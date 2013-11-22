@@ -16,29 +16,46 @@ package com.amazonaws.auth;
 
 import com.amazonaws.internal.config.InternalConfig;
 import com.amazonaws.internal.config.SignerConfig;
-import com.amazonaws.internal.config.SignerType;
 
 /** Singer factory. */
 public enum SignerFactory {
     ;
 
+    /**
+     * Returns a non-null signer for the specified service and region.
+     * 
+     * @throws UnsupportedOperationException
+     *             if the internal signer type configured is not currently
+     *             supported.
+     */
     public static Signer getSigner(String serviceName, String regionName) {
         InternalConfig config = InternalConfig.Factory.getInternalConfig();
         SignerConfig signerConfig = config.getSignerConfig(serviceName, regionName);
         Signer signer = signerConfig.computeSigner();
-        SignerType type = signerConfig.getSignerType();
-        switch(type) {
-            case AWS4SignerType: {
-                AWS4Signer v4 = (AWS4Signer)signer;
-                v4.setServiceName(serviceName);
-                v4.setRegionName(regionName);
-            }
-            default:
-                // fall thru (more details come later)
+        if (signer instanceof AWS4Signer) {
+            AWS4Signer v4 = (AWS4Signer)signer;
+            v4.setServiceName(serviceName);
+            v4.setRegionName(regionName);
         }
+// May need this later on ....
+//      SignerType type = signerConfig.getSignerType();
+//        switch(type) {
+//            case AWSS3V4SignerType: // fall thru
+//            case AWS4SignerType: {
+//            }
+//            default:
+//                // fall thru (more details come later)
+//        }
         return signer;
     }
 
+    /**
+     * Returns a non-null signer for the specified service.
+     * 
+     * @throws UnsupportedOperationException
+     *             if the internal signer type configured is not currently
+     *             supported.
+     */
     public static Signer getSigner(String serviceName) {
         return getSigner(serviceName, null);
     }

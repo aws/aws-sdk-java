@@ -16,6 +16,7 @@ package com.amazonaws.services.securitytoken;
 
 import org.w3c.dom.*;
 
+import java.net.*;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -24,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -79,11 +81,6 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
             = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
-
-    
-    /** AWS signer for authenticating requests. */
-    private AWS4Signer signer;
-
 
     /**
      * Constructs a new client to invoke service methods on
@@ -213,16 +210,13 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         exceptionUnmarshallers.add(new InvalidIdentityTokenExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
-        setEndpoint("sts.amazonaws.com");
-
-        signer = new AWS4Signer();
-        
-        signer.setServiceName("sts");
-        
-
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("sts.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/securitytoken/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
+                "/com/amazonaws/services/securitytoken/request.handler2s"));
     }
 
     
@@ -286,13 +280,14 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         ExecutionContext executionContext = createExecutionContext(getSessionTokenRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetSessionTokenRequest> request = null;
-        GetSessionTokenResult response = null;
+        Response<GetSessionTokenResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetSessionTokenRequestMarshaller().marshall(getSessionTokenRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetSessionTokenResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetSessionTokenResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -365,13 +360,14 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         ExecutionContext executionContext = createExecutionContext(decodeAuthorizationMessageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DecodeAuthorizationMessageRequest> request = null;
-        DecodeAuthorizationMessageResult response = null;
+        Response<DecodeAuthorizationMessageResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DecodeAuthorizationMessageRequestMarshaller().marshall(decodeAuthorizationMessageRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DecodeAuthorizationMessageResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DecodeAuthorizationMessageResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -480,13 +476,14 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         ExecutionContext executionContext = createExecutionContext(assumeRoleWithSAMLRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<AssumeRoleWithSAMLRequest> request = null;
-        AssumeRoleWithSAMLResult response = null;
+        Response<AssumeRoleWithSAMLResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new AssumeRoleWithSAMLRequestMarshaller().marshall(assumeRoleWithSAMLRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new AssumeRoleWithSAMLResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new AssumeRoleWithSAMLResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -602,13 +599,14 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         ExecutionContext executionContext = createExecutionContext(assumeRoleWithWebIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<AssumeRoleWithWebIdentityRequest> request = null;
-        AssumeRoleWithWebIdentityResult response = null;
+        Response<AssumeRoleWithWebIdentityResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new AssumeRoleWithWebIdentityRequestMarshaller().marshall(assumeRoleWithWebIdentityRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new AssumeRoleWithWebIdentityResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new AssumeRoleWithWebIdentityResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -684,13 +682,14 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         ExecutionContext executionContext = createExecutionContext(getFederationTokenRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetFederationTokenRequest> request = null;
-        GetFederationTokenResult response = null;
+        Response<GetFederationTokenResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetFederationTokenRequestMarshaller().marshall(getFederationTokenRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetFederationTokenResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetFederationTokenResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -791,13 +790,14 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         ExecutionContext executionContext = createExecutionContext(assumeRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<AssumeRoleRequest> request = null;
-        AssumeRoleResult response = null;
+        Response<AssumeRoleResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new AssumeRoleRequestMarshaller().marshall(assumeRoleRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new AssumeRoleResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new AssumeRoleResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -859,47 +859,6 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         return getSessionToken(new GetSessionTokenRequest());
     }
     
-    /**
-     * Overrides the default endpoint for this client ("https://sts.amazonaws.com") and explicitly provides
-     * an AWS region ID and AWS service name to use when the client calculates a signature
-     * for requests.  In almost all cases, this region ID and service name
-     * are automatically determined from the endpoint, and callers should use the simpler
-     * one-argument form of setEndpoint instead of this method.
-     * <p>
-     * <b>This method is not threadsafe. Endpoints should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit.</b>
-     * <p>
-     * Callers can pass in just the endpoint (ex: "sts.amazonaws.com") or a full
-     * URL, including the protocol (ex: "https://sts.amazonaws.com"). If the
-     * protocol is not specified here, the default protocol from this client's
-     * {@link ClientConfiguration} will be used, which by default is HTTPS.
-     * <p>
-     * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
-     *
-     * @param endpoint
-     *            The endpoint (ex: "sts.amazonaws.com") or a full URL,
-     *            including the protocol (ex: "https://sts.amazonaws.com") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     * @param serviceName
-     *            The name of the AWS service to use when signing requests.
-     * @param regionId
-     *            The ID of the region in which this service resides.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
-     */
-    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
-        setEndpoint(endpoint);
-        signer.setServiceName(serviceName);
-        signer.setRegionName(regionId);
-    }
-    
     @Override
     protected String getServiceAbbreviation() {
         return "sts";
@@ -926,7 +885,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
             Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
             ExecutionContext executionContext)
     {
@@ -942,12 +901,12 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(signer);
+        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-        return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
+        return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }
         

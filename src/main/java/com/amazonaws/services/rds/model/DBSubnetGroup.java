@@ -36,22 +36,22 @@ import java.io.Serializable;
 public class DBSubnetGroup implements Serializable {
 
     /**
-     * Specifies the name of the DB Subnet Group.
+     * Specifies the name of the DB subnet group.
      */
     private String dBSubnetGroupName;
 
     /**
-     * Provides the description of the DB Subnet Group.
+     * Provides the description of the DB subnet group.
      */
     private String dBSubnetGroupDescription;
 
     /**
-     * Provides the VpcId of the DB Subnet Group.
+     * Provides the VpcId of the DB subnet group.
      */
     private String vpcId;
 
     /**
-     * Provides the status of the DB Subnet Group.
+     * Provides the status of the DB subnet group.
      */
     private String subnetGroupStatus;
 
@@ -61,29 +61,29 @@ public class DBSubnetGroup implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Subnet> subnets;
 
     /**
-     * Specifies the name of the DB Subnet Group.
+     * Specifies the name of the DB subnet group.
      *
-     * @return Specifies the name of the DB Subnet Group.
+     * @return Specifies the name of the DB subnet group.
      */
     public String getDBSubnetGroupName() {
         return dBSubnetGroupName;
     }
     
     /**
-     * Specifies the name of the DB Subnet Group.
+     * Specifies the name of the DB subnet group.
      *
-     * @param dBSubnetGroupName Specifies the name of the DB Subnet Group.
+     * @param dBSubnetGroupName Specifies the name of the DB subnet group.
      */
     public void setDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
     }
     
     /**
-     * Specifies the name of the DB Subnet Group.
+     * Specifies the name of the DB subnet group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSubnetGroupName Specifies the name of the DB Subnet Group.
+     * @param dBSubnetGroupName Specifies the name of the DB subnet group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -94,29 +94,29 @@ public class DBSubnetGroup implements Serializable {
     }
 
     /**
-     * Provides the description of the DB Subnet Group.
+     * Provides the description of the DB subnet group.
      *
-     * @return Provides the description of the DB Subnet Group.
+     * @return Provides the description of the DB subnet group.
      */
     public String getDBSubnetGroupDescription() {
         return dBSubnetGroupDescription;
     }
     
     /**
-     * Provides the description of the DB Subnet Group.
+     * Provides the description of the DB subnet group.
      *
-     * @param dBSubnetGroupDescription Provides the description of the DB Subnet Group.
+     * @param dBSubnetGroupDescription Provides the description of the DB subnet group.
      */
     public void setDBSubnetGroupDescription(String dBSubnetGroupDescription) {
         this.dBSubnetGroupDescription = dBSubnetGroupDescription;
     }
     
     /**
-     * Provides the description of the DB Subnet Group.
+     * Provides the description of the DB subnet group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSubnetGroupDescription Provides the description of the DB Subnet Group.
+     * @param dBSubnetGroupDescription Provides the description of the DB subnet group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -127,29 +127,29 @@ public class DBSubnetGroup implements Serializable {
     }
 
     /**
-     * Provides the VpcId of the DB Subnet Group.
+     * Provides the VpcId of the DB subnet group.
      *
-     * @return Provides the VpcId of the DB Subnet Group.
+     * @return Provides the VpcId of the DB subnet group.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * Provides the VpcId of the DB Subnet Group.
+     * Provides the VpcId of the DB subnet group.
      *
-     * @param vpcId Provides the VpcId of the DB Subnet Group.
+     * @param vpcId Provides the VpcId of the DB subnet group.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * Provides the VpcId of the DB Subnet Group.
+     * Provides the VpcId of the DB subnet group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId Provides the VpcId of the DB Subnet Group.
+     * @param vpcId Provides the VpcId of the DB subnet group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -160,29 +160,29 @@ public class DBSubnetGroup implements Serializable {
     }
 
     /**
-     * Provides the status of the DB Subnet Group.
+     * Provides the status of the DB subnet group.
      *
-     * @return Provides the status of the DB Subnet Group.
+     * @return Provides the status of the DB subnet group.
      */
     public String getSubnetGroupStatus() {
         return subnetGroupStatus;
     }
     
     /**
-     * Provides the status of the DB Subnet Group.
+     * Provides the status of the DB subnet group.
      *
-     * @param subnetGroupStatus Provides the status of the DB Subnet Group.
+     * @param subnetGroupStatus Provides the status of the DB subnet group.
      */
     public void setSubnetGroupStatus(String subnetGroupStatus) {
         this.subnetGroupStatus = subnetGroupStatus;
     }
     
     /**
-     * Provides the status of the DB Subnet Group.
+     * Provides the status of the DB subnet group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetGroupStatus Provides the status of the DB Subnet Group.
+     * @param subnetGroupStatus Provides the status of the DB subnet group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

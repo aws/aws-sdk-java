@@ -60,6 +60,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeLocations service method, as returned by AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -88,6 +89,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeLocations service method, as returned by AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -119,6 +121,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         ConfirmPublicVirtualInterface service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -153,6 +156,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         ConfirmPublicVirtualInterface service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -181,6 +185,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         CreatePrivateVirtualInterface service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -212,6 +217,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         CreatePrivateVirtualInterface service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -237,6 +243,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         DeleteVirtualInterface service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -265,6 +272,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         DeleteVirtualInterface service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -293,6 +301,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         CreatePublicVirtualInterface service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -324,6 +333,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         CreatePublicVirtualInterface service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -366,6 +376,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * 
      * @return A Java Future object containing the response from the
      *         CreateInterconnect service method, as returned by AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -411,6 +422,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * 
      * @return A Java Future object containing the response from the
      *         CreateInterconnect service method, as returned by AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -450,6 +462,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         DescribeVirtualInterfaces service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -492,6 +505,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         DescribeVirtualInterfaces service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -520,6 +534,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * 
      * @return A Java Future object containing the response from the
      *         ConfirmConnection service method, as returned by AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -551,6 +566,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * 
      * @return A Java Future object containing the response from the
      *         ConfirmConnection service method, as returned by AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -580,6 +596,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         DescribeInterconnects service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -612,6 +629,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         DescribeInterconnects service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -645,6 +663,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         DescribeVirtualGateways service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -681,6 +700,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         DescribeVirtualGateways service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -712,6 +732,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         ConfirmPrivateVirtualInterface service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -746,6 +767,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         ConfirmPrivateVirtualInterface service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -775,6 +797,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         DescribeConnections service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -807,6 +830,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         DescribeConnections service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -843,6 +867,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         AllocatePublicVirtualInterface service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -882,6 +907,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         AllocatePublicVirtualInterface service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -918,6 +944,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         AllocatePrivateVirtualInterface service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -957,6 +984,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         AllocatePrivateVirtualInterface service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -986,6 +1014,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteConnection service method, as returned by AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1018,6 +1047,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteConnection service method, as returned by AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1044,6 +1074,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         DescribeConnectionsOnInterconnect service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1073,6 +1104,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         DescribeConnectionsOnInterconnect service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1102,6 +1134,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         AllocateConnectionOnInterconnect service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1134,6 +1167,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future object containing the response from the
      *         AllocateConnectionOnInterconnect service method, as returned by
      *         AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1168,6 +1202,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * 
      * @return A Java Future object containing the response from the
      *         CreateConnection service method, as returned by AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1205,6 +1240,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * 
      * @return A Java Future object containing the response from the
      *         CreateConnection service method, as returned by AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1229,6 +1265,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteInterconnect service method, as returned by AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1256,6 +1293,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteInterconnect service method, as returned by AmazonDirectConnect.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

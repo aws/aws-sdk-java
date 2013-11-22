@@ -13,16 +13,16 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.http;
-import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
 import static com.amazonaws.SDKGlobalConfiguration.DISABLE_CERT_CHECKING_SYSTEM_PROPERTY;
+import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -55,9 +55,10 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
 import com.amazonaws.RequestClientOptions;
 import com.amazonaws.RequestClientOptions.Marker;
+import com.amazonaws.Response;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.SDKGlobalConfiguration;
-import com.amazonaws.handlers.RequestHandler;
+import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.internal.CRC32MismatchException;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
@@ -198,7 +199,6 @@ public class AmazonHttpClient {
             throw new AmazonClientException("Unable to access default SSL context to disable strict hostname verification");
         }
     }
-
     /**
      * Executes the request and returns the result.
      *
@@ -214,36 +214,56 @@ public class AmazonHttpClient {
      *            Additional information about the context of this web service
      *            call
      */
-    public <T> T execute(Request<?> request,
+    public <T> Response<T> execute(Request<?> request,
             HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
             HttpResponseHandler<AmazonServiceException> errorResponseHandler,
             ExecutionContext executionContext) throws AmazonClientException, AmazonServiceException {
         if (executionContext == null)
             throw new AmazonClientException("Internal SDK Error: No execution context parameter specified.");
-        List<RequestHandler> requestHandlers = executionContext.getRequestHandlers();
-        if (requestHandlers == null) requestHandlers = new ArrayList<RequestHandler>();
-
-        // Apply any additional service specific request handlers that need to be run
-        for ( RequestHandler requestHandler : requestHandlers ) {
-            requestHandler.beforeRequest(request);
-        }
+        List<RequestHandler2> requestHandler2s = requestHandler2s(request, executionContext);
 
         final AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        T response = null;
+        Response<T> response = null;
         try {
             response = executeHelper(request, responseHandler, errorResponseHandler, executionContext);
             TimingInfo timingInfo = awsRequestMetrics.getTimingInfo().endTiming();
-
-            for (RequestHandler handler : requestHandlers) {
-                handler.afterResponse(request, response, timingInfo);
-            }
+            afterResponse(request, requestHandler2s, response, timingInfo);
             return response;
         } catch (AmazonClientException e) {
-            for (RequestHandler handler : requestHandlers) {
-                handler.afterError(request, e);
-            }
+            afterError(request, response, requestHandler2s, e);
             throw e;
         }
+    }
+
+    private void afterError(Request<?> request, Response<?> response,
+            List<RequestHandler2> requestHandler2s, AmazonClientException e) {
+        for (RequestHandler2 handler2 : requestHandler2s) {
+            handler2.afterError(request, response, e);
+        }
+    }
+
+    private <T> void afterResponse(Request<?> request,
+            List<RequestHandler2> requestHandler2s,
+            Response<T> response,
+            TimingInfo timingInfo) {
+        for (RequestHandler2 handler2 : requestHandler2s) {
+            handler2.afterResponse(request, response);
+        }
+    }
+
+    private List<RequestHandler2> requestHandler2s(Request<?> request,
+            ExecutionContext executionContext) {
+        List<RequestHandler2> requestHandler2s = executionContext
+                .getRequestHandler2s();
+        if (requestHandler2s == null) {
+            return Collections.emptyList();
+        }
+        // Apply any additional service specific request handlers that need
+        // to be run
+        for (RequestHandler2 requestHandler2 : requestHandler2s) {
+            requestHandler2.beforeRequest(request);
+        }
+        return requestHandler2s;
     }
 
     /**
@@ -252,7 +272,7 @@ public class AmazonHttpClient {
      * @see AmazonHttpClient#execute(Request, HttpResponseHandler, HttpResponseHandler)
      * @see AmazonHttpClient#execute(Request, HttpResponseHandler, HttpResponseHandler, ExecutionContext)
      */
-    private <T> T executeHelper(Request<?> request,
+    private <T> Response<T> executeHelper(Request<?> request,
             HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
             HttpResponseHandler<AmazonServiceException> errorResponseHandler,
             ExecutionContext executionContext)
@@ -293,7 +313,7 @@ public class AmazonHttpClient {
             }
 
             HttpRequestBase httpRequest = null;
-            org.apache.http.HttpResponse response = null;
+            org.apache.http.HttpResponse apacheResponse = null;
 
             try {
                 // Sign the request if a signer was provided
@@ -354,38 +374,44 @@ public class AmazonHttpClient {
                 retriedException = null;
                 awsRequestMetrics.startEvent(Field.HttpRequestTime);
                 try {
-                    response = httpClient.execute(httpRequest, httpContext);
+                    apacheResponse = httpClient.execute(httpRequest, httpContext);
                 } finally {
                     awsRequestMetrics.endEvent(Field.HttpRequestTime);
                 }
 
-                if (isRequestSuccessful(response)) {
-                    awsRequestMetrics.addProperty(Field.StatusCode, response.getStatusLine().getStatusCode());
+                if (isRequestSuccessful(apacheResponse)) {
+                    awsRequestMetrics.addProperty(Field.StatusCode, apacheResponse.getStatusLine().getStatusCode());
                     /*
                      * If we get back any 2xx status code, then we know we should
                      * treat the service call as successful.
                      */
-                    leaveHttpConnectionOpen = responseHandler.needsConnectionLeftOpen();
-                    return handleResponse(request, responseHandler, httpRequest, response, executionContext);
-                } else if (isTemporaryRedirect(response)) {
+                    leaveHttpConnectionOpen = responseHandler
+                            .needsConnectionLeftOpen();
+                    HttpResponse httpResponse = createResponse(httpRequest,
+                            request, apacheResponse);
+                    T response = handleResponse(request, responseHandler,
+                            httpRequest, httpResponse, apacheResponse,
+                            executionContext);
+                    return new Response<T>(response, httpResponse);
+                } else if (isTemporaryRedirect(apacheResponse)) {
                     /*
                      * S3 sends 307 Temporary Redirects if you try to delete an
                      * EU bucket from the US endpoint. If we get a 307, we'll
                      * point the HTTP method to the redirected location, and let
                      * the next retry deliver the request to the right location.
                      */
-                    Header[] locationHeaders = response.getHeaders("location");
+                    Header[] locationHeaders = apacheResponse.getHeaders("location");
                     String redirectedLocation = locationHeaders[0].getValue();
                     log.debug("Redirecting to: " + redirectedLocation);
                     redirectedURI = URI.create(redirectedLocation);
                     httpRequest.setURI(redirectedURI);
-                    awsRequestMetrics.addProperty(Field.StatusCode, response.getStatusLine().getStatusCode());
+                    awsRequestMetrics.addProperty(Field.StatusCode, apacheResponse.getStatusLine().getStatusCode());
                     awsRequestMetrics.addProperty(Field.RedirectLocation, redirectedLocation);
                     awsRequestMetrics.addProperty(Field.AWSRequestID, null);
 
                 } else {
                     leaveHttpConnectionOpen = errorResponseHandler.needsConnectionLeftOpen();
-                    AmazonServiceException ase = handleErrorResponse(request, errorResponseHandler, httpRequest, response);
+                    AmazonServiceException ase = handleErrorResponse(request, errorResponseHandler, httpRequest, apacheResponse);
                     awsRequestMetrics.addProperty(Field.AWSRequestID, ase.getRequestId());
                     awsRequestMetrics.addProperty(Field.AWSErrorCode, ase.getErrorCode());
                     awsRequestMetrics.addProperty(Field.StatusCode, ase.getStatusCode());
@@ -405,7 +431,7 @@ public class AmazonHttpClient {
                      * global time offset for every service exception.
                      */
                     if(RetryUtils.isClockSkewError(ase)) {
-                        int timeOffset = parseClockSkewOffset(response, ase);
+                        int timeOffset = parseClockSkewOffset(apacheResponse, ase);
                         SDKGlobalConfiguration.setGlobalTimeOffset(timeOffset);
                     }
                     resetRequestAfterError(request, ase);
@@ -444,9 +470,9 @@ public class AmazonHttpClient {
                  */
                 if (!leaveHttpConnectionOpen) {
                     try {
-                        if (response != null && response.getEntity() != null
-                                && response.getEntity().getContent() != null) {
-                            response.getEntity().getContent().close();
+                        if (apacheResponse != null && apacheResponse.getEntity() != null
+                                && apacheResponse.getEntity().getContent() != null) {
+                            apacheResponse.getEntity().getContent().close();
                         }
                     } catch (IOException e) {
                         log.warn("Cannot close the response content.", e);
@@ -634,10 +660,11 @@ public class AmazonHttpClient {
      *             contents from the HTTP method object.
      */
     private <T> T handleResponse(Request<?> request,
-            HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler, HttpRequestBase method, org.apache.http.HttpResponse apacheHttpResponse, ExecutionContext executionContext)
-            throws IOException {
-
-        HttpResponse httpResponse = createResponse(method, request, apacheHttpResponse);
+            HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
+            HttpRequestBase method, HttpResponse httpResponse,
+            org.apache.http.HttpResponse apacheHttpResponse,
+            ExecutionContext executionContext) throws IOException
+    {
         if (responseHandler.needsConnectionLeftOpen() && method instanceof HttpEntityEnclosingRequest) {
             HttpEntityEnclosingRequest httpEntityEnclosingRequest = (HttpEntityEnclosingRequest)method;
             httpResponse.setContent(new HttpMethodReleaseInputStream(httpEntityEnclosingRequest));

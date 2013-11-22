@@ -38,12 +38,12 @@ public class EC2SecurityGroup implements Serializable {
     private String status;
 
     /**
-     * Specifies the name of the EC2 Security Group.
+     * Specifies the name of the EC2 security group.
      */
     private String eC2SecurityGroupName;
 
     /**
-     * Specifies the id of the EC2 Security Group.
+     * Specifies the id of the EC2 security group.
      */
     private String eC2SecurityGroupId;
 
@@ -99,29 +99,29 @@ public class EC2SecurityGroup implements Serializable {
     }
 
     /**
-     * Specifies the name of the EC2 Security Group.
+     * Specifies the name of the EC2 security group.
      *
-     * @return Specifies the name of the EC2 Security Group.
+     * @return Specifies the name of the EC2 security group.
      */
     public String getEC2SecurityGroupName() {
         return eC2SecurityGroupName;
     }
     
     /**
-     * Specifies the name of the EC2 Security Group.
+     * Specifies the name of the EC2 security group.
      *
-     * @param eC2SecurityGroupName Specifies the name of the EC2 Security Group.
+     * @param eC2SecurityGroupName Specifies the name of the EC2 security group.
      */
     public void setEC2SecurityGroupName(String eC2SecurityGroupName) {
         this.eC2SecurityGroupName = eC2SecurityGroupName;
     }
     
     /**
-     * Specifies the name of the EC2 Security Group.
+     * Specifies the name of the EC2 security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroupName Specifies the name of the EC2 Security Group.
+     * @param eC2SecurityGroupName Specifies the name of the EC2 security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -132,29 +132,29 @@ public class EC2SecurityGroup implements Serializable {
     }
 
     /**
-     * Specifies the id of the EC2 Security Group.
+     * Specifies the id of the EC2 security group.
      *
-     * @return Specifies the id of the EC2 Security Group.
+     * @return Specifies the id of the EC2 security group.
      */
     public String getEC2SecurityGroupId() {
         return eC2SecurityGroupId;
     }
     
     /**
-     * Specifies the id of the EC2 Security Group.
+     * Specifies the id of the EC2 security group.
      *
-     * @param eC2SecurityGroupId Specifies the id of the EC2 Security Group.
+     * @param eC2SecurityGroupId Specifies the id of the EC2 security group.
      */
     public void setEC2SecurityGroupId(String eC2SecurityGroupId) {
         this.eC2SecurityGroupId = eC2SecurityGroupId;
     }
     
     /**
-     * Specifies the id of the EC2 Security Group.
+     * Specifies the id of the EC2 security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroupId Specifies the id of the EC2 Security Group.
+     * @param eC2SecurityGroupId Specifies the id of the EC2 security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

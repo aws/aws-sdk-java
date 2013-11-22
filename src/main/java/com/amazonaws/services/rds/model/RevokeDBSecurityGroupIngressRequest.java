@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the DB Security Group to revoke ingress from.
+     * The name of the DB security group to revoke ingress from.
      */
     private String dBSecurityGroupName;
 
@@ -43,8 +43,8 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     private String cIDRIP;
 
     /**
-     * The name of the EC2 Security Group to revoke access from. For VPC DB
-     * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * The name of the EC2 security group to revoke access from. For VPC DB
+     * security groups, <code>EC2SecurityGroupId</code> must be provided.
      * Otherwise, EC2SecurityGroupOwnerId and either
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
      * must be provided.
@@ -52,8 +52,8 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     private String eC2SecurityGroupName;
 
     /**
-     * The id of the EC2 Security Group to revoke access from. For VPC DB
-     * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * The id of the EC2 security group to revoke access from. For VPC DB
+     * security groups, <code>EC2SecurityGroupId</code> must be provided.
      * Otherwise, EC2SecurityGroupOwnerId and either
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
      * must be provided.
@@ -63,7 +63,7 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     /**
      * The AWS Account Number of the owner of the EC2 security group
      * specified in the <code>EC2SecurityGroupName</code> parameter. The AWS
-     * Access Key ID is not an acceptable value. For VPC DB Security Groups,
+     * Access Key ID is not an acceptable value. For VPC DB security groups,
      * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
      * or <code>EC2SecurityGroupId</code> must be provided.
@@ -81,7 +81,7 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dBSecurityGroupName The name of the DB Security Group to revoke
+     * @param dBSecurityGroupName The name of the DB security group to revoke
      * ingress from.
      */
     public RevokeDBSecurityGroupIngressRequest(String dBSecurityGroupName) {
@@ -89,29 +89,29 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * The name of the DB Security Group to revoke ingress from.
+     * The name of the DB security group to revoke ingress from.
      *
-     * @return The name of the DB Security Group to revoke ingress from.
+     * @return The name of the DB security group to revoke ingress from.
      */
     public String getDBSecurityGroupName() {
         return dBSecurityGroupName;
     }
     
     /**
-     * The name of the DB Security Group to revoke ingress from.
+     * The name of the DB security group to revoke ingress from.
      *
-     * @param dBSecurityGroupName The name of the DB Security Group to revoke ingress from.
+     * @param dBSecurityGroupName The name of the DB security group to revoke ingress from.
      */
     public void setDBSecurityGroupName(String dBSecurityGroupName) {
         this.dBSecurityGroupName = dBSecurityGroupName;
     }
     
     /**
-     * The name of the DB Security Group to revoke ingress from.
+     * The name of the DB security group to revoke ingress from.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSecurityGroupName The name of the DB Security Group to revoke ingress from.
+     * @param dBSecurityGroupName The name of the DB security group to revoke ingress from.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -173,14 +173,14 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * The name of the EC2 Security Group to revoke access from. For VPC DB
-     * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * The name of the EC2 security group to revoke access from. For VPC DB
+     * security groups, <code>EC2SecurityGroupId</code> must be provided.
      * Otherwise, EC2SecurityGroupOwnerId and either
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
      * must be provided.
      *
-     * @return The name of the EC2 Security Group to revoke access from. For VPC DB
-     *         Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * @return The name of the EC2 security group to revoke access from. For VPC DB
+     *         security groups, <code>EC2SecurityGroupId</code> must be provided.
      *         Otherwise, EC2SecurityGroupOwnerId and either
      *         <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
      *         must be provided.
@@ -190,14 +190,14 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * The name of the EC2 Security Group to revoke access from. For VPC DB
-     * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * The name of the EC2 security group to revoke access from. For VPC DB
+     * security groups, <code>EC2SecurityGroupId</code> must be provided.
      * Otherwise, EC2SecurityGroupOwnerId and either
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
      * must be provided.
      *
-     * @param eC2SecurityGroupName The name of the EC2 Security Group to revoke access from. For VPC DB
-     *         Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * @param eC2SecurityGroupName The name of the EC2 security group to revoke access from. For VPC DB
+     *         security groups, <code>EC2SecurityGroupId</code> must be provided.
      *         Otherwise, EC2SecurityGroupOwnerId and either
      *         <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
      *         must be provided.
@@ -207,16 +207,16 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * The name of the EC2 Security Group to revoke access from. For VPC DB
-     * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * The name of the EC2 security group to revoke access from. For VPC DB
+     * security groups, <code>EC2SecurityGroupId</code> must be provided.
      * Otherwise, EC2SecurityGroupOwnerId and either
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
      * must be provided.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroupName The name of the EC2 Security Group to revoke access from. For VPC DB
-     *         Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * @param eC2SecurityGroupName The name of the EC2 security group to revoke access from. For VPC DB
+     *         security groups, <code>EC2SecurityGroupId</code> must be provided.
      *         Otherwise, EC2SecurityGroupOwnerId and either
      *         <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
      *         must be provided.
@@ -230,14 +230,14 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * The id of the EC2 Security Group to revoke access from. For VPC DB
-     * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * The id of the EC2 security group to revoke access from. For VPC DB
+     * security groups, <code>EC2SecurityGroupId</code> must be provided.
      * Otherwise, EC2SecurityGroupOwnerId and either
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
      * must be provided.
      *
-     * @return The id of the EC2 Security Group to revoke access from. For VPC DB
-     *         Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * @return The id of the EC2 security group to revoke access from. For VPC DB
+     *         security groups, <code>EC2SecurityGroupId</code> must be provided.
      *         Otherwise, EC2SecurityGroupOwnerId and either
      *         <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
      *         must be provided.
@@ -247,14 +247,14 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * The id of the EC2 Security Group to revoke access from. For VPC DB
-     * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * The id of the EC2 security group to revoke access from. For VPC DB
+     * security groups, <code>EC2SecurityGroupId</code> must be provided.
      * Otherwise, EC2SecurityGroupOwnerId and either
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
      * must be provided.
      *
-     * @param eC2SecurityGroupId The id of the EC2 Security Group to revoke access from. For VPC DB
-     *         Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * @param eC2SecurityGroupId The id of the EC2 security group to revoke access from. For VPC DB
+     *         security groups, <code>EC2SecurityGroupId</code> must be provided.
      *         Otherwise, EC2SecurityGroupOwnerId and either
      *         <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
      *         must be provided.
@@ -264,16 +264,16 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * The id of the EC2 Security Group to revoke access from. For VPC DB
-     * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * The id of the EC2 security group to revoke access from. For VPC DB
+     * security groups, <code>EC2SecurityGroupId</code> must be provided.
      * Otherwise, EC2SecurityGroupOwnerId and either
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
      * must be provided.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroupId The id of the EC2 Security Group to revoke access from. For VPC DB
-     *         Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * @param eC2SecurityGroupId The id of the EC2 security group to revoke access from. For VPC DB
+     *         security groups, <code>EC2SecurityGroupId</code> must be provided.
      *         Otherwise, EC2SecurityGroupOwnerId and either
      *         <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
      *         must be provided.
@@ -289,14 +289,14 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     /**
      * The AWS Account Number of the owner of the EC2 security group
      * specified in the <code>EC2SecurityGroupName</code> parameter. The AWS
-     * Access Key ID is not an acceptable value. For VPC DB Security Groups,
+     * Access Key ID is not an acceptable value. For VPC DB security groups,
      * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
      * or <code>EC2SecurityGroupId</code> must be provided.
      *
      * @return The AWS Account Number of the owner of the EC2 security group
      *         specified in the <code>EC2SecurityGroupName</code> parameter. The AWS
-     *         Access Key ID is not an acceptable value. For VPC DB Security Groups,
+     *         Access Key ID is not an acceptable value. For VPC DB security groups,
      *         <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
      *         or <code>EC2SecurityGroupId</code> must be provided.
@@ -308,14 +308,14 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     /**
      * The AWS Account Number of the owner of the EC2 security group
      * specified in the <code>EC2SecurityGroupName</code> parameter. The AWS
-     * Access Key ID is not an acceptable value. For VPC DB Security Groups,
+     * Access Key ID is not an acceptable value. For VPC DB security groups,
      * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
      * or <code>EC2SecurityGroupId</code> must be provided.
      *
      * @param eC2SecurityGroupOwnerId The AWS Account Number of the owner of the EC2 security group
      *         specified in the <code>EC2SecurityGroupName</code> parameter. The AWS
-     *         Access Key ID is not an acceptable value. For VPC DB Security Groups,
+     *         Access Key ID is not an acceptable value. For VPC DB security groups,
      *         <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
      *         or <code>EC2SecurityGroupId</code> must be provided.
@@ -327,7 +327,7 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     /**
      * The AWS Account Number of the owner of the EC2 security group
      * specified in the <code>EC2SecurityGroupName</code> parameter. The AWS
-     * Access Key ID is not an acceptable value. For VPC DB Security Groups,
+     * Access Key ID is not an acceptable value. For VPC DB security groups,
      * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
      * or <code>EC2SecurityGroupId</code> must be provided.
@@ -336,7 +336,7 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *
      * @param eC2SecurityGroupOwnerId The AWS Account Number of the owner of the EC2 security group
      *         specified in the <code>EC2SecurityGroupName</code> parameter. The AWS
-     *         Access Key ID is not an acceptable value. For VPC DB Security Groups,
+     *         Access Key ID is not an acceptable value. For VPC DB security groups,
      *         <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
      *         or <code>EC2SecurityGroupId</code> must be provided.

@@ -330,6 +330,7 @@ public interface AmazonSimpleEmailService {
      *           parameters to execute the VerifyEmailAddress service method on
      *           AmazonSimpleEmailService.
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -632,6 +633,7 @@ public interface AmazonSimpleEmailService {
      * @param deleteVerifiedEmailAddressRequest Container for the necessary
      *           parameters to execute the DeleteVerifiedEmailAddress service method on
      *           AmazonSimpleEmailService.
+     * 
      * 
      *
      * @throws AmazonClientException

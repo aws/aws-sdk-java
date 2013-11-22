@@ -423,6 +423,7 @@ public interface AmazonSimpleWorkflow {
      *           parameters to execute the DeprecateWorkflowType service method on
      *           AmazonSimpleWorkflow.
      * 
+     * 
      * @throws TypeDeprecatedException
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
@@ -480,6 +481,7 @@ public interface AmazonSimpleWorkflow {
      *
      * @param deprecateDomainRequest Container for the necessary parameters
      *           to execute the DeprecateDomain service method on AmazonSimpleWorkflow.
+     * 
      * 
      * @throws DomainDeprecatedException
      * @throws OperationNotPermittedException
@@ -551,6 +553,7 @@ public interface AmazonSimpleWorkflow {
      * @param registerWorkflowTypeRequest Container for the necessary
      *           parameters to execute the RegisterWorkflowType service method on
      *           AmazonSimpleWorkflow.
+     * 
      * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
@@ -750,6 +753,7 @@ public interface AmazonSimpleWorkflow {
      *           parameters to execute the SignalWorkflowExecution service method on
      *           AmazonSimpleWorkflow.
      * 
+     * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
      *
@@ -872,6 +876,7 @@ public interface AmazonSimpleWorkflow {
      * @param requestCancelWorkflowExecutionRequest Container for the
      *           necessary parameters to execute the RequestCancelWorkflowExecution
      *           service method on AmazonSimpleWorkflow.
+     * 
      * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
@@ -998,6 +1003,7 @@ public interface AmazonSimpleWorkflow {
      * @param deprecateActivityTypeRequest Container for the necessary
      *           parameters to execute the DeprecateActivityType service method on
      *           AmazonSimpleWorkflow.
+     * 
      * 
      * @throws TypeDeprecatedException
      * @throws OperationNotPermittedException
@@ -1193,6 +1199,7 @@ public interface AmazonSimpleWorkflow {
      *           parameters to execute the RespondActivityTaskCanceled service method
      *           on AmazonSimpleWorkflow.
      * 
+     * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
      *
@@ -1237,6 +1244,7 @@ public interface AmazonSimpleWorkflow {
      * @param respondDecisionTaskCompletedRequest Container for the necessary
      *           parameters to execute the RespondDecisionTaskCompleted service method
      *           on AmazonSimpleWorkflow.
+     * 
      * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
@@ -1305,6 +1313,7 @@ public interface AmazonSimpleWorkflow {
      * @param respondActivityTaskCompletedRequest Container for the necessary
      *           parameters to execute the RespondActivityTaskCompleted service method
      *           on AmazonSimpleWorkflow.
+     * 
      * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
@@ -1682,6 +1691,7 @@ public interface AmazonSimpleWorkflow {
      * @param registerDomainRequest Container for the necessary parameters to
      *           execute the RegisterDomain service method on AmazonSimpleWorkflow.
      * 
+     * 
      * @throws DomainAlreadyExistsException
      * @throws OperationNotPermittedException
      * @throws LimitExceededException
@@ -1748,6 +1758,7 @@ public interface AmazonSimpleWorkflow {
      * @param registerActivityTypeRequest Container for the necessary
      *           parameters to execute the RegisterActivityType service method on
      *           AmazonSimpleWorkflow.
+     * 
      * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
@@ -2162,6 +2173,7 @@ public interface AmazonSimpleWorkflow {
      *           parameters to execute the RespondActivityTaskFailed service method on
      *           AmazonSimpleWorkflow.
      * 
+     * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
      *
@@ -2284,6 +2296,7 @@ public interface AmazonSimpleWorkflow {
      * @param terminateWorkflowExecutionRequest Container for the necessary
      *           parameters to execute the TerminateWorkflowExecution service method on
      *           AmazonSimpleWorkflow.
+     * 
      * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException

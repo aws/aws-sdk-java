@@ -272,6 +272,7 @@ public interface AmazonCloudFormation {
      * @param setStackPolicyRequest Container for the necessary parameters to
      *           execute the SetStackPolicy service method on AmazonCloudFormation.
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -384,6 +385,7 @@ public interface AmazonCloudFormation {
      * @param cancelUpdateStackRequest Container for the necessary parameters
      *           to execute the CancelUpdateStack service method on
      *           AmazonCloudFormation.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -508,6 +510,7 @@ public interface AmazonCloudFormation {
      *
      * @param deleteStackRequest Container for the necessary parameters to
      *           execute the DeleteStack service method on AmazonCloudFormation.
+     * 
      * 
      *
      * @throws AmazonClientException

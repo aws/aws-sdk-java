@@ -62,6 +62,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DeregisterVolume service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -91,6 +92,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DeregisterVolume service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -116,6 +118,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         SetPermission service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -144,6 +147,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         SetPermission service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -170,6 +174,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeInstances service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -199,6 +204,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeInstances service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -223,6 +229,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribePermissions service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -250,6 +257,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribePermissions service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -276,6 +284,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteInstance service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -305,6 +314,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteInstance service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -330,6 +340,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         CloneStack service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -358,6 +369,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         CloneStack service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -382,6 +394,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DetachElasticLoadBalancer service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -409,6 +422,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DetachElasticLoadBalancer service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -437,6 +451,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         StopInstance service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -468,6 +483,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         StopInstance service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -491,6 +507,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateApp service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -517,6 +534,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateApp service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -543,6 +561,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeCommands service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -572,6 +591,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeCommands service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -599,6 +619,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         AssociateElasticIp service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -629,6 +650,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         AssociateElasticIp service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -655,6 +677,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         UnassignVolume service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -684,6 +707,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         UnassignVolume service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -710,6 +734,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeRaidArrays service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -739,6 +764,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeRaidArrays service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -764,6 +790,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         GetHostnameSuggestion service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -792,6 +819,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         GetHostnameSuggestion service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -825,6 +853,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         SetLoadBasedAutoScaling service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -861,6 +890,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         SetLoadBasedAutoScaling service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -887,6 +917,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVolumes service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -916,6 +947,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVolumes service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -943,6 +975,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         AssignVolume service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -973,6 +1006,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         AssignVolume service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -997,6 +1031,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeServiceErrors service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1024,6 +1059,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeServiceErrors service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1047,6 +1083,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateLayer service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1073,6 +1110,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateLayer service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1099,6 +1137,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateElasticIp service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1128,6 +1167,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateElasticIp service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1153,6 +1193,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         StartInstance service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1181,6 +1222,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         StartInstance service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1214,6 +1256,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         CreateLayer service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1250,6 +1293,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         CreateLayer service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1277,6 +1321,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DisassociateElasticIp service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1307,6 +1352,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DisassociateElasticIp service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1333,6 +1379,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteStack service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1362,6 +1409,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteStack service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1385,6 +1433,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         StartStack service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1411,6 +1460,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         StartStack service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1439,6 +1489,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         RegisterVolume service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1470,6 +1521,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         RegisterVolume service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1493,6 +1545,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateUserProfile service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1519,6 +1572,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateUserProfile service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1544,6 +1598,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         CreateStack service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1572,6 +1627,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         CreateStack service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1597,6 +1653,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         RebootInstance service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1625,6 +1682,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         RebootInstance service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1650,6 +1708,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         CreateInstance service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1678,6 +1737,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         CreateInstance service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1701,6 +1761,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteApp service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1727,6 +1788,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteApp service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1754,6 +1816,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DeregisterElasticIp service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1784,6 +1847,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DeregisterElasticIp service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1813,6 +1877,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         AttachElasticLoadBalancer service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1845,6 +1910,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         AttachElasticLoadBalancer service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1868,6 +1934,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateStack service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1894,6 +1961,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateStack service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1917,6 +1985,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         CreateUserProfile service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1943,6 +2012,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         CreateUserProfile service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1969,6 +2039,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeLayers service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1998,6 +2069,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeLayers service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2026,6 +2098,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @return A Java Future object containing the response from the
      *         DescribeLoadBasedAutoScaling service method, as returned by
      *         AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2057,6 +2130,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @return A Java Future object containing the response from the
      *         DescribeLoadBasedAutoScaling service method, as returned by
      *         AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2085,6 +2159,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @return A Java Future object containing the response from the
      *         DescribeElasticLoadBalancers service method, as returned by
      *         AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2116,6 +2191,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @return A Java Future object containing the response from the
      *         DescribeElasticLoadBalancers service method, as returned by
      *         AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2142,6 +2218,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteLayer service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2171,6 +2248,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteLayer service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2198,6 +2276,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         SetTimeBasedAutoScaling service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2228,6 +2307,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         SetTimeBasedAutoScaling service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2253,6 +2333,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         CreateApp service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2281,6 +2362,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         CreateApp service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2304,6 +2386,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteUserProfile service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2330,6 +2413,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteUserProfile service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2359,6 +2443,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @return A Java Future object containing the response from the
      *         DescribeTimeBasedAutoScaling service method, as returned by
      *         AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2391,6 +2476,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @return A Java Future object containing the response from the
      *         DescribeTimeBasedAutoScaling service method, as returned by
      *         AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2417,6 +2503,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateVolume service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2446,6 +2533,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateVolume service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2470,6 +2558,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeUserProfiles service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2497,6 +2586,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeUserProfiles service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2520,6 +2610,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateInstance service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2546,6 +2637,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateInstance service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2573,6 +2665,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeDeployments service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2603,6 +2696,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeDeployments service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2631,6 +2725,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         RegisterElasticIp service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2662,6 +2757,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         RegisterElasticIp service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2690,6 +2786,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeElasticIps service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2721,6 +2818,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeElasticIps service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2744,6 +2842,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeStacks service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2770,6 +2869,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeStacks service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2796,6 +2896,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeApps service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2825,6 +2926,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeApps service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2848,6 +2950,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         StopStack service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2874,6 +2977,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         StopStack service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2913,6 +3017,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         CreateDeployment service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2955,6 +3060,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * 
      * @return A Java Future object containing the response from the
      *         CreateDeployment service method, as returned by AWSOpsWorks.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

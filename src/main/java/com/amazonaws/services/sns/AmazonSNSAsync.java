@@ -53,6 +53,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         ConfirmSubscription service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -84,6 +85,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         ConfirmSubscription service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -125,6 +127,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         CreatePlatformApplication service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -169,6 +172,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         CreatePlatformApplication service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -194,6 +198,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         GetTopicAttributes service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -222,6 +227,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         GetTopicAttributes service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -249,6 +255,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         Subscribe service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -279,6 +286,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         Subscribe service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -305,6 +313,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteEndpoint service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -334,6 +343,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteEndpoint service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -358,6 +368,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         SetTopicAttributes service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -385,6 +396,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         SetTopicAttributes service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -409,6 +421,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         RemovePermission service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -436,6 +449,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         RemovePermission service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -464,6 +478,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         GetEndpointAttributes service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -495,6 +510,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         GetEndpointAttributes service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -523,6 +539,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         ListSubscriptions service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -554,6 +571,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         ListSubscriptions service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -588,6 +606,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         CreatePlatformEndpoint service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -625,6 +644,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         CreatePlatformEndpoint service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -650,6 +670,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         SetSubscriptionAttributes service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -678,6 +699,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         SetSubscriptionAttributes service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -706,6 +728,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         CreateTopic service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -737,6 +760,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         CreateTopic service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -762,6 +786,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         GetSubscriptionAttributes service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -790,6 +815,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         GetSubscriptionAttributes service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -817,6 +843,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         ListTopics service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -847,6 +874,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         ListTopics service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -875,6 +903,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         DeletePlatformApplication service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -906,6 +935,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         DeletePlatformApplication service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -940,6 +970,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         ListPlatformApplications service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -977,6 +1008,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         ListPlatformApplications service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1005,6 +1037,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         SetEndpointAttributes service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1036,6 +1069,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         SetEndpointAttributes service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1066,6 +1100,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         Unsubscribe service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1099,6 +1134,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         Unsubscribe service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1126,6 +1162,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteTopic service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1156,6 +1193,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteTopic service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1185,6 +1223,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * @return A Java Future object containing the response from the
      *         GetPlatformApplicationAttributes service method, as returned by
      *         AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1217,6 +1256,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * @return A Java Future object containing the response from the
      *         GetPlatformApplicationAttributes service method, as returned by
      *         AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1246,6 +1286,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * @return A Java Future object containing the response from the
      *         SetPlatformApplicationAttributes service method, as returned by
      *         AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1278,6 +1319,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * @return A Java Future object containing the response from the
      *         SetPlatformApplicationAttributes service method, as returned by
      *         AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1303,6 +1345,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         AddPermission service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1331,6 +1374,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         AddPermission service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1368,6 +1412,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * @return A Java Future object containing the response from the
      *         ListEndpointsByPlatformApplication service method, as returned by
      *         AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1408,6 +1453,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * @return A Java Future object containing the response from the
      *         ListEndpointsByPlatformApplication service method, as returned by
      *         AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1437,6 +1483,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         ListSubscriptionsByTopic service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1469,6 +1516,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the
      *         ListSubscriptionsByTopic service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1505,6 +1553,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the Publish
      *         service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1544,6 +1593,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @return A Java Future object containing the response from the Publish
      *         service method, as returned by AmazonSNS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

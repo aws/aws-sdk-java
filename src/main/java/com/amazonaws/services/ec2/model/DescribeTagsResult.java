@@ -28,6 +28,8 @@ public class DescribeTagsResult implements Serializable {
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<TagDescription> tags;
 
+    private String nextToken;
+
     /**
      * A list of the tags for the specified resources.
      *
@@ -97,6 +99,39 @@ public class DescribeTagsResult implements Serializable {
     }
 
     /**
+     * Returns the value of the NextToken property for this object.
+     *
+     * @return The value of the NextToken property for this object.
+     */
+    public String getNextToken() {
+        return nextToken;
+    }
+    
+    /**
+     * Sets the value of the NextToken property for this object.
+     *
+     * @param nextToken The new value for the NextToken property for this object.
+     */
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+    
+    /**
+     * Sets the value of the NextToken property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param nextToken The new value for the NextToken property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DescribeTagsResult withNextToken(String nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -108,7 +143,8 @@ public class DescribeTagsResult implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getTags() != null) sb.append("Tags: " + getTags() );
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }
@@ -119,6 +155,7 @@ public class DescribeTagsResult implements Serializable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
         return hashCode;
     }
     
@@ -132,6 +169,8 @@ public class DescribeTagsResult implements Serializable {
         
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
         return true;
     }
     

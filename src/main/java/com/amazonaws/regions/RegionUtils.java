@@ -176,7 +176,6 @@ public class RegionUtils {
     }
 
     private static void loadRegionsFromOverrideFile() throws FileNotFoundException {
-        System.setProperty("com.amazonaws.sdk.disableCertChecking", "true");
         String overrideFilePath = System.getProperty(REGIONS_FILE_OVERRIDE_SYSTEM_PROPERTY);
         if ( log.isDebugEnabled() ) {
             log.debug("Using local override of the regions file (" 

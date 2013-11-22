@@ -38,7 +38,7 @@ public class ModifySnapshotAttributeRequestMarshaller implements Marshaller<Requ
 
         Request<ModifySnapshotAttributeRequest> request = new DefaultRequest<ModifySnapshotAttributeRequest>(modifySnapshotAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifySnapshotAttribute");
-        request.addParameter("Version", "2013-10-01");
+        request.addParameter("Version", "2013-10-15");
 
         if (modifySnapshotAttributeRequest.getSnapshotId() != null) {
             request.addParameter("SnapshotId", StringUtils.fromString(modifySnapshotAttributeRequest.getSnapshotId()));

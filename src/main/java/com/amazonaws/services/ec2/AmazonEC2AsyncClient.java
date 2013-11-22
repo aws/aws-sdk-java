@@ -295,6 +295,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         RebootInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -333,6 +334,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         RebootInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -372,6 +374,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeReservedInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -407,6 +410,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeReservedInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -453,6 +457,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeAvailabilityZones service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -494,6 +499,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeAvailabilityZones service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -532,6 +538,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DetachVolume service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -565,6 +572,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DetachVolume service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -603,6 +611,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteKeyPair service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -637,6 +646,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteKeyPair service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -674,6 +684,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         UnmonitorInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -707,6 +718,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         UnmonitorInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -748,6 +760,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AttachVpnGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -784,6 +797,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AttachVpnGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -826,6 +840,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateImage service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -863,6 +878,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateImage service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -909,6 +925,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteSecurityGroup service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -951,6 +968,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteSecurityGroup service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -986,6 +1004,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateInstanceExportTask service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1017,6 +1036,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateInstanceExportTask service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1062,6 +1082,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         GetPasswordData service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1102,6 +1123,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         GetPasswordData service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1148,6 +1170,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AssociateDhcpOptions service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1190,6 +1213,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AssociateDhcpOptions service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1252,6 +1276,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AuthorizeSecurityGroupEgress service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1311,6 +1336,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AuthorizeSecurityGroupEgress service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1360,6 +1386,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         StopInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1405,6 +1432,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         StopInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1463,6 +1491,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ImportKeyPair service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1516,6 +1545,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ImportKeyPair service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1552,6 +1582,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteNetworkInterface service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1584,6 +1615,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteNetworkInterface service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1618,6 +1650,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ModifyVpcAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1649,6 +1682,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ModifyVpcAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1696,6 +1730,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateSecurityGroup service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1739,6 +1774,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateSecurityGroup service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1790,6 +1826,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeSpotPriceHistory service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1836,6 +1873,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeSpotPriceHistory service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1872,6 +1910,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeNetworkInterfaces service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1903,6 +1942,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeNetworkInterfaces service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1942,6 +1982,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeRegions service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1976,6 +2017,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeRegions service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2013,6 +2055,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         CreateReservedInstancesListing service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2045,6 +2088,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         CreateReservedInstancesListing service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2089,6 +2133,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateDhcpOptions service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2128,6 +2173,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateDhcpOptions service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2167,6 +2213,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ResetSnapshotAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2202,6 +2249,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ResetSnapshotAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2242,6 +2290,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteRoute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2279,6 +2328,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteRoute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2337,6 +2387,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeInternetGateways service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2391,6 +2442,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeInternetGateways service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2426,6 +2478,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ImportVolume service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2456,6 +2509,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ImportVolume service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2502,6 +2556,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeSecurityGroups service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2543,6 +2598,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeSecurityGroups service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2588,6 +2644,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DetachVpnGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2629,6 +2686,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DetachVpnGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2667,6 +2725,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeregisterImage service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2702,6 +2761,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeregisterImage service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2747,6 +2807,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         DescribeSpotDatafeedSubscription service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2788,6 +2849,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         DescribeSpotDatafeedSubscription service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2826,6 +2888,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteTags service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2860,6 +2923,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteTags service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2899,6 +2963,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteSubnet service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2935,6 +3000,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteSubnet service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2970,6 +3036,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeAccountAttributes service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3001,6 +3068,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeAccountAttributes service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3041,6 +3109,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateVpnGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3076,6 +3145,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateVpnGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3114,6 +3184,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         EnableVolumeIO service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3148,6 +3219,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         EnableVolumeIO service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3190,6 +3262,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteVpnGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3229,6 +3302,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteVpnGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3266,6 +3340,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AttachVolume service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3299,6 +3374,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AttachVolume service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3339,6 +3415,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeLicenses service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3374,6 +3451,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeLicenses service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3412,6 +3490,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVolumeStatus service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3445,6 +3524,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVolumeStatus service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3484,6 +3564,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ActivateLicense service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3519,6 +3600,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ActivateLicense service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3560,6 +3642,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ResetImageAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3598,6 +3681,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ResetImageAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3651,6 +3735,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVpnConnections service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3700,6 +3785,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVpnConnections service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3736,6 +3822,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         EnableVgwRoutePropagation service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3768,6 +3855,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         EnableVgwRoutePropagation service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3815,6 +3903,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateSnapshot service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3858,6 +3947,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateSnapshot service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3897,6 +3987,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteVolume service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3932,6 +4023,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteVolume service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3967,6 +4059,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateNetworkInterface service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3998,6 +4091,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateNetworkInterface service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4039,6 +4133,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ModifyReservedInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4075,6 +4170,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ModifyReservedInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4111,6 +4207,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         UnassignPrivateIpAddresses service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4143,6 +4240,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         UnassignPrivateIpAddresses service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4193,6 +4291,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVpcs service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4239,6 +4338,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVpcs service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4274,6 +4374,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CancelConversionTask service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4305,6 +4406,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CancelConversionTask service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4349,6 +4451,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AssociateAddress service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4389,6 +4492,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AssociateAddress service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4429,6 +4533,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeactivateLicense service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4465,6 +4570,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeactivateLicense service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4510,6 +4616,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteCustomerGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4552,6 +4659,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteCustomerGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4609,6 +4717,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateNetworkAclEntry service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4663,6 +4772,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateNetworkAclEntry service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4697,6 +4807,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeExportTasks service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4727,6 +4838,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeExportTasks service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4774,6 +4886,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DetachInternetGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4817,6 +4930,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DetachInternetGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4858,6 +4972,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateRouteTable service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4895,6 +5010,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateRouteTable service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4935,6 +5051,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVolumes service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4970,6 +5087,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVolumes service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5007,6 +5125,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         DescribeReservedInstancesListings service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5039,6 +5158,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         DescribeReservedInstancesListings service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5074,6 +5194,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ReportInstanceStatus service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5105,6 +5226,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ReportInstanceStatus service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5162,6 +5284,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeRouteTables service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5215,6 +5338,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeRouteTables service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5261,6 +5385,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeDhcpOptions service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5302,6 +5427,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeDhcpOptions service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5340,6 +5466,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         MonitorInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5373,6 +5500,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         MonitorInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5430,6 +5558,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeNetworkAcls service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5482,6 +5611,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeNetworkAcls service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5523,6 +5653,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeBundleTasks service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5559,6 +5690,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeBundleTasks service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5594,6 +5726,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ImportInstance service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5624,6 +5757,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ImportInstance service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5676,6 +5810,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         RevokeSecurityGroupIngress service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5724,6 +5859,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         RevokeSecurityGroupIngress service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5768,6 +5904,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         GetConsoleOutput service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5808,6 +5945,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         GetConsoleOutput service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5851,6 +5989,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateInternetGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5889,6 +6028,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateInternetGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5925,6 +6065,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteVpnConnectionRoute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5957,6 +6098,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteVpnConnectionRoute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5992,6 +6134,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DetachNetworkInterface service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6024,6 +6167,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DetachNetworkInterface service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6061,6 +6205,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ModifyImageAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6095,6 +6240,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ModifyImageAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6153,6 +6299,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateCustomerGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6207,6 +6354,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateCustomerGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6254,6 +6402,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         CreateSpotDatafeedSubscription service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6296,6 +6445,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         CreateSpotDatafeedSubscription service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6337,6 +6487,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AttachInternetGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6374,6 +6525,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AttachInternetGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6423,6 +6575,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteVpnConnection service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6469,6 +6622,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteVpnConnection service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6504,6 +6658,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeConversionTasks service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6535,6 +6690,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeConversionTasks service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6592,6 +6748,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateVpnConnection service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6644,6 +6801,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateVpnConnection service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6684,6 +6842,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeInstanceAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6719,6 +6878,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeInstanceAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6759,6 +6919,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribePlacementGroups service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6794,6 +6955,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribePlacementGroups service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6846,6 +7008,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeSubnets service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6893,6 +7056,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeSubnets service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6980,6 +7144,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         RunInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7062,6 +7227,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         RunInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7110,6 +7276,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AssociateRouteTable service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7153,6 +7320,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AssociateRouteTable service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7204,6 +7372,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7250,6 +7419,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7291,6 +7461,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteNetworkAcl service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7328,6 +7499,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteNetworkAcl service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7363,6 +7535,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ModifyVolumeAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7395,6 +7568,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ModifyVolumeAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7479,6 +7653,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeImages service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7559,6 +7734,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeImages service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7607,6 +7783,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         StartInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7650,6 +7827,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         StartInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7687,6 +7865,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         CancelReservedInstancesListing service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7719,6 +7898,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         CancelReservedInstancesListing service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7758,6 +7938,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ModifyInstanceAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7793,6 +7974,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ModifyInstanceAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7833,6 +8015,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteDhcpOptions service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7870,6 +8053,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteDhcpOptions service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7922,6 +8106,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         AuthorizeSecurityGroupIngress service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7971,6 +8156,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         AuthorizeSecurityGroupIngress service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8043,6 +8229,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeSpotInstanceRequests service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8111,6 +8298,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeSpotInstanceRequests service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8158,6 +8346,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateVpc service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8200,6 +8389,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateVpc service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8250,6 +8440,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeCustomerGateways service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8295,6 +8486,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeCustomerGateways service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8330,6 +8522,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CancelExportTask service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8361,6 +8554,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CancelExportTask service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8422,6 +8616,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateRoute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8480,6 +8675,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateRoute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8514,6 +8710,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CopyImage service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8544,6 +8741,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CopyImage service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8581,6 +8779,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         ModifyNetworkInterfaceAttribute service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8614,6 +8813,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         ModifyNetworkInterfaceAttribute service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8655,6 +8855,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteRouteTable service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8693,6 +8894,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteRouteTable service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8729,6 +8931,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         DescribeNetworkInterfaceAttribute service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8761,6 +8964,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         DescribeNetworkInterfaceAttribute service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8810,6 +9014,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         RequestSpotInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8854,6 +9059,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         RequestSpotInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8894,6 +9100,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateTags service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8930,6 +9137,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateTags service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8965,6 +9173,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVolumeAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -8996,6 +9205,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVolumeAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9032,6 +9242,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AttachNetworkInterface service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9063,6 +9274,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AttachNetworkInterface service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9104,6 +9316,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ReplaceRoute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9141,6 +9354,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ReplaceRoute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9178,6 +9392,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeTags service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9211,6 +9426,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeTags service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9253,6 +9469,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CancelBundleTask service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9290,6 +9507,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CancelBundleTask service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9326,6 +9544,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DisableVgwRoutePropagation service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9358,6 +9577,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DisableVgwRoutePropagation service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9408,6 +9628,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CancelSpotInstanceRequests service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9454,6 +9675,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CancelSpotInstanceRequests service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9498,6 +9720,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         PurchaseReservedInstancesOffering service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9537,6 +9760,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         PurchaseReservedInstancesOffering service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9576,6 +9800,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ModifySnapshotAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9611,6 +9836,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ModifySnapshotAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9651,6 +9877,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         DescribeReservedInstancesModifications service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9687,6 +9914,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         DescribeReservedInstancesModifications service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9731,6 +9959,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         TerminateInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9770,6 +9999,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         TerminateInstances service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9816,6 +10046,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         DeleteSpotDatafeedSubscription service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9858,6 +10089,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         DeleteSpotDatafeedSubscription service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9898,6 +10130,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteInternetGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9935,6 +10168,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteInternetGateway service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -9974,6 +10208,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeSnapshotAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10009,6 +10244,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeSnapshotAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10058,6 +10294,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ReplaceRouteTableAssociation service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10102,6 +10339,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ReplaceRouteTableAssociation service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10141,6 +10379,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeAddresses service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10175,6 +10414,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeAddresses service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10215,6 +10455,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeImageAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10250,6 +10491,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeImageAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10291,6 +10533,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeKeyPairs service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10327,6 +10570,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeKeyPairs service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10374,6 +10618,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ConfirmProductInstance service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10416,6 +10661,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ConfirmProductInstance service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10462,6 +10708,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DisassociateRouteTable service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10504,6 +10751,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DisassociateRouteTable service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10538,6 +10786,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVpcAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10568,6 +10817,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVpcAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10626,6 +10876,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         RevokeSecurityGroupEgress service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10680,6 +10931,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         RevokeSecurityGroupEgress service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10720,6 +10972,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteNetworkAclEntry service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10757,6 +11010,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteNetworkAclEntry service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10794,6 +11048,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateVolume service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10827,6 +11082,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateVolume service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -10932,6 +11188,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeInstanceStatus service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11032,6 +11289,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeInstanceStatus service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11085,6 +11343,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVpnGateways service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11133,6 +11392,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVpnGateways service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11185,6 +11445,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateSubnet service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11232,6 +11493,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateSubnet service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11276,6 +11538,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         DescribeReservedInstancesOfferings service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11315,6 +11578,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         DescribeReservedInstancesOfferings service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11351,6 +11615,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AssignPrivateIpAddresses service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11383,6 +11648,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AssignPrivateIpAddresses service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11421,6 +11687,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteSnapshot service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11456,6 +11723,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteSnapshot service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11497,6 +11765,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ReplaceNetworkAclAssociation service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11534,6 +11803,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ReplaceNetworkAclAssociation service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11575,6 +11845,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DisassociateAddress service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11612,6 +11883,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DisassociateAddress service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11651,6 +11923,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreatePlacementGroup service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11687,6 +11960,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreatePlacementGroup service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11728,6 +12002,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         BundleInstance service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11765,6 +12040,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         BundleInstance service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11804,6 +12080,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeletePlacementGroup service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11839,6 +12116,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeletePlacementGroup service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11880,6 +12158,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteVpc service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11918,6 +12197,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DeleteVpc service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11952,6 +12232,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CopySnapshot service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -11982,6 +12263,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CopySnapshot service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12021,6 +12303,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AllocateAddress service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12055,6 +12338,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         AllocateAddress service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12108,6 +12392,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ReleaseAddress service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12157,6 +12442,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ReleaseAddress service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12195,6 +12481,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ResetInstanceAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12230,6 +12517,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ResetInstanceAttribute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12269,6 +12557,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateKeyPair service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12304,6 +12593,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateKeyPair service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12345,6 +12635,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ReplaceNetworkAclEntry service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12382,6 +12673,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         ReplaceNetworkAclEntry service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12423,6 +12715,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeSnapshots service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12460,6 +12753,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         DescribeSnapshots service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12501,6 +12795,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateNetworkAcl service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12537,6 +12832,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateNetworkAcl service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12591,6 +12887,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         RegisterImage service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12640,6 +12937,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         RegisterImage service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12677,6 +12975,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         ResetNetworkInterfaceAttribute service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12710,6 +13009,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @return A Java Future object containing the response from the
      *         ResetNetworkInterfaceAttribute service method, as returned by
      *         AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12745,6 +13045,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateVpnConnectionRoute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -12777,6 +13078,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * @return A Java Future object containing the response from the
      *         CreateVpnConnectionRoute service method, as returned by AmazonEC2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

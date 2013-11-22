@@ -38,13 +38,30 @@ public class CopyDBSnapshotRequestMarshaller implements Marshaller<Request<CopyD
 
         Request<CopyDBSnapshotRequest> request = new DefaultRequest<CopyDBSnapshotRequest>(copyDBSnapshotRequest, "AmazonRDS");
         request.addParameter("Action", "CopyDBSnapshot");
-        request.addParameter("Version", "2013-05-15");
+        request.addParameter("Version", "2013-09-09");
 
         if (copyDBSnapshotRequest.getSourceDBSnapshotIdentifier() != null) {
             request.addParameter("SourceDBSnapshotIdentifier", StringUtils.fromString(copyDBSnapshotRequest.getSourceDBSnapshotIdentifier()));
         }
         if (copyDBSnapshotRequest.getTargetDBSnapshotIdentifier() != null) {
             request.addParameter("TargetDBSnapshotIdentifier", StringUtils.fromString(copyDBSnapshotRequest.getTargetDBSnapshotIdentifier()));
+        }
+
+        java.util.List<Tag> tagsList = copyDBSnapshotRequest.getTags();
+        int tagsListIndex = 1;
+
+        for (Tag tagsListValue : tagsList) {
+            Tag tagMember = tagsListValue;
+            if (tagMember != null) {
+                if (tagMember.getKey() != null) {
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagMember.getKey()));
+                }
+                if (tagMember.getValue() != null) {
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagMember.getValue()));
+                }
+            }
+
+            tagsListIndex++;
         }
 
 

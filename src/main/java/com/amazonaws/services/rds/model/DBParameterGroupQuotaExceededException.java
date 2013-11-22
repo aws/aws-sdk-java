@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Request would result in user exceeding the allowed number of DB Parameter Groups.
+ * Request would result in user exceeding the allowed number of DB parameter groups.
  * </p>
  */        
 public class DBParameterGroupQuotaExceededException extends AmazonServiceException {

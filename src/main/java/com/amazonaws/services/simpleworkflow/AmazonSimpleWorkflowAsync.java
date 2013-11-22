@@ -373,6 +373,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         DeprecateWorkflowType service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -443,6 +444,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         DeprecateWorkflowType service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -501,6 +503,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @return A Java Future object containing the response from the
      *         DeprecateDomain service method, as returned by AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -562,6 +565,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @return A Java Future object containing the response from the
      *         DeprecateDomain service method, as returned by AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -634,6 +638,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         RegisterWorkflowType service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -709,6 +714,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         RegisterWorkflowType service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -760,6 +766,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @return A Java Future object containing the response from the
      *         ListWorkflowTypes service method, as returned by AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -814,6 +821,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @return A Java Future object containing the response from the
      *         ListWorkflowTypes service method, as returned by AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -889,6 +897,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         StartWorkflowExecution service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -967,6 +976,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         StartWorkflowExecution service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1031,6 +1041,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         SignalWorkflowExecution service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1098,6 +1109,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         SignalWorkflowExecution service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1155,6 +1167,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @return A Java Future object containing the response from the
      *         ListDomains service method, as returned by AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1215,6 +1228,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @return A Java Future object containing the response from the
      *         ListDomains service method, as returned by AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1282,6 +1296,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         RequestCancelWorkflowExecution service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1352,6 +1367,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         RequestCancelWorkflowExecution service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1413,6 +1429,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         DescribeWorkflowType service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1477,6 +1494,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         DescribeWorkflowType service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1543,6 +1561,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         DeprecateActivityType service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1612,6 +1631,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         DeprecateActivityType service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1678,6 +1698,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         CountClosedWorkflowExecutions service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1747,6 +1768,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         CountClosedWorkflowExecutions service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1802,6 +1824,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         CountPendingActivityTasks service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1860,6 +1883,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         CountPendingActivityTasks service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1932,6 +1956,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         RespondActivityTaskCanceled service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2007,6 +2032,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         RespondActivityTaskCanceled service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2054,6 +2080,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         RespondDecisionTaskCompleted service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2104,6 +2131,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         RespondDecisionTaskCompleted service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2174,6 +2202,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         RespondActivityTaskCompleted service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2247,6 +2276,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         RespondActivityTaskCompleted service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2313,6 +2343,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         PollForActivityTask service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2382,6 +2413,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         PollForActivityTask service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2448,6 +2480,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         CountOpenWorkflowExecutions service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2517,6 +2550,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         CountOpenWorkflowExecutions service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2578,6 +2612,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         DescribeActivityType service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2642,6 +2677,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         DescribeActivityType service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2710,6 +2746,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         ListOpenWorkflowExecutions service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2781,6 +2818,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         ListOpenWorkflowExecutions service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2839,6 +2877,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         GetWorkflowExecutionHistory service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2900,6 +2939,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         GetWorkflowExecutionHistory service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2952,6 +2992,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @return A Java Future object containing the response from the
      *         RegisterDomain service method, as returned by AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3007,6 +3048,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @return A Java Future object containing the response from the
      *         RegisterDomain service method, as returned by AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3075,6 +3117,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         RegisterActivityType service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3146,6 +3189,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         RegisterActivityType service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3214,6 +3258,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         ListClosedWorkflowExecutions service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3285,6 +3330,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         ListClosedWorkflowExecutions service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3374,6 +3420,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         RecordActivityTaskHeartbeat service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3466,6 +3513,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         RecordActivityTaskHeartbeat service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3545,6 +3593,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         PollForDecisionTask service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3627,6 +3676,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         PollForDecisionTask service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3681,6 +3731,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @return A Java Future object containing the response from the
      *         ListActivityTypes service method, as returned by AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3738,6 +3789,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @return A Java Future object containing the response from the
      *         ListActivityTypes service method, as returned by AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3788,6 +3840,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeDomain service method, as returned by AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3841,6 +3894,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeDomain service method, as returned by AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3905,6 +3959,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         RespondActivityTaskFailed service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3972,6 +4027,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         RespondActivityTaskFailed service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4027,6 +4083,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         CountPendingDecisionTasks service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4085,6 +4142,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         CountPendingDecisionTasks service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4154,6 +4212,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         TerminateWorkflowExecution service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4226,6 +4285,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         TerminateWorkflowExecution service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4282,6 +4342,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         DescribeWorkflowExecution service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4341,6 +4402,7 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future object containing the response from the
      *         DescribeWorkflowExecution service method, as returned by
      *         AmazonSimpleWorkflow.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

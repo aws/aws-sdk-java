@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The status of the DB Parameter Group.
+ * The status of the DB parameter group.
  * </p>
  * <p>
  * This data type is used as a response element in the following actions:
@@ -38,7 +38,7 @@ import java.io.Serializable;
 public class DBParameterGroupStatus implements Serializable {
 
     /**
-     * The name of the DP Parameter Group.
+     * The name of the DP parameter group.
      */
     private String dBParameterGroupName;
 
@@ -54,29 +54,29 @@ public class DBParameterGroupStatus implements Serializable {
     public DBParameterGroupStatus() {}
     
     /**
-     * The name of the DP Parameter Group.
+     * The name of the DP parameter group.
      *
-     * @return The name of the DP Parameter Group.
+     * @return The name of the DP parameter group.
      */
     public String getDBParameterGroupName() {
         return dBParameterGroupName;
     }
     
     /**
-     * The name of the DP Parameter Group.
+     * The name of the DP parameter group.
      *
-     * @param dBParameterGroupName The name of the DP Parameter Group.
+     * @param dBParameterGroupName The name of the DP parameter group.
      */
     public void setDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
     }
     
     /**
-     * The name of the DP Parameter Group.
+     * The name of the DP parameter group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupName The name of the DP Parameter Group.
+     * @param dBParameterGroupName The name of the DP parameter group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -29,46 +29,46 @@ import java.io.Serializable;
 public class DBParameterGroup implements Serializable {
 
     /**
-     * Provides the name of the DB Parameter Group.
+     * Provides the name of the DB parameter group.
      */
     private String dBParameterGroupName;
 
     /**
-     * Provides the name of the DB Parameter Group Family that this DB
-     * Parameter Group is compatible with.
+     * Provides the name of the DB parameter group family that this DB
+     * parameter group is compatible with.
      */
     private String dBParameterGroupFamily;
 
     /**
-     * Provides the customer-specified description for this DB Parameter
-     * Group.
+     * Provides the customer-specified description for this DB parameter
+     * group.
      */
     private String description;
 
     /**
-     * Provides the name of the DB Parameter Group.
+     * Provides the name of the DB parameter group.
      *
-     * @return Provides the name of the DB Parameter Group.
+     * @return Provides the name of the DB parameter group.
      */
     public String getDBParameterGroupName() {
         return dBParameterGroupName;
     }
     
     /**
-     * Provides the name of the DB Parameter Group.
+     * Provides the name of the DB parameter group.
      *
-     * @param dBParameterGroupName Provides the name of the DB Parameter Group.
+     * @param dBParameterGroupName Provides the name of the DB parameter group.
      */
     public void setDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
     }
     
     /**
-     * Provides the name of the DB Parameter Group.
+     * Provides the name of the DB parameter group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupName Provides the name of the DB Parameter Group.
+     * @param dBParameterGroupName Provides the name of the DB parameter group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -79,35 +79,35 @@ public class DBParameterGroup implements Serializable {
     }
 
     /**
-     * Provides the name of the DB Parameter Group Family that this DB
-     * Parameter Group is compatible with.
+     * Provides the name of the DB parameter group family that this DB
+     * parameter group is compatible with.
      *
-     * @return Provides the name of the DB Parameter Group Family that this DB
-     *         Parameter Group is compatible with.
+     * @return Provides the name of the DB parameter group family that this DB
+     *         parameter group is compatible with.
      */
     public String getDBParameterGroupFamily() {
         return dBParameterGroupFamily;
     }
     
     /**
-     * Provides the name of the DB Parameter Group Family that this DB
-     * Parameter Group is compatible with.
+     * Provides the name of the DB parameter group family that this DB
+     * parameter group is compatible with.
      *
-     * @param dBParameterGroupFamily Provides the name of the DB Parameter Group Family that this DB
-     *         Parameter Group is compatible with.
+     * @param dBParameterGroupFamily Provides the name of the DB parameter group family that this DB
+     *         parameter group is compatible with.
      */
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
     }
     
     /**
-     * Provides the name of the DB Parameter Group Family that this DB
-     * Parameter Group is compatible with.
+     * Provides the name of the DB parameter group family that this DB
+     * parameter group is compatible with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupFamily Provides the name of the DB Parameter Group Family that this DB
-     *         Parameter Group is compatible with.
+     * @param dBParameterGroupFamily Provides the name of the DB parameter group family that this DB
+     *         parameter group is compatible with.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -118,35 +118,35 @@ public class DBParameterGroup implements Serializable {
     }
 
     /**
-     * Provides the customer-specified description for this DB Parameter
-     * Group.
+     * Provides the customer-specified description for this DB parameter
+     * group.
      *
-     * @return Provides the customer-specified description for this DB Parameter
-     *         Group.
+     * @return Provides the customer-specified description for this DB parameter
+     *         group.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Provides the customer-specified description for this DB Parameter
-     * Group.
+     * Provides the customer-specified description for this DB parameter
+     * group.
      *
-     * @param description Provides the customer-specified description for this DB Parameter
-     *         Group.
+     * @param description Provides the customer-specified description for this DB parameter
+     *         group.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Provides the customer-specified description for this DB Parameter
-     * Group.
+     * Provides the customer-specified description for this DB parameter
+     * group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description Provides the customer-specified description for this DB Parameter
-     *         Group.
+     * @param description Provides the customer-specified description for this DB parameter
+     *         group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

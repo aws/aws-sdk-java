@@ -38,7 +38,7 @@ public class DeleteSpotDatafeedSubscriptionRequestMarshaller implements Marshall
 
         Request<DeleteSpotDatafeedSubscriptionRequest> request = new DefaultRequest<DeleteSpotDatafeedSubscriptionRequest>(deleteSpotDatafeedSubscriptionRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteSpotDatafeedSubscription");
-        request.addParameter("Version", "2013-10-01");
+        request.addParameter("Version", "2013-10-15");
 
 
 

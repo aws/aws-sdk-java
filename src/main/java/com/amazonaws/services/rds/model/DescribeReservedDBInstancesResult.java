@@ -32,7 +32,7 @@ public class DescribeReservedDBInstancesResult implements Serializable {
     private String marker;
 
     /**
-     * A list of of reserved DB Instances.
+     * A list of reserved DB instances.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedDBInstance> reservedDBInstances;
 
@@ -82,9 +82,9 @@ public class DescribeReservedDBInstancesResult implements Serializable {
     }
 
     /**
-     * A list of of reserved DB Instances.
+     * A list of reserved DB instances.
      *
-     * @return A list of of reserved DB Instances.
+     * @return A list of reserved DB instances.
      */
     public java.util.List<ReservedDBInstance> getReservedDBInstances() {
         if (reservedDBInstances == null) {
@@ -95,9 +95,9 @@ public class DescribeReservedDBInstancesResult implements Serializable {
     }
     
     /**
-     * A list of of reserved DB Instances.
+     * A list of reserved DB instances.
      *
-     * @param reservedDBInstances A list of of reserved DB Instances.
+     * @param reservedDBInstances A list of reserved DB instances.
      */
     public void setReservedDBInstances(java.util.Collection<ReservedDBInstance> reservedDBInstances) {
         if (reservedDBInstances == null) {
@@ -110,11 +110,11 @@ public class DescribeReservedDBInstancesResult implements Serializable {
     }
     
     /**
-     * A list of of reserved DB Instances.
+     * A list of reserved DB instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedDBInstances A list of of reserved DB Instances.
+     * @param reservedDBInstances A list of reserved DB instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -128,11 +128,11 @@ public class DescribeReservedDBInstancesResult implements Serializable {
     }
     
     /**
-     * A list of of reserved DB Instances.
+     * A list of reserved DB instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedDBInstances A list of of reserved DB Instances.
+     * @param reservedDBInstances A list of reserved DB instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

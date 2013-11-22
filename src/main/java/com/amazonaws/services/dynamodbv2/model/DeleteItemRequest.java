@@ -148,6 +148,50 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
+     * Constructs a new DeleteItemRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param tableName The name of the table from which to delete the item.
+     * @param key A map of attribute names to <i>AttributeValue</i> objects,
+     * representing the primary key of the item to delete.
+     * @param returnValues Use <i>ReturnValues</i> if you want to get the
+     * item attributes as they appeared before they were deleted. For
+     * <i>DeleteItem</i>, the valid values are: <ul> <li>
+     * <p><code>NONE</code> - If <i>ReturnValues</i> is not specified, or if
+     * its value is <code>NONE</code>, then nothing is returned. (This is the
+     * default for <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> -
+     * The content of the old item is returned. </li> </ul>
+     */
+    public DeleteItemRequest(String tableName, java.util.Map<String,AttributeValue> key, String returnValues) {
+        setTableName(tableName);
+        setKey(key);
+        setReturnValues(returnValues);
+    }
+
+    /**
+     * Constructs a new DeleteItemRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param tableName The name of the table from which to delete the item.
+     * @param key A map of attribute names to <i>AttributeValue</i> objects,
+     * representing the primary key of the item to delete.
+     * @param returnValues Use <i>ReturnValues</i> if you want to get the
+     * item attributes as they appeared before they were deleted. For
+     * <i>DeleteItem</i>, the valid values are: <ul> <li>
+     * <p><code>NONE</code> - If <i>ReturnValues</i> is not specified, or if
+     * its value is <code>NONE</code>, then nothing is returned. (This is the
+     * default for <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> -
+     * The content of the old item is returned. </li> </ul>
+     */
+    public DeleteItemRequest(String tableName, java.util.Map<String,AttributeValue> key, ReturnValue returnValues) {
+        this.tableName = tableName;
+        this.key = key;
+        this.returnValues = returnValues.toString();
+    }
+
+    /**
      * The name of the table from which to delete the item.
      * <p>
      * <b>Constraints:</b><br/>

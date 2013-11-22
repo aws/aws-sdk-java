@@ -20,7 +20,7 @@ package com.amazonaws.internal.config;
  * use of Jackson without the need to write any special parser or json
  * marshaller/unmarshaller.
  */
-class SignerConfigJsonHelper {
+class SignerConfigJsonHelper implements Builder<SignerConfig> {
     private String signerType;
     private boolean doubleUrlEncode;
 
@@ -51,7 +51,7 @@ class SignerConfigJsonHelper {
         this.doubleUrlEncode = doubleUrlEncode;
     }
 
-    SignerConfig build() {
+    @Override public SignerConfig build() {
         SignerType signerType = SignerType.valueOf(this.signerType);
         return new SignerConfig(signerType, doubleUrlEncode);
     }

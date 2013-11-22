@@ -81,6 +81,11 @@ public class InstanceAttribute implements Serializable {
     private Boolean ebsOptimized;
 
     /**
+     * String value
+     */
+    private String sriovNetSupport;
+
+    /**
      * The ID of the associated instance.
      *
      * @return The ID of the associated instance.
@@ -560,6 +565,39 @@ public class InstanceAttribute implements Serializable {
     }
 
     /**
+     * String value
+     *
+     * @return String value
+     */
+    public String getSriovNetSupport() {
+        return sriovNetSupport;
+    }
+    
+    /**
+     * String value
+     *
+     * @param sriovNetSupport String value
+     */
+    public void setSriovNetSupport(String sriovNetSupport) {
+        this.sriovNetSupport = sriovNetSupport;
+    }
+    
+    /**
+     * String value
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param sriovNetSupport String value
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public InstanceAttribute withSriovNetSupport(String sriovNetSupport) {
+        this.sriovNetSupport = sriovNetSupport;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -581,7 +619,8 @@ public class InstanceAttribute implements Serializable {
         if (getRootDeviceName() != null) sb.append("RootDeviceName: " + getRootDeviceName() + ",");
         if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
         if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ",");
-        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() );
+        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() + ",");
+        if (getSriovNetSupport() != null) sb.append("SriovNetSupport: " + getSriovNetSupport() );
         sb.append("}");
         return sb.toString();
     }
@@ -602,6 +641,7 @@ public class InstanceAttribute implements Serializable {
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
         hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode()); 
         hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
+        hashCode = prime * hashCode + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport().hashCode()); 
         return hashCode;
     }
     
@@ -635,6 +675,8 @@ public class InstanceAttribute implements Serializable {
         if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false) return false; 
         if (other.isEbsOptimized() == null ^ this.isEbsOptimized() == null) return false;
         if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
+        if (other.getSriovNetSupport() == null ^ this.getSriovNetSupport() == null) return false;
+        if (other.getSriovNetSupport() != null && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false) return false; 
         return true;
     }
     

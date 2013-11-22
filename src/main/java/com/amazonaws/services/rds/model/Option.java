@@ -55,13 +55,13 @@ public class Option implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<OptionSetting> optionSettings;
 
     /**
-     * If the option requires access to a port, then this DB Security Group
+     * If the option requires access to a port, then this DB security group
      * allows access to the port.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroupMembership> dBSecurityGroupMemberships;
 
     /**
-     * If the option requires access to a port, then this VPC Security Group
+     * If the option requires access to a port, then this VPC security group
      * allows access to the port.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership> vpcSecurityGroupMemberships;
@@ -318,10 +318,10 @@ public class Option implements Serializable {
     }
 
     /**
-     * If the option requires access to a port, then this DB Security Group
+     * If the option requires access to a port, then this DB security group
      * allows access to the port.
      *
-     * @return If the option requires access to a port, then this DB Security Group
+     * @return If the option requires access to a port, then this DB security group
      *         allows access to the port.
      */
     public java.util.List<DBSecurityGroupMembership> getDBSecurityGroupMemberships() {
@@ -333,10 +333,10 @@ public class Option implements Serializable {
     }
     
     /**
-     * If the option requires access to a port, then this DB Security Group
+     * If the option requires access to a port, then this DB security group
      * allows access to the port.
      *
-     * @param dBSecurityGroupMemberships If the option requires access to a port, then this DB Security Group
+     * @param dBSecurityGroupMemberships If the option requires access to a port, then this DB security group
      *         allows access to the port.
      */
     public void setDBSecurityGroupMemberships(java.util.Collection<DBSecurityGroupMembership> dBSecurityGroupMemberships) {
@@ -350,12 +350,12 @@ public class Option implements Serializable {
     }
     
     /**
-     * If the option requires access to a port, then this DB Security Group
+     * If the option requires access to a port, then this DB security group
      * allows access to the port.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSecurityGroupMemberships If the option requires access to a port, then this DB Security Group
+     * @param dBSecurityGroupMemberships If the option requires access to a port, then this DB security group
      *         allows access to the port.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -370,12 +370,12 @@ public class Option implements Serializable {
     }
     
     /**
-     * If the option requires access to a port, then this DB Security Group
+     * If the option requires access to a port, then this DB security group
      * allows access to the port.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSecurityGroupMemberships If the option requires access to a port, then this DB Security Group
+     * @param dBSecurityGroupMemberships If the option requires access to a port, then this DB security group
      *         allows access to the port.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -394,10 +394,10 @@ public class Option implements Serializable {
     }
 
     /**
-     * If the option requires access to a port, then this VPC Security Group
+     * If the option requires access to a port, then this VPC security group
      * allows access to the port.
      *
-     * @return If the option requires access to a port, then this VPC Security Group
+     * @return If the option requires access to a port, then this VPC security group
      *         allows access to the port.
      */
     public java.util.List<VpcSecurityGroupMembership> getVpcSecurityGroupMemberships() {
@@ -409,10 +409,10 @@ public class Option implements Serializable {
     }
     
     /**
-     * If the option requires access to a port, then this VPC Security Group
+     * If the option requires access to a port, then this VPC security group
      * allows access to the port.
      *
-     * @param vpcSecurityGroupMemberships If the option requires access to a port, then this VPC Security Group
+     * @param vpcSecurityGroupMemberships If the option requires access to a port, then this VPC security group
      *         allows access to the port.
      */
     public void setVpcSecurityGroupMemberships(java.util.Collection<VpcSecurityGroupMembership> vpcSecurityGroupMemberships) {
@@ -426,12 +426,12 @@ public class Option implements Serializable {
     }
     
     /**
-     * If the option requires access to a port, then this VPC Security Group
+     * If the option requires access to a port, then this VPC security group
      * allows access to the port.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcSecurityGroupMemberships If the option requires access to a port, then this VPC Security Group
+     * @param vpcSecurityGroupMemberships If the option requires access to a port, then this VPC security group
      *         allows access to the port.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -446,12 +446,12 @@ public class Option implements Serializable {
     }
     
     /**
-     * If the option requires access to a port, then this VPC Security Group
+     * If the option requires access to a port, then this VPC security group
      * allows access to the port.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcSecurityGroupMemberships If the option requires access to a port, then this VPC Security Group
+     * @param vpcSecurityGroupMemberships If the option requires access to a port, then this VPC security group
      *         allows access to the port.
      *
      * @return A reference to this updated object so that method calls can be chained 

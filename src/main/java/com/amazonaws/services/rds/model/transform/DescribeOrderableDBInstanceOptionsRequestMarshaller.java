@@ -38,7 +38,7 @@ public class DescribeOrderableDBInstanceOptionsRequestMarshaller implements Mars
 
         Request<DescribeOrderableDBInstanceOptionsRequest> request = new DefaultRequest<DescribeOrderableDBInstanceOptionsRequest>(describeOrderableDBInstanceOptionsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeOrderableDBInstanceOptions");
-        request.addParameter("Version", "2013-05-15");
+        request.addParameter("Version", "2013-09-09");
 
         if (describeOrderableDBInstanceOptionsRequest.getEngine() != null) {
             request.addParameter("Engine", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getEngine()));

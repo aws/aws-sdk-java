@@ -16,6 +16,7 @@ package com.amazonaws.services.s3.transfer.internal;
 
 import java.io.IOException;
 
+import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
@@ -106,6 +107,19 @@ public class DownloadImpl extends AbstractTransfer implements Download {
      *  Set the S3 object to download.
      */
     public synchronized void setS3Object(S3Object s3Object) {
-    	this.s3Object = s3Object;
+        this.s3Object = s3Object;
+    }
+    
+    /**
+     * This method is also responsible for firing COMPLETED signal to the
+     * listeners.
+     */
+    @Override
+    public void setState(TransferState state) {
+        super.setState(state);
+        
+        if (state == TransferState.Completed) {
+            fireProgressEvent(ProgressEvent.COMPLETED_EVENT_CODE);
+        }
     }
 }

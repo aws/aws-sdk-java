@@ -22,7 +22,9 @@ import org.apache.commons.logging.LogFactory;
 
 /**
  * An implementation of ProgressListener interface that delegates
- * progressChanged callback to multiple listeners.
+ * progressChanged callback to multiple listeners. It also takes
+ * an optional ProgressEventFilter to filter incoming events before
+ * passing them to the listeners.
  * <p>
  * This class could be used for both Amazon S3 and Amazon Glacier clients. The
  * legacy Amazon S3 progress listener chain
@@ -32,11 +34,24 @@ import org.apache.commons.logging.LogFactory;
  */
 public class ProgressListenerChain implements ProgressListener {
     private final List<ProgressListener> listeners = new CopyOnWriteArrayList<ProgressListener>();
+    private final ProgressEventFilter progressEventFilter;
     
     private static final Log log = LogFactory.getLog(ProgressListenerChain.class);
     
+    /**
+     * Create a listener chain that directly passes all the progress events to
+     * the specified listeners.
+     */
     public ProgressListenerChain(ProgressListener... listeners) {
+        this(null, listeners);
+    }
+    
+    /**
+     * Create a listener chain with a ProgressEventFilter.
+     */
+    public ProgressListenerChain(ProgressEventFilter progressEventFilter, ProgressListener... listeners) {
         for (ProgressListener listener : listeners) addProgressListener(listener);
+        this.progressEventFilter = progressEventFilter;
     }
 
     public synchronized void addProgressListener(ProgressListener listener) {
@@ -50,12 +65,31 @@ public class ProgressListenerChain implements ProgressListener {
     }
 
     public void progressChanged(final ProgressEvent progressEvent) {
+        ProgressEvent filteredEvent = progressEvent;
+        if (progressEventFilter != null) {
+            filteredEvent = progressEventFilter.filter(progressEvent);
+            if (filteredEvent == null) return;
+        }
+        
         for ( ProgressListener listener : listeners ) {
             try {
-                listener.progressChanged(progressEvent);
+                listener.progressChanged(filteredEvent);
             } catch ( RuntimeException e ) {
                 log.warn("Couldn't update progress listener", e);
             }
         }
+    }
+    
+    /**
+     * An interface that filters the incoming events before passing
+     * them into the registered listeners.
+     */
+    public static interface ProgressEventFilter {
+        
+        /**
+         * Returns the filtered event object that will be actually passed into
+         * the listeners. Returns null if the event should be completely blocked.
+         */
+        public ProgressEvent filter(ProgressEvent progressEvent);
     }
 }

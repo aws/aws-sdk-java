@@ -38,7 +38,7 @@ public class CreateSnapshotRequestMarshaller implements Marshaller<Request<Creat
 
         Request<CreateSnapshotRequest> request = new DefaultRequest<CreateSnapshotRequest>(createSnapshotRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSnapshot");
-        request.addParameter("Version", "2013-10-01");
+        request.addParameter("Version", "2013-10-15");
 
         if (createSnapshotRequest.getVolumeId() != null) {
             request.addParameter("VolumeId", StringUtils.fromString(createSnapshotRequest.getVolumeId()));

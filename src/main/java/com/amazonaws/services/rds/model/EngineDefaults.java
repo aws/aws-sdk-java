@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class EngineDefaults implements Serializable {
 
     /**
-     * Specifies the name of the DB Parameter Group Family which the engine
+     * Specifies the name of the DB parameter group family which the engine
      * default parameters apply to.
      */
     private String dBParameterGroupFamily;
@@ -44,10 +44,10 @@ public class EngineDefaults implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
 
     /**
-     * Specifies the name of the DB Parameter Group Family which the engine
+     * Specifies the name of the DB parameter group family which the engine
      * default parameters apply to.
      *
-     * @return Specifies the name of the DB Parameter Group Family which the engine
+     * @return Specifies the name of the DB parameter group family which the engine
      *         default parameters apply to.
      */
     public String getDBParameterGroupFamily() {
@@ -55,10 +55,10 @@ public class EngineDefaults implements Serializable {
     }
     
     /**
-     * Specifies the name of the DB Parameter Group Family which the engine
+     * Specifies the name of the DB parameter group family which the engine
      * default parameters apply to.
      *
-     * @param dBParameterGroupFamily Specifies the name of the DB Parameter Group Family which the engine
+     * @param dBParameterGroupFamily Specifies the name of the DB parameter group family which the engine
      *         default parameters apply to.
      */
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
@@ -66,12 +66,12 @@ public class EngineDefaults implements Serializable {
     }
     
     /**
-     * Specifies the name of the DB Parameter Group Family which the engine
+     * Specifies the name of the DB parameter group family which the engine
      * default parameters apply to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupFamily Specifies the name of the DB Parameter Group Family which the engine
+     * @param dBParameterGroupFamily Specifies the name of the DB parameter group family which the engine
      *         default parameters apply to.
      *
      * @return A reference to this updated object so that method calls can be chained 

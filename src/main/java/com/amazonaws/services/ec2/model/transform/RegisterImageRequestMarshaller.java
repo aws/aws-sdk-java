@@ -38,7 +38,7 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
 
         Request<RegisterImageRequest> request = new DefaultRequest<RegisterImageRequest>(registerImageRequest, "AmazonEC2");
         request.addParameter("Action", "RegisterImage");
-        request.addParameter("Version", "2013-10-01");
+        request.addParameter("Version", "2013-10-15");
 
         if (registerImageRequest.getImageLocation() != null) {
             request.addParameter("ImageLocation", StringUtils.fromString(registerImageRequest.getImageLocation()));
@@ -98,6 +98,12 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
             }
 
             blockDeviceMappingsListIndex++;
+        }
+        if (registerImageRequest.getVirtualizationType() != null) {
+            request.addParameter("VirtualizationType", StringUtils.fromString(registerImageRequest.getVirtualizationType()));
+        }
+        if (registerImageRequest.getSriovNetSupport() != null) {
+            request.addParameter("SriovNetSupport", StringUtils.fromString(registerImageRequest.getSriovNetSupport()));
         }
 
 

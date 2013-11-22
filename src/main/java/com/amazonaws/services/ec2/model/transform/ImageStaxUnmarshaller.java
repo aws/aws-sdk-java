@@ -90,6 +90,10 @@ public class ImageStaxUnmarshaller implements Unmarshaller<Image, StaxUnmarshall
                     image.setPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("sriovNetSupport", targetDepth)) {
+                    image.setSriovNetSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("stateReason", targetDepth)) {
                     image.setStateReason(StateReasonStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

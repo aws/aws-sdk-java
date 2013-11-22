@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.directconnect;
 
+import java.net.*;
 import java.util.*;
 
 import org.apache.commons.logging.*;
@@ -23,10 +24,11 @@ import com.amazonaws.regions.*;
 import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
-import com.amazonaws.util.*;
-import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
 import com.amazonaws.transform.*;
+import com.amazonaws.util.*;
+import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.directconnect.model.*;
@@ -71,11 +73,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * List of exception unmarshallers for all AmazonDirectConnect exceptions.
      */
     protected List<Unmarshaller<AmazonServiceException, JSONObject>> exceptionUnmarshallers;
-
-    
-    /** AWS signer for authenticating requests. */
-    private AWS4Signer signer;
-
 
     /**
      * Constructs a new client to invoke service methods on
@@ -206,16 +203,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers.add(new DirectConnectClientExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new JsonErrorUnmarshaller());
-        setEndpoint("directconnect.us-east-1.amazonaws.com/");
-
-        signer = new AWS4Signer();
-        
-        signer.setServiceName("directconnect");
-        
-
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("directconnect.us-east-1.amazonaws.com/");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/directconnect/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
+                "/com/amazonaws/services/directconnect/request.handler2s"));
 
         
     }
@@ -251,7 +245,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeLocationsRequest> request = null;
-        DescribeLocationsResult response = null;
+        Response<DescribeLocationsResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -264,7 +258,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<DescribeLocationsResult, JsonUnmarshallerContext> unmarshaller = new DescribeLocationsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeLocationsResult> responseHandler = new JsonResponseHandler<DescribeLocationsResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -305,7 +300,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ConfirmPublicVirtualInterfaceRequest> request = null;
-        ConfirmPublicVirtualInterfaceResult response = null;
+        Response<ConfirmPublicVirtualInterfaceResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -318,7 +313,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<ConfirmPublicVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new ConfirmPublicVirtualInterfaceResultJsonUnmarshaller();
             JsonResponseHandler<ConfirmPublicVirtualInterfaceResult> responseHandler = new JsonResponseHandler<ConfirmPublicVirtualInterfaceResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -356,7 +352,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreatePrivateVirtualInterfaceRequest> request = null;
-        CreatePrivateVirtualInterfaceResult response = null;
+        Response<CreatePrivateVirtualInterfaceResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -369,7 +365,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<CreatePrivateVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new CreatePrivateVirtualInterfaceResultJsonUnmarshaller();
             JsonResponseHandler<CreatePrivateVirtualInterfaceResult> responseHandler = new JsonResponseHandler<CreatePrivateVirtualInterfaceResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -404,7 +401,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteVirtualInterfaceRequest> request = null;
-        DeleteVirtualInterfaceResult response = null;
+        Response<DeleteVirtualInterfaceResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -417,7 +414,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<DeleteVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new DeleteVirtualInterfaceResultJsonUnmarshaller();
             JsonResponseHandler<DeleteVirtualInterfaceResult> responseHandler = new JsonResponseHandler<DeleteVirtualInterfaceResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -455,7 +453,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreatePublicVirtualInterfaceRequest> request = null;
-        CreatePublicVirtualInterfaceResult response = null;
+        Response<CreatePublicVirtualInterfaceResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -468,7 +466,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<CreatePublicVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new CreatePublicVirtualInterfaceResultJsonUnmarshaller();
             JsonResponseHandler<CreatePublicVirtualInterfaceResult> responseHandler = new JsonResponseHandler<CreatePublicVirtualInterfaceResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -521,7 +520,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateInterconnectRequest> request = null;
-        CreateInterconnectResult response = null;
+        Response<CreateInterconnectResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -534,7 +533,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<CreateInterconnectResult, JsonUnmarshallerContext> unmarshaller = new CreateInterconnectResultJsonUnmarshaller();
             JsonResponseHandler<CreateInterconnectResult> responseHandler = new JsonResponseHandler<CreateInterconnectResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -583,7 +583,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeVirtualInterfacesRequest> request = null;
-        DescribeVirtualInterfacesResult response = null;
+        Response<DescribeVirtualInterfacesResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -596,7 +596,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<DescribeVirtualInterfacesResult, JsonUnmarshallerContext> unmarshaller = new DescribeVirtualInterfacesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeVirtualInterfacesResult> responseHandler = new JsonResponseHandler<DescribeVirtualInterfacesResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -636,7 +637,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ConfirmConnectionRequest> request = null;
-        ConfirmConnectionResult response = null;
+        Response<ConfirmConnectionResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -649,7 +650,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<ConfirmConnectionResult, JsonUnmarshallerContext> unmarshaller = new ConfirmConnectionResultJsonUnmarshaller();
             JsonResponseHandler<ConfirmConnectionResult> responseHandler = new JsonResponseHandler<ConfirmConnectionResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -688,7 +690,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeInterconnectsRequest> request = null;
-        DescribeInterconnectsResult response = null;
+        Response<DescribeInterconnectsResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -701,7 +703,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<DescribeInterconnectsResult, JsonUnmarshallerContext> unmarshaller = new DescribeInterconnectsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeInterconnectsResult> responseHandler = new JsonResponseHandler<DescribeInterconnectsResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -744,7 +747,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeVirtualGatewaysRequest> request = null;
-        DescribeVirtualGatewaysResult response = null;
+        Response<DescribeVirtualGatewaysResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -757,7 +760,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<DescribeVirtualGatewaysResult, JsonUnmarshallerContext> unmarshaller = new DescribeVirtualGatewaysResultJsonUnmarshaller();
             JsonResponseHandler<DescribeVirtualGatewaysResult> responseHandler = new JsonResponseHandler<DescribeVirtualGatewaysResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -798,7 +802,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ConfirmPrivateVirtualInterfaceRequest> request = null;
-        ConfirmPrivateVirtualInterfaceResult response = null;
+        Response<ConfirmPrivateVirtualInterfaceResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -811,7 +815,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<ConfirmPrivateVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new ConfirmPrivateVirtualInterfaceResultJsonUnmarshaller();
             JsonResponseHandler<ConfirmPrivateVirtualInterfaceResult> responseHandler = new JsonResponseHandler<ConfirmPrivateVirtualInterfaceResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -850,7 +855,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeConnectionsRequest> request = null;
-        DescribeConnectionsResult response = null;
+        Response<DescribeConnectionsResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -863,7 +868,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<DescribeConnectionsResult, JsonUnmarshallerContext> unmarshaller = new DescribeConnectionsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeConnectionsResult> responseHandler = new JsonResponseHandler<DescribeConnectionsResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -909,7 +915,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AllocatePublicVirtualInterfaceRequest> request = null;
-        AllocatePublicVirtualInterfaceResult response = null;
+        Response<AllocatePublicVirtualInterfaceResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -922,7 +928,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<AllocatePublicVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new AllocatePublicVirtualInterfaceResultJsonUnmarshaller();
             JsonResponseHandler<AllocatePublicVirtualInterfaceResult> responseHandler = new JsonResponseHandler<AllocatePublicVirtualInterfaceResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -968,7 +975,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AllocatePrivateVirtualInterfaceRequest> request = null;
-        AllocatePrivateVirtualInterfaceResult response = null;
+        Response<AllocatePrivateVirtualInterfaceResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -981,7 +988,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<AllocatePrivateVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new AllocatePrivateVirtualInterfaceResultJsonUnmarshaller();
             JsonResponseHandler<AllocatePrivateVirtualInterfaceResult> responseHandler = new JsonResponseHandler<AllocatePrivateVirtualInterfaceResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1021,7 +1029,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteConnectionRequest> request = null;
-        DeleteConnectionResult response = null;
+        Response<DeleteConnectionResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1034,7 +1042,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<DeleteConnectionResult, JsonUnmarshallerContext> unmarshaller = new DeleteConnectionResultJsonUnmarshaller();
             JsonResponseHandler<DeleteConnectionResult> responseHandler = new JsonResponseHandler<DeleteConnectionResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1070,7 +1079,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeConnectionsOnInterconnectRequest> request = null;
-        DescribeConnectionsOnInterconnectResult response = null;
+        Response<DescribeConnectionsOnInterconnectResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1083,7 +1092,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<DescribeConnectionsOnInterconnectResult, JsonUnmarshallerContext> unmarshaller = new DescribeConnectionsOnInterconnectResultJsonUnmarshaller();
             JsonResponseHandler<DescribeConnectionsOnInterconnectResult> responseHandler = new JsonResponseHandler<DescribeConnectionsOnInterconnectResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1122,7 +1132,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AllocateConnectionOnInterconnectRequest> request = null;
-        AllocateConnectionOnInterconnectResult response = null;
+        Response<AllocateConnectionOnInterconnectResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1135,7 +1145,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<AllocateConnectionOnInterconnectResult, JsonUnmarshallerContext> unmarshaller = new AllocateConnectionOnInterconnectResultJsonUnmarshaller();
             JsonResponseHandler<AllocateConnectionOnInterconnectResult> responseHandler = new JsonResponseHandler<AllocateConnectionOnInterconnectResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1180,7 +1191,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateConnectionRequest> request = null;
-        CreateConnectionResult response = null;
+        Response<CreateConnectionResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1193,7 +1204,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<CreateConnectionResult, JsonUnmarshallerContext> unmarshaller = new CreateConnectionResultJsonUnmarshaller();
             JsonResponseHandler<CreateConnectionResult> responseHandler = new JsonResponseHandler<CreateConnectionResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1228,7 +1240,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteInterconnectRequest> request = null;
-        DeleteInterconnectResult response = null;
+        Response<DeleteInterconnectResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1241,7 +1253,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             Unmarshaller<DeleteInterconnectResult, JsonUnmarshallerContext> unmarshaller = new DeleteInterconnectResultJsonUnmarshaller();
             JsonResponseHandler<DeleteInterconnectResult> responseHandler = new JsonResponseHandler<DeleteInterconnectResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1395,47 +1408,21 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         return describeConnections(new DescribeConnectionsRequest());
     }
     
-    /**
-     * Overrides the default endpoint for this client ("https://directconnect.us-east-1.amazonaws.com/") and explicitly provides
-     * an AWS region ID and AWS service name to use when the client calculates a signature
-     * for requests.  In almost all cases, this region ID and service name
-     * are automatically determined from the endpoint, and callers should use the simpler
-     * one-argument form of setEndpoint instead of this method.
-     * <p>
-     * <b>This method is not threadsafe. Endpoints should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit.</b>
-     * <p>
-     * Callers can pass in just the endpoint (ex: "directconnect.us-east-1.amazonaws.com/") or a full
-     * URL, including the protocol (ex: "https://directconnect.us-east-1.amazonaws.com/"). If the
-     * protocol is not specified here, the default protocol from this client's
-     * {@link ClientConfiguration} will be used, which by default is HTTPS.
-     * <p>
-     * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
-     *
-     * @param endpoint
-     *            The endpoint (ex: "directconnect.us-east-1.amazonaws.com/") or a full URL,
-     *            including the protocol (ex: "https://directconnect.us-east-1.amazonaws.com/") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     * @param serviceName
-     *            The name of the AWS service to use when signing requests.
-     * @param regionId
-     *            The ID of the region in which this service resides.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
-     * @see AmazonDynamoDB#setRegion(Region)
-     */
-    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
-        setEndpoint(endpoint);
-        signer.setServiceName(serviceName);
-        signer.setRegionName(regionId);
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        super.setEndpoint(endpoint);
+
+        
     }
+
+    @Override
+    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
+        super.setEndpoint(endpoint, serviceName, regionId);
+
+        
+    }
+
     
     @Override
     protected String getServiceAbbreviation() {
@@ -1463,7 +1450,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
@@ -1483,11 +1470,11 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(signer);
+        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
 
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
-        X result = (X) client.execute(request, responseHandler,
+        Response<X> result = client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);
         awsRequestMetrics.log();
         return result;

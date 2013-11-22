@@ -16,6 +16,7 @@ package com.amazonaws.services.cloudsearch;
 
 import org.w3c.dom.*;
 
+import java.net.*;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -24,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -57,11 +59,6 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
             = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
-
-    
-    /** AWS signer for authenticating requests. */
-    private AWS4Signer signer;
-
 
     /**
      * Constructs a new client to invoke service methods on
@@ -189,14 +186,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new InternalExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
-        setEndpoint("cloudsearch.us-east-1.amazonaws.com/");
-
-        signer = new AWS4Signer();
-        
-
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("cloudsearch.us-east-1.amazonaws.com/");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/cloudsearch/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
+                "/com/amazonaws/services/cloudsearch/request.handler2s"));
     }
 
     
@@ -232,13 +228,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(updateDefaultSearchFieldRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateDefaultSearchFieldRequest> request = null;
-        UpdateDefaultSearchFieldResult response = null;
+        Response<UpdateDefaultSearchFieldResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new UpdateDefaultSearchFieldRequestMarshaller().marshall(updateDefaultSearchFieldRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new UpdateDefaultSearchFieldResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new UpdateDefaultSearchFieldResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -273,13 +270,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(deleteRankExpressionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteRankExpressionRequest> request = null;
-        DeleteRankExpressionResult response = null;
+        Response<DeleteRankExpressionResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DeleteRankExpressionRequestMarshaller().marshall(deleteRankExpressionRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DeleteRankExpressionResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DeleteRankExpressionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -315,13 +313,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeRankExpressionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeRankExpressionsRequest> request = null;
-        DescribeRankExpressionsResult response = null;
+        Response<DescribeRankExpressionsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeRankExpressionsRequestMarshaller().marshall(describeRankExpressionsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeRankExpressionsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeRankExpressionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -354,13 +353,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(createDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateDomainRequest> request = null;
-        CreateDomainResult response = null;
+        Response<CreateDomainResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateDomainRequestMarshaller().marshall(createDomainRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateDomainResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateDomainResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -398,13 +398,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(updateServiceAccessPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateServiceAccessPoliciesRequest> request = null;
-        UpdateServiceAccessPoliciesResult response = null;
+        Response<UpdateServiceAccessPoliciesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new UpdateServiceAccessPoliciesRequestMarshaller().marshall(updateServiceAccessPoliciesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new UpdateServiceAccessPoliciesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new UpdateServiceAccessPoliciesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -442,13 +443,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(defineIndexFieldRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DefineIndexFieldRequest> request = null;
-        DefineIndexFieldResult response = null;
+        Response<DefineIndexFieldResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DefineIndexFieldRequestMarshaller().marshall(defineIndexFieldRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DefineIndexFieldResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DefineIndexFieldResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -487,13 +489,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(defineRankExpressionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DefineRankExpressionRequest> request = null;
-        DefineRankExpressionResult response = null;
+        Response<DefineRankExpressionResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DefineRankExpressionRequestMarshaller().marshall(defineRankExpressionRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DefineRankExpressionResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DefineRankExpressionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -527,13 +530,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeSynonymOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeSynonymOptionsRequest> request = null;
-        DescribeSynonymOptionsResult response = null;
+        Response<DescribeSynonymOptionsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeSynonymOptionsRequestMarshaller().marshall(describeSynonymOptionsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeSynonymOptionsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeSynonymOptionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -567,13 +571,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeStopwordOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeStopwordOptionsRequest> request = null;
-        DescribeStopwordOptionsResult response = null;
+        Response<DescribeStopwordOptionsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeStopwordOptionsRequestMarshaller().marshall(describeStopwordOptionsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeStopwordOptionsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeStopwordOptionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -605,13 +610,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(deleteDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteDomainRequest> request = null;
-        DeleteDomainResult response = null;
+        Response<DeleteDomainResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DeleteDomainRequestMarshaller().marshall(deleteDomainRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DeleteDomainResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DeleteDomainResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -646,13 +652,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeServiceAccessPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeServiceAccessPoliciesRequest> request = null;
-        DescribeServiceAccessPoliciesResult response = null;
+        Response<DescribeServiceAccessPoliciesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeServiceAccessPoliciesRequestMarshaller().marshall(describeServiceAccessPoliciesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeServiceAccessPoliciesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeServiceAccessPoliciesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -686,13 +693,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeDefaultSearchFieldRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeDefaultSearchFieldRequest> request = null;
-        DescribeDefaultSearchFieldResult response = null;
+        Response<DescribeDefaultSearchFieldResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeDefaultSearchFieldRequestMarshaller().marshall(describeDefaultSearchFieldRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeDefaultSearchFieldResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeDefaultSearchFieldResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -730,13 +738,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(updateStopwordOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateStopwordOptionsRequest> request = null;
-        UpdateStopwordOptionsResult response = null;
+        Response<UpdateStopwordOptionsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new UpdateStopwordOptionsRequestMarshaller().marshall(updateStopwordOptionsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new UpdateStopwordOptionsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new UpdateStopwordOptionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -775,13 +784,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(updateSynonymOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateSynonymOptionsRequest> request = null;
-        UpdateSynonymOptionsResult response = null;
+        Response<UpdateSynonymOptionsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new UpdateSynonymOptionsRequestMarshaller().marshall(updateSynonymOptionsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new UpdateSynonymOptionsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new UpdateSynonymOptionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -819,13 +829,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(updateStemmingOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateStemmingOptionsRequest> request = null;
-        UpdateStemmingOptionsResult response = null;
+        Response<UpdateStemmingOptionsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new UpdateStemmingOptionsRequestMarshaller().marshall(updateStemmingOptionsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new UpdateStemmingOptionsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new UpdateStemmingOptionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -859,13 +870,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeStemmingOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeStemmingOptionsRequest> request = null;
-        DescribeStemmingOptionsResult response = null;
+        Response<DescribeStemmingOptionsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeStemmingOptionsRequestMarshaller().marshall(describeStemmingOptionsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeStemmingOptionsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeStemmingOptionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -898,13 +910,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeDomainsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeDomainsRequest> request = null;
-        DescribeDomainsResult response = null;
+        Response<DescribeDomainsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeDomainsRequestMarshaller().marshall(describeDomainsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeDomainsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeDomainsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -941,13 +954,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(indexDocumentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<IndexDocumentsRequest> request = null;
-        IndexDocumentsResult response = null;
+        Response<IndexDocumentsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new IndexDocumentsRequestMarshaller().marshall(indexDocumentsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new IndexDocumentsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new IndexDocumentsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -983,13 +997,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeIndexFieldsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeIndexFieldsRequest> request = null;
-        DescribeIndexFieldsResult response = null;
+        Response<DescribeIndexFieldsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeIndexFieldsRequestMarshaller().marshall(describeIndexFieldsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeIndexFieldsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeIndexFieldsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1023,13 +1038,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(deleteIndexFieldRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteIndexFieldRequest> request = null;
-        DeleteIndexFieldResult response = null;
+        Response<DeleteIndexFieldResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DeleteIndexFieldRequestMarshaller().marshall(deleteIndexFieldRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DeleteIndexFieldResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DeleteIndexFieldResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1059,47 +1075,6 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         return describeDomains(new DescribeDomainsRequest());
     }
     
-    /**
-     * Overrides the default endpoint for this client ("https://cloudsearch.us-east-1.amazonaws.com/") and explicitly provides
-     * an AWS region ID and AWS service name to use when the client calculates a signature
-     * for requests.  In almost all cases, this region ID and service name
-     * are automatically determined from the endpoint, and callers should use the simpler
-     * one-argument form of setEndpoint instead of this method.
-     * <p>
-     * <b>This method is not threadsafe. Endpoints should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit.</b>
-     * <p>
-     * Callers can pass in just the endpoint (ex: "cloudsearch.us-east-1.amazonaws.com/") or a full
-     * URL, including the protocol (ex: "https://cloudsearch.us-east-1.amazonaws.com/"). If the
-     * protocol is not specified here, the default protocol from this client's
-     * {@link ClientConfiguration} will be used, which by default is HTTPS.
-     * <p>
-     * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
-     *
-     * @param endpoint
-     *            The endpoint (ex: "cloudsearch.us-east-1.amazonaws.com/") or a full URL,
-     *            including the protocol (ex: "https://cloudsearch.us-east-1.amazonaws.com/") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     * @param serviceName
-     *            The name of the AWS service to use when signing requests.
-     * @param regionId
-     *            The ID of the region in which this service resides.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
-     */
-    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
-        setEndpoint(endpoint);
-        signer.setServiceName(serviceName);
-        signer.setRegionName(regionId);
-    }
-    
     @Override
     protected String getServiceAbbreviation() {
         return "cloudsearch";
@@ -1126,7 +1101,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
             Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
             ExecutionContext executionContext)
     {
@@ -1142,12 +1117,12 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(signer);
+        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-        return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
+        return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }
         

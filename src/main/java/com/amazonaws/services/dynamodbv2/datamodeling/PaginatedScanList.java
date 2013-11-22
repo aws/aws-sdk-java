@@ -41,18 +41,28 @@ public class PaginatedScanList<T> extends PaginatedList<T> {
     /** The current scan request */
     private final ScanRequest scanRequest;
 
+    private final DynamoDBMapperConfig config;
+    
     /** The current results for the last executed scan operation */
     private ScanResult scanResult;
 
-    public PaginatedScanList(DynamoDBMapper mapper, Class<T> clazz,
-            AmazonDynamoDB dynamo, ScanRequest scanRequest,
-            ScanResult scanResult, PaginationLoadingStrategy paginationLoadingStrategy) {
+    public PaginatedScanList(
+            DynamoDBMapper mapper,
+            Class<T> clazz,
+            AmazonDynamoDB dynamo,
+            ScanRequest scanRequest,
+            ScanResult scanResult,
+            PaginationLoadingStrategy paginationLoadingStrategy,
+            DynamoDBMapperConfig config
+    ) {
         super(mapper, clazz, dynamo, paginationLoadingStrategy);
 
         this.scanRequest = scanRequest;
         this.scanResult = scanResult;
+        this.config = config;
 
-        allResults.addAll(mapper.marshallIntoObjects(clazz, scanResult.getItems()));
+        allResults.addAll(mapper.marshalIntoObjects(
+            mapper.toParameters(scanResult.getItems(), clazz, config)));
         
         // If the results should be eagerly loaded at once
         if (paginationLoadingStrategy == PaginationLoadingStrategy.EAGER_LOADING) {
@@ -69,7 +79,8 @@ public class PaginatedScanList<T> extends PaginatedList<T> {
     protected synchronized List<T> fetchNextPage() {
         scanRequest.setExclusiveStartKey(scanResult.getLastEvaluatedKey());
         scanResult = dynamo.scan(DynamoDBMapper.applyUserAgent(scanRequest));
-        return mapper.marshallIntoObjects(clazz, scanResult.getItems());
+        return mapper.marshalIntoObjects(
+            mapper.toParameters(scanResult.getItems(), clazz, config));
     }
 
 }

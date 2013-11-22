@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeDBParameterGroups(DescribeDBParameterGroupsRequest) DescribeDBParameterGroups operation}.
  * <p>
- * Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName is specified, the list will contain only the description of the specified
- * DBParameterGroup.
+ * Returns a list of <code>DBParameterGroup</code> descriptions. If a <code>DBParameterGroupName</code> is specified, the list will contain only the
+ * description of the specified DB parameter group.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBParameterGroups(DescribeDBParameterGroupsRequest)
@@ -30,12 +30,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of a specific DB Parameter Group to return details for.
+     * The name of a specific DB parameter group to return details for.
      * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul>
      */
     private String dBParameterGroupName;
+
+    /**
+     * This parameter is not currently supported.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * The maximum number of records to include in the response. If more
@@ -48,9 +53,9 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest im
 
     /**
      * An optional pagination token provided by a previous
-     * DescribeDBParameterGroups request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>.
+     * <code>DescribeDBParameterGroups</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <code>MaxRecords</code>.
      */
     private String marker;
 
@@ -61,12 +66,12 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest im
     public DescribeDBParameterGroupsRequest() {}
     
     /**
-     * The name of a specific DB Parameter Group to return details for.
+     * The name of a specific DB parameter group to return details for.
      * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul>
      *
-     * @return The name of a specific DB Parameter Group to return details for.
+     * @return The name of a specific DB parameter group to return details for.
      *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul>
@@ -76,12 +81,12 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The name of a specific DB Parameter Group to return details for.
+     * The name of a specific DB parameter group to return details for.
      * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul>
      *
-     * @param dBParameterGroupName The name of a specific DB Parameter Group to return details for.
+     * @param dBParameterGroupName The name of a specific DB parameter group to return details for.
      *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul>
@@ -91,14 +96,14 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The name of a specific DB Parameter Group to return details for.
+     * The name of a specific DB parameter group to return details for.
      * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupName The name of a specific DB Parameter Group to return details for.
+     * @param dBParameterGroupName The name of a specific DB parameter group to return details for.
      *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul>
@@ -108,6 +113,74 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest im
      */
     public DescribeDBParameterGroupsRequest withDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
+        return this;
+    }
+
+    /**
+     * This parameter is not currently supported.
+     *
+     * @return This parameter is not currently supported.
+     */
+    public java.util.List<Filter> getFilters() {
+        if (filters == null) {
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
+        }
+        return filters;
+    }
+    
+    /**
+     * This parameter is not currently supported.
+     *
+     * @param filters This parameter is not currently supported.
+     */
+    public void setFilters(java.util.Collection<Filter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
+        filtersCopy.addAll(filters);
+        this.filters = filtersCopy;
+    }
+    
+    /**
+     * This parameter is not currently supported.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param filters This parameter is not currently supported.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DescribeDBParameterGroupsRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
+        for (Filter value : filters) {
+            getFilters().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * This parameter is not currently supported.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param filters This parameter is not currently supported.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DescribeDBParameterGroupsRequest withFilters(java.util.Collection<Filter> filters) {
+        if (filters == null) {
+            this.filters = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
+            filtersCopy.addAll(filters);
+            this.filters = filtersCopy;
+        }
+
         return this;
     }
 
@@ -170,14 +243,14 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest im
 
     /**
      * An optional pagination token provided by a previous
-     * DescribeDBParameterGroups request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>.
+     * <code>DescribeDBParameterGroups</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <code>MaxRecords</code>.
      *
      * @return An optional pagination token provided by a previous
-     *         DescribeDBParameterGroups request. If this parameter is specified, the
-     *         response includes only records beyond the marker, up to the value
-     *         specified by <code>MaxRecords</code>.
+     *         <code>DescribeDBParameterGroups</code> request. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <code>MaxRecords</code>.
      */
     public String getMarker() {
         return marker;
@@ -185,14 +258,14 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest im
     
     /**
      * An optional pagination token provided by a previous
-     * DescribeDBParameterGroups request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>.
+     * <code>DescribeDBParameterGroups</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <code>MaxRecords</code>.
      *
      * @param marker An optional pagination token provided by a previous
-     *         DescribeDBParameterGroups request. If this parameter is specified, the
-     *         response includes only records beyond the marker, up to the value
-     *         specified by <code>MaxRecords</code>.
+     *         <code>DescribeDBParameterGroups</code> request. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <code>MaxRecords</code>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -200,16 +273,16 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest im
     
     /**
      * An optional pagination token provided by a previous
-     * DescribeDBParameterGroups request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>.
+     * <code>DescribeDBParameterGroups</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <code>MaxRecords</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker An optional pagination token provided by a previous
-     *         DescribeDBParameterGroups request. If this parameter is specified, the
-     *         response includes only records beyond the marker, up to the value
-     *         specified by <code>MaxRecords</code>.
+     *         <code>DescribeDBParameterGroups</code> request. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <code>MaxRecords</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -232,6 +305,7 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");
         if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
@@ -244,6 +318,7 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest im
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getDBParameterGroupName() == null) ? 0 : getDBParameterGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
         return hashCode;
@@ -259,6 +334,8 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest im
         
         if (other.getDBParameterGroupName() == null ^ this.getDBParameterGroupName() == null) return false;
         if (other.getDBParameterGroupName() != null && other.getDBParameterGroupName().equals(this.getDBParameterGroupName()) == false) return false; 
+        if (other.getFilters() == null ^ this.getFilters() == null) return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;
         if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
         if (other.getMarker() == null ^ this.getMarker() == null) return false;

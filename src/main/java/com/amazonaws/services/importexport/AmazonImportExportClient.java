@@ -16,6 +16,7 @@ package com.amazonaws.services.importexport;
 
 import org.w3c.dom.*;
 
+import java.net.*;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -24,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -53,11 +55,6 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
             = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
-
-    
-    /** AWS signer for authenticating requests. */
-    private QueryStringSigner signer;
-
 
     /**
      * Constructs a new client to invoke service methods on
@@ -197,14 +194,13 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
         exceptionUnmarshallers.add(new InvalidCustomsExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
-        setEndpoint("importexport.amazonaws.com");
-
-        signer = new QueryStringSigner();
-        
-
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("importexport.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/importexport/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
+                "/com/amazonaws/services/importexport/request.handler2s"));
     }
 
     
@@ -250,13 +246,14 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
         ExecutionContext executionContext = createExecutionContext(createJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateJobRequest> request = null;
-        CreateJobResult response = null;
+        Response<CreateJobResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateJobRequestMarshaller().marshall(createJobRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateJobResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateJobResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -292,13 +289,14 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
         ExecutionContext executionContext = createExecutionContext(cancelJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CancelJobRequest> request = null;
-        CancelJobResult response = null;
+        Response<CancelJobResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CancelJobRequestMarshaller().marshall(cancelJobRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CancelJobResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CancelJobResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -335,13 +333,14 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
         ExecutionContext executionContext = createExecutionContext(getStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetStatusRequest> request = null;
-        GetStatusResult response = null;
+        Response<GetStatusResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetStatusRequestMarshaller().marshall(getStatusRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetStatusResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetStatusResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -377,13 +376,14 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
         ExecutionContext executionContext = createExecutionContext(listJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListJobsRequest> request = null;
-        ListJobsResult response = null;
+        Response<ListJobsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListJobsRequestMarshaller().marshall(listJobsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListJobsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListJobsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -433,13 +433,14 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
         ExecutionContext executionContext = createExecutionContext(updateJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateJobRequest> request = null;
-        UpdateJobResult response = null;
+        Response<UpdateJobResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new UpdateJobRequestMarshaller().marshall(updateJobRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new UpdateJobResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new UpdateJobResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -498,7 +499,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
             Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
             ExecutionContext executionContext)
     {
@@ -514,12 +515,12 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(signer);
+        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-        return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
+        return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }
         

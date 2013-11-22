@@ -70,6 +70,10 @@ public class ImageAttributeStaxUnmarshaller implements Unmarshaller<ImageAttribu
                     imageAttribute.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("sriovNetSupport/value", targetDepth)) {
+                    imageAttribute.setSriovNetSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("blockDeviceMapping/item", targetDepth)) {
                     imageAttribute.getBlockDeviceMappings().add(BlockDeviceMappingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

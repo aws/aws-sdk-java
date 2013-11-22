@@ -254,6 +254,7 @@ public interface AmazonElasticLoadBalancing {
      *           parameters to execute the CreateLoadBalancerListeners service method
      *           on AmazonElasticLoadBalancing.
      * 
+     * 
      * @throws InvalidConfigurationRequestException
      * @throws DuplicateListenerException
      * @throws CertificateNotFoundException
@@ -278,6 +279,7 @@ public interface AmazonElasticLoadBalancing {
      * @param deleteLoadBalancerListenersRequest Container for the necessary
      *           parameters to execute the DeleteLoadBalancerListeners service method
      *           on AmazonElasticLoadBalancing.
+     * 
      * 
      * @throws LoadBalancerNotFoundException
      *
@@ -644,6 +646,7 @@ public interface AmazonElasticLoadBalancing {
      *           parameters to execute the DeleteLoadBalancer service method on
      *           AmazonElasticLoadBalancing.
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -837,6 +840,7 @@ public interface AmazonElasticLoadBalancing {
      *           necessary parameters to execute the
      *           SetLoadBalancerListenerSSLCertificate service method on
      *           AmazonElasticLoadBalancing.
+     * 
      * 
      * @throws InvalidConfigurationRequestException
      * @throws CertificateNotFoundException

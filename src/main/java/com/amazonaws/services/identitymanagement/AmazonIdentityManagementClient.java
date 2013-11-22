@@ -16,6 +16,7 @@ package com.amazonaws.services.identitymanagement;
 
 import org.w3c.dom.*;
 
+import java.net.*;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -24,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -89,11 +91,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
             = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
-
-    
-    /** AWS signer for authenticating requests. */
-    private AWS4Signer signer;
-
 
     /**
      * Constructs a new client to invoke service methods on
@@ -230,16 +227,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         exceptionUnmarshallers.add(new NoSuchEntityExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
-        setEndpoint("iam.amazonaws.com");
-
-        signer = new AWS4Signer();
-        
-        signer.setServiceName("iam");
-        
-
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("iam.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/identitymanagement/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
+                "/com/amazonaws/services/identitymanagement/request.handler2s"));
     }
 
     
@@ -255,6 +249,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteAccountAliasRequest Container for the necessary
      *           parameters to execute the DeleteAccountAlias service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -310,13 +305,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListGroupsRequest> request = null;
-        ListGroupsResult response = null;
+        Response<ListGroupsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListGroupsRequestMarshaller().marshall(listGroupsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListGroupsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListGroupsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -337,6 +333,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteAccessKeyRequest Container for the necessary parameters
      *           to execute the DeleteAccessKey service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -378,6 +375,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *           parameters to execute the DeleteVirtualMFADevice service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws NoSuchEntityException
      * @throws DeleteConflictException
      * @throws LimitExceededException
@@ -413,6 +411,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteUserPolicyRequest Container for the necessary parameters
      *           to execute the DeleteUserPolicy service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -466,6 +465,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *
      * @param putUserPolicyRequest Container for the necessary parameters to
      *           execute the PutUserPolicy service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws MalformedPolicyDocumentException
      * @throws NoSuchEntityException
@@ -524,13 +524,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listServerCertificatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListServerCertificatesRequest> request = null;
-        ListServerCertificatesResult response = null;
+        Response<ListServerCertificatesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListServerCertificatesRequestMarshaller().marshall(listServerCertificatesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListServerCertificatesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListServerCertificatesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -564,13 +565,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listSAMLProvidersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListSAMLProvidersRequest> request = null;
-        ListSAMLProvidersResult response = null;
+        Response<ListSAMLProvidersResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListSAMLProvidersRequestMarshaller().marshall(listSAMLProvidersRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListSAMLProvidersResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListSAMLProvidersResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -605,13 +607,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getUserPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetUserPolicyRequest> request = null;
-        GetUserPolicyResult response = null;
+        Response<GetUserPolicyResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetUserPolicyRequestMarshaller().marshall(getUserPolicyRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetUserPolicyResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetUserPolicyResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -638,6 +641,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param updateServerCertificateRequest Container for the necessary
      *           parameters to execute the UpdateServerCertificate service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -685,6 +689,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *
      * @param updateUserRequest Container for the necessary parameters to
      *           execute the UpdateUser service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws EntityTemporarilyUnmodifiableException
      * @throws NoSuchEntityException
@@ -741,6 +746,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param putRolePolicyRequest Container for the necessary parameters to
      *           execute the PutRolePolicy service method on AmazonIdentityManagement.
      * 
+     * 
      * @throws MalformedPolicyDocumentException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -792,6 +798,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *           parameters to execute the UpdateSigningCertificate service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -827,6 +834,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteGroupPolicyRequest Container for the necessary parameters
      *           to execute the DeleteGroupPolicy service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -883,13 +891,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listUsersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListUsersRequest> request = null;
-        ListUsersResult response = null;
+        Response<ListUsersResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListUsersRequestMarshaller().marshall(listUsersRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListUsersResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListUsersResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -915,6 +924,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *
      * @param updateGroupRequest Container for the necessary parameters to
      *           execute the UpdateGroup service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -977,13 +987,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(createUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateUserRequest> request = null;
-        CreateUserResult response = null;
+        Response<CreateUserResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateUserRequestMarshaller().marshall(createUserRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateUserResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateUserResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1006,6 +1017,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteSAMLProviderRequest Container for the necessary
      *           parameters to execute the DeleteSAMLProvider service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws InvalidInputException
      *
@@ -1042,6 +1054,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param enableMFADeviceRequest Container for the necessary parameters
      *           to execute the EnableMFADevice service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws EntityTemporarilyUnmodifiableException
      * @throws NoSuchEntityException
@@ -1080,6 +1093,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteAccountPasswordPolicyRequest Container for the necessary
      *           parameters to execute the DeleteAccountPasswordPolicy service method
      *           on AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      *
@@ -1134,13 +1148,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getLoginProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetLoginProfileRequest> request = null;
-        GetLoginProfileResult response = null;
+        Response<GetLoginProfileResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetLoginProfileRequestMarshaller().marshall(getLoginProfileRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetLoginProfileResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetLoginProfileResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1177,13 +1192,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(updateSAMLProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateSAMLProviderRequest> request = null;
-        UpdateSAMLProviderResult response = null;
+        Response<UpdateSAMLProviderResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new UpdateSAMLProviderRequestMarshaller().marshall(updateSAMLProviderRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new UpdateSAMLProviderResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new UpdateSAMLProviderResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1236,13 +1252,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(uploadServerCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UploadServerCertificateRequest> request = null;
-        UploadServerCertificateResult response = null;
+        Response<UploadServerCertificateResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new UploadServerCertificateRequestMarshaller().marshall(uploadServerCertificateRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new UploadServerCertificateResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new UploadServerCertificateResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1281,13 +1298,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(createGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateGroupRequest> request = null;
-        CreateGroupResult response = null;
+        Response<CreateGroupResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateGroupRequestMarshaller().marshall(createGroupRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateGroupResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateGroupResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1305,6 +1323,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param createAccountAliasRequest Container for the necessary
      *           parameters to execute the CreateAccountAlias service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws LimitExceededException
      * @throws EntityAlreadyExistsException
@@ -1340,6 +1359,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *
      * @param deleteUserRequest Container for the necessary parameters to
      *           execute the DeleteUser service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws DeleteConflictException
@@ -1378,6 +1398,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *           parameters to execute the DeactivateMFADevice service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws EntityTemporarilyUnmodifiableException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -1413,6 +1434,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param removeUserFromGroupRequest Container for the necessary
      *           parameters to execute the RemoveUserFromGroup service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -1456,6 +1478,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *
      * @param deleteRoleRequest Container for the necessary parameters to
      *           execute the DeleteRole service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws DeleteConflictException
@@ -1504,6 +1527,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteServerCertificateRequest Container for the necessary
      *           parameters to execute the DeleteServerCertificate service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws DeleteConflictException
@@ -1582,13 +1606,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(createAccessKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateAccessKeyRequest> request = null;
-        CreateAccessKeyResult response = null;
+        Response<CreateAccessKeyResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateAccessKeyRequestMarshaller().marshall(createAccessKeyRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateAccessKeyResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateAccessKeyResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1624,13 +1649,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetUserRequest> request = null;
-        GetUserResult response = null;
+        Response<GetUserResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetUserRequestMarshaller().marshall(getUserRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetUserResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetUserResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1644,6 +1670,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param resyncMFADeviceRequest Container for the necessary parameters
      *           to execute the ResyncMFADevice service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws InvalidAuthenticationCodeException
@@ -1704,13 +1731,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listMFADevicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListMFADevicesRequest> request = null;
-        ListMFADevicesResult response = null;
+        Response<ListMFADevicesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListMFADevicesRequestMarshaller().marshall(listMFADevicesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListMFADevicesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListMFADevicesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1765,13 +1793,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(createVirtualMFADeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateVirtualMFADeviceRequest> request = null;
-        CreateVirtualMFADeviceResult response = null;
+        Response<CreateVirtualMFADeviceResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateVirtualMFADeviceRequestMarshaller().marshall(createVirtualMFADeviceRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateVirtualMFADeviceResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateVirtualMFADeviceResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1810,13 +1839,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listInstanceProfilesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListInstanceProfilesRequest> request = null;
-        ListInstanceProfilesResult response = null;
+        Response<ListInstanceProfilesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListInstanceProfilesRequestMarshaller().marshall(listInstanceProfilesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListInstanceProfilesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListInstanceProfilesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1845,6 +1875,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param updateAccessKeyRequest Container for the necessary parameters
      *           to execute the UpdateAccessKey service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -1879,6 +1910,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *
      * @param addUserToGroupRequest Container for the necessary parameters to
      *           execute the AddUserToGroup service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -1933,13 +1965,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetGroupRequest> request = null;
-        GetGroupResult response = null;
+        Response<GetGroupResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetGroupRequestMarshaller().marshall(getGroupRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetGroupResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetGroupResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1978,13 +2011,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listAccountAliasesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListAccountAliasesRequest> request = null;
-        ListAccountAliasesResult response = null;
+        Response<ListAccountAliasesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListAccountAliasesRequestMarshaller().marshall(listAccountAliasesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListAccountAliasesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListAccountAliasesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1998,6 +2032,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *
      * @param deleteGroupRequest Container for the necessary parameters to
      *           execute the DeleteGroup service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws DeleteConflictException
@@ -2062,13 +2097,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetRoleRequest> request = null;
-        GetRoleResult response = null;
+        Response<GetRoleResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetRoleRequestMarshaller().marshall(getRoleRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetRoleResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetRoleResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2105,13 +2141,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listRolePoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListRolePoliciesRequest> request = null;
-        ListRolePoliciesResult response = null;
+        Response<ListRolePoliciesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListRolePoliciesRequestMarshaller().marshall(listRolePoliciesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListRolePoliciesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListRolePoliciesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2156,13 +2193,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listSigningCertificatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListSigningCertificatesRequest> request = null;
-        ListSigningCertificatesResult response = null;
+        Response<ListSigningCertificatesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListSigningCertificatesRequestMarshaller().marshall(listSigningCertificatesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListSigningCertificatesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListSigningCertificatesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2218,13 +2256,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(uploadSigningCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UploadSigningCertificateRequest> request = null;
-        UploadSigningCertificateResult response = null;
+        Response<UploadSigningCertificateResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new UploadSigningCertificateRequestMarshaller().marshall(uploadSigningCertificateRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new UploadSigningCertificateResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new UploadSigningCertificateResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2250,6 +2289,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteInstanceProfileRequest Container for the necessary
      *           parameters to execute the DeleteInstanceProfile service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws DeleteConflictException
@@ -2309,13 +2349,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getSAMLProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetSAMLProviderRequest> request = null;
-        GetSAMLProviderResult response = null;
+        Response<GetSAMLProviderResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetSAMLProviderRequestMarshaller().marshall(getSAMLProviderRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetSAMLProviderResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetSAMLProviderResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2362,13 +2403,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(createRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateRoleRequest> request = null;
-        CreateRoleResult response = null;
+        Response<CreateRoleResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateRoleRequestMarshaller().marshall(createRoleRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateRoleResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateRoleResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2382,6 +2424,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param updateLoginProfileRequest Container for the necessary
      *           parameters to execute the UpdateLoginProfile service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws PasswordPolicyViolationException
      * @throws EntityTemporarilyUnmodifiableException
@@ -2429,6 +2472,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *           parameters to execute the DeleteLoginProfile service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws EntityTemporarilyUnmodifiableException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -2468,6 +2512,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *
      * @param changePasswordRequest Container for the necessary parameters to
      *           execute the ChangePassword service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws EntityTemporarilyUnmodifiableException
      * @throws NoSuchEntityException
@@ -2523,13 +2568,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getServerCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetServerCertificateRequest> request = null;
-        GetServerCertificateResult response = null;
+        Response<GetServerCertificateResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetServerCertificateRequestMarshaller().marshall(getServerCertificateRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetServerCertificateResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetServerCertificateResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2561,6 +2607,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *
      * @param putGroupPolicyRequest Container for the necessary parameters to
      *           execute the PutGroupPolicy service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws MalformedPolicyDocumentException
      * @throws NoSuchEntityException
@@ -2605,6 +2652,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteSigningCertificateRequest Container for the necessary
      *           parameters to execute the DeleteSigningCertificate service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -2663,13 +2711,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listUserPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListUserPoliciesRequest> request = null;
-        ListUserPoliciesResult response = null;
+        Response<ListUserPoliciesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListUserPoliciesRequestMarshaller().marshall(listUserPoliciesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListUserPoliciesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListUserPoliciesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2717,13 +2766,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listAccessKeysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListAccessKeysRequest> request = null;
-        ListAccessKeysResult response = null;
+        Response<ListAccessKeysResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListAccessKeysRequestMarshaller().marshall(listAccessKeysRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListAccessKeysResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListAccessKeysResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2759,13 +2809,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listGroupsForUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListGroupsForUserRequest> request = null;
-        ListGroupsForUserResult response = null;
+        Response<ListGroupsForUserResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListGroupsForUserRequestMarshaller().marshall(listGroupsForUserRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListGroupsForUserResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListGroupsForUserResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2785,6 +2836,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param addRoleToInstanceProfileRequest Container for the necessary
      *           parameters to execute the AddRoleToInstanceProfile service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -2842,13 +2894,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getGroupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetGroupPolicyRequest> request = null;
-        GetGroupPolicyResult response = null;
+        Response<GetGroupPolicyResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetGroupPolicyRequestMarshaller().marshall(getGroupPolicyRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetGroupPolicyResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetGroupPolicyResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2888,13 +2941,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetRolePolicyRequest> request = null;
-        GetRolePolicyResult response = null;
+        Response<GetRolePolicyResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetRolePolicyRequestMarshaller().marshall(getRolePolicyRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetRolePolicyResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetRolePolicyResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2934,13 +2988,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listInstanceProfilesForRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListInstanceProfilesForRoleRequest> request = null;
-        ListInstanceProfilesForRoleResult response = null;
+        Response<ListInstanceProfilesForRoleResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListInstanceProfilesForRoleRequestMarshaller().marshall(listInstanceProfilesForRoleRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListInstanceProfilesForRoleResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListInstanceProfilesForRoleResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2979,13 +3034,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listVirtualMFADevicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListVirtualMFADevicesRequest> request = null;
-        ListVirtualMFADevicesResult response = null;
+        Response<ListVirtualMFADevicesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListVirtualMFADevicesRequestMarshaller().marshall(listVirtualMFADevicesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListVirtualMFADevicesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListVirtualMFADevicesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2999,6 +3055,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteRolePolicyRequest Container for the necessary parameters
      *           to execute the DeleteRolePolicy service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -3063,13 +3120,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(createInstanceProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateInstanceProfileRequest> request = null;
-        CreateInstanceProfileResult response = null;
+        Response<CreateInstanceProfileResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateInstanceProfileRequestMarshaller().marshall(createInstanceProfileRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateInstanceProfileResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateInstanceProfileResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3106,13 +3164,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listGroupPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListGroupPoliciesRequest> request = null;
-        ListGroupPoliciesResult response = null;
+        Response<ListGroupPoliciesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListGroupPoliciesRequestMarshaller().marshall(listGroupPoliciesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListGroupPoliciesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListGroupPoliciesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3151,13 +3210,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(createLoginProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateLoginProfileRequest> request = null;
-        CreateLoginProfileResult response = null;
+        Response<CreateLoginProfileResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateLoginProfileRequestMarshaller().marshall(createLoginProfileRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateLoginProfileResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateLoginProfileResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3186,6 +3246,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param removeRoleFromInstanceProfileRequest Container for the
      *           necessary parameters to execute the RemoveRoleFromInstanceProfile
      *           service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -3224,6 +3285,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param updateAccountPasswordPolicyRequest Container for the necessary
      *           parameters to execute the UpdateAccountPasswordPolicy service method
      *           on AmazonIdentityManagement.
+     * 
      * 
      * @throws MalformedPolicyDocumentException
      * @throws NoSuchEntityException
@@ -3264,6 +3326,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param updateAssumeRolePolicyRequest Container for the necessary
      *           parameters to execute the UpdateAssumeRolePolicy service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws MalformedPolicyDocumentException
      * @throws NoSuchEntityException
@@ -3325,13 +3388,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getInstanceProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetInstanceProfileRequest> request = null;
-        GetInstanceProfileResult response = null;
+        Response<GetInstanceProfileResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetInstanceProfileRequestMarshaller().marshall(getInstanceProfileRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetInstanceProfileResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetInstanceProfileResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3375,13 +3439,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listRolesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListRolesRequest> request = null;
-        ListRolesResult response = null;
+        Response<ListRolesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListRolesRequestMarshaller().marshall(listRolesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListRolesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListRolesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3419,13 +3484,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getAccountSummaryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetAccountSummaryRequest> request = null;
-        GetAccountSummaryResult response = null;
+        Response<GetAccountSummaryResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetAccountSummaryRequestMarshaller().marshall(getAccountSummaryRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetAccountSummaryResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetAccountSummaryResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3486,13 +3552,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(createSAMLProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateSAMLProviderRequest> request = null;
-        CreateSAMLProviderResult response = null;
+        Response<CreateSAMLProviderResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateSAMLProviderRequestMarshaller().marshall(createSAMLProviderRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateSAMLProviderResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateSAMLProviderResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3527,13 +3594,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getAccountPasswordPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetAccountPasswordPolicyRequest> request = null;
-        GetAccountPasswordPolicyResult response = null;
+        Response<GetAccountPasswordPolicyResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetAccountPasswordPolicyRequestMarshaller().marshall(getAccountPasswordPolicyRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetAccountPasswordPolicyResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetAccountPasswordPolicyResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3644,6 +3712,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * Deletes the password policy for the AWS account.
      * </p>
+     * 
      * 
      * @throws NoSuchEntityException
      *
@@ -4010,47 +4079,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         return getAccountPasswordPolicy(new GetAccountPasswordPolicyRequest());
     }
     
-    /**
-     * Overrides the default endpoint for this client ("https://iam.amazonaws.com") and explicitly provides
-     * an AWS region ID and AWS service name to use when the client calculates a signature
-     * for requests.  In almost all cases, this region ID and service name
-     * are automatically determined from the endpoint, and callers should use the simpler
-     * one-argument form of setEndpoint instead of this method.
-     * <p>
-     * <b>This method is not threadsafe. Endpoints should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit.</b>
-     * <p>
-     * Callers can pass in just the endpoint (ex: "iam.amazonaws.com") or a full
-     * URL, including the protocol (ex: "https://iam.amazonaws.com"). If the
-     * protocol is not specified here, the default protocol from this client's
-     * {@link ClientConfiguration} will be used, which by default is HTTPS.
-     * <p>
-     * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
-     *
-     * @param endpoint
-     *            The endpoint (ex: "iam.amazonaws.com") or a full URL,
-     *            including the protocol (ex: "https://iam.amazonaws.com") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     * @param serviceName
-     *            The name of the AWS service to use when signing requests.
-     * @param regionId
-     *            The ID of the region in which this service resides.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
-     */
-    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
-        setEndpoint(endpoint);
-        signer.setServiceName(serviceName);
-        signer.setRegionName(regionId);
-    }
-    
     @Override
     protected String getServiceAbbreviation() {
         return "iam";
@@ -4077,7 +4105,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
             Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
             ExecutionContext executionContext)
     {
@@ -4093,12 +4121,12 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(signer);
+        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-        return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
+        return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }
         

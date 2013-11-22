@@ -164,6 +164,7 @@ public interface AmazonAutoScaling {
      *           parameters to execute the EnableMetricsCollection service method on
      *           AmazonAutoScaling.
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -187,6 +188,7 @@ public interface AmazonAutoScaling {
      *
      * @param resumeProcessesRequest Container for the necessary parameters
      *           to execute the ResumeProcesses service method on AmazonAutoScaling.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -213,6 +215,7 @@ public interface AmazonAutoScaling {
      * @param deleteLaunchConfigurationRequest Container for the necessary
      *           parameters to execute the DeleteLaunchConfiguration service method on
      *           AmazonAutoScaling.
+     * 
      * 
      * @throws ResourceInUseException
      *
@@ -293,6 +296,7 @@ public interface AmazonAutoScaling {
      * @param createAutoScalingGroupRequest Container for the necessary
      *           parameters to execute the CreateAutoScalingGroup service method on
      *           AmazonAutoScaling.
+     * 
      * 
      * @throws LimitExceededException
      * @throws AlreadyExistsException
@@ -439,6 +443,7 @@ public interface AmazonAutoScaling {
      * @param executePolicyRequest Container for the necessary parameters to
      *           execute the ExecutePolicy service method on AmazonAutoScaling.
      * 
+     * 
      * @throws ScalingActivityInProgressException
      *
      * @throws AmazonClientException
@@ -459,6 +464,7 @@ public interface AmazonAutoScaling {
      *
      * @param deleteTagsRequest Container for the necessary parameters to
      *           execute the DeleteTags service method on AmazonAutoScaling.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -519,6 +525,7 @@ public interface AmazonAutoScaling {
      *           parameters to execute the PutNotificationConfiguration service method
      *           on AmazonAutoScaling.
      * 
+     * 
      * @throws LimitExceededException
      *
      * @throws AmazonClientException
@@ -539,6 +546,7 @@ public interface AmazonAutoScaling {
      *
      * @param deletePolicyRequest Container for the necessary parameters to
      *           execute the DeletePolicy service method on AmazonAutoScaling.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -561,6 +569,7 @@ public interface AmazonAutoScaling {
      *           necessary parameters to execute the DeleteNotificationConfiguration
      *           service method on AmazonAutoScaling.
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -582,6 +591,7 @@ public interface AmazonAutoScaling {
      * @param deleteScheduledActionRequest Container for the necessary
      *           parameters to execute the DeleteScheduledAction service method on
      *           AmazonAutoScaling.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -608,6 +618,7 @@ public interface AmazonAutoScaling {
      *
      * @param setInstanceHealthRequest Container for the necessary parameters
      *           to execute the SetInstanceHealth service method on AmazonAutoScaling.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -667,6 +678,7 @@ public interface AmazonAutoScaling {
      *           parameters to execute the CreateOrUpdateTags service method on
      *           AmazonAutoScaling.
      * 
+     * 
      * @throws LimitExceededException
      * @throws AlreadyExistsException
      *
@@ -704,6 +716,7 @@ public interface AmazonAutoScaling {
      *
      * @param suspendProcessesRequest Container for the necessary parameters
      *           to execute the SuspendProcesses service method on AmazonAutoScaling.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -773,6 +786,7 @@ public interface AmazonAutoScaling {
      *           parameters to execute the CreateLaunchConfiguration service method on
      *           AmazonAutoScaling.
      * 
+     * 
      * @throws LimitExceededException
      * @throws AlreadyExistsException
      *
@@ -802,6 +816,7 @@ public interface AmazonAutoScaling {
      *           parameters to execute the DeleteAutoScalingGroup service method on
      *           AmazonAutoScaling.
      * 
+     * 
      * @throws ResourceInUseException
      * @throws ScalingActivityInProgressException
      *
@@ -827,6 +842,7 @@ public interface AmazonAutoScaling {
      * @param disableMetricsCollectionRequest Container for the necessary
      *           parameters to execute the DisableMetricsCollection service method on
      *           AmazonAutoScaling.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -873,6 +889,7 @@ public interface AmazonAutoScaling {
      * @param updateAutoScalingGroupRequest Container for the necessary
      *           parameters to execute the UpdateAutoScalingGroup service method on
      *           AmazonAutoScaling.
+     * 
      * 
      * @throws ScalingActivityInProgressException
      *
@@ -991,6 +1008,7 @@ public interface AmazonAutoScaling {
      *           necessary parameters to execute the PutScheduledUpdateGroupAction
      *           service method on AmazonAutoScaling.
      * 
+     * 
      * @throws LimitExceededException
      * @throws AlreadyExistsException
      *
@@ -1038,6 +1056,7 @@ public interface AmazonAutoScaling {
      * @param setDesiredCapacityRequest Container for the necessary
      *           parameters to execute the SetDesiredCapacity service method on
      *           AmazonAutoScaling.
+     * 
      * 
      * @throws ScalingActivityInProgressException
      *

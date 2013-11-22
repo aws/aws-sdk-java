@@ -21,13 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createDBParameterGroup(CreateDBParameterGroupRequest) CreateDBParameterGroup operation}.
  * <p>
- * Creates a new DB Parameter Group.
+ * Creates a new DB parameter group.
  * </p>
  * <p>
- * A DB Parameter Group is initially created with the default parameters for the database engine used by the DB Instance. To provide custom values for
- * any of the parameters, you must modify the group after creating it using <i>ModifyDBParameterGroup</i> . Once you've created a DB Parameter Group, you
- * need to associate it with your DB Instance using <i>ModifyDBInstance</i> . When you associate a new DB Parameter Group with a running DB Instance, you
- * need to reboot the DB Instance for the new DB Parameter Group and associated settings to take effect.
+ * A DB parameter group is initially created with the default parameters for the database engine used by the DB instance. To provide custom values for
+ * any of the parameters, you must modify the group after creating it using <i>ModifyDBParameterGroup</i> . Once you've created a DB parameter group, you
+ * need to associate it with your DB instance using <i>ModifyDBInstance</i> . When you associate a new DB parameter group with a running DB instance, you
+ * need to reboot the DB Instance for the new DB parameter group and associated settings to take effect.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBParameterGroup(CreateDBParameterGroupRequest)
@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the DB Parameter Group. <p> Constraints: <ul> <li>Must be
+     * The name of the DB parameter group. <p> Constraints: <ul> <li>Must be
      * 1 to 255 alphanumeric characters</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul> <note>This value is stored as a lower-case
@@ -44,17 +44,22 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
     private String dBParameterGroupName;
 
     /**
-     * The DB Parameter Group Family name. A DB Parameter Group can be
-     * associated with one and only one DB Parameter Group Family, and can be
-     * applied only to a DB Instance running a database engine and engine
-     * version compatible with that DB Parameter Group Family.
+     * The DB parameter group family name. A DB parameter group can be
+     * associated with one and only one DB parameter group family, and can be
+     * applied only to a DB instance running a database engine and engine
+     * version compatible with that DB parameter group family.
      */
     private String dBParameterGroupFamily;
 
     /**
-     * The description for the DB Parameter Group.
+     * The description for the DB parameter group.
      */
     private String description;
+
+    /**
+     * A list of tags.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * Default constructor for a new CreateDBParameterGroupRequest object.  Callers should use the
@@ -67,17 +72,17 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dBParameterGroupName The name of the DB Parameter Group. <p>
+     * @param dBParameterGroupName The name of the DB parameter group. <p>
      * Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul> <note>This value is
      * stored as a lower-case string.</note>
-     * @param dBParameterGroupFamily The DB Parameter Group Family name. A DB
-     * Parameter Group can be associated with one and only one DB Parameter
-     * Group Family, and can be applied only to a DB Instance running a
-     * database engine and engine version compatible with that DB Parameter
-     * Group Family.
-     * @param description The description for the DB Parameter Group.
+     * @param dBParameterGroupFamily The DB parameter group family name. A DB
+     * parameter group can be associated with one and only one DB parameter
+     * group family, and can be applied only to a DB instance running a
+     * database engine and engine version compatible with that DB parameter
+     * group family.
+     * @param description The description for the DB parameter group.
      */
     public CreateDBParameterGroupRequest(String dBParameterGroupName, String dBParameterGroupFamily, String description) {
         setDBParameterGroupName(dBParameterGroupName);
@@ -86,13 +91,13 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The name of the DB Parameter Group. <p> Constraints: <ul> <li>Must be
+     * The name of the DB parameter group. <p> Constraints: <ul> <li>Must be
      * 1 to 255 alphanumeric characters</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul> <note>This value is stored as a lower-case
      * string.</note>
      *
-     * @return The name of the DB Parameter Group. <p> Constraints: <ul> <li>Must be
+     * @return The name of the DB parameter group. <p> Constraints: <ul> <li>Must be
      *         1 to 255 alphanumeric characters</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul> <note>This value is stored as a lower-case
@@ -103,13 +108,13 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The name of the DB Parameter Group. <p> Constraints: <ul> <li>Must be
+     * The name of the DB parameter group. <p> Constraints: <ul> <li>Must be
      * 1 to 255 alphanumeric characters</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul> <note>This value is stored as a lower-case
      * string.</note>
      *
-     * @param dBParameterGroupName The name of the DB Parameter Group. <p> Constraints: <ul> <li>Must be
+     * @param dBParameterGroupName The name of the DB parameter group. <p> Constraints: <ul> <li>Must be
      *         1 to 255 alphanumeric characters</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul> <note>This value is stored as a lower-case
@@ -120,7 +125,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The name of the DB Parameter Group. <p> Constraints: <ul> <li>Must be
+     * The name of the DB parameter group. <p> Constraints: <ul> <li>Must be
      * 1 to 255 alphanumeric characters</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul> <note>This value is stored as a lower-case
@@ -128,7 +133,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupName The name of the DB Parameter Group. <p> Constraints: <ul> <li>Must be
+     * @param dBParameterGroupName The name of the DB parameter group. <p> Constraints: <ul> <li>Must be
      *         1 to 255 alphanumeric characters</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul> <note>This value is stored as a lower-case
@@ -143,47 +148,47 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The DB Parameter Group Family name. A DB Parameter Group can be
-     * associated with one and only one DB Parameter Group Family, and can be
-     * applied only to a DB Instance running a database engine and engine
-     * version compatible with that DB Parameter Group Family.
+     * The DB parameter group family name. A DB parameter group can be
+     * associated with one and only one DB parameter group family, and can be
+     * applied only to a DB instance running a database engine and engine
+     * version compatible with that DB parameter group family.
      *
-     * @return The DB Parameter Group Family name. A DB Parameter Group can be
-     *         associated with one and only one DB Parameter Group Family, and can be
-     *         applied only to a DB Instance running a database engine and engine
-     *         version compatible with that DB Parameter Group Family.
+     * @return The DB parameter group family name. A DB parameter group can be
+     *         associated with one and only one DB parameter group family, and can be
+     *         applied only to a DB instance running a database engine and engine
+     *         version compatible with that DB parameter group family.
      */
     public String getDBParameterGroupFamily() {
         return dBParameterGroupFamily;
     }
     
     /**
-     * The DB Parameter Group Family name. A DB Parameter Group can be
-     * associated with one and only one DB Parameter Group Family, and can be
-     * applied only to a DB Instance running a database engine and engine
-     * version compatible with that DB Parameter Group Family.
+     * The DB parameter group family name. A DB parameter group can be
+     * associated with one and only one DB parameter group family, and can be
+     * applied only to a DB instance running a database engine and engine
+     * version compatible with that DB parameter group family.
      *
-     * @param dBParameterGroupFamily The DB Parameter Group Family name. A DB Parameter Group can be
-     *         associated with one and only one DB Parameter Group Family, and can be
-     *         applied only to a DB Instance running a database engine and engine
-     *         version compatible with that DB Parameter Group Family.
+     * @param dBParameterGroupFamily The DB parameter group family name. A DB parameter group can be
+     *         associated with one and only one DB parameter group family, and can be
+     *         applied only to a DB instance running a database engine and engine
+     *         version compatible with that DB parameter group family.
      */
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
     }
     
     /**
-     * The DB Parameter Group Family name. A DB Parameter Group can be
-     * associated with one and only one DB Parameter Group Family, and can be
-     * applied only to a DB Instance running a database engine and engine
-     * version compatible with that DB Parameter Group Family.
+     * The DB parameter group family name. A DB parameter group can be
+     * associated with one and only one DB parameter group family, and can be
+     * applied only to a DB instance running a database engine and engine
+     * version compatible with that DB parameter group family.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupFamily The DB Parameter Group Family name. A DB Parameter Group can be
-     *         associated with one and only one DB Parameter Group Family, and can be
-     *         applied only to a DB Instance running a database engine and engine
-     *         version compatible with that DB Parameter Group Family.
+     * @param dBParameterGroupFamily The DB parameter group family name. A DB parameter group can be
+     *         associated with one and only one DB parameter group family, and can be
+     *         applied only to a DB instance running a database engine and engine
+     *         version compatible with that DB parameter group family.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -194,35 +199,103 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The description for the DB Parameter Group.
+     * The description for the DB parameter group.
      *
-     * @return The description for the DB Parameter Group.
+     * @return The description for the DB parameter group.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * The description for the DB Parameter Group.
+     * The description for the DB parameter group.
      *
-     * @param description The description for the DB Parameter Group.
+     * @param description The description for the DB parameter group.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * The description for the DB Parameter Group.
+     * The description for the DB parameter group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description The description for the DB Parameter Group.
+     * @param description The description for the DB parameter group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public CreateDBParameterGroupRequest withDescription(String description) {
         this.description = description;
+        return this;
+    }
+
+    /**
+     * A list of tags.
+     *
+     * @return A list of tags.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags.
+     *
+     * @param tags A list of tags.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateDBParameterGroupRequest withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateDBParameterGroupRequest withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
         return this;
     }
 
@@ -240,7 +313,8 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
         sb.append("{");
         if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");
         if (getDBParameterGroupFamily() != null) sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ",");
-        if (getDescription() != null) sb.append("Description: " + getDescription() );
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -253,6 +327,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getDBParameterGroupName() == null) ? 0 : getDBParameterGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getDBParameterGroupFamily() == null) ? 0 : getDBParameterGroupFamily().hashCode()); 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -270,6 +345,8 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
         if (other.getDBParameterGroupFamily() != null && other.getDBParameterGroupFamily().equals(this.getDBParameterGroupFamily()) == false) return false; 
         if (other.getDescription() == null ^ this.getDescription() == null) return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

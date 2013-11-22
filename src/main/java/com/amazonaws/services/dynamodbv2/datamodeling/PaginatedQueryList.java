@@ -41,18 +41,29 @@ public class PaginatedQueryList<T> extends PaginatedList<T> {
     /** The current query request */
     private final QueryRequest queryRequest;
 
+    private final DynamoDBMapperConfig config;
+    
     /** The current results for the last executed query operation */
     private QueryResult queryResult;
 
-    public PaginatedQueryList(DynamoDBMapper mapper, Class<T> clazz,
-            AmazonDynamoDB dynamo, QueryRequest queryRequest,
-            QueryResult queryResult, PaginationLoadingStrategy paginationLoadingStrategy) {
+    public PaginatedQueryList(
+            DynamoDBMapper mapper,
+            Class<T> clazz,
+            AmazonDynamoDB dynamo,
+            QueryRequest queryRequest,
+            QueryResult queryResult,
+            PaginationLoadingStrategy paginationLoadingStrategy,
+            DynamoDBMapperConfig config
+    ) {
         super(mapper, clazz, dynamo, paginationLoadingStrategy);
 
         this.queryRequest = queryRequest;
         this.queryResult  = queryResult;
+        this.config = config;
 
-        allResults.addAll(mapper.marshallIntoObjects(clazz, queryResult.getItems()));
+
+        allResults.addAll(mapper.marshalIntoObjects(
+            mapper.toParameters(queryResult.getItems(), clazz, config)));
         
         // If the results should be eagerly loaded at once
         if (paginationLoadingStrategy == PaginationLoadingStrategy.EAGER_LOADING) {
@@ -69,6 +80,7 @@ public class PaginatedQueryList<T> extends PaginatedList<T> {
     protected synchronized List<T> fetchNextPage() {
         queryRequest.setExclusiveStartKey(queryResult.getLastEvaluatedKey());
         queryResult = dynamo.query(DynamoDBMapper.applyUserAgent(queryRequest));
-        return mapper.marshallIntoObjects(clazz, queryResult.getItems());
+        return mapper.marshalIntoObjects(
+            mapper.toParameters(queryResult.getItems(), clazz, config));
     }
 }

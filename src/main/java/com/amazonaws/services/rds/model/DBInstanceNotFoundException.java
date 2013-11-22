@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * <i>DBInstanceIdentifier</i> does not refer to an existing DB Instance.
+ * <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
  * </p>
  */        
 public class DBInstanceNotFoundException extends AmazonServiceException {

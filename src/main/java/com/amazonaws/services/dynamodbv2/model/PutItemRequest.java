@@ -175,6 +175,70 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
     }
 
     /**
+     * Constructs a new PutItemRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param tableName The name of the table to contain the item.
+     * @param item A map of attribute name/value pairs, one for each
+     * attribute. Only the primary key attributes are required; you can
+     * optionally provide other attribute name-value pairs for the item.
+     * <p>If you specify any attributes that are part of an index key, then
+     * the data types for those attributes must match those of the schema in
+     * the table's attribute definition. <p>For more information about
+     * primary keys, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
+     * Key</a> in the Amazon DynamoDB Developer Guide. <p>Each element in the
+     * <i>Item</i> map is an <i>AttributeValue</i> object.
+     * @param returnValues Use <i>ReturnValues</i> if you want to get the
+     * item attributes as they appeared before they were updated with the
+     * <i>PutItem</i> request. For <i>PutItem</i>, the valid values are: <ul>
+     * <li> <p><code>NONE</code> - If <i>ReturnValues</i> is not specified,
+     * or if its value is <code>NONE</code>, then nothing is returned. (This
+     * is the default for <i>ReturnValues</i>.) </li> <li>
+     * <p><code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute
+     * name-value pair, then the content of the old item is returned. </li>
+     * </ul>
+     */
+    public PutItemRequest(String tableName, java.util.Map<String,AttributeValue> item, String returnValues) {
+        setTableName(tableName);
+        setItem(item);
+        setReturnValues(returnValues);
+    }
+
+    /**
+     * Constructs a new PutItemRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param tableName The name of the table to contain the item.
+     * @param item A map of attribute name/value pairs, one for each
+     * attribute. Only the primary key attributes are required; you can
+     * optionally provide other attribute name-value pairs for the item.
+     * <p>If you specify any attributes that are part of an index key, then
+     * the data types for those attributes must match those of the schema in
+     * the table's attribute definition. <p>For more information about
+     * primary keys, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
+     * Key</a> in the Amazon DynamoDB Developer Guide. <p>Each element in the
+     * <i>Item</i> map is an <i>AttributeValue</i> object.
+     * @param returnValues Use <i>ReturnValues</i> if you want to get the
+     * item attributes as they appeared before they were updated with the
+     * <i>PutItem</i> request. For <i>PutItem</i>, the valid values are: <ul>
+     * <li> <p><code>NONE</code> - If <i>ReturnValues</i> is not specified,
+     * or if its value is <code>NONE</code>, then nothing is returned. (This
+     * is the default for <i>ReturnValues</i>.) </li> <li>
+     * <p><code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute
+     * name-value pair, then the content of the old item is returned. </li>
+     * </ul>
+     */
+    public PutItemRequest(String tableName, java.util.Map<String,AttributeValue> item, ReturnValue returnValues) {
+        this.tableName = tableName;
+        this.item = item;
+        this.returnValues = returnValues.toString();
+    }
+
+    /**
      * The name of the table to contain the item.
      * <p>
      * <b>Constraints:</b><br/>

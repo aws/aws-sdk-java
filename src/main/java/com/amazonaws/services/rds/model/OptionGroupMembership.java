@@ -30,7 +30,7 @@ public class OptionGroupMembership implements Serializable {
     private String optionGroupName;
 
     /**
-     * The status of the DB Instance's option group membership (e.g. in-sync,
+     * The status of the DB instance's option group membership (e.g. in-sync,
      * pending, pending-maintenance, applying).
      */
     private String status;
@@ -69,10 +69,10 @@ public class OptionGroupMembership implements Serializable {
     }
 
     /**
-     * The status of the DB Instance's option group membership (e.g. in-sync,
+     * The status of the DB instance's option group membership (e.g. in-sync,
      * pending, pending-maintenance, applying).
      *
-     * @return The status of the DB Instance's option group membership (e.g. in-sync,
+     * @return The status of the DB instance's option group membership (e.g. in-sync,
      *         pending, pending-maintenance, applying).
      */
     public String getStatus() {
@@ -80,10 +80,10 @@ public class OptionGroupMembership implements Serializable {
     }
     
     /**
-     * The status of the DB Instance's option group membership (e.g. in-sync,
+     * The status of the DB instance's option group membership (e.g. in-sync,
      * pending, pending-maintenance, applying).
      *
-     * @param status The status of the DB Instance's option group membership (e.g. in-sync,
+     * @param status The status of the DB instance's option group membership (e.g. in-sync,
      *         pending, pending-maintenance, applying).
      */
     public void setStatus(String status) {
@@ -91,12 +91,12 @@ public class OptionGroupMembership implements Serializable {
     }
     
     /**
-     * The status of the DB Instance's option group membership (e.g. in-sync,
+     * The status of the DB instance's option group membership (e.g. in-sync,
      * pending, pending-maintenance, applying).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status The status of the DB Instance's option group membership (e.g. in-sync,
+     * @param status The status of the DB instance's option group membership (e.g. in-sync,
      *         pending, pending-maintenance, applying).
      *
      * @return A reference to this updated object so that method calls can be chained 

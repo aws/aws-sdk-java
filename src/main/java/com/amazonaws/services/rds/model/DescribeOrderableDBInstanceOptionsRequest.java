@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest) DescribeOrderableDBInstanceOptions operation}.
  * <p>
- * Returns a list of orderable DB Instance options for the specified engine.
+ * Returns a list of orderable DB instance options for the specified engine.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest)
@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the engine to retrieve DB Instance options for.
+     * The name of the engine to retrieve DB instance options for.
      */
     private String engine;
 
@@ -40,8 +40,8 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
     private String engineVersion;
 
     /**
-     * The DB Instance class filter value. Specify this parameter to show
-     * only the available offerings matching the specified DB Instance class.
+     * The DB instance class filter value. Specify this parameter to show
+     * only the available offerings matching the specified DB instance class.
      */
     private String dBInstanceClass;
 
@@ -75,29 +75,29 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
     private String marker;
 
     /**
-     * The name of the engine to retrieve DB Instance options for.
+     * The name of the engine to retrieve DB instance options for.
      *
-     * @return The name of the engine to retrieve DB Instance options for.
+     * @return The name of the engine to retrieve DB instance options for.
      */
     public String getEngine() {
         return engine;
     }
     
     /**
-     * The name of the engine to retrieve DB Instance options for.
+     * The name of the engine to retrieve DB instance options for.
      *
-     * @param engine The name of the engine to retrieve DB Instance options for.
+     * @param engine The name of the engine to retrieve DB instance options for.
      */
     public void setEngine(String engine) {
         this.engine = engine;
     }
     
     /**
-     * The name of the engine to retrieve DB Instance options for.
+     * The name of the engine to retrieve DB instance options for.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engine The name of the engine to retrieve DB Instance options for.
+     * @param engine The name of the engine to retrieve DB instance options for.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -147,35 +147,35 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
     }
 
     /**
-     * The DB Instance class filter value. Specify this parameter to show
-     * only the available offerings matching the specified DB Instance class.
+     * The DB instance class filter value. Specify this parameter to show
+     * only the available offerings matching the specified DB instance class.
      *
-     * @return The DB Instance class filter value. Specify this parameter to show
-     *         only the available offerings matching the specified DB Instance class.
+     * @return The DB instance class filter value. Specify this parameter to show
+     *         only the available offerings matching the specified DB instance class.
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
     }
     
     /**
-     * The DB Instance class filter value. Specify this parameter to show
-     * only the available offerings matching the specified DB Instance class.
+     * The DB instance class filter value. Specify this parameter to show
+     * only the available offerings matching the specified DB instance class.
      *
-     * @param dBInstanceClass The DB Instance class filter value. Specify this parameter to show
-     *         only the available offerings matching the specified DB Instance class.
+     * @param dBInstanceClass The DB instance class filter value. Specify this parameter to show
+     *         only the available offerings matching the specified DB instance class.
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
     }
     
     /**
-     * The DB Instance class filter value. Specify this parameter to show
-     * only the available offerings matching the specified DB Instance class.
+     * The DB instance class filter value. Specify this parameter to show
+     * only the available offerings matching the specified DB instance class.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceClass The DB Instance class filter value. Specify this parameter to show
-     *         only the available offerings matching the specified DB Instance class.
+     * @param dBInstanceClass The DB instance class filter value. Specify this parameter to show
+     *         only the available offerings matching the specified DB instance class.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

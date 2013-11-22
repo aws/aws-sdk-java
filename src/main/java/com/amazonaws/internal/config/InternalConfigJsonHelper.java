@@ -28,9 +28,10 @@ class InternalConfigJsonHelper {
     // without the use of custom [un]marshallers.  This is not the case for
     // Map, which Jackson only supports the use of strings 
     // without custom [un]marshaller.
-    private SignerJsonIndex[] serviceSigners;
-    private SignerJsonIndex[] regionSigners;
-    private SignerJsonIndex[] serviceRegionSigners;
+    private JsonIndex<SignerConfigJsonHelper, SignerConfig>[] serviceSigners;
+    private JsonIndex<SignerConfigJsonHelper, SignerConfig>[] regionSigners;
+    private JsonIndex<SignerConfigJsonHelper, SignerConfig>[] serviceRegionSigners;
+    private JsonIndex<HttpClientConfigJsonHelper, HttpClientConfig>[] httpClients;
 
     SignerConfigJsonHelper getDefaultSigner() {
         return defaultSigner;
@@ -40,27 +41,35 @@ class InternalConfigJsonHelper {
         this.defaultSigner = defaultSigner;
     }
 
-    public SignerJsonIndex[] getServiceSigners() {
+    public JsonIndex<SignerConfigJsonHelper, SignerConfig>[] getServiceSigners() {
         return serviceSigners;
     }
 
-    void setServiceSigners(SignerJsonIndex ... serviceSigners) {
+    void setServiceSigners(JsonIndex<SignerConfigJsonHelper, SignerConfig> ... serviceSigners) {
         this.serviceSigners = serviceSigners;
     }
 
-    public SignerJsonIndex[] getRegionSigners() {
+    public JsonIndex<SignerConfigJsonHelper, SignerConfig>[] getRegionSigners() {
         return regionSigners;
     }
 
-    void setRegionSigners(SignerJsonIndex ... regionSigners) {
+    void setRegionSigners(JsonIndex<SignerConfigJsonHelper, SignerConfig> ... regionSigners) {
         this.regionSigners = regionSigners;
     }
 
-    public SignerJsonIndex[] getServiceRegionSigners() {
+    public JsonIndex<SignerConfigJsonHelper, SignerConfig>[] getServiceRegionSigners() {
         return serviceRegionSigners;
     }
 
-    void setServiceRegionSigners(SignerJsonIndex ... serviceRegionSigners) {
+    void setServiceRegionSigners(JsonIndex<SignerConfigJsonHelper, SignerConfig> ... serviceRegionSigners) {
         this.serviceRegionSigners = serviceRegionSigners;
+    }
+
+    public JsonIndex<HttpClientConfigJsonHelper, HttpClientConfig>[] getHttpClients() {
+        return httpClients;
+    }
+
+    public void setHttpClients(JsonIndex<HttpClientConfigJsonHelper, HttpClientConfig> ... httpClients) {
+        this.httpClients = httpClients;
     }
 }

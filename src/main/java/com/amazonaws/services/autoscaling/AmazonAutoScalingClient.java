@@ -16,6 +16,7 @@ package com.amazonaws.services.autoscaling;
 
 import org.w3c.dom.*;
 
+import java.net.*;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -24,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -81,11 +83,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
             = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
-
-    
-    /** AWS signer for authenticating requests. */
-    private AWS4Signer signer;
-
 
     /**
      * Constructs a new client to invoke service methods on
@@ -213,16 +210,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
-        setEndpoint("autoscaling.amazonaws.com");
-
-        signer = new AWS4Signer();
-        
-        signer.setServiceName("autoscaling");
-        
-
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("autoscaling.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/autoscaling/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
+                "/com/amazonaws/services/autoscaling/request.handler2s"));
     }
 
     
@@ -260,13 +254,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeAutoScalingGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeAutoScalingGroupsRequest> request = null;
-        DescribeAutoScalingGroupsResult response = null;
+        Response<DescribeAutoScalingGroupsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeAutoScalingGroupsRequestMarshaller().marshall(describeAutoScalingGroupsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeAutoScalingGroupsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeAutoScalingGroupsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -289,6 +284,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param enableMetricsCollectionRequest Container for the necessary
      *           parameters to execute the EnableMetricsCollection service method on
      *           AmazonAutoScaling.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -325,6 +321,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *
      * @param resumeProcessesRequest Container for the necessary parameters
      *           to execute the ResumeProcesses service method on AmazonAutoScaling.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -363,6 +360,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param deleteLaunchConfigurationRequest Container for the necessary
      *           parameters to execute the DeleteLaunchConfiguration service method on
      *           AmazonAutoScaling.
+     * 
      * 
      * @throws ResourceInUseException
      *
@@ -417,13 +415,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describePoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribePoliciesRequest> request = null;
-        DescribePoliciesResult response = null;
+        Response<DescribePoliciesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribePoliciesRequestMarshaller().marshall(describePoliciesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribePoliciesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribePoliciesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -455,13 +454,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeScalingProcessTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeScalingProcessTypesRequest> request = null;
-        DescribeScalingProcessTypesResult response = null;
+        Response<DescribeScalingProcessTypesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeScalingProcessTypesRequestMarshaller().marshall(describeScalingProcessTypesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeScalingProcessTypesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeScalingProcessTypesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -481,6 +481,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param createAutoScalingGroupRequest Container for the necessary
      *           parameters to execute the CreateAutoScalingGroup service method on
      *           AmazonAutoScaling.
+     * 
      * 
      * @throws LimitExceededException
      * @throws AlreadyExistsException
@@ -546,13 +547,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeScalingActivitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeScalingActivitiesRequest> request = null;
-        DescribeScalingActivitiesResult response = null;
+        Response<DescribeScalingActivitiesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeScalingActivitiesRequestMarshaller().marshall(describeScalingActivitiesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeScalingActivitiesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeScalingActivitiesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -585,13 +587,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeNotificationConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeNotificationConfigurationsRequest> request = null;
-        DescribeNotificationConfigurationsResult response = null;
+        Response<DescribeNotificationConfigurationsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeNotificationConfigurationsRequestMarshaller().marshall(describeNotificationConfigurationsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeNotificationConfigurationsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeNotificationConfigurationsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -622,13 +625,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeTerminationPolicyTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeTerminationPolicyTypesRequest> request = null;
-        DescribeTerminationPolicyTypesResult response = null;
+        Response<DescribeTerminationPolicyTypesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeTerminationPolicyTypesRequestMarshaller().marshall(describeTerminationPolicyTypesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeTerminationPolicyTypesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeTerminationPolicyTypesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -671,13 +675,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeTagsRequest> request = null;
-        DescribeTagsResult response = null;
+        Response<DescribeTagsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeTagsRequestMarshaller().marshall(describeTagsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeTagsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeTagsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -690,6 +695,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *
      * @param executePolicyRequest Container for the necessary parameters to
      *           execute the ExecutePolicy service method on AmazonAutoScaling.
+     * 
      * 
      * @throws ScalingActivityInProgressException
      *
@@ -723,6 +729,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *
      * @param deleteTagsRequest Container for the necessary parameters to
      *           execute the DeleteTags service method on AmazonAutoScaling.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -776,13 +783,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(putScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<PutScalingPolicyRequest> request = null;
-        PutScalingPolicyResult response = null;
+        Response<PutScalingPolicyResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new PutScalingPolicyRequestMarshaller().marshall(putScalingPolicyRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new PutScalingPolicyResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new PutScalingPolicyResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -807,6 +815,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param putNotificationConfigurationRequest Container for the necessary
      *           parameters to execute the PutNotificationConfiguration service method
      *           on AmazonAutoScaling.
+     * 
      * 
      * @throws LimitExceededException
      *
@@ -841,6 +850,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param deletePolicyRequest Container for the necessary parameters to
      *           execute the DeletePolicy service method on AmazonAutoScaling.
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -873,6 +883,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param deleteNotificationConfigurationRequest Container for the
      *           necessary parameters to execute the DeleteNotificationConfiguration
      *           service method on AmazonAutoScaling.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -907,6 +918,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param deleteScheduledActionRequest Container for the necessary
      *           parameters to execute the DeleteScheduledAction service method on
      *           AmazonAutoScaling.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -945,6 +957,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *
      * @param setInstanceHealthRequest Container for the necessary parameters
      *           to execute the SetInstanceHealth service method on AmazonAutoScaling.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -997,13 +1010,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeAutoScalingNotificationTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeAutoScalingNotificationTypesRequest> request = null;
-        DescribeAutoScalingNotificationTypesResult response = null;
+        Response<DescribeAutoScalingNotificationTypesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeAutoScalingNotificationTypesRequestMarshaller().marshall(describeAutoScalingNotificationTypesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeAutoScalingNotificationTypesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeAutoScalingNotificationTypesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1028,6 +1042,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param createOrUpdateTagsRequest Container for the necessary
      *           parameters to execute the CreateOrUpdateTags service method on
      *           AmazonAutoScaling.
+     * 
      * 
      * @throws LimitExceededException
      * @throws AlreadyExistsException
@@ -1078,6 +1093,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *
      * @param suspendProcessesRequest Container for the necessary parameters
      *           to execute the SuspendProcesses service method on AmazonAutoScaling.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -1137,13 +1153,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeAutoScalingInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeAutoScalingInstancesRequest> request = null;
-        DescribeAutoScalingInstancesResult response = null;
+        Response<DescribeAutoScalingInstancesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeAutoScalingInstancesRequestMarshaller().marshall(describeAutoScalingInstancesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeAutoScalingInstancesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeAutoScalingInstancesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1171,6 +1188,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param createLaunchConfigurationRequest Container for the necessary
      *           parameters to execute the CreateLaunchConfiguration service method on
      *           AmazonAutoScaling.
+     * 
      * 
      * @throws LimitExceededException
      * @throws AlreadyExistsException
@@ -1213,6 +1231,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *           parameters to execute the DeleteAutoScalingGroup service method on
      *           AmazonAutoScaling.
      * 
+     * 
      * @throws ResourceInUseException
      * @throws ScalingActivityInProgressException
      *
@@ -1250,6 +1269,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param disableMetricsCollectionRequest Container for the necessary
      *           parameters to execute the DisableMetricsCollection service method on
      *           AmazonAutoScaling.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -1309,6 +1329,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *           parameters to execute the UpdateAutoScalingGroup service method on
      *           AmazonAutoScaling.
      * 
+     * 
      * @throws ScalingActivityInProgressException
      *
      * @throws AmazonClientException
@@ -1365,13 +1386,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeLaunchConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeLaunchConfigurationsRequest> request = null;
-        DescribeLaunchConfigurationsResult response = null;
+        Response<DescribeLaunchConfigurationsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeLaunchConfigurationsRequestMarshaller().marshall(describeLaunchConfigurationsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeLaunchConfigurationsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeLaunchConfigurationsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1403,13 +1425,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeAdjustmentTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeAdjustmentTypesRequest> request = null;
-        DescribeAdjustmentTypesResult response = null;
+        Response<DescribeAdjustmentTypesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeAdjustmentTypesRequestMarshaller().marshall(describeAdjustmentTypesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeAdjustmentTypesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeAdjustmentTypesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1443,13 +1466,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeScheduledActionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeScheduledActionsRequest> request = null;
-        DescribeScheduledActionsResult response = null;
+        Response<DescribeScheduledActionsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeScheduledActionsRequestMarshaller().marshall(describeScheduledActionsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeScheduledActionsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeScheduledActionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1476,6 +1500,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param putScheduledUpdateGroupActionRequest Container for the
      *           necessary parameters to execute the PutScheduledUpdateGroupAction
      *           service method on AmazonAutoScaling.
+     * 
      * 
      * @throws LimitExceededException
      * @throws AlreadyExistsException
@@ -1529,13 +1554,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(describeMetricCollectionTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeMetricCollectionTypesRequest> request = null;
-        DescribeMetricCollectionTypesResult response = null;
+        Response<DescribeMetricCollectionTypesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeMetricCollectionTypesRequestMarshaller().marshall(describeMetricCollectionTypesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeMetricCollectionTypesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeMetricCollectionTypesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1549,6 +1575,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param setDesiredCapacityRequest Container for the necessary
      *           parameters to execute the SetDesiredCapacity service method on
      *           AmazonAutoScaling.
+     * 
      * 
      * @throws ScalingActivityInProgressException
      *
@@ -1607,13 +1634,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         ExecutionContext executionContext = createExecutionContext(terminateInstanceInAutoScalingGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<TerminateInstanceInAutoScalingGroupRequest> request = null;
-        TerminateInstanceInAutoScalingGroupResult response = null;
+        Response<TerminateInstanceInAutoScalingGroupResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new TerminateInstanceInAutoScalingGroupRequestMarshaller().marshall(terminateInstanceInAutoScalingGroupRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new TerminateInstanceInAutoScalingGroupResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new TerminateInstanceInAutoScalingGroupResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1955,47 +1983,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         return describeMetricCollectionTypes(new DescribeMetricCollectionTypesRequest());
     }
     
-    /**
-     * Overrides the default endpoint for this client ("https://autoscaling.amazonaws.com") and explicitly provides
-     * an AWS region ID and AWS service name to use when the client calculates a signature
-     * for requests.  In almost all cases, this region ID and service name
-     * are automatically determined from the endpoint, and callers should use the simpler
-     * one-argument form of setEndpoint instead of this method.
-     * <p>
-     * <b>This method is not threadsafe. Endpoints should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit.</b>
-     * <p>
-     * Callers can pass in just the endpoint (ex: "autoscaling.amazonaws.com") or a full
-     * URL, including the protocol (ex: "https://autoscaling.amazonaws.com"). If the
-     * protocol is not specified here, the default protocol from this client's
-     * {@link ClientConfiguration} will be used, which by default is HTTPS.
-     * <p>
-     * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
-     *
-     * @param endpoint
-     *            The endpoint (ex: "autoscaling.amazonaws.com") or a full URL,
-     *            including the protocol (ex: "https://autoscaling.amazonaws.com") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     * @param serviceName
-     *            The name of the AWS service to use when signing requests.
-     * @param regionId
-     *            The ID of the region in which this service resides.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
-     */
-    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
-        setEndpoint(endpoint);
-        signer.setServiceName(serviceName);
-        signer.setRegionName(regionId);
-    }
-    
     @Override
     protected String getServiceAbbreviation() {
         return "autoscaling";
@@ -2022,7 +2009,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
             Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
             ExecutionContext executionContext)
     {
@@ -2038,12 +2025,12 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(signer);
+        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-        return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
+        return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }
         

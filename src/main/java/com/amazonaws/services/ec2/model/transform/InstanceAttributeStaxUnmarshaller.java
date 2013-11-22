@@ -90,6 +90,10 @@ public class InstanceAttributeStaxUnmarshaller implements Unmarshaller<InstanceA
                     instanceAttribute.setEbsOptimized(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("sriovNetSupport/value", targetDepth)) {
+                    instanceAttribute.setSriovNetSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceAttribute;

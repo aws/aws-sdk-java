@@ -76,6 +76,20 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest implement
     }
 
     /**
+     * Constructs a new GetQueueAttributesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param attributeNames A list of attributes to retrieve information
+     * for.
+     */
+    public GetQueueAttributesRequest(String queueUrl, java.util.List<String> attributeNames) {
+        setQueueUrl(queueUrl);
+        setAttributeNames(attributeNames);
+    }
+
+    /**
      * The URL of the SQS queue to take action on.
      *
      * @return The URL of the SQS queue to take action on.

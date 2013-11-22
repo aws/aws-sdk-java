@@ -32,7 +32,7 @@ import java.io.Serializable;
 public class Endpoint implements Serializable {
 
     /**
-     * Specifies the DNS address of the DB Instance.
+     * Specifies the DNS address of the DB instance.
      */
     private String address;
 
@@ -48,29 +48,29 @@ public class Endpoint implements Serializable {
     public Endpoint() {}
     
     /**
-     * Specifies the DNS address of the DB Instance.
+     * Specifies the DNS address of the DB instance.
      *
-     * @return Specifies the DNS address of the DB Instance.
+     * @return Specifies the DNS address of the DB instance.
      */
     public String getAddress() {
         return address;
     }
     
     /**
-     * Specifies the DNS address of the DB Instance.
+     * Specifies the DNS address of the DB instance.
      *
-     * @param address Specifies the DNS address of the DB Instance.
+     * @param address Specifies the DNS address of the DB instance.
      */
     public void setAddress(String address) {
         this.address = address;
     }
     
     /**
-     * Specifies the DNS address of the DB Instance.
+     * Specifies the DNS address of the DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param address Specifies the DNS address of the DB Instance.
+     * @param address Specifies the DNS address of the DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

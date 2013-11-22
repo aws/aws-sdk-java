@@ -21,11 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#removeTagsFromResource(RemoveTagsFromResourceRequest) RemoveTagsFromResource operation}.
  * <p>
- * Removes metadata tags from a DB Instance.
+ * Removes metadata tags from an Amazon RDS resource.
  * </p>
  * <p>
- * For an overview on tagging DB Instances, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html"> DB Instance Tags.
- * </a>
+ * For an overview on tagging an Amazon RDS resource, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html"> Tagging
+ * Amazon RDS Resources </a> .
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#removeTagsFromResource(RemoveTagsFromResourceRequest)
@@ -33,8 +33,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The DB Instance the tags will be removed from. This value is an Amazon
-     * Resource Name (ARN). For information about creating an ARN, see <a
+     * The Amazon RDS resource the tags will be removed from. This value is
+     * an Amazon Resource Name (ARN). For information about creating an ARN,
+     * see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.
      */
@@ -46,13 +47,15 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest imple
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> tagKeys;
 
     /**
-     * The DB Instance the tags will be removed from. This value is an Amazon
-     * Resource Name (ARN). For information about creating an ARN, see <a
+     * The Amazon RDS resource the tags will be removed from. This value is
+     * an Amazon Resource Name (ARN). For information about creating an ARN,
+     * see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.
      *
-     * @return The DB Instance the tags will be removed from. This value is an Amazon
-     *         Resource Name (ARN). For information about creating an ARN, see <a
+     * @return The Amazon RDS resource the tags will be removed from. This value is
+     *         an Amazon Resource Name (ARN). For information about creating an ARN,
+     *         see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      *         Constructing an RDS Amazon Resource Name (ARN)</a>.
      */
@@ -61,13 +64,15 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The DB Instance the tags will be removed from. This value is an Amazon
-     * Resource Name (ARN). For information about creating an ARN, see <a
+     * The Amazon RDS resource the tags will be removed from. This value is
+     * an Amazon Resource Name (ARN). For information about creating an ARN,
+     * see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.
      *
-     * @param resourceName The DB Instance the tags will be removed from. This value is an Amazon
-     *         Resource Name (ARN). For information about creating an ARN, see <a
+     * @param resourceName The Amazon RDS resource the tags will be removed from. This value is
+     *         an Amazon Resource Name (ARN). For information about creating an ARN,
+     *         see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      *         Constructing an RDS Amazon Resource Name (ARN)</a>.
      */
@@ -76,15 +81,17 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The DB Instance the tags will be removed from. This value is an Amazon
-     * Resource Name (ARN). For information about creating an ARN, see <a
+     * The Amazon RDS resource the tags will be removed from. This value is
+     * an Amazon Resource Name (ARN). For information about creating an ARN,
+     * see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourceName The DB Instance the tags will be removed from. This value is an Amazon
-     *         Resource Name (ARN). For information about creating an ARN, see <a
+     * @param resourceName The Amazon RDS resource the tags will be removed from. This value is
+     *         an Amazon Resource Name (ARN). For information about creating an ARN,
+     *         see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      *         Constructing an RDS Amazon Resource Name (ARN)</a>.
      *

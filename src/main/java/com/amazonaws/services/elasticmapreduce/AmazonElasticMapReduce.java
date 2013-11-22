@@ -130,6 +130,7 @@ public interface AmazonElasticMapReduce {
      *           parameters to execute the SetVisibleToAllUsers service method on
      *           AmazonElasticMapReduce.
      * 
+     * 
      * @throws InternalServerErrorException
      *
      * @throws AmazonClientException
@@ -315,6 +316,7 @@ public interface AmazonElasticMapReduce {
      *           parameters to execute the ModifyInstanceGroups service method on
      *           AmazonElasticMapReduce.
      * 
+     * 
      * @throws InternalServerErrorException
      *
      * @throws AmazonClientException
@@ -400,6 +402,7 @@ public interface AmazonElasticMapReduce {
      * @param terminateJobFlowsRequest Container for the necessary parameters
      *           to execute the TerminateJobFlows service method on
      *           AmazonElasticMapReduce.
+     * 
      * 
      * @throws InternalServerErrorException
      *
@@ -499,6 +502,7 @@ public interface AmazonElasticMapReduce {
      * @param setTerminationProtectionRequest Container for the necessary
      *           parameters to execute the SetTerminationProtection service method on
      *           AmazonElasticMapReduce.
+     * 
      * 
      * @throws InternalServerErrorException
      *
@@ -714,6 +718,7 @@ public interface AmazonElasticMapReduce {
      * target instance count for the group and the instance group ID. The
      * call will either succeed or fail atomically.
      * </p>
+     * 
      * 
      * @throws InternalServerErrorException
      *

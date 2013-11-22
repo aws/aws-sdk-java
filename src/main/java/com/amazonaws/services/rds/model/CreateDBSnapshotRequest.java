@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The identifier for the DB Snapshot. <p>Constraints: <ul> <li>Cannot be
+     * The identifier for the DB snapshot. <p>Constraints: <ul> <li>Cannot be
      * null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
@@ -38,13 +38,18 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
     private String dBSnapshotIdentifier;
 
     /**
-     * The DB Instance identifier. This is the unique key that identifies a
-     * DB Instance. This parameter isn't case sensitive. <p>Constraints: <ul>
+     * The DB instance identifier. This is the unique key that identifies a
+     * DB instance. This parameter isn't case sensitive. <p>Constraints: <ul>
      * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul>
      */
     private String dBInstanceIdentifier;
+
+    /**
+     * A list of tags.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * Default constructor for a new CreateDBSnapshotRequest object.  Callers should use the
@@ -57,14 +62,14 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dBSnapshotIdentifier The identifier for the DB Snapshot.
+     * @param dBSnapshotIdentifier The identifier for the DB snapshot.
      * <p>Constraints: <ul> <li>Cannot be null, empty, or blank</li> <li>Must
      * contain from 1 to 255 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul> <p>Example:
      * <code>my-snapshot-id</code>
-     * @param dBInstanceIdentifier The DB Instance identifier. This is the
-     * unique key that identifies a DB Instance. This parameter isn't case
+     * @param dBInstanceIdentifier The DB instance identifier. This is the
+     * unique key that identifies a DB instance. This parameter isn't case
      * sensitive. <p>Constraints: <ul> <li>Must contain from 1 to 63
      * alphanumeric characters or hyphens</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
@@ -76,13 +81,13 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The identifier for the DB Snapshot. <p>Constraints: <ul> <li>Cannot be
+     * The identifier for the DB snapshot. <p>Constraints: <ul> <li>Cannot be
      * null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      * </ul> <p>Example: <code>my-snapshot-id</code>
      *
-     * @return The identifier for the DB Snapshot. <p>Constraints: <ul> <li>Cannot be
+     * @return The identifier for the DB snapshot. <p>Constraints: <ul> <li>Cannot be
      *         null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
      *         characters or hyphens</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
@@ -93,13 +98,13 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The identifier for the DB Snapshot. <p>Constraints: <ul> <li>Cannot be
+     * The identifier for the DB snapshot. <p>Constraints: <ul> <li>Cannot be
      * null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      * </ul> <p>Example: <code>my-snapshot-id</code>
      *
-     * @param dBSnapshotIdentifier The identifier for the DB Snapshot. <p>Constraints: <ul> <li>Cannot be
+     * @param dBSnapshotIdentifier The identifier for the DB snapshot. <p>Constraints: <ul> <li>Cannot be
      *         null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
      *         characters or hyphens</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
@@ -110,7 +115,7 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The identifier for the DB Snapshot. <p>Constraints: <ul> <li>Cannot be
+     * The identifier for the DB snapshot. <p>Constraints: <ul> <li>Cannot be
      * null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
@@ -118,7 +123,7 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSnapshotIdentifier The identifier for the DB Snapshot. <p>Constraints: <ul> <li>Cannot be
+     * @param dBSnapshotIdentifier The identifier for the DB snapshot. <p>Constraints: <ul> <li>Cannot be
      *         null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
      *         characters or hyphens</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
@@ -133,14 +138,14 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The DB Instance identifier. This is the unique key that identifies a
-     * DB Instance. This parameter isn't case sensitive. <p>Constraints: <ul>
+     * The DB instance identifier. This is the unique key that identifies a
+     * DB instance. This parameter isn't case sensitive. <p>Constraints: <ul>
      * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul>
      *
-     * @return The DB Instance identifier. This is the unique key that identifies a
-     *         DB Instance. This parameter isn't case sensitive. <p>Constraints: <ul>
+     * @return The DB instance identifier. This is the unique key that identifies a
+     *         DB instance. This parameter isn't case sensitive. <p>Constraints: <ul>
      *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul>
@@ -150,14 +155,14 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The DB Instance identifier. This is the unique key that identifies a
-     * DB Instance. This parameter isn't case sensitive. <p>Constraints: <ul>
+     * The DB instance identifier. This is the unique key that identifies a
+     * DB instance. This parameter isn't case sensitive. <p>Constraints: <ul>
      * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul>
      *
-     * @param dBInstanceIdentifier The DB Instance identifier. This is the unique key that identifies a
-     *         DB Instance. This parameter isn't case sensitive. <p>Constraints: <ul>
+     * @param dBInstanceIdentifier The DB instance identifier. This is the unique key that identifies a
+     *         DB instance. This parameter isn't case sensitive. <p>Constraints: <ul>
      *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul>
@@ -167,16 +172,16 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The DB Instance identifier. This is the unique key that identifies a
-     * DB Instance. This parameter isn't case sensitive. <p>Constraints: <ul>
+     * The DB instance identifier. This is the unique key that identifies a
+     * DB instance. This parameter isn't case sensitive. <p>Constraints: <ul>
      * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceIdentifier The DB Instance identifier. This is the unique key that identifies a
-     *         DB Instance. This parameter isn't case sensitive. <p>Constraints: <ul>
+     * @param dBInstanceIdentifier The DB instance identifier. This is the unique key that identifies a
+     *         DB instance. This parameter isn't case sensitive. <p>Constraints: <ul>
      *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul>
@@ -186,6 +191,74 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
      */
     public CreateDBSnapshotRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
+        return this;
+    }
+
+    /**
+     * A list of tags.
+     *
+     * @return A list of tags.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags.
+     *
+     * @param tags A list of tags.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateDBSnapshotRequest withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateDBSnapshotRequest withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
         return this;
     }
 
@@ -202,7 +275,8 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBSnapshotIdentifier() != null) sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() + ",");
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() );
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -214,6 +288,7 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
         
         hashCode = prime * hashCode + ((getDBSnapshotIdentifier() == null) ? 0 : getDBSnapshotIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getDBInstanceIdentifier() == null) ? 0 : getDBInstanceIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -229,6 +304,8 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
         if (other.getDBSnapshotIdentifier() != null && other.getDBSnapshotIdentifier().equals(this.getDBSnapshotIdentifier()) == false) return false; 
         if (other.getDBInstanceIdentifier() == null ^ this.getDBInstanceIdentifier() == null) return false;
         if (other.getDBInstanceIdentifier() != null && other.getDBInstanceIdentifier().equals(this.getDBInstanceIdentifier()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

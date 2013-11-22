@@ -171,6 +171,7 @@ public interface AWSElasticBeanstalk {
      *           parameters to execute the DeleteConfigurationTemplate service method
      *           on AWSElasticBeanstalk.
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -262,6 +263,7 @@ public interface AWSElasticBeanstalk {
      *           parameters to execute the RequestEnvironmentInfo service method on
      *           AWSElasticBeanstalk.
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -320,6 +322,7 @@ public interface AWSElasticBeanstalk {
      *           parameters to execute the DeleteApplicationVersion service method on
      *           AWSElasticBeanstalk.
      * 
+     * 
      * @throws SourceBundleDeletionException
      *
      * @throws AmazonClientException
@@ -370,6 +373,7 @@ public interface AWSElasticBeanstalk {
      * @param deleteApplicationRequest Container for the necessary parameters
      *           to execute the DeleteApplication service method on
      *           AWSElasticBeanstalk.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -452,6 +456,7 @@ public interface AWSElasticBeanstalk {
      * @param swapEnvironmentCNAMEsRequest Container for the necessary
      *           parameters to execute the SwapEnvironmentCNAMEs service method on
      *           AWSElasticBeanstalk.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -700,6 +705,7 @@ public interface AWSElasticBeanstalk {
      * @param restartAppServerRequest Container for the necessary parameters
      *           to execute the RestartAppServer service method on AWSElasticBeanstalk.
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -730,6 +736,7 @@ public interface AWSElasticBeanstalk {
      * @param deleteEnvironmentConfigurationRequest Container for the
      *           necessary parameters to execute the DeleteEnvironmentConfiguration
      *           service method on AWSElasticBeanstalk.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -894,6 +901,7 @@ public interface AWSElasticBeanstalk {
      *           parameters to execute the RebuildEnvironment service method on
      *           AWSElasticBeanstalk.
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -981,6 +989,7 @@ public interface AWSElasticBeanstalk {
      * <p>
      * Swaps the CNAMEs of two environments.
      * </p>
+     * 
      * 
      *
      * @throws AmazonClientException

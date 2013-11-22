@@ -22,12 +22,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBInstance(DeleteDBInstanceRequest) DeleteDBInstance operation}.
  * <p>
  * The DeleteDBInstance action deletes a previously provisioned DB instance. A successful response from the web service indicates the request was
- * received correctly. When you delete a DB instance, all automated backups for that instance are deleted and cannot be recovered. Manual DB Snapshots of
+ * received correctly. When you delete a DB instance, all automated backups for that instance are deleted and cannot be recovered. Manual DB snapshots of
  * the DB instance to be deleted are not deleted.
  * </p>
  * <p>
- * If a final DBSnapshot is requested the status of the RDS instance will be "deleting" until the DBSnapshot is created. DescribeDBInstance is used to
- * monitor the status of this operation. This cannot be canceled or reverted once submitted.
+ * If a final DB snapshot is requested the status of the RDS instance will be "deleting" until the DB snapshot is created. The API action
+ * <code>DescribeDBInstance</code> is used to monitor the status of this operation. The action cannot be canceled or reverted once submitted.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBInstance(DeleteDBInstanceRequest)
@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The DB Instance identifier for the DB Instance to be deleted. This
+     * The DB instance identifier for the DB instance to be deleted. This
      * parameter isn't case sensitive. <p>Constraints: <ul> <li>Must contain
      * from 1 to 63 alphanumeric characters or hyphens</li> <li>First
      * character must be a letter</li> <li>Cannot end with a hyphen or
@@ -44,12 +44,14 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
     private String dBInstanceIdentifier;
 
     /**
-     * Determines whether a final DB Snapshot is created before the DB
-     * Instance is deleted. If <code>true</code> is specified, no DBSnapshot
-     * is created. If false is specified, a DB Snapshot is created before the
-     * DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
-     * must be specified if SkipFinalSnapshot is <code>false</code>.</note>
-     * <p>Default: <code>false</code>
+     * Determines whether a final DB snapshot is created before the DB
+     * instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     * is created. If <code>false</code> is specified, a DB snapshot is
+     * created before the DB instance is deleted. <p>Specify
+     * <code>true</code> when deleting a read replica. <note>The
+     * FinalDBSnapshotIdentifier parameter must be specified if
+     * SkipFinalSnapshot is <code>false</code>.</note> <p>Default:
+     * <code>false</code>
      */
     private Boolean skipFinalSnapshot;
 
@@ -60,7 +62,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
      * results in an error. </note> <p>Constraints: <ul> <li>Must be 1 to 255
      * alphanumeric characters</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * <li>Cannot be specified when deleting a read replica.</li> </ul>
      */
     private String finalDBSnapshotIdentifier;
 
@@ -75,8 +77,8 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dBInstanceIdentifier The DB Instance identifier for the DB
-     * Instance to be deleted. This parameter isn't case sensitive.
+     * @param dBInstanceIdentifier The DB instance identifier for the DB
+     * instance to be deleted. This parameter isn't case sensitive.
      * <p>Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
@@ -87,13 +89,13 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The DB Instance identifier for the DB Instance to be deleted. This
+     * The DB instance identifier for the DB instance to be deleted. This
      * parameter isn't case sensitive. <p>Constraints: <ul> <li>Must contain
      * from 1 to 63 alphanumeric characters or hyphens</li> <li>First
      * character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
      *
-     * @return The DB Instance identifier for the DB Instance to be deleted. This
+     * @return The DB instance identifier for the DB instance to be deleted. This
      *         parameter isn't case sensitive. <p>Constraints: <ul> <li>Must contain
      *         from 1 to 63 alphanumeric characters or hyphens</li> <li>First
      *         character must be a letter</li> <li>Cannot end with a hyphen or
@@ -104,13 +106,13 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The DB Instance identifier for the DB Instance to be deleted. This
+     * The DB instance identifier for the DB instance to be deleted. This
      * parameter isn't case sensitive. <p>Constraints: <ul> <li>Must contain
      * from 1 to 63 alphanumeric characters or hyphens</li> <li>First
      * character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
      *
-     * @param dBInstanceIdentifier The DB Instance identifier for the DB Instance to be deleted. This
+     * @param dBInstanceIdentifier The DB instance identifier for the DB instance to be deleted. This
      *         parameter isn't case sensitive. <p>Constraints: <ul> <li>Must contain
      *         from 1 to 63 alphanumeric characters or hyphens</li> <li>First
      *         character must be a letter</li> <li>Cannot end with a hyphen or
@@ -121,7 +123,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The DB Instance identifier for the DB Instance to be deleted. This
+     * The DB instance identifier for the DB instance to be deleted. This
      * parameter isn't case sensitive. <p>Constraints: <ul> <li>Must contain
      * from 1 to 63 alphanumeric characters or hyphens</li> <li>First
      * character must be a letter</li> <li>Cannot end with a hyphen or
@@ -129,7 +131,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceIdentifier The DB Instance identifier for the DB Instance to be deleted. This
+     * @param dBInstanceIdentifier The DB instance identifier for the DB instance to be deleted. This
      *         parameter isn't case sensitive. <p>Constraints: <ul> <li>Must contain
      *         from 1 to 63 alphanumeric characters or hyphens</li> <li>First
      *         character must be a letter</li> <li>Cannot end with a hyphen or
@@ -144,59 +146,71 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Determines whether a final DB Snapshot is created before the DB
-     * Instance is deleted. If <code>true</code> is specified, no DBSnapshot
-     * is created. If false is specified, a DB Snapshot is created before the
-     * DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
-     * must be specified if SkipFinalSnapshot is <code>false</code>.</note>
-     * <p>Default: <code>false</code>
+     * Determines whether a final DB snapshot is created before the DB
+     * instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     * is created. If <code>false</code> is specified, a DB snapshot is
+     * created before the DB instance is deleted. <p>Specify
+     * <code>true</code> when deleting a read replica. <note>The
+     * FinalDBSnapshotIdentifier parameter must be specified if
+     * SkipFinalSnapshot is <code>false</code>.</note> <p>Default:
+     * <code>false</code>
      *
-     * @return Determines whether a final DB Snapshot is created before the DB
-     *         Instance is deleted. If <code>true</code> is specified, no DBSnapshot
-     *         is created. If false is specified, a DB Snapshot is created before the
-     *         DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
-     *         must be specified if SkipFinalSnapshot is <code>false</code>.</note>
-     *         <p>Default: <code>false</code>
+     * @return Determines whether a final DB snapshot is created before the DB
+     *         instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     *         is created. If <code>false</code> is specified, a DB snapshot is
+     *         created before the DB instance is deleted. <p>Specify
+     *         <code>true</code> when deleting a read replica. <note>The
+     *         FinalDBSnapshotIdentifier parameter must be specified if
+     *         SkipFinalSnapshot is <code>false</code>.</note> <p>Default:
+     *         <code>false</code>
      */
     public Boolean isSkipFinalSnapshot() {
         return skipFinalSnapshot;
     }
     
     /**
-     * Determines whether a final DB Snapshot is created before the DB
-     * Instance is deleted. If <code>true</code> is specified, no DBSnapshot
-     * is created. If false is specified, a DB Snapshot is created before the
-     * DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
-     * must be specified if SkipFinalSnapshot is <code>false</code>.</note>
-     * <p>Default: <code>false</code>
+     * Determines whether a final DB snapshot is created before the DB
+     * instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     * is created. If <code>false</code> is specified, a DB snapshot is
+     * created before the DB instance is deleted. <p>Specify
+     * <code>true</code> when deleting a read replica. <note>The
+     * FinalDBSnapshotIdentifier parameter must be specified if
+     * SkipFinalSnapshot is <code>false</code>.</note> <p>Default:
+     * <code>false</code>
      *
-     * @param skipFinalSnapshot Determines whether a final DB Snapshot is created before the DB
-     *         Instance is deleted. If <code>true</code> is specified, no DBSnapshot
-     *         is created. If false is specified, a DB Snapshot is created before the
-     *         DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
-     *         must be specified if SkipFinalSnapshot is <code>false</code>.</note>
-     *         <p>Default: <code>false</code>
+     * @param skipFinalSnapshot Determines whether a final DB snapshot is created before the DB
+     *         instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     *         is created. If <code>false</code> is specified, a DB snapshot is
+     *         created before the DB instance is deleted. <p>Specify
+     *         <code>true</code> when deleting a read replica. <note>The
+     *         FinalDBSnapshotIdentifier parameter must be specified if
+     *         SkipFinalSnapshot is <code>false</code>.</note> <p>Default:
+     *         <code>false</code>
      */
     public void setSkipFinalSnapshot(Boolean skipFinalSnapshot) {
         this.skipFinalSnapshot = skipFinalSnapshot;
     }
     
     /**
-     * Determines whether a final DB Snapshot is created before the DB
-     * Instance is deleted. If <code>true</code> is specified, no DBSnapshot
-     * is created. If false is specified, a DB Snapshot is created before the
-     * DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
-     * must be specified if SkipFinalSnapshot is <code>false</code>.</note>
-     * <p>Default: <code>false</code>
+     * Determines whether a final DB snapshot is created before the DB
+     * instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     * is created. If <code>false</code> is specified, a DB snapshot is
+     * created before the DB instance is deleted. <p>Specify
+     * <code>true</code> when deleting a read replica. <note>The
+     * FinalDBSnapshotIdentifier parameter must be specified if
+     * SkipFinalSnapshot is <code>false</code>.</note> <p>Default:
+     * <code>false</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param skipFinalSnapshot Determines whether a final DB Snapshot is created before the DB
-     *         Instance is deleted. If <code>true</code> is specified, no DBSnapshot
-     *         is created. If false is specified, a DB Snapshot is created before the
-     *         DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
-     *         must be specified if SkipFinalSnapshot is <code>false</code>.</note>
-     *         <p>Default: <code>false</code>
+     * @param skipFinalSnapshot Determines whether a final DB snapshot is created before the DB
+     *         instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     *         is created. If <code>false</code> is specified, a DB snapshot is
+     *         created before the DB instance is deleted. <p>Specify
+     *         <code>true</code> when deleting a read replica. <note>The
+     *         FinalDBSnapshotIdentifier parameter must be specified if
+     *         SkipFinalSnapshot is <code>false</code>.</note> <p>Default:
+     *         <code>false</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -207,19 +221,23 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Determines whether a final DB Snapshot is created before the DB
-     * Instance is deleted. If <code>true</code> is specified, no DBSnapshot
-     * is created. If false is specified, a DB Snapshot is created before the
-     * DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
-     * must be specified if SkipFinalSnapshot is <code>false</code>.</note>
-     * <p>Default: <code>false</code>
+     * Determines whether a final DB snapshot is created before the DB
+     * instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     * is created. If <code>false</code> is specified, a DB snapshot is
+     * created before the DB instance is deleted. <p>Specify
+     * <code>true</code> when deleting a read replica. <note>The
+     * FinalDBSnapshotIdentifier parameter must be specified if
+     * SkipFinalSnapshot is <code>false</code>.</note> <p>Default:
+     * <code>false</code>
      *
-     * @return Determines whether a final DB Snapshot is created before the DB
-     *         Instance is deleted. If <code>true</code> is specified, no DBSnapshot
-     *         is created. If false is specified, a DB Snapshot is created before the
-     *         DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
-     *         must be specified if SkipFinalSnapshot is <code>false</code>.</note>
-     *         <p>Default: <code>false</code>
+     * @return Determines whether a final DB snapshot is created before the DB
+     *         instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     *         is created. If <code>false</code> is specified, a DB snapshot is
+     *         created before the DB instance is deleted. <p>Specify
+     *         <code>true</code> when deleting a read replica. <note>The
+     *         FinalDBSnapshotIdentifier parameter must be specified if
+     *         SkipFinalSnapshot is <code>false</code>.</note> <p>Default:
+     *         <code>false</code>
      */
     public Boolean getSkipFinalSnapshot() {
         return skipFinalSnapshot;
@@ -232,7 +250,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
      * results in an error. </note> <p>Constraints: <ul> <li>Must be 1 to 255
      * alphanumeric characters</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * <li>Cannot be specified when deleting a read replica.</li> </ul>
      *
      * @return The DBSnapshotIdentifier of the new DBSnapshot created when
      *         SkipFinalSnapshot is set to <code>false</code>. <note> Specifying this
@@ -240,7 +258,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         results in an error. </note> <p>Constraints: <ul> <li>Must be 1 to 255
      *         alphanumeric characters</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     *         </ul>
+     *         <li>Cannot be specified when deleting a read replica.</li> </ul>
      */
     public String getFinalDBSnapshotIdentifier() {
         return finalDBSnapshotIdentifier;
@@ -253,7 +271,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
      * results in an error. </note> <p>Constraints: <ul> <li>Must be 1 to 255
      * alphanumeric characters</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * <li>Cannot be specified when deleting a read replica.</li> </ul>
      *
      * @param finalDBSnapshotIdentifier The DBSnapshotIdentifier of the new DBSnapshot created when
      *         SkipFinalSnapshot is set to <code>false</code>. <note> Specifying this
@@ -261,7 +279,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         results in an error. </note> <p>Constraints: <ul> <li>Must be 1 to 255
      *         alphanumeric characters</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     *         </ul>
+     *         <li>Cannot be specified when deleting a read replica.</li> </ul>
      */
     public void setFinalDBSnapshotIdentifier(String finalDBSnapshotIdentifier) {
         this.finalDBSnapshotIdentifier = finalDBSnapshotIdentifier;
@@ -274,7 +292,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
      * results in an error. </note> <p>Constraints: <ul> <li>Must be 1 to 255
      * alphanumeric characters</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * <li>Cannot be specified when deleting a read replica.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -284,7 +302,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         results in an error. </note> <p>Constraints: <ul> <li>Must be 1 to 255
      *         alphanumeric characters</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     *         </ul>
+     *         <li>Cannot be specified when deleting a read replica.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

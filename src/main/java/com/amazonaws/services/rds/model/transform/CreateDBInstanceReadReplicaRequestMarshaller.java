@@ -38,7 +38,7 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements Marshaller<
 
         Request<CreateDBInstanceReadReplicaRequest> request = new DefaultRequest<CreateDBInstanceReadReplicaRequest>(createDBInstanceReadReplicaRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBInstanceReadReplica");
-        request.addParameter("Version", "2013-05-15");
+        request.addParameter("Version", "2013-09-09");
 
         if (createDBInstanceReadReplicaRequest.getDBInstanceIdentifier() != null) {
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDBInstanceIdentifier()));
@@ -66,6 +66,26 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements Marshaller<
         }
         if (createDBInstanceReadReplicaRequest.isPubliclyAccessible() != null) {
             request.addParameter("PubliclyAccessible", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.isPubliclyAccessible()));
+        }
+
+        java.util.List<Tag> tagsList = createDBInstanceReadReplicaRequest.getTags();
+        int tagsListIndex = 1;
+
+        for (Tag tagsListValue : tagsList) {
+            Tag tagMember = tagsListValue;
+            if (tagMember != null) {
+                if (tagMember.getKey() != null) {
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagMember.getKey()));
+                }
+                if (tagMember.getValue() != null) {
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagMember.getValue()));
+                }
+            }
+
+            tagsListIndex++;
+        }
+        if (createDBInstanceReadReplicaRequest.getDBSubnetGroupName() != null) {
+            request.addParameter("DBSubnetGroupName", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDBSubnetGroupName()));
         }
 
 

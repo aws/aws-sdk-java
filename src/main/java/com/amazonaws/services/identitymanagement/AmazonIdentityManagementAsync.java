@@ -84,6 +84,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteAccountAlias service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -116,6 +117,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteAccountAlias service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -143,6 +145,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         ListGroups service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -173,6 +176,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         ListGroups service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -204,6 +208,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteAccessKey service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -238,6 +243,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteAccessKey service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -268,6 +274,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteVirtualMFADevice service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -301,6 +308,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteVirtualMFADevice service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -325,6 +333,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteUserPolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -352,6 +361,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteUserPolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -394,6 +404,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         PutUserPolicy service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -439,6 +450,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         PutUserPolicy service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -469,6 +481,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListServerCertificates service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -502,6 +515,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListServerCertificates service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -530,6 +544,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListSAMLProviders service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -561,6 +576,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListSAMLProviders service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -588,6 +604,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         GetUserPolicy service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -618,6 +635,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         GetUserPolicy service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -656,6 +674,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UpdateServerCertificate service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -697,6 +716,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UpdateServerCertificate service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -732,6 +752,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         UpdateUser service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -770,6 +791,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         UpdateUser service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -812,6 +834,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         PutRolePolicy service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -857,6 +880,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         PutRolePolicy service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -897,6 +921,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UpdateSigningCertificate service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -940,6 +965,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UpdateSigningCertificate service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -966,6 +992,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteGroupPolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -995,6 +1022,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteGroupPolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1023,6 +1051,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         ListUsers service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1054,6 +1083,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         ListUsers service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1090,6 +1120,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         UpdateGroup service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1129,6 +1160,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         UpdateGroup service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1159,6 +1191,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         CreateUser service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1192,6 +1225,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         CreateUser service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1226,6 +1260,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteSAMLProvider service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1263,6 +1298,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteSAMLProvider service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1289,6 +1325,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         EnableMFADevice service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1318,6 +1355,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         EnableMFADevice service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1343,6 +1381,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteAccountPasswordPolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1371,6 +1410,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteAccountPasswordPolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1397,6 +1437,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         GetLoginProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1426,6 +1467,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         GetLoginProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1454,6 +1496,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UpdateSAMLProvider service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1485,6 +1528,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UpdateSAMLProvider service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1528,6 +1572,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UploadServerCertificate service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1574,6 +1619,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UploadServerCertificate service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1603,6 +1649,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         CreateGroup service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1635,6 +1682,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         CreateGroup service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1664,6 +1712,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         CreateAccountAlias service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1696,6 +1745,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         CreateAccountAlias service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1720,6 +1770,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         DeleteUser service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1747,6 +1798,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         DeleteUser service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1773,6 +1825,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeactivateMFADevice service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1802,6 +1855,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeactivateMFADevice service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1827,6 +1881,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         RemoveUserFromGroup service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1855,6 +1910,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         RemoveUserFromGroup service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1887,6 +1943,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         DeleteRole service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1922,6 +1979,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         DeleteRole service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1959,6 +2017,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteServerCertificate service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1999,6 +2058,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteServerCertificate service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2046,6 +2106,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         CreateAccessKey service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2096,6 +2157,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         CreateAccessKey service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2124,6 +2186,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the GetUser
      *         service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2155,6 +2218,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the GetUser
      *         service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2179,6 +2243,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ResyncMFADevice service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2206,6 +2271,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ResyncMFADevice service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2237,6 +2303,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListMFADevices service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2271,6 +2338,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListMFADevices service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2318,6 +2386,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         CreateVirtualMFADevice service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2368,6 +2437,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         CreateVirtualMFADevice service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2401,6 +2471,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListInstanceProfiles service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2437,6 +2508,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListInstanceProfiles service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2476,6 +2548,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UpdateAccessKey service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2518,6 +2591,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UpdateAccessKey service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2542,6 +2616,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         AddUserToGroup service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2569,6 +2644,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         AddUserToGroup service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2594,6 +2670,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the GetGroup
      *         service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2622,6 +2699,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the GetGroup
      *         service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2655,6 +2733,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListAccountAliases service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2691,6 +2770,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListAccountAliases service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2715,6 +2795,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         DeleteGroup service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2742,6 +2823,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         DeleteGroup service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2776,6 +2858,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the GetRole
      *         service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2813,6 +2896,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the GetRole
      *         service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2842,6 +2926,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListRolePolicies service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2874,6 +2959,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListRolePolicies service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2912,6 +2998,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListSigningCertificates service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2953,6 +3040,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListSigningCertificates service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2997,6 +3085,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UploadSigningCertificate service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3044,6 +3133,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UploadSigningCertificate service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3081,6 +3171,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteInstanceProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3121,6 +3212,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteInstanceProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3149,6 +3241,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         GetSAMLProvider service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3180,6 +3273,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         GetSAMLProvider service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3217,6 +3311,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         CreateRole service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3257,6 +3352,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         CreateRole service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3282,6 +3378,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UpdateLoginProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3310,6 +3407,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UpdateLoginProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3344,6 +3442,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteLoginProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3381,6 +3480,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteLoginProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3410,6 +3510,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ChangePassword service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3442,6 +3543,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ChangePassword service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3467,6 +3569,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         GetServerCertificate service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3495,6 +3598,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         GetServerCertificate service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3538,6 +3642,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         PutGroupPolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3584,6 +3689,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         PutGroupPolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3617,6 +3723,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteSigningCertificate service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3653,6 +3760,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteSigningCertificate service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3682,6 +3790,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListUserPolicies service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3714,6 +3823,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListUserPolicies service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3755,6 +3865,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListAccessKeys service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3799,6 +3910,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListAccessKeys service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3828,6 +3940,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListGroupsForUser service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3860,6 +3973,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListGroupsForUser service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3891,6 +4005,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         AddRoleToInstanceProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3925,6 +4040,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         AddRoleToInstanceProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3953,6 +4069,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         GetGroupPolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3984,6 +4101,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         GetGroupPolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4016,6 +4134,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         GetRolePolicy service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4051,6 +4170,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         GetRolePolicy service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4084,6 +4204,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListInstanceProfilesForRole service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4120,6 +4241,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListInstanceProfilesForRole service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4153,6 +4275,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListVirtualMFADevices service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4189,6 +4312,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListVirtualMFADevices service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4213,6 +4337,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteRolePolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4240,6 +4365,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         DeleteRolePolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4275,6 +4401,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         CreateInstanceProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4313,6 +4440,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         CreateInstanceProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4343,6 +4471,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListGroupPolicies service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4376,6 +4505,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         ListGroupPolicies service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4405,6 +4535,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         CreateLoginProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4437,6 +4568,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         CreateLoginProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4477,6 +4609,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         RemoveRoleFromInstanceProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4520,6 +4653,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         RemoveRoleFromInstanceProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4548,6 +4682,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UpdateAccountPasswordPolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4579,6 +4714,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UpdateAccountPasswordPolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4608,6 +4744,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UpdateAssumeRolePolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4640,6 +4777,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         UpdateAssumeRolePolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4672,6 +4810,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         GetInstanceProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4707,6 +4846,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         GetInstanceProfile service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4744,6 +4884,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         ListRoles service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4784,6 +4925,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * 
      * @return A Java Future object containing the response from the
      *         ListRoles service method, as returned by AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4816,6 +4958,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         GetAccountSummary service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4851,6 +4994,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         GetAccountSummary service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4903,6 +5047,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         CreateSAMLProvider service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4958,6 +5103,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         CreateSAMLProvider service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4986,6 +5132,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         GetAccountPasswordPolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -5017,6 +5164,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future object containing the response from the
      *         GetAccountPasswordPolicy service method, as returned by
      *         AmazonIdentityManagement.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

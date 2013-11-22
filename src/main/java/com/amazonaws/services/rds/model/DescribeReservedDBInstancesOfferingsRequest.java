@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest) DescribeReservedDBInstancesOfferings operation}.
  * <p>
- * Lists available reserved DB Instance offerings.
+ * Lists available reserved DB instance offerings.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest)
@@ -37,8 +37,8 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
     private String reservedDBInstancesOfferingId;
 
     /**
-     * The DB Instance class filter value. Specify this parameter to show
-     * only the available offerings matching the specified DB Instance class.
+     * The DB instance class filter value. Specify this parameter to show
+     * only the available offerings matching the specified DB instance class.
      */
     private String dBInstanceClass;
 
@@ -143,35 +143,35 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
     }
 
     /**
-     * The DB Instance class filter value. Specify this parameter to show
-     * only the available offerings matching the specified DB Instance class.
+     * The DB instance class filter value. Specify this parameter to show
+     * only the available offerings matching the specified DB instance class.
      *
-     * @return The DB Instance class filter value. Specify this parameter to show
-     *         only the available offerings matching the specified DB Instance class.
+     * @return The DB instance class filter value. Specify this parameter to show
+     *         only the available offerings matching the specified DB instance class.
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
     }
     
     /**
-     * The DB Instance class filter value. Specify this parameter to show
-     * only the available offerings matching the specified DB Instance class.
+     * The DB instance class filter value. Specify this parameter to show
+     * only the available offerings matching the specified DB instance class.
      *
-     * @param dBInstanceClass The DB Instance class filter value. Specify this parameter to show
-     *         only the available offerings matching the specified DB Instance class.
+     * @param dBInstanceClass The DB instance class filter value. Specify this parameter to show
+     *         only the available offerings matching the specified DB instance class.
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
     }
     
     /**
-     * The DB Instance class filter value. Specify this parameter to show
-     * only the available offerings matching the specified DB Instance class.
+     * The DB instance class filter value. Specify this parameter to show
+     * only the available offerings matching the specified DB instance class.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceClass The DB Instance class filter value. Specify this parameter to show
-     *         only the available offerings matching the specified DB Instance class.
+     * @param dBInstanceClass The DB instance class filter value. Specify this parameter to show
+     *         only the available offerings matching the specified DB instance class.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

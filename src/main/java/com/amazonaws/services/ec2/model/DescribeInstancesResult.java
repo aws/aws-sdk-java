@@ -29,6 +29,8 @@ public class DescribeInstancesResult implements Serializable {
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Reservation> reservations;
 
+    private String nextToken;
+
     /**
      * The list of reservations containing the describes instances.
      *
@@ -98,6 +100,39 @@ public class DescribeInstancesResult implements Serializable {
     }
 
     /**
+     * Returns the value of the NextToken property for this object.
+     *
+     * @return The value of the NextToken property for this object.
+     */
+    public String getNextToken() {
+        return nextToken;
+    }
+    
+    /**
+     * Sets the value of the NextToken property for this object.
+     *
+     * @param nextToken The new value for the NextToken property for this object.
+     */
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+    
+    /**
+     * Sets the value of the NextToken property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param nextToken The new value for the NextToken property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DescribeInstancesResult withNextToken(String nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -109,7 +144,8 @@ public class DescribeInstancesResult implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getReservations() != null) sb.append("Reservations: " + getReservations() );
+        if (getReservations() != null) sb.append("Reservations: " + getReservations() + ",");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }
@@ -120,6 +156,7 @@ public class DescribeInstancesResult implements Serializable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getReservations() == null) ? 0 : getReservations().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
         return hashCode;
     }
     
@@ -133,6 +170,8 @@ public class DescribeInstancesResult implements Serializable {
         
         if (other.getReservations() == null ^ this.getReservations() == null) return false;
         if (other.getReservations() != null && other.getReservations().equals(this.getReservations()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
         return true;
     }
     

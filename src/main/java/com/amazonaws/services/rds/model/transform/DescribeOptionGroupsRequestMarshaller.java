@@ -38,10 +38,35 @@ public class DescribeOptionGroupsRequestMarshaller implements Marshaller<Request
 
         Request<DescribeOptionGroupsRequest> request = new DefaultRequest<DescribeOptionGroupsRequest>(describeOptionGroupsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeOptionGroups");
-        request.addParameter("Version", "2013-05-15");
+        request.addParameter("Version", "2013-09-09");
 
         if (describeOptionGroupsRequest.getOptionGroupName() != null) {
             request.addParameter("OptionGroupName", StringUtils.fromString(describeOptionGroupsRequest.getOptionGroupName()));
+        }
+
+        java.util.List<Filter> filtersList = describeOptionGroupsRequest.getFilters();
+        int filtersListIndex = 1;
+
+        for (Filter filtersListValue : filtersList) {
+            Filter filterMember = filtersListValue;
+            if (filterMember != null) {
+                if (filterMember.getFilterName() != null) {
+                    request.addParameter("Filters.Filter." + filtersListIndex + ".FilterName", StringUtils.fromString(filterMember.getFilterName()));
+                }
+
+                java.util.List<String> filterValueList = filterMember.getFilterValue();
+                int filterValueListIndex = 1;
+
+                for (String filterValueListValue : filterValueList) {
+                    if (filterValueListValue != null) {
+                        request.addParameter("Filters.Filter." + filtersListIndex + ".FilterValue.Value." + filterValueListIndex, StringUtils.fromString(filterValueListValue));
+                    }
+
+                    filterValueListIndex++;
+                }
+            }
+
+            filtersListIndex++;
         }
         if (describeOptionGroupsRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeOptionGroupsRequest.getMarker()));

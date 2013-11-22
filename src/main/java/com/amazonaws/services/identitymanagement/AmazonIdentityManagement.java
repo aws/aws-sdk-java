@@ -134,6 +134,7 @@ public interface AmazonIdentityManagement {
      *           parameters to execute the DeleteAccountAlias service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -191,6 +192,7 @@ public interface AmazonIdentityManagement {
      *           to execute the DeleteAccessKey service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -219,6 +221,7 @@ public interface AmazonIdentityManagement {
      *           parameters to execute the DeleteVirtualMFADevice service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws NoSuchEntityException
      * @throws DeleteConflictException
      * @throws LimitExceededException
@@ -242,6 +245,7 @@ public interface AmazonIdentityManagement {
      * @param deleteUserPolicyRequest Container for the necessary parameters
      *           to execute the DeleteUserPolicy service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -283,6 +287,7 @@ public interface AmazonIdentityManagement {
      *
      * @param putUserPolicyRequest Container for the necessary parameters to
      *           execute the PutUserPolicy service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws MalformedPolicyDocumentException
      * @throws NoSuchEntityException
@@ -405,6 +410,7 @@ public interface AmazonIdentityManagement {
      *           parameters to execute the UpdateServerCertificate service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      * @throws EntityAlreadyExistsException
@@ -439,6 +445,7 @@ public interface AmazonIdentityManagement {
      *
      * @param updateUserRequest Container for the necessary parameters to
      *           execute the UpdateUser service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws EntityTemporarilyUnmodifiableException
      * @throws NoSuchEntityException
@@ -483,6 +490,7 @@ public interface AmazonIdentityManagement {
      * @param putRolePolicyRequest Container for the necessary parameters to
      *           execute the PutRolePolicy service method on AmazonIdentityManagement.
      * 
+     * 
      * @throws MalformedPolicyDocumentException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -522,6 +530,7 @@ public interface AmazonIdentityManagement {
      *           parameters to execute the UpdateSigningCertificate service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -545,6 +554,7 @@ public interface AmazonIdentityManagement {
      * @param deleteGroupPolicyRequest Container for the necessary parameters
      *           to execute the DeleteGroupPolicy service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -608,6 +618,7 @@ public interface AmazonIdentityManagement {
      *
      * @param updateGroupRequest Container for the necessary parameters to
      *           execute the UpdateGroup service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -675,6 +686,7 @@ public interface AmazonIdentityManagement {
      *           parameters to execute the DeleteSAMLProvider service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws InvalidInputException
      *
      * @throws AmazonClientException
@@ -698,6 +710,7 @@ public interface AmazonIdentityManagement {
      * @param enableMFADeviceRequest Container for the necessary parameters
      *           to execute the EnableMFADevice service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws EntityTemporarilyUnmodifiableException
      * @throws NoSuchEntityException
@@ -724,6 +737,7 @@ public interface AmazonIdentityManagement {
      * @param deleteAccountPasswordPolicyRequest Container for the necessary
      *           parameters to execute the DeleteAccountPasswordPolicy service method
      *           on AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      *
@@ -886,6 +900,7 @@ public interface AmazonIdentityManagement {
      *           parameters to execute the CreateAccountAlias service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws LimitExceededException
      * @throws EntityAlreadyExistsException
      *
@@ -908,6 +923,7 @@ public interface AmazonIdentityManagement {
      *
      * @param deleteUserRequest Container for the necessary parameters to
      *           execute the DeleteUser service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws DeleteConflictException
@@ -934,6 +950,7 @@ public interface AmazonIdentityManagement {
      *           parameters to execute the DeactivateMFADevice service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws EntityTemporarilyUnmodifiableException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -957,6 +974,7 @@ public interface AmazonIdentityManagement {
      * @param removeUserFromGroupRequest Container for the necessary
      *           parameters to execute the RemoveUserFromGroup service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -988,6 +1006,7 @@ public interface AmazonIdentityManagement {
      *
      * @param deleteRoleRequest Container for the necessary parameters to
      *           execute the DeleteRole service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws DeleteConflictException
@@ -1024,6 +1043,7 @@ public interface AmazonIdentityManagement {
      * @param deleteServerCertificateRequest Container for the necessary
      *           parameters to execute the DeleteServerCertificate service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws DeleteConflictException
@@ -1126,6 +1146,7 @@ public interface AmazonIdentityManagement {
      * @param resyncMFADeviceRequest Container for the necessary parameters
      *           to execute the ResyncMFADevice service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws InvalidAuthenticationCodeException
@@ -1277,6 +1298,7 @@ public interface AmazonIdentityManagement {
      *           to execute the UpdateAccessKey service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -1298,6 +1320,7 @@ public interface AmazonIdentityManagement {
      *
      * @param addUserToGroupRequest Container for the necessary parameters to
      *           execute the AddUserToGroup service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -1379,6 +1402,7 @@ public interface AmazonIdentityManagement {
      *
      * @param deleteGroupRequest Container for the necessary parameters to
      *           execute the DeleteGroup service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws DeleteConflictException
@@ -1568,6 +1592,7 @@ public interface AmazonIdentityManagement {
      *           parameters to execute the DeleteInstanceProfile service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws NoSuchEntityException
      * @throws DeleteConflictException
      * @throws LimitExceededException
@@ -1662,6 +1687,7 @@ public interface AmazonIdentityManagement {
      *           parameters to execute the UpdateLoginProfile service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws PasswordPolicyViolationException
      * @throws EntityTemporarilyUnmodifiableException
      * @throws NoSuchEntityException
@@ -1696,6 +1722,7 @@ public interface AmazonIdentityManagement {
      *           parameters to execute the DeleteLoginProfile service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws EntityTemporarilyUnmodifiableException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -1723,6 +1750,7 @@ public interface AmazonIdentityManagement {
      *
      * @param changePasswordRequest Container for the necessary parameters to
      *           execute the ChangePassword service method on AmazonIdentityManagement.
+     * 
      * 
      * @throws EntityTemporarilyUnmodifiableException
      * @throws NoSuchEntityException
@@ -1792,6 +1820,7 @@ public interface AmazonIdentityManagement {
      * @param putGroupPolicyRequest Container for the necessary parameters to
      *           execute the PutGroupPolicy service method on AmazonIdentityManagement.
      * 
+     * 
      * @throws MalformedPolicyDocumentException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -1823,6 +1852,7 @@ public interface AmazonIdentityManagement {
      * @param deleteSigningCertificateRequest Container for the necessary
      *           parameters to execute the DeleteSigningCertificate service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -1952,6 +1982,7 @@ public interface AmazonIdentityManagement {
      * @param addRoleToInstanceProfileRequest Container for the necessary
      *           parameters to execute the AddRoleToInstanceProfile service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -2103,6 +2134,7 @@ public interface AmazonIdentityManagement {
      *           to execute the DeleteRolePolicy service method on
      *           AmazonIdentityManagement.
      * 
+     * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -2239,6 +2271,7 @@ public interface AmazonIdentityManagement {
      *           necessary parameters to execute the RemoveRoleFromInstanceProfile
      *           service method on AmazonIdentityManagement.
      * 
+     * 
      * @throws NoSuchEntityException
      * @throws LimitExceededException
      *
@@ -2264,6 +2297,7 @@ public interface AmazonIdentityManagement {
      * @param updateAccountPasswordPolicyRequest Container for the necessary
      *           parameters to execute the UpdateAccountPasswordPolicy service method
      *           on AmazonIdentityManagement.
+     * 
      * 
      * @throws MalformedPolicyDocumentException
      * @throws NoSuchEntityException
@@ -2292,6 +2326,7 @@ public interface AmazonIdentityManagement {
      * @param updateAssumeRolePolicyRequest Container for the necessary
      *           parameters to execute the UpdateAssumeRolePolicy service method on
      *           AmazonIdentityManagement.
+     * 
      * 
      * @throws MalformedPolicyDocumentException
      * @throws NoSuchEntityException
@@ -2587,6 +2622,7 @@ public interface AmazonIdentityManagement {
      * <p>
      * Deletes the password policy for the AWS account.
      * </p>
+     * 
      * 
      * @throws NoSuchEntityException
      *

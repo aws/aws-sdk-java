@@ -97,6 +97,24 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     }
 
     /**
+     * Constructs a new GetItemRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param tableName The name of the table containing the requested item.
+     * @param key A map of attribute names to <i>AttributeValue</i> objects,
+     * representing the primary key of the item to retrieve.
+     * @param consistentRead If set to <code>true</code>, then the operation
+     * uses strongly consistent reads; otherwise, eventually consistent reads
+     * are used.
+     */
+    public GetItemRequest(String tableName, java.util.Map<String,AttributeValue> key, Boolean consistentRead) {
+        setTableName(tableName);
+        setKey(key);
+        setConsistentRead(consistentRead);
+    }
+
+    /**
      * The name of the table containing the requested item.
      * <p>
      * <b>Constraints:</b><br/>

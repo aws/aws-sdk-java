@@ -315,6 +315,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DeleteSnapshotSchedule service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -363,6 +364,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DeleteSnapshotSchedule service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -405,6 +407,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeMaintenanceStartTime service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -442,6 +445,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeMaintenanceStartTime service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -497,6 +501,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         CreateStorediSCSIVolume service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -547,6 +552,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         CreateStorediSCSIVolume service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -602,6 +608,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         UpdateGatewaySoftwareNow service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -652,6 +659,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         UpdateGatewaySoftwareNow service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -714,6 +722,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateSnapshot service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -771,6 +780,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateSnapshot service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -821,6 +831,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         AddWorkingStorage service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -866,6 +877,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         AddWorkingStorage service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -906,6 +918,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         CancelRetrieval service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -941,6 +954,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         CancelRetrieval service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -990,6 +1004,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeBandwidthRateLimit service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1034,6 +1049,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeBandwidthRateLimit service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1075,6 +1091,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeTapes service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1111,6 +1128,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeTapes service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1163,6 +1181,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         RetrieveTapeRecoveryPoint service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1210,6 +1229,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         RetrieveTapeRecoveryPoint service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1258,6 +1278,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         UpdateChapCredentials service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1301,6 +1322,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         UpdateChapCredentials service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1345,6 +1367,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateTapes service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1384,6 +1407,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateTapes service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1430,6 +1454,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeUploadBuffer service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1471,6 +1496,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeUploadBuffer service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1512,6 +1538,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DeleteChapCredentials service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1548,6 +1575,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DeleteChapCredentials service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1595,6 +1623,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the AddCache
      *         service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1637,6 +1666,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the AddCache
      *         service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1680,6 +1710,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeGatewayInformation service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1718,6 +1749,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeGatewayInformation service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1768,6 +1800,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         ActivateGateway service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1813,6 +1846,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         ActivateGateway service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1858,6 +1892,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeTapeArchives service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1898,6 +1933,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeTapeArchives service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1940,6 +1976,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         UpdateGatewayInformation service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1977,6 +2014,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         UpdateGatewayInformation service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2021,6 +2059,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         ListLocalDisks service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2060,6 +2099,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         ListLocalDisks service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2098,6 +2138,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteTapeArchive service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2131,6 +2172,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteTapeArchive service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2175,6 +2217,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeCache service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2214,6 +2257,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeCache service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2267,6 +2311,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         UpdateBandwidthRateLimit service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2315,6 +2360,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         UpdateBandwidthRateLimit service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2362,6 +2408,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DisableGateway service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2404,6 +2451,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DisableGateway service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2455,6 +2503,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeWorkingStorage service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2501,6 +2550,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeWorkingStorage service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2543,6 +2593,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         UpdateMaintenanceStartTime service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2580,6 +2631,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         UpdateMaintenanceStartTime service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2618,6 +2670,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteTape service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2651,6 +2704,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteTape service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2703,6 +2757,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         StartGateway service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2750,6 +2805,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         StartGateway service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2792,6 +2848,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeChapCredentials service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2829,6 +2886,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeChapCredentials service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2871,6 +2929,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeSnapshotSchedule service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2908,6 +2967,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeSnapshotSchedule service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2965,6 +3025,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteVolume service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3017,6 +3078,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteVolume service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3080,6 +3142,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         CreateSnapshotFromVolumeRecoveryPoint service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3138,6 +3201,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         CreateSnapshotFromVolumeRecoveryPoint service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3196,6 +3260,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteGateway service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3249,6 +3314,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteGateway service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3304,6 +3370,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         CreateCachediSCSIVolume service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3354,6 +3421,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         CreateCachediSCSIVolume service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3421,6 +3489,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         ShutdownGateway service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3483,6 +3552,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         ShutdownGateway service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3527,6 +3597,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DeleteBandwidthRateLimit service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3566,6 +3637,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DeleteBandwidthRateLimit service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3616,6 +3688,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         ListVolumes service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3661,6 +3734,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         ListVolumes service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3708,6 +3782,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeTapeRecoveryPoints service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3750,6 +3825,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeTapeRecoveryPoints service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3802,6 +3878,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         UpdateSnapshotSchedule service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3849,6 +3926,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         UpdateSnapshotSchedule service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3900,6 +3978,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         ListGateways service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3946,6 +4025,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         ListGateways service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3991,6 +4071,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         AddUploadBuffer service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4031,6 +4112,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         AddUploadBuffer service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4078,6 +4160,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeCachediSCSIVolumes service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4120,6 +4203,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeCachediSCSIVolumes service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4163,6 +4247,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeStorediSCSIVolumes service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4201,6 +4286,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         DescribeStorediSCSIVolumes service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4250,6 +4336,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         ListVolumeRecoveryPoints service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4294,6 +4381,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @return A Java Future object containing the response from the
      *         ListVolumeRecoveryPoints service method, as returned by
      *         AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4339,6 +4427,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVTLDevices service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4379,6 +4468,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVTLDevices service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4427,6 +4517,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         RetrieveTapeArchive service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4470,6 +4561,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         RetrieveTapeArchive service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4509,6 +4601,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         CancelArchival service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4543,6 +4636,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * 
      * @return A Java Future object containing the response from the
      *         CancelArchival service method, as returned by AWSStorageGateway.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

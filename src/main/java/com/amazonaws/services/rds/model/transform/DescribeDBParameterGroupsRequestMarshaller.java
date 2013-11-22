@@ -38,10 +38,35 @@ public class DescribeDBParameterGroupsRequestMarshaller implements Marshaller<Re
 
         Request<DescribeDBParameterGroupsRequest> request = new DefaultRequest<DescribeDBParameterGroupsRequest>(describeDBParameterGroupsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBParameterGroups");
-        request.addParameter("Version", "2013-05-15");
+        request.addParameter("Version", "2013-09-09");
 
         if (describeDBParameterGroupsRequest.getDBParameterGroupName() != null) {
             request.addParameter("DBParameterGroupName", StringUtils.fromString(describeDBParameterGroupsRequest.getDBParameterGroupName()));
+        }
+
+        java.util.List<Filter> filtersList = describeDBParameterGroupsRequest.getFilters();
+        int filtersListIndex = 1;
+
+        for (Filter filtersListValue : filtersList) {
+            Filter filterMember = filtersListValue;
+            if (filterMember != null) {
+                if (filterMember.getFilterName() != null) {
+                    request.addParameter("Filters.Filter." + filtersListIndex + ".FilterName", StringUtils.fromString(filterMember.getFilterName()));
+                }
+
+                java.util.List<String> filterValueList = filterMember.getFilterValue();
+                int filterValueListIndex = 1;
+
+                for (String filterValueListValue : filterValueList) {
+                    if (filterValueListValue != null) {
+                        request.addParameter("Filters.Filter." + filtersListIndex + ".FilterValue.Value." + filterValueListIndex, StringUtils.fromString(filterValueListValue));
+                    }
+
+                    filterValueListIndex++;
+                }
+            }
+
+            filtersListIndex++;
         }
         if (describeDBParameterGroupsRequest.getMaxRecords() != null) {
             request.addParameter("MaxRecords", StringUtils.fromInteger(describeDBParameterGroupsRequest.getMaxRecords()));

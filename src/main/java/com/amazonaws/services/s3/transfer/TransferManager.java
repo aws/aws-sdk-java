@@ -41,6 +41,7 @@ import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.event.ProgressListenerCallbackExecutor;
 import com.amazonaws.event.ProgressListenerChain;
+import com.amazonaws.event.ProgressListenerChain.ProgressEventFilter;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.AmazonS3EncryptionClient;
@@ -493,14 +494,33 @@ public class TransferManager {
 
         String description = "Downloading from " + getObjectRequest.getBucketName() + "/" + getObjectRequest.getKey();
 
-        // Add our own transfer progress listener
         TransferProgressImpl transferProgress = new TransferProgressImpl();
-        ProgressListenerChain listenerChain = new ProgressListenerChain(new TransferProgressUpdatingListener(
-                transferProgress), getObjectRequest.getGeneralProgressListener());
-        getObjectRequest.setGeneralProgressListener(listenerChain);
+        ProgressListenerChain listenerChain = new ProgressListenerChain(
+                new TransferProgressUpdatingListener(transferProgress),   // The listener for updating transfer progress
+                getObjectRequest.getGeneralProgressListener());           // Listeners included in the original request
+        
+        // The listener chain used by the low-level GetObject request.
+        // This listener chain ignores any COMPLETE event, so that we could 
+        // delay firing the signal until the high-level download fully finishes.
+        ProgressListenerChain listenerChainForGetObjectRequest = new ProgressListenerChain(
+                new ProgressEventFilter() {
+                    @Override
+                    public ProgressEvent filter(ProgressEvent progressEvent) {
+                        if (progressEvent.getEventCode() == ProgressEvent.COMPLETED_EVENT_CODE) {
+                            // Block COMPLETE events from the low-level GetObject operation,
+                            // but we still want to keep the BytesTransferred
+                            progressEvent.setEventCode(0);
+                        }
+                        return progressEvent;
+                    }
+                },
+                listenerChain);
+        getObjectRequest.setGeneralProgressListener(listenerChainForGetObjectRequest);
+        
         final ObjectMetadata objectMetadata = s3.getObjectMetadata(getObjectRequest.getBucketName(), getObjectRequest.getKey());
 
         final StartDownloadLock startDownloadLock = new StartDownloadLock();
+        // We still pass the unfiltered listener chain into DownloadImpl
         final DownloadImpl download = new DownloadImpl(description, transferProgress, listenerChain, null, stateListener);
         long contentLength = objectMetadata.getContentLength();
         if (getObjectRequest.getRange() != null && getObjectRequest.getRange().length == 2) {

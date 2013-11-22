@@ -101,6 +101,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         ListVaults service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -155,6 +156,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         ListVaults service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -207,6 +209,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeJob service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -262,6 +265,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeJob service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -317,6 +321,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         ListParts service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -375,6 +380,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         ListParts service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -425,6 +431,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         GetVaultNotifications service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -478,6 +485,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         GetVaultNotifications service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -556,6 +564,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the ListJobs
      *         service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -637,6 +646,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the ListJobs
      *         service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -701,6 +711,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         CreateVault service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -768,6 +779,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         CreateVault service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -837,6 +849,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         InitiateMultipartUpload service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -909,6 +922,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         InitiateMultipartUpload service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -961,6 +975,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         AbortMultipartUpload service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1016,6 +1031,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         AbortMultipartUpload service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1072,6 +1088,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteArchive service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1131,6 +1148,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteArchive service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1215,6 +1233,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         GetJobOutput service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1302,6 +1321,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         GetJobOutput service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1424,6 +1444,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         InitiateJob service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1549,6 +1570,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         InitiateJob service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1621,6 +1643,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         UploadArchive service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1696,6 +1719,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         UploadArchive service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1765,6 +1789,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         SetVaultNotifications service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1837,6 +1862,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         SetVaultNotifications service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1917,6 +1943,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         CompleteMultipartUpload service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2000,6 +2027,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         CompleteMultipartUpload service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2085,6 +2113,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         UploadMultipartPart service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2173,6 +2202,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         UploadMultipartPart service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2223,6 +2253,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVault service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2276,6 +2307,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeVault service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2320,6 +2352,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteVaultNotifications service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2367,6 +2400,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteVaultNotifications service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2430,6 +2464,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         ListMultipartUploads service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2496,6 +2531,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         ListMultipartUploads service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2550,6 +2586,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteVault service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2607,6 +2644,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteVault service method, as returned by AmazonGlacier.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

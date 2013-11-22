@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Option Group option settings are used to display settings available for each option with their default values and other information. These values are
+ * option group option settings are used to display settings available for each option with their default values and other information. These values are
  * used with the DescribeOptionGroupOptions action.
  * </p>
  */

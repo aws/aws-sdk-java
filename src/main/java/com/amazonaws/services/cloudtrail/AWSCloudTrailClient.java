@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudtrail;
 
+import java.net.*;
 import java.util.*;
 
 import org.apache.commons.logging.*;
@@ -23,10 +24,11 @@ import com.amazonaws.regions.*;
 import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
-import com.amazonaws.util.*;
-import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
 import com.amazonaws.transform.*;
+import com.amazonaws.util.*;
+import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.cloudtrail.model.*;
@@ -67,11 +69,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * List of exception unmarshallers for all AWSCloudTrail exceptions.
      */
     protected List<Unmarshaller<AmazonServiceException, JSONObject>> exceptionUnmarshallers;
-
-    
-    /** AWS signer for authenticating requests. */
-    private AWS4Signer signer;
-
 
     /**
      * Constructs a new client to invoke service methods on
@@ -212,16 +209,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         exceptionUnmarshallers.add(new InsufficientS3BucketPolicyExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new JsonErrorUnmarshaller());
-        setEndpoint("cloudtrail.us-east-1.amazonaws.com");
-
-        signer = new AWS4Signer();
-        
-        signer.setServiceName("cloudtrail");
-        
-
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("cloudtrail.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/cloudtrail/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
+                "/com/amazonaws/services/cloudtrail/request.handler2s"));
 
         
     }
@@ -258,7 +252,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<GetTrailStatusRequest> request = null;
-        GetTrailStatusResult response = null;
+        Response<GetTrailStatusResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -271,7 +265,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             Unmarshaller<GetTrailStatusResult, JsonUnmarshallerContext> unmarshaller = new GetTrailStatusResultJsonUnmarshaller();
             JsonResponseHandler<GetTrailStatusResult> responseHandler = new JsonResponseHandler<GetTrailStatusResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -306,7 +301,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteTrailRequest> request = null;
-        DeleteTrailResult response = null;
+        Response<DeleteTrailResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -319,7 +314,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             Unmarshaller<DeleteTrailResult, JsonUnmarshallerContext> unmarshaller = new DeleteTrailResultJsonUnmarshaller();
             JsonResponseHandler<DeleteTrailResult> responseHandler = new JsonResponseHandler<DeleteTrailResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -381,7 +377,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateTrailRequest> request = null;
-        CreateTrailResult response = null;
+        Response<CreateTrailResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -394,7 +390,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             Unmarshaller<CreateTrailResult, JsonUnmarshallerContext> unmarshaller = new CreateTrailResultJsonUnmarshaller();
             JsonResponseHandler<CreateTrailResult> responseHandler = new JsonResponseHandler<CreateTrailResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -444,7 +441,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateTrailRequest> request = null;
-        UpdateTrailResult response = null;
+        Response<UpdateTrailResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -457,7 +454,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             Unmarshaller<UpdateTrailResult, JsonUnmarshallerContext> unmarshaller = new UpdateTrailResultJsonUnmarshaller();
             JsonResponseHandler<UpdateTrailResult> responseHandler = new JsonResponseHandler<UpdateTrailResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -491,7 +489,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeTrailsRequest> request = null;
-        DescribeTrailsResult response = null;
+        Response<DescribeTrailsResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -504,7 +502,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             Unmarshaller<DescribeTrailsResult, JsonUnmarshallerContext> unmarshaller = new DescribeTrailsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeTrailsResult> responseHandler = new JsonResponseHandler<DescribeTrailsResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -542,7 +541,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<StopLoggingRequest> request = null;
-        StopLoggingResult response = null;
+        Response<StopLoggingResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -555,7 +554,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             Unmarshaller<StopLoggingResult, JsonUnmarshallerContext> unmarshaller = new StopLoggingResultJsonUnmarshaller();
             JsonResponseHandler<StopLoggingResult> responseHandler = new JsonResponseHandler<StopLoggingResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -594,7 +594,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<StartLoggingRequest> request = null;
-        StartLoggingResult response = null;
+        Response<StartLoggingResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -607,7 +607,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             Unmarshaller<StartLoggingResult, JsonUnmarshallerContext> unmarshaller = new StartLoggingResultJsonUnmarshaller();
             JsonResponseHandler<StartLoggingResult> responseHandler = new JsonResponseHandler<StartLoggingResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -637,47 +638,21 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         return describeTrails(new DescribeTrailsRequest());
     }
     
-    /**
-     * Overrides the default endpoint for this client ("https://cloudtrail.us-east-1.amazonaws.com") and explicitly provides
-     * an AWS region ID and AWS service name to use when the client calculates a signature
-     * for requests.  In almost all cases, this region ID and service name
-     * are automatically determined from the endpoint, and callers should use the simpler
-     * one-argument form of setEndpoint instead of this method.
-     * <p>
-     * <b>This method is not threadsafe. Endpoints should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit.</b>
-     * <p>
-     * Callers can pass in just the endpoint (ex: "cloudtrail.us-east-1.amazonaws.com") or a full
-     * URL, including the protocol (ex: "https://cloudtrail.us-east-1.amazonaws.com"). If the
-     * protocol is not specified here, the default protocol from this client's
-     * {@link ClientConfiguration} will be used, which by default is HTTPS.
-     * <p>
-     * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
-     *
-     * @param endpoint
-     *            The endpoint (ex: "cloudtrail.us-east-1.amazonaws.com") or a full URL,
-     *            including the protocol (ex: "https://cloudtrail.us-east-1.amazonaws.com") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     * @param serviceName
-     *            The name of the AWS service to use when signing requests.
-     * @param regionId
-     *            The ID of the region in which this service resides.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
-     * @see AmazonDynamoDB#setRegion(Region)
-     */
-    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
-        setEndpoint(endpoint);
-        signer.setServiceName(serviceName);
-        signer.setRegionName(regionId);
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        super.setEndpoint(endpoint);
+
+        
     }
+
+    @Override
+    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
+        super.setEndpoint(endpoint, serviceName, regionId);
+
+        
+    }
+
     
     @Override
     protected String getServiceAbbreviation() {
@@ -705,7 +680,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
@@ -725,11 +700,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(signer);
+        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
 
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
-        X result = (X) client.execute(request, responseHandler,
+        Response<X> result = client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);
         awsRequestMetrics.log();
         return result;

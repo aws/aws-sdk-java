@@ -16,6 +16,7 @@
 package com.amazonaws.metrics;
 
 import com.amazonaws.Request;
+import com.amazonaws.Response;
 
 /**
  * A service provider interface that can be used to implement an AWS SDK
@@ -39,12 +40,12 @@ public abstract class RequestMetricCollector {
      *
      * @see Request#getAWSRequestMetrics()
      */
-    public abstract void collectMetrics(Request<?> request, Object response);
+    public abstract void collectMetrics(Request<?> request, Response<?> response);
     public boolean isEnabled() { return true; }
 
     /** A convenient instance of a no-op request metric collector. */
     public static final RequestMetricCollector NONE = new RequestMetricCollector() {
-        @Override public void collectMetrics(Request<?> request, Object response) {}
+        @Override public void collectMetrics(Request<?> request, Response<?> response) {}
         @Override public boolean isEnabled() { return false; }
     };
 }

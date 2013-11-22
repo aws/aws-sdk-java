@@ -50,6 +50,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * @return A Java Future object containing the response from the
      *         UpdatePipelineStatus service method, as returned by
      *         AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -86,6 +87,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * @return A Java Future object containing the response from the
      *         UpdatePipelineStatus service method, as returned by
      *         AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -116,6 +118,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * @return A Java Future object containing the response from the
      *         UpdatePipelineNotifications service method, as returned by
      *         AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -149,6 +152,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * @return A Java Future object containing the response from the
      *         UpdatePipelineNotifications service method, as returned by
      *         AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -172,6 +176,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the ReadJob
      *         service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -198,6 +203,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the ReadJob
      *         service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -224,6 +230,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * @return A Java Future object containing the response from the
      *         ListJobsByStatus service method, as returned by
      *         AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -253,6 +260,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * @return A Java Future object containing the response from the
      *         ListJobsByStatus service method, as returned by
      *         AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -276,6 +284,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         ReadPreset service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -302,6 +311,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         ReadPreset service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -326,6 +336,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         CreatePipeline service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -353,6 +364,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         CreatePipeline service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -382,6 +394,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         CancelJob service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -414,6 +427,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         CancelJob service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -444,6 +458,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         UpdatePipeline service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -477,6 +492,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         UpdatePipeline service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -502,6 +518,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         ListPresets service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -530,6 +547,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         ListPresets service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -559,6 +577,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         DeletePipeline service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -591,6 +610,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         DeletePipeline service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -622,6 +642,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the TestRole
      *         service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -656,6 +677,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the TestRole
      *         service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -680,6 +702,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         ListPipelines service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -707,6 +730,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         ListPipelines service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -730,6 +754,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         ReadPipeline service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -756,6 +781,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         ReadPipeline service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -799,6 +825,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         CreatePreset service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -845,6 +872,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         CreatePreset service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -873,6 +901,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         DeletePreset service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -904,6 +933,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         DeletePreset service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -935,6 +965,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         CreateJob service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -969,6 +1000,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * 
      * @return A Java Future object containing the response from the
      *         CreateJob service method, as returned by AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1000,6 +1032,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * @return A Java Future object containing the response from the
      *         ListJobsByPipeline service method, as returned by
      *         AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1034,6 +1067,7 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      * @return A Java Future object containing the response from the
      *         ListJobsByPipeline service method, as returned by
      *         AmazonElasticTranscoder.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

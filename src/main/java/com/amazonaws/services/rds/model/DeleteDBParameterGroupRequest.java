@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes a specified DBParameterGroup. The DBParameterGroup cannot be associated with any RDS instances to be deleted.
  * </p>
  * <p>
- * <b>NOTE:</b> The specified DB Parameter Group cannot be associated with any DB Instances.
+ * <b>NOTE:</b> The specified DB parameter group cannot be associated with any DB instances.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBParameterGroup(DeleteDBParameterGroupRequest)
@@ -32,10 +32,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
-     * the name of an existing DB Parameter Group</li> <li>You cannot delete
-     * a default DB Parameter Group</li> <li>Cannot be associated with any DB
-     * Instances</li> </ul>
+     * The name of the DB parameter group. <p>Constraints: <ul> <li>Must be
+     * the name of an existing DB parameter group</li> <li>You cannot delete
+     * a default DB parameter group</li> <li>Cannot be associated with any DB
+     * instances</li> </ul>
      */
     private String dBParameterGroupName;
 
@@ -50,57 +50,57 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest imple
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dBParameterGroupName The name of the DB Parameter Group.
-     * <p>Constraints: <ul> <li>Must be the name of an existing DB Parameter
-     * Group</li> <li>You cannot delete a default DB Parameter Group</li>
-     * <li>Cannot be associated with any DB Instances</li> </ul>
+     * @param dBParameterGroupName The name of the DB parameter group.
+     * <p>Constraints: <ul> <li>Must be the name of an existing DB parameter
+     * group</li> <li>You cannot delete a default DB parameter group</li>
+     * <li>Cannot be associated with any DB instances</li> </ul>
      */
     public DeleteDBParameterGroupRequest(String dBParameterGroupName) {
         setDBParameterGroupName(dBParameterGroupName);
     }
 
     /**
-     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
-     * the name of an existing DB Parameter Group</li> <li>You cannot delete
-     * a default DB Parameter Group</li> <li>Cannot be associated with any DB
-     * Instances</li> </ul>
+     * The name of the DB parameter group. <p>Constraints: <ul> <li>Must be
+     * the name of an existing DB parameter group</li> <li>You cannot delete
+     * a default DB parameter group</li> <li>Cannot be associated with any DB
+     * instances</li> </ul>
      *
-     * @return The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
-     *         the name of an existing DB Parameter Group</li> <li>You cannot delete
-     *         a default DB Parameter Group</li> <li>Cannot be associated with any DB
-     *         Instances</li> </ul>
+     * @return The name of the DB parameter group. <p>Constraints: <ul> <li>Must be
+     *         the name of an existing DB parameter group</li> <li>You cannot delete
+     *         a default DB parameter group</li> <li>Cannot be associated with any DB
+     *         instances</li> </ul>
      */
     public String getDBParameterGroupName() {
         return dBParameterGroupName;
     }
     
     /**
-     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
-     * the name of an existing DB Parameter Group</li> <li>You cannot delete
-     * a default DB Parameter Group</li> <li>Cannot be associated with any DB
-     * Instances</li> </ul>
+     * The name of the DB parameter group. <p>Constraints: <ul> <li>Must be
+     * the name of an existing DB parameter group</li> <li>You cannot delete
+     * a default DB parameter group</li> <li>Cannot be associated with any DB
+     * instances</li> </ul>
      *
-     * @param dBParameterGroupName The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
-     *         the name of an existing DB Parameter Group</li> <li>You cannot delete
-     *         a default DB Parameter Group</li> <li>Cannot be associated with any DB
-     *         Instances</li> </ul>
+     * @param dBParameterGroupName The name of the DB parameter group. <p>Constraints: <ul> <li>Must be
+     *         the name of an existing DB parameter group</li> <li>You cannot delete
+     *         a default DB parameter group</li> <li>Cannot be associated with any DB
+     *         instances</li> </ul>
      */
     public void setDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
     }
     
     /**
-     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
-     * the name of an existing DB Parameter Group</li> <li>You cannot delete
-     * a default DB Parameter Group</li> <li>Cannot be associated with any DB
-     * Instances</li> </ul>
+     * The name of the DB parameter group. <p>Constraints: <ul> <li>Must be
+     * the name of an existing DB parameter group</li> <li>You cannot delete
+     * a default DB parameter group</li> <li>Cannot be associated with any DB
+     * instances</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupName The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
-     *         the name of an existing DB Parameter Group</li> <li>You cannot delete
-     *         a default DB Parameter Group</li> <li>Cannot be associated with any DB
-     *         Instances</li> </ul>
+     * @param dBParameterGroupName The name of the DB parameter group. <p>Constraints: <ul> <li>Must be
+     *         the name of an existing DB parameter group</li> <li>You cannot delete
+     *         a default DB parameter group</li> <li>Cannot be associated with any DB
+     *         instances</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

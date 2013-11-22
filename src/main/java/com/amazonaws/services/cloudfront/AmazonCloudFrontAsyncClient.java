@@ -280,6 +280,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         ListStreamingDistributions service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -315,6 +316,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         ListStreamingDistributions service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -355,6 +357,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         UpdateCloudFrontOriginAccessIdentity service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -390,6 +393,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         UpdateCloudFrontOriginAccessIdentity service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -429,6 +433,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateInvalidation service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -463,6 +468,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateInvalidation service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -503,6 +509,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         DeleteStreamingDistribution service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -539,6 +546,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         DeleteStreamingDistribution service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -577,6 +585,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         GetDistributionConfig service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -611,6 +620,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         GetDistributionConfig service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -651,6 +661,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         UpdateStreamingDistribution service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -686,6 +697,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         UpdateStreamingDistribution service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -724,6 +736,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         GetDistribution service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -757,6 +770,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         GetDistribution service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -795,6 +809,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         ListInvalidations service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -828,6 +843,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         ListInvalidations service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -867,6 +883,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         UpdateDistribution service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -901,6 +918,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         UpdateDistribution service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -940,6 +958,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteDistribution service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -975,6 +994,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteDistribution service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1014,6 +1034,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         CreateCloudFrontOriginAccessIdentity service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1049,6 +1070,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         CreateCloudFrontOriginAccessIdentity service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1089,6 +1111,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         GetStreamingDistribution service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1124,6 +1147,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         GetStreamingDistribution service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1162,6 +1186,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         ListDistributions service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1195,6 +1220,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         ListDistributions service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1235,6 +1261,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         CreateStreamingDistribution service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1270,6 +1297,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         CreateStreamingDistribution service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1310,6 +1338,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         ListCloudFrontOriginAccessIdentities service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1345,6 +1374,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         ListCloudFrontOriginAccessIdentities service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1385,6 +1415,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         DeleteCloudFrontOriginAccessIdentity service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1421,6 +1452,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         DeleteCloudFrontOriginAccessIdentity service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1459,6 +1491,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateDistribution service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1493,6 +1526,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateDistribution service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1531,6 +1565,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         GetInvalidation service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1564,6 +1599,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * 
      * @return A Java Future object containing the response from the
      *         GetInvalidation service method, as returned by AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1604,6 +1640,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         GetCloudFrontOriginAccessIdentityConfig service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1639,6 +1676,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         GetCloudFrontOriginAccessIdentityConfig service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1679,6 +1717,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         GetCloudFrontOriginAccessIdentity service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1714,6 +1753,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         GetCloudFrontOriginAccessIdentity service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1754,6 +1794,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         GetStreamingDistributionConfig service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1789,6 +1830,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @return A Java Future object containing the response from the
      *         GetStreamingDistributionConfig service method, as returned by
      *         AmazonCloudFront.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

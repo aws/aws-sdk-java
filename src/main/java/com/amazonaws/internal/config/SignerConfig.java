@@ -55,7 +55,8 @@ public class SignerConfig {
     }
 
     /**
-     * Returns the respective Signer instance.
+     * Returns the respective Signer instance, or null if it cannot be
+     * determined.
      */
     public Signer computeSigner() {
         switch(signerType) {
@@ -70,6 +71,6 @@ public class SignerConfig {
             case S3SignerType:
                 // yet to invvestigate how to support this
         }
-        throw new UnsupportedOperationException();
+        return null;
     }
 }

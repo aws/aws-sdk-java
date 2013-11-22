@@ -38,7 +38,7 @@ public class DescribeReservedDBInstancesRequestMarshaller implements Marshaller<
 
         Request<DescribeReservedDBInstancesRequest> request = new DefaultRequest<DescribeReservedDBInstancesRequest>(describeReservedDBInstancesRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeReservedDBInstances");
-        request.addParameter("Version", "2013-05-15");
+        request.addParameter("Version", "2013-09-09");
 
         if (describeReservedDBInstancesRequest.getReservedDBInstanceId() != null) {
             request.addParameter("ReservedDBInstanceId", StringUtils.fromString(describeReservedDBInstancesRequest.getReservedDBInstanceId()));
@@ -60,6 +60,31 @@ public class DescribeReservedDBInstancesRequestMarshaller implements Marshaller<
         }
         if (describeReservedDBInstancesRequest.isMultiAZ() != null) {
             request.addParameter("MultiAZ", StringUtils.fromBoolean(describeReservedDBInstancesRequest.isMultiAZ()));
+        }
+
+        java.util.List<Filter> filtersList = describeReservedDBInstancesRequest.getFilters();
+        int filtersListIndex = 1;
+
+        for (Filter filtersListValue : filtersList) {
+            Filter filterMember = filtersListValue;
+            if (filterMember != null) {
+                if (filterMember.getFilterName() != null) {
+                    request.addParameter("Filters.Filter." + filtersListIndex + ".FilterName", StringUtils.fromString(filterMember.getFilterName()));
+                }
+
+                java.util.List<String> filterValueList = filterMember.getFilterValue();
+                int filterValueListIndex = 1;
+
+                for (String filterValueListValue : filterValueList) {
+                    if (filterValueListValue != null) {
+                        request.addParameter("Filters.Filter." + filtersListIndex + ".FilterValue.Value." + filterValueListIndex, StringUtils.fromString(filterValueListValue));
+                    }
+
+                    filterValueListIndex++;
+                }
+            }
+
+            filtersListIndex++;
         }
         if (describeReservedDBInstancesRequest.getMaxRecords() != null) {
             request.addParameter("MaxRecords", StringUtils.fromInteger(describeReservedDBInstancesRequest.getMaxRecords()));

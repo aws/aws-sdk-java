@@ -21,12 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#modifyDBParameterGroup(ModifyDBParameterGroupRequest) ModifyDBParameterGroup operation}.
  * <p>
- * Modifies the parameters of a DBParameterGroup. To modify more than one parameter submit a list of the following: ParameterName, ParameterValue, and
- * ApplyMethod. A maximum of 20 parameters can be modified in a single request.
+ * Modifies the parameters of a DB parameter group. To modify more than one parameter, submit a list of the following: <code>ParameterName</code> ,
+ * <code>ParameterValue</code> , and <code>ApplyMethod</code> . A maximum of 20 parameters can be modified in a single request.
  * </p>
  * <p>
  * <b>NOTE:</b> The apply-immediate method can be used only for dynamic parameters; the pending-reboot method can be used with MySQL and Oracle DB
- * Instances for either dynamic or static parameters. For Microsoft SQL Server DB Instances, the pending-reboot method can be used only for static
+ * instances for either dynamic or static parameters. For Microsoft SQL Server DB instances, the pending-reboot method can be used only for static
  * parameters.
  * </p>
  *
@@ -35,8 +35,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
-     * the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
+     * The name of the DB parameter group. <p>Constraints: <ul> <li>Must be
+     * the name of an existing DB parameter group</li> <li>Must be 1 to 255
      * alphanumeric characters</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      * </ul>
@@ -51,7 +51,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
      * the application method): <code>immediate | pending-reboot</code>
      * <note>You can use the immediate value with dynamic parameters only.
      * You can use the pending-reboot value for both dynamic and static
-     * parameters, and changes are applied when DB Instance reboots. </note>
+     * parameters, and changes are applied when DB instance reboots. </note>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
 
@@ -66,9 +66,9 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dBParameterGroupName The name of the DB Parameter Group.
-     * <p>Constraints: <ul> <li>Must be the name of an existing DB Parameter
-     * Group</li> <li>Must be 1 to 255 alphanumeric characters</li> <li>First
+     * @param dBParameterGroupName The name of the DB parameter group.
+     * <p>Constraints: <ul> <li>Must be the name of an existing DB parameter
+     * group</li> <li>Must be 1 to 255 alphanumeric characters</li> <li>First
      * character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
      * @param parameters An array of parameter names, values, and the apply
@@ -79,7 +79,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
      * pending-reboot</code> <note>You can use the immediate value with
      * dynamic parameters only. You can use the pending-reboot value for both
      * dynamic and static parameters, and changes are applied when DB
-     * Instance reboots. </note>
+     * instance reboots. </note>
      */
     public ModifyDBParameterGroupRequest(String dBParameterGroupName, java.util.List<Parameter> parameters) {
         setDBParameterGroupName(dBParameterGroupName);
@@ -87,14 +87,14 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
-     * the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
+     * The name of the DB parameter group. <p>Constraints: <ul> <li>Must be
+     * the name of an existing DB parameter group</li> <li>Must be 1 to 255
      * alphanumeric characters</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      * </ul>
      *
-     * @return The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
-     *         the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
+     * @return The name of the DB parameter group. <p>Constraints: <ul> <li>Must be
+     *         the name of an existing DB parameter group</li> <li>Must be 1 to 255
      *         alphanumeric characters</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         </ul>
@@ -104,14 +104,14 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
-     * the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
+     * The name of the DB parameter group. <p>Constraints: <ul> <li>Must be
+     * the name of an existing DB parameter group</li> <li>Must be 1 to 255
      * alphanumeric characters</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      * </ul>
      *
-     * @param dBParameterGroupName The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
-     *         the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
+     * @param dBParameterGroupName The name of the DB parameter group. <p>Constraints: <ul> <li>Must be
+     *         the name of an existing DB parameter group</li> <li>Must be 1 to 255
      *         alphanumeric characters</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         </ul>
@@ -121,16 +121,16 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
-     * the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
+     * The name of the DB parameter group. <p>Constraints: <ul> <li>Must be
+     * the name of an existing DB parameter group</li> <li>Must be 1 to 255
      * alphanumeric characters</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupName The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
-     *         the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
+     * @param dBParameterGroupName The name of the DB parameter group. <p>Constraints: <ul> <li>Must be
+     *         the name of an existing DB parameter group</li> <li>Must be 1 to 255
      *         alphanumeric characters</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         </ul>
@@ -151,7 +151,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
      * the application method): <code>immediate | pending-reboot</code>
      * <note>You can use the immediate value with dynamic parameters only.
      * You can use the pending-reboot value for both dynamic and static
-     * parameters, and changes are applied when DB Instance reboots. </note>
+     * parameters, and changes are applied when DB instance reboots. </note>
      *
      * @return An array of parameter names, values, and the apply method for the
      *         parameter update. At least one parameter name, value, and apply method
@@ -160,7 +160,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
      *         the application method): <code>immediate | pending-reboot</code>
      *         <note>You can use the immediate value with dynamic parameters only.
      *         You can use the pending-reboot value for both dynamic and static
-     *         parameters, and changes are applied when DB Instance reboots. </note>
+     *         parameters, and changes are applied when DB instance reboots. </note>
      */
     public java.util.List<Parameter> getParameters() {
         if (parameters == null) {
@@ -178,7 +178,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
      * the application method): <code>immediate | pending-reboot</code>
      * <note>You can use the immediate value with dynamic parameters only.
      * You can use the pending-reboot value for both dynamic and static
-     * parameters, and changes are applied when DB Instance reboots. </note>
+     * parameters, and changes are applied when DB instance reboots. </note>
      *
      * @param parameters An array of parameter names, values, and the apply method for the
      *         parameter update. At least one parameter name, value, and apply method
@@ -187,7 +187,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
      *         the application method): <code>immediate | pending-reboot</code>
      *         <note>You can use the immediate value with dynamic parameters only.
      *         You can use the pending-reboot value for both dynamic and static
-     *         parameters, and changes are applied when DB Instance reboots. </note>
+     *         parameters, and changes are applied when DB instance reboots. </note>
      */
     public void setParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
@@ -207,7 +207,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
      * the application method): <code>immediate | pending-reboot</code>
      * <note>You can use the immediate value with dynamic parameters only.
      * You can use the pending-reboot value for both dynamic and static
-     * parameters, and changes are applied when DB Instance reboots. </note>
+     * parameters, and changes are applied when DB instance reboots. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -218,7 +218,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
      *         the application method): <code>immediate | pending-reboot</code>
      *         <note>You can use the immediate value with dynamic parameters only.
      *         You can use the pending-reboot value for both dynamic and static
-     *         parameters, and changes are applied when DB Instance reboots. </note>
+     *         parameters, and changes are applied when DB instance reboots. </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -239,7 +239,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
      * the application method): <code>immediate | pending-reboot</code>
      * <note>You can use the immediate value with dynamic parameters only.
      * You can use the pending-reboot value for both dynamic and static
-     * parameters, and changes are applied when DB Instance reboots. </note>
+     * parameters, and changes are applied when DB instance reboots. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -250,7 +250,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
      *         the application method): <code>immediate | pending-reboot</code>
      *         <note>You can use the immediate value with dynamic parameters only.
      *         You can use the pending-reboot value for both dynamic and static
-     *         parameters, and changes are applied when DB Instance reboots. </note>
+     *         parameters, and changes are applied when DB instance reboots. </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

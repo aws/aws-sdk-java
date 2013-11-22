@@ -80,11 +80,12 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      * ASCII letters, digits, and hyphens; it cannot end with a hyphen or
      * contain two consecutive hyphens. <p>Constraints: <ul> <li>If SourceIds
      * are supplied, SourceType must also be provided.</li> <li>If the source
-     * type is a DB instance, then a DBInstanceIdentifier must be
-     * supplied.</li> <li>If the source type is a DB security group, a
-     * DBSecurityGroupName must be supplied.</li> <li>If the source type is a
-     * DB parameter group, a DBParameterGroupName must be supplied.</li>
-     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must
+     * type is a DB instance, then a <code>DBInstanceIdentifier</code> must
+     * be supplied.</li> <li>If the source type is a DB security group, a
+     * <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the
+     * source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the
+     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must
      * be supplied.</li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> sourceIds;
@@ -94,6 +95,11 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      * to <b>false</b> to create the subscription but not active it.
      */
     private Boolean enabled;
+
+    /**
+     * A list of tags.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * The name of the subscription. <p>Constraints: The name must be less
@@ -351,11 +357,12 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      * ASCII letters, digits, and hyphens; it cannot end with a hyphen or
      * contain two consecutive hyphens. <p>Constraints: <ul> <li>If SourceIds
      * are supplied, SourceType must also be provided.</li> <li>If the source
-     * type is a DB instance, then a DBInstanceIdentifier must be
-     * supplied.</li> <li>If the source type is a DB security group, a
-     * DBSecurityGroupName must be supplied.</li> <li>If the source type is a
-     * DB parameter group, a DBParameterGroupName must be supplied.</li>
-     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must
+     * type is a DB instance, then a <code>DBInstanceIdentifier</code> must
+     * be supplied.</li> <li>If the source type is a DB security group, a
+     * <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the
+     * source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the
+     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must
      * be supplied.</li> </ul>
      *
      * @return The list of identifiers of the event sources for which events will be
@@ -364,11 +371,12 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         ASCII letters, digits, and hyphens; it cannot end with a hyphen or
      *         contain two consecutive hyphens. <p>Constraints: <ul> <li>If SourceIds
      *         are supplied, SourceType must also be provided.</li> <li>If the source
-     *         type is a DB instance, then a DBInstanceIdentifier must be
-     *         supplied.</li> <li>If the source type is a DB security group, a
-     *         DBSecurityGroupName must be supplied.</li> <li>If the source type is a
-     *         DB parameter group, a DBParameterGroupName must be supplied.</li>
-     *         <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must
+     *         type is a DB instance, then a <code>DBInstanceIdentifier</code> must
+     *         be supplied.</li> <li>If the source type is a DB security group, a
+     *         <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the
+     *         source type is a DB parameter group, a
+     *         <code>DBParameterGroupName</code> must be supplied.</li> <li>If the
+     *         source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must
      *         be supplied.</li> </ul>
      */
     public java.util.List<String> getSourceIds() {
@@ -386,11 +394,12 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      * ASCII letters, digits, and hyphens; it cannot end with a hyphen or
      * contain two consecutive hyphens. <p>Constraints: <ul> <li>If SourceIds
      * are supplied, SourceType must also be provided.</li> <li>If the source
-     * type is a DB instance, then a DBInstanceIdentifier must be
-     * supplied.</li> <li>If the source type is a DB security group, a
-     * DBSecurityGroupName must be supplied.</li> <li>If the source type is a
-     * DB parameter group, a DBParameterGroupName must be supplied.</li>
-     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must
+     * type is a DB instance, then a <code>DBInstanceIdentifier</code> must
+     * be supplied.</li> <li>If the source type is a DB security group, a
+     * <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the
+     * source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the
+     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must
      * be supplied.</li> </ul>
      *
      * @param sourceIds The list of identifiers of the event sources for which events will be
@@ -399,11 +408,12 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         ASCII letters, digits, and hyphens; it cannot end with a hyphen or
      *         contain two consecutive hyphens. <p>Constraints: <ul> <li>If SourceIds
      *         are supplied, SourceType must also be provided.</li> <li>If the source
-     *         type is a DB instance, then a DBInstanceIdentifier must be
-     *         supplied.</li> <li>If the source type is a DB security group, a
-     *         DBSecurityGroupName must be supplied.</li> <li>If the source type is a
-     *         DB parameter group, a DBParameterGroupName must be supplied.</li>
-     *         <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must
+     *         type is a DB instance, then a <code>DBInstanceIdentifier</code> must
+     *         be supplied.</li> <li>If the source type is a DB security group, a
+     *         <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the
+     *         source type is a DB parameter group, a
+     *         <code>DBParameterGroupName</code> must be supplied.</li> <li>If the
+     *         source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must
      *         be supplied.</li> </ul>
      */
     public void setSourceIds(java.util.Collection<String> sourceIds) {
@@ -423,11 +433,12 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      * ASCII letters, digits, and hyphens; it cannot end with a hyphen or
      * contain two consecutive hyphens. <p>Constraints: <ul> <li>If SourceIds
      * are supplied, SourceType must also be provided.</li> <li>If the source
-     * type is a DB instance, then a DBInstanceIdentifier must be
-     * supplied.</li> <li>If the source type is a DB security group, a
-     * DBSecurityGroupName must be supplied.</li> <li>If the source type is a
-     * DB parameter group, a DBParameterGroupName must be supplied.</li>
-     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must
+     * type is a DB instance, then a <code>DBInstanceIdentifier</code> must
+     * be supplied.</li> <li>If the source type is a DB security group, a
+     * <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the
+     * source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the
+     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must
      * be supplied.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -438,11 +449,12 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         ASCII letters, digits, and hyphens; it cannot end with a hyphen or
      *         contain two consecutive hyphens. <p>Constraints: <ul> <li>If SourceIds
      *         are supplied, SourceType must also be provided.</li> <li>If the source
-     *         type is a DB instance, then a DBInstanceIdentifier must be
-     *         supplied.</li> <li>If the source type is a DB security group, a
-     *         DBSecurityGroupName must be supplied.</li> <li>If the source type is a
-     *         DB parameter group, a DBParameterGroupName must be supplied.</li>
-     *         <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must
+     *         type is a DB instance, then a <code>DBInstanceIdentifier</code> must
+     *         be supplied.</li> <li>If the source type is a DB security group, a
+     *         <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the
+     *         source type is a DB parameter group, a
+     *         <code>DBParameterGroupName</code> must be supplied.</li> <li>If the
+     *         source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must
      *         be supplied.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -463,11 +475,12 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      * ASCII letters, digits, and hyphens; it cannot end with a hyphen or
      * contain two consecutive hyphens. <p>Constraints: <ul> <li>If SourceIds
      * are supplied, SourceType must also be provided.</li> <li>If the source
-     * type is a DB instance, then a DBInstanceIdentifier must be
-     * supplied.</li> <li>If the source type is a DB security group, a
-     * DBSecurityGroupName must be supplied.</li> <li>If the source type is a
-     * DB parameter group, a DBParameterGroupName must be supplied.</li>
-     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must
+     * type is a DB instance, then a <code>DBInstanceIdentifier</code> must
+     * be supplied.</li> <li>If the source type is a DB security group, a
+     * <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the
+     * source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the
+     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must
      * be supplied.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -478,11 +491,12 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         ASCII letters, digits, and hyphens; it cannot end with a hyphen or
      *         contain two consecutive hyphens. <p>Constraints: <ul> <li>If SourceIds
      *         are supplied, SourceType must also be provided.</li> <li>If the source
-     *         type is a DB instance, then a DBInstanceIdentifier must be
-     *         supplied.</li> <li>If the source type is a DB security group, a
-     *         DBSecurityGroupName must be supplied.</li> <li>If the source type is a
-     *         DB parameter group, a DBParameterGroupName must be supplied.</li>
-     *         <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must
+     *         type is a DB instance, then a <code>DBInstanceIdentifier</code> must
+     *         be supplied.</li> <li>If the source type is a DB security group, a
+     *         <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the
+     *         source type is a DB parameter group, a
+     *         <code>DBParameterGroupName</code> must be supplied.</li> <li>If the
+     *         source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must
      *         be supplied.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -551,6 +565,74 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * A list of tags.
+     *
+     * @return A list of tags.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags.
+     *
+     * @param tags A list of tags.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateEventSubscriptionRequest withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateEventSubscriptionRequest withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -567,7 +649,8 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
         if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");
         if (getEventCategories() != null) sb.append("EventCategories: " + getEventCategories() + ",");
         if (getSourceIds() != null) sb.append("SourceIds: " + getSourceIds() + ",");
-        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() );
+        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -583,6 +666,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getEventCategories() == null) ? 0 : getEventCategories().hashCode()); 
         hashCode = prime * hashCode + ((getSourceIds() == null) ? 0 : getSourceIds().hashCode()); 
         hashCode = prime * hashCode + ((isEnabled() == null) ? 0 : isEnabled().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -606,6 +690,8 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
         if (other.getSourceIds() != null && other.getSourceIds().equals(this.getSourceIds()) == false) return false; 
         if (other.isEnabled() == null ^ this.isEnabled() == null) return false;
         if (other.isEnabled() != null && other.isEnabled().equals(this.isEnabled()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

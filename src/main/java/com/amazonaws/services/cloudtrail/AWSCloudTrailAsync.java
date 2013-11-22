@@ -57,6 +57,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * 
      * @return A Java Future object containing the response from the
      *         GetTrailStatus service method, as returned by AWSCloudTrail.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -86,6 +87,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * 
      * @return A Java Future object containing the response from the
      *         GetTrailStatus service method, as returned by AWSCloudTrail.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -109,6 +111,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteTrail service method, as returned by AWSCloudTrail.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -135,6 +138,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteTrail service method, as returned by AWSCloudTrail.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -177,6 +181,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * 
      * @return A Java Future object containing the response from the
      *         CreateTrail service method, as returned by AWSCloudTrail.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -222,6 +227,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * 
      * @return A Java Future object containing the response from the
      *         CreateTrail service method, as returned by AWSCloudTrail.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -253,6 +259,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateTrail service method, as returned by AWSCloudTrail.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -287,6 +294,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateTrail service method, as returned by AWSCloudTrail.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -311,6 +319,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeTrails service method, as returned by AWSCloudTrail.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -338,6 +347,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeTrails service method, as returned by AWSCloudTrail.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -364,6 +374,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * 
      * @return A Java Future object containing the response from the
      *         StopLogging service method, as returned by AWSCloudTrail.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -393,6 +404,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * 
      * @return A Java Future object containing the response from the
      *         StopLogging service method, as returned by AWSCloudTrail.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -417,6 +429,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * 
      * @return A Java Future object containing the response from the
      *         StartLogging service method, as returned by AWSCloudTrail.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -444,6 +457,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * 
      * @return A Java Future object containing the response from the
      *         StartLogging service method, as returned by AWSCloudTrail.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

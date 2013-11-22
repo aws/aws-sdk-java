@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#purchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest) PurchaseReservedDBInstancesOffering operation}.
  * <p>
- * Purchases a reserved DB Instance offering.
+ * Purchases a reserved DB instance offering.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#purchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest)
@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The ID of the Reserved DB Instance offering to purchase. <p>Example:
+     * The ID of the Reserved DB instance offering to purchase. <p>Example:
      * 438012d3-4052-4cc7-b2e3-8d3372e0e706
      */
     private String reservedDBInstancesOfferingId;
@@ -46,6 +46,11 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
     private Integer dBInstanceCount;
 
     /**
+     * A list of tags.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
+
+    /**
      * Default constructor for a new PurchaseReservedDBInstancesOfferingRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -57,7 +62,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
      * initialize any additional object members.
      * 
      * @param reservedDBInstancesOfferingId The ID of the Reserved DB
-     * Instance offering to purchase. <p>Example:
+     * instance offering to purchase. <p>Example:
      * 438012d3-4052-4cc7-b2e3-8d3372e0e706
      */
     public PurchaseReservedDBInstancesOfferingRequest(String reservedDBInstancesOfferingId) {
@@ -65,10 +70,10 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
     }
 
     /**
-     * The ID of the Reserved DB Instance offering to purchase. <p>Example:
+     * The ID of the Reserved DB instance offering to purchase. <p>Example:
      * 438012d3-4052-4cc7-b2e3-8d3372e0e706
      *
-     * @return The ID of the Reserved DB Instance offering to purchase. <p>Example:
+     * @return The ID of the Reserved DB instance offering to purchase. <p>Example:
      *         438012d3-4052-4cc7-b2e3-8d3372e0e706
      */
     public String getReservedDBInstancesOfferingId() {
@@ -76,10 +81,10 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
     }
     
     /**
-     * The ID of the Reserved DB Instance offering to purchase. <p>Example:
+     * The ID of the Reserved DB instance offering to purchase. <p>Example:
      * 438012d3-4052-4cc7-b2e3-8d3372e0e706
      *
-     * @param reservedDBInstancesOfferingId The ID of the Reserved DB Instance offering to purchase. <p>Example:
+     * @param reservedDBInstancesOfferingId The ID of the Reserved DB instance offering to purchase. <p>Example:
      *         438012d3-4052-4cc7-b2e3-8d3372e0e706
      */
     public void setReservedDBInstancesOfferingId(String reservedDBInstancesOfferingId) {
@@ -87,12 +92,12 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
     }
     
     /**
-     * The ID of the Reserved DB Instance offering to purchase. <p>Example:
+     * The ID of the Reserved DB instance offering to purchase. <p>Example:
      * 438012d3-4052-4cc7-b2e3-8d3372e0e706
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedDBInstancesOfferingId The ID of the Reserved DB Instance offering to purchase. <p>Example:
+     * @param reservedDBInstancesOfferingId The ID of the Reserved DB instance offering to purchase. <p>Example:
      *         438012d3-4052-4cc7-b2e3-8d3372e0e706
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -176,6 +181,74 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
     }
 
     /**
+     * A list of tags.
+     *
+     * @return A list of tags.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags.
+     *
+     * @param tags A list of tags.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public PurchaseReservedDBInstancesOfferingRequest withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public PurchaseReservedDBInstancesOfferingRequest withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -189,7 +262,8 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
         sb.append("{");
         if (getReservedDBInstancesOfferingId() != null) sb.append("ReservedDBInstancesOfferingId: " + getReservedDBInstancesOfferingId() + ",");
         if (getReservedDBInstanceId() != null) sb.append("ReservedDBInstanceId: " + getReservedDBInstanceId() + ",");
-        if (getDBInstanceCount() != null) sb.append("DBInstanceCount: " + getDBInstanceCount() );
+        if (getDBInstanceCount() != null) sb.append("DBInstanceCount: " + getDBInstanceCount() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -202,6 +276,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
         hashCode = prime * hashCode + ((getReservedDBInstancesOfferingId() == null) ? 0 : getReservedDBInstancesOfferingId().hashCode()); 
         hashCode = prime * hashCode + ((getReservedDBInstanceId() == null) ? 0 : getReservedDBInstanceId().hashCode()); 
         hashCode = prime * hashCode + ((getDBInstanceCount() == null) ? 0 : getDBInstanceCount().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -219,6 +294,8 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
         if (other.getReservedDBInstanceId() != null && other.getReservedDBInstanceId().equals(this.getReservedDBInstanceId()) == false) return false; 
         if (other.getDBInstanceCount() == null ^ this.getDBInstanceCount() == null) return false;
         if (other.getDBInstanceCount() != null && other.getDBInstanceCount().equals(this.getDBInstanceCount()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

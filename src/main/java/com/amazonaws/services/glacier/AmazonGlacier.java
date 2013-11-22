@@ -600,6 +600,7 @@ public interface AmazonGlacier {
      *           parameters to execute the AbortMultipartUpload service method on
      *           AmazonGlacier.
      * 
+     * 
      * @throws ResourceNotFoundException
      * @throws MissingParameterValueException
      * @throws ServiceUnavailableException
@@ -656,6 +657,7 @@ public interface AmazonGlacier {
      *
      * @param deleteArchiveRequest Container for the necessary parameters to
      *           execute the DeleteArchive service method on AmazonGlacier.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws MissingParameterValueException
@@ -1018,6 +1020,7 @@ public interface AmazonGlacier {
      *           parameters to execute the SetVaultNotifications service method on
      *           AmazonGlacier.
      * 
+     * 
      * @throws ResourceNotFoundException
      * @throws MissingParameterValueException
      * @throws ServiceUnavailableException
@@ -1291,6 +1294,7 @@ public interface AmazonGlacier {
      *           parameters to execute the DeleteVaultNotifications service method on
      *           AmazonGlacier.
      * 
+     * 
      * @throws ResourceNotFoundException
      * @throws MissingParameterValueException
      * @throws ServiceUnavailableException
@@ -1412,6 +1416,7 @@ public interface AmazonGlacier {
      *
      * @param deleteVaultRequest Container for the necessary parameters to
      *           execute the DeleteVault service method on AmazonGlacier.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws MissingParameterValueException

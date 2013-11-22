@@ -30,7 +30,7 @@ public class VpcSecurityGroupMembership implements Serializable {
     private String vpcSecurityGroupId;
 
     /**
-     * The status of the VPC Security Group.
+     * The status of the VPC security group.
      */
     private String status;
 
@@ -68,29 +68,29 @@ public class VpcSecurityGroupMembership implements Serializable {
     }
 
     /**
-     * The status of the VPC Security Group.
+     * The status of the VPC security group.
      *
-     * @return The status of the VPC Security Group.
+     * @return The status of the VPC security group.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * The status of the VPC Security Group.
+     * The status of the VPC security group.
      *
-     * @param status The status of the VPC Security Group.
+     * @param status The status of the VPC security group.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * The status of the VPC Security Group.
+     * The status of the VPC security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status The status of the VPC Security Group.
+     * @param status The status of the VPC security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

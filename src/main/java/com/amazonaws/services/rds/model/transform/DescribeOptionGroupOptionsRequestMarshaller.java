@@ -38,7 +38,7 @@ public class DescribeOptionGroupOptionsRequestMarshaller implements Marshaller<R
 
         Request<DescribeOptionGroupOptionsRequest> request = new DefaultRequest<DescribeOptionGroupOptionsRequest>(describeOptionGroupOptionsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeOptionGroupOptions");
-        request.addParameter("Version", "2013-05-15");
+        request.addParameter("Version", "2013-09-09");
 
         if (describeOptionGroupOptionsRequest.getEngineName() != null) {
             request.addParameter("EngineName", StringUtils.fromString(describeOptionGroupOptionsRequest.getEngineName()));

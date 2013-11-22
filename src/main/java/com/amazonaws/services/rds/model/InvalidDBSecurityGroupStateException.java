@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The state of the DB Security Group does not allow deletion.
+ * The state of the DB security group does not allow deletion.
  * </p>
  */        
 public class InvalidDBSecurityGroupStateException extends AmazonServiceException {

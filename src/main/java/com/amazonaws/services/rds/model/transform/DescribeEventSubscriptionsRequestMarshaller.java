@@ -38,10 +38,35 @@ public class DescribeEventSubscriptionsRequestMarshaller implements Marshaller<R
 
         Request<DescribeEventSubscriptionsRequest> request = new DefaultRequest<DescribeEventSubscriptionsRequest>(describeEventSubscriptionsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeEventSubscriptions");
-        request.addParameter("Version", "2013-05-15");
+        request.addParameter("Version", "2013-09-09");
 
         if (describeEventSubscriptionsRequest.getSubscriptionName() != null) {
             request.addParameter("SubscriptionName", StringUtils.fromString(describeEventSubscriptionsRequest.getSubscriptionName()));
+        }
+
+        java.util.List<Filter> filtersList = describeEventSubscriptionsRequest.getFilters();
+        int filtersListIndex = 1;
+
+        for (Filter filtersListValue : filtersList) {
+            Filter filterMember = filtersListValue;
+            if (filterMember != null) {
+                if (filterMember.getFilterName() != null) {
+                    request.addParameter("Filters.Filter." + filtersListIndex + ".FilterName", StringUtils.fromString(filterMember.getFilterName()));
+                }
+
+                java.util.List<String> filterValueList = filterMember.getFilterValue();
+                int filterValueListIndex = 1;
+
+                for (String filterValueListValue : filterValueList) {
+                    if (filterValueListValue != null) {
+                        request.addParameter("Filters.Filter." + filtersListIndex + ".FilterValue.Value." + filterValueListIndex, StringUtils.fromString(filterValueListValue));
+                    }
+
+                    filterValueListIndex++;
+                }
+            }
+
+            filtersListIndex++;
         }
         if (describeEventSubscriptionsRequest.getMaxRecords() != null) {
             request.addParameter("MaxRecords", StringUtils.fromInteger(describeEventSubscriptionsRequest.getMaxRecords()));

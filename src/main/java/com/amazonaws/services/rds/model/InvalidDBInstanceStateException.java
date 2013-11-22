@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified DB Instance is not in the <i>available</i> state.
+ * The specified DB instance is not in the <i>available</i> state.
  * </p>
  */        
 public class InvalidDBInstanceStateException extends AmazonServiceException {

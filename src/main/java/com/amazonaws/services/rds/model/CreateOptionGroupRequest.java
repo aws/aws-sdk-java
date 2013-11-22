@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createOptionGroup(CreateOptionGroupRequest) CreateOptionGroup operation}.
  * <p>
- * Creates a new Option Group. You can create up to 20 option groups.
+ * Creates a new option group. You can create up to 20 option groups.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createOptionGroup(CreateOptionGroupRequest)
@@ -33,7 +33,7 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
      * <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul> <p>Example:
-     * <code>myOptiongroup</code>
+     * <code>myoptiongroup</code>
      */
     private String optionGroupName;
 
@@ -55,17 +55,22 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
     private String optionGroupDescription;
 
     /**
+     * A list of tags.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
+
+    /**
      * Specifies the name of the option group to be created. <p> Constraints:
      * <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul> <p>Example:
-     * <code>myOptiongroup</code>
+     * <code>myoptiongroup</code>
      *
      * @return Specifies the name of the option group to be created. <p> Constraints:
      *         <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul> <p>Example:
-     *         <code>myOptiongroup</code>
+     *         <code>myoptiongroup</code>
      */
     public String getOptionGroupName() {
         return optionGroupName;
@@ -76,13 +81,13 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
      * <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul> <p>Example:
-     * <code>myOptiongroup</code>
+     * <code>myoptiongroup</code>
      *
      * @param optionGroupName Specifies the name of the option group to be created. <p> Constraints:
      *         <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul> <p>Example:
-     *         <code>myOptiongroup</code>
+     *         <code>myoptiongroup</code>
      */
     public void setOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;
@@ -93,7 +98,7 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
      * <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul> <p>Example:
-     * <code>myOptiongroup</code>
+     * <code>myoptiongroup</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -101,7 +106,7 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
      *         <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul> <p>Example:
-     *         <code>myOptiongroup</code>
+     *         <code>myoptiongroup</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -223,6 +228,74 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * A list of tags.
+     *
+     * @return A list of tags.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags.
+     *
+     * @param tags A list of tags.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateOptionGroupRequest withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateOptionGroupRequest withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -237,7 +310,8 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
         if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
         if (getEngineName() != null) sb.append("EngineName: " + getEngineName() + ",");
         if (getMajorEngineVersion() != null) sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ",");
-        if (getOptionGroupDescription() != null) sb.append("OptionGroupDescription: " + getOptionGroupDescription() );
+        if (getOptionGroupDescription() != null) sb.append("OptionGroupDescription: " + getOptionGroupDescription() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -251,6 +325,7 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
         hashCode = prime * hashCode + ((getEngineName() == null) ? 0 : getEngineName().hashCode()); 
         hashCode = prime * hashCode + ((getMajorEngineVersion() == null) ? 0 : getMajorEngineVersion().hashCode()); 
         hashCode = prime * hashCode + ((getOptionGroupDescription() == null) ? 0 : getOptionGroupDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -270,6 +345,8 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
         if (other.getMajorEngineVersion() != null && other.getMajorEngineVersion().equals(this.getMajorEngineVersion()) == false) return false; 
         if (other.getOptionGroupDescription() == null ^ this.getOptionGroupDescription() == null) return false;
         if (other.getOptionGroupDescription() != null && other.getOptionGroupDescription().equals(this.getOptionGroupDescription()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

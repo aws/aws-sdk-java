@@ -38,7 +38,7 @@ public class ListTagsForResourceRequestMarshaller implements Marshaller<Request<
 
         Request<ListTagsForResourceRequest> request = new DefaultRequest<ListTagsForResourceRequest>(listTagsForResourceRequest, "AmazonRDS");
         request.addParameter("Action", "ListTagsForResource");
-        request.addParameter("Version", "2013-05-15");
+        request.addParameter("Version", "2013-09-09");
 
         if (listTagsForResourceRequest.getResourceName() != null) {
             request.addParameter("ResourceName", StringUtils.fromString(listTagsForResourceRequest.getResourceName()));

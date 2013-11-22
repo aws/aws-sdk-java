@@ -35,7 +35,7 @@ public class DBEngineVersion implements Serializable {
     private String engineVersion;
 
     /**
-     * The name of the DBParameterGroupFamily for the database engine.
+     * The name of the DB parameter group family for the database engine.
      */
     private String dBParameterGroupFamily;
 
@@ -135,29 +135,29 @@ public class DBEngineVersion implements Serializable {
     }
 
     /**
-     * The name of the DBParameterGroupFamily for the database engine.
+     * The name of the DB parameter group family for the database engine.
      *
-     * @return The name of the DBParameterGroupFamily for the database engine.
+     * @return The name of the DB parameter group family for the database engine.
      */
     public String getDBParameterGroupFamily() {
         return dBParameterGroupFamily;
     }
     
     /**
-     * The name of the DBParameterGroupFamily for the database engine.
+     * The name of the DB parameter group family for the database engine.
      *
-     * @param dBParameterGroupFamily The name of the DBParameterGroupFamily for the database engine.
+     * @param dBParameterGroupFamily The name of the DB parameter group family for the database engine.
      */
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
     }
     
     /**
-     * The name of the DBParameterGroupFamily for the database engine.
+     * The name of the DB parameter group family for the database engine.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupFamily The name of the DBParameterGroupFamily for the database engine.
+     * @param dBParameterGroupFamily The name of the DB parameter group family for the database engine.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

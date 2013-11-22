@@ -144,20 +144,20 @@ public class CreateTableRequestMarshaller implements Marshaller<Request<CreateTa
                             jsonWriter.key("IndexName").value(localSecondaryIndexesListValue.getIndexName());
                         }
 
-                        com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement> List = (com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement>)(localSecondaryIndexesListValue.getKeySchema());
-                        if (List != null && !(List.isAutoConstruct() && List.isEmpty())) {
+                        com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement> keySchema2List = (com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement>)(localSecondaryIndexesListValue.getKeySchema());
+                        if (keySchema2List != null && !(keySchema2List.isAutoConstruct() && keySchema2List.isEmpty())) {
 
                             jsonWriter.key("KeySchema");
                             jsonWriter.array();
 
-                            for (KeySchemaElement ListValue : List) {
-                                if (ListValue != null) {
+                            for (KeySchemaElement keySchema2ListValue : keySchema2List) {
+                                if (keySchema2ListValue != null) {
                                     jsonWriter.object();
-                                    if (ListValue.getAttributeName() != null) {
-                                        jsonWriter.key("AttributeName").value(ListValue.getAttributeName());
+                                    if (keySchema2ListValue.getAttributeName() != null) {
+                                        jsonWriter.key("AttributeName").value(keySchema2ListValue.getAttributeName());
                                     }
-                                    if (ListValue.getKeyType() != null) {
-                                        jsonWriter.key("KeyType").value(ListValue.getKeyType());
+                                    if (keySchema2ListValue.getKeyType() != null) {
+                                        jsonWriter.key("KeyType").value(keySchema2ListValue.getKeyType());
                                     }
                                     jsonWriter.endObject();
                                 }

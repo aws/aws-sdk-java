@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The DB Parameter Group cannot be deleted because it is in use.
+ * The DB parameter group cannot be deleted because it is in use.
  * </p>
  */        
 public class InvalidDBParameterGroupStateException extends AmazonServiceException {

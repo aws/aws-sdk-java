@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest) RestoreDBInstanceFromDBSnapshot operation}.
  * <p>
- * Creates a new DB Instance from a DB snapshot. The target database is created from the source database restore point with the same configuration as
+ * Creates a new DB instance from a DB snapshot. The target database is created from the source database restore point with the same configuration as
  * the original source database, except that the new RDS instance is created with the default security group.
  * </p>
  *
@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The identifier for the DB Snapshot to restore from. <p>Constraints:
+     * The identifier for the DB snapshot to restore from. <p>Constraints:
      * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      * with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -38,7 +38,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     private String dBInstanceIdentifier;
 
     /**
-     * Name of the DB Instance to create from the DB Snapshot. This parameter
+     * Name of the DB instance to create from the DB snapshot. This parameter
      * isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -55,7 +55,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
 
     /**
      * The port number on which the database accepts connections. <p>Default:
-     * The same port as the original DB Instance <p>Constraints: Value must
+     * The same port as the original DB instance <p>Constraints: Value must
      * be <code>1150-65535</code>
      */
     private Integer port;
@@ -70,19 +70,19 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     private String availabilityZone;
 
     /**
-     * The DB Subnet Group name to use for the new instance.
+     * The DB subnet group name to use for the new instance.
      */
     private String dBSubnetGroupName;
 
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     * Specifies if the DB instance is a Multi-AZ deployment. <p>Constraint:
      * You cannot specify the AvailabilityZone parameter if the MultiAZ
      * parameter is set to <code>true</code>.
      */
     private Boolean multiAZ;
 
     /**
-     * Specifies the accessibility options for the DB Instance. A value of
+     * Specifies the accessibility options for the DB instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
      * DNS name, which resolves to a public IP address. A value of false
      * specifies an internal instance with a DNS name that resolves to a
@@ -100,12 +100,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
 
     /**
      * Indicates that minor version upgrades will be applied automatically to
-     * the DB Instance during the maintenance window.
+     * the DB instance during the maintenance window.
      */
     private Boolean autoMinorVersionUpgrade;
 
     /**
-     * License model information for the restored DB Instance. <p> Default:
+     * License model information for the restored DB instance. <p> Default:
      * Same as source. <p> Valid values: <code>license-included</code> |
      * <code>bring-your-own-license</code> |
      * <code>general-public-license</code>
@@ -113,7 +113,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     private String licenseModel;
 
     /**
-     * The database name for the restored DB Instance. <note> <p>This
+     * The database name for the restored DB instance. <note> <p>This
      * parameter doesn't apply to the MySQL engine. </note>
      */
     private String dBName;
@@ -126,7 +126,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     private String engine;
 
     /**
-     * Specifies the amount of provisioned IOPS for the DB Instance,
+     * Specifies the amount of provisioned IOPS for the DB instance,
      * expressed in I/O operations per second. If this parameter is not
      * specified, the IOPS value will be taken from the backup. If this
      * parameter is set to 0, the new instance will be converted to a
@@ -149,6 +149,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     private String optionGroupName;
 
     /**
+     * A list of tags.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
+
+    /**
      * Default constructor for a new RestoreDBInstanceFromDBSnapshotRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -159,13 +164,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dBInstanceIdentifier The identifier for the DB Snapshot to
+     * @param dBInstanceIdentifier The identifier for the DB snapshot to
      * restore from. <p>Constraints: <ul> <li>Must contain from 1 to 63
      * alphanumeric characters or hyphens</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul>
-     * @param dBSnapshotIdentifier Name of the DB Instance to create from the
-     * DB Snapshot. This parameter isn't case sensitive. <p>Constraints: <ul>
+     * @param dBSnapshotIdentifier Name of the DB instance to create from the
+     * DB snapshot. This parameter isn't case sensitive. <p>Constraints: <ul>
      * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul> <p>Example:
@@ -177,12 +182,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
 
     /**
-     * The identifier for the DB Snapshot to restore from. <p>Constraints:
+     * The identifier for the DB snapshot to restore from. <p>Constraints:
      * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      * with a hyphen or contain two consecutive hyphens</li> </ul>
      *
-     * @return The identifier for the DB Snapshot to restore from. <p>Constraints:
+     * @return The identifier for the DB snapshot to restore from. <p>Constraints:
      *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      *         with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -192,12 +197,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * The identifier for the DB Snapshot to restore from. <p>Constraints:
+     * The identifier for the DB snapshot to restore from. <p>Constraints:
      * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      * with a hyphen or contain two consecutive hyphens</li> </ul>
      *
-     * @param dBInstanceIdentifier The identifier for the DB Snapshot to restore from. <p>Constraints:
+     * @param dBInstanceIdentifier The identifier for the DB snapshot to restore from. <p>Constraints:
      *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      *         with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -207,14 +212,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * The identifier for the DB Snapshot to restore from. <p>Constraints:
+     * The identifier for the DB snapshot to restore from. <p>Constraints:
      * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      * with a hyphen or contain two consecutive hyphens</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceIdentifier The identifier for the DB Snapshot to restore from. <p>Constraints:
+     * @param dBInstanceIdentifier The identifier for the DB snapshot to restore from. <p>Constraints:
      *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      *         with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -228,13 +233,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
 
     /**
-     * Name of the DB Instance to create from the DB Snapshot. This parameter
+     * Name of the DB instance to create from the DB snapshot. This parameter
      * isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
      *
-     * @return Name of the DB Instance to create from the DB Snapshot. This parameter
+     * @return Name of the DB instance to create from the DB snapshot. This parameter
      *         isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      *         255 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -245,13 +250,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * Name of the DB Instance to create from the DB Snapshot. This parameter
+     * Name of the DB instance to create from the DB snapshot. This parameter
      * isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
      *
-     * @param dBSnapshotIdentifier Name of the DB Instance to create from the DB Snapshot. This parameter
+     * @param dBSnapshotIdentifier Name of the DB instance to create from the DB snapshot. This parameter
      *         isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      *         255 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -262,7 +267,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * Name of the DB Instance to create from the DB Snapshot. This parameter
+     * Name of the DB instance to create from the DB snapshot. This parameter
      * isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -270,7 +275,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSnapshotIdentifier Name of the DB Instance to create from the DB Snapshot. This parameter
+     * @param dBSnapshotIdentifier Name of the DB instance to create from the DB snapshot. This parameter
      *         isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      *         255 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -331,11 +336,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
 
     /**
      * The port number on which the database accepts connections. <p>Default:
-     * The same port as the original DB Instance <p>Constraints: Value must
+     * The same port as the original DB instance <p>Constraints: Value must
      * be <code>1150-65535</code>
      *
      * @return The port number on which the database accepts connections. <p>Default:
-     *         The same port as the original DB Instance <p>Constraints: Value must
+     *         The same port as the original DB instance <p>Constraints: Value must
      *         be <code>1150-65535</code>
      */
     public Integer getPort() {
@@ -344,11 +349,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The port number on which the database accepts connections. <p>Default:
-     * The same port as the original DB Instance <p>Constraints: Value must
+     * The same port as the original DB instance <p>Constraints: Value must
      * be <code>1150-65535</code>
      *
      * @param port The port number on which the database accepts connections. <p>Default:
-     *         The same port as the original DB Instance <p>Constraints: Value must
+     *         The same port as the original DB instance <p>Constraints: Value must
      *         be <code>1150-65535</code>
      */
     public void setPort(Integer port) {
@@ -357,13 +362,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The port number on which the database accepts connections. <p>Default:
-     * The same port as the original DB Instance <p>Constraints: Value must
+     * The same port as the original DB instance <p>Constraints: Value must
      * be <code>1150-65535</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param port The port number on which the database accepts connections. <p>Default:
-     *         The same port as the original DB Instance <p>Constraints: Value must
+     *         The same port as the original DB instance <p>Constraints: Value must
      *         be <code>1150-65535</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -432,29 +437,29 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
 
     /**
-     * The DB Subnet Group name to use for the new instance.
+     * The DB subnet group name to use for the new instance.
      *
-     * @return The DB Subnet Group name to use for the new instance.
+     * @return The DB subnet group name to use for the new instance.
      */
     public String getDBSubnetGroupName() {
         return dBSubnetGroupName;
     }
     
     /**
-     * The DB Subnet Group name to use for the new instance.
+     * The DB subnet group name to use for the new instance.
      *
-     * @param dBSubnetGroupName The DB Subnet Group name to use for the new instance.
+     * @param dBSubnetGroupName The DB subnet group name to use for the new instance.
      */
     public void setDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
     }
     
     /**
-     * The DB Subnet Group name to use for the new instance.
+     * The DB subnet group name to use for the new instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSubnetGroupName The DB Subnet Group name to use for the new instance.
+     * @param dBSubnetGroupName The DB subnet group name to use for the new instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -465,11 +470,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
 
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     * Specifies if the DB instance is a Multi-AZ deployment. <p>Constraint:
      * You cannot specify the AvailabilityZone parameter if the MultiAZ
      * parameter is set to <code>true</code>.
      *
-     * @return Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     * @return Specifies if the DB instance is a Multi-AZ deployment. <p>Constraint:
      *         You cannot specify the AvailabilityZone parameter if the MultiAZ
      *         parameter is set to <code>true</code>.
      */
@@ -478,11 +483,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     * Specifies if the DB instance is a Multi-AZ deployment. <p>Constraint:
      * You cannot specify the AvailabilityZone parameter if the MultiAZ
      * parameter is set to <code>true</code>.
      *
-     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     * @param multiAZ Specifies if the DB instance is a Multi-AZ deployment. <p>Constraint:
      *         You cannot specify the AvailabilityZone parameter if the MultiAZ
      *         parameter is set to <code>true</code>.
      */
@@ -491,13 +496,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     * Specifies if the DB instance is a Multi-AZ deployment. <p>Constraint:
      * You cannot specify the AvailabilityZone parameter if the MultiAZ
      * parameter is set to <code>true</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     * @param multiAZ Specifies if the DB instance is a Multi-AZ deployment. <p>Constraint:
      *         You cannot specify the AvailabilityZone parameter if the MultiAZ
      *         parameter is set to <code>true</code>.
      *
@@ -510,11 +515,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
 
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     * Specifies if the DB instance is a Multi-AZ deployment. <p>Constraint:
      * You cannot specify the AvailabilityZone parameter if the MultiAZ
      * parameter is set to <code>true</code>.
      *
-     * @return Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     * @return Specifies if the DB instance is a Multi-AZ deployment. <p>Constraint:
      *         You cannot specify the AvailabilityZone parameter if the MultiAZ
      *         parameter is set to <code>true</code>.
      */
@@ -523,7 +528,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
 
     /**
-     * Specifies the accessibility options for the DB Instance. A value of
+     * Specifies the accessibility options for the DB instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
      * DNS name, which resolves to a public IP address. A value of false
      * specifies an internal instance with a DNS name that resolves to a
@@ -537,7 +542,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * as part of the request and the PubliclyAccessible value has not been
      * set, the DB instance will be private.
      *
-     * @return Specifies the accessibility options for the DB Instance. A value of
+     * @return Specifies the accessibility options for the DB instance. A value of
      *         true specifies an Internet-facing instance with a publicly resolvable
      *         DNS name, which resolves to a public IP address. A value of false
      *         specifies an internal instance with a DNS name that resolves to a
@@ -556,7 +561,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * Specifies the accessibility options for the DB Instance. A value of
+     * Specifies the accessibility options for the DB instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
      * DNS name, which resolves to a public IP address. A value of false
      * specifies an internal instance with a DNS name that resolves to a
@@ -570,7 +575,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * as part of the request and the PubliclyAccessible value has not been
      * set, the DB instance will be private.
      *
-     * @param publiclyAccessible Specifies the accessibility options for the DB Instance. A value of
+     * @param publiclyAccessible Specifies the accessibility options for the DB instance. A value of
      *         true specifies an Internet-facing instance with a publicly resolvable
      *         DNS name, which resolves to a public IP address. A value of false
      *         specifies an internal instance with a DNS name that resolves to a
@@ -589,7 +594,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * Specifies the accessibility options for the DB Instance. A value of
+     * Specifies the accessibility options for the DB instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
      * DNS name, which resolves to a public IP address. A value of false
      * specifies an internal instance with a DNS name that resolves to a
@@ -605,7 +610,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publiclyAccessible Specifies the accessibility options for the DB Instance. A value of
+     * @param publiclyAccessible Specifies the accessibility options for the DB instance. A value of
      *         true specifies an Internet-facing instance with a publicly resolvable
      *         DNS name, which resolves to a public IP address. A value of false
      *         specifies an internal instance with a DNS name that resolves to a
@@ -628,7 +633,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
 
     /**
-     * Specifies the accessibility options for the DB Instance. A value of
+     * Specifies the accessibility options for the DB instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
      * DNS name, which resolves to a public IP address. A value of false
      * specifies an internal instance with a DNS name that resolves to a
@@ -642,7 +647,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * as part of the request and the PubliclyAccessible value has not been
      * set, the DB instance will be private.
      *
-     * @return Specifies the accessibility options for the DB Instance. A value of
+     * @return Specifies the accessibility options for the DB instance. A value of
      *         true specifies an Internet-facing instance with a publicly resolvable
      *         DNS name, which resolves to a public IP address. A value of false
      *         specifies an internal instance with a DNS name that resolves to a
@@ -662,10 +667,10 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
 
     /**
      * Indicates that minor version upgrades will be applied automatically to
-     * the DB Instance during the maintenance window.
+     * the DB instance during the maintenance window.
      *
      * @return Indicates that minor version upgrades will be applied automatically to
-     *         the DB Instance during the maintenance window.
+     *         the DB instance during the maintenance window.
      */
     public Boolean isAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
@@ -673,10 +678,10 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * Indicates that minor version upgrades will be applied automatically to
-     * the DB Instance during the maintenance window.
+     * the DB instance during the maintenance window.
      *
      * @param autoMinorVersionUpgrade Indicates that minor version upgrades will be applied automatically to
-     *         the DB Instance during the maintenance window.
+     *         the DB instance during the maintenance window.
      */
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
@@ -684,12 +689,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * Indicates that minor version upgrades will be applied automatically to
-     * the DB Instance during the maintenance window.
+     * the DB instance during the maintenance window.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoMinorVersionUpgrade Indicates that minor version upgrades will be applied automatically to
-     *         the DB Instance during the maintenance window.
+     *         the DB instance during the maintenance window.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -701,22 +706,22 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
 
     /**
      * Indicates that minor version upgrades will be applied automatically to
-     * the DB Instance during the maintenance window.
+     * the DB instance during the maintenance window.
      *
      * @return Indicates that minor version upgrades will be applied automatically to
-     *         the DB Instance during the maintenance window.
+     *         the DB instance during the maintenance window.
      */
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
 
     /**
-     * License model information for the restored DB Instance. <p> Default:
+     * License model information for the restored DB instance. <p> Default:
      * Same as source. <p> Valid values: <code>license-included</code> |
      * <code>bring-your-own-license</code> |
      * <code>general-public-license</code>
      *
-     * @return License model information for the restored DB Instance. <p> Default:
+     * @return License model information for the restored DB instance. <p> Default:
      *         Same as source. <p> Valid values: <code>license-included</code> |
      *         <code>bring-your-own-license</code> |
      *         <code>general-public-license</code>
@@ -726,12 +731,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * License model information for the restored DB Instance. <p> Default:
+     * License model information for the restored DB instance. <p> Default:
      * Same as source. <p> Valid values: <code>license-included</code> |
      * <code>bring-your-own-license</code> |
      * <code>general-public-license</code>
      *
-     * @param licenseModel License model information for the restored DB Instance. <p> Default:
+     * @param licenseModel License model information for the restored DB instance. <p> Default:
      *         Same as source. <p> Valid values: <code>license-included</code> |
      *         <code>bring-your-own-license</code> |
      *         <code>general-public-license</code>
@@ -741,14 +746,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * License model information for the restored DB Instance. <p> Default:
+     * License model information for the restored DB instance. <p> Default:
      * Same as source. <p> Valid values: <code>license-included</code> |
      * <code>bring-your-own-license</code> |
      * <code>general-public-license</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param licenseModel License model information for the restored DB Instance. <p> Default:
+     * @param licenseModel License model information for the restored DB instance. <p> Default:
      *         Same as source. <p> Valid values: <code>license-included</code> |
      *         <code>bring-your-own-license</code> |
      *         <code>general-public-license</code>
@@ -762,10 +767,10 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
 
     /**
-     * The database name for the restored DB Instance. <note> <p>This
+     * The database name for the restored DB instance. <note> <p>This
      * parameter doesn't apply to the MySQL engine. </note>
      *
-     * @return The database name for the restored DB Instance. <note> <p>This
+     * @return The database name for the restored DB instance. <note> <p>This
      *         parameter doesn't apply to the MySQL engine. </note>
      */
     public String getDBName() {
@@ -773,10 +778,10 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * The database name for the restored DB Instance. <note> <p>This
+     * The database name for the restored DB instance. <note> <p>This
      * parameter doesn't apply to the MySQL engine. </note>
      *
-     * @param dBName The database name for the restored DB Instance. <note> <p>This
+     * @param dBName The database name for the restored DB instance. <note> <p>This
      *         parameter doesn't apply to the MySQL engine. </note>
      */
     public void setDBName(String dBName) {
@@ -784,12 +789,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * The database name for the restored DB Instance. <note> <p>This
+     * The database name for the restored DB instance. <note> <p>This
      * parameter doesn't apply to the MySQL engine. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBName The database name for the restored DB Instance. <note> <p>This
+     * @param dBName The database name for the restored DB instance. <note> <p>This
      *         parameter doesn't apply to the MySQL engine. </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -846,7 +851,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
 
     /**
-     * Specifies the amount of provisioned IOPS for the DB Instance,
+     * Specifies the amount of provisioned IOPS for the DB instance,
      * expressed in I/O operations per second. If this parameter is not
      * specified, the IOPS value will be taken from the backup. If this
      * parameter is set to 0, the new instance will be converted to a
@@ -854,7 +859,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * instance will be available for connections before the conversion
      * starts. <p> Constraints: Must be an integer greater than 1000.
      *
-     * @return Specifies the amount of provisioned IOPS for the DB Instance,
+     * @return Specifies the amount of provisioned IOPS for the DB instance,
      *         expressed in I/O operations per second. If this parameter is not
      *         specified, the IOPS value will be taken from the backup. If this
      *         parameter is set to 0, the new instance will be converted to a
@@ -867,7 +872,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * Specifies the amount of provisioned IOPS for the DB Instance,
+     * Specifies the amount of provisioned IOPS for the DB instance,
      * expressed in I/O operations per second. If this parameter is not
      * specified, the IOPS value will be taken from the backup. If this
      * parameter is set to 0, the new instance will be converted to a
@@ -875,7 +880,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * instance will be available for connections before the conversion
      * starts. <p> Constraints: Must be an integer greater than 1000.
      *
-     * @param iops Specifies the amount of provisioned IOPS for the DB Instance,
+     * @param iops Specifies the amount of provisioned IOPS for the DB instance,
      *         expressed in I/O operations per second. If this parameter is not
      *         specified, the IOPS value will be taken from the backup. If this
      *         parameter is set to 0, the new instance will be converted to a
@@ -888,7 +893,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * Specifies the amount of provisioned IOPS for the DB Instance,
+     * Specifies the amount of provisioned IOPS for the DB instance,
      * expressed in I/O operations per second. If this parameter is not
      * specified, the IOPS value will be taken from the backup. If this
      * parameter is set to 0, the new instance will be converted to a
@@ -898,7 +903,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param iops Specifies the amount of provisioned IOPS for the DB Instance,
+     * @param iops Specifies the amount of provisioned IOPS for the DB instance,
      *         expressed in I/O operations per second. If this parameter is not
      *         specified, the IOPS value will be taken from the backup. If this
      *         parameter is set to 0, the new instance will be converted to a
@@ -990,6 +995,74 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
 
     /**
+     * A list of tags.
+     *
+     * @return A list of tags.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags.
+     *
+     * @param tags A list of tags.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public RestoreDBInstanceFromDBSnapshotRequest withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public RestoreDBInstanceFromDBSnapshotRequest withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1014,7 +1087,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         if (getDBName() != null) sb.append("DBName: " + getDBName() + ",");
         if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");
         if (getIops() != null) sb.append("Iops: " + getIops() + ",");
-        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() );
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -1038,6 +1112,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode()); 
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -1077,6 +1152,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
         if (other.getOptionGroupName() == null ^ this.getOptionGroupName() == null) return false;
         if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

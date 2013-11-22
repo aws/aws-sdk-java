@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#modifyDBInstance(ModifyDBInstanceRequest) ModifyDBInstance operation}.
  * <p>
- * Modify settings for a DB Instance. You can change one or more database configuration parameters by specifying these parameters and the new values in
+ * Modify settings for a DB instance. You can change one or more database configuration parameters by specifying these parameters and the new values in
  * the request.
  * </p>
  *
@@ -30,9 +30,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The DB Instance identifier. This value is stored as a lowercase
+     * The DB instance identifier. This value is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must be the identifier for an
-     * existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
+     * existing DB instance</li> <li>Must contain from 1 to 63 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      * </ul>
@@ -72,7 +72,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     private Integer allocatedStorage;
 
     /**
-     * The new compute and memory capacity of the DB Instance. To determine
+     * The new compute and memory capacity of the DB instance. To determine
      * the instance classes that are available for a particular DB engine,
      * use the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Passing
      * a value for this parameter causes an outage during the change and is
@@ -86,7 +86,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     private String dBInstanceClass;
 
     /**
-     * A list of DB Security Groups to authorize on this DB Instance.
+     * A list of DB security groups to authorize on this DB instance.
      * Changing this parameter does not result in an outage and the change is
      * asynchronously applied as soon as possible. <p>Constraints: <ul>
      * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
@@ -96,7 +96,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> dBSecurityGroups;
 
     /**
-     * A list of EC2 VPC Security Groups to authorize on this DB Instance.
+     * A list of EC2 VPC security groups to authorize on this DB instance.
      * This change is asynchronously applied as soon as possible.
      * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -108,8 +108,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Specifies whether or not the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible,
      * regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the DB Instance. <p> If this parameter is passed as
-     * <code>false</code>, changes to the DB Instance are applied on the next
+     * the DB instance. <p> If this parameter is passed as
+     * <code>false</code>, changes to the DB instance are applied on the next
      * call to <a>RebootDBInstance</a>, the next maintenance reboot, or the
      * next failure reboot, whichever occurs first. See each parameter to
      * determine when a change is applied. <p>Default: <code>false</code>
@@ -117,8 +117,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     private Boolean applyImmediately;
 
     /**
-     * The new password for the DB Instance master user. Can be any printable
-     * ASCII character except "/", "\", or "@". <p> Changing this parameter
+     * The new password for the DB instance master user. Can be any printable
+     * ASCII character except "/", """, or "@". <p> Changing this parameter
      * does not result in an outage and the change is asynchronously applied
      * as soon as possible. Between the time of the request and the
      * completion of the request, the <code>MasterUserPassword</code> element
@@ -133,13 +133,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     private String masterUserPassword;
 
     /**
-     * The name of the DB Parameter Group to apply to this DB Instance.
+     * The name of the DB parameter group to apply to this DB instance.
      * Changing this parameter does not result in an outage and the change is
      * applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Default: Uses existing setting <p>Constraints:
-     * The DB Parameter Group must be in the same DB Parameter Group family
-     * as this DB Instance.
+     * The DB parameter group must be in the same DB parameter group family
+     * as this DB instance.
      */
     private String dBParameterGroupName;
 
@@ -153,9 +153,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>true</code> for this request. If you change the parameter from
      * one non-zero value to another non-zero value, the change is
      * asynchronously applied as soon as possible. <p>Default: Uses existing
-     * setting <p>Constraints: <ul> <li>Must be a value from 0 to 8</li>
-     * <li>Cannot be set to 0 if the DB Instance is a master instance with
-     * read replicas or if the DB Instance is a read replica</li> </ul>
+     * setting <p>Constraints: <ul> <li>Must be a value from 0 to 35</li>
+     * <li>Can be specified for a read replica only if the source is running
+     * MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source
+     * to read replicas</li> </ul>
      */
     private Integer backupRetentionPeriod;
 
@@ -178,7 +179,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * is asynchronously applied as soon as possible. If there are pending
      * actions that cause a reboot, and the maintenance window is changed to
      * include the current time, then changing this parameter will cause a
-     * reboot of the DB Instance. If moving this window to the current time,
+     * reboot of the DB instance. If moving this window to the current time,
      * there must be at least 30 minutes between the current time and end of
      * the window to ensure pending changes are applied. <p>Default: Uses
      * existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon
@@ -188,12 +189,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     private String preferredMaintenanceWindow;
 
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. Changing this
+     * Specifies if the DB instance is a Multi-AZ deployment. Changing this
      * parameter does not result in an outage and the change is applied
      * during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Constraints: Cannot be specified if the DB
-     * Instance is a read replica.
+     * instance is a read replica.
      */
     private Boolean multiAZ;
 
@@ -202,10 +203,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * parameter results in an outage and the change is applied during the
      * next maintenance window unless the <code>ApplyImmediately</code>
      * parameter is set to <code>true</code> for this request. <p> For major
-     * version upgrades, if a nondefault DB Parameter Group is currently in
-     * use, a new DB Parameter Group in the DB Parameter Group Family for the
-     * new engine version must be specified. The new DB Parameter Group can
-     * be the default for that DB Parameter Group Family. <p>Example:
+     * version upgrades, if a non-default DB parameter group is currently in
+     * use, a new DB parameter group in the DB parameter group family for the
+     * new engine version must be specified. The new DB parameter group can
+     * be the default for that DB parameter group family. <p>Example:
      * <code>5.1.42</code>
      */
     private String engineVersion;
@@ -216,13 +217,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * asynchronously applied as soon as possible. <p>Constraints: This
      * parameter must be set to true when specifying a value for the
      * EngineVersion parameter that is a different major version than the DB
-     * Instance's current version.
+     * instance's current version.
      */
     private Boolean allowMajorVersionUpgrade;
 
     /**
      * Indicates that minor version upgrades will be applied automatically to
-     * the DB Instance during the maintenance window. Changing this parameter
+     * the DB instance during the maintenance window. Changing this parameter
      * does not result in an outage except in the following case and the
      * change is asynchronously applied as soon as possible. An outage will
      * result if this parameter is set to <code>true</code> during the
@@ -259,7 +260,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     private Integer iops;
 
     /**
-     * Indicates that the DB Instance should be associated with the specified
+     * Indicates that the DB instance should be associated with the specified
      * option group. Changing this parameter does not result in an outage
      * except in the following case and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter
@@ -277,7 +278,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     private String optionGroupName;
 
     /**
-     * The new DB Instance identifier for the DB Instance when renaming a DB
+     * The new DB instance identifier for the DB instance when renaming a DB
      * Instance. This value is stored as a lowercase string. <p>Constraints:
      * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
@@ -296,9 +297,9 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dBInstanceIdentifier The DB Instance identifier. This value is
+     * @param dBInstanceIdentifier The DB instance identifier. This value is
      * stored as a lowercase string. <p>Constraints: <ul> <li>Must be the
-     * identifier for an existing DB Instance</li> <li>Must contain from 1 to
+     * identifier for an existing DB instance</li> <li>Must contain from 1 to
      * 63 alphanumeric characters or hyphens</li> <li>First character must be
      * a letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul>
@@ -308,16 +309,16 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The DB Instance identifier. This value is stored as a lowercase
+     * The DB instance identifier. This value is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must be the identifier for an
-     * existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
+     * existing DB instance</li> <li>Must contain from 1 to 63 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      * </ul>
      *
-     * @return The DB Instance identifier. This value is stored as a lowercase
+     * @return The DB instance identifier. This value is stored as a lowercase
      *         string. <p>Constraints: <ul> <li>Must be the identifier for an
-     *         existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
+     *         existing DB instance</li> <li>Must contain from 1 to 63 alphanumeric
      *         characters or hyphens</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         </ul>
@@ -327,16 +328,16 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The DB Instance identifier. This value is stored as a lowercase
+     * The DB instance identifier. This value is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must be the identifier for an
-     * existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
+     * existing DB instance</li> <li>Must contain from 1 to 63 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      * </ul>
      *
-     * @param dBInstanceIdentifier The DB Instance identifier. This value is stored as a lowercase
+     * @param dBInstanceIdentifier The DB instance identifier. This value is stored as a lowercase
      *         string. <p>Constraints: <ul> <li>Must be the identifier for an
-     *         existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
+     *         existing DB instance</li> <li>Must contain from 1 to 63 alphanumeric
      *         characters or hyphens</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         </ul>
@@ -346,18 +347,18 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The DB Instance identifier. This value is stored as a lowercase
+     * The DB instance identifier. This value is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must be the identifier for an
-     * existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
+     * existing DB instance</li> <li>Must contain from 1 to 63 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceIdentifier The DB Instance identifier. This value is stored as a lowercase
+     * @param dBInstanceIdentifier The DB instance identifier. This value is stored as a lowercase
      *         string. <p>Constraints: <ul> <li>Must be the identifier for an
-     *         existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
+     *         existing DB instance</li> <li>Must contain from 1 to 63 alphanumeric
      *         characters or hyphens</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         </ul>
@@ -566,7 +567,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The new compute and memory capacity of the DB Instance. To determine
+     * The new compute and memory capacity of the DB instance. To determine
      * the instance classes that are available for a particular DB engine,
      * use the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Passing
      * a value for this parameter causes an outage during the change and is
@@ -577,7 +578,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge |
      * db.m2.4xlarge</code>
      *
-     * @return The new compute and memory capacity of the DB Instance. To determine
+     * @return The new compute and memory capacity of the DB instance. To determine
      *         the instance classes that are available for a particular DB engine,
      *         use the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Passing
      *         a value for this parameter causes an outage during the change and is
@@ -593,7 +594,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The new compute and memory capacity of the DB Instance. To determine
+     * The new compute and memory capacity of the DB instance. To determine
      * the instance classes that are available for a particular DB engine,
      * use the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Passing
      * a value for this parameter causes an outage during the change and is
@@ -604,7 +605,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge |
      * db.m2.4xlarge</code>
      *
-     * @param dBInstanceClass The new compute and memory capacity of the DB Instance. To determine
+     * @param dBInstanceClass The new compute and memory capacity of the DB instance. To determine
      *         the instance classes that are available for a particular DB engine,
      *         use the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Passing
      *         a value for this parameter causes an outage during the change and is
@@ -620,7 +621,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The new compute and memory capacity of the DB Instance. To determine
+     * The new compute and memory capacity of the DB instance. To determine
      * the instance classes that are available for a particular DB engine,
      * use the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Passing
      * a value for this parameter causes an outage during the change and is
@@ -633,7 +634,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceClass The new compute and memory capacity of the DB Instance. To determine
+     * @param dBInstanceClass The new compute and memory capacity of the DB instance. To determine
      *         the instance classes that are available for a particular DB engine,
      *         use the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Passing
      *         a value for this parameter causes an outage during the change and is
@@ -653,14 +654,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * A list of DB Security Groups to authorize on this DB Instance.
+     * A list of DB security groups to authorize on this DB instance.
      * Changing this parameter does not result in an outage and the change is
      * asynchronously applied as soon as possible. <p>Constraints: <ul>
      * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
      * must be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul>
      *
-     * @return A list of DB Security Groups to authorize on this DB Instance.
+     * @return A list of DB security groups to authorize on this DB instance.
      *         Changing this parameter does not result in an outage and the change is
      *         asynchronously applied as soon as possible. <p>Constraints: <ul>
      *         <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
@@ -676,14 +677,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * A list of DB Security Groups to authorize on this DB Instance.
+     * A list of DB security groups to authorize on this DB instance.
      * Changing this parameter does not result in an outage and the change is
      * asynchronously applied as soon as possible. <p>Constraints: <ul>
      * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
      * must be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul>
      *
-     * @param dBSecurityGroups A list of DB Security Groups to authorize on this DB Instance.
+     * @param dBSecurityGroups A list of DB security groups to authorize on this DB instance.
      *         Changing this parameter does not result in an outage and the change is
      *         asynchronously applied as soon as possible. <p>Constraints: <ul>
      *         <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
@@ -701,7 +702,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * A list of DB Security Groups to authorize on this DB Instance.
+     * A list of DB security groups to authorize on this DB instance.
      * Changing this parameter does not result in an outage and the change is
      * asynchronously applied as soon as possible. <p>Constraints: <ul>
      * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
@@ -710,7 +711,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSecurityGroups A list of DB Security Groups to authorize on this DB Instance.
+     * @param dBSecurityGroups A list of DB security groups to authorize on this DB instance.
      *         Changing this parameter does not result in an outage and the change is
      *         asynchronously applied as soon as possible. <p>Constraints: <ul>
      *         <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
@@ -729,7 +730,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * A list of DB Security Groups to authorize on this DB Instance.
+     * A list of DB security groups to authorize on this DB instance.
      * Changing this parameter does not result in an outage and the change is
      * asynchronously applied as soon as possible. <p>Constraints: <ul>
      * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
@@ -738,7 +739,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSecurityGroups A list of DB Security Groups to authorize on this DB Instance.
+     * @param dBSecurityGroups A list of DB security groups to authorize on this DB instance.
      *         Changing this parameter does not result in an outage and the change is
      *         asynchronously applied as soon as possible. <p>Constraints: <ul>
      *         <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
@@ -761,13 +762,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * A list of EC2 VPC Security Groups to authorize on this DB Instance.
+     * A list of EC2 VPC security groups to authorize on this DB instance.
      * This change is asynchronously applied as soon as possible.
      * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul>
      *
-     * @return A list of EC2 VPC Security Groups to authorize on this DB Instance.
+     * @return A list of EC2 VPC security groups to authorize on this DB instance.
      *         This change is asynchronously applied as soon as possible.
      *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -782,13 +783,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * A list of EC2 VPC Security Groups to authorize on this DB Instance.
+     * A list of EC2 VPC security groups to authorize on this DB instance.
      * This change is asynchronously applied as soon as possible.
      * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul>
      *
-     * @param vpcSecurityGroupIds A list of EC2 VPC Security Groups to authorize on this DB Instance.
+     * @param vpcSecurityGroupIds A list of EC2 VPC security groups to authorize on this DB instance.
      *         This change is asynchronously applied as soon as possible.
      *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -805,7 +806,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * A list of EC2 VPC Security Groups to authorize on this DB Instance.
+     * A list of EC2 VPC security groups to authorize on this DB instance.
      * This change is asynchronously applied as soon as possible.
      * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -813,7 +814,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcSecurityGroupIds A list of EC2 VPC Security Groups to authorize on this DB Instance.
+     * @param vpcSecurityGroupIds A list of EC2 VPC security groups to authorize on this DB instance.
      *         This change is asynchronously applied as soon as possible.
      *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -831,7 +832,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * A list of EC2 VPC Security Groups to authorize on this DB Instance.
+     * A list of EC2 VPC security groups to authorize on this DB instance.
      * This change is asynchronously applied as soon as possible.
      * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -839,7 +840,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcSecurityGroupIds A list of EC2 VPC Security Groups to authorize on this DB Instance.
+     * @param vpcSecurityGroupIds A list of EC2 VPC security groups to authorize on this DB instance.
      *         This change is asynchronously applied as soon as possible.
      *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -864,8 +865,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Specifies whether or not the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible,
      * regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the DB Instance. <p> If this parameter is passed as
-     * <code>false</code>, changes to the DB Instance are applied on the next
+     * the DB instance. <p> If this parameter is passed as
+     * <code>false</code>, changes to the DB instance are applied on the next
      * call to <a>RebootDBInstance</a>, the next maintenance reboot, or the
      * next failure reboot, whichever occurs first. See each parameter to
      * determine when a change is applied. <p>Default: <code>false</code>
@@ -873,8 +874,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @return Specifies whether or not the modifications in this request and any
      *         pending modifications are asynchronously applied as soon as possible,
      *         regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     *         the DB Instance. <p> If this parameter is passed as
-     *         <code>false</code>, changes to the DB Instance are applied on the next
+     *         the DB instance. <p> If this parameter is passed as
+     *         <code>false</code>, changes to the DB instance are applied on the next
      *         call to <a>RebootDBInstance</a>, the next maintenance reboot, or the
      *         next failure reboot, whichever occurs first. See each parameter to
      *         determine when a change is applied. <p>Default: <code>false</code>
@@ -887,8 +888,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Specifies whether or not the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible,
      * regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the DB Instance. <p> If this parameter is passed as
-     * <code>false</code>, changes to the DB Instance are applied on the next
+     * the DB instance. <p> If this parameter is passed as
+     * <code>false</code>, changes to the DB instance are applied on the next
      * call to <a>RebootDBInstance</a>, the next maintenance reboot, or the
      * next failure reboot, whichever occurs first. See each parameter to
      * determine when a change is applied. <p>Default: <code>false</code>
@@ -896,8 +897,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @param applyImmediately Specifies whether or not the modifications in this request and any
      *         pending modifications are asynchronously applied as soon as possible,
      *         regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     *         the DB Instance. <p> If this parameter is passed as
-     *         <code>false</code>, changes to the DB Instance are applied on the next
+     *         the DB instance. <p> If this parameter is passed as
+     *         <code>false</code>, changes to the DB instance are applied on the next
      *         call to <a>RebootDBInstance</a>, the next maintenance reboot, or the
      *         next failure reboot, whichever occurs first. See each parameter to
      *         determine when a change is applied. <p>Default: <code>false</code>
@@ -910,8 +911,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Specifies whether or not the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible,
      * regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the DB Instance. <p> If this parameter is passed as
-     * <code>false</code>, changes to the DB Instance are applied on the next
+     * the DB instance. <p> If this parameter is passed as
+     * <code>false</code>, changes to the DB instance are applied on the next
      * call to <a>RebootDBInstance</a>, the next maintenance reboot, or the
      * next failure reboot, whichever occurs first. See each parameter to
      * determine when a change is applied. <p>Default: <code>false</code>
@@ -921,8 +922,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @param applyImmediately Specifies whether or not the modifications in this request and any
      *         pending modifications are asynchronously applied as soon as possible,
      *         regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     *         the DB Instance. <p> If this parameter is passed as
-     *         <code>false</code>, changes to the DB Instance are applied on the next
+     *         the DB instance. <p> If this parameter is passed as
+     *         <code>false</code>, changes to the DB instance are applied on the next
      *         call to <a>RebootDBInstance</a>, the next maintenance reboot, or the
      *         next failure reboot, whichever occurs first. See each parameter to
      *         determine when a change is applied. <p>Default: <code>false</code>
@@ -939,8 +940,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Specifies whether or not the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible,
      * regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the DB Instance. <p> If this parameter is passed as
-     * <code>false</code>, changes to the DB Instance are applied on the next
+     * the DB instance. <p> If this parameter is passed as
+     * <code>false</code>, changes to the DB instance are applied on the next
      * call to <a>RebootDBInstance</a>, the next maintenance reboot, or the
      * next failure reboot, whichever occurs first. See each parameter to
      * determine when a change is applied. <p>Default: <code>false</code>
@@ -948,8 +949,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @return Specifies whether or not the modifications in this request and any
      *         pending modifications are asynchronously applied as soon as possible,
      *         regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     *         the DB Instance. <p> If this parameter is passed as
-     *         <code>false</code>, changes to the DB Instance are applied on the next
+     *         the DB instance. <p> If this parameter is passed as
+     *         <code>false</code>, changes to the DB instance are applied on the next
      *         call to <a>RebootDBInstance</a>, the next maintenance reboot, or the
      *         next failure reboot, whichever occurs first. See each parameter to
      *         determine when a change is applied. <p>Default: <code>false</code>
@@ -959,8 +960,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The new password for the DB Instance master user. Can be any printable
-     * ASCII character except "/", "\", or "@". <p> Changing this parameter
+     * The new password for the DB instance master user. Can be any printable
+     * ASCII character except "/", """, or "@". <p> Changing this parameter
      * does not result in an outage and the change is asynchronously applied
      * as soon as possible. Between the time of the request and the
      * completion of the request, the <code>MasterUserPassword</code> element
@@ -972,8 +973,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * action provides a way to regain access to a master instance user if
      * the password is lost. </note>
      *
-     * @return The new password for the DB Instance master user. Can be any printable
-     *         ASCII character except "/", "\", or "@". <p> Changing this parameter
+     * @return The new password for the DB instance master user. Can be any printable
+     *         ASCII character except "/", """, or "@". <p> Changing this parameter
      *         does not result in an outage and the change is asynchronously applied
      *         as soon as possible. Between the time of the request and the
      *         completion of the request, the <code>MasterUserPassword</code> element
@@ -990,8 +991,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The new password for the DB Instance master user. Can be any printable
-     * ASCII character except "/", "\", or "@". <p> Changing this parameter
+     * The new password for the DB instance master user. Can be any printable
+     * ASCII character except "/", """, or "@". <p> Changing this parameter
      * does not result in an outage and the change is asynchronously applied
      * as soon as possible. Between the time of the request and the
      * completion of the request, the <code>MasterUserPassword</code> element
@@ -1003,8 +1004,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * action provides a way to regain access to a master instance user if
      * the password is lost. </note>
      *
-     * @param masterUserPassword The new password for the DB Instance master user. Can be any printable
-     *         ASCII character except "/", "\", or "@". <p> Changing this parameter
+     * @param masterUserPassword The new password for the DB instance master user. Can be any printable
+     *         ASCII character except "/", """, or "@". <p> Changing this parameter
      *         does not result in an outage and the change is asynchronously applied
      *         as soon as possible. Between the time of the request and the
      *         completion of the request, the <code>MasterUserPassword</code> element
@@ -1021,8 +1022,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The new password for the DB Instance master user. Can be any printable
-     * ASCII character except "/", "\", or "@". <p> Changing this parameter
+     * The new password for the DB instance master user. Can be any printable
+     * ASCII character except "/", """, or "@". <p> Changing this parameter
      * does not result in an outage and the change is asynchronously applied
      * as soon as possible. Between the time of the request and the
      * completion of the request, the <code>MasterUserPassword</code> element
@@ -1036,8 +1037,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param masterUserPassword The new password for the DB Instance master user. Can be any printable
-     *         ASCII character except "/", "\", or "@". <p> Changing this parameter
+     * @param masterUserPassword The new password for the DB instance master user. Can be any printable
+     *         ASCII character except "/", """, or "@". <p> Changing this parameter
      *         does not result in an outage and the change is asynchronously applied
      *         as soon as possible. Between the time of the request and the
      *         completion of the request, the <code>MasterUserPassword</code> element
@@ -1058,65 +1059,65 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The name of the DB Parameter Group to apply to this DB Instance.
+     * The name of the DB parameter group to apply to this DB instance.
      * Changing this parameter does not result in an outage and the change is
      * applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Default: Uses existing setting <p>Constraints:
-     * The DB Parameter Group must be in the same DB Parameter Group family
-     * as this DB Instance.
+     * The DB parameter group must be in the same DB parameter group family
+     * as this DB instance.
      *
-     * @return The name of the DB Parameter Group to apply to this DB Instance.
+     * @return The name of the DB parameter group to apply to this DB instance.
      *         Changing this parameter does not result in an outage and the change is
      *         applied during the next maintenance window unless the
      *         <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *         for this request. <p>Default: Uses existing setting <p>Constraints:
-     *         The DB Parameter Group must be in the same DB Parameter Group family
-     *         as this DB Instance.
+     *         The DB parameter group must be in the same DB parameter group family
+     *         as this DB instance.
      */
     public String getDBParameterGroupName() {
         return dBParameterGroupName;
     }
     
     /**
-     * The name of the DB Parameter Group to apply to this DB Instance.
+     * The name of the DB parameter group to apply to this DB instance.
      * Changing this parameter does not result in an outage and the change is
      * applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Default: Uses existing setting <p>Constraints:
-     * The DB Parameter Group must be in the same DB Parameter Group family
-     * as this DB Instance.
+     * The DB parameter group must be in the same DB parameter group family
+     * as this DB instance.
      *
-     * @param dBParameterGroupName The name of the DB Parameter Group to apply to this DB Instance.
+     * @param dBParameterGroupName The name of the DB parameter group to apply to this DB instance.
      *         Changing this parameter does not result in an outage and the change is
      *         applied during the next maintenance window unless the
      *         <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *         for this request. <p>Default: Uses existing setting <p>Constraints:
-     *         The DB Parameter Group must be in the same DB Parameter Group family
-     *         as this DB Instance.
+     *         The DB parameter group must be in the same DB parameter group family
+     *         as this DB instance.
      */
     public void setDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
     }
     
     /**
-     * The name of the DB Parameter Group to apply to this DB Instance.
+     * The name of the DB parameter group to apply to this DB instance.
      * Changing this parameter does not result in an outage and the change is
      * applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Default: Uses existing setting <p>Constraints:
-     * The DB Parameter Group must be in the same DB Parameter Group family
-     * as this DB Instance.
+     * The DB parameter group must be in the same DB parameter group family
+     * as this DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupName The name of the DB Parameter Group to apply to this DB Instance.
+     * @param dBParameterGroupName The name of the DB parameter group to apply to this DB instance.
      *         Changing this parameter does not result in an outage and the change is
      *         applied during the next maintenance window unless the
      *         <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *         for this request. <p>Default: Uses existing setting <p>Constraints:
-     *         The DB Parameter Group must be in the same DB Parameter Group family
-     *         as this DB Instance.
+     *         The DB parameter group must be in the same DB parameter group family
+     *         as this DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1136,9 +1137,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>true</code> for this request. If you change the parameter from
      * one non-zero value to another non-zero value, the change is
      * asynchronously applied as soon as possible. <p>Default: Uses existing
-     * setting <p>Constraints: <ul> <li>Must be a value from 0 to 8</li>
-     * <li>Cannot be set to 0 if the DB Instance is a master instance with
-     * read replicas or if the DB Instance is a read replica</li> </ul>
+     * setting <p>Constraints: <ul> <li>Must be a value from 0 to 35</li>
+     * <li>Can be specified for a read replica only if the source is running
+     * MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source
+     * to read replicas</li> </ul>
      *
      * @return The number of days to retain automated backups. Setting this parameter
      *         to a positive number enables backups. Setting this parameter to 0
@@ -1149,9 +1151,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code>true</code> for this request. If you change the parameter from
      *         one non-zero value to another non-zero value, the change is
      *         asynchronously applied as soon as possible. <p>Default: Uses existing
-     *         setting <p>Constraints: <ul> <li>Must be a value from 0 to 8</li>
-     *         <li>Cannot be set to 0 if the DB Instance is a master instance with
-     *         read replicas or if the DB Instance is a read replica</li> </ul>
+     *         setting <p>Constraints: <ul> <li>Must be a value from 0 to 35</li>
+     *         <li>Can be specified for a read replica only if the source is running
+     *         MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source
+     *         to read replicas</li> </ul>
      */
     public Integer getBackupRetentionPeriod() {
         return backupRetentionPeriod;
@@ -1167,9 +1170,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>true</code> for this request. If you change the parameter from
      * one non-zero value to another non-zero value, the change is
      * asynchronously applied as soon as possible. <p>Default: Uses existing
-     * setting <p>Constraints: <ul> <li>Must be a value from 0 to 8</li>
-     * <li>Cannot be set to 0 if the DB Instance is a master instance with
-     * read replicas or if the DB Instance is a read replica</li> </ul>
+     * setting <p>Constraints: <ul> <li>Must be a value from 0 to 35</li>
+     * <li>Can be specified for a read replica only if the source is running
+     * MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source
+     * to read replicas</li> </ul>
      *
      * @param backupRetentionPeriod The number of days to retain automated backups. Setting this parameter
      *         to a positive number enables backups. Setting this parameter to 0
@@ -1180,9 +1184,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code>true</code> for this request. If you change the parameter from
      *         one non-zero value to another non-zero value, the change is
      *         asynchronously applied as soon as possible. <p>Default: Uses existing
-     *         setting <p>Constraints: <ul> <li>Must be a value from 0 to 8</li>
-     *         <li>Cannot be set to 0 if the DB Instance is a master instance with
-     *         read replicas or if the DB Instance is a read replica</li> </ul>
+     *         setting <p>Constraints: <ul> <li>Must be a value from 0 to 35</li>
+     *         <li>Can be specified for a read replica only if the source is running
+     *         MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source
+     *         to read replicas</li> </ul>
      */
     public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
         this.backupRetentionPeriod = backupRetentionPeriod;
@@ -1198,9 +1203,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>true</code> for this request. If you change the parameter from
      * one non-zero value to another non-zero value, the change is
      * asynchronously applied as soon as possible. <p>Default: Uses existing
-     * setting <p>Constraints: <ul> <li>Must be a value from 0 to 8</li>
-     * <li>Cannot be set to 0 if the DB Instance is a master instance with
-     * read replicas or if the DB Instance is a read replica</li> </ul>
+     * setting <p>Constraints: <ul> <li>Must be a value from 0 to 35</li>
+     * <li>Can be specified for a read replica only if the source is running
+     * MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source
+     * to read replicas</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1213,9 +1219,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code>true</code> for this request. If you change the parameter from
      *         one non-zero value to another non-zero value, the change is
      *         asynchronously applied as soon as possible. <p>Default: Uses existing
-     *         setting <p>Constraints: <ul> <li>Must be a value from 0 to 8</li>
-     *         <li>Cannot be set to 0 if the DB Instance is a master instance with
-     *         read replicas or if the DB Instance is a read replica</li> </ul>
+     *         setting <p>Constraints: <ul> <li>Must be a value from 0 to 35</li>
+     *         <li>Can be specified for a read replica only if the source is running
+     *         MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source
+     *         to read replicas</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1307,7 +1314,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * is asynchronously applied as soon as possible. If there are pending
      * actions that cause a reboot, and the maintenance window is changed to
      * include the current time, then changing this parameter will cause a
-     * reboot of the DB Instance. If moving this window to the current time,
+     * reboot of the DB instance. If moving this window to the current time,
      * there must be at least 30 minutes between the current time and end of
      * the window to ensure pending changes are applied. <p>Default: Uses
      * existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon
@@ -1320,7 +1327,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         is asynchronously applied as soon as possible. If there are pending
      *         actions that cause a reboot, and the maintenance window is changed to
      *         include the current time, then changing this parameter will cause a
-     *         reboot of the DB Instance. If moving this window to the current time,
+     *         reboot of the DB instance. If moving this window to the current time,
      *         there must be at least 30 minutes between the current time and end of
      *         the window to ensure pending changes are applied. <p>Default: Uses
      *         existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon
@@ -1338,7 +1345,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * is asynchronously applied as soon as possible. If there are pending
      * actions that cause a reboot, and the maintenance window is changed to
      * include the current time, then changing this parameter will cause a
-     * reboot of the DB Instance. If moving this window to the current time,
+     * reboot of the DB instance. If moving this window to the current time,
      * there must be at least 30 minutes between the current time and end of
      * the window to ensure pending changes are applied. <p>Default: Uses
      * existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon
@@ -1351,7 +1358,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         is asynchronously applied as soon as possible. If there are pending
      *         actions that cause a reboot, and the maintenance window is changed to
      *         include the current time, then changing this parameter will cause a
-     *         reboot of the DB Instance. If moving this window to the current time,
+     *         reboot of the DB instance. If moving this window to the current time,
      *         there must be at least 30 minutes between the current time and end of
      *         the window to ensure pending changes are applied. <p>Default: Uses
      *         existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon
@@ -1369,7 +1376,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * is asynchronously applied as soon as possible. If there are pending
      * actions that cause a reboot, and the maintenance window is changed to
      * include the current time, then changing this parameter will cause a
-     * reboot of the DB Instance. If moving this window to the current time,
+     * reboot of the DB instance. If moving this window to the current time,
      * there must be at least 30 minutes between the current time and end of
      * the window to ensure pending changes are applied. <p>Default: Uses
      * existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon
@@ -1384,7 +1391,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         is asynchronously applied as soon as possible. If there are pending
      *         actions that cause a reboot, and the maintenance window is changed to
      *         include the current time, then changing this parameter will cause a
-     *         reboot of the DB Instance. If moving this window to the current time,
+     *         reboot of the DB instance. If moving this window to the current time,
      *         there must be at least 30 minutes between the current time and end of
      *         the window to ensure pending changes are applied. <p>Default: Uses
      *         existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon
@@ -1400,59 +1407,59 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. Changing this
+     * Specifies if the DB instance is a Multi-AZ deployment. Changing this
      * parameter does not result in an outage and the change is applied
      * during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Constraints: Cannot be specified if the DB
-     * Instance is a read replica.
+     * instance is a read replica.
      *
-     * @return Specifies if the DB Instance is a Multi-AZ deployment. Changing this
+     * @return Specifies if the DB instance is a Multi-AZ deployment. Changing this
      *         parameter does not result in an outage and the change is applied
      *         during the next maintenance window unless the
      *         <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *         for this request. <p>Constraints: Cannot be specified if the DB
-     *         Instance is a read replica.
+     *         instance is a read replica.
      */
     public Boolean isMultiAZ() {
         return multiAZ;
     }
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. Changing this
+     * Specifies if the DB instance is a Multi-AZ deployment. Changing this
      * parameter does not result in an outage and the change is applied
      * during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Constraints: Cannot be specified if the DB
-     * Instance is a read replica.
+     * instance is a read replica.
      *
-     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. Changing this
+     * @param multiAZ Specifies if the DB instance is a Multi-AZ deployment. Changing this
      *         parameter does not result in an outage and the change is applied
      *         during the next maintenance window unless the
      *         <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *         for this request. <p>Constraints: Cannot be specified if the DB
-     *         Instance is a read replica.
+     *         instance is a read replica.
      */
     public void setMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
     }
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. Changing this
+     * Specifies if the DB instance is a Multi-AZ deployment. Changing this
      * parameter does not result in an outage and the change is applied
      * during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Constraints: Cannot be specified if the DB
-     * Instance is a read replica.
+     * instance is a read replica.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. Changing this
+     * @param multiAZ Specifies if the DB instance is a Multi-AZ deployment. Changing this
      *         parameter does not result in an outage and the change is applied
      *         during the next maintenance window unless the
      *         <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *         for this request. <p>Constraints: Cannot be specified if the DB
-     *         Instance is a read replica.
+     *         instance is a read replica.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1463,19 +1470,19 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. Changing this
+     * Specifies if the DB instance is a Multi-AZ deployment. Changing this
      * parameter does not result in an outage and the change is applied
      * during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Constraints: Cannot be specified if the DB
-     * Instance is a read replica.
+     * instance is a read replica.
      *
-     * @return Specifies if the DB Instance is a Multi-AZ deployment. Changing this
+     * @return Specifies if the DB instance is a Multi-AZ deployment. Changing this
      *         parameter does not result in an outage and the change is applied
      *         during the next maintenance window unless the
      *         <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *         for this request. <p>Constraints: Cannot be specified if the DB
-     *         Instance is a read replica.
+     *         instance is a read replica.
      */
     public Boolean getMultiAZ() {
         return multiAZ;
@@ -1486,20 +1493,20 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * parameter results in an outage and the change is applied during the
      * next maintenance window unless the <code>ApplyImmediately</code>
      * parameter is set to <code>true</code> for this request. <p> For major
-     * version upgrades, if a nondefault DB Parameter Group is currently in
-     * use, a new DB Parameter Group in the DB Parameter Group Family for the
-     * new engine version must be specified. The new DB Parameter Group can
-     * be the default for that DB Parameter Group Family. <p>Example:
+     * version upgrades, if a non-default DB parameter group is currently in
+     * use, a new DB parameter group in the DB parameter group family for the
+     * new engine version must be specified. The new DB parameter group can
+     * be the default for that DB parameter group family. <p>Example:
      * <code>5.1.42</code>
      *
      * @return The version number of the database engine to upgrade to. Changing this
      *         parameter results in an outage and the change is applied during the
      *         next maintenance window unless the <code>ApplyImmediately</code>
      *         parameter is set to <code>true</code> for this request. <p> For major
-     *         version upgrades, if a nondefault DB Parameter Group is currently in
-     *         use, a new DB Parameter Group in the DB Parameter Group Family for the
-     *         new engine version must be specified. The new DB Parameter Group can
-     *         be the default for that DB Parameter Group Family. <p>Example:
+     *         version upgrades, if a non-default DB parameter group is currently in
+     *         use, a new DB parameter group in the DB parameter group family for the
+     *         new engine version must be specified. The new DB parameter group can
+     *         be the default for that DB parameter group family. <p>Example:
      *         <code>5.1.42</code>
      */
     public String getEngineVersion() {
@@ -1511,20 +1518,20 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * parameter results in an outage and the change is applied during the
      * next maintenance window unless the <code>ApplyImmediately</code>
      * parameter is set to <code>true</code> for this request. <p> For major
-     * version upgrades, if a nondefault DB Parameter Group is currently in
-     * use, a new DB Parameter Group in the DB Parameter Group Family for the
-     * new engine version must be specified. The new DB Parameter Group can
-     * be the default for that DB Parameter Group Family. <p>Example:
+     * version upgrades, if a non-default DB parameter group is currently in
+     * use, a new DB parameter group in the DB parameter group family for the
+     * new engine version must be specified. The new DB parameter group can
+     * be the default for that DB parameter group family. <p>Example:
      * <code>5.1.42</code>
      *
      * @param engineVersion The version number of the database engine to upgrade to. Changing this
      *         parameter results in an outage and the change is applied during the
      *         next maintenance window unless the <code>ApplyImmediately</code>
      *         parameter is set to <code>true</code> for this request. <p> For major
-     *         version upgrades, if a nondefault DB Parameter Group is currently in
-     *         use, a new DB Parameter Group in the DB Parameter Group Family for the
-     *         new engine version must be specified. The new DB Parameter Group can
-     *         be the default for that DB Parameter Group Family. <p>Example:
+     *         version upgrades, if a non-default DB parameter group is currently in
+     *         use, a new DB parameter group in the DB parameter group family for the
+     *         new engine version must be specified. The new DB parameter group can
+     *         be the default for that DB parameter group family. <p>Example:
      *         <code>5.1.42</code>
      */
     public void setEngineVersion(String engineVersion) {
@@ -1536,10 +1543,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * parameter results in an outage and the change is applied during the
      * next maintenance window unless the <code>ApplyImmediately</code>
      * parameter is set to <code>true</code> for this request. <p> For major
-     * version upgrades, if a nondefault DB Parameter Group is currently in
-     * use, a new DB Parameter Group in the DB Parameter Group Family for the
-     * new engine version must be specified. The new DB Parameter Group can
-     * be the default for that DB Parameter Group Family. <p>Example:
+     * version upgrades, if a non-default DB parameter group is currently in
+     * use, a new DB parameter group in the DB parameter group family for the
+     * new engine version must be specified. The new DB parameter group can
+     * be the default for that DB parameter group family. <p>Example:
      * <code>5.1.42</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -1548,10 +1555,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         parameter results in an outage and the change is applied during the
      *         next maintenance window unless the <code>ApplyImmediately</code>
      *         parameter is set to <code>true</code> for this request. <p> For major
-     *         version upgrades, if a nondefault DB Parameter Group is currently in
-     *         use, a new DB Parameter Group in the DB Parameter Group Family for the
-     *         new engine version must be specified. The new DB Parameter Group can
-     *         be the default for that DB Parameter Group Family. <p>Example:
+     *         version upgrades, if a non-default DB parameter group is currently in
+     *         use, a new DB parameter group in the DB parameter group family for the
+     *         new engine version must be specified. The new DB parameter group can
+     *         be the default for that DB parameter group family. <p>Example:
      *         <code>5.1.42</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -1568,14 +1575,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * asynchronously applied as soon as possible. <p>Constraints: This
      * parameter must be set to true when specifying a value for the
      * EngineVersion parameter that is a different major version than the DB
-     * Instance's current version.
+     * instance's current version.
      *
      * @return Indicates that major version upgrades are allowed. Changing this
      *         parameter does not result in an outage and the change is
      *         asynchronously applied as soon as possible. <p>Constraints: This
      *         parameter must be set to true when specifying a value for the
      *         EngineVersion parameter that is a different major version than the DB
-     *         Instance's current version.
+     *         instance's current version.
      */
     public Boolean isAllowMajorVersionUpgrade() {
         return allowMajorVersionUpgrade;
@@ -1587,14 +1594,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * asynchronously applied as soon as possible. <p>Constraints: This
      * parameter must be set to true when specifying a value for the
      * EngineVersion parameter that is a different major version than the DB
-     * Instance's current version.
+     * instance's current version.
      *
      * @param allowMajorVersionUpgrade Indicates that major version upgrades are allowed. Changing this
      *         parameter does not result in an outage and the change is
      *         asynchronously applied as soon as possible. <p>Constraints: This
      *         parameter must be set to true when specifying a value for the
      *         EngineVersion parameter that is a different major version than the DB
-     *         Instance's current version.
+     *         instance's current version.
      */
     public void setAllowMajorVersionUpgrade(Boolean allowMajorVersionUpgrade) {
         this.allowMajorVersionUpgrade = allowMajorVersionUpgrade;
@@ -1606,7 +1613,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * asynchronously applied as soon as possible. <p>Constraints: This
      * parameter must be set to true when specifying a value for the
      * EngineVersion parameter that is a different major version than the DB
-     * Instance's current version.
+     * instance's current version.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1615,7 +1622,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         asynchronously applied as soon as possible. <p>Constraints: This
      *         parameter must be set to true when specifying a value for the
      *         EngineVersion parameter that is a different major version than the DB
-     *         Instance's current version.
+     *         instance's current version.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1631,14 +1638,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * asynchronously applied as soon as possible. <p>Constraints: This
      * parameter must be set to true when specifying a value for the
      * EngineVersion parameter that is a different major version than the DB
-     * Instance's current version.
+     * instance's current version.
      *
      * @return Indicates that major version upgrades are allowed. Changing this
      *         parameter does not result in an outage and the change is
      *         asynchronously applied as soon as possible. <p>Constraints: This
      *         parameter must be set to true when specifying a value for the
      *         EngineVersion parameter that is a different major version than the DB
-     *         Instance's current version.
+     *         instance's current version.
      */
     public Boolean getAllowMajorVersionUpgrade() {
         return allowMajorVersionUpgrade;
@@ -1646,7 +1653,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * Indicates that minor version upgrades will be applied automatically to
-     * the DB Instance during the maintenance window. Changing this parameter
+     * the DB instance during the maintenance window. Changing this parameter
      * does not result in an outage except in the following case and the
      * change is asynchronously applied as soon as possible. An outage will
      * result if this parameter is set to <code>true</code> during the
@@ -1654,7 +1661,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * has enabled auto patching for that engine version.
      *
      * @return Indicates that minor version upgrades will be applied automatically to
-     *         the DB Instance during the maintenance window. Changing this parameter
+     *         the DB instance during the maintenance window. Changing this parameter
      *         does not result in an outage except in the following case and the
      *         change is asynchronously applied as soon as possible. An outage will
      *         result if this parameter is set to <code>true</code> during the
@@ -1667,7 +1674,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * Indicates that minor version upgrades will be applied automatically to
-     * the DB Instance during the maintenance window. Changing this parameter
+     * the DB instance during the maintenance window. Changing this parameter
      * does not result in an outage except in the following case and the
      * change is asynchronously applied as soon as possible. An outage will
      * result if this parameter is set to <code>true</code> during the
@@ -1675,7 +1682,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * has enabled auto patching for that engine version.
      *
      * @param autoMinorVersionUpgrade Indicates that minor version upgrades will be applied automatically to
-     *         the DB Instance during the maintenance window. Changing this parameter
+     *         the DB instance during the maintenance window. Changing this parameter
      *         does not result in an outage except in the following case and the
      *         change is asynchronously applied as soon as possible. An outage will
      *         result if this parameter is set to <code>true</code> during the
@@ -1688,7 +1695,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * Indicates that minor version upgrades will be applied automatically to
-     * the DB Instance during the maintenance window. Changing this parameter
+     * the DB instance during the maintenance window. Changing this parameter
      * does not result in an outage except in the following case and the
      * change is asynchronously applied as soon as possible. An outage will
      * result if this parameter is set to <code>true</code> during the
@@ -1698,7 +1705,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoMinorVersionUpgrade Indicates that minor version upgrades will be applied automatically to
-     *         the DB Instance during the maintenance window. Changing this parameter
+     *         the DB instance during the maintenance window. Changing this parameter
      *         does not result in an outage except in the following case and the
      *         change is asynchronously applied as soon as possible. An outage will
      *         result if this parameter is set to <code>true</code> during the
@@ -1715,7 +1722,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * Indicates that minor version upgrades will be applied automatically to
-     * the DB Instance during the maintenance window. Changing this parameter
+     * the DB instance during the maintenance window. Changing this parameter
      * does not result in an outage except in the following case and the
      * change is asynchronously applied as soon as possible. An outage will
      * result if this parameter is set to <code>true</code> during the
@@ -1723,7 +1730,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * has enabled auto patching for that engine version.
      *
      * @return Indicates that minor version upgrades will be applied automatically to
-     *         the DB Instance during the maintenance window. Changing this parameter
+     *         the DB instance during the maintenance window. Changing this parameter
      *         does not result in an outage except in the following case and the
      *         change is asynchronously applied as soon as possible. An outage will
      *         result if this parameter is set to <code>true</code> during the
@@ -1900,7 +1907,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Indicates that the DB Instance should be associated with the specified
+     * Indicates that the DB instance should be associated with the specified
      * option group. Changing this parameter does not result in an outage
      * except in the following case and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter
@@ -1915,7 +1922,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * option group, and that option group cannot be removed from a DB
      * instance once it is associated with a DB instance
      *
-     * @return Indicates that the DB Instance should be associated with the specified
+     * @return Indicates that the DB instance should be associated with the specified
      *         option group. Changing this parameter does not result in an outage
      *         except in the following case and the change is applied during the next
      *         maintenance window unless the <code>ApplyImmediately</code> parameter
@@ -1935,7 +1942,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * Indicates that the DB Instance should be associated with the specified
+     * Indicates that the DB instance should be associated with the specified
      * option group. Changing this parameter does not result in an outage
      * except in the following case and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter
@@ -1950,7 +1957,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * option group, and that option group cannot be removed from a DB
      * instance once it is associated with a DB instance
      *
-     * @param optionGroupName Indicates that the DB Instance should be associated with the specified
+     * @param optionGroupName Indicates that the DB instance should be associated with the specified
      *         option group. Changing this parameter does not result in an outage
      *         except in the following case and the change is applied during the next
      *         maintenance window unless the <code>ApplyImmediately</code> parameter
@@ -1970,7 +1977,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * Indicates that the DB Instance should be associated with the specified
+     * Indicates that the DB instance should be associated with the specified
      * option group. Changing this parameter does not result in an outage
      * except in the following case and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter
@@ -1987,7 +1994,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param optionGroupName Indicates that the DB Instance should be associated with the specified
+     * @param optionGroupName Indicates that the DB instance should be associated with the specified
      *         option group. Changing this parameter does not result in an outage
      *         except in the following case and the change is applied during the next
      *         maintenance window unless the <code>ApplyImmediately</code> parameter
@@ -2011,13 +2018,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The new DB Instance identifier for the DB Instance when renaming a DB
+     * The new DB instance identifier for the DB instance when renaming a DB
      * Instance. This value is stored as a lowercase string. <p>Constraints:
      * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      * with a hyphen or contain two consecutive hyphens</li> </ul>
      *
-     * @return The new DB Instance identifier for the DB Instance when renaming a DB
+     * @return The new DB instance identifier for the DB instance when renaming a DB
      *         Instance. This value is stored as a lowercase string. <p>Constraints:
      *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
@@ -2028,13 +2035,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The new DB Instance identifier for the DB Instance when renaming a DB
+     * The new DB instance identifier for the DB instance when renaming a DB
      * Instance. This value is stored as a lowercase string. <p>Constraints:
      * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      * with a hyphen or contain two consecutive hyphens</li> </ul>
      *
-     * @param newDBInstanceIdentifier The new DB Instance identifier for the DB Instance when renaming a DB
+     * @param newDBInstanceIdentifier The new DB instance identifier for the DB instance when renaming a DB
      *         Instance. This value is stored as a lowercase string. <p>Constraints:
      *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
@@ -2045,7 +2052,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The new DB Instance identifier for the DB Instance when renaming a DB
+     * The new DB instance identifier for the DB instance when renaming a DB
      * Instance. This value is stored as a lowercase string. <p>Constraints:
      * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
@@ -2053,7 +2060,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param newDBInstanceIdentifier The new DB Instance identifier for the DB Instance when renaming a DB
+     * @param newDBInstanceIdentifier The new DB instance identifier for the DB instance when renaming a DB
      *         Instance. This value is stored as a lowercase string. <p>Constraints:
      *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end

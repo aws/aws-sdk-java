@@ -38,7 +38,7 @@ public class ModifyEventSubscriptionRequestMarshaller implements Marshaller<Requ
 
         Request<ModifyEventSubscriptionRequest> request = new DefaultRequest<ModifyEventSubscriptionRequest>(modifyEventSubscriptionRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyEventSubscription");
-        request.addParameter("Version", "2013-05-15");
+        request.addParameter("Version", "2013-09-09");
 
         if (modifyEventSubscriptionRequest.getSubscriptionName() != null) {
             request.addParameter("SubscriptionName", StringUtils.fromString(modifyEventSubscriptionRequest.getSubscriptionName()));

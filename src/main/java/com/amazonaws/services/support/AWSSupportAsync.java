@@ -104,6 +104,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeCases service method, as returned by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -142,6 +143,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeCases service method, as returned by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -170,6 +172,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @return A Java Future object containing the response from the
      *         DescribeTrustedAdvisorCheckRefreshStatuses service method, as returned
      *         by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -201,6 +204,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @return A Java Future object containing the response from the
      *         DescribeTrustedAdvisorCheckRefreshStatuses service method, as returned
      *         by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -231,6 +235,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeSeverityLevels service method, as returned by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -264,6 +269,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeSeverityLevels service method, as returned by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -297,6 +303,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeCommunications service method, as returned by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -333,6 +340,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeCommunications service method, as returned by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -371,6 +379,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * 
      * @return A Java Future object containing the response from the
      *         AddCommunicationToCase service method, as returned by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -412,6 +421,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * 
      * @return A Java Future object containing the response from the
      *         AddCommunicationToCase service method, as returned by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -490,6 +500,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * 
      * @return A Java Future object containing the response from the
      *         CreateCase service method, as returned by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -571,6 +582,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * 
      * @return A Java Future object containing the response from the
      *         CreateCase service method, as returned by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -600,6 +612,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @return A Java Future object containing the response from the
      *         DescribeTrustedAdvisorChecks service method, as returned by
      *         AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -632,6 +645,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @return A Java Future object containing the response from the
      *         DescribeTrustedAdvisorChecks service method, as returned by
      *         AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -690,6 +704,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @return A Java Future object containing the response from the
      *         DescribeTrustedAdvisorCheckResult service method, as returned by
      *         AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -751,6 +766,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @return A Java Future object containing the response from the
      *         DescribeTrustedAdvisorCheckResult service method, as returned by
      *         AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -777,6 +793,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * 
      * @return A Java Future object containing the response from the
      *         ResolveCase service method, as returned by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -806,6 +823,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * 
      * @return A Java Future object containing the response from the
      *         ResolveCase service method, as returned by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -836,6 +854,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * 
      * @return A Java Future object containing the response from the
      *         RefreshTrustedAdvisorCheck service method, as returned by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -869,6 +888,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * 
      * @return A Java Future object containing the response from the
      *         RefreshTrustedAdvisorCheck service method, as returned by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -908,6 +928,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeServices service method, as returned by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -950,6 +971,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeServices service method, as returned by AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -985,6 +1007,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @return A Java Future object containing the response from the
      *         DescribeTrustedAdvisorCheckSummaries service method, as returned by
      *         AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1023,6 +1046,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @return A Java Future object containing the response from the
      *         DescribeTrustedAdvisorCheckSummaries service method, as returned by
      *         AWSSupport.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

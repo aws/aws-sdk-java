@@ -55,6 +55,11 @@ public class ImageAttribute implements Serializable {
     private String description;
 
     /**
+     * String value
+     */
+    private String sriovNetSupport;
+
+    /**
      * Block device mappings for the associated AMI.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
@@ -328,6 +333,39 @@ public class ImageAttribute implements Serializable {
     }
 
     /**
+     * String value
+     *
+     * @return String value
+     */
+    public String getSriovNetSupport() {
+        return sriovNetSupport;
+    }
+    
+    /**
+     * String value
+     *
+     * @param sriovNetSupport String value
+     */
+    public void setSriovNetSupport(String sriovNetSupport) {
+        this.sriovNetSupport = sriovNetSupport;
+    }
+    
+    /**
+     * String value
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param sriovNetSupport String value
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public ImageAttribute withSriovNetSupport(String sriovNetSupport) {
+        this.sriovNetSupport = sriovNetSupport;
+        return this;
+    }
+
+    /**
      * Block device mappings for the associated AMI.
      *
      * @return Block device mappings for the associated AMI.
@@ -413,6 +451,7 @@ public class ImageAttribute implements Serializable {
         if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");
         if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getSriovNetSupport() != null) sb.append("SriovNetSupport: " + getSriovNetSupport() + ",");
         if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() );
         sb.append("}");
         return sb.toString();
@@ -429,6 +468,7 @@ public class ImageAttribute implements Serializable {
         hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode()); 
         hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode()); 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport().hashCode()); 
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
         return hashCode;
     }
@@ -453,6 +493,8 @@ public class ImageAttribute implements Serializable {
         if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false) return false; 
         if (other.getDescription() == null ^ this.getDescription() == null) return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getSriovNetSupport() == null ^ this.getSriovNetSupport() == null) return false;
+        if (other.getSriovNetSupport() != null && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false) return false; 
         if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null) return false;
         if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false) return false; 
         return true;

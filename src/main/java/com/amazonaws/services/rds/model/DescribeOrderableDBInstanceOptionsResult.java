@@ -26,7 +26,7 @@ public class DescribeOrderableDBInstanceOptionsResult implements Serializable {
 
     /**
      * An <a>OrderableDBInstanceOption</a> structure containing information
-     * about orderable options for the DB Instance.
+     * about orderable options for the DB instance.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<OrderableDBInstanceOption> orderableDBInstanceOptions;
 
@@ -40,10 +40,10 @@ public class DescribeOrderableDBInstanceOptionsResult implements Serializable {
 
     /**
      * An <a>OrderableDBInstanceOption</a> structure containing information
-     * about orderable options for the DB Instance.
+     * about orderable options for the DB instance.
      *
      * @return An <a>OrderableDBInstanceOption</a> structure containing information
-     *         about orderable options for the DB Instance.
+     *         about orderable options for the DB instance.
      */
     public java.util.List<OrderableDBInstanceOption> getOrderableDBInstanceOptions() {
         if (orderableDBInstanceOptions == null) {
@@ -55,10 +55,10 @@ public class DescribeOrderableDBInstanceOptionsResult implements Serializable {
     
     /**
      * An <a>OrderableDBInstanceOption</a> structure containing information
-     * about orderable options for the DB Instance.
+     * about orderable options for the DB instance.
      *
      * @param orderableDBInstanceOptions An <a>OrderableDBInstanceOption</a> structure containing information
-     *         about orderable options for the DB Instance.
+     *         about orderable options for the DB instance.
      */
     public void setOrderableDBInstanceOptions(java.util.Collection<OrderableDBInstanceOption> orderableDBInstanceOptions) {
         if (orderableDBInstanceOptions == null) {
@@ -72,12 +72,12 @@ public class DescribeOrderableDBInstanceOptionsResult implements Serializable {
     
     /**
      * An <a>OrderableDBInstanceOption</a> structure containing information
-     * about orderable options for the DB Instance.
+     * about orderable options for the DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param orderableDBInstanceOptions An <a>OrderableDBInstanceOption</a> structure containing information
-     *         about orderable options for the DB Instance.
+     *         about orderable options for the DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -92,12 +92,12 @@ public class DescribeOrderableDBInstanceOptionsResult implements Serializable {
     
     /**
      * An <a>OrderableDBInstanceOption</a> structure containing information
-     * about orderable options for the DB Instance.
+     * about orderable options for the DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param orderableDBInstanceOptions An <a>OrderableDBInstanceOption</a> structure containing information
-     *         about orderable options for the DB Instance.
+     *         about orderable options for the DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

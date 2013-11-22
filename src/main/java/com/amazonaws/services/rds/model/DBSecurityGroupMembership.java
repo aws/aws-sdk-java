@@ -33,12 +33,12 @@ import java.io.Serializable;
 public class DBSecurityGroupMembership implements Serializable {
 
     /**
-     * The name of the DB Security Group.
+     * The name of the DB security group.
      */
     private String dBSecurityGroupName;
 
     /**
-     * The status of the DB Security Group.
+     * The status of the DB security group.
      */
     private String status;
 
@@ -49,29 +49,29 @@ public class DBSecurityGroupMembership implements Serializable {
     public DBSecurityGroupMembership() {}
     
     /**
-     * The name of the DB Security Group.
+     * The name of the DB security group.
      *
-     * @return The name of the DB Security Group.
+     * @return The name of the DB security group.
      */
     public String getDBSecurityGroupName() {
         return dBSecurityGroupName;
     }
     
     /**
-     * The name of the DB Security Group.
+     * The name of the DB security group.
      *
-     * @param dBSecurityGroupName The name of the DB Security Group.
+     * @param dBSecurityGroupName The name of the DB security group.
      */
     public void setDBSecurityGroupName(String dBSecurityGroupName) {
         this.dBSecurityGroupName = dBSecurityGroupName;
     }
     
     /**
-     * The name of the DB Security Group.
+     * The name of the DB security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSecurityGroupName The name of the DB Security Group.
+     * @param dBSecurityGroupName The name of the DB security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -82,29 +82,29 @@ public class DBSecurityGroupMembership implements Serializable {
     }
 
     /**
-     * The status of the DB Security Group.
+     * The status of the DB security group.
      *
-     * @return The status of the DB Security Group.
+     * @return The status of the DB security group.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * The status of the DB Security Group.
+     * The status of the DB security group.
      *
-     * @param status The status of the DB Security Group.
+     * @param status The status of the DB security group.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * The status of the DB Security Group.
+     * The status of the DB security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status The status of the DB Security Group.
+     * @param status The status of the DB security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

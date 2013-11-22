@@ -18,8 +18,11 @@ import com.amazonaws.Request;
 import com.amazonaws.util.TimingInfo;
 
 /**
+ * @deprecated by {@link RequestHandler2}.
+ * <p>
  * Simple implementation of RequestHandler to stub out required methods.
  */
+@Deprecated
 public abstract class AbstractRequestHandler implements RequestHandler {
 	public void beforeRequest(Request<?> request) {}
 	public void afterResponse(Request<?> request, Object response, TimingInfo timingInfo) {}

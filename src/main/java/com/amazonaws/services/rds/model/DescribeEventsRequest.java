@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeEvents(DescribeEventsRequest) DescribeEvents operation}.
  * <p>
- * Returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter Groups for the past 14 days. Events specific to a
- * particular DB Instance, DB Security Group, database snapshot or DB Parameter Group can be obtained by providing the name as a parameter. By default,
+ * Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days. Events specific to a
+ * particular DB instance, DB security group, database snapshot, or DB parameter group can be obtained by providing the name as a parameter. By default,
  * the past hour of events are returned.
  * </p>
  *
@@ -34,13 +34,16 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      * The identifier of the event source for which events will be returned.
      * If not specified, then all sources are included in the response.
      * <p>Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType
-     * must also be provided.</li> <li>If the source type is DBInstance, then
-     * a DBInstanceIdentifier must be supplied.</li> <li>If the source type
-     * is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li>
-     * <li>If the source type is DBParameterGroup, a DBParameterGroupName
-     * must be supplied.</li> <li>If the source type is DBSnapshot, a
-     * DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens.</li> </ul>
+     * must also be provided.</li> <li>If the source type is
+     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must
+     * be supplied.</li> <li>If the source type is
+     * <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must
+     * be supplied.</li> <li>If the source type is
+     * <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code>
+     * must be supplied.</li> <li>If the source type is
+     * <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be
+     * supplied.</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</li> </ul>
      */
     private String sourceIdentifier;
 
@@ -107,24 +110,30 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      * The identifier of the event source for which events will be returned.
      * If not specified, then all sources are included in the response.
      * <p>Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType
-     * must also be provided.</li> <li>If the source type is DBInstance, then
-     * a DBInstanceIdentifier must be supplied.</li> <li>If the source type
-     * is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li>
-     * <li>If the source type is DBParameterGroup, a DBParameterGroupName
-     * must be supplied.</li> <li>If the source type is DBSnapshot, a
-     * DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens.</li> </ul>
+     * must also be provided.</li> <li>If the source type is
+     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must
+     * be supplied.</li> <li>If the source type is
+     * <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must
+     * be supplied.</li> <li>If the source type is
+     * <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code>
+     * must be supplied.</li> <li>If the source type is
+     * <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be
+     * supplied.</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</li> </ul>
      *
      * @return The identifier of the event source for which events will be returned.
      *         If not specified, then all sources are included in the response.
      *         <p>Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType
-     *         must also be provided.</li> <li>If the source type is DBInstance, then
-     *         a DBInstanceIdentifier must be supplied.</li> <li>If the source type
-     *         is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li>
-     *         <li>If the source type is DBParameterGroup, a DBParameterGroupName
-     *         must be supplied.</li> <li>If the source type is DBSnapshot, a
-     *         DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a
-     *         hyphen or contain two consecutive hyphens.</li> </ul>
+     *         must also be provided.</li> <li>If the source type is
+     *         <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must
+     *         be supplied.</li> <li>If the source type is
+     *         <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must
+     *         be supplied.</li> <li>If the source type is
+     *         <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code>
+     *         must be supplied.</li> <li>If the source type is
+     *         <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be
+     *         supplied.</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens.</li> </ul>
      */
     public String getSourceIdentifier() {
         return sourceIdentifier;
@@ -134,24 +143,30 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      * The identifier of the event source for which events will be returned.
      * If not specified, then all sources are included in the response.
      * <p>Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType
-     * must also be provided.</li> <li>If the source type is DBInstance, then
-     * a DBInstanceIdentifier must be supplied.</li> <li>If the source type
-     * is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li>
-     * <li>If the source type is DBParameterGroup, a DBParameterGroupName
-     * must be supplied.</li> <li>If the source type is DBSnapshot, a
-     * DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens.</li> </ul>
+     * must also be provided.</li> <li>If the source type is
+     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must
+     * be supplied.</li> <li>If the source type is
+     * <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must
+     * be supplied.</li> <li>If the source type is
+     * <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code>
+     * must be supplied.</li> <li>If the source type is
+     * <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be
+     * supplied.</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</li> </ul>
      *
      * @param sourceIdentifier The identifier of the event source for which events will be returned.
      *         If not specified, then all sources are included in the response.
      *         <p>Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType
-     *         must also be provided.</li> <li>If the source type is DBInstance, then
-     *         a DBInstanceIdentifier must be supplied.</li> <li>If the source type
-     *         is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li>
-     *         <li>If the source type is DBParameterGroup, a DBParameterGroupName
-     *         must be supplied.</li> <li>If the source type is DBSnapshot, a
-     *         DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a
-     *         hyphen or contain two consecutive hyphens.</li> </ul>
+     *         must also be provided.</li> <li>If the source type is
+     *         <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must
+     *         be supplied.</li> <li>If the source type is
+     *         <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must
+     *         be supplied.</li> <li>If the source type is
+     *         <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code>
+     *         must be supplied.</li> <li>If the source type is
+     *         <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be
+     *         supplied.</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens.</li> </ul>
      */
     public void setSourceIdentifier(String sourceIdentifier) {
         this.sourceIdentifier = sourceIdentifier;
@@ -161,26 +176,32 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      * The identifier of the event source for which events will be returned.
      * If not specified, then all sources are included in the response.
      * <p>Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType
-     * must also be provided.</li> <li>If the source type is DBInstance, then
-     * a DBInstanceIdentifier must be supplied.</li> <li>If the source type
-     * is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li>
-     * <li>If the source type is DBParameterGroup, a DBParameterGroupName
-     * must be supplied.</li> <li>If the source type is DBSnapshot, a
-     * DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens.</li> </ul>
+     * must also be provided.</li> <li>If the source type is
+     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must
+     * be supplied.</li> <li>If the source type is
+     * <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must
+     * be supplied.</li> <li>If the source type is
+     * <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code>
+     * must be supplied.</li> <li>If the source type is
+     * <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be
+     * supplied.</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceIdentifier The identifier of the event source for which events will be returned.
      *         If not specified, then all sources are included in the response.
      *         <p>Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType
-     *         must also be provided.</li> <li>If the source type is DBInstance, then
-     *         a DBInstanceIdentifier must be supplied.</li> <li>If the source type
-     *         is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li>
-     *         <li>If the source type is DBParameterGroup, a DBParameterGroupName
-     *         must be supplied.</li> <li>If the source type is DBSnapshot, a
-     *         DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a
-     *         hyphen or contain two consecutive hyphens.</li> </ul>
+     *         must also be provided.</li> <li>If the source type is
+     *         <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must
+     *         be supplied.</li> <li>If the source type is
+     *         <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must
+     *         be supplied.</li> <li>If the source type is
+     *         <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code>
+     *         must be supplied.</li> <li>If the source type is
+     *         <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be
+     *         supplied.</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

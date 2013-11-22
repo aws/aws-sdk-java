@@ -16,6 +16,7 @@ package com.amazonaws.services.sqs;
 
 import org.w3c.dom.*;
 
+import java.net.*;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -24,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -62,11 +64,6 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
             = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
-
-    
-    /** AWS signer for authenticating requests. */
-    private AWS4Signer signer;
-
 
     /**
      * Constructs a new client to invoke service methods on
@@ -203,14 +200,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         exceptionUnmarshallers.add(new BatchEntryIdsNotDistinctExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
-        setEndpoint("sqs.us-east-1.amazonaws.com");
-
-        signer = new AWS4Signer();
-        
-
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("sqs.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/sqs/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
+                "/com/amazonaws/services/sqs/request.handler2s"));
     }
 
     
@@ -224,6 +220,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @param setQueueAttributesRequest Container for the necessary
      *           parameters to execute the SetQueueAttributes service method on
      *           AmazonSQS.
+     * 
      * 
      * @throws InvalidAttributeNameException
      *
@@ -282,13 +279,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         ExecutionContext executionContext = createExecutionContext(changeMessageVisibilityBatchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ChangeMessageVisibilityBatchRequest> request = null;
-        ChangeMessageVisibilityBatchResult response = null;
+        Response<ChangeMessageVisibilityBatchResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ChangeMessageVisibilityBatchRequestMarshaller().marshall(changeMessageVisibilityBatchRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ChangeMessageVisibilityBatchResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ChangeMessageVisibilityBatchResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -332,6 +330,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @param changeMessageVisibilityRequest Container for the necessary
      *           parameters to execute the ChangeMessageVisibility service method on
      *           AmazonSQS.
+     * 
      * 
      * @throws ReceiptHandleIsInvalidException
      * @throws MessageNotInflightException
@@ -385,13 +384,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         ExecutionContext executionContext = createExecutionContext(getQueueUrlRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetQueueUrlRequest> request = null;
-        GetQueueUrlResult response = null;
+        Response<GetQueueUrlResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetQueueUrlRequestMarshaller().marshall(getQueueUrlRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetQueueUrlResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetQueueUrlResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -406,6 +406,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *
      * @param removePermissionRequest Container for the necessary parameters
      *           to execute the RemovePermission service method on AmazonSQS.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -493,13 +494,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         ExecutionContext executionContext = createExecutionContext(getQueueAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetQueueAttributesRequest> request = null;
-        GetQueueAttributesResult response = null;
+        Response<GetQueueAttributesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetQueueAttributesRequestMarshaller().marshall(getQueueAttributesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetQueueAttributesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetQueueAttributesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -536,13 +538,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         ExecutionContext executionContext = createExecutionContext(sendMessageBatchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<SendMessageBatchRequest> request = null;
-        SendMessageBatchResult response = null;
+        Response<SendMessageBatchResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new SendMessageBatchRequestMarshaller().marshall(sendMessageBatchRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new SendMessageBatchResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new SendMessageBatchResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -561,6 +564,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *
      * @param deleteQueueRequest Container for the necessary parameters to
      *           execute the DeleteQueue service method on AmazonSQS.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -612,13 +616,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         ExecutionContext executionContext = createExecutionContext(sendMessageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<SendMessageRequest> request = null;
-        SendMessageResult response = null;
+        Response<SendMessageResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new SendMessageRequestMarshaller().marshall(sendMessageRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new SendMessageResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new SendMessageResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -670,13 +675,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         ExecutionContext executionContext = createExecutionContext(receiveMessageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ReceiveMessageRequest> request = null;
-        ReceiveMessageResult response = null;
+        Response<ReceiveMessageResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ReceiveMessageRequestMarshaller().marshall(receiveMessageRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ReceiveMessageResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ReceiveMessageResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -706,13 +712,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         ExecutionContext executionContext = createExecutionContext(listQueuesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListQueuesRequest> request = null;
-        ListQueuesResult response = null;
+        Response<ListQueuesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListQueuesRequestMarshaller().marshall(listQueuesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListQueuesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListQueuesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -749,13 +756,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         ExecutionContext executionContext = createExecutionContext(deleteMessageBatchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteMessageBatchRequest> request = null;
-        DeleteMessageBatchResult response = null;
+        Response<DeleteMessageBatchResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DeleteMessageBatchRequestMarshaller().marshall(deleteMessageBatchRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DeleteMessageBatchResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DeleteMessageBatchResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -803,13 +811,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         ExecutionContext executionContext = createExecutionContext(createQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateQueueRequest> request = null;
-        CreateQueueResult response = null;
+        Response<CreateQueueResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateQueueRequestMarshaller().marshall(createQueueRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateQueueResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateQueueResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -840,6 +849,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *
      * @param addPermissionRequest Container for the necessary parameters to
      *           execute the AddPermission service method on AmazonSQS.
+     * 
      * 
      * @throws OverLimitException
      *
@@ -876,6 +886,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *
      * @param deleteMessageRequest Container for the necessary parameters to
      *           execute the DeleteMessage service method on AmazonSQS.
+     * 
      * 
      * @throws ReceiptHandleIsInvalidException
      * @throws InvalidIdFormatException
@@ -924,47 +935,6 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         return listQueues(new ListQueuesRequest());
     }
     
-    /**
-     * Overrides the default endpoint for this client ("sqs.us-east-1.amazonaws.com") and explicitly provides
-     * an AWS region ID and AWS service name to use when the client calculates a signature
-     * for requests.  In almost all cases, this region ID and service name
-     * are automatically determined from the endpoint, and callers should use the simpler
-     * one-argument form of setEndpoint instead of this method.
-     * <p>
-     * <b>This method is not threadsafe. Endpoints should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit.</b>
-     * <p>
-     * Callers can pass in just the endpoint (ex: "sqs.us-east-1.amazonaws.com") or a full
-     * URL, including the protocol (ex: "sqs.us-east-1.amazonaws.com"). If the
-     * protocol is not specified here, the default protocol from this client's
-     * {@link ClientConfiguration} will be used, which by default is HTTPS.
-     * <p>
-     * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
-     *
-     * @param endpoint
-     *            The endpoint (ex: "sqs.us-east-1.amazonaws.com") or a full URL,
-     *            including the protocol (ex: "sqs.us-east-1.amazonaws.com") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     * @param serviceName
-     *            The name of the AWS service to use when signing requests.
-     * @param regionId
-     *            The ID of the region in which this service resides.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
-     */
-    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
-        setEndpoint(endpoint);
-        signer.setServiceName(serviceName);
-        signer.setRegionName(regionId);
-    }
-    
     @Override
     protected String getServiceAbbreviation() {
         return "sqs";
@@ -991,7 +961,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
             Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
             ExecutionContext executionContext)
     {
@@ -1007,12 +977,12 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(signer);
+        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-        return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
+        return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }
         

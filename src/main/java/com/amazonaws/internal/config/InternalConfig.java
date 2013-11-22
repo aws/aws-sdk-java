@@ -25,6 +25,7 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.http.annotation.Immutable;
 
 import com.amazonaws.regions.Regions;
+import com.amazonaws.util.ClassLoaderHelper;
 import com.amazonaws.util.json.Jackson;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -35,7 +36,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 @Immutable
 public class InternalConfig {
     private static final Log log = LogFactory.getLog(InternalConfig.class);
-    static final String DEFAULT_CONFIG_RESOURCE = "awssdk_config.json";
+    static final String DEFAULT_CONFIG_RESOURCE = "awssdk_config_default.json";
     static final String CONFIG_OVERRIDE_RESOURCE = "awssdk_config_override.json";
     private static final String SERVICE_REGION_DELIMITOR = "/";
 
@@ -43,6 +44,7 @@ public class InternalConfig {
     private final Map<String, SignerConfig> serviceRegionSigners;
     private final Map<String, SignerConfig> regionSigners;
     private final Map<String, SignerConfig> serviceSigners;
+    private final Map<String, HttpClientConfig> httpClients;
 
     /**
      * @param defaults default configuration
@@ -58,6 +60,7 @@ public class InternalConfig {
         serviceRegionSigners = mergeSignerMap(defaults.getServiceRegionSigners(),
             override.getServiceRegionSigners(), 
             "service" + SERVICE_REGION_DELIMITOR + "region");
+        httpClients = merge(defaults.getHttpClients(), override.getHttpClients());
     }
 
     /**
@@ -71,12 +74,35 @@ public class InternalConfig {
      * @param theme
      *            used for message logging. eg region, service, region+service
      */
-    private Map<String, SignerConfig> mergeSignerMap(SignerJsonIndex[] defaults,
-            SignerJsonIndex[] overrides, String theme) {
+    private Map<String, SignerConfig> mergeSignerMap(JsonIndex<SignerConfigJsonHelper, SignerConfig>[] defaults,
+            JsonIndex<SignerConfigJsonHelper, SignerConfig>[] overrides, String theme) {
         Map<String, SignerConfig> map = buildSignerMap(defaults, theme);
         Map<String, SignerConfig> mapOverride = buildSignerMap(overrides, theme);
         map.putAll(mapOverride);
         return Collections.unmodifiableMap(map);
+    }
+
+    private <C extends Builder<T>, T> Map<String, T> merge(JsonIndex<C, T>[] defaults,
+            JsonIndex<C, T>[] overrides) {
+        Map<String, T> map = buildMap(defaults);
+        Map<String, T> mapOverride = buildMap(overrides);
+        map.putAll(mapOverride);
+        return Collections.unmodifiableMap(map);
+    }
+
+    private <C extends Builder<T>, T> Map<String, T> buildMap(JsonIndex<C, T>[] signerIndexes) {
+        Map<String, T> map = new HashMap<String, T>();
+        if (signerIndexes != null) {
+            for (JsonIndex<C, T> index: signerIndexes) {
+                String region = index.getKey();
+                T prev = map.put(region, index.newReadOnlyConfig());
+                if (prev != null) {
+                    log.warn("Duplicate definition of signer for "
+                            + index.getKey());
+                }
+            }
+        }
+        return map;
     }
 
     /**
@@ -88,12 +114,12 @@ public class InternalConfig {
      *            used for message logging. eg region, service, region+service
      */
     private Map<String, SignerConfig> buildSignerMap(
-            SignerJsonIndex[] signerIndexes, String theme) {
+            JsonIndex<SignerConfigJsonHelper, SignerConfig>[] signerIndexes, String theme) {
         Map<String, SignerConfig> map = new HashMap<String, SignerConfig>();
         if (signerIndexes != null) {
-            for (SignerJsonIndex index: signerIndexes) {
+            for (JsonIndex<SignerConfigJsonHelper, SignerConfig> index: signerIndexes) {
                 String region = index.getKey();
-                SignerConfig prev = map.put(region, index.newSignerConfig());
+                SignerConfig prev = map.put(region, index.newReadOnlyConfig());
                 if (prev != null) {
                     log.warn("Duplicate definition of signer for " + theme + " "
                             + index.getKey());
@@ -109,6 +135,13 @@ public class InternalConfig {
      */
     public SignerConfig getSignerConfig(String serviceName) {
         return getSignerConfig(serviceName, null);
+    }
+
+    /**
+     * Returns the http client configuration for the http client name.
+     */
+    public HttpClientConfig getHttpClientConfig(String httpClientName) {
+        return httpClients.get(httpClientName);
     }
 
     /**
@@ -155,11 +188,12 @@ public class InternalConfig {
      */
     static InternalConfig load() throws JsonParseException,
         JsonMappingException, IOException {
-        ClassLoader loader = Thread.currentThread().getContextClassLoader();
-        URL url = loader.getResource(DEFAULT_CONFIG_RESOURCE);
+        URL url = ClassLoaderHelper.getResource(DEFAULT_CONFIG_RESOURCE,
+                InternalConfig.class);
         InternalConfigJsonHelper config = loadfrom(url);
         InternalConfigJsonHelper configOverride;
-        URL overrideUrl = loader.getResource(CONFIG_OVERRIDE_RESOURCE);
+        URL overrideUrl = ClassLoaderHelper.getResource(
+                CONFIG_OVERRIDE_RESOURCE, InternalConfig.class);
         if (overrideUrl == null) {
             log.debug("Configuration override " + CONFIG_OVERRIDE_RESOURCE
                     + " not found.");

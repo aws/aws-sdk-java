@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * User already has a DB Instance with the given identifier.
+ * User already has a DB instance with the given identifier.
  * </p>
  */        
 public class DBInstanceAlreadyExistsException extends AmazonServiceException {

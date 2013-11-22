@@ -38,7 +38,7 @@ public class ModifyReservedInstancesRequestMarshaller implements Marshaller<Requ
 
         Request<ModifyReservedInstancesRequest> request = new DefaultRequest<ModifyReservedInstancesRequest>(modifyReservedInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyReservedInstances");
-        request.addParameter("Version", "2013-10-01");
+        request.addParameter("Version", "2013-10-15");
 
         if (modifyReservedInstancesRequest.getClientToken() != null) {
             request.addParameter("ClientToken", StringUtils.fromString(modifyReservedInstancesRequest.getClientToken()));

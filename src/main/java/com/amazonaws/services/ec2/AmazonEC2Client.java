@@ -16,6 +16,7 @@ package com.amazonaws.services.ec2;
 
 import org.w3c.dom.*;
 
+import java.net.*;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -24,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -62,11 +64,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
             = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
-
-    
-    /** AWS signer for authenticating requests. */
-    private QueryStringSigner signer;
-
 
     /**
      * Constructs a new client to invoke service methods on
@@ -189,14 +186,13 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     private void init() {
         
         exceptionUnmarshallers.add(new LegacyErrorUnmarshaller());
-        setEndpoint("ec2.amazonaws.com");
-
-        signer = new QueryStringSigner();
-        
-
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("ec2.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/ec2/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
+                "/com/amazonaws/services/ec2/request.handler2s"));
     }
 
     
@@ -211,6 +207,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param rebootInstancesRequest Container for the necessary parameters
      *           to execute the RebootInstances service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -262,13 +259,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeReservedInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeReservedInstancesRequest> request = null;
-        DescribeReservedInstancesResult response = null;
+        Response<DescribeReservedInstancesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeReservedInstancesRequestMarshaller().marshall(describeReservedInstancesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeReservedInstancesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeReservedInstancesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -306,13 +304,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeAvailabilityZonesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeAvailabilityZonesRequest> request = null;
-        DescribeAvailabilityZonesResult response = null;
+        Response<DescribeAvailabilityZonesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeAvailabilityZonesRequestMarshaller().marshall(describeAvailabilityZonesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeAvailabilityZonesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeAvailabilityZonesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -342,13 +341,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(detachVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DetachVolumeRequest> request = null;
-        DetachVolumeResult response = null;
+        Response<DetachVolumeResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DetachVolumeRequestMarshaller().marshall(detachVolumeRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DetachVolumeResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DetachVolumeResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -361,6 +361,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param deleteKeyPairRequest Container for the necessary parameters to
      *           execute the DeleteKeyPair service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -411,13 +412,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(unmonitorInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UnmonitorInstancesRequest> request = null;
-        UnmonitorInstancesResult response = null;
+        Response<UnmonitorInstancesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new UnmonitorInstancesRequestMarshaller().marshall(unmonitorInstancesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new UnmonitorInstancesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new UnmonitorInstancesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -450,13 +452,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(attachVpnGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<AttachVpnGatewayRequest> request = null;
-        AttachVpnGatewayResult response = null;
+        Response<AttachVpnGatewayResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new AttachVpnGatewayRequestMarshaller().marshall(attachVpnGatewayRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new AttachVpnGatewayResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new AttachVpnGatewayResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -490,13 +493,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createImageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateImageRequest> request = null;
-        CreateImageResult response = null;
+        Response<CreateImageResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateImageRequestMarshaller().marshall(createImageRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateImageResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateImageResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -518,6 +522,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param deleteSecurityGroupRequest Container for the necessary
      *           parameters to execute the DeleteSecurityGroup service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -565,13 +570,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createInstanceExportTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateInstanceExportTaskRequest> request = null;
-        CreateInstanceExportTaskResult response = null;
+        Response<CreateInstanceExportTaskResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateInstanceExportTaskRequestMarshaller().marshall(createInstanceExportTaskRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateInstanceExportTaskResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateInstanceExportTaskResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -608,13 +614,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(getPasswordDataRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetPasswordDataRequest> request = null;
-        GetPasswordDataResult response = null;
+        Response<GetPasswordDataResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetPasswordDataRequestMarshaller().marshall(getPasswordDataRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetPasswordDataResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetPasswordDataResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -636,6 +643,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param associateDhcpOptionsRequest Container for the necessary
      *           parameters to execute the AssociateDhcpOptions service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -693,6 +701,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param authorizeSecurityGroupEgressRequest Container for the necessary
      *           parameters to execute the AuthorizeSecurityGroupEgress service method
      *           on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -754,13 +763,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(stopInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<StopInstancesRequest> request = null;
-        StopInstancesResult response = null;
+        Response<StopInstancesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new StopInstancesRequestMarshaller().marshall(stopInstancesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new StopInstancesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new StopInstancesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -810,13 +820,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(importKeyPairRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ImportKeyPairRequest> request = null;
-        ImportKeyPairResult response = null;
+        Response<ImportKeyPairResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ImportKeyPairRequestMarshaller().marshall(importKeyPairRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ImportKeyPairResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ImportKeyPairResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -827,6 +838,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param deleteNetworkInterfaceRequest Container for the necessary
      *           parameters to execute the DeleteNetworkInterface service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -857,6 +869,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param modifyVpcAttributeRequest Container for the necessary
      *           parameters to execute the ModifyVpcAttribute service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -917,13 +930,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createSecurityGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateSecurityGroupRequest> request = null;
-        CreateSecurityGroupResult response = null;
+        Response<CreateSecurityGroupResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateSecurityGroupRequestMarshaller().marshall(createSecurityGroupRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateSecurityGroupResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateSecurityGroupResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -966,13 +980,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeSpotPriceHistoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeSpotPriceHistoryRequest> request = null;
-        DescribeSpotPriceHistoryResult response = null;
+        Response<DescribeSpotPriceHistoryResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeSpotPriceHistoryRequestMarshaller().marshall(describeSpotPriceHistoryRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeSpotPriceHistoryResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeSpotPriceHistoryResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1000,13 +1015,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeNetworkInterfacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeNetworkInterfacesRequest> request = null;
-        DescribeNetworkInterfacesResult response = null;
+        Response<DescribeNetworkInterfacesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeNetworkInterfacesRequestMarshaller().marshall(describeNetworkInterfacesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeNetworkInterfacesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeNetworkInterfacesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1037,13 +1053,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeRegionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeRegionsRequest> request = null;
-        DescribeRegionsResult response = null;
+        Response<DescribeRegionsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeRegionsRequestMarshaller().marshall(describeRegionsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeRegionsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeRegionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1071,13 +1088,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createReservedInstancesListingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateReservedInstancesListingRequest> request = null;
-        CreateReservedInstancesListingResult response = null;
+        Response<CreateReservedInstancesListingResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateReservedInstancesListingRequestMarshaller().marshall(createReservedInstancesListingRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateReservedInstancesListingResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateReservedInstancesListingResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1113,13 +1131,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createDhcpOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateDhcpOptionsRequest> request = null;
-        CreateDhcpOptionsResult response = null;
+        Response<CreateDhcpOptionsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateDhcpOptionsRequestMarshaller().marshall(createDhcpOptionsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateDhcpOptionsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateDhcpOptionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1133,6 +1152,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param resetSnapshotAttributeRequest Container for the necessary
      *           parameters to execute the ResetSnapshotAttribute service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -1168,6 +1188,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param deleteRouteRequest Container for the necessary parameters to
      *           execute the DeleteRoute service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -1238,13 +1259,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeInternetGatewaysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeInternetGatewaysRequest> request = null;
-        DescribeInternetGatewaysResult response = null;
+        Response<DescribeInternetGatewaysResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeInternetGatewaysRequestMarshaller().marshall(describeInternetGatewaysRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeInternetGatewaysResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeInternetGatewaysResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1271,13 +1293,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(importVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ImportVolumeRequest> request = null;
-        ImportVolumeResult response = null;
+        Response<ImportVolumeResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ImportVolumeRequestMarshaller().marshall(importVolumeRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ImportVolumeResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ImportVolumeResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1315,13 +1338,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeSecurityGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeSecurityGroupsRequest> request = null;
-        DescribeSecurityGroupsResult response = null;
+        Response<DescribeSecurityGroupsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeSecurityGroupsRequestMarshaller().marshall(describeSecurityGroupsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeSecurityGroupsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeSecurityGroupsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1341,6 +1365,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param detachVpnGatewayRequest Container for the necessary parameters
      *           to execute the DetachVpnGateway service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -1374,6 +1399,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param deregisterImageRequest Container for the necessary parameters
      *           to execute the DeregisterImage service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -1430,13 +1456,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeSpotDatafeedSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeSpotDatafeedSubscriptionRequest> request = null;
-        DescribeSpotDatafeedSubscriptionResult response = null;
+        Response<DescribeSpotDatafeedSubscriptionResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeSpotDatafeedSubscriptionRequestMarshaller().marshall(describeSpotDatafeedSubscriptionRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeSpotDatafeedSubscriptionResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeSpotDatafeedSubscriptionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1449,6 +1476,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param deleteTagsRequest Container for the necessary parameters to
      *           execute the DeleteTags service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -1483,6 +1511,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param deleteSubnetRequest Container for the necessary parameters to
      *           execute the DeleteSubnet service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -1530,13 +1559,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeAccountAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeAccountAttributesRequest> request = null;
-        DescribeAccountAttributesResult response = null;
+        Response<DescribeAccountAttributesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeAccountAttributesRequestMarshaller().marshall(describeAccountAttributesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeAccountAttributesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeAccountAttributesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1568,13 +1598,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createVpnGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateVpnGatewayRequest> request = null;
-        CreateVpnGatewayResult response = null;
+        Response<CreateVpnGatewayResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateVpnGatewayRequestMarshaller().marshall(createVpnGatewayRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateVpnGatewayResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateVpnGatewayResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1587,6 +1618,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param enableVolumeIORequest Container for the necessary parameters to
      *           execute the EnableVolumeIO service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -1624,6 +1656,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param deleteVpnGatewayRequest Container for the necessary parameters
      *           to execute the DeleteVpnGateway service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -1673,13 +1706,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(attachVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<AttachVolumeRequest> request = null;
-        AttachVolumeResult response = null;
+        Response<AttachVolumeResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new AttachVolumeRequestMarshaller().marshall(attachVolumeRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new AttachVolumeResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new AttachVolumeResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1711,13 +1745,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeLicensesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeLicensesRequest> request = null;
-        DescribeLicensesResult response = null;
+        Response<DescribeLicensesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeLicensesRequestMarshaller().marshall(describeLicensesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeLicensesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeLicensesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1748,13 +1783,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeVolumeStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeVolumeStatusRequest> request = null;
-        DescribeVolumeStatusResult response = null;
+        Response<DescribeVolumeStatusResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeVolumeStatusRequestMarshaller().marshall(describeVolumeStatusRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeVolumeStatusResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeVolumeStatusResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1768,6 +1804,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param activateLicenseRequest Container for the necessary parameters
      *           to execute the ActivateLicense service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -1805,6 +1842,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param resetImageAttributeRequest Container for the necessary
      *           parameters to execute the ResetImageAttribute service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -1870,13 +1908,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeVpnConnectionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeVpnConnectionsRequest> request = null;
-        DescribeVpnConnectionsResult response = null;
+        Response<DescribeVpnConnectionsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeVpnConnectionsRequestMarshaller().marshall(describeVpnConnectionsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeVpnConnectionsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeVpnConnectionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1887,6 +1926,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param enableVgwRoutePropagationRequest Container for the necessary
      *           parameters to execute the EnableVgwRoutePropagation service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -1946,13 +1986,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateSnapshotRequest> request = null;
-        CreateSnapshotResult response = null;
+        Response<CreateSnapshotResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateSnapshotRequestMarshaller().marshall(createSnapshotRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateSnapshotResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateSnapshotResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1966,6 +2007,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param deleteVolumeRequest Container for the necessary parameters to
      *           execute the DeleteVolume service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -2013,13 +2055,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createNetworkInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateNetworkInterfaceRequest> request = null;
-        CreateNetworkInterfaceResult response = null;
+        Response<CreateNetworkInterfaceResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateNetworkInterfaceRequestMarshaller().marshall(createNetworkInterfaceRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateNetworkInterfaceResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateNetworkInterfaceResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2052,13 +2095,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(modifyReservedInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ModifyReservedInstancesRequest> request = null;
-        ModifyReservedInstancesResult response = null;
+        Response<ModifyReservedInstancesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ModifyReservedInstancesRequestMarshaller().marshall(modifyReservedInstancesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ModifyReservedInstancesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ModifyReservedInstancesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2069,6 +2113,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param unassignPrivateIpAddressesRequest Container for the necessary
      *           parameters to execute the UnassignPrivateIpAddresses service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -2131,13 +2176,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeVpcsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeVpcsRequest> request = null;
-        DescribeVpcsResult response = null;
+        Response<DescribeVpcsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeVpcsRequestMarshaller().marshall(describeVpcsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeVpcsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeVpcsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2148,6 +2194,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param cancelConversionTaskRequest Container for the necessary
      *           parameters to execute the CancelConversionTask service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -2204,13 +2251,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(associateAddressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<AssociateAddressRequest> request = null;
-        AssociateAddressResult response = null;
+        Response<AssociateAddressResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new AssociateAddressRequestMarshaller().marshall(associateAddressRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new AssociateAddressResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new AssociateAddressResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2225,6 +2273,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param deactivateLicenseRequest Container for the necessary parameters
      *           to execute the DeactivateLicense service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -2265,6 +2314,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param deleteCustomerGatewayRequest Container for the necessary
      *           parameters to execute the DeleteCustomerGateway service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -2318,6 +2368,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *           parameters to execute the CreateNetworkAclEntry service method on
      *           AmazonEC2.
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2364,13 +2415,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeExportTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeExportTasksRequest> request = null;
-        DescribeExportTasksResult response = null;
+        Response<DescribeExportTasksResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeExportTasksRequestMarshaller().marshall(describeExportTasksRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeExportTasksResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeExportTasksResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2392,6 +2444,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param detachInternetGatewayRequest Container for the necessary
      *           parameters to execute the DetachInternetGateway service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -2445,13 +2498,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createRouteTableRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateRouteTableRequest> request = null;
-        CreateRouteTableResult response = null;
+        Response<CreateRouteTableResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateRouteTableRequestMarshaller().marshall(createRouteTableRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateRouteTableResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateRouteTableResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2483,13 +2537,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeVolumesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeVolumesRequest> request = null;
-        DescribeVolumesResult response = null;
+        Response<DescribeVolumesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeVolumesRequestMarshaller().marshall(describeVolumesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeVolumesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeVolumesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2517,13 +2572,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeReservedInstancesListingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeReservedInstancesListingsRequest> request = null;
-        DescribeReservedInstancesListingsResult response = null;
+        Response<DescribeReservedInstancesListingsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeReservedInstancesListingsRequestMarshaller().marshall(describeReservedInstancesListingsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeReservedInstancesListingsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeReservedInstancesListingsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2534,6 +2590,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param reportInstanceStatusRequest Container for the necessary
      *           parameters to execute the ReportInstanceStatus service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -2604,13 +2661,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeRouteTablesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeRouteTablesRequest> request = null;
-        DescribeRouteTablesResult response = null;
+        Response<DescribeRouteTablesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeRouteTablesRequestMarshaller().marshall(describeRouteTablesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeRouteTablesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeRouteTablesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2649,13 +2707,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeDhcpOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeDhcpOptionsRequest> request = null;
-        DescribeDhcpOptionsResult response = null;
+        Response<DescribeDhcpOptionsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeDhcpOptionsRequestMarshaller().marshall(describeDhcpOptionsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeDhcpOptionsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeDhcpOptionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2685,13 +2744,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(monitorInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<MonitorInstancesRequest> request = null;
-        MonitorInstancesResult response = null;
+        Response<MonitorInstancesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new MonitorInstancesRequestMarshaller().marshall(monitorInstancesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new MonitorInstancesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new MonitorInstancesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2741,13 +2801,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeNetworkAclsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeNetworkAclsRequest> request = null;
-        DescribeNetworkAclsResult response = null;
+        Response<DescribeNetworkAclsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeNetworkAclsRequestMarshaller().marshall(describeNetworkAclsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeNetworkAclsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeNetworkAclsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2781,13 +2842,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeBundleTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeBundleTasksRequest> request = null;
-        DescribeBundleTasksResult response = null;
+        Response<DescribeBundleTasksResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeBundleTasksRequestMarshaller().marshall(describeBundleTasksRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeBundleTasksResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeBundleTasksResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2814,13 +2876,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(importInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ImportInstanceRequest> request = null;
-        ImportInstanceResult response = null;
+        Response<ImportInstanceResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ImportInstanceRequestMarshaller().marshall(importInstanceRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ImportInstanceResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ImportInstanceResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2847,6 +2910,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param revokeSecurityGroupIngressRequest Container for the necessary
      *           parameters to execute the RevokeSecurityGroupIngress service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -2903,13 +2967,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(getConsoleOutputRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetConsoleOutputRequest> request = null;
-        GetConsoleOutputResult response = null;
+        Response<GetConsoleOutputResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetConsoleOutputRequestMarshaller().marshall(getConsoleOutputRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetConsoleOutputResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetConsoleOutputResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2944,13 +3009,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createInternetGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateInternetGatewayRequest> request = null;
-        CreateInternetGatewayResult response = null;
+        Response<CreateInternetGatewayResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateInternetGatewayRequestMarshaller().marshall(createInternetGatewayRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateInternetGatewayResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateInternetGatewayResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2961,6 +3027,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param deleteVpnConnectionRouteRequest Container for the necessary
      *           parameters to execute the DeleteVpnConnectionRoute service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -2991,6 +3058,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param detachNetworkInterfaceRequest Container for the necessary
      *           parameters to execute the DetachNetworkInterface service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -3024,6 +3092,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param modifyImageAttributeRequest Container for the necessary
      *           parameters to execute the ModifyImageAttribute service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -3094,13 +3163,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createCustomerGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateCustomerGatewayRequest> request = null;
-        CreateCustomerGatewayResult response = null;
+        Response<CreateCustomerGatewayResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateCustomerGatewayRequestMarshaller().marshall(createCustomerGatewayRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateCustomerGatewayResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateCustomerGatewayResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3138,13 +3208,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createSpotDatafeedSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateSpotDatafeedSubscriptionRequest> request = null;
-        CreateSpotDatafeedSubscriptionResult response = null;
+        Response<CreateSpotDatafeedSubscriptionResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateSpotDatafeedSubscriptionRequestMarshaller().marshall(createSpotDatafeedSubscriptionRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateSpotDatafeedSubscriptionResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateSpotDatafeedSubscriptionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3160,6 +3231,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param attachInternetGatewayRequest Container for the necessary
      *           parameters to execute the AttachInternetGateway service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -3205,6 +3277,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param deleteVpnConnectionRequest Container for the necessary
      *           parameters to execute the DeleteVpnConnection service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -3252,13 +3325,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeConversionTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeConversionTasksRequest> request = null;
-        DescribeConversionTasksResult response = null;
+        Response<DescribeConversionTasksResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeConversionTasksRequestMarshaller().marshall(describeConversionTasksRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeConversionTasksResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeConversionTasksResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3308,13 +3382,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createVpnConnectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateVpnConnectionRequest> request = null;
-        CreateVpnConnectionResult response = null;
+        Response<CreateVpnConnectionResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateVpnConnectionRequestMarshaller().marshall(createVpnConnectionRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateVpnConnectionResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateVpnConnectionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3346,13 +3421,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeInstanceAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeInstanceAttributeRequest> request = null;
-        DescribeInstanceAttributeResult response = null;
+        Response<DescribeInstanceAttributeResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeInstanceAttributeRequestMarshaller().marshall(describeInstanceAttributeRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeInstanceAttributeResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeInstanceAttributeResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3384,13 +3460,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describePlacementGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribePlacementGroupsRequest> request = null;
-        DescribePlacementGroupsResult response = null;
+        Response<DescribePlacementGroupsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribePlacementGroupsRequestMarshaller().marshall(describePlacementGroupsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribePlacementGroupsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribePlacementGroupsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3434,13 +3511,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeSubnetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeSubnetsRequest> request = null;
-        DescribeSubnetsResult response = null;
+        Response<DescribeSubnetsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeSubnetsRequestMarshaller().marshall(describeSubnetsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeSubnetsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeSubnetsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3519,13 +3597,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(runInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<RunInstancesRequest> request = null;
-        RunInstancesResult response = null;
+        Response<RunInstancesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new RunInstancesRequestMarshaller().marshall(runInstancesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new RunInstancesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new RunInstancesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3566,13 +3645,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(associateRouteTableRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<AssociateRouteTableRequest> request = null;
-        AssociateRouteTableResult response = null;
+        Response<AssociateRouteTableResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new AssociateRouteTableRequestMarshaller().marshall(associateRouteTableRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new AssociateRouteTableResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new AssociateRouteTableResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3615,13 +3695,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeInstancesRequest> request = null;
-        DescribeInstancesResult response = null;
+        Response<DescribeInstancesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeInstancesRequestMarshaller().marshall(describeInstancesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeInstancesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeInstancesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3637,6 +3718,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param deleteNetworkAclRequest Container for the necessary parameters
      *           to execute the DeleteNetworkAcl service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -3667,6 +3749,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param modifyVolumeAttributeRequest Container for the necessary
      *           parameters to execute the ModifyVolumeAttribute service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -3763,13 +3846,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeImagesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeImagesRequest> request = null;
-        DescribeImagesResult response = null;
+        Response<DescribeImagesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeImagesRequestMarshaller().marshall(describeImagesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeImagesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeImagesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3809,13 +3893,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(startInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<StartInstancesRequest> request = null;
-        StartInstancesResult response = null;
+        Response<StartInstancesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new StartInstancesRequestMarshaller().marshall(startInstancesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new StartInstancesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new StartInstancesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3843,13 +3928,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(cancelReservedInstancesListingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CancelReservedInstancesListingRequest> request = null;
-        CancelReservedInstancesListingResult response = null;
+        Response<CancelReservedInstancesListingResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CancelReservedInstancesListingRequestMarshaller().marshall(cancelReservedInstancesListingRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CancelReservedInstancesListingResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CancelReservedInstancesListingResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -3863,6 +3949,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param modifyInstanceAttributeRequest Container for the necessary
      *           parameters to execute the ModifyInstanceAttribute service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -3898,6 +3985,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param deleteDhcpOptionsRequest Container for the necessary parameters
      *           to execute the DeleteDhcpOptions service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -3944,6 +4032,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param authorizeSecurityGroupIngressRequest Container for the
      *           necessary parameters to execute the AuthorizeSecurityGroupIngress
      *           service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -4028,13 +4117,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeSpotInstanceRequestsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeSpotInstanceRequestsRequest> request = null;
-        DescribeSpotInstanceRequestsResult response = null;
+        Response<DescribeSpotInstanceRequestsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeSpotInstanceRequestsRequestMarshaller().marshall(describeSpotInstanceRequestsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeSpotInstanceRequestsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeSpotInstanceRequestsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -4073,13 +4163,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createVpcRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateVpcRequest> request = null;
-        CreateVpcResult response = null;
+        Response<CreateVpcResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateVpcRequestMarshaller().marshall(createVpcRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateVpcResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateVpcResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -4121,13 +4212,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeCustomerGatewaysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeCustomerGatewaysRequest> request = null;
-        DescribeCustomerGatewaysResult response = null;
+        Response<DescribeCustomerGatewaysResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeCustomerGatewaysRequestMarshaller().marshall(describeCustomerGatewaysRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeCustomerGatewaysResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeCustomerGatewaysResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -4137,6 +4229,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param cancelExportTaskRequest Container for the necessary parameters
      *           to execute the CancelExportTask service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -4194,6 +4287,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param createRouteRequest Container for the necessary parameters to
      *           execute the CreateRoute service method on AmazonEC2.
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4239,13 +4333,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(copyImageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CopyImageRequest> request = null;
-        CopyImageResult response = null;
+        Response<CopyImageResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CopyImageRequestMarshaller().marshall(copyImageRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CopyImageResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CopyImageResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -4256,6 +4351,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param modifyNetworkInterfaceAttributeRequest Container for the
      *           necessary parameters to execute the ModifyNetworkInterfaceAttribute
      *           service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -4292,6 +4388,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param deleteRouteTableRequest Container for the necessary parameters
      *           to execute the DeleteRouteTable service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -4339,13 +4436,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeNetworkInterfaceAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeNetworkInterfaceAttributeRequest> request = null;
-        DescribeNetworkInterfaceAttributeResult response = null;
+        Response<DescribeNetworkInterfaceAttributeResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeNetworkInterfaceAttributeRequestMarshaller().marshall(describeNetworkInterfaceAttributeRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeNetworkInterfaceAttributeResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeNetworkInterfaceAttributeResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -4387,13 +4485,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(requestSpotInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<RequestSpotInstancesRequest> request = null;
-        RequestSpotInstancesResult response = null;
+        Response<RequestSpotInstancesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new RequestSpotInstancesRequestMarshaller().marshall(requestSpotInstancesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new RequestSpotInstancesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new RequestSpotInstancesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -4408,6 +4507,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param createTagsRequest Container for the necessary parameters to
      *           execute the CreateTags service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -4455,13 +4555,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeVolumeAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeVolumeAttributeRequest> request = null;
-        DescribeVolumeAttributeResult response = null;
+        Response<DescribeVolumeAttributeResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeVolumeAttributeRequestMarshaller().marshall(describeVolumeAttributeRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeVolumeAttributeResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeVolumeAttributeResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -4489,13 +4590,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(attachNetworkInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<AttachNetworkInterfaceRequest> request = null;
-        AttachNetworkInterfaceResult response = null;
+        Response<AttachNetworkInterfaceResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new AttachNetworkInterfaceRequestMarshaller().marshall(attachNetworkInterfaceRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new AttachNetworkInterfaceResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new AttachNetworkInterfaceResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -4511,6 +4613,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param replaceRouteRequest Container for the necessary parameters to
      *           execute the ReplaceRoute service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -4560,13 +4663,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeTagsRequest> request = null;
-        DescribeTagsResult response = null;
+        Response<DescribeTagsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeTagsRequestMarshaller().marshall(describeTagsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeTagsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeTagsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -4600,13 +4704,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(cancelBundleTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CancelBundleTaskRequest> request = null;
-        CancelBundleTaskResult response = null;
+        Response<CancelBundleTaskResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CancelBundleTaskRequestMarshaller().marshall(cancelBundleTaskRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CancelBundleTaskResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CancelBundleTaskResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -4617,6 +4722,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param disableVgwRoutePropagationRequest Container for the necessary
      *           parameters to execute the DisableVgwRoutePropagation service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -4679,13 +4785,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(cancelSpotInstanceRequestsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CancelSpotInstanceRequestsRequest> request = null;
-        CancelSpotInstanceRequestsResult response = null;
+        Response<CancelSpotInstanceRequestsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CancelSpotInstanceRequestsRequestMarshaller().marshall(cancelSpotInstanceRequestsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CancelSpotInstanceRequestsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CancelSpotInstanceRequestsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -4720,13 +4827,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(purchaseReservedInstancesOfferingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<PurchaseReservedInstancesOfferingRequest> request = null;
-        PurchaseReservedInstancesOfferingResult response = null;
+        Response<PurchaseReservedInstancesOfferingResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new PurchaseReservedInstancesOfferingRequestMarshaller().marshall(purchaseReservedInstancesOfferingRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new PurchaseReservedInstancesOfferingResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new PurchaseReservedInstancesOfferingResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -4740,6 +4848,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param modifySnapshotAttributeRequest Container for the necessary
      *           parameters to execute the ModifySnapshotAttribute service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -4791,13 +4900,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeReservedInstancesModificationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeReservedInstancesModificationsRequest> request = null;
-        DescribeReservedInstancesModificationsResult response = null;
+        Response<DescribeReservedInstancesModificationsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeReservedInstancesModificationsRequestMarshaller().marshall(describeReservedInstancesModificationsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeReservedInstancesModificationsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeReservedInstancesModificationsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -4834,13 +4944,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(terminateInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<TerminateInstancesRequest> request = null;
-        TerminateInstancesResult response = null;
+        Response<TerminateInstancesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new TerminateInstancesRequestMarshaller().marshall(terminateInstancesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new TerminateInstancesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new TerminateInstancesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -4860,6 +4971,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param deleteSpotDatafeedSubscriptionRequest Container for the
      *           necessary parameters to execute the DeleteSpotDatafeedSubscription
      *           service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -4895,6 +5007,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param deleteInternetGatewayRequest Container for the necessary
      *           parameters to execute the DeleteInternetGateway service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -4946,13 +5059,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeSnapshotAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeSnapshotAttributeRequest> request = null;
-        DescribeSnapshotAttributeResult response = null;
+        Response<DescribeSnapshotAttributeResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeSnapshotAttributeRequestMarshaller().marshall(describeSnapshotAttributeRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeSnapshotAttributeResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeSnapshotAttributeResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -4993,13 +5107,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(replaceRouteTableAssociationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ReplaceRouteTableAssociationRequest> request = null;
-        ReplaceRouteTableAssociationResult response = null;
+        Response<ReplaceRouteTableAssociationResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ReplaceRouteTableAssociationRequestMarshaller().marshall(replaceRouteTableAssociationRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ReplaceRouteTableAssociationResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ReplaceRouteTableAssociationResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -5030,13 +5145,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeAddressesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeAddressesRequest> request = null;
-        DescribeAddressesResult response = null;
+        Response<DescribeAddressesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeAddressesRequestMarshaller().marshall(describeAddressesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeAddressesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeAddressesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -5068,13 +5184,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeImageAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeImageAttributeRequest> request = null;
-        DescribeImageAttributeResult response = null;
+        Response<DescribeImageAttributeResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeImageAttributeRequestMarshaller().marshall(describeImageAttributeRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeImageAttributeResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeImageAttributeResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -5107,13 +5224,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeKeyPairsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeKeyPairsRequest> request = null;
-        DescribeKeyPairsResult response = null;
+        Response<DescribeKeyPairsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeKeyPairsRequestMarshaller().marshall(describeKeyPairsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeKeyPairsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeKeyPairsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -5152,13 +5270,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(confirmProductInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ConfirmProductInstanceRequest> request = null;
-        ConfirmProductInstanceResult response = null;
+        Response<ConfirmProductInstanceResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ConfirmProductInstanceRequestMarshaller().marshall(confirmProductInstanceRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ConfirmProductInstanceResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ConfirmProductInstanceResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -5179,6 +5298,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param disassociateRouteTableRequest Container for the necessary
      *           parameters to execute the DisassociateRouteTable service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -5226,13 +5346,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeVpcAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeVpcAttributeRequest> request = null;
-        DescribeVpcAttributeResult response = null;
+        Response<DescribeVpcAttributeResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeVpcAttributeRequestMarshaller().marshall(describeVpcAttributeRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeVpcAttributeResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeVpcAttributeResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -5265,6 +5386,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param revokeSecurityGroupEgressRequest Container for the necessary
      *           parameters to execute the RevokeSecurityGroupEgress service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -5300,6 +5422,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param deleteNetworkAclEntryRequest Container for the necessary
      *           parameters to execute the DeleteNetworkAclEntry service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -5349,13 +5472,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateVolumeRequest> request = null;
-        CreateVolumeResult response = null;
+        Response<CreateVolumeResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateVolumeRequestMarshaller().marshall(createVolumeRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateVolumeResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateVolumeResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -5452,13 +5576,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeInstanceStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeInstanceStatusRequest> request = null;
-        DescribeInstanceStatusResult response = null;
+        Response<DescribeInstanceStatusResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeInstanceStatusRequestMarshaller().marshall(describeInstanceStatusRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeInstanceStatusResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeInstanceStatusResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -5504,13 +5629,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeVpnGatewaysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeVpnGatewaysRequest> request = null;
-        DescribeVpnGatewaysResult response = null;
+        Response<DescribeVpnGatewaysResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeVpnGatewaysRequestMarshaller().marshall(describeVpnGatewaysRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeVpnGatewaysResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeVpnGatewaysResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -5554,13 +5680,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createSubnetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateSubnetRequest> request = null;
-        CreateSubnetResult response = null;
+        Response<CreateSubnetResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateSubnetRequestMarshaller().marshall(createSubnetRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateSubnetResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateSubnetResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -5595,13 +5722,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeReservedInstancesOfferingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeReservedInstancesOfferingsRequest> request = null;
-        DescribeReservedInstancesOfferingsResult response = null;
+        Response<DescribeReservedInstancesOfferingsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeReservedInstancesOfferingsRequestMarshaller().marshall(describeReservedInstancesOfferingsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeReservedInstancesOfferingsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeReservedInstancesOfferingsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -5612,6 +5740,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param assignPrivateIpAddressesRequest Container for the necessary
      *           parameters to execute the AssignPrivateIpAddresses service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -5645,6 +5774,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param deleteSnapshotRequest Container for the necessary parameters to
      *           execute the DeleteSnapshot service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -5698,13 +5828,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(replaceNetworkAclAssociationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ReplaceNetworkAclAssociationRequest> request = null;
-        ReplaceNetworkAclAssociationResult response = null;
+        Response<ReplaceNetworkAclAssociationResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ReplaceNetworkAclAssociationRequestMarshaller().marshall(replaceNetworkAclAssociationRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ReplaceNetworkAclAssociationResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ReplaceNetworkAclAssociationResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -5721,6 +5852,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param disassociateAddressRequest Container for the necessary
      *           parameters to execute the DisassociateAddress service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -5756,6 +5888,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param createPlacementGroupRequest Container for the necessary
      *           parameters to execute the CreatePlacementGroup service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -5809,13 +5942,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(bundleInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<BundleInstanceRequest> request = null;
-        BundleInstanceResult response = null;
+        Response<BundleInstanceResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new BundleInstanceRequestMarshaller().marshall(bundleInstanceRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new BundleInstanceResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new BundleInstanceResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -5830,6 +5964,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param deletePlacementGroupRequest Container for the necessary
      *           parameters to execute the DeletePlacementGroup service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -5866,6 +6001,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param deleteVpcRequest Container for the necessary parameters to
      *           execute the DeleteVpc service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -5912,13 +6048,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(copySnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CopySnapshotRequest> request = null;
-        CopySnapshotResult response = null;
+        Response<CopySnapshotResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CopySnapshotRequestMarshaller().marshall(copySnapshotRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CopySnapshotResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CopySnapshotResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -5949,13 +6086,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(allocateAddressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<AllocateAddressRequest> request = null;
-        AllocateAddressResult response = null;
+        Response<AllocateAddressResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new AllocateAddressRequestMarshaller().marshall(allocateAddressRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new AllocateAddressResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new AllocateAddressResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -5983,6 +6121,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param releaseAddressRequest Container for the necessary parameters to
      *           execute the ReleaseAddress service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -6016,6 +6155,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param resetInstanceAttributeRequest Container for the necessary
      *           parameters to execute the ResetInstanceAttribute service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -6067,13 +6207,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createKeyPairRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateKeyPairRequest> request = null;
-        CreateKeyPairResult response = null;
+        Response<CreateKeyPairResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateKeyPairRequestMarshaller().marshall(createKeyPairRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateKeyPairResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateKeyPairResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -6089,6 +6230,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param replaceNetworkAclEntryRequest Container for the necessary
      *           parameters to execute the ReplaceNetworkAclEntry service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -6142,13 +6284,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(describeSnapshotsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeSnapshotsRequest> request = null;
-        DescribeSnapshotsResult response = null;
+        Response<DescribeSnapshotsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DescribeSnapshotsRequestMarshaller().marshall(describeSnapshotsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DescribeSnapshotsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeSnapshotsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -6181,13 +6324,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(createNetworkAclRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateNetworkAclRequest> request = null;
-        CreateNetworkAclResult response = null;
+        Response<CreateNetworkAclResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateNetworkAclRequestMarshaller().marshall(createNetworkAclRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateNetworkAclResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateNetworkAclResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -6233,13 +6377,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         ExecutionContext executionContext = createExecutionContext(registerImageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<RegisterImageRequest> request = null;
-        RegisterImageResult response = null;
+        Response<RegisterImageResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new RegisterImageRequestMarshaller().marshall(registerImageRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new RegisterImageResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new RegisterImageResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -6250,6 +6395,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param resetNetworkInterfaceAttributeRequest Container for the
      *           necessary parameters to execute the ResetNetworkInterfaceAttribute
      *           service method on AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -6280,6 +6426,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param createVpnConnectionRouteRequest Container for the necessary
      *           parameters to execute the CreateVpnConnectionRoute service method on
      *           AmazonEC2.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -6367,6 +6514,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * access from security group A, security group A cannot be deleted until
      * the allow rule is removed.
      * </p>
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -6761,6 +6909,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -6925,6 +7074,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * security group. However, depending on the number of instances in the
      * group, a small delay might occur.
      * </p>
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -7159,6 +7309,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * instances, a small delay might occur.
      * </p>
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7312,6 +7463,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * User Guide .
      * 
      * </p>
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -7528,6 +7680,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * not return an error.
      * </p>
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -7582,6 +7735,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * be assigned to another account which will cause Amazon EC2 to return
      * an error.
      * </p>
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -7724,7 +7878,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
             Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
             ExecutionContext executionContext)
     {
@@ -7740,12 +7894,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(signer);
+        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-        return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
+        return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }
         

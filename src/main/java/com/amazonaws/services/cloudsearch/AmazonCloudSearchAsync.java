@@ -51,6 +51,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         UpdateDefaultSearchField service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -82,6 +83,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         UpdateDefaultSearchField service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -106,6 +108,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteRankExpression service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -133,6 +136,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteRankExpression service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -160,6 +164,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         DescribeRankExpressions service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -190,6 +195,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         DescribeRankExpressions service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -213,6 +219,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         CreateDomain service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -239,6 +246,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         CreateDomain service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -266,6 +274,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         UpdateServiceAccessPolicies service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -296,6 +305,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         UpdateServiceAccessPolicies service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -322,6 +332,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         DefineIndexField service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -351,6 +362,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         DefineIndexField service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -378,6 +390,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         DefineRankExpression service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -408,6 +421,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         DefineRankExpression service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -433,6 +447,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         DescribeSynonymOptions service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -461,6 +476,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         DescribeSynonymOptions service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -486,6 +502,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         DescribeStopwordOptions service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -514,6 +531,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         DescribeStopwordOptions service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -537,6 +555,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteDomain service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -563,6 +582,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteDomain service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -589,6 +609,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         DescribeServiceAccessPolicies service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -618,6 +639,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         DescribeServiceAccessPolicies service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -643,6 +665,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         DescribeDefaultSearchField service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -671,6 +694,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         DescribeDefaultSearchField service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -698,6 +722,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         UpdateStopwordOptions service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -728,6 +753,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         UpdateStopwordOptions service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -755,6 +781,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateSynonymOptions service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -785,6 +812,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         UpdateSynonymOptions service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -812,6 +840,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         UpdateStemmingOptions service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -842,6 +871,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         UpdateStemmingOptions service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -867,6 +897,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         DescribeStemmingOptions service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -895,6 +926,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * @return A Java Future object containing the response from the
      *         DescribeStemmingOptions service method, as returned by
      *         AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -919,6 +951,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeDomains service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -946,6 +979,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeDomains service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -973,6 +1007,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         IndexDocuments service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1003,6 +1038,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         IndexDocuments service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1029,6 +1065,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeIndexFields service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1058,6 +1095,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         DescribeIndexFields service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1081,6 +1119,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteIndexField service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1107,6 +1146,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteIndexField service method, as returned by AmazonCloudSearch.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

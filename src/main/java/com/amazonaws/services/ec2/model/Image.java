@@ -97,6 +97,8 @@ public class Image implements Serializable {
      */
     private String platform;
 
+    private String sriovNetSupport;
+
     /**
      * The reason for the state change.
      */
@@ -800,6 +802,39 @@ public class Image implements Serializable {
     }
 
     /**
+     * Returns the value of the SriovNetSupport property for this object.
+     *
+     * @return The value of the SriovNetSupport property for this object.
+     */
+    public String getSriovNetSupport() {
+        return sriovNetSupport;
+    }
+    
+    /**
+     * Sets the value of the SriovNetSupport property for this object.
+     *
+     * @param sriovNetSupport The new value for the SriovNetSupport property for this object.
+     */
+    public void setSriovNetSupport(String sriovNetSupport) {
+        this.sriovNetSupport = sriovNetSupport;
+    }
+    
+    /**
+     * Sets the value of the SriovNetSupport property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param sriovNetSupport The new value for the SriovNetSupport property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Image withSriovNetSupport(String sriovNetSupport) {
+        this.sriovNetSupport = sriovNetSupport;
+        return this;
+    }
+
+    /**
      * The reason for the state change.
      *
      * @return The reason for the state change.
@@ -1385,6 +1420,7 @@ public class Image implements Serializable {
         if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");
         if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");
         if (getPlatform() != null) sb.append("Platform: " + getPlatform() + ",");
+        if (getSriovNetSupport() != null) sb.append("SriovNetSupport: " + getSriovNetSupport() + ",");
         if (getStateReason() != null) sb.append("StateReason: " + getStateReason() + ",");
         if (getImageOwnerAlias() != null) sb.append("ImageOwnerAlias: " + getImageOwnerAlias() + ",");
         if (getName() != null) sb.append("Name: " + getName() + ",");
@@ -1415,6 +1451,7 @@ public class Image implements Serializable {
         hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode()); 
         hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode()); 
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode()); 
+        hashCode = prime * hashCode + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport().hashCode()); 
         hashCode = prime * hashCode + ((getStateReason() == null) ? 0 : getStateReason().hashCode()); 
         hashCode = prime * hashCode + ((getImageOwnerAlias() == null) ? 0 : getImageOwnerAlias().hashCode()); 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
@@ -1458,6 +1495,8 @@ public class Image implements Serializable {
         if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false) return false; 
         if (other.getPlatform() == null ^ this.getPlatform() == null) return false;
         if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false) return false; 
+        if (other.getSriovNetSupport() == null ^ this.getSriovNetSupport() == null) return false;
+        if (other.getSriovNetSupport() != null && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false) return false; 
         if (other.getStateReason() == null ^ this.getStateReason() == null) return false;
         if (other.getStateReason() != null && other.getStateReason().equals(this.getStateReason()) == false) return false; 
         if (other.getImageOwnerAlias() == null ^ this.getImageOwnerAlias() == null) return false;

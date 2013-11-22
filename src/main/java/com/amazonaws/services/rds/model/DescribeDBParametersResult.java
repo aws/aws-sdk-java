@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class DescribeDBParametersResult implements Serializable {
 
     /**
-     * A list of <a>Parameter</a> instances.
+     * A list of <a>Parameter</a> values.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
 
@@ -37,9 +37,9 @@ public class DescribeDBParametersResult implements Serializable {
     private String marker;
 
     /**
-     * A list of <a>Parameter</a> instances.
+     * A list of <a>Parameter</a> values.
      *
-     * @return A list of <a>Parameter</a> instances.
+     * @return A list of <a>Parameter</a> values.
      */
     public java.util.List<Parameter> getParameters() {
         if (parameters == null) {
@@ -50,9 +50,9 @@ public class DescribeDBParametersResult implements Serializable {
     }
     
     /**
-     * A list of <a>Parameter</a> instances.
+     * A list of <a>Parameter</a> values.
      *
-     * @param parameters A list of <a>Parameter</a> instances.
+     * @param parameters A list of <a>Parameter</a> values.
      */
     public void setParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
@@ -65,11 +65,11 @@ public class DescribeDBParametersResult implements Serializable {
     }
     
     /**
-     * A list of <a>Parameter</a> instances.
+     * A list of <a>Parameter</a> values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameters A list of <a>Parameter</a> instances.
+     * @param parameters A list of <a>Parameter</a> values.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -83,11 +83,11 @@ public class DescribeDBParametersResult implements Serializable {
     }
     
     /**
-     * A list of <a>Parameter</a> instances.
+     * A list of <a>Parameter</a> values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameters A list of <a>Parameter</a> instances.
+     * @param parameters A list of <a>Parameter</a> values.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

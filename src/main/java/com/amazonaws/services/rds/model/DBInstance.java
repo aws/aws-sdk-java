@@ -36,19 +36,19 @@ public class DBInstance implements Serializable {
 
     /**
      * Contains a user-supplied database identifier. This is the unique key
-     * that identifies a DB Instance.
+     * that identifies a DB instance.
      */
     private String dBInstanceIdentifier;
 
     /**
      * Contains the name of the compute and memory capacity class of the DB
-     * Instance.
+     * instance.
      */
     private String dBInstanceClass;
 
     /**
      * Provides the name of the database engine to be used for this DB
-     * Instance.
+     * instance.
      */
     private String engine;
 
@@ -58,17 +58,21 @@ public class DBInstance implements Serializable {
     private String dBInstanceStatus;
 
     /**
-     * Contains the master username for the DB Instance.
+     * Contains the master username for the DB instance.
      */
     private String masterUsername;
 
     /**
      * The meaning of this parameter differs according to the database engine
-     * you use. <p><b>MySQL</b> <p> Contains the name of the initial database
-     * of this instance that was provided at create time, if one was
-     * specified when the DB Instance was created. This same name is returned
-     * for the life of the DB Instance. <p>Type: String <p><b>Oracle</b> <p>
-     * Contains the Oracle System ID (SID) of the created DB Instance.
+     * you use. For example, this value returns only MySQL information when
+     * returning values from CreateDBInstanceReadReplica since read replicas
+     * are only supported for MySQL. <p><b>MySQL</b> <p> Contains the name of
+     * the initial database of this instance that was provided at create
+     * time, if one was specified when the DB instance was created. This same
+     * name is returned for the life of the DB instance. <p>Type: String
+     * <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
+     * created DB instance. Not shown when the returned parameters do not
+     * apply to an Oracle DB instance.
      */
     private String dBName;
 
@@ -83,7 +87,7 @@ public class DBInstance implements Serializable {
     private Integer allocatedStorage;
 
     /**
-     * Provides the date and time the DB Instance was created.
+     * Provides the date and time the DB instance was created.
      */
     private java.util.Date instanceCreateTime;
 
@@ -95,38 +99,38 @@ public class DBInstance implements Serializable {
     private String preferredBackupWindow;
 
     /**
-     * Specifies the number of days for which automatic DB Snapshots are
+     * Specifies the number of days for which automatic DB snapshots are
      * retained.
      */
     private Integer backupRetentionPeriod;
 
     /**
-     * Provides List of DB Security Group elements containing only
+     * Provides List of DB security group elements containing only
      * <code>DBSecurityGroup.Name</code> and
      * <code>DBSecurityGroup.Status</code> subelements.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroupMembership> dBSecurityGroups;
 
     /**
-     * Provides List of VPC security group elements that the DB Instance
+     * Provides List of VPC security group elements that the DB instance
      * belongs to.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership> vpcSecurityGroups;
 
     /**
-     * Provides the list of DB Parameter Groups applied to this DB Instance.
+     * Provides the list of DB parameter groups applied to this DB instance.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<DBParameterGroupStatus> dBParameterGroups;
 
     /**
-     * Specifies the name of the Availability Zone the DB Instance is located
+     * Specifies the name of the Availability Zone the DB instance is located
      * in.
      */
     private String availabilityZone;
 
     /**
-     * Provides the inforamtion of the subnet group associated with the DB
-     * instance, including the name, descrption and subnets in the subnet
+     * Specifies information on the subnet group associated with the DB
+     * instance, including the name, description, and subnets in the subnet
      * group.
      */
     private DBSubnetGroup dBSubnetGroup;
@@ -138,7 +142,7 @@ public class DBInstance implements Serializable {
     private String preferredMaintenanceWindow;
 
     /**
-     * Specifies that changes to the DB Instance are pending. This element is
+     * Specifies that changes to the DB instance are pending. This element is
      * only included when changes are pending. Specific changes are
      * identified by subelements.
      */
@@ -151,7 +155,7 @@ public class DBInstance implements Serializable {
     private java.util.Date latestRestorableTime;
 
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment.
+     * Specifies if the DB instance is a Multi-AZ deployment.
      */
     private Boolean multiAZ;
 
@@ -166,19 +170,19 @@ public class DBInstance implements Serializable {
     private Boolean autoMinorVersionUpgrade;
 
     /**
-     * Contains the identifier of the source DB Instance if this DB Instance
-     * is a Read Replica.
+     * Contains the identifier of the source DB instance if this DB instance
+     * is a read replica.
      */
     private String readReplicaSourceDBInstanceIdentifier;
 
     /**
-     * Contains one or more identifiers of the Read Replicas associated with
-     * this DB Instance.
+     * Contains one or more identifiers of the read replicas associated with
+     * this DB instance.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> readReplicaDBInstanceIdentifiers;
 
     /**
-     * License model information for this DB Instance.
+     * License model information for this DB instance.
      */
     private String licenseModel;
 
@@ -188,7 +192,7 @@ public class DBInstance implements Serializable {
     private Integer iops;
 
     /**
-     * Provides the list of option group memberships for this DB Instance.
+     * Provides the list of option group memberships for this DB instance.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroupMembership> optionGroupMemberships;
 
@@ -205,7 +209,7 @@ public class DBInstance implements Serializable {
     private String secondaryAvailabilityZone;
 
     /**
-     * Specifies the accessibility options for the DB Instance. A value of
+     * Specifies the accessibility options for the DB instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
      * DNS name, which resolves to a public IP address. A value of false
      * specifies an internal instance with a DNS name that resolves to a
@@ -222,17 +226,17 @@ public class DBInstance implements Serializable {
     private Boolean publiclyAccessible;
 
     /**
-     * The status of a Read Replica. If the instance is not a for a read
-     * replica, this will be blank.
+     * The status of a read replica. If the instance is not a read replica,
+     * this will be blank.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<DBInstanceStatusInfo> statusInfos;
 
     /**
      * Contains a user-supplied database identifier. This is the unique key
-     * that identifies a DB Instance.
+     * that identifies a DB instance.
      *
      * @return Contains a user-supplied database identifier. This is the unique key
-     *         that identifies a DB Instance.
+     *         that identifies a DB instance.
      */
     public String getDBInstanceIdentifier() {
         return dBInstanceIdentifier;
@@ -240,10 +244,10 @@ public class DBInstance implements Serializable {
     
     /**
      * Contains a user-supplied database identifier. This is the unique key
-     * that identifies a DB Instance.
+     * that identifies a DB instance.
      *
      * @param dBInstanceIdentifier Contains a user-supplied database identifier. This is the unique key
-     *         that identifies a DB Instance.
+     *         that identifies a DB instance.
      */
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -251,12 +255,12 @@ public class DBInstance implements Serializable {
     
     /**
      * Contains a user-supplied database identifier. This is the unique key
-     * that identifies a DB Instance.
+     * that identifies a DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceIdentifier Contains a user-supplied database identifier. This is the unique key
-     *         that identifies a DB Instance.
+     *         that identifies a DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -268,10 +272,10 @@ public class DBInstance implements Serializable {
 
     /**
      * Contains the name of the compute and memory capacity class of the DB
-     * Instance.
+     * instance.
      *
      * @return Contains the name of the compute and memory capacity class of the DB
-     *         Instance.
+     *         instance.
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
@@ -279,10 +283,10 @@ public class DBInstance implements Serializable {
     
     /**
      * Contains the name of the compute and memory capacity class of the DB
-     * Instance.
+     * instance.
      *
      * @param dBInstanceClass Contains the name of the compute and memory capacity class of the DB
-     *         Instance.
+     *         instance.
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -290,12 +294,12 @@ public class DBInstance implements Serializable {
     
     /**
      * Contains the name of the compute and memory capacity class of the DB
-     * Instance.
+     * instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceClass Contains the name of the compute and memory capacity class of the DB
-     *         Instance.
+     *         instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -307,10 +311,10 @@ public class DBInstance implements Serializable {
 
     /**
      * Provides the name of the database engine to be used for this DB
-     * Instance.
+     * instance.
      *
      * @return Provides the name of the database engine to be used for this DB
-     *         Instance.
+     *         instance.
      */
     public String getEngine() {
         return engine;
@@ -318,10 +322,10 @@ public class DBInstance implements Serializable {
     
     /**
      * Provides the name of the database engine to be used for this DB
-     * Instance.
+     * instance.
      *
      * @param engine Provides the name of the database engine to be used for this DB
-     *         Instance.
+     *         instance.
      */
     public void setEngine(String engine) {
         this.engine = engine;
@@ -329,12 +333,12 @@ public class DBInstance implements Serializable {
     
     /**
      * Provides the name of the database engine to be used for this DB
-     * Instance.
+     * instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engine Provides the name of the database engine to be used for this DB
-     *         Instance.
+     *         instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -378,29 +382,29 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Contains the master username for the DB Instance.
+     * Contains the master username for the DB instance.
      *
-     * @return Contains the master username for the DB Instance.
+     * @return Contains the master username for the DB instance.
      */
     public String getMasterUsername() {
         return masterUsername;
     }
     
     /**
-     * Contains the master username for the DB Instance.
+     * Contains the master username for the DB instance.
      *
-     * @param masterUsername Contains the master username for the DB Instance.
+     * @param masterUsername Contains the master username for the DB instance.
      */
     public void setMasterUsername(String masterUsername) {
         this.masterUsername = masterUsername;
     }
     
     /**
-     * Contains the master username for the DB Instance.
+     * Contains the master username for the DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param masterUsername Contains the master username for the DB Instance.
+     * @param masterUsername Contains the master username for the DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -412,18 +416,26 @@ public class DBInstance implements Serializable {
 
     /**
      * The meaning of this parameter differs according to the database engine
-     * you use. <p><b>MySQL</b> <p> Contains the name of the initial database
-     * of this instance that was provided at create time, if one was
-     * specified when the DB Instance was created. This same name is returned
-     * for the life of the DB Instance. <p>Type: String <p><b>Oracle</b> <p>
-     * Contains the Oracle System ID (SID) of the created DB Instance.
+     * you use. For example, this value returns only MySQL information when
+     * returning values from CreateDBInstanceReadReplica since read replicas
+     * are only supported for MySQL. <p><b>MySQL</b> <p> Contains the name of
+     * the initial database of this instance that was provided at create
+     * time, if one was specified when the DB instance was created. This same
+     * name is returned for the life of the DB instance. <p>Type: String
+     * <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
+     * created DB instance. Not shown when the returned parameters do not
+     * apply to an Oracle DB instance.
      *
      * @return The meaning of this parameter differs according to the database engine
-     *         you use. <p><b>MySQL</b> <p> Contains the name of the initial database
-     *         of this instance that was provided at create time, if one was
-     *         specified when the DB Instance was created. This same name is returned
-     *         for the life of the DB Instance. <p>Type: String <p><b>Oracle</b> <p>
-     *         Contains the Oracle System ID (SID) of the created DB Instance.
+     *         you use. For example, this value returns only MySQL information when
+     *         returning values from CreateDBInstanceReadReplica since read replicas
+     *         are only supported for MySQL. <p><b>MySQL</b> <p> Contains the name of
+     *         the initial database of this instance that was provided at create
+     *         time, if one was specified when the DB instance was created. This same
+     *         name is returned for the life of the DB instance. <p>Type: String
+     *         <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
+     *         created DB instance. Not shown when the returned parameters do not
+     *         apply to an Oracle DB instance.
      */
     public String getDBName() {
         return dBName;
@@ -431,18 +443,26 @@ public class DBInstance implements Serializable {
     
     /**
      * The meaning of this parameter differs according to the database engine
-     * you use. <p><b>MySQL</b> <p> Contains the name of the initial database
-     * of this instance that was provided at create time, if one was
-     * specified when the DB Instance was created. This same name is returned
-     * for the life of the DB Instance. <p>Type: String <p><b>Oracle</b> <p>
-     * Contains the Oracle System ID (SID) of the created DB Instance.
+     * you use. For example, this value returns only MySQL information when
+     * returning values from CreateDBInstanceReadReplica since read replicas
+     * are only supported for MySQL. <p><b>MySQL</b> <p> Contains the name of
+     * the initial database of this instance that was provided at create
+     * time, if one was specified when the DB instance was created. This same
+     * name is returned for the life of the DB instance. <p>Type: String
+     * <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
+     * created DB instance. Not shown when the returned parameters do not
+     * apply to an Oracle DB instance.
      *
      * @param dBName The meaning of this parameter differs according to the database engine
-     *         you use. <p><b>MySQL</b> <p> Contains the name of the initial database
-     *         of this instance that was provided at create time, if one was
-     *         specified when the DB Instance was created. This same name is returned
-     *         for the life of the DB Instance. <p>Type: String <p><b>Oracle</b> <p>
-     *         Contains the Oracle System ID (SID) of the created DB Instance.
+     *         you use. For example, this value returns only MySQL information when
+     *         returning values from CreateDBInstanceReadReplica since read replicas
+     *         are only supported for MySQL. <p><b>MySQL</b> <p> Contains the name of
+     *         the initial database of this instance that was provided at create
+     *         time, if one was specified when the DB instance was created. This same
+     *         name is returned for the life of the DB instance. <p>Type: String
+     *         <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
+     *         created DB instance. Not shown when the returned parameters do not
+     *         apply to an Oracle DB instance.
      */
     public void setDBName(String dBName) {
         this.dBName = dBName;
@@ -450,20 +470,28 @@ public class DBInstance implements Serializable {
     
     /**
      * The meaning of this parameter differs according to the database engine
-     * you use. <p><b>MySQL</b> <p> Contains the name of the initial database
-     * of this instance that was provided at create time, if one was
-     * specified when the DB Instance was created. This same name is returned
-     * for the life of the DB Instance. <p>Type: String <p><b>Oracle</b> <p>
-     * Contains the Oracle System ID (SID) of the created DB Instance.
+     * you use. For example, this value returns only MySQL information when
+     * returning values from CreateDBInstanceReadReplica since read replicas
+     * are only supported for MySQL. <p><b>MySQL</b> <p> Contains the name of
+     * the initial database of this instance that was provided at create
+     * time, if one was specified when the DB instance was created. This same
+     * name is returned for the life of the DB instance. <p>Type: String
+     * <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
+     * created DB instance. Not shown when the returned parameters do not
+     * apply to an Oracle DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBName The meaning of this parameter differs according to the database engine
-     *         you use. <p><b>MySQL</b> <p> Contains the name of the initial database
-     *         of this instance that was provided at create time, if one was
-     *         specified when the DB Instance was created. This same name is returned
-     *         for the life of the DB Instance. <p>Type: String <p><b>Oracle</b> <p>
-     *         Contains the Oracle System ID (SID) of the created DB Instance.
+     *         you use. For example, this value returns only MySQL information when
+     *         returning values from CreateDBInstanceReadReplica since read replicas
+     *         are only supported for MySQL. <p><b>MySQL</b> <p> Contains the name of
+     *         the initial database of this instance that was provided at create
+     *         time, if one was specified when the DB instance was created. This same
+     *         name is returned for the life of the DB instance. <p>Type: String
+     *         <p><b>Oracle</b> <p> Contains the Oracle System ID (SID) of the
+     *         created DB instance. Not shown when the returned parameters do not
+     *         apply to an Oracle DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -540,29 +568,29 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Provides the date and time the DB Instance was created.
+     * Provides the date and time the DB instance was created.
      *
-     * @return Provides the date and time the DB Instance was created.
+     * @return Provides the date and time the DB instance was created.
      */
     public java.util.Date getInstanceCreateTime() {
         return instanceCreateTime;
     }
     
     /**
-     * Provides the date and time the DB Instance was created.
+     * Provides the date and time the DB instance was created.
      *
-     * @param instanceCreateTime Provides the date and time the DB Instance was created.
+     * @param instanceCreateTime Provides the date and time the DB instance was created.
      */
     public void setInstanceCreateTime(java.util.Date instanceCreateTime) {
         this.instanceCreateTime = instanceCreateTime;
     }
     
     /**
-     * Provides the date and time the DB Instance was created.
+     * Provides the date and time the DB instance was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceCreateTime Provides the date and time the DB Instance was created.
+     * @param instanceCreateTime Provides the date and time the DB instance was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -618,10 +646,10 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Specifies the number of days for which automatic DB Snapshots are
+     * Specifies the number of days for which automatic DB snapshots are
      * retained.
      *
-     * @return Specifies the number of days for which automatic DB Snapshots are
+     * @return Specifies the number of days for which automatic DB snapshots are
      *         retained.
      */
     public Integer getBackupRetentionPeriod() {
@@ -629,10 +657,10 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Specifies the number of days for which automatic DB Snapshots are
+     * Specifies the number of days for which automatic DB snapshots are
      * retained.
      *
-     * @param backupRetentionPeriod Specifies the number of days for which automatic DB Snapshots are
+     * @param backupRetentionPeriod Specifies the number of days for which automatic DB snapshots are
      *         retained.
      */
     public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
@@ -640,12 +668,12 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Specifies the number of days for which automatic DB Snapshots are
+     * Specifies the number of days for which automatic DB snapshots are
      * retained.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param backupRetentionPeriod Specifies the number of days for which automatic DB Snapshots are
+     * @param backupRetentionPeriod Specifies the number of days for which automatic DB snapshots are
      *         retained.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -657,11 +685,11 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Provides List of DB Security Group elements containing only
+     * Provides List of DB security group elements containing only
      * <code>DBSecurityGroup.Name</code> and
      * <code>DBSecurityGroup.Status</code> subelements.
      *
-     * @return Provides List of DB Security Group elements containing only
+     * @return Provides List of DB security group elements containing only
      *         <code>DBSecurityGroup.Name</code> and
      *         <code>DBSecurityGroup.Status</code> subelements.
      */
@@ -674,11 +702,11 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Provides List of DB Security Group elements containing only
+     * Provides List of DB security group elements containing only
      * <code>DBSecurityGroup.Name</code> and
      * <code>DBSecurityGroup.Status</code> subelements.
      *
-     * @param dBSecurityGroups Provides List of DB Security Group elements containing only
+     * @param dBSecurityGroups Provides List of DB security group elements containing only
      *         <code>DBSecurityGroup.Name</code> and
      *         <code>DBSecurityGroup.Status</code> subelements.
      */
@@ -693,13 +721,13 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Provides List of DB Security Group elements containing only
+     * Provides List of DB security group elements containing only
      * <code>DBSecurityGroup.Name</code> and
      * <code>DBSecurityGroup.Status</code> subelements.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSecurityGroups Provides List of DB Security Group elements containing only
+     * @param dBSecurityGroups Provides List of DB security group elements containing only
      *         <code>DBSecurityGroup.Name</code> and
      *         <code>DBSecurityGroup.Status</code> subelements.
      *
@@ -715,13 +743,13 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Provides List of DB Security Group elements containing only
+     * Provides List of DB security group elements containing only
      * <code>DBSecurityGroup.Name</code> and
      * <code>DBSecurityGroup.Status</code> subelements.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSecurityGroups Provides List of DB Security Group elements containing only
+     * @param dBSecurityGroups Provides List of DB security group elements containing only
      *         <code>DBSecurityGroup.Name</code> and
      *         <code>DBSecurityGroup.Status</code> subelements.
      *
@@ -741,10 +769,10 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Provides List of VPC security group elements that the DB Instance
+     * Provides List of VPC security group elements that the DB instance
      * belongs to.
      *
-     * @return Provides List of VPC security group elements that the DB Instance
+     * @return Provides List of VPC security group elements that the DB instance
      *         belongs to.
      */
     public java.util.List<VpcSecurityGroupMembership> getVpcSecurityGroups() {
@@ -756,10 +784,10 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Provides List of VPC security group elements that the DB Instance
+     * Provides List of VPC security group elements that the DB instance
      * belongs to.
      *
-     * @param vpcSecurityGroups Provides List of VPC security group elements that the DB Instance
+     * @param vpcSecurityGroups Provides List of VPC security group elements that the DB instance
      *         belongs to.
      */
     public void setVpcSecurityGroups(java.util.Collection<VpcSecurityGroupMembership> vpcSecurityGroups) {
@@ -773,12 +801,12 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Provides List of VPC security group elements that the DB Instance
+     * Provides List of VPC security group elements that the DB instance
      * belongs to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcSecurityGroups Provides List of VPC security group elements that the DB Instance
+     * @param vpcSecurityGroups Provides List of VPC security group elements that the DB instance
      *         belongs to.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -793,12 +821,12 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Provides List of VPC security group elements that the DB Instance
+     * Provides List of VPC security group elements that the DB instance
      * belongs to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcSecurityGroups Provides List of VPC security group elements that the DB Instance
+     * @param vpcSecurityGroups Provides List of VPC security group elements that the DB instance
      *         belongs to.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -817,9 +845,9 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Provides the list of DB Parameter Groups applied to this DB Instance.
+     * Provides the list of DB parameter groups applied to this DB instance.
      *
-     * @return Provides the list of DB Parameter Groups applied to this DB Instance.
+     * @return Provides the list of DB parameter groups applied to this DB instance.
      */
     public java.util.List<DBParameterGroupStatus> getDBParameterGroups() {
         if (dBParameterGroups == null) {
@@ -830,9 +858,9 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Provides the list of DB Parameter Groups applied to this DB Instance.
+     * Provides the list of DB parameter groups applied to this DB instance.
      *
-     * @param dBParameterGroups Provides the list of DB Parameter Groups applied to this DB Instance.
+     * @param dBParameterGroups Provides the list of DB parameter groups applied to this DB instance.
      */
     public void setDBParameterGroups(java.util.Collection<DBParameterGroupStatus> dBParameterGroups) {
         if (dBParameterGroups == null) {
@@ -845,11 +873,11 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Provides the list of DB Parameter Groups applied to this DB Instance.
+     * Provides the list of DB parameter groups applied to this DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroups Provides the list of DB Parameter Groups applied to this DB Instance.
+     * @param dBParameterGroups Provides the list of DB parameter groups applied to this DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -863,11 +891,11 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Provides the list of DB Parameter Groups applied to this DB Instance.
+     * Provides the list of DB parameter groups applied to this DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroups Provides the list of DB Parameter Groups applied to this DB Instance.
+     * @param dBParameterGroups Provides the list of DB parameter groups applied to this DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -885,10 +913,10 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Specifies the name of the Availability Zone the DB Instance is located
+     * Specifies the name of the Availability Zone the DB instance is located
      * in.
      *
-     * @return Specifies the name of the Availability Zone the DB Instance is located
+     * @return Specifies the name of the Availability Zone the DB instance is located
      *         in.
      */
     public String getAvailabilityZone() {
@@ -896,10 +924,10 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Specifies the name of the Availability Zone the DB Instance is located
+     * Specifies the name of the Availability Zone the DB instance is located
      * in.
      *
-     * @param availabilityZone Specifies the name of the Availability Zone the DB Instance is located
+     * @param availabilityZone Specifies the name of the Availability Zone the DB instance is located
      *         in.
      */
     public void setAvailabilityZone(String availabilityZone) {
@@ -907,12 +935,12 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Specifies the name of the Availability Zone the DB Instance is located
+     * Specifies the name of the Availability Zone the DB instance is located
      * in.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone Specifies the name of the Availability Zone the DB Instance is located
+     * @param availabilityZone Specifies the name of the Availability Zone the DB instance is located
      *         in.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -924,12 +952,12 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Provides the inforamtion of the subnet group associated with the DB
-     * instance, including the name, descrption and subnets in the subnet
+     * Specifies information on the subnet group associated with the DB
+     * instance, including the name, description, and subnets in the subnet
      * group.
      *
-     * @return Provides the inforamtion of the subnet group associated with the DB
-     *         instance, including the name, descrption and subnets in the subnet
+     * @return Specifies information on the subnet group associated with the DB
+     *         instance, including the name, description, and subnets in the subnet
      *         group.
      */
     public DBSubnetGroup getDBSubnetGroup() {
@@ -937,12 +965,12 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Provides the inforamtion of the subnet group associated with the DB
-     * instance, including the name, descrption and subnets in the subnet
+     * Specifies information on the subnet group associated with the DB
+     * instance, including the name, description, and subnets in the subnet
      * group.
      *
-     * @param dBSubnetGroup Provides the inforamtion of the subnet group associated with the DB
-     *         instance, including the name, descrption and subnets in the subnet
+     * @param dBSubnetGroup Specifies information on the subnet group associated with the DB
+     *         instance, including the name, description, and subnets in the subnet
      *         group.
      */
     public void setDBSubnetGroup(DBSubnetGroup dBSubnetGroup) {
@@ -950,14 +978,14 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Provides the inforamtion of the subnet group associated with the DB
-     * instance, including the name, descrption and subnets in the subnet
+     * Specifies information on the subnet group associated with the DB
+     * instance, including the name, description, and subnets in the subnet
      * group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSubnetGroup Provides the inforamtion of the subnet group associated with the DB
-     *         instance, including the name, descrption and subnets in the subnet
+     * @param dBSubnetGroup Specifies information on the subnet group associated with the DB
+     *         instance, including the name, description, and subnets in the subnet
      *         group.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -1008,11 +1036,11 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Specifies that changes to the DB Instance are pending. This element is
+     * Specifies that changes to the DB instance are pending. This element is
      * only included when changes are pending. Specific changes are
      * identified by subelements.
      *
-     * @return Specifies that changes to the DB Instance are pending. This element is
+     * @return Specifies that changes to the DB instance are pending. This element is
      *         only included when changes are pending. Specific changes are
      *         identified by subelements.
      */
@@ -1021,11 +1049,11 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Specifies that changes to the DB Instance are pending. This element is
+     * Specifies that changes to the DB instance are pending. This element is
      * only included when changes are pending. Specific changes are
      * identified by subelements.
      *
-     * @param pendingModifiedValues Specifies that changes to the DB Instance are pending. This element is
+     * @param pendingModifiedValues Specifies that changes to the DB instance are pending. This element is
      *         only included when changes are pending. Specific changes are
      *         identified by subelements.
      */
@@ -1034,13 +1062,13 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Specifies that changes to the DB Instance are pending. This element is
+     * Specifies that changes to the DB instance are pending. This element is
      * only included when changes are pending. Specific changes are
      * identified by subelements.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pendingModifiedValues Specifies that changes to the DB Instance are pending. This element is
+     * @param pendingModifiedValues Specifies that changes to the DB instance are pending. This element is
      *         only included when changes are pending. Specific changes are
      *         identified by subelements.
      *
@@ -1092,29 +1120,29 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment.
+     * Specifies if the DB instance is a Multi-AZ deployment.
      *
-     * @return Specifies if the DB Instance is a Multi-AZ deployment.
+     * @return Specifies if the DB instance is a Multi-AZ deployment.
      */
     public Boolean isMultiAZ() {
         return multiAZ;
     }
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment.
+     * Specifies if the DB instance is a Multi-AZ deployment.
      *
-     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment.
+     * @param multiAZ Specifies if the DB instance is a Multi-AZ deployment.
      */
     public void setMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
     }
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment.
+     * Specifies if the DB instance is a Multi-AZ deployment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment.
+     * @param multiAZ Specifies if the DB instance is a Multi-AZ deployment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1125,9 +1153,9 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment.
+     * Specifies if the DB instance is a Multi-AZ deployment.
      *
-     * @return Specifies if the DB Instance is a Multi-AZ deployment.
+     * @return Specifies if the DB instance is a Multi-AZ deployment.
      */
     public Boolean getMultiAZ() {
         return multiAZ;
@@ -1209,35 +1237,35 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Contains the identifier of the source DB Instance if this DB Instance
-     * is a Read Replica.
+     * Contains the identifier of the source DB instance if this DB instance
+     * is a read replica.
      *
-     * @return Contains the identifier of the source DB Instance if this DB Instance
-     *         is a Read Replica.
+     * @return Contains the identifier of the source DB instance if this DB instance
+     *         is a read replica.
      */
     public String getReadReplicaSourceDBInstanceIdentifier() {
         return readReplicaSourceDBInstanceIdentifier;
     }
     
     /**
-     * Contains the identifier of the source DB Instance if this DB Instance
-     * is a Read Replica.
+     * Contains the identifier of the source DB instance if this DB instance
+     * is a read replica.
      *
-     * @param readReplicaSourceDBInstanceIdentifier Contains the identifier of the source DB Instance if this DB Instance
-     *         is a Read Replica.
+     * @param readReplicaSourceDBInstanceIdentifier Contains the identifier of the source DB instance if this DB instance
+     *         is a read replica.
      */
     public void setReadReplicaSourceDBInstanceIdentifier(String readReplicaSourceDBInstanceIdentifier) {
         this.readReplicaSourceDBInstanceIdentifier = readReplicaSourceDBInstanceIdentifier;
     }
     
     /**
-     * Contains the identifier of the source DB Instance if this DB Instance
-     * is a Read Replica.
+     * Contains the identifier of the source DB instance if this DB instance
+     * is a read replica.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param readReplicaSourceDBInstanceIdentifier Contains the identifier of the source DB Instance if this DB Instance
-     *         is a Read Replica.
+     * @param readReplicaSourceDBInstanceIdentifier Contains the identifier of the source DB instance if this DB instance
+     *         is a read replica.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1248,11 +1276,11 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Contains one or more identifiers of the Read Replicas associated with
-     * this DB Instance.
+     * Contains one or more identifiers of the read replicas associated with
+     * this DB instance.
      *
-     * @return Contains one or more identifiers of the Read Replicas associated with
-     *         this DB Instance.
+     * @return Contains one or more identifiers of the read replicas associated with
+     *         this DB instance.
      */
     public java.util.List<String> getReadReplicaDBInstanceIdentifiers() {
         if (readReplicaDBInstanceIdentifiers == null) {
@@ -1263,11 +1291,11 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Contains one or more identifiers of the Read Replicas associated with
-     * this DB Instance.
+     * Contains one or more identifiers of the read replicas associated with
+     * this DB instance.
      *
-     * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the Read Replicas associated with
-     *         this DB Instance.
+     * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the read replicas associated with
+     *         this DB instance.
      */
     public void setReadReplicaDBInstanceIdentifiers(java.util.Collection<String> readReplicaDBInstanceIdentifiers) {
         if (readReplicaDBInstanceIdentifiers == null) {
@@ -1280,13 +1308,13 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Contains one or more identifiers of the Read Replicas associated with
-     * this DB Instance.
+     * Contains one or more identifiers of the read replicas associated with
+     * this DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the Read Replicas associated with
-     *         this DB Instance.
+     * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the read replicas associated with
+     *         this DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1300,13 +1328,13 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Contains one or more identifiers of the Read Replicas associated with
-     * this DB Instance.
+     * Contains one or more identifiers of the read replicas associated with
+     * this DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the Read Replicas associated with
-     *         this DB Instance.
+     * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the read replicas associated with
+     *         this DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1324,29 +1352,29 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * License model information for this DB Instance.
+     * License model information for this DB instance.
      *
-     * @return License model information for this DB Instance.
+     * @return License model information for this DB instance.
      */
     public String getLicenseModel() {
         return licenseModel;
     }
     
     /**
-     * License model information for this DB Instance.
+     * License model information for this DB instance.
      *
-     * @param licenseModel License model information for this DB Instance.
+     * @param licenseModel License model information for this DB instance.
      */
     public void setLicenseModel(String licenseModel) {
         this.licenseModel = licenseModel;
     }
     
     /**
-     * License model information for this DB Instance.
+     * License model information for this DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param licenseModel License model information for this DB Instance.
+     * @param licenseModel License model information for this DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1390,9 +1418,9 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Provides the list of option group memberships for this DB Instance.
+     * Provides the list of option group memberships for this DB instance.
      *
-     * @return Provides the list of option group memberships for this DB Instance.
+     * @return Provides the list of option group memberships for this DB instance.
      */
     public java.util.List<OptionGroupMembership> getOptionGroupMemberships() {
         if (optionGroupMemberships == null) {
@@ -1403,9 +1431,9 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Provides the list of option group memberships for this DB Instance.
+     * Provides the list of option group memberships for this DB instance.
      *
-     * @param optionGroupMemberships Provides the list of option group memberships for this DB Instance.
+     * @param optionGroupMemberships Provides the list of option group memberships for this DB instance.
      */
     public void setOptionGroupMemberships(java.util.Collection<OptionGroupMembership> optionGroupMemberships) {
         if (optionGroupMemberships == null) {
@@ -1418,11 +1446,11 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Provides the list of option group memberships for this DB Instance.
+     * Provides the list of option group memberships for this DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param optionGroupMemberships Provides the list of option group memberships for this DB Instance.
+     * @param optionGroupMemberships Provides the list of option group memberships for this DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1436,11 +1464,11 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Provides the list of option group memberships for this DB Instance.
+     * Provides the list of option group memberships for this DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param optionGroupMemberships Provides the list of option group memberships for this DB Instance.
+     * @param optionGroupMemberships Provides the list of option group memberships for this DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1536,7 +1564,7 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Specifies the accessibility options for the DB Instance. A value of
+     * Specifies the accessibility options for the DB instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
      * DNS name, which resolves to a public IP address. A value of false
      * specifies an internal instance with a DNS name that resolves to a
@@ -1550,7 +1578,7 @@ public class DBInstance implements Serializable {
      * as part of the request and the PubliclyAccessible value has not been
      * set, the DB instance will be private.
      *
-     * @return Specifies the accessibility options for the DB Instance. A value of
+     * @return Specifies the accessibility options for the DB instance. A value of
      *         true specifies an Internet-facing instance with a publicly resolvable
      *         DNS name, which resolves to a public IP address. A value of false
      *         specifies an internal instance with a DNS name that resolves to a
@@ -1569,7 +1597,7 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Specifies the accessibility options for the DB Instance. A value of
+     * Specifies the accessibility options for the DB instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
      * DNS name, which resolves to a public IP address. A value of false
      * specifies an internal instance with a DNS name that resolves to a
@@ -1583,7 +1611,7 @@ public class DBInstance implements Serializable {
      * as part of the request and the PubliclyAccessible value has not been
      * set, the DB instance will be private.
      *
-     * @param publiclyAccessible Specifies the accessibility options for the DB Instance. A value of
+     * @param publiclyAccessible Specifies the accessibility options for the DB instance. A value of
      *         true specifies an Internet-facing instance with a publicly resolvable
      *         DNS name, which resolves to a public IP address. A value of false
      *         specifies an internal instance with a DNS name that resolves to a
@@ -1602,7 +1630,7 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * Specifies the accessibility options for the DB Instance. A value of
+     * Specifies the accessibility options for the DB instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
      * DNS name, which resolves to a public IP address. A value of false
      * specifies an internal instance with a DNS name that resolves to a
@@ -1618,7 +1646,7 @@ public class DBInstance implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publiclyAccessible Specifies the accessibility options for the DB Instance. A value of
+     * @param publiclyAccessible Specifies the accessibility options for the DB instance. A value of
      *         true specifies an Internet-facing instance with a publicly resolvable
      *         DNS name, which resolves to a public IP address. A value of false
      *         specifies an internal instance with a DNS name that resolves to a
@@ -1641,7 +1669,7 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * Specifies the accessibility options for the DB Instance. A value of
+     * Specifies the accessibility options for the DB instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
      * DNS name, which resolves to a public IP address. A value of false
      * specifies an internal instance with a DNS name that resolves to a
@@ -1655,7 +1683,7 @@ public class DBInstance implements Serializable {
      * as part of the request and the PubliclyAccessible value has not been
      * set, the DB instance will be private.
      *
-     * @return Specifies the accessibility options for the DB Instance. A value of
+     * @return Specifies the accessibility options for the DB instance. A value of
      *         true specifies an Internet-facing instance with a publicly resolvable
      *         DNS name, which resolves to a public IP address. A value of false
      *         specifies an internal instance with a DNS name that resolves to a
@@ -1674,11 +1702,11 @@ public class DBInstance implements Serializable {
     }
 
     /**
-     * The status of a Read Replica. If the instance is not a for a read
-     * replica, this will be blank.
+     * The status of a read replica. If the instance is not a read replica,
+     * this will be blank.
      *
-     * @return The status of a Read Replica. If the instance is not a for a read
-     *         replica, this will be blank.
+     * @return The status of a read replica. If the instance is not a read replica,
+     *         this will be blank.
      */
     public java.util.List<DBInstanceStatusInfo> getStatusInfos() {
         if (statusInfos == null) {
@@ -1689,11 +1717,11 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * The status of a Read Replica. If the instance is not a for a read
-     * replica, this will be blank.
+     * The status of a read replica. If the instance is not a read replica,
+     * this will be blank.
      *
-     * @param statusInfos The status of a Read Replica. If the instance is not a for a read
-     *         replica, this will be blank.
+     * @param statusInfos The status of a read replica. If the instance is not a read replica,
+     *         this will be blank.
      */
     public void setStatusInfos(java.util.Collection<DBInstanceStatusInfo> statusInfos) {
         if (statusInfos == null) {
@@ -1706,13 +1734,13 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * The status of a Read Replica. If the instance is not a for a read
-     * replica, this will be blank.
+     * The status of a read replica. If the instance is not a read replica,
+     * this will be blank.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param statusInfos The status of a Read Replica. If the instance is not a for a read
-     *         replica, this will be blank.
+     * @param statusInfos The status of a read replica. If the instance is not a read replica,
+     *         this will be blank.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1726,13 +1754,13 @@ public class DBInstance implements Serializable {
     }
     
     /**
-     * The status of a Read Replica. If the instance is not a for a read
-     * replica, this will be blank.
+     * The status of a read replica. If the instance is not a read replica,
+     * this will be blank.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param statusInfos The status of a Read Replica. If the instance is not a for a read
-     *         replica, this will be blank.
+     * @param statusInfos The status of a read replica. If the instance is not a read replica,
+     *         this will be blank.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

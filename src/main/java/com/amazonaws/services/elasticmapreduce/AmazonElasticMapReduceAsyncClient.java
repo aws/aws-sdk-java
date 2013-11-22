@@ -288,6 +288,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @return A Java Future object containing the response from the
      *         ListBootstrapActions service method, as returned by
      *         AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -324,6 +325,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @return A Java Future object containing the response from the
      *         ListBootstrapActions service method, as returned by
      *         AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -370,6 +372,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @return A Java Future object containing the response from the
      *         SetVisibleToAllUsers service method, as returned by
      *         AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -412,6 +415,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @return A Java Future object containing the response from the
      *         SetVisibleToAllUsers service method, as returned by
      *         AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -449,6 +453,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * 
      * @return A Java Future object containing the response from the
      *         ListSteps service method, as returned by AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -482,6 +487,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * 
      * @return A Java Future object containing the response from the
      *         ListSteps service method, as returned by AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -549,6 +555,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * 
      * @return A Java Future object containing the response from the
      *         AddJobFlowSteps service method, as returned by AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -611,6 +618,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * 
      * @return A Java Future object containing the response from the
      *         AddJobFlowSteps service method, as returned by AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -649,6 +657,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * 
      * @return A Java Future object containing the response from the
      *         DescribeStep service method, as returned by AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -682,6 +691,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * 
      * @return A Java Future object containing the response from the
      *         DescribeStep service method, as returned by AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -725,6 +735,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * 
      * @return A Java Future object containing the response from the
      *         ListClusters service method, as returned by AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -763,6 +774,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * 
      * @return A Java Future object containing the response from the
      *         ListClusters service method, as returned by AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -803,6 +815,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @return A Java Future object containing the response from the
      *         ListInstanceGroups service method, as returned by
      *         AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -838,6 +851,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @return A Java Future object containing the response from the
      *         ListInstanceGroups service method, as returned by
      *         AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -881,6 +895,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @return A Java Future object containing the response from the
      *         ModifyInstanceGroups service method, as returned by
      *         AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -920,6 +935,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @return A Java Future object containing the response from the
      *         ModifyInstanceGroups service method, as returned by
      *         AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -961,6 +977,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * 
      * @return A Java Future object containing the response from the
      *         ListInstances service method, as returned by AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -998,6 +1015,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * 
      * @return A Java Future object containing the response from the
      *         ListInstances service method, as returned by AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1037,6 +1055,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @return A Java Future object containing the response from the
      *         AddInstanceGroups service method, as returned by
      *         AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1071,6 +1090,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @return A Java Future object containing the response from the
      *         AddInstanceGroups service method, as returned by
      *         AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1120,6 +1140,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @return A Java Future object containing the response from the
      *         TerminateJobFlows service method, as returned by
      *         AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1165,6 +1186,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @return A Java Future object containing the response from the
      *         TerminateJobFlows service method, as returned by
      *         AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1229,6 +1251,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @return A Java Future object containing the response from the
      *         DescribeJobFlows service method, as returned by
      *         AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1290,6 +1313,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @return A Java Future object containing the response from the
      *         DescribeJobFlows service method, as returned by
      *         AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1355,6 +1379,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @return A Java Future object containing the response from the
      *         SetTerminationProtection service method, as returned by
      *         AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1416,6 +1441,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @return A Java Future object containing the response from the
      *         SetTerminationProtection service method, as returned by
      *         AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1484,6 +1510,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * 
      * @return A Java Future object containing the response from the
      *         RunJobFlow service method, as returned by AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1548,6 +1575,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * 
      * @return A Java Future object containing the response from the
      *         RunJobFlow service method, as returned by AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1588,6 +1616,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * 
      * @return A Java Future object containing the response from the
      *         DescribeCluster service method, as returned by AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1623,6 +1652,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * 
      * @return A Java Future object containing the response from the
      *         DescribeCluster service method, as returned by AmazonElasticMapReduce.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

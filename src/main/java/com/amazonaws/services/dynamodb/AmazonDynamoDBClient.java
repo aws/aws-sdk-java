@@ -27,6 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
+import com.amazonaws.Response;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.auth.AWS4Signer;
 import com.amazonaws.auth.AWSCredentials;
@@ -331,7 +332,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/dynamodb/request.handlers"));
 
 
@@ -993,10 +994,10 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         executionContext.setCredentials(credentials);
 
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
-        X result = (X) client.execute(request, responseHandler,
+        Response<X> result = client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);
         awsRequestMetrics.log();
-        return result;
+        return result.getAwsResponse();
     }
 
     /**

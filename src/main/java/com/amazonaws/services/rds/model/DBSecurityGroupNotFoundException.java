@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * <i>DBSecurityGroupName</i> does not refer to an existing DB Security Group.
+ * <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
  * </p>
  */        
 public class DBSecurityGroupNotFoundException extends AmazonServiceException {

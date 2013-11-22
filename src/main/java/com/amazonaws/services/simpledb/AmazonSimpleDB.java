@@ -199,6 +199,7 @@ public interface AmazonSimpleDB {
      * @param putAttributesRequest Container for the necessary parameters to
      *           execute the PutAttributes service method on AmazonSimpleDB.
      * 
+     * 
      * @throws InvalidParameterValueException
      * @throws NumberDomainBytesExceededException
      * @throws NumberDomainAttributesExceededException
@@ -253,6 +254,7 @@ public interface AmazonSimpleDB {
      *           parameters to execute the BatchDeleteAttributes service method on
      *           AmazonSimpleDB.
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -280,6 +282,7 @@ public interface AmazonSimpleDB {
      *
      * @param deleteDomainRequest Container for the necessary parameters to
      *           execute the DeleteDomain service method on AmazonSimpleDB.
+     * 
      * 
      * @throws MissingParameterException
      *
@@ -317,6 +320,7 @@ public interface AmazonSimpleDB {
      *
      * @param createDomainRequest Container for the necessary parameters to
      *           execute the CreateDomain service method on AmazonSimpleDB.
+     * 
      * 
      * @throws InvalidParameterValueException
      * @throws NumberDomainsExceededException
@@ -358,6 +362,7 @@ public interface AmazonSimpleDB {
      *
      * @param deleteAttributesRequest Container for the necessary parameters
      *           to execute the DeleteAttributes service method on AmazonSimpleDB.
+     * 
      * 
      * @throws InvalidParameterValueException
      * @throws NoSuchDomainException
@@ -523,6 +528,7 @@ public interface AmazonSimpleDB {
      * @param batchPutAttributesRequest Container for the necessary
      *           parameters to execute the BatchPutAttributes service method on
      *           AmazonSimpleDB.
+     * 
      * 
      * @throws DuplicateItemNameException
      * @throws InvalidParameterValueException

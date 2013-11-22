@@ -35,6 +35,10 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
+    private Integer maxResults;
+
+    private String nextToken;
+
     /**
      * Default constructor for a new DescribeTagsRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
@@ -121,6 +125,72 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * Returns the value of the MaxResults property for this object.
+     *
+     * @return The value of the MaxResults property for this object.
+     */
+    public Integer getMaxResults() {
+        return maxResults;
+    }
+    
+    /**
+     * Sets the value of the MaxResults property for this object.
+     *
+     * @param maxResults The new value for the MaxResults property for this object.
+     */
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+    
+    /**
+     * Sets the value of the MaxResults property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param maxResults The new value for the MaxResults property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DescribeTagsRequest withMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+        return this;
+    }
+
+    /**
+     * Returns the value of the NextToken property for this object.
+     *
+     * @return The value of the NextToken property for this object.
+     */
+    public String getNextToken() {
+        return nextToken;
+    }
+    
+    /**
+     * Sets the value of the NextToken property for this object.
+     *
+     * @param nextToken The new value for the NextToken property for this object.
+     */
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+    
+    /**
+     * Sets the value of the NextToken property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param nextToken The new value for the NextToken property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DescribeTagsRequest withNextToken(String nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to
      * enable operation dry-run.
@@ -144,7 +214,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFilters() != null) sb.append("Filters: " + getFilters() );
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");
+        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ",");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }
@@ -155,6 +227,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
         return hashCode;
     }
     
@@ -168,6 +242,10 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
         
         if (other.getFilters() == null ^ this.getFilters() == null) return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null) return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
         return true;
     }
     

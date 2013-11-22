@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * <i>DBSubnetGroupName</i> does not refer to an existing DB Subnet Group.
+ * <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
  * </p>
  */        
 public class DBSubnetGroupNotFoundException extends AmazonServiceException {

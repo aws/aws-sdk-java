@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#promoteReadReplica(PromoteReadReplicaRequest) PromoteReadReplica operation}.
  * <p>
- * Promotes a Read Replica DB Instance to a standalone DB Instance.
+ * Promotes a read replica DB instance to a standalone DB instance.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#promoteReadReplica(PromoteReadReplicaRequest)
@@ -29,9 +29,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The DB Instance identifier. This value is stored as a lowercase
+     * The DB instance identifier. This value is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must be the identifier for an
-     * existing Read Replica DB Instance</li> <li>Must contain from 1 to 63
+     * existing read replica DB instance</li> <li>Must contain from 1 to 63
      * alphanumeric characters or hyphens</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
@@ -50,31 +50,26 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implement
      * The daily time range during which automated backups are created if
      * automated backups are enabled, using the
      * <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
-     * window selected at random from an 8-hour block of time per region. The
-     * following list shows the time blocks for each region from which the
-     * default backup windows are assigned. <ul> <li><b>US-East (Northern
-     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
-     * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
-     * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     * Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
-     * </b> 17:00-03:00 UTC</li> </ul> <p> Constraints: Must be in the format
-     * <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
-     * Coordinated (UTC). Must not conflict with the preferred maintenance
-     * window. Must be at least 30 minutes.
+     * window selected at random from an 8-hour block of time per region. See
+     * the Amazon RDS User Guide for the time blocks for each region from
+     * which the default backup windows are assigned. <p> Constraints: Must
+     * be in the format <code>hh24:mi-hh24:mi</code>. Times should be
+     * Universal Time Coordinated (UTC). Must not conflict with the preferred
+     * maintenance window. Must be at least 30 minutes.
      */
     private String preferredBackupWindow;
 
     /**
-     * The DB Instance identifier. This value is stored as a lowercase
+     * The DB instance identifier. This value is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must be the identifier for an
-     * existing Read Replica DB Instance</li> <li>Must contain from 1 to 63
+     * existing read replica DB instance</li> <li>Must contain from 1 to 63
      * alphanumeric characters or hyphens</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
      *
-     * @return The DB Instance identifier. This value is stored as a lowercase
+     * @return The DB instance identifier. This value is stored as a lowercase
      *         string. <p>Constraints: <ul> <li>Must be the identifier for an
-     *         existing Read Replica DB Instance</li> <li>Must contain from 1 to 63
+     *         existing read replica DB instance</li> <li>Must contain from 1 to 63
      *         alphanumeric characters or hyphens</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
@@ -84,16 +79,16 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The DB Instance identifier. This value is stored as a lowercase
+     * The DB instance identifier. This value is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must be the identifier for an
-     * existing Read Replica DB Instance</li> <li>Must contain from 1 to 63
+     * existing read replica DB instance</li> <li>Must contain from 1 to 63
      * alphanumeric characters or hyphens</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
      *
-     * @param dBInstanceIdentifier The DB Instance identifier. This value is stored as a lowercase
+     * @param dBInstanceIdentifier The DB instance identifier. This value is stored as a lowercase
      *         string. <p>Constraints: <ul> <li>Must be the identifier for an
-     *         existing Read Replica DB Instance</li> <li>Must contain from 1 to 63
+     *         existing read replica DB instance</li> <li>Must contain from 1 to 63
      *         alphanumeric characters or hyphens</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
@@ -103,18 +98,18 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The DB Instance identifier. This value is stored as a lowercase
+     * The DB instance identifier. This value is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must be the identifier for an
-     * existing Read Replica DB Instance</li> <li>Must contain from 1 to 63
+     * existing read replica DB instance</li> <li>Must contain from 1 to 63
      * alphanumeric characters or hyphens</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceIdentifier The DB Instance identifier. This value is stored as a lowercase
+     * @param dBInstanceIdentifier The DB instance identifier. This value is stored as a lowercase
      *         string. <p>Constraints: <ul> <li>Must be the identifier for an
-     *         existing Read Replica DB Instance</li> <li>Must contain from 1 to 63
+     *         existing read replica DB instance</li> <li>Must contain from 1 to 63
      *         alphanumeric characters or hyphens</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
@@ -182,32 +177,22 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implement
      * The daily time range during which automated backups are created if
      * automated backups are enabled, using the
      * <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
-     * window selected at random from an 8-hour block of time per region. The
-     * following list shows the time blocks for each region from which the
-     * default backup windows are assigned. <ul> <li><b>US-East (Northern
-     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
-     * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
-     * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     * Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
-     * </b> 17:00-03:00 UTC</li> </ul> <p> Constraints: Must be in the format
-     * <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
-     * Coordinated (UTC). Must not conflict with the preferred maintenance
-     * window. Must be at least 30 minutes.
+     * window selected at random from an 8-hour block of time per region. See
+     * the Amazon RDS User Guide for the time blocks for each region from
+     * which the default backup windows are assigned. <p> Constraints: Must
+     * be in the format <code>hh24:mi-hh24:mi</code>. Times should be
+     * Universal Time Coordinated (UTC). Must not conflict with the preferred
+     * maintenance window. Must be at least 30 minutes.
      *
      * @return The daily time range during which automated backups are created if
      *         automated backups are enabled, using the
      *         <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
-     *         window selected at random from an 8-hour block of time per region. The
-     *         following list shows the time blocks for each region from which the
-     *         default backup windows are assigned. <ul> <li><b>US-East (Northern
-     *         Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
-     *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
-     *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     *         Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
-     *         </b> 17:00-03:00 UTC</li> </ul> <p> Constraints: Must be in the format
-     *         <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
-     *         Coordinated (UTC). Must not conflict with the preferred maintenance
-     *         window. Must be at least 30 minutes.
+     *         window selected at random from an 8-hour block of time per region. See
+     *         the Amazon RDS User Guide for the time blocks for each region from
+     *         which the default backup windows are assigned. <p> Constraints: Must
+     *         be in the format <code>hh24:mi-hh24:mi</code>. Times should be
+     *         Universal Time Coordinated (UTC). Must not conflict with the preferred
+     *         maintenance window. Must be at least 30 minutes.
      */
     public String getPreferredBackupWindow() {
         return preferredBackupWindow;
@@ -217,32 +202,22 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implement
      * The daily time range during which automated backups are created if
      * automated backups are enabled, using the
      * <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
-     * window selected at random from an 8-hour block of time per region. The
-     * following list shows the time blocks for each region from which the
-     * default backup windows are assigned. <ul> <li><b>US-East (Northern
-     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
-     * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
-     * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     * Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
-     * </b> 17:00-03:00 UTC</li> </ul> <p> Constraints: Must be in the format
-     * <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
-     * Coordinated (UTC). Must not conflict with the preferred maintenance
-     * window. Must be at least 30 minutes.
+     * window selected at random from an 8-hour block of time per region. See
+     * the Amazon RDS User Guide for the time blocks for each region from
+     * which the default backup windows are assigned. <p> Constraints: Must
+     * be in the format <code>hh24:mi-hh24:mi</code>. Times should be
+     * Universal Time Coordinated (UTC). Must not conflict with the preferred
+     * maintenance window. Must be at least 30 minutes.
      *
      * @param preferredBackupWindow The daily time range during which automated backups are created if
      *         automated backups are enabled, using the
      *         <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
-     *         window selected at random from an 8-hour block of time per region. The
-     *         following list shows the time blocks for each region from which the
-     *         default backup windows are assigned. <ul> <li><b>US-East (Northern
-     *         Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
-     *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
-     *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     *         Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
-     *         </b> 17:00-03:00 UTC</li> </ul> <p> Constraints: Must be in the format
-     *         <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
-     *         Coordinated (UTC). Must not conflict with the preferred maintenance
-     *         window. Must be at least 30 minutes.
+     *         window selected at random from an 8-hour block of time per region. See
+     *         the Amazon RDS User Guide for the time blocks for each region from
+     *         which the default backup windows are assigned. <p> Constraints: Must
+     *         be in the format <code>hh24:mi-hh24:mi</code>. Times should be
+     *         Universal Time Coordinated (UTC). Must not conflict with the preferred
+     *         maintenance window. Must be at least 30 minutes.
      */
     public void setPreferredBackupWindow(String preferredBackupWindow) {
         this.preferredBackupWindow = preferredBackupWindow;
@@ -252,34 +227,24 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implement
      * The daily time range during which automated backups are created if
      * automated backups are enabled, using the
      * <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
-     * window selected at random from an 8-hour block of time per region. The
-     * following list shows the time blocks for each region from which the
-     * default backup windows are assigned. <ul> <li><b>US-East (Northern
-     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
-     * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
-     * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     * Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
-     * </b> 17:00-03:00 UTC</li> </ul> <p> Constraints: Must be in the format
-     * <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
-     * Coordinated (UTC). Must not conflict with the preferred maintenance
-     * window. Must be at least 30 minutes.
+     * window selected at random from an 8-hour block of time per region. See
+     * the Amazon RDS User Guide for the time blocks for each region from
+     * which the default backup windows are assigned. <p> Constraints: Must
+     * be in the format <code>hh24:mi-hh24:mi</code>. Times should be
+     * Universal Time Coordinated (UTC). Must not conflict with the preferred
+     * maintenance window. Must be at least 30 minutes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredBackupWindow The daily time range during which automated backups are created if
      *         automated backups are enabled, using the
      *         <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
-     *         window selected at random from an 8-hour block of time per region. The
-     *         following list shows the time blocks for each region from which the
-     *         default backup windows are assigned. <ul> <li><b>US-East (Northern
-     *         Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
-     *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
-     *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     *         Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
-     *         </b> 17:00-03:00 UTC</li> </ul> <p> Constraints: Must be in the format
-     *         <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
-     *         Coordinated (UTC). Must not conflict with the preferred maintenance
-     *         window. Must be at least 30 minutes.
+     *         window selected at random from an 8-hour block of time per region. See
+     *         the Amazon RDS User Guide for the time blocks for each region from
+     *         which the default backup windows are assigned. <p> Constraints: Must
+     *         be in the format <code>hh24:mi-hh24:mi</code>. Times should be
+     *         Universal Time Coordinated (UTC). Must not conflict with the preferred
+     *         maintenance window. Must be at least 30 minutes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -16,6 +16,7 @@ package com.amazonaws.services.simpleemail;
 
 import org.w3c.dom.*;
 
+import java.net.*;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -24,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -59,11 +61,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
             = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
-
-    
-    /** AWS signer for authenticating requests. */
-    private AWS3Signer signer;
-
 
     /**
      * Constructs a new client to invoke service methods on
@@ -187,14 +184,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         exceptionUnmarshallers.add(new MessageRejectedExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
-        setEndpoint("email.us-east-1.amazonaws.com");
-
-        signer = new AWS3Signer();
-        
-
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("email.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/simpleemail/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
+                "/com/amazonaws/services/simpleemail/request.handler2s"));
     }
 
     
@@ -223,13 +219,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(deleteIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteIdentityRequest> request = null;
-        DeleteIdentityResult response = null;
+        Response<DeleteIdentityResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DeleteIdentityRequestMarshaller().marshall(deleteIdentityRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DeleteIdentityResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DeleteIdentityResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -266,13 +263,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listVerifiedEmailAddressesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListVerifiedEmailAddressesRequest> request = null;
-        ListVerifiedEmailAddressesResult response = null;
+        Response<ListVerifiedEmailAddressesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListVerifiedEmailAddressesRequestMarshaller().marshall(listVerifiedEmailAddressesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListVerifiedEmailAddressesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListVerifiedEmailAddressesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -308,13 +306,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getSendStatisticsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetSendStatisticsRequest> request = null;
-        GetSendStatisticsResult response = null;
+        Response<GetSendStatisticsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetSendStatisticsRequestMarshaller().marshall(getSendStatisticsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetSendStatisticsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetSendStatisticsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -346,13 +345,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(verifyEmailIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<VerifyEmailIdentityRequest> request = null;
-        VerifyEmailIdentityResult response = null;
+        Response<VerifyEmailIdentityResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new VerifyEmailIdentityRequestMarshaller().marshall(verifyEmailIdentityRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new VerifyEmailIdentityResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new VerifyEmailIdentityResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -387,13 +387,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getIdentityNotificationAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetIdentityNotificationAttributesRequest> request = null;
-        GetIdentityNotificationAttributesResult response = null;
+        Response<GetIdentityNotificationAttributesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetIdentityNotificationAttributesRequestMarshaller().marshall(getIdentityNotificationAttributesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetIdentityNotificationAttributesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetIdentityNotificationAttributesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -441,13 +442,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(verifyDomainDkimRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<VerifyDomainDkimRequest> request = null;
-        VerifyDomainDkimResult response = null;
+        Response<VerifyDomainDkimResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new VerifyDomainDkimRequestMarshaller().marshall(verifyDomainDkimRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new VerifyDomainDkimResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new VerifyDomainDkimResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -501,13 +503,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getIdentityDkimAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetIdentityDkimAttributesRequest> request = null;
-        GetIdentityDkimAttributesResult response = null;
+        Response<GetIdentityDkimAttributesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetIdentityDkimAttributesRequestMarshaller().marshall(getIdentityDkimAttributesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetIdentityDkimAttributesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetIdentityDkimAttributesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -527,6 +530,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @param verifyEmailAddressRequest Container for the necessary
      *           parameters to execute the VerifyEmailAddress service method on
      *           AmazonSimpleEmailService.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -606,13 +610,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(sendRawEmailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<SendRawEmailRequest> request = null;
-        SendRawEmailResult response = null;
+        Response<SendRawEmailResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new SendRawEmailRequestMarshaller().marshall(sendRawEmailRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new SendRawEmailResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new SendRawEmailResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -644,13 +649,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(listIdentitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListIdentitiesRequest> request = null;
-        ListIdentitiesResult response = null;
+        Response<ListIdentitiesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListIdentitiesRequestMarshaller().marshall(listIdentitiesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListIdentitiesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListIdentitiesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -683,13 +689,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getIdentityVerificationAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetIdentityVerificationAttributesRequest> request = null;
-        GetIdentityVerificationAttributesResult response = null;
+        Response<GetIdentityVerificationAttributesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetIdentityVerificationAttributesRequestMarshaller().marshall(getIdentityVerificationAttributesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetIdentityVerificationAttributesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetIdentityVerificationAttributesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -741,13 +748,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(setIdentityDkimEnabledRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<SetIdentityDkimEnabledRequest> request = null;
-        SetIdentityDkimEnabledResult response = null;
+        Response<SetIdentityDkimEnabledResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new SetIdentityDkimEnabledRequestMarshaller().marshall(setIdentityDkimEnabledRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new SetIdentityDkimEnabledResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new SetIdentityDkimEnabledResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -777,13 +785,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(getSendQuotaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetSendQuotaRequest> request = null;
-        GetSendQuotaResult response = null;
+        Response<GetSendQuotaResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetSendQuotaRequestMarshaller().marshall(getSendQuotaRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetSendQuotaResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetSendQuotaResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -820,13 +829,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(setIdentityFeedbackForwardingEnabledRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<SetIdentityFeedbackForwardingEnabledRequest> request = null;
-        SetIdentityFeedbackForwardingEnabledResult response = null;
+        Response<SetIdentityFeedbackForwardingEnabledResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new SetIdentityFeedbackForwardingEnabledRequestMarshaller().marshall(setIdentityFeedbackForwardingEnabledRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new SetIdentityFeedbackForwardingEnabledResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new SetIdentityFeedbackForwardingEnabledResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -857,13 +867,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(verifyDomainIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<VerifyDomainIdentityRequest> request = null;
-        VerifyDomainIdentityResult response = null;
+        Response<VerifyDomainIdentityResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new VerifyDomainIdentityRequestMarshaller().marshall(verifyDomainIdentityRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new VerifyDomainIdentityResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new VerifyDomainIdentityResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -920,13 +931,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(sendEmailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<SendEmailRequest> request = null;
-        SendEmailResult response = null;
+        Response<SendEmailResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new SendEmailRequestMarshaller().marshall(sendEmailRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new SendEmailResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new SendEmailResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -946,6 +958,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @param deleteVerifiedEmailAddressRequest Container for the necessary
      *           parameters to execute the DeleteVerifiedEmailAddress service method on
      *           AmazonSimpleEmailService.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -1003,13 +1016,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         ExecutionContext executionContext = createExecutionContext(setIdentityNotificationTopicRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<SetIdentityNotificationTopicRequest> request = null;
-        SetIdentityNotificationTopicResult response = null;
+        Response<SetIdentityNotificationTopicResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new SetIdentityNotificationTopicRequestMarshaller().marshall(setIdentityNotificationTopicRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new SetIdentityNotificationTopicResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new SetIdentityNotificationTopicResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1138,7 +1152,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
             Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
             ExecutionContext executionContext)
     {
@@ -1154,12 +1168,12 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(signer);
+        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-        return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
+        return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }
         

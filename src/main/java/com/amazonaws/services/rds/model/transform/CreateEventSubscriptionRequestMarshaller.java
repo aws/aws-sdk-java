@@ -38,7 +38,7 @@ public class CreateEventSubscriptionRequestMarshaller implements Marshaller<Requ
 
         Request<CreateEventSubscriptionRequest> request = new DefaultRequest<CreateEventSubscriptionRequest>(createEventSubscriptionRequest, "AmazonRDS");
         request.addParameter("Action", "CreateEventSubscription");
-        request.addParameter("Version", "2013-05-15");
+        request.addParameter("Version", "2013-09-09");
 
         if (createEventSubscriptionRequest.getSubscriptionName() != null) {
             request.addParameter("SubscriptionName", StringUtils.fromString(createEventSubscriptionRequest.getSubscriptionName()));
@@ -73,6 +73,23 @@ public class CreateEventSubscriptionRequestMarshaller implements Marshaller<Requ
         }
         if (createEventSubscriptionRequest.isEnabled() != null) {
             request.addParameter("Enabled", StringUtils.fromBoolean(createEventSubscriptionRequest.isEnabled()));
+        }
+
+        java.util.List<Tag> tagsList = createEventSubscriptionRequest.getTags();
+        int tagsListIndex = 1;
+
+        for (Tag tagsListValue : tagsList) {
+            Tag tagMember = tagsListValue;
+            if (tagMember != null) {
+                if (tagMember.getKey() != null) {
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagMember.getKey()));
+                }
+                if (tagMember.getValue() != null) {
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagMember.getValue()));
+                }
+            }
+
+            tagsListIndex++;
         }
 
 

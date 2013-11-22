@@ -344,6 +344,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * @return A Java Future object containing the response from the
      *         GetSessionToken service method, as returned by
      *         AWSSecurityTokenService.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -413,6 +414,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * @return A Java Future object containing the response from the
      *         GetSessionToken service method, as returned by
      *         AWSSecurityTokenService.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -494,6 +496,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * @return A Java Future object containing the response from the
      *         DecodeAuthorizationMessage service method, as returned by
      *         AWSSecurityTokenService.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -570,6 +573,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * @return A Java Future object containing the response from the
      *         DecodeAuthorizationMessage service method, as returned by
      *         AWSSecurityTokenService.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -683,6 +687,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * @return A Java Future object containing the response from the
      *         AssumeRoleWithSAML service method, as returned by
      *         AWSSecurityTokenService.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -791,6 +796,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * @return A Java Future object containing the response from the
      *         AssumeRoleWithSAML service method, as returned by
      *         AWSSecurityTokenService.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -910,6 +916,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * @return A Java Future object containing the response from the
      *         AssumeRoleWithWebIdentity service method, as returned by
      *         AWSSecurityTokenService.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1024,6 +1031,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * @return A Java Future object containing the response from the
      *         AssumeRoleWithWebIdentity service method, as returned by
      *         AWSSecurityTokenService.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1107,6 +1115,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * @return A Java Future object containing the response from the
      *         GetFederationToken service method, as returned by
      *         AWSSecurityTokenService.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1185,6 +1194,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * @return A Java Future object containing the response from the
      *         GetFederationToken service method, as returned by
      *         AWSSecurityTokenService.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1292,6 +1302,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * 
      * @return A Java Future object containing the response from the
      *         AssumeRole service method, as returned by AWSSecurityTokenService.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1394,6 +1405,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * 
      * @return A Java Future object containing the response from the
      *         AssumeRole service method, as returned by AWSSecurityTokenService.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

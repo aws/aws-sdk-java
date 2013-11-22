@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The DB Subnet Group cannot be deleted because it is in use.
+ * The DB subnet group cannot be deleted because it is in use.
  * </p>
  */        
 public class InvalidDBSubnetGroupStateException extends AmazonServiceException {

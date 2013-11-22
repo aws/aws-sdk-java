@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticmapreduce;
 
+import java.net.*;
 import java.util.*;
 
 import org.apache.commons.logging.*;
@@ -23,10 +24,11 @@ import com.amazonaws.regions.*;
 import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
-import com.amazonaws.util.*;
-import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
 import com.amazonaws.transform.*;
+import com.amazonaws.util.*;
+import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
@@ -58,11 +60,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * List of exception unmarshallers for all AmazonElasticMapReduce exceptions.
      */
     protected List<Unmarshaller<AmazonServiceException, JSONObject>> exceptionUnmarshallers;
-
-    
-    /** AWS signer for authenticating requests. */
-    private AWS4Signer signer;
-
 
     /**
      * Constructs a new client to invoke service methods on
@@ -194,16 +191,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         exceptionUnmarshallers.add(new InvalidRequestExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new JsonErrorUnmarshaller());
-        setEndpoint("elasticmapreduce.amazonaws.com");
-
-        signer = new AWS4Signer();
-        
-        signer.setServiceName("elasticmapreduce");
-        
-
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("elasticmapreduce.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/elasticmapreduce/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
+                "/com/amazonaws/services/elasticmapreduce/request.handler2s"));
 
         
     }
@@ -238,7 +232,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListBootstrapActionsRequest> request = null;
-        ListBootstrapActionsResult response = null;
+        Response<ListBootstrapActionsResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -251,7 +245,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             Unmarshaller<ListBootstrapActionsResult, JsonUnmarshallerContext> unmarshaller = new ListBootstrapActionsResultJsonUnmarshaller();
             JsonResponseHandler<ListBootstrapActionsResult> responseHandler = new JsonResponseHandler<ListBootstrapActionsResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -272,6 +267,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @param setVisibleToAllUsersRequest Container for the necessary
      *           parameters to execute the SetVisibleToAllUsers service method on
      *           AmazonElasticMapReduce.
+     * 
      * 
      * @throws InternalServerErrorException
      *
@@ -326,7 +322,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListStepsRequest> request = null;
-        ListStepsResult response = null;
+        Response<ListStepsResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -339,7 +335,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             Unmarshaller<ListStepsResult, JsonUnmarshallerContext> unmarshaller = new ListStepsResultJsonUnmarshaller();
             JsonResponseHandler<ListStepsResult> responseHandler = new JsonResponseHandler<ListStepsResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -402,7 +399,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AddJobFlowStepsRequest> request = null;
-        AddJobFlowStepsResult response = null;
+        Response<AddJobFlowStepsResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -415,7 +412,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             Unmarshaller<AddJobFlowStepsResult, JsonUnmarshallerContext> unmarshaller = new AddJobFlowStepsResultJsonUnmarshaller();
             JsonResponseHandler<AddJobFlowStepsResult> responseHandler = new JsonResponseHandler<AddJobFlowStepsResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -449,7 +447,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeStepRequest> request = null;
-        DescribeStepResult response = null;
+        Response<DescribeStepResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -462,7 +460,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             Unmarshaller<DescribeStepResult, JsonUnmarshallerContext> unmarshaller = new DescribeStepResultJsonUnmarshaller();
             JsonResponseHandler<DescribeStepResult> responseHandler = new JsonResponseHandler<DescribeStepResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -501,7 +500,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListClustersRequest> request = null;
-        ListClustersResult response = null;
+        Response<ListClustersResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -514,7 +513,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             Unmarshaller<ListClustersResult, JsonUnmarshallerContext> unmarshaller = new ListClustersResultJsonUnmarshaller();
             JsonResponseHandler<ListClustersResult> responseHandler = new JsonResponseHandler<ListClustersResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -549,7 +549,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListInstanceGroupsRequest> request = null;
-        ListInstanceGroupsResult response = null;
+        Response<ListInstanceGroupsResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -562,7 +562,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             Unmarshaller<ListInstanceGroupsResult, JsonUnmarshallerContext> unmarshaller = new ListInstanceGroupsResultJsonUnmarshaller();
             JsonResponseHandler<ListInstanceGroupsResult> responseHandler = new JsonResponseHandler<ListInstanceGroupsResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -580,6 +581,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @param modifyInstanceGroupsRequest Container for the necessary
      *           parameters to execute the ModifyInstanceGroups service method on
      *           AmazonElasticMapReduce.
+     * 
      * 
      * @throws InternalServerErrorException
      *
@@ -638,7 +640,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListInstancesRequest> request = null;
-        ListInstancesResult response = null;
+        Response<ListInstancesResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -651,7 +653,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             Unmarshaller<ListInstancesResult, JsonUnmarshallerContext> unmarshaller = new ListInstancesResultJsonUnmarshaller();
             JsonResponseHandler<ListInstancesResult> responseHandler = new JsonResponseHandler<ListInstancesResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -685,7 +688,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AddInstanceGroupsRequest> request = null;
-        AddInstanceGroupsResult response = null;
+        Response<AddInstanceGroupsResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -698,7 +701,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             Unmarshaller<AddInstanceGroupsResult, JsonUnmarshallerContext> unmarshaller = new AddInstanceGroupsResultJsonUnmarshaller();
             JsonResponseHandler<AddInstanceGroupsResult> responseHandler = new JsonResponseHandler<AddInstanceGroupsResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -723,6 +727,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @param terminateJobFlowsRequest Container for the necessary parameters
      *           to execute the TerminateJobFlows service method on
      *           AmazonElasticMapReduce.
+     * 
      * 
      * @throws InternalServerErrorException
      *
@@ -804,7 +809,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeJobFlowsRequest> request = null;
-        DescribeJobFlowsResult response = null;
+        Response<DescribeJobFlowsResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -817,7 +822,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             Unmarshaller<DescribeJobFlowsResult, JsonUnmarshallerContext> unmarshaller = new DescribeJobFlowsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeJobFlowsResult> responseHandler = new JsonResponseHandler<DescribeJobFlowsResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -857,6 +863,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @param setTerminationProtectionRequest Container for the necessary
      *           parameters to execute the SetTerminationProtection service method on
      *           AmazonElasticMapReduce.
+     * 
      * 
      * @throws InternalServerErrorException
      *
@@ -941,7 +948,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RunJobFlowRequest> request = null;
-        RunJobFlowResult response = null;
+        Response<RunJobFlowResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -954,7 +961,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             Unmarshaller<RunJobFlowResult, JsonUnmarshallerContext> unmarshaller = new RunJobFlowResultJsonUnmarshaller();
             JsonResponseHandler<RunJobFlowResult> responseHandler = new JsonResponseHandler<RunJobFlowResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -991,7 +999,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeClusterRequest> request = null;
-        DescribeClusterResult response = null;
+        Response<DescribeClusterResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1004,7 +1012,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             Unmarshaller<DescribeClusterResult, JsonUnmarshallerContext> unmarshaller = new DescribeClusterResultJsonUnmarshaller();
             JsonResponseHandler<DescribeClusterResult> responseHandler = new JsonResponseHandler<DescribeClusterResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1140,6 +1149,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * call will either succeed or fail atomically.
      * </p>
      * 
+     * 
      * @throws InternalServerErrorException
      *
      * @throws AmazonClientException
@@ -1255,47 +1265,21 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         return describeCluster(new DescribeClusterRequest());
     }
     
-    /**
-     * Overrides the default endpoint for this client ("https://elasticmapreduce.amazonaws.com") and explicitly provides
-     * an AWS region ID and AWS service name to use when the client calculates a signature
-     * for requests.  In almost all cases, this region ID and service name
-     * are automatically determined from the endpoint, and callers should use the simpler
-     * one-argument form of setEndpoint instead of this method.
-     * <p>
-     * <b>This method is not threadsafe. Endpoints should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit.</b>
-     * <p>
-     * Callers can pass in just the endpoint (ex: "elasticmapreduce.amazonaws.com") or a full
-     * URL, including the protocol (ex: "https://elasticmapreduce.amazonaws.com"). If the
-     * protocol is not specified here, the default protocol from this client's
-     * {@link ClientConfiguration} will be used, which by default is HTTPS.
-     * <p>
-     * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
-     *
-     * @param endpoint
-     *            The endpoint (ex: "elasticmapreduce.amazonaws.com") or a full URL,
-     *            including the protocol (ex: "https://elasticmapreduce.amazonaws.com") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     * @param serviceName
-     *            The name of the AWS service to use when signing requests.
-     * @param regionId
-     *            The ID of the region in which this service resides.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
-     * @see AmazonDynamoDB#setRegion(Region)
-     */
-    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
-        setEndpoint(endpoint);
-        signer.setServiceName(serviceName);
-        signer.setRegionName(regionId);
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        super.setEndpoint(endpoint);
+
+        
     }
+
+    @Override
+    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
+        super.setEndpoint(endpoint, serviceName, regionId);
+
+        
+    }
+
     
     @Override
     protected String getServiceAbbreviation() {
@@ -1323,7 +1307,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
@@ -1343,11 +1327,11 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(signer);
+        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
 
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
-        X result = (X) client.execute(request, responseHandler,
+        Response<X> result = client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);
         awsRequestMetrics.log();
         return result;

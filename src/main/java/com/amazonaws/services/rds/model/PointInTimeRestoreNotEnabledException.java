@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * <i>SourceDBInstanceIdentifier</i> refers to a DB Instance with <i>BackupRetentionPeriod</i> equal to 0.
+ * <i>SourceDBInstanceIdentifier</i> refers to a DB instance with <i>BackupRetentionPeriod</i> equal to 0.
  * </p>
  */        
 public class PointInTimeRestoreNotEnabledException extends AmazonServiceException {

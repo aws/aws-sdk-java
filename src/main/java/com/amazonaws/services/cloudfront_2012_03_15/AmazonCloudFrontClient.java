@@ -26,6 +26,7 @@ import com.amazonaws.AmazonWebServiceClient;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
+import com.amazonaws.Response;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -317,7 +318,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+		requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services.cloudfront_2012_03_15request.handlers"));
     }
     
@@ -1030,6 +1031,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
-        return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+        Response<X> res = client.execute(request, responseHandler, errorResponseHandler, executionContext);
+        return res.getAwsResponse();
     }
 }

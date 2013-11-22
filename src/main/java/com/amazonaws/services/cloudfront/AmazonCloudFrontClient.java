@@ -16,6 +16,7 @@ package com.amazonaws.services.cloudfront;
 
 import org.w3c.dom.*;
 
+import java.net.*;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -24,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -49,11 +51,6 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
             = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
-
-    
-    /** AWS signer for authenticating requests. */
-    private AWS4Signer signer;
-
 
     /**
      * Constructs a new client to invoke service methods on
@@ -217,16 +214,13 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new TooManyStreamingDistributionCNAMEsExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
-        setEndpoint("cloudfront.amazonaws.com/");
-
-        signer = new AWS4Signer();
-        
-        signer.setServiceName("cloudfront");
-        
-
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("cloudfront.amazonaws.com/");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/cloudfront/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
+                "/com/amazonaws/services/cloudfront/request.handler2s"));
     }
 
     
@@ -256,13 +250,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(listStreamingDistributionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListStreamingDistributionsRequest> request = null;
-        ListStreamingDistributionsResult response = null;
+        Response<ListStreamingDistributionsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListStreamingDistributionsRequestMarshaller().marshall(listStreamingDistributionsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListStreamingDistributionsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListStreamingDistributionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -302,13 +297,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(updateCloudFrontOriginAccessIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateCloudFrontOriginAccessIdentityRequest> request = null;
-        UpdateCloudFrontOriginAccessIdentityResult response = null;
+        Response<UpdateCloudFrontOriginAccessIdentityResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller().marshall(updateCloudFrontOriginAccessIdentityRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new UpdateCloudFrontOriginAccessIdentityResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new UpdateCloudFrontOriginAccessIdentityResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -346,13 +342,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(createInvalidationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateInvalidationRequest> request = null;
-        CreateInvalidationResult response = null;
+        Response<CreateInvalidationResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateInvalidationRequestMarshaller().marshall(createInvalidationRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateInvalidationResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateInvalidationResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -366,6 +363,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @param deleteStreamingDistributionRequest Container for the necessary
      *           parameters to execute the DeleteStreamingDistribution service method
      *           on AmazonCloudFront.
+     * 
      * 
      * @throws InvalidIfMatchVersionException
      * @throws NoSuchStreamingDistributionException
@@ -423,13 +421,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(getDistributionConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetDistributionConfigRequest> request = null;
-        GetDistributionConfigResult response = null;
+        Response<GetDistributionConfigResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetDistributionConfigRequestMarshaller().marshall(getDistributionConfigRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetDistributionConfigResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetDistributionConfigResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -473,13 +472,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(updateStreamingDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateStreamingDistributionRequest> request = null;
-        UpdateStreamingDistributionResult response = null;
+        Response<UpdateStreamingDistributionResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new UpdateStreamingDistributionRequestMarshaller().marshall(updateStreamingDistributionRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new UpdateStreamingDistributionResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new UpdateStreamingDistributionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -511,13 +511,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(getDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetDistributionRequest> request = null;
-        GetDistributionResult response = null;
+        Response<GetDistributionResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetDistributionRequestMarshaller().marshall(getDistributionRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetDistributionResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetDistributionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -550,13 +551,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(listInvalidationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListInvalidationsRequest> request = null;
-        ListInvalidationsResult response = null;
+        Response<ListInvalidationsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListInvalidationsRequestMarshaller().marshall(listInvalidationsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListInvalidationsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListInvalidationsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -612,13 +614,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(updateDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateDistributionRequest> request = null;
-        UpdateDistributionResult response = null;
+        Response<UpdateDistributionResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new UpdateDistributionRequestMarshaller().marshall(updateDistributionRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new UpdateDistributionResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new UpdateDistributionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -632,6 +635,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @param deleteDistributionRequest Container for the necessary
      *           parameters to execute the DeleteDistribution service method on
      *           AmazonCloudFront.
+     * 
      * 
      * @throws InvalidIfMatchVersionException
      * @throws NoSuchDistributionException
@@ -693,13 +697,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(createCloudFrontOriginAccessIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateCloudFrontOriginAccessIdentityRequest> request = null;
-        CreateCloudFrontOriginAccessIdentityResult response = null;
+        Response<CreateCloudFrontOriginAccessIdentityResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateCloudFrontOriginAccessIdentityRequestMarshaller().marshall(createCloudFrontOriginAccessIdentityRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateCloudFrontOriginAccessIdentityResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateCloudFrontOriginAccessIdentityResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -732,13 +737,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(getStreamingDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetStreamingDistributionRequest> request = null;
-        GetStreamingDistributionResult response = null;
+        Response<GetStreamingDistributionResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetStreamingDistributionRequestMarshaller().marshall(getStreamingDistributionRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetStreamingDistributionResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetStreamingDistributionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -769,13 +775,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(listDistributionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListDistributionsRequest> request = null;
-        ListDistributionsResult response = null;
+        Response<ListDistributionsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListDistributionsRequestMarshaller().marshall(listDistributionsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListDistributionsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListDistributionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -818,13 +825,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(createStreamingDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateStreamingDistributionRequest> request = null;
-        CreateStreamingDistributionResult response = null;
+        Response<CreateStreamingDistributionResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateStreamingDistributionRequestMarshaller().marshall(createStreamingDistributionRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateStreamingDistributionResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateStreamingDistributionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -857,13 +865,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(listCloudFrontOriginAccessIdentitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListCloudFrontOriginAccessIdentitiesRequest> request = null;
-        ListCloudFrontOriginAccessIdentitiesResult response = null;
+        Response<ListCloudFrontOriginAccessIdentitiesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller().marshall(listCloudFrontOriginAccessIdentitiesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListCloudFrontOriginAccessIdentitiesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListCloudFrontOriginAccessIdentitiesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -878,6 +887,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *           necessary parameters to execute the
      *           DeleteCloudFrontOriginAccessIdentity service method on
      *           AmazonCloudFront.
+     * 
      * 
      * @throws InvalidIfMatchVersionException
      * @throws CloudFrontOriginAccessIdentityInUseException
@@ -957,13 +967,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(createDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateDistributionRequest> request = null;
-        CreateDistributionResult response = null;
+        Response<CreateDistributionResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new CreateDistributionRequestMarshaller().marshall(createDistributionRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new CreateDistributionResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateDistributionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -996,13 +1007,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(getInvalidationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetInvalidationRequest> request = null;
-        GetInvalidationResult response = null;
+        Response<GetInvalidationResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetInvalidationRequestMarshaller().marshall(getInvalidationRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetInvalidationResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetInvalidationResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1036,13 +1048,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(getCloudFrontOriginAccessIdentityConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetCloudFrontOriginAccessIdentityConfigRequest> request = null;
-        GetCloudFrontOriginAccessIdentityConfigResult response = null;
+        Response<GetCloudFrontOriginAccessIdentityConfigResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller().marshall(getCloudFrontOriginAccessIdentityConfigRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetCloudFrontOriginAccessIdentityConfigResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetCloudFrontOriginAccessIdentityConfigResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1075,13 +1088,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(getCloudFrontOriginAccessIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetCloudFrontOriginAccessIdentityRequest> request = null;
-        GetCloudFrontOriginAccessIdentityResult response = null;
+        Response<GetCloudFrontOriginAccessIdentityResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetCloudFrontOriginAccessIdentityRequestMarshaller().marshall(getCloudFrontOriginAccessIdentityRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetCloudFrontOriginAccessIdentityResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetCloudFrontOriginAccessIdentityResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1114,57 +1128,17 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         ExecutionContext executionContext = createExecutionContext(getStreamingDistributionConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetStreamingDistributionConfigRequest> request = null;
-        GetStreamingDistributionConfigResult response = null;
+        Response<GetStreamingDistributionConfigResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetStreamingDistributionConfigRequestMarshaller().marshall(getStreamingDistributionConfigRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetStreamingDistributionConfigResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetStreamingDistributionConfigResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
-    }
-    
-    /**
-     * Overrides the default endpoint for this client ("https://cloudfront.amazonaws.com/") and explicitly provides
-     * an AWS region ID and AWS service name to use when the client calculates a signature
-     * for requests.  In almost all cases, this region ID and service name
-     * are automatically determined from the endpoint, and callers should use the simpler
-     * one-argument form of setEndpoint instead of this method.
-     * <p>
-     * <b>This method is not threadsafe. Endpoints should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit.</b>
-     * <p>
-     * Callers can pass in just the endpoint (ex: "cloudfront.amazonaws.com/") or a full
-     * URL, including the protocol (ex: "https://cloudfront.amazonaws.com/"). If the
-     * protocol is not specified here, the default protocol from this client's
-     * {@link ClientConfiguration} will be used, which by default is HTTPS.
-     * <p>
-     * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
-     *
-     * @param endpoint
-     *            The endpoint (ex: "cloudfront.amazonaws.com/") or a full URL,
-     *            including the protocol (ex: "https://cloudfront.amazonaws.com/") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     * @param serviceName
-     *            The name of the AWS service to use when signing requests.
-     * @param regionId
-     *            The ID of the region in which this service resides.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
-     */
-    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
-        setEndpoint(endpoint);
-        signer.setServiceName(serviceName);
-        signer.setRegionName(regionId);
     }
     
     @Override
@@ -1193,7 +1167,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
             Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
             ExecutionContext executionContext)
     {
@@ -1209,12 +1183,12 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(signer);
+        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-        return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
+        return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }
         

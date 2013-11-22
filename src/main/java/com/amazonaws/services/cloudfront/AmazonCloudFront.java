@@ -179,6 +179,7 @@ public interface AmazonCloudFront {
      *           parameters to execute the DeleteStreamingDistribution service method
      *           on AmazonCloudFront.
      * 
+     * 
      * @throws InvalidIfMatchVersionException
      * @throws NoSuchStreamingDistributionException
      * @throws StreamingDistributionNotDisabledException
@@ -368,6 +369,7 @@ public interface AmazonCloudFront {
      *           parameters to execute the DeleteDistribution service method on
      *           AmazonCloudFront.
      * 
+     * 
      * @throws InvalidIfMatchVersionException
      * @throws NoSuchDistributionException
      * @throws DistributionNotDisabledException
@@ -536,6 +538,7 @@ public interface AmazonCloudFront {
      *           necessary parameters to execute the
      *           DeleteCloudFrontOriginAccessIdentity service method on
      *           AmazonCloudFront.
+     * 
      * 
      * @throws InvalidIfMatchVersionException
      * @throws CloudFrontOriginAccessIdentityInUseException

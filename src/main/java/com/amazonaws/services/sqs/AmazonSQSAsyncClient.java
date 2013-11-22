@@ -293,6 +293,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         SetQueueAttributes service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -329,6 +330,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         SetQueueAttributes service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -370,6 +372,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         ChangeMessageVisibilityBatch service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -407,6 +410,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         ChangeMessageVisibilityBatch service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -476,6 +480,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         ChangeMessageVisibility service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -541,6 +546,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         ChangeMessageVisibility service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -579,6 +585,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         GetQueueUrl service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -613,6 +620,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         GetQueueUrl service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -653,6 +661,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         RemovePermission service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -689,6 +698,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         RemovePermission service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -762,6 +772,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         GetQueueAttributes service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -831,6 +842,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         GetQueueAttributes service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -871,6 +883,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         SendMessageBatch service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -906,6 +919,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         SendMessageBatch service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -950,6 +964,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteQueue service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -990,6 +1005,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteQueue service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1028,6 +1044,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         SendMessage service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1062,6 +1079,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         SendMessage service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1121,6 +1139,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         ReceiveMessage service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1175,6 +1194,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         ReceiveMessage service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1213,6 +1233,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         ListQueues service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1246,6 +1267,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         ListQueues service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1286,6 +1308,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteMessageBatch service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1321,6 +1344,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteMessageBatch service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1375,6 +1399,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateQueue service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1424,6 +1449,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateQueue service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1480,6 +1506,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         AddPermission service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1532,6 +1559,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         AddPermission service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1572,6 +1600,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteMessage service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1609,6 +1638,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteMessage service method, as returned by AmazonSQS.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

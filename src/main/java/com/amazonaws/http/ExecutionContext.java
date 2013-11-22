@@ -20,15 +20,14 @@ import org.apache.http.annotation.NotThreadSafe;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.Signer;
-import com.amazonaws.handlers.RequestHandler;
-import com.amazonaws.internal.CustomBackoffStrategy;
+import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetricsFullSupport;
 
 @NotThreadSafe
 public class ExecutionContext {
     private final AWSRequestMetrics awsRequestMetrics;
-    private List<RequestHandler> requestHandlers;
+    private List<RequestHandler2> requestHandler2s;
     private String contextUserAgent;
 
     /** Optional signer to enable the runtime layer to handle signing requests (and resigning on retries). */
@@ -42,8 +41,8 @@ public class ExecutionContext {
         this(null, false);
     }
 
-    public ExecutionContext(List<RequestHandler> requestHandlers, boolean isMetricEnabled) {
-        this.requestHandlers = requestHandlers;
+    public ExecutionContext(List<RequestHandler2> requestHandler2s, boolean isMetricEnabled) {
+        this.requestHandler2s = requestHandler2s;
         awsRequestMetrics = isMetricEnabled 
                           ? new AWSRequestMetricsFullSupport()
                           : new AWSRequestMetrics();
@@ -57,14 +56,8 @@ public class ExecutionContext {
         this.contextUserAgent = contextUserAgent;
     }
 
-    /**
-     * Returns a list of request handlers that should be run for a given
-     * request's execution.
-     *
-     * @return The list of request handlers to run for the current request.
-     */
-    public List<RequestHandler> getRequestHandlers() {
-        return requestHandlers;
+    public List<RequestHandler2> getRequestHandler2s() {
+        return requestHandler2s;
     }
 
     public AWSRequestMetrics getAwsRequestMetrics() {

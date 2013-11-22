@@ -38,7 +38,7 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements Marshall
 
         Request<RestoreDBInstanceToPointInTimeRequest> request = new DefaultRequest<RestoreDBInstanceToPointInTimeRequest>(restoreDBInstanceToPointInTimeRequest, "AmazonRDS");
         request.addParameter("Action", "RestoreDBInstanceToPointInTime");
-        request.addParameter("Version", "2013-05-15");
+        request.addParameter("Version", "2013-09-09");
 
         if (restoreDBInstanceToPointInTimeRequest.getSourceDBInstanceIdentifier() != null) {
             request.addParameter("SourceDBInstanceIdentifier", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getSourceDBInstanceIdentifier()));
@@ -87,6 +87,23 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements Marshall
         }
         if (restoreDBInstanceToPointInTimeRequest.getOptionGroupName() != null) {
             request.addParameter("OptionGroupName", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getOptionGroupName()));
+        }
+
+        java.util.List<Tag> tagsList = restoreDBInstanceToPointInTimeRequest.getTags();
+        int tagsListIndex = 1;
+
+        for (Tag tagsListValue : tagsList) {
+            Tag tagMember = tagsListValue;
+            if (tagMember != null) {
+                if (tagMember.getKey() != null) {
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagMember.getKey()));
+                }
+                if (tagMember.getValue() != null) {
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagMember.getValue()));
+                }
+            }
+
+            tagsListIndex++;
         }
 
 

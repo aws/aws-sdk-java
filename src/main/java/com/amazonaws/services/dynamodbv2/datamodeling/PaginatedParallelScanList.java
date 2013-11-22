@@ -42,12 +42,19 @@ public class PaginatedParallelScanList<T> extends PaginatedList<T> {
     /** The current parallel scan task which contains all the information about the scan request */
     private final ParallelScanTask parallelScanTask;
 
-    public PaginatedParallelScanList(DynamoDBMapper mapper, Class<T> clazz,
-            AmazonDynamoDB dynamo, ParallelScanTask parallelScanTask,
-            PaginationLoadingStrategy paginationLoadingStrategy) {
+    private final DynamoDBMapperConfig config;
+    
+    public PaginatedParallelScanList(
+            DynamoDBMapper mapper,
+            Class<T> clazz,
+            AmazonDynamoDB dynamo,
+            ParallelScanTask parallelScanTask,
+            PaginationLoadingStrategy paginationLoadingStrategy,
+            DynamoDBMapperConfig config) {
         super(mapper, clazz, dynamo, paginationLoadingStrategy);
 
         this.parallelScanTask = parallelScanTask;
+        this.config = config;
 
         // Marshal the first batch of results in allResults
         allResults.addAll(marshalParallelScanResultsIntoObjects(parallelScanTask.getNextBatchOfScanResults()));
@@ -72,10 +79,11 @@ public class PaginatedParallelScanList<T> extends PaginatedList<T> {
         List<T> allItems = new LinkedList<T>();
         for (ScanResult scanResult : scanResults) {
             if (null != scanResult) {
-                allItems.addAll(mapper.marshallIntoObjects(clazz, scanResult.getItems()));
+                allItems.addAll(mapper.marshalIntoObjects(
+                    mapper.toParameters(
+                        scanResult.getItems(), clazz, config)));
             }
         }
         return allItems;
     }
-
 }

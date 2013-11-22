@@ -25,34 +25,34 @@ import java.io.Serializable;
 public class ResetDBParameterGroupResult implements Serializable {
 
     /**
-     * The name of the DB Parameter Group.
+     * The name of the DB parameter group.
      */
     private String dBParameterGroupName;
 
     /**
-     * The name of the DB Parameter Group.
+     * The name of the DB parameter group.
      *
-     * @return The name of the DB Parameter Group.
+     * @return The name of the DB parameter group.
      */
     public String getDBParameterGroupName() {
         return dBParameterGroupName;
     }
     
     /**
-     * The name of the DB Parameter Group.
+     * The name of the DB parameter group.
      *
-     * @param dBParameterGroupName The name of the DB Parameter Group.
+     * @param dBParameterGroupName The name of the DB parameter group.
      */
     public void setDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
     }
     
     /**
-     * The name of the DB Parameter Group.
+     * The name of the DB parameter group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupName The name of the DB Parameter Group.
+     * @param dBParameterGroupName The name of the DB parameter group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

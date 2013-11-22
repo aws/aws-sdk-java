@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow;
 
+import java.net.*;
 import java.util.*;
 
 import org.apache.commons.logging.*;
@@ -23,10 +24,11 @@ import com.amazonaws.regions.*;
 import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
-import com.amazonaws.util.*;
-import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
 import com.amazonaws.transform.*;
+import com.amazonaws.util.*;
+import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.simpleworkflow.model.*;
@@ -343,11 +345,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     protected List<Unmarshaller<AmazonServiceException, JSONObject>> exceptionUnmarshallers;
 
-    
-    /** AWS signer for authenticating requests. */
-    private AWS4Signer signer;
-
-
     /**
      * Constructs a new client to invoke service methods on
      * AmazonSimpleWorkflow.  A credentials provider chain will be used
@@ -484,16 +481,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         exceptionUnmarshallers.add(new TypeAlreadyExistsExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new JsonErrorUnmarshaller());
-        setEndpoint("swf.us-east-1.amazonaws.com");
-
-        signer = new AWS4Signer();
-        
-        signer.setServiceName("swf");
-        
-
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("swf.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/simpleworkflow/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
+                "/com/amazonaws/services/simpleworkflow/request.handler2s"));
 
         
         clientConfiguration = new ClientConfiguration(clientConfiguration);
@@ -559,6 +553,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * @param deprecateWorkflowTypeRequest Container for the necessary
      *           parameters to execute the DeprecateWorkflowType service method on
      *           AmazonSimpleWorkflow.
+     * 
      * 
      * @throws TypeDeprecatedException
      * @throws OperationNotPermittedException
@@ -630,6 +625,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      *
      * @param deprecateDomainRequest Container for the necessary parameters
      *           to execute the DeprecateDomain service method on AmazonSimpleWorkflow.
+     * 
      * 
      * @throws DomainDeprecatedException
      * @throws OperationNotPermittedException
@@ -714,6 +710,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * @param registerWorkflowTypeRequest Container for the necessary
      *           parameters to execute the RegisterWorkflowType service method on
      *           AmazonSimpleWorkflow.
+     * 
      * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
@@ -800,7 +797,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListWorkflowTypesRequest> request = null;
-        WorkflowTypeInfos response = null;
+        Response<WorkflowTypeInfos> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -813,7 +810,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<WorkflowTypeInfos, JsonUnmarshallerContext> unmarshaller = new WorkflowTypeInfosJsonUnmarshaller();
             JsonResponseHandler<WorkflowTypeInfos> responseHandler = new JsonResponseHandler<WorkflowTypeInfos>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -902,7 +900,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<StartWorkflowExecutionRequest> request = null;
-        Run response = null;
+        Response<Run> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -915,7 +913,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<Run, JsonUnmarshallerContext> unmarshaller = new RunJsonUnmarshaller();
             JsonResponseHandler<Run> responseHandler = new JsonResponseHandler<Run>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -969,6 +968,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * @param signalWorkflowExecutionRequest Container for the necessary
      *           parameters to execute the SignalWorkflowExecution service method on
      *           AmazonSimpleWorkflow.
+     * 
      * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
@@ -1057,7 +1057,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListDomainsRequest> request = null;
-        DomainInfos response = null;
+        Response<DomainInfos> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1070,7 +1070,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<DomainInfos, JsonUnmarshallerContext> unmarshaller = new DomainInfosJsonUnmarshaller();
             JsonResponseHandler<DomainInfos> responseHandler = new JsonResponseHandler<DomainInfos>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1127,6 +1128,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * @param requestCancelWorkflowExecutionRequest Container for the
      *           necessary parameters to execute the RequestCancelWorkflowExecution
      *           service method on AmazonSimpleWorkflow.
+     * 
      * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
@@ -1219,7 +1221,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeWorkflowTypeRequest> request = null;
-        WorkflowTypeDetail response = null;
+        Response<WorkflowTypeDetail> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1232,7 +1234,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<WorkflowTypeDetail, JsonUnmarshallerContext> unmarshaller = new WorkflowTypeDetailJsonUnmarshaller();
             JsonResponseHandler<WorkflowTypeDetail> responseHandler = new JsonResponseHandler<WorkflowTypeDetail>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1288,6 +1291,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * @param deprecateActivityTypeRequest Container for the necessary
      *           parameters to execute the DeprecateActivityType service method on
      *           AmazonSimpleWorkflow.
+     * 
      * 
      * @throws TypeDeprecatedException
      * @throws OperationNotPermittedException
@@ -1386,7 +1390,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CountClosedWorkflowExecutionsRequest> request = null;
-        WorkflowExecutionCount response = null;
+        Response<WorkflowExecutionCount> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1399,7 +1403,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<WorkflowExecutionCount, JsonUnmarshallerContext> unmarshaller = new WorkflowExecutionCountJsonUnmarshaller();
             JsonResponseHandler<WorkflowExecutionCount> responseHandler = new JsonResponseHandler<WorkflowExecutionCount>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1464,7 +1469,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CountPendingActivityTasksRequest> request = null;
-        PendingTaskCount response = null;
+        Response<PendingTaskCount> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1477,7 +1482,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<PendingTaskCount, JsonUnmarshallerContext> unmarshaller = new PendingTaskCountJsonUnmarshaller();
             JsonResponseHandler<PendingTaskCount> responseHandler = new JsonResponseHandler<PendingTaskCount>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1540,6 +1546,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      *           parameters to execute the RespondActivityTaskCanceled service method
      *           on AmazonSimpleWorkflow.
      * 
+     * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
      *
@@ -1597,6 +1604,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * @param respondDecisionTaskCompletedRequest Container for the necessary
      *           parameters to execute the RespondDecisionTaskCompleted service method
      *           on AmazonSimpleWorkflow.
+     * 
      * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
@@ -1678,6 +1686,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * @param respondActivityTaskCompletedRequest Container for the necessary
      *           parameters to execute the RespondActivityTaskCompleted service method
      *           on AmazonSimpleWorkflow.
+     * 
      * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
@@ -1776,7 +1785,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PollForActivityTaskRequest> request = null;
-        ActivityTask response = null;
+        Response<ActivityTask> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1789,7 +1798,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<ActivityTask, JsonUnmarshallerContext> unmarshaller = new ActivityTaskJsonUnmarshaller();
             JsonResponseHandler<ActivityTask> responseHandler = new JsonResponseHandler<ActivityTask>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1865,7 +1875,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CountOpenWorkflowExecutionsRequest> request = null;
-        WorkflowExecutionCount response = null;
+        Response<WorkflowExecutionCount> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1878,7 +1888,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<WorkflowExecutionCount, JsonUnmarshallerContext> unmarshaller = new WorkflowExecutionCountJsonUnmarshaller();
             JsonResponseHandler<WorkflowExecutionCount> responseHandler = new JsonResponseHandler<WorkflowExecutionCount>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1949,7 +1960,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeActivityTypeRequest> request = null;
-        ActivityTypeDetail response = null;
+        Response<ActivityTypeDetail> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1962,7 +1973,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<ActivityTypeDetail, JsonUnmarshallerContext> unmarshaller = new ActivityTypeDetailJsonUnmarshaller();
             JsonResponseHandler<ActivityTypeDetail> responseHandler = new JsonResponseHandler<ActivityTypeDetail>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2040,7 +2052,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListOpenWorkflowExecutionsRequest> request = null;
-        WorkflowExecutionInfos response = null;
+        Response<WorkflowExecutionInfos> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -2053,7 +2065,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<WorkflowExecutionInfos, JsonUnmarshallerContext> unmarshaller = new WorkflowExecutionInfosJsonUnmarshaller();
             JsonResponseHandler<WorkflowExecutionInfos> responseHandler = new JsonResponseHandler<WorkflowExecutionInfos>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2121,7 +2134,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<GetWorkflowExecutionHistoryRequest> request = null;
-        History response = null;
+        Response<History> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -2134,7 +2147,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<History, JsonUnmarshallerContext> unmarshaller = new HistoryJsonUnmarshaller();
             JsonResponseHandler<History> responseHandler = new JsonResponseHandler<History>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2177,6 +2191,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      *
      * @param registerDomainRequest Container for the necessary parameters to
      *           execute the RegisterDomain service method on AmazonSimpleWorkflow.
+     * 
      * 
      * @throws DomainAlreadyExistsException
      * @throws OperationNotPermittedException
@@ -2257,6 +2272,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * @param registerActivityTypeRequest Container for the necessary
      *           parameters to execute the RegisterActivityType service method on
      *           AmazonSimpleWorkflow.
+     * 
      * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
@@ -2358,7 +2374,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListClosedWorkflowExecutionsRequest> request = null;
-        WorkflowExecutionInfos response = null;
+        Response<WorkflowExecutionInfos> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -2371,7 +2387,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<WorkflowExecutionInfos, JsonUnmarshallerContext> unmarshaller = new WorkflowExecutionInfosJsonUnmarshaller();
             JsonResponseHandler<WorkflowExecutionInfos> responseHandler = new JsonResponseHandler<WorkflowExecutionInfos>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2470,7 +2487,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RecordActivityTaskHeartbeatRequest> request = null;
-        ActivityTaskStatus response = null;
+        Response<ActivityTaskStatus> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -2483,7 +2500,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<ActivityTaskStatus, JsonUnmarshallerContext> unmarshaller = new ActivityTaskStatusJsonUnmarshaller();
             JsonResponseHandler<ActivityTaskStatus> responseHandler = new JsonResponseHandler<ActivityTaskStatus>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2573,7 +2591,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PollForDecisionTaskRequest> request = null;
-        DecisionTask response = null;
+        Response<DecisionTask> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -2586,7 +2604,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<DecisionTask, JsonUnmarshallerContext> unmarshaller = new DecisionTaskJsonUnmarshaller();
             JsonResponseHandler<DecisionTask> responseHandler = new JsonResponseHandler<DecisionTask>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2652,7 +2671,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListActivityTypesRequest> request = null;
-        ActivityTypeInfos response = null;
+        Response<ActivityTypeInfos> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -2665,7 +2684,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<ActivityTypeInfos, JsonUnmarshallerContext> unmarshaller = new ActivityTypeInfosJsonUnmarshaller();
             JsonResponseHandler<ActivityTypeInfos> responseHandler = new JsonResponseHandler<ActivityTypeInfos>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2726,7 +2746,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeDomainRequest> request = null;
-        DomainDetail response = null;
+        Response<DomainDetail> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -2739,7 +2759,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<DomainDetail, JsonUnmarshallerContext> unmarshaller = new DomainDetailJsonUnmarshaller();
             JsonResponseHandler<DomainDetail> responseHandler = new JsonResponseHandler<DomainDetail>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2793,6 +2814,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * @param respondActivityTaskFailedRequest Container for the necessary
      *           parameters to execute the RespondActivityTaskFailed service method on
      *           AmazonSimpleWorkflow.
+     * 
      * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
@@ -2879,7 +2901,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CountPendingDecisionTasksRequest> request = null;
-        PendingTaskCount response = null;
+        Response<PendingTaskCount> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -2892,7 +2914,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<PendingTaskCount, JsonUnmarshallerContext> unmarshaller = new PendingTaskCountJsonUnmarshaller();
             JsonResponseHandler<PendingTaskCount> responseHandler = new JsonResponseHandler<PendingTaskCount>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2951,6 +2974,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * @param terminateWorkflowExecutionRequest Container for the necessary
      *           parameters to execute the TerminateWorkflowExecution service method on
      *           AmazonSimpleWorkflow.
+     * 
      * 
      * @throws OperationNotPermittedException
      * @throws UnknownResourceException
@@ -3038,7 +3062,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeWorkflowExecutionRequest> request = null;
-        WorkflowExecutionDetail response = null;
+        Response<WorkflowExecutionDetail> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -3051,54 +3075,29 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             Unmarshaller<WorkflowExecutionDetail, JsonUnmarshallerContext> unmarshaller = new WorkflowExecutionDetailJsonUnmarshaller();
             JsonResponseHandler<WorkflowExecutionDetail> responseHandler = new JsonResponseHandler<WorkflowExecutionDetail>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
    
-    /**
-     * Overrides the default endpoint for this client ("https://swf.us-east-1.amazonaws.com") and explicitly provides
-     * an AWS region ID and AWS service name to use when the client calculates a signature
-     * for requests.  In almost all cases, this region ID and service name
-     * are automatically determined from the endpoint, and callers should use the simpler
-     * one-argument form of setEndpoint instead of this method.
-     * <p>
-     * <b>This method is not threadsafe. Endpoints should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit.</b>
-     * <p>
-     * Callers can pass in just the endpoint (ex: "swf.us-east-1.amazonaws.com") or a full
-     * URL, including the protocol (ex: "https://swf.us-east-1.amazonaws.com"). If the
-     * protocol is not specified here, the default protocol from this client's
-     * {@link ClientConfiguration} will be used, which by default is HTTPS.
-     * <p>
-     * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
-     *
-     * @param endpoint
-     *            The endpoint (ex: "swf.us-east-1.amazonaws.com") or a full URL,
-     *            including the protocol (ex: "https://swf.us-east-1.amazonaws.com") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     * @param serviceName
-     *            The name of the AWS service to use when signing requests.
-     * @param regionId
-     *            The ID of the region in which this service resides.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
-     * @see AmazonDynamoDB#setRegion(Region)
-     */
-    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
-        setEndpoint(endpoint);
-        signer.setServiceName(serviceName);
-        signer.setRegionName(regionId);
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        super.setEndpoint(endpoint);
+
+        
     }
+
+    @Override
+    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
+        super.setEndpoint(endpoint, serviceName, regionId);
+
+        
+    }
+
     
     @Override
     protected String getServiceAbbreviation() {
@@ -3126,7 +3125,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
@@ -3146,11 +3145,11 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(signer);
+        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
 
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
-        X result = (X) client.execute(request, responseHandler,
+        Response<X> result = client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);
         awsRequestMetrics.log();
         return result;

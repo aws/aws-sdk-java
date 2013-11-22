@@ -300,6 +300,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the Scan
      *         service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -353,6 +354,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the Scan
      *         service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -414,6 +416,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         UpdateTable service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -470,6 +473,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         UpdateTable service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -529,6 +533,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteTable service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -583,6 +588,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteTable service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -705,6 +711,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         BatchWriteItem service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -822,6 +829,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         BatchWriteItem service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -862,6 +870,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeTable service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -897,6 +906,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeTable service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -944,6 +954,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the GetItem
      *         service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -986,6 +997,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the GetItem
      *         service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1041,6 +1053,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteItem service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1091,6 +1104,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteItem service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1149,6 +1163,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateTable service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1202,6 +1217,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateTable service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1263,6 +1279,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the Query
      *         service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1319,6 +1336,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the Query
      *         service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1389,6 +1407,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the PutItem
      *         service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1454,6 +1473,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the PutItem
      *         service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1493,6 +1513,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         ListTables service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1527,6 +1548,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         ListTables service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1574,6 +1596,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         UpdateItem service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1616,6 +1639,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         UpdateItem service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1702,6 +1726,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         BatchGetItem service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1783,6 +1808,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * @return A Java Future object containing the response from the
      *         BatchGetItem service method, as returned by AmazonDynamoDBv2.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

@@ -307,6 +307,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         RevokeSnapshotAccess service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -349,6 +350,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         RevokeSnapshotAccess service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -390,6 +392,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         ModifySnapshotCopyRetentionPeriod service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -426,6 +429,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         ModifySnapshotCopyRetentionPeriod service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -468,6 +472,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         ModifyClusterSubnetGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -505,6 +510,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         ModifyClusterSubnetGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -544,6 +550,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteHsmConfiguration service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -579,6 +586,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteHsmConfiguration service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -631,6 +639,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         PurchaseReservedNodeOffering service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -679,6 +688,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         PurchaseReservedNodeOffering service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -718,6 +728,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DisableLogging service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -752,6 +763,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DisableLogging service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -806,6 +818,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         ModifyCluster service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -855,6 +868,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         ModifyCluster service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -910,6 +924,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         CopyClusterSnapshot service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -960,6 +975,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         CopyClusterSnapshot service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1010,6 +1026,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeOrderableClusterOptions service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1055,6 +1072,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeOrderableClusterOptions service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1094,6 +1112,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         EnableLogging service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1128,6 +1147,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         EnableLogging service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1177,6 +1197,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         CreateClusterSubnetGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1221,6 +1242,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         CreateClusterSubnetGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1261,6 +1283,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DeleteHsmClientCertificate service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1297,6 +1320,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DeleteHsmClientCertificate service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1342,6 +1366,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         RebootCluster service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1383,6 +1408,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         RebootCluster service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1423,6 +1449,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DeleteClusterSubnetGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1459,6 +1486,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DeleteClusterSubnetGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1507,6 +1535,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteCluster service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1551,6 +1580,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteCluster service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1597,6 +1627,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateClusterSnapshot service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1638,6 +1669,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateClusterSnapshot service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1685,6 +1717,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateCluster service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1727,6 +1760,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateCluster service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1769,6 +1803,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeEvents service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1806,6 +1841,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeEvents service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1869,6 +1905,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         AuthorizeClusterSecurityGroupIngress service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1927,6 +1964,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         AuthorizeClusterSecurityGroupIngress service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1966,6 +2004,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         RotateEncryptionKey service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2000,6 +2039,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         RotateEncryptionKey service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2050,6 +2090,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DeleteClusterSecurityGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2096,6 +2137,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DeleteClusterSecurityGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2134,6 +2176,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeReservedNodes service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2168,6 +2211,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeReservedNodes service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2215,6 +2259,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeDefaultClusterParameters service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2257,6 +2302,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeDefaultClusterParameters service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2296,6 +2342,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         ModifyEventSubscription service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2330,6 +2377,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         ModifyEventSubscription service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2378,6 +2426,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         CreateClusterSecurityGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2421,6 +2470,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         CreateClusterSecurityGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2467,6 +2517,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeResize service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2508,6 +2559,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeResize service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2553,6 +2605,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeClusterVersions service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2593,6 +2646,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeClusterVersions service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2651,6 +2705,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         RestoreFromClusterSnapshot service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2704,6 +2759,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         RestoreFromClusterSnapshot service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2750,6 +2806,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         ModifyClusterParameterGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2791,6 +2848,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         ModifyClusterParameterGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2834,6 +2892,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeEventCategories service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2872,6 +2931,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeEventCategories service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2920,6 +2980,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeClusterSecurityGroups service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2963,6 +3024,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeClusterSecurityGroups service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3006,6 +3068,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeClusterSubnetGroups service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3044,6 +3107,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeClusterSubnetGroups service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3087,6 +3151,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeHsmConfigurations service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3125,6 +3190,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeHsmConfigurations service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3174,6 +3240,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteClusterSnapshot service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3218,6 +3285,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteClusterSnapshot service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3262,6 +3330,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DeleteClusterParameterGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3302,6 +3371,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DeleteClusterParameterGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3341,6 +3411,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DisableSnapshotCopy service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3376,6 +3447,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DisableSnapshotCopy service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3441,6 +3513,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateEventSubscription service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3501,6 +3574,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateEventSubscription service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3545,6 +3619,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         ResetClusterParameterGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3584,6 +3659,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         ResetClusterParameterGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3630,6 +3706,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         AuthorizeSnapshotAccess service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3671,6 +3748,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         AuthorizeSnapshotAccess service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3711,6 +3789,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         EnableSnapshotCopy service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3746,6 +3825,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         EnableSnapshotCopy service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3800,6 +3880,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeReservedNodeOfferings service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3849,6 +3930,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeReservedNodeOfferings service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3891,6 +3973,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeEventSubscriptions service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3928,6 +4011,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeEventSubscriptions service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3968,6 +4052,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeLoggingStatus service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4003,6 +4088,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeLoggingStatus service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4042,6 +4128,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteEventSubscription service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4077,6 +4164,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteEventSubscription service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4126,6 +4214,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         CreateHsmClientCertificate service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4171,6 +4260,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         CreateHsmClientCertificate service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4218,6 +4308,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         RevokeClusterSecurityGroupIngress service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4260,6 +4351,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         RevokeClusterSecurityGroupIngress service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4315,6 +4407,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeClusterParameters service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4365,6 +4458,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeClusterParameters service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4407,6 +4501,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeHsmClientCertificates service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4444,6 +4539,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeHsmClientCertificates service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4492,6 +4588,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateHsmConfiguration service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4535,6 +4632,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateHsmConfiguration service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4581,6 +4679,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeClusters service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4622,6 +4721,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeClusters service method, as returned by AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4666,6 +4766,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeClusterSnapshots service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4705,6 +4806,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeClusterSnapshots service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4760,6 +4862,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         CreateClusterParameterGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4810,6 +4913,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         CreateClusterParameterGroup service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4861,6 +4965,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeClusterParameterGroups service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4907,6 +5012,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * @return A Java Future object containing the response from the
      *         DescribeClusterParameterGroups service method, as returned by
      *         AmazonRedshift.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

@@ -50,6 +50,10 @@ public class DescribeTagsResultStaxUnmarshaller implements Unmarshaller<Describe
                     describeTagsResult.getTags().add(TagDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeTagsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeTagsResult;

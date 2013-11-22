@@ -204,6 +204,7 @@ public interface AmazonRedshift {
      *           parameters to execute the DeleteHsmConfiguration service method on
      *           AmazonRedshift.
      * 
+     * 
      * @throws HsmConfigurationNotFoundException
      * @throws InvalidHsmConfigurationStateException
      *
@@ -487,6 +488,7 @@ public interface AmazonRedshift {
      *           parameters to execute the DeleteHsmClientCertificate service method on
      *           AmazonRedshift.
      * 
+     * 
      * @throws InvalidHsmClientCertificateStateException
      * @throws HsmClientCertificateNotFoundException
      *
@@ -542,6 +544,7 @@ public interface AmazonRedshift {
      * @param deleteClusterSubnetGroupRequest Container for the necessary
      *           parameters to execute the DeleteClusterSubnetGroup service method on
      *           AmazonRedshift.
+     * 
      * 
      * @throws InvalidClusterSubnetStateException
      * @throws ClusterSubnetGroupNotFoundException
@@ -800,6 +803,7 @@ public interface AmazonRedshift {
      * @param deleteClusterSecurityGroupRequest Container for the necessary
      *           parameters to execute the DeleteClusterSecurityGroup service method on
      *           AmazonRedshift.
+     * 
      * 
      * @throws InvalidClusterSecurityGroupStateException
      * @throws ClusterSecurityGroupNotFoundException
@@ -1257,6 +1261,7 @@ public interface AmazonRedshift {
      *           parameters to execute the DeleteClusterParameterGroup service method
      *           on AmazonRedshift.
      * 
+     * 
      * @throws InvalidClusterParameterGroupStateException
      * @throws ClusterParameterGroupNotFoundException
      *
@@ -1554,6 +1559,7 @@ public interface AmazonRedshift {
      * @param deleteEventSubscriptionRequest Container for the necessary
      *           parameters to execute the DeleteEventSubscription service method on
      *           AmazonRedshift.
+     * 
      * 
      * @throws SubscriptionNotFoundException
      *

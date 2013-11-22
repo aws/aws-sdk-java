@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains a list of available options for a DB Instance
+ * Contains a list of available options for a DB instance
  * </p>
  * <p>
  * This data type is used as a response element in the DescribeOrderableDBInstanceOptions action.
@@ -28,69 +28,69 @@ import java.io.Serializable;
 public class OrderableDBInstanceOption implements Serializable {
 
     /**
-     * The engine type of the orderable DB Instance.
+     * The engine type of the orderable DB instance.
      */
     private String engine;
 
     /**
-     * The engine version of the orderable DB Instance.
+     * The engine version of the orderable DB instance.
      */
     private String engineVersion;
 
     /**
-     * The DB Instance Class for the orderable DB Instance
+     * The DB instance Class for the orderable DB instance
      */
     private String dBInstanceClass;
 
     /**
-     * The license model for the orderable DB Instance.
+     * The license model for the orderable DB instance.
      */
     private String licenseModel;
 
     /**
-     * A list of availability zones for the orderable DB Instance.
+     * A list of availability zones for the orderable DB instance.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZone> availabilityZones;
 
     /**
-     * Indicates whether this orderable DB Instance is multi-AZ capable.
+     * Indicates whether this orderable DB instance is multi-AZ capable.
      */
     private Boolean multiAZCapable;
 
     /**
-     * Indicates whether this orderable DB Instance can have a read replica.
+     * Indicates whether this orderable DB instance can have a read replica.
      */
     private Boolean readReplicaCapable;
 
     /**
-     * Indicates whether this is a VPC orderable DB Instance.
+     * Indicates whether this is a VPC orderable DB instance.
      */
     private Boolean vpc;
 
     /**
-     * The engine type of the orderable DB Instance.
+     * The engine type of the orderable DB instance.
      *
-     * @return The engine type of the orderable DB Instance.
+     * @return The engine type of the orderable DB instance.
      */
     public String getEngine() {
         return engine;
     }
     
     /**
-     * The engine type of the orderable DB Instance.
+     * The engine type of the orderable DB instance.
      *
-     * @param engine The engine type of the orderable DB Instance.
+     * @param engine The engine type of the orderable DB instance.
      */
     public void setEngine(String engine) {
         this.engine = engine;
     }
     
     /**
-     * The engine type of the orderable DB Instance.
+     * The engine type of the orderable DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engine The engine type of the orderable DB Instance.
+     * @param engine The engine type of the orderable DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -101,29 +101,29 @@ public class OrderableDBInstanceOption implements Serializable {
     }
 
     /**
-     * The engine version of the orderable DB Instance.
+     * The engine version of the orderable DB instance.
      *
-     * @return The engine version of the orderable DB Instance.
+     * @return The engine version of the orderable DB instance.
      */
     public String getEngineVersion() {
         return engineVersion;
     }
     
     /**
-     * The engine version of the orderable DB Instance.
+     * The engine version of the orderable DB instance.
      *
-     * @param engineVersion The engine version of the orderable DB Instance.
+     * @param engineVersion The engine version of the orderable DB instance.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
     
     /**
-     * The engine version of the orderable DB Instance.
+     * The engine version of the orderable DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion The engine version of the orderable DB Instance.
+     * @param engineVersion The engine version of the orderable DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -134,29 +134,29 @@ public class OrderableDBInstanceOption implements Serializable {
     }
 
     /**
-     * The DB Instance Class for the orderable DB Instance
+     * The DB instance Class for the orderable DB instance
      *
-     * @return The DB Instance Class for the orderable DB Instance
+     * @return The DB instance Class for the orderable DB instance
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
     }
     
     /**
-     * The DB Instance Class for the orderable DB Instance
+     * The DB instance Class for the orderable DB instance
      *
-     * @param dBInstanceClass The DB Instance Class for the orderable DB Instance
+     * @param dBInstanceClass The DB instance Class for the orderable DB instance
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
     }
     
     /**
-     * The DB Instance Class for the orderable DB Instance
+     * The DB instance Class for the orderable DB instance
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceClass The DB Instance Class for the orderable DB Instance
+     * @param dBInstanceClass The DB instance Class for the orderable DB instance
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -167,29 +167,29 @@ public class OrderableDBInstanceOption implements Serializable {
     }
 
     /**
-     * The license model for the orderable DB Instance.
+     * The license model for the orderable DB instance.
      *
-     * @return The license model for the orderable DB Instance.
+     * @return The license model for the orderable DB instance.
      */
     public String getLicenseModel() {
         return licenseModel;
     }
     
     /**
-     * The license model for the orderable DB Instance.
+     * The license model for the orderable DB instance.
      *
-     * @param licenseModel The license model for the orderable DB Instance.
+     * @param licenseModel The license model for the orderable DB instance.
      */
     public void setLicenseModel(String licenseModel) {
         this.licenseModel = licenseModel;
     }
     
     /**
-     * The license model for the orderable DB Instance.
+     * The license model for the orderable DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param licenseModel The license model for the orderable DB Instance.
+     * @param licenseModel The license model for the orderable DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -200,9 +200,9 @@ public class OrderableDBInstanceOption implements Serializable {
     }
 
     /**
-     * A list of availability zones for the orderable DB Instance.
+     * A list of availability zones for the orderable DB instance.
      *
-     * @return A list of availability zones for the orderable DB Instance.
+     * @return A list of availability zones for the orderable DB instance.
      */
     public java.util.List<AvailabilityZone> getAvailabilityZones() {
         if (availabilityZones == null) {
@@ -213,9 +213,9 @@ public class OrderableDBInstanceOption implements Serializable {
     }
     
     /**
-     * A list of availability zones for the orderable DB Instance.
+     * A list of availability zones for the orderable DB instance.
      *
-     * @param availabilityZones A list of availability zones for the orderable DB Instance.
+     * @param availabilityZones A list of availability zones for the orderable DB instance.
      */
     public void setAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
         if (availabilityZones == null) {
@@ -228,11 +228,11 @@ public class OrderableDBInstanceOption implements Serializable {
     }
     
     /**
-     * A list of availability zones for the orderable DB Instance.
+     * A list of availability zones for the orderable DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones A list of availability zones for the orderable DB Instance.
+     * @param availabilityZones A list of availability zones for the orderable DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -246,11 +246,11 @@ public class OrderableDBInstanceOption implements Serializable {
     }
     
     /**
-     * A list of availability zones for the orderable DB Instance.
+     * A list of availability zones for the orderable DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones A list of availability zones for the orderable DB Instance.
+     * @param availabilityZones A list of availability zones for the orderable DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -268,29 +268,29 @@ public class OrderableDBInstanceOption implements Serializable {
     }
 
     /**
-     * Indicates whether this orderable DB Instance is multi-AZ capable.
+     * Indicates whether this orderable DB instance is multi-AZ capable.
      *
-     * @return Indicates whether this orderable DB Instance is multi-AZ capable.
+     * @return Indicates whether this orderable DB instance is multi-AZ capable.
      */
     public Boolean isMultiAZCapable() {
         return multiAZCapable;
     }
     
     /**
-     * Indicates whether this orderable DB Instance is multi-AZ capable.
+     * Indicates whether this orderable DB instance is multi-AZ capable.
      *
-     * @param multiAZCapable Indicates whether this orderable DB Instance is multi-AZ capable.
+     * @param multiAZCapable Indicates whether this orderable DB instance is multi-AZ capable.
      */
     public void setMultiAZCapable(Boolean multiAZCapable) {
         this.multiAZCapable = multiAZCapable;
     }
     
     /**
-     * Indicates whether this orderable DB Instance is multi-AZ capable.
+     * Indicates whether this orderable DB instance is multi-AZ capable.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param multiAZCapable Indicates whether this orderable DB Instance is multi-AZ capable.
+     * @param multiAZCapable Indicates whether this orderable DB instance is multi-AZ capable.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -301,38 +301,38 @@ public class OrderableDBInstanceOption implements Serializable {
     }
 
     /**
-     * Indicates whether this orderable DB Instance is multi-AZ capable.
+     * Indicates whether this orderable DB instance is multi-AZ capable.
      *
-     * @return Indicates whether this orderable DB Instance is multi-AZ capable.
+     * @return Indicates whether this orderable DB instance is multi-AZ capable.
      */
     public Boolean getMultiAZCapable() {
         return multiAZCapable;
     }
 
     /**
-     * Indicates whether this orderable DB Instance can have a read replica.
+     * Indicates whether this orderable DB instance can have a read replica.
      *
-     * @return Indicates whether this orderable DB Instance can have a read replica.
+     * @return Indicates whether this orderable DB instance can have a read replica.
      */
     public Boolean isReadReplicaCapable() {
         return readReplicaCapable;
     }
     
     /**
-     * Indicates whether this orderable DB Instance can have a read replica.
+     * Indicates whether this orderable DB instance can have a read replica.
      *
-     * @param readReplicaCapable Indicates whether this orderable DB Instance can have a read replica.
+     * @param readReplicaCapable Indicates whether this orderable DB instance can have a read replica.
      */
     public void setReadReplicaCapable(Boolean readReplicaCapable) {
         this.readReplicaCapable = readReplicaCapable;
     }
     
     /**
-     * Indicates whether this orderable DB Instance can have a read replica.
+     * Indicates whether this orderable DB instance can have a read replica.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param readReplicaCapable Indicates whether this orderable DB Instance can have a read replica.
+     * @param readReplicaCapable Indicates whether this orderable DB instance can have a read replica.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -343,38 +343,38 @@ public class OrderableDBInstanceOption implements Serializable {
     }
 
     /**
-     * Indicates whether this orderable DB Instance can have a read replica.
+     * Indicates whether this orderable DB instance can have a read replica.
      *
-     * @return Indicates whether this orderable DB Instance can have a read replica.
+     * @return Indicates whether this orderable DB instance can have a read replica.
      */
     public Boolean getReadReplicaCapable() {
         return readReplicaCapable;
     }
 
     /**
-     * Indicates whether this is a VPC orderable DB Instance.
+     * Indicates whether this is a VPC orderable DB instance.
      *
-     * @return Indicates whether this is a VPC orderable DB Instance.
+     * @return Indicates whether this is a VPC orderable DB instance.
      */
     public Boolean isVpc() {
         return vpc;
     }
     
     /**
-     * Indicates whether this is a VPC orderable DB Instance.
+     * Indicates whether this is a VPC orderable DB instance.
      *
-     * @param vpc Indicates whether this is a VPC orderable DB Instance.
+     * @param vpc Indicates whether this is a VPC orderable DB instance.
      */
     public void setVpc(Boolean vpc) {
         this.vpc = vpc;
     }
     
     /**
-     * Indicates whether this is a VPC orderable DB Instance.
+     * Indicates whether this is a VPC orderable DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpc Indicates whether this is a VPC orderable DB Instance.
+     * @param vpc Indicates whether this is a VPC orderable DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -385,9 +385,9 @@ public class OrderableDBInstanceOption implements Serializable {
     }
 
     /**
-     * Indicates whether this is a VPC orderable DB Instance.
+     * Indicates whether this is a VPC orderable DB instance.
      *
-     * @return Indicates whether this is a VPC orderable DB Instance.
+     * @return Indicates whether this is a VPC orderable DB instance.
      */
     public Boolean getVpc() {
         return vpc;

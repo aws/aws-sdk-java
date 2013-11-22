@@ -311,6 +311,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         ActivatePipeline service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -351,6 +352,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         ActivatePipeline service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -391,6 +393,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         ListPipelines service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -426,6 +429,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         ListPipelines service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -478,6 +482,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         ReportTaskProgress service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -525,6 +530,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         ReportTaskProgress service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -566,6 +572,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * @return A Java Future object containing the response from the
      *         ValidatePipelineDefinition service method, as returned by
      *         DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -602,6 +609,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * @return A Java Future object containing the response from the
      *         ValidatePipelineDefinition service method, as returned by
      *         DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -656,6 +664,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         PollForTask service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -705,6 +714,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         PollForTask service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -752,6 +762,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         QueryObjects service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -794,6 +805,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         QueryObjects service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -835,6 +847,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         SetStatus service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -872,6 +885,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         SetStatus service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -918,6 +932,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         DeletePipeline service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -961,6 +976,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         DeletePipeline service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1001,6 +1017,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         GetPipelineDefinition service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1037,6 +1054,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         GetPipelineDefinition service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1079,6 +1097,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         SetTaskStatus service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1116,6 +1135,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         SetTaskStatus service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1156,6 +1176,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         EvaluateExpression service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1191,6 +1212,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         EvaluateExpression service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1239,6 +1261,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribePipelines service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1282,6 +1305,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribePipelines service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1321,6 +1345,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         CreatePipeline service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1355,6 +1380,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         CreatePipeline service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1395,6 +1421,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeObjects service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1430,6 +1457,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeObjects service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1473,6 +1501,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         ReportTaskRunnerHeartbeat service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1511,6 +1540,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         ReportTaskRunnerHeartbeat service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1567,6 +1597,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         PutPipelineDefinition service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1618,6 +1649,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * 
      * @return A Java Future object containing the response from the
      *         PutPipelineDefinition service method, as returned by DataPipeline.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

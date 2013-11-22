@@ -65,6 +65,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the Select
      *         service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -105,6 +106,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the Select
      *         service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -179,6 +181,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         PutAttributes service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -256,6 +259,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         PutAttributes service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -306,6 +310,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         BatchDeleteAttributes service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -359,6 +364,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         BatchDeleteAttributes service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -390,6 +396,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteDomain service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -424,6 +431,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteDomain service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -463,6 +471,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         CreateDomain service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -505,6 +514,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         CreateDomain service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -546,6 +556,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteAttributes service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -590,6 +601,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         DeleteAttributes service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -620,6 +632,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         ListDomains service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -653,6 +666,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         ListDomains service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -688,6 +702,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         GetAttributes service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -726,6 +741,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         GetAttributes service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -820,6 +836,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         BatchPutAttributes service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -917,6 +934,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         BatchPutAttributes service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -942,6 +960,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         DomainMetadata service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -970,6 +989,7 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
      * 
      * @return A Java Future object containing the response from the
      *         DomainMetadata service method, as returned by AmazonSimpleDB.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

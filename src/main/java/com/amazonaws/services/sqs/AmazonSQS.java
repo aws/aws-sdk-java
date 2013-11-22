@@ -105,6 +105,7 @@ public interface AmazonSQS {
      *           parameters to execute the SetQueueAttributes service method on
      *           AmazonSQS.
      * 
+     * 
      * @throws InvalidAttributeNameException
      *
      * @throws AmazonClientException
@@ -188,6 +189,7 @@ public interface AmazonSQS {
      *           parameters to execute the ChangeMessageVisibility service method on
      *           AmazonSQS.
      * 
+     * 
      * @throws ReceiptHandleIsInvalidException
      * @throws MessageNotInflightException
      *
@@ -236,6 +238,7 @@ public interface AmazonSQS {
      *
      * @param removePermissionRequest Container for the necessary parameters
      *           to execute the RemovePermission service method on AmazonSQS.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -353,6 +356,7 @@ public interface AmazonSQS {
      *
      * @param deleteQueueRequest Container for the necessary parameters to
      *           execute the DeleteQueue service method on AmazonSQS.
+     * 
      * 
      *
      * @throws AmazonClientException
@@ -556,6 +560,7 @@ public interface AmazonSQS {
      * @param addPermissionRequest Container for the necessary parameters to
      *           execute the AddPermission service method on AmazonSQS.
      * 
+     * 
      * @throws OverLimitException
      *
      * @throws AmazonClientException
@@ -579,6 +584,7 @@ public interface AmazonSQS {
      *
      * @param deleteMessageRequest Container for the necessary parameters to
      *           execute the DeleteMessage service method on AmazonSQS.
+     * 
      * 
      * @throws ReceiptHandleIsInvalidException
      * @throws InvalidIdFormatException

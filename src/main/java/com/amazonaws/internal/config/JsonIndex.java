@@ -14,41 +14,38 @@
  */
 package com.amazonaws.internal.config;
 
-import org.apache.http.annotation.Immutable;
-
 /**
- * An internal class used to represent a key-signer pair for JSON persistence
- * purposes.  The key can be a service, a region, or a service-region, etc.
+ * An internal class used to represent a key-object pair for JSON persistence
+ * purposes.
  */
-@Immutable
-class SignerJsonIndex {
+final class JsonIndex<C extends Builder<T>, T> {
     private String key;
-    private SignerConfigJsonHelper signerConfig;
+    private C config;
 
-    SignerJsonIndex(String key, SignerConfigJsonHelper signerConfig) {
+    JsonIndex(String key, C config) {
         this.key = key;
-        this.signerConfig = signerConfig;
+        this.config = config;
     }
 
-    SignerJsonIndex() {}
+    JsonIndex(String key) {
+        this.key = key;
+    }
+
+    JsonIndex() {}
 
     public String getKey() {
         return key;
-    }
-
-    public SignerConfigJsonHelper getSignerConfig() {
-        return signerConfig;
-    }
-
-    SignerConfig newSignerConfig() {
-        return new SignerConfig(signerConfig.build());
     }
 
     void setKey(String key) {
         this.key = key;
     }
 
-    void setSignerConfig(SignerConfigJsonHelper signerConfig) {
-        this.signerConfig = signerConfig;
+    public C getConfig() {
+        return config;
+    }
+
+    T newReadOnlyConfig() {
+        return config.build();
     }
 }

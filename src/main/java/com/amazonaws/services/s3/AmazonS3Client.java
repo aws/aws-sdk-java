@@ -48,6 +48,7 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.HttpMethod;
 import com.amazonaws.Request;
+import com.amazonaws.Response;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSCredentialsProviderChain;
@@ -61,7 +62,7 @@ import com.amazonaws.event.ProgressListener;
 import com.amazonaws.event.ProgressListenerCallbackExecutor;
 import com.amazonaws.event.ProgressReportingInputStream;
 import com.amazonaws.handlers.HandlerChainFactory;
-import com.amazonaws.handlers.RequestHandler;
+import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpResponseHandler;
@@ -400,8 +401,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         setEndpoint(Constants.S3_HOSTNAME);
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/s3/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
+                "/com/amazonaws/services/s3/request.handler2s"));
     }
 
     /* (non-Javadoc)
@@ -422,19 +425,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     public void setS3ClientOptions(S3ClientOptions clientOptions) {
       this.clientOptions = new S3ClientOptions(clientOptions);
     }
-
-    /**
-     * Appends a request handler to the list of registered handlers that are run
-     * as part of a request's lifecycle.
-     *
-     * @param requestHandler
-     *            The new handler to add to the current list of request
-     *            handlers.
-     */
-    public void addRequestHandler(RequestHandler requestHandler) {
-        requestHandlers.add(requestHandler);
-    }
-
 
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#listNextBatchOfVersions(com.amazonaws.services.s3.model.S3VersionListing)
@@ -2660,11 +2650,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     protected <T> void presignRequest(Request<T> request, HttpMethod methodName,
             String bucketName, String key, Date expiration, String subResource) {
         // Run any additional request handlers if present
-        if (requestHandlers != null) {
-            for (RequestHandler requestHandler : requestHandlers) {
-                requestHandler.beforeRequest(request);
-            }
-        }
+        beforeRequest(request);
 
         String resourcePath = "/" +
             ((bucketName != null) ? bucketName + "/" : "") +
@@ -2686,6 +2672,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             String value = request.getHeaders().get(Headers.SECURITY_TOKEN);
             request.addParameter(Headers.SECURITY_TOKEN, value);
             request.getHeaders().remove(Headers.SECURITY_TOKEN);
+        }
+    }
+
+    private <T> void beforeRequest(Request<T> request) {
+        if (requestHandler2s != null) {
+            for (RequestHandler2 requestHandler2 : requestHandler2s) {
+                requestHandler2.beforeRequest(request);
+            }
         }
     }
 
@@ -3100,7 +3094,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // We can incrementally make it more elaborate should the need arise
         // for individual method.
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        X response = null;
+        Response<X> response = null;
         try {
             for (Entry<String, String> entry : request.getOriginalRequest()
                     .copyPrivateRequestParameters().entrySet()) {
@@ -3124,8 +3118,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
             executionContext.setSigner(createSigner(request, bucket, key));
             executionContext.setCredentials(credentials);
-            return response = client.execute(request, responseHandler,
+            response = client.execute(request, responseHandler,
                     errorResponseHandler, executionContext);
+            return response.getAwsResponse();
          } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }

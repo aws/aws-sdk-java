@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The Option Group is not in the <i>available</i> state.
+ * The option group is not in the <i>available</i> state.
  * </p>
  */        
 public class InvalidOptionGroupStateException extends AmazonServiceException {

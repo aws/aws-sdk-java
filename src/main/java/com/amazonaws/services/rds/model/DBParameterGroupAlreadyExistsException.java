@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * A DB Parameter Group with the same name exists.
+ * A DB parameter group with the same name exists.
  * </p>
  */        
 public class DBParameterGroupAlreadyExistsException extends AmazonServiceException {

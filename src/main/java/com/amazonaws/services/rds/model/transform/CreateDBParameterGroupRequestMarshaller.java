@@ -38,7 +38,7 @@ public class CreateDBParameterGroupRequestMarshaller implements Marshaller<Reque
 
         Request<CreateDBParameterGroupRequest> request = new DefaultRequest<CreateDBParameterGroupRequest>(createDBParameterGroupRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBParameterGroup");
-        request.addParameter("Version", "2013-05-15");
+        request.addParameter("Version", "2013-09-09");
 
         if (createDBParameterGroupRequest.getDBParameterGroupName() != null) {
             request.addParameter("DBParameterGroupName", StringUtils.fromString(createDBParameterGroupRequest.getDBParameterGroupName()));
@@ -48,6 +48,23 @@ public class CreateDBParameterGroupRequestMarshaller implements Marshaller<Reque
         }
         if (createDBParameterGroupRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(createDBParameterGroupRequest.getDescription()));
+        }
+
+        java.util.List<Tag> tagsList = createDBParameterGroupRequest.getTags();
+        int tagsListIndex = 1;
+
+        for (Tag tagsListValue : tagsList) {
+            Tag tagMember = tagsListValue;
+            if (tagMember != null) {
+                if (tagMember.getKey() != null) {
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagMember.getKey()));
+                }
+                if (tagMember.getValue() != null) {
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagMember.getValue()));
+                }
+            }
+
+            tagsListIndex++;
         }
 
 

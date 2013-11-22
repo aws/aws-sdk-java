@@ -38,7 +38,7 @@ public class AddSourceIdentifierToSubscriptionRequestMarshaller implements Marsh
 
         Request<AddSourceIdentifierToSubscriptionRequest> request = new DefaultRequest<AddSourceIdentifierToSubscriptionRequest>(addSourceIdentifierToSubscriptionRequest, "AmazonRDS");
         request.addParameter("Action", "AddSourceIdentifierToSubscription");
-        request.addParameter("Version", "2013-05-15");
+        request.addParameter("Version", "2013-09-09");
 
         if (addSourceIdentifierToSubscriptionRequest.getSubscriptionName() != null) {
             request.addParameter("SubscriptionName", StringUtils.fromString(addSourceIdentifierToSubscriptionRequest.getSubscriptionName()));

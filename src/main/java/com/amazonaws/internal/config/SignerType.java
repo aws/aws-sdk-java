@@ -17,6 +17,7 @@ package com.amazonaws.internal.config;
 import java.lang.reflect.Constructor;
 
 import com.amazonaws.auth.Signer;
+import com.amazonaws.util.ClassLoaderHelper;
 
 /**
  * Internal signer types.
@@ -24,8 +25,7 @@ import com.amazonaws.auth.Signer;
 public enum SignerType {
     AWS3SignerType {
         @Override public Signer createSigner() {
-            // optimization; not strictly necessary
-            return com.amazonaws.auth.AWS3Signer.Instance;
+            return new com.amazonaws.auth.AWS3Signer();
         }
     },
     AWS4SignerType {
@@ -37,8 +37,7 @@ public enum SignerType {
     CloudFrontSignerType,
     QueryStringSignerType {
         @Override public Signer createSigner() {
-            // optimization; not strictly necessary
-            return com.amazonaws.auth.QueryStringSigner.Instance;
+            return new com.amazonaws.auth.QueryStringSigner();
         }
     },
 
@@ -87,9 +86,8 @@ public enum SignerType {
     }
 
     Signer createSigner() {
-        ClassLoader loader = Thread.currentThread().getContextClassLoader();
         try {
-            Class<?> c = loader.loadClass(fqcn);
+            Class<?> c = ClassLoaderHelper.loadClass(fqcn, Signer.class);
             return (Signer)c.newInstance();
         } catch(Exception e) {
             throw toRuntimeException(e);
@@ -111,9 +109,8 @@ public enum SignerType {
 
     private static Signer createSignerWith(String fqcn,
             Class<?>[] ctorParamTypes, Object... ctorParams) {
-        ClassLoader loader = Thread.currentThread().getContextClassLoader();
         try {
-            Class<?> c = loader.loadClass(fqcn);
+            Class<?> c = ClassLoaderHelper.loadClass(fqcn, Signer.class);
             Constructor<?> ctor = c.getConstructor(ctorParamTypes);
             return (Signer)ctor.newInstance(ctorParams);
         } catch (Exception e) {

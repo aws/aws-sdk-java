@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.opsworks;
 
+import java.net.*;
 import java.util.*;
 
 import org.apache.commons.logging.*;
@@ -23,10 +24,11 @@ import com.amazonaws.regions.*;
 import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
-import com.amazonaws.util.*;
-import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
 import com.amazonaws.transform.*;
+import com.amazonaws.util.*;
+import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.opsworks.model.*;
@@ -72,11 +74,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * List of exception unmarshallers for all AWSOpsWorks exceptions.
      */
     protected List<Unmarshaller<AmazonServiceException, JSONObject>> exceptionUnmarshallers;
-
-    
-    /** AWS signer for authenticating requests. */
-    private AWS4Signer signer;
-
 
     /**
      * Constructs a new client to invoke service methods on
@@ -207,16 +204,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new JsonErrorUnmarshaller());
-        setEndpoint("opsworks.us-east-1.amazonaws.com");
-
-        signer = new AWS4Signer();
-        
-        signer.setServiceName("opsworks");
-        
-
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("opsworks.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/opsworks/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
+                "/com/amazonaws/services/opsworks/request.handler2s"));
 
         
     }
@@ -232,6 +226,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param deregisterVolumeRequest Container for the necessary parameters
      *           to execute the DeregisterVolume service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -269,6 +264,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param setPermissionRequest Container for the necessary parameters to
      *           execute the SetPermission service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -327,7 +323,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeInstancesRequest> request = null;
-        DescribeInstancesResult response = null;
+        Response<DescribeInstancesResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -340,7 +336,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<DescribeInstancesResult, JsonUnmarshallerContext> unmarshaller = new DescribeInstancesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeInstancesResult> responseHandler = new JsonResponseHandler<DescribeInstancesResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -375,7 +372,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribePermissionsRequest> request = null;
-        DescribePermissionsResult response = null;
+        Response<DescribePermissionsResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -388,7 +385,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<DescribePermissionsResult, JsonUnmarshallerContext> unmarshaller = new DescribePermissionsResultJsonUnmarshaller();
             JsonResponseHandler<DescribePermissionsResult> responseHandler = new JsonResponseHandler<DescribePermissionsResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -405,6 +403,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param deleteInstanceRequest Container for the necessary parameters to
      *           execute the DeleteInstance service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -462,7 +461,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CloneStackRequest> request = null;
-        CloneStackResult response = null;
+        Response<CloneStackResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -475,7 +474,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<CloneStackResult, JsonUnmarshallerContext> unmarshaller = new CloneStackResultJsonUnmarshaller();
             JsonResponseHandler<CloneStackResult> responseHandler = new JsonResponseHandler<CloneStackResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -490,6 +490,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * @param detachElasticLoadBalancerRequest Container for the necessary
      *           parameters to execute the DetachElasticLoadBalancer service method on
      *           AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      *
@@ -530,6 +531,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * @param stopInstanceRequest Container for the necessary parameters to
      *           execute the StopInstance service method on AWSOpsWorks.
      * 
+     * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
      *
@@ -564,6 +566,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param updateAppRequest Container for the necessary parameters to
      *           execute the UpdateApp service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -622,7 +625,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeCommandsRequest> request = null;
-        DescribeCommandsResult response = null;
+        Response<DescribeCommandsResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -635,7 +638,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<DescribeCommandsResult, JsonUnmarshallerContext> unmarshaller = new DescribeCommandsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeCommandsResult> responseHandler = new JsonResponseHandler<DescribeCommandsResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -654,6 +658,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * @param associateElasticIpRequest Container for the necessary
      *           parameters to execute the AssociateElasticIp service method on
      *           AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -692,6 +697,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param unassignVolumeRequest Container for the necessary parameters to
      *           execute the UnassignVolume service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -751,7 +757,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeRaidArraysRequest> request = null;
-        DescribeRaidArraysResult response = null;
+        Response<DescribeRaidArraysResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -764,7 +770,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<DescribeRaidArraysResult, JsonUnmarshallerContext> unmarshaller = new DescribeRaidArraysResultJsonUnmarshaller();
             JsonResponseHandler<DescribeRaidArraysResult> responseHandler = new JsonResponseHandler<DescribeRaidArraysResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -799,7 +806,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<GetHostnameSuggestionRequest> request = null;
-        GetHostnameSuggestionResult response = null;
+        Response<GetHostnameSuggestionResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -812,7 +819,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<GetHostnameSuggestionResult, JsonUnmarshallerContext> unmarshaller = new GetHostnameSuggestionResultJsonUnmarshaller();
             JsonResponseHandler<GetHostnameSuggestionResult> responseHandler = new JsonResponseHandler<GetHostnameSuggestionResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -836,6 +844,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * @param setLoadBasedAutoScalingRequest Container for the necessary
      *           parameters to execute the SetLoadBasedAutoScaling service method on
      *           AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -894,7 +903,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeVolumesRequest> request = null;
-        DescribeVolumesResult response = null;
+        Response<DescribeVolumesResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -907,7 +916,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<DescribeVolumesResult, JsonUnmarshallerContext> unmarshaller = new DescribeVolumesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeVolumesResult> responseHandler = new JsonResponseHandler<DescribeVolumesResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -925,6 +935,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param assignVolumeRequest Container for the necessary parameters to
      *           execute the AssignVolume service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -981,7 +992,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeServiceErrorsRequest> request = null;
-        DescribeServiceErrorsResult response = null;
+        Response<DescribeServiceErrorsResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -994,7 +1005,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<DescribeServiceErrorsResult, JsonUnmarshallerContext> unmarshaller = new DescribeServiceErrorsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeServiceErrorsResult> responseHandler = new JsonResponseHandler<DescribeServiceErrorsResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1008,6 +1020,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param updateLayerRequest Container for the necessary parameters to
      *           execute the UpdateLayer service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -1047,6 +1060,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * @param updateElasticIpRequest Container for the necessary parameters
      *           to execute the UpdateElasticIp service method on AWSOpsWorks.
      * 
+     * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
      *
@@ -1083,6 +1097,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param startInstanceRequest Container for the necessary parameters to
      *           execute the StartInstance service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -1148,7 +1163,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateLayerRequest> request = null;
-        CreateLayerResult response = null;
+        Response<CreateLayerResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1161,7 +1176,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<CreateLayerResult, JsonUnmarshallerContext> unmarshaller = new CreateLayerResultJsonUnmarshaller();
             JsonResponseHandler<CreateLayerResult> responseHandler = new JsonResponseHandler<CreateLayerResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1179,6 +1195,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * @param disassociateElasticIpRequest Container for the necessary
      *           parameters to execute the DisassociateElasticIp service method on
      *           AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -1218,6 +1235,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * @param deleteStackRequest Container for the necessary parameters to
      *           execute the DeleteStack service method on AWSOpsWorks.
      * 
+     * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
      *
@@ -1252,6 +1270,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param startStackRequest Container for the necessary parameters to
      *           execute the StartStack service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -1312,7 +1331,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RegisterVolumeRequest> request = null;
-        RegisterVolumeResult response = null;
+        Response<RegisterVolumeResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1325,7 +1344,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<RegisterVolumeResult, JsonUnmarshallerContext> unmarshaller = new RegisterVolumeResultJsonUnmarshaller();
             JsonResponseHandler<RegisterVolumeResult> responseHandler = new JsonResponseHandler<RegisterVolumeResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1339,6 +1359,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param updateUserProfileRequest Container for the necessary parameters
      *           to execute the UpdateUserProfile service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -1395,7 +1416,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateStackRequest> request = null;
-        CreateStackResult response = null;
+        Response<CreateStackResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1408,7 +1429,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<CreateStackResult, JsonUnmarshallerContext> unmarshaller = new CreateStackResultJsonUnmarshaller();
             JsonResponseHandler<CreateStackResult> responseHandler = new JsonResponseHandler<CreateStackResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1424,6 +1446,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param rebootInstanceRequest Container for the necessary parameters to
      *           execute the RebootInstance service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -1481,7 +1504,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateInstanceRequest> request = null;
-        CreateInstanceResult response = null;
+        Response<CreateInstanceResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1494,7 +1517,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<CreateInstanceResult, JsonUnmarshallerContext> unmarshaller = new CreateInstanceResultJsonUnmarshaller();
             JsonResponseHandler<CreateInstanceResult> responseHandler = new JsonResponseHandler<CreateInstanceResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1508,6 +1532,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param deleteAppRequest Container for the necessary parameters to
      *           execute the DeleteApp service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -1547,6 +1572,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * @param deregisterElasticIpRequest Container for the necessary
      *           parameters to execute the DeregisterElasticIp service method on
      *           AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -1589,6 +1615,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *           parameters to execute the AttachElasticLoadBalancer service method on
      *           AWSOpsWorks.
      * 
+     * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
      *
@@ -1623,6 +1650,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param updateStackRequest Container for the necessary parameters to
      *           execute the UpdateStack service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -1677,7 +1705,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateUserProfileRequest> request = null;
-        CreateUserProfileResult response = null;
+        Response<CreateUserProfileResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1690,7 +1718,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<CreateUserProfileResult, JsonUnmarshallerContext> unmarshaller = new CreateUserProfileResultJsonUnmarshaller();
             JsonResponseHandler<CreateUserProfileResult> responseHandler = new JsonResponseHandler<CreateUserProfileResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1727,7 +1756,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeLayersRequest> request = null;
-        DescribeLayersResult response = null;
+        Response<DescribeLayersResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1740,7 +1769,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<DescribeLayersResult, JsonUnmarshallerContext> unmarshaller = new DescribeLayersResultJsonUnmarshaller();
             JsonResponseHandler<DescribeLayersResult> responseHandler = new JsonResponseHandler<DescribeLayersResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1778,7 +1808,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeLoadBasedAutoScalingRequest> request = null;
-        DescribeLoadBasedAutoScalingResult response = null;
+        Response<DescribeLoadBasedAutoScalingResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1791,7 +1821,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<DescribeLoadBasedAutoScalingResult, JsonUnmarshallerContext> unmarshaller = new DescribeLoadBasedAutoScalingResultJsonUnmarshaller();
             JsonResponseHandler<DescribeLoadBasedAutoScalingResult> responseHandler = new JsonResponseHandler<DescribeLoadBasedAutoScalingResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1829,7 +1860,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeElasticLoadBalancersRequest> request = null;
-        DescribeElasticLoadBalancersResult response = null;
+        Response<DescribeElasticLoadBalancersResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1842,7 +1873,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<DescribeElasticLoadBalancersResult, JsonUnmarshallerContext> unmarshaller = new DescribeElasticLoadBalancersResultJsonUnmarshaller();
             JsonResponseHandler<DescribeElasticLoadBalancersResult> responseHandler = new JsonResponseHandler<DescribeElasticLoadBalancersResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1859,6 +1891,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param deleteLayerRequest Container for the necessary parameters to
      *           execute the DeleteLayer service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -1898,6 +1931,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * @param setTimeBasedAutoScalingRequest Container for the necessary
      *           parameters to execute the SetTimeBasedAutoScaling service method on
      *           AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -1955,7 +1989,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateAppRequest> request = null;
-        CreateAppResult response = null;
+        Response<CreateAppResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -1968,7 +2002,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<CreateAppResult, JsonUnmarshallerContext> unmarshaller = new CreateAppResultJsonUnmarshaller();
             JsonResponseHandler<CreateAppResult> responseHandler = new JsonResponseHandler<CreateAppResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -1982,6 +2017,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param deleteUserProfileRequest Container for the necessary parameters
      *           to execute the DeleteUserProfile service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -2042,7 +2078,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeTimeBasedAutoScalingRequest> request = null;
-        DescribeTimeBasedAutoScalingResult response = null;
+        Response<DescribeTimeBasedAutoScalingResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -2055,7 +2091,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<DescribeTimeBasedAutoScalingResult, JsonUnmarshallerContext> unmarshaller = new DescribeTimeBasedAutoScalingResultJsonUnmarshaller();
             JsonResponseHandler<DescribeTimeBasedAutoScalingResult> responseHandler = new JsonResponseHandler<DescribeTimeBasedAutoScalingResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2072,6 +2109,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param updateVolumeRequest Container for the necessary parameters to
      *           execute the UpdateVolume service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -2128,7 +2166,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeUserProfilesRequest> request = null;
-        DescribeUserProfilesResult response = null;
+        Response<DescribeUserProfilesResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -2141,7 +2179,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<DescribeUserProfilesResult, JsonUnmarshallerContext> unmarshaller = new DescribeUserProfilesResultJsonUnmarshaller();
             JsonResponseHandler<DescribeUserProfilesResult> responseHandler = new JsonResponseHandler<DescribeUserProfilesResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2155,6 +2194,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param updateInstanceRequest Container for the necessary parameters to
      *           execute the UpdateInstance service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -2214,7 +2254,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeDeploymentsRequest> request = null;
-        DescribeDeploymentsResult response = null;
+        Response<DescribeDeploymentsResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -2227,7 +2267,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<DescribeDeploymentsResult, JsonUnmarshallerContext> unmarshaller = new DescribeDeploymentsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeDeploymentsResult> responseHandler = new JsonResponseHandler<DescribeDeploymentsResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2266,7 +2307,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RegisterElasticIpRequest> request = null;
-        RegisterElasticIpResult response = null;
+        Response<RegisterElasticIpResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -2279,7 +2320,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<RegisterElasticIpResult, JsonUnmarshallerContext> unmarshaller = new RegisterElasticIpResultJsonUnmarshaller();
             JsonResponseHandler<RegisterElasticIpResult> responseHandler = new JsonResponseHandler<RegisterElasticIpResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2319,7 +2361,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeElasticIpsRequest> request = null;
-        DescribeElasticIpsResult response = null;
+        Response<DescribeElasticIpsResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -2332,7 +2374,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<DescribeElasticIpsResult, JsonUnmarshallerContext> unmarshaller = new DescribeElasticIpsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeElasticIpsResult> responseHandler = new JsonResponseHandler<DescribeElasticIpsResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2366,7 +2409,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeStacksRequest> request = null;
-        DescribeStacksResult response = null;
+        Response<DescribeStacksResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -2379,7 +2422,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<DescribeStacksResult, JsonUnmarshallerContext> unmarshaller = new DescribeStacksResultJsonUnmarshaller();
             JsonResponseHandler<DescribeStacksResult> responseHandler = new JsonResponseHandler<DescribeStacksResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2416,7 +2460,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeAppsRequest> request = null;
-        DescribeAppsResult response = null;
+        Response<DescribeAppsResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -2429,7 +2473,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<DescribeAppsResult, JsonUnmarshallerContext> unmarshaller = new DescribeAppsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeAppsResult> responseHandler = new JsonResponseHandler<DescribeAppsResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -2443,6 +2488,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param stopStackRequest Container for the necessary parameters to
      *           execute the StopStack service method on AWSOpsWorks.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -2514,7 +2560,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateDeploymentRequest> request = null;
-        CreateDeploymentResult response = null;
+        Response<CreateDeploymentResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
@@ -2527,54 +2573,29 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             Unmarshaller<CreateDeploymentResult, JsonUnmarshallerContext> unmarshaller = new CreateDeploymentResultJsonUnmarshaller();
             JsonResponseHandler<CreateDeploymentResult> responseHandler = new JsonResponseHandler<CreateDeploymentResult>(unmarshaller);
             
-            return response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
    
-    /**
-     * Overrides the default endpoint for this client ("https://opsworks.us-east-1.amazonaws.com") and explicitly provides
-     * an AWS region ID and AWS service name to use when the client calculates a signature
-     * for requests.  In almost all cases, this region ID and service name
-     * are automatically determined from the endpoint, and callers should use the simpler
-     * one-argument form of setEndpoint instead of this method.
-     * <p>
-     * <b>This method is not threadsafe. Endpoints should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit.</b>
-     * <p>
-     * Callers can pass in just the endpoint (ex: "opsworks.us-east-1.amazonaws.com") or a full
-     * URL, including the protocol (ex: "https://opsworks.us-east-1.amazonaws.com"). If the
-     * protocol is not specified here, the default protocol from this client's
-     * {@link ClientConfiguration} will be used, which by default is HTTPS.
-     * <p>
-     * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
-     *
-     * @param endpoint
-     *            The endpoint (ex: "opsworks.us-east-1.amazonaws.com") or a full URL,
-     *            including the protocol (ex: "https://opsworks.us-east-1.amazonaws.com") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     * @param serviceName
-     *            The name of the AWS service to use when signing requests.
-     * @param regionId
-     *            The ID of the region in which this service resides.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
-     * @see AmazonDynamoDB#setRegion(Region)
-     */
-    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
-        setEndpoint(endpoint);
-        signer.setServiceName(serviceName);
-        signer.setRegionName(regionId);
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        super.setEndpoint(endpoint);
+
+        
     }
+
+    @Override
+    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
+        super.setEndpoint(endpoint, serviceName, regionId);
+
+        
+    }
+
     
     @Override
     protected String getServiceAbbreviation() {
@@ -2602,7 +2623,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
@@ -2622,11 +2643,11 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(signer);
+        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
 
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
-        X result = (X) client.execute(request, responseHandler,
+        Response<X> result = client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);
         awsRequestMetrics.log();
         return result;

@@ -38,7 +38,7 @@ public class DescribeDBEngineVersionsRequestMarshaller implements Marshaller<Req
 
         Request<DescribeDBEngineVersionsRequest> request = new DefaultRequest<DescribeDBEngineVersionsRequest>(describeDBEngineVersionsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBEngineVersions");
-        request.addParameter("Version", "2013-05-15");
+        request.addParameter("Version", "2013-09-09");
 
         if (describeDBEngineVersionsRequest.getEngine() != null) {
             request.addParameter("Engine", StringUtils.fromString(describeDBEngineVersionsRequest.getEngine()));

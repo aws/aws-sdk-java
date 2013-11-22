@@ -36,7 +36,7 @@ public class DBInstanceStatusInfo implements Serializable {
     private Boolean normal;
 
     /**
-     * Status of the DB instance. For a StatusType of Read Replica, the
+     * Status of the DB instance. For a StatusType of read replica, the
      * values can be replicating, error, stopped, or terminated.
      */
     private String status;
@@ -131,10 +131,10 @@ public class DBInstanceStatusInfo implements Serializable {
     }
 
     /**
-     * Status of the DB instance. For a StatusType of Read Replica, the
+     * Status of the DB instance. For a StatusType of read replica, the
      * values can be replicating, error, stopped, or terminated.
      *
-     * @return Status of the DB instance. For a StatusType of Read Replica, the
+     * @return Status of the DB instance. For a StatusType of read replica, the
      *         values can be replicating, error, stopped, or terminated.
      */
     public String getStatus() {
@@ -142,10 +142,10 @@ public class DBInstanceStatusInfo implements Serializable {
     }
     
     /**
-     * Status of the DB instance. For a StatusType of Read Replica, the
+     * Status of the DB instance. For a StatusType of read replica, the
      * values can be replicating, error, stopped, or terminated.
      *
-     * @param status Status of the DB instance. For a StatusType of Read Replica, the
+     * @param status Status of the DB instance. For a StatusType of read replica, the
      *         values can be replicating, error, stopped, or terminated.
      */
     public void setStatus(String status) {
@@ -153,12 +153,12 @@ public class DBInstanceStatusInfo implements Serializable {
     }
     
     /**
-     * Status of the DB instance. For a StatusType of Read Replica, the
+     * Status of the DB instance. For a StatusType of read replica, the
      * values can be replicating, error, stopped, or terminated.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status Status of the DB instance. For a StatusType of Read Replica, the
+     * @param status Status of the DB instance. For a StatusType of read replica, the
      *         values can be replicating, error, stopped, or terminated.
      *
      * @return A reference to this updated object so that method calls can be chained 

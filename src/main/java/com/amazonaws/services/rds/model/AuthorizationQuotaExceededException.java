@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Database security group authorization quota has been reached.
+ * DB security group authorization quota has been reached.
  * </p>
  */        
 public class AuthorizationQuotaExceededException extends AmazonServiceException {

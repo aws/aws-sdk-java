@@ -91,6 +91,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
 
+    private String virtualizationType;
+
+    private String sriovNetSupport;
+
     /**
      * Default constructor for a new RegisterImageRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
@@ -520,6 +524,72 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
+     * Returns the value of the VirtualizationType property for this object.
+     *
+     * @return The value of the VirtualizationType property for this object.
+     */
+    public String getVirtualizationType() {
+        return virtualizationType;
+    }
+    
+    /**
+     * Sets the value of the VirtualizationType property for this object.
+     *
+     * @param virtualizationType The new value for the VirtualizationType property for this object.
+     */
+    public void setVirtualizationType(String virtualizationType) {
+        this.virtualizationType = virtualizationType;
+    }
+    
+    /**
+     * Sets the value of the VirtualizationType property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param virtualizationType The new value for the VirtualizationType property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public RegisterImageRequest withVirtualizationType(String virtualizationType) {
+        this.virtualizationType = virtualizationType;
+        return this;
+    }
+
+    /**
+     * Returns the value of the SriovNetSupport property for this object.
+     *
+     * @return The value of the SriovNetSupport property for this object.
+     */
+    public String getSriovNetSupport() {
+        return sriovNetSupport;
+    }
+    
+    /**
+     * Sets the value of the SriovNetSupport property for this object.
+     *
+     * @param sriovNetSupport The new value for the SriovNetSupport property for this object.
+     */
+    public void setSriovNetSupport(String sriovNetSupport) {
+        this.sriovNetSupport = sriovNetSupport;
+    }
+    
+    /**
+     * Sets the value of the SriovNetSupport property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param sriovNetSupport The new value for the SriovNetSupport property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public RegisterImageRequest withSriovNetSupport(String sriovNetSupport) {
+        this.sriovNetSupport = sriovNetSupport;
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to
      * enable operation dry-run.
@@ -550,7 +620,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");
         if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");
         if (getRootDeviceName() != null) sb.append("RootDeviceName: " + getRootDeviceName() + ",");
-        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() );
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+        if (getVirtualizationType() != null) sb.append("VirtualizationType: " + getVirtualizationType() + ",");
+        if (getSriovNetSupport() != null) sb.append("SriovNetSupport: " + getSriovNetSupport() );
         sb.append("}");
         return sb.toString();
     }
@@ -568,6 +640,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode()); 
         hashCode = prime * hashCode + ((getRootDeviceName() == null) ? 0 : getRootDeviceName().hashCode()); 
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
+        hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode()); 
+        hashCode = prime * hashCode + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport().hashCode()); 
         return hashCode;
     }
     
@@ -595,6 +669,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         if (other.getRootDeviceName() != null && other.getRootDeviceName().equals(this.getRootDeviceName()) == false) return false; 
         if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null) return false;
         if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false) return false; 
+        if (other.getVirtualizationType() == null ^ this.getVirtualizationType() == null) return false;
+        if (other.getVirtualizationType() != null && other.getVirtualizationType().equals(this.getVirtualizationType()) == false) return false; 
+        if (other.getSriovNetSupport() == null ^ this.getSriovNetSupport() == null) return false;
+        if (other.getSriovNetSupport() != null && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false) return false; 
         return true;
     }
     

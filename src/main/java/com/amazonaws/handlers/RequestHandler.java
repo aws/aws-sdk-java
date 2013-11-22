@@ -18,10 +18,13 @@ import com.amazonaws.Request;
 import com.amazonaws.util.TimingInfo;
 
 /**
+ * @deprecated by {@link RequestHandler2}.
+ *  
  * Interface for addition request handling in clients. A request handler is
  * executed on a request object <b>before</b> it is sent to the client runtime
  * to be executed.
  */
+@Deprecated
 public interface RequestHandler {
 
     /**

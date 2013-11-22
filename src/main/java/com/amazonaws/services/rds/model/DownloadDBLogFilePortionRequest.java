@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The customer-assigned name of the DB Instance that contains the log
+     * The customer-assigned name of the DB instance that contains the log
      * files you want to list. <p>Constraints: <ul> <li>Must contain from 1
      * to 63 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -55,13 +55,13 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
     private Integer numberOfLines;
 
     /**
-     * The customer-assigned name of the DB Instance that contains the log
+     * The customer-assigned name of the DB instance that contains the log
      * files you want to list. <p>Constraints: <ul> <li>Must contain from 1
      * to 63 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul>
      *
-     * @return The customer-assigned name of the DB Instance that contains the log
+     * @return The customer-assigned name of the DB instance that contains the log
      *         files you want to list. <p>Constraints: <ul> <li>Must contain from 1
      *         to 63 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -72,13 +72,13 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * The customer-assigned name of the DB Instance that contains the log
+     * The customer-assigned name of the DB instance that contains the log
      * files you want to list. <p>Constraints: <ul> <li>Must contain from 1
      * to 63 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul>
      *
-     * @param dBInstanceIdentifier The customer-assigned name of the DB Instance that contains the log
+     * @param dBInstanceIdentifier The customer-assigned name of the DB instance that contains the log
      *         files you want to list. <p>Constraints: <ul> <li>Must contain from 1
      *         to 63 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -89,7 +89,7 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * The customer-assigned name of the DB Instance that contains the log
+     * The customer-assigned name of the DB instance that contains the log
      * files you want to list. <p>Constraints: <ul> <li>Must contain from 1
      * to 63 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
@@ -97,7 +97,7 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceIdentifier The customer-assigned name of the DB Instance that contains the log
+     * @param dBInstanceIdentifier The customer-assigned name of the DB instance that contains the log
      *         files you want to list. <p>Constraints: <ul> <li>Must contain from 1
      *         to 63 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two

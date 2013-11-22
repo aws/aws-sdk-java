@@ -328,6 +328,7 @@ public interface DataPipeline {
      * @param setStatusRequest Container for the necessary parameters to
      *           execute the SetStatus service method on DataPipeline.
      * 
+     * 
      * @throws PipelineNotFoundException
      * @throws InternalServiceErrorException
      * @throws InvalidRequestException
@@ -360,6 +361,7 @@ public interface DataPipeline {
      *
      * @param deletePipelineRequest Container for the necessary parameters to
      *           execute the DeletePipeline service method on DataPipeline.
+     * 
      * 
      * @throws PipelineNotFoundException
      * @throws InternalServiceErrorException

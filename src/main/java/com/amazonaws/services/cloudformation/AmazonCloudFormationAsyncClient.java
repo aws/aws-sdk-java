@@ -297,6 +297,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         ValidateTemplate service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -330,6 +331,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         ValidateTemplate service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -369,6 +371,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeStacks service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -403,6 +406,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         DescribeStacks service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -450,6 +454,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         GetTemplate service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -492,6 +497,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         GetTemplate service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -531,6 +537,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         GetStackPolicy service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -565,6 +572,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         GetStackPolicy service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -608,6 +616,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         ListStacks service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -646,6 +655,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         ListStacks service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -690,6 +700,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateStack service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -729,6 +740,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         CreateStack service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -767,6 +779,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         SetStackPolicy service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -801,6 +814,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         SetStackPolicy service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -842,6 +856,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * @return A Java Future object containing the response from the
      *         EstimateTemplateCost service method, as returned by
      *         AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -879,6 +894,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * @return A Java Future object containing the response from the
      *         EstimateTemplateCost service method, as returned by
      *         AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -926,6 +942,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * @return A Java Future object containing the response from the
      *         DescribeStackEvents service method, as returned by
      *         AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -968,6 +985,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * @return A Java Future object containing the response from the
      *         DescribeStackEvents service method, as returned by
      *         AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1013,6 +1031,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * @return A Java Future object containing the response from the
      *         DescribeStackResource service method, as returned by
      *         AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1053,6 +1072,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * @return A Java Future object containing the response from the
      *         DescribeStackResource service method, as returned by
      *         AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1097,6 +1117,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         CancelUpdateStack service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1137,6 +1158,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         CancelUpdateStack service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1200,6 +1222,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         UpdateStack service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1259,6 +1282,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         UpdateStack service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1327,6 +1351,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * @return A Java Future object containing the response from the
      *         DescribeStackResources service method, as returned by
      *         AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1390,6 +1415,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * @return A Java Future object containing the response from the
      *         DescribeStackResources service method, as returned by
      *         AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1430,6 +1456,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteStack service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1466,6 +1493,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * 
      * @return A Java Future object containing the response from the
      *         DeleteStack service method, as returned by AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1509,6 +1537,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * @return A Java Future object containing the response from the
      *         ListStackResources service method, as returned by
      *         AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1548,6 +1577,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * @return A Java Future object containing the response from the
      *         ListStackResources service method, as returned by
      *         AmazonCloudFormation.
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

@@ -16,6 +16,7 @@ package com.amazonaws.services.simpledb;
 
 import org.w3c.dom.*;
 
+import java.net.*;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -24,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -62,11 +64,6 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
             = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
-
-    
-    /** AWS signer for authenticating requests. */
-    private QueryStringSigner signer;
-
 
     /**
      * Constructs a new client to invoke service methods on
@@ -206,14 +203,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new InvalidNumberValueTestsExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new LegacyErrorUnmarshaller());
-        setEndpoint("sdb.amazonaws.com");
-
-        signer = new QueryStringSigner();
-        
-
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("sdb.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/simpledb/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
+                "/com/amazonaws/services/simpledb/request.handler2s"));
     }
 
     
@@ -264,13 +260,14 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
         ExecutionContext executionContext = createExecutionContext(selectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<SelectRequest> request = null;
-        SelectResult response = null;
+        Response<SelectResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new SelectRequestMarshaller().marshall(selectRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new SelectResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new SelectResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -334,6 +331,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      *
      * @param putAttributesRequest Container for the necessary parameters to
      *           execute the PutAttributes service method on AmazonSimpleDB.
+     * 
      * 
      * @throws InvalidParameterValueException
      * @throws NumberDomainBytesExceededException
@@ -401,6 +399,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      *           parameters to execute the BatchDeleteAttributes service method on
      *           AmazonSimpleDB.
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -440,6 +439,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      *
      * @param deleteDomainRequest Container for the necessary parameters to
      *           execute the DeleteDomain service method on AmazonSimpleDB.
+     * 
      * 
      * @throws MissingParameterException
      *
@@ -489,6 +489,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      *
      * @param createDomainRequest Container for the necessary parameters to
      *           execute the CreateDomain service method on AmazonSimpleDB.
+     * 
      * 
      * @throws InvalidParameterValueException
      * @throws NumberDomainsExceededException
@@ -542,6 +543,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      *
      * @param deleteAttributesRequest Container for the necessary parameters
      *           to execute the DeleteAttributes service method on AmazonSimpleDB.
+     * 
      * 
      * @throws InvalidParameterValueException
      * @throws NoSuchDomainException
@@ -604,13 +606,14 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
         ExecutionContext executionContext = createExecutionContext(listDomainsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListDomainsRequest> request = null;
-        ListDomainsResult response = null;
+        Response<ListDomainsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new ListDomainsRequestMarshaller().marshall(listDomainsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new ListDomainsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListDomainsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -655,13 +658,14 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
         ExecutionContext executionContext = createExecutionContext(getAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetAttributesRequest> request = null;
-        GetAttributesResult response = null;
+        Response<GetAttributesResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new GetAttributesRequestMarshaller().marshall(getAttributesRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new GetAttributesResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetAttributesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -746,6 +750,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      *           parameters to execute the BatchPutAttributes service method on
      *           AmazonSimpleDB.
      * 
+     * 
      * @throws DuplicateItemNameException
      * @throws InvalidParameterValueException
      * @throws NumberDomainBytesExceededException
@@ -807,13 +812,14 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
         ExecutionContext executionContext = createExecutionContext(domainMetadataRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DomainMetadataRequest> request = null;
-        DomainMetadataResult response = null;
+        Response<DomainMetadataResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
             request = new DomainMetadataRequestMarshaller().marshall(domainMetadataRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            return response = invoke(request, new DomainMetadataResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DomainMetadataResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
@@ -879,7 +885,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
           return null;
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
             Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
             ExecutionContext executionContext)
     {
@@ -895,12 +901,12 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(signer);
+        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-        return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
+        return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }
         

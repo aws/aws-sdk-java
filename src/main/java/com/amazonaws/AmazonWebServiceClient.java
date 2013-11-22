@@ -22,7 +22,10 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import com.amazonaws.auth.Signer;
+import com.amazonaws.auth.SignerFactory;
 import com.amazonaws.handlers.RequestHandler;
+import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.HttpMethodName;
@@ -33,6 +36,8 @@ import com.amazonaws.regions.Region;
 import com.amazonaws.regions.ServiceAbbreviations;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.util.AwsHostNameUtils;
+import com.amazonaws.util.Classes;
 
 /**
  * Abstract base class for Amazon Web Service Java clients.
@@ -41,6 +46,9 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
  * SDK Java clients (ex: setting the client endpoint).
  */
 public abstract class AmazonWebServiceClient {
+
+    private static final String AMAZON = "Amazon";
+    private static final String AWS = "AWS";
 
     /** The service endpoint to which this client will send requests. */
     protected URI endpoint;
@@ -52,10 +60,13 @@ public abstract class AmazonWebServiceClient {
     protected AmazonHttpClient client;
 
     /** Optional request handlers for additional request processing. */
-    protected final List<RequestHandler> requestHandlers;
+    protected final List<RequestHandler2> requestHandler2s;
     
     /** Optional offset (in seconds) to use when signing requests */
     protected int timeOffset;
+
+    /** AWS signer for authenticating requests. */
+    private Signer signer;
 
     /**
      * Constructs a new AmazonWebServiceClient object using the specified
@@ -82,8 +93,10 @@ public abstract class AmazonWebServiceClient {
             RequestMetricCollector requestMetricCollector) {
         this.clientConfiguration = clientConfiguration;
         client = new AmazonHttpClient(clientConfiguration, requestMetricCollector);
-        requestHandlers = new CopyOnWriteArrayList<RequestHandler>();
+        requestHandler2s = new CopyOnWriteArrayList<RequestHandler2>();
     }
+    
+    protected Signer getSigner() { return signer; }
 
     /**
      * Overrides the default endpoint for this client. Callers can use this
@@ -113,6 +126,12 @@ public abstract class AmazonWebServiceClient {
      *             If any problems are detected with the specified endpoint.
      */
     public void setEndpoint(String endpoint) throws IllegalArgumentException {
+        URI uri = configEndpoint(endpoint);
+        configSigner(uri);
+    }
+
+    /** Sets and returns the endpoint as a URI. */
+    private URI configEndpoint(String endpoint) throws IllegalArgumentException {
         /*
          * If the endpoint doesn't explicitly specify a protocol to use, then
          * we'll defer to the default protocol specified in the client
@@ -123,12 +142,69 @@ public abstract class AmazonWebServiceClient {
         }
 
         try {
-            this.endpoint = new URI(endpoint);
+            return this.endpoint = new URI(endpoint);
         } catch (URISyntaxException e) {
             throw new IllegalArgumentException(e);
         }
     }
-    
+
+    /**
+     * Overrides the default endpoint for this client ("http://dynamodb.us-east-1.amazonaws.com/") and explicitly provides
+     * an AWS region ID and AWS service name to use when the client calculates a signature
+     * for requests.  In almost all cases, this region ID and service name
+     * are automatically determined from the endpoint, and callers should use the simpler
+     * one-argument form of setEndpoint instead of this method.
+     * <p>
+     * <b>This method is not threadsafe. Endpoints should be configured when the
+     * client is created and before any service requests are made. Changing it
+     * afterwards creates inevitable race conditions for any service requests in
+     * transit.</b>
+     * <p>
+     * Callers can pass in just the endpoint (ex: "dynamodb.us-east-1.amazonaws.com/") or a full
+     * URL, including the protocol (ex: "http://dynamodb.us-east-1.amazonaws.com/"). If the
+     * protocol is not specified here, the default protocol from this client's
+     * {@link ClientConfiguration} will be used, which by default is HTTPS.
+     * <p>
+     * For more information on using AWS regions with the AWS SDK for Java, and
+     * a complete list of all available endpoints for all AWS services, see:
+     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
+     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     *
+     * @param endpoint
+     *            The endpoint (ex: "dynamodb.us-east-1.amazonaws.com/") or a full URL,
+     *            including the protocol (ex: "http://dynamodb.us-east-1.amazonaws.com/") of
+     *            the region specific AWS endpoint this client will communicate
+     *            with.
+     * @param serviceName
+     *            The name of the AWS service to use when signing requests.
+     * @param regionId
+     *            The ID of the region in which this service resides.
+     *
+     * @throws IllegalArgumentException
+     *             If any problems are detected with the specified endpoint.
+     * @see AmazonDynamoDB#setRegion(Region)
+     */
+    public void setEndpoint(String endpoint, String serviceName, String regionId) {
+        configEndpoint(endpoint);
+        configSigner(serviceName, regionId);
+    }
+
+    /**
+     * Configures the signer by the given URI.
+     */
+    protected void configSigner(URI uri) {
+        String region = AwsHostNameUtils.parseRegionName(uri);
+        String service = getServiceName();
+        signer = SignerFactory.getSigner(service, region);
+    }
+
+    /**
+     * Configures the signer by the given service and region.
+     */
+    protected void configSigner(String serviceName, String regionId) {
+        signer = SignerFactory.getSigner(serviceName, regionId);
+    }
+
     /**
      * An alternative to {@link AmazonWebServiceClient#setEndpoint(String)}, sets the
      * regional endpoint for this client's service calls. Callers can use this
@@ -228,6 +304,8 @@ public abstract class AmazonWebServiceClient {
     }
 
     /**
+     * @deprecated by {@link #addRequestHandler(RequestHandler2)}.
+     * 
      * Appends a request handler to the list of registered handlers that are run
      * as part of a request's lifecycle.
      *
@@ -235,8 +313,21 @@ public abstract class AmazonWebServiceClient {
      *            The new handler to add to the current list of request
      *            handlers.
      */
+    @Deprecated
     public void addRequestHandler(RequestHandler requestHandler) {
-    	requestHandlers.add(requestHandler);
+    	requestHandler2s.add(RequestHandler2.adapt(requestHandler));
+    }
+
+    /**
+     * Appends a request handler to the list of registered handlers that are run
+     * as part of a request's lifecycle.
+     *
+     * @param requestHandler2
+     *            The new handler to add to the current list of request
+     *            handlers.
+     */
+    public void addRequestHandler(RequestHandler2 requestHandler2) {
+        requestHandler2s.add(requestHandler2);
     }
 
     /**
@@ -248,12 +339,16 @@ public abstract class AmazonWebServiceClient {
      *            handlers.
      */
     public void removeRequestHandler(RequestHandler requestHandler) {
-        requestHandlers.remove(requestHandler);
+        requestHandler2s.remove(RequestHandler2.adapt(requestHandler));
+    }
+
+    public void removeRequestHandler(RequestHandler2 requestHandler2) {
+        requestHandler2s.remove(requestHandler2);
     }
 
     protected final ExecutionContext createExecutionContext(AmazonWebServiceRequest req) {
         boolean isMetricsEnabled = isRequestMetricsEnabled(req) || isProfilingEnabled();
-        return new ExecutionContext(requestHandlers, isMetricsEnabled);
+        return new ExecutionContext(requestHandler2s, isMetricsEnabled);
     }
 
     protected final ExecutionContext createExecutionContext(Request<?> req) {
@@ -274,7 +369,7 @@ public abstract class AmazonWebServiceClient {
     @Deprecated
     protected final ExecutionContext createExecutionContext() {
         boolean isMetricsEnabled = isRMCEnabledAtClientOrSdkLevel() || isProfilingEnabled();
-        return new ExecutionContext(requestHandlers, isMetricsEnabled);
+        return new ExecutionContext(requestHandler2s, isMetricsEnabled);
     }
 
     /* Check the profiling system property and return true if set */
@@ -382,12 +477,58 @@ public abstract class AmazonWebServiceClient {
      * in a try-finally block. 
      */
     protected final void endClientExecution(AWSRequestMetrics awsRequestMetrics,
-            Request<?> request, Object response) {
+            Request<?> request, Response<?> response) {
         if (request != null) {
             awsRequestMetrics.endEvent(Field.ClientExecuteTime);
             awsRequestMetrics.getTimingInfo().endTiming();
             RequestMetricCollector c = findRequestMetricCollector(request);
             c.collectMetrics(request, response);
         }
+    }
+
+    /**
+     * Returns the service name of this AWS http client by first looking it up
+     * from the SDK internal configuration, and if not found, derive it from the
+     * class name of the immediate subclass of {@link AmazonWebServiceClient}.
+     * No configuration is necessary if the simple class name of the http client
+     * follows the convention of <code>(Amazon|AWS).*(JavaClient|Client)</code>.
+     */
+    public String getServiceName() {
+        Class<?> httpClientClass = Classes.childClassOf(
+                AmazonWebServiceClient.class, this);
+        final String httpClientName = httpClientClass.getSimpleName();
+        String service = ServiceNameFactory.getServiceName(httpClientName);
+        if (service != null) {
+            return service; // only if it is so explicitly configured
+        }
+        // Otherwise, make use of convention over configuration
+        int j = httpClientName.indexOf("JavaClient");
+        if (j == -1) {
+            j = httpClientName.indexOf("Client");
+            if (j == -1) {
+                throw new IllegalStateException(
+                        "Unrecognized suffix for the AWS http client class name "
+                                + httpClientName);
+            }
+        }
+        int i = httpClientName.indexOf(AMAZON);
+        int len;
+        if (i == -1) {
+            i = httpClientName.indexOf(AWS);
+            if (i == -1) {
+                throw new IllegalStateException(
+                        "Unrecognized prefix for the AWS http client class name "
+                                + httpClientName);
+            }
+            len = AWS.length();
+        } else {
+            len = AMAZON.length();
+        }
+        if (i >= j) {
+            throw new IllegalStateException(
+                    "Unrecognized AWS http client class name " + httpClientName);
+        }
+        String serviceName = httpClientName.substring(i + len, j);
+        return serviceName.toLowerCase();
     }
 }

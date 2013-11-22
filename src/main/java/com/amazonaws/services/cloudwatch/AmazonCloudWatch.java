@@ -128,6 +128,7 @@ public interface AmazonCloudWatch {
      * @param putMetricAlarmRequest Container for the necessary parameters to
      *           execute the PutMetricAlarm service method on AmazonCloudWatch.
      * 
+     * 
      * @throws LimitExceededException
      *
      * @throws AmazonClientException
@@ -166,6 +167,7 @@ public interface AmazonCloudWatch {
      *
      * @param putMetricDataRequest Container for the necessary parameters to
      *           execute the PutMetricData service method on AmazonCloudWatch.
+     * 
      * 
      * @throws InvalidParameterValueException
      * @throws InternalServiceException
@@ -292,6 +294,7 @@ public interface AmazonCloudWatch {
      *           parameters to execute the DisableAlarmActions service method on
      *           AmazonCloudWatch.
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -396,6 +399,7 @@ public interface AmazonCloudWatch {
      *           parameters to execute the EnableAlarmActions service method on
      *           AmazonCloudWatch.
      * 
+     * 
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -416,6 +420,7 @@ public interface AmazonCloudWatch {
      *
      * @param deleteAlarmsRequest Container for the necessary parameters to
      *           execute the DeleteAlarms service method on AmazonCloudWatch.
+     * 
      * 
      * @throws ResourceNotFoundException
      *
@@ -441,6 +446,7 @@ public interface AmazonCloudWatch {
      *
      * @param setAlarmStateRequest Container for the necessary parameters to
      *           execute the SetAlarmState service method on AmazonCloudWatch.
+     * 
      * 
      * @throws ResourceNotFoundException
      * @throws InvalidFormatException

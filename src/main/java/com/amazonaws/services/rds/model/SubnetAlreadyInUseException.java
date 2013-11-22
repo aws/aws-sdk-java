@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The DB subnet is already in use in the availability zone.
+ * The DB subnet is already in use in the Availability Zone.
  * </p>
  */        
 public class SubnetAlreadyInUseException extends AmazonServiceException {
