@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -42,7 +42,7 @@ import com.amazonaws.services.route53.model.transform.*;
  * using this client are blocking, and will not return until the service call
  * completes.
  * <p>
- * 
+ *
  */
 public class AmazonRoute53Client extends AmazonWebServiceClient implements AmazonRoute53 {
 
@@ -55,7 +55,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
             = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
 
-    
+
     /** AWS signer for authenticating requests. */
     private AWS3Signer signer;
 
@@ -193,19 +193,19 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         exceptionUnmarshallers.add(new NoSuchHostedZoneExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchHealthCheckExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PriorRequestNotCompleteExceptionUnmarshaller());
-        
+
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
         setEndpoint("route53.amazonaws.com");
 
         signer = new AWS3Signer();
-        
+
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/route53/request.handlers"));
     }
 
-    
+
     /**
      * <p>
      * Imagine all the resource record sets in a zone listed out in front of
@@ -215,7 +215,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * MaxItems resource record sets from this list, in order, starting at a
      * position specified by the Name and Type arguments:
      * </p>
-     * 
+     *
      * <ul>
      * <li>If both Name and Type are omitted, this means start the results
      * at the first RRSET in the HostedZone.</li>
@@ -226,7 +226,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * at the first RRSET in the list whose name is greater than or equal to
      * Name and whose type is greater than or equal to Type.</li>
      * <li>It is an error to specify the Type but not the Name.</li>
-     * 
+     *
      * </ul>
      * <p>
      * Use ListResourceRecordSets to retrieve a single known record set by
@@ -264,10 +264,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @param listResourceRecordSetsRequest Container for the necessary
      *           parameters to execute the ListResourceRecordSets service method on
      *           AmazonRoute53.
-     * 
+     *
      * @return The response from the ListResourceRecordSets service method,
      *         as returned by AmazonRoute53.
-     * 
+     *
      * @throws InvalidInputException
      * @throws NoSuchHostedZoneException
      *
@@ -279,12 +279,15 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListResourceRecordSetsResult listResourceRecordSets(ListResourceRecordSetsRequest listResourceRecordSetsRequest) 
+    public ListResourceRecordSetsResult listResourceRecordSets(ListResourceRecordSetsRequest listResourceRecordSetsRequest)
             throws AmazonServiceException, AmazonClientException {
+    	if(super.getVersion() != null){
+    		listResourceRecordSetsRequest.setVersion(super.getVersion());
+    	}
         Request<ListResourceRecordSetsRequest> request = new ListResourceRecordSetsRequestMarshaller().marshall(listResourceRecordSetsRequest);
         return invoke(request, new ListResourceRecordSetsResultStaxUnmarshaller());
     }
-    
+
     /**
      * <p>
      * Use this action to create or change your authoritative DNS
@@ -334,10 +337,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @param changeResourceRecordSetsRequest Container for the necessary
      *           parameters to execute the ChangeResourceRecordSets service method on
      *           AmazonRoute53.
-     * 
+     *
      * @return The response from the ChangeResourceRecordSets service method,
      *         as returned by AmazonRoute53.
-     * 
+     *
      * @throws InvalidInputException
      * @throws NoSuchHostedZoneException
      * @throws InvalidChangeBatchException
@@ -352,12 +355,15 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ChangeResourceRecordSetsResult changeResourceRecordSets(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest) 
+    public ChangeResourceRecordSetsResult changeResourceRecordSets(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest)
             throws AmazonServiceException, AmazonClientException {
+    	if(super.getVersion() != null){
+    		changeResourceRecordSetsRequest.setVersion(super.getVersion());
+    	}
         Request<ChangeResourceRecordSetsRequest> request = new ChangeResourceRecordSetsRequestMarshaller().marshall(changeResourceRecordSetsRequest);
         return invoke(request, new ChangeResourceRecordSetsResultStaxUnmarshaller());
     }
-    
+
     /**
      * <p>
      * This action creates a new hosted zone.
@@ -388,10 +394,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *
      * @param createHostedZoneRequest Container for the necessary parameters
      *           to execute the CreateHostedZone service method on AmazonRoute53.
-     * 
+     *
      * @return The response from the CreateHostedZone service method, as
      *         returned by AmazonRoute53.
-     * 
+     *
      * @throws HostedZoneAlreadyExistsException
      * @throws InvalidInputException
      * @throws InvalidDomainNameException
@@ -406,12 +412,15 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateHostedZoneResult createHostedZone(CreateHostedZoneRequest createHostedZoneRequest) 
+    public CreateHostedZoneResult createHostedZone(CreateHostedZoneRequest createHostedZoneRequest)
             throws AmazonServiceException, AmazonClientException {
+    	if(super.getVersion() != null){
+    		createHostedZoneRequest.setVersion(super.getVersion());
+    	}
         Request<CreateHostedZoneRequest> request = new CreateHostedZoneRequestMarshaller().marshall(createHostedZoneRequest);
         return invoke(request, new CreateHostedZoneResultStaxUnmarshaller());
     }
-    
+
     /**
      * <p>
      * To retrieve the health check, send a <code>GET</code> request to the
@@ -420,10 +429,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *
      * @param getHealthCheckRequest Container for the necessary parameters to
      *           execute the GetHealthCheck service method on AmazonRoute53.
-     * 
+     *
      * @return The response from the GetHealthCheck service method, as
      *         returned by AmazonRoute53.
-     * 
+     *
      * @throws InvalidInputException
      * @throws NoSuchHealthCheckException
      *
@@ -435,12 +444,15 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetHealthCheckResult getHealthCheck(GetHealthCheckRequest getHealthCheckRequest) 
+    public GetHealthCheckResult getHealthCheck(GetHealthCheckRequest getHealthCheckRequest)
             throws AmazonServiceException, AmazonClientException {
+    	if(super.getVersion() != null){
+    		getHealthCheckRequest.setVersion(super.getVersion());
+    	}
         Request<GetHealthCheckRequest> request = new GetHealthCheckRequestMarshaller().marshall(getHealthCheckRequest);
         return invoke(request, new GetHealthCheckResultStaxUnmarshaller());
     }
-    
+
     /**
      * <p>
      * This action creates a new health check.
@@ -456,10 +468,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *
      * @param createHealthCheckRequest Container for the necessary parameters
      *           to execute the CreateHealthCheck service method on AmazonRoute53.
-     * 
+     *
      * @return The response from the CreateHealthCheck service method, as
      *         returned by AmazonRoute53.
-     * 
+     *
      * @throws InvalidInputException
      * @throws HealthCheckAlreadyExistsException
      * @throws TooManyHealthChecksException
@@ -472,12 +484,15 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateHealthCheckResult createHealthCheck(CreateHealthCheckRequest createHealthCheckRequest) 
+    public CreateHealthCheckResult createHealthCheck(CreateHealthCheckRequest createHealthCheckRequest)
             throws AmazonServiceException, AmazonClientException {
+    	if(super.getVersion() != null){
+    		createHealthCheckRequest.setVersion(super.getVersion());
+    	}
         Request<CreateHealthCheckRequest> request = new CreateHealthCheckRequestMarshaller().marshall(createHealthCheckRequest);
         return invoke(request, new CreateHealthCheckResultStaxUnmarshaller());
     }
-    
+
     /**
      * <p>
      * This action returns the current status of a change batch request. The
@@ -495,10 +510,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *
      * @param getChangeRequest Container for the necessary parameters to
      *           execute the GetChange service method on AmazonRoute53.
-     * 
+     *
      * @return The response from the GetChange service method, as returned by
      *         AmazonRoute53.
-     * 
+     *
      * @throws NoSuchChangeException
      * @throws InvalidInputException
      *
@@ -510,12 +525,15 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetChangeResult getChange(GetChangeRequest getChangeRequest) 
+    public GetChangeResult getChange(GetChangeRequest getChangeRequest)
             throws AmazonServiceException, AmazonClientException {
+    	if(super.getVersion() != null){
+    		getChangeRequest.setVersion(super.getVersion());
+    	}
         Request<GetChangeRequest> request = new GetChangeRequestMarshaller().marshall(getChangeRequest);
         return invoke(request, new GetChangeResultStaxUnmarshaller());
     }
-    
+
     /**
      * <p>
      * This action deletes a health check. To delete a health check, send a
@@ -535,10 +553,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *
      * @param deleteHealthCheckRequest Container for the necessary parameters
      *           to execute the DeleteHealthCheck service method on AmazonRoute53.
-     * 
+     *
      * @return The response from the DeleteHealthCheck service method, as
      *         returned by AmazonRoute53.
-     * 
+     *
      * @throws InvalidInputException
      * @throws HealthCheckInUseException
      * @throws NoSuchHealthCheckException
@@ -551,12 +569,15 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeleteHealthCheckResult deleteHealthCheck(DeleteHealthCheckRequest deleteHealthCheckRequest) 
+    public DeleteHealthCheckResult deleteHealthCheck(DeleteHealthCheckRequest deleteHealthCheckRequest)
             throws AmazonServiceException, AmazonClientException {
+    	if(super.getVersion() != null){
+    		deleteHealthCheckRequest.setVersion(super.getVersion());
+    	}
         Request<DeleteHealthCheckRequest> request = new DeleteHealthCheckRequestMarshaller().marshall(deleteHealthCheckRequest);
         return invoke(request, new DeleteHealthCheckResultStaxUnmarshaller());
     }
-    
+
     /**
      * <p>
      * To retrieve the delegation set for a hosted zone, send a
@@ -567,10 +588,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *
      * @param getHostedZoneRequest Container for the necessary parameters to
      *           execute the GetHostedZone service method on AmazonRoute53.
-     * 
+     *
      * @return The response from the GetHostedZone service method, as
      *         returned by AmazonRoute53.
-     * 
+     *
      * @throws InvalidInputException
      * @throws NoSuchHostedZoneException
      *
@@ -582,12 +603,15 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetHostedZoneResult getHostedZone(GetHostedZoneRequest getHostedZoneRequest) 
+    public GetHostedZoneResult getHostedZone(GetHostedZoneRequest getHostedZoneRequest)
             throws AmazonServiceException, AmazonClientException {
+    	if(super.getVersion() != null){
+    		getHostedZoneRequest.setVersion(super.getVersion());
+    	}
         Request<GetHostedZoneRequest> request = new GetHostedZoneRequestMarshaller().marshall(getHostedZoneRequest);
         return invoke(request, new GetHostedZoneResultStaxUnmarshaller());
     }
-    
+
     /**
      * <p>
      * To retrieve a list of your hosted zones, send a <code>GET</code>
@@ -607,10 +631,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *
      * @param listHostedZonesRequest Container for the necessary parameters
      *           to execute the ListHostedZones service method on AmazonRoute53.
-     * 
+     *
      * @return The response from the ListHostedZones service method, as
      *         returned by AmazonRoute53.
-     * 
+     *
      * @throws InvalidInputException
      *
      * @throws AmazonClientException
@@ -621,12 +645,15 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListHostedZonesResult listHostedZones(ListHostedZonesRequest listHostedZonesRequest) 
+    public ListHostedZonesResult listHostedZones(ListHostedZonesRequest listHostedZonesRequest)
             throws AmazonServiceException, AmazonClientException {
+    	if(super.getVersion() != null){
+    		listHostedZonesRequest.setVersion(super.getVersion());
+    	}
         Request<ListHostedZonesRequest> request = new ListHostedZonesRequestMarshaller().marshall(listHostedZonesRequest);
         return invoke(request, new ListHostedZonesResultStaxUnmarshaller());
     }
-    
+
     /**
      * <p>
      * This action deletes a hosted zone. To delete a hosted zone, send a
@@ -652,10 +679,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *
      * @param deleteHostedZoneRequest Container for the necessary parameters
      *           to execute the DeleteHostedZone service method on AmazonRoute53.
-     * 
+     *
      * @return The response from the DeleteHostedZone service method, as
      *         returned by AmazonRoute53.
-     * 
+     *
      * @throws HostedZoneNotEmptyException
      * @throws InvalidInputException
      * @throws NoSuchHostedZoneException
@@ -669,12 +696,15 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest deleteHostedZoneRequest) 
+    public DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest deleteHostedZoneRequest)
             throws AmazonServiceException, AmazonClientException {
+    	if(super.getVersion() != null){
+    		deleteHostedZoneRequest.setVersion(super.getVersion());
+    	}
         Request<DeleteHostedZoneRequest> request = new DeleteHostedZoneRequestMarshaller().marshall(deleteHostedZoneRequest);
         return invoke(request, new DeleteHostedZoneResultStaxUnmarshaller());
     }
-    
+
     /**
      * <p>
      * To retrieve a list of your health checks, send a <code>GET</code>
@@ -694,10 +724,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *
      * @param listHealthChecksRequest Container for the necessary parameters
      *           to execute the ListHealthChecks service method on AmazonRoute53.
-     * 
+     *
      * @return The response from the ListHealthChecks service method, as
      *         returned by AmazonRoute53.
-     * 
+     *
      * @throws InvalidInputException
      *
      * @throws AmazonClientException
@@ -708,12 +738,15 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListHealthChecksResult listHealthChecks(ListHealthChecksRequest listHealthChecksRequest) 
+    public ListHealthChecksResult listHealthChecks(ListHealthChecksRequest listHealthChecksRequest)
             throws AmazonServiceException, AmazonClientException {
+    	if(super.getVersion() != null){
+    		listHealthChecksRequest.setVersion(super.getVersion());
+    	}
         Request<ListHealthChecksRequest> request = new ListHealthChecksRequestMarshaller().marshall(listHealthChecksRequest);
         return invoke(request, new ListHealthChecksResultStaxUnmarshaller());
     }
-    
+
     /**
      * <p>
      * To retrieve a list of your hosted zones, send a <code>GET</code>
@@ -730,10 +763,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * set MaxItems to a value greater than 100, Amazon Route 53 returns only
      * the first 100.
      * </p>
-     * 
+     *
      * @return The response from the ListHostedZones service method, as
      *         returned by AmazonRoute53.
-     * 
+     *
      * @throws InvalidInputException
      *
      * @throws AmazonClientException
@@ -747,7 +780,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     public ListHostedZonesResult listHostedZones() throws AmazonServiceException, AmazonClientException {
         return listHostedZones(new ListHostedZonesRequest());
     }
-    
+
     /**
      * <p>
      * To retrieve a list of your health checks, send a <code>GET</code>
@@ -764,10 +797,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * set MaxItems to a value greater than 100, Amazon Route 53 returns only
      * the first 100.
      * </p>
-     * 
+     *
      * @return The response from the ListHealthChecks service method, as
      *         returned by AmazonRoute53.
-     * 
+     *
      * @throws InvalidInputException
      *
      * @throws AmazonClientException
@@ -781,12 +814,12 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     public ListHealthChecksResult listHealthChecks() throws AmazonServiceException, AmazonClientException {
         return listHealthChecks(new ListHealthChecksRequest());
     }
-    
+
     @Override
     protected String getServiceAbbreviation() {
         return "route53";
     }
-    
+
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for
@@ -824,11 +857,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         ExecutionContext executionContext = createExecutionContext();
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
-        
+
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }
-        

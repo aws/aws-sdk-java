@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -44,7 +44,13 @@ public class CreateHostedZoneRequestMarshaller implements Marshaller<Request<Cre
         Request<CreateHostedZoneRequest> request = new DefaultRequest<CreateHostedZoneRequest>(createHostedZoneRequest, "AmazonRoute53");
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2012-12-12/hostedzone"; 
+        String version = createHostedZoneRequest.getVersion();
+        if(version == null){
+            version = "2012-12-12";
+        }
+
+        String uriResourcePath = "/{Version}/hostedzone";
+        uriResourcePath = uriResourcePath.replace("{Version}", version);
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -62,12 +68,12 @@ public class CreateHostedZoneRequestMarshaller implements Marshaller<Request<Cre
 
         request.setResourcePath(uriResourcePath);
 
-        
+
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter, "https://route53.amazonaws.com/doc/2012-12-12/");
 
-            
-            
+
+
             xmlWriter.startElement("CreateHostedZoneRequest");
                     if (createHostedZoneRequest.getName() != null) {
             xmlWriter.startElement("Name").value(createHostedZoneRequest.getName()).endElement();
@@ -87,7 +93,7 @@ public class CreateHostedZoneRequestMarshaller implements Marshaller<Request<Cre
         }
 
             xmlWriter.endElement();
-            
+
 
             try {
                 request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
@@ -96,7 +102,7 @@ public class CreateHostedZoneRequestMarshaller implements Marshaller<Request<Cre
             } catch (UnsupportedEncodingException e) {
                 throw new AmazonClientException("Unable to marshall request to XML", e);
             }
-        
+
 
         return request;
     }

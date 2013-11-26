@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -80,18 +80,23 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
     private HostedZoneConfig hostedZoneConfig;
 
     /**
+     * Specify the api version that is used to endpoint.
+     */
+    private String version;
+
+    /**
      * Default constructor for a new CreateHostedZoneRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public CreateHostedZoneRequest() {}
-    
+
 
 
     /**
      * Constructs a new CreateHostedZoneRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     * 
+     *
      * @param name The name of the domain. This must be a fully-specified
      * domain, for example, www.example.com. The trailing dot is optional;
      * Route 53 assumes that the domain name is fully qualified. This means
@@ -116,8 +121,22 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
         setCallerReference(callerReference);
     }
 
-    
-    
+    /**
+     * Specify the api version.
+     *
+     * @return api version
+     */
+    public String getVersion(){
+        return version;
+    }
+    /**
+     * Specify the api version.
+     */
+    public void setVersion(String version){
+        this.version = version;
+    }
+
+
     /**
      * The name of the domain. This must be a fully-specified domain, for
      * example, www.example.com. The trailing dot is optional; Route 53
@@ -145,7 +164,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
     public String getName() {
         return name;
     }
-    
+
     /**
      * The name of the domain. This must be a fully-specified domain, for
      * example, www.example.com. The trailing dot is optional; Route 53
@@ -173,7 +192,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
      * The name of the domain. This must be a fully-specified domain, for
      * example, www.example.com. The trailing dot is optional; Route 53
@@ -200,15 +219,15 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
      *         the set of <code>NameServers</code> elements returned in
      *         <code>DelegationSet</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHostedZoneRequest withName(String name) {
         this.name = name;
         return this;
     }
-    
-    
+
+
     /**
      * A unique string that identifies the request and that allows failed
      * <code>CreateHostedZone</code> requests to be retried without the risk
@@ -236,7 +255,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
     public String getCallerReference() {
         return callerReference;
     }
-    
+
     /**
      * A unique string that identifies the request and that allows failed
      * <code>CreateHostedZone</code> requests to be retried without the risk
@@ -264,7 +283,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
     public void setCallerReference(String callerReference) {
         this.callerReference = callerReference;
     }
-    
+
     /**
      * A unique string that identifies the request and that allows failed
      * <code>CreateHostedZone</code> requests to be retried without the risk
@@ -291,15 +310,15 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
      *         points that are legal in an XML 1.0 document. The UTF-8 encoding of
      *         the value must be less than 128 bytes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHostedZoneRequest withCallerReference(String callerReference) {
         this.callerReference = callerReference;
         return this;
     }
-    
-    
+
+
     /**
      * A complex type that contains an optional comment about your hosted
      * zone.
@@ -310,7 +329,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
     public HostedZoneConfig getHostedZoneConfig() {
         return hostedZoneConfig;
     }
-    
+
     /**
      * A complex type that contains an optional comment about your hosted
      * zone.
@@ -321,7 +340,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
     public void setHostedZoneConfig(HostedZoneConfig hostedZoneConfig) {
         this.hostedZoneConfig = hostedZoneConfig;
     }
-    
+
     /**
      * A complex type that contains an optional comment about your hosted
      * zone.
@@ -331,15 +350,15 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
      * @param hostedZoneConfig A complex type that contains an optional comment about your hosted
      *         zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHostedZoneRequest withHostedZoneConfig(HostedZoneConfig hostedZoneConfig) {
         this.hostedZoneConfig = hostedZoneConfig;
         return this;
     }
-    
-    
+
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -358,18 +377,18 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
         sb.append("}");
         return sb.toString();
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
-        hashCode = prime * hashCode + ((getCallerReference() == null) ? 0 : getCallerReference().hashCode()); 
-        hashCode = prime * hashCode + ((getHostedZoneConfig() == null) ? 0 : getHostedZoneConfig().hashCode()); 
+
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getCallerReference() == null) ? 0 : getCallerReference().hashCode());
+        hashCode = prime * hashCode + ((getHostedZoneConfig() == null) ? 0 : getHostedZoneConfig().hashCode());
         return hashCode;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -377,15 +396,14 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
 
         if (obj instanceof CreateHostedZoneRequest == false) return false;
         CreateHostedZoneRequest other = (CreateHostedZoneRequest)obj;
-        
+
         if (other.getName() == null ^ this.getName() == null) return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
+        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false;
         if (other.getCallerReference() == null ^ this.getCallerReference() == null) return false;
-        if (other.getCallerReference() != null && other.getCallerReference().equals(this.getCallerReference()) == false) return false; 
+        if (other.getCallerReference() != null && other.getCallerReference().equals(this.getCallerReference()) == false) return false;
         if (other.getHostedZoneConfig() == null ^ this.getHostedZoneConfig() == null) return false;
-        if (other.getHostedZoneConfig() != null && other.getHostedZoneConfig().equals(this.getHostedZoneConfig()) == false) return false; 
+        if (other.getHostedZoneConfig() != null && other.getHostedZoneConfig().equals(this.getHostedZoneConfig()) == false) return false;
         return true;
     }
-    
+
 }
-    

@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -74,18 +74,23 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
     private ChangeBatch changeBatch;
 
     /**
+     * Specify the api version that is used to endpoint.
+     */
+    private String version;
+
+    /**
      * Default constructor for a new ChangeResourceRecordSetsRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public ChangeResourceRecordSetsRequest() {}
-    
+
 
 
     /**
      * Constructs a new ChangeResourceRecordSetsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     * 
+     *
      * @param hostedZoneId <i>Alias resource record sets only:</i> The value
      * of the hosted zone ID for the AWS resource. <p>For more information,
      * an example, and several ways to get the hosted zone ID for the
@@ -101,8 +106,23 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
         setChangeBatch(changeBatch);
     }
 
-    
-    
+
+    /**
+     * Specify the api version.
+     *
+     * @return api version
+     */
+    public String getVersion(){
+        return version;
+    }
+    /**
+     * Specify the api version.
+     */
+    public void setVersion(String version){
+        this.version = version;
+    }
+
+
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone
      * ID for the AWS resource. <p>For more information, an example, and
@@ -124,7 +144,7 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
     public String getHostedZoneId() {
         return hostedZoneId;
     }
-    
+
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone
      * ID for the AWS resource. <p>For more information, an example, and
@@ -146,7 +166,7 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
     public void setHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
     }
-    
+
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone
      * ID for the AWS resource. <p>For more information, an example, and
@@ -167,15 +187,15 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
      *         Alias Resource Record Sets for Elastic Load Balancing</a> in the
      *         <i>Amazon Route 53 Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeResourceRecordSetsRequest withHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
         return this;
     }
-    
-    
+
+
     /**
      * A complex type that contains an optional comment and the
      * <code>Changes</code> element.
@@ -186,7 +206,7 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
     public ChangeBatch getChangeBatch() {
         return changeBatch;
     }
-    
+
     /**
      * A complex type that contains an optional comment and the
      * <code>Changes</code> element.
@@ -197,7 +217,7 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
     public void setChangeBatch(ChangeBatch changeBatch) {
         this.changeBatch = changeBatch;
     }
-    
+
     /**
      * A complex type that contains an optional comment and the
      * <code>Changes</code> element.
@@ -207,15 +227,15 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
      * @param changeBatch A complex type that contains an optional comment and the
      *         <code>Changes</code> element.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeResourceRecordSetsRequest withChangeBatch(ChangeBatch changeBatch) {
         this.changeBatch = changeBatch;
         return this;
     }
-    
-    
+
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -233,17 +253,17 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
         sb.append("}");
         return sb.toString();
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getHostedZoneId() == null) ? 0 : getHostedZoneId().hashCode()); 
-        hashCode = prime * hashCode + ((getChangeBatch() == null) ? 0 : getChangeBatch().hashCode()); 
+
+        hashCode = prime * hashCode + ((getHostedZoneId() == null) ? 0 : getHostedZoneId().hashCode());
+        hashCode = prime * hashCode + ((getChangeBatch() == null) ? 0 : getChangeBatch().hashCode());
         return hashCode;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -251,13 +271,12 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
 
         if (obj instanceof ChangeResourceRecordSetsRequest == false) return false;
         ChangeResourceRecordSetsRequest other = (ChangeResourceRecordSetsRequest)obj;
-        
+
         if (other.getHostedZoneId() == null ^ this.getHostedZoneId() == null) return false;
-        if (other.getHostedZoneId() != null && other.getHostedZoneId().equals(this.getHostedZoneId()) == false) return false; 
+        if (other.getHostedZoneId() != null && other.getHostedZoneId().equals(this.getHostedZoneId()) == false) return false;
         if (other.getChangeBatch() == null ^ this.getChangeBatch() == null) return false;
-        if (other.getChangeBatch() != null && other.getChangeBatch().equals(this.getChangeBatch()) == false) return false; 
+        if (other.getChangeBatch() != null && other.getChangeBatch().equals(this.getChangeBatch()) == false) return false;
         return true;
     }
-    
+
 }
-    

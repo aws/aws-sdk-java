@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -44,18 +44,23 @@ public class GetChangeRequest extends AmazonWebServiceRequest implements Seriali
     private String id;
 
     /**
+     * Specify the api version that is used to endpoint.
+     */
+    private String version;
+
+    /**
      * Default constructor for a new GetChangeRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public GetChangeRequest() {}
-    
+
 
 
     /**
      * Constructs a new GetChangeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     * 
+     *
      * @param id The ID of the change batch request. The value that you
      * specify here is the value that <code>ChangeResourceRecordSets</code>
      * returned in the Id element when you submitted the request.
@@ -64,8 +69,23 @@ public class GetChangeRequest extends AmazonWebServiceRequest implements Seriali
         setId(id);
     }
 
-    
-    
+    /**
+     * Specify the api version.
+     *
+     * @return api version
+     */
+    public String getVersion(){
+        return version;
+    }
+    /**
+     * Specify the api version.
+     */
+    public void setVersion(String version){
+        this.version = version;
+    }
+
+
+
     /**
      * The ID of the change batch request. The value that you specify here is
      * the value that <code>ChangeResourceRecordSets</code> returned in the
@@ -81,7 +101,7 @@ public class GetChangeRequest extends AmazonWebServiceRequest implements Seriali
     public String getId() {
         return id;
     }
-    
+
     /**
      * The ID of the change batch request. The value that you specify here is
      * the value that <code>ChangeResourceRecordSets</code> returned in the
@@ -97,7 +117,7 @@ public class GetChangeRequest extends AmazonWebServiceRequest implements Seriali
     public void setId(String id) {
         this.id = id;
     }
-    
+
     /**
      * The ID of the change batch request. The value that you specify here is
      * the value that <code>ChangeResourceRecordSets</code> returned in the
@@ -112,15 +132,15 @@ public class GetChangeRequest extends AmazonWebServiceRequest implements Seriali
      *         the value that <code>ChangeResourceRecordSets</code> returned in the
      *         Id element when you submitted the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetChangeRequest withId(String id) {
         this.id = id;
         return this;
     }
-    
-    
+
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -137,16 +157,16 @@ public class GetChangeRequest extends AmazonWebServiceRequest implements Seriali
         sb.append("}");
         return sb.toString();
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
+
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         return hashCode;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -154,11 +174,10 @@ public class GetChangeRequest extends AmazonWebServiceRequest implements Seriali
 
         if (obj instanceof GetChangeRequest == false) return false;
         GetChangeRequest other = (GetChangeRequest)obj;
-        
+
         if (other.getId() == null ^ this.getId() == null) return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
+        if (other.getId() != null && other.getId().equals(this.getId()) == false) return false;
         return true;
     }
-    
+
 }
-    

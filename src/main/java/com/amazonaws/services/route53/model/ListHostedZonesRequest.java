@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -51,11 +51,31 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements S
     private String maxItems;
 
     /**
+     * Specify the api version that is used to endpoint.
+     */
+    private String version;
+
+    /**
      * Default constructor for a new ListHostedZonesRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public ListHostedZonesRequest() {}
-    
+
+    /**
+     * Specify the api version.
+     *
+     * @return api version
+     */
+    public String getVersion(){
+        return version;
+    }
+    /**
+     * Specify the api version.
+     */
+    public void setVersion(String version){
+        this.version = version;
+    }
+
     /**
      * If the request returned more than one page of results, submit another
      * request and specify the value of <code>NextMarker</code> from the last
@@ -73,7 +93,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements S
     public String getMarker() {
         return marker;
     }
-    
+
     /**
      * If the request returned more than one page of results, submit another
      * request and specify the value of <code>NextMarker</code> from the last
@@ -91,7 +111,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements S
     public void setMarker(String marker) {
         this.marker = marker;
     }
-    
+
     /**
      * If the request returned more than one page of results, submit another
      * request and specify the value of <code>NextMarker</code> from the last
@@ -108,15 +128,15 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements S
      *         response in the <code>marker</code> parameter to get the next page of
      *         results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListHostedZonesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
-    
-    
+
+
     /**
      * Specify the maximum number of hosted zones to return per page of
      * results.
@@ -127,7 +147,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements S
     public String getMaxItems() {
         return maxItems;
     }
-    
+
     /**
      * Specify the maximum number of hosted zones to return per page of
      * results.
@@ -138,7 +158,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements S
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
-    
+
     /**
      * Specify the maximum number of hosted zones to return per page of
      * results.
@@ -148,15 +168,15 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements S
      * @param maxItems Specify the maximum number of hosted zones to return per page of
      *         results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListHostedZonesRequest withMaxItems(String maxItems) {
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -174,17 +194,17 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements S
         sb.append("}");
         return sb.toString();
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
-        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode()); 
+
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -192,13 +212,12 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements S
 
         if (obj instanceof ListHostedZonesRequest == false) return false;
         ListHostedZonesRequest other = (ListHostedZonesRequest)obj;
-        
+
         if (other.getMarker() == null ^ this.getMarker() == null) return false;
-        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null) return false;
-        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false) return false; 
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false) return false;
         return true;
     }
-    
+
 }
-    

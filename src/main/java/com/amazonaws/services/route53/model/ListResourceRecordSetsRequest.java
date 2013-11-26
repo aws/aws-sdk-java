@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -23,7 +23,7 @@ import java.io.Serializable;
  * reversed, like "com.amazon.www" for example), and secondarily, lexicographically by record type. This operation retrieves at most MaxItems resource
  * record sets from this list, in order, starting at a position specified by the Name and Type arguments:
  * </p>
- * 
+ *
  * <ul>
  * <li>If both Name and Type are omitted, this means start the results at the first RRSET in the HostedZone.</li>
  * <li>If Name is specified but Type is omitted, this means start the results at the first RRSET in the list whose name is greater than or equal to
@@ -31,7 +31,7 @@ import java.io.Serializable;
  * <li>If both Name and Type are specified, this means start the results at the first RRSET in the list whose name is greater than or equal to Name and
  * whose type is greater than or equal to Type.</li>
  * <li>It is an error to specify the Type but not the Name.</li>
- * 
+ *
  * </ul>
  * <p>
  * Use ListResourceRecordSets to retrieve a single known record set by specifying the record set's name and type, and setting MaxItems = 1
@@ -115,18 +115,23 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
     private String maxItems;
 
     /**
+     * Specify the api version that is used to endpoint.
+     */
+    private String version;
+
+    /**
      * Default constructor for a new ListResourceRecordSetsRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public ListResourceRecordSetsRequest() {}
-    
+
 
 
     /**
      * Constructs a new ListResourceRecordSetsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
-     * 
+     *
      * @param hostedZoneId The ID of the hosted zone that contains the
      * resource record sets that you want to get.
      */
@@ -134,8 +139,22 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
         setHostedZoneId(hostedZoneId);
     }
 
-    
-    
+    /**
+     * Specify the api version.
+     *
+     * @return api version
+     */
+    public String getVersion(){
+        return version;
+    }
+    /**
+     * Specify the api version.
+     */
+    public void setVersion(String version){
+        this.version = version;
+    }
+
+
     /**
      * The ID of the hosted zone that contains the resource record sets that
      * you want to get.
@@ -149,7 +168,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
     public String getHostedZoneId() {
         return hostedZoneId;
     }
-    
+
     /**
      * The ID of the hosted zone that contains the resource record sets that
      * you want to get.
@@ -163,7 +182,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
     public void setHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
     }
-    
+
     /**
      * The ID of the hosted zone that contains the resource record sets that
      * you want to get.
@@ -176,15 +195,15 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
      * @param hostedZoneId The ID of the hosted zone that contains the resource record sets that
      *         you want to get.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListResourceRecordSetsRequest withHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
         return this;
     }
-    
-    
+
+
     /**
      * The first name in the lexicographic ordering of domain names that you
      * want the <code>ListResourceRecordSets</code> request to list.
@@ -198,7 +217,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
     public String getStartRecordName() {
         return startRecordName;
     }
-    
+
     /**
      * The first name in the lexicographic ordering of domain names that you
      * want the <code>ListResourceRecordSets</code> request to list.
@@ -212,7 +231,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
     public void setStartRecordName(String startRecordName) {
         this.startRecordName = startRecordName;
     }
-    
+
     /**
      * The first name in the lexicographic ordering of domain names that you
      * want the <code>ListResourceRecordSets</code> request to list.
@@ -225,15 +244,15 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
      * @param startRecordName The first name in the lexicographic ordering of domain names that you
      *         want the <code>ListResourceRecordSets</code> request to list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListResourceRecordSetsRequest withStartRecordName(String startRecordName) {
         this.startRecordName = startRecordName;
         return this;
     }
-    
-    
+
+
     /**
      * The DNS type at which to begin the listing of resource record sets.
      * <p>Valid values: <code>A</code> | <code>AAAA</code> |
@@ -269,7 +288,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
     public String getStartRecordType() {
         return startRecordType;
     }
-    
+
     /**
      * The DNS type at which to begin the listing of resource record sets.
      * <p>Valid values: <code>A</code> | <code>AAAA</code> |
@@ -305,7 +324,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
     public void setStartRecordType(String startRecordType) {
         this.startRecordType = startRecordType;
     }
-    
+
     /**
      * The DNS type at which to begin the listing of resource record sets.
      * <p>Valid values: <code>A</code> | <code>AAAA</code> |
@@ -338,7 +357,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
      *         <code>type</code> without specifying <code>name</code> returns an
      *         <a>InvalidInput</a> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RRType
@@ -347,8 +366,8 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
         this.startRecordType = startRecordType;
         return this;
     }
-    
-    
+
+
     /**
      * The DNS type at which to begin the listing of resource record sets.
      * <p>Valid values: <code>A</code> | <code>AAAA</code> |
@@ -384,7 +403,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
     public void setStartRecordType(RRType startRecordType) {
         this.startRecordType = startRecordType.toString();
     }
-    
+
     /**
      * The DNS type at which to begin the listing of resource record sets.
      * <p>Valid values: <code>A</code> | <code>AAAA</code> |
@@ -417,7 +436,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
      *         <code>type</code> without specifying <code>name</code> returns an
      *         <a>InvalidInput</a> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RRType
@@ -426,7 +445,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
         this.startRecordType = startRecordType.toString();
         return this;
     }
-    
+
     /**
      * <i>Weighted resource record sets only:</i> If results were truncated
      * for a given DNS name and type, specify the value of
@@ -446,7 +465,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
     public String getStartRecordIdentifier() {
         return startRecordIdentifier;
     }
-    
+
     /**
      * <i>Weighted resource record sets only:</i> If results were truncated
      * for a given DNS name and type, specify the value of
@@ -466,7 +485,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
     public void setStartRecordIdentifier(String startRecordIdentifier) {
         this.startRecordIdentifier = startRecordIdentifier;
     }
-    
+
     /**
      * <i>Weighted resource record sets only:</i> If results were truncated
      * for a given DNS name and type, specify the value of
@@ -485,15 +504,15 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
      *         the previous response to get the next resource record set that has the
      *         current DNS name and type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListResourceRecordSetsRequest withStartRecordIdentifier(String startRecordIdentifier) {
         this.startRecordIdentifier = startRecordIdentifier;
         return this;
     }
-    
-    
+
+
     /**
      * The maximum number of records you want in the response body.
      *
@@ -502,7 +521,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
     public String getMaxItems() {
         return maxItems;
     }
-    
+
     /**
      * The maximum number of records you want in the response body.
      *
@@ -511,7 +530,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
-    
+
     /**
      * The maximum number of records you want in the response body.
      * <p>
@@ -519,15 +538,15 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
      *
      * @param maxItems The maximum number of records you want in the response body.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListResourceRecordSetsRequest withMaxItems(String maxItems) {
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -548,20 +567,20 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
         sb.append("}");
         return sb.toString();
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getHostedZoneId() == null) ? 0 : getHostedZoneId().hashCode()); 
-        hashCode = prime * hashCode + ((getStartRecordName() == null) ? 0 : getStartRecordName().hashCode()); 
-        hashCode = prime * hashCode + ((getStartRecordType() == null) ? 0 : getStartRecordType().hashCode()); 
-        hashCode = prime * hashCode + ((getStartRecordIdentifier() == null) ? 0 : getStartRecordIdentifier().hashCode()); 
-        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode()); 
+
+        hashCode = prime * hashCode + ((getHostedZoneId() == null) ? 0 : getHostedZoneId().hashCode());
+        hashCode = prime * hashCode + ((getStartRecordName() == null) ? 0 : getStartRecordName().hashCode());
+        hashCode = prime * hashCode + ((getStartRecordType() == null) ? 0 : getStartRecordType().hashCode());
+        hashCode = prime * hashCode + ((getStartRecordIdentifier() == null) ? 0 : getStartRecordIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -569,19 +588,18 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
 
         if (obj instanceof ListResourceRecordSetsRequest == false) return false;
         ListResourceRecordSetsRequest other = (ListResourceRecordSetsRequest)obj;
-        
+
         if (other.getHostedZoneId() == null ^ this.getHostedZoneId() == null) return false;
-        if (other.getHostedZoneId() != null && other.getHostedZoneId().equals(this.getHostedZoneId()) == false) return false; 
+        if (other.getHostedZoneId() != null && other.getHostedZoneId().equals(this.getHostedZoneId()) == false) return false;
         if (other.getStartRecordName() == null ^ this.getStartRecordName() == null) return false;
-        if (other.getStartRecordName() != null && other.getStartRecordName().equals(this.getStartRecordName()) == false) return false; 
+        if (other.getStartRecordName() != null && other.getStartRecordName().equals(this.getStartRecordName()) == false) return false;
         if (other.getStartRecordType() == null ^ this.getStartRecordType() == null) return false;
-        if (other.getStartRecordType() != null && other.getStartRecordType().equals(this.getStartRecordType()) == false) return false; 
+        if (other.getStartRecordType() != null && other.getStartRecordType().equals(this.getStartRecordType()) == false) return false;
         if (other.getStartRecordIdentifier() == null ^ this.getStartRecordIdentifier() == null) return false;
-        if (other.getStartRecordIdentifier() != null && other.getStartRecordIdentifier().equals(this.getStartRecordIdentifier()) == false) return false; 
+        if (other.getStartRecordIdentifier() != null && other.getStartRecordIdentifier().equals(this.getStartRecordIdentifier()) == false) return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null) return false;
-        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false) return false; 
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false) return false;
         return true;
     }
-    
+
 }
-    

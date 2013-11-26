@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -35,6 +35,26 @@ public class GetHealthCheckRequest extends AmazonWebServiceRequest implements Se
     private String healthCheckId;
 
     /**
+     * Specify the api version that is used to endpoint.
+     */
+    private String version;
+
+    /**
+     * Specify the api version.
+     *
+     * @return api version
+     */
+    public String getVersion(){
+        return version;
+    }
+    /**
+     * Specify the api version.
+     */
+    public void setVersion(String version){
+        this.version = version;
+    }
+
+    /**
      * The ID of the health check to retrieve.
      * <p>
      * <b>Constraints:</b><br/>
@@ -45,7 +65,7 @@ public class GetHealthCheckRequest extends AmazonWebServiceRequest implements Se
     public String getHealthCheckId() {
         return healthCheckId;
     }
-    
+
     /**
      * The ID of the health check to retrieve.
      * <p>
@@ -57,7 +77,7 @@ public class GetHealthCheckRequest extends AmazonWebServiceRequest implements Se
     public void setHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;
     }
-    
+
     /**
      * The ID of the health check to retrieve.
      * <p>
@@ -68,15 +88,15 @@ public class GetHealthCheckRequest extends AmazonWebServiceRequest implements Se
      *
      * @param healthCheckId The ID of the health check to retrieve.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetHealthCheckRequest withHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;
         return this;
     }
-    
-    
+
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -93,16 +113,16 @@ public class GetHealthCheckRequest extends AmazonWebServiceRequest implements Se
         sb.append("}");
         return sb.toString();
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getHealthCheckId() == null) ? 0 : getHealthCheckId().hashCode()); 
+
+        hashCode = prime * hashCode + ((getHealthCheckId() == null) ? 0 : getHealthCheckId().hashCode());
         return hashCode;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -110,11 +130,10 @@ public class GetHealthCheckRequest extends AmazonWebServiceRequest implements Se
 
         if (obj instanceof GetHealthCheckRequest == false) return false;
         GetHealthCheckRequest other = (GetHealthCheckRequest)obj;
-        
+
         if (other.getHealthCheckId() == null ^ this.getHealthCheckId() == null) return false;
-        if (other.getHealthCheckId() != null && other.getHealthCheckId().equals(this.getHealthCheckId()) == false) return false; 
+        if (other.getHealthCheckId() != null && other.getHealthCheckId().equals(this.getHealthCheckId()) == false) return false;
         return true;
     }
-    
+
 }
-    

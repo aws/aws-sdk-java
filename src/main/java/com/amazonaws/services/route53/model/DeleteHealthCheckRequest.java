@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -42,6 +42,26 @@ public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements
     private String healthCheckId;
 
     /**
+     * Specify the api version that is used to endpoint.
+     */
+    private String version;
+
+    /**
+     * Specify the api version.
+     *
+     * @return api version
+     */
+    public String getVersion(){
+        return version;
+    }
+    /**
+     * Specify the api version.
+     */
+    public void setVersion(String version){
+        this.version = version;
+    }
+
+    /**
      * The ID of the health check to delete.
      * <p>
      * <b>Constraints:</b><br/>
@@ -52,7 +72,7 @@ public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements
     public String getHealthCheckId() {
         return healthCheckId;
     }
-    
+
     /**
      * The ID of the health check to delete.
      * <p>
@@ -64,7 +84,7 @@ public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements
     public void setHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;
     }
-    
+
     /**
      * The ID of the health check to delete.
      * <p>
@@ -75,15 +95,15 @@ public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements
      *
      * @param healthCheckId The ID of the health check to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteHealthCheckRequest withHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;
         return this;
     }
-    
-    
+
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -100,16 +120,16 @@ public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements
         sb.append("}");
         return sb.toString();
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getHealthCheckId() == null) ? 0 : getHealthCheckId().hashCode()); 
+
+        hashCode = prime * hashCode + ((getHealthCheckId() == null) ? 0 : getHealthCheckId().hashCode());
         return hashCode;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -117,11 +137,10 @@ public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements
 
         if (obj instanceof DeleteHealthCheckRequest == false) return false;
         DeleteHealthCheckRequest other = (DeleteHealthCheckRequest)obj;
-        
+
         if (other.getHealthCheckId() == null ^ this.getHealthCheckId() == null) return false;
-        if (other.getHealthCheckId() != null && other.getHealthCheckId().equals(this.getHealthCheckId()) == false) return false; 
+        if (other.getHealthCheckId() != null && other.getHealthCheckId().equals(this.getHealthCheckId()) == false) return false;
         return true;
     }
-    
+
 }
-    

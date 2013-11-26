@@ -41,6 +41,9 @@ public abstract class AmazonWebServiceClient {
     /** The service endpoint to which this client will send requests. */
     protected URI endpoint;
 
+    /** The api version of client use */
+    protected String version;
+
     /** The client configuration */
     protected ClientConfiguration clientConfiguration;
 
@@ -49,10 +52,9 @@ public abstract class AmazonWebServiceClient {
 
     /** Optional request handlers for additional request processing. */
     protected final List<RequestHandler> requestHandlers;
-    
+
     /** Optional offset (in seconds) to use when signing requests */
     protected int timeOffset;
-
 
     /**
      * Constructs a new AmazonWebServiceClient object using the specified
@@ -82,10 +84,10 @@ public abstract class AmazonWebServiceClient {
      * {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see: 
+     * a complete list of all available endpoints for all AWS services, see:
      * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
      * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
-     * 
+     *
      * @param endpoint
      *            The endpoint (ex: "ec2.amazonaws.com") or a full URL,
      *            including the protocol (ex: "https://ec2.amazonaws.com") of
@@ -110,7 +112,26 @@ public abstract class AmazonWebServiceClient {
             throw new IllegalArgumentException(e);
         }
     }
-    
+
+    /**
+     * Set api version of this client
+     *
+     * @param version
+     *            api version client uses
+     */
+    public void setVersion(String version) {
+        this.version = version;
+    }
+    /**
+     * Get api version of this client
+     *
+     * @return version
+     *            api version client uses
+     */
+    public String getVersion() {
+        return version;
+    }
+
     /**
      * An alternative to {@link AmazonWebServiceClient#setEndpoint(String)}, sets the
      * regional endpoint for this client's service calls. Callers can use this
@@ -124,7 +145,7 @@ public abstract class AmazonWebServiceClient {
      * By default, all service endpoints in all regions use the https protocol.
      * To use http instead, specify it in the {@link ClientConfiguration}
      * supplied at construction.
-     * 
+     *
      * @param region
      *            The region this client will communicate with. See
      *            {@link Region#getRegion(com.amazonaws.regions.Regions)} for
@@ -150,11 +171,11 @@ public abstract class AmazonWebServiceClient {
         }
         setEndpoint(serviceEndpoint);
     }
-    
+
     /**
      * Returns the service abbreviation for this service, used for identifying
      * service endpoints by region.
-     * 
+     *
      * @see ServiceAbbreviations
      */
     protected String getServiceAbbreviation() {
@@ -237,7 +258,7 @@ public abstract class AmazonWebServiceClient {
         ExecutionContext executionContext = new ExecutionContext(requestHandlers);
         return executionContext;
     }
-    
+
     /**
      * Sets the optional value for time offset for this client.  This
      * value will be applied to all requests processed through this client.
@@ -250,7 +271,7 @@ public abstract class AmazonWebServiceClient {
     public void setTimeOffset(int timeOffset) {
         this.timeOffset = timeOffset;
     }
-    
+
     /**
      * Sets the optional value for time offset for this client.  This
      * value will be applied to all requests processed through this client.
@@ -259,14 +280,14 @@ public abstract class AmazonWebServiceClient {
      *
      * @param timeOffset
      *            The optional value for time offset (in seconds) for this client.
-     * 
+     *
      * @return the updated web service client
      */
     public AmazonWebServiceClient withTimeOffset(int timeOffset) {
         setTimeOffset(timeOffset);
         return this;
     }
-    
+
     /**
      * Returns the optional value for time offset for this client.  This
      * value will be applied to all requests processed through this client.

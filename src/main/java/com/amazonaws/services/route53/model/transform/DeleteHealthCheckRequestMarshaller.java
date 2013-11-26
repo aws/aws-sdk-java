@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -44,8 +44,14 @@ public class DeleteHealthCheckRequestMarshaller implements Marshaller<Request<De
         Request<DeleteHealthCheckRequest> request = new DefaultRequest<DeleteHealthCheckRequest>(deleteHealthCheckRequest, "AmazonRoute53");
         request.setHttpMethod(HttpMethodName.DELETE);
 
-        String uriResourcePath = "/2012-12-12/healthcheck/{HealthCheckId}"; 
-        uriResourcePath = uriResourcePath.replace("{HealthCheckId}", getString(deleteHealthCheckRequest.getHealthCheckId())); 
+        String version = deleteHealthCheckRequest.getVersion();
+        if(version == null){
+            version = "2012-12-12";
+        }
+
+        String uriResourcePath = "/{Version}/healthcheck/{HealthCheckId}";
+        uriResourcePath = uriResourcePath.replace("{Version}", version);
+        uriResourcePath = uriResourcePath.replace("{HealthCheckId}", getString(deleteHealthCheckRequest.getHealthCheckId()));
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -63,7 +69,7 @@ public class DeleteHealthCheckRequestMarshaller implements Marshaller<Request<De
 
         request.setResourcePath(uriResourcePath);
 
-        
+
 
         return request;
     }
