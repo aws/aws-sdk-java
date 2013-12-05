@@ -3168,11 +3168,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         return describeClusterParameterGroups(new DescribeClusterParameterGroupsRequest());
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "redshift";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

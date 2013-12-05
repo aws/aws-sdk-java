@@ -38,11 +38,16 @@ public class ListUnmarshaller<T>
 
         List<T> list = new ArrayList<T>();
         int originalDepth = context.getCurrentDepth();
-
+        
+        JsonToken firstToken = context.peek();
+        if (firstToken == JsonToken.VALUE_NULL) {
+            return null;
+        }
+        
         while (true) {
             JsonToken token = context.nextToken();
             if (token == null) return list;
-
+            
             if (token == JsonToken.START_ARRAY) {
                 continue;
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -17,6 +17,8 @@ package com.amazonaws.metrics;
 import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_METRICS_SYSTEM_PROPERTY;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -29,21 +31,25 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.auth.PropertiesCredentials;
+import com.amazonaws.jmx.spi.SdkMBeanRegistry;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.AWSServiceMetrics;
-import com.amazonaws.util.jmx.MBeans;
 
 /**
  * Used to control the default AWS SDK metric collection system.
  * <p>
- * The default metric collection of the Java AWS SDK is disabled by
- * default. To enable it, simply specify the system property
+ * The default metric collection of the Java AWS SDK is disabled by default. To
+ * enable it, simply specify the system property
  * <b>"com.amazonaws.sdk.enableDefaultMetrics"</b> when starting up the JVM.
  * When the system property is specified, a default metric collector will be
  * started at the AWS SDK level. The default implementation uploads the
  * request/response metrics captured to Amazon CloudWatch using AWS credentials
  * obtained via the {@link DefaultAWSCredentialsProviderChain}.
+ * <p>
+ * For additional optional attributes that can be specified for the system
+ * property, please read the javadoc of the individual fields of
+ * this class for more details.
  * <p>
  * Instead of via system properties, the default AWS SDK metric collection can
  * also be enabled programmatically via {@link #enableDefaultMetrics()}.
@@ -58,17 +64,18 @@ import com.amazonaws.util.jmx.MBeans;
  * Alternatively, for limited customization of the internal collector
  * implementation provided by the AWS SDK, one can extend the internal Amazon
  * CloudWatch metric collector. See the javadoc at
- * com.amazonaws.metrics.internal.cloudwatch.CloudWatchMetricConfig for
- * more details.
+ * com.amazonaws.metrics.internal.cloudwatch.CloudWatchMetricConfig for more
+ * details.
  */
 public enum AwsSdkMetrics {
     ;
-    public static final String METRICS_NAMESPACE = "AWSSDK/Java";
+    public static final String DEFAULT_METRIC_NAMESPACE = "AWSSDK/Java";
     private static final String MBEAN_OBJECT_NAME =
         "com.amazonaws.management:type=" + AwsSdkMetrics.class.getSimpleName();
     /**
      * Used to exclude the generation of JVM metrics when the AWS SDK default
-     * metrics is enabled when starting up the JVM.
+     * metrics is enabled.
+     * By default, jvm metrics is included. 
      * 
      * <pre>
      * Example:
@@ -77,10 +84,85 @@ public enum AwsSdkMetrics {
      */
     public static final String EXCLUDE_MACHINE_METRICS = "excludeMachineMetrics";
 
+    /**
+     * Used to generate per host level metrics when the AWS SDK default
+     * metrics is enabled.
+     * By default, per-host level metrics is excluded. 
+     * 
+     * <pre>
+     * Example:
+     *  -Dcom.amazonaws.sdk.enableDefaultMetrics=includePerHostMetrics
+     * </pre>
+     */
+    public static final String INCLUDE_PER_HOST_METRICS = "includePerHostMetrics";
+
+    /**
+     * Used to specify an AWS credential property file.
+     * By default, the {@link DefaultAWSCredentialsProviderChain} is used.
+     * 
+     * <pre>
+     * Example:
+     *  -Dcom.amazonaws.sdk.enableDefaultMetrics=credentialFile=/path/aws.properties
+     * </pre>
+     */
     public static final String AWS_CREDENTAIL_PROPERTIES_FILE= "credentialFile";
+
+    /**
+     * Used to specify the Amazon CloudWatch region for metrics uploading purposes.
+     * By default, metrics are uploaded to us-east-1.
+     * 
+     * <pre>
+     * Example:
+     *  -Dcom.amazonaws.sdk.enableDefaultMetrics=cloudwatchRegion=us-west-2
+     * </pre>
+     */
     public static final String CLOUDWATCH_REGION = "cloudwatchRegion";
-    public static final String METRIC_QUEUE_SIZE = "metricQueueSize"; 
-    public static final String QUEUE_POLL_TIMEOUT_MILLI = "getQueuePollTimeoutMilli"; 
+
+    /**
+     * Used to specify the internal in-memory queue size for queuing metrics
+     * data points. The default size is 1,000.
+     * 
+     * <pre>
+     * Example:
+     *  -Dcom.amazonaws.sdk.enableDefaultMetrics=metricQueueSize=1000
+     * </pre>
+     */
+    public static final String METRIC_QUEUE_SIZE = "metricQueueSize";
+
+    /**
+     * Used to specify the internal queue polling timeout in millisecond.
+     * The default timeout is 1 minute, which is optimal for the default
+     * CloudWatch implementation.
+     * 
+     * <pre>
+     * Example:
+     *  -Dcom.amazonaws.sdk.enableDefaultMetrics=getQueuePollTimeoutMilli=60000
+     * </pre>
+     */
+    public static final String QUEUE_POLL_TIMEOUT_MILLI = "getQueuePollTimeoutMilli";
+
+    /**
+     * Used to specify a custom metric name space.
+     * The default name space is {{@link #DEFAULT_METRIC_NAMESPACE}.
+     * 
+     * <pre>
+     * Example:
+     *  -Dcom.amazonaws.sdk.enableDefaultMetrics=metricNameSpace=MyNameSpace
+     * </pre>
+     */
+    public static final String METRIC_NAME_SPACE = "metricNameSpace";
+
+    /**
+     * Used to generate per JVM level metrics when the AWS SDK default
+     * metrics is enabled.
+     * By default, JVM level metrics are not generated.
+     * 
+     * <pre>
+     * Example:
+     *  -Dcom.amazonaws.sdk.enableDefaultMetrics=jvmMetricName=Tomcat1
+     * </pre>
+     */
+    public static final String JVM_METRIC_NAME = "jvmMetricName";
     
     private static final String DEFAULT_METRIC_COLLECTOR_FACTORY =
         "com.amazonaws.metrics.internal.cloudwatch.DefaultMetricCollectorFactory";
@@ -89,14 +171,39 @@ public enum AwsSdkMetrics {
      * been set; false otherwise.
      */
     private static final boolean defaultMetricsEnabled;
+    private static volatile AWSCredentialsProvider credentialProvider;
     /**
      * True if machine metrics is to be excluded; false otherwise.
      */
     private static volatile boolean machineMetricsExcluded;
-    private static volatile AWSCredentialsProvider credentialProvider;
+    /**
+     * True if per-host metrics is to be included; false otherwise.
+     */
+    private static volatile boolean perHostMetricsIncluded;
     private static volatile Regions region;
     private static volatile Integer metricQueueSize;
     private static volatile Long queuePollTimeoutMilli;
+    private static volatile String metricNameSpace = DEFAULT_METRIC_NAMESPACE;
+    private static volatile String credentialFile;
+
+    /**
+     * No JVM level metrics is generated if this field is set to null or blank.
+     * Otherwise, the value in this field is used to compose the metric name
+     * space.
+     * 
+     * Example:
+     * <ol>
+     * <li>If jvmMetricName="Tomcat1" and host-level metrics is disabled, the
+     * metric name space will be something like: "AWSSDK/Java/Tomcat1".</li>
+     * <li>If jvmMetricName="Tomcat1" and host-level metrics is enabled, the
+     * metric name space will be something like:
+     * "AWSSDK/Java/myhost.mycompany.com/Tomcat1".</li>
+     * <li>If jvmMetricName="Tomcat1" and host-level metrics is enabled and the
+     * metricNameSpace="MyNameSpace", the metric name space will be something
+     * like: "MyNameSpace/myhost.mycompany.com/Tomcat1".</li>
+     * </ol>
+     */
+    private static volatile String jvmMetricName;
 
     static {
         String defaultMetrics = System.getProperty(DEFAULT_METRICS_SYSTEM_PROPERTY);
@@ -104,10 +211,13 @@ public enum AwsSdkMetrics {
         if (defaultMetricsEnabled) {
             String[] values = defaultMetrics.split(",");
             boolean excludeMachineMetrics = false;
+            boolean includePerHostMetrics = false;
             for (String s: values) {
                 String part = s.trim();
                 if (!excludeMachineMetrics && EXCLUDE_MACHINE_METRICS.equals(part)) {
                     excludeMachineMetrics = true;
+                } else if (!includePerHostMetrics && INCLUDE_PER_HOST_METRICS.equals(part)) {
+                    includePerHostMetrics = true;
                 } else {
                     String[] pair = part.split("=");
                     if (pair.length == 2) {
@@ -115,12 +225,7 @@ public enum AwsSdkMetrics {
                         String value  = pair[1].trim();
                         try {
                             if (AWS_CREDENTAIL_PROPERTIES_FILE.equals(key)) {
-                                final PropertiesCredentials cred;
-                                    cred = new PropertiesCredentials(new File(value));
-                                    credentialProvider = new AWSCredentialsProvider() {
-                                        @Override public void refresh() {}
-                                        @Override public AWSCredentials getCredentials() { return cred; }
-                                    };
+                                setCredentialFile0(value);
                             } else if (CLOUDWATCH_REGION.equals(key)) {
                                 region = Regions.fromName(value);
                             } else if (METRIC_QUEUE_SIZE.equals(key)) {
@@ -133,6 +238,10 @@ public enum AwsSdkMetrics {
                                 if (i.intValue() < 1000)
                                     throw new IllegalArgumentException(QUEUE_POLL_TIMEOUT_MILLI + " must be at least 1000");
                                 queuePollTimeoutMilli = i;
+                            } else if (METRIC_NAME_SPACE.equals(key)) {
+                                metricNameSpace = value;
+                            } else if (JVM_METRIC_NAME.equals(key)) {
+                                jvmMetricName = value;
                             } else {
                                 LogFactory.getLog(AwsSdkMetrics.class).debug("Ignoring unrecognized parameter: " + part);
                             }
@@ -143,6 +252,7 @@ public enum AwsSdkMetrics {
                 }
             }
             machineMetricsExcluded = excludeMachineMetrics;
+            perHostMetricsIncluded = includePerHostMetrics;
         }
     }
 
@@ -155,12 +265,40 @@ public enum AwsSdkMetrics {
     /** Exports AwsSdkMetrics for JMX access. */
     static {
         try {
-            MBeans.registerMBean(MBEAN_OBJECT_NAME, new AwsSdkMetrics.Admin());
+            registerMetricAdminMBean();
         } catch(Exception ex) {
             LogFactory.getLog(AwsSdkMetrics.class).warn("", ex);
         }
     }
 
+    /**
+     * Returns true if the metric admin MBean is currently registered for JMX
+     * access; false otherwise.
+     */
+    public static boolean isMetricAdminMBeanRegistered() {
+        SdkMBeanRegistry registry = SdkMBeanRegistry.Factory.getMBeanRegistry();
+        return registry.isMBeanRegistered(MBEAN_OBJECT_NAME);
+    }
+
+    /**
+     * Registers the metric admin MBean for JMX access.
+     * 
+     * @return true if the registeration succeeded; false otherwise.
+     */
+    public static boolean registerMetricAdminMBean() {
+        SdkMBeanRegistry registry = SdkMBeanRegistry.Factory.getMBeanRegistry();
+        return registry.registerMetricAdminMBean(MBEAN_OBJECT_NAME);
+    }
+
+    /**
+     * Unregisters the metric admin MBean from JMX.
+     * 
+     * @return true if the unregisteration succeeded; false otherwise.
+     */
+    public static boolean unregisterMetricAdminMBean() {
+        SdkMBeanRegistry registry = SdkMBeanRegistry.Factory.getMBeanRegistry();
+        return registry.unregisterMBean(MBEAN_OBJECT_NAME);
+    }
     /**
      * Returns a non-null request metric collector for the SDK. If no custom
      * request metric collector has previously been specified via
@@ -187,6 +325,14 @@ public enum AwsSdkMetrics {
         @SuppressWarnings("unchecked")
         T t = (T)(mc == null ? ServiceMetricCollector.NONE : mc.getServiceMetricCollector());
         return t; 
+    }
+
+    /**
+     * This method should never be called by anyone except the JMX MBean used
+     * for administrative purposes only.
+     */
+    static MetricCollector getInternalMetricCollector() {
+        return mc;
     }
 
     public static <T extends MetricCollector> T getMetricCollector() {
@@ -236,6 +382,16 @@ public enum AwsSdkMetrics {
     }
 
     /**
+     * Used to set whether the per-host metrics is to be included.
+     * 
+     * @param includePerHostMetrics true if per-host metrics is to be included;
+     * false otherwise.
+     */
+    public static void setPerHostMetricsIncluded(boolean includePerHostMetrics) {
+        AwsSdkMetrics.perHostMetricsIncluded = includePerHostMetrics;
+    }
+
+    /**
      * Returns true if the system property
      * {@link SDKGlobalConfiguration#DEFAULT_METRICS_SYSTEM_PROPERTY} has been
      * set; false otherwise.
@@ -258,6 +414,13 @@ public enum AwsSdkMetrics {
      */
     public static boolean isMachineMetricExcluded() {
         return machineMetricsExcluded;
+    }
+
+    /**
+     * Returns true if per-host metrics is to be included.
+     */
+    public static boolean isPerHostMetricIncluded() {
+        return perHostMetricsIncluded;
     }
 
     /**
@@ -365,10 +528,13 @@ public enum AwsSdkMetrics {
     }
 
     /**
-     * Sets the credential provider for the default AWS SDK metric implementation;
-     * or null if the default is to be used.
+     * Sets the credential provider for the default AWS SDK metric
+     * implementation; or null if the default is to be used. Calling this method
+     * may result in the credential provider being different from the credential
+     * file property.
      */
-    public static void setCredentialProvider(AWSCredentialsProvider provider) {
+    public static synchronized void setCredentialProvider(
+            AWSCredentialsProvider provider) {
         credentialProvider = provider;
     }
 
@@ -386,6 +552,41 @@ public enum AwsSdkMetrics {
      */
     public static void setRegion(Regions region) {
         AwsSdkMetrics.region = region;
+    }
+
+    /**
+     * Returns the last set AWS credential file, or null if there is none.
+     */
+    public static String getCredentailFile() {
+        return credentialFile;
+    }
+
+    /**
+     * Sets the AWS credential file to be used for accessing Amazon CloudWatch.
+     * Successfully calling this method would result in the AWS credential
+     * provider to make use of the given credential file.
+     */
+    public static void setCredentialFile(String filepath)
+            throws FileNotFoundException, IOException {
+        setCredentialFile0(filepath);
+    }
+
+    /**
+     * Internal method to implement the {@link #setCredentialFile(String)}.
+     */
+    private static void setCredentialFile0(String filepath)
+            throws FileNotFoundException, IOException {
+        final PropertiesCredentials cred =
+            new PropertiesCredentials(new File(filepath));
+        synchronized(AwsSdkMetrics.class) {
+            credentialProvider = new AWSCredentialsProvider() {
+                @Override public void refresh() {}
+                @Override public AWSCredentials getCredentials() {
+                    return cred;
+                }
+            };
+            AwsSdkMetrics.credentialFile = filepath;
+        }
     }
 
     /**
@@ -422,159 +623,44 @@ public enum AwsSdkMetrics {
     }
 
     /**
-     * MBean interface for AwsSdkMetrics administration.
+     * Returns the metric name space, which is never null or blank.
      */
-    public static interface AdminMBean {
-        /**
-         * Returns true if metrics at the AWS SDK level is enabled; false
-         * if disabled.
-         */
-        public boolean isMetricsEnabled();
-        /**
-         * Returns the name of the request metric collector set at the AWS SDK
-         * level, or NONE if there is none.
-         */
-        public String getRequestMetricCollector();
-        /**
-         * Returns the name of the service metric collector set at the AWS SDK
-         * level, or NONE if there is none.
-         */
-        public String getServiceMetricCollector();
-        /**
-         * Starts the default AWS SDK metric collector, but only if no
-         * metric collector is currently in use at the AWS SDK level.
-         * 
-         * @return true if the default AWS SDK metric collector has been
-         *         successfully started by this call; false otherwise.
-         */
-        public boolean enableDefaultMetrics();
-        /**
-         * Disables the metric collector at the AWS SDK level.
-         */
-        public void disableMetrics();
-        /**
-         * Returns true if machine metrics is to be excluded; false otherwise.
-         */
-        public boolean isMachineMetricsExcluded();
-        /**
-         * Used to set whether the JVM metrics is to be excluded.
-         * 
-         * @param excludeMachineMetrics true if JVM metrics is to be excluded;
-         * false otherwise.
-         */
-        public void setMachineMetricsExcluded(boolean excludeMachineMetrics);
-        
-        /**
-         * Returns the region configured for the default AWS SDK metric collector;
-         * or null if the default is to be used.
-         */
-        public String getRegion();
-        
-        /**
-         * Sets the region to be used for the default AWS SDK metric collector;
-         * or null if the default is to be used.
-         */
-        public void setRegion(String region);
-        /**
-         * Returns the internal metric queue size to be used for the default AWS SDK
-         * metric collector; or null if the default is to be used.
-         */
-        public Integer getMetricQueueSize();
-        /**
-         * Sets the metric queue size to be used for the default AWS SDK metric collector;
-         * or null if the default is to be used.
-         */
-        public void setMetricQueueSize(Integer metricQueueSize);
-        
-        /**
-         * Returns the internal metric queue timeout in millisecond to be used
-         * for the default AWS SDK metric collector; or null if the default is
-         * to be used. Use Integer instead of Long as it seems jconsole does not
-         * handle Long properly.
-         */
-        public Integer getQueuePollTimeoutMilli();
-
-        /**
-         * Sets the queue poll time in millisecond to be used for the default
-         * AWS SDK metric collector; or null if the default is to be used. Use
-         * Integer instead of Long as it seems jconsole does not handle Long
-         * properly.
-         */
-        public void setQueuePollTimeoutMilli(Integer timeoutMilli);
+    public static String getMetricNameSpace() {
+        return metricNameSpace;
     }
 
     /**
-     *  Administration of AwsSdkMetrics as an MBean.
+     * Sets the metric name space.
+     * 
+     * @param metricNameSpace
+     *            metric name space which must neither be null or blank.
+     * 
+     * @throws IllegalArgumentException
+     *             if the specified metric name space is either null or blank.
      */
-    private static class Admin implements AdminMBean {
-        @Override
-        public boolean enableDefaultMetrics() {
-            return AwsSdkMetrics.enableDefaultMetrics();
-        }
-        @Override
-        public void disableMetrics() {
-            AwsSdkMetrics.disableMetrics();
-        }
-        @Override
-        public String getRequestMetricCollector() {
-            MetricCollector mc = AwsSdkMetrics.mc;
-            RequestMetricCollector rmc = mc == null ? null : mc.getRequestMetricCollector();
-            return mc == null || rmc == RequestMetricCollector.NONE
-                 ? "NONE"
-                 : rmc.getClass().getName()
-                 ;
-        }
-        @Override
-        public String getServiceMetricCollector() {
-            MetricCollector mc = AwsSdkMetrics.mc;
-            ServiceMetricCollector smc = mc == null ? null : mc.getServiceMetricCollector();
-            return mc == null || smc == ServiceMetricCollector.NONE
-                 ? "NONE"
-                 : smc.getClass().getName()
-                 ;
-        }
-        @Override
-        public boolean isMetricsEnabled() {
-            return AwsSdkMetrics.isMetricsEnabled();
-        }
+    public static void setMetricNameSpace(String metricNameSpace) {
+        if (metricNameSpace == null || metricNameSpace.trim().length() == 0)
+            throw new IllegalArgumentException();
+        AwsSdkMetrics.metricNameSpace = metricNameSpace;
+    }
 
-        @Override
-        public boolean isMachineMetricsExcluded() {
-            return machineMetricsExcluded;
-        }
-        @Override
-        public void setMachineMetricsExcluded(boolean excludeJvmMetrics) {
-            AwsSdkMetrics.setMachineMetricsExcluded(excludeJvmMetrics);
-        }
-        @Override
-        public String getRegion() {
-            return region == null ? null : region.getName();
-        }
-        @Override
-        public void setRegion(String region) {
-            if (region == null || region.isEmpty())
-                AwsSdkMetrics.setRegion(null);
-            else {
-                AwsSdkMetrics.setRegion(Regions.fromName(region));
-            }
-        }
-        @Override
-        public Integer getMetricQueueSize() {
-            return metricQueueSize;
-        }
-        @Override
-        public void setMetricQueueSize(Integer metricQueueSize) {
-            AwsSdkMetrics.setMetricQueueSize(metricQueueSize);
-            
-        }
-        @Override
-        public Integer getQueuePollTimeoutMilli() {
-            return queuePollTimeoutMilli == null ? null : queuePollTimeoutMilli.intValue();
-        }
-        @Override
-        public void setQueuePollTimeoutMilli(Integer timeoutMilli) {
-            AwsSdkMetrics.setQueuePollTimeoutMilli(timeoutMilli == null ? null : timeoutMilli.longValue());
-        }
+    /**
+     * Returns the name of the JVM for generating per-JVM level metrics;
+     * or null or blank if per-JVM level metrics are disabled.
+     */
+    public static String getJvmMetricName() {
+        return jvmMetricName;
+    }
+
+    /**
+     * Sets the name of the JVM for generating per-JVM level metrics.
+     * 
+     * @param jvmMetricName
+     *            name of the JVM for generating per-JVM level metrics; or null
+     *            or blank if per-JVM level metrics are to be disabled.
+     */
+    public static void setJvmMetricName(String jvmMetricName) {
+        AwsSdkMetrics.jvmMetricName = jvmMetricName;
     }
 
     /**

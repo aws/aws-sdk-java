@@ -4079,11 +4079,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         return getAccountPasswordPolicy(new GetAccountPasswordPolicyRequest());
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "iam";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

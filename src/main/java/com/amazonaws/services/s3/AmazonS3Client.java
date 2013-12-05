@@ -407,14 +407,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 "/com/amazonaws/services/s3/request.handler2s"));
     }
 
-    /* (non-Javadoc)
-     * @see com.amazonaws.AmazonWebServiceClient#getServiceAbbreviation()
-     */
-    @Override
-    protected String getServiceAbbreviation() {
-        return S3_SERVICE_NAME;
-    }
-
     /**
      * <p>
      * Override the default S3 client options for this client.
@@ -2140,7 +2132,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         HttpMethodName httpMethod = HttpMethodName.valueOf(generatePresignedUrlRequest.getMethod().toString());
+        
+        // If the key starts with a slash character itself, the following method
+        // will actually add another slash before the resource path to prevent
+        // the HttpClient mistakenly treating the slash as a path delimiter.
+        // For presigned request, we need to remember to remove this extra slash
+        // before generating the URL.
         Request<GeneratePresignedUrlRequest> request = createRequest(bucketName, key, generatePresignedUrlRequest, httpMethod);
+        
         for (Entry<String, String> entry : generatePresignedUrlRequest.getRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }
@@ -2154,7 +2153,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         presignRequest(request, generatePresignedUrlRequest.getMethod(),
                 bucketName, key, generatePresignedUrlRequest.getExpiration(), null);
 
-        return ServiceUtils.convertRequestToUrl(request);
+        // Remove the leading slash (if any) in the resource-path
+        return ServiceUtils.convertRequestToUrl(request, true);
     }
 
     /* (non-Javadoc)
@@ -2656,6 +2656,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             ((bucketName != null) ? bucketName + "/" : "") +
             ((key != null) ? HttpUtils.urlEncode(key, true) : "") +
             ((subResource != null) ? "?" + subResource : "");
+        
+        // Make sure the resource-path for signing does not contain
+        // any consecutive "/"s.
+        // Note that we should also follow the same rule to escape
+        // consecutive "/"s when generating the presigned URL.
+        // See ServiceUtils#convertRequestToUrl(...)
+        resourcePath = resourcePath.replaceAll("(?<=/)/", "%2F");
 
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();

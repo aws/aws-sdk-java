@@ -1009,11 +1009,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         return describeStackResources(new DescribeStackResourcesRequest());
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "cloudformation";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

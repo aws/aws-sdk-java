@@ -2176,11 +2176,6 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         return publish(publishRequest);
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "sns";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

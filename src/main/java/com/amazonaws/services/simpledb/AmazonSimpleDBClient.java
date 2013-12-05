@@ -855,11 +855,6 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
         return listDomains(new ListDomainsRequest());
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "sdb";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

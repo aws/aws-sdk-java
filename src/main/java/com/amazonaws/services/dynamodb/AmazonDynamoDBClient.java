@@ -943,7 +943,6 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         signer.setRegionName(regionId);
     }
 
-    @Override
     protected String getServiceAbbreviation() {
         return "dynamodb";
     }

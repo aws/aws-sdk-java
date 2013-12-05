@@ -26,7 +26,6 @@ import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Date;
@@ -139,8 +138,41 @@ public class ServiceUtils {
      *             If the request cannot be converted to a well formed URL.
      */
     public static URL convertRequestToUrl(Request<?> request) {
-        String urlString =  request.getEndpoint()
-            + "/" + HttpUtils.urlEncode(request.getResourcePath(), true);
+        // To be backward compatible, this method by default does not 
+        // remove the leading slash in the request resource-path.
+        return convertRequestToUrl(request, false);
+    }
+    
+    /**
+     * Converts the specified request object into a URL, containing all the
+     * specified parameters, the specified request endpoint, etc.
+     *
+     * @param request
+     *            The request to convert into a URL.
+     * @param removeLeadingSlashInResourcePath
+     *            Whether the leading slash in resource-path should be removed
+     *            before appending to the endpoint.
+     * @return A new URL representing the specified request.
+     *
+     * @throws AmazonClientException
+     *             If the request cannot be converted to a well formed URL.
+     */
+    public static URL convertRequestToUrl(Request<?> request, boolean removeLeadingSlashInResourcePath) {
+        String resourcePath = HttpUtils.urlEncode(request.getResourcePath(), true);
+        
+        // Removed the padding "/" that was already added into the request's resource path.
+        if (removeLeadingSlashInResourcePath
+                && resourcePath.startsWith("/")) {
+            resourcePath = resourcePath.substring(1);
+        }
+        
+        // Some http client libraries (e.g. Apache HttpClient) cannot handle
+        // consecutive "/"s between URL authority and path components.
+        // So we escape "////..." into "/%2F%2F%2F...", in the same way as how
+        // we treat consecutive "/"s in AmazonS3Client#presignRequest(...)
+        String urlPath = "/" + resourcePath;
+        urlPath = urlPath.replaceAll("(?<=/)/", "%2F");
+        String urlString =  request.getEndpoint() + urlPath;
 
         boolean firstParam = true;
         for (String param : request.getParameters().keySet()) {

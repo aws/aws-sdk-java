@@ -1141,11 +1141,6 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         }
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "cloudfront";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

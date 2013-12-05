@@ -2859,11 +2859,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         return describeOptionGroups(new DescribeOptionGroupsRequest());
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "rds";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

@@ -43,7 +43,8 @@ class ClientConnectionRequestFactory {
         if (orig instanceof Wrapped)
             throw new IllegalArgumentException();
         return (ClientConnectionRequest) Proxy.newProxyInstance(
-                ClientConnectionRequest.class.getClassLoader(),
+                // https://github.com/aws/aws-sdk-java/pull/48#issuecomment-29454423
+                ClientConnectionRequestFactory.class.getClassLoader(),
                 interfaces,
                 new Handler(orig));
     }

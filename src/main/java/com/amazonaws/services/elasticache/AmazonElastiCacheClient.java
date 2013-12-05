@@ -1876,11 +1876,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
         return describeCacheEngineVersions(new DescribeCacheEngineVersionsRequest());
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "elasticache";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

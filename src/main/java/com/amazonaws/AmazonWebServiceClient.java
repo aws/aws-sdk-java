@@ -33,7 +33,6 @@ import com.amazonaws.http.HttpRequest;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.Region;
-import com.amazonaws.regions.ServiceAbbreviations;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.AwsHostNameUtils;
@@ -68,6 +67,12 @@ public abstract class AmazonWebServiceClient {
     /** AWS signer for authenticating requests. */
     private Signer signer;
 
+    /**
+     * The cached service abbreviation for this service, used for identifying
+     * service endpoints by region, identifying the necessary signer, etc.
+     * Thread safe so it's backward compatible.
+     */
+    private volatile String serviceName;
     /**
      * Constructs a new AmazonWebServiceClient object using the specified
      * configuration.
@@ -194,7 +199,7 @@ public abstract class AmazonWebServiceClient {
      */
     protected void configSigner(URI uri) {
         String region = AwsHostNameUtils.parseRegionName(uri);
-        String service = getServiceName();
+        String service = getServiceNameIntern();
         signer = SignerFactory.getSigner(service, region);
     }
 
@@ -233,26 +238,17 @@ public abstract class AmazonWebServiceClient {
     public void setRegion(Region region) throws IllegalArgumentException {
         if ( region == null )
             throw new IllegalArgumentException("No region provided");
-        if ( !region.isServiceSupported(getServiceAbbreviation()) )
-            throw new IllegalArgumentException(getServiceAbbreviation() + " isn't supported in region "
+        String serviceName = getServiceNameIntern();
+        if ( !region.isServiceSupported(serviceName) )
+            throw new IllegalArgumentException(serviceName + " isn't supported in region "
                     + region.getName());
-        String serviceEndpoint = region.getServiceEndpoint(getServiceAbbreviation());
+        String serviceEndpoint = region.getServiceEndpoint(serviceName);
         int protocolIdx = serviceEndpoint.indexOf("://");
         // Strip off the protocol to allow the client config to specify it
         if ( protocolIdx >= 0 ) {
             serviceEndpoint = serviceEndpoint.substring(protocolIdx + "://".length());
         }
         setEndpoint(serviceEndpoint);
-    }
-    
-    /**
-     * Returns the service abbreviation for this service, used for identifying
-     * service endpoints by region.
-     * 
-     * @see ServiceAbbreviations
-     */
-    protected String getServiceAbbreviation() {
-        return "NO_SERVICE_ABBREVIATION_SPECIFIED";
     }
 
     public void setConfiguration(ClientConfiguration clientConfiguration) {
@@ -487,13 +483,44 @@ public abstract class AmazonWebServiceClient {
     }
 
     /**
+     * @deprecated by {@link #getServiceName()}.
+     */
+    @Deprecated
+    protected String getServiceAbbreviation() {
+        return getServiceNameIntern();
+    }
+
+    /**
+     * Returns the service abbreviation for this service, used for identifying
+     * service endpoints by region, identifying the necessary signer, etc.
+     * Used to be call "getServiceAbbreviation".
+     */
+    public String getServiceName() {
+        return getServiceNameIntern();
+    }
+
+    /**
+     * Internal method for implementing {@link #getServiceName()}.
+     */
+    private String getServiceNameIntern() {
+        if (serviceName == null) {
+            synchronized(this) {
+                if (serviceName == null) {
+                    return serviceName = computeServiceName();
+                }
+            }
+        }
+        return serviceName;
+    }
+
+    /**
      * Returns the service name of this AWS http client by first looking it up
      * from the SDK internal configuration, and if not found, derive it from the
      * class name of the immediate subclass of {@link AmazonWebServiceClient}.
      * No configuration is necessary if the simple class name of the http client
      * follows the convention of <code>(Amazon|AWS).*(JavaClient|Client)</code>.
      */
-    public String getServiceName() {
+    private String computeServiceName() {
         Class<?> httpClientClass = Classes.childClassOf(
                 AmazonWebServiceClient.class, this);
         final String httpClientName = httpClientClass.getSimpleName();

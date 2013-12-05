@@ -7852,11 +7852,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         }
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "ec2";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

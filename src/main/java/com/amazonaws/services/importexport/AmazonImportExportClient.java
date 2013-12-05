@@ -473,11 +473,6 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
         return listJobs(new ListJobsRequest());
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "importexport";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

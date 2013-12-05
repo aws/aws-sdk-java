@@ -58,6 +58,7 @@ import com.amazonaws.metrics.AwsSdkMetrics;
  */
 @NotThreadSafe
 public class CloudWatchMetricConfig {
+    static final String NAMESPACE_DELIMITER = "/";
     /**
      * Maximum number of metric data that Amazon CloudWatch can
      * accept in a single request

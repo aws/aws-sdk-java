@@ -1596,11 +1596,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         return describeEvents(new DescribeEventsRequest());
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "elasticbeanstalk";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

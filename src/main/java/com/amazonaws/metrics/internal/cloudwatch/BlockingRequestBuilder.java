@@ -14,6 +14,8 @@
  */
 package com.amazonaws.metrics.internal.cloudwatch;
 
+import static com.amazonaws.metrics.internal.cloudwatch.CloudWatchMetricConfig.NAMESPACE_DELIMITER;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -29,6 +31,7 @@ import com.amazonaws.services.cloudwatch.model.Dimension;
 import com.amazonaws.services.cloudwatch.model.MetricDatum;
 import com.amazonaws.services.cloudwatch.model.PutMetricDataRequest;
 import com.amazonaws.services.cloudwatch.model.StatisticSet;
+import com.amazonaws.util.AwsHostNameUtils;
 import com.amazonaws.util.json.Jackson;
 
 /**
@@ -37,6 +40,7 @@ import com.amazonaws.util.json.Jackson;
  * necessary.
  */
 class BlockingRequestBuilder {
+    private static final String OS_METRIC_NAME = MachineMetric.getOSMetricName();
     private final MachineMetricFactory machineMetricFactory = new MachineMetricFactory();
     private final BlockingQueue<MetricDatum> queue;
     private final long timeoutNano;
@@ -128,23 +132,68 @@ class BlockingRequestBuilder {
         for (MetricDatum m: uniqueMetrics.values()) {
             data.add(m);
             if (data.size() == CloudWatchMetricConfig.MAX_METRICS_DATUM_SIZE) {
-                list.add(newPutMetricDataRequest(data));
+                list.addAll(newPutMetricDataRequests(data));
                 data.clear();
             }
         }
 
         if (data.size() > 0) {
-            list.add(newPutMetricDataRequest(data));
+            list.addAll(newPutMetricDataRequests(data));
         }
         return list;
     }
 
-    private PutMetricDataRequest newPutMetricDataRequest(Collection<MetricDatum> data) {
-        PutMetricDataRequest req = new PutMetricDataRequest()
-            .withNamespace(AwsSdkMetrics.METRICS_NAMESPACE)
+    private List<PutMetricDataRequest> newPutMetricDataRequests(Collection<MetricDatum> data) {
+        List<PutMetricDataRequest> list = new ArrayList<PutMetricDataRequest>();
+        final String ns = AwsSdkMetrics.getMetricNameSpace();
+        PutMetricDataRequest req = newPutMetricDataRequest(data, ns);
+        list.add(req);
+        String perHostNameSpace = null;
+        final boolean perHost = AwsSdkMetrics.isPerHostMetricIncluded();
+        if (perHost) {
+            perHostNameSpace = ns + NAMESPACE_DELIMITER
+                    + AwsHostNameUtils.localHostName();
+            req = newPutMetricDataRequest(data, perHostNameSpace);
+            list.add(req);
+        }
+        String jvmMetricName = AwsSdkMetrics.getJvmMetricName();
+        if (jvmMetricName != null) {
+            jvmMetricName = jvmMetricName.trim();
+            if (jvmMetricName.length() > 0) {
+                String perJvmNameSpace = perHostNameSpace == null
+                    ? ns + NAMESPACE_DELIMITER + jvmMetricName
+                    : perHostNameSpace + NAMESPACE_DELIMITER + jvmMetricName
+                    ;
+                // If OS metrics are already included at the per host level,
+                // there is little reason, if any, to include them at the
+                // JVM level.  Hence the filtering.
+                req = newPutMetricDataRequest
+                    (perHost ? filterOSMetrics(data) : data, perJvmNameSpace);
+                list.add(req);
+            }
+        }
+        return list;
+    }
+
+    /**
+     * Return a collection of metrics almost the same as the input except with
+     * all OS metrics removed.
+     */
+    private Collection<MetricDatum> filterOSMetrics(Collection<MetricDatum> data) {
+        Collection<MetricDatum> output = new ArrayList<MetricDatum>(data.size());
+        for (MetricDatum datum: data) {
+            if (!OS_METRIC_NAME.equals(datum.getMetricName()))
+                output.add(datum);
+        }
+        return output;
+    }
+
+    private PutMetricDataRequest newPutMetricDataRequest(
+            Collection<MetricDatum> data, String namespace) {
+        return new PutMetricDataRequest()
+            .withNamespace(namespace)
             .withMetricData(data)
             .withRequestMetricCollector(RequestMetricCollector.NONE)
             ;
-        return req;
     }
 }

@@ -26,27 +26,17 @@ import static com.amazonaws.metrics.internal.cloudwatch.MachineMetric.TotalMemor
 import static com.amazonaws.metrics.internal.cloudwatch.MachineMetric.TotalStartedThreadCount;
 import static com.amazonaws.metrics.internal.cloudwatch.MachineMetric.UsedMemory;
 
-import java.lang.management.ManagementFactory;
-import java.lang.management.ThreadMXBean;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import javax.management.Attribute;
-import javax.management.AttributeList;
-import javax.management.InstanceNotFoundException;
-import javax.management.MBeanServer;
-import javax.management.MalformedObjectNameException;
-import javax.management.ObjectName;
-import javax.management.ReflectionException;
-
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.jmx.spi.JmxInfoProvider;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.services.cloudwatch.model.Dimension;
 import com.amazonaws.services.cloudwatch.model.MetricDatum;
 import com.amazonaws.services.cloudwatch.model.StandardUnit;
-import com.amazonaws.util.jmx.MBeans;
 
 class MachineMetricFactory {
     private static final MachineMetric[] memoryMetrics = { 
@@ -58,7 +48,8 @@ class MachineMetricFactory {
     private static final MachineMetric[] fdMetrics = { 
         OpenFileDescriptorCount, SpareFileDescriptorCount,  
     };
-    
+    private final JmxInfoProvider jmxInfoProvider = JmxInfoProvider.Factory.getJmxInfoProvider();
+
     private void addMetrics(List<MetricDatum> list, MachineMetric[] machineMetrics,
             long[] values, StandardUnit unit) {
         for (int i=0; i < machineMetrics.length; i++) {
@@ -107,28 +98,25 @@ class MachineMetricFactory {
         return list;
     }
 
-    private void addFileDescriptorMetrics(List<MetricDatum> list)
-            throws ReflectionException, InstanceNotFoundException,
-            MalformedObjectNameException {
-        MBeanServer mbsc = MBeans.getMBeanServer();
-        AttributeList attributes = mbsc.getAttributes(
-            new ObjectName("java.lang:type=OperatingSystem"), 
-            new String[]{"OpenFileDescriptorCount", "MaxFileDescriptorCount"});
-        List<Attribute> attrList = attributes.asList();
-        long openFdCount = (Long)attrList.get(0).getValue();
-        long maxFdCount = (Long)attrList.get(1).getValue();
-        long[] fdCounts = { openFdCount, maxFdCount - openFdCount};
-        addMetrics(list, fdMetrics, fdCounts, StandardUnit.Count);
+    private void addFileDescriptorMetrics(List<MetricDatum> list) {
+        JmxInfoProvider provider = JmxInfoProvider.Factory.getJmxInfoProvider();
+        long[] fdInfo = provider.getFileDecriptorInfo();
+
+        if (fdInfo != null) {
+            long openFdCount = fdInfo[0];
+            long maxFdCount = fdInfo[1];
+            long[] fdCounts = { openFdCount, maxFdCount - openFdCount};
+            addMetrics(list, fdMetrics, fdCounts, StandardUnit.Count);
+        }
     }
 
     private void addThreadMetrics(List<MetricDatum> list) {
-        ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
-        int threadCount = threadMXBean.getThreadCount();
-        long[] ids = threadMXBean.findDeadlockedThreads();
+        int threadCount = jmxInfoProvider.getThreadCount();
+        long[] ids = jmxInfoProvider.findDeadlockedThreads();
         int deadLockThreadCount = ids == null ? 0 : ids.length;
-        int daemonThreadCount = threadMXBean.getDaemonThreadCount();
-        int peakThreadCount = threadMXBean.getPeakThreadCount();
-        long totalStartedThreadCount = threadMXBean.getTotalStartedThreadCount();
+        int daemonThreadCount = jmxInfoProvider.getDaemonThreadCount();
+        int peakThreadCount = jmxInfoProvider.getPeakThreadCount();
+        long totalStartedThreadCount = jmxInfoProvider.getTotalStartedThreadCount();
         long[] counts = {
             threadCount,
             deadLockThreadCount,

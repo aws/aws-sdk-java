@@ -1617,11 +1617,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
         return describeLoadBalancers(new DescribeLoadBalancersRequest());
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "elasticloadbalancing";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

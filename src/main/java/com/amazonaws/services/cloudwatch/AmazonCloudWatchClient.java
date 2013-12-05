@@ -802,11 +802,6 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
         return describeAlarmHistory(new DescribeAlarmHistoryRequest());
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "monitoring";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

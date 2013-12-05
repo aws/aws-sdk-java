@@ -1075,11 +1075,6 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         return describeDomains(new DescribeDomainsRequest());
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "cloudsearch";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

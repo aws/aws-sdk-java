@@ -2596,13 +2596,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         
     }
 
-    
-    @Override
-    protected String getServiceAbbreviation() {
-        return "opsworks";
-    }
-    
-
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for
      * debugging issues where a service isn't acting as expected.  This data isn't considered part

@@ -498,9 +498,9 @@ public class TransferManager {
         ProgressListenerChain listenerChain = new ProgressListenerChain(
                 new TransferProgressUpdatingListener(transferProgress),   // The listener for updating transfer progress
                 getObjectRequest.getGeneralProgressListener());           // Listeners included in the original request
-        
+
         // The listener chain used by the low-level GetObject request.
-        // This listener chain ignores any COMPLETE event, so that we could 
+        // This listener chain ignores any COMPLETE event, so that we could
         // delay firing the signal until the high-level download fully finishes.
         ProgressListenerChain listenerChainForGetObjectRequest = new ProgressListenerChain(
                 new ProgressEventFilter() {
@@ -516,7 +516,7 @@ public class TransferManager {
                 },
                 listenerChain);
         getObjectRequest.setGeneralProgressListener(listenerChainForGetObjectRequest);
-        
+
         final ObjectMetadata objectMetadata = s3.getObjectMetadata(getObjectRequest.getBucketName(), getObjectRequest.getKey());
 
         final StartDownloadLock startDownloadLock = new StartDownloadLock();
@@ -546,14 +546,14 @@ public class TransferManager {
                      }
                     download.setState(TransferState.InProgress);
                     S3Object s3Object = ServiceUtils.retryableDownloadS3ObjectToFile(file, new ServiceUtils.RetryableS3DownloadTask() {
-                        
+
                         @Override
                         public S3Object getS3ObjectStream() {
                             S3Object s3Object = s3.getObject(getObjectRequest);
                             download.setS3Object(s3Object);
                             return s3Object;
                         }
-                        
+
                         @Override
                         public boolean needIntegrityCheck() {
                             // Don't perform the integrity check if the stream data is wrapped
@@ -565,7 +565,7 @@ public class TransferManager {
                             return performIntegrityCheck;
                         }
                     });
-                    
+
 
                     if (s3Object == null) {
                         download.setState(TransferState.Canceled);
@@ -770,18 +770,18 @@ public class TransferManager {
      * events to a ProgressListenerChain.
      */
     private static final class MultipleFileTransferProgressUpdatingListener extends TransferProgressUpdatingListener {
-        
+
         private final ProgressListenerCallbackExecutor progressListenerCallbackExecutor;
-        
+
         public MultipleFileTransferProgressUpdatingListener(TransferProgressImpl transferProgress, ProgressListenerChain progressListenerChain) {
             super(transferProgress);
             this.progressListenerCallbackExecutor = ProgressListenerCallbackExecutor.wrapListener(progressListenerChain);
         }
-        
+
         @Override
         public void progressChanged(ProgressEvent progressEvent) {
             super.progressChanged(progressEvent);
-            
+
             /* Only propagate the BytesTransferred to progress listener chain */
             progressListenerCallbackExecutor.progressChanged(new ProgressEvent(
                     progressEvent.getBytesTransferred()));
@@ -811,7 +811,7 @@ public class TransferManager {
     public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirectoryKeyPrefix, File directory, boolean includeSubdirectories) {
     	return uploadDirectory(bucketName, virtualDirectoryKeyPrefix, directory, includeSubdirectories, null);
     }
-    
+
     /**
      * Uploads all files in the directory given to the bucket named, optionally
      * recursing for all subdirectories.
@@ -826,13 +826,13 @@ public class TransferManager {
      *            null or empty string to upload files to the root of the
      *            bucket.
      * @param directory
-     *            The directory to upload.    			           
+     *            The directory to upload.
      * @param includeSubdirectories
      *            Whether to include subdirectories in the upload. If true,
      *            files found in subdirectories will be included with an
      *            appropriate concatenation to the key prefix.
      * @param metadataProvider
-     * 			  A callback of type <code>ObjectMetadataProvider</code> which 
+     * 			  A callback of type <code>ObjectMetadataProvider</code> which
      *            is used to provide metadata for each file being uploaded.
      */
     public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirectoryKeyPrefix, File directory, boolean includeSubdirectories, ObjectMetadataProvider metadataProvider) {
@@ -842,10 +842,10 @@ public class TransferManager {
 
         List<File> files = new LinkedList<File>();
         listFiles(directory, files, includeSubdirectories);
-        
+
         return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files, metadataProvider);
     }
-    
+
     /**
      * Uploads all specified files to the bucket named, constructing
      * relative keys depending on the commonParentDirectory given.
@@ -868,7 +868,7 @@ public class TransferManager {
      *            calculated relative to the common parent directory and the
      *            virtualDirectoryKeyPrefix.
      */
-    public MultipleFileUpload uploadFileList(String bucketName, String virtualDirectoryKeyPrefix, File directory, List<File> files) {    	
+    public MultipleFileUpload uploadFileList(String bucketName, String virtualDirectoryKeyPrefix, File directory, List<File> files) {
     	return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files, null);
     }
 
@@ -894,7 +894,7 @@ public class TransferManager {
      *            calculated relative to the common parent directory and the
      *            virtualDirectoryKeyPrefix.
      * @param metadataProvider
-     * 			  A callback of type <code>ObjectMetadataProvider</code> which 
+     * 			  A callback of type <code>ObjectMetadataProvider</code> which
      *            is used to provide metadata for each file being uploaded.
      */
     public MultipleFileUpload uploadFileList(String bucketName, String virtualDirectoryKeyPrefix, File directory, List<File> files,ObjectMetadataProvider metadataProvider) {
@@ -911,7 +911,7 @@ public class TransferManager {
 
         /* This is the hook for adding additional progress listeners */
         ProgressListenerChain additionalProgressListenerChain = new ProgressListenerChain();
-        
+
         TransferProgressImpl transferProgress = new TransferProgressImpl();
         /*
          * Bind additional progress listeners to this
@@ -933,22 +933,31 @@ public class TransferManager {
             multipleFileUpload.setState(TransferState.Completed);
         }
 
+        /*
+         * If the absolute path for the common/base directory does NOT end in a
+         * separator (which is the case for anything but root directories), then
+         * we know there's still a separator between the base directory and the
+         * rest of the file's path, so we increment the starting position by one.
+         */
+        int startingPosition = directory.getAbsolutePath().length();
+        if (!(directory.getAbsolutePath().endsWith(File.separator))) startingPosition++;
+
         long totalSize = 0;
         for (File f : files) {
             //Check, if file, since only files can be uploaded.
             if (f.isFile()) {
                 totalSize += f.length();
-                String key = f.getAbsolutePath().substring(directory.getAbsolutePath().length() + 1)
-                        .replaceAll("\\\\", "/");
-                
+
+                String key = f.getAbsolutePath().substring(startingPosition).replaceAll("\\\\", "/");
+
                 ObjectMetadata metadata=new ObjectMetadata();
-                
+
                 // Invoke the callback if it's present.
                 // The callback allows the user to customize the metadata for each file being uploaded.
-                if(metadataProvider!=null){
-                	  metadataProvider.provideObjectMetadata(f,metadata);
+                if (metadataProvider != null) {
+                    metadataProvider.provideObjectMetadata(f, metadata);
                 }
-                
+
                 // All the single-file uploads share the same
                 // MultipleFileTransferProgressUpdatingListener and
                 // MultipleFileTransferStateChangeListener

@@ -859,11 +859,6 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         return getSessionToken(new GetSessionTokenRequest());
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "sts";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

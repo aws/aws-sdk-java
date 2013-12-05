@@ -935,11 +935,6 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         return listQueues(new ListQueuesRequest());
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "sqs";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

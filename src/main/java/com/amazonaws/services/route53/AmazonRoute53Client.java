@@ -894,11 +894,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         return listHealthChecks(new ListHealthChecksRequest());
     }
     
-    @Override
-    protected String getServiceAbbreviation() {
-        return "route53";
-    }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

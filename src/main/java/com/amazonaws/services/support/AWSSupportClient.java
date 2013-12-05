@@ -1142,13 +1142,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         
     }
 
-    
-    @Override
-    protected String getServiceAbbreviation() {
-        return "supoort";
-    }
-    
-
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for
      * debugging issues where a service isn't acting as expected.  This data isn't considered part

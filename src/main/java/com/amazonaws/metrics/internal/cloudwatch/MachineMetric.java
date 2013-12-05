@@ -14,6 +14,7 @@
  */
 package com.amazonaws.metrics.internal.cloudwatch;
 
+
 enum MachineMetric {
     // JVM Metrics
     TotalMemory(Dim.Memory, MetricName.JvmMetric),
@@ -47,7 +48,12 @@ enum MachineMetric {
     String getDimensionName() { return dimension.name(); }
     String getMetricName() { return metricName.name(); }
     boolean includeZeroValue() { return includeZeroValue; }
-    
+
+    /** Returns the metric name for OS metrics. */
+    static String getOSMetricName() {
+        return MetricName.OSMetric.name();
+    }
+
     /**
      * Machine metric names.
      */

@@ -1231,13 +1231,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         
     }
 
-    
-    @Override
-    protected String getServiceAbbreviation() {
-        return "elastictranscoder";
-    }
-    
-
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for
      * debugging issues where a service isn't acting as expected.  This data isn't considered part
