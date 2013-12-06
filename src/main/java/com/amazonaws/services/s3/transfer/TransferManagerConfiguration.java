@@ -55,7 +55,7 @@ public class TransferManagerConfiguration {
      * communication, small uploads are still recommended to use a single
      * connection for the upload.
      */
-    private int multipartUploadThreshold = DEFAULT_MULTIPART_UPLOAD_THRESHOLD;
+    private long multipartUploadThreshold = DEFAULT_MULTIPART_UPLOAD_THRESHOLD;
 
     
     /**
@@ -121,7 +121,7 @@ public class TransferManagerConfiguration {
      *            The size threshold in bytes for when to use multipart
      *            uploads.
      */
-    public void setMultipartUploadThreshold(int multipartUploadThreshold) {
+    public void setMultipartUploadThreshold(long multipartUploadThreshold) {
         this.multipartUploadThreshold = multipartUploadThreshold;
     }
 }
