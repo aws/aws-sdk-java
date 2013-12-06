@@ -29,8 +29,6 @@ public class PropertiesFileCredentialsProvider implements AWSCredentialsProvider
      *            For example,
      *            <ul>
      *              <li>/etc/somewhere/credentials.properties</li>
-     *              <li>./beta-credentials.properties</li>
-     *              <li>./AwsCredentials.properties</li>
      *            </ul>
      */
     public PropertiesFileCredentialsProvider(String credentialsFilePath) {
