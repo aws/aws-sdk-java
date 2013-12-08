@@ -606,7 +606,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     public Bucket createBucket(String bucketName)
             throws AmazonClientException, AmazonServiceException {
-        return createBucket(new CreateBucketRequest(bucketName));
+        return createBucket(new CreateBucketRequest(bucketName, this.getRegion()));
     }
 
     /* (non-Javadoc)
