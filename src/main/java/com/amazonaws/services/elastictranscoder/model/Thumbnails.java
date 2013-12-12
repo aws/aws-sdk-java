@@ -16,7 +16,6 @@ package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Thumbnails for videos.

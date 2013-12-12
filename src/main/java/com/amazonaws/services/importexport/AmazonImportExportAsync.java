@@ -320,6 +320,5 @@ public interface AmazonImportExportAsync extends AmazonImportExport {
     public Future<UpdateJobResult> updateJobAsync(UpdateJobRequest updateJobRequest,
             AsyncHandler<UpdateJobRequest, UpdateJobResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

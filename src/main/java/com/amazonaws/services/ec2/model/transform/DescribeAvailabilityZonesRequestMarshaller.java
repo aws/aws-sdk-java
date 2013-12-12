@@ -33,13 +33,12 @@ public class DescribeAvailabilityZonesRequestMarshaller implements Marshaller<Re
     public Request<DescribeAvailabilityZonesRequest> marshall(DescribeAvailabilityZonesRequest describeAvailabilityZonesRequest) {
 
         if (describeAvailabilityZonesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeAvailabilityZonesRequest> request = new DefaultRequest<DescribeAvailabilityZonesRequest>(describeAvailabilityZonesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeAvailabilityZones");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> zoneNamesList = describeAvailabilityZonesRequest.getZoneNames();
         int zoneNamesListIndex = 1;
@@ -76,7 +75,6 @@ public class DescribeAvailabilityZonesRequestMarshaller implements Marshaller<Re
 
             filtersListIndex++;
         }
-
 
         return request;
     }

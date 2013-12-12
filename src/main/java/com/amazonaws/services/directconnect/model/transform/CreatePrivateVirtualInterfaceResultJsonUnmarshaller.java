@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Create Private Virtual Interface Result JSON Unmarshaller
  */
 public class CreatePrivateVirtualInterfaceResultJsonUnmarshaller implements Unmarshaller<CreatePrivateVirtualInterfaceResult, JsonUnmarshallerContext> {
 
-    
-
     public CreatePrivateVirtualInterfaceResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         CreatePrivateVirtualInterfaceResult createPrivateVirtualInterfaceResult = new CreatePrivateVirtualInterfaceResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class CreatePrivateVirtualInterfaceResultJsonUnmarshaller implements Unma
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ownerAccount", targetDepth)) {
                     context.nextToken();
@@ -115,7 +109,6 @@ public class CreatePrivateVirtualInterfaceResultJsonUnmarshaller implements Unma
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

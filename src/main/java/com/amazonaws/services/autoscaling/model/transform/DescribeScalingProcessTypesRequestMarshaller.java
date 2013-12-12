@@ -33,14 +33,12 @@ public class DescribeScalingProcessTypesRequestMarshaller implements Marshaller<
     public Request<DescribeScalingProcessTypesRequest> marshall(DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest) {
 
         if (describeScalingProcessTypesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeScalingProcessTypesRequest> request = new DefaultRequest<DescribeScalingProcessTypesRequest>(describeScalingProcessTypesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeScalingProcessTypes");
         request.addParameter("Version", "2011-01-01");
-
-
 
         return request;
     }

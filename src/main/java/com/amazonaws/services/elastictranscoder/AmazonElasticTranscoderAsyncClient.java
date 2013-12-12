@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 
-
 /**
  * Asynchronous client for accessing AmazonElasticTranscoder.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -46,7 +45,6 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -246,7 +244,6 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -305,11 +302,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<UpdatePipelineStatusResult>() {
             public UpdatePipelineStatusResult call() throws Exception {
                 return updatePipelineStatus(updatePipelineStatusRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The UpdatePipelineStatus operation pauses or reactivates a pipeline,
@@ -350,17 +346,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdatePipelineStatusResult>() {
             public UpdatePipelineStatusResult call() throws Exception {
-            	UpdatePipelineStatusResult result;
+                UpdatePipelineStatusResult result;
                 try {
-            		result = updatePipelineStatus(updatePipelineStatusRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updatePipelineStatusRequest, result);
-               	return result;
-		    }
-		});
+                    result = updatePipelineStatus(updatePipelineStatusRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updatePipelineStatusRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -395,11 +391,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<UpdatePipelineNotificationsResult>() {
             public UpdatePipelineNotificationsResult call() throws Exception {
                 return updatePipelineNotifications(updatePipelineNotificationsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * With the UpdatePipelineNotifications operation, you can update Amazon
@@ -437,17 +432,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdatePipelineNotificationsResult>() {
             public UpdatePipelineNotificationsResult call() throws Exception {
-            	UpdatePipelineNotificationsResult result;
+                UpdatePipelineNotificationsResult result;
                 try {
-            		result = updatePipelineNotifications(updatePipelineNotificationsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updatePipelineNotificationsRequest, result);
-               	return result;
-		    }
-		});
+                    result = updatePipelineNotifications(updatePipelineNotificationsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updatePipelineNotificationsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -475,11 +470,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<ReadJobResult>() {
             public ReadJobResult call() throws Exception {
                 return readJob(readJobRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The ReadJob operation returns detailed information about a job.
@@ -510,17 +504,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ReadJobResult>() {
             public ReadJobResult call() throws Exception {
-            	ReadJobResult result;
+                ReadJobResult result;
                 try {
-            		result = readJob(readJobRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(readJobRequest, result);
-               	return result;
-		    }
-		});
+                    result = readJob(readJobRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(readJobRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -551,11 +545,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<ListJobsByStatusResult>() {
             public ListJobsByStatusResult call() throws Exception {
                 return listJobsByStatus(listJobsByStatusRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The ListJobsByStatus operation gets a list of jobs that have a
@@ -589,17 +582,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListJobsByStatusResult>() {
             public ListJobsByStatusResult call() throws Exception {
-            	ListJobsByStatusResult result;
+                ListJobsByStatusResult result;
                 try {
-            		result = listJobsByStatus(listJobsByStatusRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listJobsByStatusRequest, result);
-               	return result;
-		    }
-		});
+                    result = listJobsByStatus(listJobsByStatusRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listJobsByStatusRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -627,11 +620,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<ReadPresetResult>() {
             public ReadPresetResult call() throws Exception {
                 return readPreset(readPresetRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The ReadPreset operation gets detailed information about a preset.
@@ -662,17 +654,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ReadPresetResult>() {
             public ReadPresetResult call() throws Exception {
-            	ReadPresetResult result;
+                ReadPresetResult result;
                 try {
-            		result = readPreset(readPresetRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(readPresetRequest, result);
-               	return result;
-		    }
-		});
+                    result = readPreset(readPresetRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(readPresetRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -701,11 +693,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<CreatePipelineResult>() {
             public CreatePipelineResult call() throws Exception {
                 return createPipeline(createPipelineRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The CreatePipeline operation creates a pipeline with settings that you
@@ -737,17 +728,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreatePipelineResult>() {
             public CreatePipelineResult call() throws Exception {
-            	CreatePipelineResult result;
+                CreatePipelineResult result;
                 try {
-            		result = createPipeline(createPipelineRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createPipelineRequest, result);
-               	return result;
-		    }
-		});
+                    result = createPipeline(createPipelineRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createPipelineRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -781,11 +772,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<CancelJobResult>() {
             public CancelJobResult call() throws Exception {
                 return cancelJob(cancelJobRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The CancelJob operation cancels an unfinished job.
@@ -822,17 +812,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CancelJobResult>() {
             public CancelJobResult call() throws Exception {
-            	CancelJobResult result;
+                CancelJobResult result;
                 try {
-            		result = cancelJob(cancelJobRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(cancelJobRequest, result);
-               	return result;
-		    }
-		});
+                    result = cancelJob(cancelJobRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(cancelJobRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -867,11 +857,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<UpdatePipelineResult>() {
             public UpdatePipelineResult call() throws Exception {
                 return updatePipeline(updatePipelineRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Use the <code>UpdatePipeline</code> operation to update settings for
@@ -909,17 +898,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdatePipelineResult>() {
             public UpdatePipelineResult call() throws Exception {
-            	UpdatePipelineResult result;
+                UpdatePipelineResult result;
                 try {
-            		result = updatePipeline(updatePipelineRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updatePipelineRequest, result);
-               	return result;
-		    }
-		});
+                    result = updatePipeline(updatePipelineRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updatePipelineRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -949,11 +938,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<ListPresetsResult>() {
             public ListPresetsResult call() throws Exception {
                 return listPresets(listPresetsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The ListPresets operation gets a list of the default presets included
@@ -986,17 +974,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListPresetsResult>() {
             public ListPresetsResult call() throws Exception {
-            	ListPresetsResult result;
+                ListPresetsResult result;
                 try {
-            		result = listPresets(listPresetsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listPresetsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listPresets(listPresetsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listPresetsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1030,11 +1018,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<DeletePipelineResult>() {
             public DeletePipelineResult call() throws Exception {
                 return deletePipeline(deletePipelineRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DeletePipeline operation removes a pipeline.
@@ -1071,17 +1058,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeletePipelineResult>() {
             public DeletePipelineResult call() throws Exception {
-            	DeletePipelineResult result;
+                DeletePipelineResult result;
                 try {
-            		result = deletePipeline(deletePipelineRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deletePipelineRequest, result);
-               	return result;
-		    }
-		});
+                    result = deletePipeline(deletePipelineRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deletePipelineRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1117,11 +1104,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<TestRoleResult>() {
             public TestRoleResult call() throws Exception {
                 return testRole(testRoleRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The TestRole operation tests the IAM role used to create the pipeline.
@@ -1160,17 +1146,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<TestRoleResult>() {
             public TestRoleResult call() throws Exception {
-            	TestRoleResult result;
+                TestRoleResult result;
                 try {
-            		result = testRole(testRoleRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(testRoleRequest, result);
-               	return result;
-		    }
-		});
+                    result = testRole(testRoleRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(testRoleRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1199,11 +1185,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<ListPipelinesResult>() {
             public ListPipelinesResult call() throws Exception {
                 return listPipelines(listPipelinesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The ListPipelines operation gets a list of the pipelines associated
@@ -1235,17 +1220,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListPipelinesResult>() {
             public ListPipelinesResult call() throws Exception {
-            	ListPipelinesResult result;
+                ListPipelinesResult result;
                 try {
-            		result = listPipelines(listPipelinesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listPipelinesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listPipelines(listPipelinesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listPipelinesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1273,11 +1258,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<ReadPipelineResult>() {
             public ReadPipelineResult call() throws Exception {
                 return readPipeline(readPipelineRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The ReadPipeline operation gets detailed information about a pipeline.
@@ -1308,17 +1292,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ReadPipelineResult>() {
             public ReadPipelineResult call() throws Exception {
-            	ReadPipelineResult result;
+                ReadPipelineResult result;
                 try {
-            		result = readPipeline(readPipelineRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(readPipelineRequest, result);
-               	return result;
-		    }
-		});
+                    result = readPipeline(readPipelineRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(readPipelineRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1366,11 +1350,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<CreatePresetResult>() {
             public CreatePresetResult call() throws Exception {
                 return createPreset(createPresetRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The CreatePreset operation creates a preset with settings that you
@@ -1421,17 +1404,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreatePresetResult>() {
             public CreatePresetResult call() throws Exception {
-            	CreatePresetResult result;
+                CreatePresetResult result;
                 try {
-            		result = createPreset(createPresetRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createPresetRequest, result);
-               	return result;
-		    }
-		});
+                    result = createPreset(createPresetRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createPresetRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1464,11 +1447,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<DeletePresetResult>() {
             public DeletePresetResult call() throws Exception {
                 return deletePreset(deletePresetRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DeletePreset operation removes a preset that you've added in an
@@ -1504,17 +1486,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeletePresetResult>() {
             public DeletePresetResult call() throws Exception {
-            	DeletePresetResult result;
+                DeletePresetResult result;
                 try {
-            		result = deletePreset(deletePresetRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deletePresetRequest, result);
-               	return result;
-		    }
-		});
+                    result = deletePreset(deletePresetRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deletePresetRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1550,11 +1532,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<CreateJobResult>() {
             public CreateJobResult call() throws Exception {
                 return createJob(createJobRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * When you create a job, Elastic Transcoder returns JSON data that
@@ -1593,17 +1574,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateJobResult>() {
             public CreateJobResult call() throws Exception {
-            	CreateJobResult result;
+                CreateJobResult result;
                 try {
-            		result = createJob(createJobRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createJobRequest, result);
-               	return result;
-		    }
-		});
+                    result = createJob(createJobRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createJobRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1639,11 +1620,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         return executorService.submit(new Callable<ListJobsByPipelineResult>() {
             public ListJobsByPipelineResult call() throws Exception {
                 return listJobsByPipeline(listJobsByPipelineRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The ListJobsByPipeline operation gets a list of the jobs currently in
@@ -1682,17 +1662,17 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListJobsByPipelineResult>() {
             public ListJobsByPipelineResult call() throws Exception {
-            	ListJobsByPipelineResult result;
+                ListJobsByPipelineResult result;
                 try {
-            		result = listJobsByPipeline(listJobsByPipelineRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listJobsByPipelineRequest, result);
-               	return result;
-		    }
-		});
+                    result = listJobsByPipeline(listJobsByPipelineRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listJobsByPipelineRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

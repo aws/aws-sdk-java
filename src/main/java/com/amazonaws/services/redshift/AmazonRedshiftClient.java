@@ -25,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
@@ -32,7 +33,6 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
 
 import com.amazonaws.services.redshift.model.*;
 import com.amazonaws.services.redshift.model.transform.*;
-
 
 /**
  * Client for accessing AmazonRedshift.  All service calls made
@@ -185,7 +185,30 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AmazonRedshiftClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonRedshift using the specified AWS account credentials
+     * provider, client configuration options, and request metric collector.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AmazonRedshift
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public AmazonRedshiftClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
     }
@@ -271,7 +294,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 "/com/amazonaws/services/redshift/request.handler2s"));
     }
 
-    
     /**
      * <p>
      * Removes the ability of the specified AWS customer account to restore
@@ -3167,7 +3189,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     public DescribeClusterParameterGroupsResult describeClusterParameterGroups() throws AmazonServiceException, AmazonClientException {
         return describeClusterParameterGroups(new DescribeClusterParameterGroupsRequest());
     }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

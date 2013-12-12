@@ -34,8 +34,7 @@ public class ResourceInUseExceptionUnmarshaller extends JsonErrorUnmarshaller {
             return null;
 
         ResourceInUseException e = (ResourceInUseException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

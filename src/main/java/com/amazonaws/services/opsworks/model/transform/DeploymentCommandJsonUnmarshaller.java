@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Deployment Command JSON Unmarshaller
  */
 public class DeploymentCommandJsonUnmarshaller implements Unmarshaller<DeploymentCommand, JsonUnmarshallerContext> {
 
-    
-
     public DeploymentCommand unmarshall(JsonUnmarshallerContext context) throws Exception {
         DeploymentCommand deploymentCommand = new DeploymentCommand();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DeploymentCommandJsonUnmarshaller implements Unmarshaller<Deploymen
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
@@ -63,7 +57,6 @@ public class DeploymentCommandJsonUnmarshaller implements Unmarshaller<Deploymen
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

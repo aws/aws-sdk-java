@@ -33,8 +33,8 @@ public class UploadServerCertificateRequestMarshaller implements Marshaller<Requ
     public Request<UploadServerCertificateRequest> marshall(UploadServerCertificateRequest uploadServerCertificateRequest) {
 
         if (uploadServerCertificateRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<UploadServerCertificateRequest> request = new DefaultRequest<UploadServerCertificateRequest>(uploadServerCertificateRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "UploadServerCertificate");
@@ -55,7 +55,6 @@ public class UploadServerCertificateRequestMarshaller implements Marshaller<Requ
         if (uploadServerCertificateRequest.getCertificateChain() != null) {
             request.addParameter("CertificateChain", StringUtils.fromString(uploadServerCertificateRequest.getCertificateChain()));
         }
-
 
         return request;
     }

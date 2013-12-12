@@ -605,7 +605,5 @@ public interface AmazonSimpleDB {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ListDomainsResult listDomains() throws AmazonServiceException, AmazonClientException;
-    
-
 }
         

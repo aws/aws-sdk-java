@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class SetVisibleToAllUsersRequestMarshaller implements Marshaller<Request<SetVisibleToAllUsersRequest>, SetVisibleToAllUsersRequest> {
 
-    
-
     public Request<SetVisibleToAllUsersRequest> marshall(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest) {
     if (setVisibleToAllUsersRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class SetVisibleToAllUsersRequestMarshaller implements Marshaller<Request
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,16 +70,11 @@ public class SetVisibleToAllUsersRequestMarshaller implements Marshaller<Request
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
-          
 
             com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(setVisibleToAllUsersRequest.getJobFlowIds());
             if (jobFlowIdsList != null && !(jobFlowIdsList.isAutoConstruct() && jobFlowIdsList.isEmpty())) {
@@ -104,7 +94,6 @@ public class SetVisibleToAllUsersRequestMarshaller implements Marshaller<Request
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -113,7 +102,6 @@ public class SetVisibleToAllUsersRequestMarshaller implements Marshaller<Request
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

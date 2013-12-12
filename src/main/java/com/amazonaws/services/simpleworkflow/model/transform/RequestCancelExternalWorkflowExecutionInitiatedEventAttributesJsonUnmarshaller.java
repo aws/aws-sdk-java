@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Request Cancel External Workflow Execution Initiated Event Attributes JSON Unmarshaller
  */
 public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributesJsonUnmarshaller implements Unmarshaller<RequestCancelExternalWorkflowExecutionInitiatedEventAttributes, JsonUnmarshallerContext> {
 
-    
-
     public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         RequestCancelExternalWorkflowExecutionInitiatedEventAttributes requestCancelExternalWorkflowExecutionInitiatedEventAttributes = new RequestCancelExternalWorkflowExecutionInitiatedEventAttributes();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributesJsonU
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workflowId", targetDepth)) {
                     context.nextToken();
@@ -72,7 +66,6 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributesJsonU
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -78,12 +78,14 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
     private java.util.Map<String,KeysAndAttributes> requestItems;
 
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      */
     private String returnConsumedCapacity;
 
@@ -132,10 +134,11 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      * <code>true</code>, a strongly consistent read is used; if
      * <code>false</code> (the default), an eventually consistent read is
      * used. </li> </ul>
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>,
-     * <i>ConsumedCapacity</i> is included in the response; if set to
-     * <code>NONE</code> (the default), <i>ConsumedCapacity</i> is not
-     * included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the
+     * response includes <i>ConsumedCapacity</i> data for tables and indexes.
+     * If set to <code>INDEXES</code>, the repsonse includes
+     * <i>ConsumedCapacity</i> for indexes. If set to <code>NONE</code> (the
+     * default), <i>ConsumedCapacity</i> is not included in the response.
      */
     public BatchGetItemRequest(java.util.Map<String,KeysAndAttributes> requestItems, String returnConsumedCapacity) {
         setRequestItems(requestItems);
@@ -159,10 +162,11 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      * <code>true</code>, a strongly consistent read is used; if
      * <code>false</code> (the default), an eventually consistent read is
      * used. </li> </ul>
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>,
-     * <i>ConsumedCapacity</i> is included in the response; if set to
-     * <code>NONE</code> (the default), <i>ConsumedCapacity</i> is not
-     * included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the
+     * response includes <i>ConsumedCapacity</i> data for tables and indexes.
+     * If set to <code>INDEXES</code>, the repsonse includes
+     * <i>ConsumedCapacity</i> for indexes. If set to <code>NONE</code> (the
+     * default), <i>ConsumedCapacity</i> is not included in the response.
      */
     public BatchGetItemRequest(java.util.Map<String,KeysAndAttributes> requestItems, ReturnConsumedCapacity returnConsumedCapacity) {
         this.requestItems = requestItems;
@@ -295,37 +299,41 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      * @param key The key of the entry to be added into RequestItems.
      * @param value The corresponding value of the entry to be added into RequestItems.
      */
-	public BatchGetItemRequest addRequestItemsEntry(String key, KeysAndAttributes value) {
-		if (null == this.requestItems) {
-			this.requestItems = new java.util.HashMap<String,KeysAndAttributes>();
-		}
-		if (this.requestItems.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.requestItems.put(key, value);
-		return this;
-	}
+    public BatchGetItemRequest addRequestItemsEntry(String key, KeysAndAttributes value) {
+        if (null == this.requestItems) {
+            this.requestItems = new java.util.HashMap<String,KeysAndAttributes>();
+        }
+        if (this.requestItems.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.requestItems.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into RequestItems.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public BatchGetItemRequest clearRequestItemsEntries() {
-		this.requestItems = null;
-		return this;
-	}
-	
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * Removes all the entries added into RequestItems.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public BatchGetItemRequest clearRequestItemsEntries() {
+        this.requestItems = null;
+        return this;
+    }
+    
+    /**
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @return If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @return If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @see ReturnConsumedCapacity
      */
@@ -334,16 +342,20 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @see ReturnConsumedCapacity
      */
@@ -352,18 +364,22 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -376,16 +392,20 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @see ReturnConsumedCapacity
      */
@@ -394,18 +414,22 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

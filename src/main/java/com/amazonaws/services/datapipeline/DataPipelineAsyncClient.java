@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.datapipeline.model.*;
 
-
 /**
  * Asynchronous client for accessing DataPipeline.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -70,7 +69,6 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -270,7 +268,6 @@ public class DataPipelineAsyncClient extends DataPipelineClient
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -326,11 +323,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient
         return executorService.submit(new Callable<ActivatePipelineResult>() {
             public ActivatePipelineResult call() throws Exception {
                 return activatePipeline(activatePipelineRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Validates a pipeline and initiates processing. If the pipeline does
@@ -368,17 +364,17 @@ public class DataPipelineAsyncClient extends DataPipelineClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ActivatePipelineResult>() {
             public ActivatePipelineResult call() throws Exception {
-            	ActivatePipelineResult result;
+                ActivatePipelineResult result;
                 try {
-            		result = activatePipeline(activatePipelineRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(activatePipelineRequest, result);
-               	return result;
-		    }
-		});
+                    result = activatePipeline(activatePipelineRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(activatePipelineRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -408,11 +404,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient
         return executorService.submit(new Callable<ListPipelinesResult>() {
             public ListPipelinesResult call() throws Exception {
                 return listPipelines(listPipelinesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a list of pipeline identifiers for all active pipelines.
@@ -445,17 +440,17 @@ public class DataPipelineAsyncClient extends DataPipelineClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListPipelinesResult>() {
             public ListPipelinesResult call() throws Exception {
-            	ListPipelinesResult result;
+                ListPipelinesResult result;
                 try {
-            		result = listPipelines(listPipelinesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listPipelinesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listPipelines(listPipelinesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listPipelinesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -497,11 +492,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient
         return executorService.submit(new Callable<ReportTaskProgressResult>() {
             public ReportTaskProgressResult call() throws Exception {
                 return reportTaskProgress(reportTaskProgressRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Updates the AWS Data Pipeline service on the progress of the calling
@@ -546,17 +540,17 @@ public class DataPipelineAsyncClient extends DataPipelineClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ReportTaskProgressResult>() {
             public ReportTaskProgressResult call() throws Exception {
-            	ReportTaskProgressResult result;
+                ReportTaskProgressResult result;
                 try {
-            		result = reportTaskProgress(reportTaskProgressRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(reportTaskProgressRequest, result);
-               	return result;
-		    }
-		});
+                    result = reportTaskProgress(reportTaskProgressRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(reportTaskProgressRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -587,11 +581,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient
         return executorService.submit(new Callable<ValidatePipelineDefinitionResult>() {
             public ValidatePipelineDefinitionResult call() throws Exception {
                 return validatePipelineDefinition(validatePipelineDefinitionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Tests the pipeline definition with a set of validation checks to
@@ -625,17 +618,17 @@ public class DataPipelineAsyncClient extends DataPipelineClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ValidatePipelineDefinitionResult>() {
             public ValidatePipelineDefinitionResult call() throws Exception {
-            	ValidatePipelineDefinitionResult result;
+                ValidatePipelineDefinitionResult result;
                 try {
-            		result = validatePipelineDefinition(validatePipelineDefinitionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(validatePipelineDefinitionRequest, result);
-               	return result;
-		    }
-		});
+                    result = validatePipelineDefinition(validatePipelineDefinitionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(validatePipelineDefinitionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -679,11 +672,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient
         return executorService.submit(new Callable<PollForTaskResult>() {
             public PollForTaskResult call() throws Exception {
                 return pollForTask(pollForTaskRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Task runners call this action to receive a task to perform from AWS
@@ -730,17 +722,17 @@ public class DataPipelineAsyncClient extends DataPipelineClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<PollForTaskResult>() {
             public PollForTaskResult call() throws Exception {
-            	PollForTaskResult result;
+                PollForTaskResult result;
                 try {
-            		result = pollForTask(pollForTaskRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(pollForTaskRequest, result);
-               	return result;
-		    }
-		});
+                    result = pollForTask(pollForTaskRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(pollForTaskRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -777,11 +769,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient
         return executorService.submit(new Callable<QueryObjectsResult>() {
             public QueryObjectsResult call() throws Exception {
                 return queryObjects(queryObjectsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Queries a pipeline for the names of objects that match a specified set
@@ -821,17 +812,17 @@ public class DataPipelineAsyncClient extends DataPipelineClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<QueryObjectsResult>() {
             public QueryObjectsResult call() throws Exception {
-            	QueryObjectsResult result;
+                QueryObjectsResult result;
                 try {
-            		result = queryObjects(queryObjectsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(queryObjectsRequest, result);
-               	return result;
-		    }
-		});
+                    result = queryObjects(queryObjectsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(queryObjectsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -863,11 +854,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient
             public Void call() throws Exception {
                 setStatus(setStatusRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Requests that the status of an array of physical or logical pipeline
@@ -901,16 +891,16 @@ public class DataPipelineAsyncClient extends DataPipelineClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		setStatus(setStatusRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(setStatusRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    setStatus(setStatusRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(setStatusRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -948,11 +938,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient
             public Void call() throws Exception {
                 deletePipeline(deletePipelineRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Permanently deletes a pipeline, its pipeline definition and its run
@@ -992,16 +981,16 @@ public class DataPipelineAsyncClient extends DataPipelineClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deletePipeline(deletePipelineRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deletePipelineRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deletePipeline(deletePipelineRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deletePipelineRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1032,11 +1021,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient
         return executorService.submit(new Callable<GetPipelineDefinitionResult>() {
             public GetPipelineDefinitionResult call() throws Exception {
                 return getPipelineDefinition(getPipelineDefinitionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the definition of the specified pipeline. You can call
@@ -1070,17 +1058,17 @@ public class DataPipelineAsyncClient extends DataPipelineClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetPipelineDefinitionResult>() {
             public GetPipelineDefinitionResult call() throws Exception {
-            	GetPipelineDefinitionResult result;
+                GetPipelineDefinitionResult result;
                 try {
-            		result = getPipelineDefinition(getPipelineDefinitionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getPipelineDefinitionRequest, result);
-               	return result;
-		    }
-		});
+                    result = getPipelineDefinition(getPipelineDefinitionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getPipelineDefinitionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1112,11 +1100,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient
         return executorService.submit(new Callable<SetTaskStatusResult>() {
             public SetTaskStatusResult call() throws Exception {
                 return setTaskStatus(setTaskStatusRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Notifies AWS Data Pipeline that a task is completed and provides
@@ -1151,17 +1138,17 @@ public class DataPipelineAsyncClient extends DataPipelineClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<SetTaskStatusResult>() {
             public SetTaskStatusResult call() throws Exception {
-            	SetTaskStatusResult result;
+                SetTaskStatusResult result;
                 try {
-            		result = setTaskStatus(setTaskStatusRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(setTaskStatusRequest, result);
-               	return result;
-		    }
-		});
+                    result = setTaskStatus(setTaskStatusRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(setTaskStatusRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1191,11 +1178,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient
         return executorService.submit(new Callable<EvaluateExpressionResult>() {
             public EvaluateExpressionResult call() throws Exception {
                 return evaluateExpression(evaluateExpressionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Evaluates a string in the context of a specified object. A task runner
@@ -1228,17 +1214,17 @@ public class DataPipelineAsyncClient extends DataPipelineClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<EvaluateExpressionResult>() {
             public EvaluateExpressionResult call() throws Exception {
-            	EvaluateExpressionResult result;
+                EvaluateExpressionResult result;
                 try {
-            		result = evaluateExpression(evaluateExpressionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(evaluateExpressionRequest, result);
-               	return result;
-		    }
-		});
+                    result = evaluateExpression(evaluateExpressionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(evaluateExpressionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1276,11 +1262,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient
         return executorService.submit(new Callable<DescribePipelinesResult>() {
             public DescribePipelinesResult call() throws Exception {
                 return describePipelines(describePipelinesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieve metadata about one or more pipelines. The information
@@ -1321,17 +1306,17 @@ public class DataPipelineAsyncClient extends DataPipelineClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribePipelinesResult>() {
             public DescribePipelinesResult call() throws Exception {
-            	DescribePipelinesResult result;
+                DescribePipelinesResult result;
                 try {
-            		result = describePipelines(describePipelinesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describePipelinesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describePipelines(describePipelinesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describePipelinesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1360,11 +1345,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient
         return executorService.submit(new Callable<CreatePipelineResult>() {
             public CreatePipelineResult call() throws Exception {
                 return createPipeline(createPipelineRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new empty pipeline. When this action succeeds, you can then
@@ -1396,17 +1380,17 @@ public class DataPipelineAsyncClient extends DataPipelineClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreatePipelineResult>() {
             public CreatePipelineResult call() throws Exception {
-            	CreatePipelineResult result;
+                CreatePipelineResult result;
                 try {
-            		result = createPipeline(createPipelineRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createPipelineRequest, result);
-               	return result;
-		    }
-		});
+                    result = createPipeline(createPipelineRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createPipelineRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1436,11 +1420,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient
         return executorService.submit(new Callable<DescribeObjectsResult>() {
             public DescribeObjectsResult call() throws Exception {
                 return describeObjects(describeObjectsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the object definitions for a set of objects associated with
@@ -1473,17 +1456,17 @@ public class DataPipelineAsyncClient extends DataPipelineClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeObjectsResult>() {
             public DescribeObjectsResult call() throws Exception {
-            	DescribeObjectsResult result;
+                DescribeObjectsResult result;
                 try {
-            		result = describeObjects(describeObjectsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeObjectsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeObjects(describeObjectsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeObjectsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1516,11 +1499,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient
         return executorService.submit(new Callable<ReportTaskRunnerHeartbeatResult>() {
             public ReportTaskRunnerHeartbeatResult call() throws Exception {
                 return reportTaskRunnerHeartbeat(reportTaskRunnerHeartbeatRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Task runners call ReportTaskRunnerHeartbeat every 15 minutes to
@@ -1556,17 +1538,17 @@ public class DataPipelineAsyncClient extends DataPipelineClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ReportTaskRunnerHeartbeatResult>() {
             public ReportTaskRunnerHeartbeatResult call() throws Exception {
-            	ReportTaskRunnerHeartbeatResult result;
+                ReportTaskRunnerHeartbeatResult result;
                 try {
-            		result = reportTaskRunnerHeartbeat(reportTaskRunnerHeartbeatRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(reportTaskRunnerHeartbeatRequest, result);
-               	return result;
-		    }
-		});
+                    result = reportTaskRunnerHeartbeat(reportTaskRunnerHeartbeatRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(reportTaskRunnerHeartbeatRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1612,11 +1594,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient
         return executorService.submit(new Callable<PutPipelineDefinitionResult>() {
             public PutPipelineDefinitionResult call() throws Exception {
                 return putPipelineDefinition(putPipelineDefinitionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Adds tasks, schedules, and preconditions that control the behavior of
@@ -1665,17 +1646,17 @@ public class DataPipelineAsyncClient extends DataPipelineClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<PutPipelineDefinitionResult>() {
             public PutPipelineDefinitionResult call() throws Exception {
-            	PutPipelineDefinitionResult result;
+                PutPipelineDefinitionResult result;
                 try {
-            		result = putPipelineDefinition(putPipelineDefinitionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(putPipelineDefinitionRequest, result);
-               	return result;
-		    }
-		});
+                    result = putPipelineDefinition(putPipelineDefinitionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(putPipelineDefinitionRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

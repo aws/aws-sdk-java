@@ -34,8 +34,7 @@ public class UnknownResourceExceptionUnmarshaller extends JsonErrorUnmarshaller 
             return null;
 
         UnknownResourceException e = (UnknownResourceException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

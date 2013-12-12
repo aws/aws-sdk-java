@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Report Task Progress Result JSON Unmarshaller
  */
 public class ReportTaskProgressResultJsonUnmarshaller implements Unmarshaller<ReportTaskProgressResult, JsonUnmarshallerContext> {
 
-    
-
     public ReportTaskProgressResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ReportTaskProgressResult reportTaskProgressResult = new ReportTaskProgressResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ReportTaskProgressResultJsonUnmarshaller implements Unmarshaller<Re
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("canceled", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class ReportTaskProgressResultJsonUnmarshaller implements Unmarshaller<Re
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

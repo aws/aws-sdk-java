@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Set Task Status Result JSON Unmarshaller
  */
 public class SetTaskStatusResultJsonUnmarshaller implements Unmarshaller<SetTaskStatusResult, JsonUnmarshallerContext> {
 
-    
-
     public SetTaskStatusResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         SetTaskStatusResult setTaskStatusResult = new SetTaskStatusResult();
 
-        
-        
         return setTaskStatusResult;
     }
 

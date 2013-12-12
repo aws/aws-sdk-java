@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Get Pipeline Definition Result JSON Unmarshaller
  */
 public class GetPipelineDefinitionResultJsonUnmarshaller implements Unmarshaller<GetPipelineDefinitionResult, JsonUnmarshallerContext> {
 
-    
-
     public GetPipelineDefinitionResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         GetPipelineDefinitionResult getPipelineDefinitionResult = new GetPipelineDefinitionResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class GetPipelineDefinitionResultJsonUnmarshaller implements Unmarshaller
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pipelineObjects", targetDepth)) {
                     getPipelineDefinitionResult.setPipelineObjects(new ListUnmarshaller<PipelineObject>(PipelineObjectJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -59,7 +53,6 @@ public class GetPipelineDefinitionResultJsonUnmarshaller implements Unmarshaller
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

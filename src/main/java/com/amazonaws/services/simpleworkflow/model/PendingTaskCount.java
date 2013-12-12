@@ -16,7 +16,6 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Contains the count of tasks in a task list.

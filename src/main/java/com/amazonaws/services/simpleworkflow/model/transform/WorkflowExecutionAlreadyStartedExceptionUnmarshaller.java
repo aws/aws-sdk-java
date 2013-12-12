@@ -34,8 +34,7 @@ public class WorkflowExecutionAlreadyStartedExceptionUnmarshaller extends JsonEr
             return null;
 
         WorkflowExecutionAlreadyStartedException e = (WorkflowExecutionAlreadyStartedException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

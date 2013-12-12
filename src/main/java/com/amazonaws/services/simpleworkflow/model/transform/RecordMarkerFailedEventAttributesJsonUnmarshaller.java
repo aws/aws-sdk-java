@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Record Marker Failed Event Attributes JSON Unmarshaller
  */
 public class RecordMarkerFailedEventAttributesJsonUnmarshaller implements Unmarshaller<RecordMarkerFailedEventAttributes, JsonUnmarshallerContext> {
 
-    
-
     public RecordMarkerFailedEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         RecordMarkerFailedEventAttributes recordMarkerFailedEventAttributes = new RecordMarkerFailedEventAttributes();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class RecordMarkerFailedEventAttributesJsonUnmarshaller implements Unmars
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("markerName", targetDepth)) {
                     context.nextToken();
@@ -68,7 +62,6 @@ public class RecordMarkerFailedEventAttributesJsonUnmarshaller implements Unmars
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -16,7 +16,6 @@ package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes an Amazon Glacier job.

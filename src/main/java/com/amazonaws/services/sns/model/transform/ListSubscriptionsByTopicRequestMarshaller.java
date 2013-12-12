@@ -33,8 +33,8 @@ public class ListSubscriptionsByTopicRequestMarshaller implements Marshaller<Req
     public Request<ListSubscriptionsByTopicRequest> marshall(ListSubscriptionsByTopicRequest listSubscriptionsByTopicRequest) {
 
         if (listSubscriptionsByTopicRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListSubscriptionsByTopicRequest> request = new DefaultRequest<ListSubscriptionsByTopicRequest>(listSubscriptionsByTopicRequest, "AmazonSNS");
         request.addParameter("Action", "ListSubscriptionsByTopic");
@@ -46,7 +46,6 @@ public class ListSubscriptionsByTopicRequestMarshaller implements Marshaller<Req
         if (listSubscriptionsByTopicRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(listSubscriptionsByTopicRequest.getNextToken()));
         }
-
 
         return request;
     }

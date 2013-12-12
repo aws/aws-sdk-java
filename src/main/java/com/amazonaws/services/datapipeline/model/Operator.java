@@ -16,7 +16,6 @@ package com.amazonaws.services.datapipeline.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Contains a logical operation for comparing the value of a field with a specified value.

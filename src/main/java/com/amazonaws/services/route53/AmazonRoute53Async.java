@@ -972,6 +972,5 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     public Future<ListHealthChecksResult> listHealthChecksAsync(ListHealthChecksRequest listHealthChecksRequest,
             AsyncHandler<ListHealthChecksRequest, ListHealthChecksResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

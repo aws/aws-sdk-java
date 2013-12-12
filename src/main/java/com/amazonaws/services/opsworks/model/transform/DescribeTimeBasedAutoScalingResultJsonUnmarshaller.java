@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Describe Time Based Auto Scaling Result JSON Unmarshaller
  */
 public class DescribeTimeBasedAutoScalingResultJsonUnmarshaller implements Unmarshaller<DescribeTimeBasedAutoScalingResult, JsonUnmarshallerContext> {
 
-    
-
     public DescribeTimeBasedAutoScalingResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeTimeBasedAutoScalingResult describeTimeBasedAutoScalingResult = new DescribeTimeBasedAutoScalingResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DescribeTimeBasedAutoScalingResultJsonUnmarshaller implements Unmar
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TimeBasedAutoScalingConfigurations", targetDepth)) {
                     describeTimeBasedAutoScalingResult.setTimeBasedAutoScalingConfigurations(new ListUnmarshaller<TimeBasedAutoScalingConfiguration>(TimeBasedAutoScalingConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -59,7 +53,6 @@ public class DescribeTimeBasedAutoScalingResultJsonUnmarshaller implements Unmar
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

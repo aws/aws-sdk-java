@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Result message containing a single description of an application.

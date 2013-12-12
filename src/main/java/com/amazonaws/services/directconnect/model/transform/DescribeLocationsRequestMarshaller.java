@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.directconnect.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class DescribeLocationsRequestMarshaller implements Marshaller<Request<DescribeLocationsRequest>, DescribeLocationsRequest> {
 
-    
-
     public Request<DescribeLocationsRequest> marshall(DescribeLocationsRequest describeLocationsRequest) {
     if (describeLocationsRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class DescribeLocationsRequestMarshaller implements Marshaller<Request<De
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,10 +70,7 @@ public class DescribeLocationsRequestMarshaller implements Marshaller<Request<De
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         request.setContent(new ByteArrayInputStream(new byte[0]));
-        
 
         return request;
     }

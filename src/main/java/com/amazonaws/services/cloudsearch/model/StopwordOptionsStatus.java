@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudsearch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The stopword options configured for this search domain and the current status of those options.

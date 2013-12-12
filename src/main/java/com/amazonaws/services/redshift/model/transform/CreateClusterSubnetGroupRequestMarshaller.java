@@ -33,8 +33,8 @@ public class CreateClusterSubnetGroupRequestMarshaller implements Marshaller<Req
     public Request<CreateClusterSubnetGroupRequest> marshall(CreateClusterSubnetGroupRequest createClusterSubnetGroupRequest) {
 
         if (createClusterSubnetGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateClusterSubnetGroupRequest> request = new DefaultRequest<CreateClusterSubnetGroupRequest>(createClusterSubnetGroupRequest, "AmazonRedshift");
         request.addParameter("Action", "CreateClusterSubnetGroup");
@@ -57,7 +57,6 @@ public class CreateClusterSubnetGroupRequestMarshaller implements Marshaller<Req
 
             subnetIdsListIndex++;
         }
-
 
         return request;
     }

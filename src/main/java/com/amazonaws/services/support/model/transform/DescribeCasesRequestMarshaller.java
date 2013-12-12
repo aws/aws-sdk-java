@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.support.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class DescribeCasesRequestMarshaller implements Marshaller<Request<DescribeCasesRequest>, DescribeCasesRequest> {
 
-    
-
     public Request<DescribeCasesRequest> marshall(DescribeCasesRequest describeCasesRequest) {
     if (describeCasesRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class DescribeCasesRequestMarshaller implements Marshaller<Request<Descri
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,16 +70,11 @@ public class DescribeCasesRequestMarshaller implements Marshaller<Request<Descri
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
-          
 
             com.amazonaws.internal.ListWithAutoConstructFlag<String> caseIdListList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeCasesRequest.getCaseIdList());
             if (caseIdListList != null && !(caseIdListList.isAutoConstruct() && caseIdListList.isEmpty())) {
@@ -122,7 +112,6 @@ public class DescribeCasesRequestMarshaller implements Marshaller<Request<Descri
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -131,7 +120,6 @@ public class DescribeCasesRequestMarshaller implements Marshaller<Request<Descri
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

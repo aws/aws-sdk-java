@@ -33,8 +33,8 @@ public class CreateApplicationVersionRequestMarshaller implements Marshaller<Req
     public Request<CreateApplicationVersionRequest> marshall(CreateApplicationVersionRequest createApplicationVersionRequest) {
 
         if (createApplicationVersionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateApplicationVersionRequest> request = new DefaultRequest<CreateApplicationVersionRequest>(createApplicationVersionRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "CreateApplicationVersion");
@@ -61,7 +61,6 @@ public class CreateApplicationVersionRequestMarshaller implements Marshaller<Req
         if (createApplicationVersionRequest.isAutoCreateApplication() != null) {
             request.addParameter("AutoCreateApplication", StringUtils.fromBoolean(createApplicationVersionRequest.isAutoCreateApplication()));
         }
-
 
         return request;
     }

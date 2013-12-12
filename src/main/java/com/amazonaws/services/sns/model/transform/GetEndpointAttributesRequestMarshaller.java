@@ -33,8 +33,8 @@ public class GetEndpointAttributesRequestMarshaller implements Marshaller<Reques
     public Request<GetEndpointAttributesRequest> marshall(GetEndpointAttributesRequest getEndpointAttributesRequest) {
 
         if (getEndpointAttributesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetEndpointAttributesRequest> request = new DefaultRequest<GetEndpointAttributesRequest>(getEndpointAttributesRequest, "AmazonSNS");
         request.addParameter("Action", "GetEndpointAttributes");
@@ -43,7 +43,6 @@ public class GetEndpointAttributesRequestMarshaller implements Marshaller<Reques
         if (getEndpointAttributesRequest.getEndpointArn() != null) {
             request.addParameter("EndpointArn", StringUtils.fromString(getEndpointAttributesRequest.getEndpointArn()));
         }
-
 
         return request;
     }

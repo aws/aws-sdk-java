@@ -16,7 +16,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents a placement group into which multiple Amazon EC2 instances can be launched. A placement group ensures that Amazon EC2 instances are

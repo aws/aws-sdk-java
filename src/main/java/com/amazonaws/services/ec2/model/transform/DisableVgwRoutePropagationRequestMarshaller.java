@@ -33,8 +33,8 @@ public class DisableVgwRoutePropagationRequestMarshaller implements Marshaller<R
     public Request<DisableVgwRoutePropagationRequest> marshall(DisableVgwRoutePropagationRequest disableVgwRoutePropagationRequest) {
 
         if (disableVgwRoutePropagationRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DisableVgwRoutePropagationRequest> request = new DefaultRequest<DisableVgwRoutePropagationRequest>(disableVgwRoutePropagationRequest, "AmazonEC2");
         request.addParameter("Action", "DisableVgwRoutePropagation");
@@ -46,7 +46,6 @@ public class DisableVgwRoutePropagationRequestMarshaller implements Marshaller<R
         if (disableVgwRoutePropagationRequest.getGatewayId() != null) {
             request.addParameter("GatewayId", StringUtils.fromString(disableVgwRoutePropagationRequest.getGatewayId()));
         }
-
 
         return request;
     }

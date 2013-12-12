@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Get Vault Notifications Result JSON Unmarshaller
  */
 public class GetVaultNotificationsResultJsonUnmarshaller implements Unmarshaller<GetVaultNotificationsResult, JsonUnmarshallerContext> {
 
-    
-
     public GetVaultNotificationsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         GetVaultNotificationsResult getVaultNotificationsResult = new GetVaultNotificationsResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -50,7 +45,6 @@ public class GetVaultNotificationsResultJsonUnmarshaller implements Unmarshaller
             if (token == null) break;
 
             getVaultNotificationsResult.setVaultNotificationConfig(VaultNotificationConfigJsonUnmarshaller.getInstance().unmarshall(context));
-            
 
             token = context.nextToken();
         }

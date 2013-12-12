@@ -15,7 +15,9 @@
 package com.amazonaws.metrics;
 
 /**
- * Service (eg S3, DynamoDB, etc.) specific Metric type.
+ * <a href=
+ * "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/metrics/package-summary.html"
+ * >Service specific Metric type</a> (eg S3, DynamoDB, etc.)
  */
 public interface ServiceMetricType extends MetricType {
     public String getServiceName();

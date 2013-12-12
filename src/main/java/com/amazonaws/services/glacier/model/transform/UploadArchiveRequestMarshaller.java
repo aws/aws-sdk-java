@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class UploadArchiveRequestMarshaller implements Marshaller<Request<UploadArchiveRequest>, UploadArchiveRequest> {
 
-    
-
     public Request<UploadArchiveRequest> marshall(UploadArchiveRequest uploadArchiveRequest) {
     if (uploadArchiveRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,7 +48,6 @@ public class UploadArchiveRequestMarshaller implements Marshaller<Request<Upload
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
         if (uploadArchiveRequest.getContentLength() != null)
           request.addHeader("x-amz-content-length", StringUtils.fromLong(uploadArchiveRequest.getContentLength()));
@@ -61,8 +57,6 @@ public class UploadArchiveRequestMarshaller implements Marshaller<Request<Upload
         
         if (uploadArchiveRequest.getChecksum() != null)
           request.addHeader("x-amz-sha256-tree-hash", StringUtils.fromString(uploadArchiveRequest.getChecksum()));
-        
-
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/archives"; 
         uriResourcePath = uriResourcePath.replace("{vaultName}", (uploadArchiveRequest.getVaultName() == null) ? "" : StringUtils.fromString(uploadArchiveRequest.getVaultName())); 
@@ -86,11 +80,8 @@ public class UploadArchiveRequestMarshaller implements Marshaller<Request<Upload
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         request.setContent(uploadArchiveRequest.getBody());
         request.addHeader("Content-Type", "binary/octet-stream");
-        
 
         return request;
     }

@@ -33,8 +33,8 @@ public class DefineRankExpressionRequestMarshaller implements Marshaller<Request
     public Request<DefineRankExpressionRequest> marshall(DefineRankExpressionRequest defineRankExpressionRequest) {
 
         if (defineRankExpressionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DefineRankExpressionRequest> request = new DefaultRequest<DefineRankExpressionRequest>(defineRankExpressionRequest, "AmazonCloudSearch");
         request.addParameter("Action", "DefineRankExpression");
@@ -52,7 +52,6 @@ public class DefineRankExpressionRequestMarshaller implements Marshaller<Request
                 request.addParameter("RankExpression.RankExpression", StringUtils.fromString(namedRankExpressionRankExpression.getRankExpression()));
             }
         }
-
 
         return request;
     }

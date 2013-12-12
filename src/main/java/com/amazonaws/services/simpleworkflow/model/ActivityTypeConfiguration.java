@@ -16,7 +16,6 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Configuration settings registered with the activity type.

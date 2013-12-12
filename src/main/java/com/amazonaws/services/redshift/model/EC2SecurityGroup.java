@@ -16,7 +16,6 @@ package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes an Amazon EC2 security group.

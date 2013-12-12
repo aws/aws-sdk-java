@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents the output of one of the following operations:

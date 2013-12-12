@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Get Platform Application Attributes Result StAX Unmarshaller
  */
@@ -66,16 +65,13 @@ public class GetPlatformApplicationAttributesResultStaxUnmarshaller implements U
         }
 
     }
-    
 
     public GetPlatformApplicationAttributesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         GetPlatformApplicationAttributesResult getPlatformApplicationAttributesResult = new GetPlatformApplicationAttributesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        
         if (context.isStartOfDocument()) targetDepth += 2;
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

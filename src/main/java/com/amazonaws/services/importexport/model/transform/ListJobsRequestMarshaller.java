@@ -33,8 +33,8 @@ public class ListJobsRequestMarshaller implements Marshaller<Request<ListJobsReq
     public Request<ListJobsRequest> marshall(ListJobsRequest listJobsRequest) {
 
         if (listJobsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListJobsRequest> request = new DefaultRequest<ListJobsRequest>(listJobsRequest, "AmazonImportExport");
         request.addParameter("Action", "ListJobs");
@@ -46,7 +46,6 @@ public class ListJobsRequestMarshaller implements Marshaller<Request<ListJobsReq
         if (listJobsRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(listJobsRequest.getMarker()));
         }
-
 
         return request;
     }

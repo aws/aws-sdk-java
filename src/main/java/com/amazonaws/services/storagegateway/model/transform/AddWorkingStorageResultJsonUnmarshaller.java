@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Add Working Storage Result JSON Unmarshaller
  */
 public class AddWorkingStorageResultJsonUnmarshaller implements Unmarshaller<AddWorkingStorageResult, JsonUnmarshallerContext> {
 
-    
-
     public AddWorkingStorageResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         AddWorkingStorageResult addWorkingStorageResult = new AddWorkingStorageResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class AddWorkingStorageResultJsonUnmarshaller implements Unmarshaller<Add
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class AddWorkingStorageResultJsonUnmarshaller implements Unmarshaller<Add
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

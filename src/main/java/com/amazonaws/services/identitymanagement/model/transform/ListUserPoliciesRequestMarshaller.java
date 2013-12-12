@@ -33,8 +33,8 @@ public class ListUserPoliciesRequestMarshaller implements Marshaller<Request<Lis
     public Request<ListUserPoliciesRequest> marshall(ListUserPoliciesRequest listUserPoliciesRequest) {
 
         if (listUserPoliciesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListUserPoliciesRequest> request = new DefaultRequest<ListUserPoliciesRequest>(listUserPoliciesRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListUserPolicies");
@@ -49,7 +49,6 @@ public class ListUserPoliciesRequestMarshaller implements Marshaller<Request<Lis
         if (listUserPoliciesRequest.getMaxItems() != null) {
             request.addParameter("MaxItems", StringUtils.fromInteger(listUserPoliciesRequest.getMaxItems()));
         }
-
 
         return request;
     }

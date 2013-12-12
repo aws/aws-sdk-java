@@ -22,7 +22,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#assignVolume(AssignVolumeRequest) AssignVolume operation}.
  * <p>
  * Assigns one of the stack's registered Amazon EBS volumes to a specified instance. The volume must first be registered with the stack by calling
- * RegisterVolume. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> </a> .
+ * RegisterVolume. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a> .
+ * </p>
+ * <p>
+ * <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that
+ * explicitly grants permissions. For more information on user permissions, see <a
+ * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a> .
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#assignVolume(AssignVolumeRequest)

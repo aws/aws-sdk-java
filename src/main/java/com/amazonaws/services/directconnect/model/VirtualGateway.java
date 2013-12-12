@@ -16,7 +16,6 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * You can create one or more AWS Direct Connect private virtual interfaces linking to your virtual private gateway.

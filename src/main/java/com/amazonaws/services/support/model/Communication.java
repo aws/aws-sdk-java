@@ -16,7 +16,6 @@ package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Object that exposes the fields used by a communication for an AWS Support case.

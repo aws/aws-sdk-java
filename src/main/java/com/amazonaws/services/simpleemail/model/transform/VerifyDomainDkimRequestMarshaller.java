@@ -33,8 +33,8 @@ public class VerifyDomainDkimRequestMarshaller implements Marshaller<Request<Ver
     public Request<VerifyDomainDkimRequest> marshall(VerifyDomainDkimRequest verifyDomainDkimRequest) {
 
         if (verifyDomainDkimRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<VerifyDomainDkimRequest> request = new DefaultRequest<VerifyDomainDkimRequest>(verifyDomainDkimRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "VerifyDomainDkim");
@@ -43,7 +43,6 @@ public class VerifyDomainDkimRequestMarshaller implements Marshaller<Request<Ver
         if (verifyDomainDkimRequest.getDomain() != null) {
             request.addParameter("Domain", StringUtils.fromString(verifyDomainDkimRequest.getDomain()));
         }
-
 
         return request;
     }

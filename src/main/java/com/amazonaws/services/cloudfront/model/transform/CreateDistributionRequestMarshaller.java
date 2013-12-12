@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
@@ -62,11 +61,9 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
         request.setResourcePath(uriResourcePath);
 
-        
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-09-27/");
 
-            
                     if (createDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = createDistributionRequest.getDistributionConfig();
             if (distributionConfigDistributionConfig != null) {
@@ -92,7 +89,6 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                 xmlWriter.startElement("CNAME");
                                     xmlWriter.value(aliasesAliasesitemsListValue);
                                 xmlWriter.endElement();
-
 
                                     aliasesAliasesitemsListIndex++;
                                 }
@@ -155,7 +151,6 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                     }
                                 xmlWriter.endElement();
 
-
                                     originsOriginsitemsListIndex++;
                                 }
                                 xmlWriter.endElement();
@@ -204,7 +199,6 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                                             xmlWriter.value(cookieNamesWhitelistedNamesitemsListValue);
                                                         xmlWriter.endElement();
 
-
                                                             cookieNamesWhitelistedNamesitemsListIndex++;
                                                         }
                                                         xmlWriter.endElement();
@@ -241,7 +235,6 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                             xmlWriter.value(trustedSignersTrustedSignersitemsListValue);
                                         xmlWriter.endElement();
 
-
                                             trustedSignersTrustedSignersitemsListIndex++;
                                         }
                                         xmlWriter.endElement();
@@ -274,7 +267,6 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                         xmlWriter.startElement("Method");
                                             xmlWriter.value(allowedMethodsAllowedMethodsitemsListValue);
                                         xmlWriter.endElement();
-
 
                                             allowedMethodsAllowedMethodsitemsListIndex++;
                                         }
@@ -342,7 +334,6 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                                                         xmlWriter.value(cookieNamesWhitelistedNamesitemsListValue);
                                                                     xmlWriter.endElement();
 
-
                                                                         cookieNamesWhitelistedNamesitemsListIndex++;
                                                                     }
                                                                     xmlWriter.endElement();
@@ -379,7 +370,6 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                                         xmlWriter.value(trustedSignersTrustedSignersitemsListValue);
                                                     xmlWriter.endElement();
 
-
                                                         trustedSignersTrustedSignersitemsListIndex++;
                                                     }
                                                     xmlWriter.endElement();
@@ -413,7 +403,6 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                                         xmlWriter.value(allowedMethodsAllowedMethodsitemsListValue);
                                                     xmlWriter.endElement();
 
-
                                                         allowedMethodsAllowedMethodsitemsListIndex++;
                                                     }
                                                     xmlWriter.endElement();
@@ -423,7 +412,6 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                         }
                                     }
                                 xmlWriter.endElement();
-
 
                                     cacheBehaviorsCacheBehaviorsitemsListIndex++;
                                 }
@@ -462,7 +450,6 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                         xmlWriter.startElement("ErrorCachingMinTTL").value(customErrorResponsesCustomErrorResponsesitemsListValue.getErrorCachingMinTTL()).endElement();
                                     }
                                 xmlWriter.endElement();
-
 
                                     customErrorResponsesCustomErrorResponsesitemsListIndex++;
                                 }
@@ -517,7 +504,6 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
             }
         }
 
-
             try {
                 request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
                 request.addHeader("Content-Length", Integer.toString(stringWriter.getBuffer().toString().getBytes("UTF-8").length));
@@ -525,7 +511,6 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
             } catch (UnsupportedEncodingException e) {
                 throw new AmazonClientException("Unable to marshall request to XML", e);
             }
-        
 
         return request;
     }

@@ -84,36 +84,19 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
 
     /**
      * The attributes to be returned in the result. You can retrieve all item
-     * attributes, specific item attributes, the count of matching items, or
-     * in the case of an index, some or all of the attributes projected into
-     * the index. <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of
-     * the item attributes. For a table, this is the default. For an index,
-     * this mode causes Amazon DynamoDB to fetch the full item from the table
-     * for each matching item in the index. If the index is configured to
-     * project all item attributes, the matching items will not be fetched
-     * from the table. Fetching items from the table incurs additional
-     * throughput cost and latency. </li> <li>
-     * <p><code>ALL_PROJECTED_ATTRIBUTES</code>: Retrieves all attributes
-     * which have been projected into the index. If the index is configured
-     * to project all attributes, this is equivalent to specifying
-     * <i>ALL_ATTRIBUTES</i>. </li> <li> <p><code>COUNT</code>: Returns the
-     * number of matching items, rather than the matching items themselves.
-     * </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the
-     * attributes listed in <i>AttributesToGet</i>. This is equivalent to
-     * specifying <i>AttributesToGet</i> without specifying any value for
-     * <i>Select</i>. <p>If you are querying an index and request only
-     * attributes that are projected into that index, the operation will read
-     * only the index and not the table. If any of the requested attributes
-     * are not projected into the index, Amazon DynamoDB will need to fetch
-     * each matching item from the table. This extra fetching incurs
-     * additional throughput cost and latency. </li> </ul> <p>When neither
-     * <i>Select</i> nor <i>AttributesToGet</i> are specified, Amazon
-     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an
-     * index. You cannot use both <i>Select</i> and <i>AttributesToGet</i>
-     * together in a single request, <i>unless</i> the value for
-     * <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
-     * equivalent to specifying <i>AttributesToGet</i> without any value for
+     * attributes, specific item attributes, or the count of matching items.
+     * <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of the item
+     * attributes. </li> <li> <p><code>COUNT</code>: Returns the number of
+     * matching items, rather than the matching items themselves. </li> <li>
+     * <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes
+     * listed in <i>AttributesToGet</i>. This is equivalent to specifying
+     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     * </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
+     * specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
+     * You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
+     * in a single request, <i>unless</i> the value for <i>Select</i> is
+     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     * specifying <i>AttributesToGet</i> without any value for
      * <i>Select</i>.)
      * <p>
      * <b>Constraints:</b><br/>
@@ -234,7 +217,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     private java.util.Map<String,Condition> scanFilter;
 
     /**
-     * The primary key of the first item that this operation will evaluate.
+     * The primary key of the first item that this operation will evalute.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed. <p>In a
@@ -246,12 +229,14 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     private java.util.Map<String,AttributeValue> exclusiveStartKey;
 
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      */
     private String returnConsumedCapacity;
 
@@ -563,72 +548,38 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
 
     /**
      * The attributes to be returned in the result. You can retrieve all item
-     * attributes, specific item attributes, the count of matching items, or
-     * in the case of an index, some or all of the attributes projected into
-     * the index. <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of
-     * the item attributes. For a table, this is the default. For an index,
-     * this mode causes Amazon DynamoDB to fetch the full item from the table
-     * for each matching item in the index. If the index is configured to
-     * project all item attributes, the matching items will not be fetched
-     * from the table. Fetching items from the table incurs additional
-     * throughput cost and latency. </li> <li>
-     * <p><code>ALL_PROJECTED_ATTRIBUTES</code>: Retrieves all attributes
-     * which have been projected into the index. If the index is configured
-     * to project all attributes, this is equivalent to specifying
-     * <i>ALL_ATTRIBUTES</i>. </li> <li> <p><code>COUNT</code>: Returns the
-     * number of matching items, rather than the matching items themselves.
-     * </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the
-     * attributes listed in <i>AttributesToGet</i>. This is equivalent to
-     * specifying <i>AttributesToGet</i> without specifying any value for
-     * <i>Select</i>. <p>If you are querying an index and request only
-     * attributes that are projected into that index, the operation will read
-     * only the index and not the table. If any of the requested attributes
-     * are not projected into the index, Amazon DynamoDB will need to fetch
-     * each matching item from the table. This extra fetching incurs
-     * additional throughput cost and latency. </li> </ul> <p>When neither
-     * <i>Select</i> nor <i>AttributesToGet</i> are specified, Amazon
-     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an
-     * index. You cannot use both <i>Select</i> and <i>AttributesToGet</i>
-     * together in a single request, <i>unless</i> the value for
-     * <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
-     * equivalent to specifying <i>AttributesToGet</i> without any value for
+     * attributes, specific item attributes, or the count of matching items.
+     * <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of the item
+     * attributes. </li> <li> <p><code>COUNT</code>: Returns the number of
+     * matching items, rather than the matching items themselves. </li> <li>
+     * <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes
+     * listed in <i>AttributesToGet</i>. This is equivalent to specifying
+     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     * </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
+     * specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
+     * You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
+     * in a single request, <i>unless</i> the value for <i>Select</i> is
+     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     * specifying <i>AttributesToGet</i> without any value for
      * <i>Select</i>.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
      *
      * @return The attributes to be returned in the result. You can retrieve all item
-     *         attributes, specific item attributes, the count of matching items, or
-     *         in the case of an index, some or all of the attributes projected into
-     *         the index. <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of
-     *         the item attributes. For a table, this is the default. For an index,
-     *         this mode causes Amazon DynamoDB to fetch the full item from the table
-     *         for each matching item in the index. If the index is configured to
-     *         project all item attributes, the matching items will not be fetched
-     *         from the table. Fetching items from the table incurs additional
-     *         throughput cost and latency. </li> <li>
-     *         <p><code>ALL_PROJECTED_ATTRIBUTES</code>: Retrieves all attributes
-     *         which have been projected into the index. If the index is configured
-     *         to project all attributes, this is equivalent to specifying
-     *         <i>ALL_ATTRIBUTES</i>. </li> <li> <p><code>COUNT</code>: Returns the
-     *         number of matching items, rather than the matching items themselves.
-     *         </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the
-     *         attributes listed in <i>AttributesToGet</i>. This is equivalent to
-     *         specifying <i>AttributesToGet</i> without specifying any value for
-     *         <i>Select</i>. <p>If you are querying an index and request only
-     *         attributes that are projected into that index, the operation will read
-     *         only the index and not the table. If any of the requested attributes
-     *         are not projected into the index, Amazon DynamoDB will need to fetch
-     *         each matching item from the table. This extra fetching incurs
-     *         additional throughput cost and latency. </li> </ul> <p>When neither
-     *         <i>Select</i> nor <i>AttributesToGet</i> are specified, Amazon
-     *         DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     *         table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an
-     *         index. You cannot use both <i>Select</i> and <i>AttributesToGet</i>
-     *         together in a single request, <i>unless</i> the value for
-     *         <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
-     *         equivalent to specifying <i>AttributesToGet</i> without any value for
+     *         attributes, specific item attributes, or the count of matching items.
+     *         <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of the item
+     *         attributes. </li> <li> <p><code>COUNT</code>: Returns the number of
+     *         matching items, rather than the matching items themselves. </li> <li>
+     *         <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes
+     *         listed in <i>AttributesToGet</i>. This is equivalent to specifying
+     *         <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     *         </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
+     *         specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
+     *         You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
+     *         in a single request, <i>unless</i> the value for <i>Select</i> is
+     *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
      *
      * @see Select
@@ -639,72 +590,38 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     
     /**
      * The attributes to be returned in the result. You can retrieve all item
-     * attributes, specific item attributes, the count of matching items, or
-     * in the case of an index, some or all of the attributes projected into
-     * the index. <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of
-     * the item attributes. For a table, this is the default. For an index,
-     * this mode causes Amazon DynamoDB to fetch the full item from the table
-     * for each matching item in the index. If the index is configured to
-     * project all item attributes, the matching items will not be fetched
-     * from the table. Fetching items from the table incurs additional
-     * throughput cost and latency. </li> <li>
-     * <p><code>ALL_PROJECTED_ATTRIBUTES</code>: Retrieves all attributes
-     * which have been projected into the index. If the index is configured
-     * to project all attributes, this is equivalent to specifying
-     * <i>ALL_ATTRIBUTES</i>. </li> <li> <p><code>COUNT</code>: Returns the
-     * number of matching items, rather than the matching items themselves.
-     * </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the
-     * attributes listed in <i>AttributesToGet</i>. This is equivalent to
-     * specifying <i>AttributesToGet</i> without specifying any value for
-     * <i>Select</i>. <p>If you are querying an index and request only
-     * attributes that are projected into that index, the operation will read
-     * only the index and not the table. If any of the requested attributes
-     * are not projected into the index, Amazon DynamoDB will need to fetch
-     * each matching item from the table. This extra fetching incurs
-     * additional throughput cost and latency. </li> </ul> <p>When neither
-     * <i>Select</i> nor <i>AttributesToGet</i> are specified, Amazon
-     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an
-     * index. You cannot use both <i>Select</i> and <i>AttributesToGet</i>
-     * together in a single request, <i>unless</i> the value for
-     * <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
-     * equivalent to specifying <i>AttributesToGet</i> without any value for
+     * attributes, specific item attributes, or the count of matching items.
+     * <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of the item
+     * attributes. </li> <li> <p><code>COUNT</code>: Returns the number of
+     * matching items, rather than the matching items themselves. </li> <li>
+     * <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes
+     * listed in <i>AttributesToGet</i>. This is equivalent to specifying
+     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     * </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
+     * specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
+     * You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
+     * in a single request, <i>unless</i> the value for <i>Select</i> is
+     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     * specifying <i>AttributesToGet</i> without any value for
      * <i>Select</i>.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
      *
      * @param select The attributes to be returned in the result. You can retrieve all item
-     *         attributes, specific item attributes, the count of matching items, or
-     *         in the case of an index, some or all of the attributes projected into
-     *         the index. <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of
-     *         the item attributes. For a table, this is the default. For an index,
-     *         this mode causes Amazon DynamoDB to fetch the full item from the table
-     *         for each matching item in the index. If the index is configured to
-     *         project all item attributes, the matching items will not be fetched
-     *         from the table. Fetching items from the table incurs additional
-     *         throughput cost and latency. </li> <li>
-     *         <p><code>ALL_PROJECTED_ATTRIBUTES</code>: Retrieves all attributes
-     *         which have been projected into the index. If the index is configured
-     *         to project all attributes, this is equivalent to specifying
-     *         <i>ALL_ATTRIBUTES</i>. </li> <li> <p><code>COUNT</code>: Returns the
-     *         number of matching items, rather than the matching items themselves.
-     *         </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the
-     *         attributes listed in <i>AttributesToGet</i>. This is equivalent to
-     *         specifying <i>AttributesToGet</i> without specifying any value for
-     *         <i>Select</i>. <p>If you are querying an index and request only
-     *         attributes that are projected into that index, the operation will read
-     *         only the index and not the table. If any of the requested attributes
-     *         are not projected into the index, Amazon DynamoDB will need to fetch
-     *         each matching item from the table. This extra fetching incurs
-     *         additional throughput cost and latency. </li> </ul> <p>When neither
-     *         <i>Select</i> nor <i>AttributesToGet</i> are specified, Amazon
-     *         DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     *         table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an
-     *         index. You cannot use both <i>Select</i> and <i>AttributesToGet</i>
-     *         together in a single request, <i>unless</i> the value for
-     *         <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
-     *         equivalent to specifying <i>AttributesToGet</i> without any value for
+     *         attributes, specific item attributes, or the count of matching items.
+     *         <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of the item
+     *         attributes. </li> <li> <p><code>COUNT</code>: Returns the number of
+     *         matching items, rather than the matching items themselves. </li> <li>
+     *         <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes
+     *         listed in <i>AttributesToGet</i>. This is equivalent to specifying
+     *         <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     *         </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
+     *         specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
+     *         You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
+     *         in a single request, <i>unless</i> the value for <i>Select</i> is
+     *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
      *
      * @see Select
@@ -715,36 +632,19 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     
     /**
      * The attributes to be returned in the result. You can retrieve all item
-     * attributes, specific item attributes, the count of matching items, or
-     * in the case of an index, some or all of the attributes projected into
-     * the index. <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of
-     * the item attributes. For a table, this is the default. For an index,
-     * this mode causes Amazon DynamoDB to fetch the full item from the table
-     * for each matching item in the index. If the index is configured to
-     * project all item attributes, the matching items will not be fetched
-     * from the table. Fetching items from the table incurs additional
-     * throughput cost and latency. </li> <li>
-     * <p><code>ALL_PROJECTED_ATTRIBUTES</code>: Retrieves all attributes
-     * which have been projected into the index. If the index is configured
-     * to project all attributes, this is equivalent to specifying
-     * <i>ALL_ATTRIBUTES</i>. </li> <li> <p><code>COUNT</code>: Returns the
-     * number of matching items, rather than the matching items themselves.
-     * </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the
-     * attributes listed in <i>AttributesToGet</i>. This is equivalent to
-     * specifying <i>AttributesToGet</i> without specifying any value for
-     * <i>Select</i>. <p>If you are querying an index and request only
-     * attributes that are projected into that index, the operation will read
-     * only the index and not the table. If any of the requested attributes
-     * are not projected into the index, Amazon DynamoDB will need to fetch
-     * each matching item from the table. This extra fetching incurs
-     * additional throughput cost and latency. </li> </ul> <p>When neither
-     * <i>Select</i> nor <i>AttributesToGet</i> are specified, Amazon
-     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an
-     * index. You cannot use both <i>Select</i> and <i>AttributesToGet</i>
-     * together in a single request, <i>unless</i> the value for
-     * <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
-     * equivalent to specifying <i>AttributesToGet</i> without any value for
+     * attributes, specific item attributes, or the count of matching items.
+     * <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of the item
+     * attributes. </li> <li> <p><code>COUNT</code>: Returns the number of
+     * matching items, rather than the matching items themselves. </li> <li>
+     * <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes
+     * listed in <i>AttributesToGet</i>. This is equivalent to specifying
+     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     * </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
+     * specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
+     * You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
+     * in a single request, <i>unless</i> the value for <i>Select</i> is
+     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     * specifying <i>AttributesToGet</i> without any value for
      * <i>Select</i>.)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -753,36 +653,19 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
      *
      * @param select The attributes to be returned in the result. You can retrieve all item
-     *         attributes, specific item attributes, the count of matching items, or
-     *         in the case of an index, some or all of the attributes projected into
-     *         the index. <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of
-     *         the item attributes. For a table, this is the default. For an index,
-     *         this mode causes Amazon DynamoDB to fetch the full item from the table
-     *         for each matching item in the index. If the index is configured to
-     *         project all item attributes, the matching items will not be fetched
-     *         from the table. Fetching items from the table incurs additional
-     *         throughput cost and latency. </li> <li>
-     *         <p><code>ALL_PROJECTED_ATTRIBUTES</code>: Retrieves all attributes
-     *         which have been projected into the index. If the index is configured
-     *         to project all attributes, this is equivalent to specifying
-     *         <i>ALL_ATTRIBUTES</i>. </li> <li> <p><code>COUNT</code>: Returns the
-     *         number of matching items, rather than the matching items themselves.
-     *         </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the
-     *         attributes listed in <i>AttributesToGet</i>. This is equivalent to
-     *         specifying <i>AttributesToGet</i> without specifying any value for
-     *         <i>Select</i>. <p>If you are querying an index and request only
-     *         attributes that are projected into that index, the operation will read
-     *         only the index and not the table. If any of the requested attributes
-     *         are not projected into the index, Amazon DynamoDB will need to fetch
-     *         each matching item from the table. This extra fetching incurs
-     *         additional throughput cost and latency. </li> </ul> <p>When neither
-     *         <i>Select</i> nor <i>AttributesToGet</i> are specified, Amazon
-     *         DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     *         table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an
-     *         index. You cannot use both <i>Select</i> and <i>AttributesToGet</i>
-     *         together in a single request, <i>unless</i> the value for
-     *         <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
-     *         equivalent to specifying <i>AttributesToGet</i> without any value for
+     *         attributes, specific item attributes, or the count of matching items.
+     *         <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of the item
+     *         attributes. </li> <li> <p><code>COUNT</code>: Returns the number of
+     *         matching items, rather than the matching items themselves. </li> <li>
+     *         <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes
+     *         listed in <i>AttributesToGet</i>. This is equivalent to specifying
+     *         <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     *         </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
+     *         specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
+     *         You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
+     *         in a single request, <i>unless</i> the value for <i>Select</i> is
+     *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -797,72 +680,38 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
 
     /**
      * The attributes to be returned in the result. You can retrieve all item
-     * attributes, specific item attributes, the count of matching items, or
-     * in the case of an index, some or all of the attributes projected into
-     * the index. <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of
-     * the item attributes. For a table, this is the default. For an index,
-     * this mode causes Amazon DynamoDB to fetch the full item from the table
-     * for each matching item in the index. If the index is configured to
-     * project all item attributes, the matching items will not be fetched
-     * from the table. Fetching items from the table incurs additional
-     * throughput cost and latency. </li> <li>
-     * <p><code>ALL_PROJECTED_ATTRIBUTES</code>: Retrieves all attributes
-     * which have been projected into the index. If the index is configured
-     * to project all attributes, this is equivalent to specifying
-     * <i>ALL_ATTRIBUTES</i>. </li> <li> <p><code>COUNT</code>: Returns the
-     * number of matching items, rather than the matching items themselves.
-     * </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the
-     * attributes listed in <i>AttributesToGet</i>. This is equivalent to
-     * specifying <i>AttributesToGet</i> without specifying any value for
-     * <i>Select</i>. <p>If you are querying an index and request only
-     * attributes that are projected into that index, the operation will read
-     * only the index and not the table. If any of the requested attributes
-     * are not projected into the index, Amazon DynamoDB will need to fetch
-     * each matching item from the table. This extra fetching incurs
-     * additional throughput cost and latency. </li> </ul> <p>When neither
-     * <i>Select</i> nor <i>AttributesToGet</i> are specified, Amazon
-     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an
-     * index. You cannot use both <i>Select</i> and <i>AttributesToGet</i>
-     * together in a single request, <i>unless</i> the value for
-     * <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
-     * equivalent to specifying <i>AttributesToGet</i> without any value for
+     * attributes, specific item attributes, or the count of matching items.
+     * <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of the item
+     * attributes. </li> <li> <p><code>COUNT</code>: Returns the number of
+     * matching items, rather than the matching items themselves. </li> <li>
+     * <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes
+     * listed in <i>AttributesToGet</i>. This is equivalent to specifying
+     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     * </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
+     * specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
+     * You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
+     * in a single request, <i>unless</i> the value for <i>Select</i> is
+     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     * specifying <i>AttributesToGet</i> without any value for
      * <i>Select</i>.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
      *
      * @param select The attributes to be returned in the result. You can retrieve all item
-     *         attributes, specific item attributes, the count of matching items, or
-     *         in the case of an index, some or all of the attributes projected into
-     *         the index. <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of
-     *         the item attributes. For a table, this is the default. For an index,
-     *         this mode causes Amazon DynamoDB to fetch the full item from the table
-     *         for each matching item in the index. If the index is configured to
-     *         project all item attributes, the matching items will not be fetched
-     *         from the table. Fetching items from the table incurs additional
-     *         throughput cost and latency. </li> <li>
-     *         <p><code>ALL_PROJECTED_ATTRIBUTES</code>: Retrieves all attributes
-     *         which have been projected into the index. If the index is configured
-     *         to project all attributes, this is equivalent to specifying
-     *         <i>ALL_ATTRIBUTES</i>. </li> <li> <p><code>COUNT</code>: Returns the
-     *         number of matching items, rather than the matching items themselves.
-     *         </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the
-     *         attributes listed in <i>AttributesToGet</i>. This is equivalent to
-     *         specifying <i>AttributesToGet</i> without specifying any value for
-     *         <i>Select</i>. <p>If you are querying an index and request only
-     *         attributes that are projected into that index, the operation will read
-     *         only the index and not the table. If any of the requested attributes
-     *         are not projected into the index, Amazon DynamoDB will need to fetch
-     *         each matching item from the table. This extra fetching incurs
-     *         additional throughput cost and latency. </li> </ul> <p>When neither
-     *         <i>Select</i> nor <i>AttributesToGet</i> are specified, Amazon
-     *         DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     *         table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an
-     *         index. You cannot use both <i>Select</i> and <i>AttributesToGet</i>
-     *         together in a single request, <i>unless</i> the value for
-     *         <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
-     *         equivalent to specifying <i>AttributesToGet</i> without any value for
+     *         attributes, specific item attributes, or the count of matching items.
+     *         <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of the item
+     *         attributes. </li> <li> <p><code>COUNT</code>: Returns the number of
+     *         matching items, rather than the matching items themselves. </li> <li>
+     *         <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes
+     *         listed in <i>AttributesToGet</i>. This is equivalent to specifying
+     *         <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     *         </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
+     *         specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
+     *         You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
+     *         in a single request, <i>unless</i> the value for <i>Select</i> is
+     *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
      *
      * @see Select
@@ -873,36 +722,19 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     
     /**
      * The attributes to be returned in the result. You can retrieve all item
-     * attributes, specific item attributes, the count of matching items, or
-     * in the case of an index, some or all of the attributes projected into
-     * the index. <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of
-     * the item attributes. For a table, this is the default. For an index,
-     * this mode causes Amazon DynamoDB to fetch the full item from the table
-     * for each matching item in the index. If the index is configured to
-     * project all item attributes, the matching items will not be fetched
-     * from the table. Fetching items from the table incurs additional
-     * throughput cost and latency. </li> <li>
-     * <p><code>ALL_PROJECTED_ATTRIBUTES</code>: Retrieves all attributes
-     * which have been projected into the index. If the index is configured
-     * to project all attributes, this is equivalent to specifying
-     * <i>ALL_ATTRIBUTES</i>. </li> <li> <p><code>COUNT</code>: Returns the
-     * number of matching items, rather than the matching items themselves.
-     * </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the
-     * attributes listed in <i>AttributesToGet</i>. This is equivalent to
-     * specifying <i>AttributesToGet</i> without specifying any value for
-     * <i>Select</i>. <p>If you are querying an index and request only
-     * attributes that are projected into that index, the operation will read
-     * only the index and not the table. If any of the requested attributes
-     * are not projected into the index, Amazon DynamoDB will need to fetch
-     * each matching item from the table. This extra fetching incurs
-     * additional throughput cost and latency. </li> </ul> <p>When neither
-     * <i>Select</i> nor <i>AttributesToGet</i> are specified, Amazon
-     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an
-     * index. You cannot use both <i>Select</i> and <i>AttributesToGet</i>
-     * together in a single request, <i>unless</i> the value for
-     * <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
-     * equivalent to specifying <i>AttributesToGet</i> without any value for
+     * attributes, specific item attributes, or the count of matching items.
+     * <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of the item
+     * attributes. </li> <li> <p><code>COUNT</code>: Returns the number of
+     * matching items, rather than the matching items themselves. </li> <li>
+     * <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes
+     * listed in <i>AttributesToGet</i>. This is equivalent to specifying
+     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     * </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
+     * specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
+     * You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
+     * in a single request, <i>unless</i> the value for <i>Select</i> is
+     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     * specifying <i>AttributesToGet</i> without any value for
      * <i>Select</i>.)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -911,36 +743,19 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
      *
      * @param select The attributes to be returned in the result. You can retrieve all item
-     *         attributes, specific item attributes, the count of matching items, or
-     *         in the case of an index, some or all of the attributes projected into
-     *         the index. <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of
-     *         the item attributes. For a table, this is the default. For an index,
-     *         this mode causes Amazon DynamoDB to fetch the full item from the table
-     *         for each matching item in the index. If the index is configured to
-     *         project all item attributes, the matching items will not be fetched
-     *         from the table. Fetching items from the table incurs additional
-     *         throughput cost and latency. </li> <li>
-     *         <p><code>ALL_PROJECTED_ATTRIBUTES</code>: Retrieves all attributes
-     *         which have been projected into the index. If the index is configured
-     *         to project all attributes, this is equivalent to specifying
-     *         <i>ALL_ATTRIBUTES</i>. </li> <li> <p><code>COUNT</code>: Returns the
-     *         number of matching items, rather than the matching items themselves.
-     *         </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the
-     *         attributes listed in <i>AttributesToGet</i>. This is equivalent to
-     *         specifying <i>AttributesToGet</i> without specifying any value for
-     *         <i>Select</i>. <p>If you are querying an index and request only
-     *         attributes that are projected into that index, the operation will read
-     *         only the index and not the table. If any of the requested attributes
-     *         are not projected into the index, Amazon DynamoDB will need to fetch
-     *         each matching item from the table. This extra fetching incurs
-     *         additional throughput cost and latency. </li> </ul> <p>When neither
-     *         <i>Select</i> nor <i>AttributesToGet</i> are specified, Amazon
-     *         DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     *         table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an
-     *         index. You cannot use both <i>Select</i> and <i>AttributesToGet</i>
-     *         together in a single request, <i>unless</i> the value for
-     *         <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
-     *         equivalent to specifying <i>AttributesToGet</i> without any value for
+     *         attributes, specific item attributes, or the count of matching items.
+     *         <ul> <li> <p><code>ALL_ATTRIBUTES</code>: Returns all of the item
+     *         attributes. </li> <li> <p><code>COUNT</code>: Returns the number of
+     *         matching items, rather than the matching items themselves. </li> <li>
+     *         <p> <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes
+     *         listed in <i>AttributesToGet</i>. This is equivalent to specifying
+     *         <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     *         </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
+     *         specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
+     *         You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
+     *         in a single request, <i>unless</i> the value for <i>Select</i> is
+     *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -1746,28 +1561,28 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * @param key The key of the entry to be added into ScanFilter.
      * @param value The corresponding value of the entry to be added into ScanFilter.
      */
-	public ScanRequest addScanFilterEntry(String key, Condition value) {
-		if (null == this.scanFilter) {
-			this.scanFilter = new java.util.HashMap<String,Condition>();
-		}
-		if (this.scanFilter.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.scanFilter.put(key, value);
-		return this;
-	}
+    public ScanRequest addScanFilterEntry(String key, Condition value) {
+        if (null == this.scanFilter) {
+            this.scanFilter = new java.util.HashMap<String,Condition>();
+        }
+        if (this.scanFilter.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.scanFilter.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into ScanFilter.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public ScanRequest clearScanFilterEntries() {
-		this.scanFilter = null;
-		return this;
-	}
-	
     /**
-     * The primary key of the first item that this operation will evaluate.
+     * Removes all the entries added into ScanFilter.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public ScanRequest clearScanFilterEntries() {
+        this.scanFilter = null;
+        return this;
+    }
+    
+    /**
+     * The primary key of the first item that this operation will evalute.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1776,7 +1591,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <i>Scan</i> returned the corresponding value of
      * <i>LastEvaluatedKey</i>.
      *
-     * @return The primary key of the first item that this operation will evaluate.
+     * @return The primary key of the first item that this operation will evalute.
      *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
      *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      *         be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1791,7 +1606,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * The primary key of the first item that this operation will evaluate.
+     * The primary key of the first item that this operation will evalute.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1800,7 +1615,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <i>Scan</i> returned the corresponding value of
      * <i>LastEvaluatedKey</i>.
      *
-     * @param exclusiveStartKey The primary key of the first item that this operation will evaluate.
+     * @param exclusiveStartKey The primary key of the first item that this operation will evalute.
      *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
      *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      *         be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1814,7 +1629,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * The primary key of the first item that this operation will evaluate.
+     * The primary key of the first item that this operation will evalute.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1825,7 +1640,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exclusiveStartKey The primary key of the first item that this operation will evaluate.
+     * @param exclusiveStartKey The primary key of the first item that this operation will evalute.
      *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
      *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      *         be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1843,7 +1658,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
 
     /**
-     * The primary key of the first item that this operation will evaluate.
+     * The primary key of the first item that this operation will evalute.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1860,19 +1675,19 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      */
     public void setExclusiveStartKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
         java.util.HashMap<String,AttributeValue> exclusiveStartKey = new java.util.HashMap<String,AttributeValue>();
-    	
-    	if (hashKey != null) {
-    	    exclusiveStartKey.put(hashKey.getKey(), hashKey.getValue());
-    	} else
+        
+        if (hashKey != null) {
+            exclusiveStartKey.put(hashKey.getKey(), hashKey.getValue());
+        } else
             throw new IllegalArgumentException("hashKey must be non-null object.");
-    	if (rangeKey != null) {
-    	    exclusiveStartKey.put(rangeKey.getKey(), rangeKey.getValue());
-    	} 
+        if (rangeKey != null) {
+            exclusiveStartKey.put(rangeKey.getKey(), rangeKey.getValue());
+        } 
         setExclusiveStartKey(exclusiveStartKey);
     }
     
     /**
-     * The primary key of the first item that this operation will evaluate.
+     * The primary key of the first item that this operation will evalute.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1890,12 +1705,12 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * @param rangeKey Primary range key. (null if it a hash-only table)
      */
     public ScanRequest withExclusiveStartKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
-    	setExclusiveStartKey(hashKey, rangeKey);
-    	return this;
+        setExclusiveStartKey(hashKey, rangeKey);
+        return this;
     }
 
     /**
-     * The primary key of the first item that this operation will evaluate.
+     * The primary key of the first item that this operation will evalute.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1911,37 +1726,41 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * @param key The key of the entry to be added into ExclusiveStartKey.
      * @param value The corresponding value of the entry to be added into ExclusiveStartKey.
      */
-	public ScanRequest addExclusiveStartKeyEntry(String key, AttributeValue value) {
-		if (null == this.exclusiveStartKey) {
-			this.exclusiveStartKey = new java.util.HashMap<String,AttributeValue>();
-		}
-		if (this.exclusiveStartKey.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.exclusiveStartKey.put(key, value);
-		return this;
-	}
+    public ScanRequest addExclusiveStartKeyEntry(String key, AttributeValue value) {
+        if (null == this.exclusiveStartKey) {
+            this.exclusiveStartKey = new java.util.HashMap<String,AttributeValue>();
+        }
+        if (this.exclusiveStartKey.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.exclusiveStartKey.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into ExclusiveStartKey.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public ScanRequest clearExclusiveStartKeyEntries() {
-		this.exclusiveStartKey = null;
-		return this;
-	}
-	
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * Removes all the entries added into ExclusiveStartKey.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public ScanRequest clearExclusiveStartKeyEntries() {
+        this.exclusiveStartKey = null;
+        return this;
+    }
+    
+    /**
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @return If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @return If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @see ReturnConsumedCapacity
      */
@@ -1950,16 +1769,20 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @see ReturnConsumedCapacity
      */
@@ -1968,18 +1791,22 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1992,16 +1819,20 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
 
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @see ReturnConsumedCapacity
      */
@@ -2010,18 +1841,22 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -33,8 +33,8 @@ public class CreateSAMLProviderRequestMarshaller implements Marshaller<Request<C
     public Request<CreateSAMLProviderRequest> marshall(CreateSAMLProviderRequest createSAMLProviderRequest) {
 
         if (createSAMLProviderRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateSAMLProviderRequest> request = new DefaultRequest<CreateSAMLProviderRequest>(createSAMLProviderRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "CreateSAMLProvider");
@@ -46,7 +46,6 @@ public class CreateSAMLProviderRequestMarshaller implements Marshaller<Request<C
         if (createSAMLProviderRequest.getName() != null) {
             request.addParameter("Name", StringUtils.fromString(createSAMLProviderRequest.getName()));
         }
-
 
         return request;
     }

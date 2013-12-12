@@ -33,8 +33,8 @@ public class RemoveRoleFromInstanceProfileRequestMarshaller implements Marshalle
     public Request<RemoveRoleFromInstanceProfileRequest> marshall(RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest) {
 
         if (removeRoleFromInstanceProfileRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RemoveRoleFromInstanceProfileRequest> request = new DefaultRequest<RemoveRoleFromInstanceProfileRequest>(removeRoleFromInstanceProfileRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "RemoveRoleFromInstanceProfile");
@@ -46,7 +46,6 @@ public class RemoveRoleFromInstanceProfileRequestMarshaller implements Marshalle
         if (removeRoleFromInstanceProfileRequest.getRoleName() != null) {
             request.addParameter("RoleName", StringUtils.fromString(removeRoleFromInstanceProfileRequest.getRoleName()));
         }
-
 
         return request;
     }

@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A complex type that lists the AWS accounts that were included in the TrustedSigners complex type, as well as their active CloudFront key pair IDs, if

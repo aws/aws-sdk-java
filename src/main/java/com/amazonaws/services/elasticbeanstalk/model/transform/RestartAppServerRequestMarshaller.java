@@ -33,8 +33,8 @@ public class RestartAppServerRequestMarshaller implements Marshaller<Request<Res
     public Request<RestartAppServerRequest> marshall(RestartAppServerRequest restartAppServerRequest) {
 
         if (restartAppServerRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RestartAppServerRequest> request = new DefaultRequest<RestartAppServerRequest>(restartAppServerRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "RestartAppServer");
@@ -46,7 +46,6 @@ public class RestartAppServerRequestMarshaller implements Marshaller<Request<Res
         if (restartAppServerRequest.getEnvironmentName() != null) {
             request.addParameter("EnvironmentName", StringUtils.fromString(restartAppServerRequest.getEnvironmentName()));
         }
-
 
         return request;
     }

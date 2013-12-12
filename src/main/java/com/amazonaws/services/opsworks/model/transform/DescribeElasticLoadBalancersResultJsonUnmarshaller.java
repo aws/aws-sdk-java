@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Describe Elastic Load Balancers Result JSON Unmarshaller
  */
 public class DescribeElasticLoadBalancersResultJsonUnmarshaller implements Unmarshaller<DescribeElasticLoadBalancersResult, JsonUnmarshallerContext> {
 
-    
-
     public DescribeElasticLoadBalancersResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeElasticLoadBalancersResult describeElasticLoadBalancersResult = new DescribeElasticLoadBalancersResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DescribeElasticLoadBalancersResultJsonUnmarshaller implements Unmar
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ElasticLoadBalancers", targetDepth)) {
                     describeElasticLoadBalancersResult.setElasticLoadBalancers(new ListUnmarshaller<ElasticLoadBalancer>(ElasticLoadBalancerJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -59,7 +53,6 @@ public class DescribeElasticLoadBalancersResultJsonUnmarshaller implements Unmar
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

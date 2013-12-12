@@ -33,8 +33,8 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
     public Request<RestoreFromClusterSnapshotRequest> marshall(RestoreFromClusterSnapshotRequest restoreFromClusterSnapshotRequest) {
 
         if (restoreFromClusterSnapshotRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RestoreFromClusterSnapshotRequest> request = new DefaultRequest<RestoreFromClusterSnapshotRequest>(restoreFromClusterSnapshotRequest, "AmazonRedshift");
         request.addParameter("Action", "RestoreFromClusterSnapshot");
@@ -76,7 +76,6 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
         if (restoreFromClusterSnapshotRequest.getElasticIp() != null) {
             request.addParameter("ElasticIp", StringUtils.fromString(restoreFromClusterSnapshotRequest.getElasticIp()));
         }
-
 
         return request;
     }

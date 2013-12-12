@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudsearch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The source attribute name and an optional default value to use if a document doesn't have an attribute of that name.

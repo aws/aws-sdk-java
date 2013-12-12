@@ -16,7 +16,6 @@ package com.amazonaws.services.sqs.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * This is used in the responses of batch API to give a detailed description of the result of an operation on each entry in the request.

@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Account Attribute StAX Unmarshaller
  */
@@ -37,9 +36,7 @@ public class AccountAttributeStaxUnmarshaller implements Unmarshaller<AccountAtt
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        
         if (context.isStartOfDocument()) targetDepth += 1;
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

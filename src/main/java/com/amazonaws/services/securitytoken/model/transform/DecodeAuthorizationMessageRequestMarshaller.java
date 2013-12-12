@@ -33,8 +33,8 @@ public class DecodeAuthorizationMessageRequestMarshaller implements Marshaller<R
     public Request<DecodeAuthorizationMessageRequest> marshall(DecodeAuthorizationMessageRequest decodeAuthorizationMessageRequest) {
 
         if (decodeAuthorizationMessageRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DecodeAuthorizationMessageRequest> request = new DefaultRequest<DecodeAuthorizationMessageRequest>(decodeAuthorizationMessageRequest, "AWSSecurityTokenService");
         request.addParameter("Action", "DecodeAuthorizationMessage");
@@ -43,7 +43,6 @@ public class DecodeAuthorizationMessageRequestMarshaller implements Marshaller<R
         if (decodeAuthorizationMessageRequest.getEncodedMessage() != null) {
             request.addParameter("EncodedMessage", StringUtils.fromString(decodeAuthorizationMessageRequest.getEncodedMessage()));
         }
-
 
         return request;
     }

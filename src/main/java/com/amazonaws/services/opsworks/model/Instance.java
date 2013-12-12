@@ -16,7 +16,6 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes an instance.
@@ -74,10 +73,12 @@ public class Instance implements Serializable {
     private String instanceProfileArn;
 
     /**
-     * The instance status: <ul> <li>requested</li> <li>booting</li>
-     * <li>running_setup</li> <li>online</li> <li>setup_failed</li>
-     * <li>start_failed</li> <li>terminating</li> <li>terminated</li>
-     * <li>stopped</li> <li>connection_lost</li> </ul>
+     * The instance status: <ul> <li><code>requested</code></li>
+     * <li><code>booting</code></li> <li><code>running_setup</code></li>
+     * <li><code>online</code></li> <li><code>setup_failed</code></li>
+     * <li><code>start_failed</code></li> <li><code>terminating</code></li>
+     * <li><code>terminated</code></li> <li><code>stopped</code></li>
+     * <li><code>connection_lost</code></li> </ul>
      */
     private String status;
 
@@ -598,47 +599,59 @@ public class Instance implements Serializable {
     }
 
     /**
-     * The instance status: <ul> <li>requested</li> <li>booting</li>
-     * <li>running_setup</li> <li>online</li> <li>setup_failed</li>
-     * <li>start_failed</li> <li>terminating</li> <li>terminated</li>
-     * <li>stopped</li> <li>connection_lost</li> </ul>
+     * The instance status: <ul> <li><code>requested</code></li>
+     * <li><code>booting</code></li> <li><code>running_setup</code></li>
+     * <li><code>online</code></li> <li><code>setup_failed</code></li>
+     * <li><code>start_failed</code></li> <li><code>terminating</code></li>
+     * <li><code>terminated</code></li> <li><code>stopped</code></li>
+     * <li><code>connection_lost</code></li> </ul>
      *
-     * @return The instance status: <ul> <li>requested</li> <li>booting</li>
-     *         <li>running_setup</li> <li>online</li> <li>setup_failed</li>
-     *         <li>start_failed</li> <li>terminating</li> <li>terminated</li>
-     *         <li>stopped</li> <li>connection_lost</li> </ul>
+     * @return The instance status: <ul> <li><code>requested</code></li>
+     *         <li><code>booting</code></li> <li><code>running_setup</code></li>
+     *         <li><code>online</code></li> <li><code>setup_failed</code></li>
+     *         <li><code>start_failed</code></li> <li><code>terminating</code></li>
+     *         <li><code>terminated</code></li> <li><code>stopped</code></li>
+     *         <li><code>connection_lost</code></li> </ul>
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * The instance status: <ul> <li>requested</li> <li>booting</li>
-     * <li>running_setup</li> <li>online</li> <li>setup_failed</li>
-     * <li>start_failed</li> <li>terminating</li> <li>terminated</li>
-     * <li>stopped</li> <li>connection_lost</li> </ul>
+     * The instance status: <ul> <li><code>requested</code></li>
+     * <li><code>booting</code></li> <li><code>running_setup</code></li>
+     * <li><code>online</code></li> <li><code>setup_failed</code></li>
+     * <li><code>start_failed</code></li> <li><code>terminating</code></li>
+     * <li><code>terminated</code></li> <li><code>stopped</code></li>
+     * <li><code>connection_lost</code></li> </ul>
      *
-     * @param status The instance status: <ul> <li>requested</li> <li>booting</li>
-     *         <li>running_setup</li> <li>online</li> <li>setup_failed</li>
-     *         <li>start_failed</li> <li>terminating</li> <li>terminated</li>
-     *         <li>stopped</li> <li>connection_lost</li> </ul>
+     * @param status The instance status: <ul> <li><code>requested</code></li>
+     *         <li><code>booting</code></li> <li><code>running_setup</code></li>
+     *         <li><code>online</code></li> <li><code>setup_failed</code></li>
+     *         <li><code>start_failed</code></li> <li><code>terminating</code></li>
+     *         <li><code>terminated</code></li> <li><code>stopped</code></li>
+     *         <li><code>connection_lost</code></li> </ul>
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * The instance status: <ul> <li>requested</li> <li>booting</li>
-     * <li>running_setup</li> <li>online</li> <li>setup_failed</li>
-     * <li>start_failed</li> <li>terminating</li> <li>terminated</li>
-     * <li>stopped</li> <li>connection_lost</li> </ul>
+     * The instance status: <ul> <li><code>requested</code></li>
+     * <li><code>booting</code></li> <li><code>running_setup</code></li>
+     * <li><code>online</code></li> <li><code>setup_failed</code></li>
+     * <li><code>start_failed</code></li> <li><code>terminating</code></li>
+     * <li><code>terminated</code></li> <li><code>stopped</code></li>
+     * <li><code>connection_lost</code></li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status The instance status: <ul> <li>requested</li> <li>booting</li>
-     *         <li>running_setup</li> <li>online</li> <li>setup_failed</li>
-     *         <li>start_failed</li> <li>terminating</li> <li>terminated</li>
-     *         <li>stopped</li> <li>connection_lost</li> </ul>
+     * @param status The instance status: <ul> <li><code>requested</code></li>
+     *         <li><code>booting</code></li> <li><code>running_setup</code></li>
+     *         <li><code>online</code></li> <li><code>setup_failed</code></li>
+     *         <li><code>start_failed</code></li> <li><code>terminating</code></li>
+     *         <li><code>terminated</code></li> <li><code>stopped</code></li>
+     *         <li><code>connection_lost</code></li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

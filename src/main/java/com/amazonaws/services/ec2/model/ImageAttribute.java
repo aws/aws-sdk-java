@@ -16,7 +16,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents an attribute of an <i>Amazon Machine Image</i> (AMI).

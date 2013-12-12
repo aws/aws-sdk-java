@@ -16,7 +16,6 @@ package com.amazonaws.services.sqs.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Contains the details of a single SQS message along with a <code>Id</code> .

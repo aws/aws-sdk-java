@@ -16,7 +16,6 @@ package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Provides options for defining a job.
@@ -51,8 +50,8 @@ public class JobParameters implements Serializable {
     /**
      * The optional description for the job. The description must be less
      * than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
-     * without control codes���specifically, ASCII values 32���126 decimal or
-     * 0x20���0x7E hexadecimal.
+     * without control codes?????????specifically, ASCII values 32?????????126 decimal or
+     * 0x20?????????0x7E hexadecimal.
      */
     private String description;
 
@@ -91,8 +90,8 @@ public class JobParameters implements Serializable {
      * parameter for an inventory retrieval job request.
      * @param description The optional description for the job. The
      * description must be less than or equal to 1,024 bytes. The allowable
-     * characters are 7-bit ASCII without control codes���specifically, ASCII
-     * values 32���126 decimal or 0x20���0x7E hexadecimal.
+     * characters are 7-bit ASCII without control codes?????????specifically, ASCII
+     * values 32?????????126 decimal or 0x20?????????0x7E hexadecimal.
      */
     public JobParameters(String format, String type, String archiveId, String description) {
         setFormat(format);
@@ -257,13 +256,13 @@ public class JobParameters implements Serializable {
     /**
      * The optional description for the job. The description must be less
      * than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
-     * without control codes���specifically, ASCII values 32���126 decimal or
-     * 0x20���0x7E hexadecimal.
+     * without control codes?????????specifically, ASCII values 32?????????126 decimal or
+     * 0x20?????????0x7E hexadecimal.
      *
      * @return The optional description for the job. The description must be less
      *         than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
-     *         without control codes���specifically, ASCII values 32���126 decimal or
-     *         0x20���0x7E hexadecimal.
+     *         without control codes?????????specifically, ASCII values 32?????????126 decimal or
+     *         0x20?????????0x7E hexadecimal.
      */
     public String getDescription() {
         return description;
@@ -272,13 +271,13 @@ public class JobParameters implements Serializable {
     /**
      * The optional description for the job. The description must be less
      * than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
-     * without control codes���specifically, ASCII values 32���126 decimal or
-     * 0x20���0x7E hexadecimal.
+     * without control codes?????????specifically, ASCII values 32?????????126 decimal or
+     * 0x20?????????0x7E hexadecimal.
      *
      * @param description The optional description for the job. The description must be less
      *         than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
-     *         without control codes���specifically, ASCII values 32���126 decimal or
-     *         0x20���0x7E hexadecimal.
+     *         without control codes?????????specifically, ASCII values 32?????????126 decimal or
+     *         0x20?????????0x7E hexadecimal.
      */
     public void setDescription(String description) {
         this.description = description;
@@ -287,15 +286,15 @@ public class JobParameters implements Serializable {
     /**
      * The optional description for the job. The description must be less
      * than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
-     * without control codes���specifically, ASCII values 32���126 decimal or
-     * 0x20���0x7E hexadecimal.
+     * without control codes?????????specifically, ASCII values 32?????????126 decimal or
+     * 0x20?????????0x7E hexadecimal.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The optional description for the job. The description must be less
      *         than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
-     *         without control codes���specifically, ASCII values 32���126 decimal or
-     *         0x20���0x7E hexadecimal.
+     *         without control codes?????????specifically, ASCII values 32?????????126 decimal or
+     *         0x20?????????0x7E hexadecimal.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

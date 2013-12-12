@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Reports the configuration of a bootstrap action in a job flow.

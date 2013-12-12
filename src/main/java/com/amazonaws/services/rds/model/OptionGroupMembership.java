@@ -16,7 +16,6 @@ package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Provides information on the option groups the DB instance is a member of.

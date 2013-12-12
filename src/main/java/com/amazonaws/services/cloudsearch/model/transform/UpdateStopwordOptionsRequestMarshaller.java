@@ -33,8 +33,8 @@ public class UpdateStopwordOptionsRequestMarshaller implements Marshaller<Reques
     public Request<UpdateStopwordOptionsRequest> marshall(UpdateStopwordOptionsRequest updateStopwordOptionsRequest) {
 
         if (updateStopwordOptionsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<UpdateStopwordOptionsRequest> request = new DefaultRequest<UpdateStopwordOptionsRequest>(updateStopwordOptionsRequest, "AmazonCloudSearch");
         request.addParameter("Action", "UpdateStopwordOptions");
@@ -46,7 +46,6 @@ public class UpdateStopwordOptionsRequestMarshaller implements Marshaller<Reques
         if (updateStopwordOptionsRequest.getStopwords() != null) {
             request.addParameter("Stopwords", StringUtils.fromString(updateStopwordOptionsRequest.getStopwords()));
         }
-
 
         return request;
     }

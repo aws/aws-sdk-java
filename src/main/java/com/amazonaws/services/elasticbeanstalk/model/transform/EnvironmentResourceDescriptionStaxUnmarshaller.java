@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Environment Resource Description StAX Unmarshaller
  */
@@ -37,9 +36,7 @@ public class EnvironmentResourceDescriptionStaxUnmarshaller implements Unmarshal
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        
         if (context.isStartOfDocument()) targetDepth += 2;
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
@@ -68,6 +65,10 @@ public class EnvironmentResourceDescriptionStaxUnmarshaller implements Unmarshal
                 }
                 if (context.testExpression("Triggers/member", targetDepth)) {
                     environmentResourceDescription.getTriggers().add(TriggerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Queues/member", targetDepth)) {
+                    environmentResourceDescription.getQueues().add(QueueStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

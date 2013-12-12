@@ -1988,6 +1988,5 @@ public interface AmazonRDS {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

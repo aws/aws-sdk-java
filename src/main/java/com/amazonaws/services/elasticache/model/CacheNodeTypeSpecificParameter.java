@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cache cluster, a <i>cache.m1.large</i> cache

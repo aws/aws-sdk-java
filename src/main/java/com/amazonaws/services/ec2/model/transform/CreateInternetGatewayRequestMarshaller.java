@@ -33,14 +33,12 @@ public class CreateInternetGatewayRequestMarshaller implements Marshaller<Reques
     public Request<CreateInternetGatewayRequest> marshall(CreateInternetGatewayRequest createInternetGatewayRequest) {
 
         if (createInternetGatewayRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateInternetGatewayRequest> request = new DefaultRequest<CreateInternetGatewayRequest>(createInternetGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "CreateInternetGateway");
         request.addParameter("Version", "2013-10-15");
-
-
 
         return request;
     }

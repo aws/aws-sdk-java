@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudwatch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The <code>Metric</code> data type contains information about a specific metric. If you call ListMetrics, Amazon CloudWatch returns information

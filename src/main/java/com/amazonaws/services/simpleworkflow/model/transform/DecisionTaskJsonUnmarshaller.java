@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Decision Task JSON Unmarshaller
  */
 public class DecisionTaskJsonUnmarshaller implements Unmarshaller<DecisionTask, JsonUnmarshallerContext> {
 
-    
-
     public DecisionTask unmarshall(JsonUnmarshallerContext context) throws Exception {
         DecisionTask decisionTask = new DecisionTask();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DecisionTaskJsonUnmarshaller implements Unmarshaller<DecisionTask, 
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskToken", targetDepth)) {
                     context.nextToken();
@@ -83,7 +77,6 @@ public class DecisionTaskJsonUnmarshaller implements Unmarshaller<DecisionTask, 
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

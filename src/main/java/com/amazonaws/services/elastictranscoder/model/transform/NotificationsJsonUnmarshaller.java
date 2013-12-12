@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Notifications JSON Unmarshaller
  */
 public class NotificationsJsonUnmarshaller implements Unmarshaller<Notifications, JsonUnmarshallerContext> {
 
-    
-
     public Notifications unmarshall(JsonUnmarshallerContext context) throws Exception {
         Notifications notifications = new Notifications();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class NotificationsJsonUnmarshaller implements Unmarshaller<Notifications
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Progressing", targetDepth)) {
                     context.nextToken();
@@ -72,7 +66,6 @@ public class NotificationsJsonUnmarshaller implements Unmarshaller<Notifications
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

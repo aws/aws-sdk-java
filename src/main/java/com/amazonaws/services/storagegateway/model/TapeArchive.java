@@ -16,7 +16,6 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents a virtual tape that is archived in the Virtual Tape Shelf (VTS).

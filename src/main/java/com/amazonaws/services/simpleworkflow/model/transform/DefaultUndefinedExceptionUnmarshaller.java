@@ -34,8 +34,7 @@ public class DefaultUndefinedExceptionUnmarshaller extends JsonErrorUnmarshaller
             return null;
 
         DefaultUndefinedException e = (DefaultUndefinedException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

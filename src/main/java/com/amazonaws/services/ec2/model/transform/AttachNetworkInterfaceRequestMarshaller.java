@@ -33,8 +33,8 @@ public class AttachNetworkInterfaceRequestMarshaller implements Marshaller<Reque
     public Request<AttachNetworkInterfaceRequest> marshall(AttachNetworkInterfaceRequest attachNetworkInterfaceRequest) {
 
         if (attachNetworkInterfaceRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AttachNetworkInterfaceRequest> request = new DefaultRequest<AttachNetworkInterfaceRequest>(attachNetworkInterfaceRequest, "AmazonEC2");
         request.addParameter("Action", "AttachNetworkInterface");
@@ -49,7 +49,6 @@ public class AttachNetworkInterfaceRequestMarshaller implements Marshaller<Reque
         if (attachNetworkInterfaceRequest.getDeviceIndex() != null) {
             request.addParameter("DeviceIndex", StringUtils.fromInteger(attachNetworkInterfaceRequest.getDeviceIndex()));
         }
-
 
         return request;
     }

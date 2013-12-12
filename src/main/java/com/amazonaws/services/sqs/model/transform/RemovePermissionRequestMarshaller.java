@@ -33,8 +33,8 @@ public class RemovePermissionRequestMarshaller implements Marshaller<Request<Rem
     public Request<RemovePermissionRequest> marshall(RemovePermissionRequest removePermissionRequest) {
 
         if (removePermissionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RemovePermissionRequest> request = new DefaultRequest<RemovePermissionRequest>(removePermissionRequest, "AmazonSQS");
         request.addParameter("Action", "RemovePermission");
@@ -46,7 +46,6 @@ public class RemovePermissionRequestMarshaller implements Marshaller<Request<Rem
         if (removePermissionRequest.getLabel() != null) {
             request.addParameter("Label", StringUtils.fromString(removePermissionRequest.getLabel()));
         }
-
 
         return request;
     }

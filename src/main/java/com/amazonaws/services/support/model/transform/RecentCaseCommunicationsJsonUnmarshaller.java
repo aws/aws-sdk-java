@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Recent Case Communications JSON Unmarshaller
  */
 public class RecentCaseCommunicationsJsonUnmarshaller implements Unmarshaller<RecentCaseCommunications, JsonUnmarshallerContext> {
 
-    
-
     public RecentCaseCommunications unmarshall(JsonUnmarshallerContext context) throws Exception {
         RecentCaseCommunications recentCaseCommunications = new RecentCaseCommunications();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class RecentCaseCommunicationsJsonUnmarshaller implements Unmarshaller<Re
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("communications", targetDepth)) {
                     recentCaseCommunications.setCommunications(new ListUnmarshaller<Communication>(CommunicationJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -63,7 +57,6 @@ public class RecentCaseCommunicationsJsonUnmarshaller implements Unmarshaller<Re
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

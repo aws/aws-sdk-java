@@ -16,7 +16,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * An EBS volume backed block device.

@@ -33,8 +33,8 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements Marshall
     public Request<RestoreDBInstanceToPointInTimeRequest> marshall(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) {
 
         if (restoreDBInstanceToPointInTimeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RestoreDBInstanceToPointInTimeRequest> request = new DefaultRequest<RestoreDBInstanceToPointInTimeRequest>(restoreDBInstanceToPointInTimeRequest, "AmazonRDS");
         request.addParameter("Action", "RestoreDBInstanceToPointInTime");
@@ -105,7 +105,6 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements Marshall
 
             tagsListIndex++;
         }
-
 
         return request;
     }

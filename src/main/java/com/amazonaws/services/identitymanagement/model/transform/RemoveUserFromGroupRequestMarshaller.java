@@ -33,8 +33,8 @@ public class RemoveUserFromGroupRequestMarshaller implements Marshaller<Request<
     public Request<RemoveUserFromGroupRequest> marshall(RemoveUserFromGroupRequest removeUserFromGroupRequest) {
 
         if (removeUserFromGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RemoveUserFromGroupRequest> request = new DefaultRequest<RemoveUserFromGroupRequest>(removeUserFromGroupRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "RemoveUserFromGroup");
@@ -46,7 +46,6 @@ public class RemoveUserFromGroupRequestMarshaller implements Marshaller<Request<
         if (removeUserFromGroupRequest.getUserName() != null) {
             request.addParameter("UserName", StringUtils.fromString(removeUserFromGroupRequest.getUserName()));
         }
-
 
         return request;
     }

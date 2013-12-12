@@ -16,7 +16,6 @@ package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Contains the fields that indicate the statuses Trusted Advisor checks for which refreshes have been requested.

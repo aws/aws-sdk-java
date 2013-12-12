@@ -33,8 +33,8 @@ public class ResetCacheParameterGroupRequestMarshaller implements Marshaller<Req
     public Request<ResetCacheParameterGroupRequest> marshall(ResetCacheParameterGroupRequest resetCacheParameterGroupRequest) {
 
         if (resetCacheParameterGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ResetCacheParameterGroupRequest> request = new DefaultRequest<ResetCacheParameterGroupRequest>(resetCacheParameterGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "ResetCacheParameterGroup");
@@ -63,7 +63,6 @@ public class ResetCacheParameterGroupRequestMarshaller implements Marshaller<Req
 
             parameterNameValuesListIndex++;
         }
-
 
         return request;
     }

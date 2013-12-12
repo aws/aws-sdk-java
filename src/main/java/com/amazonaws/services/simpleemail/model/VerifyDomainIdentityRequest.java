@@ -23,6 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Verifies a domain.
  * </p>
+ * <p>
+ * This action is throttled at one request per second.
+ * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#verifyDomainIdentity(VerifyDomainIdentityRequest)
  */

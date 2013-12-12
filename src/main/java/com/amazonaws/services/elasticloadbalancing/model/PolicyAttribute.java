@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticloadbalancing.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The PolicyAttribute data type. This data type contains a key/value pair that defines properties of a specific policy.

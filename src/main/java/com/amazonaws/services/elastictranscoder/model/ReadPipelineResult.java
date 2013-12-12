@@ -16,7 +16,6 @@ package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The <code>ReadPipelineResponse</code> structure.

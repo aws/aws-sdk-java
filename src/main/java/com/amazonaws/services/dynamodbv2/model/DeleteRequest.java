@@ -16,7 +16,6 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents a request to perform a <i>DeleteItem</i> operation on an item.
@@ -118,14 +117,14 @@ public class DeleteRequest implements Serializable {
      */
     public void setKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
         java.util.HashMap<String,AttributeValue> key = new java.util.HashMap<String,AttributeValue>();
-    	
-    	if (hashKey != null) {
-    	    key.put(hashKey.getKey(), hashKey.getValue());
-    	} else
+        
+        if (hashKey != null) {
+            key.put(hashKey.getKey(), hashKey.getValue());
+        } else
             throw new IllegalArgumentException("hashKey must be non-null object.");
-    	if (rangeKey != null) {
-    	    key.put(rangeKey.getKey(), rangeKey.getValue());
-    	} 
+        if (rangeKey != null) {
+            key.put(rangeKey.getKey(), rangeKey.getValue());
+        } 
         setKey(key);
     }
     
@@ -144,8 +143,8 @@ public class DeleteRequest implements Serializable {
      * @param rangeKey Primary range key. (null if it a hash-only table)
      */
     public DeleteRequest withKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
-    	setKey(hashKey, rangeKey);
-    	return this;
+        setKey(hashKey, rangeKey);
+        return this;
     }
 
     /**
@@ -160,26 +159,26 @@ public class DeleteRequest implements Serializable {
      * @param key The key of the entry to be added into Key.
      * @param value The corresponding value of the entry to be added into Key.
      */
-	public DeleteRequest addKeyEntry(String key, AttributeValue value) {
-		if (null == this.key) {
-			this.key = new java.util.HashMap<String,AttributeValue>();
-		}
-		if (this.key.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.key.put(key, value);
-		return this;
-	}
+    public DeleteRequest addKeyEntry(String key, AttributeValue value) {
+        if (null == this.key) {
+            this.key = new java.util.HashMap<String,AttributeValue>();
+        }
+        if (this.key.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.key.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Key.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public DeleteRequest clearKeyEntries() {
-		this.key = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Key.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public DeleteRequest clearKeyEntries() {
+        this.key = null;
+        return this;
+    }
+    
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

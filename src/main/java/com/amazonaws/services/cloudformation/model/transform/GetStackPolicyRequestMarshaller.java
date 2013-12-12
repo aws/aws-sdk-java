@@ -33,8 +33,8 @@ public class GetStackPolicyRequestMarshaller implements Marshaller<Request<GetSt
     public Request<GetStackPolicyRequest> marshall(GetStackPolicyRequest getStackPolicyRequest) {
 
         if (getStackPolicyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetStackPolicyRequest> request = new DefaultRequest<GetStackPolicyRequest>(getStackPolicyRequest, "AmazonCloudFormation");
         request.addParameter("Action", "GetStackPolicy");
@@ -43,7 +43,6 @@ public class GetStackPolicyRequestMarshaller implements Marshaller<Request<GetSt
         if (getStackPolicyRequest.getStackName() != null) {
             request.addParameter("StackName", StringUtils.fromString(getStackPolicyRequest.getStackName()));
         }
-
 
         return request;
     }

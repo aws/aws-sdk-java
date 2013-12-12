@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A value that applies only to a certain cache node type.

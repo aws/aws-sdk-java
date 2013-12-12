@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Signal External Workflow Execution Failed Event Attributes JSON Unmarshaller
  */
 public class SignalExternalWorkflowExecutionFailedEventAttributesJsonUnmarshaller implements Unmarshaller<SignalExternalWorkflowExecutionFailedEventAttributes, JsonUnmarshallerContext> {
 
-    
-
     public SignalExternalWorkflowExecutionFailedEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         SignalExternalWorkflowExecutionFailedEventAttributes signalExternalWorkflowExecutionFailedEventAttributes = new SignalExternalWorkflowExecutionFailedEventAttributes();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class SignalExternalWorkflowExecutionFailedEventAttributesJsonUnmarshalle
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workflowId", targetDepth)) {
                     context.nextToken();
@@ -80,7 +74,6 @@ public class SignalExternalWorkflowExecutionFailedEventAttributesJsonUnmarshalle
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

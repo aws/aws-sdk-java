@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A complex type that describes how CloudFront processes requests. You can create up to 10 cache behaviors.You must create at least as many cache

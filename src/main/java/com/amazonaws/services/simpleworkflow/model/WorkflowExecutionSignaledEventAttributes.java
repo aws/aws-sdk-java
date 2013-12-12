@@ -16,7 +16,6 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Provides details of the <code>WorkflowExecutionSignaled</code> event.

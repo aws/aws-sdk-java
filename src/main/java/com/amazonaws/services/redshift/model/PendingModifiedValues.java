@@ -16,7 +16,6 @@ package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.

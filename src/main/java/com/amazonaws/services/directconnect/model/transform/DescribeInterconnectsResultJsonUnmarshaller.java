@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Describe Interconnects Result JSON Unmarshaller
  */
 public class DescribeInterconnectsResultJsonUnmarshaller implements Unmarshaller<DescribeInterconnectsResult, JsonUnmarshallerContext> {
 
-    
-
     public DescribeInterconnectsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeInterconnectsResult describeInterconnectsResult = new DescribeInterconnectsResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DescribeInterconnectsResultJsonUnmarshaller implements Unmarshaller
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("interconnects", targetDepth)) {
                     describeInterconnectsResult.setInterconnects(new ListUnmarshaller<Interconnect>(InterconnectJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -59,7 +53,6 @@ public class DescribeInterconnectsResultJsonUnmarshaller implements Unmarshaller
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

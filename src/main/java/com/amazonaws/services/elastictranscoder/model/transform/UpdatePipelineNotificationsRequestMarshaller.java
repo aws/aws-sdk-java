@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class UpdatePipelineNotificationsRequestMarshaller implements Marshaller<Request<UpdatePipelineNotificationsRequest>, UpdatePipelineNotificationsRequest> {
 
-    
-
     public Request<UpdatePipelineNotificationsRequest> marshall(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest) {
     if (updatePipelineNotificationsRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class UpdatePipelineNotificationsRequestMarshaller implements Marshaller<
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = "2012-09-25/pipelines/{Id}/notifications"; 
         uriResourcePath = uriResourcePath.replace("{Id}", (updatePipelineNotificationsRequest.getId() == null) ? "" : StringUtils.fromString(updatePipelineNotificationsRequest.getId())); 
@@ -76,14 +71,10 @@ public class UpdatePipelineNotificationsRequestMarshaller implements Marshaller<
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             Notifications notifications = updatePipelineNotificationsRequest.getNotifications();
@@ -108,7 +99,6 @@ public class UpdatePipelineNotificationsRequestMarshaller implements Marshaller<
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -117,7 +107,6 @@ public class UpdatePipelineNotificationsRequestMarshaller implements Marshaller<
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

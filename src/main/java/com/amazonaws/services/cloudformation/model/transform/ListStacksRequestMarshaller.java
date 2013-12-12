@@ -33,8 +33,8 @@ public class ListStacksRequestMarshaller implements Marshaller<Request<ListStack
     public Request<ListStacksRequest> marshall(ListStacksRequest listStacksRequest) {
 
         if (listStacksRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListStacksRequest> request = new DefaultRequest<ListStacksRequest>(listStacksRequest, "AmazonCloudFormation");
         request.addParameter("Action", "ListStacks");
@@ -54,7 +54,6 @@ public class ListStacksRequestMarshaller implements Marshaller<Request<ListStack
 
             stackStatusFiltersListIndex++;
         }
-
 
         return request;
     }

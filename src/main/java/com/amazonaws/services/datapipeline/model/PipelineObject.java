@@ -16,7 +16,6 @@ package com.amazonaws.services.datapipeline.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of

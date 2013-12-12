@@ -33,8 +33,8 @@ public class DeleteSAMLProviderRequestMarshaller implements Marshaller<Request<D
     public Request<DeleteSAMLProviderRequest> marshall(DeleteSAMLProviderRequest deleteSAMLProviderRequest) {
 
         if (deleteSAMLProviderRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteSAMLProviderRequest> request = new DefaultRequest<DeleteSAMLProviderRequest>(deleteSAMLProviderRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteSAMLProvider");
@@ -43,7 +43,6 @@ public class DeleteSAMLProviderRequestMarshaller implements Marshaller<Request<D
         if (deleteSAMLProviderRequest.getSAMLProviderArn() != null) {
             request.addParameter("SAMLProviderArn", StringUtils.fromString(deleteSAMLProviderRequest.getSAMLProviderArn()));
         }
-
 
         return request;
     }

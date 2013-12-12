@@ -33,8 +33,8 @@ public class ReplaceNetworkAclAssociationRequestMarshaller implements Marshaller
     public Request<ReplaceNetworkAclAssociationRequest> marshall(ReplaceNetworkAclAssociationRequest replaceNetworkAclAssociationRequest) {
 
         if (replaceNetworkAclAssociationRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ReplaceNetworkAclAssociationRequest> request = new DefaultRequest<ReplaceNetworkAclAssociationRequest>(replaceNetworkAclAssociationRequest, "AmazonEC2");
         request.addParameter("Action", "ReplaceNetworkAclAssociation");
@@ -46,7 +46,6 @@ public class ReplaceNetworkAclAssociationRequestMarshaller implements Marshaller
         if (replaceNetworkAclAssociationRequest.getNetworkAclId() != null) {
             request.addParameter("NetworkAclId", StringUtils.fromString(replaceNetworkAclAssociationRequest.getNetworkAclId()));
         }
-
 
         return request;
     }

@@ -33,8 +33,8 @@ public class ResumeProcessesRequestMarshaller implements Marshaller<Request<Resu
     public Request<ResumeProcessesRequest> marshall(ResumeProcessesRequest resumeProcessesRequest) {
 
         if (resumeProcessesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ResumeProcessesRequest> request = new DefaultRequest<ResumeProcessesRequest>(resumeProcessesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "ResumeProcesses");
@@ -54,7 +54,6 @@ public class ResumeProcessesRequestMarshaller implements Marshaller<Request<Resu
 
             scalingProcessesListIndex++;
         }
-
 
         return request;
     }

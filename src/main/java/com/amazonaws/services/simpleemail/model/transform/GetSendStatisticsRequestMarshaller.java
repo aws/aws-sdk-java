@@ -33,14 +33,12 @@ public class GetSendStatisticsRequestMarshaller implements Marshaller<Request<Ge
     public Request<GetSendStatisticsRequest> marshall(GetSendStatisticsRequest getSendStatisticsRequest) {
 
         if (getSendStatisticsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetSendStatisticsRequest> request = new DefaultRequest<GetSendStatisticsRequest>(getSendStatisticsRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "GetSendStatistics");
         request.addParameter("Version", "2010-12-01");
-
-
 
         return request;
     }

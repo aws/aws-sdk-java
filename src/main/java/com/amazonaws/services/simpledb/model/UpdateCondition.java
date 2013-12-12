@@ -16,7 +16,6 @@ package com.amazonaws.services.simpledb.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Specifies the conditions under which data should be updated. If an update condition is specified for a request, the data will only be updated if the

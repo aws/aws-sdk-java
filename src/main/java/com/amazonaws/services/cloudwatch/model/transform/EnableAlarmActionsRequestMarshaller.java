@@ -33,13 +33,12 @@ public class EnableAlarmActionsRequestMarshaller implements Marshaller<Request<E
     public Request<EnableAlarmActionsRequest> marshall(EnableAlarmActionsRequest enableAlarmActionsRequest) {
 
         if (enableAlarmActionsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<EnableAlarmActionsRequest> request = new DefaultRequest<EnableAlarmActionsRequest>(enableAlarmActionsRequest, "AmazonCloudWatch");
         request.addParameter("Action", "EnableAlarmActions");
         request.addParameter("Version", "2010-08-01");
-
 
         java.util.List<String> alarmNamesList = enableAlarmActionsRequest.getAlarmNames();
         int alarmNamesListIndex = 1;
@@ -51,7 +50,6 @@ public class EnableAlarmActionsRequestMarshaller implements Marshaller<Request<E
 
             alarmNamesListIndex++;
         }
-
 
         return request;
     }

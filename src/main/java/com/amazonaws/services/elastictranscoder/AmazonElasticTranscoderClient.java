@@ -26,6 +26,7 @@ import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -33,7 +34,6 @@ import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.services.elastictranscoder.model.transform.*;
-
 
 /**
  * Client for accessing AmazonElasticTranscoder.  All service calls made
@@ -171,13 +171,35 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AmazonElasticTranscoderClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonElasticTranscoder using the specified AWS account credentials
+     * provider, client configuration options and request metric collector.
+     * 
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AmazonElasticTranscoder
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public AmazonElasticTranscoderClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         
         this.awsCredentialsProvider = awsCredentialsProvider;
         
         init();
     }
-
 
     private void init() {
         exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, JSONObject>>();
@@ -197,11 +219,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 "/com/amazonaws/services/elastictranscoder/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
                 "/com/amazonaws/services/elastictranscoder/request.handler2s"));
-
-        
     }
 
-    
     /**
      * <p>
      * The UpdatePipelineStatus operation pauses or reactivates a pipeline,
@@ -262,7 +281,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * With the UpdatePipelineNotifications operation, you can update Amazon
@@ -320,7 +338,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * The ReadJob operation returns detailed information about a job.
@@ -371,7 +388,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * The ListJobsByStatus operation gets a list of jobs that have a
@@ -425,7 +441,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * The ReadPreset operation gets detailed information about a preset.
@@ -476,7 +491,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * The CreatePipeline operation creates a pipeline with settings that you
@@ -529,7 +543,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * The CancelJob operation cancels an unfinished job.
@@ -587,7 +600,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * Use the <code>UpdatePipeline</code> operation to update settings for
@@ -646,7 +658,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * The ListPresets operation gets a list of the default presets included
@@ -698,7 +709,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * The DeletePipeline operation removes a pipeline.
@@ -756,7 +766,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * The TestRole operation tests the IAM role used to create the pipeline.
@@ -815,7 +824,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * The ListPipelines operation gets a list of the pipelines associated
@@ -866,7 +874,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * The ReadPipeline operation gets detailed information about a pipeline.
@@ -917,7 +924,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * The CreatePreset operation creates a preset with settings that you
@@ -988,7 +994,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * The DeletePreset operation removes a preset that you've added in an
@@ -1044,7 +1049,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * When you create a job, Elastic Transcoder returns JSON data that
@@ -1104,7 +1108,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * The ListJobsByPipeline operation gets a list of the jobs currently in
@@ -1162,7 +1165,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
     }
 
-   
     /**
      * <p>
      * The ListPresets operation gets a list of the default presets included
@@ -1215,20 +1217,15 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
     public ListPipelinesResult listPipelines() throws AmazonServiceException, AmazonClientException {
         return listPipelines(new ListPipelinesRequest());
     }
-    
 
     @Override
     public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
-
-        
     }
 
     @Override
     public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
         super.setEndpoint(endpoint, serviceName, regionId);
-
-        
     }
 
     /**

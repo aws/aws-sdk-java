@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Delete Tape Result JSON Unmarshaller
  */
 public class DeleteTapeResultJsonUnmarshaller implements Unmarshaller<DeleteTapeResult, JsonUnmarshallerContext> {
 
-    
-
     public DeleteTapeResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DeleteTapeResult deleteTapeResult = new DeleteTapeResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DeleteTapeResultJsonUnmarshaller implements Unmarshaller<DeleteTape
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TapeARN", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class DeleteTapeResultJsonUnmarshaller implements Unmarshaller<DeleteTape
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

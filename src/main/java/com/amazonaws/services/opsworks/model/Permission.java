@@ -16,7 +16,6 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes stack or user permissions.
@@ -46,6 +45,17 @@ public class Permission implements Serializable {
      * Whether the user can use <b>sudo</b>.
      */
     private Boolean allowSudo;
+
+    /**
+     * The user's permission level, which must be the following: <ul>
+     * <li><code>deny</code></li> <li><code>show</code></li>
+     * <li><code>deploy</code></li> <li><code>manage</code></li>
+     * <li><code>iam_only</code></li> </ul> <p>For more information on the
+     * permissions associated with these levels, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+     * User Permissions</a>
+     */
+    private String level;
 
     /**
      * A stack ID.
@@ -216,6 +226,75 @@ public class Permission implements Serializable {
     }
 
     /**
+     * The user's permission level, which must be the following: <ul>
+     * <li><code>deny</code></li> <li><code>show</code></li>
+     * <li><code>deploy</code></li> <li><code>manage</code></li>
+     * <li><code>iam_only</code></li> </ul> <p>For more information on the
+     * permissions associated with these levels, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+     * User Permissions</a>
+     *
+     * @return The user's permission level, which must be the following: <ul>
+     *         <li><code>deny</code></li> <li><code>show</code></li>
+     *         <li><code>deploy</code></li> <li><code>manage</code></li>
+     *         <li><code>iam_only</code></li> </ul> <p>For more information on the
+     *         permissions associated with these levels, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+     *         User Permissions</a>
+     */
+    public String getLevel() {
+        return level;
+    }
+    
+    /**
+     * The user's permission level, which must be the following: <ul>
+     * <li><code>deny</code></li> <li><code>show</code></li>
+     * <li><code>deploy</code></li> <li><code>manage</code></li>
+     * <li><code>iam_only</code></li> </ul> <p>For more information on the
+     * permissions associated with these levels, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+     * User Permissions</a>
+     *
+     * @param level The user's permission level, which must be the following: <ul>
+     *         <li><code>deny</code></li> <li><code>show</code></li>
+     *         <li><code>deploy</code></li> <li><code>manage</code></li>
+     *         <li><code>iam_only</code></li> </ul> <p>For more information on the
+     *         permissions associated with these levels, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+     *         User Permissions</a>
+     */
+    public void setLevel(String level) {
+        this.level = level;
+    }
+    
+    /**
+     * The user's permission level, which must be the following: <ul>
+     * <li><code>deny</code></li> <li><code>show</code></li>
+     * <li><code>deploy</code></li> <li><code>manage</code></li>
+     * <li><code>iam_only</code></li> </ul> <p>For more information on the
+     * permissions associated with these levels, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+     * User Permissions</a>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param level The user's permission level, which must be the following: <ul>
+     *         <li><code>deny</code></li> <li><code>show</code></li>
+     *         <li><code>deploy</code></li> <li><code>manage</code></li>
+     *         <li><code>iam_only</code></li> </ul> <p>For more information on the
+     *         permissions associated with these levels, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+     *         User Permissions</a>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Permission withLevel(String level) {
+        this.level = level;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -230,7 +309,8 @@ public class Permission implements Serializable {
         if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
         if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ",");
         if (isAllowSsh() != null) sb.append("AllowSsh: " + isAllowSsh() + ",");
-        if (isAllowSudo() != null) sb.append("AllowSudo: " + isAllowSudo() );
+        if (isAllowSudo() != null) sb.append("AllowSudo: " + isAllowSudo() + ",");
+        if (getLevel() != null) sb.append("Level: " + getLevel() );
         sb.append("}");
         return sb.toString();
     }
@@ -244,6 +324,7 @@ public class Permission implements Serializable {
         hashCode = prime * hashCode + ((getIamUserArn() == null) ? 0 : getIamUserArn().hashCode()); 
         hashCode = prime * hashCode + ((isAllowSsh() == null) ? 0 : isAllowSsh().hashCode()); 
         hashCode = prime * hashCode + ((isAllowSudo() == null) ? 0 : isAllowSudo().hashCode()); 
+        hashCode = prime * hashCode + ((getLevel() == null) ? 0 : getLevel().hashCode()); 
         return hashCode;
     }
     
@@ -263,6 +344,8 @@ public class Permission implements Serializable {
         if (other.isAllowSsh() != null && other.isAllowSsh().equals(this.isAllowSsh()) == false) return false; 
         if (other.isAllowSudo() == null ^ this.isAllowSudo() == null) return false;
         if (other.isAllowSudo() != null && other.isAllowSudo().equals(this.isAllowSudo()) == false) return false; 
+        if (other.getLevel() == null ^ this.getLevel() == null) return false;
+        if (other.getLevel() != null && other.getLevel().equals(this.getLevel()) == false) return false; 
         return true;
     }
     

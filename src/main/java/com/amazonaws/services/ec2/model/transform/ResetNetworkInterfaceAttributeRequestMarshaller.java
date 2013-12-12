@@ -33,8 +33,8 @@ public class ResetNetworkInterfaceAttributeRequestMarshaller implements Marshall
     public Request<ResetNetworkInterfaceAttributeRequest> marshall(ResetNetworkInterfaceAttributeRequest resetNetworkInterfaceAttributeRequest) {
 
         if (resetNetworkInterfaceAttributeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ResetNetworkInterfaceAttributeRequest> request = new DefaultRequest<ResetNetworkInterfaceAttributeRequest>(resetNetworkInterfaceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ResetNetworkInterfaceAttribute");
@@ -46,7 +46,6 @@ public class ResetNetworkInterfaceAttributeRequestMarshaller implements Marshall
         if (resetNetworkInterfaceAttributeRequest.getSourceDestCheck() != null) {
             request.addParameter("SourceDestCheck", StringUtils.fromString(resetNetworkInterfaceAttributeRequest.getSourceDestCheck()));
         }
-
 
         return request;
     }

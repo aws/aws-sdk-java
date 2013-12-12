@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A complex type that describes how you'd prefer CloudFront to respond to requests that result in either a 4xx or 5xx response. You can control whether

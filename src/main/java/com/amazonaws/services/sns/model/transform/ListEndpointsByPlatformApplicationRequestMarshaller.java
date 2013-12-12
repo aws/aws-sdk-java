@@ -33,8 +33,8 @@ public class ListEndpointsByPlatformApplicationRequestMarshaller implements Mars
     public Request<ListEndpointsByPlatformApplicationRequest> marshall(ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest) {
 
         if (listEndpointsByPlatformApplicationRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListEndpointsByPlatformApplicationRequest> request = new DefaultRequest<ListEndpointsByPlatformApplicationRequest>(listEndpointsByPlatformApplicationRequest, "AmazonSNS");
         request.addParameter("Action", "ListEndpointsByPlatformApplication");
@@ -46,7 +46,6 @@ public class ListEndpointsByPlatformApplicationRequestMarshaller implements Mars
         if (listEndpointsByPlatformApplicationRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(listEndpointsByPlatformApplicationRequest.getNextToken()));
         }
-
 
         return request;
     }

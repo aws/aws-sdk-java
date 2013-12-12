@@ -33,14 +33,12 @@ public class DescribeMetricCollectionTypesRequestMarshaller implements Marshalle
     public Request<DescribeMetricCollectionTypesRequest> marshall(DescribeMetricCollectionTypesRequest describeMetricCollectionTypesRequest) {
 
         if (describeMetricCollectionTypesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeMetricCollectionTypesRequest> request = new DefaultRequest<DescribeMetricCollectionTypesRequest>(describeMetricCollectionTypesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeMetricCollectionTypes");
         request.addParameter("Version", "2011-01-01");
-
-
 
         return request;
     }

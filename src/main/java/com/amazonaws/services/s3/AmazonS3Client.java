@@ -68,6 +68,7 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpResponseHandler;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.metrics.AwsSdkMetrics;
+import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.RegionUtils;
 import com.amazonaws.services.s3.internal.BucketNameUtils;
 import com.amazonaws.services.s3.internal.Constants;
@@ -340,8 +341,27 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *            The client configuration options controlling how this client
      *            connects to Amazon S3 (e.g. proxy settings, retry counts, etc).
      */
-    public AmazonS3Client(AWSCredentialsProvider credentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+    public AmazonS3Client(AWSCredentialsProvider credentialsProvider,
+            ClientConfiguration clientConfiguration) {
+        this(credentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new Amazon S3 client using the specified AWS credentials,
+     * client configuration and request metric collector to access Amazon S3.
+     *
+     * @param credentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration
+     *            The client configuration options controlling how this client
+     *            connects to Amazon S3 (e.g. proxy settings, retry counts, etc).
+     * @param requestMetricCollector request metric collector
+     */
+    public AmazonS3Client(AWSCredentialsProvider credentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = credentialsProvider;
         init();
     }
@@ -657,8 +677,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (!(this.endpoint.getHost().equals(Constants.S3_HOSTNAME))
                 && (region == null || region.isEmpty())) {
 
-            region = RegionUtils.getRegionByEndpoint(this.endpoint.getHost())
+            try {
+                region = RegionUtils
+                    .getRegionByEndpoint(this.endpoint.getHost())
                     .getName();
+            } catch (IllegalArgumentException exception) {
+                // Endpoint does not correspond to a known region; send the
+                // request with no location constraint and hope for the best.
+            }
 
         }
 
@@ -699,44 +725,72 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return getAcl(bucketName, key, versionId, null);
     }
 
-    /* (non-Javadoc)
-     * @see com.amazonaws.services.s3.AmazonS3#setObjectAcl(java.lang.String, java.lang.String, com.amazonaws.services.s3.model.AccessControlList)
-     */
+    @Override
     public void setObjectAcl(String bucketName, String key, AccessControlList acl)
             throws AmazonClientException, AmazonServiceException {
         setObjectAcl(bucketName, key, null, acl);
     }
 
-    /* (non-Javadoc)
-     * @see com.amazonaws.services.s3.AmazonS3#setObjectAcl(java.lang.String, java.lang.String, com.amazonaws.services.s3.model.CannedAccessControlList)
-     */
+    @Override
     public void setObjectAcl(String bucketName, String key, CannedAccessControlList acl)
             throws AmazonClientException, AmazonServiceException {
         setObjectAcl(bucketName, key, null, acl);
     }
 
-    /* (non-Javadoc)
-     * @see com.amazonaws.services.s3.AmazonS3#setObjectAcl(java.lang.String, java.lang.String, java.lang.String, com.amazonaws.services.s3.model.AccessControlList)
-     */
+    @Override
     public void setObjectAcl(String bucketName, String key, String versionId, AccessControlList acl)
             throws AmazonClientException, AmazonServiceException {
-        assertParameterNotNull(bucketName, "The bucket name parameter must be specified when setting an object's ACL");
-        assertParameterNotNull(key, "The key parameter must be specified when setting an object's ACL");
-        assertParameterNotNull(acl, "The ACL parameter must be specified when setting an object's ACL");
-
-        setAcl(bucketName, key, versionId, acl, null);
+        setObjectAcl0(bucketName, key, versionId, acl, null);
     }
 
-    /* (non-Javadoc)
-     * @see com.amazonaws.services.s3.AmazonS3#setObjectAcl(java.lang.String, java.lang.String, java.lang.String, com.amazonaws.services.s3.model.CannedAccessControlList)
+    /**
+     * Same as {@link #setObjectAcl(String, String, String, AccessControlList)}
+     * but allows specifying a request metric collector.
      */
-    public void setObjectAcl(String bucketName, String key, String versionId, CannedAccessControlList acl)
+    public void setObjectAcl(String bucketName, String key, String versionId,
+            AccessControlList acl, RequestMetricCollector requestMetricCollector)
+            throws AmazonClientException, AmazonServiceException {
+        setObjectAcl0(bucketName, key, versionId, acl, requestMetricCollector);
+    }
+
+    private void setObjectAcl0(String bucketName, String key, String versionId,
+            AccessControlList acl, RequestMetricCollector requestMetricCollector)
             throws AmazonClientException, AmazonServiceException {
         assertParameterNotNull(bucketName, "The bucket name parameter must be specified when setting an object's ACL");
         assertParameterNotNull(key, "The key parameter must be specified when setting an object's ACL");
         assertParameterNotNull(acl, "The ACL parameter must be specified when setting an object's ACL");
 
-        setAcl(bucketName, key, versionId, acl, null);
+        setAcl(bucketName, key, versionId, acl,
+            new GenericBucketRequest(bucketName)
+                .withRequestMetricCollector(requestMetricCollector));
+    }
+
+    @Override
+    public void setObjectAcl(String bucketName, String key, String versionId, CannedAccessControlList acl)
+            throws AmazonClientException, AmazonServiceException {
+        setObjectAcl0(bucketName, key, versionId, acl, null);
+    }
+
+    /**
+     * Same as {@link #setObjectAcl(String, String, String, CannedAccessControlList)}
+     * but allows specifying a request metric collector.
+     */
+    public void setObjectAcl(String bucketName, String key, String versionId,
+            CannedAccessControlList acl,
+            RequestMetricCollector requestMetricCollector) {
+        setObjectAcl0(bucketName, key, versionId, acl, requestMetricCollector);
+    }
+    
+    private void setObjectAcl0(String bucketName, String key, String versionId,
+            CannedAccessControlList acl, RequestMetricCollector requestMetricCollector)
+            throws AmazonClientException, AmazonServiceException {
+        assertParameterNotNull(bucketName, "The bucket name parameter must be specified when setting an object's ACL");
+        assertParameterNotNull(key, "The key parameter must be specified when setting an object's ACL");
+        assertParameterNotNull(acl, "The ACL parameter must be specified when setting an object's ACL");
+
+        setAcl(bucketName, key, versionId, acl,
+            new GenericBucketRequest(bucketName)
+                .withRequestMetricCollector(requestMetricCollector));
     }
 
     /* (non-Javadoc)
@@ -760,20 +814,32 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return getAcl(bucketName, null, null, getBucketAclRequest);
     }
 
-    /* (non-Javadoc)
-     * @see com.amazonaws.services.s3.AmazonS3#setBucketAcl(java.lang.String, com.amazonaws.services.s3.model.AccessControlList)
-     */
+    @Override
     public void setBucketAcl(String bucketName, AccessControlList acl)
             throws AmazonClientException, AmazonServiceException {
+        setBucketAcl0(bucketName, acl, null);
+    }
+
+    /**
+     * Same as {@link #setBucketAcl(String, AccessControlList)}
+     * but allows specifying a request metric collector.
+     */
+    public void setBucketAcl(String bucketName, AccessControlList acl,
+            RequestMetricCollector requestMetricCollector) {
+        setBucketAcl0(bucketName, acl, requestMetricCollector);
+    }
+
+    private void setBucketAcl0(String bucketName, AccessControlList acl,
+            RequestMetricCollector requestMetricCollector) {
         assertParameterNotNull(bucketName, "The bucket name parameter must be specified when setting a bucket's ACL");
         assertParameterNotNull(acl, "The ACL parameter must be specified when setting a bucket's ACL");
 
-        setAcl(bucketName, null, null, acl, null);
+        setAcl(bucketName, null, null, acl,
+            new GenericBucketRequest(bucketName)
+                .withRequestMetricCollector(requestMetricCollector));
     }
 
-    /* (non-Javadoc)
-     * @see com.amazonaws.services.s3.AmazonS3#setBucketAcl(com.amazonaws.services.s3.SetBucketAclRequest)
-     */
+    @Override
     public void setBucketAcl(SetBucketAclRequest setBucketAclRequest)
             throws AmazonClientException, AmazonServiceException {
         String bucketName = setBucketAclRequest.getBucketName();
@@ -790,15 +856,31 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
     }
 
-    /* (non-Javadoc)
-     * @see com.amazonaws.services.s3.AmazonS3#setBucketAcl(java.lang.String, com.amazonaws.services.s3.model.CannedAccessControlList)
-     */
+    @Override
     public void setBucketAcl(String bucketName, CannedAccessControlList acl)
             throws AmazonClientException, AmazonServiceException {
+        setBucketAcl0(bucketName, acl, null);
+    }
+
+    /**
+     * Same as {@link #setBucketAcl(String, CannedAccessControlList)}
+     * but allows specifying a request metric collector.
+     */
+    public void setBucketAcl(String bucketName, CannedAccessControlList acl,
+            RequestMetricCollector requestMetricCollector) throws AmazonClientException,
+            AmazonServiceException {
+        setBucketAcl0(bucketName, acl, requestMetricCollector);
+    }
+
+    private void setBucketAcl0(String bucketName, CannedAccessControlList acl,
+            RequestMetricCollector col) throws AmazonClientException,
+            AmazonServiceException {
         assertParameterNotNull(bucketName, "The bucket name parameter must be specified when setting a bucket's ACL");
         assertParameterNotNull(acl, "The ACL parameter must be specified when setting a bucket's ACL");
 
-        setAcl(bucketName, null, null, acl, null);
+        setAcl(bucketName, null, null, acl,
+            new GenericBucketRequest(bucketName)
+                .withRequestMetricCollector(col));
     }
 
     /* (non-Javadoc)
@@ -2408,8 +2490,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 byte[] serverSideHash = BinaryUtils.fromHex(metadata.getETag());
 
                 if (!Arrays.equals(clientSideHash, serverSideHash)) {
-                    fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.PART_FAILED_EVENT_CODE);
-
                     throw new AmazonClientException("Unable to verify integrity of data upload.  " +
                             "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
                             "You may need to delete the data stored in Amazon S3.");
@@ -2424,7 +2504,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             result.setServerSideEncryption(metadata.getServerSideEncryption());
             return result;
         } catch (AmazonClientException ace) {
+            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.PART_FAILED_EVENT_CODE);
+
+            // Leaving this here in case anyone is depending on it, but it's
+            // inconsistent with other methods which only generate one of
+            // COMPLETED_EVENT_CODE or FAILED_EVENT_CODE.
             fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.PART_COMPLETED_EVENT_CODE);
+
             throw ace;
         } finally {
             if (inputStream != null) {

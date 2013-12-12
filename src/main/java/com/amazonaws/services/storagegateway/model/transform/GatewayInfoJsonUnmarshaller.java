@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Gateway Info JSON Unmarshaller
  */
 public class GatewayInfoJsonUnmarshaller implements Unmarshaller<GatewayInfo, JsonUnmarshallerContext> {
 
-    
-
     public GatewayInfo unmarshall(JsonUnmarshallerContext context) throws Exception {
         GatewayInfo gatewayInfo = new GatewayInfo();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class GatewayInfoJsonUnmarshaller implements Unmarshaller<GatewayInfo, Js
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
@@ -68,7 +62,6 @@ public class GatewayInfoJsonUnmarshaller implements Unmarshaller<GatewayInfo, Js
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Summary of the information about a CloudFront origin access identity.

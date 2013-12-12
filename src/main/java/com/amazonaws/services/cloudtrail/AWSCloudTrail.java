@@ -377,6 +377,5 @@ public interface AWSCloudTrail {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

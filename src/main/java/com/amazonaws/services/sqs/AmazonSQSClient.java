@@ -25,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
@@ -32,7 +33,6 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
 
 import com.amazonaws.services.sqs.model.*;
 import com.amazonaws.services.sqs.model.transform.*;
-
 
 /**
  * Client for accessing AmazonSQS.  All service calls made
@@ -178,7 +178,30 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AmazonSQSClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonSQS using the specified AWS account credentials
+     * provider, client configuration options, and request metric collector.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AmazonSQS
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public AmazonSQSClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
     }
@@ -209,7 +232,6 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 "/com/amazonaws/services/sqs/request.handler2s"));
     }
 
-    
     /**
      * <p>
      * Sets the value of one or more queue attributes. Valid attributes that
@@ -934,7 +956,6 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     public ListQueuesResult listQueues() throws AmazonServiceException, AmazonClientException {
         return listQueues(new ListQueuesRequest());
     }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

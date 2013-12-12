@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Hsm Client Certificate StAX Unmarshaller
  */
@@ -37,12 +36,9 @@ public class HsmClientCertificateStaxUnmarshaller implements Unmarshaller<HsmCli
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        
         if (context.isStartOfDocument()) targetDepth += 2;
-        
 
         if (context.isStartOfDocument()) targetDepth++;
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

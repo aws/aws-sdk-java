@@ -16,7 +16,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Result returned from allocating an Elastic IP.

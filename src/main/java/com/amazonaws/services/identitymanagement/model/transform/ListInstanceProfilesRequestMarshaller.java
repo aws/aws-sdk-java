@@ -33,8 +33,8 @@ public class ListInstanceProfilesRequestMarshaller implements Marshaller<Request
     public Request<ListInstanceProfilesRequest> marshall(ListInstanceProfilesRequest listInstanceProfilesRequest) {
 
         if (listInstanceProfilesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListInstanceProfilesRequest> request = new DefaultRequest<ListInstanceProfilesRequest>(listInstanceProfilesRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListInstanceProfiles");
@@ -49,7 +49,6 @@ public class ListInstanceProfilesRequestMarshaller implements Marshaller<Request
         if (listInstanceProfilesRequest.getMaxItems() != null) {
             request.addParameter("MaxItems", StringUtils.fromInteger(listInstanceProfilesRequest.getMaxItems()));
         }
-
 
         return request;
     }

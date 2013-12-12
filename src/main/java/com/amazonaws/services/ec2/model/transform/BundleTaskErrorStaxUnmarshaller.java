@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Bundle Task Error StAX Unmarshaller
  */
@@ -37,9 +36,7 @@ public class BundleTaskErrorStaxUnmarshaller implements Unmarshaller<BundleTaskE
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        
         if (context.isStartOfDocument()) targetDepth += 1;
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

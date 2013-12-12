@@ -33,13 +33,12 @@ public class DescribeTagsRequestMarshaller implements Marshaller<Request<Describ
     public Request<DescribeTagsRequest> marshall(DescribeTagsRequest describeTagsRequest) {
 
         if (describeTagsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeTagsRequest> request = new DefaultRequest<DescribeTagsRequest>(describeTagsRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeTags");
         request.addParameter("Version", "2011-01-01");
-
 
         java.util.List<Filter> filtersList = describeTagsRequest.getFilters();
         int filtersListIndex = 1;
@@ -71,7 +70,6 @@ public class DescribeTagsRequestMarshaller implements Marshaller<Request<Describ
         if (describeTagsRequest.getMaxRecords() != null) {
             request.addParameter("MaxRecords", StringUtils.fromInteger(describeTagsRequest.getMaxRecords()));
         }
-
 
         return request;
     }

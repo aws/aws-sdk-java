@@ -16,7 +16,6 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents a selection criteria for a <i>Query</i> or <i>Scan</i> operation.
@@ -24,7 +23,7 @@ import java.io.Serializable;
  * 
  * <ul>
  * <li> <p>
- * For a <i>Query</i> operation, the condition specifies the key attributes to use when querying a table or a secondary index.
+ * For a <i>Query</i> operation, the condition specifies the key attributes to use when querying a table or an index.
  * </p>
  * </li>
  * <li> <p>
@@ -40,14 +39,14 @@ import java.io.Serializable;
 public class Condition implements Serializable {
 
     /**
-     * Represents one or more values to evaluate against the supplied
-     * attribute. This list contains exactly one value, except for a
-     * <code>BETWEEN</code> or <code>IN</code> comparison, in which case the
-     * list contains two values. <note> <p>For type Number, value comparisons
-     * are numeric. <p>String value comparisons for greater than, equals, or
-     * less than are based on ASCII character code values. For example,
-     * <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     * greater than <code>B</code>. For a list of code values, see <a
+     * One or more values to evaluate against the supplied attribute. This
+     * list contains exactly one value, except for a <code>BETWEEN</code> or
+     * <code>IN</code> comparison, in which case the list contains two
+     * values. <note> <p>For type Number, value comparisons are numeric.
+     * <p>String value comparisons for greater than, equals, or less than are
+     * based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
@@ -56,13 +55,13 @@ public class Condition implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<AttributeValue> attributeValueList;
 
     /**
-     * Represents a comparator for evaluating attributes. For example,
-     * equals, greater than, less than, etc. <p>Valid comparison operators
-     * for Query: <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH |
-     * BETWEEN</code> <p>Valid comparison operators for Scan: <p><code>EQ |
-     * NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
-     * BEGINS_WITH | IN | BETWEEN</code> <p>For information on specifying
-     * data types in JSON, see <a
+     * A comparator for evaluating attributes. For example, equals, greater
+     * than, less than, etc. <p>Valid comparison operators for Query:
+     * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code>
+     * <p>Valid comparison operators for Scan: <p><code>EQ | NE | LE | LT |
+     * GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN
+     * | BETWEEN</code> <p>For information on specifying data types in JSON,
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
@@ -161,27 +160,27 @@ public class Condition implements Serializable {
     public Condition() {}
     
     /**
-     * Represents one or more values to evaluate against the supplied
-     * attribute. This list contains exactly one value, except for a
-     * <code>BETWEEN</code> or <code>IN</code> comparison, in which case the
-     * list contains two values. <note> <p>For type Number, value comparisons
-     * are numeric. <p>String value comparisons for greater than, equals, or
-     * less than are based on ASCII character code values. For example,
-     * <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     * greater than <code>B</code>. For a list of code values, see <a
+     * One or more values to evaluate against the supplied attribute. This
+     * list contains exactly one value, except for a <code>BETWEEN</code> or
+     * <code>IN</code> comparison, in which case the list contains two
+     * values. <note> <p>For type Number, value comparisons are numeric.
+     * <p>String value comparisons for greater than, equals, or less than are
+     * based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
      * query expressions. </note>
      *
-     * @return Represents one or more values to evaluate against the supplied
-     *         attribute. This list contains exactly one value, except for a
-     *         <code>BETWEEN</code> or <code>IN</code> comparison, in which case the
-     *         list contains two values. <note> <p>For type Number, value comparisons
-     *         are numeric. <p>String value comparisons for greater than, equals, or
-     *         less than are based on ASCII character code values. For example,
-     *         <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     *         greater than <code>B</code>. For a list of code values, see <a
+     * @return One or more values to evaluate against the supplied attribute. This
+     *         list contains exactly one value, except for a <code>BETWEEN</code> or
+     *         <code>IN</code> comparison, in which case the list contains two
+     *         values. <note> <p>For type Number, value comparisons are numeric.
+     *         <p>String value comparisons for greater than, equals, or less than are
+     *         based on ASCII character code values. For example, <code>a</code> is
+     *         greater than <code>A</code>, and <code>aa</code> is greater than
+     *         <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
@@ -192,27 +191,27 @@ public class Condition implements Serializable {
     }
     
     /**
-     * Represents one or more values to evaluate against the supplied
-     * attribute. This list contains exactly one value, except for a
-     * <code>BETWEEN</code> or <code>IN</code> comparison, in which case the
-     * list contains two values. <note> <p>For type Number, value comparisons
-     * are numeric. <p>String value comparisons for greater than, equals, or
-     * less than are based on ASCII character code values. For example,
-     * <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     * greater than <code>B</code>. For a list of code values, see <a
+     * One or more values to evaluate against the supplied attribute. This
+     * list contains exactly one value, except for a <code>BETWEEN</code> or
+     * <code>IN</code> comparison, in which case the list contains two
+     * values. <note> <p>For type Number, value comparisons are numeric.
+     * <p>String value comparisons for greater than, equals, or less than are
+     * based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
      * query expressions. </note>
      *
-     * @param attributeValueList Represents one or more values to evaluate against the supplied
-     *         attribute. This list contains exactly one value, except for a
-     *         <code>BETWEEN</code> or <code>IN</code> comparison, in which case the
-     *         list contains two values. <note> <p>For type Number, value comparisons
-     *         are numeric. <p>String value comparisons for greater than, equals, or
-     *         less than are based on ASCII character code values. For example,
-     *         <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     *         greater than <code>B</code>. For a list of code values, see <a
+     * @param attributeValueList One or more values to evaluate against the supplied attribute. This
+     *         list contains exactly one value, except for a <code>BETWEEN</code> or
+     *         <code>IN</code> comparison, in which case the list contains two
+     *         values. <note> <p>For type Number, value comparisons are numeric.
+     *         <p>String value comparisons for greater than, equals, or less than are
+     *         based on ASCII character code values. For example, <code>a</code> is
+     *         greater than <code>A</code>, and <code>aa</code> is greater than
+     *         <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
@@ -229,14 +228,14 @@ public class Condition implements Serializable {
     }
     
     /**
-     * Represents one or more values to evaluate against the supplied
-     * attribute. This list contains exactly one value, except for a
-     * <code>BETWEEN</code> or <code>IN</code> comparison, in which case the
-     * list contains two values. <note> <p>For type Number, value comparisons
-     * are numeric. <p>String value comparisons for greater than, equals, or
-     * less than are based on ASCII character code values. For example,
-     * <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     * greater than <code>B</code>. For a list of code values, see <a
+     * One or more values to evaluate against the supplied attribute. This
+     * list contains exactly one value, except for a <code>BETWEEN</code> or
+     * <code>IN</code> comparison, in which case the list contains two
+     * values. <note> <p>For type Number, value comparisons are numeric.
+     * <p>String value comparisons for greater than, equals, or less than are
+     * based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
@@ -244,14 +243,14 @@ public class Condition implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeValueList Represents one or more values to evaluate against the supplied
-     *         attribute. This list contains exactly one value, except for a
-     *         <code>BETWEEN</code> or <code>IN</code> comparison, in which case the
-     *         list contains two values. <note> <p>For type Number, value comparisons
-     *         are numeric. <p>String value comparisons for greater than, equals, or
-     *         less than are based on ASCII character code values. For example,
-     *         <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     *         greater than <code>B</code>. For a list of code values, see <a
+     * @param attributeValueList One or more values to evaluate against the supplied attribute. This
+     *         list contains exactly one value, except for a <code>BETWEEN</code> or
+     *         <code>IN</code> comparison, in which case the list contains two
+     *         values. <note> <p>For type Number, value comparisons are numeric.
+     *         <p>String value comparisons for greater than, equals, or less than are
+     *         based on ASCII character code values. For example, <code>a</code> is
+     *         greater than <code>A</code>, and <code>aa</code> is greater than
+     *         <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
@@ -269,14 +268,14 @@ public class Condition implements Serializable {
     }
     
     /**
-     * Represents one or more values to evaluate against the supplied
-     * attribute. This list contains exactly one value, except for a
-     * <code>BETWEEN</code> or <code>IN</code> comparison, in which case the
-     * list contains two values. <note> <p>For type Number, value comparisons
-     * are numeric. <p>String value comparisons for greater than, equals, or
-     * less than are based on ASCII character code values. For example,
-     * <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     * greater than <code>B</code>. For a list of code values, see <a
+     * One or more values to evaluate against the supplied attribute. This
+     * list contains exactly one value, except for a <code>BETWEEN</code> or
+     * <code>IN</code> comparison, in which case the list contains two
+     * values. <note> <p>For type Number, value comparisons are numeric.
+     * <p>String value comparisons for greater than, equals, or less than are
+     * based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
@@ -284,14 +283,14 @@ public class Condition implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeValueList Represents one or more values to evaluate against the supplied
-     *         attribute. This list contains exactly one value, except for a
-     *         <code>BETWEEN</code> or <code>IN</code> comparison, in which case the
-     *         list contains two values. <note> <p>For type Number, value comparisons
-     *         are numeric. <p>String value comparisons for greater than, equals, or
-     *         less than are based on ASCII character code values. For example,
-     *         <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     *         greater than <code>B</code>. For a list of code values, see <a
+     * @param attributeValueList One or more values to evaluate against the supplied attribute. This
+     *         list contains exactly one value, except for a <code>BETWEEN</code> or
+     *         <code>IN</code> comparison, in which case the list contains two
+     *         values. <note> <p>For type Number, value comparisons are numeric.
+     *         <p>String value comparisons for greater than, equals, or less than are
+     *         based on ASCII character code values. For example, <code>a</code> is
+     *         greater than <code>A</code>, and <code>aa</code> is greater than
+     *         <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
@@ -313,13 +312,13 @@ public class Condition implements Serializable {
     }
 
     /**
-     * Represents a comparator for evaluating attributes. For example,
-     * equals, greater than, less than, etc. <p>Valid comparison operators
-     * for Query: <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH |
-     * BETWEEN</code> <p>Valid comparison operators for Scan: <p><code>EQ |
-     * NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
-     * BEGINS_WITH | IN | BETWEEN</code> <p>For information on specifying
-     * data types in JSON, see <a
+     * A comparator for evaluating attributes. For example, equals, greater
+     * than, less than, etc. <p>Valid comparison operators for Query:
+     * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code>
+     * <p>Valid comparison operators for Scan: <p><code>EQ | NE | LE | LT |
+     * GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN
+     * | BETWEEN</code> <p>For information on specifying data types in JSON,
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
@@ -409,13 +408,13 @@ public class Condition implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH
      *
-     * @return Represents a comparator for evaluating attributes. For example,
-     *         equals, greater than, less than, etc. <p>Valid comparison operators
-     *         for Query: <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH |
-     *         BETWEEN</code> <p>Valid comparison operators for Scan: <p><code>EQ |
-     *         NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
-     *         BEGINS_WITH | IN | BETWEEN</code> <p>For information on specifying
-     *         data types in JSON, see <a
+     * @return A comparator for evaluating attributes. For example, equals, greater
+     *         than, less than, etc. <p>Valid comparison operators for Query:
+     *         <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code>
+     *         <p>Valid comparison operators for Scan: <p><code>EQ | NE | LE | LT |
+     *         GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN
+     *         | BETWEEN</code> <p>For information on specifying data types in JSON,
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      *         following are descriptions of each comparison operator. <ul> <li>
@@ -509,13 +508,13 @@ public class Condition implements Serializable {
     }
     
     /**
-     * Represents a comparator for evaluating attributes. For example,
-     * equals, greater than, less than, etc. <p>Valid comparison operators
-     * for Query: <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH |
-     * BETWEEN</code> <p>Valid comparison operators for Scan: <p><code>EQ |
-     * NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
-     * BEGINS_WITH | IN | BETWEEN</code> <p>For information on specifying
-     * data types in JSON, see <a
+     * A comparator for evaluating attributes. For example, equals, greater
+     * than, less than, etc. <p>Valid comparison operators for Query:
+     * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code>
+     * <p>Valid comparison operators for Scan: <p><code>EQ | NE | LE | LT |
+     * GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN
+     * | BETWEEN</code> <p>For information on specifying data types in JSON,
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
@@ -605,13 +604,13 @@ public class Condition implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH
      *
-     * @param comparisonOperator Represents a comparator for evaluating attributes. For example,
-     *         equals, greater than, less than, etc. <p>Valid comparison operators
-     *         for Query: <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH |
-     *         BETWEEN</code> <p>Valid comparison operators for Scan: <p><code>EQ |
-     *         NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
-     *         BEGINS_WITH | IN | BETWEEN</code> <p>For information on specifying
-     *         data types in JSON, see <a
+     * @param comparisonOperator A comparator for evaluating attributes. For example, equals, greater
+     *         than, less than, etc. <p>Valid comparison operators for Query:
+     *         <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code>
+     *         <p>Valid comparison operators for Scan: <p><code>EQ | NE | LE | LT |
+     *         GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN
+     *         | BETWEEN</code> <p>For information on specifying data types in JSON,
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      *         following are descriptions of each comparison operator. <ul> <li>
@@ -705,13 +704,13 @@ public class Condition implements Serializable {
     }
     
     /**
-     * Represents a comparator for evaluating attributes. For example,
-     * equals, greater than, less than, etc. <p>Valid comparison operators
-     * for Query: <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH |
-     * BETWEEN</code> <p>Valid comparison operators for Scan: <p><code>EQ |
-     * NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
-     * BEGINS_WITH | IN | BETWEEN</code> <p>For information on specifying
-     * data types in JSON, see <a
+     * A comparator for evaluating attributes. For example, equals, greater
+     * than, less than, etc. <p>Valid comparison operators for Query:
+     * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code>
+     * <p>Valid comparison operators for Scan: <p><code>EQ | NE | LE | LT |
+     * GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN
+     * | BETWEEN</code> <p>For information on specifying data types in JSON,
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
@@ -803,13 +802,13 @@ public class Condition implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH
      *
-     * @param comparisonOperator Represents a comparator for evaluating attributes. For example,
-     *         equals, greater than, less than, etc. <p>Valid comparison operators
-     *         for Query: <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH |
-     *         BETWEEN</code> <p>Valid comparison operators for Scan: <p><code>EQ |
-     *         NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
-     *         BEGINS_WITH | IN | BETWEEN</code> <p>For information on specifying
-     *         data types in JSON, see <a
+     * @param comparisonOperator A comparator for evaluating attributes. For example, equals, greater
+     *         than, less than, etc. <p>Valid comparison operators for Query:
+     *         <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code>
+     *         <p>Valid comparison operators for Scan: <p><code>EQ | NE | LE | LT |
+     *         GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN
+     *         | BETWEEN</code> <p>For information on specifying data types in JSON,
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      *         following are descriptions of each comparison operator. <ul> <li>
@@ -907,13 +906,13 @@ public class Condition implements Serializable {
     }
 
     /**
-     * Represents a comparator for evaluating attributes. For example,
-     * equals, greater than, less than, etc. <p>Valid comparison operators
-     * for Query: <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH |
-     * BETWEEN</code> <p>Valid comparison operators for Scan: <p><code>EQ |
-     * NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
-     * BEGINS_WITH | IN | BETWEEN</code> <p>For information on specifying
-     * data types in JSON, see <a
+     * A comparator for evaluating attributes. For example, equals, greater
+     * than, less than, etc. <p>Valid comparison operators for Query:
+     * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code>
+     * <p>Valid comparison operators for Scan: <p><code>EQ | NE | LE | LT |
+     * GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN
+     * | BETWEEN</code> <p>For information on specifying data types in JSON,
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
@@ -1003,13 +1002,13 @@ public class Condition implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH
      *
-     * @param comparisonOperator Represents a comparator for evaluating attributes. For example,
-     *         equals, greater than, less than, etc. <p>Valid comparison operators
-     *         for Query: <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH |
-     *         BETWEEN</code> <p>Valid comparison operators for Scan: <p><code>EQ |
-     *         NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
-     *         BEGINS_WITH | IN | BETWEEN</code> <p>For information on specifying
-     *         data types in JSON, see <a
+     * @param comparisonOperator A comparator for evaluating attributes. For example, equals, greater
+     *         than, less than, etc. <p>Valid comparison operators for Query:
+     *         <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code>
+     *         <p>Valid comparison operators for Scan: <p><code>EQ | NE | LE | LT |
+     *         GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN
+     *         | BETWEEN</code> <p>For information on specifying data types in JSON,
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      *         following are descriptions of each comparison operator. <ul> <li>
@@ -1103,13 +1102,13 @@ public class Condition implements Serializable {
     }
     
     /**
-     * Represents a comparator for evaluating attributes. For example,
-     * equals, greater than, less than, etc. <p>Valid comparison operators
-     * for Query: <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH |
-     * BETWEEN</code> <p>Valid comparison operators for Scan: <p><code>EQ |
-     * NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
-     * BEGINS_WITH | IN | BETWEEN</code> <p>For information on specifying
-     * data types in JSON, see <a
+     * A comparator for evaluating attributes. For example, equals, greater
+     * than, less than, etc. <p>Valid comparison operators for Query:
+     * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code>
+     * <p>Valid comparison operators for Scan: <p><code>EQ | NE | LE | LT |
+     * GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN
+     * | BETWEEN</code> <p>For information on specifying data types in JSON,
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
@@ -1201,13 +1200,13 @@ public class Condition implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH
      *
-     * @param comparisonOperator Represents a comparator for evaluating attributes. For example,
-     *         equals, greater than, less than, etc. <p>Valid comparison operators
-     *         for Query: <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH |
-     *         BETWEEN</code> <p>Valid comparison operators for Scan: <p><code>EQ |
-     *         NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS |
-     *         BEGINS_WITH | IN | BETWEEN</code> <p>For information on specifying
-     *         data types in JSON, see <a
+     * @param comparisonOperator A comparator for evaluating attributes. For example, equals, greater
+     *         than, less than, etc. <p>Valid comparison operators for Query:
+     *         <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code>
+     *         <p>Valid comparison operators for Scan: <p><code>EQ | NE | LE | LT |
+     *         GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN
+     *         | BETWEEN</code> <p>For information on specifying data types in JSON,
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      *         following are descriptions of each comparison operator. <ul> <li>

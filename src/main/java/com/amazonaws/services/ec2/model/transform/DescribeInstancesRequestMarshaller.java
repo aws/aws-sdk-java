@@ -33,13 +33,12 @@ public class DescribeInstancesRequestMarshaller implements Marshaller<Request<De
     public Request<DescribeInstancesRequest> marshall(DescribeInstancesRequest describeInstancesRequest) {
 
         if (describeInstancesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeInstancesRequest> request = new DefaultRequest<DescribeInstancesRequest>(describeInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeInstances");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> instanceIdsList = describeInstancesRequest.getInstanceIds();
         int instanceIdsListIndex = 1;
@@ -82,7 +81,6 @@ public class DescribeInstancesRequestMarshaller implements Marshaller<Request<De
         if (describeInstancesRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(describeInstancesRequest.getMaxResults()));
         }
-
 
         return request;
     }

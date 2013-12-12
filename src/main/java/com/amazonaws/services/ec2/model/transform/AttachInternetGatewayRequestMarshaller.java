@@ -33,8 +33,8 @@ public class AttachInternetGatewayRequestMarshaller implements Marshaller<Reques
     public Request<AttachInternetGatewayRequest> marshall(AttachInternetGatewayRequest attachInternetGatewayRequest) {
 
         if (attachInternetGatewayRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AttachInternetGatewayRequest> request = new DefaultRequest<AttachInternetGatewayRequest>(attachInternetGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "AttachInternetGateway");
@@ -46,7 +46,6 @@ public class AttachInternetGatewayRequestMarshaller implements Marshaller<Reques
         if (attachInternetGatewayRequest.getVpcId() != null) {
             request.addParameter("VpcId", StringUtils.fromString(attachInternetGatewayRequest.getVpcId()));
         }
-
 
         return request;
     }

@@ -33,8 +33,8 @@ public class ModifySnapshotCopyRetentionPeriodRequestMarshaller implements Marsh
     public Request<ModifySnapshotCopyRetentionPeriodRequest> marshall(ModifySnapshotCopyRetentionPeriodRequest modifySnapshotCopyRetentionPeriodRequest) {
 
         if (modifySnapshotCopyRetentionPeriodRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ModifySnapshotCopyRetentionPeriodRequest> request = new DefaultRequest<ModifySnapshotCopyRetentionPeriodRequest>(modifySnapshotCopyRetentionPeriodRequest, "AmazonRedshift");
         request.addParameter("Action", "ModifySnapshotCopyRetentionPeriod");
@@ -46,7 +46,6 @@ public class ModifySnapshotCopyRetentionPeriodRequestMarshaller implements Marsh
         if (modifySnapshotCopyRetentionPeriodRequest.getRetentionPeriod() != null) {
             request.addParameter("RetentionPeriod", StringUtils.fromInteger(modifySnapshotCopyRetentionPeriodRequest.getRetentionPeriod()));
         }
-
 
         return request;
     }

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Describe Elastic Ips Result JSON Unmarshaller
  */
 public class DescribeElasticIpsResultJsonUnmarshaller implements Unmarshaller<DescribeElasticIpsResult, JsonUnmarshallerContext> {
 
-    
-
     public DescribeElasticIpsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeElasticIpsResult describeElasticIpsResult = new DescribeElasticIpsResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DescribeElasticIpsResultJsonUnmarshaller implements Unmarshaller<De
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ElasticIps", targetDepth)) {
                     describeElasticIpsResult.setElasticIps(new ListUnmarshaller<ElasticIp>(ElasticIpJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -59,7 +53,6 @@ public class DescribeElasticIpsResultJsonUnmarshaller implements Unmarshaller<De
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

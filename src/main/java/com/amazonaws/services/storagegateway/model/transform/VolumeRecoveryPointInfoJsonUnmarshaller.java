@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Volume Recovery Point Info JSON Unmarshaller
  */
 public class VolumeRecoveryPointInfoJsonUnmarshaller implements Unmarshaller<VolumeRecoveryPointInfo, JsonUnmarshallerContext> {
 
-    
-
     public VolumeRecoveryPointInfo unmarshall(JsonUnmarshallerContext context) throws Exception {
         VolumeRecoveryPointInfo volumeRecoveryPointInfo = new VolumeRecoveryPointInfo();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class VolumeRecoveryPointInfoJsonUnmarshaller implements Unmarshaller<Vol
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
                     context.nextToken();
@@ -72,7 +66,6 @@ public class VolumeRecoveryPointInfoJsonUnmarshaller implements Unmarshaller<Vol
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Load Based Auto Scaling Configuration JSON Unmarshaller
  */
 public class LoadBasedAutoScalingConfigurationJsonUnmarshaller implements Unmarshaller<LoadBasedAutoScalingConfiguration, JsonUnmarshallerContext> {
 
-    
-
     public LoadBasedAutoScalingConfiguration unmarshall(JsonUnmarshallerContext context) throws Exception {
         LoadBasedAutoScalingConfiguration loadBasedAutoScalingConfiguration = new LoadBasedAutoScalingConfiguration();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class LoadBasedAutoScalingConfigurationJsonUnmarshaller implements Unmars
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LayerId", targetDepth)) {
                     context.nextToken();
@@ -72,7 +66,6 @@ public class LoadBasedAutoScalingConfigurationJsonUnmarshaller implements Unmars
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

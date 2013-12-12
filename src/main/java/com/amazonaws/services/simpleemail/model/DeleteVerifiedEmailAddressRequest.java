@@ -27,6 +27,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <b>IMPORTANT:</b>The DeleteVerifiedEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The DeleteIdentity action
  * is now preferred.
  * </p>
+ * <p>
+ * This action is throttled at one request per second.
+ * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#deleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest)
  */

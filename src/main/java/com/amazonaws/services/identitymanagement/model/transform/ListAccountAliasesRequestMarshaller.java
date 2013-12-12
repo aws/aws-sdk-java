@@ -33,8 +33,8 @@ public class ListAccountAliasesRequestMarshaller implements Marshaller<Request<L
     public Request<ListAccountAliasesRequest> marshall(ListAccountAliasesRequest listAccountAliasesRequest) {
 
         if (listAccountAliasesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListAccountAliasesRequest> request = new DefaultRequest<ListAccountAliasesRequest>(listAccountAliasesRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListAccountAliases");
@@ -46,7 +46,6 @@ public class ListAccountAliasesRequestMarshaller implements Marshaller<Request<L
         if (listAccountAliasesRequest.getMaxItems() != null) {
             request.addParameter("MaxItems", StringUtils.fromInteger(listAccountAliasesRequest.getMaxItems()));
         }
-
 
         return request;
     }

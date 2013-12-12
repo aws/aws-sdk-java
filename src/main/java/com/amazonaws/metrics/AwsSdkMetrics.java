@@ -143,7 +143,7 @@ public enum AwsSdkMetrics {
 
     /**
      * Used to specify a custom metric name space.
-     * The default name space is {{@link #DEFAULT_METRIC_NAMESPACE}.
+     * The default name space is {@link #DEFAULT_METRIC_NAMESPACE}.
      * 
      * <pre>
      * Example:

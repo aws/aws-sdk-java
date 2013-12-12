@@ -33,8 +33,8 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
     public Request<RunInstancesRequest> marshall(RunInstancesRequest runInstancesRequest) {
 
         if (runInstancesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RunInstancesRequest> request = new DefaultRequest<RunInstancesRequest>(runInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RunInstances");
@@ -238,7 +238,6 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
         if (runInstancesRequest.isEbsOptimized() != null) {
             request.addParameter("EbsOptimized", StringUtils.fromBoolean(runInstancesRequest.isEbsOptimized()));
         }
-
 
         return request;
     }

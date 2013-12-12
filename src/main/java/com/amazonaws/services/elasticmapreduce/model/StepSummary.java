@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The summary of the cluster step.

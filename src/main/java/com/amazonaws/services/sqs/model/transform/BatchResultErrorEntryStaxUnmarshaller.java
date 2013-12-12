@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Batch Result Error Entry StAX Unmarshaller
  */
@@ -37,9 +36,7 @@ public class BatchResultErrorEntryStaxUnmarshaller implements Unmarshaller<Batch
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        
         if (context.isStartOfDocument()) targetDepth += 2;
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

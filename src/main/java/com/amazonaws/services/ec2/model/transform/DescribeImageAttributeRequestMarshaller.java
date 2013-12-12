@@ -33,8 +33,8 @@ public class DescribeImageAttributeRequestMarshaller implements Marshaller<Reque
     public Request<DescribeImageAttributeRequest> marshall(DescribeImageAttributeRequest describeImageAttributeRequest) {
 
         if (describeImageAttributeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeImageAttributeRequest> request = new DefaultRequest<DescribeImageAttributeRequest>(describeImageAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeImageAttribute");
@@ -46,7 +46,6 @@ public class DescribeImageAttributeRequestMarshaller implements Marshaller<Reque
         if (describeImageAttributeRequest.getAttribute() != null) {
             request.addParameter("Attribute", StringUtils.fromString(describeImageAttributeRequest.getAttribute()));
         }
-
 
         return request;
     }

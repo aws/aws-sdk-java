@@ -33,8 +33,8 @@ public class CreateNetworkAclRequestMarshaller implements Marshaller<Request<Cre
     public Request<CreateNetworkAclRequest> marshall(CreateNetworkAclRequest createNetworkAclRequest) {
 
         if (createNetworkAclRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateNetworkAclRequest> request = new DefaultRequest<CreateNetworkAclRequest>(createNetworkAclRequest, "AmazonEC2");
         request.addParameter("Action", "CreateNetworkAcl");
@@ -43,7 +43,6 @@ public class CreateNetworkAclRequestMarshaller implements Marshaller<Request<Cre
         if (createNetworkAclRequest.getVpcId() != null) {
             request.addParameter("VpcId", StringUtils.fromString(createNetworkAclRequest.getVpcId()));
         }
-
 
         return request;
     }

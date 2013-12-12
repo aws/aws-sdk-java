@@ -16,7 +16,6 @@ package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The <code>VirtualMFADevice</code> data type contains information about a virtual MFA device.

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Describe Tape Recovery Points Result JSON Unmarshaller
  */
 public class DescribeTapeRecoveryPointsResultJsonUnmarshaller implements Unmarshaller<DescribeTapeRecoveryPointsResult, JsonUnmarshallerContext> {
 
-    
-
     public DescribeTapeRecoveryPointsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeTapeRecoveryPointsResult describeTapeRecoveryPointsResult = new DescribeTapeRecoveryPointsResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DescribeTapeRecoveryPointsResultJsonUnmarshaller implements Unmarsh
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
@@ -67,7 +61,6 @@ public class DescribeTapeRecoveryPointsResultJsonUnmarshaller implements Unmarsh
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

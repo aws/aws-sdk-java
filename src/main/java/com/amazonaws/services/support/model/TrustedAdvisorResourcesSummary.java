@@ -16,7 +16,6 @@ package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * JSON-formatted object that lists details about AWS resources that were analyzed in a call to Trusted Advisor <a

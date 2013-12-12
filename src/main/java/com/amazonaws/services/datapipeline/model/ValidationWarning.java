@@ -16,7 +16,6 @@ package com.amazonaws.services.datapipeline.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Defines a validation warning returned by PutPipelineDefinition or ValidatePipelineDefinition. Validation warnings do not prevent pipeline activation.

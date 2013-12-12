@@ -33,8 +33,8 @@ public class DeleteEnvironmentConfigurationRequestMarshaller implements Marshall
     public Request<DeleteEnvironmentConfigurationRequest> marshall(DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest) {
 
         if (deleteEnvironmentConfigurationRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteEnvironmentConfigurationRequest> request = new DefaultRequest<DeleteEnvironmentConfigurationRequest>(deleteEnvironmentConfigurationRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DeleteEnvironmentConfiguration");
@@ -46,7 +46,6 @@ public class DeleteEnvironmentConfigurationRequestMarshaller implements Marshall
         if (deleteEnvironmentConfigurationRequest.getEnvironmentName() != null) {
             request.addParameter("EnvironmentName", StringUtils.fromString(deleteEnvironmentConfigurationRequest.getEnvironmentName()));
         }
-
 
         return request;
     }

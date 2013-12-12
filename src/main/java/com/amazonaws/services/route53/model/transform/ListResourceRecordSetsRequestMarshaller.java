@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
@@ -66,8 +65,6 @@ public class ListResourceRecordSetsRequestMarshaller implements Marshaller<Reque
         }
 
         request.setResourcePath(uriResourcePath);
-
-        
 
         return request;
     }

@@ -33,8 +33,8 @@ public class CreateHsmClientCertificateRequestMarshaller implements Marshaller<R
     public Request<CreateHsmClientCertificateRequest> marshall(CreateHsmClientCertificateRequest createHsmClientCertificateRequest) {
 
         if (createHsmClientCertificateRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateHsmClientCertificateRequest> request = new DefaultRequest<CreateHsmClientCertificateRequest>(createHsmClientCertificateRequest, "AmazonRedshift");
         request.addParameter("Action", "CreateHsmClientCertificate");
@@ -43,7 +43,6 @@ public class CreateHsmClientCertificateRequestMarshaller implements Marshaller<R
         if (createHsmClientCertificateRequest.getHsmClientCertificateIdentifier() != null) {
             request.addParameter("HsmClientCertificateIdentifier", StringUtils.fromString(createHsmClientCertificateRequest.getHsmClientCertificateIdentifier()));
         }
-
 
         return request;
     }

@@ -16,10 +16,9 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
- * The provisioned throughput settings for the specified table. The settings can be modified using the <i>UpdateTable</i> operation.
+ * Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <i>UpdateTable</i> operation.
  * </p>
  * <p>
  * For current minimum and maximum provisioned throughput values, see <a

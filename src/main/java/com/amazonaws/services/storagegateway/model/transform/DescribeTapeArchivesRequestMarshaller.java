@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class DescribeTapeArchivesRequestMarshaller implements Marshaller<Request<DescribeTapeArchivesRequest>, DescribeTapeArchivesRequest> {
 
-    
-
     public Request<DescribeTapeArchivesRequest> marshall(DescribeTapeArchivesRequest describeTapeArchivesRequest) {
     if (describeTapeArchivesRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class DescribeTapeArchivesRequestMarshaller implements Marshaller<Request
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,16 +70,11 @@ public class DescribeTapeArchivesRequestMarshaller implements Marshaller<Request
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
-          
 
             com.amazonaws.internal.ListWithAutoConstructFlag<String> tapeARNsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeTapeArchivesRequest.getTapeARNs());
             if (tapeARNsList != null && !(tapeARNsList.isAutoConstruct() && tapeARNsList.isEmpty())) {
@@ -107,7 +97,6 @@ public class DescribeTapeArchivesRequestMarshaller implements Marshaller<Request
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -116,7 +105,6 @@ public class DescribeTapeArchivesRequestMarshaller implements Marshaller<Request
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

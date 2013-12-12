@@ -33,8 +33,8 @@ public class RebuildEnvironmentRequestMarshaller implements Marshaller<Request<R
     public Request<RebuildEnvironmentRequest> marshall(RebuildEnvironmentRequest rebuildEnvironmentRequest) {
 
         if (rebuildEnvironmentRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RebuildEnvironmentRequest> request = new DefaultRequest<RebuildEnvironmentRequest>(rebuildEnvironmentRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "RebuildEnvironment");
@@ -46,7 +46,6 @@ public class RebuildEnvironmentRequestMarshaller implements Marshaller<Request<R
         if (rebuildEnvironmentRequest.getEnvironmentName() != null) {
             request.addParameter("EnvironmentName", StringUtils.fromString(rebuildEnvironmentRequest.getEnvironmentName()));
         }
-
 
         return request;
     }

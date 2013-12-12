@@ -23,6 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Verifies an email address. This action causes a confirmation email message to be sent to the specified address.
  * </p>
+ * <p>
+ * This action is throttled at one request per second.
+ * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#verifyEmailIdentity(VerifyEmailIdentityRequest)
  */

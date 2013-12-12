@@ -16,7 +16,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The result of modifying Reserved Instances. Contains the ID of the modification request.

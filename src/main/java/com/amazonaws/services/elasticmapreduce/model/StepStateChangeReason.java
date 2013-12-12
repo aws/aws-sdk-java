@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The details of the step state change reason.

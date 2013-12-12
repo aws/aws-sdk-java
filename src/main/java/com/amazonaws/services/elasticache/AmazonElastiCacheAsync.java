@@ -1948,6 +1948,5 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
     public Future<CacheCluster> rebootCacheClusterAsync(RebootCacheClusterRequest rebootCacheClusterRequest,
             AsyncHandler<RebootCacheClusterRequest, CacheCluster> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

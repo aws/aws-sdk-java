@@ -33,8 +33,8 @@ public class DeleteAccessKeyRequestMarshaller implements Marshaller<Request<Dele
     public Request<DeleteAccessKeyRequest> marshall(DeleteAccessKeyRequest deleteAccessKeyRequest) {
 
         if (deleteAccessKeyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteAccessKeyRequest> request = new DefaultRequest<DeleteAccessKeyRequest>(deleteAccessKeyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteAccessKey");
@@ -46,7 +46,6 @@ public class DeleteAccessKeyRequestMarshaller implements Marshaller<Request<Dele
         if (deleteAccessKeyRequest.getAccessKeyId() != null) {
             request.addParameter("AccessKeyId", StringUtils.fromString(deleteAccessKeyRequest.getAccessKeyId()));
         }
-
 
         return request;
     }

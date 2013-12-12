@@ -33,8 +33,8 @@ public class PutScheduledUpdateGroupActionRequestMarshaller implements Marshalle
     public Request<PutScheduledUpdateGroupActionRequest> marshall(PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest) {
 
         if (putScheduledUpdateGroupActionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<PutScheduledUpdateGroupActionRequest> request = new DefaultRequest<PutScheduledUpdateGroupActionRequest>(putScheduledUpdateGroupActionRequest, "AmazonAutoScaling");
         request.addParameter("Action", "PutScheduledUpdateGroupAction");
@@ -67,7 +67,6 @@ public class PutScheduledUpdateGroupActionRequestMarshaller implements Marshalle
         if (putScheduledUpdateGroupActionRequest.getDesiredCapacity() != null) {
             request.addParameter("DesiredCapacity", StringUtils.fromInteger(putScheduledUpdateGroupActionRequest.getDesiredCapacity()));
         }
-
 
         return request;
     }

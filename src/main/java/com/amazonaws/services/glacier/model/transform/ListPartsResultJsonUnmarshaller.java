@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * List Parts Result JSON Unmarshaller
  */
 public class ListPartsResultJsonUnmarshaller implements Unmarshaller<ListPartsResult, JsonUnmarshallerContext> {
 
-    
-
     public ListPartsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ListPartsResult listPartsResult = new ListPartsResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ListPartsResultJsonUnmarshaller implements Unmarshaller<ListPartsRe
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MultipartUploadId", targetDepth)) {
                     context.nextToken();
@@ -83,7 +77,6 @@ public class ListPartsResultJsonUnmarshaller implements Unmarshaller<ListPartsRe
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -33,8 +33,8 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
     public Request<ModifyReplicationGroupRequest> marshall(ModifyReplicationGroupRequest modifyReplicationGroupRequest) {
 
         if (modifyReplicationGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ModifyReplicationGroupRequest> request = new DefaultRequest<ModifyReplicationGroupRequest>(modifyReplicationGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "ModifyReplicationGroup");
@@ -92,7 +92,6 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
         if (modifyReplicationGroupRequest.getPrimaryClusterId() != null) {
             request.addParameter("PrimaryClusterId", StringUtils.fromString(modifyReplicationGroupRequest.getPrimaryClusterId()));
         }
-
 
         return request;
     }

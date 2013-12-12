@@ -1035,6 +1035,5 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
     public Future<ListStackResourcesResult> listStackResourcesAsync(ListStackResourcesRequest listStackResourcesRequest,
             AsyncHandler<ListStackResourcesRequest, ListStackResourcesResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

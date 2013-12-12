@@ -33,13 +33,12 @@ public class GetIdentityVerificationAttributesRequestMarshaller implements Marsh
     public Request<GetIdentityVerificationAttributesRequest> marshall(GetIdentityVerificationAttributesRequest getIdentityVerificationAttributesRequest) {
 
         if (getIdentityVerificationAttributesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetIdentityVerificationAttributesRequest> request = new DefaultRequest<GetIdentityVerificationAttributesRequest>(getIdentityVerificationAttributesRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "GetIdentityVerificationAttributes");
         request.addParameter("Version", "2010-12-01");
-
 
         java.util.List<String> identitiesList = getIdentityVerificationAttributesRequest.getIdentities();
         int identitiesListIndex = 1;
@@ -51,7 +50,6 @@ public class GetIdentityVerificationAttributesRequestMarshaller implements Marsh
 
             identitiesListIndex++;
         }
-
 
         return request;
     }

@@ -1606,6 +1606,5 @@ public interface AmazonSNSAsync extends AmazonSNS {
     public Future<PublishResult> publishAsync(PublishRequest publishRequest,
             AsyncHandler<PublishRequest, PublishResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

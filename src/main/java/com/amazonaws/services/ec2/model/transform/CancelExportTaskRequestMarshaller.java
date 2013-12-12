@@ -33,8 +33,8 @@ public class CancelExportTaskRequestMarshaller implements Marshaller<Request<Can
     public Request<CancelExportTaskRequest> marshall(CancelExportTaskRequest cancelExportTaskRequest) {
 
         if (cancelExportTaskRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CancelExportTaskRequest> request = new DefaultRequest<CancelExportTaskRequest>(cancelExportTaskRequest, "AmazonEC2");
         request.addParameter("Action", "CancelExportTask");
@@ -43,7 +43,6 @@ public class CancelExportTaskRequestMarshaller implements Marshaller<Request<Can
         if (cancelExportTaskRequest.getExportTaskId() != null) {
             request.addParameter("ExportTaskId", StringUtils.fromString(cancelExportTaskRequest.getExportTaskId()));
         }
-
 
         return request;
     }

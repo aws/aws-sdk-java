@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.simpleworkflow.model.*;
 
-
 /**
  * Asynchronous client for accessing AmazonSimpleWorkflow.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -336,7 +335,6 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
      */
     private ExecutorService executorService;
 
-
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonSimpleWorkflow.  A credentials provider chain will be used
@@ -535,7 +533,6 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -629,11 +626,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
             public Void call() throws Exception {
                 deprecateWorkflowType(deprecateWorkflowTypeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deprecates the specified <i>workflow type</i> . After a workflow type
@@ -708,16 +704,16 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deprecateWorkflowType(deprecateWorkflowTypeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deprecateWorkflowTypeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deprecateWorkflowType(deprecateWorkflowTypeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deprecateWorkflowTypeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -781,11 +777,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
             public Void call() throws Exception {
                 deprecateDomain(deprecateDomainRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deprecates the specified domain. After a domain has been deprecated
@@ -851,16 +846,16 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deprecateDomain(deprecateDomainRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deprecateDomainRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deprecateDomain(deprecateDomainRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deprecateDomainRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -938,11 +933,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
             public Void call() throws Exception {
                 registerWorkflowType(registerWorkflowTypeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Registers a new <i>workflow type</i> and its configuration settings
@@ -1022,16 +1016,16 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		registerWorkflowType(registerWorkflowTypeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(registerWorkflowTypeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    registerWorkflowType(registerWorkflowTypeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(registerWorkflowTypeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1087,11 +1081,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<WorkflowTypeInfos>() {
             public WorkflowTypeInfos call() throws Exception {
                 return listWorkflowTypes(listWorkflowTypesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about workflow types in the specified domain. The
@@ -1150,17 +1143,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<WorkflowTypeInfos>() {
             public WorkflowTypeInfos call() throws Exception {
-            	WorkflowTypeInfos result;
+                WorkflowTypeInfos result;
                 try {
-            		result = listWorkflowTypes(listWorkflowTypesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listWorkflowTypesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listWorkflowTypes(listWorkflowTypesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listWorkflowTypesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1240,11 +1233,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<Run>() {
             public Run call() throws Exception {
                 return startWorkflowExecution(startWorkflowExecutionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Starts an execution of the workflow type in the specified domain
@@ -1327,17 +1319,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Run>() {
             public Run call() throws Exception {
-            	Run result;
+                Run result;
                 try {
-            		result = startWorkflowExecution(startWorkflowExecutionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(startWorkflowExecutionRequest, result);
-               	return result;
-		    }
-		});
+                    result = startWorkflowExecution(startWorkflowExecutionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(startWorkflowExecutionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1407,11 +1399,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
             public Void call() throws Exception {
                 signalWorkflowExecution(signalWorkflowExecutionRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Records a <code>WorkflowExecutionSignaled</code> event in the
@@ -1483,16 +1474,16 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		signalWorkflowExecution(signalWorkflowExecutionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(signalWorkflowExecutionRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    signalWorkflowExecution(signalWorkflowExecutionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(signalWorkflowExecutionRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1554,11 +1545,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<DomainInfos>() {
             public DomainInfos call() throws Exception {
                 return listDomains(listDomainsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the list of domains registered in the account. The results
@@ -1623,17 +1613,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DomainInfos>() {
             public DomainInfos call() throws Exception {
-            	DomainInfos result;
+                DomainInfos result;
                 try {
-            		result = listDomains(listDomainsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listDomainsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listDomains(listDomainsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listDomainsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1706,11 +1696,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
             public Void call() throws Exception {
                 requestCancelWorkflowExecution(requestCancelWorkflowExecutionRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Records a <code>WorkflowExecutionCancelRequested</code> event in the
@@ -1785,16 +1774,16 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		requestCancelWorkflowExecution(requestCancelWorkflowExecutionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(requestCancelWorkflowExecutionRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    requestCancelWorkflowExecution(requestCancelWorkflowExecutionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(requestCancelWorkflowExecutionRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1860,11 +1849,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<WorkflowTypeDetail>() {
             public WorkflowTypeDetail call() throws Exception {
                 return describeWorkflowType(describeWorkflowTypeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about the specified <i>workflow type</i> . This
@@ -1933,17 +1921,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<WorkflowTypeDetail>() {
             public WorkflowTypeDetail call() throws Exception {
-            	WorkflowTypeDetail result;
+                WorkflowTypeDetail result;
                 try {
-            		result = describeWorkflowType(describeWorkflowTypeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeWorkflowTypeRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeWorkflowType(describeWorkflowTypeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeWorkflowTypeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2015,11 +2003,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
             public Void call() throws Exception {
                 deprecateActivityType(deprecateActivityTypeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deprecates the specified <i>activity type</i> .
@@ -2093,16 +2080,16 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deprecateActivityType(deprecateActivityTypeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deprecateActivityTypeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deprecateActivityType(deprecateActivityTypeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deprecateActivityTypeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2173,11 +2160,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<WorkflowExecutionCount>() {
             public WorkflowExecutionCount call() throws Exception {
                 return countClosedWorkflowExecutions(countClosedWorkflowExecutionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the number of closed workflow executions within the given
@@ -2251,17 +2237,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<WorkflowExecutionCount>() {
             public WorkflowExecutionCount call() throws Exception {
-            	WorkflowExecutionCount result;
+                WorkflowExecutionCount result;
                 try {
-            		result = countClosedWorkflowExecutions(countClosedWorkflowExecutionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(countClosedWorkflowExecutionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = countClosedWorkflowExecutions(countClosedWorkflowExecutionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(countClosedWorkflowExecutionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2321,11 +2307,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<PendingTaskCount>() {
             public PendingTaskCount call() throws Exception {
                 return countPendingActivityTasks(countPendingActivityTasksRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the estimated number of activity tasks in the specified task
@@ -2388,17 +2373,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<PendingTaskCount>() {
             public PendingTaskCount call() throws Exception {
-            	PendingTaskCount result;
+                PendingTaskCount result;
                 try {
-            		result = countPendingActivityTasks(countPendingActivityTasksRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(countPendingActivityTasksRequest, result);
-               	return result;
-		    }
-		});
+                    result = countPendingActivityTasks(countPendingActivityTasksRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(countPendingActivityTasksRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2476,11 +2461,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
             public Void call() throws Exception {
                 respondActivityTaskCanceled(respondActivityTaskCanceledRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Used by workers to tell the service that the ActivityTask identified
@@ -2560,16 +2544,16 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		respondActivityTaskCanceled(respondActivityTaskCanceledRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(respondActivityTaskCanceledRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    respondActivityTaskCanceled(respondActivityTaskCanceledRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(respondActivityTaskCanceledRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2622,11 +2606,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
             public Void call() throws Exception {
                 respondDecisionTaskCompleted(respondDecisionTaskCompletedRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Used by deciders to tell the service that the DecisionTask identified
@@ -2681,16 +2664,16 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		respondDecisionTaskCompleted(respondDecisionTaskCompletedRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(respondDecisionTaskCompletedRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    respondDecisionTaskCompleted(respondDecisionTaskCompletedRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(respondDecisionTaskCompletedRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2766,11 +2749,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
             public Void call() throws Exception {
                 respondActivityTaskCompleted(respondActivityTaskCompletedRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Used by workers to tell the service that the ActivityTask identified
@@ -2848,16 +2830,16 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		respondActivityTaskCompleted(respondActivityTaskCompletedRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(respondActivityTaskCompletedRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    respondActivityTaskCompleted(respondActivityTaskCompletedRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(respondActivityTaskCompletedRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2928,11 +2910,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<ActivityTask>() {
             public ActivityTask call() throws Exception {
                 return pollForActivityTask(pollForActivityTaskRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Used by workers to get an ActivityTask from the specified activity
@@ -3006,17 +2987,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ActivityTask>() {
             public ActivityTask call() throws Exception {
-            	ActivityTask result;
+                ActivityTask result;
                 try {
-            		result = pollForActivityTask(pollForActivityTaskRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(pollForActivityTaskRequest, result);
-               	return result;
-		    }
-		});
+                    result = pollForActivityTask(pollForActivityTaskRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(pollForActivityTaskRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3087,11 +3068,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<WorkflowExecutionCount>() {
             public WorkflowExecutionCount call() throws Exception {
                 return countOpenWorkflowExecutions(countOpenWorkflowExecutionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the number of open workflow executions within the given
@@ -3165,17 +3145,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<WorkflowExecutionCount>() {
             public WorkflowExecutionCount call() throws Exception {
-            	WorkflowExecutionCount result;
+                WorkflowExecutionCount result;
                 try {
-            		result = countOpenWorkflowExecutions(countOpenWorkflowExecutionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(countOpenWorkflowExecutionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = countOpenWorkflowExecutions(countOpenWorkflowExecutionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(countOpenWorkflowExecutionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3241,11 +3221,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<ActivityTypeDetail>() {
             public ActivityTypeDetail call() throws Exception {
                 return describeActivityType(describeActivityTypeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about the specified activity type. This includes
@@ -3314,17 +3293,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ActivityTypeDetail>() {
             public ActivityTypeDetail call() throws Exception {
-            	ActivityTypeDetail result;
+                ActivityTypeDetail result;
                 try {
-            		result = describeActivityType(describeActivityTypeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeActivityTypeRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeActivityType(describeActivityTypeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeActivityTypeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3397,11 +3376,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<WorkflowExecutionInfos>() {
             public WorkflowExecutionInfos call() throws Exception {
                 return listOpenWorkflowExecutions(listOpenWorkflowExecutionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a list of open workflow executions in the specified domain
@@ -3477,17 +3455,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<WorkflowExecutionInfos>() {
             public WorkflowExecutionInfos call() throws Exception {
-            	WorkflowExecutionInfos result;
+                WorkflowExecutionInfos result;
                 try {
-            		result = listOpenWorkflowExecutions(listOpenWorkflowExecutionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listOpenWorkflowExecutionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listOpenWorkflowExecutions(listOpenWorkflowExecutionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listOpenWorkflowExecutionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3550,11 +3528,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<History>() {
             public History call() throws Exception {
                 return getWorkflowExecutionHistory(getWorkflowExecutionHistoryRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the history of the specified workflow execution. The results
@@ -3620,17 +3597,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<History>() {
             public History call() throws Exception {
-            	History result;
+                History result;
                 try {
-            		result = getWorkflowExecutionHistory(getWorkflowExecutionHistoryRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getWorkflowExecutionHistoryRequest, result);
-               	return result;
-		    }
-		});
+                    result = getWorkflowExecutionHistory(getWorkflowExecutionHistoryRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getWorkflowExecutionHistoryRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3688,11 +3665,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
             public Void call() throws Exception {
                 registerDomain(registerDomainRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Registers a new domain.
@@ -3752,16 +3728,16 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		registerDomain(registerDomainRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(registerDomainRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    registerDomain(registerDomainRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(registerDomainRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3835,11 +3811,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
             public Void call() throws Exception {
                 registerActivityType(registerActivityTypeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Registers a new <i>activity type</i> along with its configuration
@@ -3915,16 +3890,16 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		registerActivityType(registerActivityTypeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(registerActivityTypeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    registerActivityType(registerActivityTypeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(registerActivityTypeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3997,11 +3972,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<WorkflowExecutionInfos>() {
             public WorkflowExecutionInfos call() throws Exception {
                 return listClosedWorkflowExecutions(listClosedWorkflowExecutionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a list of closed workflow executions in the specified domain
@@ -4077,17 +4051,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<WorkflowExecutionInfos>() {
             public WorkflowExecutionInfos call() throws Exception {
-            	WorkflowExecutionInfos result;
+                WorkflowExecutionInfos result;
                 try {
-            		result = listClosedWorkflowExecutions(listClosedWorkflowExecutionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listClosedWorkflowExecutionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listClosedWorkflowExecutions(listClosedWorkflowExecutionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listClosedWorkflowExecutionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4181,11 +4155,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<ActivityTaskStatus>() {
             public ActivityTaskStatus call() throws Exception {
                 return recordActivityTaskHeartbeat(recordActivityTaskHeartbeatRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Used by activity workers to report to the service that the
@@ -4282,17 +4255,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ActivityTaskStatus>() {
             public ActivityTaskStatus call() throws Exception {
-            	ActivityTaskStatus result;
+                ActivityTaskStatus result;
                 try {
-            		result = recordActivityTaskHeartbeat(recordActivityTaskHeartbeatRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(recordActivityTaskHeartbeatRequest, result);
-               	return result;
-		    }
-		});
+                    result = recordActivityTaskHeartbeat(recordActivityTaskHeartbeatRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(recordActivityTaskHeartbeatRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4376,11 +4349,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<DecisionTask>() {
             public DecisionTask call() throws Exception {
                 return pollForDecisionTask(pollForDecisionTaskRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Used by deciders to get a DecisionTask from the specified decision
@@ -4467,17 +4439,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DecisionTask>() {
             public DecisionTask call() throws Exception {
-            	DecisionTask result;
+                DecisionTask result;
                 try {
-            		result = pollForDecisionTask(pollForDecisionTaskRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(pollForDecisionTaskRequest, result);
-               	return result;
-		    }
-		});
+                    result = pollForDecisionTask(pollForDecisionTaskRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(pollForDecisionTaskRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4536,11 +4508,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<ActivityTypeInfos>() {
             public ActivityTypeInfos call() throws Exception {
                 return listActivityTypes(listActivityTypesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about all activities registered in the specified
@@ -4602,17 +4573,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ActivityTypeInfos>() {
             public ActivityTypeInfos call() throws Exception {
-            	ActivityTypeInfos result;
+                ActivityTypeInfos result;
                 try {
-            		result = listActivityTypes(listActivityTypesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listActivityTypesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listActivityTypes(listActivityTypesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listActivityTypesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4667,11 +4638,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<DomainDetail>() {
             public DomainDetail call() throws Exception {
                 return describeDomain(describeDomainRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about the specified domain including description
@@ -4729,17 +4699,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DomainDetail>() {
             public DomainDetail call() throws Exception {
-            	DomainDetail result;
+                DomainDetail result;
                 try {
-            		result = describeDomain(describeDomainRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeDomainRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeDomain(describeDomainRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeDomainRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4809,11 +4779,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
             public Void call() throws Exception {
                 respondActivityTaskFailed(respondActivityTaskFailedRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Used by workers to tell the service that the ActivityTask identified
@@ -4885,16 +4854,16 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		respondActivityTaskFailed(respondActivityTaskFailedRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(respondActivityTaskFailedRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    respondActivityTaskFailed(respondActivityTaskFailedRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(respondActivityTaskFailedRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -4954,11 +4923,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<PendingTaskCount>() {
             public PendingTaskCount call() throws Exception {
                 return countPendingDecisionTasks(countPendingDecisionTasksRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the estimated number of decision tasks in the specified task
@@ -5021,17 +4989,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<PendingTaskCount>() {
             public PendingTaskCount call() throws Exception {
-            	PendingTaskCount result;
+                PendingTaskCount result;
                 try {
-            		result = countPendingDecisionTasks(countPendingDecisionTasksRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(countPendingDecisionTasksRequest, result);
-               	return result;
-		    }
-		});
+                    result = countPendingDecisionTasks(countPendingDecisionTasksRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(countPendingDecisionTasksRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5106,11 +5074,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
             public Void call() throws Exception {
                 terminateWorkflowExecution(terminateWorkflowExecutionRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Records a <code>WorkflowExecutionTerminated</code> event and forces
@@ -5187,16 +5154,16 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		terminateWorkflowExecution(terminateWorkflowExecutionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(terminateWorkflowExecutionRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    terminateWorkflowExecution(terminateWorkflowExecutionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(terminateWorkflowExecutionRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -5257,11 +5224,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
         return executorService.submit(new Callable<WorkflowExecutionDetail>() {
             public WorkflowExecutionDetail call() throws Exception {
                 return describeWorkflowExecution(describeWorkflowExecutionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about the specified workflow execution including
@@ -5325,17 +5291,17 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<WorkflowExecutionDetail>() {
             public WorkflowExecutionDetail call() throws Exception {
-            	WorkflowExecutionDetail result;
+                WorkflowExecutionDetail result;
                 try {
-            		result = describeWorkflowExecution(describeWorkflowExecutionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeWorkflowExecutionRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeWorkflowExecution(describeWorkflowExecutionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeWorkflowExecutionRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

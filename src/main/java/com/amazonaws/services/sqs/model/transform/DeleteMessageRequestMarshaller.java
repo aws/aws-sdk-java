@@ -33,8 +33,8 @@ public class DeleteMessageRequestMarshaller implements Marshaller<Request<Delete
     public Request<DeleteMessageRequest> marshall(DeleteMessageRequest deleteMessageRequest) {
 
         if (deleteMessageRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteMessageRequest> request = new DefaultRequest<DeleteMessageRequest>(deleteMessageRequest, "AmazonSQS");
         request.addParameter("Action", "DeleteMessage");
@@ -46,7 +46,6 @@ public class DeleteMessageRequestMarshaller implements Marshaller<Request<Delete
         if (deleteMessageRequest.getReceiptHandle() != null) {
             request.addParameter("ReceiptHandle", StringUtils.fromString(deleteMessageRequest.getReceiptHandle()));
         }
-
 
         return request;
     }

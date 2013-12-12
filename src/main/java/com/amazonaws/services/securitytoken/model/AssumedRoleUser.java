@@ -16,7 +16,6 @@ package com.amazonaws.services.securitytoken.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The identifiers for the temporary security credentials that the operation returns.

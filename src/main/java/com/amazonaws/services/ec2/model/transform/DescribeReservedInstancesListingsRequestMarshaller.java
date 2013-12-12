@@ -33,8 +33,8 @@ public class DescribeReservedInstancesListingsRequestMarshaller implements Marsh
     public Request<DescribeReservedInstancesListingsRequest> marshall(DescribeReservedInstancesListingsRequest describeReservedInstancesListingsRequest) {
 
         if (describeReservedInstancesListingsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeReservedInstancesListingsRequest> request = new DefaultRequest<DescribeReservedInstancesListingsRequest>(describeReservedInstancesListingsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeReservedInstancesListings");
@@ -71,7 +71,6 @@ public class DescribeReservedInstancesListingsRequestMarshaller implements Marsh
 
             filtersListIndex++;
         }
-
 
         return request;
     }

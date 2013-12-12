@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Workflow Type Infos JSON Unmarshaller
  */
 public class WorkflowTypeInfosJsonUnmarshaller implements Unmarshaller<WorkflowTypeInfos, JsonUnmarshallerContext> {
 
-    
-
     public WorkflowTypeInfos unmarshall(JsonUnmarshallerContext context) throws Exception {
         WorkflowTypeInfos workflowTypeInfos = new WorkflowTypeInfos();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class WorkflowTypeInfosJsonUnmarshaller implements Unmarshaller<WorkflowT
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("typeInfos", targetDepth)) {
                     workflowTypeInfos.setTypeInfos(new ListUnmarshaller<WorkflowTypeInfo>(WorkflowTypeInfoJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -63,7 +57,6 @@ public class WorkflowTypeInfosJsonUnmarshaller implements Unmarshaller<WorkflowT
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

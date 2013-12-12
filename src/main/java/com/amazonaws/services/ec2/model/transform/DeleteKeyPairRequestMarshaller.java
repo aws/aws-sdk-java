@@ -33,8 +33,8 @@ public class DeleteKeyPairRequestMarshaller implements Marshaller<Request<Delete
     public Request<DeleteKeyPairRequest> marshall(DeleteKeyPairRequest deleteKeyPairRequest) {
 
         if (deleteKeyPairRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteKeyPairRequest> request = new DefaultRequest<DeleteKeyPairRequest>(deleteKeyPairRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteKeyPair");
@@ -43,7 +43,6 @@ public class DeleteKeyPairRequestMarshaller implements Marshaller<Request<Delete
         if (deleteKeyPairRequest.getKeyName() != null) {
             request.addParameter("KeyName", StringUtils.fromString(deleteKeyPairRequest.getKeyName()));
         }
-
 
         return request;
     }

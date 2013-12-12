@@ -16,7 +16,6 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents the output of an <i>UpdateTable</i> operation.
@@ -25,34 +24,34 @@ import java.io.Serializable;
 public class UpdateTableResult implements Serializable {
 
     /**
-     * Contains the properties of a table.
+     * Represents the properties of a table.
      */
     private TableDescription tableDescription;
 
     /**
-     * Contains the properties of a table.
+     * Represents the properties of a table.
      *
-     * @return Contains the properties of a table.
+     * @return Represents the properties of a table.
      */
     public TableDescription getTableDescription() {
         return tableDescription;
     }
     
     /**
-     * Contains the properties of a table.
+     * Represents the properties of a table.
      *
-     * @param tableDescription Contains the properties of a table.
+     * @param tableDescription Represents the properties of a table.
      */
     public void setTableDescription(TableDescription tableDescription) {
         this.tableDescription = tableDescription;
     }
     
     /**
-     * Contains the properties of a table.
+     * Represents the properties of a table.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tableDescription Contains the properties of a table.
+     * @param tableDescription Represents the properties of a table.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -33,8 +33,8 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements Marshaller<
     public Request<CreateDBInstanceReadReplicaRequest> marshall(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest) {
 
         if (createDBInstanceReadReplicaRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateDBInstanceReadReplicaRequest> request = new DefaultRequest<CreateDBInstanceReadReplicaRequest>(createDBInstanceReadReplicaRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBInstanceReadReplica");
@@ -87,7 +87,6 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements Marshaller<
         if (createDBInstanceReadReplicaRequest.getDBSubnetGroupName() != null) {
             request.addParameter("DBSubnetGroupName", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDBSubnetGroupName()));
         }
-
 
         return request;
     }

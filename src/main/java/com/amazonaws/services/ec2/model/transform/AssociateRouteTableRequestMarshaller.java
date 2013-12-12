@@ -33,8 +33,8 @@ public class AssociateRouteTableRequestMarshaller implements Marshaller<Request<
     public Request<AssociateRouteTableRequest> marshall(AssociateRouteTableRequest associateRouteTableRequest) {
 
         if (associateRouteTableRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AssociateRouteTableRequest> request = new DefaultRequest<AssociateRouteTableRequest>(associateRouteTableRequest, "AmazonEC2");
         request.addParameter("Action", "AssociateRouteTable");
@@ -46,7 +46,6 @@ public class AssociateRouteTableRequestMarshaller implements Marshaller<Request<
         if (associateRouteTableRequest.getRouteTableId() != null) {
             request.addParameter("RouteTableId", StringUtils.fromString(associateRouteTableRequest.getRouteTableId()));
         }
-
 
         return request;
     }

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Upload List Element JSON Unmarshaller
  */
 public class UploadListElementJsonUnmarshaller implements Unmarshaller<UploadListElement, JsonUnmarshallerContext> {
 
-    
-
     public UploadListElement unmarshall(JsonUnmarshallerContext context) throws Exception {
         UploadListElement uploadListElement = new UploadListElement();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class UploadListElementJsonUnmarshaller implements Unmarshaller<UploadLis
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MultipartUploadId", targetDepth)) {
                     context.nextToken();
@@ -76,7 +70,6 @@ public class UploadListElementJsonUnmarshaller implements Unmarshaller<UploadLis
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

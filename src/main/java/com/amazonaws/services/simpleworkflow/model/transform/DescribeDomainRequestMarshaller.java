@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class DescribeDomainRequestMarshaller implements Marshaller<Request<DescribeDomainRequest>, DescribeDomainRequest> {
 
-    
-
     public Request<DescribeDomainRequest> marshall(DescribeDomainRequest describeDomainRequest) {
     if (describeDomainRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class DescribeDomainRequestMarshaller implements Marshaller<Request<Descr
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class DescribeDomainRequestMarshaller implements Marshaller<Request<Descr
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (describeDomainRequest.getName() != null) {
@@ -90,7 +81,6 @@ public class DescribeDomainRequestMarshaller implements Marshaller<Request<Descr
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -99,7 +89,6 @@ public class DescribeDomainRequestMarshaller implements Marshaller<Request<Descr
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

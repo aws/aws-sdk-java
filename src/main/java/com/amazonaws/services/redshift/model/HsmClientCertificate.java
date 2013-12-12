@@ -16,7 +16,6 @@ package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon

@@ -33,8 +33,8 @@ public class ListAccessKeysRequestMarshaller implements Marshaller<Request<ListA
     public Request<ListAccessKeysRequest> marshall(ListAccessKeysRequest listAccessKeysRequest) {
 
         if (listAccessKeysRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListAccessKeysRequest> request = new DefaultRequest<ListAccessKeysRequest>(listAccessKeysRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListAccessKeys");
@@ -49,7 +49,6 @@ public class ListAccessKeysRequestMarshaller implements Marshaller<Request<ListA
         if (listAccessKeysRequest.getMaxItems() != null) {
             request.addParameter("MaxItems", StringUtils.fromInteger(listAccessKeysRequest.getMaxItems()));
         }
-
 
         return request;
     }

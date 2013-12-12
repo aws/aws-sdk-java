@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudwatch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The MetricAlarm data type represents an alarm. You can use PutMetricAlarm to create or update an alarm.

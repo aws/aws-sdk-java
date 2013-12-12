@@ -16,7 +16,6 @@ package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.

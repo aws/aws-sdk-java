@@ -33,8 +33,8 @@ public class DescribeDBLogFilesRequestMarshaller implements Marshaller<Request<D
     public Request<DescribeDBLogFilesRequest> marshall(DescribeDBLogFilesRequest describeDBLogFilesRequest) {
 
         if (describeDBLogFilesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeDBLogFilesRequest> request = new DefaultRequest<DescribeDBLogFilesRequest>(describeDBLogFilesRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBLogFiles");
@@ -58,7 +58,6 @@ public class DescribeDBLogFilesRequestMarshaller implements Marshaller<Request<D
         if (describeDBLogFilesRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeDBLogFilesRequest.getMarker()));
         }
-
 
         return request;
     }

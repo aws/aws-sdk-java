@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Network Interface JSON Unmarshaller
  */
 public class NetworkInterfaceJsonUnmarshaller implements Unmarshaller<NetworkInterface, JsonUnmarshallerContext> {
 
-    
-
     public NetworkInterface unmarshall(JsonUnmarshallerContext context) throws Exception {
         NetworkInterface networkInterface = new NetworkInterface();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class NetworkInterfaceJsonUnmarshaller implements Unmarshaller<NetworkInt
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Ipv4Address", targetDepth)) {
                     context.nextToken();
@@ -68,7 +62,6 @@ public class NetworkInterfaceJsonUnmarshaller implements Unmarshaller<NetworkInt
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

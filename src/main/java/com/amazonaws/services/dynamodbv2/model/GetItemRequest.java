@@ -67,12 +67,14 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     private Boolean consistentRead;
 
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      */
     private String returnConsumedCapacity;
 
@@ -211,14 +213,14 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      */
     public void setKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
         java.util.HashMap<String,AttributeValue> key = new java.util.HashMap<String,AttributeValue>();
-    	
-    	if (hashKey != null) {
-    	    key.put(hashKey.getKey(), hashKey.getValue());
-    	} else
+        
+        if (hashKey != null) {
+            key.put(hashKey.getKey(), hashKey.getValue());
+        } else
             throw new IllegalArgumentException("hashKey must be non-null object.");
-    	if (rangeKey != null) {
-    	    key.put(rangeKey.getKey(), rangeKey.getValue());
-    	} 
+        if (rangeKey != null) {
+            key.put(rangeKey.getKey(), rangeKey.getValue());
+        } 
         setKey(key);
     }
     
@@ -235,8 +237,8 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param rangeKey Primary range key. (null if it a hash-only table)
      */
     public GetItemRequest withKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
-    	setKey(hashKey, rangeKey);
-    	return this;
+        setKey(hashKey, rangeKey);
+        return this;
     }
 
     /**
@@ -249,26 +251,26 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param key The key of the entry to be added into Key.
      * @param value The corresponding value of the entry to be added into Key.
      */
-	public GetItemRequest addKeyEntry(String key, AttributeValue value) {
-		if (null == this.key) {
-			this.key = new java.util.HashMap<String,AttributeValue>();
-		}
-		if (this.key.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.key.put(key, value);
-		return this;
-	}
+    public GetItemRequest addKeyEntry(String key, AttributeValue value) {
+        if (null == this.key) {
+            this.key = new java.util.HashMap<String,AttributeValue>();
+        }
+        if (this.key.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.key.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Key.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public GetItemRequest clearKeyEntries() {
-		this.key = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Key.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public GetItemRequest clearKeyEntries() {
+        this.key = null;
+        return this;
+    }
+    
     /**
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
@@ -420,16 +422,20 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     }
 
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @return If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @return If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @see ReturnConsumedCapacity
      */
@@ -438,16 +444,20 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @see ReturnConsumedCapacity
      */
@@ -456,18 +466,22 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -480,16 +494,20 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     }
 
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @see ReturnConsumedCapacity
      */
@@ -498,18 +516,22 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

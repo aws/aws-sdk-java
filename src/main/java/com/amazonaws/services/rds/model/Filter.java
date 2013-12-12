@@ -16,7 +16,6 @@ package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
 
-
 /**
  * 
  */

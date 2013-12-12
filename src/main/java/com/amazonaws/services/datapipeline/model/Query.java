@@ -16,7 +16,6 @@ package com.amazonaws.services.datapipeline.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Defines the query to run against an object.

@@ -16,10 +16,9 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
- * Contains the properties of a table.
+ * Represents the properties of a table.
  * </p>
  */
 public class TableDescription implements Serializable {
@@ -57,13 +56,13 @@ public class TableDescription implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement> keySchema;
 
     /**
-     * Represents the current state of the table: <ul> <li>
-     * <p><i>CREATING</i> - The table is being created, as the result of a
-     * <i>CreateTable</i> operation. </li> <li> <p><i>UPDATING</i> - The
-     * table is being updated, as the result of an <i>UpdateTable</i>
-     * operation. </li> <li> <p><i>DELETING</i> - The table is being deleted,
-     * as the result of a <i>DeleteTable</i> operation. </li> <li>
-     * <p><i>ACTIVE</i> - The table is ready for use. </li> </ul>
+     * The current state of the table: <ul> <li> <p><i>CREATING</i> - The
+     * table is being created, as the result of a <i>CreateTable</i>
+     * operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
+     * as the result of an <i>UpdateTable</i> operation. </li> <li>
+     * <p><i>DELETING</i> - The table is being deleted, as the result of a
+     * <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
+     * is ready for use. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CREATING, UPDATING, DELETING, ACTIVE
@@ -71,43 +70,43 @@ public class TableDescription implements Serializable {
     private String tableStatus;
 
     /**
-     * Represents the date and time when the table was created, in <a
+     * The date and time when the table was created, in <a
      * href="http://www.epochconverter.com/">UNIX epoch time</a> format.
      */
     private java.util.Date creationDateTime;
 
     /**
-     * Represents the provisioned throughput settings for the table,
-     * consisting of read and write capacity units, along with data about
-     * increases and decreases.
+     * The provisioned throughput settings for the table, consisting of read
+     * and write capacity units, along with data about increases and
+     * decreases.
      */
     private ProvisionedThroughputDescription provisionedThroughput;
 
     /**
-     * Represents the total size of the specified table, in bytes. Amazon
-     * DynamoDB updates this value approximately every six hours. Recent
-     * changes might not be reflected in this value.
+     * The total size of the specified table, in bytes. Amazon DynamoDB
+     * updates this value approximately every six hours. Recent changes might
+     * not be reflected in this value.
      */
     private Long tableSizeBytes;
 
     /**
-     * Represents the number of items in the specified table. Amazon DynamoDB
-     * updates this value approximately every six hours. Recent changes might
-     * not be reflected in this value.
+     * The number of items in the specified table. Amazon DynamoDB updates
+     * this value approximately every six hours. Recent changes might not be
+     * reflected in this value.
      */
     private Long itemCount;
 
     /**
-     * Represents one or more secondary indexes on the table. Each index is
-     * scoped to a given hash key value. Tables with one or more local
-     * secondary indexes are subject to an item collection size limit, where
-     * the amount of data within a given item collection cannot exceed 10 GB.
-     * Each element is composed of: <ul> <li> <p><i>IndexName</i> - The name
-     * of the secondary index. </li> <li> <p><i>KeySchema</i> - Specifies the
-     * complete index key schema. The attribute names in the key schema must
-     * be between 1 and 255 characters (inclusive). The key schema must begin
-     * with the same hash key attribute as the table. </li> <li>
-     * <p><i>Projection</i> - Specifies attributes that are copied
+     * Represents one or more local secondary indexes on the table. Each
+     * index is scoped to a given hash key value. Tables with one or more
+     * local secondary indexes are subject to an item collection size limit,
+     * where the amount of data within a given item collection cannot exceed
+     * 10 GB. Each element is composed of: <ul> <li> <p><i>IndexName</i> -
+     * The name of the local secondary index. </li> <li> <p><i>KeySchema</i>
+     * - Specifies the complete index key schema. The attribute names in the
+     * key schema must be between 1 and 255 characters (inclusive). The key
+     * schema must begin with the same hash key attribute as the table. </li>
+     * <li> <p><i>Projection</i> - Specifies attributes that are copied
      * (projected) from the table into the index. These are in addition to
      * the primary key attributes and index key attributes, which are
      * automatically projected. Each attribute specification is composed of:
@@ -119,10 +118,10 @@ public class TableDescription implements Serializable {
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * index. The total count of attributes specified in
-     * <i>NonKeyAttributes</i>, summed across all of the local secondary
-     * indexes, must not exceed 20. If you project the same attribute into
-     * two different indexes, this counts as two distinct attributes when
+     * secondary index. The total count of attributes specified in
+     * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     * must not exceed 20. If you project the same attribute into two
+     * different indexes, this counts as two distinct attributes when
      * determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      * - Represents the total size of the index, in bytes. Amazon DynamoDB
      * updates this value approximately every six hours. Recent changes might
@@ -134,6 +133,45 @@ public class TableDescription implements Serializable {
      * returned.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<LocalSecondaryIndexDescription> localSecondaryIndexes;
+
+    /**
+     * The global secondary indexes, if any, on the table. Each index is
+     * scoped to a given hash key value. Each element is composed of: <ul>
+     * <li> <p><i>IndexName</i> - The name of the global secondary index.
+     * </li> <li> <p><i>KeySchema</i> - Specifies the complete index key
+     * schema. The attribute names in the key schema must be between 1 and
+     * 255 characters (inclusive). The key schema must begin with the same
+     * hash key attribute as the table. </li> <li> <p><i>Projection</i> -
+     * Specifies attributes that are copied (projected) from the table into
+     * the index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. Each
+     * attribute specification is composed of: <ul> <li>
+     * <p><i>ProjectionType</i> - One of the following: <ul> <li>
+     * <p><code>KEYS_ONLY</code> - Only the index and primary keys are
+     * projected into the index. </li> <li> <p><code>INCLUDE</code> - Only
+     * the specified table attributes are projected into the index. The list
+     * of projected attributes are in <i>NonKeyAttributes</i>. </li> <li>
+     * <p><code>ALL</code> - All of the table attributes are projected into
+     * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
+     * of one or more non-key attribute names that are projected into the
+     * secondary index. The total count of attributes specified in
+     * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     * must not exceed 20. If you project the same attribute into two
+     * different indexes, this counts as two distinct attributes when
+     * determining the total. </li> </ul> </li> <li>
+     * <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     * for the global secondary index, consisting of read and write capacity
+     * units, along with data about increases and decreases. </li> <li>
+     * <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     * index, in bytes. Amazon DynamoDB updates this value approximately
+     * every six hours. Recent changes might not be reflected in this value.
+     * </li> <li> <p><i>ItemCount</i> - The number of items in the global
+     * secondary index. Amazon DynamoDB updates this value approximately
+     * every six hours. Recent changes might not be reflected in this value.
+     * </li> </ul> <p>If the table is in the <code>DELETING</code> state, no
+     * information about indexes will be returned.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<GlobalSecondaryIndexDescription> globalSecondaryIndexes;
 
     /**
      * Default constructor for a new TableDescription object.  Callers should use the
@@ -407,24 +445,24 @@ public class TableDescription implements Serializable {
     }
 
     /**
-     * Represents the current state of the table: <ul> <li>
-     * <p><i>CREATING</i> - The table is being created, as the result of a
-     * <i>CreateTable</i> operation. </li> <li> <p><i>UPDATING</i> - The
-     * table is being updated, as the result of an <i>UpdateTable</i>
-     * operation. </li> <li> <p><i>DELETING</i> - The table is being deleted,
-     * as the result of a <i>DeleteTable</i> operation. </li> <li>
-     * <p><i>ACTIVE</i> - The table is ready for use. </li> </ul>
+     * The current state of the table: <ul> <li> <p><i>CREATING</i> - The
+     * table is being created, as the result of a <i>CreateTable</i>
+     * operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
+     * as the result of an <i>UpdateTable</i> operation. </li> <li>
+     * <p><i>DELETING</i> - The table is being deleted, as the result of a
+     * <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
+     * is ready for use. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CREATING, UPDATING, DELETING, ACTIVE
      *
-     * @return Represents the current state of the table: <ul> <li>
-     *         <p><i>CREATING</i> - The table is being created, as the result of a
-     *         <i>CreateTable</i> operation. </li> <li> <p><i>UPDATING</i> - The
-     *         table is being updated, as the result of an <i>UpdateTable</i>
-     *         operation. </li> <li> <p><i>DELETING</i> - The table is being deleted,
-     *         as the result of a <i>DeleteTable</i> operation. </li> <li>
-     *         <p><i>ACTIVE</i> - The table is ready for use. </li> </ul>
+     * @return The current state of the table: <ul> <li> <p><i>CREATING</i> - The
+     *         table is being created, as the result of a <i>CreateTable</i>
+     *         operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
+     *         as the result of an <i>UpdateTable</i> operation. </li> <li>
+     *         <p><i>DELETING</i> - The table is being deleted, as the result of a
+     *         <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
+     *         is ready for use. </li> </ul>
      *
      * @see TableStatus
      */
@@ -433,24 +471,24 @@ public class TableDescription implements Serializable {
     }
     
     /**
-     * Represents the current state of the table: <ul> <li>
-     * <p><i>CREATING</i> - The table is being created, as the result of a
-     * <i>CreateTable</i> operation. </li> <li> <p><i>UPDATING</i> - The
-     * table is being updated, as the result of an <i>UpdateTable</i>
-     * operation. </li> <li> <p><i>DELETING</i> - The table is being deleted,
-     * as the result of a <i>DeleteTable</i> operation. </li> <li>
-     * <p><i>ACTIVE</i> - The table is ready for use. </li> </ul>
+     * The current state of the table: <ul> <li> <p><i>CREATING</i> - The
+     * table is being created, as the result of a <i>CreateTable</i>
+     * operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
+     * as the result of an <i>UpdateTable</i> operation. </li> <li>
+     * <p><i>DELETING</i> - The table is being deleted, as the result of a
+     * <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
+     * is ready for use. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CREATING, UPDATING, DELETING, ACTIVE
      *
-     * @param tableStatus Represents the current state of the table: <ul> <li>
-     *         <p><i>CREATING</i> - The table is being created, as the result of a
-     *         <i>CreateTable</i> operation. </li> <li> <p><i>UPDATING</i> - The
-     *         table is being updated, as the result of an <i>UpdateTable</i>
-     *         operation. </li> <li> <p><i>DELETING</i> - The table is being deleted,
-     *         as the result of a <i>DeleteTable</i> operation. </li> <li>
-     *         <p><i>ACTIVE</i> - The table is ready for use. </li> </ul>
+     * @param tableStatus The current state of the table: <ul> <li> <p><i>CREATING</i> - The
+     *         table is being created, as the result of a <i>CreateTable</i>
+     *         operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
+     *         as the result of an <i>UpdateTable</i> operation. </li> <li>
+     *         <p><i>DELETING</i> - The table is being deleted, as the result of a
+     *         <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
+     *         is ready for use. </li> </ul>
      *
      * @see TableStatus
      */
@@ -459,26 +497,26 @@ public class TableDescription implements Serializable {
     }
     
     /**
-     * Represents the current state of the table: <ul> <li>
-     * <p><i>CREATING</i> - The table is being created, as the result of a
-     * <i>CreateTable</i> operation. </li> <li> <p><i>UPDATING</i> - The
-     * table is being updated, as the result of an <i>UpdateTable</i>
-     * operation. </li> <li> <p><i>DELETING</i> - The table is being deleted,
-     * as the result of a <i>DeleteTable</i> operation. </li> <li>
-     * <p><i>ACTIVE</i> - The table is ready for use. </li> </ul>
+     * The current state of the table: <ul> <li> <p><i>CREATING</i> - The
+     * table is being created, as the result of a <i>CreateTable</i>
+     * operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
+     * as the result of an <i>UpdateTable</i> operation. </li> <li>
+     * <p><i>DELETING</i> - The table is being deleted, as the result of a
+     * <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
+     * is ready for use. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CREATING, UPDATING, DELETING, ACTIVE
      *
-     * @param tableStatus Represents the current state of the table: <ul> <li>
-     *         <p><i>CREATING</i> - The table is being created, as the result of a
-     *         <i>CreateTable</i> operation. </li> <li> <p><i>UPDATING</i> - The
-     *         table is being updated, as the result of an <i>UpdateTable</i>
-     *         operation. </li> <li> <p><i>DELETING</i> - The table is being deleted,
-     *         as the result of a <i>DeleteTable</i> operation. </li> <li>
-     *         <p><i>ACTIVE</i> - The table is ready for use. </li> </ul>
+     * @param tableStatus The current state of the table: <ul> <li> <p><i>CREATING</i> - The
+     *         table is being created, as the result of a <i>CreateTable</i>
+     *         operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
+     *         as the result of an <i>UpdateTable</i> operation. </li> <li>
+     *         <p><i>DELETING</i> - The table is being deleted, as the result of a
+     *         <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
+     *         is ready for use. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -491,24 +529,24 @@ public class TableDescription implements Serializable {
     }
 
     /**
-     * Represents the current state of the table: <ul> <li>
-     * <p><i>CREATING</i> - The table is being created, as the result of a
-     * <i>CreateTable</i> operation. </li> <li> <p><i>UPDATING</i> - The
-     * table is being updated, as the result of an <i>UpdateTable</i>
-     * operation. </li> <li> <p><i>DELETING</i> - The table is being deleted,
-     * as the result of a <i>DeleteTable</i> operation. </li> <li>
-     * <p><i>ACTIVE</i> - The table is ready for use. </li> </ul>
+     * The current state of the table: <ul> <li> <p><i>CREATING</i> - The
+     * table is being created, as the result of a <i>CreateTable</i>
+     * operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
+     * as the result of an <i>UpdateTable</i> operation. </li> <li>
+     * <p><i>DELETING</i> - The table is being deleted, as the result of a
+     * <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
+     * is ready for use. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CREATING, UPDATING, DELETING, ACTIVE
      *
-     * @param tableStatus Represents the current state of the table: <ul> <li>
-     *         <p><i>CREATING</i> - The table is being created, as the result of a
-     *         <i>CreateTable</i> operation. </li> <li> <p><i>UPDATING</i> - The
-     *         table is being updated, as the result of an <i>UpdateTable</i>
-     *         operation. </li> <li> <p><i>DELETING</i> - The table is being deleted,
-     *         as the result of a <i>DeleteTable</i> operation. </li> <li>
-     *         <p><i>ACTIVE</i> - The table is ready for use. </li> </ul>
+     * @param tableStatus The current state of the table: <ul> <li> <p><i>CREATING</i> - The
+     *         table is being created, as the result of a <i>CreateTable</i>
+     *         operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
+     *         as the result of an <i>UpdateTable</i> operation. </li> <li>
+     *         <p><i>DELETING</i> - The table is being deleted, as the result of a
+     *         <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
+     *         is ready for use. </li> </ul>
      *
      * @see TableStatus
      */
@@ -517,26 +555,26 @@ public class TableDescription implements Serializable {
     }
     
     /**
-     * Represents the current state of the table: <ul> <li>
-     * <p><i>CREATING</i> - The table is being created, as the result of a
-     * <i>CreateTable</i> operation. </li> <li> <p><i>UPDATING</i> - The
-     * table is being updated, as the result of an <i>UpdateTable</i>
-     * operation. </li> <li> <p><i>DELETING</i> - The table is being deleted,
-     * as the result of a <i>DeleteTable</i> operation. </li> <li>
-     * <p><i>ACTIVE</i> - The table is ready for use. </li> </ul>
+     * The current state of the table: <ul> <li> <p><i>CREATING</i> - The
+     * table is being created, as the result of a <i>CreateTable</i>
+     * operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
+     * as the result of an <i>UpdateTable</i> operation. </li> <li>
+     * <p><i>DELETING</i> - The table is being deleted, as the result of a
+     * <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
+     * is ready for use. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CREATING, UPDATING, DELETING, ACTIVE
      *
-     * @param tableStatus Represents the current state of the table: <ul> <li>
-     *         <p><i>CREATING</i> - The table is being created, as the result of a
-     *         <i>CreateTable</i> operation. </li> <li> <p><i>UPDATING</i> - The
-     *         table is being updated, as the result of an <i>UpdateTable</i>
-     *         operation. </li> <li> <p><i>DELETING</i> - The table is being deleted,
-     *         as the result of a <i>DeleteTable</i> operation. </li> <li>
-     *         <p><i>ACTIVE</i> - The table is ready for use. </li> </ul>
+     * @param tableStatus The current state of the table: <ul> <li> <p><i>CREATING</i> - The
+     *         table is being created, as the result of a <i>CreateTable</i>
+     *         operation. </li> <li> <p><i>UPDATING</i> - The table is being updated,
+     *         as the result of an <i>UpdateTable</i> operation. </li> <li>
+     *         <p><i>DELETING</i> - The table is being deleted, as the result of a
+     *         <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
+     *         is ready for use. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -549,10 +587,10 @@ public class TableDescription implements Serializable {
     }
 
     /**
-     * Represents the date and time when the table was created, in <a
+     * The date and time when the table was created, in <a
      * href="http://www.epochconverter.com/">UNIX epoch time</a> format.
      *
-     * @return Represents the date and time when the table was created, in <a
+     * @return The date and time when the table was created, in <a
      *         href="http://www.epochconverter.com/">UNIX epoch time</a> format.
      */
     public java.util.Date getCreationDateTime() {
@@ -560,10 +598,10 @@ public class TableDescription implements Serializable {
     }
     
     /**
-     * Represents the date and time when the table was created, in <a
+     * The date and time when the table was created, in <a
      * href="http://www.epochconverter.com/">UNIX epoch time</a> format.
      *
-     * @param creationDateTime Represents the date and time when the table was created, in <a
+     * @param creationDateTime The date and time when the table was created, in <a
      *         href="http://www.epochconverter.com/">UNIX epoch time</a> format.
      */
     public void setCreationDateTime(java.util.Date creationDateTime) {
@@ -571,12 +609,12 @@ public class TableDescription implements Serializable {
     }
     
     /**
-     * Represents the date and time when the table was created, in <a
+     * The date and time when the table was created, in <a
      * href="http://www.epochconverter.com/">UNIX epoch time</a> format.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param creationDateTime Represents the date and time when the table was created, in <a
+     * @param creationDateTime The date and time when the table was created, in <a
      *         href="http://www.epochconverter.com/">UNIX epoch time</a> format.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -588,41 +626,41 @@ public class TableDescription implements Serializable {
     }
 
     /**
-     * Represents the provisioned throughput settings for the table,
-     * consisting of read and write capacity units, along with data about
-     * increases and decreases.
+     * The provisioned throughput settings for the table, consisting of read
+     * and write capacity units, along with data about increases and
+     * decreases.
      *
-     * @return Represents the provisioned throughput settings for the table,
-     *         consisting of read and write capacity units, along with data about
-     *         increases and decreases.
+     * @return The provisioned throughput settings for the table, consisting of read
+     *         and write capacity units, along with data about increases and
+     *         decreases.
      */
     public ProvisionedThroughputDescription getProvisionedThroughput() {
         return provisionedThroughput;
     }
     
     /**
-     * Represents the provisioned throughput settings for the table,
-     * consisting of read and write capacity units, along with data about
-     * increases and decreases.
+     * The provisioned throughput settings for the table, consisting of read
+     * and write capacity units, along with data about increases and
+     * decreases.
      *
-     * @param provisionedThroughput Represents the provisioned throughput settings for the table,
-     *         consisting of read and write capacity units, along with data about
-     *         increases and decreases.
+     * @param provisionedThroughput The provisioned throughput settings for the table, consisting of read
+     *         and write capacity units, along with data about increases and
+     *         decreases.
      */
     public void setProvisionedThroughput(ProvisionedThroughputDescription provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;
     }
     
     /**
-     * Represents the provisioned throughput settings for the table,
-     * consisting of read and write capacity units, along with data about
-     * increases and decreases.
+     * The provisioned throughput settings for the table, consisting of read
+     * and write capacity units, along with data about increases and
+     * decreases.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param provisionedThroughput Represents the provisioned throughput settings for the table,
-     *         consisting of read and write capacity units, along with data about
-     *         increases and decreases.
+     * @param provisionedThroughput The provisioned throughput settings for the table, consisting of read
+     *         and write capacity units, along with data about increases and
+     *         decreases.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -633,41 +671,41 @@ public class TableDescription implements Serializable {
     }
 
     /**
-     * Represents the total size of the specified table, in bytes. Amazon
-     * DynamoDB updates this value approximately every six hours. Recent
-     * changes might not be reflected in this value.
+     * The total size of the specified table, in bytes. Amazon DynamoDB
+     * updates this value approximately every six hours. Recent changes might
+     * not be reflected in this value.
      *
-     * @return Represents the total size of the specified table, in bytes. Amazon
-     *         DynamoDB updates this value approximately every six hours. Recent
-     *         changes might not be reflected in this value.
+     * @return The total size of the specified table, in bytes. Amazon DynamoDB
+     *         updates this value approximately every six hours. Recent changes might
+     *         not be reflected in this value.
      */
     public Long getTableSizeBytes() {
         return tableSizeBytes;
     }
     
     /**
-     * Represents the total size of the specified table, in bytes. Amazon
-     * DynamoDB updates this value approximately every six hours. Recent
-     * changes might not be reflected in this value.
+     * The total size of the specified table, in bytes. Amazon DynamoDB
+     * updates this value approximately every six hours. Recent changes might
+     * not be reflected in this value.
      *
-     * @param tableSizeBytes Represents the total size of the specified table, in bytes. Amazon
-     *         DynamoDB updates this value approximately every six hours. Recent
-     *         changes might not be reflected in this value.
+     * @param tableSizeBytes The total size of the specified table, in bytes. Amazon DynamoDB
+     *         updates this value approximately every six hours. Recent changes might
+     *         not be reflected in this value.
      */
     public void setTableSizeBytes(Long tableSizeBytes) {
         this.tableSizeBytes = tableSizeBytes;
     }
     
     /**
-     * Represents the total size of the specified table, in bytes. Amazon
-     * DynamoDB updates this value approximately every six hours. Recent
-     * changes might not be reflected in this value.
+     * The total size of the specified table, in bytes. Amazon DynamoDB
+     * updates this value approximately every six hours. Recent changes might
+     * not be reflected in this value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tableSizeBytes Represents the total size of the specified table, in bytes. Amazon
-     *         DynamoDB updates this value approximately every six hours. Recent
-     *         changes might not be reflected in this value.
+     * @param tableSizeBytes The total size of the specified table, in bytes. Amazon DynamoDB
+     *         updates this value approximately every six hours. Recent changes might
+     *         not be reflected in this value.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -678,41 +716,41 @@ public class TableDescription implements Serializable {
     }
 
     /**
-     * Represents the number of items in the specified table. Amazon DynamoDB
-     * updates this value approximately every six hours. Recent changes might
-     * not be reflected in this value.
+     * The number of items in the specified table. Amazon DynamoDB updates
+     * this value approximately every six hours. Recent changes might not be
+     * reflected in this value.
      *
-     * @return Represents the number of items in the specified table. Amazon DynamoDB
-     *         updates this value approximately every six hours. Recent changes might
-     *         not be reflected in this value.
+     * @return The number of items in the specified table. Amazon DynamoDB updates
+     *         this value approximately every six hours. Recent changes might not be
+     *         reflected in this value.
      */
     public Long getItemCount() {
         return itemCount;
     }
     
     /**
-     * Represents the number of items in the specified table. Amazon DynamoDB
-     * updates this value approximately every six hours. Recent changes might
-     * not be reflected in this value.
+     * The number of items in the specified table. Amazon DynamoDB updates
+     * this value approximately every six hours. Recent changes might not be
+     * reflected in this value.
      *
-     * @param itemCount Represents the number of items in the specified table. Amazon DynamoDB
-     *         updates this value approximately every six hours. Recent changes might
-     *         not be reflected in this value.
+     * @param itemCount The number of items in the specified table. Amazon DynamoDB updates
+     *         this value approximately every six hours. Recent changes might not be
+     *         reflected in this value.
      */
     public void setItemCount(Long itemCount) {
         this.itemCount = itemCount;
     }
     
     /**
-     * Represents the number of items in the specified table. Amazon DynamoDB
-     * updates this value approximately every six hours. Recent changes might
-     * not be reflected in this value.
+     * The number of items in the specified table. Amazon DynamoDB updates
+     * this value approximately every six hours. Recent changes might not be
+     * reflected in this value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param itemCount Represents the number of items in the specified table. Amazon DynamoDB
-     *         updates this value approximately every six hours. Recent changes might
-     *         not be reflected in this value.
+     * @param itemCount The number of items in the specified table. Amazon DynamoDB updates
+     *         this value approximately every six hours. Recent changes might not be
+     *         reflected in this value.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -723,16 +761,16 @@ public class TableDescription implements Serializable {
     }
 
     /**
-     * Represents one or more secondary indexes on the table. Each index is
-     * scoped to a given hash key value. Tables with one or more local
-     * secondary indexes are subject to an item collection size limit, where
-     * the amount of data within a given item collection cannot exceed 10 GB.
-     * Each element is composed of: <ul> <li> <p><i>IndexName</i> - The name
-     * of the secondary index. </li> <li> <p><i>KeySchema</i> - Specifies the
-     * complete index key schema. The attribute names in the key schema must
-     * be between 1 and 255 characters (inclusive). The key schema must begin
-     * with the same hash key attribute as the table. </li> <li>
-     * <p><i>Projection</i> - Specifies attributes that are copied
+     * Represents one or more local secondary indexes on the table. Each
+     * index is scoped to a given hash key value. Tables with one or more
+     * local secondary indexes are subject to an item collection size limit,
+     * where the amount of data within a given item collection cannot exceed
+     * 10 GB. Each element is composed of: <ul> <li> <p><i>IndexName</i> -
+     * The name of the local secondary index. </li> <li> <p><i>KeySchema</i>
+     * - Specifies the complete index key schema. The attribute names in the
+     * key schema must be between 1 and 255 characters (inclusive). The key
+     * schema must begin with the same hash key attribute as the table. </li>
+     * <li> <p><i>Projection</i> - Specifies attributes that are copied
      * (projected) from the table into the index. These are in addition to
      * the primary key attributes and index key attributes, which are
      * automatically projected. Each attribute specification is composed of:
@@ -744,10 +782,10 @@ public class TableDescription implements Serializable {
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * index. The total count of attributes specified in
-     * <i>NonKeyAttributes</i>, summed across all of the local secondary
-     * indexes, must not exceed 20. If you project the same attribute into
-     * two different indexes, this counts as two distinct attributes when
+     * secondary index. The total count of attributes specified in
+     * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     * must not exceed 20. If you project the same attribute into two
+     * different indexes, this counts as two distinct attributes when
      * determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      * - Represents the total size of the index, in bytes. Amazon DynamoDB
      * updates this value approximately every six hours. Recent changes might
@@ -758,16 +796,16 @@ public class TableDescription implements Serializable {
      * <code>DELETING</code> state, no information about indexes will be
      * returned.
      *
-     * @return Represents one or more secondary indexes on the table. Each index is
-     *         scoped to a given hash key value. Tables with one or more local
-     *         secondary indexes are subject to an item collection size limit, where
-     *         the amount of data within a given item collection cannot exceed 10 GB.
-     *         Each element is composed of: <ul> <li> <p><i>IndexName</i> - The name
-     *         of the secondary index. </li> <li> <p><i>KeySchema</i> - Specifies the
-     *         complete index key schema. The attribute names in the key schema must
-     *         be between 1 and 255 characters (inclusive). The key schema must begin
-     *         with the same hash key attribute as the table. </li> <li>
-     *         <p><i>Projection</i> - Specifies attributes that are copied
+     * @return Represents one or more local secondary indexes on the table. Each
+     *         index is scoped to a given hash key value. Tables with one or more
+     *         local secondary indexes are subject to an item collection size limit,
+     *         where the amount of data within a given item collection cannot exceed
+     *         10 GB. Each element is composed of: <ul> <li> <p><i>IndexName</i> -
+     *         The name of the local secondary index. </li> <li> <p><i>KeySchema</i>
+     *         - Specifies the complete index key schema. The attribute names in the
+     *         key schema must be between 1 and 255 characters (inclusive). The key
+     *         schema must begin with the same hash key attribute as the table. </li>
+     *         <li> <p><i>Projection</i> - Specifies attributes that are copied
      *         (projected) from the table into the index. These are in addition to
      *         the primary key attributes and index key attributes, which are
      *         automatically projected. Each attribute specification is composed of:
@@ -779,10 +817,10 @@ public class TableDescription implements Serializable {
      *         <p><code>ALL</code> - All of the table attributes are projected into
      *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      *         of one or more non-key attribute names that are projected into the
-     *         index. The total count of attributes specified in
-     *         <i>NonKeyAttributes</i>, summed across all of the local secondary
-     *         indexes, must not exceed 20. If you project the same attribute into
-     *         two different indexes, this counts as two distinct attributes when
+     *         secondary index. The total count of attributes specified in
+     *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     *         must not exceed 20. If you project the same attribute into two
+     *         different indexes, this counts as two distinct attributes when
      *         determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      *         - Represents the total size of the index, in bytes. Amazon DynamoDB
      *         updates this value approximately every six hours. Recent changes might
@@ -798,16 +836,16 @@ public class TableDescription implements Serializable {
     }
     
     /**
-     * Represents one or more secondary indexes on the table. Each index is
-     * scoped to a given hash key value. Tables with one or more local
-     * secondary indexes are subject to an item collection size limit, where
-     * the amount of data within a given item collection cannot exceed 10 GB.
-     * Each element is composed of: <ul> <li> <p><i>IndexName</i> - The name
-     * of the secondary index. </li> <li> <p><i>KeySchema</i> - Specifies the
-     * complete index key schema. The attribute names in the key schema must
-     * be between 1 and 255 characters (inclusive). The key schema must begin
-     * with the same hash key attribute as the table. </li> <li>
-     * <p><i>Projection</i> - Specifies attributes that are copied
+     * Represents one or more local secondary indexes on the table. Each
+     * index is scoped to a given hash key value. Tables with one or more
+     * local secondary indexes are subject to an item collection size limit,
+     * where the amount of data within a given item collection cannot exceed
+     * 10 GB. Each element is composed of: <ul> <li> <p><i>IndexName</i> -
+     * The name of the local secondary index. </li> <li> <p><i>KeySchema</i>
+     * - Specifies the complete index key schema. The attribute names in the
+     * key schema must be between 1 and 255 characters (inclusive). The key
+     * schema must begin with the same hash key attribute as the table. </li>
+     * <li> <p><i>Projection</i> - Specifies attributes that are copied
      * (projected) from the table into the index. These are in addition to
      * the primary key attributes and index key attributes, which are
      * automatically projected. Each attribute specification is composed of:
@@ -819,10 +857,10 @@ public class TableDescription implements Serializable {
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * index. The total count of attributes specified in
-     * <i>NonKeyAttributes</i>, summed across all of the local secondary
-     * indexes, must not exceed 20. If you project the same attribute into
-     * two different indexes, this counts as two distinct attributes when
+     * secondary index. The total count of attributes specified in
+     * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     * must not exceed 20. If you project the same attribute into two
+     * different indexes, this counts as two distinct attributes when
      * determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      * - Represents the total size of the index, in bytes. Amazon DynamoDB
      * updates this value approximately every six hours. Recent changes might
@@ -833,16 +871,16 @@ public class TableDescription implements Serializable {
      * <code>DELETING</code> state, no information about indexes will be
      * returned.
      *
-     * @param localSecondaryIndexes Represents one or more secondary indexes on the table. Each index is
-     *         scoped to a given hash key value. Tables with one or more local
-     *         secondary indexes are subject to an item collection size limit, where
-     *         the amount of data within a given item collection cannot exceed 10 GB.
-     *         Each element is composed of: <ul> <li> <p><i>IndexName</i> - The name
-     *         of the secondary index. </li> <li> <p><i>KeySchema</i> - Specifies the
-     *         complete index key schema. The attribute names in the key schema must
-     *         be between 1 and 255 characters (inclusive). The key schema must begin
-     *         with the same hash key attribute as the table. </li> <li>
-     *         <p><i>Projection</i> - Specifies attributes that are copied
+     * @param localSecondaryIndexes Represents one or more local secondary indexes on the table. Each
+     *         index is scoped to a given hash key value. Tables with one or more
+     *         local secondary indexes are subject to an item collection size limit,
+     *         where the amount of data within a given item collection cannot exceed
+     *         10 GB. Each element is composed of: <ul> <li> <p><i>IndexName</i> -
+     *         The name of the local secondary index. </li> <li> <p><i>KeySchema</i>
+     *         - Specifies the complete index key schema. The attribute names in the
+     *         key schema must be between 1 and 255 characters (inclusive). The key
+     *         schema must begin with the same hash key attribute as the table. </li>
+     *         <li> <p><i>Projection</i> - Specifies attributes that are copied
      *         (projected) from the table into the index. These are in addition to
      *         the primary key attributes and index key attributes, which are
      *         automatically projected. Each attribute specification is composed of:
@@ -854,10 +892,10 @@ public class TableDescription implements Serializable {
      *         <p><code>ALL</code> - All of the table attributes are projected into
      *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      *         of one or more non-key attribute names that are projected into the
-     *         index. The total count of attributes specified in
-     *         <i>NonKeyAttributes</i>, summed across all of the local secondary
-     *         indexes, must not exceed 20. If you project the same attribute into
-     *         two different indexes, this counts as two distinct attributes when
+     *         secondary index. The total count of attributes specified in
+     *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     *         must not exceed 20. If you project the same attribute into two
+     *         different indexes, this counts as two distinct attributes when
      *         determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      *         - Represents the total size of the index, in bytes. Amazon DynamoDB
      *         updates this value approximately every six hours. Recent changes might
@@ -879,16 +917,16 @@ public class TableDescription implements Serializable {
     }
     
     /**
-     * Represents one or more secondary indexes on the table. Each index is
-     * scoped to a given hash key value. Tables with one or more local
-     * secondary indexes are subject to an item collection size limit, where
-     * the amount of data within a given item collection cannot exceed 10 GB.
-     * Each element is composed of: <ul> <li> <p><i>IndexName</i> - The name
-     * of the secondary index. </li> <li> <p><i>KeySchema</i> - Specifies the
-     * complete index key schema. The attribute names in the key schema must
-     * be between 1 and 255 characters (inclusive). The key schema must begin
-     * with the same hash key attribute as the table. </li> <li>
-     * <p><i>Projection</i> - Specifies attributes that are copied
+     * Represents one or more local secondary indexes on the table. Each
+     * index is scoped to a given hash key value. Tables with one or more
+     * local secondary indexes are subject to an item collection size limit,
+     * where the amount of data within a given item collection cannot exceed
+     * 10 GB. Each element is composed of: <ul> <li> <p><i>IndexName</i> -
+     * The name of the local secondary index. </li> <li> <p><i>KeySchema</i>
+     * - Specifies the complete index key schema. The attribute names in the
+     * key schema must be between 1 and 255 characters (inclusive). The key
+     * schema must begin with the same hash key attribute as the table. </li>
+     * <li> <p><i>Projection</i> - Specifies attributes that are copied
      * (projected) from the table into the index. These are in addition to
      * the primary key attributes and index key attributes, which are
      * automatically projected. Each attribute specification is composed of:
@@ -900,10 +938,10 @@ public class TableDescription implements Serializable {
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * index. The total count of attributes specified in
-     * <i>NonKeyAttributes</i>, summed across all of the local secondary
-     * indexes, must not exceed 20. If you project the same attribute into
-     * two different indexes, this counts as two distinct attributes when
+     * secondary index. The total count of attributes specified in
+     * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     * must not exceed 20. If you project the same attribute into two
+     * different indexes, this counts as two distinct attributes when
      * determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      * - Represents the total size of the index, in bytes. Amazon DynamoDB
      * updates this value approximately every six hours. Recent changes might
@@ -916,16 +954,16 @@ public class TableDescription implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param localSecondaryIndexes Represents one or more secondary indexes on the table. Each index is
-     *         scoped to a given hash key value. Tables with one or more local
-     *         secondary indexes are subject to an item collection size limit, where
-     *         the amount of data within a given item collection cannot exceed 10 GB.
-     *         Each element is composed of: <ul> <li> <p><i>IndexName</i> - The name
-     *         of the secondary index. </li> <li> <p><i>KeySchema</i> - Specifies the
-     *         complete index key schema. The attribute names in the key schema must
-     *         be between 1 and 255 characters (inclusive). The key schema must begin
-     *         with the same hash key attribute as the table. </li> <li>
-     *         <p><i>Projection</i> - Specifies attributes that are copied
+     * @param localSecondaryIndexes Represents one or more local secondary indexes on the table. Each
+     *         index is scoped to a given hash key value. Tables with one or more
+     *         local secondary indexes are subject to an item collection size limit,
+     *         where the amount of data within a given item collection cannot exceed
+     *         10 GB. Each element is composed of: <ul> <li> <p><i>IndexName</i> -
+     *         The name of the local secondary index. </li> <li> <p><i>KeySchema</i>
+     *         - Specifies the complete index key schema. The attribute names in the
+     *         key schema must be between 1 and 255 characters (inclusive). The key
+     *         schema must begin with the same hash key attribute as the table. </li>
+     *         <li> <p><i>Projection</i> - Specifies attributes that are copied
      *         (projected) from the table into the index. These are in addition to
      *         the primary key attributes and index key attributes, which are
      *         automatically projected. Each attribute specification is composed of:
@@ -937,10 +975,10 @@ public class TableDescription implements Serializable {
      *         <p><code>ALL</code> - All of the table attributes are projected into
      *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      *         of one or more non-key attribute names that are projected into the
-     *         index. The total count of attributes specified in
-     *         <i>NonKeyAttributes</i>, summed across all of the local secondary
-     *         indexes, must not exceed 20. If you project the same attribute into
-     *         two different indexes, this counts as two distinct attributes when
+     *         secondary index. The total count of attributes specified in
+     *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     *         must not exceed 20. If you project the same attribute into two
+     *         different indexes, this counts as two distinct attributes when
      *         determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      *         - Represents the total size of the index, in bytes. Amazon DynamoDB
      *         updates this value approximately every six hours. Recent changes might
@@ -963,16 +1001,16 @@ public class TableDescription implements Serializable {
     }
     
     /**
-     * Represents one or more secondary indexes on the table. Each index is
-     * scoped to a given hash key value. Tables with one or more local
-     * secondary indexes are subject to an item collection size limit, where
-     * the amount of data within a given item collection cannot exceed 10 GB.
-     * Each element is composed of: <ul> <li> <p><i>IndexName</i> - The name
-     * of the secondary index. </li> <li> <p><i>KeySchema</i> - Specifies the
-     * complete index key schema. The attribute names in the key schema must
-     * be between 1 and 255 characters (inclusive). The key schema must begin
-     * with the same hash key attribute as the table. </li> <li>
-     * <p><i>Projection</i> - Specifies attributes that are copied
+     * Represents one or more local secondary indexes on the table. Each
+     * index is scoped to a given hash key value. Tables with one or more
+     * local secondary indexes are subject to an item collection size limit,
+     * where the amount of data within a given item collection cannot exceed
+     * 10 GB. Each element is composed of: <ul> <li> <p><i>IndexName</i> -
+     * The name of the local secondary index. </li> <li> <p><i>KeySchema</i>
+     * - Specifies the complete index key schema. The attribute names in the
+     * key schema must be between 1 and 255 characters (inclusive). The key
+     * schema must begin with the same hash key attribute as the table. </li>
+     * <li> <p><i>Projection</i> - Specifies attributes that are copied
      * (projected) from the table into the index. These are in addition to
      * the primary key attributes and index key attributes, which are
      * automatically projected. Each attribute specification is composed of:
@@ -984,10 +1022,10 @@ public class TableDescription implements Serializable {
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * index. The total count of attributes specified in
-     * <i>NonKeyAttributes</i>, summed across all of the local secondary
-     * indexes, must not exceed 20. If you project the same attribute into
-     * two different indexes, this counts as two distinct attributes when
+     * secondary index. The total count of attributes specified in
+     * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     * must not exceed 20. If you project the same attribute into two
+     * different indexes, this counts as two distinct attributes when
      * determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      * - Represents the total size of the index, in bytes. Amazon DynamoDB
      * updates this value approximately every six hours. Recent changes might
@@ -1000,16 +1038,16 @@ public class TableDescription implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param localSecondaryIndexes Represents one or more secondary indexes on the table. Each index is
-     *         scoped to a given hash key value. Tables with one or more local
-     *         secondary indexes are subject to an item collection size limit, where
-     *         the amount of data within a given item collection cannot exceed 10 GB.
-     *         Each element is composed of: <ul> <li> <p><i>IndexName</i> - The name
-     *         of the secondary index. </li> <li> <p><i>KeySchema</i> - Specifies the
-     *         complete index key schema. The attribute names in the key schema must
-     *         be between 1 and 255 characters (inclusive). The key schema must begin
-     *         with the same hash key attribute as the table. </li> <li>
-     *         <p><i>Projection</i> - Specifies attributes that are copied
+     * @param localSecondaryIndexes Represents one or more local secondary indexes on the table. Each
+     *         index is scoped to a given hash key value. Tables with one or more
+     *         local secondary indexes are subject to an item collection size limit,
+     *         where the amount of data within a given item collection cannot exceed
+     *         10 GB. Each element is composed of: <ul> <li> <p><i>IndexName</i> -
+     *         The name of the local secondary index. </li> <li> <p><i>KeySchema</i>
+     *         - Specifies the complete index key schema. The attribute names in the
+     *         key schema must be between 1 and 255 characters (inclusive). The key
+     *         schema must begin with the same hash key attribute as the table. </li>
+     *         <li> <p><i>Projection</i> - Specifies attributes that are copied
      *         (projected) from the table into the index. These are in addition to
      *         the primary key attributes and index key attributes, which are
      *         automatically projected. Each attribute specification is composed of:
@@ -1021,10 +1059,10 @@ public class TableDescription implements Serializable {
      *         <p><code>ALL</code> - All of the table attributes are projected into
      *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      *         of one or more non-key attribute names that are projected into the
-     *         index. The total count of attributes specified in
-     *         <i>NonKeyAttributes</i>, summed across all of the local secondary
-     *         indexes, must not exceed 20. If you project the same attribute into
-     *         two different indexes, this counts as two distinct attributes when
+     *         secondary index. The total count of attributes specified in
+     *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     *         must not exceed 20. If you project the same attribute into two
+     *         different indexes, this counts as two distinct attributes when
      *         determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      *         - Represents the total size of the index, in bytes. Amazon DynamoDB
      *         updates this value approximately every six hours. Recent changes might
@@ -1051,6 +1089,342 @@ public class TableDescription implements Serializable {
     }
 
     /**
+     * The global secondary indexes, if any, on the table. Each index is
+     * scoped to a given hash key value. Each element is composed of: <ul>
+     * <li> <p><i>IndexName</i> - The name of the global secondary index.
+     * </li> <li> <p><i>KeySchema</i> - Specifies the complete index key
+     * schema. The attribute names in the key schema must be between 1 and
+     * 255 characters (inclusive). The key schema must begin with the same
+     * hash key attribute as the table. </li> <li> <p><i>Projection</i> -
+     * Specifies attributes that are copied (projected) from the table into
+     * the index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. Each
+     * attribute specification is composed of: <ul> <li>
+     * <p><i>ProjectionType</i> - One of the following: <ul> <li>
+     * <p><code>KEYS_ONLY</code> - Only the index and primary keys are
+     * projected into the index. </li> <li> <p><code>INCLUDE</code> - Only
+     * the specified table attributes are projected into the index. The list
+     * of projected attributes are in <i>NonKeyAttributes</i>. </li> <li>
+     * <p><code>ALL</code> - All of the table attributes are projected into
+     * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
+     * of one or more non-key attribute names that are projected into the
+     * secondary index. The total count of attributes specified in
+     * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     * must not exceed 20. If you project the same attribute into two
+     * different indexes, this counts as two distinct attributes when
+     * determining the total. </li> </ul> </li> <li>
+     * <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     * for the global secondary index, consisting of read and write capacity
+     * units, along with data about increases and decreases. </li> <li>
+     * <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     * index, in bytes. Amazon DynamoDB updates this value approximately
+     * every six hours. Recent changes might not be reflected in this value.
+     * </li> <li> <p><i>ItemCount</i> - The number of items in the global
+     * secondary index. Amazon DynamoDB updates this value approximately
+     * every six hours. Recent changes might not be reflected in this value.
+     * </li> </ul> <p>If the table is in the <code>DELETING</code> state, no
+     * information about indexes will be returned.
+     *
+     * @return The global secondary indexes, if any, on the table. Each index is
+     *         scoped to a given hash key value. Each element is composed of: <ul>
+     *         <li> <p><i>IndexName</i> - The name of the global secondary index.
+     *         </li> <li> <p><i>KeySchema</i> - Specifies the complete index key
+     *         schema. The attribute names in the key schema must be between 1 and
+     *         255 characters (inclusive). The key schema must begin with the same
+     *         hash key attribute as the table. </li> <li> <p><i>Projection</i> -
+     *         Specifies attributes that are copied (projected) from the table into
+     *         the index. These are in addition to the primary key attributes and
+     *         index key attributes, which are automatically projected. Each
+     *         attribute specification is composed of: <ul> <li>
+     *         <p><i>ProjectionType</i> - One of the following: <ul> <li>
+     *         <p><code>KEYS_ONLY</code> - Only the index and primary keys are
+     *         projected into the index. </li> <li> <p><code>INCLUDE</code> - Only
+     *         the specified table attributes are projected into the index. The list
+     *         of projected attributes are in <i>NonKeyAttributes</i>. </li> <li>
+     *         <p><code>ALL</code> - All of the table attributes are projected into
+     *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
+     *         of one or more non-key attribute names that are projected into the
+     *         secondary index. The total count of attributes specified in
+     *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     *         must not exceed 20. If you project the same attribute into two
+     *         different indexes, this counts as two distinct attributes when
+     *         determining the total. </li> </ul> </li> <li>
+     *         <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     *         for the global secondary index, consisting of read and write capacity
+     *         units, along with data about increases and decreases. </li> <li>
+     *         <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     *         index, in bytes. Amazon DynamoDB updates this value approximately
+     *         every six hours. Recent changes might not be reflected in this value.
+     *         </li> <li> <p><i>ItemCount</i> - The number of items in the global
+     *         secondary index. Amazon DynamoDB updates this value approximately
+     *         every six hours. Recent changes might not be reflected in this value.
+     *         </li> </ul> <p>If the table is in the <code>DELETING</code> state, no
+     *         information about indexes will be returned.
+     */
+    public java.util.List<GlobalSecondaryIndexDescription> getGlobalSecondaryIndexes() {
+        return globalSecondaryIndexes;
+    }
+    
+    /**
+     * The global secondary indexes, if any, on the table. Each index is
+     * scoped to a given hash key value. Each element is composed of: <ul>
+     * <li> <p><i>IndexName</i> - The name of the global secondary index.
+     * </li> <li> <p><i>KeySchema</i> - Specifies the complete index key
+     * schema. The attribute names in the key schema must be between 1 and
+     * 255 characters (inclusive). The key schema must begin with the same
+     * hash key attribute as the table. </li> <li> <p><i>Projection</i> -
+     * Specifies attributes that are copied (projected) from the table into
+     * the index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. Each
+     * attribute specification is composed of: <ul> <li>
+     * <p><i>ProjectionType</i> - One of the following: <ul> <li>
+     * <p><code>KEYS_ONLY</code> - Only the index and primary keys are
+     * projected into the index. </li> <li> <p><code>INCLUDE</code> - Only
+     * the specified table attributes are projected into the index. The list
+     * of projected attributes are in <i>NonKeyAttributes</i>. </li> <li>
+     * <p><code>ALL</code> - All of the table attributes are projected into
+     * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
+     * of one or more non-key attribute names that are projected into the
+     * secondary index. The total count of attributes specified in
+     * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     * must not exceed 20. If you project the same attribute into two
+     * different indexes, this counts as two distinct attributes when
+     * determining the total. </li> </ul> </li> <li>
+     * <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     * for the global secondary index, consisting of read and write capacity
+     * units, along with data about increases and decreases. </li> <li>
+     * <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     * index, in bytes. Amazon DynamoDB updates this value approximately
+     * every six hours. Recent changes might not be reflected in this value.
+     * </li> <li> <p><i>ItemCount</i> - The number of items in the global
+     * secondary index. Amazon DynamoDB updates this value approximately
+     * every six hours. Recent changes might not be reflected in this value.
+     * </li> </ul> <p>If the table is in the <code>DELETING</code> state, no
+     * information about indexes will be returned.
+     *
+     * @param globalSecondaryIndexes The global secondary indexes, if any, on the table. Each index is
+     *         scoped to a given hash key value. Each element is composed of: <ul>
+     *         <li> <p><i>IndexName</i> - The name of the global secondary index.
+     *         </li> <li> <p><i>KeySchema</i> - Specifies the complete index key
+     *         schema. The attribute names in the key schema must be between 1 and
+     *         255 characters (inclusive). The key schema must begin with the same
+     *         hash key attribute as the table. </li> <li> <p><i>Projection</i> -
+     *         Specifies attributes that are copied (projected) from the table into
+     *         the index. These are in addition to the primary key attributes and
+     *         index key attributes, which are automatically projected. Each
+     *         attribute specification is composed of: <ul> <li>
+     *         <p><i>ProjectionType</i> - One of the following: <ul> <li>
+     *         <p><code>KEYS_ONLY</code> - Only the index and primary keys are
+     *         projected into the index. </li> <li> <p><code>INCLUDE</code> - Only
+     *         the specified table attributes are projected into the index. The list
+     *         of projected attributes are in <i>NonKeyAttributes</i>. </li> <li>
+     *         <p><code>ALL</code> - All of the table attributes are projected into
+     *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
+     *         of one or more non-key attribute names that are projected into the
+     *         secondary index. The total count of attributes specified in
+     *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     *         must not exceed 20. If you project the same attribute into two
+     *         different indexes, this counts as two distinct attributes when
+     *         determining the total. </li> </ul> </li> <li>
+     *         <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     *         for the global secondary index, consisting of read and write capacity
+     *         units, along with data about increases and decreases. </li> <li>
+     *         <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     *         index, in bytes. Amazon DynamoDB updates this value approximately
+     *         every six hours. Recent changes might not be reflected in this value.
+     *         </li> <li> <p><i>ItemCount</i> - The number of items in the global
+     *         secondary index. Amazon DynamoDB updates this value approximately
+     *         every six hours. Recent changes might not be reflected in this value.
+     *         </li> </ul> <p>If the table is in the <code>DELETING</code> state, no
+     *         information about indexes will be returned.
+     */
+    public void setGlobalSecondaryIndexes(java.util.Collection<GlobalSecondaryIndexDescription> globalSecondaryIndexes) {
+        if (globalSecondaryIndexes == null) {
+            this.globalSecondaryIndexes = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<GlobalSecondaryIndexDescription> globalSecondaryIndexesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GlobalSecondaryIndexDescription>(globalSecondaryIndexes.size());
+        globalSecondaryIndexesCopy.addAll(globalSecondaryIndexes);
+        this.globalSecondaryIndexes = globalSecondaryIndexesCopy;
+    }
+    
+    /**
+     * The global secondary indexes, if any, on the table. Each index is
+     * scoped to a given hash key value. Each element is composed of: <ul>
+     * <li> <p><i>IndexName</i> - The name of the global secondary index.
+     * </li> <li> <p><i>KeySchema</i> - Specifies the complete index key
+     * schema. The attribute names in the key schema must be between 1 and
+     * 255 characters (inclusive). The key schema must begin with the same
+     * hash key attribute as the table. </li> <li> <p><i>Projection</i> -
+     * Specifies attributes that are copied (projected) from the table into
+     * the index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. Each
+     * attribute specification is composed of: <ul> <li>
+     * <p><i>ProjectionType</i> - One of the following: <ul> <li>
+     * <p><code>KEYS_ONLY</code> - Only the index and primary keys are
+     * projected into the index. </li> <li> <p><code>INCLUDE</code> - Only
+     * the specified table attributes are projected into the index. The list
+     * of projected attributes are in <i>NonKeyAttributes</i>. </li> <li>
+     * <p><code>ALL</code> - All of the table attributes are projected into
+     * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
+     * of one or more non-key attribute names that are projected into the
+     * secondary index. The total count of attributes specified in
+     * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     * must not exceed 20. If you project the same attribute into two
+     * different indexes, this counts as two distinct attributes when
+     * determining the total. </li> </ul> </li> <li>
+     * <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     * for the global secondary index, consisting of read and write capacity
+     * units, along with data about increases and decreases. </li> <li>
+     * <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     * index, in bytes. Amazon DynamoDB updates this value approximately
+     * every six hours. Recent changes might not be reflected in this value.
+     * </li> <li> <p><i>ItemCount</i> - The number of items in the global
+     * secondary index. Amazon DynamoDB updates this value approximately
+     * every six hours. Recent changes might not be reflected in this value.
+     * </li> </ul> <p>If the table is in the <code>DELETING</code> state, no
+     * information about indexes will be returned.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param globalSecondaryIndexes The global secondary indexes, if any, on the table. Each index is
+     *         scoped to a given hash key value. Each element is composed of: <ul>
+     *         <li> <p><i>IndexName</i> - The name of the global secondary index.
+     *         </li> <li> <p><i>KeySchema</i> - Specifies the complete index key
+     *         schema. The attribute names in the key schema must be between 1 and
+     *         255 characters (inclusive). The key schema must begin with the same
+     *         hash key attribute as the table. </li> <li> <p><i>Projection</i> -
+     *         Specifies attributes that are copied (projected) from the table into
+     *         the index. These are in addition to the primary key attributes and
+     *         index key attributes, which are automatically projected. Each
+     *         attribute specification is composed of: <ul> <li>
+     *         <p><i>ProjectionType</i> - One of the following: <ul> <li>
+     *         <p><code>KEYS_ONLY</code> - Only the index and primary keys are
+     *         projected into the index. </li> <li> <p><code>INCLUDE</code> - Only
+     *         the specified table attributes are projected into the index. The list
+     *         of projected attributes are in <i>NonKeyAttributes</i>. </li> <li>
+     *         <p><code>ALL</code> - All of the table attributes are projected into
+     *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
+     *         of one or more non-key attribute names that are projected into the
+     *         secondary index. The total count of attributes specified in
+     *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     *         must not exceed 20. If you project the same attribute into two
+     *         different indexes, this counts as two distinct attributes when
+     *         determining the total. </li> </ul> </li> <li>
+     *         <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     *         for the global secondary index, consisting of read and write capacity
+     *         units, along with data about increases and decreases. </li> <li>
+     *         <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     *         index, in bytes. Amazon DynamoDB updates this value approximately
+     *         every six hours. Recent changes might not be reflected in this value.
+     *         </li> <li> <p><i>ItemCount</i> - The number of items in the global
+     *         secondary index. Amazon DynamoDB updates this value approximately
+     *         every six hours. Recent changes might not be reflected in this value.
+     *         </li> </ul> <p>If the table is in the <code>DELETING</code> state, no
+     *         information about indexes will be returned.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public TableDescription withGlobalSecondaryIndexes(GlobalSecondaryIndexDescription... globalSecondaryIndexes) {
+        if (getGlobalSecondaryIndexes() == null) setGlobalSecondaryIndexes(new java.util.ArrayList<GlobalSecondaryIndexDescription>(globalSecondaryIndexes.length));
+        for (GlobalSecondaryIndexDescription value : globalSecondaryIndexes) {
+            getGlobalSecondaryIndexes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The global secondary indexes, if any, on the table. Each index is
+     * scoped to a given hash key value. Each element is composed of: <ul>
+     * <li> <p><i>IndexName</i> - The name of the global secondary index.
+     * </li> <li> <p><i>KeySchema</i> - Specifies the complete index key
+     * schema. The attribute names in the key schema must be between 1 and
+     * 255 characters (inclusive). The key schema must begin with the same
+     * hash key attribute as the table. </li> <li> <p><i>Projection</i> -
+     * Specifies attributes that are copied (projected) from the table into
+     * the index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. Each
+     * attribute specification is composed of: <ul> <li>
+     * <p><i>ProjectionType</i> - One of the following: <ul> <li>
+     * <p><code>KEYS_ONLY</code> - Only the index and primary keys are
+     * projected into the index. </li> <li> <p><code>INCLUDE</code> - Only
+     * the specified table attributes are projected into the index. The list
+     * of projected attributes are in <i>NonKeyAttributes</i>. </li> <li>
+     * <p><code>ALL</code> - All of the table attributes are projected into
+     * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
+     * of one or more non-key attribute names that are projected into the
+     * secondary index. The total count of attributes specified in
+     * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     * must not exceed 20. If you project the same attribute into two
+     * different indexes, this counts as two distinct attributes when
+     * determining the total. </li> </ul> </li> <li>
+     * <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     * for the global secondary index, consisting of read and write capacity
+     * units, along with data about increases and decreases. </li> <li>
+     * <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     * index, in bytes. Amazon DynamoDB updates this value approximately
+     * every six hours. Recent changes might not be reflected in this value.
+     * </li> <li> <p><i>ItemCount</i> - The number of items in the global
+     * secondary index. Amazon DynamoDB updates this value approximately
+     * every six hours. Recent changes might not be reflected in this value.
+     * </li> </ul> <p>If the table is in the <code>DELETING</code> state, no
+     * information about indexes will be returned.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param globalSecondaryIndexes The global secondary indexes, if any, on the table. Each index is
+     *         scoped to a given hash key value. Each element is composed of: <ul>
+     *         <li> <p><i>IndexName</i> - The name of the global secondary index.
+     *         </li> <li> <p><i>KeySchema</i> - Specifies the complete index key
+     *         schema. The attribute names in the key schema must be between 1 and
+     *         255 characters (inclusive). The key schema must begin with the same
+     *         hash key attribute as the table. </li> <li> <p><i>Projection</i> -
+     *         Specifies attributes that are copied (projected) from the table into
+     *         the index. These are in addition to the primary key attributes and
+     *         index key attributes, which are automatically projected. Each
+     *         attribute specification is composed of: <ul> <li>
+     *         <p><i>ProjectionType</i> - One of the following: <ul> <li>
+     *         <p><code>KEYS_ONLY</code> - Only the index and primary keys are
+     *         projected into the index. </li> <li> <p><code>INCLUDE</code> - Only
+     *         the specified table attributes are projected into the index. The list
+     *         of projected attributes are in <i>NonKeyAttributes</i>. </li> <li>
+     *         <p><code>ALL</code> - All of the table attributes are projected into
+     *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
+     *         of one or more non-key attribute names that are projected into the
+     *         secondary index. The total count of attributes specified in
+     *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     *         must not exceed 20. If you project the same attribute into two
+     *         different indexes, this counts as two distinct attributes when
+     *         determining the total. </li> </ul> </li> <li>
+     *         <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     *         for the global secondary index, consisting of read and write capacity
+     *         units, along with data about increases and decreases. </li> <li>
+     *         <p><i>IndexSizeBytes</i> - The total size of the global secondary
+     *         index, in bytes. Amazon DynamoDB updates this value approximately
+     *         every six hours. Recent changes might not be reflected in this value.
+     *         </li> <li> <p><i>ItemCount</i> - The number of items in the global
+     *         secondary index. Amazon DynamoDB updates this value approximately
+     *         every six hours. Recent changes might not be reflected in this value.
+     *         </li> </ul> <p>If the table is in the <code>DELETING</code> state, no
+     *         information about indexes will be returned.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public TableDescription withGlobalSecondaryIndexes(java.util.Collection<GlobalSecondaryIndexDescription> globalSecondaryIndexes) {
+        if (globalSecondaryIndexes == null) {
+            this.globalSecondaryIndexes = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<GlobalSecondaryIndexDescription> globalSecondaryIndexesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GlobalSecondaryIndexDescription>(globalSecondaryIndexes.size());
+            globalSecondaryIndexesCopy.addAll(globalSecondaryIndexes);
+            this.globalSecondaryIndexes = globalSecondaryIndexesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1070,7 +1444,8 @@ public class TableDescription implements Serializable {
         if (getProvisionedThroughput() != null) sb.append("ProvisionedThroughput: " + getProvisionedThroughput() + ",");
         if (getTableSizeBytes() != null) sb.append("TableSizeBytes: " + getTableSizeBytes() + ",");
         if (getItemCount() != null) sb.append("ItemCount: " + getItemCount() + ",");
-        if (getLocalSecondaryIndexes() != null) sb.append("LocalSecondaryIndexes: " + getLocalSecondaryIndexes() );
+        if (getLocalSecondaryIndexes() != null) sb.append("LocalSecondaryIndexes: " + getLocalSecondaryIndexes() + ",");
+        if (getGlobalSecondaryIndexes() != null) sb.append("GlobalSecondaryIndexes: " + getGlobalSecondaryIndexes() );
         sb.append("}");
         return sb.toString();
     }
@@ -1089,6 +1464,7 @@ public class TableDescription implements Serializable {
         hashCode = prime * hashCode + ((getTableSizeBytes() == null) ? 0 : getTableSizeBytes().hashCode()); 
         hashCode = prime * hashCode + ((getItemCount() == null) ? 0 : getItemCount().hashCode()); 
         hashCode = prime * hashCode + ((getLocalSecondaryIndexes() == null) ? 0 : getLocalSecondaryIndexes().hashCode()); 
+        hashCode = prime * hashCode + ((getGlobalSecondaryIndexes() == null) ? 0 : getGlobalSecondaryIndexes().hashCode()); 
         return hashCode;
     }
     
@@ -1118,6 +1494,8 @@ public class TableDescription implements Serializable {
         if (other.getItemCount() != null && other.getItemCount().equals(this.getItemCount()) == false) return false; 
         if (other.getLocalSecondaryIndexes() == null ^ this.getLocalSecondaryIndexes() == null) return false;
         if (other.getLocalSecondaryIndexes() != null && other.getLocalSecondaryIndexes().equals(this.getLocalSecondaryIndexes()) == false) return false; 
+        if (other.getGlobalSecondaryIndexes() == null ^ this.getGlobalSecondaryIndexes() == null) return false;
+        if (other.getGlobalSecondaryIndexes() != null && other.getGlobalSecondaryIndexes().equals(this.getGlobalSecondaryIndexes()) == false) return false; 
         return true;
     }
     

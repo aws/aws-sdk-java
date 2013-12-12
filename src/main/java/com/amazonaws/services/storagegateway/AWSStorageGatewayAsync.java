@@ -3390,6 +3390,5 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     public Future<CancelArchivalResult> cancelArchivalAsync(CancelArchivalRequest cancelArchivalRequest,
             AsyncHandler<CancelArchivalRequest, CancelArchivalResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

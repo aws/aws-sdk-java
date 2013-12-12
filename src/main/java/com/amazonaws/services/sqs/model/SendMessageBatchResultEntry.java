@@ -16,7 +16,6 @@ package com.amazonaws.services.sqs.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Encloses a message ID for successfully enqueued message of a SendMessageBatch.

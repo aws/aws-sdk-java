@@ -33,8 +33,8 @@ public class DownloadDBLogFilePortionRequestMarshaller implements Marshaller<Req
     public Request<DownloadDBLogFilePortionRequest> marshall(DownloadDBLogFilePortionRequest downloadDBLogFilePortionRequest) {
 
         if (downloadDBLogFilePortionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DownloadDBLogFilePortionRequest> request = new DefaultRequest<DownloadDBLogFilePortionRequest>(downloadDBLogFilePortionRequest, "AmazonRDS");
         request.addParameter("Action", "DownloadDBLogFilePortion");
@@ -52,7 +52,6 @@ public class DownloadDBLogFilePortionRequestMarshaller implements Marshaller<Req
         if (downloadDBLogFilePortionRequest.getNumberOfLines() != null) {
             request.addParameter("NumberOfLines", StringUtils.fromInteger(downloadDBLogFilePortionRequest.getNumberOfLines()));
         }
-
 
         return request;
     }

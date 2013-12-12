@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Route Filter Prefix JSON Unmarshaller
  */
 public class RouteFilterPrefixJsonUnmarshaller implements Unmarshaller<RouteFilterPrefix, JsonUnmarshallerContext> {
 
-    
-
     public RouteFilterPrefix unmarshall(JsonUnmarshallerContext context) throws Exception {
         RouteFilterPrefix routeFilterPrefix = new RouteFilterPrefix();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class RouteFilterPrefixJsonUnmarshaller implements Unmarshaller<RouteFilt
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cidr", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class RouteFilterPrefixJsonUnmarshaller implements Unmarshaller<RouteFilt
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

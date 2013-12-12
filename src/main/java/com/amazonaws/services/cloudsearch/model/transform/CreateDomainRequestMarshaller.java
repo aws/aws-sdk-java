@@ -33,8 +33,8 @@ public class CreateDomainRequestMarshaller implements Marshaller<Request<CreateD
     public Request<CreateDomainRequest> marshall(CreateDomainRequest createDomainRequest) {
 
         if (createDomainRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateDomainRequest> request = new DefaultRequest<CreateDomainRequest>(createDomainRequest, "AmazonCloudSearch");
         request.addParameter("Action", "CreateDomain");
@@ -43,7 +43,6 @@ public class CreateDomainRequestMarshaller implements Marshaller<Request<CreateD
         if (createDomainRequest.getDomainName() != null) {
             request.addParameter("DomainName", StringUtils.fromString(createDomainRequest.getDomainName()));
         }
-
 
         return request;
     }

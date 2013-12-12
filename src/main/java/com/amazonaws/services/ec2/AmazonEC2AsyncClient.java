@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.ec2.model.*;
 
-
 /**
  * Asynchronous client for accessing AmazonEC2.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -57,7 +56,6 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -257,7 +255,6 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -311,11 +308,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 rebootInstances(rebootInstancesRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The RebootInstances operation requests a reboot of one or more
@@ -350,16 +346,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		rebootInstances(rebootInstancesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(rebootInstancesRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    rebootInstances(rebootInstancesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(rebootInstancesRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -389,11 +385,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeReservedInstancesResult>() {
             public DescribeReservedInstancesResult call() throws Exception {
                 return describeReservedInstances(describeReservedInstancesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DescribeReservedInstances operation describes Reserved Instances
@@ -426,17 +421,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeReservedInstancesResult>() {
             public DescribeReservedInstancesResult call() throws Exception {
-            	DescribeReservedInstancesResult result;
+                DescribeReservedInstancesResult result;
                 try {
-            		result = describeReservedInstances(describeReservedInstancesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeReservedInstancesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeReservedInstances(describeReservedInstancesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeReservedInstancesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -472,11 +467,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeAvailabilityZonesResult>() {
             public DescribeAvailabilityZonesResult call() throws Exception {
                 return describeAvailabilityZones(describeAvailabilityZonesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DescribeAvailabilityZones operation describes availability zones
@@ -515,17 +509,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeAvailabilityZonesResult>() {
             public DescribeAvailabilityZonesResult call() throws Exception {
-            	DescribeAvailabilityZonesResult result;
+                DescribeAvailabilityZonesResult result;
                 try {
-            		result = describeAvailabilityZones(describeAvailabilityZonesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeAvailabilityZonesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeAvailabilityZones(describeAvailabilityZonesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeAvailabilityZonesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -553,11 +547,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DetachVolumeResult>() {
             public DetachVolumeResult call() throws Exception {
                 return detachVolume(detachVolumeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Detach a previously attached volume from a running instance.
@@ -588,17 +581,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DetachVolumeResult>() {
             public DetachVolumeResult call() throws Exception {
-            	DetachVolumeResult result;
+                DetachVolumeResult result;
                 try {
-            		result = detachVolume(detachVolumeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(detachVolumeRequest, result);
-               	return result;
-		    }
-		});
+                    result = detachVolume(detachVolumeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(detachVolumeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -627,11 +620,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteKeyPair(deleteKeyPairRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DeleteKeyPair operation deletes a key pair.
@@ -662,16 +654,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteKeyPair(deleteKeyPairRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteKeyPairRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteKeyPair(deleteKeyPairRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteKeyPairRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -699,11 +691,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<UnmonitorInstancesResult>() {
             public UnmonitorInstancesResult call() throws Exception {
                 return unmonitorInstances(unmonitorInstancesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Disables monitoring for a running instance.
@@ -734,17 +725,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UnmonitorInstancesResult>() {
             public UnmonitorInstancesResult call() throws Exception {
-            	UnmonitorInstancesResult result;
+                UnmonitorInstancesResult result;
                 try {
-            		result = unmonitorInstances(unmonitorInstancesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(unmonitorInstancesRequest, result);
-               	return result;
-		    }
-		});
+                    result = unmonitorInstances(unmonitorInstancesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(unmonitorInstancesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -775,11 +766,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<AttachVpnGatewayResult>() {
             public AttachVpnGatewayResult call() throws Exception {
                 return attachVpnGateway(attachVpnGatewayRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Attaches a VPN gateway to a VPC. This is the last step required to
@@ -813,17 +803,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AttachVpnGatewayResult>() {
             public AttachVpnGatewayResult call() throws Exception {
-            	AttachVpnGatewayResult result;
+                AttachVpnGatewayResult result;
                 try {
-            		result = attachVpnGateway(attachVpnGatewayRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(attachVpnGatewayRequest, result);
-               	return result;
-		    }
-		});
+                    result = attachVpnGateway(attachVpnGatewayRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(attachVpnGatewayRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -855,11 +845,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateImageResult>() {
             public CreateImageResult call() throws Exception {
                 return createImage(createImageRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates an Amazon EBS-backed AMI from a "running" or "stopped"
@@ -894,17 +883,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateImageResult>() {
             public CreateImageResult call() throws Exception {
-            	CreateImageResult result;
+                CreateImageResult result;
                 try {
-            		result = createImage(createImageRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createImageRequest, result);
-               	return result;
-		    }
-		});
+                    result = createImage(createImageRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createImageRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -941,11 +930,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteSecurityGroup(deleteSecurityGroupRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DeleteSecurityGroup operation deletes a security group.
@@ -984,16 +972,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteSecurityGroup(deleteSecurityGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteSecurityGroupRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteSecurityGroup(deleteSecurityGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteSecurityGroupRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1019,11 +1007,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateInstanceExportTaskResult>() {
             public CreateInstanceExportTaskResult call() throws Exception {
                 return createInstanceExportTask(createInstanceExportTaskRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param createInstanceExportTaskRequest Container for the necessary
@@ -1052,17 +1039,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateInstanceExportTaskResult>() {
             public CreateInstanceExportTaskResult call() throws Exception {
-            	CreateInstanceExportTaskResult result;
+                CreateInstanceExportTaskResult result;
                 try {
-            		result = createInstanceExportTask(createInstanceExportTaskRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createInstanceExportTaskRequest, result);
-               	return result;
-		    }
-		});
+                    result = createInstanceExportTask(createInstanceExportTaskRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createInstanceExportTaskRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1097,11 +1084,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<GetPasswordDataResult>() {
             public GetPasswordDataResult call() throws Exception {
                 return getPasswordData(getPasswordDataRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves the encrypted administrator password for the instances
@@ -1139,17 +1125,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetPasswordDataResult>() {
             public GetPasswordDataResult call() throws Exception {
-            	GetPasswordDataResult result;
+                GetPasswordDataResult result;
                 try {
-            		result = getPasswordData(getPasswordDataRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getPasswordDataRequest, result);
-               	return result;
-		    }
-		});
+                    result = getPasswordData(getPasswordDataRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getPasswordDataRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1186,11 +1172,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 associateDhcpOptions(associateDhcpOptionsRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Associates a set of DHCP options (that you've previously created)
@@ -1229,16 +1214,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		associateDhcpOptions(associateDhcpOptionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(associateDhcpOptionsRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    associateDhcpOptions(associateDhcpOptionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(associateDhcpOptionsRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1292,11 +1277,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 authorizeSecurityGroupEgress(authorizeSecurityGroupEgressRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This action applies only to security groups in a VPC; it's not
@@ -1352,16 +1336,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		authorizeSecurityGroupEgress(authorizeSecurityGroupEgressRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(authorizeSecurityGroupEgressRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    authorizeSecurityGroupEgress(authorizeSecurityGroupEgressRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(authorizeSecurityGroupEgressRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1401,11 +1385,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<StopInstancesResult>() {
             public StopInstancesResult call() throws Exception {
                 return stopInstances(stopInstancesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Stops an instance that uses an Amazon EBS volume as its root device.
@@ -1448,17 +1431,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<StopInstancesResult>() {
             public StopInstancesResult call() throws Exception {
-            	StopInstancesResult result;
+                StopInstancesResult result;
                 try {
-            		result = stopInstances(stopInstancesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(stopInstancesRequest, result);
-               	return result;
-		    }
-		});
+                    result = stopInstances(stopInstancesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(stopInstancesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1506,11 +1489,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<ImportKeyPairResult>() {
             public ImportKeyPairResult call() throws Exception {
                 return importKeyPair(importKeyPairRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Imports the public key from an RSA key pair created with a
@@ -1561,17 +1543,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ImportKeyPairResult>() {
             public ImportKeyPairResult call() throws Exception {
-            	ImportKeyPairResult result;
+                ImportKeyPairResult result;
                 try {
-            		result = importKeyPair(importKeyPairRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(importKeyPairRequest, result);
-               	return result;
-		    }
-		});
+                    result = importKeyPair(importKeyPairRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(importKeyPairRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1598,11 +1580,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteNetworkInterface(deleteNetworkInterfaceRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param deleteNetworkInterfaceRequest Container for the necessary
@@ -1631,16 +1612,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteNetworkInterface(deleteNetworkInterfaceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteNetworkInterfaceRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteNetworkInterface(deleteNetworkInterfaceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteNetworkInterfaceRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1666,11 +1647,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 modifyVpcAttribute(modifyVpcAttributeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param modifyVpcAttributeRequest Container for the necessary
@@ -1698,16 +1678,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		modifyVpcAttribute(modifyVpcAttributeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(modifyVpcAttributeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    modifyVpcAttribute(modifyVpcAttributeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(modifyVpcAttributeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1745,11 +1725,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateSecurityGroupResult>() {
             public CreateSecurityGroupResult call() throws Exception {
                 return createSecurityGroup(createSecurityGroupRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The CreateSecurityGroup operation creates a new security group.
@@ -1790,17 +1769,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateSecurityGroupResult>() {
             public CreateSecurityGroupResult call() throws Exception {
-            	CreateSecurityGroupResult result;
+                CreateSecurityGroupResult result;
                 try {
-            		result = createSecurityGroup(createSecurityGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createSecurityGroupRequest, result);
-               	return result;
-		    }
-		});
+                    result = createSecurityGroup(createSecurityGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createSecurityGroupRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1841,11 +1820,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeSpotPriceHistoryResult>() {
             public DescribeSpotPriceHistoryResult call() throws Exception {
                 return describeSpotPriceHistory(describeSpotPriceHistoryRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describes the Spot Price history.
@@ -1889,17 +1867,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSpotPriceHistoryResult>() {
             public DescribeSpotPriceHistoryResult call() throws Exception {
-            	DescribeSpotPriceHistoryResult result;
+                DescribeSpotPriceHistoryResult result;
                 try {
-            		result = describeSpotPriceHistory(describeSpotPriceHistoryRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeSpotPriceHistoryRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeSpotPriceHistory(describeSpotPriceHistoryRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeSpotPriceHistoryRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1925,11 +1903,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeNetworkInterfacesResult>() {
             public DescribeNetworkInterfacesResult call() throws Exception {
                 return describeNetworkInterfaces(describeNetworkInterfacesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param describeNetworkInterfacesRequest Container for the necessary
@@ -1958,17 +1935,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeNetworkInterfacesResult>() {
             public DescribeNetworkInterfacesResult call() throws Exception {
-            	DescribeNetworkInterfacesResult result;
+                DescribeNetworkInterfacesResult result;
                 try {
-            		result = describeNetworkInterfaces(describeNetworkInterfacesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeNetworkInterfacesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeNetworkInterfaces(describeNetworkInterfacesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeNetworkInterfacesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1997,11 +1974,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeRegionsResult>() {
             public DescribeRegionsResult call() throws Exception {
                 return describeRegions(describeRegionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DescribeRegions operation describes regions zones that are
@@ -2033,17 +2009,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeRegionsResult>() {
             public DescribeRegionsResult call() throws Exception {
-            	DescribeRegionsResult result;
+                DescribeRegionsResult result;
                 try {
-            		result = describeRegions(describeRegionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeRegionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeRegions(describeRegionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeRegionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2070,11 +2046,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateReservedInstancesListingResult>() {
             public CreateReservedInstancesListingResult call() throws Exception {
                 return createReservedInstancesListing(createReservedInstancesListingRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param createReservedInstancesListingRequest Container for the
@@ -2104,17 +2079,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateReservedInstancesListingResult>() {
             public CreateReservedInstancesListingResult call() throws Exception {
-            	CreateReservedInstancesListingResult result;
+                CreateReservedInstancesListingResult result;
                 try {
-            		result = createReservedInstancesListing(createReservedInstancesListingRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createReservedInstancesListingRequest, result);
-               	return result;
-		    }
-		});
+                    result = createReservedInstancesListing(createReservedInstancesListingRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createReservedInstancesListingRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2148,11 +2123,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateDhcpOptionsResult>() {
             public CreateDhcpOptionsResult call() throws Exception {
                 return createDhcpOptions(createDhcpOptionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a set of DHCP options that you can then associate with one or
@@ -2189,17 +2163,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateDhcpOptionsResult>() {
             public CreateDhcpOptionsResult call() throws Exception {
-            	CreateDhcpOptionsResult result;
+                CreateDhcpOptionsResult result;
                 try {
-            		result = createDhcpOptions(createDhcpOptionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createDhcpOptionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = createDhcpOptions(createDhcpOptionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createDhcpOptionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2229,11 +2203,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 resetSnapshotAttribute(resetSnapshotAttributeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Resets permission settings for the specified snapshot.
@@ -2265,16 +2238,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		resetSnapshotAttribute(resetSnapshotAttributeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(resetSnapshotAttributeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    resetSnapshotAttribute(resetSnapshotAttributeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(resetSnapshotAttributeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2306,11 +2279,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteRoute(deleteRouteRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a route from a route table in a VPC. For more information
@@ -2344,16 +2316,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteRoute(deleteRouteRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteRouteRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteRoute(deleteRouteRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteRouteRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2402,11 +2374,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeInternetGatewaysResult>() {
             public DescribeInternetGatewaysResult call() throws Exception {
                 return describeInternetGateways(describeInternetGatewaysRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gives you information about your Internet gateways. You can filter
@@ -2458,17 +2429,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeInternetGatewaysResult>() {
             public DescribeInternetGatewaysResult call() throws Exception {
-            	DescribeInternetGatewaysResult result;
+                DescribeInternetGatewaysResult result;
                 try {
-            		result = describeInternetGateways(describeInternetGatewaysRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeInternetGatewaysRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeInternetGateways(describeInternetGatewaysRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeInternetGatewaysRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2493,11 +2464,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<ImportVolumeResult>() {
             public ImportVolumeResult call() throws Exception {
                 return importVolume(importVolumeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param importVolumeRequest Container for the necessary parameters to
@@ -2525,17 +2495,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ImportVolumeResult>() {
             public ImportVolumeResult call() throws Exception {
-            	ImportVolumeResult result;
+                ImportVolumeResult result;
                 try {
-            		result = importVolume(importVolumeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(importVolumeRequest, result);
-               	return result;
-		    }
-		});
+                    result = importVolume(importVolumeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(importVolumeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2571,11 +2541,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeSecurityGroupsResult>() {
             public DescribeSecurityGroupsResult call() throws Exception {
                 return describeSecurityGroups(describeSecurityGroupsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DescribeSecurityGroups operation returns information about
@@ -2614,17 +2583,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSecurityGroupsResult>() {
             public DescribeSecurityGroupsResult call() throws Exception {
-            	DescribeSecurityGroupsResult result;
+                DescribeSecurityGroupsResult result;
                 try {
-            		result = describeSecurityGroups(describeSecurityGroupsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeSecurityGroupsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeSecurityGroups(describeSecurityGroupsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeSecurityGroupsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2660,11 +2629,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 detachVpnGateway(detachVpnGatewayRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Detaches a VPN gateway from a VPC. You do this if you're planning to
@@ -2702,16 +2670,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		detachVpnGateway(detachVpnGatewayRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(detachVpnGatewayRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    detachVpnGateway(detachVpnGatewayRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(detachVpnGatewayRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2741,11 +2709,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deregisterImage(deregisterImageRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DeregisterImage operation deregisters an AMI. Once deregistered,
@@ -2777,16 +2744,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deregisterImage(deregisterImageRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deregisterImageRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deregisterImage(deregisterImageRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deregisterImageRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2822,11 +2789,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeSpotDatafeedSubscriptionResult>() {
             public DescribeSpotDatafeedSubscriptionResult call() throws Exception {
                 return describeSpotDatafeedSubscription(describeSpotDatafeedSubscriptionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describes the data feed for Spot Instances.
@@ -2865,17 +2831,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSpotDatafeedSubscriptionResult>() {
             public DescribeSpotDatafeedSubscriptionResult call() throws Exception {
-            	DescribeSpotDatafeedSubscriptionResult result;
+                DescribeSpotDatafeedSubscriptionResult result;
                 try {
-            		result = describeSpotDatafeedSubscription(describeSpotDatafeedSubscriptionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeSpotDatafeedSubscriptionRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeSpotDatafeedSubscription(describeSpotDatafeedSubscriptionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeSpotDatafeedSubscriptionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2904,11 +2870,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteTags(deleteTagsRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes tags from the specified Amazon EC2 resources.
@@ -2939,16 +2904,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteTags(deleteTagsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteTagsRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteTags(deleteTagsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteTagsRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2979,11 +2944,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteSubnet(deleteSubnetRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a subnet from a VPC. You must terminate all running instances
@@ -3016,16 +2980,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteSubnet(deleteSubnetRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteSubnetRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteSubnet(deleteSubnetRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteSubnetRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3051,11 +3015,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeAccountAttributesResult>() {
             public DescribeAccountAttributesResult call() throws Exception {
                 return describeAccountAttributes(describeAccountAttributesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param describeAccountAttributesRequest Container for the necessary
@@ -3084,17 +3047,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeAccountAttributesResult>() {
             public DescribeAccountAttributesResult call() throws Exception {
-            	DescribeAccountAttributesResult result;
+                DescribeAccountAttributesResult result;
                 try {
-            		result = describeAccountAttributes(describeAccountAttributesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeAccountAttributesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeAccountAttributes(describeAccountAttributesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeAccountAttributesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3124,11 +3087,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateVpnGatewayResult>() {
             public CreateVpnGatewayResult call() throws Exception {
                 return createVpnGateway(createVpnGatewayRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new VPN gateway. A VPN gateway is the VPC-side endpoint for
@@ -3161,17 +3123,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateVpnGatewayResult>() {
             public CreateVpnGatewayResult call() throws Exception {
-            	CreateVpnGatewayResult result;
+                CreateVpnGatewayResult result;
                 try {
-            		result = createVpnGateway(createVpnGatewayRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createVpnGatewayRequest, result);
-               	return result;
-		    }
-		});
+                    result = createVpnGateway(createVpnGatewayRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createVpnGatewayRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3200,11 +3162,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 enableVolumeIO(enableVolumeIORequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Enable IO on the volume after an event has occured.
@@ -3235,16 +3196,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		enableVolumeIO(enableVolumeIORequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(enableVolumeIORequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    enableVolumeIO(enableVolumeIORequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(enableVolumeIORequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3278,11 +3239,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteVpnGateway(deleteVpnGatewayRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a VPN gateway. Use this when you want to delete a VPC and all
@@ -3318,16 +3278,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteVpnGateway(deleteVpnGatewayRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteVpnGatewayRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteVpnGateway(deleteVpnGatewayRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteVpnGatewayRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3355,11 +3315,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<AttachVolumeResult>() {
             public AttachVolumeResult call() throws Exception {
                 return attachVolume(attachVolumeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Attach a previously created volume to a running instance.
@@ -3390,17 +3349,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AttachVolumeResult>() {
             public AttachVolumeResult call() throws Exception {
-            	AttachVolumeResult result;
+                AttachVolumeResult result;
                 try {
-            		result = attachVolume(attachVolumeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(attachVolumeRequest, result);
-               	return result;
-		    }
-		});
+                    result = attachVolume(attachVolumeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(attachVolumeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3430,11 +3389,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeLicensesResult>() {
             public DescribeLicensesResult call() throws Exception {
                 return describeLicenses(describeLicensesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Provides details of a user's registered licenses. Zero or more IDs
@@ -3467,17 +3425,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeLicensesResult>() {
             public DescribeLicensesResult call() throws Exception {
-            	DescribeLicensesResult result;
+                DescribeLicensesResult result;
                 try {
-            		result = describeLicenses(describeLicensesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeLicensesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeLicenses(describeLicensesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeLicensesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3505,11 +3463,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeVolumeStatusResult>() {
             public DescribeVolumeStatusResult call() throws Exception {
                 return describeVolumeStatus(describeVolumeStatusRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describes the status of a volume.
@@ -3540,17 +3497,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVolumeStatusResult>() {
             public DescribeVolumeStatusResult call() throws Exception {
-            	DescribeVolumeStatusResult result;
+                DescribeVolumeStatusResult result;
                 try {
-            		result = describeVolumeStatus(describeVolumeStatusRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeVolumeStatusRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeVolumeStatus(describeVolumeStatusRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeVolumeStatusRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3580,11 +3537,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 activateLicense(activateLicenseRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Activates a specific number of licenses for a 90-day period.
@@ -3616,16 +3572,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		activateLicense(activateLicenseRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(activateLicenseRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    activateLicense(activateLicenseRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(activateLicenseRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3658,11 +3614,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 resetImageAttribute(resetImageAttributeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The ResetImageAttribute operation resets an attribute of an AMI to
@@ -3697,16 +3652,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		resetImageAttribute(resetImageAttributeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(resetImageAttributeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    resetImageAttribute(resetImageAttributeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(resetImageAttributeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3750,11 +3705,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeVpnConnectionsResult>() {
             public DescribeVpnConnectionsResult call() throws Exception {
                 return describeVpnConnections(describeVpnConnectionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gives you information about your VPN connections.
@@ -3801,17 +3755,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVpnConnectionsResult>() {
             public DescribeVpnConnectionsResult call() throws Exception {
-            	DescribeVpnConnectionsResult result;
+                DescribeVpnConnectionsResult result;
                 try {
-            		result = describeVpnConnections(describeVpnConnectionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeVpnConnectionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeVpnConnections(describeVpnConnectionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeVpnConnectionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3838,11 +3792,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 enableVgwRoutePropagation(enableVgwRoutePropagationRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param enableVgwRoutePropagationRequest Container for the necessary
@@ -3871,16 +3824,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		enableVgwRoutePropagation(enableVgwRoutePropagationRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(enableVgwRoutePropagationRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    enableVgwRoutePropagation(enableVgwRoutePropagationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(enableVgwRoutePropagationRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3918,11 +3871,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateSnapshotResult>() {
             public CreateSnapshotResult call() throws Exception {
                 return createSnapshot(createSnapshotRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Create a snapshot of the volume identified by volume ID. A volume
@@ -3963,17 +3915,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateSnapshotResult>() {
             public CreateSnapshotResult call() throws Exception {
-            	CreateSnapshotResult result;
+                CreateSnapshotResult result;
                 try {
-            		result = createSnapshot(createSnapshotRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createSnapshotRequest, result);
-               	return result;
-		    }
-		});
+                    result = createSnapshot(createSnapshotRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createSnapshotRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4003,11 +3955,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteVolume(deleteVolumeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a previously created volume. Once successfully deleted, a
@@ -4039,16 +3990,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteVolume(deleteVolumeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteVolumeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteVolume(deleteVolumeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteVolumeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -4074,11 +4025,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateNetworkInterfaceResult>() {
             public CreateNetworkInterfaceResult call() throws Exception {
                 return createNetworkInterface(createNetworkInterfaceRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param createNetworkInterfaceRequest Container for the necessary
@@ -4107,17 +4057,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateNetworkInterfaceResult>() {
             public CreateNetworkInterfaceResult call() throws Exception {
-            	CreateNetworkInterfaceResult result;
+                CreateNetworkInterfaceResult result;
                 try {
-            		result = createNetworkInterface(createNetworkInterfaceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createNetworkInterfaceRequest, result);
-               	return result;
-		    }
-		});
+                    result = createNetworkInterface(createNetworkInterfaceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createNetworkInterfaceRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4148,11 +4098,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<ModifyReservedInstancesResult>() {
             public ModifyReservedInstancesResult call() throws Exception {
                 return modifyReservedInstances(modifyReservedInstancesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The ModifyReservedInstances operation modifies the Availability Zone,
@@ -4186,17 +4135,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ModifyReservedInstancesResult>() {
             public ModifyReservedInstancesResult call() throws Exception {
-            	ModifyReservedInstancesResult result;
+                ModifyReservedInstancesResult result;
                 try {
-            		result = modifyReservedInstances(modifyReservedInstancesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(modifyReservedInstancesRequest, result);
-               	return result;
-		    }
-		});
+                    result = modifyReservedInstances(modifyReservedInstancesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(modifyReservedInstancesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4223,11 +4172,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 unassignPrivateIpAddresses(unassignPrivateIpAddressesRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param unassignPrivateIpAddressesRequest Container for the necessary
@@ -4256,16 +4204,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		unassignPrivateIpAddresses(unassignPrivateIpAddressesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(unassignPrivateIpAddressesRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    unassignPrivateIpAddresses(unassignPrivateIpAddressesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(unassignPrivateIpAddressesRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -4306,11 +4254,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeVpcsResult>() {
             public DescribeVpcsResult call() throws Exception {
                 return describeVpcs(describeVpcsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gives you information about your VPCs. You can filter the results to
@@ -4354,17 +4301,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVpcsResult>() {
             public DescribeVpcsResult call() throws Exception {
-            	DescribeVpcsResult result;
+                DescribeVpcsResult result;
                 try {
-            		result = describeVpcs(describeVpcsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeVpcsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeVpcs(describeVpcsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeVpcsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4390,11 +4337,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 cancelConversionTask(cancelConversionTaskRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param cancelConversionTaskRequest Container for the necessary
@@ -4422,16 +4368,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		cancelConversionTask(cancelConversionTaskRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(cancelConversionTaskRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    cancelConversionTask(cancelConversionTaskRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(cancelConversionTaskRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -4466,11 +4412,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<AssociateAddressResult>() {
             public AssociateAddressResult call() throws Exception {
                 return associateAddress(associateAddressRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The AssociateAddress operation associates an elastic IP address with
@@ -4508,17 +4453,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AssociateAddressResult>() {
             public AssociateAddressResult call() throws Exception {
-            	AssociateAddressResult result;
+                AssociateAddressResult result;
                 try {
-            		result = associateAddress(associateAddressRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(associateAddressRequest, result);
-               	return result;
-		    }
-		});
+                    result = associateAddress(associateAddressRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(associateAddressRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4549,11 +4494,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deactivateLicense(deactivateLicenseRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deactivates a specific number of licenses. Deactivations can be done
@@ -4586,16 +4530,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deactivateLicense(deactivateLicenseRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deactivateLicenseRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deactivateLicense(deactivateLicenseRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deactivateLicenseRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -4632,11 +4576,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteCustomerGateway(deleteCustomerGatewayRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a customer gateway. You must delete the VPN connection before
@@ -4675,16 +4618,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteCustomerGateway(deleteCustomerGatewayRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteCustomerGatewayRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteCustomerGateway(deleteCustomerGatewayRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteCustomerGatewayRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -4733,11 +4676,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 createNetworkAclEntry(createNetworkAclEntryRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates an entry (i.e., rule) in a network ACL with a rule number you
@@ -4788,16 +4730,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		createNetworkAclEntry(createNetworkAclEntryRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createNetworkAclEntryRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    createNetworkAclEntry(createNetworkAclEntryRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createNetworkAclEntryRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -4822,11 +4764,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeExportTasksResult>() {
             public DescribeExportTasksResult call() throws Exception {
                 return describeExportTasks(describeExportTasksRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param describeExportTasksRequest Container for the necessary
@@ -4854,17 +4795,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeExportTasksResult>() {
             public DescribeExportTasksResult call() throws Exception {
-            	DescribeExportTasksResult result;
+                DescribeExportTasksResult result;
                 try {
-            		result = describeExportTasks(describeExportTasksRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeExportTasksRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeExportTasks(describeExportTasksRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeExportTasksRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4902,11 +4843,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 detachInternetGateway(detachInternetGatewayRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Detaches an Internet gateway from a VPC, disabling connectivity
@@ -4946,16 +4886,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		detachInternetGateway(detachInternetGatewayRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(detachInternetGatewayRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    detachInternetGateway(detachInternetGatewayRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(detachInternetGatewayRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -4987,11 +4927,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateRouteTableResult>() {
             public CreateRouteTableResult call() throws Exception {
                 return createRouteTable(createRouteTableRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new route table within a VPC. After you create a new route
@@ -5026,17 +4965,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateRouteTableResult>() {
             public CreateRouteTableResult call() throws Exception {
-            	CreateRouteTableResult result;
+                CreateRouteTableResult result;
                 try {
-            		result = createRouteTable(createRouteTableRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createRouteTableRequest, result);
-               	return result;
-		    }
-		});
+                    result = createRouteTable(createRouteTableRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createRouteTableRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5066,11 +5005,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeVolumesResult>() {
             public DescribeVolumesResult call() throws Exception {
                 return describeVolumes(describeVolumesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describes the status of the indicated volume or, in lieu of any
@@ -5103,17 +5041,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVolumesResult>() {
             public DescribeVolumesResult call() throws Exception {
-            	DescribeVolumesResult result;
+                DescribeVolumesResult result;
                 try {
-            		result = describeVolumes(describeVolumesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeVolumesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeVolumes(describeVolumesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeVolumesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5140,11 +5078,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeReservedInstancesListingsResult>() {
             public DescribeReservedInstancesListingsResult call() throws Exception {
                 return describeReservedInstancesListings(describeReservedInstancesListingsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param describeReservedInstancesListingsRequest Container for the
@@ -5174,17 +5111,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeReservedInstancesListingsResult>() {
             public DescribeReservedInstancesListingsResult call() throws Exception {
-            	DescribeReservedInstancesListingsResult result;
+                DescribeReservedInstancesListingsResult result;
                 try {
-            		result = describeReservedInstancesListings(describeReservedInstancesListingsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeReservedInstancesListingsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeReservedInstancesListings(describeReservedInstancesListingsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeReservedInstancesListingsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5210,11 +5147,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 reportInstanceStatus(reportInstanceStatusRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param reportInstanceStatusRequest Container for the necessary
@@ -5242,16 +5178,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		reportInstanceStatus(reportInstanceStatusRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(reportInstanceStatusRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    reportInstanceStatus(reportInstanceStatusRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(reportInstanceStatusRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -5299,11 +5235,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeRouteTablesResult>() {
             public DescribeRouteTablesResult call() throws Exception {
                 return describeRouteTables(describeRouteTablesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gives you information about your route tables. You can filter the
@@ -5354,17 +5289,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeRouteTablesResult>() {
             public DescribeRouteTablesResult call() throws Exception {
-            	DescribeRouteTablesResult result;
+                DescribeRouteTablesResult result;
                 try {
-            		result = describeRouteTables(describeRouteTablesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeRouteTablesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeRouteTables(describeRouteTablesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeRouteTablesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5400,11 +5335,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeDhcpOptionsResult>() {
             public DescribeDhcpOptionsResult call() throws Exception {
                 return describeDhcpOptions(describeDhcpOptionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gives you information about one or more sets of DHCP options. You can
@@ -5443,17 +5377,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeDhcpOptionsResult>() {
             public DescribeDhcpOptionsResult call() throws Exception {
-            	DescribeDhcpOptionsResult result;
+                DescribeDhcpOptionsResult result;
                 try {
-            		result = describeDhcpOptions(describeDhcpOptionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeDhcpOptionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeDhcpOptions(describeDhcpOptionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeDhcpOptionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5481,11 +5415,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<MonitorInstancesResult>() {
             public MonitorInstancesResult call() throws Exception {
                 return monitorInstances(monitorInstancesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Enables monitoring for a running instance.
@@ -5516,17 +5449,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<MonitorInstancesResult>() {
             public MonitorInstancesResult call() throws Exception {
-            	MonitorInstancesResult result;
+                MonitorInstancesResult result;
                 try {
-            		result = monitorInstances(monitorInstancesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(monitorInstancesRequest, result);
-               	return result;
-		    }
-		});
+                    result = monitorInstances(monitorInstancesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(monitorInstancesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5573,11 +5506,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeNetworkAclsResult>() {
             public DescribeNetworkAclsResult call() throws Exception {
                 return describeNetworkAcls(describeNetworkAclsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gives you information about the network ACLs in your VPC. You can
@@ -5627,17 +5559,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeNetworkAclsResult>() {
             public DescribeNetworkAclsResult call() throws Exception {
-            	DescribeNetworkAclsResult result;
+                DescribeNetworkAclsResult result;
                 try {
-            		result = describeNetworkAcls(describeNetworkAclsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeNetworkAclsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeNetworkAcls(describeNetworkAclsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeNetworkAclsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5668,11 +5600,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeBundleTasksResult>() {
             public DescribeBundleTasksResult call() throws Exception {
                 return describeBundleTasks(describeBundleTasksRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DescribeBundleTasks operation describes in-progress and recent
@@ -5706,17 +5637,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeBundleTasksResult>() {
             public DescribeBundleTasksResult call() throws Exception {
-            	DescribeBundleTasksResult result;
+                DescribeBundleTasksResult result;
                 try {
-            		result = describeBundleTasks(describeBundleTasksRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeBundleTasksRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeBundleTasks(describeBundleTasksRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeBundleTasksRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5741,11 +5672,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<ImportInstanceResult>() {
             public ImportInstanceResult call() throws Exception {
                 return importInstance(importInstanceRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param importInstanceRequest Container for the necessary parameters to
@@ -5773,17 +5703,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ImportInstanceResult>() {
             public ImportInstanceResult call() throws Exception {
-            	ImportInstanceResult result;
+                ImportInstanceResult result;
                 try {
-            		result = importInstance(importInstanceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(importInstanceRequest, result);
-               	return result;
-		    }
-		});
+                    result = importInstance(importInstanceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(importInstanceRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5826,11 +5756,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 revokeSecurityGroupIngress(revokeSecurityGroupIngressRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The RevokeSecurityGroupIngress operation revokes permissions from a
@@ -5875,16 +5804,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		revokeSecurityGroupIngress(revokeSecurityGroupIngressRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(revokeSecurityGroupIngressRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    revokeSecurityGroupIngress(revokeSecurityGroupIngressRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(revokeSecurityGroupIngressRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -5919,11 +5848,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<GetConsoleOutputResult>() {
             public GetConsoleOutputResult call() throws Exception {
                 return getConsoleOutput(getConsoleOutputRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The GetConsoleOutput operation retrieves console output for the
@@ -5961,17 +5889,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetConsoleOutputResult>() {
             public GetConsoleOutputResult call() throws Exception {
-            	GetConsoleOutputResult result;
+                GetConsoleOutputResult result;
                 try {
-            		result = getConsoleOutput(getConsoleOutputRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getConsoleOutputRequest, result);
-               	return result;
-		    }
-		});
+                    result = getConsoleOutput(getConsoleOutputRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getConsoleOutputRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -6004,11 +5932,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateInternetGatewayResult>() {
             public CreateInternetGatewayResult call() throws Exception {
                 return createInternetGateway(createInternetGatewayRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new Internet gateway in your AWS account. After creating
@@ -6044,17 +5971,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateInternetGatewayResult>() {
             public CreateInternetGatewayResult call() throws Exception {
-            	CreateInternetGatewayResult result;
+                CreateInternetGatewayResult result;
                 try {
-            		result = createInternetGateway(createInternetGatewayRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createInternetGatewayRequest, result);
-               	return result;
-		    }
-		});
+                    result = createInternetGateway(createInternetGatewayRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createInternetGatewayRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -6081,11 +6008,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteVpnConnectionRoute(deleteVpnConnectionRouteRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param deleteVpnConnectionRouteRequest Container for the necessary
@@ -6114,16 +6040,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteVpnConnectionRoute(deleteVpnConnectionRouteRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteVpnConnectionRouteRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteVpnConnectionRoute(deleteVpnConnectionRouteRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteVpnConnectionRouteRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -6150,11 +6076,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 detachNetworkInterface(detachNetworkInterfaceRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param detachNetworkInterfaceRequest Container for the necessary
@@ -6183,16 +6108,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		detachNetworkInterface(detachNetworkInterfaceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(detachNetworkInterfaceRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    detachNetworkInterface(detachNetworkInterfaceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(detachNetworkInterfaceRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -6221,11 +6146,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 modifyImageAttribute(modifyImageAttributeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The ModifyImageAttribute operation modifies an attribute of an AMI.
@@ -6256,16 +6180,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		modifyImageAttribute(modifyImageAttributeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(modifyImageAttributeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    modifyImageAttribute(modifyImageAttributeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(modifyImageAttributeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -6314,11 +6238,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateCustomerGatewayResult>() {
             public CreateCustomerGatewayResult call() throws Exception {
                 return createCustomerGateway(createCustomerGatewayRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Provides information to AWS about your customer gateway device. The
@@ -6370,17 +6293,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateCustomerGatewayResult>() {
             public CreateCustomerGatewayResult call() throws Exception {
-            	CreateCustomerGatewayResult result;
+                CreateCustomerGatewayResult result;
                 try {
-            		result = createCustomerGateway(createCustomerGatewayRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createCustomerGatewayRequest, result);
-               	return result;
-		    }
-		});
+                    result = createCustomerGateway(createCustomerGatewayRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createCustomerGatewayRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -6417,11 +6340,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateSpotDatafeedSubscriptionResult>() {
             public CreateSpotDatafeedSubscriptionResult call() throws Exception {
                 return createSpotDatafeedSubscription(createSpotDatafeedSubscriptionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates the data feed for Spot Instances, enabling you to view Spot
@@ -6461,17 +6383,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateSpotDatafeedSubscriptionResult>() {
             public CreateSpotDatafeedSubscriptionResult call() throws Exception {
-            	CreateSpotDatafeedSubscriptionResult result;
+                CreateSpotDatafeedSubscriptionResult result;
                 try {
-            		result = createSpotDatafeedSubscription(createSpotDatafeedSubscriptionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createSpotDatafeedSubscriptionRequest, result);
-               	return result;
-		    }
-		});
+                    result = createSpotDatafeedSubscription(createSpotDatafeedSubscriptionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createSpotDatafeedSubscriptionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -6503,11 +6425,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 attachInternetGateway(attachInternetGatewayRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Attaches an Internet gateway to a VPC, enabling connectivity between
@@ -6541,16 +6462,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		attachInternetGateway(attachInternetGatewayRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(attachInternetGatewayRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    attachInternetGateway(attachInternetGatewayRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(attachInternetGatewayRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -6591,11 +6512,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteVpnConnection(deleteVpnConnectionRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a VPN connection. Use this if you want to delete a VPC and
@@ -6638,16 +6558,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteVpnConnection(deleteVpnConnectionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteVpnConnectionRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteVpnConnection(deleteVpnConnectionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteVpnConnectionRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -6673,11 +6593,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeConversionTasksResult>() {
             public DescribeConversionTasksResult call() throws Exception {
                 return describeConversionTasks(describeConversionTasksRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param describeConversionTasksRequest Container for the necessary
@@ -6706,17 +6625,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeConversionTasksResult>() {
             public DescribeConversionTasksResult call() throws Exception {
-            	DescribeConversionTasksResult result;
+                DescribeConversionTasksResult result;
                 try {
-            		result = describeConversionTasks(describeConversionTasksRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeConversionTasksRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeConversionTasks(describeConversionTasksRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeConversionTasksRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -6763,11 +6682,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateVpnConnectionResult>() {
             public CreateVpnConnectionResult call() throws Exception {
                 return createVpnConnection(createVpnConnectionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new VPN connection between an existing VPN gateway and
@@ -6817,17 +6735,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateVpnConnectionResult>() {
             public CreateVpnConnectionResult call() throws Exception {
-            	CreateVpnConnectionResult result;
+                CreateVpnConnectionResult result;
                 try {
-            		result = createVpnConnection(createVpnConnectionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createVpnConnectionRequest, result);
-               	return result;
-		    }
-		});
+                    result = createVpnConnection(createVpnConnectionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createVpnConnectionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -6857,11 +6775,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeInstanceAttributeResult>() {
             public DescribeInstanceAttributeResult call() throws Exception {
                 return describeInstanceAttribute(describeInstanceAttributeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about an attribute of an instance. Only one
@@ -6894,17 +6811,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeInstanceAttributeResult>() {
             public DescribeInstanceAttributeResult call() throws Exception {
-            	DescribeInstanceAttributeResult result;
+                DescribeInstanceAttributeResult result;
                 try {
-            		result = describeInstanceAttribute(describeInstanceAttributeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeInstanceAttributeRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeInstanceAttribute(describeInstanceAttributeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeInstanceAttributeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -6934,11 +6851,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribePlacementGroupsResult>() {
             public DescribePlacementGroupsResult call() throws Exception {
                 return describePlacementGroups(describePlacementGroupsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about one or more PlacementGroup instances in a
@@ -6971,17 +6887,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribePlacementGroupsResult>() {
             public DescribePlacementGroupsResult call() throws Exception {
-            	DescribePlacementGroupsResult result;
+                DescribePlacementGroupsResult result;
                 try {
-            		result = describePlacementGroups(describePlacementGroupsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describePlacementGroupsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describePlacementGroups(describePlacementGroupsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describePlacementGroupsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -7023,11 +6939,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeSubnetsResult>() {
             public DescribeSubnetsResult call() throws Exception {
                 return describeSubnets(describeSubnetsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gives you information about your subnets. You can filter the results
@@ -7072,17 +6987,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSubnetsResult>() {
             public DescribeSubnetsResult call() throws Exception {
-            	DescribeSubnetsResult result;
+                DescribeSubnetsResult result;
                 try {
-            		result = describeSubnets(describeSubnetsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeSubnetsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeSubnets(describeSubnetsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeSubnetsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -7159,11 +7074,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<RunInstancesResult>() {
             public RunInstancesResult call() throws Exception {
                 return runInstances(runInstancesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The RunInstances operation launches a specified number of instances.
@@ -7243,17 +7157,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RunInstancesResult>() {
             public RunInstancesResult call() throws Exception {
-            	RunInstancesResult result;
+                RunInstancesResult result;
                 try {
-            		result = runInstances(runInstancesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(runInstancesRequest, result);
-               	return result;
-		    }
-		});
+                    result = runInstances(runInstancesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(runInstancesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -7291,11 +7205,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<AssociateRouteTableResult>() {
             public AssociateRouteTableResult call() throws Exception {
                 return associateRouteTable(associateRouteTableRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Associates a subnet with a route table. The subnet and route table
@@ -7336,17 +7249,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AssociateRouteTableResult>() {
             public AssociateRouteTableResult call() throws Exception {
-            	AssociateRouteTableResult result;
+                AssociateRouteTableResult result;
                 try {
-            		result = associateRouteTable(associateRouteTableRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(associateRouteTableRequest, result);
-               	return result;
-		    }
-		});
+                    result = associateRouteTable(associateRouteTableRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(associateRouteTableRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -7387,11 +7300,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeInstancesResult>() {
             public DescribeInstancesResult call() throws Exception {
                 return describeInstances(describeInstancesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DescribeInstances operation returns information about instances
@@ -7435,17 +7347,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeInstancesResult>() {
             public DescribeInstancesResult call() throws Exception {
-            	DescribeInstancesResult result;
+                DescribeInstancesResult result;
                 try {
-            		result = describeInstances(describeInstancesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeInstancesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeInstances(describeInstancesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeInstancesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -7477,11 +7389,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteNetworkAcl(deleteNetworkAclRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a network ACL from a VPC. The ACL must not have any subnets
@@ -7515,16 +7426,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteNetworkAcl(deleteNetworkAclRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteNetworkAclRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteNetworkAcl(deleteNetworkAclRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteNetworkAclRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -7551,11 +7462,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 modifyVolumeAttribute(modifyVolumeAttributeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param modifyVolumeAttributeRequest Container for the necessary
@@ -7584,16 +7494,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		modifyVolumeAttribute(modifyVolumeAttributeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(modifyVolumeAttributeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    modifyVolumeAttribute(modifyVolumeAttributeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(modifyVolumeAttributeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -7668,11 +7578,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeImagesResult>() {
             public DescribeImagesResult call() throws Exception {
                 return describeImages(describeImagesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DescribeImages operation returns information about AMIs, AKIs,
@@ -7750,17 +7659,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeImagesResult>() {
             public DescribeImagesResult call() throws Exception {
-            	DescribeImagesResult result;
+                DescribeImagesResult result;
                 try {
-            		result = describeImages(describeImagesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeImagesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeImages(describeImagesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeImagesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -7798,11 +7707,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<StartInstancesResult>() {
             public StartInstancesResult call() throws Exception {
                 return startInstances(startInstancesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Starts an instance that uses an Amazon EBS volume as its root device.
@@ -7843,17 +7751,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<StartInstancesResult>() {
             public StartInstancesResult call() throws Exception {
-            	StartInstancesResult result;
+                StartInstancesResult result;
                 try {
-            		result = startInstances(startInstancesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(startInstancesRequest, result);
-               	return result;
-		    }
-		});
+                    result = startInstances(startInstancesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(startInstancesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -7880,11 +7788,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CancelReservedInstancesListingResult>() {
             public CancelReservedInstancesListingResult call() throws Exception {
                 return cancelReservedInstancesListing(cancelReservedInstancesListingRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param cancelReservedInstancesListingRequest Container for the
@@ -7914,17 +7821,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CancelReservedInstancesListingResult>() {
             public CancelReservedInstancesListingResult call() throws Exception {
-            	CancelReservedInstancesListingResult result;
+                CancelReservedInstancesListingResult result;
                 try {
-            		result = cancelReservedInstancesListing(cancelReservedInstancesListingRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(cancelReservedInstancesListingRequest, result);
-               	return result;
-		    }
-		});
+                    result = cancelReservedInstancesListing(cancelReservedInstancesListingRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(cancelReservedInstancesListingRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -7954,11 +7861,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 modifyInstanceAttribute(modifyInstanceAttributeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Modifies an attribute of an instance.
@@ -7990,16 +7896,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		modifyInstanceAttribute(modifyInstanceAttributeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(modifyInstanceAttributeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    modifyInstanceAttribute(modifyInstanceAttributeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(modifyInstanceAttributeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -8031,11 +7937,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteDhcpOptions(deleteDhcpOptionsRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a set of DHCP options that you specify. Amazon VPC returns an
@@ -8069,16 +7974,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteDhcpOptions(deleteDhcpOptionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteDhcpOptionsRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteDhcpOptions(deleteDhcpOptionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteDhcpOptionsRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -8122,11 +8027,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 authorizeSecurityGroupIngress(authorizeSecurityGroupIngressRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The AuthorizeSecurityGroupIngress operation adds permissions to a
@@ -8172,16 +8076,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		authorizeSecurityGroupIngress(authorizeSecurityGroupIngressRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(authorizeSecurityGroupIngressRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    authorizeSecurityGroupIngress(authorizeSecurityGroupIngressRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(authorizeSecurityGroupIngressRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -8244,11 +8148,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeSpotInstanceRequestsResult>() {
             public DescribeSpotInstanceRequestsResult call() throws Exception {
                 return describeSpotInstanceRequests(describeSpotInstanceRequestsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describes Spot Instance requests. Spot Instances are instances that
@@ -8314,17 +8217,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSpotInstanceRequestsResult>() {
             public DescribeSpotInstanceRequestsResult call() throws Exception {
-            	DescribeSpotInstanceRequestsResult result;
+                DescribeSpotInstanceRequestsResult result;
                 try {
-            		result = describeSpotInstanceRequests(describeSpotInstanceRequestsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeSpotInstanceRequestsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeSpotInstanceRequests(describeSpotInstanceRequestsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeSpotInstanceRequestsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -8361,11 +8264,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateVpcResult>() {
             public CreateVpcResult call() throws Exception {
                 return createVpc(createVpcRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a VPC with the CIDR block you specify. The smallest VPC you
@@ -8405,17 +8307,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateVpcResult>() {
             public CreateVpcResult call() throws Exception {
-            	CreateVpcResult result;
+                CreateVpcResult result;
                 try {
-            		result = createVpc(createVpcRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createVpcRequest, result);
-               	return result;
-		    }
-		});
+                    result = createVpc(createVpcRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createVpcRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -8455,11 +8357,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeCustomerGatewaysResult>() {
             public DescribeCustomerGatewaysResult call() throws Exception {
                 return describeCustomerGateways(describeCustomerGatewaysRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gives you information about your customer gateways. You can filter
@@ -8502,17 +8403,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeCustomerGatewaysResult>() {
             public DescribeCustomerGatewaysResult call() throws Exception {
-            	DescribeCustomerGatewaysResult result;
+                DescribeCustomerGatewaysResult result;
                 try {
-            		result = describeCustomerGateways(describeCustomerGatewaysRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeCustomerGatewaysRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeCustomerGateways(describeCustomerGatewaysRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeCustomerGatewaysRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -8538,11 +8439,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 cancelExportTask(cancelExportTaskRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param cancelExportTaskRequest Container for the necessary parameters
@@ -8570,16 +8470,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		cancelExportTask(cancelExportTaskRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(cancelExportTaskRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    cancelExportTask(cancelExportTaskRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(cancelExportTaskRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -8632,11 +8532,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 createRoute(createRouteRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new route in a route table within a VPC. The route's target
@@ -8691,16 +8590,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		createRoute(createRouteRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createRouteRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    createRoute(createRouteRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createRouteRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -8725,11 +8624,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CopyImageResult>() {
             public CopyImageResult call() throws Exception {
                 return copyImage(copyImageRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param copyImageRequest Container for the necessary parameters to
@@ -8757,17 +8655,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CopyImageResult>() {
             public CopyImageResult call() throws Exception {
-            	CopyImageResult result;
+                CopyImageResult result;
                 try {
-            		result = copyImage(copyImageRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(copyImageRequest, result);
-               	return result;
-		    }
-		});
+                    result = copyImage(copyImageRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(copyImageRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -8795,11 +8693,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 modifyNetworkInterfaceAttribute(modifyNetworkInterfaceAttributeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param modifyNetworkInterfaceAttributeRequest Container for the
@@ -8829,16 +8726,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		modifyNetworkInterfaceAttribute(modifyNetworkInterfaceAttributeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(modifyNetworkInterfaceAttributeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    modifyNetworkInterfaceAttribute(modifyNetworkInterfaceAttributeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(modifyNetworkInterfaceAttributeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -8871,11 +8768,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteRouteTable(deleteRouteTableRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a route table from a VPC. The route table must not be
@@ -8910,16 +8806,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteRouteTable(deleteRouteTableRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteRouteTableRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteRouteTable(deleteRouteTableRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteRouteTableRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -8946,11 +8842,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeNetworkInterfaceAttributeResult>() {
             public DescribeNetworkInterfaceAttributeResult call() throws Exception {
                 return describeNetworkInterfaceAttribute(describeNetworkInterfaceAttributeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param describeNetworkInterfaceAttributeRequest Container for the
@@ -8980,17 +8875,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeNetworkInterfaceAttributeResult>() {
             public DescribeNetworkInterfaceAttributeResult call() throws Exception {
-            	DescribeNetworkInterfaceAttributeResult result;
+                DescribeNetworkInterfaceAttributeResult result;
                 try {
-            		result = describeNetworkInterfaceAttribute(describeNetworkInterfaceAttributeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeNetworkInterfaceAttributeRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeNetworkInterfaceAttribute(describeNetworkInterfaceAttributeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeNetworkInterfaceAttributeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -9029,11 +8924,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<RequestSpotInstancesResult>() {
             public RequestSpotInstancesResult call() throws Exception {
                 return requestSpotInstances(requestSpotInstancesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a Spot Instance request.
@@ -9075,17 +8969,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RequestSpotInstancesResult>() {
             public RequestSpotInstancesResult call() throws Exception {
-            	RequestSpotInstancesResult result;
+                RequestSpotInstancesResult result;
                 try {
-            		result = requestSpotInstances(requestSpotInstancesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(requestSpotInstancesRequest, result);
-               	return result;
-		    }
-		});
+                    result = requestSpotInstances(requestSpotInstancesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(requestSpotInstancesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -9116,11 +9010,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 createTags(createTagsRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Adds or overwrites tags for the specified resources. Each resource
@@ -9153,16 +9046,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		createTags(createTagsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createTagsRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    createTags(createTagsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createTagsRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -9188,11 +9081,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeVolumeAttributeResult>() {
             public DescribeVolumeAttributeResult call() throws Exception {
                 return describeVolumeAttribute(describeVolumeAttributeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param describeVolumeAttributeRequest Container for the necessary
@@ -9221,17 +9113,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVolumeAttributeResult>() {
             public DescribeVolumeAttributeResult call() throws Exception {
-            	DescribeVolumeAttributeResult result;
+                DescribeVolumeAttributeResult result;
                 try {
-            		result = describeVolumeAttribute(describeVolumeAttributeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeVolumeAttributeRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeVolumeAttribute(describeVolumeAttributeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeVolumeAttributeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -9257,11 +9149,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<AttachNetworkInterfaceResult>() {
             public AttachNetworkInterfaceResult call() throws Exception {
                 return attachNetworkInterface(attachNetworkInterfaceRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param attachNetworkInterfaceRequest Container for the necessary
@@ -9290,17 +9181,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AttachNetworkInterfaceResult>() {
             public AttachNetworkInterfaceResult call() throws Exception {
-            	AttachNetworkInterfaceResult result;
+                AttachNetworkInterfaceResult result;
                 try {
-            		result = attachNetworkInterface(attachNetworkInterfaceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(attachNetworkInterfaceRequest, result);
-               	return result;
-		    }
-		});
+                    result = attachNetworkInterface(attachNetworkInterfaceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(attachNetworkInterfaceRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -9332,11 +9223,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 replaceRoute(replaceRouteRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Replaces an existing route within a route table in a VPC. For more
@@ -9370,16 +9260,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		replaceRoute(replaceRouteRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(replaceRouteRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    replaceRoute(replaceRouteRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(replaceRouteRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -9407,11 +9297,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeTagsResult>() {
             public DescribeTagsResult call() throws Exception {
                 return describeTags(describeTagsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describes the tags for the specified resources.
@@ -9442,17 +9331,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeTagsResult>() {
             public DescribeTagsResult call() throws Exception {
-            	DescribeTagsResult result;
+                DescribeTagsResult result;
                 try {
-            		result = describeTags(describeTagsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeTagsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeTags(describeTagsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeTagsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -9484,11 +9373,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CancelBundleTaskResult>() {
             public CancelBundleTaskResult call() throws Exception {
                 return cancelBundleTask(cancelBundleTaskRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * CancelBundleTask operation cancels a pending or in-progress bundling
@@ -9523,17 +9411,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CancelBundleTaskResult>() {
             public CancelBundleTaskResult call() throws Exception {
-            	CancelBundleTaskResult result;
+                CancelBundleTaskResult result;
                 try {
-            		result = cancelBundleTask(cancelBundleTaskRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(cancelBundleTaskRequest, result);
-               	return result;
-		    }
-		});
+                    result = cancelBundleTask(cancelBundleTaskRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(cancelBundleTaskRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -9560,11 +9448,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 disableVgwRoutePropagation(disableVgwRoutePropagationRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param disableVgwRoutePropagationRequest Container for the necessary
@@ -9593,16 +9480,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		disableVgwRoutePropagation(disableVgwRoutePropagationRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(disableVgwRoutePropagationRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    disableVgwRoutePropagation(disableVgwRoutePropagationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(disableVgwRoutePropagationRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -9643,11 +9530,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CancelSpotInstanceRequestsResult>() {
             public CancelSpotInstanceRequestsResult call() throws Exception {
                 return cancelSpotInstanceRequests(cancelSpotInstanceRequestsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Cancels one or more Spot Instance requests.
@@ -9691,17 +9577,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CancelSpotInstanceRequestsResult>() {
             public CancelSpotInstanceRequestsResult call() throws Exception {
-            	CancelSpotInstanceRequestsResult result;
+                CancelSpotInstanceRequestsResult result;
                 try {
-            		result = cancelSpotInstanceRequests(cancelSpotInstanceRequestsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(cancelSpotInstanceRequestsRequest, result);
-               	return result;
-		    }
-		});
+                    result = cancelSpotInstanceRequests(cancelSpotInstanceRequestsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(cancelSpotInstanceRequestsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -9735,11 +9621,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<PurchaseReservedInstancesOfferingResult>() {
             public PurchaseReservedInstancesOfferingResult call() throws Exception {
                 return purchaseReservedInstancesOffering(purchaseReservedInstancesOfferingRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The PurchaseReservedInstancesOffering operation purchases a Reserved
@@ -9776,17 +9661,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<PurchaseReservedInstancesOfferingResult>() {
             public PurchaseReservedInstancesOfferingResult call() throws Exception {
-            	PurchaseReservedInstancesOfferingResult result;
+                PurchaseReservedInstancesOfferingResult result;
                 try {
-            		result = purchaseReservedInstancesOffering(purchaseReservedInstancesOfferingRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(purchaseReservedInstancesOfferingRequest, result);
-               	return result;
-		    }
-		});
+                    result = purchaseReservedInstancesOffering(purchaseReservedInstancesOfferingRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(purchaseReservedInstancesOfferingRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -9816,11 +9701,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 modifySnapshotAttribute(modifySnapshotAttributeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Adds or remove permission settings for the specified snapshot.
@@ -9852,16 +9736,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		modifySnapshotAttribute(modifySnapshotAttributeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(modifySnapshotAttributeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    modifySnapshotAttribute(modifySnapshotAttributeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(modifySnapshotAttributeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -9892,11 +9776,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeReservedInstancesModificationsResult>() {
             public DescribeReservedInstancesModificationsResult call() throws Exception {
                 return describeReservedInstancesModifications(describeReservedInstancesModificationsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DescribeReservedInstancesModifications operation describes
@@ -9930,17 +9813,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeReservedInstancesModificationsResult>() {
             public DescribeReservedInstancesModificationsResult call() throws Exception {
-            	DescribeReservedInstancesModificationsResult result;
+                DescribeReservedInstancesModificationsResult result;
                 try {
-            		result = describeReservedInstancesModifications(describeReservedInstancesModificationsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeReservedInstancesModificationsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeReservedInstancesModifications(describeReservedInstancesModificationsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeReservedInstancesModificationsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -9974,11 +9857,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<TerminateInstancesResult>() {
             public TerminateInstancesResult call() throws Exception {
                 return terminateInstances(terminateInstancesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The TerminateInstances operation shuts down one or more instances.
@@ -10015,17 +9897,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<TerminateInstancesResult>() {
             public TerminateInstancesResult call() throws Exception {
-            	TerminateInstancesResult result;
+                TerminateInstancesResult result;
                 try {
-            		result = terminateInstances(terminateInstancesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(terminateInstancesRequest, result);
-               	return result;
-		    }
-		});
+                    result = terminateInstances(terminateInstancesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(terminateInstancesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -10062,11 +9944,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteSpotDatafeedSubscription(deleteSpotDatafeedSubscriptionRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the data feed for Spot Instances.
@@ -10105,16 +9986,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteSpotDatafeedSubscription(deleteSpotDatafeedSubscriptionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteSpotDatafeedSubscriptionRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteSpotDatafeedSubscription(deleteSpotDatafeedSubscriptionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteSpotDatafeedSubscriptionRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -10146,11 +10027,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteInternetGateway(deleteInternetGatewayRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes an Internet gateway from your AWS account. The gateway must
@@ -10184,16 +10064,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteInternetGateway(deleteInternetGatewayRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteInternetGatewayRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteInternetGateway(deleteInternetGatewayRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteInternetGatewayRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -10223,11 +10103,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeSnapshotAttributeResult>() {
             public DescribeSnapshotAttributeResult call() throws Exception {
                 return describeSnapshotAttribute(describeSnapshotAttributeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about an attribute of a snapshot. Only one
@@ -10260,17 +10139,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSnapshotAttributeResult>() {
             public DescribeSnapshotAttributeResult call() throws Exception {
-            	DescribeSnapshotAttributeResult result;
+                DescribeSnapshotAttributeResult result;
                 try {
-            		result = describeSnapshotAttribute(describeSnapshotAttributeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeSnapshotAttributeRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeSnapshotAttribute(describeSnapshotAttributeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeSnapshotAttributeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -10309,11 +10188,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<ReplaceRouteTableAssociationResult>() {
             public ReplaceRouteTableAssociationResult call() throws Exception {
                 return replaceRouteTableAssociation(replaceRouteTableAssociationRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Changes the route table associated with a given subnet in a VPC.
@@ -10355,17 +10233,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ReplaceRouteTableAssociationResult>() {
             public ReplaceRouteTableAssociationResult call() throws Exception {
-            	ReplaceRouteTableAssociationResult result;
+                ReplaceRouteTableAssociationResult result;
                 try {
-            		result = replaceRouteTableAssociation(replaceRouteTableAssociationRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(replaceRouteTableAssociationRequest, result);
-               	return result;
-		    }
-		});
+                    result = replaceRouteTableAssociation(replaceRouteTableAssociationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(replaceRouteTableAssociationRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -10394,11 +10272,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeAddressesResult>() {
             public DescribeAddressesResult call() throws Exception {
                 return describeAddresses(describeAddressesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DescribeAddresses operation lists elastic IP addresses assigned
@@ -10430,17 +10307,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeAddressesResult>() {
             public DescribeAddressesResult call() throws Exception {
-            	DescribeAddressesResult result;
+                DescribeAddressesResult result;
                 try {
-            		result = describeAddresses(describeAddressesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeAddressesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeAddresses(describeAddressesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeAddressesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -10470,11 +10347,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeImageAttributeResult>() {
             public DescribeImageAttributeResult call() throws Exception {
                 return describeImageAttribute(describeImageAttributeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DescribeImageAttribute operation returns information about an
@@ -10507,17 +10383,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeImageAttributeResult>() {
             public DescribeImageAttributeResult call() throws Exception {
-            	DescribeImageAttributeResult result;
+                DescribeImageAttributeResult result;
                 try {
-            		result = describeImageAttribute(describeImageAttributeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeImageAttributeRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeImageAttribute(describeImageAttributeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeImageAttributeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -10548,11 +10424,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeKeyPairsResult>() {
             public DescribeKeyPairsResult call() throws Exception {
                 return describeKeyPairs(describeKeyPairsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DescribeKeyPairs operation returns information about key pairs
@@ -10586,17 +10461,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeKeyPairsResult>() {
             public DescribeKeyPairsResult call() throws Exception {
-            	DescribeKeyPairsResult result;
+                DescribeKeyPairsResult result;
                 try {
-            		result = describeKeyPairs(describeKeyPairsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeKeyPairsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeKeyPairs(describeKeyPairsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeKeyPairsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -10633,11 +10508,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<ConfirmProductInstanceResult>() {
             public ConfirmProductInstanceResult call() throws Exception {
                 return confirmProductInstance(confirmProductInstanceRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The ConfirmProductInstance operation returns true if the specified
@@ -10677,17 +10551,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ConfirmProductInstanceResult>() {
             public ConfirmProductInstanceResult call() throws Exception {
-            	ConfirmProductInstanceResult result;
+                ConfirmProductInstanceResult result;
                 try {
-            		result = confirmProductInstance(confirmProductInstanceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(confirmProductInstanceRequest, result);
-               	return result;
-		    }
-		});
+                    result = confirmProductInstance(confirmProductInstanceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(confirmProductInstanceRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -10724,11 +10598,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 disassociateRouteTable(disassociateRouteTableRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Disassociates a subnet from a route table.
@@ -10767,16 +10640,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		disassociateRouteTable(disassociateRouteTableRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(disassociateRouteTableRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    disassociateRouteTable(disassociateRouteTableRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(disassociateRouteTableRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -10801,11 +10674,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeVpcAttributeResult>() {
             public DescribeVpcAttributeResult call() throws Exception {
                 return describeVpcAttribute(describeVpcAttributeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param describeVpcAttributeRequest Container for the necessary
@@ -10833,17 +10705,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVpcAttributeResult>() {
             public DescribeVpcAttributeResult call() throws Exception {
-            	DescribeVpcAttributeResult result;
+                DescribeVpcAttributeResult result;
                 try {
-            		result = describeVpcAttribute(describeVpcAttributeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeVpcAttributeRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeVpcAttribute(describeVpcAttributeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeVpcAttributeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -10892,11 +10764,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 revokeSecurityGroupEgress(revokeSecurityGroupEgressRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This action applies only to security groups in a VPC. It doesn't work
@@ -10947,16 +10818,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		revokeSecurityGroupEgress(revokeSecurityGroupEgressRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(revokeSecurityGroupEgressRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    revokeSecurityGroupEgress(revokeSecurityGroupEgressRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(revokeSecurityGroupEgressRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -10988,11 +10859,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteNetworkAclEntry(deleteNetworkAclEntryRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes an ingress or egress entry (i.e., rule) from a network ACL.
@@ -11026,16 +10896,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteNetworkAclEntry(deleteNetworkAclEntryRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteNetworkAclEntryRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteNetworkAclEntry(deleteNetworkAclEntryRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteNetworkAclEntryRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -11063,11 +10933,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateVolumeResult>() {
             public CreateVolumeResult call() throws Exception {
                 return createVolume(createVolumeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Initializes an empty volume of a given size.
@@ -11098,17 +10967,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateVolumeResult>() {
             public CreateVolumeResult call() throws Exception {
-            	CreateVolumeResult result;
+                CreateVolumeResult result;
                 try {
-            		result = createVolume(createVolumeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createVolumeRequest, result);
-               	return result;
-		    }
-		});
+                    result = createVolume(createVolumeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createVolumeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -11203,11 +11072,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeInstanceStatusResult>() {
             public DescribeInstanceStatusResult call() throws Exception {
                 return describeInstanceStatus(describeInstanceStatusRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describes the status of an Amazon Elastic Compute Cloud (Amazon EC2)
@@ -11305,17 +11173,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeInstanceStatusResult>() {
             public DescribeInstanceStatusResult call() throws Exception {
-            	DescribeInstanceStatusResult result;
+                DescribeInstanceStatusResult result;
                 try {
-            		result = describeInstanceStatus(describeInstanceStatusRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeInstanceStatusRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeInstanceStatus(describeInstanceStatusRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeInstanceStatusRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -11358,11 +11226,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeVpnGatewaysResult>() {
             public DescribeVpnGatewaysResult call() throws Exception {
                 return describeVpnGateways(describeVpnGatewaysRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gives you information about your VPN gateways. You can filter the
@@ -11408,17 +11275,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVpnGatewaysResult>() {
             public DescribeVpnGatewaysResult call() throws Exception {
-            	DescribeVpnGatewaysResult result;
+                DescribeVpnGatewaysResult result;
                 try {
-            		result = describeVpnGateways(describeVpnGatewaysRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeVpnGatewaysRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeVpnGateways(describeVpnGatewaysRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeVpnGatewaysRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -11460,11 +11327,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateSubnetResult>() {
             public CreateSubnetResult call() throws Exception {
                 return createSubnet(createSubnetRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a subnet in an existing VPC. You can create up to 20 subnets
@@ -11509,17 +11375,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateSubnetResult>() {
             public CreateSubnetResult call() throws Exception {
-            	CreateSubnetResult result;
+                CreateSubnetResult result;
                 try {
-            		result = createSubnet(createSubnetRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createSubnetRequest, result);
-               	return result;
-		    }
-		});
+                    result = createSubnet(createSubnetRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createSubnetRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -11553,11 +11419,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeReservedInstancesOfferingsResult>() {
             public DescribeReservedInstancesOfferingsResult call() throws Exception {
                 return describeReservedInstancesOfferings(describeReservedInstancesOfferingsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DescribeReservedInstancesOfferings operation describes Reserved
@@ -11594,17 +11459,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeReservedInstancesOfferingsResult>() {
             public DescribeReservedInstancesOfferingsResult call() throws Exception {
-            	DescribeReservedInstancesOfferingsResult result;
+                DescribeReservedInstancesOfferingsResult result;
                 try {
-            		result = describeReservedInstancesOfferings(describeReservedInstancesOfferingsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeReservedInstancesOfferingsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeReservedInstancesOfferings(describeReservedInstancesOfferingsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeReservedInstancesOfferingsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -11631,11 +11496,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 assignPrivateIpAddresses(assignPrivateIpAddressesRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param assignPrivateIpAddressesRequest Container for the necessary
@@ -11664,16 +11528,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		assignPrivateIpAddresses(assignPrivateIpAddressesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(assignPrivateIpAddressesRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    assignPrivateIpAddresses(assignPrivateIpAddressesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(assignPrivateIpAddressesRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -11703,11 +11567,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteSnapshot(deleteSnapshotRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the snapshot identified by <code>snapshotId</code> .
@@ -11739,16 +11602,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteSnapshot(deleteSnapshotRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteSnapshotRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteSnapshot(deleteSnapshotRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteSnapshotRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -11780,11 +11643,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<ReplaceNetworkAclAssociationResult>() {
             public ReplaceNetworkAclAssociationResult call() throws Exception {
                 return replaceNetworkAclAssociation(replaceNetworkAclAssociationRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Changes which network ACL a subnet is associated with. By default
@@ -11819,17 +11681,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ReplaceNetworkAclAssociationResult>() {
             public ReplaceNetworkAclAssociationResult call() throws Exception {
-            	ReplaceNetworkAclAssociationResult result;
+                ReplaceNetworkAclAssociationResult result;
                 try {
-            		result = replaceNetworkAclAssociation(replaceNetworkAclAssociationRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(replaceNetworkAclAssociationRequest, result);
-               	return result;
-		    }
-		});
+                    result = replaceNetworkAclAssociation(replaceNetworkAclAssociationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(replaceNetworkAclAssociationRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -11861,11 +11723,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 disassociateAddress(disassociateAddressRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The DisassociateAddress operation disassociates the specified elastic
@@ -11899,16 +11760,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		disassociateAddress(disassociateAddressRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(disassociateAddressRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    disassociateAddress(disassociateAddressRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(disassociateAddressRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -11939,11 +11800,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 createPlacementGroup(createPlacementGroupRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a PlacementGroup into which multiple Amazon EC2 instances can
@@ -11976,16 +11836,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		createPlacementGroup(createPlacementGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createPlacementGroupRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    createPlacementGroup(createPlacementGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createPlacementGroupRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -12017,11 +11877,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<BundleInstanceResult>() {
             public BundleInstanceResult call() throws Exception {
                 return bundleInstance(bundleInstanceRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The BundleInstance operation request that an instance is bundled the
@@ -12056,17 +11915,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<BundleInstanceResult>() {
             public BundleInstanceResult call() throws Exception {
-            	BundleInstanceResult result;
+                BundleInstanceResult result;
                 try {
-            		result = bundleInstance(bundleInstanceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(bundleInstanceRequest, result);
-               	return result;
-		    }
-		});
+                    result = bundleInstance(bundleInstanceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(bundleInstanceRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -12096,11 +11955,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deletePlacementGroup(deletePlacementGroupRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a PlacementGroup from a user's account. Terminate all Amazon
@@ -12132,16 +11990,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deletePlacementGroup(deletePlacementGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deletePlacementGroupRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deletePlacementGroup(deletePlacementGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deletePlacementGroupRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -12174,11 +12032,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteVpc(deleteVpcRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a VPC. You must detach or delete all gateways or other
@@ -12213,16 +12070,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteVpc(deleteVpcRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteVpcRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteVpc(deleteVpcRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteVpcRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -12247,11 +12104,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CopySnapshotResult>() {
             public CopySnapshotResult call() throws Exception {
                 return copySnapshot(copySnapshotRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param copySnapshotRequest Container for the necessary parameters to
@@ -12279,17 +12135,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CopySnapshotResult>() {
             public CopySnapshotResult call() throws Exception {
-            	CopySnapshotResult result;
+                CopySnapshotResult result;
                 try {
-            		result = copySnapshot(copySnapshotRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(copySnapshotRequest, result);
-               	return result;
-		    }
-		});
+                    result = copySnapshot(copySnapshotRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(copySnapshotRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -12318,11 +12174,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<AllocateAddressResult>() {
             public AllocateAddressResult call() throws Exception {
                 return allocateAddress(allocateAddressRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The AllocateAddress operation acquires an elastic IP address for use
@@ -12354,17 +12209,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AllocateAddressResult>() {
             public AllocateAddressResult call() throws Exception {
-            	AllocateAddressResult result;
+                AllocateAddressResult result;
                 try {
-            		result = allocateAddress(allocateAddressRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(allocateAddressRequest, result);
-               	return result;
-		    }
-		});
+                    result = allocateAddress(allocateAddressRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(allocateAddressRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -12408,11 +12263,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 releaseAddress(releaseAddressRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The ReleaseAddress operation releases an elastic IP address
@@ -12458,16 +12312,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		releaseAddress(releaseAddressRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(releaseAddressRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    releaseAddress(releaseAddressRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(releaseAddressRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -12497,11 +12351,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 resetInstanceAttribute(resetInstanceAttributeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Resets an attribute of an instance to its default value.
@@ -12533,16 +12386,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		resetInstanceAttribute(resetInstanceAttributeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(resetInstanceAttributeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    resetInstanceAttribute(resetInstanceAttributeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(resetInstanceAttributeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -12572,11 +12425,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateKeyPairResult>() {
             public CreateKeyPairResult call() throws Exception {
                 return createKeyPair(createKeyPairRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The CreateKeyPair operation creates a new 2048 bit RSA key pair and
@@ -12609,17 +12461,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateKeyPairResult>() {
             public CreateKeyPairResult call() throws Exception {
-            	CreateKeyPairResult result;
+                CreateKeyPairResult result;
                 try {
-            		result = createKeyPair(createKeyPairRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createKeyPairRequest, result);
-               	return result;
-		    }
-		});
+                    result = createKeyPair(createKeyPairRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createKeyPairRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -12651,11 +12503,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 replaceNetworkAclEntry(replaceNetworkAclEntryRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Replaces an entry (i.e., rule) in a network ACL. For more information
@@ -12689,16 +12540,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		replaceNetworkAclEntry(replaceNetworkAclEntryRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(replaceNetworkAclEntryRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    replaceNetworkAclEntry(replaceNetworkAclEntryRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(replaceNetworkAclEntryRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -12730,11 +12581,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeSnapshotsResult>() {
             public DescribeSnapshotsResult call() throws Exception {
                 return describeSnapshots(describeSnapshotsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about the Amazon EBS snapshots available to you.
@@ -12769,17 +12619,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSnapshotsResult>() {
             public DescribeSnapshotsResult call() throws Exception {
-            	DescribeSnapshotsResult result;
+                DescribeSnapshotsResult result;
                 try {
-            		result = describeSnapshots(describeSnapshotsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeSnapshotsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeSnapshots(describeSnapshotsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeSnapshotsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -12810,11 +12660,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateNetworkAclResult>() {
             public CreateNetworkAclResult call() throws Exception {
                 return createNetworkAcl(createNetworkAclRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new network ACL in a VPC. Network ACLs provide an optional
@@ -12848,17 +12697,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateNetworkAclResult>() {
             public CreateNetworkAclResult call() throws Exception {
-            	CreateNetworkAclResult result;
+                CreateNetworkAclResult result;
                 try {
-            		result = createNetworkAcl(createNetworkAclRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createNetworkAclRequest, result);
-               	return result;
-		    }
-		});
+                    result = createNetworkAcl(createNetworkAclRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createNetworkAclRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -12902,11 +12751,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<RegisterImageResult>() {
             public RegisterImageResult call() throws Exception {
                 return registerImage(registerImageRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The RegisterImage operation registers an AMI with Amazon EC2. Images
@@ -12953,17 +12801,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RegisterImageResult>() {
             public RegisterImageResult call() throws Exception {
-            	RegisterImageResult result;
+                RegisterImageResult result;
                 try {
-            		result = registerImage(registerImageRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(registerImageRequest, result);
-               	return result;
-		    }
-		});
+                    result = registerImage(registerImageRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(registerImageRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -12991,11 +12839,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 resetNetworkInterfaceAttribute(resetNetworkInterfaceAttributeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param resetNetworkInterfaceAttributeRequest Container for the
@@ -13025,16 +12872,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		resetNetworkInterfaceAttribute(resetNetworkInterfaceAttributeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(resetNetworkInterfaceAttributeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    resetNetworkInterfaceAttribute(resetNetworkInterfaceAttributeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(resetNetworkInterfaceAttributeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -13061,11 +12908,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 createVpnConnectionRoute(createVpnConnectionRouteRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      *
      * @param createVpnConnectionRouteRequest Container for the necessary
@@ -13094,16 +12940,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		createVpnConnectionRoute(createVpnConnectionRouteRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createVpnConnectionRouteRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    createVpnConnectionRoute(createVpnConnectionRouteRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createVpnConnectionRouteRequest, null);
+                   return null;
+            }
+        });
     }
     
 }

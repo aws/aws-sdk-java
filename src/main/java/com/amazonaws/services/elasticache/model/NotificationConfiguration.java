@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple

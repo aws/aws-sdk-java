@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudsearch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The value of the <code>DefaultSearchField</code> configured for this search domain and its current status.

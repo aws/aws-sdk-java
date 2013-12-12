@@ -16,7 +16,6 @@ package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The User data type contains information about a user.

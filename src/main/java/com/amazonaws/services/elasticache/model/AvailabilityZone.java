@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes an availability zone in which the cache cluster is launched.

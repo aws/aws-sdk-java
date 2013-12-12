@@ -26,6 +26,7 @@ import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -33,7 +34,6 @@ import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.services.storagegateway.model.transform.*;
-
 
 /**
  * Client for accessing AWSStorageGateway.  All service calls made
@@ -191,13 +191,35 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AWSStorageGatewayClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AWSStorageGateway using the specified AWS account credentials
+     * provider, client configuration options and request metric collector.
+     * 
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AWSStorageGateway
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public AWSStorageGatewayClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         
         this.awsCredentialsProvider = awsCredentialsProvider;
         
         init();
     }
-
 
     private void init() {
         exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, JSONObject>>();
@@ -212,11 +234,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 "/com/amazonaws/services/storagegateway/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
                 "/com/amazonaws/services/storagegateway/request.handler2s"));
-
-        
     }
 
-    
     /**
      * <p>
      * This operation deletes a snapshot of a volume.
@@ -278,7 +297,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation returns your gateway's weekly maintenance start time
@@ -329,7 +347,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation creates a volume on a specified gateway. This operation
@@ -393,7 +410,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation updates the gateway virtual machine (VM) software. The
@@ -457,7 +473,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation initiates a snapshot of a volume.
@@ -529,7 +544,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation configures one or more gateway local disks as working
@@ -589,7 +603,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * Cancels retrieval of a virtual tape from the Virtual Tape Shelf (VTS)
@@ -639,7 +652,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation returns the bandwidth rate limits of a gateway. By
@@ -697,7 +709,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * Returns a description of the specified Amazon Resource Name (ARN) of
@@ -748,7 +759,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * Retrieves the recovery point for the specified virtual tape.
@@ -809,7 +819,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation updates the Challenge-Handshake Authentication Protocol
@@ -866,7 +875,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * Creates one or more virtual tapes. You write data to the virtual tapes
@@ -920,7 +928,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation returns information about the upload buffer of a
@@ -976,7 +983,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation deletes Challenge-Handshake Authentication Protocol
@@ -1026,7 +1032,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation configures one or more gateway local disks as cache for
@@ -1083,7 +1088,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation returns metadata about a gateway such as its name,
@@ -1135,7 +1139,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation activates the gateway you previously deployed on your
@@ -1195,7 +1198,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * Returns a description of specified virtual tapes in the Virtual Tape
@@ -1250,7 +1252,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation updates a gateway's metadata, which includes the
@@ -1301,7 +1302,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation returns a list of the local disks of a gateway. To
@@ -1355,7 +1355,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * Deletes the specified virtual tape from the Virtual Tape Shelf (VTS).
@@ -1403,7 +1402,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation returns information about the cache of a gateway. This
@@ -1457,7 +1455,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation updates the bandwidth rate limits of a gateway. You can
@@ -1519,7 +1516,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * Disables a gateway when the gateway is no longer functioning. For
@@ -1576,7 +1572,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation returns information about the working storage of a
@@ -1636,7 +1631,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation updates a gateway's weekly maintenance start time
@@ -1687,7 +1681,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * Deletes the specified virtual tape.
@@ -1735,7 +1728,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation starts a gateway that you previously shut down (see
@@ -1797,7 +1789,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation returns an array of Challenge-Handshake Authentication
@@ -1848,7 +1839,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation describes the snapshot schedule for the specified
@@ -1899,7 +1889,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation delete the specified gateway volume that you previously
@@ -1966,7 +1955,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation initiates a snapshot of a gateway from a volume
@@ -2039,7 +2027,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation deletes a gateway. To specify which gateway to delete,
@@ -2107,7 +2094,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation creates a cached volume on a specified cached gateway.
@@ -2171,7 +2157,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation shuts down a gateway. To specify which gateway to shut
@@ -2248,7 +2233,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation deletes the bandwidth rate limits of a gateway. You can
@@ -2301,7 +2285,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation lists the iSCSI stored volumes of a gateway. Results
@@ -2361,7 +2344,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * Returns a list of virtual tape recovery points that are available for
@@ -2417,7 +2399,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation updates a snapshot schedule configured for a gateway
@@ -2478,7 +2459,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation lists gateways owned by an AWS account in a region
@@ -2539,7 +2519,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation configures one or more gateway local disks as upload
@@ -2594,7 +2573,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation returns a description of the gateway volumes specified
@@ -2650,7 +2628,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation returns description of the gateway volumes specified in
@@ -2702,7 +2679,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * This operation lists the recovery points for a specified gateway. This
@@ -2760,7 +2736,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * Returns a description of Virtual Tape Library (VTL) devices for the
@@ -2815,7 +2790,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * Retrieves an archived virtual tape from the Virtual Tape Shelf (VTS)
@@ -2873,7 +2847,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * Cancels archiving of a virtual tape to the Virtual Tape Shelf (VTS)
@@ -2922,7 +2895,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         }
     }
 
-   
     /**
      * <p>
      * Returns a description of specified virtual tapes in the Virtual Tape
@@ -2987,20 +2959,15 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     public ListGatewaysResult listGateways() throws AmazonServiceException, AmazonClientException {
         return listGateways(new ListGatewaysRequest());
     }
-    
 
     @Override
     public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
-
-        
     }
 
     @Override
     public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
         super.setEndpoint(endpoint, serviceName, regionId);
-
-        
     }
 
     /**

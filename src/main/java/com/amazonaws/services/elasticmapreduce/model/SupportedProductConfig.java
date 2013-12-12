@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding

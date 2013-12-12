@@ -16,7 +16,6 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents the output of a <i>ListTables</i> operation.

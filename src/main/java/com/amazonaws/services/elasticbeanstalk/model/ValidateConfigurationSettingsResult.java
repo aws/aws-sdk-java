@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Provides a list of validation messages.

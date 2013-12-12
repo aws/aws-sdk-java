@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Describe Tapes Result JSON Unmarshaller
  */
 public class DescribeTapesResultJsonUnmarshaller implements Unmarshaller<DescribeTapesResult, JsonUnmarshallerContext> {
 
-    
-
     public DescribeTapesResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeTapesResult describeTapesResult = new DescribeTapesResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DescribeTapesResultJsonUnmarshaller implements Unmarshaller<Describ
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Tapes", targetDepth)) {
                     describeTapesResult.setTapes(new ListUnmarshaller<Tape>(TapeJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -63,7 +57,6 @@ public class DescribeTapesResultJsonUnmarshaller implements Unmarshaller<Describ
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

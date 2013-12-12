@@ -33,8 +33,8 @@ public class ListMFADevicesRequestMarshaller implements Marshaller<Request<ListM
     public Request<ListMFADevicesRequest> marshall(ListMFADevicesRequest listMFADevicesRequest) {
 
         if (listMFADevicesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListMFADevicesRequest> request = new DefaultRequest<ListMFADevicesRequest>(listMFADevicesRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListMFADevices");
@@ -49,7 +49,6 @@ public class ListMFADevicesRequestMarshaller implements Marshaller<Request<ListM
         if (listMFADevicesRequest.getMaxItems() != null) {
             request.addParameter("MaxItems", StringUtils.fromInteger(listMFADevicesRequest.getMaxItems()));
         }
-
 
         return request;
     }

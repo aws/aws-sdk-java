@@ -33,14 +33,12 @@ public class GetAccountSummaryRequestMarshaller implements Marshaller<Request<Ge
     public Request<GetAccountSummaryRequest> marshall(GetAccountSummaryRequest getAccountSummaryRequest) {
 
         if (getAccountSummaryRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetAccountSummaryRequest> request = new DefaultRequest<GetAccountSummaryRequest>(getAccountSummaryRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "GetAccountSummary");
         request.addParameter("Version", "2010-05-08");
-
-
 
         return request;
     }

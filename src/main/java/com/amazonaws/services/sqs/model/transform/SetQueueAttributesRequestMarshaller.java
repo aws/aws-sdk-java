@@ -33,8 +33,8 @@ public class SetQueueAttributesRequestMarshaller implements Marshaller<Request<S
     public Request<SetQueueAttributesRequest> marshall(SetQueueAttributesRequest setQueueAttributesRequest) {
 
         if (setQueueAttributesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<SetQueueAttributesRequest> request = new DefaultRequest<SetQueueAttributesRequest>(setQueueAttributesRequest, "AmazonSQS");
         request.addParameter("Action", "SetQueueAttributes");
@@ -58,7 +58,6 @@ public class SetQueueAttributesRequestMarshaller implements Marshaller<Request<S
                 }
             }
         }
-
 
         return request;
     }

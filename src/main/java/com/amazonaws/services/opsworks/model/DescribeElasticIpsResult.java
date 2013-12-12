@@ -16,7 +16,6 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Contains the response to a <code>DescribeElasticIps</code> request.

@@ -26,6 +26,7 @@ import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -33,7 +34,6 @@ import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.services.opsworks.model.transform.*;
-
 
 /**
  * Client for accessing AWSOpsWorks.  All service calls made
@@ -49,6 +49,25 @@ import com.amazonaws.services.opsworks.model.transform.*;
  * information about this product, go to the <a href="http://aws.amazon.com/opsworks/"> AWS OpsWorks </a> details page.
  * </p>
  * <p>
+ * <b>SDKs and CLI</b>
+ * </p>
+ * <p>
+ * The most common way to use the AWS OpsWorks API is by using the AWS Command Line Interface (CLI) or by using one of the AWS SDKs to implement
+ * applications in your preferred language. For more information, see:
+ * </p>
+ * 
+ * <ul>
+ * <li> <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html"> AWS CLI </a> </li>
+ * <li> <a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html"> AWS SDK for Java </a>
+ * </li>
+ * <li> <a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm"> AWS SDK for .NET </a> </li>
+ * <li> <a href="http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html"> AWS SDK for PHP 2 </a> </li>
+ * <li> <a href="http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/OpsWorks/Client.html"> AWS SDK for Ruby </a> </li>
+ * <li> <a href="http://aws.amazon.com/documentation/sdkforjavascript/"> AWS SDK for Node.js </a> </li>
+ * <li> <a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html"> AWS SDK for Python(Boto) </a> </li>
+ * 
+ * </ul>
+ * <p>
  * <b>Endpoints</b>
  * </p>
  * <p>
@@ -60,7 +79,8 @@ import com.amazonaws.services.opsworks.model.transform.*;
  * </p>
  * <p>
  * When you call CreateStack, CloneStack, or UpdateStack we recommend you use the <code>ConfigurationManager</code> parameter to specify the Chef
- * version, 0.9 or 11.4. The default value is currently 0.9. However, we expect to change the default value to 11.4 in September 2013.
+ * version, 0.9 or 11.4. The default value is currently 0.9. However, we expect to change the default value to 11.4 in October 2013. For more
+ * information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html"> Using AWS OpsWorks with Chef 11 </a> .
  * </p>
  */
 public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsWorks {
@@ -190,13 +210,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AWSOpsWorksClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AWSOpsWorks using the specified AWS account credentials
+     * provider, client configuration options and request metric collector.
+     * 
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AWSOpsWorks
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public AWSOpsWorksClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         
         this.awsCredentialsProvider = awsCredentialsProvider;
         
         init();
     }
-
 
     private void init() {
         exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, JSONObject>>();
@@ -211,17 +253,65 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 "/com/amazonaws/services/opsworks/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
                 "/com/amazonaws/services/opsworks/request.handler2s"));
-
-        
     }
 
+    /**
+     * <p>
+     * Updates a user's SSH public key.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have self-management enabled or an attached policy that explicitly
+     * grants permissions. For more information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
+     *
+     * @param updateMyUserProfileRequest Container for the necessary
+     *           parameters to execute the UpdateMyUserProfile service method on
+     *           AWSOpsWorks.
+     * 
+     * 
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateMyUserProfile(UpdateMyUserProfileRequest updateMyUserProfileRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateMyUserProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateMyUserProfileRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new UpdateMyUserProfileRequestMarshaller().marshall(updateMyUserProfileRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
     
     /**
      * <p>
      * Deregisters an Amazon EBS volume. The volume can then be registered by
      * another stack. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deregisterVolumeRequest Container for the necessary parameters
@@ -261,6 +351,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * //docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">
      * Security and Permissions </a> .
      * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
      *
      * @param setPermissionRequest Container for the necessary parameters to
      *           execute the SetPermission service method on AWSOpsWorks.
@@ -299,6 +397,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeInstancesRequest Container for the necessary parameters
@@ -343,10 +449,17 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Describes the permissions for a specified stack.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describePermissionsRequest Container for the necessary
@@ -392,13 +505,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Deletes a specified instance. You must stop an instance before you can
      * delete it. For more information, see <a
      * ws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">
      * Deleting Instances </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deleteInstanceRequest Container for the necessary parameters to
@@ -437,6 +557,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Creates a clone of a specified stack. For more information, see <a
      * .aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">
      * Clone a Stack </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param cloneStackRequest Container for the necessary parameters to
@@ -481,10 +608,17 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Detaches a specified Elastic Load Balancing instance from its layer.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param detachElasticLoadBalancerRequest Container for the necessary
@@ -527,6 +661,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
      * Starting, Stopping, and Rebooting Instances </a> .
      * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
      *
      * @param stopInstanceRequest Container for the necessary parameters to
      *           execute the StopInstance service method on AWSOpsWorks.
@@ -562,6 +704,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     /**
      * <p>
      * Updates a specified app.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Deploy or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateAppRequest Container for the necessary parameters to
@@ -601,6 +751,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeCommandsRequest Container for the necessary parameters
@@ -645,14 +803,21 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Associates one of the stack's registered Elastic IP addresses with a
      * specified instance. The address must first be registered with the
      * stack by calling RegisterElasticIp. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param associateElasticIpRequest Container for the necessary
@@ -692,7 +857,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Unassigns an assigned Amazon EBS volume. The volume remains registered
      * with the stack. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param unassignVolumeRequest Container for the necessary parameters to
@@ -732,6 +905,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeRaidArraysRequest Container for the necessary
@@ -777,11 +958,18 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Gets a generated host name for the specified layer, based on the
      * current host name theme.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param getHostnameSuggestionRequest Container for the necessary
@@ -791,6 +979,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * @return The response from the GetHostnameSuggestion service method, as
      *         returned by AWSOpsWorks.
      * 
+     * @throws ResourceNotFoundException
      * @throws ValidationException
      *
      * @throws AmazonClientException
@@ -826,7 +1015,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Specify the load-based auto scaling configuration for a specified
@@ -839,6 +1027,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * load-based auto scaling instances. Load-based auto scaling operates
      * only on the instances from that set, so you must ensure that you have
      * created enough instances to handle the maximum anticipated load.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param setLoadBasedAutoScalingRequest Container for the necessary
@@ -879,6 +1075,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeVolumesRequest Container for the necessary parameters
@@ -923,14 +1127,21 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Assigns one of the stack's registered Amazon EBS volumes to a
      * specified instance. The volume must first be registered with the stack
      * by calling RegisterVolume. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param assignVolumeRequest Container for the necessary parameters to
@@ -967,6 +1178,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     /**
      * <p>
      * Describes AWS OpsWorks service errors.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeServiceErrorsRequest Container for the necessary
@@ -1012,10 +1231,17 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Updates a specified layer.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateLayerRequest Container for the necessary parameters to
@@ -1054,7 +1280,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Updates a registered Elastic IP address's name. For more information,
      * see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateElasticIpRequest Container for the necessary parameters
@@ -1093,6 +1327,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Starts a specified instance. For more information, see <a
      * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
      * Starting, Stopping, and Rebooting Instances </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param startInstanceRequest Container for the necessary parameters to
@@ -1140,6 +1382,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * A stack can have an arbitrary number of custom layers, so you can call
      * CreateLayer as many times as you like for that layer type.
      * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
      *
      * @param createLayerRequest Container for the necessary parameters to
      *           execute the CreateLayer service method on AWSOpsWorks.
@@ -1183,13 +1433,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Disassociates an Elastic IP address from its instance. The address
      * remains registered with the stack. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param disassociateElasticIpRequest Container for the necessary
@@ -1231,6 +1488,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">
      * Shut Down a Stack </a> .
      * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
      *
      * @param deleteStackRequest Container for the necessary parameters to
      *           execute the DeleteStack service method on AWSOpsWorks.
@@ -1266,6 +1531,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     /**
      * <p>
      * Starts stack's instances.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param startStackRequest Container for the necessary parameters to
@@ -1306,7 +1579,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * registered, you must first deregister it by calling DeregisterVolume.
      * For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param registerVolumeRequest Container for the necessary parameters to
@@ -1351,10 +1632,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Updates a specified user profile.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateUserProfileRequest Container for the necessary parameters
@@ -1390,9 +1677,62 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     
     /**
      * <p>
+     * Reboots a specified instance. For more information, see <a
+     * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
+     * Starting, Stopping, and Rebooting Instances </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
+     *
+     * @param rebootInstanceRequest Container for the necessary parameters to
+     *           execute the RebootInstance service method on AWSOpsWorks.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void rebootInstance(RebootInstanceRequest rebootInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(rebootInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<RebootInstanceRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new RebootInstanceRequestMarshaller().marshall(rebootInstanceRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
      * Creates a new stack. For more information, see <a
      * ocs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">
      * Create a New Stack </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param createStackRequest Container for the necessary parameters to
@@ -1436,50 +1776,19 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
-    /**
-     * <p>
-     * Reboots a specified instance. For more information, see <a
-     * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
-     * Starting, Stopping, and Rebooting Instances </a> .
-     * </p>
-     *
-     * @param rebootInstanceRequest Container for the necessary parameters to
-     *           execute the RebootInstance service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void rebootInstance(RebootInstanceRequest rebootInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(rebootInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<RebootInstanceRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-        try {
-            request = new RebootInstanceRequestMarshaller().marshall(rebootInstanceRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-        } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-        }
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
-    }
-    
     /**
      * <p>
      * Creates an instance in a specified stack. For more information, see <a
      * s.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
      * Adding an Instance to a Layer </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param createInstanceRequest Container for the necessary parameters to
@@ -1524,10 +1833,17 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Deletes a specified app.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deleteAppRequest Container for the necessary parameters to
@@ -1566,7 +1882,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Deregisters a specified Elastic IP address. The address can then be
      * registered by another stack. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deregisterElasticIpRequest Container for the necessary
@@ -1610,6 +1934,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * separately, by using the Elastic Load Balancing console, API, or CLI.
      * For more information, see Elastic Load Balancing Developer Guide.
      * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
      *
      * @param attachElasticLoadBalancerRequest Container for the necessary
      *           parameters to execute the AttachElasticLoadBalancer service method on
@@ -1647,6 +1979,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * <p>
      * Updates a specified stack.
      * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
      *
      * @param updateStackRequest Container for the necessary parameters to
      *           execute the UpdateStack service method on AWSOpsWorks.
@@ -1682,6 +2022,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     /**
      * <p>
      * Creates a new user profile.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param createUserProfileRequest Container for the necessary parameters
@@ -1725,13 +2072,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Requests a description of one or more layers in a specified stack.
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeLayersRequest Container for the necessary parameters to
@@ -1776,13 +2130,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Describes load-based auto scaling configurations for specified layers.
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeLoadBasedAutoScalingRequest Container for the necessary
@@ -1828,13 +2189,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Describes a stack's Elastic Load Balancing instances.
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeElasticLoadBalancersRequest Container for the necessary
@@ -1880,13 +2248,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Deletes a specified layer. You must first stop and then delete all
      * associated instances. For more information, see <a
      * mazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">
      * How to Delete a Layer </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deleteLayerRequest Container for the necessary parameters to
@@ -1922,10 +2297,71 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     
     /**
      * <p>
+     * Describes a user's SSH information.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have self-management enabled or an attached policy that explicitly
+     * grants permissions. For more information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
+     *
+     * @param describeMyUserProfileRequest Container for the necessary
+     *           parameters to execute the DescribeMyUserProfile service method on
+     *           AWSOpsWorks.
+     * 
+     * @return The response from the DescribeMyUserProfile service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeMyUserProfileResult describeMyUserProfile(DescribeMyUserProfileRequest describeMyUserProfileRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeMyUserProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeMyUserProfileRequest> request = null;
+        Response<DescribeMyUserProfileResult> response = null;
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeMyUserProfileRequestMarshaller().marshall(describeMyUserProfileRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<DescribeMyUserProfileResult, JsonUnmarshallerContext> unmarshaller = new DescribeMyUserProfileResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeMyUserProfileResult> responseHandler = new JsonResponseHandler<DescribeMyUserProfileResult>(unmarshaller);
+            
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Specify the time-based auto scaling configuration for a specified
      * instance. For more information, see <a
      * azon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">
      * Managing Load with Time-based and Load-based Instances </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param setTimeBasedAutoScalingRequest Container for the necessary
@@ -1965,6 +2401,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Creates an app for a specified stack. For more information, see <a
      * s.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">
      * Creating Apps </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param createAppRequest Container for the necessary parameters to
@@ -2009,10 +2453,16 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Deletes a user profile.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deleteUserProfileRequest Container for the necessary parameters
@@ -2053,6 +2503,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeTimeBasedAutoScalingRequest Container for the necessary
@@ -2098,13 +2556,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Updates an Amazon EBS volume's name or mount point. For more
      * information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateVolumeRequest Container for the necessary parameters to
@@ -2141,6 +2606,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     /**
      * <p>
      * Describe specified users.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeUserProfilesRequest Container for the necessary
@@ -2186,10 +2658,17 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Updates a specified instance.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateInstanceRequest Container for the necessary parameters to
@@ -2229,6 +2708,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeDeploymentsRequest Container for the necessary
@@ -2274,7 +2761,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Registers an Elastic IP address with a specified stack. An address can
@@ -2282,7 +2768,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * registered, you must first deregister it by calling
      * DeregisterElasticIp. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param registerElasticIpRequest Container for the necessary parameters
@@ -2327,7 +2821,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Describes <a
@@ -2336,6 +2829,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeElasticIpsRequest Container for the necessary
@@ -2381,10 +2882,17 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Requests a description of one or more stacks.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeStacksRequest Container for the necessary parameters to
@@ -2429,13 +2937,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
     /**
      * <p>
      * Requests a description of a specified set of apps.
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeAppsRequest Container for the necessary parameters to
@@ -2480,10 +2995,75 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
+    /**
+     * <p>
+     * Describes the number of layers and apps in a specified stack, and the
+     * number of instances in each state, such as <code>running_setup</code>
+     * or <code>online</code> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
+     *
+     * @param describeStackSummaryRequest Container for the necessary
+     *           parameters to execute the DescribeStackSummary service method on
+     *           AWSOpsWorks.
+     * 
+     * @return The response from the DescribeStackSummary service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeStackSummaryResult describeStackSummary(DescribeStackSummaryRequest describeStackSummaryRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeStackSummaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeStackSummaryRequest> request = null;
+        Response<DescribeStackSummaryResult> response = null;
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeStackSummaryRequestMarshaller().marshall(describeStackSummaryRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<DescribeStackSummaryResult, JsonUnmarshallerContext> unmarshaller = new DescribeStackSummaryResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeStackSummaryResult> responseHandler = new JsonResponseHandler<DescribeStackSummaryResult>(unmarshaller);
+            
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
     /**
      * <p>
      * Stops a specified stack.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param stopStackRequest Container for the necessary parameters to
@@ -2537,6 +3117,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">
      * Run Stack Commands </a> .
      * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Deploy or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
      *
      * @param createDeploymentRequest Container for the necessary parameters
      *           to execute the CreateDeployment service method on AWSOpsWorks.
@@ -2580,20 +3168,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-   
-
     @Override
     public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
-
-        
     }
 
     @Override
     public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
         super.setEndpoint(endpoint, serviceName, regionId);
-
-        
     }
 
     /**

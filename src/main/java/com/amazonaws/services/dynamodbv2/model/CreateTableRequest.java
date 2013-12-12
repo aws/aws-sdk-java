@@ -30,8 +30,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * perform read and write operations only on an <code>ACTIVE</code> table.
  * </p>
  * <p>
- * If you want to create multiple tables with local secondary indexes on them, you must create them sequentially. Only one table with local secondary
- * indexes can be in the <code>CREATING</code> state at any given time.
+ * If you want to create multiple tables with secondary indexes on them, you must create them sequentially. Only one table with secondary indexes can be
+ * in the <code>CREATING</code> state at any given time.
  * </p>
  * <p>
  * You can use the <i>DescribeTable</i> API to check the table status.
@@ -57,9 +57,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
     private String tableName;
 
     /**
-     * Specifies the attributes that make up the primary key for the table.
-     * The attributes in <i>KeySchema</i> must also be defined in the
-     * <i>AttributeDefinitions</i> array. For more information, see <a
+     * Specifies the attributes that make up the primary key for a table or
+     * an index. The attributes in <i>KeySchema</i> must also be defined in
+     * the <i>AttributeDefinitions</i> array. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      * Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      * <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
@@ -82,15 +82,16 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
     private com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement> keySchema;
 
     /**
-     * One or more secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given hash key value. There is a
-     * 10 gigabyte size limit per hash key; otherwise, the size of a local
-     * secondary index is unconstrained. <p>Each secondary index in the array
-     * includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     * the secondary index. Must be unique only for this table. <p> </li>
-     * <li> <p><i>KeySchema</i> - Specifies the key schema for the index. The
-     * key schema must begin with the same hash key attribute as the table.
-     * </li> <li> <p><i>Projection</i> - Specifies attributes that are copied
+     * One or more local secondary indexes (the maximum is five) to be
+     * created on the table. Each index is scoped to a given hash key value.
+     * There is a 10 gigabyte size limit per hash key; otherwise, the size of
+     * a local secondary index is unconstrained. <p>Each local secondary
+     * index in the array includes the following: <ul> <li>
+     * <p><i>IndexName</i> - The name of the local secondary index. Must be
+     * unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     * Specifies the key schema for the local secondary index. The key schema
+     * must begin with the same hash key attribute as the table. </li> <li>
+     * <p><i>Projection</i> - Specifies attributes that are copied
      * (projected) from the table into the index. These are in addition to
      * the primary key attributes and index key attributes, which are
      * automatically projected. Each attribute specification is composed of:
@@ -102,19 +103,48 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * index. The total count of attributes specified in
-     * <i>NonKeyAttributes</i>, summed across all of the local secondary
-     * indexes, must not exceed 20. If you project the same attribute into
-     * two different indexes, this counts as two distinct attributes when
+     * secondary index. The total count of attributes specified in
+     * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     * must not exceed 20. If you project the same attribute into two
+     * different indexes, this counts as two distinct attributes when
      * determining the total. </li> </ul> </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<LocalSecondaryIndex> localSecondaryIndexes;
 
     /**
-     * The provisioned throughput settings for the specified table. The
-     * settings can be modified using the <i>UpdateTable</i> operation.
-     * <p>For current minimum and maximum provisioned throughput values, see
-     * <a
+     * One or more global secondary indexes (the maximum is five) to be
+     * created on the table. Each global secondary index in the array
+     * includes the following: <ul> <li> <p><i>IndexName</i> - The name of
+     * the global secondary index. Must be unique only for this table. <p>
+     * </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
+     * global secondary index. </li> <li> <p><i>Projection</i> - Specifies
+     * attributes that are copied (projected) from the table into the index.
+     * These are in addition to the primary key attributes and index key
+     * attributes, which are automatically projected. Each attribute
+     * specification is composed of: <ul> <li> <p><i>ProjectionType</i> - One
+     * of the following: <ul> <li> <p><code>KEYS_ONLY</code> - Only the index
+     * and primary keys are projected into the index. </li> <li>
+     * <p><code>INCLUDE</code> - Only the specified table attributes are
+     * projected into the index. The list of projected attributes are in
+     * <i>NonKeyAttributes</i>. </li> <li> <p><code>ALL</code> - All of the
+     * table attributes are projected into the index. </li> </ul> </li> <li>
+     * <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
+     * names that are projected into the secondary index. The total count of
+     * attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     * the secondary indexes, must not exceed 20. If you project the same
+     * attribute into two different indexes, this counts as two distinct
+     * attributes when determining the total. </li> </ul> </li> <li>
+     * <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     * for the global secondary index, consisting of read and write capacity
+     * units. </li> </ul>
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<GlobalSecondaryIndex> globalSecondaryIndexes;
+
+    /**
+     * Represents the provisioned throughput settings for a specified table
+     * or index. The settings can be modified using the <i>UpdateTable</i>
+     * operation. <p>For current minimum and maximum provisioned throughput
+     * values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the Amazon DynamoDB Developer Guide.
      */
@@ -133,8 +163,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * 
      * @param tableName The name of the table to create.
      * @param keySchema Specifies the attributes that make up the primary key
-     * for the table. The attributes in <i>KeySchema</i> must also be defined
-     * in the <i>AttributeDefinitions</i> array. For more information, see <a
+     * for a table or an index. The attributes in <i>KeySchema</i> must also
+     * be defined in the <i>AttributeDefinitions</i> array. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      * Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      * <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
@@ -165,8 +196,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * key schema for the table and indexes.
      * @param tableName The name of the table to create.
      * @param keySchema Specifies the attributes that make up the primary key
-     * for the table. The attributes in <i>KeySchema</i> must also be defined
-     * in the <i>AttributeDefinitions</i> array. For more information, see <a
+     * for a table or an index. The attributes in <i>KeySchema</i> must also
+     * be defined in the <i>AttributeDefinitions</i> array. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      * Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      * <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
@@ -182,10 +214,10 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
      * the Primary Key</a> in the Amazon DynamoDB Developer Guide.
-     * @param provisionedThroughput The provisioned throughput settings for
-     * the specified table. The settings can be modified using the
-     * <i>UpdateTable</i> operation. <p>For current minimum and maximum
-     * provisioned throughput values, see <a
+     * @param provisionedThroughput Represents the provisioned throughput
+     * settings for a specified table or index. The settings can be modified
+     * using the <i>UpdateTable</i> operation. <p>For current minimum and
+     * maximum provisioned throughput values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the Amazon DynamoDB Developer Guide.
      */
@@ -314,9 +346,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Specifies the attributes that make up the primary key for the table.
-     * The attributes in <i>KeySchema</i> must also be defined in the
-     * <i>AttributeDefinitions</i> array. For more information, see <a
+     * Specifies the attributes that make up the primary key for a table or
+     * an index. The attributes in <i>KeySchema</i> must also be defined in
+     * the <i>AttributeDefinitions</i> array. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      * Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      * <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
@@ -336,9 +368,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
      *
-     * @return Specifies the attributes that make up the primary key for the table.
-     *         The attributes in <i>KeySchema</i> must also be defined in the
-     *         <i>AttributeDefinitions</i> array. For more information, see <a
+     * @return Specifies the attributes that make up the primary key for a table or
+     *         an index. The attributes in <i>KeySchema</i> must also be defined in
+     *         the <i>AttributeDefinitions</i> array. For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      *         Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      *         <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
@@ -360,9 +392,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * Specifies the attributes that make up the primary key for the table.
-     * The attributes in <i>KeySchema</i> must also be defined in the
-     * <i>AttributeDefinitions</i> array. For more information, see <a
+     * Specifies the attributes that make up the primary key for a table or
+     * an index. The attributes in <i>KeySchema</i> must also be defined in
+     * the <i>AttributeDefinitions</i> array. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      * Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      * <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
@@ -382,9 +414,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
      *
-     * @param keySchema Specifies the attributes that make up the primary key for the table.
-     *         The attributes in <i>KeySchema</i> must also be defined in the
-     *         <i>AttributeDefinitions</i> array. For more information, see <a
+     * @param keySchema Specifies the attributes that make up the primary key for a table or
+     *         an index. The attributes in <i>KeySchema</i> must also be defined in
+     *         the <i>AttributeDefinitions</i> array. For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      *         Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      *         <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
@@ -412,9 +444,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * Specifies the attributes that make up the primary key for the table.
-     * The attributes in <i>KeySchema</i> must also be defined in the
-     * <i>AttributeDefinitions</i> array. For more information, see <a
+     * Specifies the attributes that make up the primary key for a table or
+     * an index. The attributes in <i>KeySchema</i> must also be defined in
+     * the <i>AttributeDefinitions</i> array. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      * Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      * <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
@@ -436,9 +468,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
      *
-     * @param keySchema Specifies the attributes that make up the primary key for the table.
-     *         The attributes in <i>KeySchema</i> must also be defined in the
-     *         <i>AttributeDefinitions</i> array. For more information, see <a
+     * @param keySchema Specifies the attributes that make up the primary key for a table or
+     *         an index. The attributes in <i>KeySchema</i> must also be defined in
+     *         the <i>AttributeDefinitions</i> array. For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      *         Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      *         <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
@@ -467,9 +499,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * Specifies the attributes that make up the primary key for the table.
-     * The attributes in <i>KeySchema</i> must also be defined in the
-     * <i>AttributeDefinitions</i> array. For more information, see <a
+     * Specifies the attributes that make up the primary key for a table or
+     * an index. The attributes in <i>KeySchema</i> must also be defined in
+     * the <i>AttributeDefinitions</i> array. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      * Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      * <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
@@ -491,9 +523,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
      *
-     * @param keySchema Specifies the attributes that make up the primary key for the table.
-     *         The attributes in <i>KeySchema</i> must also be defined in the
-     *         <i>AttributeDefinitions</i> array. For more information, see <a
+     * @param keySchema Specifies the attributes that make up the primary key for a table or
+     *         an index. The attributes in <i>KeySchema</i> must also be defined in
+     *         the <i>AttributeDefinitions</i> array. For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      *         Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      *         <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
@@ -526,15 +558,16 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * One or more secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given hash key value. There is a
-     * 10 gigabyte size limit per hash key; otherwise, the size of a local
-     * secondary index is unconstrained. <p>Each secondary index in the array
-     * includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     * the secondary index. Must be unique only for this table. <p> </li>
-     * <li> <p><i>KeySchema</i> - Specifies the key schema for the index. The
-     * key schema must begin with the same hash key attribute as the table.
-     * </li> <li> <p><i>Projection</i> - Specifies attributes that are copied
+     * One or more local secondary indexes (the maximum is five) to be
+     * created on the table. Each index is scoped to a given hash key value.
+     * There is a 10 gigabyte size limit per hash key; otherwise, the size of
+     * a local secondary index is unconstrained. <p>Each local secondary
+     * index in the array includes the following: <ul> <li>
+     * <p><i>IndexName</i> - The name of the local secondary index. Must be
+     * unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     * Specifies the key schema for the local secondary index. The key schema
+     * must begin with the same hash key attribute as the table. </li> <li>
+     * <p><i>Projection</i> - Specifies attributes that are copied
      * (projected) from the table into the index. These are in addition to
      * the primary key attributes and index key attributes, which are
      * automatically projected. Each attribute specification is composed of:
@@ -546,21 +579,22 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * index. The total count of attributes specified in
-     * <i>NonKeyAttributes</i>, summed across all of the local secondary
-     * indexes, must not exceed 20. If you project the same attribute into
-     * two different indexes, this counts as two distinct attributes when
+     * secondary index. The total count of attributes specified in
+     * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     * must not exceed 20. If you project the same attribute into two
+     * different indexes, this counts as two distinct attributes when
      * determining the total. </li> </ul> </li> </ul>
      *
-     * @return One or more secondary indexes (the maximum is five) to be created on
-     *         the table. Each index is scoped to a given hash key value. There is a
-     *         10 gigabyte size limit per hash key; otherwise, the size of a local
-     *         secondary index is unconstrained. <p>Each secondary index in the array
-     *         includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     *         the secondary index. Must be unique only for this table. <p> </li>
-     *         <li> <p><i>KeySchema</i> - Specifies the key schema for the index. The
-     *         key schema must begin with the same hash key attribute as the table.
-     *         </li> <li> <p><i>Projection</i> - Specifies attributes that are copied
+     * @return One or more local secondary indexes (the maximum is five) to be
+     *         created on the table. Each index is scoped to a given hash key value.
+     *         There is a 10 gigabyte size limit per hash key; otherwise, the size of
+     *         a local secondary index is unconstrained. <p>Each local secondary
+     *         index in the array includes the following: <ul> <li>
+     *         <p><i>IndexName</i> - The name of the local secondary index. Must be
+     *         unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     *         Specifies the key schema for the local secondary index. The key schema
+     *         must begin with the same hash key attribute as the table. </li> <li>
+     *         <p><i>Projection</i> - Specifies attributes that are copied
      *         (projected) from the table into the index. These are in addition to
      *         the primary key attributes and index key attributes, which are
      *         automatically projected. Each attribute specification is composed of:
@@ -572,10 +606,10 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         <p><code>ALL</code> - All of the table attributes are projected into
      *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      *         of one or more non-key attribute names that are projected into the
-     *         index. The total count of attributes specified in
-     *         <i>NonKeyAttributes</i>, summed across all of the local secondary
-     *         indexes, must not exceed 20. If you project the same attribute into
-     *         two different indexes, this counts as two distinct attributes when
+     *         secondary index. The total count of attributes specified in
+     *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     *         must not exceed 20. If you project the same attribute into two
+     *         different indexes, this counts as two distinct attributes when
      *         determining the total. </li> </ul> </li> </ul>
      */
     public java.util.List<LocalSecondaryIndex> getLocalSecondaryIndexes() {
@@ -583,15 +617,16 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * One or more secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given hash key value. There is a
-     * 10 gigabyte size limit per hash key; otherwise, the size of a local
-     * secondary index is unconstrained. <p>Each secondary index in the array
-     * includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     * the secondary index. Must be unique only for this table. <p> </li>
-     * <li> <p><i>KeySchema</i> - Specifies the key schema for the index. The
-     * key schema must begin with the same hash key attribute as the table.
-     * </li> <li> <p><i>Projection</i> - Specifies attributes that are copied
+     * One or more local secondary indexes (the maximum is five) to be
+     * created on the table. Each index is scoped to a given hash key value.
+     * There is a 10 gigabyte size limit per hash key; otherwise, the size of
+     * a local secondary index is unconstrained. <p>Each local secondary
+     * index in the array includes the following: <ul> <li>
+     * <p><i>IndexName</i> - The name of the local secondary index. Must be
+     * unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     * Specifies the key schema for the local secondary index. The key schema
+     * must begin with the same hash key attribute as the table. </li> <li>
+     * <p><i>Projection</i> - Specifies attributes that are copied
      * (projected) from the table into the index. These are in addition to
      * the primary key attributes and index key attributes, which are
      * automatically projected. Each attribute specification is composed of:
@@ -603,21 +638,22 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * index. The total count of attributes specified in
-     * <i>NonKeyAttributes</i>, summed across all of the local secondary
-     * indexes, must not exceed 20. If you project the same attribute into
-     * two different indexes, this counts as two distinct attributes when
+     * secondary index. The total count of attributes specified in
+     * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     * must not exceed 20. If you project the same attribute into two
+     * different indexes, this counts as two distinct attributes when
      * determining the total. </li> </ul> </li> </ul>
      *
-     * @param localSecondaryIndexes One or more secondary indexes (the maximum is five) to be created on
-     *         the table. Each index is scoped to a given hash key value. There is a
-     *         10 gigabyte size limit per hash key; otherwise, the size of a local
-     *         secondary index is unconstrained. <p>Each secondary index in the array
-     *         includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     *         the secondary index. Must be unique only for this table. <p> </li>
-     *         <li> <p><i>KeySchema</i> - Specifies the key schema for the index. The
-     *         key schema must begin with the same hash key attribute as the table.
-     *         </li> <li> <p><i>Projection</i> - Specifies attributes that are copied
+     * @param localSecondaryIndexes One or more local secondary indexes (the maximum is five) to be
+     *         created on the table. Each index is scoped to a given hash key value.
+     *         There is a 10 gigabyte size limit per hash key; otherwise, the size of
+     *         a local secondary index is unconstrained. <p>Each local secondary
+     *         index in the array includes the following: <ul> <li>
+     *         <p><i>IndexName</i> - The name of the local secondary index. Must be
+     *         unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     *         Specifies the key schema for the local secondary index. The key schema
+     *         must begin with the same hash key attribute as the table. </li> <li>
+     *         <p><i>Projection</i> - Specifies attributes that are copied
      *         (projected) from the table into the index. These are in addition to
      *         the primary key attributes and index key attributes, which are
      *         automatically projected. Each attribute specification is composed of:
@@ -629,10 +665,10 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         <p><code>ALL</code> - All of the table attributes are projected into
      *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      *         of one or more non-key attribute names that are projected into the
-     *         index. The total count of attributes specified in
-     *         <i>NonKeyAttributes</i>, summed across all of the local secondary
-     *         indexes, must not exceed 20. If you project the same attribute into
-     *         two different indexes, this counts as two distinct attributes when
+     *         secondary index. The total count of attributes specified in
+     *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     *         must not exceed 20. If you project the same attribute into two
+     *         different indexes, this counts as two distinct attributes when
      *         determining the total. </li> </ul> </li> </ul>
      */
     public void setLocalSecondaryIndexes(java.util.Collection<LocalSecondaryIndex> localSecondaryIndexes) {
@@ -646,15 +682,16 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * One or more secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given hash key value. There is a
-     * 10 gigabyte size limit per hash key; otherwise, the size of a local
-     * secondary index is unconstrained. <p>Each secondary index in the array
-     * includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     * the secondary index. Must be unique only for this table. <p> </li>
-     * <li> <p><i>KeySchema</i> - Specifies the key schema for the index. The
-     * key schema must begin with the same hash key attribute as the table.
-     * </li> <li> <p><i>Projection</i> - Specifies attributes that are copied
+     * One or more local secondary indexes (the maximum is five) to be
+     * created on the table. Each index is scoped to a given hash key value.
+     * There is a 10 gigabyte size limit per hash key; otherwise, the size of
+     * a local secondary index is unconstrained. <p>Each local secondary
+     * index in the array includes the following: <ul> <li>
+     * <p><i>IndexName</i> - The name of the local secondary index. Must be
+     * unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     * Specifies the key schema for the local secondary index. The key schema
+     * must begin with the same hash key attribute as the table. </li> <li>
+     * <p><i>Projection</i> - Specifies attributes that are copied
      * (projected) from the table into the index. These are in addition to
      * the primary key attributes and index key attributes, which are
      * automatically projected. Each attribute specification is composed of:
@@ -666,23 +703,24 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * index. The total count of attributes specified in
-     * <i>NonKeyAttributes</i>, summed across all of the local secondary
-     * indexes, must not exceed 20. If you project the same attribute into
-     * two different indexes, this counts as two distinct attributes when
+     * secondary index. The total count of attributes specified in
+     * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     * must not exceed 20. If you project the same attribute into two
+     * different indexes, this counts as two distinct attributes when
      * determining the total. </li> </ul> </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param localSecondaryIndexes One or more secondary indexes (the maximum is five) to be created on
-     *         the table. Each index is scoped to a given hash key value. There is a
-     *         10 gigabyte size limit per hash key; otherwise, the size of a local
-     *         secondary index is unconstrained. <p>Each secondary index in the array
-     *         includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     *         the secondary index. Must be unique only for this table. <p> </li>
-     *         <li> <p><i>KeySchema</i> - Specifies the key schema for the index. The
-     *         key schema must begin with the same hash key attribute as the table.
-     *         </li> <li> <p><i>Projection</i> - Specifies attributes that are copied
+     * @param localSecondaryIndexes One or more local secondary indexes (the maximum is five) to be
+     *         created on the table. Each index is scoped to a given hash key value.
+     *         There is a 10 gigabyte size limit per hash key; otherwise, the size of
+     *         a local secondary index is unconstrained. <p>Each local secondary
+     *         index in the array includes the following: <ul> <li>
+     *         <p><i>IndexName</i> - The name of the local secondary index. Must be
+     *         unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     *         Specifies the key schema for the local secondary index. The key schema
+     *         must begin with the same hash key attribute as the table. </li> <li>
+     *         <p><i>Projection</i> - Specifies attributes that are copied
      *         (projected) from the table into the index. These are in addition to
      *         the primary key attributes and index key attributes, which are
      *         automatically projected. Each attribute specification is composed of:
@@ -694,10 +732,10 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         <p><code>ALL</code> - All of the table attributes are projected into
      *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      *         of one or more non-key attribute names that are projected into the
-     *         index. The total count of attributes specified in
-     *         <i>NonKeyAttributes</i>, summed across all of the local secondary
-     *         indexes, must not exceed 20. If you project the same attribute into
-     *         two different indexes, this counts as two distinct attributes when
+     *         secondary index. The total count of attributes specified in
+     *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     *         must not exceed 20. If you project the same attribute into two
+     *         different indexes, this counts as two distinct attributes when
      *         determining the total. </li> </ul> </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -712,15 +750,16 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * One or more secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given hash key value. There is a
-     * 10 gigabyte size limit per hash key; otherwise, the size of a local
-     * secondary index is unconstrained. <p>Each secondary index in the array
-     * includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     * the secondary index. Must be unique only for this table. <p> </li>
-     * <li> <p><i>KeySchema</i> - Specifies the key schema for the index. The
-     * key schema must begin with the same hash key attribute as the table.
-     * </li> <li> <p><i>Projection</i> - Specifies attributes that are copied
+     * One or more local secondary indexes (the maximum is five) to be
+     * created on the table. Each index is scoped to a given hash key value.
+     * There is a 10 gigabyte size limit per hash key; otherwise, the size of
+     * a local secondary index is unconstrained. <p>Each local secondary
+     * index in the array includes the following: <ul> <li>
+     * <p><i>IndexName</i> - The name of the local secondary index. Must be
+     * unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     * Specifies the key schema for the local secondary index. The key schema
+     * must begin with the same hash key attribute as the table. </li> <li>
+     * <p><i>Projection</i> - Specifies attributes that are copied
      * (projected) from the table into the index. These are in addition to
      * the primary key attributes and index key attributes, which are
      * automatically projected. Each attribute specification is composed of:
@@ -732,23 +771,24 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <p><code>ALL</code> - All of the table attributes are projected into
      * the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      * of one or more non-key attribute names that are projected into the
-     * index. The total count of attributes specified in
-     * <i>NonKeyAttributes</i>, summed across all of the local secondary
-     * indexes, must not exceed 20. If you project the same attribute into
-     * two different indexes, this counts as two distinct attributes when
+     * secondary index. The total count of attributes specified in
+     * <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     * must not exceed 20. If you project the same attribute into two
+     * different indexes, this counts as two distinct attributes when
      * determining the total. </li> </ul> </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param localSecondaryIndexes One or more secondary indexes (the maximum is five) to be created on
-     *         the table. Each index is scoped to a given hash key value. There is a
-     *         10 gigabyte size limit per hash key; otherwise, the size of a local
-     *         secondary index is unconstrained. <p>Each secondary index in the array
-     *         includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     *         the secondary index. Must be unique only for this table. <p> </li>
-     *         <li> <p><i>KeySchema</i> - Specifies the key schema for the index. The
-     *         key schema must begin with the same hash key attribute as the table.
-     *         </li> <li> <p><i>Projection</i> - Specifies attributes that are copied
+     * @param localSecondaryIndexes One or more local secondary indexes (the maximum is five) to be
+     *         created on the table. Each index is scoped to a given hash key value.
+     *         There is a 10 gigabyte size limit per hash key; otherwise, the size of
+     *         a local secondary index is unconstrained. <p>Each local secondary
+     *         index in the array includes the following: <ul> <li>
+     *         <p><i>IndexName</i> - The name of the local secondary index. Must be
+     *         unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     *         Specifies the key schema for the local secondary index. The key schema
+     *         must begin with the same hash key attribute as the table. </li> <li>
+     *         <p><i>Projection</i> - Specifies attributes that are copied
      *         (projected) from the table into the index. These are in addition to
      *         the primary key attributes and index key attributes, which are
      *         automatically projected. Each attribute specification is composed of:
@@ -760,10 +800,10 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         <p><code>ALL</code> - All of the table attributes are projected into
      *         the index. </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list
      *         of one or more non-key attribute names that are projected into the
-     *         index. The total count of attributes specified in
-     *         <i>NonKeyAttributes</i>, summed across all of the local secondary
-     *         indexes, must not exceed 20. If you project the same attribute into
-     *         two different indexes, this counts as two distinct attributes when
+     *         secondary index. The total count of attributes specified in
+     *         <i>NonKeyAttributes</i>, summed across all of the secondary indexes,
+     *         must not exceed 20. If you project the same attribute into two
+     *         different indexes, this counts as two distinct attributes when
      *         determining the total. </li> </ul> </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -782,17 +822,273 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The provisioned throughput settings for the specified table. The
-     * settings can be modified using the <i>UpdateTable</i> operation.
-     * <p>For current minimum and maximum provisioned throughput values, see
-     * <a
+     * One or more global secondary indexes (the maximum is five) to be
+     * created on the table. Each global secondary index in the array
+     * includes the following: <ul> <li> <p><i>IndexName</i> - The name of
+     * the global secondary index. Must be unique only for this table. <p>
+     * </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
+     * global secondary index. </li> <li> <p><i>Projection</i> - Specifies
+     * attributes that are copied (projected) from the table into the index.
+     * These are in addition to the primary key attributes and index key
+     * attributes, which are automatically projected. Each attribute
+     * specification is composed of: <ul> <li> <p><i>ProjectionType</i> - One
+     * of the following: <ul> <li> <p><code>KEYS_ONLY</code> - Only the index
+     * and primary keys are projected into the index. </li> <li>
+     * <p><code>INCLUDE</code> - Only the specified table attributes are
+     * projected into the index. The list of projected attributes are in
+     * <i>NonKeyAttributes</i>. </li> <li> <p><code>ALL</code> - All of the
+     * table attributes are projected into the index. </li> </ul> </li> <li>
+     * <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
+     * names that are projected into the secondary index. The total count of
+     * attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     * the secondary indexes, must not exceed 20. If you project the same
+     * attribute into two different indexes, this counts as two distinct
+     * attributes when determining the total. </li> </ul> </li> <li>
+     * <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     * for the global secondary index, consisting of read and write capacity
+     * units. </li> </ul>
+     *
+     * @return One or more global secondary indexes (the maximum is five) to be
+     *         created on the table. Each global secondary index in the array
+     *         includes the following: <ul> <li> <p><i>IndexName</i> - The name of
+     *         the global secondary index. Must be unique only for this table. <p>
+     *         </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
+     *         global secondary index. </li> <li> <p><i>Projection</i> - Specifies
+     *         attributes that are copied (projected) from the table into the index.
+     *         These are in addition to the primary key attributes and index key
+     *         attributes, which are automatically projected. Each attribute
+     *         specification is composed of: <ul> <li> <p><i>ProjectionType</i> - One
+     *         of the following: <ul> <li> <p><code>KEYS_ONLY</code> - Only the index
+     *         and primary keys are projected into the index. </li> <li>
+     *         <p><code>INCLUDE</code> - Only the specified table attributes are
+     *         projected into the index. The list of projected attributes are in
+     *         <i>NonKeyAttributes</i>. </li> <li> <p><code>ALL</code> - All of the
+     *         table attributes are projected into the index. </li> </ul> </li> <li>
+     *         <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
+     *         names that are projected into the secondary index. The total count of
+     *         attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     *         the secondary indexes, must not exceed 20. If you project the same
+     *         attribute into two different indexes, this counts as two distinct
+     *         attributes when determining the total. </li> </ul> </li> <li>
+     *         <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     *         for the global secondary index, consisting of read and write capacity
+     *         units. </li> </ul>
+     */
+    public java.util.List<GlobalSecondaryIndex> getGlobalSecondaryIndexes() {
+        return globalSecondaryIndexes;
+    }
+    
+    /**
+     * One or more global secondary indexes (the maximum is five) to be
+     * created on the table. Each global secondary index in the array
+     * includes the following: <ul> <li> <p><i>IndexName</i> - The name of
+     * the global secondary index. Must be unique only for this table. <p>
+     * </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
+     * global secondary index. </li> <li> <p><i>Projection</i> - Specifies
+     * attributes that are copied (projected) from the table into the index.
+     * These are in addition to the primary key attributes and index key
+     * attributes, which are automatically projected. Each attribute
+     * specification is composed of: <ul> <li> <p><i>ProjectionType</i> - One
+     * of the following: <ul> <li> <p><code>KEYS_ONLY</code> - Only the index
+     * and primary keys are projected into the index. </li> <li>
+     * <p><code>INCLUDE</code> - Only the specified table attributes are
+     * projected into the index. The list of projected attributes are in
+     * <i>NonKeyAttributes</i>. </li> <li> <p><code>ALL</code> - All of the
+     * table attributes are projected into the index. </li> </ul> </li> <li>
+     * <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
+     * names that are projected into the secondary index. The total count of
+     * attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     * the secondary indexes, must not exceed 20. If you project the same
+     * attribute into two different indexes, this counts as two distinct
+     * attributes when determining the total. </li> </ul> </li> <li>
+     * <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     * for the global secondary index, consisting of read and write capacity
+     * units. </li> </ul>
+     *
+     * @param globalSecondaryIndexes One or more global secondary indexes (the maximum is five) to be
+     *         created on the table. Each global secondary index in the array
+     *         includes the following: <ul> <li> <p><i>IndexName</i> - The name of
+     *         the global secondary index. Must be unique only for this table. <p>
+     *         </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
+     *         global secondary index. </li> <li> <p><i>Projection</i> - Specifies
+     *         attributes that are copied (projected) from the table into the index.
+     *         These are in addition to the primary key attributes and index key
+     *         attributes, which are automatically projected. Each attribute
+     *         specification is composed of: <ul> <li> <p><i>ProjectionType</i> - One
+     *         of the following: <ul> <li> <p><code>KEYS_ONLY</code> - Only the index
+     *         and primary keys are projected into the index. </li> <li>
+     *         <p><code>INCLUDE</code> - Only the specified table attributes are
+     *         projected into the index. The list of projected attributes are in
+     *         <i>NonKeyAttributes</i>. </li> <li> <p><code>ALL</code> - All of the
+     *         table attributes are projected into the index. </li> </ul> </li> <li>
+     *         <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
+     *         names that are projected into the secondary index. The total count of
+     *         attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     *         the secondary indexes, must not exceed 20. If you project the same
+     *         attribute into two different indexes, this counts as two distinct
+     *         attributes when determining the total. </li> </ul> </li> <li>
+     *         <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     *         for the global secondary index, consisting of read and write capacity
+     *         units. </li> </ul>
+     */
+    public void setGlobalSecondaryIndexes(java.util.Collection<GlobalSecondaryIndex> globalSecondaryIndexes) {
+        if (globalSecondaryIndexes == null) {
+            this.globalSecondaryIndexes = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<GlobalSecondaryIndex> globalSecondaryIndexesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GlobalSecondaryIndex>(globalSecondaryIndexes.size());
+        globalSecondaryIndexesCopy.addAll(globalSecondaryIndexes);
+        this.globalSecondaryIndexes = globalSecondaryIndexesCopy;
+    }
+    
+    /**
+     * One or more global secondary indexes (the maximum is five) to be
+     * created on the table. Each global secondary index in the array
+     * includes the following: <ul> <li> <p><i>IndexName</i> - The name of
+     * the global secondary index. Must be unique only for this table. <p>
+     * </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
+     * global secondary index. </li> <li> <p><i>Projection</i> - Specifies
+     * attributes that are copied (projected) from the table into the index.
+     * These are in addition to the primary key attributes and index key
+     * attributes, which are automatically projected. Each attribute
+     * specification is composed of: <ul> <li> <p><i>ProjectionType</i> - One
+     * of the following: <ul> <li> <p><code>KEYS_ONLY</code> - Only the index
+     * and primary keys are projected into the index. </li> <li>
+     * <p><code>INCLUDE</code> - Only the specified table attributes are
+     * projected into the index. The list of projected attributes are in
+     * <i>NonKeyAttributes</i>. </li> <li> <p><code>ALL</code> - All of the
+     * table attributes are projected into the index. </li> </ul> </li> <li>
+     * <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
+     * names that are projected into the secondary index. The total count of
+     * attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     * the secondary indexes, must not exceed 20. If you project the same
+     * attribute into two different indexes, this counts as two distinct
+     * attributes when determining the total. </li> </ul> </li> <li>
+     * <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     * for the global secondary index, consisting of read and write capacity
+     * units. </li> </ul>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param globalSecondaryIndexes One or more global secondary indexes (the maximum is five) to be
+     *         created on the table. Each global secondary index in the array
+     *         includes the following: <ul> <li> <p><i>IndexName</i> - The name of
+     *         the global secondary index. Must be unique only for this table. <p>
+     *         </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
+     *         global secondary index. </li> <li> <p><i>Projection</i> - Specifies
+     *         attributes that are copied (projected) from the table into the index.
+     *         These are in addition to the primary key attributes and index key
+     *         attributes, which are automatically projected. Each attribute
+     *         specification is composed of: <ul> <li> <p><i>ProjectionType</i> - One
+     *         of the following: <ul> <li> <p><code>KEYS_ONLY</code> - Only the index
+     *         and primary keys are projected into the index. </li> <li>
+     *         <p><code>INCLUDE</code> - Only the specified table attributes are
+     *         projected into the index. The list of projected attributes are in
+     *         <i>NonKeyAttributes</i>. </li> <li> <p><code>ALL</code> - All of the
+     *         table attributes are projected into the index. </li> </ul> </li> <li>
+     *         <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
+     *         names that are projected into the secondary index. The total count of
+     *         attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     *         the secondary indexes, must not exceed 20. If you project the same
+     *         attribute into two different indexes, this counts as two distinct
+     *         attributes when determining the total. </li> </ul> </li> <li>
+     *         <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     *         for the global secondary index, consisting of read and write capacity
+     *         units. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateTableRequest withGlobalSecondaryIndexes(GlobalSecondaryIndex... globalSecondaryIndexes) {
+        if (getGlobalSecondaryIndexes() == null) setGlobalSecondaryIndexes(new java.util.ArrayList<GlobalSecondaryIndex>(globalSecondaryIndexes.length));
+        for (GlobalSecondaryIndex value : globalSecondaryIndexes) {
+            getGlobalSecondaryIndexes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * One or more global secondary indexes (the maximum is five) to be
+     * created on the table. Each global secondary index in the array
+     * includes the following: <ul> <li> <p><i>IndexName</i> - The name of
+     * the global secondary index. Must be unique only for this table. <p>
+     * </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
+     * global secondary index. </li> <li> <p><i>Projection</i> - Specifies
+     * attributes that are copied (projected) from the table into the index.
+     * These are in addition to the primary key attributes and index key
+     * attributes, which are automatically projected. Each attribute
+     * specification is composed of: <ul> <li> <p><i>ProjectionType</i> - One
+     * of the following: <ul> <li> <p><code>KEYS_ONLY</code> - Only the index
+     * and primary keys are projected into the index. </li> <li>
+     * <p><code>INCLUDE</code> - Only the specified table attributes are
+     * projected into the index. The list of projected attributes are in
+     * <i>NonKeyAttributes</i>. </li> <li> <p><code>ALL</code> - All of the
+     * table attributes are projected into the index. </li> </ul> </li> <li>
+     * <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
+     * names that are projected into the secondary index. The total count of
+     * attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     * the secondary indexes, must not exceed 20. If you project the same
+     * attribute into two different indexes, this counts as two distinct
+     * attributes when determining the total. </li> </ul> </li> <li>
+     * <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     * for the global secondary index, consisting of read and write capacity
+     * units. </li> </ul>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param globalSecondaryIndexes One or more global secondary indexes (the maximum is five) to be
+     *         created on the table. Each global secondary index in the array
+     *         includes the following: <ul> <li> <p><i>IndexName</i> - The name of
+     *         the global secondary index. Must be unique only for this table. <p>
+     *         </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
+     *         global secondary index. </li> <li> <p><i>Projection</i> - Specifies
+     *         attributes that are copied (projected) from the table into the index.
+     *         These are in addition to the primary key attributes and index key
+     *         attributes, which are automatically projected. Each attribute
+     *         specification is composed of: <ul> <li> <p><i>ProjectionType</i> - One
+     *         of the following: <ul> <li> <p><code>KEYS_ONLY</code> - Only the index
+     *         and primary keys are projected into the index. </li> <li>
+     *         <p><code>INCLUDE</code> - Only the specified table attributes are
+     *         projected into the index. The list of projected attributes are in
+     *         <i>NonKeyAttributes</i>. </li> <li> <p><code>ALL</code> - All of the
+     *         table attributes are projected into the index. </li> </ul> </li> <li>
+     *         <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute
+     *         names that are projected into the secondary index. The total count of
+     *         attributes specified in <i>NonKeyAttributes</i>, summed across all of
+     *         the secondary indexes, must not exceed 20. If you project the same
+     *         attribute into two different indexes, this counts as two distinct
+     *         attributes when determining the total. </li> </ul> </li> <li>
+     *         <p><i>ProvisionedThroughput</i> - The provisioned throughput settings
+     *         for the global secondary index, consisting of read and write capacity
+     *         units. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateTableRequest withGlobalSecondaryIndexes(java.util.Collection<GlobalSecondaryIndex> globalSecondaryIndexes) {
+        if (globalSecondaryIndexes == null) {
+            this.globalSecondaryIndexes = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<GlobalSecondaryIndex> globalSecondaryIndexesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GlobalSecondaryIndex>(globalSecondaryIndexes.size());
+            globalSecondaryIndexesCopy.addAll(globalSecondaryIndexes);
+            this.globalSecondaryIndexes = globalSecondaryIndexesCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * Represents the provisioned throughput settings for a specified table
+     * or index. The settings can be modified using the <i>UpdateTable</i>
+     * operation. <p>For current minimum and maximum provisioned throughput
+     * values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the Amazon DynamoDB Developer Guide.
      *
-     * @return The provisioned throughput settings for the specified table. The
-     *         settings can be modified using the <i>UpdateTable</i> operation.
-     *         <p>For current minimum and maximum provisioned throughput values, see
-     *         <a
+     * @return Represents the provisioned throughput settings for a specified table
+     *         or index. The settings can be modified using the <i>UpdateTable</i>
+     *         operation. <p>For current minimum and maximum provisioned throughput
+     *         values, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      *         in the Amazon DynamoDB Developer Guide.
      */
@@ -801,17 +1097,17 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * The provisioned throughput settings for the specified table. The
-     * settings can be modified using the <i>UpdateTable</i> operation.
-     * <p>For current minimum and maximum provisioned throughput values, see
-     * <a
+     * Represents the provisioned throughput settings for a specified table
+     * or index. The settings can be modified using the <i>UpdateTable</i>
+     * operation. <p>For current minimum and maximum provisioned throughput
+     * values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the Amazon DynamoDB Developer Guide.
      *
-     * @param provisionedThroughput The provisioned throughput settings for the specified table. The
-     *         settings can be modified using the <i>UpdateTable</i> operation.
-     *         <p>For current minimum and maximum provisioned throughput values, see
-     *         <a
+     * @param provisionedThroughput Represents the provisioned throughput settings for a specified table
+     *         or index. The settings can be modified using the <i>UpdateTable</i>
+     *         operation. <p>For current minimum and maximum provisioned throughput
+     *         values, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      *         in the Amazon DynamoDB Developer Guide.
      */
@@ -820,19 +1116,19 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * The provisioned throughput settings for the specified table. The
-     * settings can be modified using the <i>UpdateTable</i> operation.
-     * <p>For current minimum and maximum provisioned throughput values, see
-     * <a
+     * Represents the provisioned throughput settings for a specified table
+     * or index. The settings can be modified using the <i>UpdateTable</i>
+     * operation. <p>For current minimum and maximum provisioned throughput
+     * values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the Amazon DynamoDB Developer Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param provisionedThroughput The provisioned throughput settings for the specified table. The
-     *         settings can be modified using the <i>UpdateTable</i> operation.
-     *         <p>For current minimum and maximum provisioned throughput values, see
-     *         <a
+     * @param provisionedThroughput Represents the provisioned throughput settings for a specified table
+     *         or index. The settings can be modified using the <i>UpdateTable</i>
+     *         operation. <p>For current minimum and maximum provisioned throughput
+     *         values, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      *         in the Amazon DynamoDB Developer Guide.
      *
@@ -860,6 +1156,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
         if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");
         if (getKeySchema() != null) sb.append("KeySchema: " + getKeySchema() + ",");
         if (getLocalSecondaryIndexes() != null) sb.append("LocalSecondaryIndexes: " + getLocalSecondaryIndexes() + ",");
+        if (getGlobalSecondaryIndexes() != null) sb.append("GlobalSecondaryIndexes: " + getGlobalSecondaryIndexes() + ",");
         if (getProvisionedThroughput() != null) sb.append("ProvisionedThroughput: " + getProvisionedThroughput() );
         sb.append("}");
         return sb.toString();
@@ -874,6 +1171,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode()); 
         hashCode = prime * hashCode + ((getKeySchema() == null) ? 0 : getKeySchema().hashCode()); 
         hashCode = prime * hashCode + ((getLocalSecondaryIndexes() == null) ? 0 : getLocalSecondaryIndexes().hashCode()); 
+        hashCode = prime * hashCode + ((getGlobalSecondaryIndexes() == null) ? 0 : getGlobalSecondaryIndexes().hashCode()); 
         hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode()); 
         return hashCode;
     }
@@ -894,6 +1192,8 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
         if (other.getKeySchema() != null && other.getKeySchema().equals(this.getKeySchema()) == false) return false; 
         if (other.getLocalSecondaryIndexes() == null ^ this.getLocalSecondaryIndexes() == null) return false;
         if (other.getLocalSecondaryIndexes() != null && other.getLocalSecondaryIndexes().equals(this.getLocalSecondaryIndexes()) == false) return false; 
+        if (other.getGlobalSecondaryIndexes() == null ^ this.getGlobalSecondaryIndexes() == null) return false;
+        if (other.getGlobalSecondaryIndexes() != null && other.getGlobalSecondaryIndexes().equals(this.getGlobalSecondaryIndexes()) == false) return false; 
         if (other.getProvisionedThroughput() == null ^ this.getProvisionedThroughput() == null) return false;
         if (other.getProvisionedThroughput() != null && other.getProvisionedThroughput().equals(this.getProvisionedThroughput()) == false) return false; 
         return true;

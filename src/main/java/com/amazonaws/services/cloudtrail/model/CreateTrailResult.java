@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudtrail.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A JSON-formatted Trail object that represents the settings for the requested trail.

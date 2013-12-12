@@ -33,13 +33,12 @@ public class DescribeExportTasksRequestMarshaller implements Marshaller<Request<
     public Request<DescribeExportTasksRequest> marshall(DescribeExportTasksRequest describeExportTasksRequest) {
 
         if (describeExportTasksRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeExportTasksRequest> request = new DefaultRequest<DescribeExportTasksRequest>(describeExportTasksRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeExportTasks");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> exportTaskIdsList = describeExportTasksRequest.getExportTaskIds();
         int exportTaskIdsListIndex = 1;
@@ -51,7 +50,6 @@ public class DescribeExportTasksRequestMarshaller implements Marshaller<Request<
 
             exportTaskIdsListIndex++;
         }
-
 
         return request;
     }

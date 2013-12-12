@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Local Secondary Index Description JSON Unmarshaller
  */
 public class LocalSecondaryIndexDescriptionJsonUnmarshaller implements Unmarshaller<LocalSecondaryIndexDescription, JsonUnmarshallerContext> {
 
-    
-
     public LocalSecondaryIndexDescription unmarshall(JsonUnmarshallerContext context) throws Exception {
         LocalSecondaryIndexDescription localSecondaryIndexDescription = new LocalSecondaryIndexDescription();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class LocalSecondaryIndexDescriptionJsonUnmarshaller implements Unmarshal
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IndexName", targetDepth)) {
                     context.nextToken();
@@ -75,7 +69,6 @@ public class LocalSecondaryIndexDescriptionJsonUnmarshaller implements Unmarshal
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

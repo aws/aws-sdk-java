@@ -116,12 +116,14 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
     private java.util.Map<String,java.util.List<WriteRequest>> requestItems;
 
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      */
     private String returnConsumedCapacity;
 
@@ -129,7 +131,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * If set to <code>SIZE</code>, statistics about item collections, if
      * any, that were modified during the operation are returned in the
      * response. If set to <code>NONE</code> (the default), no statistics are
-     * returned..
+     * returned.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>SIZE, NONE
@@ -353,37 +355,41 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * @param key The key of the entry to be added into RequestItems.
      * @param value The corresponding value of the entry to be added into RequestItems.
      */
-	public BatchWriteItemRequest addRequestItemsEntry(String key, java.util.List<WriteRequest> value) {
-		if (null == this.requestItems) {
-			this.requestItems = new java.util.HashMap<String,java.util.List<WriteRequest>>();
-		}
-		if (this.requestItems.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.requestItems.put(key, value);
-		return this;
-	}
+    public BatchWriteItemRequest addRequestItemsEntry(String key, java.util.List<WriteRequest> value) {
+        if (null == this.requestItems) {
+            this.requestItems = new java.util.HashMap<String,java.util.List<WriteRequest>>();
+        }
+        if (this.requestItems.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.requestItems.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into RequestItems.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public BatchWriteItemRequest clearRequestItemsEntries() {
-		this.requestItems = null;
-		return this;
-	}
-	
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * Removes all the entries added into RequestItems.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public BatchWriteItemRequest clearRequestItemsEntries() {
+        this.requestItems = null;
+        return this;
+    }
+    
+    /**
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @return If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @return If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @see ReturnConsumedCapacity
      */
@@ -392,16 +398,20 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @see ReturnConsumedCapacity
      */
@@ -410,18 +420,22 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -434,16 +448,20 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @see ReturnConsumedCapacity
      */
@@ -452,18 +470,22 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -479,7 +501,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * If set to <code>SIZE</code>, statistics about item collections, if
      * any, that were modified during the operation are returned in the
      * response. If set to <code>NONE</code> (the default), no statistics are
-     * returned..
+     * returned.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>SIZE, NONE
@@ -487,7 +509,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * @return If set to <code>SIZE</code>, statistics about item collections, if
      *         any, that were modified during the operation are returned in the
      *         response. If set to <code>NONE</code> (the default), no statistics are
-     *         returned..
+     *         returned.
      *
      * @see ReturnItemCollectionMetrics
      */
@@ -499,7 +521,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * If set to <code>SIZE</code>, statistics about item collections, if
      * any, that were modified during the operation are returned in the
      * response. If set to <code>NONE</code> (the default), no statistics are
-     * returned..
+     * returned.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>SIZE, NONE
@@ -507,7 +529,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * @param returnItemCollectionMetrics If set to <code>SIZE</code>, statistics about item collections, if
      *         any, that were modified during the operation are returned in the
      *         response. If set to <code>NONE</code> (the default), no statistics are
-     *         returned..
+     *         returned.
      *
      * @see ReturnItemCollectionMetrics
      */
@@ -519,7 +541,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * If set to <code>SIZE</code>, statistics about item collections, if
      * any, that were modified during the operation are returned in the
      * response. If set to <code>NONE</code> (the default), no statistics are
-     * returned..
+     * returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -529,7 +551,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * @param returnItemCollectionMetrics If set to <code>SIZE</code>, statistics about item collections, if
      *         any, that were modified during the operation are returned in the
      *         response. If set to <code>NONE</code> (the default), no statistics are
-     *         returned..
+     *         returned.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -545,7 +567,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * If set to <code>SIZE</code>, statistics about item collections, if
      * any, that were modified during the operation are returned in the
      * response. If set to <code>NONE</code> (the default), no statistics are
-     * returned..
+     * returned.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>SIZE, NONE
@@ -553,7 +575,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * @param returnItemCollectionMetrics If set to <code>SIZE</code>, statistics about item collections, if
      *         any, that were modified during the operation are returned in the
      *         response. If set to <code>NONE</code> (the default), no statistics are
-     *         returned..
+     *         returned.
      *
      * @see ReturnItemCollectionMetrics
      */
@@ -565,7 +587,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * If set to <code>SIZE</code>, statistics about item collections, if
      * any, that were modified during the operation are returned in the
      * response. If set to <code>NONE</code> (the default), no statistics are
-     * returned..
+     * returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -575,7 +597,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * @param returnItemCollectionMetrics If set to <code>SIZE</code>, statistics about item collections, if
      *         any, that were modified during the operation are returned in the
      *         response. If set to <code>NONE</code> (the default), no statistics are
-     *         returned..
+     *         returned.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -33,8 +33,8 @@ public class GetStatusRequestMarshaller implements Marshaller<Request<GetStatusR
     public Request<GetStatusRequest> marshall(GetStatusRequest getStatusRequest) {
 
         if (getStatusRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetStatusRequest> request = new DefaultRequest<GetStatusRequest>(getStatusRequest, "AmazonImportExport");
         request.addParameter("Action", "GetStatus");
@@ -43,7 +43,6 @@ public class GetStatusRequestMarshaller implements Marshaller<Request<GetStatusR
         if (getStatusRequest.getJobId() != null) {
             request.addParameter("JobId", StringUtils.fromString(getStatusRequest.getJobId()));
         }
-
 
         return request;
     }

@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class DescribeTableRequestMarshaller implements Marshaller<Request<DescribeTableRequest>, DescribeTableRequest> {
 
-    
-
     public Request<DescribeTableRequest> marshall(DescribeTableRequest describeTableRequest) {
     if (describeTableRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class DescribeTableRequestMarshaller implements Marshaller<Request<Descri
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class DescribeTableRequestMarshaller implements Marshaller<Request<Descri
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (describeTableRequest.getTableName() != null) {
@@ -90,7 +81,6 @@ public class DescribeTableRequestMarshaller implements Marshaller<Request<Descri
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -99,7 +89,6 @@ public class DescribeTableRequestMarshaller implements Marshaller<Request<Descri
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

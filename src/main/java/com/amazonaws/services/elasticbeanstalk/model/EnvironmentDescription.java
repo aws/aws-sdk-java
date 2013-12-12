@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes the properties of an environment.
@@ -80,7 +79,9 @@ public class EnvironmentDescription implements Serializable {
     private String description;
 
     /**
-     * The URL to the LoadBalancer for this environment.
+     * For load-balanced, autoscaling environments, the URL to the
+     * LoadBalancer. For single-instance environments, the IP address of the
+     * instance.
      */
     private String endpointURL;
 
@@ -147,6 +148,11 @@ public class EnvironmentDescription implements Serializable {
      * The description of the AWS resources used by this environment.
      */
     private EnvironmentResourcesDescription resources;
+
+    /**
+     * Describes the current tier of this environment.
+     */
+    private EnvironmentTier tier;
 
     /**
      * The name of this environment.
@@ -446,29 +452,41 @@ public class EnvironmentDescription implements Serializable {
     }
 
     /**
-     * The URL to the LoadBalancer for this environment.
+     * For load-balanced, autoscaling environments, the URL to the
+     * LoadBalancer. For single-instance environments, the IP address of the
+     * instance.
      *
-     * @return The URL to the LoadBalancer for this environment.
+     * @return For load-balanced, autoscaling environments, the URL to the
+     *         LoadBalancer. For single-instance environments, the IP address of the
+     *         instance.
      */
     public String getEndpointURL() {
         return endpointURL;
     }
     
     /**
-     * The URL to the LoadBalancer for this environment.
+     * For load-balanced, autoscaling environments, the URL to the
+     * LoadBalancer. For single-instance environments, the IP address of the
+     * instance.
      *
-     * @param endpointURL The URL to the LoadBalancer for this environment.
+     * @param endpointURL For load-balanced, autoscaling environments, the URL to the
+     *         LoadBalancer. For single-instance environments, the IP address of the
+     *         instance.
      */
     public void setEndpointURL(String endpointURL) {
         this.endpointURL = endpointURL;
     }
     
     /**
-     * The URL to the LoadBalancer for this environment.
+     * For load-balanced, autoscaling environments, the URL to the
+     * LoadBalancer. For single-instance environments, the IP address of the
+     * instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param endpointURL The URL to the LoadBalancer for this environment.
+     * @param endpointURL For load-balanced, autoscaling environments, the URL to the
+     *         LoadBalancer. For single-instance environments, the IP address of the
+     *         instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1034,6 +1052,39 @@ public class EnvironmentDescription implements Serializable {
     }
 
     /**
+     * Describes the current tier of this environment.
+     *
+     * @return Describes the current tier of this environment.
+     */
+    public EnvironmentTier getTier() {
+        return tier;
+    }
+    
+    /**
+     * Describes the current tier of this environment.
+     *
+     * @param tier Describes the current tier of this environment.
+     */
+    public void setTier(EnvironmentTier tier) {
+        this.tier = tier;
+    }
+    
+    /**
+     * Describes the current tier of this environment.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tier Describes the current tier of this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public EnvironmentDescription withTier(EnvironmentTier tier) {
+        this.tier = tier;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1058,7 +1109,8 @@ public class EnvironmentDescription implements Serializable {
         if (getDateUpdated() != null) sb.append("DateUpdated: " + getDateUpdated() + ",");
         if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
         if (getHealth() != null) sb.append("Health: " + getHealth() + ",");
-        if (getResources() != null) sb.append("Resources: " + getResources() );
+        if (getResources() != null) sb.append("Resources: " + getResources() + ",");
+        if (getTier() != null) sb.append("Tier: " + getTier() );
         sb.append("}");
         return sb.toString();
     }
@@ -1082,6 +1134,7 @@ public class EnvironmentDescription implements Serializable {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
         hashCode = prime * hashCode + ((getHealth() == null) ? 0 : getHealth().hashCode()); 
         hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode()); 
+        hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode()); 
         return hashCode;
     }
     
@@ -1121,6 +1174,8 @@ public class EnvironmentDescription implements Serializable {
         if (other.getHealth() != null && other.getHealth().equals(this.getHealth()) == false) return false; 
         if (other.getResources() == null ^ this.getResources() == null) return false;
         if (other.getResources() != null && other.getResources().equals(this.getResources()) == false) return false; 
+        if (other.getTier() == null ^ this.getTier() == null) return false;
+        if (other.getTier() != null && other.getTier().equals(this.getTier()) == false) return false; 
         return true;
     }
     

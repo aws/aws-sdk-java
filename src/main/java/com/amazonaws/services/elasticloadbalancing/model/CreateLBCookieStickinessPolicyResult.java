@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticloadbalancing.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The output for the CreateLBCookieStickinessPolicy action.

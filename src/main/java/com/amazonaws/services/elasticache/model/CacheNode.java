@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents an individual cache node within a cache cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software

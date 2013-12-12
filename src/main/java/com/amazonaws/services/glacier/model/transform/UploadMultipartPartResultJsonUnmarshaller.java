@@ -25,19 +25,13 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Upload Multipart Part Result JSON Unmarshaller
  */
 public class UploadMultipartPartResultJsonUnmarshaller implements Unmarshaller<UploadMultipartPartResult, JsonUnmarshallerContext> {
 
-    
-
     public UploadMultipartPartResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         UploadMultipartPartResult uploadMultipartPartResult = new UploadMultipartPartResult();
-
-        
-        
 
         if (context.isStartOfDocument()) {
             if (context.getHeader("x-amz-sha256-tree-hash") != null)

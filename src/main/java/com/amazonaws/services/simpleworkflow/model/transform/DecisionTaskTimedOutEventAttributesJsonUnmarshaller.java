@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Decision Task Timed Out Event Attributes JSON Unmarshaller
  */
 public class DecisionTaskTimedOutEventAttributesJsonUnmarshaller implements Unmarshaller<DecisionTaskTimedOutEventAttributes, JsonUnmarshallerContext> {
 
-    
-
     public DecisionTaskTimedOutEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         DecisionTaskTimedOutEventAttributes decisionTaskTimedOutEventAttributes = new DecisionTaskTimedOutEventAttributes();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DecisionTaskTimedOutEventAttributesJsonUnmarshaller implements Unma
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("timeoutType", targetDepth)) {
                     context.nextToken();
@@ -68,7 +62,6 @@ public class DecisionTaskTimedOutEventAttributesJsonUnmarshaller implements Unma
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

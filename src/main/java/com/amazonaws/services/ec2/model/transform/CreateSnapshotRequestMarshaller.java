@@ -33,8 +33,8 @@ public class CreateSnapshotRequestMarshaller implements Marshaller<Request<Creat
     public Request<CreateSnapshotRequest> marshall(CreateSnapshotRequest createSnapshotRequest) {
 
         if (createSnapshotRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateSnapshotRequest> request = new DefaultRequest<CreateSnapshotRequest>(createSnapshotRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSnapshot");
@@ -46,7 +46,6 @@ public class CreateSnapshotRequestMarshaller implements Marshaller<Request<Creat
         if (createSnapshotRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(createSnapshotRequest.getDescription()));
         }
-
 
         return request;
     }

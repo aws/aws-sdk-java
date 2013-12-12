@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Service Error JSON Unmarshaller
  */
 public class ServiceErrorJsonUnmarshaller implements Unmarshaller<ServiceError, JsonUnmarshallerContext> {
 
-    
-
     public ServiceError unmarshall(JsonUnmarshallerContext context) throws Exception {
         ServiceError serviceError = new ServiceError();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ServiceErrorJsonUnmarshaller implements Unmarshaller<ServiceError, 
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ServiceErrorId", targetDepth)) {
                     context.nextToken();
@@ -80,7 +74,6 @@ public class ServiceErrorJsonUnmarshaller implements Unmarshaller<ServiceError, 
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

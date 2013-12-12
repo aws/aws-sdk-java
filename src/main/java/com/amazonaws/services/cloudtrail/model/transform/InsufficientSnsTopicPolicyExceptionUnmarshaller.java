@@ -34,8 +34,7 @@ public class InsufficientSnsTopicPolicyExceptionUnmarshaller extends JsonErrorUn
             return null;
 
         InsufficientSnsTopicPolicyException e = (InsufficientSnsTopicPolicyException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

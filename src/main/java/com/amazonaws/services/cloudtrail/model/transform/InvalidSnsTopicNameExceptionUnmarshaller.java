@@ -34,8 +34,7 @@ public class InvalidSnsTopicNameExceptionUnmarshaller extends JsonErrorUnmarshal
             return null;
 
         InvalidSnsTopicNameException e = (InvalidSnsTopicNameException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

@@ -34,8 +34,7 @@ public class MissingParameterValueExceptionUnmarshaller extends GlacierErrorUnma
             return null;
 
         MissingParameterValueException e = (MissingParameterValueException)super.unmarshall(json);
-        
-        
+
         e.setType(parseMember("Type", json));
         
         e.setCode(parseMember("Code", json));

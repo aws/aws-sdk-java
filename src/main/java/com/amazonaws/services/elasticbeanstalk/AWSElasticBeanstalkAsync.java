@@ -35,20 +35,17 @@ import com.amazonaws.services.elasticbeanstalk.model.*;
  * </p>
  * <p>
  * For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/"> AWS Elastic Beanstalk </a> details page. The
- * location of the lastest AWS Elastic Beanstalk WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">
+ * location of the latest AWS Elastic Beanstalk WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">
  * http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl </a> .
  * </p>
  * <p>
  * <b>Endpoints</b>
  * </p>
  * <p>
- * AWS Elastic Beanstalk supports the following region-specific endpoint:
+ * For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a
+ * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region"> Regions and Endpoints </a> in the <i>Amazon Web Services
+ * Glossary</i> .
  * </p>
- * 
- * <ul>
- * <li> https://elasticbeanstalk.us-east-1.amazonaws.com </li>
- * 
- * </ul>
  */
 public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
     /**
@@ -625,7 +622,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
     /**
      * <p>
      * Deletes the specified application along with all associated versions
-     * and configurations.
+     * and configurations. The application versions will not be deleted from
+     * your Amazon S3 bucket.
      * </p>
      * <p>
      * <b>NOTE:</b>You cannot delete an application that has a running
@@ -653,7 +651,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
     /**
      * <p>
      * Deletes the specified application along with all associated versions
-     * and configurations.
+     * and configurations. The application versions will not be deleted from
+     * your Amazon S3 bucket.
      * </p>
      * <p>
      * <b>NOTE:</b>You cannot delete an application that has a running
@@ -755,11 +754,6 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * Creates an application that has one configuration template named
      * <code>default</code> and no application versions.
      * </p>
-     * <p>
-     * <b>NOTE:</b> The default configuration template is for a 32-bit
-     * version of the Amazon Linux operating system running the Tomcat 6
-     * application container.
-     * </p>
      *
      * @param createApplicationRequest Container for the necessary parameters
      *           to execute the CreateApplication operation on AWSElasticBeanstalk.
@@ -783,11 +777,6 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * <p>
      * Creates an application that has one configuration template named
      * <code>default</code> and no application versions.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> The default configuration template is for a 32-bit
-     * version of the Amazon Linux operating system running the Tomcat 6
-     * application container.
      * </p>
      *
      * @param createApplicationRequest Container for the necessary parameters
@@ -1919,6 +1908,5 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
     public Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest describeEventsRequest,
             AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

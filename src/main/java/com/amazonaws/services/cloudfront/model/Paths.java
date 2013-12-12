@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A complex type that contains information about the objects that you want to invalidate.

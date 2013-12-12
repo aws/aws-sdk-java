@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Attribute Definition JSON Unmarshaller
  */
 public class AttributeDefinitionJsonUnmarshaller implements Unmarshaller<AttributeDefinition, JsonUnmarshallerContext> {
 
-    
-
     public AttributeDefinition unmarshall(JsonUnmarshallerContext context) throws Exception {
         AttributeDefinition attributeDefinition = new AttributeDefinition();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class AttributeDefinitionJsonUnmarshaller implements Unmarshaller<Attribu
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AttributeName", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class AttributeDefinitionJsonUnmarshaller implements Unmarshaller<Attribu
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -33,8 +33,8 @@ public class CreateSubnetRequestMarshaller implements Marshaller<Request<CreateS
     public Request<CreateSubnetRequest> marshall(CreateSubnetRequest createSubnetRequest) {
 
         if (createSubnetRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateSubnetRequest> request = new DefaultRequest<CreateSubnetRequest>(createSubnetRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSubnet");
@@ -49,7 +49,6 @@ public class CreateSubnetRequestMarshaller implements Marshaller<Request<CreateS
         if (createSubnetRequest.getAvailabilityZone() != null) {
             request.addParameter("AvailabilityZone", StringUtils.fromString(createSubnetRequest.getAvailabilityZone()));
         }
-
 
         return request;
     }

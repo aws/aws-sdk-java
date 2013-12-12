@@ -16,7 +16,6 @@ package com.amazonaws.services.datapipeline.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A key-value pair that describes a property of a pipeline object. The value is specified as either a string value ( <code>StringValue</code> ) or a

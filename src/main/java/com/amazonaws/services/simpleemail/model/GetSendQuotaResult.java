@@ -16,7 +16,6 @@ package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents the user's current activity limits returned from a successful <code>GetSendQuota</code> request.

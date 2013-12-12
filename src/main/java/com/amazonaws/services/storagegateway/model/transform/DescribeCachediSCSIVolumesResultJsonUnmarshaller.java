@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Describe Cachedi S C S I Volumes Result JSON Unmarshaller
  */
 public class DescribeCachediSCSIVolumesResultJsonUnmarshaller implements Unmarshaller<DescribeCachediSCSIVolumesResult, JsonUnmarshallerContext> {
 
-    
-
     public DescribeCachediSCSIVolumesResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeCachediSCSIVolumesResult describeCachediSCSIVolumesResult = new DescribeCachediSCSIVolumesResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DescribeCachediSCSIVolumesResultJsonUnmarshaller implements Unmarsh
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CachediSCSIVolumes", targetDepth)) {
                     describeCachediSCSIVolumesResult.setCachediSCSIVolumes(new ListUnmarshaller<CachediSCSIVolume>(CachediSCSIVolumeJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -59,7 +53,6 @@ public class DescribeCachediSCSIVolumesResultJsonUnmarshaller implements Unmarsh
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

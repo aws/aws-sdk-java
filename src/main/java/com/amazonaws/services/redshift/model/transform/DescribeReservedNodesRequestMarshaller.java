@@ -33,8 +33,8 @@ public class DescribeReservedNodesRequestMarshaller implements Marshaller<Reques
     public Request<DescribeReservedNodesRequest> marshall(DescribeReservedNodesRequest describeReservedNodesRequest) {
 
         if (describeReservedNodesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeReservedNodesRequest> request = new DefaultRequest<DescribeReservedNodesRequest>(describeReservedNodesRequest, "AmazonRedshift");
         request.addParameter("Action", "DescribeReservedNodes");
@@ -49,7 +49,6 @@ public class DescribeReservedNodesRequestMarshaller implements Marshaller<Reques
         if (describeReservedNodesRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeReservedNodesRequest.getMarker()));
         }
-
 
         return request;
     }

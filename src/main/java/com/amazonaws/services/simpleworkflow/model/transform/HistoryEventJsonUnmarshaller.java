@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * History Event JSON Unmarshaller
  */
 public class HistoryEventJsonUnmarshaller implements Unmarshaller<HistoryEvent, JsonUnmarshallerContext> {
 
-    
-
     public HistoryEvent unmarshall(JsonUnmarshallerContext context) throws Exception {
         HistoryEvent historyEvent = new HistoryEvent();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class HistoryEventJsonUnmarshaller implements Unmarshaller<HistoryEvent, 
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventTimestamp", targetDepth)) {
                     context.nextToken();
@@ -256,7 +250,6 @@ public class HistoryEventJsonUnmarshaller implements Unmarshaller<HistoryEvent, 
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

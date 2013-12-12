@@ -2265,6 +2265,5 @@ public interface AmazonRedshift {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

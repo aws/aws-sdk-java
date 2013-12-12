@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Specification of a job flow step.

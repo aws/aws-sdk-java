@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Update Bandwidth Rate Limit Result JSON Unmarshaller
  */
 public class UpdateBandwidthRateLimitResultJsonUnmarshaller implements Unmarshaller<UpdateBandwidthRateLimitResult, JsonUnmarshallerContext> {
 
-    
-
     public UpdateBandwidthRateLimitResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         UpdateBandwidthRateLimitResult updateBandwidthRateLimitResult = new UpdateBandwidthRateLimitResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class UpdateBandwidthRateLimitResultJsonUnmarshaller implements Unmarshal
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class UpdateBandwidthRateLimitResultJsonUnmarshaller implements Unmarshal
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

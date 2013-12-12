@@ -33,8 +33,8 @@ public class DescribeIndexFieldsRequestMarshaller implements Marshaller<Request<
     public Request<DescribeIndexFieldsRequest> marshall(DescribeIndexFieldsRequest describeIndexFieldsRequest) {
 
         if (describeIndexFieldsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeIndexFieldsRequest> request = new DefaultRequest<DescribeIndexFieldsRequest>(describeIndexFieldsRequest, "AmazonCloudSearch");
         request.addParameter("Action", "DescribeIndexFields");
@@ -54,7 +54,6 @@ public class DescribeIndexFieldsRequestMarshaller implements Marshaller<Request<
 
             fieldNamesListIndex++;
         }
-
 
         return request;
     }

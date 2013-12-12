@@ -33,8 +33,8 @@ public class CreateCustomerGatewayRequestMarshaller implements Marshaller<Reques
     public Request<CreateCustomerGatewayRequest> marshall(CreateCustomerGatewayRequest createCustomerGatewayRequest) {
 
         if (createCustomerGatewayRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateCustomerGatewayRequest> request = new DefaultRequest<CreateCustomerGatewayRequest>(createCustomerGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "CreateCustomerGateway");
@@ -49,7 +49,6 @@ public class CreateCustomerGatewayRequestMarshaller implements Marshaller<Reques
         if (createCustomerGatewayRequest.getBgpAsn() != null) {
             request.addParameter("BgpAsn", StringUtils.fromInteger(createCustomerGatewayRequest.getBgpAsn()));
         }
-
 
         return request;
     }

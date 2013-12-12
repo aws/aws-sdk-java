@@ -33,8 +33,8 @@ public class GetUserPolicyRequestMarshaller implements Marshaller<Request<GetUse
     public Request<GetUserPolicyRequest> marshall(GetUserPolicyRequest getUserPolicyRequest) {
 
         if (getUserPolicyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetUserPolicyRequest> request = new DefaultRequest<GetUserPolicyRequest>(getUserPolicyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "GetUserPolicy");
@@ -46,7 +46,6 @@ public class GetUserPolicyRequestMarshaller implements Marshaller<Request<GetUse
         if (getUserPolicyRequest.getPolicyName() != null) {
             request.addParameter("PolicyName", StringUtils.fromString(getUserPolicyRequest.getPolicyName()));
         }
-
 
         return request;
     }

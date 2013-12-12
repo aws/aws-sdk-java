@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class CreateLayerRequestMarshaller implements Marshaller<Request<CreateLayerRequest>, CreateLayerRequest> {
 
-    
-
     public Request<CreateLayerRequest> marshall(CreateLayerRequest createLayerRequest) {
     if (createLayerRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class CreateLayerRequestMarshaller implements Marshaller<Request<CreateLa
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class CreateLayerRequestMarshaller implements Marshaller<Request<CreateLa
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (createLayerRequest.getStackId() != null) {
@@ -182,7 +173,6 @@ public class CreateLayerRequestMarshaller implements Marshaller<Request<CreateLa
                 jsonWriter.key("CustomRecipes");
                 jsonWriter.object();
 
-
                 com.amazonaws.internal.ListWithAutoConstructFlag<String> setupList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(customRecipes.getSetup());
                 if (setupList != null && !(setupList.isAutoConstruct() && setupList.isEmpty())) {
 
@@ -259,7 +249,6 @@ public class CreateLayerRequestMarshaller implements Marshaller<Request<CreateLa
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -268,7 +257,6 @@ public class CreateLayerRequestMarshaller implements Marshaller<Request<CreateLa
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

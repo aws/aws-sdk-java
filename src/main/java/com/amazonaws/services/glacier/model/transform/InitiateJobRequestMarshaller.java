@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class InitiateJobRequestMarshaller implements Marshaller<Request<InitiateJobRequest>, InitiateJobRequest> {
 
-    
-
     public Request<InitiateJobRequest> marshall(InitiateJobRequest initiateJobRequest) {
     if (initiateJobRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class InitiateJobRequestMarshaller implements Marshaller<Request<Initiate
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", (initiateJobRequest.getAccountId() == null) ? "" : StringUtils.fromString(initiateJobRequest.getAccountId())); 
@@ -77,14 +72,10 @@ public class InitiateJobRequestMarshaller implements Marshaller<Request<Initiate
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
             JobParameters jobParameters = initiateJobRequest.getJobParameters();
             if (jobParameters != null) {
 
@@ -111,7 +102,6 @@ public class InitiateJobRequestMarshaller implements Marshaller<Request<Initiate
                 jsonWriter.endObject();
             }
 
-
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
           request.setContent(new StringInputStream(snippet));
@@ -119,7 +109,6 @@ public class InitiateJobRequestMarshaller implements Marshaller<Request<Initiate
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

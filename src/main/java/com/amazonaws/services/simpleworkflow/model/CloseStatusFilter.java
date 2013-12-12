@@ -16,7 +16,6 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Used to filter the closed workflow executions in visibility APIs by their close status.

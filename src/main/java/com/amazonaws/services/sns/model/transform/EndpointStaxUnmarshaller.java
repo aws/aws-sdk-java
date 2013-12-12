@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Endpoint StAX Unmarshaller
  */
@@ -66,16 +65,13 @@ public class EndpointStaxUnmarshaller implements Unmarshaller<Endpoint, StaxUnma
         }
 
     }
-    
 
     public Endpoint unmarshall(StaxUnmarshallerContext context) throws Exception {
         Endpoint endpoint = new Endpoint();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        
         if (context.isStartOfDocument()) targetDepth += 2;
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

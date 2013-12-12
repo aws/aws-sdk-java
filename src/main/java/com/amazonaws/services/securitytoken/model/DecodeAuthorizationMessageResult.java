@@ -16,7 +16,6 @@ package com.amazonaws.services.securitytoken.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an

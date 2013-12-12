@@ -34,8 +34,7 @@ public class TrailNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller {
             return null;
 
         TrailNotFoundException e = (TrailNotFoundException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

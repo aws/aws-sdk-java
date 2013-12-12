@@ -33,8 +33,8 @@ public class PutMetricAlarmRequestMarshaller implements Marshaller<Request<PutMe
     public Request<PutMetricAlarmRequest> marshall(PutMetricAlarmRequest putMetricAlarmRequest) {
 
         if (putMetricAlarmRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<PutMetricAlarmRequest> request = new DefaultRequest<PutMetricAlarmRequest>(putMetricAlarmRequest, "AmazonCloudWatch");
         request.addParameter("Action", "PutMetricAlarm");
@@ -123,7 +123,6 @@ public class PutMetricAlarmRequestMarshaller implements Marshaller<Request<PutMe
         if (putMetricAlarmRequest.getComparisonOperator() != null) {
             request.addParameter("ComparisonOperator", StringUtils.fromString(putMetricAlarmRequest.getComparisonOperator()));
         }
-
 
         return request;
     }

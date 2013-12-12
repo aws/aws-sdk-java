@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Allocate Connection On Interconnect Result JSON Unmarshaller
  */
 public class AllocateConnectionOnInterconnectResultJsonUnmarshaller implements Unmarshaller<AllocateConnectionOnInterconnectResult, JsonUnmarshallerContext> {
 
-    
-
     public AllocateConnectionOnInterconnectResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         AllocateConnectionOnInterconnectResult allocateConnectionOnInterconnectResult = new AllocateConnectionOnInterconnectResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class AllocateConnectionOnInterconnectResultJsonUnmarshaller implements U
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ownerAccount", targetDepth)) {
                     context.nextToken();
@@ -92,7 +86,6 @@ public class AllocateConnectionOnInterconnectResultJsonUnmarshaller implements U
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

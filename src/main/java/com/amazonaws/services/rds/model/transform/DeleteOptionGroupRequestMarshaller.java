@@ -33,8 +33,8 @@ public class DeleteOptionGroupRequestMarshaller implements Marshaller<Request<De
     public Request<DeleteOptionGroupRequest> marshall(DeleteOptionGroupRequest deleteOptionGroupRequest) {
 
         if (deleteOptionGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteOptionGroupRequest> request = new DefaultRequest<DeleteOptionGroupRequest>(deleteOptionGroupRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteOptionGroup");
@@ -43,7 +43,6 @@ public class DeleteOptionGroupRequestMarshaller implements Marshaller<Request<De
         if (deleteOptionGroupRequest.getOptionGroupName() != null) {
             request.addParameter("OptionGroupName", StringUtils.fromString(deleteOptionGroupRequest.getOptionGroupName()));
         }
-
 
         return request;
     }

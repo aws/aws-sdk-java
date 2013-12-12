@@ -34,8 +34,7 @@ public class InvalidParameterValueExceptionUnmarshaller extends GlacierErrorUnma
             return null;
 
         InvalidParameterValueException e = (InvalidParameterValueException)super.unmarshall(json);
-        
-        
+
         e.setType(parseMember("Type", json));
         
         e.setCode(parseMember("Code", json));

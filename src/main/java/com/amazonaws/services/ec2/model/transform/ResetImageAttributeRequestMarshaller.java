@@ -33,8 +33,8 @@ public class ResetImageAttributeRequestMarshaller implements Marshaller<Request<
     public Request<ResetImageAttributeRequest> marshall(ResetImageAttributeRequest resetImageAttributeRequest) {
 
         if (resetImageAttributeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ResetImageAttributeRequest> request = new DefaultRequest<ResetImageAttributeRequest>(resetImageAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ResetImageAttribute");
@@ -46,7 +46,6 @@ public class ResetImageAttributeRequestMarshaller implements Marshaller<Request<
         if (resetImageAttributeRequest.getAttribute() != null) {
             request.addParameter("Attribute", StringUtils.fromString(resetImageAttributeRequest.getAttribute()));
         }
-
 
         return request;
     }

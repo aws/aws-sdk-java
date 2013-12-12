@@ -33,8 +33,8 @@ public class DescribeConfigurationOptionsRequestMarshaller implements Marshaller
     public Request<DescribeConfigurationOptionsRequest> marshall(DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest) {
 
         if (describeConfigurationOptionsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeConfigurationOptionsRequest> request = new DefaultRequest<DescribeConfigurationOptionsRequest>(describeConfigurationOptionsRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DescribeConfigurationOptions");
@@ -69,7 +69,6 @@ public class DescribeConfigurationOptionsRequestMarshaller implements Marshaller
 
             optionsListIndex++;
         }
-
 
         return request;
     }

@@ -33,8 +33,8 @@ public class DescribeStopwordOptionsRequestMarshaller implements Marshaller<Requ
     public Request<DescribeStopwordOptionsRequest> marshall(DescribeStopwordOptionsRequest describeStopwordOptionsRequest) {
 
         if (describeStopwordOptionsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeStopwordOptionsRequest> request = new DefaultRequest<DescribeStopwordOptionsRequest>(describeStopwordOptionsRequest, "AmazonCloudSearch");
         request.addParameter("Action", "DescribeStopwordOptions");
@@ -43,7 +43,6 @@ public class DescribeStopwordOptionsRequestMarshaller implements Marshaller<Requ
         if (describeStopwordOptionsRequest.getDomainName() != null) {
             request.addParameter("DomainName", StringUtils.fromString(describeStopwordOptionsRequest.getDomainName()));
         }
-
 
         return request;
     }

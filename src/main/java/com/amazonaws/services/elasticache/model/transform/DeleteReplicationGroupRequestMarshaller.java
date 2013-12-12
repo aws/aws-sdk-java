@@ -33,8 +33,8 @@ public class DeleteReplicationGroupRequestMarshaller implements Marshaller<Reque
     public Request<DeleteReplicationGroupRequest> marshall(DeleteReplicationGroupRequest deleteReplicationGroupRequest) {
 
         if (deleteReplicationGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteReplicationGroupRequest> request = new DefaultRequest<DeleteReplicationGroupRequest>(deleteReplicationGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "DeleteReplicationGroup");
@@ -43,7 +43,6 @@ public class DeleteReplicationGroupRequestMarshaller implements Marshaller<Reque
         if (deleteReplicationGroupRequest.getReplicationGroupId() != null) {
             request.addParameter("ReplicationGroupId", StringUtils.fromString(deleteReplicationGroupRequest.getReplicationGroupId()));
         }
-
 
         return request;
     }

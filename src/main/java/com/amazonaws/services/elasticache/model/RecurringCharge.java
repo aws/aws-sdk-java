@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache node offering.

@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.cloudtrail.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class CreateTrailRequestMarshaller implements Marshaller<Request<CreateTrailRequest>, CreateTrailRequest> {
 
-    
-
     public Request<CreateTrailRequest> marshall(CreateTrailRequest createTrailRequest) {
     if (createTrailRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class CreateTrailRequestMarshaller implements Marshaller<Request<CreateTr
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class CreateTrailRequestMarshaller implements Marshaller<Request<CreateTr
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             Trail trail = createTrailRequest.getTrail();
@@ -110,7 +101,6 @@ public class CreateTrailRequestMarshaller implements Marshaller<Request<CreateTr
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -119,7 +109,6 @@ public class CreateTrailRequestMarshaller implements Marshaller<Request<CreateTr
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

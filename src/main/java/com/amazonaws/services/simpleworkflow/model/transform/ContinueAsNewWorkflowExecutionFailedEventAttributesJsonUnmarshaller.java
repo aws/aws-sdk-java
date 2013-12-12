@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Continue As New Workflow Execution Failed Event Attributes JSON Unmarshaller
  */
 public class ContinueAsNewWorkflowExecutionFailedEventAttributesJsonUnmarshaller implements Unmarshaller<ContinueAsNewWorkflowExecutionFailedEventAttributes, JsonUnmarshallerContext> {
 
-    
-
     public ContinueAsNewWorkflowExecutionFailedEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         ContinueAsNewWorkflowExecutionFailedEventAttributes continueAsNewWorkflowExecutionFailedEventAttributes = new ContinueAsNewWorkflowExecutionFailedEventAttributes();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ContinueAsNewWorkflowExecutionFailedEventAttributesJsonUnmarshaller
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cause", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class ContinueAsNewWorkflowExecutionFailedEventAttributesJsonUnmarshaller
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

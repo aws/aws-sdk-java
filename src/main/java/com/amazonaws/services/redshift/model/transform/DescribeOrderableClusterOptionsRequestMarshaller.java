@@ -33,8 +33,8 @@ public class DescribeOrderableClusterOptionsRequestMarshaller implements Marshal
     public Request<DescribeOrderableClusterOptionsRequest> marshall(DescribeOrderableClusterOptionsRequest describeOrderableClusterOptionsRequest) {
 
         if (describeOrderableClusterOptionsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeOrderableClusterOptionsRequest> request = new DefaultRequest<DescribeOrderableClusterOptionsRequest>(describeOrderableClusterOptionsRequest, "AmazonRedshift");
         request.addParameter("Action", "DescribeOrderableClusterOptions");
@@ -52,7 +52,6 @@ public class DescribeOrderableClusterOptionsRequestMarshaller implements Marshal
         if (describeOrderableClusterOptionsRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeOrderableClusterOptionsRequest.getMarker()));
         }
-
 
         return request;
     }

@@ -16,7 +16,6 @@ package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The <code>MFADevice</code> data type contains information about an MFA device.

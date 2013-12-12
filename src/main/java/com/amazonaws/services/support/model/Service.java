@@ -16,7 +16,6 @@ package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * JSON-formatted object that represents an AWS Service returned by the <a

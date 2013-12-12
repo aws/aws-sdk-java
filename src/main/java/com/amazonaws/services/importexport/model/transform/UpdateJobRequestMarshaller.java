@@ -33,8 +33,8 @@ public class UpdateJobRequestMarshaller implements Marshaller<Request<UpdateJobR
     public Request<UpdateJobRequest> marshall(UpdateJobRequest updateJobRequest) {
 
         if (updateJobRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<UpdateJobRequest> request = new DefaultRequest<UpdateJobRequest>(updateJobRequest, "AmazonImportExport");
         request.addParameter("Action", "UpdateJob");
@@ -52,7 +52,6 @@ public class UpdateJobRequestMarshaller implements Marshaller<Request<UpdateJobR
         if (updateJobRequest.isValidateOnly() != null) {
             request.addParameter("ValidateOnly", StringUtils.fromBoolean(updateJobRequest.isValidateOnly()));
         }
-
 
         return request;
     }

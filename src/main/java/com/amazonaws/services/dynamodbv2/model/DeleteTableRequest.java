@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * until the table deletion is complete.
  * </p>
  * <p>
- * When you delete a table, any local secondary indexes on that table are also deleted.
+ * When you delete a table, any indexes on that table are also deleted.
  * </p>
  * <p>
  * Use the <i>DescribeTable</i> API to check the status of the table.

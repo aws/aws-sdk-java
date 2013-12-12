@@ -33,8 +33,8 @@ public class SelectRequestMarshaller implements Marshaller<Request<SelectRequest
     public Request<SelectRequest> marshall(SelectRequest selectRequest) {
 
         if (selectRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<SelectRequest> request = new DefaultRequest<SelectRequest>(selectRequest, "AmazonSimpleDB");
         request.addParameter("Action", "Select");
@@ -49,7 +49,6 @@ public class SelectRequestMarshaller implements Marshaller<Request<SelectRequest
         if (selectRequest.isConsistentRead() != null) {
             request.addParameter("ConsistentRead", StringUtils.fromBoolean(selectRequest.isConsistentRead()));
         }
-
 
         return request;
     }

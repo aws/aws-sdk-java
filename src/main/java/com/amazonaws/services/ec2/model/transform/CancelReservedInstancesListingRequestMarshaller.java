@@ -33,8 +33,8 @@ public class CancelReservedInstancesListingRequestMarshaller implements Marshall
     public Request<CancelReservedInstancesListingRequest> marshall(CancelReservedInstancesListingRequest cancelReservedInstancesListingRequest) {
 
         if (cancelReservedInstancesListingRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CancelReservedInstancesListingRequest> request = new DefaultRequest<CancelReservedInstancesListingRequest>(cancelReservedInstancesListingRequest, "AmazonEC2");
         request.addParameter("Action", "CancelReservedInstancesListing");
@@ -43,7 +43,6 @@ public class CancelReservedInstancesListingRequestMarshaller implements Marshall
         if (cancelReservedInstancesListingRequest.getReservedInstancesListingId() != null) {
             request.addParameter("ReservedInstancesListingId", StringUtils.fromString(cancelReservedInstancesListingRequest.getReservedInstancesListingId()));
         }
-
 
         return request;
     }

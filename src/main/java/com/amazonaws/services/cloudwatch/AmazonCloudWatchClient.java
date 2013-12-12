@@ -25,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
@@ -32,7 +33,6 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
 
 import com.amazonaws.services.cloudwatch.model.*;
 import com.amazonaws.services.cloudwatch.model.transform.*;
-
 
 /**
  * Client for accessing AmazonCloudWatch.  All service calls made
@@ -192,7 +192,30 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AmazonCloudWatchClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonCloudWatch using the specified AWS account credentials
+     * provider, client configuration options, and request metric collector.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AmazonCloudWatch
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public AmazonCloudWatchClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
     }
@@ -217,7 +240,6 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 "/com/amazonaws/services/cloudwatch/request.handler2s"));
     }
 
-    
     /**
      * <p>
      * Creates or updates an alarm and associates it with the specified
@@ -801,7 +823,6 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
     public DescribeAlarmHistoryResult describeAlarmHistory() throws AmazonServiceException, AmazonClientException {
         return describeAlarmHistory(new DescribeAlarmHistoryRequest());
     }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

@@ -33,8 +33,8 @@ public class DeleteHsmConfigurationRequestMarshaller implements Marshaller<Reque
     public Request<DeleteHsmConfigurationRequest> marshall(DeleteHsmConfigurationRequest deleteHsmConfigurationRequest) {
 
         if (deleteHsmConfigurationRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteHsmConfigurationRequest> request = new DefaultRequest<DeleteHsmConfigurationRequest>(deleteHsmConfigurationRequest, "AmazonRedshift");
         request.addParameter("Action", "DeleteHsmConfiguration");
@@ -43,7 +43,6 @@ public class DeleteHsmConfigurationRequestMarshaller implements Marshaller<Reque
         if (deleteHsmConfigurationRequest.getHsmConfigurationIdentifier() != null) {
             request.addParameter("HsmConfigurationIdentifier", StringUtils.fromString(deleteHsmConfigurationRequest.getHsmConfigurationIdentifier()));
         }
-
 
         return request;
     }

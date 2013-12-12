@@ -33,8 +33,8 @@ public class DescribeHsmClientCertificatesRequestMarshaller implements Marshalle
     public Request<DescribeHsmClientCertificatesRequest> marshall(DescribeHsmClientCertificatesRequest describeHsmClientCertificatesRequest) {
 
         if (describeHsmClientCertificatesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeHsmClientCertificatesRequest> request = new DefaultRequest<DescribeHsmClientCertificatesRequest>(describeHsmClientCertificatesRequest, "AmazonRedshift");
         request.addParameter("Action", "DescribeHsmClientCertificates");
@@ -49,7 +49,6 @@ public class DescribeHsmClientCertificatesRequestMarshaller implements Marshalle
         if (describeHsmClientCertificatesRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeHsmClientCertificatesRequest.getMarker()));
         }
-
 
         return request;
     }

@@ -26,6 +26,7 @@ import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -33,7 +34,6 @@ import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.simpleworkflow.model.*;
 import com.amazonaws.services.simpleworkflow.model.transform.*;
-
 
 /**
  * Client for accessing AmazonSimpleWorkflow.  All service calls made
@@ -460,13 +460,35 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AmazonSimpleWorkflowClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonSimpleWorkflow using the specified AWS account credentials
+     * provider, client configuration options and request metric collector.
+     * 
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AmazonSimpleWorkflow
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public AmazonSimpleWorkflowClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         
         this.awsCredentialsProvider = awsCredentialsProvider;
         
         init();
     }
-
 
     private void init() {
         exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, JSONObject>>();
@@ -489,7 +511,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
                 "/com/amazonaws/services/simpleworkflow/request.handler2s"));
 
-        
         clientConfiguration = new ClientConfiguration(clientConfiguration);
         if (clientConfiguration.getMaxConnections() == ClientConfiguration.DEFAULT_MAX_CONNECTIONS) {
             log.debug("Overriding default max connection value to: " + 1000);
@@ -502,7 +523,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         setConfiguration(clientConfiguration);
     }
 
-    
     /**
      * <p>
      * Deprecates the specified <i>workflow type</i> . After a workflow type
@@ -817,7 +837,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Starts an execution of the workflow type in the specified domain
@@ -920,7 +939,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Records a <code>WorkflowExecutionSignaled</code> event in the
@@ -1077,7 +1095,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Records a <code>WorkflowExecutionCancelRequested</code> event in the
@@ -1241,7 +1258,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Deprecates the specified <i>activity type</i> .
@@ -1410,7 +1426,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Returns the estimated number of activity tasks in the specified task
@@ -1489,7 +1504,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Used by workers to tell the service that the ActivityTask identified
@@ -1805,7 +1819,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Returns the number of open workflow executions within the given
@@ -1895,7 +1908,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Returns information about the specified activity type. This includes
@@ -1980,7 +1992,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Returns a list of open workflow executions in the specified domain
@@ -2072,7 +2083,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Returns the history of the specified workflow execution. The results
@@ -2154,7 +2164,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Registers a new domain.
@@ -2394,7 +2403,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Used by activity workers to report to the service that the
@@ -2507,7 +2515,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Used by deciders to get a DecisionTask from the specified decision
@@ -2611,7 +2618,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Returns information about all activities registered in the specified
@@ -2691,7 +2697,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Returns information about the specified domain including description
@@ -2766,7 +2771,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Used by workers to tell the service that the ActivityTask identified
@@ -2921,7 +2925,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
     /**
      * <p>
      * Records a <code>WorkflowExecutionTerminated</code> event and forces
@@ -3082,20 +3085,14 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         }
     }
 
-   
-
     @Override
     public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
-
-        
     }
 
     @Override
     public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
         super.setEndpoint(endpoint, serviceName, regionId);
-
-        
     }
 
     /**

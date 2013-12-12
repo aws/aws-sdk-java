@@ -16,7 +16,6 @@ package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Returns an array of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"> CaseDetails </a> objects and a

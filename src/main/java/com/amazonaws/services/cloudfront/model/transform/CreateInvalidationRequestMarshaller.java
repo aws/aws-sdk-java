@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
@@ -63,11 +62,9 @@ public class CreateInvalidationRequestMarshaller implements Marshaller<Request<C
 
         request.setResourcePath(uriResourcePath);
 
-        
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-09-27/");
 
-            
                     if (createInvalidationRequest != null) {
             InvalidationBatch invalidationBatchInvalidationBatch = createInvalidationRequest.getInvalidationBatch();
             if (invalidationBatchInvalidationBatch != null) {
@@ -91,7 +88,6 @@ public class CreateInvalidationRequestMarshaller implements Marshaller<Request<C
                                     xmlWriter.value(pathsPathsitemsListValue);
                                 xmlWriter.endElement();
 
-
                                     pathsPathsitemsListIndex++;
                                 }
                                 xmlWriter.endElement();
@@ -107,7 +103,6 @@ public class CreateInvalidationRequestMarshaller implements Marshaller<Request<C
             }
         }
 
-
             try {
                 request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
                 request.addHeader("Content-Length", Integer.toString(stringWriter.getBuffer().toString().getBytes("UTF-8").length));
@@ -115,7 +110,6 @@ public class CreateInvalidationRequestMarshaller implements Marshaller<Request<C
             } catch (UnsupportedEncodingException e) {
                 throw new AmazonClientException("Unable to marshall request to XML", e);
             }
-        
 
         return request;
     }

@@ -33,8 +33,8 @@ public class ResetClusterParameterGroupRequestMarshaller implements Marshaller<R
     public Request<ResetClusterParameterGroupRequest> marshall(ResetClusterParameterGroupRequest resetClusterParameterGroupRequest) {
 
         if (resetClusterParameterGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ResetClusterParameterGroupRequest> request = new DefaultRequest<ResetClusterParameterGroupRequest>(resetClusterParameterGroupRequest, "AmazonRedshift");
         request.addParameter("Action", "ResetClusterParameterGroup");
@@ -81,7 +81,6 @@ public class ResetClusterParameterGroupRequestMarshaller implements Marshaller<R
 
             parametersListIndex++;
         }
-
 
         return request;
     }

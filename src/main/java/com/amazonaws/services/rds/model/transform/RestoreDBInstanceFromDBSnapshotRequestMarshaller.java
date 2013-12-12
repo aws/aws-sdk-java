@@ -33,8 +33,8 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements Marshal
     public Request<RestoreDBInstanceFromDBSnapshotRequest> marshall(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest) {
 
         if (restoreDBInstanceFromDBSnapshotRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RestoreDBInstanceFromDBSnapshotRequest> request = new DefaultRequest<RestoreDBInstanceFromDBSnapshotRequest>(restoreDBInstanceFromDBSnapshotRequest, "AmazonRDS");
         request.addParameter("Action", "RestoreDBInstanceFromDBSnapshot");
@@ -99,7 +99,6 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements Marshal
 
             tagsListIndex++;
         }
-
 
         return request;
     }

@@ -33,8 +33,8 @@ public class DeleteRouteTableRequestMarshaller implements Marshaller<Request<Del
     public Request<DeleteRouteTableRequest> marshall(DeleteRouteTableRequest deleteRouteTableRequest) {
 
         if (deleteRouteTableRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteRouteTableRequest> request = new DefaultRequest<DeleteRouteTableRequest>(deleteRouteTableRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteRouteTable");
@@ -43,7 +43,6 @@ public class DeleteRouteTableRequestMarshaller implements Marshaller<Request<Del
         if (deleteRouteTableRequest.getRouteTableId() != null) {
             request.addParameter("RouteTableId", StringUtils.fromString(deleteRouteTableRequest.getRouteTableId()));
         }
-
 
         return request;
     }

@@ -3634,6 +3634,5 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
     public Future<DescribeClusterParameterGroupsResult> describeClusterParameterGroupsAsync(DescribeClusterParameterGroupsRequest describeClusterParameterGroupsRequest,
             AsyncHandler<DescribeClusterParameterGroupsRequest, DescribeClusterParameterGroupsResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

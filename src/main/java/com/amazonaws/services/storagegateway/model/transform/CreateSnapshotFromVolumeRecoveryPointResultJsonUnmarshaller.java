@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Create Snapshot From Volume Recovery Point Result JSON Unmarshaller
  */
 public class CreateSnapshotFromVolumeRecoveryPointResultJsonUnmarshaller implements Unmarshaller<CreateSnapshotFromVolumeRecoveryPointResult, JsonUnmarshallerContext> {
 
-    
-
     public CreateSnapshotFromVolumeRecoveryPointResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         CreateSnapshotFromVolumeRecoveryPointResult createSnapshotFromVolumeRecoveryPointResult = new CreateSnapshotFromVolumeRecoveryPointResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class CreateSnapshotFromVolumeRecoveryPointResultJsonUnmarshaller impleme
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SnapshotId", targetDepth)) {
                     context.nextToken();
@@ -68,7 +62,6 @@ public class CreateSnapshotFromVolumeRecoveryPointResultJsonUnmarshaller impleme
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

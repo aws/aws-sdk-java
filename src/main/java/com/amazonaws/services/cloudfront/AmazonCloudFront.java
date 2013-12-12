@@ -736,6 +736,5 @@ public interface AmazonCloudFront {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

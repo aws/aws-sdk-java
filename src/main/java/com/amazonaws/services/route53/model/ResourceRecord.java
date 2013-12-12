@@ -16,7 +16,6 @@ package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A complex type that contains the value of the <code>Value</code> element for the current resource record set.

@@ -33,8 +33,8 @@ public class CreateClusterParameterGroupRequestMarshaller implements Marshaller<
     public Request<CreateClusterParameterGroupRequest> marshall(CreateClusterParameterGroupRequest createClusterParameterGroupRequest) {
 
         if (createClusterParameterGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateClusterParameterGroupRequest> request = new DefaultRequest<CreateClusterParameterGroupRequest>(createClusterParameterGroupRequest, "AmazonRedshift");
         request.addParameter("Action", "CreateClusterParameterGroup");
@@ -49,7 +49,6 @@ public class CreateClusterParameterGroupRequestMarshaller implements Marshaller<
         if (createClusterParameterGroupRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(createClusterParameterGroupRequest.getDescription()));
         }
-
 
         return request;
     }

@@ -33,13 +33,12 @@ public class GetIdentityNotificationAttributesRequestMarshaller implements Marsh
     public Request<GetIdentityNotificationAttributesRequest> marshall(GetIdentityNotificationAttributesRequest getIdentityNotificationAttributesRequest) {
 
         if (getIdentityNotificationAttributesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetIdentityNotificationAttributesRequest> request = new DefaultRequest<GetIdentityNotificationAttributesRequest>(getIdentityNotificationAttributesRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "GetIdentityNotificationAttributes");
         request.addParameter("Version", "2010-12-01");
-
 
         java.util.List<String> identitiesList = getIdentityNotificationAttributesRequest.getIdentities();
         int identitiesListIndex = 1;
@@ -51,7 +50,6 @@ public class GetIdentityNotificationAttributesRequestMarshaller implements Marsh
 
             identitiesListIndex++;
         }
-
 
         return request;
     }

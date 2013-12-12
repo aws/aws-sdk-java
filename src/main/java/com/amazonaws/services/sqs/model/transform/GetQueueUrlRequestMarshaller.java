@@ -33,8 +33,8 @@ public class GetQueueUrlRequestMarshaller implements Marshaller<Request<GetQueue
     public Request<GetQueueUrlRequest> marshall(GetQueueUrlRequest getQueueUrlRequest) {
 
         if (getQueueUrlRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetQueueUrlRequest> request = new DefaultRequest<GetQueueUrlRequest>(getQueueUrlRequest, "AmazonSQS");
         request.addParameter("Action", "GetQueueUrl");
@@ -46,7 +46,6 @@ public class GetQueueUrlRequestMarshaller implements Marshaller<Request<GetQueue
         if (getQueueUrlRequest.getQueueOwnerAWSAccountId() != null) {
             request.addParameter("QueueOwnerAWSAccountId", StringUtils.fromString(getQueueUrlRequest.getQueueOwnerAWSAccountId()));
         }
-
 
         return request;
     }

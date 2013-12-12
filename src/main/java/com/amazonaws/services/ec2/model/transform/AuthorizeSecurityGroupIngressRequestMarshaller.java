@@ -33,8 +33,8 @@ public class AuthorizeSecurityGroupIngressRequestMarshaller implements Marshalle
     public Request<AuthorizeSecurityGroupIngressRequest> marshall(AuthorizeSecurityGroupIngressRequest authorizeSecurityGroupIngressRequest) {
 
         if (authorizeSecurityGroupIngressRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AuthorizeSecurityGroupIngressRequest> request = new DefaultRequest<AuthorizeSecurityGroupIngressRequest>(authorizeSecurityGroupIngressRequest, "AmazonEC2");
         request.addParameter("Action", "AuthorizeSecurityGroupIngress");
@@ -115,7 +115,6 @@ public class AuthorizeSecurityGroupIngressRequestMarshaller implements Marshalle
 
             ipPermissionsListIndex++;
         }
-
 
         return request;
     }

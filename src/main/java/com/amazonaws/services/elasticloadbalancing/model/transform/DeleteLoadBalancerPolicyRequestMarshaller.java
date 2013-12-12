@@ -33,8 +33,8 @@ public class DeleteLoadBalancerPolicyRequestMarshaller implements Marshaller<Req
     public Request<DeleteLoadBalancerPolicyRequest> marshall(DeleteLoadBalancerPolicyRequest deleteLoadBalancerPolicyRequest) {
 
         if (deleteLoadBalancerPolicyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteLoadBalancerPolicyRequest> request = new DefaultRequest<DeleteLoadBalancerPolicyRequest>(deleteLoadBalancerPolicyRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DeleteLoadBalancerPolicy");
@@ -46,7 +46,6 @@ public class DeleteLoadBalancerPolicyRequestMarshaller implements Marshaller<Req
         if (deleteLoadBalancerPolicyRequest.getPolicyName() != null) {
             request.addParameter("PolicyName", StringUtils.fromString(deleteLoadBalancerPolicyRequest.getPolicyName()));
         }
-
 
         return request;
     }

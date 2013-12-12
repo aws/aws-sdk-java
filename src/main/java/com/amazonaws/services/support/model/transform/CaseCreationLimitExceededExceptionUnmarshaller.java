@@ -34,8 +34,7 @@ public class CaseCreationLimitExceededExceptionUnmarshaller extends JsonErrorUnm
             return null;
 
         CaseCreationLimitExceededException e = (CaseCreationLimitExceededException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

@@ -33,8 +33,8 @@ public class VerifyEmailIdentityRequestMarshaller implements Marshaller<Request<
     public Request<VerifyEmailIdentityRequest> marshall(VerifyEmailIdentityRequest verifyEmailIdentityRequest) {
 
         if (verifyEmailIdentityRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<VerifyEmailIdentityRequest> request = new DefaultRequest<VerifyEmailIdentityRequest>(verifyEmailIdentityRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "VerifyEmailIdentity");
@@ -43,7 +43,6 @@ public class VerifyEmailIdentityRequestMarshaller implements Marshaller<Request<
         if (verifyEmailIdentityRequest.getEmailAddress() != null) {
             request.addParameter("EmailAddress", StringUtils.fromString(verifyEmailIdentityRequest.getEmailAddress()));
         }
-
 
         return request;
     }

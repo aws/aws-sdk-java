@@ -33,8 +33,8 @@ public class DeleteVerifiedEmailAddressRequestMarshaller implements Marshaller<R
     public Request<DeleteVerifiedEmailAddressRequest> marshall(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest) {
 
         if (deleteVerifiedEmailAddressRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteVerifiedEmailAddressRequest> request = new DefaultRequest<DeleteVerifiedEmailAddressRequest>(deleteVerifiedEmailAddressRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "DeleteVerifiedEmailAddress");
@@ -43,7 +43,6 @@ public class DeleteVerifiedEmailAddressRequestMarshaller implements Marshaller<R
         if (deleteVerifiedEmailAddressRequest.getEmailAddress() != null) {
             request.addParameter("EmailAddress", StringUtils.fromString(deleteVerifiedEmailAddressRequest.getEmailAddress()));
         }
-
 
         return request;
     }

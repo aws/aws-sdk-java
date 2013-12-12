@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Delete Bandwidth Rate Limit Result JSON Unmarshaller
  */
 public class DeleteBandwidthRateLimitResultJsonUnmarshaller implements Unmarshaller<DeleteBandwidthRateLimitResult, JsonUnmarshallerContext> {
 
-    
-
     public DeleteBandwidthRateLimitResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DeleteBandwidthRateLimitResult deleteBandwidthRateLimitResult = new DeleteBandwidthRateLimitResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DeleteBandwidthRateLimitResultJsonUnmarshaller implements Unmarshal
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class DeleteBandwidthRateLimitResultJsonUnmarshaller implements Unmarshal
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

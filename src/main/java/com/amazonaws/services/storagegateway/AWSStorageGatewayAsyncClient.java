@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.storagegateway.model.*;
 
-
 /**
  * Asynchronous client for accessing AWSStorageGateway.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -66,7 +65,6 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -266,7 +264,6 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -330,11 +327,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DeleteSnapshotScheduleResult>() {
             public DeleteSnapshotScheduleResult call() throws Exception {
                 return deleteSnapshotSchedule(deleteSnapshotScheduleRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation deletes a snapshot of a volume.
@@ -380,17 +376,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteSnapshotScheduleResult>() {
             public DeleteSnapshotScheduleResult call() throws Exception {
-            	DeleteSnapshotScheduleResult result;
+                DeleteSnapshotScheduleResult result;
                 try {
-            		result = deleteSnapshotSchedule(deleteSnapshotScheduleRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteSnapshotScheduleRequest, result);
-               	return result;
-		    }
-		});
+                    result = deleteSnapshotSchedule(deleteSnapshotScheduleRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteSnapshotScheduleRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -422,11 +418,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DescribeMaintenanceStartTimeResult>() {
             public DescribeMaintenanceStartTimeResult call() throws Exception {
                 return describeMaintenanceStartTime(describeMaintenanceStartTimeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation returns your gateway's weekly maintenance start time
@@ -461,17 +456,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeMaintenanceStartTimeResult>() {
             public DescribeMaintenanceStartTimeResult call() throws Exception {
-            	DescribeMaintenanceStartTimeResult result;
+                DescribeMaintenanceStartTimeResult result;
                 try {
-            		result = describeMaintenanceStartTime(describeMaintenanceStartTimeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeMaintenanceStartTimeRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeMaintenanceStartTime(describeMaintenanceStartTimeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeMaintenanceStartTimeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -516,11 +511,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<CreateStorediSCSIVolumeResult>() {
             public CreateStorediSCSIVolumeResult call() throws Exception {
                 return createStorediSCSIVolume(createStorediSCSIVolumeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation creates a volume on a specified gateway. This operation
@@ -568,17 +562,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateStorediSCSIVolumeResult>() {
             public CreateStorediSCSIVolumeResult call() throws Exception {
-            	CreateStorediSCSIVolumeResult result;
+                CreateStorediSCSIVolumeResult result;
                 try {
-            		result = createStorediSCSIVolume(createStorediSCSIVolumeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createStorediSCSIVolumeRequest, result);
-               	return result;
-		    }
-		});
+                    result = createStorediSCSIVolume(createStorediSCSIVolumeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createStorediSCSIVolumeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -623,11 +617,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<UpdateGatewaySoftwareNowResult>() {
             public UpdateGatewaySoftwareNowResult call() throws Exception {
                 return updateGatewaySoftwareNow(updateGatewaySoftwareNowRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation updates the gateway virtual machine (VM) software. The
@@ -675,17 +668,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateGatewaySoftwareNowResult>() {
             public UpdateGatewaySoftwareNowResult call() throws Exception {
-            	UpdateGatewaySoftwareNowResult result;
+                UpdateGatewaySoftwareNowResult result;
                 try {
-            		result = updateGatewaySoftwareNow(updateGatewaySoftwareNowRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateGatewaySoftwareNowRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateGatewaySoftwareNow(updateGatewaySoftwareNowRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateGatewaySoftwareNowRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -737,11 +730,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<CreateSnapshotResult>() {
             public CreateSnapshotResult call() throws Exception {
                 return createSnapshot(createSnapshotRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation initiates a snapshot of a volume.
@@ -796,17 +788,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateSnapshotResult>() {
             public CreateSnapshotResult call() throws Exception {
-            	CreateSnapshotResult result;
+                CreateSnapshotResult result;
                 try {
-            		result = createSnapshot(createSnapshotRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createSnapshotRequest, result);
-               	return result;
-		    }
-		});
+                    result = createSnapshot(createSnapshotRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createSnapshotRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -846,11 +838,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<AddWorkingStorageResult>() {
             public AddWorkingStorageResult call() throws Exception {
                 return addWorkingStorage(addWorkingStorageRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation configures one or more gateway local disks as working
@@ -893,17 +884,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AddWorkingStorageResult>() {
             public AddWorkingStorageResult call() throws Exception {
-            	AddWorkingStorageResult result;
+                AddWorkingStorageResult result;
                 try {
-            		result = addWorkingStorage(addWorkingStorageRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(addWorkingStorageRequest, result);
-               	return result;
-		    }
-		});
+                    result = addWorkingStorage(addWorkingStorageRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(addWorkingStorageRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -933,11 +924,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<CancelRetrievalResult>() {
             public CancelRetrievalResult call() throws Exception {
                 return cancelRetrieval(cancelRetrievalRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Cancels retrieval of a virtual tape from the Virtual Tape Shelf (VTS)
@@ -970,17 +960,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CancelRetrievalResult>() {
             public CancelRetrievalResult call() throws Exception {
-            	CancelRetrievalResult result;
+                CancelRetrievalResult result;
                 try {
-            		result = cancelRetrieval(cancelRetrievalRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(cancelRetrievalRequest, result);
-               	return result;
-		    }
-		});
+                    result = cancelRetrieval(cancelRetrievalRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(cancelRetrievalRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1019,11 +1009,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DescribeBandwidthRateLimitResult>() {
             public DescribeBandwidthRateLimitResult call() throws Exception {
                 return describeBandwidthRateLimit(describeBandwidthRateLimitRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation returns the bandwidth rate limits of a gateway. By
@@ -1065,17 +1054,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeBandwidthRateLimitResult>() {
             public DescribeBandwidthRateLimitResult call() throws Exception {
-            	DescribeBandwidthRateLimitResult result;
+                DescribeBandwidthRateLimitResult result;
                 try {
-            		result = describeBandwidthRateLimit(describeBandwidthRateLimitRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeBandwidthRateLimitRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeBandwidthRateLimit(describeBandwidthRateLimitRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeBandwidthRateLimitRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1106,11 +1095,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DescribeTapesResult>() {
             public DescribeTapesResult call() throws Exception {
                 return describeTapes(describeTapesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a description of the specified Amazon Resource Name (ARN) of
@@ -1144,17 +1132,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeTapesResult>() {
             public DescribeTapesResult call() throws Exception {
-            	DescribeTapesResult result;
+                DescribeTapesResult result;
                 try {
-            		result = describeTapes(describeTapesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeTapesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeTapes(describeTapesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeTapesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1196,11 +1184,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<RetrieveTapeRecoveryPointResult>() {
             public RetrieveTapeRecoveryPointResult call() throws Exception {
                 return retrieveTapeRecoveryPoint(retrieveTapeRecoveryPointRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves the recovery point for the specified virtual tape.
@@ -1245,17 +1232,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RetrieveTapeRecoveryPointResult>() {
             public RetrieveTapeRecoveryPointResult call() throws Exception {
-            	RetrieveTapeRecoveryPointResult result;
+                RetrieveTapeRecoveryPointResult result;
                 try {
-            		result = retrieveTapeRecoveryPoint(retrieveTapeRecoveryPointRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(retrieveTapeRecoveryPointRequest, result);
-               	return result;
-		    }
-		});
+                    result = retrieveTapeRecoveryPoint(retrieveTapeRecoveryPointRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(retrieveTapeRecoveryPointRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1293,11 +1280,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<UpdateChapCredentialsResult>() {
             public UpdateChapCredentialsResult call() throws Exception {
                 return updateChapCredentials(updateChapCredentialsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation updates the Challenge-Handshake Authentication Protocol
@@ -1338,17 +1324,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateChapCredentialsResult>() {
             public UpdateChapCredentialsResult call() throws Exception {
-            	UpdateChapCredentialsResult result;
+                UpdateChapCredentialsResult result;
                 try {
-            		result = updateChapCredentials(updateChapCredentialsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateChapCredentialsRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateChapCredentials(updateChapCredentialsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateChapCredentialsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1382,11 +1368,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<CreateTapesResult>() {
             public CreateTapesResult call() throws Exception {
                 return createTapes(createTapesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates one or more virtual tapes. You write data to the virtual tapes
@@ -1423,17 +1408,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateTapesResult>() {
             public CreateTapesResult call() throws Exception {
-            	CreateTapesResult result;
+                CreateTapesResult result;
                 try {
-            		result = createTapes(createTapesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createTapesRequest, result);
-               	return result;
-		    }
-		});
+                    result = createTapes(createTapesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createTapesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1469,11 +1454,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DescribeUploadBufferResult>() {
             public DescribeUploadBufferResult call() throws Exception {
                 return describeUploadBuffer(describeUploadBufferRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation returns information about the upload buffer of a
@@ -1512,17 +1496,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeUploadBufferResult>() {
             public DescribeUploadBufferResult call() throws Exception {
-            	DescribeUploadBufferResult result;
+                DescribeUploadBufferResult result;
                 try {
-            		result = describeUploadBuffer(describeUploadBufferRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeUploadBufferRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeUploadBuffer(describeUploadBufferRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeUploadBufferRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1553,11 +1537,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DeleteChapCredentialsResult>() {
             public DeleteChapCredentialsResult call() throws Exception {
                 return deleteChapCredentials(deleteChapCredentialsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation deletes Challenge-Handshake Authentication Protocol
@@ -1591,17 +1574,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteChapCredentialsResult>() {
             public DeleteChapCredentialsResult call() throws Exception {
-            	DeleteChapCredentialsResult result;
+                DeleteChapCredentialsResult result;
                 try {
-            		result = deleteChapCredentials(deleteChapCredentialsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteChapCredentialsRequest, result);
-               	return result;
-		    }
-		});
+                    result = deleteChapCredentials(deleteChapCredentialsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteChapCredentialsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1638,11 +1621,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<AddCacheResult>() {
             public AddCacheResult call() throws Exception {
                 return addCache(addCacheRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation configures one or more gateway local disks as cache for
@@ -1682,17 +1664,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AddCacheResult>() {
             public AddCacheResult call() throws Exception {
-            	AddCacheResult result;
+                AddCacheResult result;
                 try {
-            		result = addCache(addCacheRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(addCacheRequest, result);
-               	return result;
-		    }
-		});
+                    result = addCache(addCacheRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(addCacheRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1725,11 +1707,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DescribeGatewayInformationResult>() {
             public DescribeGatewayInformationResult call() throws Exception {
                 return describeGatewayInformation(describeGatewayInformationRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation returns metadata about a gateway such as its name,
@@ -1765,17 +1746,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeGatewayInformationResult>() {
             public DescribeGatewayInformationResult call() throws Exception {
-            	DescribeGatewayInformationResult result;
+                DescribeGatewayInformationResult result;
                 try {
-            		result = describeGatewayInformation(describeGatewayInformationRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeGatewayInformationRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeGatewayInformation(describeGatewayInformationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeGatewayInformationRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1815,11 +1796,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<ActivateGatewayResult>() {
             public ActivateGatewayResult call() throws Exception {
                 return activateGateway(activateGatewayRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation activates the gateway you previously deployed on your
@@ -1862,17 +1842,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ActivateGatewayResult>() {
             public ActivateGatewayResult call() throws Exception {
-            	ActivateGatewayResult result;
+                ActivateGatewayResult result;
                 try {
-            		result = activateGateway(activateGatewayRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(activateGatewayRequest, result);
-               	return result;
-		    }
-		});
+                    result = activateGateway(activateGatewayRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(activateGatewayRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1907,11 +1887,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DescribeTapeArchivesResult>() {
             public DescribeTapeArchivesResult call() throws Exception {
                 return describeTapeArchives(describeTapeArchivesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a description of specified virtual tapes in the Virtual Tape
@@ -1949,17 +1928,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeTapeArchivesResult>() {
             public DescribeTapeArchivesResult call() throws Exception {
-            	DescribeTapeArchivesResult result;
+                DescribeTapeArchivesResult result;
                 try {
-            		result = describeTapeArchives(describeTapeArchivesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeTapeArchivesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeTapeArchives(describeTapeArchivesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeTapeArchivesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1991,11 +1970,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<UpdateGatewayInformationResult>() {
             public UpdateGatewayInformationResult call() throws Exception {
                 return updateGatewayInformation(updateGatewayInformationRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation updates a gateway's metadata, which includes the
@@ -2030,17 +2008,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateGatewayInformationResult>() {
             public UpdateGatewayInformationResult call() throws Exception {
-            	UpdateGatewayInformationResult result;
+                UpdateGatewayInformationResult result;
                 try {
-            		result = updateGatewayInformation(updateGatewayInformationRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateGatewayInformationRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateGatewayInformation(updateGatewayInformationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateGatewayInformationRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2074,11 +2052,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<ListLocalDisksResult>() {
             public ListLocalDisksResult call() throws Exception {
                 return listLocalDisks(listLocalDisksRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation returns a list of the local disks of a gateway. To
@@ -2115,17 +2092,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListLocalDisksResult>() {
             public ListLocalDisksResult call() throws Exception {
-            	ListLocalDisksResult result;
+                ListLocalDisksResult result;
                 try {
-            		result = listLocalDisks(listLocalDisksRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listLocalDisksRequest, result);
-               	return result;
-		    }
-		});
+                    result = listLocalDisks(listLocalDisksRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listLocalDisksRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2153,11 +2130,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DeleteTapeArchiveResult>() {
             public DeleteTapeArchiveResult call() throws Exception {
                 return deleteTapeArchive(deleteTapeArchiveRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified virtual tape from the Virtual Tape Shelf (VTS).
@@ -2188,17 +2164,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteTapeArchiveResult>() {
             public DeleteTapeArchiveResult call() throws Exception {
-            	DeleteTapeArchiveResult result;
+                DeleteTapeArchiveResult result;
                 try {
-            		result = deleteTapeArchive(deleteTapeArchiveRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteTapeArchiveRequest, result);
-               	return result;
-		    }
-		});
+                    result = deleteTapeArchive(deleteTapeArchiveRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteTapeArchiveRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2232,11 +2208,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DescribeCacheResult>() {
             public DescribeCacheResult call() throws Exception {
                 return describeCache(describeCacheRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation returns information about the cache of a gateway. This
@@ -2273,17 +2248,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeCacheResult>() {
             public DescribeCacheResult call() throws Exception {
-            	DescribeCacheResult result;
+                DescribeCacheResult result;
                 try {
-            		result = describeCache(describeCacheRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeCacheRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeCache(describeCacheRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeCacheRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2326,11 +2301,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<UpdateBandwidthRateLimitResult>() {
             public UpdateBandwidthRateLimitResult call() throws Exception {
                 return updateBandwidthRateLimit(updateBandwidthRateLimitRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation updates the bandwidth rate limits of a gateway. You can
@@ -2376,17 +2350,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateBandwidthRateLimitResult>() {
             public UpdateBandwidthRateLimitResult call() throws Exception {
-            	UpdateBandwidthRateLimitResult result;
+                UpdateBandwidthRateLimitResult result;
                 try {
-            		result = updateBandwidthRateLimit(updateBandwidthRateLimitRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateBandwidthRateLimitRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateBandwidthRateLimit(updateBandwidthRateLimitRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateBandwidthRateLimitRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2423,11 +2397,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DisableGatewayResult>() {
             public DisableGatewayResult call() throws Exception {
                 return disableGateway(disableGatewayRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Disables a gateway when the gateway is no longer functioning. For
@@ -2467,17 +2440,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DisableGatewayResult>() {
             public DisableGatewayResult call() throws Exception {
-            	DisableGatewayResult result;
+                DisableGatewayResult result;
                 try {
-            		result = disableGateway(disableGatewayRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(disableGatewayRequest, result);
-               	return result;
-		    }
-		});
+                    result = disableGateway(disableGatewayRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(disableGatewayRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2518,11 +2491,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DescribeWorkingStorageResult>() {
             public DescribeWorkingStorageResult call() throws Exception {
                 return describeWorkingStorage(describeWorkingStorageRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation returns information about the working storage of a
@@ -2566,17 +2538,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeWorkingStorageResult>() {
             public DescribeWorkingStorageResult call() throws Exception {
-            	DescribeWorkingStorageResult result;
+                DescribeWorkingStorageResult result;
                 try {
-            		result = describeWorkingStorage(describeWorkingStorageRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeWorkingStorageRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeWorkingStorage(describeWorkingStorageRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeWorkingStorageRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2608,11 +2580,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<UpdateMaintenanceStartTimeResult>() {
             public UpdateMaintenanceStartTimeResult call() throws Exception {
                 return updateMaintenanceStartTime(updateMaintenanceStartTimeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation updates a gateway's weekly maintenance start time
@@ -2647,17 +2618,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateMaintenanceStartTimeResult>() {
             public UpdateMaintenanceStartTimeResult call() throws Exception {
-            	UpdateMaintenanceStartTimeResult result;
+                UpdateMaintenanceStartTimeResult result;
                 try {
-            		result = updateMaintenanceStartTime(updateMaintenanceStartTimeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateMaintenanceStartTimeRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateMaintenanceStartTime(updateMaintenanceStartTimeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateMaintenanceStartTimeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2685,11 +2656,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DeleteTapeResult>() {
             public DeleteTapeResult call() throws Exception {
                 return deleteTape(deleteTapeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified virtual tape.
@@ -2720,17 +2690,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteTapeResult>() {
             public DeleteTapeResult call() throws Exception {
-            	DeleteTapeResult result;
+                DeleteTapeResult result;
                 try {
-            		result = deleteTape(deleteTapeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteTapeRequest, result);
-               	return result;
-		    }
-		});
+                    result = deleteTape(deleteTapeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteTapeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2772,11 +2742,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<StartGatewayResult>() {
             public StartGatewayResult call() throws Exception {
                 return startGateway(startGatewayRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation starts a gateway that you previously shut down (see
@@ -2821,17 +2790,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<StartGatewayResult>() {
             public StartGatewayResult call() throws Exception {
-            	StartGatewayResult result;
+                StartGatewayResult result;
                 try {
-            		result = startGateway(startGatewayRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(startGatewayRequest, result);
-               	return result;
-		    }
-		});
+                    result = startGateway(startGatewayRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(startGatewayRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2863,11 +2832,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DescribeChapCredentialsResult>() {
             public DescribeChapCredentialsResult call() throws Exception {
                 return describeChapCredentials(describeChapCredentialsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation returns an array of Challenge-Handshake Authentication
@@ -2902,17 +2870,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeChapCredentialsResult>() {
             public DescribeChapCredentialsResult call() throws Exception {
-            	DescribeChapCredentialsResult result;
+                DescribeChapCredentialsResult result;
                 try {
-            		result = describeChapCredentials(describeChapCredentialsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeChapCredentialsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeChapCredentials(describeChapCredentialsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeChapCredentialsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2944,11 +2912,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DescribeSnapshotScheduleResult>() {
             public DescribeSnapshotScheduleResult call() throws Exception {
                 return describeSnapshotSchedule(describeSnapshotScheduleRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation describes the snapshot schedule for the specified
@@ -2983,17 +2950,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSnapshotScheduleResult>() {
             public DescribeSnapshotScheduleResult call() throws Exception {
-            	DescribeSnapshotScheduleResult result;
+                DescribeSnapshotScheduleResult result;
                 try {
-            		result = describeSnapshotSchedule(describeSnapshotScheduleRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeSnapshotScheduleRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeSnapshotSchedule(describeSnapshotScheduleRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeSnapshotScheduleRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3040,11 +3007,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DeleteVolumeResult>() {
             public DeleteVolumeResult call() throws Exception {
                 return deleteVolume(deleteVolumeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation delete the specified gateway volume that you previously
@@ -3094,17 +3060,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteVolumeResult>() {
             public DeleteVolumeResult call() throws Exception {
-            	DeleteVolumeResult result;
+                DeleteVolumeResult result;
                 try {
-            		result = deleteVolume(deleteVolumeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteVolumeRequest, result);
-               	return result;
-		    }
-		});
+                    result = deleteVolume(deleteVolumeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteVolumeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3157,11 +3123,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<CreateSnapshotFromVolumeRecoveryPointResult>() {
             public CreateSnapshotFromVolumeRecoveryPointResult call() throws Exception {
                 return createSnapshotFromVolumeRecoveryPoint(createSnapshotFromVolumeRecoveryPointRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation initiates a snapshot of a gateway from a volume
@@ -3217,17 +3182,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateSnapshotFromVolumeRecoveryPointResult>() {
             public CreateSnapshotFromVolumeRecoveryPointResult call() throws Exception {
-            	CreateSnapshotFromVolumeRecoveryPointResult result;
+                CreateSnapshotFromVolumeRecoveryPointResult result;
                 try {
-            		result = createSnapshotFromVolumeRecoveryPoint(createSnapshotFromVolumeRecoveryPointRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createSnapshotFromVolumeRecoveryPointRequest, result);
-               	return result;
-		    }
-		});
+                    result = createSnapshotFromVolumeRecoveryPoint(createSnapshotFromVolumeRecoveryPointRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createSnapshotFromVolumeRecoveryPointRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3275,11 +3240,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DeleteGatewayResult>() {
             public DeleteGatewayResult call() throws Exception {
                 return deleteGateway(deleteGatewayRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation deletes a gateway. To specify which gateway to delete,
@@ -3330,17 +3294,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteGatewayResult>() {
             public DeleteGatewayResult call() throws Exception {
-            	DeleteGatewayResult result;
+                DeleteGatewayResult result;
                 try {
-            		result = deleteGateway(deleteGatewayRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteGatewayRequest, result);
-               	return result;
-		    }
-		});
+                    result = deleteGateway(deleteGatewayRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteGatewayRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3385,11 +3349,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<CreateCachediSCSIVolumeResult>() {
             public CreateCachediSCSIVolumeResult call() throws Exception {
                 return createCachediSCSIVolume(createCachediSCSIVolumeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation creates a cached volume on a specified cached gateway.
@@ -3437,17 +3400,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateCachediSCSIVolumeResult>() {
             public CreateCachediSCSIVolumeResult call() throws Exception {
-            	CreateCachediSCSIVolumeResult result;
+                CreateCachediSCSIVolumeResult result;
                 try {
-            		result = createCachediSCSIVolume(createCachediSCSIVolumeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createCachediSCSIVolumeRequest, result);
-               	return result;
-		    }
-		});
+                    result = createCachediSCSIVolume(createCachediSCSIVolumeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createCachediSCSIVolumeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3504,11 +3467,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<ShutdownGatewayResult>() {
             public ShutdownGatewayResult call() throws Exception {
                 return shutdownGateway(shutdownGatewayRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation shuts down a gateway. To specify which gateway to shut
@@ -3568,17 +3530,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ShutdownGatewayResult>() {
             public ShutdownGatewayResult call() throws Exception {
-            	ShutdownGatewayResult result;
+                ShutdownGatewayResult result;
                 try {
-            		result = shutdownGateway(shutdownGatewayRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(shutdownGatewayRequest, result);
-               	return result;
-		    }
-		});
+                    result = shutdownGateway(shutdownGatewayRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(shutdownGatewayRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3612,11 +3574,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DeleteBandwidthRateLimitResult>() {
             public DeleteBandwidthRateLimitResult call() throws Exception {
                 return deleteBandwidthRateLimit(deleteBandwidthRateLimitRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation deletes the bandwidth rate limits of a gateway. You can
@@ -3653,17 +3614,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteBandwidthRateLimitResult>() {
             public DeleteBandwidthRateLimitResult call() throws Exception {
-            	DeleteBandwidthRateLimitResult result;
+                DeleteBandwidthRateLimitResult result;
                 try {
-            		result = deleteBandwidthRateLimit(deleteBandwidthRateLimitRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteBandwidthRateLimitRequest, result);
-               	return result;
-		    }
-		});
+                    result = deleteBandwidthRateLimit(deleteBandwidthRateLimitRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteBandwidthRateLimitRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3703,11 +3664,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<ListVolumesResult>() {
             public ListVolumesResult call() throws Exception {
                 return listVolumes(listVolumesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation lists the iSCSI stored volumes of a gateway. Results
@@ -3750,17 +3710,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListVolumesResult>() {
             public ListVolumesResult call() throws Exception {
-            	ListVolumesResult result;
+                ListVolumesResult result;
                 try {
-            		result = listVolumes(listVolumesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listVolumesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listVolumes(listVolumesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listVolumesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3797,11 +3757,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DescribeTapeRecoveryPointsResult>() {
             public DescribeTapeRecoveryPointsResult call() throws Exception {
                 return describeTapeRecoveryPoints(describeTapeRecoveryPointsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a list of virtual tape recovery points that are available for
@@ -3841,17 +3800,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeTapeRecoveryPointsResult>() {
             public DescribeTapeRecoveryPointsResult call() throws Exception {
-            	DescribeTapeRecoveryPointsResult result;
+                DescribeTapeRecoveryPointsResult result;
                 try {
-            		result = describeTapeRecoveryPoints(describeTapeRecoveryPointsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeTapeRecoveryPointsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeTapeRecoveryPoints(describeTapeRecoveryPointsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeTapeRecoveryPointsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3893,11 +3852,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<UpdateSnapshotScheduleResult>() {
             public UpdateSnapshotScheduleResult call() throws Exception {
                 return updateSnapshotSchedule(updateSnapshotScheduleRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation updates a snapshot schedule configured for a gateway
@@ -3942,17 +3900,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateSnapshotScheduleResult>() {
             public UpdateSnapshotScheduleResult call() throws Exception {
-            	UpdateSnapshotScheduleResult result;
+                UpdateSnapshotScheduleResult result;
                 try {
-            		result = updateSnapshotSchedule(updateSnapshotScheduleRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateSnapshotScheduleRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateSnapshotSchedule(updateSnapshotScheduleRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateSnapshotScheduleRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3993,11 +3951,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<ListGatewaysResult>() {
             public ListGatewaysResult call() throws Exception {
                 return listGateways(listGatewaysRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation lists gateways owned by an AWS account in a region
@@ -4041,17 +3998,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListGatewaysResult>() {
             public ListGatewaysResult call() throws Exception {
-            	ListGatewaysResult result;
+                ListGatewaysResult result;
                 try {
-            		result = listGateways(listGatewaysRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listGatewaysRequest, result);
-               	return result;
-		    }
-		});
+                    result = listGateways(listGatewaysRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listGatewaysRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4086,11 +4043,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<AddUploadBufferResult>() {
             public AddUploadBufferResult call() throws Exception {
                 return addUploadBuffer(addUploadBufferRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation configures one or more gateway local disks as upload
@@ -4128,17 +4084,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AddUploadBufferResult>() {
             public AddUploadBufferResult call() throws Exception {
-            	AddUploadBufferResult result;
+                AddUploadBufferResult result;
                 try {
-            		result = addUploadBuffer(addUploadBufferRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(addUploadBufferRequest, result);
-               	return result;
-		    }
-		});
+                    result = addUploadBuffer(addUploadBufferRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(addUploadBufferRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4175,11 +4131,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DescribeCachediSCSIVolumesResult>() {
             public DescribeCachediSCSIVolumesResult call() throws Exception {
                 return describeCachediSCSIVolumes(describeCachediSCSIVolumesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation returns a description of the gateway volumes specified
@@ -4219,17 +4174,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeCachediSCSIVolumesResult>() {
             public DescribeCachediSCSIVolumesResult call() throws Exception {
-            	DescribeCachediSCSIVolumesResult result;
+                DescribeCachediSCSIVolumesResult result;
                 try {
-            		result = describeCachediSCSIVolumes(describeCachediSCSIVolumesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeCachediSCSIVolumesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeCachediSCSIVolumes(describeCachediSCSIVolumesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeCachediSCSIVolumesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4262,11 +4217,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DescribeStorediSCSIVolumesResult>() {
             public DescribeStorediSCSIVolumesResult call() throws Exception {
                 return describeStorediSCSIVolumes(describeStorediSCSIVolumesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation returns description of the gateway volumes specified in
@@ -4302,17 +4256,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeStorediSCSIVolumesResult>() {
             public DescribeStorediSCSIVolumesResult call() throws Exception {
-            	DescribeStorediSCSIVolumesResult result;
+                DescribeStorediSCSIVolumesResult result;
                 try {
-            		result = describeStorediSCSIVolumes(describeStorediSCSIVolumesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeStorediSCSIVolumesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeStorediSCSIVolumes(describeStorediSCSIVolumesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeStorediSCSIVolumesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4351,11 +4305,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<ListVolumeRecoveryPointsResult>() {
             public ListVolumeRecoveryPointsResult call() throws Exception {
                 return listVolumeRecoveryPoints(listVolumeRecoveryPointsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation lists the recovery points for a specified gateway. This
@@ -4397,17 +4350,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListVolumeRecoveryPointsResult>() {
             public ListVolumeRecoveryPointsResult call() throws Exception {
-            	ListVolumeRecoveryPointsResult result;
+                ListVolumeRecoveryPointsResult result;
                 try {
-            		result = listVolumeRecoveryPoints(listVolumeRecoveryPointsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listVolumeRecoveryPointsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listVolumeRecoveryPoints(listVolumeRecoveryPointsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listVolumeRecoveryPointsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4442,11 +4395,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<DescribeVTLDevicesResult>() {
             public DescribeVTLDevicesResult call() throws Exception {
                 return describeVTLDevices(describeVTLDevicesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a description of Virtual Tape Library (VTL) devices for the
@@ -4484,17 +4436,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVTLDevicesResult>() {
             public DescribeVTLDevicesResult call() throws Exception {
-            	DescribeVTLDevicesResult result;
+                DescribeVTLDevicesResult result;
                 try {
-            		result = describeVTLDevices(describeVTLDevicesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeVTLDevicesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeVTLDevices(describeVTLDevicesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeVTLDevicesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4532,11 +4484,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<RetrieveTapeArchiveResult>() {
             public RetrieveTapeArchiveResult call() throws Exception {
                 return retrieveTapeArchive(retrieveTapeArchiveRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves an archived virtual tape from the Virtual Tape Shelf (VTS)
@@ -4577,17 +4528,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RetrieveTapeArchiveResult>() {
             public RetrieveTapeArchiveResult call() throws Exception {
-            	RetrieveTapeArchiveResult result;
+                RetrieveTapeArchiveResult result;
                 try {
-            		result = retrieveTapeArchive(retrieveTapeArchiveRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(retrieveTapeArchiveRequest, result);
-               	return result;
-		    }
-		});
+                    result = retrieveTapeArchive(retrieveTapeArchiveRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(retrieveTapeArchiveRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4616,11 +4567,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         return executorService.submit(new Callable<CancelArchivalResult>() {
             public CancelArchivalResult call() throws Exception {
                 return cancelArchival(cancelArchivalRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Cancels archiving of a virtual tape to the Virtual Tape Shelf (VTS)
@@ -4652,17 +4602,17 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CancelArchivalResult>() {
             public CancelArchivalResult call() throws Exception {
-            	CancelArchivalResult result;
+                CancelArchivalResult result;
                 try {
-            		result = cancelArchival(cancelArchivalRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(cancelArchivalRequest, result);
-               	return result;
-		    }
-		});
+                    result = cancelArchival(cancelArchivalRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(cancelArchivalRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

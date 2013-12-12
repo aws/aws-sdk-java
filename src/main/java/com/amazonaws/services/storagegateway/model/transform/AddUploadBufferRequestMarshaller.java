@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class AddUploadBufferRequestMarshaller implements Marshaller<Request<AddUploadBufferRequest>, AddUploadBufferRequest> {
 
-    
-
     public Request<AddUploadBufferRequest> marshall(AddUploadBufferRequest addUploadBufferRequest) {
     if (addUploadBufferRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class AddUploadBufferRequestMarshaller implements Marshaller<Request<AddU
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class AddUploadBufferRequestMarshaller implements Marshaller<Request<AddU
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (addUploadBufferRequest.getGatewayARN() != null) {
@@ -104,7 +95,6 @@ public class AddUploadBufferRequestMarshaller implements Marshaller<Request<AddU
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -113,7 +103,6 @@ public class AddUploadBufferRequestMarshaller implements Marshaller<Request<AddU
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

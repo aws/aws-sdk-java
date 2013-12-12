@@ -33,8 +33,8 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
     public Request<ImportInstanceRequest> marshall(ImportInstanceRequest importInstanceRequest) {
 
         if (importInstanceRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ImportInstanceRequest> request = new DefaultRequest<ImportInstanceRequest>(importInstanceRequest, "AmazonEC2");
         request.addParameter("Action", "ImportInstance");
@@ -128,7 +128,6 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
         if (importInstanceRequest.getPlatform() != null) {
             request.addParameter("Platform", StringUtils.fromString(importInstanceRequest.getPlatform()));
         }
-
 
         return request;
     }

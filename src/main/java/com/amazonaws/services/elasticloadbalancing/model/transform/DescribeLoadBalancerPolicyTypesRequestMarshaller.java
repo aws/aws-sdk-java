@@ -33,13 +33,12 @@ public class DescribeLoadBalancerPolicyTypesRequestMarshaller implements Marshal
     public Request<DescribeLoadBalancerPolicyTypesRequest> marshall(DescribeLoadBalancerPolicyTypesRequest describeLoadBalancerPolicyTypesRequest) {
 
         if (describeLoadBalancerPolicyTypesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeLoadBalancerPolicyTypesRequest> request = new DefaultRequest<DescribeLoadBalancerPolicyTypesRequest>(describeLoadBalancerPolicyTypesRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DescribeLoadBalancerPolicyTypes");
         request.addParameter("Version", "2012-06-01");
-
 
         java.util.List<String> policyTypeNamesList = describeLoadBalancerPolicyTypesRequest.getPolicyTypeNames();
         int policyTypeNamesListIndex = 1;
@@ -51,7 +50,6 @@ public class DescribeLoadBalancerPolicyTypesRequestMarshaller implements Marshal
 
             policyTypeNamesListIndex++;
         }
-
 
         return request;
     }

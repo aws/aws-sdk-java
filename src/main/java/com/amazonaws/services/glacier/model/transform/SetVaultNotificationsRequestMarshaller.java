@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class SetVaultNotificationsRequestMarshaller implements Marshaller<Request<SetVaultNotificationsRequest>, SetVaultNotificationsRequest> {
 
-    
-
     public Request<SetVaultNotificationsRequest> marshall(SetVaultNotificationsRequest setVaultNotificationsRequest) {
     if (setVaultNotificationsRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class SetVaultNotificationsRequestMarshaller implements Marshaller<Reques
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.PUT);
-
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", (setVaultNotificationsRequest.getAccountId() == null) ? "" : StringUtils.fromString(setVaultNotificationsRequest.getAccountId())); 
@@ -77,14 +72,10 @@ public class SetVaultNotificationsRequestMarshaller implements Marshaller<Reques
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
             VaultNotificationConfig vaultNotificationConfig = setVaultNotificationsRequest.getVaultNotificationConfig();
             if (vaultNotificationConfig != null) {
 
@@ -110,7 +101,6 @@ public class SetVaultNotificationsRequestMarshaller implements Marshaller<Reques
                 jsonWriter.endObject();
             }
 
-
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
           request.setContent(new StringInputStream(snippet));
@@ -118,7 +108,6 @@ public class SetVaultNotificationsRequestMarshaller implements Marshaller<Reques
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

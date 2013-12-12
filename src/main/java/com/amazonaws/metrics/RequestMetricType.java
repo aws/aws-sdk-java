@@ -15,7 +15,9 @@
 package com.amazonaws.metrics;
 
 /**
- * Request metric type.
+ * <a href=
+ * "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/metrics/package-summary.html"
+ * >Request metric type</a>.
  */
 public interface RequestMetricType extends MetricType {
 }

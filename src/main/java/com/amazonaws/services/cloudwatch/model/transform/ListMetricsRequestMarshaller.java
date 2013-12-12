@@ -33,8 +33,8 @@ public class ListMetricsRequestMarshaller implements Marshaller<Request<ListMetr
     public Request<ListMetricsRequest> marshall(ListMetricsRequest listMetricsRequest) {
 
         if (listMetricsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListMetricsRequest> request = new DefaultRequest<ListMetricsRequest>(listMetricsRequest, "AmazonCloudWatch");
         request.addParameter("Action", "ListMetrics");
@@ -66,7 +66,6 @@ public class ListMetricsRequestMarshaller implements Marshaller<Request<ListMetr
         if (listMetricsRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(listMetricsRequest.getNextToken()));
         }
-
 
         return request;
     }

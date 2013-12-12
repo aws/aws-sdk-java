@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.cloudsearch.model.*;
 
-
 /**
  * Asynchronous client for accessing AmazonCloudSearch.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -52,7 +51,6 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -252,7 +250,6 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -306,11 +303,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<UpdateDefaultSearchFieldResult>() {
             public UpdateDefaultSearchFieldResult call() throws Exception {
                 return updateDefaultSearchField(updateDefaultSearchFieldRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Configures the default search field for the search domain. The default
@@ -346,17 +342,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateDefaultSearchFieldResult>() {
             public UpdateDefaultSearchFieldResult call() throws Exception {
-            	UpdateDefaultSearchFieldResult result;
+                UpdateDefaultSearchFieldResult result;
                 try {
-            		result = updateDefaultSearchField(updateDefaultSearchFieldRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateDefaultSearchFieldRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateDefaultSearchField(updateDefaultSearchFieldRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateDefaultSearchFieldRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -385,11 +381,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DeleteRankExpressionResult>() {
             public DeleteRankExpressionResult call() throws Exception {
                 return deleteRankExpression(deleteRankExpressionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Removes a <code>RankExpression</code> from the search domain.
@@ -421,17 +416,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteRankExpressionResult>() {
             public DeleteRankExpressionResult call() throws Exception {
-            	DeleteRankExpressionResult result;
+                DeleteRankExpressionResult result;
                 try {
-            		result = deleteRankExpression(deleteRankExpressionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteRankExpressionRequest, result);
-               	return result;
-		    }
-		});
+                    result = deleteRankExpression(deleteRankExpressionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteRankExpressionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -463,11 +458,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DescribeRankExpressionsResult>() {
             public DescribeRankExpressionsResult call() throws Exception {
                 return describeRankExpressions(describeRankExpressionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gets the rank expressions configured for the search domain. Can be
@@ -502,17 +496,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeRankExpressionsResult>() {
             public DescribeRankExpressionsResult call() throws Exception {
-            	DescribeRankExpressionsResult result;
+                DescribeRankExpressionsResult result;
                 try {
-            		result = describeRankExpressions(describeRankExpressionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeRankExpressionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeRankExpressions(describeRankExpressionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeRankExpressionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -540,11 +534,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<CreateDomainResult>() {
             public CreateDomainResult call() throws Exception {
                 return createDomain(createDomainRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new search domain.
@@ -575,17 +568,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateDomainResult>() {
             public CreateDomainResult call() throws Exception {
-            	CreateDomainResult result;
+                CreateDomainResult result;
                 try {
-            		result = createDomain(createDomainRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createDomainRequest, result);
-               	return result;
-		    }
-		});
+                    result = createDomain(createDomainRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createDomainRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -617,11 +610,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<UpdateServiceAccessPoliciesResult>() {
             public UpdateServiceAccessPoliciesResult call() throws Exception {
                 return updateServiceAccessPolicies(updateServiceAccessPoliciesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Configures the policies that control access to the domain's document
@@ -656,17 +648,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateServiceAccessPoliciesResult>() {
             public UpdateServiceAccessPoliciesResult call() throws Exception {
-            	UpdateServiceAccessPoliciesResult result;
+                UpdateServiceAccessPoliciesResult result;
                 try {
-            		result = updateServiceAccessPolicies(updateServiceAccessPoliciesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateServiceAccessPoliciesRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateServiceAccessPolicies(updateServiceAccessPoliciesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateServiceAccessPoliciesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -697,11 +689,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DefineIndexFieldResult>() {
             public DefineIndexFieldResult call() throws Exception {
                 return defineIndexField(defineIndexFieldRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Configures an <code>IndexField</code> for the search domain. Used to
@@ -735,17 +726,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DefineIndexFieldResult>() {
             public DefineIndexFieldResult call() throws Exception {
-            	DefineIndexFieldResult result;
+                DefineIndexFieldResult result;
                 try {
-            		result = defineIndexField(defineIndexFieldRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(defineIndexFieldRequest, result);
-               	return result;
-		    }
-		});
+                    result = defineIndexField(defineIndexFieldRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(defineIndexFieldRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -777,11 +768,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DefineRankExpressionResult>() {
             public DefineRankExpressionResult call() throws Exception {
                 return defineRankExpression(defineRankExpressionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Configures a <code>RankExpression</code> for the search domain. Used
@@ -816,17 +806,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DefineRankExpressionResult>() {
             public DefineRankExpressionResult call() throws Exception {
-            	DefineRankExpressionResult result;
+                DefineRankExpressionResult result;
                 try {
-            		result = defineRankExpression(defineRankExpressionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(defineRankExpressionRequest, result);
-               	return result;
-		    }
-		});
+                    result = defineRankExpression(defineRankExpressionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(defineRankExpressionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -856,11 +846,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DescribeSynonymOptionsResult>() {
             public DescribeSynonymOptionsResult call() throws Exception {
                 return describeSynonymOptions(describeSynonymOptionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gets the synonym dictionary configured for the search domain.
@@ -893,17 +882,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSynonymOptionsResult>() {
             public DescribeSynonymOptionsResult call() throws Exception {
-            	DescribeSynonymOptionsResult result;
+                DescribeSynonymOptionsResult result;
                 try {
-            		result = describeSynonymOptions(describeSynonymOptionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeSynonymOptionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeSynonymOptions(describeSynonymOptionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeSynonymOptionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -933,11 +922,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DescribeStopwordOptionsResult>() {
             public DescribeStopwordOptionsResult call() throws Exception {
                 return describeStopwordOptions(describeStopwordOptionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gets the stopwords configured for the search domain.
@@ -970,17 +958,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeStopwordOptionsResult>() {
             public DescribeStopwordOptionsResult call() throws Exception {
-            	DescribeStopwordOptionsResult result;
+                DescribeStopwordOptionsResult result;
                 try {
-            		result = describeStopwordOptions(describeStopwordOptionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeStopwordOptionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeStopwordOptions(describeStopwordOptionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeStopwordOptionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1008,11 +996,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DeleteDomainResult>() {
             public DeleteDomainResult call() throws Exception {
                 return deleteDomain(deleteDomainRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Permanently deletes a search domain and all of its data.
@@ -1043,17 +1030,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteDomainResult>() {
             public DeleteDomainResult call() throws Exception {
-            	DeleteDomainResult result;
+                DeleteDomainResult result;
                 try {
-            		result = deleteDomain(deleteDomainRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteDomainRequest, result);
-               	return result;
-		    }
-		});
+                    result = deleteDomain(deleteDomainRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteDomainRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1084,11 +1071,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DescribeServiceAccessPoliciesResult>() {
             public DescribeServiceAccessPoliciesResult call() throws Exception {
                 return describeServiceAccessPolicies(describeServiceAccessPoliciesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gets information about the resource-based policies that control access
@@ -1122,17 +1108,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeServiceAccessPoliciesResult>() {
             public DescribeServiceAccessPoliciesResult call() throws Exception {
-            	DescribeServiceAccessPoliciesResult result;
+                DescribeServiceAccessPoliciesResult result;
                 try {
-            		result = describeServiceAccessPolicies(describeServiceAccessPoliciesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeServiceAccessPoliciesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeServiceAccessPolicies(describeServiceAccessPoliciesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeServiceAccessPoliciesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1162,11 +1148,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DescribeDefaultSearchFieldResult>() {
             public DescribeDefaultSearchFieldResult call() throws Exception {
                 return describeDefaultSearchField(describeDefaultSearchFieldRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gets the default search field configured for the search domain.
@@ -1199,17 +1184,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeDefaultSearchFieldResult>() {
             public DescribeDefaultSearchFieldResult call() throws Exception {
-            	DescribeDefaultSearchFieldResult result;
+                DescribeDefaultSearchFieldResult result;
                 try {
-            		result = describeDefaultSearchField(describeDefaultSearchFieldRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeDefaultSearchFieldRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeDefaultSearchField(describeDefaultSearchFieldRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeDefaultSearchFieldRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1241,11 +1226,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<UpdateStopwordOptionsResult>() {
             public UpdateStopwordOptionsResult call() throws Exception {
                 return updateStopwordOptions(updateStopwordOptionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Configures stopwords for the search domain. Stopwords are used during
@@ -1280,17 +1264,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateStopwordOptionsResult>() {
             public UpdateStopwordOptionsResult call() throws Exception {
-            	UpdateStopwordOptionsResult result;
+                UpdateStopwordOptionsResult result;
                 try {
-            		result = updateStopwordOptions(updateStopwordOptionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateStopwordOptionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateStopwordOptions(updateStopwordOptionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateStopwordOptionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1322,11 +1306,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<UpdateSynonymOptionsResult>() {
             public UpdateSynonymOptionsResult call() throws Exception {
                 return updateSynonymOptions(updateSynonymOptionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Configures a synonym dictionary for the search domain. The synonym
@@ -1361,17 +1344,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateSynonymOptionsResult>() {
             public UpdateSynonymOptionsResult call() throws Exception {
-            	UpdateSynonymOptionsResult result;
+                UpdateSynonymOptionsResult result;
                 try {
-            		result = updateSynonymOptions(updateSynonymOptionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateSynonymOptionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateSynonymOptions(updateSynonymOptionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateSynonymOptionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1403,11 +1386,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<UpdateStemmingOptionsResult>() {
             public UpdateStemmingOptionsResult call() throws Exception {
                 return updateStemmingOptions(updateStemmingOptionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Configures a stemming dictionary for the search domain. The stemming
@@ -1442,17 +1424,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateStemmingOptionsResult>() {
             public UpdateStemmingOptionsResult call() throws Exception {
-            	UpdateStemmingOptionsResult result;
+                UpdateStemmingOptionsResult result;
                 try {
-            		result = updateStemmingOptions(updateStemmingOptionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateStemmingOptionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateStemmingOptions(updateStemmingOptionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateStemmingOptionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1482,11 +1464,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DescribeStemmingOptionsResult>() {
             public DescribeStemmingOptionsResult call() throws Exception {
                 return describeStemmingOptions(describeStemmingOptionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gets the stemming dictionary configured for the search domain.
@@ -1519,17 +1500,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeStemmingOptionsResult>() {
             public DescribeStemmingOptionsResult call() throws Exception {
-            	DescribeStemmingOptionsResult result;
+                DescribeStemmingOptionsResult result;
                 try {
-            		result = describeStemmingOptions(describeStemmingOptionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeStemmingOptionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeStemmingOptions(describeStemmingOptionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeStemmingOptionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1558,11 +1539,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DescribeDomainsResult>() {
             public DescribeDomainsResult call() throws Exception {
                 return describeDomains(describeDomainsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gets information about the search domains owned by this account. Can
@@ -1594,17 +1574,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeDomainsResult>() {
             public DescribeDomainsResult call() throws Exception {
-            	DescribeDomainsResult result;
+                DescribeDomainsResult result;
                 try {
-            		result = describeDomains(describeDomainsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeDomainsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeDomains(describeDomainsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeDomainsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1636,11 +1616,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<IndexDocumentsResult>() {
             public IndexDocumentsResult call() throws Exception {
                 return indexDocuments(indexDocumentsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Tells the search domain to start indexing its documents using the
@@ -1675,17 +1654,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<IndexDocumentsResult>() {
             public IndexDocumentsResult call() throws Exception {
-            	IndexDocumentsResult result;
+                IndexDocumentsResult result;
                 try {
-            		result = indexDocuments(indexDocumentsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(indexDocumentsRequest, result);
-               	return result;
-		    }
-		});
+                    result = indexDocuments(indexDocumentsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(indexDocumentsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1716,11 +1695,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DescribeIndexFieldsResult>() {
             public DescribeIndexFieldsResult call() throws Exception {
                 return describeIndexFields(describeIndexFieldsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gets information about the index fields configured for the search
@@ -1754,17 +1732,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeIndexFieldsResult>() {
             public DescribeIndexFieldsResult call() throws Exception {
-            	DescribeIndexFieldsResult result;
+                DescribeIndexFieldsResult result;
                 try {
-            		result = describeIndexFields(describeIndexFieldsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeIndexFieldsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeIndexFields(describeIndexFieldsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeIndexFieldsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1792,11 +1770,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DeleteIndexFieldResult>() {
             public DeleteIndexFieldResult call() throws Exception {
                 return deleteIndexField(deleteIndexFieldRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Removes an <code>IndexField</code> from the search domain.
@@ -1827,17 +1804,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteIndexFieldResult>() {
             public DeleteIndexFieldResult call() throws Exception {
-            	DeleteIndexFieldResult result;
+                DeleteIndexFieldResult result;
                 try {
-            		result = deleteIndexField(deleteIndexFieldRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteIndexFieldRequest, result);
-               	return result;
-		    }
-		});
+                    result = deleteIndexField(deleteIndexFieldRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteIndexFieldRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

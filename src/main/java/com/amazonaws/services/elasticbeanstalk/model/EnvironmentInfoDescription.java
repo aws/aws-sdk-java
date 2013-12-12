@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The information retrieved from the Amazon EC2 instances.

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Hadoop Jar Step Config JSON Unmarshaller
  */
 public class HadoopJarStepConfigJsonUnmarshaller implements Unmarshaller<HadoopJarStepConfig, JsonUnmarshallerContext> {
 
-    
-
     public HadoopJarStepConfig unmarshall(JsonUnmarshallerContext context) throws Exception {
         HadoopJarStepConfig hadoopJarStepConfig = new HadoopJarStepConfig();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class HadoopJarStepConfigJsonUnmarshaller implements Unmarshaller<HadoopJ
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Properties", targetDepth)) {
                     hadoopJarStepConfig.setProperties(new ListUnmarshaller<KeyValue>(KeyValueJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -70,7 +64,6 @@ public class HadoopJarStepConfigJsonUnmarshaller implements Unmarshaller<HadoopJ
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

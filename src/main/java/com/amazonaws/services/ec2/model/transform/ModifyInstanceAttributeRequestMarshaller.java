@@ -33,8 +33,8 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
     public Request<ModifyInstanceAttributeRequest> marshall(ModifyInstanceAttributeRequest modifyInstanceAttributeRequest) {
 
         if (modifyInstanceAttributeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ModifyInstanceAttributeRequest> request = new DefaultRequest<ModifyInstanceAttributeRequest>(modifyInstanceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyInstanceAttribute");
@@ -116,7 +116,6 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
         if (modifyInstanceAttributeRequest.getSriovNetSupport() != null) {
             request.addParameter("SriovNetSupport.Value", StringUtils.fromString(modifyInstanceAttributeRequest.getSriovNetSupport()));
         }
-
 
         return request;
     }

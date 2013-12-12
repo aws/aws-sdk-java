@@ -33,13 +33,12 @@ public class DescribeLaunchConfigurationsRequestMarshaller implements Marshaller
     public Request<DescribeLaunchConfigurationsRequest> marshall(DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest) {
 
         if (describeLaunchConfigurationsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeLaunchConfigurationsRequest> request = new DefaultRequest<DescribeLaunchConfigurationsRequest>(describeLaunchConfigurationsRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeLaunchConfigurations");
         request.addParameter("Version", "2011-01-01");
-
 
         java.util.List<String> launchConfigurationNamesList = describeLaunchConfigurationsRequest.getLaunchConfigurationNames();
         int launchConfigurationNamesListIndex = 1;
@@ -57,7 +56,6 @@ public class DescribeLaunchConfigurationsRequestMarshaller implements Marshaller
         if (describeLaunchConfigurationsRequest.getMaxRecords() != null) {
             request.addParameter("MaxRecords", StringUtils.fromInteger(describeLaunchConfigurationsRequest.getMaxRecords()));
         }
-
 
         return request;
     }

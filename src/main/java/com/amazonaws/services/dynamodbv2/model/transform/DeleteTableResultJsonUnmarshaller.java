@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Delete Table Result JSON Unmarshaller
  */
 public class DeleteTableResultJsonUnmarshaller implements Unmarshaller<DeleteTableResult, JsonUnmarshallerContext> {
 
-    
-
     public DeleteTableResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DeleteTableResult deleteTableResult = new DeleteTableResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DeleteTableResultJsonUnmarshaller implements Unmarshaller<DeleteTab
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TableDescription", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class DeleteTableResultJsonUnmarshaller implements Unmarshaller<DeleteTab
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -30,6 +30,10 @@ public enum InstanceType {
     M22xlarge("m2.2xlarge"),
     M24xlarge("m2.4xlarge"),
     Cr18xlarge("cr1.8xlarge"),
+    I2Xlarge("i2.xlarge"),
+    I22xlarge("i2.2xlarge"),
+    I24xlarge("i2.4xlarge"),
+    I28xlarge("i2.8xlarge"),
     Hi14xlarge("hi1.4xlarge"),
     Hs18xlarge("hs1.8xlarge"),
     C1Medium("c1.medium"),
@@ -88,6 +92,14 @@ public enum InstanceType {
             return InstanceType.M24xlarge;
         } else if ("cr1.8xlarge".equals(value)) {
             return InstanceType.Cr18xlarge;
+        } else if ("i2.xlarge".equals(value)) {
+            return InstanceType.I2Xlarge;
+        } else if ("i2.2xlarge".equals(value)) {
+            return InstanceType.I22xlarge;
+        } else if ("i2.4xlarge".equals(value)) {
+            return InstanceType.I24xlarge;
+        } else if ("i2.8xlarge".equals(value)) {
+            return InstanceType.I28xlarge;
         } else if ("hi1.4xlarge".equals(value)) {
             return InstanceType.Hi14xlarge;
         } else if ("hs1.8xlarge".equals(value)) {

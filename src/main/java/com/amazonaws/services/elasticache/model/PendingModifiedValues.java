@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A group of settings that will be applied to the cache cluster in the future, or that are currently being applied.

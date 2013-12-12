@@ -33,8 +33,8 @@ public class UpdateStemmingOptionsRequestMarshaller implements Marshaller<Reques
     public Request<UpdateStemmingOptionsRequest> marshall(UpdateStemmingOptionsRequest updateStemmingOptionsRequest) {
 
         if (updateStemmingOptionsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<UpdateStemmingOptionsRequest> request = new DefaultRequest<UpdateStemmingOptionsRequest>(updateStemmingOptionsRequest, "AmazonCloudSearch");
         request.addParameter("Action", "UpdateStemmingOptions");
@@ -46,7 +46,6 @@ public class UpdateStemmingOptionsRequestMarshaller implements Marshaller<Reques
         if (updateStemmingOptionsRequest.getStems() != null) {
             request.addParameter("Stems", StringUtils.fromString(updateStemmingOptionsRequest.getStems()));
         }
-
 
         return request;
     }

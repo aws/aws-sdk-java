@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Cluster State Change Reason JSON Unmarshaller
  */
 public class ClusterStateChangeReasonJsonUnmarshaller implements Unmarshaller<ClusterStateChangeReason, JsonUnmarshallerContext> {
 
-    
-
     public ClusterStateChangeReason unmarshall(JsonUnmarshallerContext context) throws Exception {
         ClusterStateChangeReason clusterStateChangeReason = new ClusterStateChangeReason();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ClusterStateChangeReasonJsonUnmarshaller implements Unmarshaller<Cl
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Code", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class ClusterStateChangeReasonJsonUnmarshaller implements Unmarshaller<Cl
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

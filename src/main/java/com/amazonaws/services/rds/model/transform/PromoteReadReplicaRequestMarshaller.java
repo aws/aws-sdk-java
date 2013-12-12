@@ -33,8 +33,8 @@ public class PromoteReadReplicaRequestMarshaller implements Marshaller<Request<P
     public Request<PromoteReadReplicaRequest> marshall(PromoteReadReplicaRequest promoteReadReplicaRequest) {
 
         if (promoteReadReplicaRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<PromoteReadReplicaRequest> request = new DefaultRequest<PromoteReadReplicaRequest>(promoteReadReplicaRequest, "AmazonRDS");
         request.addParameter("Action", "PromoteReadReplica");
@@ -49,7 +49,6 @@ public class PromoteReadReplicaRequestMarshaller implements Marshaller<Request<P
         if (promoteReadReplicaRequest.getPreferredBackupWindow() != null) {
             request.addParameter("PreferredBackupWindow", StringUtils.fromString(promoteReadReplicaRequest.getPreferredBackupWindow()));
         }
-
 
         return request;
     }

@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.support.model.*;
 
-
 /**
  * Asynchronous client for accessing AWSSupport.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -98,7 +97,6 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -298,7 +296,6 @@ public class AWSSupportAsyncClient extends AWSSupportClient
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -359,11 +356,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient
         return executorService.submit(new Callable<DescribeCasesResult>() {
             public DescribeCasesResult call() throws Exception {
                 return describeCases(describeCasesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This action returns a list of cases that you specify by passing one or
@@ -406,17 +402,17 @@ public class AWSSupportAsyncClient extends AWSSupportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeCasesResult>() {
             public DescribeCasesResult call() throws Exception {
-            	DescribeCasesResult result;
+                DescribeCasesResult result;
                 try {
-            		result = describeCases(describeCasesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeCasesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeCases(describeCasesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeCasesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -449,11 +445,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient
         return executorService.submit(new Callable<DescribeTrustedAdvisorCheckRefreshStatusesResult>() {
             public DescribeTrustedAdvisorCheckRefreshStatusesResult call() throws Exception {
                 return describeTrustedAdvisorCheckRefreshStatuses(describeTrustedAdvisorCheckRefreshStatusesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the status of all refresh requests Trusted Advisor checks
@@ -489,17 +484,17 @@ public class AWSSupportAsyncClient extends AWSSupportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeTrustedAdvisorCheckRefreshStatusesResult>() {
             public DescribeTrustedAdvisorCheckRefreshStatusesResult call() throws Exception {
-            	DescribeTrustedAdvisorCheckRefreshStatusesResult result;
+                DescribeTrustedAdvisorCheckRefreshStatusesResult result;
                 try {
-            		result = describeTrustedAdvisorCheckRefreshStatuses(describeTrustedAdvisorCheckRefreshStatusesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeTrustedAdvisorCheckRefreshStatusesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeTrustedAdvisorCheckRefreshStatuses(describeTrustedAdvisorCheckRefreshStatusesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeTrustedAdvisorCheckRefreshStatusesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -534,11 +529,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient
         return executorService.submit(new Callable<DescribeSeverityLevelsResult>() {
             public DescribeSeverityLevelsResult call() throws Exception {
                 return describeSeverityLevels(describeSeverityLevelsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This action returns the list of severity levels that you can assign to
@@ -576,17 +570,17 @@ public class AWSSupportAsyncClient extends AWSSupportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSeverityLevelsResult>() {
             public DescribeSeverityLevelsResult call() throws Exception {
-            	DescribeSeverityLevelsResult result;
+                DescribeSeverityLevelsResult result;
                 try {
-            		result = describeSeverityLevels(describeSeverityLevelsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeSeverityLevelsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeSeverityLevels(describeSeverityLevelsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeSeverityLevelsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -624,11 +618,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient
         return executorService.submit(new Callable<DescribeCommunicationsResult>() {
             public DescribeCommunicationsResult call() throws Exception {
                 return describeCommunications(describeCommunicationsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This action returns communications regarding the support case. You can
@@ -669,17 +662,17 @@ public class AWSSupportAsyncClient extends AWSSupportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeCommunicationsResult>() {
             public DescribeCommunicationsResult call() throws Exception {
-            	DescribeCommunicationsResult result;
+                DescribeCommunicationsResult result;
                 try {
-            		result = describeCommunications(describeCommunicationsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeCommunicationsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeCommunications(describeCommunicationsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeCommunicationsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -722,11 +715,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient
         return executorService.submit(new Callable<AddCommunicationToCaseResult>() {
             public AddCommunicationToCaseResult call() throws Exception {
                 return addCommunicationToCase(addCommunicationToCaseRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This action adds additional customer communication to an AWS Support
@@ -772,17 +764,17 @@ public class AWSSupportAsyncClient extends AWSSupportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AddCommunicationToCaseResult>() {
             public AddCommunicationToCaseResult call() throws Exception {
-            	AddCommunicationToCaseResult result;
+                AddCommunicationToCaseResult result;
                 try {
-            		result = addCommunicationToCase(addCommunicationToCaseRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(addCommunicationToCaseRequest, result);
-               	return result;
-		    }
-		});
+                    result = addCommunicationToCase(addCommunicationToCaseRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(addCommunicationToCaseRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -865,11 +857,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient
         return executorService.submit(new Callable<CreateCaseResult>() {
             public CreateCaseResult call() throws Exception {
                 return createCase(createCaseRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new case in the AWS Support Center. This action is modeled
@@ -955,17 +946,17 @@ public class AWSSupportAsyncClient extends AWSSupportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateCaseResult>() {
             public CreateCaseResult call() throws Exception {
-            	CreateCaseResult result;
+                CreateCaseResult result;
                 try {
-            		result = createCase(createCaseRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createCaseRequest, result);
-               	return result;
-		    }
-		});
+                    result = createCase(createCaseRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createCaseRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -999,11 +990,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient
         return executorService.submit(new Callable<DescribeTrustedAdvisorChecksResult>() {
             public DescribeTrustedAdvisorChecksResult call() throws Exception {
                 return describeTrustedAdvisorChecks(describeTrustedAdvisorChecksRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This action enables you to get a list of the available Trusted Advisor
@@ -1040,17 +1030,17 @@ public class AWSSupportAsyncClient extends AWSSupportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeTrustedAdvisorChecksResult>() {
             public DescribeTrustedAdvisorChecksResult call() throws Exception {
-            	DescribeTrustedAdvisorChecksResult result;
+                DescribeTrustedAdvisorChecksResult result;
                 try {
-            		result = describeTrustedAdvisorChecks(describeTrustedAdvisorChecksRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeTrustedAdvisorChecksRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeTrustedAdvisorChecks(describeTrustedAdvisorChecksRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeTrustedAdvisorChecksRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1113,11 +1103,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient
         return executorService.submit(new Callable<DescribeTrustedAdvisorCheckResultResult>() {
             public DescribeTrustedAdvisorCheckResultResult call() throws Exception {
                 return describeTrustedAdvisorCheckResult(describeTrustedAdvisorCheckResultRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This action responds with the results of a Trusted Advisor check. Once
@@ -1183,17 +1172,17 @@ public class AWSSupportAsyncClient extends AWSSupportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeTrustedAdvisorCheckResultResult>() {
             public DescribeTrustedAdvisorCheckResultResult call() throws Exception {
-            	DescribeTrustedAdvisorCheckResultResult result;
+                DescribeTrustedAdvisorCheckResultResult result;
                 try {
-            		result = describeTrustedAdvisorCheckResult(describeTrustedAdvisorCheckResultRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeTrustedAdvisorCheckResultRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeTrustedAdvisorCheckResult(describeTrustedAdvisorCheckResultRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeTrustedAdvisorCheckResultRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1224,11 +1213,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient
         return executorService.submit(new Callable<ResolveCaseResult>() {
             public ResolveCaseResult call() throws Exception {
                 return resolveCase(resolveCaseRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Takes a <i>CaseId</i> and returns the initial state of the case along
@@ -1262,17 +1250,17 @@ public class AWSSupportAsyncClient extends AWSSupportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ResolveCaseResult>() {
             public ResolveCaseResult call() throws Exception {
-            	ResolveCaseResult result;
+                ResolveCaseResult result;
                 try {
-            		result = resolveCase(resolveCaseRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(resolveCaseRequest, result);
-               	return result;
-		    }
-		});
+                    result = resolveCase(resolveCaseRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(resolveCaseRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1307,11 +1295,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient
         return executorService.submit(new Callable<RefreshTrustedAdvisorCheckResult>() {
             public RefreshTrustedAdvisorCheckResult call() throws Exception {
                 return refreshTrustedAdvisorCheck(refreshTrustedAdvisorCheckRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This action enables you to query the service to request a refresh for
@@ -1349,17 +1336,17 @@ public class AWSSupportAsyncClient extends AWSSupportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RefreshTrustedAdvisorCheckResult>() {
             public RefreshTrustedAdvisorCheckResult call() throws Exception {
-            	RefreshTrustedAdvisorCheckResult result;
+                RefreshTrustedAdvisorCheckResult result;
                 try {
-            		result = refreshTrustedAdvisorCheck(refreshTrustedAdvisorCheckRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(refreshTrustedAdvisorCheckRequest, result);
-               	return result;
-		    }
-		});
+                    result = refreshTrustedAdvisorCheck(refreshTrustedAdvisorCheckRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(refreshTrustedAdvisorCheckRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1403,11 +1390,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient
         return executorService.submit(new Callable<DescribeServicesResult>() {
             public DescribeServicesResult call() throws Exception {
                 return describeServices(describeServicesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the current list of AWS services and a list of service
@@ -1454,17 +1440,17 @@ public class AWSSupportAsyncClient extends AWSSupportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeServicesResult>() {
             public DescribeServicesResult call() throws Exception {
-            	DescribeServicesResult result;
+                DescribeServicesResult result;
                 try {
-            		result = describeServices(describeServicesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeServicesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeServices(describeServicesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeServicesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1504,11 +1490,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient
         return executorService.submit(new Callable<DescribeTrustedAdvisorCheckSummariesResult>() {
             public DescribeTrustedAdvisorCheckSummariesResult call() throws Exception {
                 return describeTrustedAdvisorCheckSummaries(describeTrustedAdvisorCheckSummariesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This action enables you to get the latest summaries for Trusted
@@ -1551,17 +1536,17 @@ public class AWSSupportAsyncClient extends AWSSupportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeTrustedAdvisorCheckSummariesResult>() {
             public DescribeTrustedAdvisorCheckSummariesResult call() throws Exception {
-            	DescribeTrustedAdvisorCheckSummariesResult result;
+                DescribeTrustedAdvisorCheckSummariesResult result;
                 try {
-            		result = describeTrustedAdvisorCheckSummaries(describeTrustedAdvisorCheckSummariesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeTrustedAdvisorCheckSummariesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeTrustedAdvisorCheckSummaries(describeTrustedAdvisorCheckSummariesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeTrustedAdvisorCheckSummariesRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

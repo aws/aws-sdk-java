@@ -16,7 +16,6 @@ package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Empty response for the request.

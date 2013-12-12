@@ -16,7 +16,6 @@ package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents sending statistics data. Each <code>SendDataPoint</code> contains statistics for a 15-minute period of sending activity.

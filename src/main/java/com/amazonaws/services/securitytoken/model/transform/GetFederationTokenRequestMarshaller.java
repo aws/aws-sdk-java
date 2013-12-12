@@ -33,8 +33,8 @@ public class GetFederationTokenRequestMarshaller implements Marshaller<Request<G
     public Request<GetFederationTokenRequest> marshall(GetFederationTokenRequest getFederationTokenRequest) {
 
         if (getFederationTokenRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetFederationTokenRequest> request = new DefaultRequest<GetFederationTokenRequest>(getFederationTokenRequest, "AWSSecurityTokenService");
         request.addParameter("Action", "GetFederationToken");
@@ -49,7 +49,6 @@ public class GetFederationTokenRequestMarshaller implements Marshaller<Request<G
         if (getFederationTokenRequest.getDurationSeconds() != null) {
             request.addParameter("DurationSeconds", StringUtils.fromInteger(getFederationTokenRequest.getDurationSeconds()));
         }
-
 
         return request;
     }

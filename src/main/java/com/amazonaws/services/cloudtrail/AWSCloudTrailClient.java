@@ -26,6 +26,7 @@ import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -33,7 +34,6 @@ import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.services.cloudtrail.model.transform.*;
-
 
 /**
  * Client for accessing AWSCloudTrail.  All service calls made
@@ -185,13 +185,35 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AWSCloudTrailClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AWSCloudTrail using the specified AWS account credentials
+     * provider, client configuration options and request metric collector.
+     * 
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AWSCloudTrail
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public AWSCloudTrailClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         
         this.awsCredentialsProvider = awsCredentialsProvider;
         
         init();
     }
-
 
     private void init() {
         exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, JSONObject>>();
@@ -216,11 +238,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 "/com/amazonaws/services/cloudtrail/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
                 "/com/amazonaws/services/cloudtrail/request.handler2s"));
-
-        
     }
 
-    
     /**
      * <p>
      * Returns a JSON-formatted list of information about the specified
@@ -272,7 +291,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         }
     }
 
-   
     /**
      * <p>
      * Deletes a trail.
@@ -321,7 +339,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         }
     }
 
-   
     /**
      * <p>
      * From the command line, use create-subscription.
@@ -397,7 +414,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         }
     }
 
-   
     /**
      * <p>
      * From the command line, use update-subscription.
@@ -461,7 +477,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         }
     }
 
-   
     /**
      * <p>
      * Retrieves the settings for some or all trails associated with an
@@ -509,7 +524,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         }
     }
 
-   
     /**
      * <p>
      * Suspends the recording of AWS API calls and log file delivery for the
@@ -561,7 +575,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         }
     }
 
-   
     /**
      * <p>
      * Starts the recording of AWS API calls and log file delivery for a
@@ -614,7 +627,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         }
     }
 
-   
     /**
      * <p>
      * Retrieves the settings for some or all trails associated with an
@@ -637,20 +649,15 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
     public DescribeTrailsResult describeTrails() throws AmazonServiceException, AmazonClientException {
         return describeTrails(new DescribeTrailsRequest());
     }
-    
 
     @Override
     public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
-
-        
     }
 
     @Override
     public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
         super.setEndpoint(endpoint, serviceName, regionId);
-
-        
     }
 
     /**

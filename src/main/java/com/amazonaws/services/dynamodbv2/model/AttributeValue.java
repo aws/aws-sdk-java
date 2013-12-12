@@ -16,7 +16,6 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents the data for an attribute. You can set one, and only one, of the elements.
@@ -25,32 +24,32 @@ import java.io.Serializable;
 public class AttributeValue implements Serializable {
 
     /**
-     * Represents a String data type
+     * A String data type
      */
     private String s;
 
     /**
-     * Represents a Number data type
+     * A Number data type
      */
     private String n;
 
     /**
-     * Represents a Binary data type
+     * A Binary data type
      */
     private java.nio.ByteBuffer b;
 
     /**
-     * Represents a String set data type
+     * A String set data type
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> sS;
 
     /**
-     * Represents a Number set data type
+     * Number set data type
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> nS;
 
     /**
-     * Represents a Binary set data type
+     * A Binary set data type
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<java.nio.ByteBuffer> bS;
 
@@ -65,7 +64,7 @@ public class AttributeValue implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param s Represents a String data type
+     * @param s A String data type
      */
     public AttributeValue(String s) {
         setS(s);
@@ -76,36 +75,36 @@ public class AttributeValue implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param sS Represents a String set data type
+     * @param sS A String set data type
      */
     public AttributeValue(java.util.List<String> sS) {
         setSS(sS);
     }
 
     /**
-     * Represents a String data type
+     * A String data type
      *
-     * @return Represents a String data type
+     * @return A String data type
      */
     public String getS() {
         return s;
     }
     
     /**
-     * Represents a String data type
+     * A String data type
      *
-     * @param s Represents a String data type
+     * @param s A String data type
      */
     public void setS(String s) {
         this.s = s;
     }
     
     /**
-     * Represents a String data type
+     * A String data type
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param s Represents a String data type
+     * @param s A String data type
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -116,29 +115,29 @@ public class AttributeValue implements Serializable {
     }
 
     /**
-     * Represents a Number data type
+     * A Number data type
      *
-     * @return Represents a Number data type
+     * @return A Number data type
      */
     public String getN() {
         return n;
     }
     
     /**
-     * Represents a Number data type
+     * A Number data type
      *
-     * @param n Represents a Number data type
+     * @param n A Number data type
      */
     public void setN(String n) {
         this.n = n;
     }
     
     /**
-     * Represents a Number data type
+     * A Number data type
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param n Represents a Number data type
+     * @param n A Number data type
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -149,29 +148,29 @@ public class AttributeValue implements Serializable {
     }
 
     /**
-     * Represents a Binary data type
+     * A Binary data type
      *
-     * @return Represents a Binary data type
+     * @return A Binary data type
      */
     public java.nio.ByteBuffer getB() {
         return b;
     }
     
     /**
-     * Represents a Binary data type
+     * A Binary data type
      *
-     * @param b Represents a Binary data type
+     * @param b A Binary data type
      */
     public void setB(java.nio.ByteBuffer b) {
         this.b = b;
     }
     
     /**
-     * Represents a Binary data type
+     * A Binary data type
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param b Represents a Binary data type
+     * @param b A Binary data type
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -182,18 +181,18 @@ public class AttributeValue implements Serializable {
     }
 
     /**
-     * Represents a String set data type
+     * A String set data type
      *
-     * @return Represents a String set data type
+     * @return A String set data type
      */
     public java.util.List<String> getSS() {
         return sS;
     }
     
     /**
-     * Represents a String set data type
+     * A String set data type
      *
-     * @param sS Represents a String set data type
+     * @param sS A String set data type
      */
     public void setSS(java.util.Collection<String> sS) {
         if (sS == null) {
@@ -206,11 +205,11 @@ public class AttributeValue implements Serializable {
     }
     
     /**
-     * Represents a String set data type
+     * A String set data type
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sS Represents a String set data type
+     * @param sS A String set data type
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -224,11 +223,11 @@ public class AttributeValue implements Serializable {
     }
     
     /**
-     * Represents a String set data type
+     * A String set data type
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sS Represents a String set data type
+     * @param sS A String set data type
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -246,18 +245,18 @@ public class AttributeValue implements Serializable {
     }
 
     /**
-     * Represents a Number set data type
+     * Number set data type
      *
-     * @return Represents a Number set data type
+     * @return Number set data type
      */
     public java.util.List<String> getNS() {
         return nS;
     }
     
     /**
-     * Represents a Number set data type
+     * Number set data type
      *
-     * @param nS Represents a Number set data type
+     * @param nS Number set data type
      */
     public void setNS(java.util.Collection<String> nS) {
         if (nS == null) {
@@ -270,11 +269,11 @@ public class AttributeValue implements Serializable {
     }
     
     /**
-     * Represents a Number set data type
+     * Number set data type
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nS Represents a Number set data type
+     * @param nS Number set data type
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -288,11 +287,11 @@ public class AttributeValue implements Serializable {
     }
     
     /**
-     * Represents a Number set data type
+     * Number set data type
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nS Represents a Number set data type
+     * @param nS Number set data type
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -310,18 +309,18 @@ public class AttributeValue implements Serializable {
     }
 
     /**
-     * Represents a Binary set data type
+     * A Binary set data type
      *
-     * @return Represents a Binary set data type
+     * @return A Binary set data type
      */
     public java.util.List<java.nio.ByteBuffer> getBS() {
         return bS;
     }
     
     /**
-     * Represents a Binary set data type
+     * A Binary set data type
      *
-     * @param bS Represents a Binary set data type
+     * @param bS A Binary set data type
      */
     public void setBS(java.util.Collection<java.nio.ByteBuffer> bS) {
         if (bS == null) {
@@ -334,11 +333,11 @@ public class AttributeValue implements Serializable {
     }
     
     /**
-     * Represents a Binary set data type
+     * A Binary set data type
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bS Represents a Binary set data type
+     * @param bS A Binary set data type
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -352,11 +351,11 @@ public class AttributeValue implements Serializable {
     }
     
     /**
-     * Represents a Binary set data type
+     * A Binary set data type
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bS Represents a Binary set data type
+     * @param bS A Binary set data type
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

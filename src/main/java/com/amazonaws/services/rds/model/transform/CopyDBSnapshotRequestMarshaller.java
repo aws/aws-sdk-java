@@ -33,8 +33,8 @@ public class CopyDBSnapshotRequestMarshaller implements Marshaller<Request<CopyD
     public Request<CopyDBSnapshotRequest> marshall(CopyDBSnapshotRequest copyDBSnapshotRequest) {
 
         if (copyDBSnapshotRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CopyDBSnapshotRequest> request = new DefaultRequest<CopyDBSnapshotRequest>(copyDBSnapshotRequest, "AmazonRDS");
         request.addParameter("Action", "CopyDBSnapshot");
@@ -63,7 +63,6 @@ public class CopyDBSnapshotRequestMarshaller implements Marshaller<Request<CopyD
 
             tagsListIndex++;
         }
-
 
         return request;
     }

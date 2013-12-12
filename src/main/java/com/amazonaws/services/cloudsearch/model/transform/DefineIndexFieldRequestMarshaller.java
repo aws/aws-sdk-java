@@ -33,8 +33,8 @@ public class DefineIndexFieldRequestMarshaller implements Marshaller<Request<Def
     public Request<DefineIndexFieldRequest> marshall(DefineIndexFieldRequest defineIndexFieldRequest) {
 
         if (defineIndexFieldRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DefineIndexFieldRequest> request = new DefaultRequest<DefineIndexFieldRequest>(defineIndexFieldRequest, "AmazonCloudSearch");
         request.addParameter("Action", "DefineIndexField");
@@ -150,7 +150,6 @@ public class DefineIndexFieldRequestMarshaller implements Marshaller<Request<Def
                 sourceAttributesListIndex++;
             }
         }
-
 
         return request;
     }

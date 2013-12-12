@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Cancel Job Result JSON Unmarshaller
  */
 public class CancelJobResultJsonUnmarshaller implements Unmarshaller<CancelJobResult, JsonUnmarshallerContext> {
 
-    
-
     public CancelJobResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         CancelJobResult cancelJobResult = new CancelJobResult();
 
-        
-        
         return cancelJobResult;
     }
 

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Virtual Gateway JSON Unmarshaller
  */
 public class VirtualGatewayJsonUnmarshaller implements Unmarshaller<VirtualGateway, JsonUnmarshallerContext> {
 
-    
-
     public VirtualGateway unmarshall(JsonUnmarshallerContext context) throws Exception {
         VirtualGateway virtualGateway = new VirtualGateway();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class VirtualGatewayJsonUnmarshaller implements Unmarshaller<VirtualGatew
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("virtualGatewayId", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class VirtualGatewayJsonUnmarshaller implements Unmarshaller<VirtualGatew
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

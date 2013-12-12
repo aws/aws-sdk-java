@@ -33,8 +33,8 @@ public class ReleaseAddressRequestMarshaller implements Marshaller<Request<Relea
     public Request<ReleaseAddressRequest> marshall(ReleaseAddressRequest releaseAddressRequest) {
 
         if (releaseAddressRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ReleaseAddressRequest> request = new DefaultRequest<ReleaseAddressRequest>(releaseAddressRequest, "AmazonEC2");
         request.addParameter("Action", "ReleaseAddress");
@@ -46,7 +46,6 @@ public class ReleaseAddressRequestMarshaller implements Marshaller<Request<Relea
         if (releaseAddressRequest.getAllocationId() != null) {
             request.addParameter("AllocationId", StringUtils.fromString(releaseAddressRequest.getAllocationId()));
         }
-
 
         return request;
     }

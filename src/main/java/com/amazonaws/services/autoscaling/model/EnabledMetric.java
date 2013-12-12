@@ -16,7 +16,6 @@ package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The <code>EnabledMetric</code> data type.

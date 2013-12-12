@@ -16,7 +16,6 @@ package com.amazonaws.services.securitytoken.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Identifiers for the federated user that is associated with the credentials.

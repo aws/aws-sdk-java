@@ -33,8 +33,8 @@ public class SendEmailRequestMarshaller implements Marshaller<Request<SendEmailR
     public Request<SendEmailRequest> marshall(SendEmailRequest sendEmailRequest) {
 
         if (sendEmailRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<SendEmailRequest> request = new DefaultRequest<SendEmailRequest>(sendEmailRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "SendEmail");
@@ -126,7 +126,6 @@ public class SendEmailRequestMarshaller implements Marshaller<Request<SendEmailR
         if (sendEmailRequest.getReturnPath() != null) {
             request.addParameter("ReturnPath", StringUtils.fromString(sendEmailRequest.getReturnPath()));
         }
-
 
         return request;
     }

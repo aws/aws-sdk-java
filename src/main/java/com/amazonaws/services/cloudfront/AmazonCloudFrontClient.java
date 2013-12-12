@@ -25,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
@@ -32,7 +33,6 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
 
 import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.services.cloudfront.model.transform.*;
-
 
 /**
  * Client for accessing AmazonCloudFront.  All service calls made
@@ -165,7 +165,30 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AmazonCloudFrontClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonCloudFront using the specified AWS account credentials
+     * provider, client configuration options, and request metric collector.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AmazonCloudFront
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public AmazonCloudFrontClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
     }
@@ -223,7 +246,6 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 "/com/amazonaws/services/cloudfront/request.handler2s"));
     }
 
-    
     /**
      * <p>
      * List streaming distributions.
@@ -1140,7 +1162,6 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

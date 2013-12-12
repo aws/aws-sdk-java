@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.cloudfront.model.*;
 
-
 /**
  * Asynchronous client for accessing AmazonCloudFront.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -44,7 +43,6 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -244,7 +242,6 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -295,11 +292,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<ListStreamingDistributionsResult>() {
             public ListStreamingDistributionsResult call() throws Exception {
                 return listStreamingDistributions(listStreamingDistributionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * List streaming distributions.
@@ -332,17 +328,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListStreamingDistributionsResult>() {
             public ListStreamingDistributionsResult call() throws Exception {
-            	ListStreamingDistributionsResult result;
+                ListStreamingDistributionsResult result;
                 try {
-            		result = listStreamingDistributions(listStreamingDistributionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listStreamingDistributionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listStreamingDistributions(listStreamingDistributionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listStreamingDistributionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -372,11 +368,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<UpdateCloudFrontOriginAccessIdentityResult>() {
             public UpdateCloudFrontOriginAccessIdentityResult call() throws Exception {
                 return updateCloudFrontOriginAccessIdentity(updateCloudFrontOriginAccessIdentityRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Update an origin access identity.
@@ -409,17 +404,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateCloudFrontOriginAccessIdentityResult>() {
             public UpdateCloudFrontOriginAccessIdentityResult call() throws Exception {
-            	UpdateCloudFrontOriginAccessIdentityResult result;
+                UpdateCloudFrontOriginAccessIdentityResult result;
                 try {
-            		result = updateCloudFrontOriginAccessIdentity(updateCloudFrontOriginAccessIdentityRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateCloudFrontOriginAccessIdentityRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateCloudFrontOriginAccessIdentity(updateCloudFrontOriginAccessIdentityRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateCloudFrontOriginAccessIdentityRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -448,11 +443,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<CreateInvalidationResult>() {
             public CreateInvalidationResult call() throws Exception {
                 return createInvalidation(createInvalidationRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Create a new invalidation.
@@ -484,17 +478,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateInvalidationResult>() {
             public CreateInvalidationResult call() throws Exception {
-            	CreateInvalidationResult result;
+                CreateInvalidationResult result;
                 try {
-            		result = createInvalidation(createInvalidationRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createInvalidationRequest, result);
-               	return result;
-		    }
-		});
+                    result = createInvalidation(createInvalidationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createInvalidationRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -525,11 +519,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
             public Void call() throws Exception {
                 deleteStreamingDistribution(deleteStreamingDistributionRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Delete a streaming distribution.
@@ -562,16 +555,16 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteStreamingDistribution(deleteStreamingDistributionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteStreamingDistributionRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteStreamingDistribution(deleteStreamingDistributionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteStreamingDistributionRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -600,11 +593,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<GetDistributionConfigResult>() {
             public GetDistributionConfigResult call() throws Exception {
                 return getDistributionConfig(getDistributionConfigRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Get the configuration information about a distribution.
@@ -636,17 +628,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetDistributionConfigResult>() {
             public GetDistributionConfigResult call() throws Exception {
-            	GetDistributionConfigResult result;
+                GetDistributionConfigResult result;
                 try {
-            		result = getDistributionConfig(getDistributionConfigRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getDistributionConfigRequest, result);
-               	return result;
-		    }
-		});
+                    result = getDistributionConfig(getDistributionConfigRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getDistributionConfigRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -676,11 +668,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<UpdateStreamingDistributionResult>() {
             public UpdateStreamingDistributionResult call() throws Exception {
                 return updateStreamingDistribution(updateStreamingDistributionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Update a streaming distribution.
@@ -713,17 +704,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateStreamingDistributionResult>() {
             public UpdateStreamingDistributionResult call() throws Exception {
-            	UpdateStreamingDistributionResult result;
+                UpdateStreamingDistributionResult result;
                 try {
-            		result = updateStreamingDistribution(updateStreamingDistributionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateStreamingDistributionRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateStreamingDistribution(updateStreamingDistributionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateStreamingDistributionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -751,11 +742,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<GetDistributionResult>() {
             public GetDistributionResult call() throws Exception {
                 return getDistribution(getDistributionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Get the information about a distribution.
@@ -786,17 +776,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetDistributionResult>() {
             public GetDistributionResult call() throws Exception {
-            	GetDistributionResult result;
+                GetDistributionResult result;
                 try {
-            		result = getDistribution(getDistributionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getDistributionRequest, result);
-               	return result;
-		    }
-		});
+                    result = getDistribution(getDistributionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getDistributionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -824,11 +814,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<ListInvalidationsResult>() {
             public ListInvalidationsResult call() throws Exception {
                 return listInvalidations(listInvalidationsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * List invalidation batches.
@@ -859,17 +848,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListInvalidationsResult>() {
             public ListInvalidationsResult call() throws Exception {
-            	ListInvalidationsResult result;
+                ListInvalidationsResult result;
                 try {
-            		result = listInvalidations(listInvalidationsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listInvalidationsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listInvalidations(listInvalidationsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listInvalidationsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -898,11 +887,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<UpdateDistributionResult>() {
             public UpdateDistributionResult call() throws Exception {
                 return updateDistribution(updateDistributionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Update a distribution.
@@ -934,17 +922,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateDistributionResult>() {
             public UpdateDistributionResult call() throws Exception {
-            	UpdateDistributionResult result;
+                UpdateDistributionResult result;
                 try {
-            		result = updateDistribution(updateDistributionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateDistributionRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateDistribution(updateDistributionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateDistributionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -974,11 +962,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
             public Void call() throws Exception {
                 deleteDistribution(deleteDistributionRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Delete a distribution.
@@ -1010,16 +997,16 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteDistribution(deleteDistributionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteDistributionRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteDistribution(deleteDistributionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteDistributionRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1049,11 +1036,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<CreateCloudFrontOriginAccessIdentityResult>() {
             public CreateCloudFrontOriginAccessIdentityResult call() throws Exception {
                 return createCloudFrontOriginAccessIdentity(createCloudFrontOriginAccessIdentityRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Create a new origin access identity.
@@ -1086,17 +1072,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateCloudFrontOriginAccessIdentityResult>() {
             public CreateCloudFrontOriginAccessIdentityResult call() throws Exception {
-            	CreateCloudFrontOriginAccessIdentityResult result;
+                CreateCloudFrontOriginAccessIdentityResult result;
                 try {
-            		result = createCloudFrontOriginAccessIdentity(createCloudFrontOriginAccessIdentityRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createCloudFrontOriginAccessIdentityRequest, result);
-               	return result;
-		    }
-		});
+                    result = createCloudFrontOriginAccessIdentity(createCloudFrontOriginAccessIdentityRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createCloudFrontOriginAccessIdentityRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1126,11 +1112,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<GetStreamingDistributionResult>() {
             public GetStreamingDistributionResult call() throws Exception {
                 return getStreamingDistribution(getStreamingDistributionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Get the information about a streaming distribution.
@@ -1163,17 +1148,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetStreamingDistributionResult>() {
             public GetStreamingDistributionResult call() throws Exception {
-            	GetStreamingDistributionResult result;
+                GetStreamingDistributionResult result;
                 try {
-            		result = getStreamingDistribution(getStreamingDistributionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getStreamingDistributionRequest, result);
-               	return result;
-		    }
-		});
+                    result = getStreamingDistribution(getStreamingDistributionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getStreamingDistributionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1201,11 +1186,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<ListDistributionsResult>() {
             public ListDistributionsResult call() throws Exception {
                 return listDistributions(listDistributionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * List distributions.
@@ -1236,17 +1220,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListDistributionsResult>() {
             public ListDistributionsResult call() throws Exception {
-            	ListDistributionsResult result;
+                ListDistributionsResult result;
                 try {
-            		result = listDistributions(listDistributionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listDistributionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listDistributions(listDistributionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listDistributionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1276,11 +1260,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<CreateStreamingDistributionResult>() {
             public CreateStreamingDistributionResult call() throws Exception {
                 return createStreamingDistribution(createStreamingDistributionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Create a new streaming distribution.
@@ -1313,17 +1296,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateStreamingDistributionResult>() {
             public CreateStreamingDistributionResult call() throws Exception {
-            	CreateStreamingDistributionResult result;
+                CreateStreamingDistributionResult result;
                 try {
-            		result = createStreamingDistribution(createStreamingDistributionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createStreamingDistributionRequest, result);
-               	return result;
-		    }
-		});
+                    result = createStreamingDistribution(createStreamingDistributionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createStreamingDistributionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1353,11 +1336,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<ListCloudFrontOriginAccessIdentitiesResult>() {
             public ListCloudFrontOriginAccessIdentitiesResult call() throws Exception {
                 return listCloudFrontOriginAccessIdentities(listCloudFrontOriginAccessIdentitiesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * List origin access identities.
@@ -1390,17 +1372,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListCloudFrontOriginAccessIdentitiesResult>() {
             public ListCloudFrontOriginAccessIdentitiesResult call() throws Exception {
-            	ListCloudFrontOriginAccessIdentitiesResult result;
+                ListCloudFrontOriginAccessIdentitiesResult result;
                 try {
-            		result = listCloudFrontOriginAccessIdentities(listCloudFrontOriginAccessIdentitiesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listCloudFrontOriginAccessIdentitiesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listCloudFrontOriginAccessIdentities(listCloudFrontOriginAccessIdentitiesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listCloudFrontOriginAccessIdentitiesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1431,11 +1413,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
             public Void call() throws Exception {
                 deleteCloudFrontOriginAccessIdentity(deleteCloudFrontOriginAccessIdentityRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Delete an origin access identity.
@@ -1468,16 +1449,16 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteCloudFrontOriginAccessIdentity(deleteCloudFrontOriginAccessIdentityRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteCloudFrontOriginAccessIdentityRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteCloudFrontOriginAccessIdentity(deleteCloudFrontOriginAccessIdentityRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteCloudFrontOriginAccessIdentityRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1506,11 +1487,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<CreateDistributionResult>() {
             public CreateDistributionResult call() throws Exception {
                 return createDistribution(createDistributionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Create a new distribution.
@@ -1542,17 +1522,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateDistributionResult>() {
             public CreateDistributionResult call() throws Exception {
-            	CreateDistributionResult result;
+                CreateDistributionResult result;
                 try {
-            		result = createDistribution(createDistributionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createDistributionRequest, result);
-               	return result;
-		    }
-		});
+                    result = createDistribution(createDistributionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createDistributionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1580,11 +1560,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<GetInvalidationResult>() {
             public GetInvalidationResult call() throws Exception {
                 return getInvalidation(getInvalidationRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Get the information about an invalidation.
@@ -1615,17 +1594,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetInvalidationResult>() {
             public GetInvalidationResult call() throws Exception {
-            	GetInvalidationResult result;
+                GetInvalidationResult result;
                 try {
-            		result = getInvalidation(getInvalidationRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getInvalidationRequest, result);
-               	return result;
-		    }
-		});
+                    result = getInvalidation(getInvalidationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getInvalidationRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1655,11 +1634,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<GetCloudFrontOriginAccessIdentityConfigResult>() {
             public GetCloudFrontOriginAccessIdentityConfigResult call() throws Exception {
                 return getCloudFrontOriginAccessIdentityConfig(getCloudFrontOriginAccessIdentityConfigRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Get the configuration information about an origin access identity.
@@ -1692,17 +1670,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetCloudFrontOriginAccessIdentityConfigResult>() {
             public GetCloudFrontOriginAccessIdentityConfigResult call() throws Exception {
-            	GetCloudFrontOriginAccessIdentityConfigResult result;
+                GetCloudFrontOriginAccessIdentityConfigResult result;
                 try {
-            		result = getCloudFrontOriginAccessIdentityConfig(getCloudFrontOriginAccessIdentityConfigRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getCloudFrontOriginAccessIdentityConfigRequest, result);
-               	return result;
-		    }
-		});
+                    result = getCloudFrontOriginAccessIdentityConfig(getCloudFrontOriginAccessIdentityConfigRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getCloudFrontOriginAccessIdentityConfigRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1732,11 +1710,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<GetCloudFrontOriginAccessIdentityResult>() {
             public GetCloudFrontOriginAccessIdentityResult call() throws Exception {
                 return getCloudFrontOriginAccessIdentity(getCloudFrontOriginAccessIdentityRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Get the information about an origin access identity.
@@ -1769,17 +1746,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetCloudFrontOriginAccessIdentityResult>() {
             public GetCloudFrontOriginAccessIdentityResult call() throws Exception {
-            	GetCloudFrontOriginAccessIdentityResult result;
+                GetCloudFrontOriginAccessIdentityResult result;
                 try {
-            		result = getCloudFrontOriginAccessIdentity(getCloudFrontOriginAccessIdentityRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getCloudFrontOriginAccessIdentityRequest, result);
-               	return result;
-		    }
-		});
+                    result = getCloudFrontOriginAccessIdentity(getCloudFrontOriginAccessIdentityRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getCloudFrontOriginAccessIdentityRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1809,11 +1786,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         return executorService.submit(new Callable<GetStreamingDistributionConfigResult>() {
             public GetStreamingDistributionConfigResult call() throws Exception {
                 return getStreamingDistributionConfig(getStreamingDistributionConfigRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Get the configuration information about a streaming distribution.
@@ -1846,17 +1822,17 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetStreamingDistributionConfigResult>() {
             public GetStreamingDistributionConfigResult call() throws Exception {
-            	GetStreamingDistributionConfigResult result;
+                GetStreamingDistributionConfigResult result;
                 try {
-            		result = getStreamingDistributionConfig(getStreamingDistributionConfigRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getStreamingDistributionConfigRequest, result);
-               	return result;
-		    }
-		});
+                    result = getStreamingDistributionConfig(getStreamingDistributionConfigRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getStreamingDistributionConfigRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

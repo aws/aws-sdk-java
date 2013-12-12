@@ -33,8 +33,8 @@ public class AddRoleToInstanceProfileRequestMarshaller implements Marshaller<Req
     public Request<AddRoleToInstanceProfileRequest> marshall(AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest) {
 
         if (addRoleToInstanceProfileRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AddRoleToInstanceProfileRequest> request = new DefaultRequest<AddRoleToInstanceProfileRequest>(addRoleToInstanceProfileRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "AddRoleToInstanceProfile");
@@ -46,7 +46,6 @@ public class AddRoleToInstanceProfileRequestMarshaller implements Marshaller<Req
         if (addRoleToInstanceProfileRequest.getRoleName() != null) {
             request.addParameter("RoleName", StringUtils.fromString(addRoleToInstanceProfileRequest.getRoleName()));
         }
-
 
         return request;
     }

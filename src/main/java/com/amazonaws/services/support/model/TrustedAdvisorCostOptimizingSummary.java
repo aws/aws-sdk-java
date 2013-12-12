@@ -16,7 +16,6 @@ package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Reports the estimated monthly savings and percentage of monthly savings determined by the Trusted Advisor check for your account.

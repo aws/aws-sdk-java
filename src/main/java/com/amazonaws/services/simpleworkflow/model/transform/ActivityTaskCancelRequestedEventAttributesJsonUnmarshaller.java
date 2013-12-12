@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Activity Task Cancel Requested Event Attributes JSON Unmarshaller
  */
 public class ActivityTaskCancelRequestedEventAttributesJsonUnmarshaller implements Unmarshaller<ActivityTaskCancelRequestedEventAttributes, JsonUnmarshallerContext> {
 
-    
-
     public ActivityTaskCancelRequestedEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         ActivityTaskCancelRequestedEventAttributes activityTaskCancelRequestedEventAttributes = new ActivityTaskCancelRequestedEventAttributes();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ActivityTaskCancelRequestedEventAttributesJsonUnmarshaller implemen
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("decisionTaskCompletedEventId", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class ActivityTaskCancelRequestedEventAttributesJsonUnmarshaller implemen
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

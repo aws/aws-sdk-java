@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Create Health Check Result StAX Unmarshaller
  */
@@ -37,12 +36,10 @@ public class CreateHealthCheckResultStaxUnmarshaller implements Unmarshaller<Cre
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
         if (context.isStartOfDocument()) targetDepth += 1;
-        
 
         if (context.isStartOfDocument()) {
             createHealthCheckResult.setLocation(context.getHeader("Location"));
         }
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

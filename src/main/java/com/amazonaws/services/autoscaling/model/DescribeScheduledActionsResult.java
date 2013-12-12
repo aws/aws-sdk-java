@@ -16,7 +16,6 @@ package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A scaling action that is scheduled for a future time and date. An action can be scheduled up to thirty days in advance.

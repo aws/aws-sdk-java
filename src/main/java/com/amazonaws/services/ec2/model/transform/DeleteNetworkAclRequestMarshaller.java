@@ -33,8 +33,8 @@ public class DeleteNetworkAclRequestMarshaller implements Marshaller<Request<Del
     public Request<DeleteNetworkAclRequest> marshall(DeleteNetworkAclRequest deleteNetworkAclRequest) {
 
         if (deleteNetworkAclRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteNetworkAclRequest> request = new DefaultRequest<DeleteNetworkAclRequest>(deleteNetworkAclRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteNetworkAcl");
@@ -43,7 +43,6 @@ public class DeleteNetworkAclRequestMarshaller implements Marshaller<Request<Del
         if (deleteNetworkAclRequest.getNetworkAclId() != null) {
             request.addParameter("NetworkAclId", StringUtils.fromString(deleteNetworkAclRequest.getNetworkAclId()));
         }
-
 
         return request;
     }

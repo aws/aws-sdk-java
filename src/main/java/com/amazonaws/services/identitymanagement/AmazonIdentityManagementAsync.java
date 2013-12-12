@@ -5177,6 +5177,5 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
     public Future<GetAccountPasswordPolicyResult> getAccountPasswordPolicyAsync(GetAccountPasswordPolicyRequest getAccountPasswordPolicyRequest,
             AsyncHandler<GetAccountPasswordPolicyRequest, GetAccountPasswordPolicyResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

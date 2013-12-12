@@ -33,8 +33,8 @@ public class CreateVirtualMFADeviceRequestMarshaller implements Marshaller<Reque
     public Request<CreateVirtualMFADeviceRequest> marshall(CreateVirtualMFADeviceRequest createVirtualMFADeviceRequest) {
 
         if (createVirtualMFADeviceRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateVirtualMFADeviceRequest> request = new DefaultRequest<CreateVirtualMFADeviceRequest>(createVirtualMFADeviceRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "CreateVirtualMFADevice");
@@ -46,7 +46,6 @@ public class CreateVirtualMFADeviceRequestMarshaller implements Marshaller<Reque
         if (createVirtualMFADeviceRequest.getVirtualMFADeviceName() != null) {
             request.addParameter("VirtualMFADeviceName", StringUtils.fromString(createVirtualMFADeviceRequest.getVirtualMFADeviceName()));
         }
-
 
         return request;
     }

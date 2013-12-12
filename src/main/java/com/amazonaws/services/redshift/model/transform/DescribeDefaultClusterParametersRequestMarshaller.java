@@ -33,8 +33,8 @@ public class DescribeDefaultClusterParametersRequestMarshaller implements Marsha
     public Request<DescribeDefaultClusterParametersRequest> marshall(DescribeDefaultClusterParametersRequest describeDefaultClusterParametersRequest) {
 
         if (describeDefaultClusterParametersRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeDefaultClusterParametersRequest> request = new DefaultRequest<DescribeDefaultClusterParametersRequest>(describeDefaultClusterParametersRequest, "AmazonRedshift");
         request.addParameter("Action", "DescribeDefaultClusterParameters");
@@ -49,7 +49,6 @@ public class DescribeDefaultClusterParametersRequestMarshaller implements Marsha
         if (describeDefaultClusterParametersRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeDefaultClusterParametersRequest.getMarker()));
         }
-
 
         return request;
     }

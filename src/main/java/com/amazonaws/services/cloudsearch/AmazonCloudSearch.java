@@ -712,6 +712,5 @@ public interface AmazonCloudSearch {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

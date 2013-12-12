@@ -2991,6 +2991,5 @@ public interface AmazonIdentityManagement {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

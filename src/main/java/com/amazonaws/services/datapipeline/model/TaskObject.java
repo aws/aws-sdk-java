@@ -16,7 +16,6 @@ package com.amazonaws.services.datapipeline.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Contains information about a pipeline task that is assigned to a task runner.
@@ -260,26 +259,26 @@ public class TaskObject implements Serializable {
      * @param key The key of the entry to be added into Objects.
      * @param value The corresponding value of the entry to be added into Objects.
      */
-	public TaskObject addObjectsEntry(String key, PipelineObject value) {
-		if (null == this.objects) {
-			this.objects = new java.util.HashMap<String,PipelineObject>();
-		}
-		if (this.objects.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.objects.put(key, value);
-		return this;
-	}
+    public TaskObject addObjectsEntry(String key, PipelineObject value) {
+        if (null == this.objects) {
+            this.objects = new java.util.HashMap<String,PipelineObject>();
+        }
+        if (this.objects.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.objects.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Objects.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public TaskObject clearObjectsEntries() {
-		this.objects = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Objects.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public TaskObject clearObjectsEntries() {
+        this.objects = null;
+        return this;
+    }
+    
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -16,7 +16,6 @@ package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Contains the result of a successful invocation of the GetAccountSummary action.
@@ -348,26 +347,26 @@ public class GetAccountSummaryResult implements Serializable {
      * @param key The key of the entry to be added into SummaryMap.
      * @param value The corresponding value of the entry to be added into SummaryMap.
      */
-	public GetAccountSummaryResult addSummaryMapEntry(String key, Integer value) {
-		if (null == this.summaryMap) {
-			this.summaryMap = new java.util.HashMap<String,Integer>();
-		}
-		if (this.summaryMap.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.summaryMap.put(key, value);
-		return this;
-	}
+    public GetAccountSummaryResult addSummaryMapEntry(String key, Integer value) {
+        if (null == this.summaryMap) {
+            this.summaryMap = new java.util.HashMap<String,Integer>();
+        }
+        if (this.summaryMap.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.summaryMap.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into SummaryMap.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public GetAccountSummaryResult clearSummaryMapEntries() {
-		this.summaryMap = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into SummaryMap.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public GetAccountSummaryResult clearSummaryMapEntries() {
+        this.summaryMap = null;
+        return this;
+    }
+    
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -34,8 +34,7 @@ public class ProvisionedThroughputExceededExceptionUnmarshaller extends JsonErro
             return null;
 
         ProvisionedThroughputExceededException e = (ProvisionedThroughputExceededException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

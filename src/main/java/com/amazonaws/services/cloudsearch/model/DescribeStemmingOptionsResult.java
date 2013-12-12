@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudsearch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A response message that contains the stemming options for a search domain.

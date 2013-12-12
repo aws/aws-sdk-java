@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Audio Parameters JSON Unmarshaller
  */
 public class AudioParametersJsonUnmarshaller implements Unmarshaller<AudioParameters, JsonUnmarshallerContext> {
 
-    
-
     public AudioParameters unmarshall(JsonUnmarshallerContext context) throws Exception {
         AudioParameters audioParameters = new AudioParameters();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class AudioParametersJsonUnmarshaller implements Unmarshaller<AudioParame
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Codec", targetDepth)) {
                     context.nextToken();
@@ -72,7 +66,6 @@ public class AudioParametersJsonUnmarshaller implements Unmarshaller<AudioParame
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

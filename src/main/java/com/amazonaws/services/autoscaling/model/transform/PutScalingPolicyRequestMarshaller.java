@@ -33,8 +33,8 @@ public class PutScalingPolicyRequestMarshaller implements Marshaller<Request<Put
     public Request<PutScalingPolicyRequest> marshall(PutScalingPolicyRequest putScalingPolicyRequest) {
 
         if (putScalingPolicyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<PutScalingPolicyRequest> request = new DefaultRequest<PutScalingPolicyRequest>(putScalingPolicyRequest, "AmazonAutoScaling");
         request.addParameter("Action", "PutScalingPolicy");
@@ -58,7 +58,6 @@ public class PutScalingPolicyRequestMarshaller implements Marshaller<Request<Put
         if (putScalingPolicyRequest.getMinAdjustmentStep() != null) {
             request.addParameter("MinAdjustmentStep", StringUtils.fromInteger(putScalingPolicyRequest.getMinAdjustmentStep()));
         }
-
 
         return request;
     }

@@ -33,8 +33,8 @@ public class RebootCacheClusterRequestMarshaller implements Marshaller<Request<R
     public Request<RebootCacheClusterRequest> marshall(RebootCacheClusterRequest rebootCacheClusterRequest) {
 
         if (rebootCacheClusterRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RebootCacheClusterRequest> request = new DefaultRequest<RebootCacheClusterRequest>(rebootCacheClusterRequest, "AmazonElastiCache");
         request.addParameter("Action", "RebootCacheCluster");
@@ -54,7 +54,6 @@ public class RebootCacheClusterRequestMarshaller implements Marshaller<Request<R
 
             cacheNodeIdsToRebootListIndex++;
         }
-
 
         return request;
     }

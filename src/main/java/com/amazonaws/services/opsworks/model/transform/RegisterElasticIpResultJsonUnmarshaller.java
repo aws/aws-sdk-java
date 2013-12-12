@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Register Elastic Ip Result JSON Unmarshaller
  */
 public class RegisterElasticIpResultJsonUnmarshaller implements Unmarshaller<RegisterElasticIpResult, JsonUnmarshallerContext> {
 
-    
-
     public RegisterElasticIpResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         RegisterElasticIpResult registerElasticIpResult = new RegisterElasticIpResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class RegisterElasticIpResultJsonUnmarshaller implements Unmarshaller<Reg
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ElasticIp", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class RegisterElasticIpResultJsonUnmarshaller implements Unmarshaller<Reg
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -1815,6 +1815,5 @@ public interface AWSStorageGateway {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

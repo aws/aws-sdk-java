@@ -19,6 +19,7 @@ package com.amazonaws.services.dynamodbv2.model;
  */
 public enum ReturnConsumedCapacity {
     
+    INDEXES("INDEXES"),
     TOTAL("TOTAL"),
     NONE("NONE");
 
@@ -44,6 +45,8 @@ public enum ReturnConsumedCapacity {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
+        } else if ("INDEXES".equals(value)) {
+            return ReturnConsumedCapacity.INDEXES;
         } else if ("TOTAL".equals(value)) {
             return ReturnConsumedCapacity.TOTAL;
         } else if ("NONE".equals(value)) {

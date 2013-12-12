@@ -2395,6 +2395,5 @@ public interface AmazonSimpleWorkflow {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

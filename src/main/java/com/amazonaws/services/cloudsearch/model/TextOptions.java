@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudsearch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Options that define a text field in the search index.

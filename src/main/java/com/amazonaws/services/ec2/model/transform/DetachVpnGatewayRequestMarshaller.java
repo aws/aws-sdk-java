@@ -33,8 +33,8 @@ public class DetachVpnGatewayRequestMarshaller implements Marshaller<Request<Det
     public Request<DetachVpnGatewayRequest> marshall(DetachVpnGatewayRequest detachVpnGatewayRequest) {
 
         if (detachVpnGatewayRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DetachVpnGatewayRequest> request = new DefaultRequest<DetachVpnGatewayRequest>(detachVpnGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "DetachVpnGateway");
@@ -46,7 +46,6 @@ public class DetachVpnGatewayRequestMarshaller implements Marshaller<Request<Det
         if (detachVpnGatewayRequest.getVpcId() != null) {
             request.addParameter("VpcId", StringUtils.fromString(detachVpnGatewayRequest.getVpcId()));
         }
-
 
         return request;
     }

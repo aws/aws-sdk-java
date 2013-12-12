@@ -33,8 +33,8 @@ public class EnableLoggingRequestMarshaller implements Marshaller<Request<Enable
     public Request<EnableLoggingRequest> marshall(EnableLoggingRequest enableLoggingRequest) {
 
         if (enableLoggingRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<EnableLoggingRequest> request = new DefaultRequest<EnableLoggingRequest>(enableLoggingRequest, "AmazonRedshift");
         request.addParameter("Action", "EnableLogging");
@@ -49,7 +49,6 @@ public class EnableLoggingRequestMarshaller implements Marshaller<Request<Enable
         if (enableLoggingRequest.getS3KeyPrefix() != null) {
             request.addParameter("S3KeyPrefix", StringUtils.fromString(enableLoggingRequest.getS3KeyPrefix()));
         }
-
 
         return request;
     }

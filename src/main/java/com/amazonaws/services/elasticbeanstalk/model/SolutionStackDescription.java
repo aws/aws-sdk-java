@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes the solution stack.

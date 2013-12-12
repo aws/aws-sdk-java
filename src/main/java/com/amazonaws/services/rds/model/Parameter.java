@@ -16,7 +16,6 @@ package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * This data type is used as a request parameter in the ModifyDBParameterGroup and ResetDBParameterGroup actions.

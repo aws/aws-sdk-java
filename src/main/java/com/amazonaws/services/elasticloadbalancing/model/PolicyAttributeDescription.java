@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticloadbalancing.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The <code>PolicyAttributeDescription</code> data type. This data type is used to describe the attributes and values associated with a policy.

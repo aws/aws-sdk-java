@@ -34,8 +34,7 @@ public class InvalidTrailNameExceptionUnmarshaller extends JsonErrorUnmarshaller
             return null;
 
         InvalidTrailNameException e = (InvalidTrailNameException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

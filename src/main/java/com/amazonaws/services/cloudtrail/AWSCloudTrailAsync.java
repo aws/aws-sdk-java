@@ -470,6 +470,5 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     public Future<StartLoggingResult> startLoggingAsync(StartLoggingRequest startLoggingRequest,
             AsyncHandler<StartLoggingRequest, StartLoggingResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

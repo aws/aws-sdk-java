@@ -570,6 +570,5 @@ public interface AmazonCloudWatch {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

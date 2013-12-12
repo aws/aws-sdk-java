@@ -16,7 +16,6 @@ package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * List of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"> Commmunication </a> objects.

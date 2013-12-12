@@ -33,8 +33,8 @@ public class DescribeResizeRequestMarshaller implements Marshaller<Request<Descr
     public Request<DescribeResizeRequest> marshall(DescribeResizeRequest describeResizeRequest) {
 
         if (describeResizeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeResizeRequest> request = new DefaultRequest<DescribeResizeRequest>(describeResizeRequest, "AmazonRedshift");
         request.addParameter("Action", "DescribeResize");
@@ -43,7 +43,6 @@ public class DescribeResizeRequestMarshaller implements Marshaller<Request<Descr
         if (describeResizeRequest.getClusterIdentifier() != null) {
             request.addParameter("ClusterIdentifier", StringUtils.fromString(describeResizeRequest.getClusterIdentifier()));
         }
-
 
         return request;
     }

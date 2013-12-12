@@ -33,8 +33,8 @@ public class CreateLBCookieStickinessPolicyRequestMarshaller implements Marshall
     public Request<CreateLBCookieStickinessPolicyRequest> marshall(CreateLBCookieStickinessPolicyRequest createLBCookieStickinessPolicyRequest) {
 
         if (createLBCookieStickinessPolicyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateLBCookieStickinessPolicyRequest> request = new DefaultRequest<CreateLBCookieStickinessPolicyRequest>(createLBCookieStickinessPolicyRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "CreateLBCookieStickinessPolicy");
@@ -49,7 +49,6 @@ public class CreateLBCookieStickinessPolicyRequestMarshaller implements Marshall
         if (createLBCookieStickinessPolicyRequest.getCookieExpirationPeriod() != null) {
             request.addParameter("CookieExpirationPeriod", StringUtils.fromLong(createLBCookieStickinessPolicyRequest.getCookieExpirationPeriod()));
         }
-
 
         return request;
     }

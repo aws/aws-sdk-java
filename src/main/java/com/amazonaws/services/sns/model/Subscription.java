@@ -16,7 +16,6 @@ package com.amazonaws.services.sns.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A wrapper type for the attributes of an SNS subscription.

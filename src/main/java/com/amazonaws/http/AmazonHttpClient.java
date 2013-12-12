@@ -441,7 +441,7 @@ public class AmazonHttpClient {
                     log.info("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
                 }
                 awsRequestMetrics.incrementCounter(Field.Exception);
-                awsRequestMetrics.addProperty(Field.Exception, ioe.toString());
+                awsRequestMetrics.addProperty(Field.Exception, ioe);
                 awsRequestMetrics.addProperty(Field.AWSRequestID, null);
 
                 AmazonClientException ace = new AmazonClientException("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
@@ -487,6 +487,7 @@ public class AmazonHttpClient {
      */
     private <T extends Throwable> T handleUnexpectedFailure(T t, AWSRequestMetrics awsRequestMetrics) {
         awsRequestMetrics.incrementCounter(Field.Exception);
+        awsRequestMetrics.addProperty(Field.Exception, t);
         return t;
     }
 

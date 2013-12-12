@@ -23,8 +23,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Given an identity (email address or domain), sets the Amazon SNS topic to which Amazon SES will publish bounce and complaint notifications for emails
  * sent with that identity as the <code>Source</code> .
- * Publishing to topics may only be disabled when feedback forwarding is enabled. For more information about feedback notification, see the <a
- * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide"> Amazon SES Developer Guide </a> .
+ * Publishing to topics may only be disabled when feedback forwarding is enabled.
+ * </p>
+ * <p>
+ * This action is throttled at one request per second.
+ * </p>
+ * <p>
+ * For more information about feedback notification, see the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a> .
  * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#setIdentityNotificationTopic(SetIdentityNotificationTopicRequest)
@@ -48,7 +54,7 @@ public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest
 
     /**
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     * Service (Amazon SNS) topic. If the parameter is ommited from the
+     * Service (Amazon SNS) topic. If the parameter is omitted from the
      * request or a null value is passed, the topic is cleared and publishing
      * is disabled.
      */
@@ -187,12 +193,12 @@ public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest
 
     /**
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     * Service (Amazon SNS) topic. If the parameter is ommited from the
+     * Service (Amazon SNS) topic. If the parameter is omitted from the
      * request or a null value is passed, the topic is cleared and publishing
      * is disabled.
      *
      * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     *         Service (Amazon SNS) topic. If the parameter is ommited from the
+     *         Service (Amazon SNS) topic. If the parameter is omitted from the
      *         request or a null value is passed, the topic is cleared and publishing
      *         is disabled.
      */
@@ -202,12 +208,12 @@ public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest
     
     /**
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     * Service (Amazon SNS) topic. If the parameter is ommited from the
+     * Service (Amazon SNS) topic. If the parameter is omitted from the
      * request or a null value is passed, the topic is cleared and publishing
      * is disabled.
      *
      * @param snsTopic The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     *         Service (Amazon SNS) topic. If the parameter is ommited from the
+     *         Service (Amazon SNS) topic. If the parameter is omitted from the
      *         request or a null value is passed, the topic is cleared and publishing
      *         is disabled.
      */
@@ -217,14 +223,14 @@ public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest
     
     /**
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     * Service (Amazon SNS) topic. If the parameter is ommited from the
+     * Service (Amazon SNS) topic. If the parameter is omitted from the
      * request or a null value is passed, the topic is cleared and publishing
      * is disabled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snsTopic The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     *         Service (Amazon SNS) topic. If the parameter is ommited from the
+     *         Service (Amazon SNS) topic. If the parameter is omitted from the
      *         request or a null value is passed, the topic is cleared and publishing
      *         is disabled.
      *

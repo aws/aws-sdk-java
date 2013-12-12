@@ -33,8 +33,8 @@ public class EnableSnapshotCopyRequestMarshaller implements Marshaller<Request<E
     public Request<EnableSnapshotCopyRequest> marshall(EnableSnapshotCopyRequest enableSnapshotCopyRequest) {
 
         if (enableSnapshotCopyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<EnableSnapshotCopyRequest> request = new DefaultRequest<EnableSnapshotCopyRequest>(enableSnapshotCopyRequest, "AmazonRedshift");
         request.addParameter("Action", "EnableSnapshotCopy");
@@ -49,7 +49,6 @@ public class EnableSnapshotCopyRequestMarshaller implements Marshaller<Request<E
         if (enableSnapshotCopyRequest.getRetentionPeriod() != null) {
             request.addParameter("RetentionPeriod", StringUtils.fromInteger(enableSnapshotCopyRequest.getRetentionPeriod()));
         }
-
 
         return request;
     }

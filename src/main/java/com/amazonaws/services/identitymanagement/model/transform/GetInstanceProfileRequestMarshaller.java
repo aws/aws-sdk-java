@@ -33,8 +33,8 @@ public class GetInstanceProfileRequestMarshaller implements Marshaller<Request<G
     public Request<GetInstanceProfileRequest> marshall(GetInstanceProfileRequest getInstanceProfileRequest) {
 
         if (getInstanceProfileRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetInstanceProfileRequest> request = new DefaultRequest<GetInstanceProfileRequest>(getInstanceProfileRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "GetInstanceProfile");
@@ -43,7 +43,6 @@ public class GetInstanceProfileRequestMarshaller implements Marshaller<Request<G
         if (getInstanceProfileRequest.getInstanceProfileName() != null) {
             request.addParameter("InstanceProfileName", StringUtils.fromString(getInstanceProfileRequest.getInstanceProfileName()));
         }
-
 
         return request;
     }

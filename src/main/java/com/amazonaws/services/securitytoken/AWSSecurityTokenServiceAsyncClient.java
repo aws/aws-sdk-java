@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.securitytoken.model.*;
 
-
 /**
  * Asynchronous client for accessing AWSSecurityTokenService.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -74,7 +73,6 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -274,7 +272,6 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -359,11 +356,10 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
         return executorService.submit(new Callable<GetSessionTokenResult>() {
             public GetSessionTokenResult call() throws Exception {
                 return getSessionToken(getSessionTokenRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a set of temporary credentials for an AWS account or IAM
@@ -430,17 +426,17 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetSessionTokenResult>() {
             public GetSessionTokenResult call() throws Exception {
-            	GetSessionTokenResult result;
+                GetSessionTokenResult result;
                 try {
-            		result = getSessionToken(getSessionTokenRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getSessionTokenRequest, result);
-               	return result;
-		    }
-		});
+                    result = getSessionToken(getSessionTokenRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getSessionTokenRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -511,11 +507,10 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
         return executorService.submit(new Callable<DecodeAuthorizationMessageResult>() {
             public DecodeAuthorizationMessageResult call() throws Exception {
                 return decodeAuthorizationMessage(decodeAuthorizationMessageRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Decodes additional information about the authorization status of a
@@ -589,17 +584,17 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DecodeAuthorizationMessageResult>() {
             public DecodeAuthorizationMessageResult call() throws Exception {
-            	DecodeAuthorizationMessageResult result;
+                DecodeAuthorizationMessageResult result;
                 try {
-            		result = decodeAuthorizationMessage(decodeAuthorizationMessageRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(decodeAuthorizationMessageRequest, result);
-               	return result;
-		    }
-		});
+                    result = decodeAuthorizationMessage(decodeAuthorizationMessageRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(decodeAuthorizationMessageRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -702,11 +697,10 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
         return executorService.submit(new Callable<AssumeRoleWithSAMLResult>() {
             public AssumeRoleWithSAMLResult call() throws Exception {
                 return assumeRoleWithSAML(assumeRoleWithSAMLRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a set of temporary security credentials for users who have
@@ -812,17 +806,17 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AssumeRoleWithSAMLResult>() {
             public AssumeRoleWithSAMLResult call() throws Exception {
-            	AssumeRoleWithSAMLResult result;
+                AssumeRoleWithSAMLResult result;
                 try {
-            		result = assumeRoleWithSAML(assumeRoleWithSAMLRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(assumeRoleWithSAMLRequest, result);
-               	return result;
-		    }
-		});
+                    result = assumeRoleWithSAML(assumeRoleWithSAMLRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(assumeRoleWithSAMLRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -931,11 +925,10 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
         return executorService.submit(new Callable<AssumeRoleWithWebIdentityResult>() {
             public AssumeRoleWithWebIdentityResult call() throws Exception {
                 return assumeRoleWithWebIdentity(assumeRoleWithWebIdentityRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a set of temporary security credentials for users who have
@@ -1047,17 +1040,17 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AssumeRoleWithWebIdentityResult>() {
             public AssumeRoleWithWebIdentityResult call() throws Exception {
-            	AssumeRoleWithWebIdentityResult result;
+                AssumeRoleWithWebIdentityResult result;
                 try {
-            		result = assumeRoleWithWebIdentity(assumeRoleWithWebIdentityRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(assumeRoleWithWebIdentityRequest, result);
-               	return result;
-		    }
-		});
+                    result = assumeRoleWithWebIdentity(assumeRoleWithWebIdentityRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(assumeRoleWithWebIdentityRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1130,11 +1123,10 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
         return executorService.submit(new Callable<GetFederationTokenResult>() {
             public GetFederationTokenResult call() throws Exception {
                 return getFederationToken(getFederationTokenRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a set of temporary security credentials (consisting of an
@@ -1210,17 +1202,17 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetFederationTokenResult>() {
             public GetFederationTokenResult call() throws Exception {
-            	GetFederationTokenResult result;
+                GetFederationTokenResult result;
                 try {
-            		result = getFederationToken(getFederationTokenRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getFederationTokenRequest, result);
-               	return result;
-		    }
-		});
+                    result = getFederationToken(getFederationTokenRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getFederationTokenRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1317,11 +1309,10 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
         return executorService.submit(new Callable<AssumeRoleResult>() {
             public AssumeRoleResult call() throws Exception {
                 return assumeRole(assumeRoleRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a set of temporary security credentials (consisting of an
@@ -1421,17 +1412,17 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AssumeRoleResult>() {
             public AssumeRoleResult call() throws Exception {
-            	AssumeRoleResult result;
+                AssumeRoleResult result;
                 try {
-            		result = assumeRole(assumeRoleRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(assumeRoleRequest, result);
-               	return result;
-		    }
-		});
+                    result = assumeRole(assumeRoleRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(assumeRoleRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

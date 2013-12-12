@@ -16,7 +16,6 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks starts or stops load-based

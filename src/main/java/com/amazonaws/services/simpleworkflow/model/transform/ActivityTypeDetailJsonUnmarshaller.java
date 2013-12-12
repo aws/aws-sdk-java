@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Activity Type Detail JSON Unmarshaller
  */
 public class ActivityTypeDetailJsonUnmarshaller implements Unmarshaller<ActivityTypeDetail, JsonUnmarshallerContext> {
 
-    
-
     public ActivityTypeDetail unmarshall(JsonUnmarshallerContext context) throws Exception {
         ActivityTypeDetail activityTypeDetail = new ActivityTypeDetail();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ActivityTypeDetailJsonUnmarshaller implements Unmarshaller<Activity
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("typeInfo", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class ActivityTypeDetailJsonUnmarshaller implements Unmarshaller<Activity
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

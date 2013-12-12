@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Validation Warning JSON Unmarshaller
  */
 public class ValidationWarningJsonUnmarshaller implements Unmarshaller<ValidationWarning, JsonUnmarshallerContext> {
 
-    
-
     public ValidationWarning unmarshall(JsonUnmarshallerContext context) throws Exception {
         ValidationWarning validationWarning = new ValidationWarning();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ValidationWarningJsonUnmarshaller implements Unmarshaller<Validatio
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
@@ -63,7 +57,6 @@ public class ValidationWarningJsonUnmarshaller implements Unmarshaller<Validatio
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

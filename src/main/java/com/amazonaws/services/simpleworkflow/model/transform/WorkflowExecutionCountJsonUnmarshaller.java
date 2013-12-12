@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Workflow Execution Count JSON Unmarshaller
  */
 public class WorkflowExecutionCountJsonUnmarshaller implements Unmarshaller<WorkflowExecutionCount, JsonUnmarshallerContext> {
 
-    
-
     public WorkflowExecutionCount unmarshall(JsonUnmarshallerContext context) throws Exception {
         WorkflowExecutionCount workflowExecutionCount = new WorkflowExecutionCount();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class WorkflowExecutionCountJsonUnmarshaller implements Unmarshaller<Work
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("count", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class WorkflowExecutionCountJsonUnmarshaller implements Unmarshaller<Work
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

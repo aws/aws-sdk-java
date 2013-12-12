@@ -16,7 +16,6 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes an instance's time-based auto scaling configuration.

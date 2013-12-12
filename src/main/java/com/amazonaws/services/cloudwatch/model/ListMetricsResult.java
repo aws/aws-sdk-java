@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudwatch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The output for the ListMetrics action.

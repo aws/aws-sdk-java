@@ -33,8 +33,8 @@ public class DisableLoggingRequestMarshaller implements Marshaller<Request<Disab
     public Request<DisableLoggingRequest> marshall(DisableLoggingRequest disableLoggingRequest) {
 
         if (disableLoggingRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DisableLoggingRequest> request = new DefaultRequest<DisableLoggingRequest>(disableLoggingRequest, "AmazonRedshift");
         request.addParameter("Action", "DisableLogging");
@@ -43,7 +43,6 @@ public class DisableLoggingRequestMarshaller implements Marshaller<Request<Disab
         if (disableLoggingRequest.getClusterIdentifier() != null) {
             request.addParameter("ClusterIdentifier", StringUtils.fromString(disableLoggingRequest.getClusterIdentifier()));
         }
-
 
         return request;
     }

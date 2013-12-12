@@ -16,7 +16,6 @@ package com.amazonaws.services.securitytoken.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Contains the result of a successful call to the AssumeRoleWithWebIdentity action, including temporary AWS credentials that can be used to make AWS

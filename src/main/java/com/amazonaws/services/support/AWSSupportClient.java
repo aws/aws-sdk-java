@@ -26,6 +26,7 @@ import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -33,7 +34,6 @@ import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.services.support.model.transform.*;
-
 
 /**
  * Client for accessing AWSSupport.  All service calls made
@@ -223,13 +223,35 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AWSSupportClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AWSSupport using the specified AWS account credentials
+     * provider, client configuration options and request metric collector.
+     * 
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AWSSupport
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public AWSSupportClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         
         this.awsCredentialsProvider = awsCredentialsProvider;
         
         init();
     }
-
 
     private void init() {
         exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, JSONObject>>();
@@ -245,11 +267,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 "/com/amazonaws/services/support/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
                 "/com/amazonaws/services/support/request.handler2s"));
-
-        
     }
 
-    
     /**
      * <p>
      * This action returns a list of cases that you specify by passing one or
@@ -309,7 +328,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         }
     }
 
-   
     /**
      * <p>
      * Returns the status of all refresh requests Trusted Advisor checks
@@ -362,7 +380,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         }
     }
 
-   
     /**
      * <p>
      * This action returns the list of severity levels that you can assign to
@@ -416,7 +433,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         }
     }
 
-   
     /**
      * <p>
      * This action returns communications regarding the support case. You can
@@ -474,7 +490,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         }
     }
 
-   
     /**
      * <p>
      * This action adds additional customer communication to an AWS Support
@@ -537,7 +552,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         }
     }
 
-   
     /**
      * <p>
      * Creates a new case in the AWS Support Center. This action is modeled
@@ -640,7 +654,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         }
     }
 
-   
     /**
      * <p>
      * This action enables you to get a list of the available Trusted Advisor
@@ -692,7 +705,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         }
     }
 
-   
     /**
      * <p>
      * This action responds with the results of a Trusted Advisor check. Once
@@ -773,7 +785,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         }
     }
 
-   
     /**
      * <p>
      * Takes a <i>CaseId</i> and returns the initial state of the case along
@@ -824,7 +835,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         }
     }
 
-   
     /**
      * <p>
      * This action enables you to query the service to request a refresh for
@@ -878,7 +888,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         }
     }
 
-   
     /**
      * <p>
      * Returns the current list of AWS services and a list of service
@@ -941,7 +950,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         }
     }
 
-   
     /**
      * <p>
      * This action enables you to get the latest summaries for Trusted
@@ -999,7 +1007,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         }
     }
 
-   
     /**
      * <p>
      * This action returns a list of cases that you specify by passing one or
@@ -1126,20 +1133,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
     public DescribeServicesResult describeServices() throws AmazonServiceException, AmazonClientException {
         return describeServices(new DescribeServicesRequest());
     }
-    
 
     @Override
     public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
-
-        
     }
 
     @Override
     public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
         super.setEndpoint(endpoint, serviceName, regionId);
-
-        
     }
 
     /**

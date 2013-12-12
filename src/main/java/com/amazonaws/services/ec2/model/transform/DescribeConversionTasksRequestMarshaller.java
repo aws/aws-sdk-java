@@ -33,13 +33,12 @@ public class DescribeConversionTasksRequestMarshaller implements Marshaller<Requ
     public Request<DescribeConversionTasksRequest> marshall(DescribeConversionTasksRequest describeConversionTasksRequest) {
 
         if (describeConversionTasksRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeConversionTasksRequest> request = new DefaultRequest<DescribeConversionTasksRequest>(describeConversionTasksRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeConversionTasks");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<Filter> filtersList = describeConversionTasksRequest.getFilters();
         int filtersListIndex = 1;
@@ -76,7 +75,6 @@ public class DescribeConversionTasksRequestMarshaller implements Marshaller<Requ
 
             conversionTaskIdsListIndex++;
         }
-
 
         return request;
     }

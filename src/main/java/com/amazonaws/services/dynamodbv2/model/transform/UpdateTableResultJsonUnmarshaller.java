@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Update Table Result JSON Unmarshaller
  */
 public class UpdateTableResultJsonUnmarshaller implements Unmarshaller<UpdateTableResult, JsonUnmarshallerContext> {
 
-    
-
     public UpdateTableResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         UpdateTableResult updateTableResult = new UpdateTableResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class UpdateTableResultJsonUnmarshaller implements Unmarshaller<UpdateTab
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TableDescription", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class UpdateTableResultJsonUnmarshaller implements Unmarshaller<UpdateTab
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

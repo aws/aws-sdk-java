@@ -33,13 +33,12 @@ public class DescribeKeyPairsRequestMarshaller implements Marshaller<Request<Des
     public Request<DescribeKeyPairsRequest> marshall(DescribeKeyPairsRequest describeKeyPairsRequest) {
 
         if (describeKeyPairsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeKeyPairsRequest> request = new DefaultRequest<DescribeKeyPairsRequest>(describeKeyPairsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeKeyPairs");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> keyNamesList = describeKeyPairsRequest.getKeyNames();
         int keyNamesListIndex = 1;
@@ -76,7 +75,6 @@ public class DescribeKeyPairsRequestMarshaller implements Marshaller<Request<Des
 
             filtersListIndex++;
         }
-
 
         return request;
     }

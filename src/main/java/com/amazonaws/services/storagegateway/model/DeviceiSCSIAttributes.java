@@ -16,7 +16,6 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Lists iSCSI information about a VTL device.

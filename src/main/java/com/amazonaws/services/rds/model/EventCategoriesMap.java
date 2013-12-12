@@ -16,7 +16,6 @@ package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Contains the results of a successful invocation of the DescribeEventCategories action.

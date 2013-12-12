@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Poll For Task Result JSON Unmarshaller
  */
 public class PollForTaskResultJsonUnmarshaller implements Unmarshaller<PollForTaskResult, JsonUnmarshallerContext> {
 
-    
-
     public PollForTaskResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         PollForTaskResult pollForTaskResult = new PollForTaskResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class PollForTaskResultJsonUnmarshaller implements Unmarshaller<PollForTa
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskObject", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class PollForTaskResultJsonUnmarshaller implements Unmarshaller<PollForTa
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

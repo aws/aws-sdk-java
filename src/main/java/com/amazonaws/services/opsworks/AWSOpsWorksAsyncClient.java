@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.opsworks.model.*;
 
-
 /**
  * Asynchronous client for accessing AWSOpsWorks.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -44,6 +43,25 @@ import com.amazonaws.services.opsworks.model.*;
  * information about this product, go to the <a href="http://aws.amazon.com/opsworks/"> AWS OpsWorks </a> details page.
  * </p>
  * <p>
+ * <b>SDKs and CLI</b>
+ * </p>
+ * <p>
+ * The most common way to use the AWS OpsWorks API is by using the AWS Command Line Interface (CLI) or by using one of the AWS SDKs to implement
+ * applications in your preferred language. For more information, see:
+ * </p>
+ * 
+ * <ul>
+ * <li> <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html"> AWS CLI </a> </li>
+ * <li> <a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html"> AWS SDK for Java </a>
+ * </li>
+ * <li> <a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm"> AWS SDK for .NET </a> </li>
+ * <li> <a href="http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html"> AWS SDK for PHP 2 </a> </li>
+ * <li> <a href="http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/OpsWorks/Client.html"> AWS SDK for Ruby </a> </li>
+ * <li> <a href="http://aws.amazon.com/documentation/sdkforjavascript/"> AWS SDK for Node.js </a> </li>
+ * <li> <a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html"> AWS SDK for Python(Boto) </a> </li>
+ * 
+ * </ul>
+ * <p>
  * <b>Endpoints</b>
  * </p>
  * <p>
@@ -55,7 +73,8 @@ import com.amazonaws.services.opsworks.model.*;
  * </p>
  * <p>
  * When you call CreateStack, CloneStack, or UpdateStack we recommend you use the <code>ConfigurationManager</code> parameter to specify the Chef
- * version, 0.9 or 11.4. The default value is currently 0.9. However, we expect to change the default value to 11.4 in September 2013.
+ * version, 0.9 or 11.4. The default value is currently 0.9. However, we expect to change the default value to 11.4 in October 2013. For more
+ * information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html"> Using AWS OpsWorks with Chef 11 </a> .
  * </p>
  */
 public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
@@ -65,7 +84,6 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -265,7 +283,6 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -291,10 +308,106 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             
     /**
      * <p>
+     * Updates a user's SSH public key.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have self-management enabled or an attached policy that explicitly
+     * grants permissions. For more information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
+     *
+     * @param updateMyUserProfileRequest Container for the necessary
+     *           parameters to execute the UpdateMyUserProfile operation on
+     *           AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateMyUserProfile service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateMyUserProfileAsync(final UpdateMyUserProfileRequest updateMyUserProfileRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                updateMyUserProfile(updateMyUserProfileRequest);
+                return null;
+            }
+        });
+    }
+
+    /**
+     * <p>
+     * Updates a user's SSH public key.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have self-management enabled or an attached policy that explicitly
+     * grants permissions. For more information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
+     *
+     * @param updateMyUserProfileRequest Container for the necessary
+     *           parameters to execute the UpdateMyUserProfile operation on
+     *           AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateMyUserProfile service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateMyUserProfileAsync(
+            final UpdateMyUserProfileRequest updateMyUserProfileRequest,
+            final AsyncHandler<UpdateMyUserProfileRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                try {
+                    updateMyUserProfile(updateMyUserProfileRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateMyUserProfileRequest, null);
+                   return null;
+            }
+        });
+    }
+    
+    /**
+     * <p>
      * Deregisters an Amazon EBS volume. The volume can then be registered by
      * another stack. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deregisterVolumeRequest Container for the necessary parameters
@@ -318,17 +431,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 deregisterVolume(deregisterVolumeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deregisters an Amazon EBS volume. The volume can then be registered by
      * another stack. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deregisterVolumeRequest Container for the necessary parameters
@@ -356,16 +476,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deregisterVolume(deregisterVolumeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deregisterVolumeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deregisterVolume(deregisterVolumeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deregisterVolumeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -373,6 +493,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * Specifies a stack's permissions. For more information, see <a
      * //docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">
      * Security and Permissions </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param setPermissionRequest Container for the necessary parameters to
@@ -396,16 +524,23 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 setPermission(setPermissionRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Specifies a stack's permissions. For more information, see <a
      * //docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">
      * Security and Permissions </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param setPermissionRequest Container for the necessary parameters to
@@ -433,16 +568,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		setPermission(setPermissionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(setPermissionRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    setPermission(setPermissionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(setPermissionRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -451,6 +586,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeInstancesRequest Container for the necessary parameters
@@ -473,17 +616,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<DescribeInstancesResult>() {
             public DescribeInstancesResult call() throws Exception {
                 return describeInstances(describeInstancesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Requests a description of a set of instances.
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeInstancesRequest Container for the necessary parameters
@@ -511,22 +661,30 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeInstancesResult>() {
             public DescribeInstancesResult call() throws Exception {
-            	DescribeInstancesResult result;
+                DescribeInstancesResult result;
                 try {
-            		result = describeInstances(describeInstancesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeInstancesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeInstances(describeInstancesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeInstancesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
      * <p>
      * Describes the permissions for a specified stack.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describePermissionsRequest Container for the necessary
@@ -550,14 +708,21 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<DescribePermissionsResult>() {
             public DescribePermissionsResult call() throws Exception {
                 return describePermissions(describePermissionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describes the permissions for a specified stack.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describePermissionsRequest Container for the necessary
@@ -586,17 +751,17 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribePermissionsResult>() {
             public DescribePermissionsResult call() throws Exception {
-            	DescribePermissionsResult result;
+                DescribePermissionsResult result;
                 try {
-            		result = describePermissions(describePermissionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describePermissionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describePermissions(describePermissionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describePermissionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -605,6 +770,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * delete it. For more information, see <a
      * ws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">
      * Deleting Instances </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deleteInstanceRequest Container for the necessary parameters to
@@ -628,17 +801,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 deleteInstance(deleteInstanceRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a specified instance. You must stop an instance before you can
      * delete it. For more information, see <a
      * ws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">
      * Deleting Instances </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deleteInstanceRequest Container for the necessary parameters to
@@ -666,16 +846,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteInstance(deleteInstanceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteInstanceRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteInstance(deleteInstanceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteInstanceRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -683,6 +863,13 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * Creates a clone of a specified stack. For more information, see <a
      * .aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">
      * Clone a Stack </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param cloneStackRequest Container for the necessary parameters to
@@ -705,16 +892,22 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<CloneStackResult>() {
             public CloneStackResult call() throws Exception {
                 return cloneStack(cloneStackRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a clone of a specified stack. For more information, see <a
      * .aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">
      * Clone a Stack </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param cloneStackRequest Container for the necessary parameters to
@@ -742,22 +935,30 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CloneStackResult>() {
             public CloneStackResult call() throws Exception {
-            	CloneStackResult result;
+                CloneStackResult result;
                 try {
-            		result = cloneStack(cloneStackRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(cloneStackRequest, result);
-               	return result;
-		    }
-		});
+                    result = cloneStack(cloneStackRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(cloneStackRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
      * <p>
      * Detaches a specified Elastic Load Balancing instance from its layer.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param detachElasticLoadBalancerRequest Container for the necessary
@@ -782,14 +983,21 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 detachElasticLoadBalancer(detachElasticLoadBalancerRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Detaches a specified Elastic Load Balancing instance from its layer.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param detachElasticLoadBalancerRequest Container for the necessary
@@ -818,16 +1026,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		detachElasticLoadBalancer(detachElasticLoadBalancerRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(detachElasticLoadBalancerRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    detachElasticLoadBalancer(detachElasticLoadBalancerRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(detachElasticLoadBalancerRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -838,6 +1046,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * more information, see <a
      * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
      * Starting, Stopping, and Rebooting Instances </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param stopInstanceRequest Container for the necessary parameters to
@@ -861,11 +1077,10 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 stopInstance(stopInstanceRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Stops a specified instance. When you stop a standard instance, the
@@ -874,6 +1089,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * more information, see <a
      * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
      * Starting, Stopping, and Rebooting Instances </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param stopInstanceRequest Container for the necessary parameters to
@@ -901,21 +1124,29 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		stopInstance(stopInstanceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(stopInstanceRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    stopInstance(stopInstanceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(stopInstanceRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
      * <p>
      * Updates a specified app.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Deploy or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateAppRequest Container for the necessary parameters to
@@ -939,14 +1170,21 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 updateApp(updateAppRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Updates a specified app.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Deploy or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateAppRequest Container for the necessary parameters to
@@ -974,16 +1212,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		updateApp(updateAppRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateAppRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    updateApp(updateAppRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateAppRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -992,6 +1230,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeCommandsRequest Container for the necessary parameters
@@ -1014,17 +1260,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<DescribeCommandsResult>() {
             public DescribeCommandsResult call() throws Exception {
                 return describeCommands(describeCommandsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describes the results of specified commands.
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeCommandsRequest Container for the necessary parameters
@@ -1052,17 +1305,17 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeCommandsResult>() {
             public DescribeCommandsResult call() throws Exception {
-            	DescribeCommandsResult result;
+                DescribeCommandsResult result;
                 try {
-            		result = describeCommands(describeCommandsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeCommandsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeCommands(describeCommandsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeCommandsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1071,7 +1324,15 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * specified instance. The address must first be registered with the
      * stack by calling RegisterElasticIp. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param associateElasticIpRequest Container for the necessary
@@ -1095,18 +1356,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 associateElasticIp(associateElasticIpRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Associates one of the stack's registered Elastic IP addresses with a
      * specified instance. The address must first be registered with the
      * stack by calling RegisterElasticIp. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param associateElasticIpRequest Container for the necessary
@@ -1134,16 +1402,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		associateElasticIp(associateElasticIpRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(associateElasticIpRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    associateElasticIp(associateElasticIpRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(associateElasticIpRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1151,7 +1419,15 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * Unassigns an assigned Amazon EBS volume. The volume remains registered
      * with the stack. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param unassignVolumeRequest Container for the necessary parameters to
@@ -1175,17 +1451,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 unassignVolume(unassignVolumeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Unassigns an assigned Amazon EBS volume. The volume remains registered
      * with the stack. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param unassignVolumeRequest Container for the necessary parameters to
@@ -1213,16 +1496,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		unassignVolume(unassignVolumeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(unassignVolumeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    unassignVolume(unassignVolumeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(unassignVolumeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1231,6 +1514,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeRaidArraysRequest Container for the necessary
@@ -1253,17 +1544,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<DescribeRaidArraysResult>() {
             public DescribeRaidArraysResult call() throws Exception {
                 return describeRaidArrays(describeRaidArraysRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describe an instance's RAID arrays.
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeRaidArraysRequest Container for the necessary
@@ -1291,23 +1589,31 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeRaidArraysResult>() {
             public DescribeRaidArraysResult call() throws Exception {
-            	DescribeRaidArraysResult result;
+                DescribeRaidArraysResult result;
                 try {
-            		result = describeRaidArrays(describeRaidArraysRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeRaidArraysRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeRaidArrays(describeRaidArraysRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeRaidArraysRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
      * <p>
      * Gets a generated host name for the specified layer, based on the
      * current host name theme.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param getHostnameSuggestionRequest Container for the necessary
@@ -1331,15 +1637,22 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<GetHostnameSuggestionResult>() {
             public GetHostnameSuggestionResult call() throws Exception {
                 return getHostnameSuggestion(getHostnameSuggestionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gets a generated host name for the specified layer, based on the
      * current host name theme.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param getHostnameSuggestionRequest Container for the necessary
@@ -1368,17 +1681,17 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetHostnameSuggestionResult>() {
             public GetHostnameSuggestionResult call() throws Exception {
-            	GetHostnameSuggestionResult result;
+                GetHostnameSuggestionResult result;
                 try {
-            		result = getHostnameSuggestion(getHostnameSuggestionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getHostnameSuggestionRequest, result);
-               	return result;
-		    }
-		});
+                    result = getHostnameSuggestion(getHostnameSuggestionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getHostnameSuggestionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1393,6 +1706,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * load-based auto scaling instances. Load-based auto scaling operates
      * only on the instances from that set, so you must ensure that you have
      * created enough instances to handle the maximum anticipated load.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param setLoadBasedAutoScalingRequest Container for the necessary
@@ -1417,11 +1738,10 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 setLoadBasedAutoScaling(setLoadBasedAutoScalingRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Specify the load-based auto scaling configuration for a specified
@@ -1434,6 +1754,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * load-based auto scaling instances. Load-based auto scaling operates
      * only on the instances from that set, so you must ensure that you have
      * created enough instances to handle the maximum anticipated load.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param setLoadBasedAutoScalingRequest Container for the necessary
@@ -1462,16 +1790,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		setLoadBasedAutoScaling(setLoadBasedAutoScalingRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(setLoadBasedAutoScalingRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    setLoadBasedAutoScaling(setLoadBasedAutoScalingRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(setLoadBasedAutoScalingRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1480,6 +1808,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeVolumesRequest Container for the necessary parameters
@@ -1502,17 +1838,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<DescribeVolumesResult>() {
             public DescribeVolumesResult call() throws Exception {
                 return describeVolumes(describeVolumesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describes an instance's Amazon EBS volumes.
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeVolumesRequest Container for the necessary parameters
@@ -1540,17 +1883,17 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVolumesResult>() {
             public DescribeVolumesResult call() throws Exception {
-            	DescribeVolumesResult result;
+                DescribeVolumesResult result;
                 try {
-            		result = describeVolumes(describeVolumesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeVolumesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeVolumes(describeVolumesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeVolumesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1559,7 +1902,15 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * specified instance. The volume must first be registered with the stack
      * by calling RegisterVolume. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param assignVolumeRequest Container for the necessary parameters to
@@ -1583,18 +1934,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 assignVolume(assignVolumeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Assigns one of the stack's registered Amazon EBS volumes to a
      * specified instance. The volume must first be registered with the stack
      * by calling RegisterVolume. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param assignVolumeRequest Container for the necessary parameters to
@@ -1622,21 +1980,29 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		assignVolume(assignVolumeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(assignVolumeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    assignVolume(assignVolumeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(assignVolumeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
      * <p>
      * Describes AWS OpsWorks service errors.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeServiceErrorsRequest Container for the necessary
@@ -1660,14 +2026,21 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<DescribeServiceErrorsResult>() {
             public DescribeServiceErrorsResult call() throws Exception {
                 return describeServiceErrors(describeServiceErrorsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describes AWS OpsWorks service errors.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeServiceErrorsRequest Container for the necessary
@@ -1696,22 +2069,30 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeServiceErrorsResult>() {
             public DescribeServiceErrorsResult call() throws Exception {
-            	DescribeServiceErrorsResult result;
+                DescribeServiceErrorsResult result;
                 try {
-            		result = describeServiceErrors(describeServiceErrorsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeServiceErrorsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeServiceErrors(describeServiceErrorsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeServiceErrorsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
      * <p>
      * Updates a specified layer.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateLayerRequest Container for the necessary parameters to
@@ -1735,14 +2116,21 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 updateLayer(updateLayerRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Updates a specified layer.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateLayerRequest Container for the necessary parameters to
@@ -1770,16 +2158,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		updateLayer(updateLayerRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateLayerRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    updateLayer(updateLayerRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateLayerRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1787,7 +2175,15 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * Updates a registered Elastic IP address's name. For more information,
      * see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateElasticIpRequest Container for the necessary parameters
@@ -1811,17 +2207,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 updateElasticIp(updateElasticIpRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Updates a registered Elastic IP address's name. For more information,
      * see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateElasticIpRequest Container for the necessary parameters
@@ -1849,16 +2252,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		updateElasticIp(updateElasticIpRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateElasticIpRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    updateElasticIp(updateElasticIpRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateElasticIpRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1866,6 +2269,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * Starts a specified instance. For more information, see <a
      * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
      * Starting, Stopping, and Rebooting Instances </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param startInstanceRequest Container for the necessary parameters to
@@ -1889,16 +2300,23 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 startInstance(startInstanceRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Starts a specified instance. For more information, see <a
      * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
      * Starting, Stopping, and Rebooting Instances </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param startInstanceRequest Container for the necessary parameters to
@@ -1926,16 +2344,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		startInstance(startInstanceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(startInstanceRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    startInstance(startInstanceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(startInstanceRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1951,6 +2369,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * layer; if you attempt to create a second instance, CreateLayer fails.
      * A stack can have an arbitrary number of custom layers, so you can call
      * CreateLayer as many times as you like for that layer type.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param createLayerRequest Container for the necessary parameters to
@@ -1973,11 +2399,10 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<CreateLayerResult>() {
             public CreateLayerResult call() throws Exception {
                 return createLayer(createLayerRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a layer. For more information, see <a
@@ -1991,6 +2416,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * layer; if you attempt to create a second instance, CreateLayer fails.
      * A stack can have an arbitrary number of custom layers, so you can call
      * CreateLayer as many times as you like for that layer type.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param createLayerRequest Container for the necessary parameters to
@@ -2018,17 +2451,17 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateLayerResult>() {
             public CreateLayerResult call() throws Exception {
-            	CreateLayerResult result;
+                CreateLayerResult result;
                 try {
-            		result = createLayer(createLayerRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createLayerRequest, result);
-               	return result;
-		    }
-		});
+                    result = createLayer(createLayerRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createLayerRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2036,7 +2469,15 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * Disassociates an Elastic IP address from its instance. The address
      * remains registered with the stack. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param disassociateElasticIpRequest Container for the necessary
@@ -2061,17 +2502,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 disassociateElasticIp(disassociateElasticIpRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Disassociates an Elastic IP address from its instance. The address
      * remains registered with the stack. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param disassociateElasticIpRequest Container for the necessary
@@ -2100,16 +2548,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		disassociateElasticIp(disassociateElasticIpRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(disassociateElasticIpRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    disassociateElasticIp(disassociateElasticIpRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(disassociateElasticIpRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2118,6 +2566,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * layers, and apps. For more information, see <a
      * aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">
      * Shut Down a Stack </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deleteStackRequest Container for the necessary parameters to
@@ -2141,17 +2597,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 deleteStack(deleteStackRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a specified stack. You must first delete all instances,
      * layers, and apps. For more information, see <a
      * aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">
      * Shut Down a Stack </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deleteStackRequest Container for the necessary parameters to
@@ -2179,21 +2642,29 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteStack(deleteStackRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteStackRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteStack(deleteStackRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteStackRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
      * <p>
      * Starts stack's instances.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param startStackRequest Container for the necessary parameters to
@@ -2217,14 +2688,21 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 startStack(startStackRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Starts stack's instances.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param startStackRequest Container for the necessary parameters to
@@ -2252,16 +2730,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		startStack(startStackRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(startStackRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    startStack(startStackRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(startStackRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2271,7 +2749,15 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * registered, you must first deregister it by calling DeregisterVolume.
      * For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param registerVolumeRequest Container for the necessary parameters to
@@ -2294,11 +2780,10 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<RegisterVolumeResult>() {
             public RegisterVolumeResult call() throws Exception {
                 return registerVolume(registerVolumeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Registers an Amazon EBS volume with a specified stack. A volume can be
@@ -2306,7 +2791,15 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * registered, you must first deregister it by calling DeregisterVolume.
      * For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param registerVolumeRequest Container for the necessary parameters to
@@ -2334,22 +2827,29 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RegisterVolumeResult>() {
             public RegisterVolumeResult call() throws Exception {
-            	RegisterVolumeResult result;
+                RegisterVolumeResult result;
                 try {
-            		result = registerVolume(registerVolumeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(registerVolumeRequest, result);
-               	return result;
-		    }
-		});
+                    result = registerVolume(registerVolumeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(registerVolumeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
      * <p>
      * Updates a specified user profile.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateUserProfileRequest Container for the necessary parameters
@@ -2373,14 +2873,20 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 updateUserProfile(updateUserProfileRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Updates a specified user profile.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateUserProfileRequest Container for the necessary parameters
@@ -2408,93 +2914,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		updateUserProfile(updateUserProfileRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateUserProfileRequest, null);
-               	return null;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Creates a new stack. For more information, see <a
-     * ocs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">
-     * Create a New Stack </a> .
-     * </p>
-     *
-     * @param createStackRequest Container for the necessary parameters to
-     *           execute the CreateStack operation on AWSOpsWorks.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateStack service method, as returned by AWSOpsWorks.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateStackResult> createStackAsync(final CreateStackRequest createStackRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateStackResult>() {
-            public CreateStackResult call() throws Exception {
-                return createStack(createStackRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Creates a new stack. For more information, see <a
-     * ocs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">
-     * Create a New Stack </a> .
-     * </p>
-     *
-     * @param createStackRequest Container for the necessary parameters to
-     *           execute the CreateStack operation on AWSOpsWorks.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateStack service method, as returned by AWSOpsWorks.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateStackResult> createStackAsync(
-            final CreateStackRequest createStackRequest,
-            final AsyncHandler<CreateStackRequest, CreateStackResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateStackResult>() {
-            public CreateStackResult call() throws Exception {
-            	CreateStackResult result;
                 try {
-            		result = createStack(createStackRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createStackRequest, result);
-               	return result;
-		    }
-		});
+                    updateUserProfile(updateUserProfileRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateUserProfileRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2502,6 +2931,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * Reboots a specified instance. For more information, see <a
      * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
      * Starting, Stopping, and Rebooting Instances </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param rebootInstanceRequest Container for the necessary parameters to
@@ -2525,16 +2962,23 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 rebootInstance(rebootInstanceRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Reboots a specified instance. For more information, see <a
      * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
      * Starting, Stopping, and Rebooting Instances </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param rebootInstanceRequest Container for the necessary parameters to
@@ -2562,16 +3006,106 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		rebootInstance(rebootInstanceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(rebootInstanceRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    rebootInstance(rebootInstanceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(rebootInstanceRequest, null);
+                   return null;
+            }
+        });
+    }
+    
+    /**
+     * <p>
+     * Creates a new stack. For more information, see <a
+     * ocs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">
+     * Create a New Stack </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
+     *
+     * @param createStackRequest Container for the necessary parameters to
+     *           execute the CreateStack operation on AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateStack service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateStackResult> createStackAsync(final CreateStackRequest createStackRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateStackResult>() {
+            public CreateStackResult call() throws Exception {
+                return createStack(createStackRequest);
+            }
+        });
+    }
+
+    /**
+     * <p>
+     * Creates a new stack. For more information, see <a
+     * ocs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">
+     * Create a New Stack </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
+     *
+     * @param createStackRequest Container for the necessary parameters to
+     *           execute the CreateStack operation on AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateStack service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateStackResult> createStackAsync(
+            final CreateStackRequest createStackRequest,
+            final AsyncHandler<CreateStackRequest, CreateStackResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateStackResult>() {
+            public CreateStackResult call() throws Exception {
+                CreateStackResult result;
+                try {
+                    result = createStack(createStackRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createStackRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2579,6 +3113,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * Creates an instance in a specified stack. For more information, see <a
      * s.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
      * Adding an Instance to a Layer </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param createInstanceRequest Container for the necessary parameters to
@@ -2601,16 +3143,23 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<CreateInstanceResult>() {
             public CreateInstanceResult call() throws Exception {
                 return createInstance(createInstanceRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates an instance in a specified stack. For more information, see <a
      * s.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
      * Adding an Instance to a Layer </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param createInstanceRequest Container for the necessary parameters to
@@ -2638,22 +3187,30 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateInstanceResult>() {
             public CreateInstanceResult call() throws Exception {
-            	CreateInstanceResult result;
+                CreateInstanceResult result;
                 try {
-            		result = createInstance(createInstanceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createInstanceRequest, result);
-               	return result;
-		    }
-		});
+                    result = createInstance(createInstanceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createInstanceRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
      * <p>
      * Deletes a specified app.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deleteAppRequest Container for the necessary parameters to
@@ -2677,14 +3234,21 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 deleteApp(deleteAppRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a specified app.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deleteAppRequest Container for the necessary parameters to
@@ -2712,16 +3276,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteApp(deleteAppRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteAppRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteApp(deleteAppRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteAppRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2729,7 +3293,15 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * Deregisters a specified Elastic IP address. The address can then be
      * registered by another stack. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deregisterElasticIpRequest Container for the necessary
@@ -2754,17 +3326,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 deregisterElasticIp(deregisterElasticIpRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deregisters a specified Elastic IP address. The address can then be
      * registered by another stack. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deregisterElasticIpRequest Container for the necessary
@@ -2793,16 +3372,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deregisterElasticIp(deregisterElasticIpRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deregisterElasticIpRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deregisterElasticIp(deregisterElasticIpRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deregisterElasticIpRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2813,6 +3392,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * <b>NOTE:</b>You must create the Elastic Load Balancing instance
      * separately, by using the Elastic Load Balancing console, API, or CLI.
      * For more information, see Elastic Load Balancing Developer Guide.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param attachElasticLoadBalancerRequest Container for the necessary
@@ -2837,11 +3424,10 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 attachElasticLoadBalancer(attachElasticLoadBalancerRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Attaches an Elastic Load Balancing load balancer to a specified layer.
@@ -2850,6 +3436,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * <b>NOTE:</b>You must create the Elastic Load Balancing instance
      * separately, by using the Elastic Load Balancing console, API, or CLI.
      * For more information, see Elastic Load Balancing Developer Guide.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param attachElasticLoadBalancerRequest Container for the necessary
@@ -2878,21 +3472,29 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		attachElasticLoadBalancer(attachElasticLoadBalancerRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(attachElasticLoadBalancerRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    attachElasticLoadBalancer(attachElasticLoadBalancerRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(attachElasticLoadBalancerRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
      * <p>
      * Updates a specified stack.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateStackRequest Container for the necessary parameters to
@@ -2916,14 +3518,21 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 updateStack(updateStackRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Updates a specified stack.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateStackRequest Container for the necessary parameters to
@@ -2951,21 +3560,28 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		updateStack(updateStackRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateStackRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    updateStack(updateStackRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateStackRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
      * <p>
      * Creates a new user profile.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param createUserProfileRequest Container for the necessary parameters
@@ -2988,14 +3604,20 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<CreateUserProfileResult>() {
             public CreateUserProfileResult call() throws Exception {
                 return createUserProfile(createUserProfileRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new user profile.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param createUserProfileRequest Container for the necessary parameters
@@ -3023,17 +3645,17 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateUserProfileResult>() {
             public CreateUserProfileResult call() throws Exception {
-            	CreateUserProfileResult result;
+                CreateUserProfileResult result;
                 try {
-            		result = createUserProfile(createUserProfileRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createUserProfileRequest, result);
-               	return result;
-		    }
-		});
+                    result = createUserProfile(createUserProfileRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createUserProfileRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3042,6 +3664,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeLayersRequest Container for the necessary parameters to
@@ -3064,17 +3694,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<DescribeLayersResult>() {
             public DescribeLayersResult call() throws Exception {
                 return describeLayers(describeLayersRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Requests a description of one or more layers in a specified stack.
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeLayersRequest Container for the necessary parameters to
@@ -3102,17 +3739,17 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeLayersResult>() {
             public DescribeLayersResult call() throws Exception {
-            	DescribeLayersResult result;
+                DescribeLayersResult result;
                 try {
-            		result = describeLayers(describeLayersRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeLayersRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeLayers(describeLayersRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeLayersRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3121,6 +3758,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeLoadBasedAutoScalingRequest Container for the necessary
@@ -3145,17 +3790,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<DescribeLoadBasedAutoScalingResult>() {
             public DescribeLoadBasedAutoScalingResult call() throws Exception {
                 return describeLoadBasedAutoScaling(describeLoadBasedAutoScalingRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describes load-based auto scaling configurations for specified layers.
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeLoadBasedAutoScalingRequest Container for the necessary
@@ -3185,17 +3837,17 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeLoadBasedAutoScalingResult>() {
             public DescribeLoadBasedAutoScalingResult call() throws Exception {
-            	DescribeLoadBasedAutoScalingResult result;
+                DescribeLoadBasedAutoScalingResult result;
                 try {
-            		result = describeLoadBasedAutoScaling(describeLoadBasedAutoScalingRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeLoadBasedAutoScalingRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeLoadBasedAutoScaling(describeLoadBasedAutoScalingRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeLoadBasedAutoScalingRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3204,6 +3856,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeElasticLoadBalancersRequest Container for the necessary
@@ -3228,17 +3888,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<DescribeElasticLoadBalancersResult>() {
             public DescribeElasticLoadBalancersResult call() throws Exception {
                 return describeElasticLoadBalancers(describeElasticLoadBalancersRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describes a stack's Elastic Load Balancing instances.
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeElasticLoadBalancersRequest Container for the necessary
@@ -3268,17 +3935,17 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeElasticLoadBalancersResult>() {
             public DescribeElasticLoadBalancersResult call() throws Exception {
-            	DescribeElasticLoadBalancersResult result;
+                DescribeElasticLoadBalancersResult result;
                 try {
-            		result = describeElasticLoadBalancers(describeElasticLoadBalancersRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeElasticLoadBalancersRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeElasticLoadBalancers(describeElasticLoadBalancersRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeElasticLoadBalancersRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3287,6 +3954,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * associated instances. For more information, see <a
      * mazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">
      * How to Delete a Layer </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deleteLayerRequest Container for the necessary parameters to
@@ -3310,17 +3985,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 deleteLayer(deleteLayerRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a specified layer. You must first stop and then delete all
      * associated instances. For more information, see <a
      * mazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">
      * How to Delete a Layer </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deleteLayerRequest Container for the necessary parameters to
@@ -3348,16 +4030,104 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteLayer(deleteLayerRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteLayerRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteLayer(deleteLayerRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteLayerRequest, null);
+                   return null;
+            }
+        });
+    }
+    
+    /**
+     * <p>
+     * Describes a user's SSH information.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have self-management enabled or an attached policy that explicitly
+     * grants permissions. For more information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
+     *
+     * @param describeMyUserProfileRequest Container for the necessary
+     *           parameters to execute the DescribeMyUserProfile operation on
+     *           AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeMyUserProfile service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeMyUserProfileResult> describeMyUserProfileAsync(final DescribeMyUserProfileRequest describeMyUserProfileRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeMyUserProfileResult>() {
+            public DescribeMyUserProfileResult call() throws Exception {
+                return describeMyUserProfile(describeMyUserProfileRequest);
+            }
+        });
+    }
+
+    /**
+     * <p>
+     * Describes a user's SSH information.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have self-management enabled or an attached policy that explicitly
+     * grants permissions. For more information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
+     *
+     * @param describeMyUserProfileRequest Container for the necessary
+     *           parameters to execute the DescribeMyUserProfile operation on
+     *           AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeMyUserProfile service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeMyUserProfileResult> describeMyUserProfileAsync(
+            final DescribeMyUserProfileRequest describeMyUserProfileRequest,
+            final AsyncHandler<DescribeMyUserProfileRequest, DescribeMyUserProfileResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeMyUserProfileResult>() {
+            public DescribeMyUserProfileResult call() throws Exception {
+                DescribeMyUserProfileResult result;
+                try {
+                    result = describeMyUserProfile(describeMyUserProfileRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeMyUserProfileRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3366,6 +4136,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * instance. For more information, see <a
      * azon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">
      * Managing Load with Time-based and Load-based Instances </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param setTimeBasedAutoScalingRequest Container for the necessary
@@ -3390,17 +4168,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 setTimeBasedAutoScaling(setTimeBasedAutoScalingRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Specify the time-based auto scaling configuration for a specified
      * instance. For more information, see <a
      * azon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">
      * Managing Load with Time-based and Load-based Instances </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param setTimeBasedAutoScalingRequest Container for the necessary
@@ -3429,16 +4214,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		setTimeBasedAutoScaling(setTimeBasedAutoScalingRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(setTimeBasedAutoScalingRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    setTimeBasedAutoScaling(setTimeBasedAutoScalingRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(setTimeBasedAutoScalingRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3446,6 +4231,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * Creates an app for a specified stack. For more information, see <a
      * s.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">
      * Creating Apps </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param createAppRequest Container for the necessary parameters to
@@ -3468,16 +4261,23 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<CreateAppResult>() {
             public CreateAppResult call() throws Exception {
                 return createApp(createAppRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates an app for a specified stack. For more information, see <a
      * s.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">
      * Creating Apps </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param createAppRequest Container for the necessary parameters to
@@ -3505,22 +4305,29 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateAppResult>() {
             public CreateAppResult call() throws Exception {
-            	CreateAppResult result;
+                CreateAppResult result;
                 try {
-            		result = createApp(createAppRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createAppRequest, result);
-               	return result;
-		    }
-		});
+                    result = createApp(createAppRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createAppRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
      * <p>
      * Deletes a user profile.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deleteUserProfileRequest Container for the necessary parameters
@@ -3544,14 +4351,20 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 deleteUserProfile(deleteUserProfileRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a user profile.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param deleteUserProfileRequest Container for the necessary parameters
@@ -3579,16 +4392,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteUserProfile(deleteUserProfileRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteUserProfileRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteUserProfile(deleteUserProfileRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteUserProfileRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3598,6 +4411,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeTimeBasedAutoScalingRequest Container for the necessary
@@ -3622,11 +4443,10 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<DescribeTimeBasedAutoScalingResult>() {
             public DescribeTimeBasedAutoScalingResult call() throws Exception {
                 return describeTimeBasedAutoScaling(describeTimeBasedAutoScalingRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describes time-based auto scaling configurations for specified
@@ -3634,6 +4454,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeTimeBasedAutoScalingRequest Container for the necessary
@@ -3663,17 +4491,17 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeTimeBasedAutoScalingResult>() {
             public DescribeTimeBasedAutoScalingResult call() throws Exception {
-            	DescribeTimeBasedAutoScalingResult result;
+                DescribeTimeBasedAutoScalingResult result;
                 try {
-            		result = describeTimeBasedAutoScaling(describeTimeBasedAutoScalingRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeTimeBasedAutoScalingRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeTimeBasedAutoScaling(describeTimeBasedAutoScalingRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeTimeBasedAutoScalingRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3681,7 +4509,15 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * Updates an Amazon EBS volume's name or mount point. For more
      * information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateVolumeRequest Container for the necessary parameters to
@@ -3705,17 +4541,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 updateVolume(updateVolumeRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Updates an Amazon EBS volume's name or mount point. For more
      * information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateVolumeRequest Container for the necessary parameters to
@@ -3743,21 +4586,28 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		updateVolume(updateVolumeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateVolumeRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    updateVolume(updateVolumeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateVolumeRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
      * <p>
      * Describe specified users.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeUserProfilesRequest Container for the necessary
@@ -3781,14 +4631,20 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<DescribeUserProfilesResult>() {
             public DescribeUserProfilesResult call() throws Exception {
                 return describeUserProfiles(describeUserProfilesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describe specified users.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have an attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeUserProfilesRequest Container for the necessary
@@ -3817,22 +4673,30 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeUserProfilesResult>() {
             public DescribeUserProfilesResult call() throws Exception {
-            	DescribeUserProfilesResult result;
+                DescribeUserProfilesResult result;
                 try {
-            		result = describeUserProfiles(describeUserProfilesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeUserProfilesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeUserProfiles(describeUserProfilesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeUserProfilesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
      * <p>
      * Updates a specified instance.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateInstanceRequest Container for the necessary parameters to
@@ -3856,14 +4720,21 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 updateInstance(updateInstanceRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Updates a specified instance.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param updateInstanceRequest Container for the necessary parameters to
@@ -3891,16 +4762,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		updateInstance(updateInstanceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateInstanceRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    updateInstance(updateInstanceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateInstanceRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3909,6 +4780,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeDeploymentsRequest Container for the necessary
@@ -3932,17 +4811,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<DescribeDeploymentsResult>() {
             public DescribeDeploymentsResult call() throws Exception {
                 return describeDeployments(describeDeploymentsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Requests a description of a specified set of deployments.
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeDeploymentsRequest Container for the necessary
@@ -3971,17 +4857,17 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeDeploymentsResult>() {
             public DescribeDeploymentsResult call() throws Exception {
-            	DescribeDeploymentsResult result;
+                DescribeDeploymentsResult result;
                 try {
-            		result = describeDeployments(describeDeploymentsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeDeploymentsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeDeployments(describeDeploymentsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeDeploymentsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3991,7 +4877,15 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * registered, you must first deregister it by calling
      * DeregisterElasticIp. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param registerElasticIpRequest Container for the necessary parameters
@@ -4014,11 +4908,10 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<RegisterElasticIpResult>() {
             public RegisterElasticIpResult call() throws Exception {
                 return registerElasticIp(registerElasticIpRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Registers an Elastic IP address with a specified stack. An address can
@@ -4026,7 +4919,15 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * registered, you must first deregister it by calling
      * DeregisterElasticIp. For more information, see <a
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
-     * </a> .
+     * Resource Management </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param registerElasticIpRequest Container for the necessary parameters
@@ -4054,17 +4955,17 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RegisterElasticIpResult>() {
             public RegisterElasticIpResult call() throws Exception {
-            	RegisterElasticIpResult result;
+                RegisterElasticIpResult result;
                 try {
-            		result = registerElasticIp(registerElasticIpRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(registerElasticIpRequest, result);
-               	return result;
-		    }
-		});
+                    result = registerElasticIp(registerElasticIpRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(registerElasticIpRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4075,6 +4976,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeElasticIpsRequest Container for the necessary
@@ -4097,11 +5006,10 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<DescribeElasticIpsResult>() {
             public DescribeElasticIpsResult call() throws Exception {
                 return describeElasticIps(describeElasticIpsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describes <a
@@ -4110,6 +5018,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeElasticIpsRequest Container for the necessary
@@ -4137,22 +5053,30 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeElasticIpsResult>() {
             public DescribeElasticIpsResult call() throws Exception {
-            	DescribeElasticIpsResult result;
+                DescribeElasticIpsResult result;
                 try {
-            		result = describeElasticIps(describeElasticIpsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeElasticIpsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeElasticIps(describeElasticIpsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeElasticIpsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
      * <p>
      * Requests a description of one or more stacks.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeStacksRequest Container for the necessary parameters to
@@ -4175,14 +5099,21 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<DescribeStacksResult>() {
             public DescribeStacksResult call() throws Exception {
                 return describeStacks(describeStacksRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Requests a description of one or more stacks.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeStacksRequest Container for the necessary parameters to
@@ -4210,17 +5141,17 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeStacksResult>() {
             public DescribeStacksResult call() throws Exception {
-            	DescribeStacksResult result;
+                DescribeStacksResult result;
                 try {
-            		result = describeStacks(describeStacksRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeStacksRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeStacks(describeStacksRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeStacksRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4229,6 +5160,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeAppsRequest Container for the necessary parameters to
@@ -4251,17 +5190,24 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<DescribeAppsResult>() {
             public DescribeAppsResult call() throws Exception {
                 return describeApps(describeAppsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Requests a description of a specified set of apps.
      * </p>
      * <p>
      * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param describeAppsRequest Container for the necessary parameters to
@@ -4289,22 +5235,124 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeAppsResult>() {
             public DescribeAppsResult call() throws Exception {
-            	DescribeAppsResult result;
+                DescribeAppsResult result;
                 try {
-            		result = describeApps(describeAppsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeAppsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeApps(describeAppsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeAppsRequest, result);
+                   return result;
+            }
+        });
+    }
+    
+    /**
+     * <p>
+     * Describes the number of layers and apps in a specified stack, and the
+     * number of instances in each state, such as <code>running_setup</code>
+     * or <code>online</code> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
+     *
+     * @param describeStackSummaryRequest Container for the necessary
+     *           parameters to execute the DescribeStackSummary operation on
+     *           AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeStackSummary service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeStackSummaryResult> describeStackSummaryAsync(final DescribeStackSummaryRequest describeStackSummaryRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeStackSummaryResult>() {
+            public DescribeStackSummaryResult call() throws Exception {
+                return describeStackSummary(describeStackSummaryRequest);
+            }
+        });
+    }
+
+    /**
+     * <p>
+     * Describes the number of layers and apps in a specified stack, and the
+     * number of instances in each state, such as <code>running_setup</code>
+     * or <code>online</code> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
+     * </p>
+     *
+     * @param describeStackSummaryRequest Container for the necessary
+     *           parameters to execute the DescribeStackSummary operation on
+     *           AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeStackSummary service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeStackSummaryResult> describeStackSummaryAsync(
+            final DescribeStackSummaryRequest describeStackSummaryRequest,
+            final AsyncHandler<DescribeStackSummaryRequest, DescribeStackSummaryResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeStackSummaryResult>() {
+            public DescribeStackSummaryResult call() throws Exception {
+                DescribeStackSummaryResult result;
+                try {
+                    result = describeStackSummary(describeStackSummaryRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeStackSummaryRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
      * <p>
      * Stops a specified stack.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param stopStackRequest Container for the necessary parameters to
@@ -4328,14 +5376,21 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             public Void call() throws Exception {
                 stopStack(stopStackRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Stops a specified stack.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param stopStackRequest Container for the necessary parameters to
@@ -4363,16 +5418,16 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		stopStack(stopStackRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(stopStackRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    stopStack(stopStackRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(stopStackRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -4394,6 +5449,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * Deploying Apps </a> and <a
      * aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">
      * Run Stack Commands </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Deploy or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param createDeploymentRequest Container for the necessary parameters
@@ -4416,11 +5479,10 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
         return executorService.submit(new Callable<CreateDeploymentResult>() {
             public CreateDeploymentResult call() throws Exception {
                 return createDeployment(createDeploymentRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deploys a stack or app.
@@ -4440,6 +5502,14 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * Deploying Apps </a> and <a
      * aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">
      * Run Stack Commands </a> .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Deploy or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see <a
+     * ws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+     * Managing User Permissions </a> .
      * </p>
      *
      * @param createDeploymentRequest Container for the necessary parameters
@@ -4467,17 +5537,17 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateDeploymentResult>() {
             public CreateDeploymentResult call() throws Exception {
-            	CreateDeploymentResult result;
+                CreateDeploymentResult result;
                 try {
-            		result = createDeployment(createDeploymentRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createDeploymentRequest, result);
-               	return result;
-		    }
-		});
+                    result = createDeployment(createDeploymentRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createDeploymentRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

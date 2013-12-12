@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Disable Gateway Result JSON Unmarshaller
  */
 public class DisableGatewayResultJsonUnmarshaller implements Unmarshaller<DisableGatewayResult, JsonUnmarshallerContext> {
 
-    
-
     public DisableGatewayResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DisableGatewayResult disableGatewayResult = new DisableGatewayResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DisableGatewayResultJsonUnmarshaller implements Unmarshaller<Disabl
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class DisableGatewayResultJsonUnmarshaller implements Unmarshaller<Disabl
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

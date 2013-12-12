@@ -33,13 +33,12 @@ public class DeleteTagsRequestMarshaller implements Marshaller<Request<DeleteTag
     public Request<DeleteTagsRequest> marshall(DeleteTagsRequest deleteTagsRequest) {
 
         if (deleteTagsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteTagsRequest> request = new DefaultRequest<DeleteTagsRequest>(deleteTagsRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DeleteTags");
         request.addParameter("Version", "2011-01-01");
-
 
         java.util.List<Tag> tagsList = deleteTagsRequest.getTags();
         int tagsListIndex = 1;
@@ -66,7 +65,6 @@ public class DeleteTagsRequestMarshaller implements Marshaller<Request<DeleteTag
 
             tagsListIndex++;
         }
-
 
         return request;
     }

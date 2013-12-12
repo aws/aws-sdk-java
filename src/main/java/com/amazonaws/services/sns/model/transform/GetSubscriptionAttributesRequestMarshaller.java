@@ -33,8 +33,8 @@ public class GetSubscriptionAttributesRequestMarshaller implements Marshaller<Re
     public Request<GetSubscriptionAttributesRequest> marshall(GetSubscriptionAttributesRequest getSubscriptionAttributesRequest) {
 
         if (getSubscriptionAttributesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetSubscriptionAttributesRequest> request = new DefaultRequest<GetSubscriptionAttributesRequest>(getSubscriptionAttributesRequest, "AmazonSNS");
         request.addParameter("Action", "GetSubscriptionAttributes");
@@ -43,7 +43,6 @@ public class GetSubscriptionAttributesRequestMarshaller implements Marshaller<Re
         if (getSubscriptionAttributesRequest.getSubscriptionArn() != null) {
             request.addParameter("SubscriptionArn", StringUtils.fromString(getSubscriptionAttributesRequest.getSubscriptionArn()));
         }
-
 
         return request;
     }

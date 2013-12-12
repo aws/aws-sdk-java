@@ -33,8 +33,8 @@ public class AuthorizeDBSecurityGroupIngressRequestMarshaller implements Marshal
     public Request<AuthorizeDBSecurityGroupIngressRequest> marshall(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest) {
 
         if (authorizeDBSecurityGroupIngressRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AuthorizeDBSecurityGroupIngressRequest> request = new DefaultRequest<AuthorizeDBSecurityGroupIngressRequest>(authorizeDBSecurityGroupIngressRequest, "AmazonRDS");
         request.addParameter("Action", "AuthorizeDBSecurityGroupIngress");
@@ -55,7 +55,6 @@ public class AuthorizeDBSecurityGroupIngressRequestMarshaller implements Marshal
         if (authorizeDBSecurityGroupIngressRequest.getEC2SecurityGroupOwnerId() != null) {
             request.addParameter("EC2SecurityGroupOwnerId", StringUtils.fromString(authorizeDBSecurityGroupIngressRequest.getEC2SecurityGroupOwnerId()));
         }
-
 
         return request;
     }

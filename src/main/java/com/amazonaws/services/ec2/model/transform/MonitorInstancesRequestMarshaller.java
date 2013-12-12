@@ -33,13 +33,12 @@ public class MonitorInstancesRequestMarshaller implements Marshaller<Request<Mon
     public Request<MonitorInstancesRequest> marshall(MonitorInstancesRequest monitorInstancesRequest) {
 
         if (monitorInstancesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<MonitorInstancesRequest> request = new DefaultRequest<MonitorInstancesRequest>(monitorInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "MonitorInstances");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> instanceIdsList = monitorInstancesRequest.getInstanceIds();
         int instanceIdsListIndex = 1;
@@ -51,7 +50,6 @@ public class MonitorInstancesRequestMarshaller implements Marshaller<Request<Mon
 
             instanceIdsListIndex++;
         }
-
 
         return request;
     }

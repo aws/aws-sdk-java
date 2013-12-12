@@ -16,7 +16,6 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Paginated representation of a workflow history for a workflow execution. This is the up to date, complete and authoritative record of the events

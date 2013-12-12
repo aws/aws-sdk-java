@@ -33,8 +33,8 @@ public class AssociateAddressRequestMarshaller implements Marshaller<Request<Ass
     public Request<AssociateAddressRequest> marshall(AssociateAddressRequest associateAddressRequest) {
 
         if (associateAddressRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AssociateAddressRequest> request = new DefaultRequest<AssociateAddressRequest>(associateAddressRequest, "AmazonEC2");
         request.addParameter("Action", "AssociateAddress");
@@ -58,7 +58,6 @@ public class AssociateAddressRequestMarshaller implements Marshaller<Request<Ass
         if (associateAddressRequest.isAllowReassociation() != null) {
             request.addParameter("AllowReassociation", StringUtils.fromBoolean(associateAddressRequest.isAllowReassociation()));
         }
-
 
         return request;
     }

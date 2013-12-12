@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Location JSON Unmarshaller
  */
 public class LocationJsonUnmarshaller implements Unmarshaller<Location, JsonUnmarshallerContext> {
 
-    
-
     public Location unmarshall(JsonUnmarshallerContext context) throws Exception {
         Location location = new Location();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class LocationJsonUnmarshaller implements Unmarshaller<Location, JsonUnma
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("locationCode", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class LocationJsonUnmarshaller implements Unmarshaller<Location, JsonUnma
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

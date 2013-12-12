@@ -33,8 +33,8 @@ public class DeleteHsmClientCertificateRequestMarshaller implements Marshaller<R
     public Request<DeleteHsmClientCertificateRequest> marshall(DeleteHsmClientCertificateRequest deleteHsmClientCertificateRequest) {
 
         if (deleteHsmClientCertificateRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteHsmClientCertificateRequest> request = new DefaultRequest<DeleteHsmClientCertificateRequest>(deleteHsmClientCertificateRequest, "AmazonRedshift");
         request.addParameter("Action", "DeleteHsmClientCertificate");
@@ -43,7 +43,6 @@ public class DeleteHsmClientCertificateRequestMarshaller implements Marshaller<R
         if (deleteHsmClientCertificateRequest.getHsmClientCertificateIdentifier() != null) {
             request.addParameter("HsmClientCertificateIdentifier", StringUtils.fromString(deleteHsmClientCertificateRequest.getHsmClientCertificateIdentifier()));
         }
-
 
         return request;
     }

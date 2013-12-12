@@ -33,8 +33,8 @@ public class DeleteRouteRequestMarshaller implements Marshaller<Request<DeleteRo
     public Request<DeleteRouteRequest> marshall(DeleteRouteRequest deleteRouteRequest) {
 
         if (deleteRouteRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteRouteRequest> request = new DefaultRequest<DeleteRouteRequest>(deleteRouteRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteRoute");
@@ -46,7 +46,6 @@ public class DeleteRouteRequestMarshaller implements Marshaller<Request<DeleteRo
         if (deleteRouteRequest.getDestinationCidrBlock() != null) {
             request.addParameter("DestinationCidrBlock", StringUtils.fromString(deleteRouteRequest.getDestinationCidrBlock()));
         }
-
 
         return request;
     }

@@ -33,8 +33,8 @@ public class DeleteIndexFieldRequestMarshaller implements Marshaller<Request<Del
     public Request<DeleteIndexFieldRequest> marshall(DeleteIndexFieldRequest deleteIndexFieldRequest) {
 
         if (deleteIndexFieldRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteIndexFieldRequest> request = new DefaultRequest<DeleteIndexFieldRequest>(deleteIndexFieldRequest, "AmazonCloudSearch");
         request.addParameter("Action", "DeleteIndexField");
@@ -46,7 +46,6 @@ public class DeleteIndexFieldRequestMarshaller implements Marshaller<Request<Del
         if (deleteIndexFieldRequest.getIndexFieldName() != null) {
             request.addParameter("IndexFieldName", StringUtils.fromString(deleteIndexFieldRequest.getIndexFieldName()));
         }
-
 
         return request;
     }

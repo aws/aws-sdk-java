@@ -16,7 +16,6 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents the output of a <i>BatchWriteItem</i> operation.
@@ -66,10 +65,10 @@ public class BatchWriteItemResult implements Serializable {
      * expressed in GB. This is a two-element array containing a lower bound
      * and an upper bound for the estimate. The estimate includes the size of
      * all the items in the table, plus the size of all attributes projected
-     * into all of the secondary indexes on the table. Use this estimate to
-     * measure whether a secondary index is approaching its size limit.
-     * <p>The estimate is subject to change over time; therefore, do not rely
-     * on the precision or accuracy of the estimate. </li> </ul>
+     * into all of the local secondary indexes on the table. Use this
+     * estimate to measure whether a local secondary index is approaching its
+     * size limit. <p>The estimate is subject to change over time; therefore,
+     * do not rely on the precision or accuracy of the estimate. </li> </ul>
      */
     private java.util.Map<String,java.util.List<ItemCollectionMetrics>> itemCollectionMetrics;
 
@@ -298,26 +297,26 @@ public class BatchWriteItemResult implements Serializable {
      * @param key The key of the entry to be added into UnprocessedItems.
      * @param value The corresponding value of the entry to be added into UnprocessedItems.
      */
-	public BatchWriteItemResult addUnprocessedItemsEntry(String key, java.util.List<WriteRequest> value) {
-		if (null == this.unprocessedItems) {
-			this.unprocessedItems = new java.util.HashMap<String,java.util.List<WriteRequest>>();
-		}
-		if (this.unprocessedItems.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.unprocessedItems.put(key, value);
-		return this;
-	}
+    public BatchWriteItemResult addUnprocessedItemsEntry(String key, java.util.List<WriteRequest> value) {
+        if (null == this.unprocessedItems) {
+            this.unprocessedItems = new java.util.HashMap<String,java.util.List<WriteRequest>>();
+        }
+        if (this.unprocessedItems.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.unprocessedItems.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into UnprocessedItems.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public BatchWriteItemResult clearUnprocessedItemsEntries() {
-		this.unprocessedItems = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into UnprocessedItems.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public BatchWriteItemResult clearUnprocessedItemsEntries() {
+        this.unprocessedItems = null;
+        return this;
+    }
+    
     /**
      * A list of tables that were processed by <i>BatchWriteItem</i> and, for
      * each table, information about any item collections that were affected
@@ -329,10 +328,10 @@ public class BatchWriteItemResult implements Serializable {
      * expressed in GB. This is a two-element array containing a lower bound
      * and an upper bound for the estimate. The estimate includes the size of
      * all the items in the table, plus the size of all attributes projected
-     * into all of the secondary indexes on the table. Use this estimate to
-     * measure whether a secondary index is approaching its size limit.
-     * <p>The estimate is subject to change over time; therefore, do not rely
-     * on the precision or accuracy of the estimate. </li> </ul>
+     * into all of the local secondary indexes on the table. Use this
+     * estimate to measure whether a local secondary index is approaching its
+     * size limit. <p>The estimate is subject to change over time; therefore,
+     * do not rely on the precision or accuracy of the estimate. </li> </ul>
      *
      * @return A list of tables that were processed by <i>BatchWriteItem</i> and, for
      *         each table, information about any item collections that were affected
@@ -344,10 +343,10 @@ public class BatchWriteItemResult implements Serializable {
      *         expressed in GB. This is a two-element array containing a lower bound
      *         and an upper bound for the estimate. The estimate includes the size of
      *         all the items in the table, plus the size of all attributes projected
-     *         into all of the secondary indexes on the table. Use this estimate to
-     *         measure whether a secondary index is approaching its size limit.
-     *         <p>The estimate is subject to change over time; therefore, do not rely
-     *         on the precision or accuracy of the estimate. </li> </ul>
+     *         into all of the local secondary indexes on the table. Use this
+     *         estimate to measure whether a local secondary index is approaching its
+     *         size limit. <p>The estimate is subject to change over time; therefore,
+     *         do not rely on the precision or accuracy of the estimate. </li> </ul>
      */
     public java.util.Map<String,java.util.List<ItemCollectionMetrics>> getItemCollectionMetrics() {
         
@@ -365,10 +364,10 @@ public class BatchWriteItemResult implements Serializable {
      * expressed in GB. This is a two-element array containing a lower bound
      * and an upper bound for the estimate. The estimate includes the size of
      * all the items in the table, plus the size of all attributes projected
-     * into all of the secondary indexes on the table. Use this estimate to
-     * measure whether a secondary index is approaching its size limit.
-     * <p>The estimate is subject to change over time; therefore, do not rely
-     * on the precision or accuracy of the estimate. </li> </ul>
+     * into all of the local secondary indexes on the table. Use this
+     * estimate to measure whether a local secondary index is approaching its
+     * size limit. <p>The estimate is subject to change over time; therefore,
+     * do not rely on the precision or accuracy of the estimate. </li> </ul>
      *
      * @param itemCollectionMetrics A list of tables that were processed by <i>BatchWriteItem</i> and, for
      *         each table, information about any item collections that were affected
@@ -380,10 +379,10 @@ public class BatchWriteItemResult implements Serializable {
      *         expressed in GB. This is a two-element array containing a lower bound
      *         and an upper bound for the estimate. The estimate includes the size of
      *         all the items in the table, plus the size of all attributes projected
-     *         into all of the secondary indexes on the table. Use this estimate to
-     *         measure whether a secondary index is approaching its size limit.
-     *         <p>The estimate is subject to change over time; therefore, do not rely
-     *         on the precision or accuracy of the estimate. </li> </ul>
+     *         into all of the local secondary indexes on the table. Use this
+     *         estimate to measure whether a local secondary index is approaching its
+     *         size limit. <p>The estimate is subject to change over time; therefore,
+     *         do not rely on the precision or accuracy of the estimate. </li> </ul>
      */
     public void setItemCollectionMetrics(java.util.Map<String,java.util.List<ItemCollectionMetrics>> itemCollectionMetrics) {
         this.itemCollectionMetrics = itemCollectionMetrics;
@@ -400,10 +399,10 @@ public class BatchWriteItemResult implements Serializable {
      * expressed in GB. This is a two-element array containing a lower bound
      * and an upper bound for the estimate. The estimate includes the size of
      * all the items in the table, plus the size of all attributes projected
-     * into all of the secondary indexes on the table. Use this estimate to
-     * measure whether a secondary index is approaching its size limit.
-     * <p>The estimate is subject to change over time; therefore, do not rely
-     * on the precision or accuracy of the estimate. </li> </ul>
+     * into all of the local secondary indexes on the table. Use this
+     * estimate to measure whether a local secondary index is approaching its
+     * size limit. <p>The estimate is subject to change over time; therefore,
+     * do not rely on the precision or accuracy of the estimate. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -417,10 +416,10 @@ public class BatchWriteItemResult implements Serializable {
      *         expressed in GB. This is a two-element array containing a lower bound
      *         and an upper bound for the estimate. The estimate includes the size of
      *         all the items in the table, plus the size of all attributes projected
-     *         into all of the secondary indexes on the table. Use this estimate to
-     *         measure whether a secondary index is approaching its size limit.
-     *         <p>The estimate is subject to change over time; therefore, do not rely
-     *         on the precision or accuracy of the estimate. </li> </ul>
+     *         into all of the local secondary indexes on the table. Use this
+     *         estimate to measure whether a local secondary index is approaching its
+     *         size limit. <p>The estimate is subject to change over time; therefore,
+     *         do not rely on the precision or accuracy of the estimate. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -441,10 +440,10 @@ public class BatchWriteItemResult implements Serializable {
      * expressed in GB. This is a two-element array containing a lower bound
      * and an upper bound for the estimate. The estimate includes the size of
      * all the items in the table, plus the size of all attributes projected
-     * into all of the secondary indexes on the table. Use this estimate to
-     * measure whether a secondary index is approaching its size limit.
-     * <p>The estimate is subject to change over time; therefore, do not rely
-     * on the precision or accuracy of the estimate. </li> </ul>
+     * into all of the local secondary indexes on the table. Use this
+     * estimate to measure whether a local secondary index is approaching its
+     * size limit. <p>The estimate is subject to change over time; therefore,
+     * do not rely on the precision or accuracy of the estimate. </li> </ul>
      * <p>
      * The method adds a new key-value pair into ItemCollectionMetrics
      * parameter, and returns a reference to this object so that method calls
@@ -453,26 +452,26 @@ public class BatchWriteItemResult implements Serializable {
      * @param key The key of the entry to be added into ItemCollectionMetrics.
      * @param value The corresponding value of the entry to be added into ItemCollectionMetrics.
      */
-	public BatchWriteItemResult addItemCollectionMetricsEntry(String key, java.util.List<ItemCollectionMetrics> value) {
-		if (null == this.itemCollectionMetrics) {
-			this.itemCollectionMetrics = new java.util.HashMap<String,java.util.List<ItemCollectionMetrics>>();
-		}
-		if (this.itemCollectionMetrics.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.itemCollectionMetrics.put(key, value);
-		return this;
-	}
+    public BatchWriteItemResult addItemCollectionMetricsEntry(String key, java.util.List<ItemCollectionMetrics> value) {
+        if (null == this.itemCollectionMetrics) {
+            this.itemCollectionMetrics = new java.util.HashMap<String,java.util.List<ItemCollectionMetrics>>();
+        }
+        if (this.itemCollectionMetrics.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.itemCollectionMetrics.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into ItemCollectionMetrics.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public BatchWriteItemResult clearItemCollectionMetricsEntries() {
-		this.itemCollectionMetrics = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into ItemCollectionMetrics.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public BatchWriteItemResult clearItemCollectionMetricsEntries() {
+        this.itemCollectionMetrics = null;
+        return this;
+    }
+    
     /**
      * The capacity units consumed by the operation. <p>Each element consists
      * of: <ul> <li> <p><i>TableName</i> - The table that consumed the

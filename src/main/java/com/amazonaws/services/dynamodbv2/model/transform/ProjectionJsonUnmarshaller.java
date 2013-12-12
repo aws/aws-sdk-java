@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Projection JSON Unmarshaller
  */
 public class ProjectionJsonUnmarshaller implements Unmarshaller<Projection, JsonUnmarshallerContext> {
 
-    
-
     public Projection unmarshall(JsonUnmarshallerContext context) throws Exception {
         Projection projection = new Projection();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ProjectionJsonUnmarshaller implements Unmarshaller<Projection, Json
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProjectionType", targetDepth)) {
                     context.nextToken();
@@ -63,7 +57,6 @@ public class ProjectionJsonUnmarshaller implements Unmarshaller<Projection, Json
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

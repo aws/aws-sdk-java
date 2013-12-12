@@ -33,8 +33,8 @@ public class BatchDeleteAttributesRequestMarshaller implements Marshaller<Reques
     public Request<BatchDeleteAttributesRequest> marshall(BatchDeleteAttributesRequest batchDeleteAttributesRequest) {
 
         if (batchDeleteAttributesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<BatchDeleteAttributesRequest> request = new DefaultRequest<BatchDeleteAttributesRequest>(batchDeleteAttributesRequest, "AmazonSimpleDB");
         request.addParameter("Action", "BatchDeleteAttributes");
@@ -80,7 +80,6 @@ public class BatchDeleteAttributesRequestMarshaller implements Marshaller<Reques
 
             itemsListIndex++;
         }
-
 
         return request;
     }

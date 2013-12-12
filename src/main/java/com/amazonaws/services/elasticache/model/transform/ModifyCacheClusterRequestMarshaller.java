@@ -33,8 +33,8 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
     public Request<ModifyCacheClusterRequest> marshall(ModifyCacheClusterRequest modifyCacheClusterRequest) {
 
         if (modifyCacheClusterRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ModifyCacheClusterRequest> request = new DefaultRequest<ModifyCacheClusterRequest>(modifyCacheClusterRequest, "AmazonElastiCache");
         request.addParameter("Action", "ModifyCacheCluster");
@@ -100,7 +100,6 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
         if (modifyCacheClusterRequest.isAutoMinorVersionUpgrade() != null) {
             request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(modifyCacheClusterRequest.isAutoMinorVersionUpgrade()));
         }
-
 
         return request;
     }

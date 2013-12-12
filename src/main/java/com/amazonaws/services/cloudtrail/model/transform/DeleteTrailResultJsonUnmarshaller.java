@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Delete Trail Result JSON Unmarshaller
  */
 public class DeleteTrailResultJsonUnmarshaller implements Unmarshaller<DeleteTrailResult, JsonUnmarshallerContext> {
 
-    
-
     public DeleteTrailResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DeleteTrailResult deleteTrailResult = new DeleteTrailResult();
 
-        
-        
         return deleteTrailResult;
     }
 

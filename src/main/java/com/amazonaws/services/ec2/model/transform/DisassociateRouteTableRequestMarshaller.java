@@ -33,8 +33,8 @@ public class DisassociateRouteTableRequestMarshaller implements Marshaller<Reque
     public Request<DisassociateRouteTableRequest> marshall(DisassociateRouteTableRequest disassociateRouteTableRequest) {
 
         if (disassociateRouteTableRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DisassociateRouteTableRequest> request = new DefaultRequest<DisassociateRouteTableRequest>(disassociateRouteTableRequest, "AmazonEC2");
         request.addParameter("Action", "DisassociateRouteTable");
@@ -43,7 +43,6 @@ public class DisassociateRouteTableRequestMarshaller implements Marshaller<Reque
         if (disassociateRouteTableRequest.getAssociationId() != null) {
             request.addParameter("AssociationId", StringUtils.fromString(disassociateRouteTableRequest.getAssociationId()));
         }
-
 
         return request;
     }

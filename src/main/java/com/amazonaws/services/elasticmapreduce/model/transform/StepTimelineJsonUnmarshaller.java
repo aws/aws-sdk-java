@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Step Timeline JSON Unmarshaller
  */
 public class StepTimelineJsonUnmarshaller implements Unmarshaller<StepTimeline, JsonUnmarshallerContext> {
 
-    
-
     public StepTimeline unmarshall(JsonUnmarshallerContext context) throws Exception {
         StepTimeline stepTimeline = new StepTimeline();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class StepTimelineJsonUnmarshaller implements Unmarshaller<StepTimeline, 
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
@@ -68,7 +62,6 @@ public class StepTimelineJsonUnmarshaller implements Unmarshaller<StepTimeline, 
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

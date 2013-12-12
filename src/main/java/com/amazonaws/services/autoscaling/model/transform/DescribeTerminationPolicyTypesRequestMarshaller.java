@@ -33,14 +33,12 @@ public class DescribeTerminationPolicyTypesRequestMarshaller implements Marshall
     public Request<DescribeTerminationPolicyTypesRequest> marshall(DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest) {
 
         if (describeTerminationPolicyTypesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeTerminationPolicyTypesRequest> request = new DefaultRequest<DescribeTerminationPolicyTypesRequest>(describeTerminationPolicyTypesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeTerminationPolicyTypes");
         request.addParameter("Version", "2011-01-01");
-
-
 
         return request;
     }

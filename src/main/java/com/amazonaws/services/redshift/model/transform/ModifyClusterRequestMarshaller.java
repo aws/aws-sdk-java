@@ -33,8 +33,8 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
     public Request<ModifyClusterRequest> marshall(ModifyClusterRequest modifyClusterRequest) {
 
         if (modifyClusterRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ModifyClusterRequest> request = new DefaultRequest<ModifyClusterRequest>(modifyClusterRequest, "AmazonRedshift");
         request.addParameter("Action", "ModifyCluster");
@@ -98,7 +98,6 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
         if (modifyClusterRequest.getHsmConfigurationIdentifier() != null) {
             request.addParameter("HsmConfigurationIdentifier", StringUtils.fromString(modifyClusterRequest.getHsmConfigurationIdentifier()));
         }
-
 
         return request;
     }

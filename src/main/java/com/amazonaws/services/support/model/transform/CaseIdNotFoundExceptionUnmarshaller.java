@@ -34,8 +34,7 @@ public class CaseIdNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller {
             return null;
 
         CaseIdNotFoundException e = (CaseIdNotFoundException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

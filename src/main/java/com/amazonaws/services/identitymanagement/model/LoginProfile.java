@@ -16,7 +16,6 @@ package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The LoginProfile data type contains the user name and password create date for a user.

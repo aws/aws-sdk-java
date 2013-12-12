@@ -27,19 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 
 import com.amazonaws.util.ContentLengthValidationInputStream;
 
-
 /**
  * Get Job Output Result JSON Unmarshaller
  */
 public class GetJobOutputResultJsonUnmarshaller implements Unmarshaller<GetJobOutputResult, JsonUnmarshallerContext> {
 
-    
-
     public GetJobOutputResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         GetJobOutputResult getJobOutputResult = new GetJobOutputResult();
-
-        
-        
 
         if (context.isStartOfDocument()) {
             if (context.getHeader("x-amz-sha256-tree-hash") != null)
@@ -55,7 +49,7 @@ public class GetJobOutputResultJsonUnmarshaller implements Unmarshaller<GetJobOu
         }
         
         getJobOutputResult.setStatus(context.getHttpResponse().getStatusCode());getJobOutputResult.setBody(new ContentLengthValidationInputStream(context.getHttpResponse().getContent(),Long.parseLong(context.getHeader("Content-Length"))));
-        	
+            
         return getJobOutputResult;
     }
 

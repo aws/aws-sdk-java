@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Instance Group State Change Reason JSON Unmarshaller
  */
 public class InstanceGroupStateChangeReasonJsonUnmarshaller implements Unmarshaller<InstanceGroupStateChangeReason, JsonUnmarshallerContext> {
 
-    
-
     public InstanceGroupStateChangeReason unmarshall(JsonUnmarshallerContext context) throws Exception {
         InstanceGroupStateChangeReason instanceGroupStateChangeReason = new InstanceGroupStateChangeReason();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class InstanceGroupStateChangeReasonJsonUnmarshaller implements Unmarshal
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Code", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class InstanceGroupStateChangeReasonJsonUnmarshaller implements Unmarshal
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

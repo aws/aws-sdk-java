@@ -1085,6 +1085,5 @@ public interface DataPipelineAsync extends DataPipeline {
     public Future<PutPipelineDefinitionResult> putPipelineDefinitionAsync(PutPipelineDefinitionRequest putPipelineDefinitionRequest,
             AsyncHandler<PutPipelineDefinitionRequest, PutPipelineDefinitionResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

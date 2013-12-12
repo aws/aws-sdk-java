@@ -33,8 +33,8 @@ public class AttachVolumeRequestMarshaller implements Marshaller<Request<AttachV
     public Request<AttachVolumeRequest> marshall(AttachVolumeRequest attachVolumeRequest) {
 
         if (attachVolumeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AttachVolumeRequest> request = new DefaultRequest<AttachVolumeRequest>(attachVolumeRequest, "AmazonEC2");
         request.addParameter("Action", "AttachVolume");
@@ -49,7 +49,6 @@ public class AttachVolumeRequestMarshaller implements Marshaller<Request<AttachV
         if (attachVolumeRequest.getDevice() != null) {
             request.addParameter("Device", StringUtils.fromString(attachVolumeRequest.getDevice()));
         }
-
 
         return request;
     }

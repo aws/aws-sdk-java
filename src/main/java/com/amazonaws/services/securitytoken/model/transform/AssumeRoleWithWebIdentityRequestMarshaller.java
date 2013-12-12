@@ -33,8 +33,8 @@ public class AssumeRoleWithWebIdentityRequestMarshaller implements Marshaller<Re
     public Request<AssumeRoleWithWebIdentityRequest> marshall(AssumeRoleWithWebIdentityRequest assumeRoleWithWebIdentityRequest) {
 
         if (assumeRoleWithWebIdentityRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AssumeRoleWithWebIdentityRequest> request = new DefaultRequest<AssumeRoleWithWebIdentityRequest>(assumeRoleWithWebIdentityRequest, "AWSSecurityTokenService");
         request.addParameter("Action", "AssumeRoleWithWebIdentity");
@@ -58,7 +58,6 @@ public class AssumeRoleWithWebIdentityRequestMarshaller implements Marshaller<Re
         if (assumeRoleWithWebIdentityRequest.getDurationSeconds() != null) {
             request.addParameter("DurationSeconds", StringUtils.fromInteger(assumeRoleWithWebIdentityRequest.getDurationSeconds()));
         }
-
 
         return request;
     }

@@ -25,19 +25,13 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Initiate Job Result JSON Unmarshaller
  */
 public class InitiateJobResultJsonUnmarshaller implements Unmarshaller<InitiateJobResult, JsonUnmarshallerContext> {
 
-    
-
     public InitiateJobResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         InitiateJobResult initiateJobResult = new InitiateJobResult();
-
-        
-        
 
         if (context.isStartOfDocument()) {
             if (context.getHeader("Location") != null)

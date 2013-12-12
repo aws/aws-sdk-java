@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
+import com.amazonaws.metrics.RequestMetricCollector;
+
 /**
  * Immutable configuration object for service call behavior. An instance of this
  * configuration is supplied to every {@link DynamoDBMapper} at construction; if
@@ -186,11 +188,12 @@ public class DynamoDBMapperConfig {
     private final ConsistentReads consistentReads;
     private final TableNameOverride tableNameOverride;
     private final PaginationLoadingStrategy paginationLoadingStrategy;
+    private final RequestMetricCollector requestMetricCollector;
 
     /** Legacy constructor, using default PaginationLoadingStrategy **/
-    public DynamoDBMapperConfig(SaveBehavior saveBehavior, ConsistentReads consistentReads,
-            TableNameOverride tableNameOverride) {
-        this(saveBehavior, consistentReads, tableNameOverride, null);
+    public DynamoDBMapperConfig(SaveBehavior saveBehavior,
+            ConsistentReads consistentReads, TableNameOverride tableNameOverride) {
+        this(saveBehavior, consistentReads, tableNameOverride, null, null);
     }
 
     /**
@@ -206,12 +209,39 @@ public class DynamoDBMapperConfig {
      * @param paginationLoadingStrategy
      *            The pagination loading strategy, or null for default.
      */
-    public DynamoDBMapperConfig(SaveBehavior saveBehavior, ConsistentReads consistentReads,
-            TableNameOverride tableNameOverride, PaginationLoadingStrategy paginationLoadingStrategy) {
+    public DynamoDBMapperConfig(SaveBehavior saveBehavior,
+            ConsistentReads consistentReads,
+            TableNameOverride tableNameOverride,
+            PaginationLoadingStrategy paginationLoadingStrategy) {
+        this(saveBehavior, consistentReads, tableNameOverride,
+                paginationLoadingStrategy, null);
+    }
+
+    /**
+     * Constructs a new configuration object with the save behavior, consistent
+     * read behavior, and table name override given.
+     * 
+     * @param saveBehavior
+     *            The {@link SaveBehavior} to use, or null for default.
+     * @param consistentReads
+     *            The {@link ConsistentReads} to use, or null for default.
+     * @param tableNameOverride
+     *            An override for the table name, or null for no override.
+     * @param paginationLoadingStrategy
+     *            The pagination loading strategy, or null for default.
+     * @param requestMetricCollector
+     *            optional request metric collector
+     */
+    public DynamoDBMapperConfig(SaveBehavior saveBehavior,
+            ConsistentReads consistentReads,
+            TableNameOverride tableNameOverride,
+            PaginationLoadingStrategy paginationLoadingStrategy,
+            RequestMetricCollector requestMetricCollector) {
         this.saveBehavior = saveBehavior;
         this.consistentReads = consistentReads;
         this.tableNameOverride = tableNameOverride;
         this.paginationLoadingStrategy = paginationLoadingStrategy;
+        this.requestMetricCollector = requestMetricCollector;
     }
 
     /**
@@ -257,6 +287,7 @@ public class DynamoDBMapperConfig {
             this.consistentReads = defaults.getConsistentReads();
             this.tableNameOverride = defaults.getTableNameOverride();
             this.paginationLoadingStrategy = defaults.getPaginationLoadingStrategy();
+            this.requestMetricCollector = defaults.getRequestMetricCollector();
         } else {
             this.saveBehavior = overrides.getSaveBehavior() == null ? defaults.getSaveBehavior() : overrides
                     .getSaveBehavior();
@@ -266,6 +297,8 @@ public class DynamoDBMapperConfig {
                     : overrides.getTableNameOverride();
             this.paginationLoadingStrategy = overrides.getPaginationLoadingStrategy() == null ? defaults.getPaginationLoadingStrategy()
                     : overrides.getPaginationLoadingStrategy();
+            this.requestMetricCollector = overrides.getRequestMetricCollector() == null ? defaults.getRequestMetricCollector()
+                    : overrides.getRequestMetricCollector();
         }
     }
 
@@ -302,6 +335,13 @@ public class DynamoDBMapperConfig {
      */
     public PaginationLoadingStrategy getPaginationLoadingStrategy() {
         return paginationLoadingStrategy;
+    }
+
+    /**
+     * Returns the request metric collector or null if not specified.
+     */
+    public RequestMetricCollector getRequestMetricCollector() {
+        return requestMetricCollector;
     }
 
     /**

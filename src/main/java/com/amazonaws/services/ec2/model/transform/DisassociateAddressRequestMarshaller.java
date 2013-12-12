@@ -33,8 +33,8 @@ public class DisassociateAddressRequestMarshaller implements Marshaller<Request<
     public Request<DisassociateAddressRequest> marshall(DisassociateAddressRequest disassociateAddressRequest) {
 
         if (disassociateAddressRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DisassociateAddressRequest> request = new DefaultRequest<DisassociateAddressRequest>(disassociateAddressRequest, "AmazonEC2");
         request.addParameter("Action", "DisassociateAddress");
@@ -46,7 +46,6 @@ public class DisassociateAddressRequestMarshaller implements Marshaller<Request<
         if (disassociateAddressRequest.getAssociationId() != null) {
             request.addParameter("AssociationId", StringUtils.fromString(disassociateAddressRequest.getAssociationId()));
         }
-
 
         return request;
     }

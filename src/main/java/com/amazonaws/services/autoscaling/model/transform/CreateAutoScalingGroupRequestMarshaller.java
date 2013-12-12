@@ -33,8 +33,8 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
     public Request<CreateAutoScalingGroupRequest> marshall(CreateAutoScalingGroupRequest createAutoScalingGroupRequest) {
 
         if (createAutoScalingGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateAutoScalingGroupRequest> request = new DefaultRequest<CreateAutoScalingGroupRequest>(createAutoScalingGroupRequest, "AmazonAutoScaling");
         request.addParameter("Action", "CreateAutoScalingGroup");
@@ -129,7 +129,6 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
 
             tagsListIndex++;
         }
-
 
         return request;
     }

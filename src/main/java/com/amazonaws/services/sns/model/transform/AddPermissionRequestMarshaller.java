@@ -33,8 +33,8 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
     public Request<AddPermissionRequest> marshall(AddPermissionRequest addPermissionRequest) {
 
         if (addPermissionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AddPermissionRequest> request = new DefaultRequest<AddPermissionRequest>(addPermissionRequest, "AmazonSNS");
         request.addParameter("Action", "AddPermission");
@@ -68,7 +68,6 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
 
             actionNamesListIndex++;
         }
-
 
         return request;
     }

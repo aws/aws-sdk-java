@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudwatch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The <code>DimensionFilter</code> data type is used to filter ListMetrics results.

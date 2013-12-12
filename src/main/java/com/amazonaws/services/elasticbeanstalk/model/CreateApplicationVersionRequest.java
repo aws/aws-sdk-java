@@ -65,11 +65,12 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
      * The Amazon S3 bucket and key that identify the location of the source
      * bundle for this version. <p> If data found at the Amazon S3 location
      * exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error. <p>Default: If
-     * not specified, AWS Elastic Beanstalk uses a sample application. If
-     * only partially specified (for example, a bucket is provided but not
-     * the key) or if no data is found at the Amazon S3 location, AWS Elastic
-     * Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     * returns an <code>InvalidParameterValue</code> error. The maximum size
+     * allowed is 512 MB. <p>Default: If not specified, AWS Elastic Beanstalk
+     * uses a sample application. If only partially specified (for example, a
+     * bucket is provided but not the key) or if no data is found at the
+     * Amazon S3 location, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterCombination</code> error.
      */
     private S3Location sourceBundle;
 
@@ -275,20 +276,22 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
      * The Amazon S3 bucket and key that identify the location of the source
      * bundle for this version. <p> If data found at the Amazon S3 location
      * exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error. <p>Default: If
-     * not specified, AWS Elastic Beanstalk uses a sample application. If
-     * only partially specified (for example, a bucket is provided but not
-     * the key) or if no data is found at the Amazon S3 location, AWS Elastic
-     * Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     * returns an <code>InvalidParameterValue</code> error. The maximum size
+     * allowed is 512 MB. <p>Default: If not specified, AWS Elastic Beanstalk
+     * uses a sample application. If only partially specified (for example, a
+     * bucket is provided but not the key) or if no data is found at the
+     * Amazon S3 location, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterCombination</code> error.
      *
      * @return The Amazon S3 bucket and key that identify the location of the source
      *         bundle for this version. <p> If data found at the Amazon S3 location
      *         exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     *         returns an <code>InvalidParameterValue</code> error. <p>Default: If
-     *         not specified, AWS Elastic Beanstalk uses a sample application. If
-     *         only partially specified (for example, a bucket is provided but not
-     *         the key) or if no data is found at the Amazon S3 location, AWS Elastic
-     *         Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     *         returns an <code>InvalidParameterValue</code> error. The maximum size
+     *         allowed is 512 MB. <p>Default: If not specified, AWS Elastic Beanstalk
+     *         uses a sample application. If only partially specified (for example, a
+     *         bucket is provided but not the key) or if no data is found at the
+     *         Amazon S3 location, AWS Elastic Beanstalk returns an
+     *         <code>InvalidParameterCombination</code> error.
      */
     public S3Location getSourceBundle() {
         return sourceBundle;
@@ -298,20 +301,22 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
      * The Amazon S3 bucket and key that identify the location of the source
      * bundle for this version. <p> If data found at the Amazon S3 location
      * exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error. <p>Default: If
-     * not specified, AWS Elastic Beanstalk uses a sample application. If
-     * only partially specified (for example, a bucket is provided but not
-     * the key) or if no data is found at the Amazon S3 location, AWS Elastic
-     * Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     * returns an <code>InvalidParameterValue</code> error. The maximum size
+     * allowed is 512 MB. <p>Default: If not specified, AWS Elastic Beanstalk
+     * uses a sample application. If only partially specified (for example, a
+     * bucket is provided but not the key) or if no data is found at the
+     * Amazon S3 location, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterCombination</code> error.
      *
      * @param sourceBundle The Amazon S3 bucket and key that identify the location of the source
      *         bundle for this version. <p> If data found at the Amazon S3 location
      *         exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     *         returns an <code>InvalidParameterValue</code> error. <p>Default: If
-     *         not specified, AWS Elastic Beanstalk uses a sample application. If
-     *         only partially specified (for example, a bucket is provided but not
-     *         the key) or if no data is found at the Amazon S3 location, AWS Elastic
-     *         Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     *         returns an <code>InvalidParameterValue</code> error. The maximum size
+     *         allowed is 512 MB. <p>Default: If not specified, AWS Elastic Beanstalk
+     *         uses a sample application. If only partially specified (for example, a
+     *         bucket is provided but not the key) or if no data is found at the
+     *         Amazon S3 location, AWS Elastic Beanstalk returns an
+     *         <code>InvalidParameterCombination</code> error.
      */
     public void setSourceBundle(S3Location sourceBundle) {
         this.sourceBundle = sourceBundle;
@@ -321,22 +326,24 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
      * The Amazon S3 bucket and key that identify the location of the source
      * bundle for this version. <p> If data found at the Amazon S3 location
      * exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error. <p>Default: If
-     * not specified, AWS Elastic Beanstalk uses a sample application. If
-     * only partially specified (for example, a bucket is provided but not
-     * the key) or if no data is found at the Amazon S3 location, AWS Elastic
-     * Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     * returns an <code>InvalidParameterValue</code> error. The maximum size
+     * allowed is 512 MB. <p>Default: If not specified, AWS Elastic Beanstalk
+     * uses a sample application. If only partially specified (for example, a
+     * bucket is provided but not the key) or if no data is found at the
+     * Amazon S3 location, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterCombination</code> error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceBundle The Amazon S3 bucket and key that identify the location of the source
      *         bundle for this version. <p> If data found at the Amazon S3 location
      *         exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     *         returns an <code>InvalidParameterValue</code> error. <p>Default: If
-     *         not specified, AWS Elastic Beanstalk uses a sample application. If
-     *         only partially specified (for example, a bucket is provided but not
-     *         the key) or if no data is found at the Amazon S3 location, AWS Elastic
-     *         Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     *         returns an <code>InvalidParameterValue</code> error. The maximum size
+     *         allowed is 512 MB. <p>Default: If not specified, AWS Elastic Beanstalk
+     *         uses a sample application. If only partially specified (for example, a
+     *         bucket is provided but not the key) or if no data is found at the
+     *         Amazon S3 location, AWS Elastic Beanstalk returns an
+     *         <code>InvalidParameterCombination</code> error.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

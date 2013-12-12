@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Create Tapes Result JSON Unmarshaller
  */
 public class CreateTapesResultJsonUnmarshaller implements Unmarshaller<CreateTapesResult, JsonUnmarshallerContext> {
 
-    
-
     public CreateTapesResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         CreateTapesResult createTapesResult = new CreateTapesResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class CreateTapesResultJsonUnmarshaller implements Unmarshaller<CreateTap
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TapeARNs", targetDepth)) {
                     createTapesResult.setTapeARNs(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -59,7 +53,6 @@ public class CreateTapesResultJsonUnmarshaller implements Unmarshaller<CreateTap
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

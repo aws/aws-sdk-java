@@ -33,8 +33,8 @@ public class UpdateAssumeRolePolicyRequestMarshaller implements Marshaller<Reque
     public Request<UpdateAssumeRolePolicyRequest> marshall(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest) {
 
         if (updateAssumeRolePolicyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<UpdateAssumeRolePolicyRequest> request = new DefaultRequest<UpdateAssumeRolePolicyRequest>(updateAssumeRolePolicyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "UpdateAssumeRolePolicy");
@@ -46,7 +46,6 @@ public class UpdateAssumeRolePolicyRequestMarshaller implements Marshaller<Reque
         if (updateAssumeRolePolicyRequest.getPolicyDocument() != null) {
             request.addParameter("PolicyDocument", StringUtils.fromString(updateAssumeRolePolicyRequest.getPolicyDocument()));
         }
-
 
         return request;
     }

@@ -33,8 +33,8 @@ public class DescribeInstanceHealthRequestMarshaller implements Marshaller<Reque
     public Request<DescribeInstanceHealthRequest> marshall(DescribeInstanceHealthRequest describeInstanceHealthRequest) {
 
         if (describeInstanceHealthRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeInstanceHealthRequest> request = new DefaultRequest<DescribeInstanceHealthRequest>(describeInstanceHealthRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DescribeInstanceHealth");
@@ -57,7 +57,6 @@ public class DescribeInstanceHealthRequestMarshaller implements Marshaller<Reque
 
             instancesListIndex++;
         }
-
 
         return request;
     }

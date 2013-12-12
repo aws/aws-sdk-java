@@ -1176,6 +1176,5 @@ public interface AmazonElasticLoadBalancing {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

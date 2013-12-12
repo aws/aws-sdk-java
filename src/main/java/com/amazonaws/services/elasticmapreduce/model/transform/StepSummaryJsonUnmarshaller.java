@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Step Summary JSON Unmarshaller
  */
 public class StepSummaryJsonUnmarshaller implements Unmarshaller<StepSummary, JsonUnmarshallerContext> {
 
-    
-
     public StepSummary unmarshall(JsonUnmarshallerContext context) throws Exception {
         StepSummary stepSummary = new StepSummary();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class StepSummaryJsonUnmarshaller implements Unmarshaller<StepSummary, Js
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
@@ -68,7 +62,6 @@ public class StepSummaryJsonUnmarshaller implements Unmarshaller<StepSummary, Js
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -34,8 +34,7 @@ public class InvalidGatewayRequestExceptionUnmarshaller extends JsonErrorUnmarsh
             return null;
 
         InvalidGatewayRequestException e = (InvalidGatewayRequestException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

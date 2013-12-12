@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Update Distribution Result StAX Unmarshaller
  */
@@ -40,7 +39,6 @@ public class UpdateDistributionResultStaxUnmarshaller implements Unmarshaller<Up
         if (context.isStartOfDocument()) {
             updateDistributionResult.setETag(context.getHeader("ETag"));
         }
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

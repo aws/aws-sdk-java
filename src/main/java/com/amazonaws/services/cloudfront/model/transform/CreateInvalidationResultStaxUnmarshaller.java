@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Create Invalidation Result StAX Unmarshaller
  */
@@ -40,7 +39,6 @@ public class CreateInvalidationResultStaxUnmarshaller implements Unmarshaller<Cr
         if (context.isStartOfDocument()) {
             createInvalidationResult.setLocation(context.getHeader("Location"));
         }
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

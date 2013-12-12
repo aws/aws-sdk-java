@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Volume Info JSON Unmarshaller
  */
 public class VolumeInfoJsonUnmarshaller implements Unmarshaller<VolumeInfo, JsonUnmarshallerContext> {
 
-    
-
     public VolumeInfo unmarshall(JsonUnmarshallerContext context) throws Exception {
         VolumeInfo volumeInfo = new VolumeInfo();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class VolumeInfoJsonUnmarshaller implements Unmarshaller<VolumeInfo, Json
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class VolumeInfoJsonUnmarshaller implements Unmarshaller<VolumeInfo, Json
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

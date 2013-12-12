@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticloadbalancing.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The <code>LoadBalancerAttributes</code> data type.

@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class CountOpenWorkflowExecutionsRequestMarshaller implements Marshaller<Request<CountOpenWorkflowExecutionsRequest>, CountOpenWorkflowExecutionsRequest> {
 
-    
-
     public Request<CountOpenWorkflowExecutionsRequest> marshall(CountOpenWorkflowExecutionsRequest countOpenWorkflowExecutionsRequest) {
     if (countOpenWorkflowExecutionsRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class CountOpenWorkflowExecutionsRequestMarshaller implements Marshaller<
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class CountOpenWorkflowExecutionsRequestMarshaller implements Marshaller<
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (countOpenWorkflowExecutionsRequest.getDomain() != null) {
@@ -140,7 +131,6 @@ public class CountOpenWorkflowExecutionsRequestMarshaller implements Marshaller<
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -149,7 +139,6 @@ public class CountOpenWorkflowExecutionsRequestMarshaller implements Marshaller<
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

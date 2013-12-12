@@ -16,7 +16,6 @@ package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A list of in-progress multipart uploads for a vault.

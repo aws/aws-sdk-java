@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Update Snapshot Schedule Result JSON Unmarshaller
  */
 public class UpdateSnapshotScheduleResultJsonUnmarshaller implements Unmarshaller<UpdateSnapshotScheduleResult, JsonUnmarshallerContext> {
 
-    
-
     public UpdateSnapshotScheduleResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         UpdateSnapshotScheduleResult updateSnapshotScheduleResult = new UpdateSnapshotScheduleResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class UpdateSnapshotScheduleResultJsonUnmarshaller implements Unmarshalle
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class UpdateSnapshotScheduleResultJsonUnmarshaller implements Unmarshalle
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

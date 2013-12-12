@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class UpdateUserProfileRequestMarshaller implements Marshaller<Request<UpdateUserProfileRequest>, UpdateUserProfileRequest> {
 
-    
-
     public Request<UpdateUserProfileRequest> marshall(UpdateUserProfileRequest updateUserProfileRequest) {
     if (updateUserProfileRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class UpdateUserProfileRequestMarshaller implements Marshaller<Request<Up
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class UpdateUserProfileRequestMarshaller implements Marshaller<Request<Up
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (updateUserProfileRequest.getIamUserArn() != null) {
@@ -94,9 +85,11 @@ public class UpdateUserProfileRequestMarshaller implements Marshaller<Request<Up
             if (updateUserProfileRequest.getSshPublicKey() != null) {
                 jsonWriter.key("SshPublicKey").value(updateUserProfileRequest.getSshPublicKey());
             }
+            if (updateUserProfileRequest.isAllowSelfManagement() != null) {
+                jsonWriter.key("AllowSelfManagement").value(updateUserProfileRequest.isAllowSelfManagement());
+            }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -105,7 +98,6 @@ public class UpdateUserProfileRequestMarshaller implements Marshaller<Request<Up
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

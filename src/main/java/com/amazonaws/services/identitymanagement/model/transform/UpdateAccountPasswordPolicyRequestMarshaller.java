@@ -33,8 +33,8 @@ public class UpdateAccountPasswordPolicyRequestMarshaller implements Marshaller<
     public Request<UpdateAccountPasswordPolicyRequest> marshall(UpdateAccountPasswordPolicyRequest updateAccountPasswordPolicyRequest) {
 
         if (updateAccountPasswordPolicyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<UpdateAccountPasswordPolicyRequest> request = new DefaultRequest<UpdateAccountPasswordPolicyRequest>(updateAccountPasswordPolicyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "UpdateAccountPasswordPolicy");
@@ -58,7 +58,6 @@ public class UpdateAccountPasswordPolicyRequestMarshaller implements Marshaller<
         if (updateAccountPasswordPolicyRequest.isAllowUsersToChangePassword() != null) {
             request.addParameter("AllowUsersToChangePassword", StringUtils.fromBoolean(updateAccountPasswordPolicyRequest.isAllowUsersToChangePassword()));
         }
-
 
         return request;
     }

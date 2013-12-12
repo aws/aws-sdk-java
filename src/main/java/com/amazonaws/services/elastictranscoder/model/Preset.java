@@ -16,7 +16,6 @@ package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Presets are templates that contain most of the settings for transcoding media files from one format to another. Elastic Transcoder includes some

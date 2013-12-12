@@ -33,8 +33,8 @@ public class SetEndpointAttributesRequestMarshaller implements Marshaller<Reques
     public Request<SetEndpointAttributesRequest> marshall(SetEndpointAttributesRequest setEndpointAttributesRequest) {
 
         if (setEndpointAttributesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<SetEndpointAttributesRequest> request = new DefaultRequest<SetEndpointAttributesRequest>(setEndpointAttributesRequest, "AmazonSNS");
         request.addParameter("Action", "SetEndpointAttributes");
@@ -58,7 +58,6 @@ public class SetEndpointAttributesRequestMarshaller implements Marshaller<Reques
                 }
             }
         }
-
 
         return request;
     }

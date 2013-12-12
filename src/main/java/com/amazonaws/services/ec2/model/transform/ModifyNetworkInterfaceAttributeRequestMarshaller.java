@@ -33,8 +33,8 @@ public class ModifyNetworkInterfaceAttributeRequestMarshaller implements Marshal
     public Request<ModifyNetworkInterfaceAttributeRequest> marshall(ModifyNetworkInterfaceAttributeRequest modifyNetworkInterfaceAttributeRequest) {
 
         if (modifyNetworkInterfaceAttributeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ModifyNetworkInterfaceAttributeRequest> request = new DefaultRequest<ModifyNetworkInterfaceAttributeRequest>(modifyNetworkInterfaceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyNetworkInterfaceAttribute");
@@ -69,7 +69,6 @@ public class ModifyNetworkInterfaceAttributeRequestMarshaller implements Marshal
                 request.addParameter("Attachment.DeleteOnTermination", StringUtils.fromBoolean(networkInterfaceAttachmentChangesAttachment.isDeleteOnTermination()));
             }
         }
-
 
         return request;
     }

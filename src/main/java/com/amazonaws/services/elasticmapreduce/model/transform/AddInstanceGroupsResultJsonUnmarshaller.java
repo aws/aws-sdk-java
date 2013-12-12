@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Add Instance Groups Result JSON Unmarshaller
  */
 public class AddInstanceGroupsResultJsonUnmarshaller implements Unmarshaller<AddInstanceGroupsResult, JsonUnmarshallerContext> {
 
-    
-
     public AddInstanceGroupsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         AddInstanceGroupsResult addInstanceGroupsResult = new AddInstanceGroupsResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class AddInstanceGroupsResultJsonUnmarshaller implements Unmarshaller<Add
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobFlowId", targetDepth)) {
                     context.nextToken();
@@ -63,7 +57,6 @@ public class AddInstanceGroupsResultJsonUnmarshaller implements Unmarshaller<Add
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -33,8 +33,8 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
     public Request<UpdateStackRequest> marshall(UpdateStackRequest updateStackRequest) {
 
         if (updateStackRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<UpdateStackRequest> request = new DefaultRequest<UpdateStackRequest>(updateStackRequest, "AmazonCloudFormation");
         request.addParameter("Action", "UpdateStack");
@@ -89,7 +89,6 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
         if (updateStackRequest.getStackPolicyURL() != null) {
             request.addParameter("StackPolicyURL", StringUtils.fromString(updateStackRequest.getStackPolicyURL()));
         }
-
 
         return request;
     }

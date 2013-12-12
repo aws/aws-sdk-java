@@ -33,8 +33,8 @@ public class DeleteDBInstanceRequestMarshaller implements Marshaller<Request<Del
     public Request<DeleteDBInstanceRequest> marshall(DeleteDBInstanceRequest deleteDBInstanceRequest) {
 
         if (deleteDBInstanceRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteDBInstanceRequest> request = new DefaultRequest<DeleteDBInstanceRequest>(deleteDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteDBInstance");
@@ -49,7 +49,6 @@ public class DeleteDBInstanceRequestMarshaller implements Marshaller<Request<Del
         if (deleteDBInstanceRequest.getFinalDBSnapshotIdentifier() != null) {
             request.addParameter("FinalDBSnapshotIdentifier", StringUtils.fromString(deleteDBInstanceRequest.getFinalDBSnapshotIdentifier()));
         }
-
 
         return request;
     }

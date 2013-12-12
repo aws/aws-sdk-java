@@ -21,17 +21,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#verifyDomainDkim(VerifyDomainDkimRequest) VerifyDomainDkim operation}.
  * <p>
- * Returns a set of DNS records, or <i>tokens</i> , that must be published in the domain name's DNS to complete the DKIM verification process. These
- * tokens are DNS <code>CNAME</code> records that point to DKIM public keys hosted by Amazon SES. To complete the DKIM verification process, these tokens
- * must be published in the domain's DNS. The tokens must remain published in order for Easy DKIM signing to function correctly.
+ * Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings that represent your domain's identity. Using these tokens, you
+ * will need to create DNS CNAME records that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will eventually detect that you have
+ * updated your DNS records; this detection process may take up to 72 hours. Upon successful detection, Amazon SES will be able to DKIM-sign email
+ * originating from that domain.
  * </p>
  * <p>
- * After the tokens are added to the domain's DNS, Amazon SES will be able to DKIM-sign email originating from that domain. To enable or disable Easy
- * DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code> action.
+ * This action is throttled at one request per second.
  * </p>
  * <p>
- * For more information about Easy DKIM, go to the <a href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide"> Amazon SES Developer Guide </a>
- * .
+ * To enable or disable Easy DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code> action.
+ * </p>
+ * <p>
+ * For more information about creating DNS records using DKIM tokens, go to the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"> Amazon SES Developer Guide </a> .
  * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#verifyDomainDkim(VerifyDomainDkimRequest)

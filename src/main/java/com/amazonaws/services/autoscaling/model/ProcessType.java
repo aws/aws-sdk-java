@@ -16,7 +16,6 @@ package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * There are two primary Auto Scaling process types-- <code>Launch</code> and <code>Terminate</code> . The <code>Launch</code> process creates a new

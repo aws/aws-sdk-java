@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class ListActivityTypesRequestMarshaller implements Marshaller<Request<ListActivityTypesRequest>, ListActivityTypesRequest> {
 
-    
-
     public Request<ListActivityTypesRequest> marshall(ListActivityTypesRequest listActivityTypesRequest) {
     if (listActivityTypesRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class ListActivityTypesRequestMarshaller implements Marshaller<Request<Li
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class ListActivityTypesRequestMarshaller implements Marshaller<Request<Li
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (listActivityTypesRequest.getDomain() != null) {
@@ -105,7 +96,6 @@ public class ListActivityTypesRequestMarshaller implements Marshaller<Request<Li
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -114,7 +104,6 @@ public class ListActivityTypesRequestMarshaller implements Marshaller<Request<Li
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

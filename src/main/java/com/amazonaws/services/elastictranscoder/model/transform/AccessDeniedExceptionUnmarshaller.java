@@ -34,8 +34,7 @@ public class AccessDeniedExceptionUnmarshaller extends JsonErrorUnmarshaller {
             return null;
 
         AccessDeniedException e = (AccessDeniedException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

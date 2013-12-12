@@ -33,8 +33,8 @@ public class DetachLoadBalancerFromSubnetsRequestMarshaller implements Marshalle
     public Request<DetachLoadBalancerFromSubnetsRequest> marshall(DetachLoadBalancerFromSubnetsRequest detachLoadBalancerFromSubnetsRequest) {
 
         if (detachLoadBalancerFromSubnetsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DetachLoadBalancerFromSubnetsRequest> request = new DefaultRequest<DetachLoadBalancerFromSubnetsRequest>(detachLoadBalancerFromSubnetsRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DetachLoadBalancerFromSubnets");
@@ -54,7 +54,6 @@ public class DetachLoadBalancerFromSubnetsRequestMarshaller implements Marshalle
 
             subnetsListIndex++;
         }
-
 
         return request;
     }

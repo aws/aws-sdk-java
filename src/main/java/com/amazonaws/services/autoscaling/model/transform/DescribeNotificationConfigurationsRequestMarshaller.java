@@ -33,13 +33,12 @@ public class DescribeNotificationConfigurationsRequestMarshaller implements Mars
     public Request<DescribeNotificationConfigurationsRequest> marshall(DescribeNotificationConfigurationsRequest describeNotificationConfigurationsRequest) {
 
         if (describeNotificationConfigurationsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeNotificationConfigurationsRequest> request = new DefaultRequest<DescribeNotificationConfigurationsRequest>(describeNotificationConfigurationsRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeNotificationConfigurations");
         request.addParameter("Version", "2011-01-01");
-
 
         java.util.List<String> autoScalingGroupNamesList = describeNotificationConfigurationsRequest.getAutoScalingGroupNames();
         int autoScalingGroupNamesListIndex = 1;
@@ -57,7 +56,6 @@ public class DescribeNotificationConfigurationsRequestMarshaller implements Mars
         if (describeNotificationConfigurationsRequest.getMaxRecords() != null) {
             request.addParameter("MaxRecords", StringUtils.fromInteger(describeNotificationConfigurationsRequest.getMaxRecords()));
         }
-
 
         return request;
     }

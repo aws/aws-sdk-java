@@ -33,8 +33,8 @@ public class ModifyVpcAttributeRequestMarshaller implements Marshaller<Request<M
     public Request<ModifyVpcAttributeRequest> marshall(ModifyVpcAttributeRequest modifyVpcAttributeRequest) {
 
         if (modifyVpcAttributeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ModifyVpcAttributeRequest> request = new DefaultRequest<ModifyVpcAttributeRequest>(modifyVpcAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyVpcAttribute");
@@ -49,7 +49,6 @@ public class ModifyVpcAttributeRequestMarshaller implements Marshaller<Request<M
         if (modifyVpcAttributeRequest.isEnableDnsHostnames() != null) {
             request.addParameter("EnableDnsHostnames.Value", StringUtils.fromBoolean(modifyVpcAttributeRequest.isEnableDnsHostnames()));
         }
-
 
         return request;
     }

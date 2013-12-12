@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Batch Get Item Result JSON Unmarshaller
  */
 public class BatchGetItemResultJsonUnmarshaller implements Unmarshaller<BatchGetItemResult, JsonUnmarshallerContext> {
 
-    
-
     public BatchGetItemResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         BatchGetItemResult batchGetItemResult = new BatchGetItemResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class BatchGetItemResultJsonUnmarshaller implements Unmarshaller<BatchGet
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Responses", targetDepth)) {
                     batchGetItemResult.setResponses(new MapUnmarshaller<String,java.util.List<java.util.Map<String,AttributeValue>>>(StringJsonUnmarshaller.getInstance(), new ListUnmarshaller<java.util.Map<String,AttributeValue>>(new MapUnmarshaller<String,AttributeValue>(StringJsonUnmarshaller.getInstance(), AttributeValueJsonUnmarshaller.getInstance()))).unmarshall(context));
@@ -65,7 +59,6 @@ public class BatchGetItemResultJsonUnmarshaller implements Unmarshaller<BatchGet
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

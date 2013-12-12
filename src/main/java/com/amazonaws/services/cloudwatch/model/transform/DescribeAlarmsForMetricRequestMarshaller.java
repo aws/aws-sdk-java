@@ -33,8 +33,8 @@ public class DescribeAlarmsForMetricRequestMarshaller implements Marshaller<Requ
     public Request<DescribeAlarmsForMetricRequest> marshall(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest) {
 
         if (describeAlarmsForMetricRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeAlarmsForMetricRequest> request = new DefaultRequest<DescribeAlarmsForMetricRequest>(describeAlarmsForMetricRequest, "AmazonCloudWatch");
         request.addParameter("Action", "DescribeAlarmsForMetric");
@@ -72,7 +72,6 @@ public class DescribeAlarmsForMetricRequestMarshaller implements Marshaller<Requ
         if (describeAlarmsForMetricRequest.getUnit() != null) {
             request.addParameter("Unit", StringUtils.fromString(describeAlarmsForMetricRequest.getUnit()));
         }
-
 
         return request;
     }

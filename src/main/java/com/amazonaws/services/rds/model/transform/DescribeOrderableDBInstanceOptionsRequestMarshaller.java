@@ -33,8 +33,8 @@ public class DescribeOrderableDBInstanceOptionsRequestMarshaller implements Mars
     public Request<DescribeOrderableDBInstanceOptionsRequest> marshall(DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest) {
 
         if (describeOrderableDBInstanceOptionsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeOrderableDBInstanceOptionsRequest> request = new DefaultRequest<DescribeOrderableDBInstanceOptionsRequest>(describeOrderableDBInstanceOptionsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeOrderableDBInstanceOptions");
@@ -61,7 +61,6 @@ public class DescribeOrderableDBInstanceOptionsRequestMarshaller implements Mars
         if (describeOrderableDBInstanceOptionsRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getMarker()));
         }
-
 
         return request;
     }

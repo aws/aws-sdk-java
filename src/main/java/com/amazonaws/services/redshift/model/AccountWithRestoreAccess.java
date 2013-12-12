@@ -16,7 +16,6 @@ package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes an AWS customer account authorized to restore a snapshot.

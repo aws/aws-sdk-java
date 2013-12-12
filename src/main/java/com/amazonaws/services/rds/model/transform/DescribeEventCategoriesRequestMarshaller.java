@@ -33,8 +33,8 @@ public class DescribeEventCategoriesRequestMarshaller implements Marshaller<Requ
     public Request<DescribeEventCategoriesRequest> marshall(DescribeEventCategoriesRequest describeEventCategoriesRequest) {
 
         if (describeEventCategoriesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeEventCategoriesRequest> request = new DefaultRequest<DescribeEventCategoriesRequest>(describeEventCategoriesRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeEventCategories");
@@ -43,7 +43,6 @@ public class DescribeEventCategoriesRequestMarshaller implements Marshaller<Requ
         if (describeEventCategoriesRequest.getSourceType() != null) {
             request.addParameter("SourceType", StringUtils.fromString(describeEventCategoriesRequest.getSourceType()));
         }
-
 
         return request;
     }

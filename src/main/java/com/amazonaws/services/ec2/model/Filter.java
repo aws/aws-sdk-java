@@ -16,7 +16,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A filter used to limit results when describing tags. Multiple values can be specified per filter. A tag must match at least one of the specified

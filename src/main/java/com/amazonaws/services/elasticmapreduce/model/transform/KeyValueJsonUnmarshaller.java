@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Key Value JSON Unmarshaller
  */
 public class KeyValueJsonUnmarshaller implements Unmarshaller<KeyValue, JsonUnmarshallerContext> {
 
-    
-
     public KeyValue unmarshall(JsonUnmarshallerContext context) throws Exception {
         KeyValue keyValue = new KeyValue();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class KeyValueJsonUnmarshaller implements Unmarshaller<KeyValue, JsonUnma
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Key", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class KeyValueJsonUnmarshaller implements Unmarshaller<KeyValue, JsonUnma
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

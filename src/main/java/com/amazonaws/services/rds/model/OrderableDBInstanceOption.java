@@ -16,7 +16,6 @@ package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Contains a list of available options for a DB instance

@@ -33,8 +33,8 @@ public class SetPlatformApplicationAttributesRequestMarshaller implements Marsha
     public Request<SetPlatformApplicationAttributesRequest> marshall(SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest) {
 
         if (setPlatformApplicationAttributesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<SetPlatformApplicationAttributesRequest> request = new DefaultRequest<SetPlatformApplicationAttributesRequest>(setPlatformApplicationAttributesRequest, "AmazonSNS");
         request.addParameter("Action", "SetPlatformApplicationAttributes");
@@ -58,7 +58,6 @@ public class SetPlatformApplicationAttributesRequestMarshaller implements Marsha
                 }
             }
         }
-
 
         return request;
     }

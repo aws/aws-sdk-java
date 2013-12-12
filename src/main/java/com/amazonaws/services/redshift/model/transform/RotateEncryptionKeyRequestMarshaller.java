@@ -33,8 +33,8 @@ public class RotateEncryptionKeyRequestMarshaller implements Marshaller<Request<
     public Request<RotateEncryptionKeyRequest> marshall(RotateEncryptionKeyRequest rotateEncryptionKeyRequest) {
 
         if (rotateEncryptionKeyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RotateEncryptionKeyRequest> request = new DefaultRequest<RotateEncryptionKeyRequest>(rotateEncryptionKeyRequest, "AmazonRedshift");
         request.addParameter("Action", "RotateEncryptionKey");
@@ -43,7 +43,6 @@ public class RotateEncryptionKeyRequestMarshaller implements Marshaller<Request<
         if (rotateEncryptionKeyRequest.getClusterIdentifier() != null) {
             request.addParameter("ClusterIdentifier", StringUtils.fromString(rotateEncryptionKeyRequest.getClusterIdentifier()));
         }
-
 
         return request;
     }

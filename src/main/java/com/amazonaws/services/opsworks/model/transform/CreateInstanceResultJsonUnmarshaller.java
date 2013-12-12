@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Create Instance Result JSON Unmarshaller
  */
 public class CreateInstanceResultJsonUnmarshaller implements Unmarshaller<CreateInstanceResult, JsonUnmarshallerContext> {
 
-    
-
     public CreateInstanceResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         CreateInstanceResult createInstanceResult = new CreateInstanceResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class CreateInstanceResultJsonUnmarshaller implements Unmarshaller<Create
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class CreateInstanceResultJsonUnmarshaller implements Unmarshaller<Create
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

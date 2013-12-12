@@ -33,8 +33,8 @@ public class IndexDocumentsRequestMarshaller implements Marshaller<Request<Index
     public Request<IndexDocumentsRequest> marshall(IndexDocumentsRequest indexDocumentsRequest) {
 
         if (indexDocumentsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<IndexDocumentsRequest> request = new DefaultRequest<IndexDocumentsRequest>(indexDocumentsRequest, "AmazonCloudSearch");
         request.addParameter("Action", "IndexDocuments");
@@ -43,7 +43,6 @@ public class IndexDocumentsRequestMarshaller implements Marshaller<Request<Index
         if (indexDocumentsRequest.getDomainName() != null) {
             request.addParameter("DomainName", StringUtils.fromString(indexDocumentsRequest.getDomainName()));
         }
-
 
         return request;
     }

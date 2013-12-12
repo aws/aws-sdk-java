@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class DescribeStorediSCSIVolumesRequestMarshaller implements Marshaller<Request<DescribeStorediSCSIVolumesRequest>, DescribeStorediSCSIVolumesRequest> {
 
-    
-
     public Request<DescribeStorediSCSIVolumesRequest> marshall(DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest) {
     if (describeStorediSCSIVolumesRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class DescribeStorediSCSIVolumesRequestMarshaller implements Marshaller<R
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,16 +70,11 @@ public class DescribeStorediSCSIVolumesRequestMarshaller implements Marshaller<R
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
-          
 
             com.amazonaws.internal.ListWithAutoConstructFlag<String> volumeARNsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeStorediSCSIVolumesRequest.getVolumeARNs());
             if (volumeARNsList != null && !(volumeARNsList.isAutoConstruct() && volumeARNsList.isEmpty())) {
@@ -101,7 +91,6 @@ public class DescribeStorediSCSIVolumesRequestMarshaller implements Marshaller<R
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -110,7 +99,6 @@ public class DescribeStorediSCSIVolumesRequestMarshaller implements Marshaller<R
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

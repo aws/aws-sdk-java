@@ -34,8 +34,7 @@ public class InvalidRequestExceptionUnmarshaller extends JsonErrorUnmarshaller {
             return null;
 
         InvalidRequestException e = (InvalidRequestException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

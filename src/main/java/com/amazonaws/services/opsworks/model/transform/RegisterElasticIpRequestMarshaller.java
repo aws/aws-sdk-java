@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class RegisterElasticIpRequestMarshaller implements Marshaller<Request<RegisterElasticIpRequest>, RegisterElasticIpRequest> {
 
-    
-
     public Request<RegisterElasticIpRequest> marshall(RegisterElasticIpRequest registerElasticIpRequest) {
     if (registerElasticIpRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class RegisterElasticIpRequestMarshaller implements Marshaller<Request<Re
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class RegisterElasticIpRequestMarshaller implements Marshaller<Request<Re
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (registerElasticIpRequest.getElasticIp() != null) {
@@ -93,7 +84,6 @@ public class RegisterElasticIpRequestMarshaller implements Marshaller<Request<Re
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -102,7 +92,6 @@ public class RegisterElasticIpRequestMarshaller implements Marshaller<Request<Re
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

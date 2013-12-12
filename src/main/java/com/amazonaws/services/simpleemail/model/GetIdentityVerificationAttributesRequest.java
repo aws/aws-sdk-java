@@ -24,6 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the verification token for
  * each identity.
  * </p>
+ * <p>
+ * This action is throttled at one request per second.
+ * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest)
  */

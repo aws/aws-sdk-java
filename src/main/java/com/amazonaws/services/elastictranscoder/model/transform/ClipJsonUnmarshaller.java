@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Clip JSON Unmarshaller
  */
 public class ClipJsonUnmarshaller implements Unmarshaller<Clip, JsonUnmarshallerContext> {
 
-    
-
     public Clip unmarshall(JsonUnmarshallerContext context) throws Exception {
         Clip clip = new Clip();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ClipJsonUnmarshaller implements Unmarshaller<Clip, JsonUnmarshaller
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TimeSpan", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class ClipJsonUnmarshaller implements Unmarshaller<Clip, JsonUnmarshaller
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

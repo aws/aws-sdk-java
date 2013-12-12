@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Evaluate Expression Result JSON Unmarshaller
  */
 public class EvaluateExpressionResultJsonUnmarshaller implements Unmarshaller<EvaluateExpressionResult, JsonUnmarshallerContext> {
 
-    
-
     public EvaluateExpressionResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         EvaluateExpressionResult evaluateExpressionResult = new EvaluateExpressionResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class EvaluateExpressionResultJsonUnmarshaller implements Unmarshaller<Ev
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("evaluatedExpression", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class EvaluateExpressionResultJsonUnmarshaller implements Unmarshaller<Ev
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

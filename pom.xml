@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk</artifactId>
-    <packaging>jar</packaging>
+    <packaging>bundle</packaging>
     <name>AWS SDK for Java</name>
-    <version>1.6.8</version>
+    <version>1.6.9</version>
     <description>The Amazon Web Services SDK for Java provides Java APIs for building software on AWS’ cost-effective, scalable, and reliable infrastructure products. The AWS Java SDK allows developers to code against APIs for all of Amazon's infrastructure web services (Amazon S3, Amazon EC2, Amazon SQS, Amazon Relational Database Service, Amazon AutoScaling, etc).</description>
     <url>https://aws.amazon.com/sdkforjava</url>
 
@@ -180,6 +180,18 @@
             </execution>
           </executions>
         </plugin>
+
+        <plugin>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>maven-bundle-plugin</artifactId>
+            <extensions>true</extensions>
+            <configuration>
+              <instructions>
+                <Export-Package>com.amazonaws.*</Export-Package>
+              </instructions>
+            </configuration>
+          </plugin>
+
       </plugins>
     </build>
 

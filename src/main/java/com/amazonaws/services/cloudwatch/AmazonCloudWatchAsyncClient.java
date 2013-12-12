@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.cloudwatch.model.*;
 
-
 /**
  * Asynchronous client for accessing AmazonCloudWatch.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -71,7 +70,6 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -271,7 +269,6 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -333,11 +330,10 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
             public Void call() throws Exception {
                 putMetricAlarm(putMetricAlarmRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates or updates an alarm and associates it with the specified
@@ -380,16 +376,16 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		putMetricAlarm(putMetricAlarmRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(putMetricAlarmRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    putMetricAlarm(putMetricAlarmRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(putMetricAlarmRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -436,11 +432,10 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
             public Void call() throws Exception {
                 putMetricData(putMetricDataRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch
@@ -489,16 +484,16 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		putMetricData(putMetricDataRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(putMetricDataRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    putMetricData(putMetricDataRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(putMetricDataRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -538,11 +533,10 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
         return executorService.submit(new Callable<ListMetricsResult>() {
             public ListMetricsResult call() throws Exception {
                 return listMetrics(listMetricsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a list of valid metrics stored for the AWS account owner.
@@ -585,17 +579,17 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListMetricsResult>() {
             public ListMetricsResult call() throws Exception {
-            	ListMetricsResult result;
+                ListMetricsResult result;
                 try {
-            		result = listMetrics(listMetricsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listMetricsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listMetrics(listMetricsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listMetricsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -657,11 +651,10 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
         return executorService.submit(new Callable<GetMetricStatisticsResult>() {
             public GetMetricStatisticsResult call() throws Exception {
                 return getMetricStatistics(getMetricStatisticsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gets statistics for the specified metric.
@@ -726,17 +719,17 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetMetricStatisticsResult>() {
             public GetMetricStatisticsResult call() throws Exception {
-            	GetMetricStatisticsResult result;
+                GetMetricStatisticsResult result;
                 try {
-            		result = getMetricStatistics(getMetricStatisticsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getMetricStatisticsRequest, result);
-               	return result;
-		    }
-		});
+                    result = getMetricStatistics(getMetricStatisticsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getMetricStatisticsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -768,11 +761,10 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
             public Void call() throws Exception {
                 disableAlarmActions(disableAlarmActionsRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Disables actions for the specified alarms. When an alarm's actions
@@ -806,16 +798,16 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		disableAlarmActions(disableAlarmActionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(disableAlarmActionsRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    disableAlarmActions(disableAlarmActionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(disableAlarmActionsRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -846,11 +838,10 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
         return executorService.submit(new Callable<DescribeAlarmsResult>() {
             public DescribeAlarmsResult call() throws Exception {
                 return describeAlarms(describeAlarmsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves alarms with the specified names. If no name is specified,
@@ -884,17 +875,17 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeAlarmsResult>() {
             public DescribeAlarmsResult call() throws Exception {
-            	DescribeAlarmsResult result;
+                DescribeAlarmsResult result;
                 try {
-            		result = describeAlarms(describeAlarmsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeAlarmsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeAlarms(describeAlarmsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeAlarmsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -925,11 +916,10 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
         return executorService.submit(new Callable<DescribeAlarmsForMetricResult>() {
             public DescribeAlarmsForMetricResult call() throws Exception {
                 return describeAlarmsForMetric(describeAlarmsForMetricRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves all alarms for a single metric. Specify a statistic,
@@ -963,17 +953,17 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeAlarmsForMetricResult>() {
             public DescribeAlarmsForMetricResult call() throws Exception {
-            	DescribeAlarmsForMetricResult result;
+                DescribeAlarmsForMetricResult result;
                 try {
-            		result = describeAlarmsForMetric(describeAlarmsForMetricRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeAlarmsForMetricRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeAlarmsForMetric(describeAlarmsForMetricRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeAlarmsForMetricRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1008,11 +998,10 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
         return executorService.submit(new Callable<DescribeAlarmHistoryResult>() {
             public DescribeAlarmHistoryResult call() throws Exception {
                 return describeAlarmHistory(describeAlarmHistoryRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves history for the specified alarm. Filter alarms by date
@@ -1050,17 +1039,17 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeAlarmHistoryResult>() {
             public DescribeAlarmHistoryResult call() throws Exception {
-            	DescribeAlarmHistoryResult result;
+                DescribeAlarmHistoryResult result;
                 try {
-            		result = describeAlarmHistory(describeAlarmHistoryRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeAlarmHistoryRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeAlarmHistory(describeAlarmHistoryRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeAlarmHistoryRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1090,11 +1079,10 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
             public Void call() throws Exception {
                 enableAlarmActions(enableAlarmActionsRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Enables actions for the specified alarms.
@@ -1126,16 +1114,16 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		enableAlarmActions(enableAlarmActionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(enableAlarmActionsRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    enableAlarmActions(enableAlarmActionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(enableAlarmActionsRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1165,11 +1153,10 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
             public Void call() throws Exception {
                 deleteAlarms(deleteAlarmsRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes all specified alarms. In the event of an error, no alarms are
@@ -1201,16 +1188,16 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteAlarms(deleteAlarmsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteAlarmsRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteAlarms(deleteAlarmsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteAlarmsRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1243,11 +1230,10 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
             public Void call() throws Exception {
                 setAlarmState(setAlarmStateRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Temporarily sets the state of an alarm. When the updated
@@ -1282,16 +1268,16 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		setAlarmState(setAlarmStateRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(setAlarmStateRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    setAlarmState(setAlarmStateRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(setAlarmStateRequest, null);
+                   return null;
+            }
+        });
     }
     
 }

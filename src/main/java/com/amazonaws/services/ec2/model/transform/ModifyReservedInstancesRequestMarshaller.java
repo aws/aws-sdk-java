@@ -33,8 +33,8 @@ public class ModifyReservedInstancesRequestMarshaller implements Marshaller<Requ
     public Request<ModifyReservedInstancesRequest> marshall(ModifyReservedInstancesRequest modifyReservedInstancesRequest) {
 
         if (modifyReservedInstancesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ModifyReservedInstancesRequest> request = new DefaultRequest<ModifyReservedInstancesRequest>(modifyReservedInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyReservedInstances");
@@ -77,7 +77,6 @@ public class ModifyReservedInstancesRequestMarshaller implements Marshaller<Requ
 
             targetConfigurationsListIndex++;
         }
-
 
         return request;
     }

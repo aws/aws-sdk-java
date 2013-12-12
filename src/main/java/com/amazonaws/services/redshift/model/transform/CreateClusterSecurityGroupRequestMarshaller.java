@@ -33,8 +33,8 @@ public class CreateClusterSecurityGroupRequestMarshaller implements Marshaller<R
     public Request<CreateClusterSecurityGroupRequest> marshall(CreateClusterSecurityGroupRequest createClusterSecurityGroupRequest) {
 
         if (createClusterSecurityGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateClusterSecurityGroupRequest> request = new DefaultRequest<CreateClusterSecurityGroupRequest>(createClusterSecurityGroupRequest, "AmazonRedshift");
         request.addParameter("Action", "CreateClusterSecurityGroup");
@@ -46,7 +46,6 @@ public class CreateClusterSecurityGroupRequestMarshaller implements Marshaller<R
         if (createClusterSecurityGroupRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(createClusterSecurityGroupRequest.getDescription()));
         }
-
 
         return request;
     }

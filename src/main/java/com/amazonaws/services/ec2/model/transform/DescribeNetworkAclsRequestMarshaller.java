@@ -33,13 +33,12 @@ public class DescribeNetworkAclsRequestMarshaller implements Marshaller<Request<
     public Request<DescribeNetworkAclsRequest> marshall(DescribeNetworkAclsRequest describeNetworkAclsRequest) {
 
         if (describeNetworkAclsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeNetworkAclsRequest> request = new DefaultRequest<DescribeNetworkAclsRequest>(describeNetworkAclsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeNetworkAcls");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> networkAclIdsList = describeNetworkAclsRequest.getNetworkAclIds();
         int networkAclIdsListIndex = 1;
@@ -76,7 +75,6 @@ public class DescribeNetworkAclsRequestMarshaller implements Marshaller<Request<
 
             filtersListIndex++;
         }
-
 
         return request;
     }

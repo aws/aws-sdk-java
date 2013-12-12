@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Bootstrap Action Detail JSON Unmarshaller
  */
 public class BootstrapActionDetailJsonUnmarshaller implements Unmarshaller<BootstrapActionDetail, JsonUnmarshallerContext> {
 
-    
-
     public BootstrapActionDetail unmarshall(JsonUnmarshallerContext context) throws Exception {
         BootstrapActionDetail bootstrapActionDetail = new BootstrapActionDetail();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class BootstrapActionDetailJsonUnmarshaller implements Unmarshaller<Boots
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BootstrapActionConfig", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class BootstrapActionDetailJsonUnmarshaller implements Unmarshaller<Boots
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

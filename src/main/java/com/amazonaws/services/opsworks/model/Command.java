@@ -16,7 +16,6 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes a command.
@@ -71,10 +70,14 @@ public class Command implements Serializable {
     private String logUrl;
 
     /**
-     * The command type: <ul> <li>deploy</li> <li>rollback</li>
-     * <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
-     * <li>update_dependencies</li> <li>install_dependencies</li>
-     * <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
+     * The command type: <ul> <li><code>deploy</code></li>
+     * <li><code>rollback</code></li> <li><code>start</code></li>
+     * <li><code>stop</code></li> <li><code>restart</code></li>
+     * <li><code>undeploy</code></li>
+     * <li><code>update_dependencies</code></li>
+     * <li><code>install_dependencies</code></li>
+     * <li><code>update_custom_cookbooks</code></li>
+     * <li><code>execute_recipes</code></li> </ul>
      */
     private String type;
 
@@ -382,47 +385,71 @@ public class Command implements Serializable {
     }
 
     /**
-     * The command type: <ul> <li>deploy</li> <li>rollback</li>
-     * <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
-     * <li>update_dependencies</li> <li>install_dependencies</li>
-     * <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
+     * The command type: <ul> <li><code>deploy</code></li>
+     * <li><code>rollback</code></li> <li><code>start</code></li>
+     * <li><code>stop</code></li> <li><code>restart</code></li>
+     * <li><code>undeploy</code></li>
+     * <li><code>update_dependencies</code></li>
+     * <li><code>install_dependencies</code></li>
+     * <li><code>update_custom_cookbooks</code></li>
+     * <li><code>execute_recipes</code></li> </ul>
      *
-     * @return The command type: <ul> <li>deploy</li> <li>rollback</li>
-     *         <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
-     *         <li>update_dependencies</li> <li>install_dependencies</li>
-     *         <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
+     * @return The command type: <ul> <li><code>deploy</code></li>
+     *         <li><code>rollback</code></li> <li><code>start</code></li>
+     *         <li><code>stop</code></li> <li><code>restart</code></li>
+     *         <li><code>undeploy</code></li>
+     *         <li><code>update_dependencies</code></li>
+     *         <li><code>install_dependencies</code></li>
+     *         <li><code>update_custom_cookbooks</code></li>
+     *         <li><code>execute_recipes</code></li> </ul>
      */
     public String getType() {
         return type;
     }
     
     /**
-     * The command type: <ul> <li>deploy</li> <li>rollback</li>
-     * <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
-     * <li>update_dependencies</li> <li>install_dependencies</li>
-     * <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
+     * The command type: <ul> <li><code>deploy</code></li>
+     * <li><code>rollback</code></li> <li><code>start</code></li>
+     * <li><code>stop</code></li> <li><code>restart</code></li>
+     * <li><code>undeploy</code></li>
+     * <li><code>update_dependencies</code></li>
+     * <li><code>install_dependencies</code></li>
+     * <li><code>update_custom_cookbooks</code></li>
+     * <li><code>execute_recipes</code></li> </ul>
      *
-     * @param type The command type: <ul> <li>deploy</li> <li>rollback</li>
-     *         <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
-     *         <li>update_dependencies</li> <li>install_dependencies</li>
-     *         <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
+     * @param type The command type: <ul> <li><code>deploy</code></li>
+     *         <li><code>rollback</code></li> <li><code>start</code></li>
+     *         <li><code>stop</code></li> <li><code>restart</code></li>
+     *         <li><code>undeploy</code></li>
+     *         <li><code>update_dependencies</code></li>
+     *         <li><code>install_dependencies</code></li>
+     *         <li><code>update_custom_cookbooks</code></li>
+     *         <li><code>execute_recipes</code></li> </ul>
      */
     public void setType(String type) {
         this.type = type;
     }
     
     /**
-     * The command type: <ul> <li>deploy</li> <li>rollback</li>
-     * <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
-     * <li>update_dependencies</li> <li>install_dependencies</li>
-     * <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
+     * The command type: <ul> <li><code>deploy</code></li>
+     * <li><code>rollback</code></li> <li><code>start</code></li>
+     * <li><code>stop</code></li> <li><code>restart</code></li>
+     * <li><code>undeploy</code></li>
+     * <li><code>update_dependencies</code></li>
+     * <li><code>install_dependencies</code></li>
+     * <li><code>update_custom_cookbooks</code></li>
+     * <li><code>execute_recipes</code></li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param type The command type: <ul> <li>deploy</li> <li>rollback</li>
-     *         <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
-     *         <li>update_dependencies</li> <li>install_dependencies</li>
-     *         <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
+     * @param type The command type: <ul> <li><code>deploy</code></li>
+     *         <li><code>rollback</code></li> <li><code>start</code></li>
+     *         <li><code>stop</code></li> <li><code>restart</code></li>
+     *         <li><code>undeploy</code></li>
+     *         <li><code>update_dependencies</code></li>
+     *         <li><code>install_dependencies</code></li>
+     *         <li><code>update_custom_cookbooks</code></li>
+     *         <li><code>execute_recipes</code></li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

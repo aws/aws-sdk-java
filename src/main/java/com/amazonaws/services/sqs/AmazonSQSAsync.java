@@ -1095,6 +1095,5 @@ public interface AmazonSQSAsync extends AmazonSQS {
     public Future<Void> deleteMessageAsync(DeleteMessageRequest deleteMessageRequest,
             AsyncHandler<DeleteMessageRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

@@ -1080,6 +1080,5 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
     public Future<ListJobsByPipelineResult> listJobsByPipelineAsync(ListJobsByPipelineRequest listJobsByPipelineRequest,
             AsyncHandler<ListJobsByPipelineRequest, ListJobsByPipelineResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

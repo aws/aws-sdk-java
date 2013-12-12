@@ -23,6 +23,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Updates a specified layer.
  * </p>
+ * <p>
+ * <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that
+ * explicitly grants permissions. For more information on user permissions, see <a
+ * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a> .
+ * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateLayer(UpdateLayerRequest)
  */
@@ -290,26 +295,26 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      * @param key The key of the entry to be added into Attributes.
      * @param value The corresponding value of the entry to be added into Attributes.
      */
-	public UpdateLayerRequest addAttributesEntry(String key, String value) {
-		if (null == this.attributes) {
-			this.attributes = new java.util.HashMap<String,String>();
-		}
-		if (this.attributes.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.attributes.put(key, value);
-		return this;
-	}
+    public UpdateLayerRequest addAttributesEntry(String key, String value) {
+        if (null == this.attributes) {
+            this.attributes = new java.util.HashMap<String,String>();
+        }
+        if (this.attributes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.attributes.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Attributes.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public UpdateLayerRequest clearAttributesEntries() {
-		this.attributes = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Attributes.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public UpdateLayerRequest clearAttributesEntries() {
+        this.attributes = null;
+        return this;
+    }
+    
     /**
      * The ARN of an IAM profile to be used for all of the layer's EC2
      * instances. For more information about IAM ARNs, see <a

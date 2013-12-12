@@ -33,8 +33,8 @@ public class DescribeEventSubscriptionsRequestMarshaller implements Marshaller<R
     public Request<DescribeEventSubscriptionsRequest> marshall(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest) {
 
         if (describeEventSubscriptionsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeEventSubscriptionsRequest> request = new DefaultRequest<DescribeEventSubscriptionsRequest>(describeEventSubscriptionsRequest, "AmazonRedshift");
         request.addParameter("Action", "DescribeEventSubscriptions");
@@ -49,7 +49,6 @@ public class DescribeEventSubscriptionsRequestMarshaller implements Marshaller<R
         if (describeEventSubscriptionsRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeEventSubscriptionsRequest.getMarker()));
         }
-
 
         return request;
     }

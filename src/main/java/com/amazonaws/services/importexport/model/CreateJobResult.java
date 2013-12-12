@@ -16,7 +16,6 @@ package com.amazonaws.services.importexport.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Output structure for the CreateJob operation.

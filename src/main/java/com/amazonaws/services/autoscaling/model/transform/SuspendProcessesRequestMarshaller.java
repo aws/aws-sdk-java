@@ -33,8 +33,8 @@ public class SuspendProcessesRequestMarshaller implements Marshaller<Request<Sus
     public Request<SuspendProcessesRequest> marshall(SuspendProcessesRequest suspendProcessesRequest) {
 
         if (suspendProcessesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<SuspendProcessesRequest> request = new DefaultRequest<SuspendProcessesRequest>(suspendProcessesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "SuspendProcesses");
@@ -54,7 +54,6 @@ public class SuspendProcessesRequestMarshaller implements Marshaller<Request<Sus
 
             scalingProcessesListIndex++;
         }
-
 
         return request;
     }

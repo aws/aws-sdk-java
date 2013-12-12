@@ -33,8 +33,8 @@ public class CreateLoginProfileRequestMarshaller implements Marshaller<Request<C
     public Request<CreateLoginProfileRequest> marshall(CreateLoginProfileRequest createLoginProfileRequest) {
 
         if (createLoginProfileRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateLoginProfileRequest> request = new DefaultRequest<CreateLoginProfileRequest>(createLoginProfileRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "CreateLoginProfile");
@@ -46,7 +46,6 @@ public class CreateLoginProfileRequestMarshaller implements Marshaller<Request<C
         if (createLoginProfileRequest.getPassword() != null) {
             request.addParameter("Password", StringUtils.fromString(createLoginProfileRequest.getPassword()));
         }
-
 
         return request;
     }

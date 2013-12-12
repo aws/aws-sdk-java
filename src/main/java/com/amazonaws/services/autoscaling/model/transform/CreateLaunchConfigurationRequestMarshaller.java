@@ -33,8 +33,8 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
     public Request<CreateLaunchConfigurationRequest> marshall(CreateLaunchConfigurationRequest createLaunchConfigurationRequest) {
 
         if (createLaunchConfigurationRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateLaunchConfigurationRequest> request = new DefaultRequest<CreateLaunchConfigurationRequest>(createLaunchConfigurationRequest, "AmazonAutoScaling");
         request.addParameter("Action", "CreateLaunchConfiguration");
@@ -116,7 +116,6 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
         if (createLaunchConfigurationRequest.isAssociatePublicIpAddress() != null) {
             request.addParameter("AssociatePublicIpAddress", StringUtils.fromBoolean(createLaunchConfigurationRequest.isAssociatePublicIpAddress()));
         }
-
 
         return request;
     }

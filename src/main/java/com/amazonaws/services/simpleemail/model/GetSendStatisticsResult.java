@@ -16,7 +16,6 @@ package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents a list of <code>SendDataPoint</code> items returned from a successful <code>GetSendStatistics</code> request. This list contains aggregated

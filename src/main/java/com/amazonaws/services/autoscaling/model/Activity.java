@@ -16,7 +16,6 @@ package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A scaling Activity is a long-running process that represents a change to your AutoScalingGroup, such as changing the size of the group. It can also

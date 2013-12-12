@@ -33,8 +33,8 @@ public class ModifyVolumeAttributeRequestMarshaller implements Marshaller<Reques
     public Request<ModifyVolumeAttributeRequest> marshall(ModifyVolumeAttributeRequest modifyVolumeAttributeRequest) {
 
         if (modifyVolumeAttributeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ModifyVolumeAttributeRequest> request = new DefaultRequest<ModifyVolumeAttributeRequest>(modifyVolumeAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyVolumeAttribute");
@@ -46,7 +46,6 @@ public class ModifyVolumeAttributeRequestMarshaller implements Marshaller<Reques
         if (modifyVolumeAttributeRequest.isAutoEnableIO() != null) {
             request.addParameter("AutoEnableIO.Value", StringUtils.fromBoolean(modifyVolumeAttributeRequest.isAutoEnableIO()));
         }
-
 
         return request;
     }

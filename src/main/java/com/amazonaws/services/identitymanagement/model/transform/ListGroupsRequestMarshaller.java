@@ -33,8 +33,8 @@ public class ListGroupsRequestMarshaller implements Marshaller<Request<ListGroup
     public Request<ListGroupsRequest> marshall(ListGroupsRequest listGroupsRequest) {
 
         if (listGroupsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListGroupsRequest> request = new DefaultRequest<ListGroupsRequest>(listGroupsRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListGroups");
@@ -49,7 +49,6 @@ public class ListGroupsRequestMarshaller implements Marshaller<Request<ListGroup
         if (listGroupsRequest.getMaxItems() != null) {
             request.addParameter("MaxItems", StringUtils.fromInteger(listGroupsRequest.getMaxItems()));
         }
-
 
         return request;
     }

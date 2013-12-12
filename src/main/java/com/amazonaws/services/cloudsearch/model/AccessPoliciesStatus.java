@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudsearch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A <code>PolicyDocument</code> that specifies access policies for the search domain's services, and the current status of those policies.

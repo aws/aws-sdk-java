@@ -25,19 +25,13 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Upload Archive Result JSON Unmarshaller
  */
 public class UploadArchiveResultJsonUnmarshaller implements Unmarshaller<UploadArchiveResult, JsonUnmarshallerContext> {
 
-    
-
     public UploadArchiveResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         UploadArchiveResult uploadArchiveResult = new UploadArchiveResult();
-
-        
-        
 
         if (context.isStartOfDocument()) {
             if (context.getHeader("Location") != null)

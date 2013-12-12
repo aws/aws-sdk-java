@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes the AWS resources in use by this environment. This data is live.
@@ -56,6 +55,11 @@ public class EnvironmentResourceDescription implements Serializable {
      * The <code>AutoScaling</code> triggers in use by this environment.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Trigger> triggers;
+
+    /**
+     * The queues used by this environment.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Queue> queues;
 
     /**
      * Default constructor for a new EnvironmentResourceDescription object.  Callers should use the
@@ -446,6 +450,74 @@ public class EnvironmentResourceDescription implements Serializable {
     }
 
     /**
+     * The queues used by this environment.
+     *
+     * @return The queues used by this environment.
+     */
+    public java.util.List<Queue> getQueues() {
+        if (queues == null) {
+              queues = new com.amazonaws.internal.ListWithAutoConstructFlag<Queue>();
+              queues.setAutoConstruct(true);
+        }
+        return queues;
+    }
+    
+    /**
+     * The queues used by this environment.
+     *
+     * @param queues The queues used by this environment.
+     */
+    public void setQueues(java.util.Collection<Queue> queues) {
+        if (queues == null) {
+            this.queues = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Queue> queuesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Queue>(queues.size());
+        queuesCopy.addAll(queues);
+        this.queues = queuesCopy;
+    }
+    
+    /**
+     * The queues used by this environment.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param queues The queues used by this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public EnvironmentResourceDescription withQueues(Queue... queues) {
+        if (getQueues() == null) setQueues(new java.util.ArrayList<Queue>(queues.length));
+        for (Queue value : queues) {
+            getQueues().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The queues used by this environment.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param queues The queues used by this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public EnvironmentResourceDescription withQueues(java.util.Collection<Queue> queues) {
+        if (queues == null) {
+            this.queues = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Queue> queuesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Queue>(queues.size());
+            queuesCopy.addAll(queues);
+            this.queues = queuesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -462,7 +534,8 @@ public class EnvironmentResourceDescription implements Serializable {
         if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");
         if (getLaunchConfigurations() != null) sb.append("LaunchConfigurations: " + getLaunchConfigurations() + ",");
         if (getLoadBalancers() != null) sb.append("LoadBalancers: " + getLoadBalancers() + ",");
-        if (getTriggers() != null) sb.append("Triggers: " + getTriggers() );
+        if (getTriggers() != null) sb.append("Triggers: " + getTriggers() + ",");
+        if (getQueues() != null) sb.append("Queues: " + getQueues() );
         sb.append("}");
         return sb.toString();
     }
@@ -478,6 +551,7 @@ public class EnvironmentResourceDescription implements Serializable {
         hashCode = prime * hashCode + ((getLaunchConfigurations() == null) ? 0 : getLaunchConfigurations().hashCode()); 
         hashCode = prime * hashCode + ((getLoadBalancers() == null) ? 0 : getLoadBalancers().hashCode()); 
         hashCode = prime * hashCode + ((getTriggers() == null) ? 0 : getTriggers().hashCode()); 
+        hashCode = prime * hashCode + ((getQueues() == null) ? 0 : getQueues().hashCode()); 
         return hashCode;
     }
     
@@ -501,6 +575,8 @@ public class EnvironmentResourceDescription implements Serializable {
         if (other.getLoadBalancers() != null && other.getLoadBalancers().equals(this.getLoadBalancers()) == false) return false; 
         if (other.getTriggers() == null ^ this.getTriggers() == null) return false;
         if (other.getTriggers() != null && other.getTriggers().equals(this.getTriggers()) == false) return false; 
+        if (other.getQueues() == null ^ this.getQueues() == null) return false;
+        if (other.getQueues() != null && other.getQueues().equals(this.getQueues()) == false) return false; 
         return true;
     }
     

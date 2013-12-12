@@ -16,7 +16,6 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * For the <i>UpdateItem</i> operation, represents the attributes to be modified,the action to perform on each, and the new value for each.

@@ -33,13 +33,12 @@ public class DescribeReservedInstancesModificationsRequestMarshaller implements 
     public Request<DescribeReservedInstancesModificationsRequest> marshall(DescribeReservedInstancesModificationsRequest describeReservedInstancesModificationsRequest) {
 
         if (describeReservedInstancesModificationsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeReservedInstancesModificationsRequest> request = new DefaultRequest<DescribeReservedInstancesModificationsRequest>(describeReservedInstancesModificationsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeReservedInstancesModifications");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> reservedInstancesModificationIdsList = describeReservedInstancesModificationsRequest.getReservedInstancesModificationIds();
         int reservedInstancesModificationIdsListIndex = 1;
@@ -79,7 +78,6 @@ public class DescribeReservedInstancesModificationsRequestMarshaller implements 
 
             filtersListIndex++;
         }
-
 
         return request;
     }

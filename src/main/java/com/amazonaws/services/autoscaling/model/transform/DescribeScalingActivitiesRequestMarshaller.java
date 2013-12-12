@@ -33,13 +33,12 @@ public class DescribeScalingActivitiesRequestMarshaller implements Marshaller<Re
     public Request<DescribeScalingActivitiesRequest> marshall(DescribeScalingActivitiesRequest describeScalingActivitiesRequest) {
 
         if (describeScalingActivitiesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeScalingActivitiesRequest> request = new DefaultRequest<DescribeScalingActivitiesRequest>(describeScalingActivitiesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeScalingActivities");
         request.addParameter("Version", "2011-01-01");
-
 
         java.util.List<String> activityIdsList = describeScalingActivitiesRequest.getActivityIds();
         int activityIdsListIndex = 1;
@@ -60,7 +59,6 @@ public class DescribeScalingActivitiesRequestMarshaller implements Marshaller<Re
         if (describeScalingActivitiesRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(describeScalingActivitiesRequest.getNextToken()));
         }
-
 
         return request;
     }

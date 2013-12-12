@@ -3197,6 +3197,5 @@ public interface AmazonRDSAsync extends AmazonRDS {
     public Future<DBSnapshot> createDBSnapshotAsync(CreateDBSnapshotRequest createDBSnapshotRequest,
             AsyncHandler<CreateDBSnapshotRequest, DBSnapshot> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

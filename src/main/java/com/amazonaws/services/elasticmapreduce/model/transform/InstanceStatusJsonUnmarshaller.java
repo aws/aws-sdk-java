@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Instance Status JSON Unmarshaller
  */
 public class InstanceStatusJsonUnmarshaller implements Unmarshaller<InstanceStatus, JsonUnmarshallerContext> {
 
-    
-
     public InstanceStatus unmarshall(JsonUnmarshallerContext context) throws Exception {
         InstanceStatus instanceStatus = new InstanceStatus();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class InstanceStatusJsonUnmarshaller implements Unmarshaller<InstanceStat
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
@@ -68,7 +62,6 @@ public class InstanceStatusJsonUnmarshaller implements Unmarshaller<InstanceStat
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

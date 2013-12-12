@@ -25,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
@@ -32,7 +33,6 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
 
 import com.amazonaws.services.cloudsearch.model.*;
 import com.amazonaws.services.cloudsearch.model.transform.*;
-
 
 /**
  * Client for accessing AmazonCloudSearch.  All service calls made
@@ -173,7 +173,30 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AmazonCloudSearchClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonCloudSearch using the specified AWS account credentials
+     * provider, client configuration options, and request metric collector.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AmazonCloudSearch
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public AmazonCloudSearchClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
     }
@@ -195,7 +218,6 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 "/com/amazonaws/services/cloudsearch/request.handler2s"));
     }
 
-    
     /**
      * <p>
      * Configures the default search field for the search domain. The default
@@ -1074,7 +1096,6 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
     public DescribeDomainsResult describeDomains() throws AmazonServiceException, AmazonClientException {
         return describeDomains(new DescribeDomainsRequest());
     }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

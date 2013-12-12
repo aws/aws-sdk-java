@@ -33,8 +33,8 @@ public class ModifyOptionGroupRequestMarshaller implements Marshaller<Request<Mo
     public Request<ModifyOptionGroupRequest> marshall(ModifyOptionGroupRequest modifyOptionGroupRequest) {
 
         if (modifyOptionGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ModifyOptionGroupRequest> request = new DefaultRequest<ModifyOptionGroupRequest>(modifyOptionGroupRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyOptionGroup");
@@ -134,7 +134,6 @@ public class ModifyOptionGroupRequestMarshaller implements Marshaller<Request<Mo
         if (modifyOptionGroupRequest.isApplyImmediately() != null) {
             request.addParameter("ApplyImmediately", StringUtils.fromBoolean(modifyOptionGroupRequest.isApplyImmediately()));
         }
-
 
         return request;
     }

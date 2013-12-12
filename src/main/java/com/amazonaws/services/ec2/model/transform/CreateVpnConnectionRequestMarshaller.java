@@ -33,8 +33,8 @@ public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<
     public Request<CreateVpnConnectionRequest> marshall(CreateVpnConnectionRequest createVpnConnectionRequest) {
 
         if (createVpnConnectionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateVpnConnectionRequest> request = new DefaultRequest<CreateVpnConnectionRequest>(createVpnConnectionRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVpnConnection");
@@ -55,7 +55,6 @@ public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<
                 request.addParameter("Options.StaticRoutesOnly", StringUtils.fromBoolean(vpnConnectionOptionsSpecificationOptions.isStaticRoutesOnly()));
             }
         }
-
 
         return request;
     }

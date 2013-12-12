@@ -16,7 +16,6 @@ package com.amazonaws.services.sqs.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Encloses the id an entry in DeleteMessageBatch.

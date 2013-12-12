@@ -33,8 +33,8 @@ public class DeleteDBSecurityGroupRequestMarshaller implements Marshaller<Reques
     public Request<DeleteDBSecurityGroupRequest> marshall(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest) {
 
         if (deleteDBSecurityGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteDBSecurityGroupRequest> request = new DefaultRequest<DeleteDBSecurityGroupRequest>(deleteDBSecurityGroupRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteDBSecurityGroup");
@@ -43,7 +43,6 @@ public class DeleteDBSecurityGroupRequestMarshaller implements Marshaller<Reques
         if (deleteDBSecurityGroupRequest.getDBSecurityGroupName() != null) {
             request.addParameter("DBSecurityGroupName", StringUtils.fromString(deleteDBSecurityGroupRequest.getDBSecurityGroupName()));
         }
-
 
         return request;
     }

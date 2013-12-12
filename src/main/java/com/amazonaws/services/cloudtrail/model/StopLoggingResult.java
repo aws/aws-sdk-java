@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudtrail.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Returns the objects or data listed below if successful. Otherwise, returns an error.

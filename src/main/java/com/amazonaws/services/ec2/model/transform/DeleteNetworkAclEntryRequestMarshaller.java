@@ -33,8 +33,8 @@ public class DeleteNetworkAclEntryRequestMarshaller implements Marshaller<Reques
     public Request<DeleteNetworkAclEntryRequest> marshall(DeleteNetworkAclEntryRequest deleteNetworkAclEntryRequest) {
 
         if (deleteNetworkAclEntryRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteNetworkAclEntryRequest> request = new DefaultRequest<DeleteNetworkAclEntryRequest>(deleteNetworkAclEntryRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteNetworkAclEntry");
@@ -49,7 +49,6 @@ public class DeleteNetworkAclEntryRequestMarshaller implements Marshaller<Reques
         if (deleteNetworkAclEntryRequest.isEgress() != null) {
             request.addParameter("Egress", StringUtils.fromBoolean(deleteNetworkAclEntryRequest.isEgress()));
         }
-
 
         return request;
     }

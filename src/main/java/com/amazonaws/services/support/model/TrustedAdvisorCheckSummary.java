@@ -16,7 +16,6 @@ package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Reports a summary of the Trusted Advisor check. This object contains the following child objects that report summary information about specific checks

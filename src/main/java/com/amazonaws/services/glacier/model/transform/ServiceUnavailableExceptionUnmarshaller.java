@@ -34,8 +34,7 @@ public class ServiceUnavailableExceptionUnmarshaller extends GlacierErrorUnmarsh
             return null;
 
         ServiceUnavailableException e = (ServiceUnavailableException)super.unmarshall(json);
-        
-        
+
         e.setType(parseMember("Type", json));
         
         e.setCode(parseMember("Code", json));

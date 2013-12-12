@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudsearch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A named expression that can be evaluated at search time and used for ranking or thresholding in a search query.

@@ -33,8 +33,8 @@ public class DeleteAccountAliasRequestMarshaller implements Marshaller<Request<D
     public Request<DeleteAccountAliasRequest> marshall(DeleteAccountAliasRequest deleteAccountAliasRequest) {
 
         if (deleteAccountAliasRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteAccountAliasRequest> request = new DefaultRequest<DeleteAccountAliasRequest>(deleteAccountAliasRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteAccountAlias");
@@ -43,7 +43,6 @@ public class DeleteAccountAliasRequestMarshaller implements Marshaller<Request<D
         if (deleteAccountAliasRequest.getAccountAlias() != null) {
             request.addParameter("AccountAlias", StringUtils.fromString(deleteAccountAliasRequest.getAccountAlias()));
         }
-
 
         return request;
     }

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Instance Group Detail JSON Unmarshaller
  */
 public class InstanceGroupDetailJsonUnmarshaller implements Unmarshaller<InstanceGroupDetail, JsonUnmarshallerContext> {
 
-    
-
     public InstanceGroupDetail unmarshall(JsonUnmarshallerContext context) throws Exception {
         InstanceGroupDetail instanceGroupDetail = new InstanceGroupDetail();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class InstanceGroupDetailJsonUnmarshaller implements Unmarshaller<Instanc
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceGroupId", targetDepth)) {
                     context.nextToken();
@@ -112,7 +106,6 @@ public class InstanceGroupDetailJsonUnmarshaller implements Unmarshaller<Instanc
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

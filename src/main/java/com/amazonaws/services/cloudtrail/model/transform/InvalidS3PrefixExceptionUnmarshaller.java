@@ -34,8 +34,7 @@ public class InvalidS3PrefixExceptionUnmarshaller extends JsonErrorUnmarshaller 
             return null;
 
         InvalidS3PrefixException e = (InvalidS3PrefixException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

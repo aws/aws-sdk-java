@@ -34,8 +34,7 @@ public class LimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller {
             return null;
 
         LimitExceededException e = (LimitExceededException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

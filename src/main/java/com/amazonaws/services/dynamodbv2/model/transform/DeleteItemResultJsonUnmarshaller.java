@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Delete Item Result JSON Unmarshaller
  */
 public class DeleteItemResultJsonUnmarshaller implements Unmarshaller<DeleteItemResult, JsonUnmarshallerContext> {
 
-    
-
     public DeleteItemResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DeleteItemResult deleteItemResult = new DeleteItemResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DeleteItemResultJsonUnmarshaller implements Unmarshaller<DeleteItem
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Attributes", targetDepth)) {
                     deleteItemResult.setAttributes(new MapUnmarshaller<String,AttributeValue>(StringJsonUnmarshaller.getInstance(), AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -67,7 +61,6 @@ public class DeleteItemResultJsonUnmarshaller implements Unmarshaller<DeleteItem
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

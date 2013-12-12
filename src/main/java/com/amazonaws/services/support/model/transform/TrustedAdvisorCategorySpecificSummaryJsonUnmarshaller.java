@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Trusted Advisor Category Specific Summary JSON Unmarshaller
  */
 public class TrustedAdvisorCategorySpecificSummaryJsonUnmarshaller implements Unmarshaller<TrustedAdvisorCategorySpecificSummary, JsonUnmarshallerContext> {
 
-    
-
     public TrustedAdvisorCategorySpecificSummary unmarshall(JsonUnmarshallerContext context) throws Exception {
         TrustedAdvisorCategorySpecificSummary trustedAdvisorCategorySpecificSummary = new TrustedAdvisorCategorySpecificSummary();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class TrustedAdvisorCategorySpecificSummaryJsonUnmarshaller implements Un
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("costOptimizing", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class TrustedAdvisorCategorySpecificSummaryJsonUnmarshaller implements Un
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

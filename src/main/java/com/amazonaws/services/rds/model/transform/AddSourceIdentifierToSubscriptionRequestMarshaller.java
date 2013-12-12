@@ -33,8 +33,8 @@ public class AddSourceIdentifierToSubscriptionRequestMarshaller implements Marsh
     public Request<AddSourceIdentifierToSubscriptionRequest> marshall(AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest) {
 
         if (addSourceIdentifierToSubscriptionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AddSourceIdentifierToSubscriptionRequest> request = new DefaultRequest<AddSourceIdentifierToSubscriptionRequest>(addSourceIdentifierToSubscriptionRequest, "AmazonRDS");
         request.addParameter("Action", "AddSourceIdentifierToSubscription");
@@ -46,7 +46,6 @@ public class AddSourceIdentifierToSubscriptionRequestMarshaller implements Marsh
         if (addSourceIdentifierToSubscriptionRequest.getSourceIdentifier() != null) {
             request.addParameter("SourceIdentifier", StringUtils.fromString(addSourceIdentifierToSubscriptionRequest.getSourceIdentifier()));
         }
-
 
         return request;
     }

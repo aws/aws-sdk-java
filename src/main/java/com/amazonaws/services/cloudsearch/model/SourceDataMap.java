@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudsearch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Specifies how to map source attribute values to custom values when populating an <code>IndexField</code> .
@@ -194,26 +193,26 @@ public class SourceDataMap implements Serializable {
      * @param key The key of the entry to be added into Cases.
      * @param value The corresponding value of the entry to be added into Cases.
      */
-	public SourceDataMap addCasesEntry(String key, String value) {
-		if (null == this.cases) {
-			this.cases = new java.util.HashMap<String,String>();
-		}
-		if (this.cases.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.cases.put(key, value);
-		return this;
-	}
+    public SourceDataMap addCasesEntry(String key, String value) {
+        if (null == this.cases) {
+            this.cases = new java.util.HashMap<String,String>();
+        }
+        if (this.cases.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.cases.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Cases.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public SourceDataMap clearCasesEntries() {
-		this.cases = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Cases.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public SourceDataMap clearCasesEntries() {
+        this.cases = null;
+        return this;
+    }
+    
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

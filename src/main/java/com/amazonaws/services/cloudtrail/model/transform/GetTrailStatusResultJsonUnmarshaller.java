@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Get Trail Status Result JSON Unmarshaller
  */
 public class GetTrailStatusResultJsonUnmarshaller implements Unmarshaller<GetTrailStatusResult, JsonUnmarshallerContext> {
 
-    
-
     public GetTrailStatusResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         GetTrailStatusResult getTrailStatusResult = new GetTrailStatusResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class GetTrailStatusResultJsonUnmarshaller implements Unmarshaller<GetTra
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IsLogging", targetDepth)) {
                     context.nextToken();
@@ -92,7 +86,6 @@ public class GetTrailStatusResultJsonUnmarshaller implements Unmarshaller<GetTra
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

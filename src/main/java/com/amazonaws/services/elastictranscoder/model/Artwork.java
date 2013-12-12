@@ -16,7 +16,6 @@ package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20.

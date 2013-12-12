@@ -33,8 +33,8 @@ public class ResetSnapshotAttributeRequestMarshaller implements Marshaller<Reque
     public Request<ResetSnapshotAttributeRequest> marshall(ResetSnapshotAttributeRequest resetSnapshotAttributeRequest) {
 
         if (resetSnapshotAttributeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ResetSnapshotAttributeRequest> request = new DefaultRequest<ResetSnapshotAttributeRequest>(resetSnapshotAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ResetSnapshotAttribute");
@@ -46,7 +46,6 @@ public class ResetSnapshotAttributeRequestMarshaller implements Marshaller<Reque
         if (resetSnapshotAttributeRequest.getAttribute() != null) {
             request.addParameter("Attribute", StringUtils.fromString(resetSnapshotAttributeRequest.getAttribute()));
         }
-
 
         return request;
     }

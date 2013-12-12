@@ -23,6 +23,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Updates a specified user profile.
  * </p>
+ * <p>
+ * <b>Required Permissions</b> : To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information
+ * on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a> .
+ * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateUserProfile(UpdateUserProfileRequest)
  */
@@ -42,6 +46,14 @@ public class UpdateUserProfileRequest extends AmazonWebServiceRequest implements
      * The user's new SSH public key.
      */
     private String sshPublicKey;
+
+    /**
+     * Whether users can specify their own SSH public key through the My
+     * Settings page. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     * User Permissions</a>.
+     */
+    private Boolean allowSelfManagement;
 
     /**
      * The user IAM ARN.
@@ -143,6 +155,72 @@ public class UpdateUserProfileRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * Whether users can specify their own SSH public key through the My
+     * Settings page. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     * User Permissions</a>.
+     *
+     * @return Whether users can specify their own SSH public key through the My
+     *         Settings page. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     *         User Permissions</a>.
+     */
+    public Boolean isAllowSelfManagement() {
+        return allowSelfManagement;
+    }
+    
+    /**
+     * Whether users can specify their own SSH public key through the My
+     * Settings page. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     * User Permissions</a>.
+     *
+     * @param allowSelfManagement Whether users can specify their own SSH public key through the My
+     *         Settings page. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     *         User Permissions</a>.
+     */
+    public void setAllowSelfManagement(Boolean allowSelfManagement) {
+        this.allowSelfManagement = allowSelfManagement;
+    }
+    
+    /**
+     * Whether users can specify their own SSH public key through the My
+     * Settings page. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     * User Permissions</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param allowSelfManagement Whether users can specify their own SSH public key through the My
+     *         Settings page. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     *         User Permissions</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public UpdateUserProfileRequest withAllowSelfManagement(Boolean allowSelfManagement) {
+        this.allowSelfManagement = allowSelfManagement;
+        return this;
+    }
+
+    /**
+     * Whether users can specify their own SSH public key through the My
+     * Settings page. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     * User Permissions</a>.
+     *
+     * @return Whether users can specify their own SSH public key through the My
+     *         Settings page. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     *         User Permissions</a>.
+     */
+    public Boolean getAllowSelfManagement() {
+        return allowSelfManagement;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -156,7 +234,8 @@ public class UpdateUserProfileRequest extends AmazonWebServiceRequest implements
         sb.append("{");
         if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ",");
         if (getSshUsername() != null) sb.append("SshUsername: " + getSshUsername() + ",");
-        if (getSshPublicKey() != null) sb.append("SshPublicKey: " + getSshPublicKey() );
+        if (getSshPublicKey() != null) sb.append("SshPublicKey: " + getSshPublicKey() + ",");
+        if (isAllowSelfManagement() != null) sb.append("AllowSelfManagement: " + isAllowSelfManagement() );
         sb.append("}");
         return sb.toString();
     }
@@ -169,6 +248,7 @@ public class UpdateUserProfileRequest extends AmazonWebServiceRequest implements
         hashCode = prime * hashCode + ((getIamUserArn() == null) ? 0 : getIamUserArn().hashCode()); 
         hashCode = prime * hashCode + ((getSshUsername() == null) ? 0 : getSshUsername().hashCode()); 
         hashCode = prime * hashCode + ((getSshPublicKey() == null) ? 0 : getSshPublicKey().hashCode()); 
+        hashCode = prime * hashCode + ((isAllowSelfManagement() == null) ? 0 : isAllowSelfManagement().hashCode()); 
         return hashCode;
     }
     
@@ -186,6 +266,8 @@ public class UpdateUserProfileRequest extends AmazonWebServiceRequest implements
         if (other.getSshUsername() != null && other.getSshUsername().equals(this.getSshUsername()) == false) return false; 
         if (other.getSshPublicKey() == null ^ this.getSshPublicKey() == null) return false;
         if (other.getSshPublicKey() != null && other.getSshPublicKey().equals(this.getSshPublicKey()) == false) return false; 
+        if (other.isAllowSelfManagement() == null ^ this.isAllowSelfManagement() == null) return false;
+        if (other.isAllowSelfManagement() != null && other.isAllowSelfManagement().equals(this.isAllowSelfManagement()) == false) return false; 
         return true;
     }
     

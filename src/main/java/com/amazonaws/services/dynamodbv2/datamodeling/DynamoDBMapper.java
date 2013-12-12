@@ -30,6 +30,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Random;
+import java.util.Set;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -368,7 +369,8 @@ public class DynamoDBMapper {
 
         String tableName = getTableName(clazz, config);
 
-        GetItemRequest rq = new GetItemRequest();
+        GetItemRequest rq = new GetItemRequest()
+            .withRequestMetricCollector(config.getRequestMetricCollector());
 
         Map<String, AttributeValue> key = getKey(keyObject, clazz);
 
@@ -401,7 +403,7 @@ public class DynamoDBMapper {
 
     private <T> Map<String, AttributeValue> getKey(T keyObject, Class<T> clazz) {
         Map<String, AttributeValue> key = new HashMap<String, AttributeValue>();
-        for (Method keyGetter : reflector.getKeyGetters(clazz)) {
+        for (Method keyGetter : reflector.getPrimaryKeyGetters(clazz)) {
             Object getterResult = safeInvoke(keyGetter, keyObject);
             AttributeValue keyAttributeValue = getSimpleAttributeValue(keyGetter, getterResult);
             if (keyAttributeValue == null) {
@@ -452,7 +454,7 @@ public class DynamoDBMapper {
         }
         boolean seenHashKey = false;
         boolean seenRangeKey = false;
-        for ( Method getter : reflector.getKeyGetters(clazz) ) {
+        for ( Method getter : reflector.getPrimaryKeyGetters(clazz) ) {
             if ( getter.isAnnotationPresent(DynamoDBHashKey.class) ) {
                 if ( seenHashKey ) {
                     throw new DynamoDBMappingException("Found more than one method annotated with "
@@ -483,16 +485,21 @@ public class DynamoDBMapper {
 
     /**
      * Returns a map of attribute name to EQ condition for the key prototype
-     * object given.
+     * object given. This method considers attributes annotated with either
+     * {@link DynamoDBHashKey} or {@link DynamoDBIndexHashKey}.
      */
     private Map<String, Condition> getHashKeyEqualsConditions(Object obj) {
         Map<String, Condition> conditions = new HashMap<String, Condition>();
-        for ( Method getter : reflector.getKeyGetters(obj.getClass()) ) {
-            if ( getter.isAnnotationPresent(DynamoDBHashKey.class) ) {
-                conditions.put(
-                        reflector.getAttributeName(getter),
-                        new Condition().withComparisonOperator(ComparisonOperator.EQ).withAttributeValueList(
-                                getSimpleAttributeValue(getter, safeInvoke(getter, obj, (Object[])null))));
+        for ( Method getter : reflector.getRelevantGetters(obj.getClass()) ) {
+            if ( getter.isAnnotationPresent(DynamoDBHashKey.class)
+                    || getter.isAnnotationPresent(DynamoDBIndexHashKey.class) ) {
+                Object getterReturnResult = safeInvoke(getter, obj, (Object[])null);
+                if (getterReturnResult != null) {
+                    conditions.put(
+                            reflector.getAttributeName(getter),
+                            new Condition().withComparisonOperator(ComparisonOperator.EQ).withAttributeValueList(
+                                    getSimpleAttributeValue(getter, getterReturnResult)));
+                }
             }
         }
         return conditions;
@@ -703,7 +710,7 @@ public class DynamoDBMapper {
     }
 
     private boolean needAutoGenerateAssignableKey(Class<?> clazz, Object object) {
-        Collection<Method> keyGetters = reflector.getKeyGetters(clazz);
+        Collection<Method> keyGetters = reflector.getPrimaryKeyGetters(clazz);
         boolean forcePut = false;
         /*
          * Determine if there are any auto-assigned keys to assign. If so, force
@@ -769,7 +776,7 @@ public class DynamoDBMapper {
      *
      * @see DynamoDBMapperConfig.SaveBehavior
      */
-    public <T extends Object> void save(T object, DynamoDBSaveExpression saveExpression, DynamoDBMapperConfig config) {
+    public <T extends Object> void save(T object, DynamoDBSaveExpression saveExpression, final DynamoDBMapperConfig config) {
         final DynamoDBMapperConfig finalConfig = mergeConfig(config);
 
         @SuppressWarnings("unchecked")
@@ -817,10 +824,13 @@ public class DynamoDBMapper {
                     
                     attributeValues = transformAttributes(
                         toParameters(attributeValues, this.clazz, finalConfig));
-                    
-                    db.putItem(applyUserAgent(new PutItemRequest().withTableName(getTableName())
-                            .withItem(attributeValues)
-                            .withExpected(getExpectedAttributeValues())));
+                    PutItemRequest req = new PutItemRequest()
+                        .withTableName(getTableName())
+                        .withItem(attributeValues)
+                        .withExpected(getExpectedAttributeValues())
+                        .withRequestMetricCollector(
+                            finalConfig.getRequestMetricCollector());
+                    db.putItem(applyUserAgent(req));
                 }
             };
         } else {
@@ -892,8 +902,8 @@ public class DynamoDBMapper {
                         doUpdateItem = false;
                         try {
                             keyOnlyPut(this.clazz, this.object, getTableName(),
-                                    reflector.getHashKeyGetter(this.clazz),
-                                    reflector.getRangeKeyGetter(this.clazz),
+                                    reflector.getPrimaryHashKeyGetter(this.clazz),
+                                    reflector.getPrimaryRangeKeyGetter(this.clazz),
                                     userProvidedExpectedValues,
                                     finalConfig);
                         } catch (AmazonServiceException ase) {
@@ -912,16 +922,18 @@ public class DynamoDBMapper {
                     }
                     if ( doUpdateItem ) {
                         /* Send an updateItem request. */
-                        db.updateItem(applyUserAgent(new UpdateItemRequest()
-                                .withTableName(getTableName())
-                                .withKey(getKeyAttributeValues())
-                                .withAttributeUpdates(
-                                        transformAttributeUpdates(
-                                                this.clazz,
-                                                getKeyAttributeValues(),
-                                                getAttributeValueUpdates(),
-                                                finalConfig))
-                                .withExpected(getExpectedAttributeValues())));
+                        UpdateItemRequest req = new UpdateItemRequest()
+                            .withTableName(getTableName())
+                            .withKey(getKeyAttributeValues())
+                            .withAttributeUpdates(
+                                transformAttributeUpdates(this.clazz,
+                                    getKeyAttributeValues(),
+                                    getAttributeValueUpdates(),
+                                    finalConfig))
+                            .withExpected(getExpectedAttributeValues())
+                            .withRequestMetricCollector(
+                                finalConfig.getRequestMetricCollector());
+                        db.updateItem(applyUserAgent(req));
                     }
                 }
             };
@@ -981,7 +993,7 @@ public class DynamoDBMapper {
          * The general workflow of a save operation.
          */
         public void execute() {
-            Collection<Method> keyGetters = reflector.getKeyGetters(clazz);
+            Collection<Method> keyGetters = reflector.getPrimaryKeyGetters(clazz);
 
             /*
              * First handle keys
@@ -1186,6 +1198,8 @@ public class DynamoDBMapper {
      * replace any existing item in the table, we also insist that an item with
      * the key(s) given doesn't already exist. This isn't perfect, but we shouldn't
      * be doing a putItem at all in this case, so it's the best we can do.
+     *
+     * @param config never null
      */
     private void keyOnlyPut(
             Class<?> clazz,
@@ -1218,10 +1232,11 @@ public class DynamoDBMapper {
         if(userProvidedExpectedValues != null){
             expectedValues.putAll(userProvidedExpectedValues);
         }
-
-        db.putItem(applyUserAgent(new PutItemRequest().withTableName(tableName).withItem(attributes)
-                .withExpected(expectedValues)));
-    }
+        PutItemRequest req = new PutItemRequest().withTableName(tableName)
+            .withItem(attributes).withExpected(expectedValues)
+            .withRequestMetricCollector(config.getRequestMetricCollector());
+        db.putItem(applyUserAgent(req));
+   }
 
     /**
      * Deletes the given object from its DynamoDB table using the default configuration.
@@ -1294,7 +1309,12 @@ public class DynamoDBMapper {
             expectedValues.putAll(deleteExpression.getExpected());
         }
 
-        db.deleteItem(applyUserAgent(new DeleteItemRequest().withKey(key).withTableName(tableName).withExpected(expectedValues)));
+        DeleteItemRequest req = applyUserAgent(new DeleteItemRequest()
+            .withKey(key).withTableName(tableName)
+            .withExpected(expectedValues))
+            .withRequestMetricCollector(config.getRequestMetricCollector())
+            ;
+        db.deleteItem(req);
     }
 
     /**
@@ -1717,6 +1737,9 @@ public class DynamoDBMapper {
         return batchLoad(keys, config);
     }
 
+    /**
+     * @param config never null
+     */
     private void processBatchGetRequest(
             final Map<String, Class<?>> classesByTableName,
             final Map<String, KeysAndAttributes> requestItems,
@@ -1724,7 +1747,8 @@ public class DynamoDBMapper {
             final DynamoDBMapperConfig config) {
         
         BatchGetItemResult batchGetItemResult = null;
-        BatchGetItemRequest batchGetItemRequest = new BatchGetItemRequest();
+        BatchGetItemRequest batchGetItemRequest = new BatchGetItemRequest()
+            .withRequestMetricCollector(config.getRequestMetricCollector());
         batchGetItemRequest.setRequestItems(requestItems);
         do {
             if ( batchGetItemResult != null ) {
@@ -2002,7 +2026,7 @@ public class DynamoDBMapper {
      * expression parameter allows the caller to filter results and control how
      * the query is executed.
      * <p>
-     * When the query is on any local secondary index, callers should be aware that
+     * When the query is on any local/global secondary index, callers should be aware that
      * the returned object(s) will only contain item attributes that are projected
      * into the index. All the other unprojected attributes will be saved as type
      * default values.
@@ -2185,16 +2209,23 @@ public class DynamoDBMapper {
         return config;
     }
 
+    /**
+     * @param config never null
+     */
     private ScanRequest createScanRequestFromExpression(Class<?> clazz, DynamoDBScanExpression scanExpression, DynamoDBMapperConfig config) {
         ScanRequest scanRequest = new ScanRequest();
         scanRequest.setTableName(getTableName(clazz, config));
         scanRequest.setScanFilter(scanExpression.getScanFilter());
         scanRequest.setLimit(scanExpression.getLimit());
         scanRequest.setExclusiveStartKey(scanExpression.getExclusiveStartKey());
+        scanRequest.setRequestMetricCollector(config.getRequestMetricCollector());
 
         return scanRequest;
     }
 
+    /**
+     * @param config never null
+     */
     private List<ScanRequest> createParallelScanRequestsFromExpression(Class<?> clazz, DynamoDBScanExpression scanExpression, int totalSegments, DynamoDBMapperConfig config) {
         if (totalSegments < 1)
             throw new IllegalArgumentException("Parallel scan should have at least one scan segment.");
@@ -2206,87 +2237,276 @@ public class DynamoDBMapper {
         return parallelScanRequests;
     }
 
-    private <T> QueryRequest  createQueryRequestFromExpression(Class<T> clazz, DynamoDBQueryExpression<T> queryExpression, DynamoDBMapperConfig config) {
+    private <T> QueryRequest createQueryRequestFromExpression(Class<T> clazz, DynamoDBQueryExpression<T> queryExpression, DynamoDBMapperConfig config) {
         QueryRequest queryRequest = new QueryRequest();
         queryRequest.setConsistentRead(queryExpression.isConsistentRead());
         queryRequest.setTableName(getTableName(clazz, config));
         queryRequest.setIndexName(queryExpression.getIndexName());
 
-        Map<String, Condition> keyConditions = getHashKeyEqualsConditions(queryExpression.getHashKeyValues());
-
+        // Hash key (primary or index) conditions
+        Map<String, Condition> hashKeyConditions = getHashKeyEqualsConditions(queryExpression.getHashKeyValues());
+        // Range key (primary or index) conditions
         Map<String, Condition> rangeKeyConditions = queryExpression.getRangeKeyConditions();
-        if (null != rangeKeyConditions) {
-            processRangeKeyConditions(clazz, queryRequest, rangeKeyConditions);
-            keyConditions.putAll(rangeKeyConditions);
-        }
+        processKeyConditions(clazz, queryRequest, hashKeyConditions, rangeKeyConditions);
 
-        queryRequest.setKeyConditions(keyConditions);
         queryRequest.setScanIndexForward(queryExpression.isScanIndexForward());
         queryRequest.setLimit(queryExpression.getLimit());
         queryRequest.setExclusiveStartKey(queryExpression.getExclusiveStartKey());
+        queryRequest.setRequestMetricCollector(config.getRequestMetricCollector());
 
         return queryRequest;
     }
-
+    
     /**
-     * Utility method for checking the validity of the range key condition, and also it will try to infer the index name if the query is using any index range key.
+     * Utility method for checking the validity of both hash and range key
+     * conditions. It also tries to infer the correct index name from the POJO
+     * annotation, if such information is not directly specified by the user.
+     * 
+     * @param clazz
+     *            The domain class of the queried items.
+     * @param queryRequest
+     *            The QueryRequest object to be sent to service.
+     * @param hashKeyConditions
+     *            All the hash key EQ conditions extracted from the POJO object.
+     *            The mapper will choose one of them that could be applied together with
+     *            the user-specified (if any) index name and range key conditions. Or it
+     *            throws error if more than one conditions are applicable for the query.
+     * @param rangeKeyConditions
+     *            The range conditions specified by the user. We currently only
+     *            allows at most one range key condition.
      */
-    private void processRangeKeyConditions(Class<?> clazz, QueryRequest queryRequest, Map<String, Condition> rangeKeyConditions) {
-        /**
-         * Exception if conditions on multiple range keys are found.
-         */
-        if (rangeKeyConditions.size() > 1) {
-            // The current DynamoDB service only supports queries using hash key equal condition
-            // plus ONE range key condition.
-            // This range key could be either the primary key or any index key.
-            throw new AmazonClientException("Conditions on multiple range keys ("
+    private void processKeyConditions(Class<?> clazz,
+                                      QueryRequest queryRequest,
+                                      Map<String, Condition> hashKeyConditions,
+                                      Map<String, Condition> rangeKeyConditions) {
+        // There should be least one hash key condition.
+        if (hashKeyConditions == null || hashKeyConditions.isEmpty()) {
+            throw new IllegalArgumentException("Illegal query expression: No hash key condition is found in the query");
+        }
+        // We don't allow multiple range key conditions.
+        if (rangeKeyConditions != null && rangeKeyConditions.size() > 1) {
+            throw new IllegalArgumentException(
+                    "Illegal query expression: Conditions on multiple range keys ("
                     + rangeKeyConditions.keySet().toString()
                     + ") are found in the query. DynamoDB service only accepts up to ONE range key condition.");
         }
-        String assignedIndexName = queryRequest.getIndexName();
-        for (String rangeKey : rangeKeyConditions.keySet()) {
-            /**
-             * If it is a primary range key, checks whether the user has specified
-             * an unnecessary index name.
-             */
-            if (rangeKey.equals(reflector.getPrimaryRangeKeyName(clazz))) {
-                if ( null != assignedIndexName )
-                    throw new AmazonClientException("The range key ("
-                            + rangeKey + ") in the query is the primary key of the table, not the range key of index ("
-                            + assignedIndexName + ").");
-            }
-            else {
-                List<String> annotatedIndexNames = reflector.getIndexNameByIndexRangeKeyName(clazz, rangeKey);
-                /**
-                 * If it is an index range key,
-                 *         check whether the provided index name matches the @DynamoDBIndexRangeKey annotation,
-                 *         or try to infer the index name according to @DynamoDBIndexRangeKey annotation
-                 *             if it is not provided in the query.
-                 */
-                if ( null != annotatedIndexNames) {
-                    if (null == assignedIndexName) {
-                        // infer the index name if the range key is used only in one index
-                        if ( 1 == annotatedIndexNames.size()) {
-                            queryRequest.setIndexName(annotatedIndexNames.get(0));
-                        } else {
-                            throw new AmazonClientException("Please specify which index to be used for this query. "
-                                    + "(Choose from " + annotatedIndexNames.toString() + ").");
-                        }
-                    } else {
-                        // check whether the provided index name in the query matches the @DyanmoDBIndexRangeKey annotation
-                        if ( !annotatedIndexNames.contains(assignedIndexName)) {
-                            throw new AmazonClientException(assignedIndexName
-                                    + " is not annotated as an index in the @DynamoDBIndexRangeKey annotation on "
-                                    + rangeKey + "(Choose from " + annotatedIndexNames.toString() + ").");
-                        }
-                    }
+        final boolean hasRangeKeyCondition = (rangeKeyConditions != null)
+                                            && (!rangeKeyConditions.isEmpty());
+        final String userProvidedIndexName = queryRequest.getIndexName();
+        final String primaryHashKeyName = reflector.getPrimaryHashKeyName(clazz);
+        
+        // First collect the names of all the global/local secondary indexes that could be applied to this query.
+        // If the user explicitly specified an index name, we also need to
+        //   1) check the index is applicable for both hash and range key conditions
+        //   2) choose one hash key condition if there are more than one of them
+        boolean hasPrimaryHashKeyCondition = false;
+        final Map<String, Set<String>> annotatedGSIsOnHashKeys = new HashMap<String, Set<String>>();
+        String hashKeyNameForThisQuery = null;
+        
+        boolean hasPrimaryRangeKeyCondition = false;
+        final Set<String> annotatedLSIsOnRangeKey = new HashSet<String>();
+        final Set<String> annotatedGSIsOnRangeKey = new HashSet<String>();
+        
+        // Range key condition
+        String rangeKeyNameForThisQuery = null;
+        if (hasRangeKeyCondition) {
+            for (String rangeKeyName : rangeKeyConditions.keySet()) {
+                rangeKeyNameForThisQuery = rangeKeyName;
+                if (rangeKeyName.equals(reflector.getPrimaryRangeKeyName(clazz))) {
+                    hasPrimaryRangeKeyCondition = true;
                 }
-                else {
-                    throw new AmazonClientException("The range key used in the query (" + rangeKey + ") is not annotated with " +
-                            "either @DynamoDBRangeKey or @DynamoDBIndexRangeKey in class (" + clazz.getName() + ").");
+                
+                List<String> annotatedLSI = reflector.getLocalSecondaryIndexNamesByIndexKeyName(clazz, rangeKeyName);
+                if (annotatedLSI != null) {
+                    annotatedLSIsOnRangeKey.addAll(annotatedLSI);
+                }
+                List<String> annotatedGSI = reflector.getGlobalSecondaryIndexNamesByIndexKeyName(clazz, rangeKeyName, false);
+                if (annotatedGSI != null) {
+                    annotatedGSIsOnRangeKey.addAll(annotatedGSI);
+                }
+            }
+            
+            if ( (!hasPrimaryRangeKeyCondition)
+                    && annotatedLSIsOnRangeKey.isEmpty() && annotatedGSIsOnHashKeys.isEmpty()) {
+                throw new DynamoDBMappingException(
+                        "The query contains a condition on a range key (" +
+                        rangeKeyNameForThisQuery + ") " +
+                        "that is not annotated with either @DynamoDBRangeKy or @DynamoDBIndexRangeKey.");
+            }
+        }
+        
+        final boolean userProvidedLSI = (userProvidedIndexName != null)
+                                        && (annotatedLSIsOnRangeKey.contains(userProvidedIndexName));
+        final boolean userProvidedGSI = (userProvidedIndexName != null)
+                                        && ( !hasRangeKeyCondition   // it must be a GSI if no range condition is specified.
+                                                || (annotatedGSIsOnRangeKey.contains(userProvidedIndexName)) );
+        if (userProvidedLSI && userProvidedGSI) {
+            throw new DynamoDBMappingException(
+                    "Invalid @DynamoDBIndexRangeKey annotation: " +
+                    "Index \"" + userProvidedIndexName + "\" " +
+                    "is annotateded as both the LSI and GSI for attribute " +
+                    "\"" + rangeKeyNameForThisQuery + "\".");
+        }
+        
+        // Hash key conditions
+        for (String hashKeyName : hashKeyConditions.keySet()) {
+            if (hashKeyName.equals(primaryHashKeyName)) {
+                hasPrimaryHashKeyCondition = true;
+            }
+            
+            List<String> annotatedGSINames = reflector.getGlobalSecondaryIndexNamesByIndexKeyName(clazz, hashKeyName, true);
+            annotatedGSIsOnHashKeys.put(hashKeyName, 
+                    annotatedGSINames == null ? new HashSet<String>() : new HashSet<String>(annotatedGSINames));
+            
+            // Additional validation if the user provided an index name.
+            if (userProvidedIndexName != null) {
+                boolean foundHashKeyConditionValidWithUserProvidedIndex = false;
+                if (userProvidedLSI && hashKeyName.equals(primaryHashKeyName)) {
+                    // found an applicable hash key condition (primary hash + LSI range)
+                    foundHashKeyConditionValidWithUserProvidedIndex = true;
+                } else if (userProvidedGSI && 
+                        annotatedGSINames != null && annotatedGSINames.contains(userProvidedIndexName)) {
+                    // found an applicable hash key condition (GSI hash + range)
+                    foundHashKeyConditionValidWithUserProvidedIndex = true;
+                }
+                if (foundHashKeyConditionValidWithUserProvidedIndex) {
+                    if ( hashKeyNameForThisQuery != null ) {
+                        throw new IllegalArgumentException(
+                                "Ambiguous query expression: More than one hash key EQ conditions (" +
+                                hashKeyNameForThisQuery + ", " + hashKeyName +
+                                ") are applicable to the specified index ("
+                                + userProvidedIndexName + "). " +
+                                "Please provide only one of them in the query expression.");
+                    } else {
+                        // found an applicable hash key condition
+                        hashKeyNameForThisQuery = hashKeyName;
+                    }
                 }
             }
         }
+
+        // Collate all the key conditions
+        Map<String, Condition> keyConditions = new HashMap<String, Condition>();
+        
+        // With user-provided index name
+        if (userProvidedIndexName != null) {
+            if (hasRangeKeyCondition
+                    && ( !userProvidedLSI )
+                    && ( !userProvidedGSI )) {
+                throw new IllegalArgumentException(
+                        "Illegal query expression: No range key condition is applicable to the specified index ("
+                        + userProvidedIndexName + "). ");
+            }
+            if (hashKeyNameForThisQuery == null) {
+                throw new IllegalArgumentException(
+                        "Illegal query expression: No hash key condition is applicable to the specified index ("
+                        + userProvidedIndexName + "). ");
+            }
+            
+            keyConditions.put(hashKeyNameForThisQuery, hashKeyConditions.get(hashKeyNameForThisQuery));
+            if (hasRangeKeyCondition) {
+                keyConditions.putAll(rangeKeyConditions);
+            }
+        } 
+        // Infer the index name by finding the index shared by both hash and range key annotations.
+        else {
+            if (hasRangeKeyCondition) {
+                String inferredIndexName = null;
+                hashKeyNameForThisQuery = null;
+                if (hasPrimaryHashKeyCondition && hasPrimaryRangeKeyCondition) {
+                    // Found valid query: primary hash + range key conditions
+                    hashKeyNameForThisQuery = primaryHashKeyName;
+                } else {
+                    // Intersect the set of all the indexes applicable to the range key
+                    // with the set of indexes applicable to each hash key condition.
+                    for (String hashKeyName : annotatedGSIsOnHashKeys.keySet()) {
+                        boolean foundValidQueryExpressionWithInferredIndex = false;
+                        String indexNameInferredByThisHashKey = null;
+                        if (hashKeyName.equals(primaryHashKeyName)) {
+                            if (annotatedLSIsOnRangeKey.size() == 1) {
+                                // Found valid query (Primary hash + LSI range conditions)
+                                foundValidQueryExpressionWithInferredIndex = true;
+                                indexNameInferredByThisHashKey = annotatedLSIsOnRangeKey.iterator().next();
+                            }
+                        }
+                        
+                        Set<String> annotatedGSIsOnHashKey = annotatedGSIsOnHashKeys.get(hashKeyName);
+                        // We don't need the data in annotatedGSIsOnHashKeys afterwards,
+                        // so it's safe to do the intersection in-place.
+                        annotatedGSIsOnHashKey.retainAll(annotatedGSIsOnRangeKey);
+                        if (annotatedGSIsOnHashKey.size() == 1) {
+                            // Found valid query (Hash + range conditions on a GSI)
+                            if (foundValidQueryExpressionWithInferredIndex) {
+                                hashKeyNameForThisQuery = hashKeyName;
+                                inferredIndexName = indexNameInferredByThisHashKey;
+                            }
+                            
+                            foundValidQueryExpressionWithInferredIndex = true;
+                            indexNameInferredByThisHashKey = annotatedGSIsOnHashKey.iterator().next();
+                        }
+                        
+                        if (foundValidQueryExpressionWithInferredIndex) {
+                            if (hashKeyNameForThisQuery != null) {
+                                throw new IllegalArgumentException(
+                                        "Ambiguous query expression: Found multiple valid queries: " +
+                                        "(Hash: \"" + hashKeyNameForThisQuery + "\", Range: \"" + rangeKeyNameForThisQuery + "\", Index: \"" + inferredIndexName + "\") and " +
+                                        "(Hash: \"" + hashKeyName + "\", Range: \"" + rangeKeyNameForThisQuery + "\", Index: \"" + indexNameInferredByThisHashKey + "\").");
+                            } else {
+                                hashKeyNameForThisQuery = hashKeyName;
+                                inferredIndexName = indexNameInferredByThisHashKey;
+                            }
+                        }
+                    }
+                }
+                
+                if (hashKeyNameForThisQuery != null) {
+                    keyConditions.put(hashKeyNameForThisQuery, hashKeyConditions.get(hashKeyNameForThisQuery));
+                    keyConditions.putAll(rangeKeyConditions);
+                    queryRequest.setIndexName(inferredIndexName);
+                } else {
+                    throw new IllegalArgumentException(
+                            "Illegal query expression: Cannot infer the index name from the query expression.");
+                }
+                
+            } else {
+                // No range key condition is specified.
+                if (hashKeyConditions.size() > 1) {
+                    if ( hasPrimaryHashKeyCondition ) {
+                        keyConditions.put(primaryHashKeyName, hashKeyConditions.get(primaryHashKeyName));
+                    } else {
+                        throw new IllegalArgumentException(
+                                "Ambiguous query expression: More than one index hash key EQ conditions (" +
+                                hashKeyConditions.keySet() +
+                                ") are applicable to the query. " +
+                                "Please provide only one of them in the query expression, or specify the appropriate index name.");
+                    }
+                   
+                } else {
+                    // Only one hash key condition
+                    String hashKeyName = annotatedGSIsOnHashKeys.keySet().iterator().next();
+                    if ( !hasPrimaryHashKeyCondition ) {
+                        if (annotatedGSIsOnHashKeys.get(hashKeyName).size() == 1) {
+                            // Set the index if the index hash key is only annotated with one GSI.
+                            queryRequest.setIndexName(annotatedGSIsOnHashKeys.get(hashKeyName).iterator().next());
+                        } else if (annotatedGSIsOnHashKeys.get(hashKeyName).size() > 1) {
+                            throw new IllegalArgumentException(
+                                    "Ambiguous query expression: More than one GSIs (" +
+                                    annotatedGSIsOnHashKeys.get(hashKeyName) +
+                                    ") are applicable to the query. " +
+                                    "Please specify one of them in your query expression.");
+                        } else {
+                            throw new IllegalArgumentException(
+                                    "Illegal query expression: No GSI is found in the @DynamoDBIndexHashKey annotation for attribute " +
+                                    "\"" + hashKeyName + "\".");
+                        }
+                    }
+                    keyConditions.putAll(hashKeyConditions);
+                }
+                
+            }
+        }
+        
+        queryRequest.setKeyConditions(keyConditions);
     }
 
     private <T> AttributeTransformer.Parameters<T> toParameters(
@@ -2389,7 +2609,7 @@ public class DynamoDBMapper {
         @Override
         public String getHashKeyName() {
             if (hashKeyName == null) {
-                Method hashKeyGetter = reflector.getHashKeyGetter(modelClass);
+                Method hashKeyGetter = reflector.getPrimaryHashKeyGetter(modelClass);
                 hashKeyName = reflector.getAttributeName(hashKeyGetter);
             }
             return hashKeyName;
@@ -2399,7 +2619,7 @@ public class DynamoDBMapper {
         public String getRangeKeyName() {
             if (rangeKeyName == null) {
                 Method rangeKeyGetter =
-                        reflector.getRangeKeyGetter(modelClass);
+                        reflector.getPrimaryRangeKeyGetter(modelClass);
                 if (rangeKeyGetter == null) {
                     rangeKeyName = NO_RANGE_KEY;
                 } else {
@@ -2432,9 +2652,9 @@ public class DynamoDBMapper {
      */
     @Deprecated
     protected Map<String, AttributeValue> untransformAttributes(Class<?> clazz, Map<String, AttributeValue> attributeValues) {
-        Method hashKeyGetter = reflector.getHashKeyGetter(clazz);
+        Method hashKeyGetter = reflector.getPrimaryHashKeyGetter(clazz);
         String hashKeyName = reflector.getAttributeName(hashKeyGetter);
-        Method rangeKeyGetter = reflector.getRangeKeyGetter(clazz);
+        Method rangeKeyGetter = reflector.getPrimaryRangeKeyGetter(clazz);
         String rangeKeyName = rangeKeyGetter == null ? null : reflector.getAttributeName(rangeKeyGetter);
         return untransformAttributes(hashKeyName, rangeKeyName, attributeValues);
     }
@@ -2478,9 +2698,9 @@ public class DynamoDBMapper {
      */
     @Deprecated
     protected Map<String, AttributeValue> transformAttributes(Class<?> clazz, Map<String, AttributeValue> attributeValues) {
-        Method hashKeyGetter = reflector.getHashKeyGetter(clazz);
+        Method hashKeyGetter = reflector.getPrimaryHashKeyGetter(clazz);
         String hashKeyName = reflector.getAttributeName(hashKeyGetter);
-        Method rangeKeyGetter = reflector.getRangeKeyGetter(clazz);
+        Method rangeKeyGetter = reflector.getPrimaryRangeKeyGetter(clazz);
         String rangeKeyName = rangeKeyGetter == null ? null : reflector.getAttributeName(rangeKeyGetter);
         return transformAttributes(hashKeyName, rangeKeyName, attributeValues);
     }
@@ -2522,6 +2742,7 @@ public class DynamoDBMapper {
             toParameters(item, true, clazz, config);
         
         String hashKey = parameters.getHashKeyName();
+        
         if (!item.containsKey(hashKey)) {
             item.put(hashKey, keys.get(hashKey));
         }

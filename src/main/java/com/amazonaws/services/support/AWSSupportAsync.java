@@ -1059,6 +1059,5 @@ public interface AWSSupportAsync extends AWSSupport {
     public Future<DescribeTrustedAdvisorCheckSummariesResult> describeTrustedAdvisorCheckSummariesAsync(DescribeTrustedAdvisorCheckSummariesRequest describeTrustedAdvisorCheckSummariesRequest,
             AsyncHandler<DescribeTrustedAdvisorCheckSummariesRequest, DescribeTrustedAdvisorCheckSummariesResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

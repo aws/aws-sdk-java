@@ -33,8 +33,8 @@ public class DeleteConfigurationTemplateRequestMarshaller implements Marshaller<
     public Request<DeleteConfigurationTemplateRequest> marshall(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest) {
 
         if (deleteConfigurationTemplateRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteConfigurationTemplateRequest> request = new DefaultRequest<DeleteConfigurationTemplateRequest>(deleteConfigurationTemplateRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DeleteConfigurationTemplate");
@@ -46,7 +46,6 @@ public class DeleteConfigurationTemplateRequestMarshaller implements Marshaller<
         if (deleteConfigurationTemplateRequest.getTemplateName() != null) {
             request.addParameter("TemplateName", StringUtils.fromString(deleteConfigurationTemplateRequest.getTemplateName()));
         }
-
 
         return request;
     }

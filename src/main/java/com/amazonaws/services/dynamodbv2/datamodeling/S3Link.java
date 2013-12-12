@@ -21,12 +21,14 @@ import java.io.OutputStream;
 import java.net.URL;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.internal.BucketNameUtils;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.Region;
 import com.amazonaws.services.s3.model.S3Object;
@@ -170,7 +172,23 @@ public class S3Link {
      *         returned by Amazon S3 for the newly created object.
      */
     public PutObjectResult uploadFrom(final File source) {
-        return getAmazonS3Client().putObject(getBucketName(), getKey(), source);
+        return uploadFrom0(source, null);
+    }
+
+    /**
+     * Same as {@link #uploadFrom(File)} but allows specifying a
+     * request metric collector.
+     */
+    public PutObjectResult uploadFrom(final File source,
+            RequestMetricCollector requestMetricCollector) {
+        return uploadFrom0(source, requestMetricCollector);
+    }
+
+    private PutObjectResult uploadFrom0(final File source,
+            RequestMetricCollector requestMetricCollector) {
+        PutObjectRequest req = new PutObjectRequest(getBucketName(), getKey(),
+                source).withRequestMetricCollector(requestMetricCollector);
+        return getAmazonS3Client().putObject(req);
     }
 
     /**
@@ -184,10 +202,26 @@ public class S3Link {
      *         returned by Amazon S3 for the newly created object.
      */
     public PutObjectResult uploadFrom(final byte[] buffer) {
+        return uploadFrom0(buffer, null);
+    }
+
+    /**
+     * Same as {@link #uploadFrom(byte[])} but allows specifying a
+     * request metric collector.
+     */
+    public PutObjectResult uploadFrom(final byte[] buffer,
+            RequestMetricCollector requestMetricCollector) {
+        return uploadFrom0(buffer, requestMetricCollector);
+    }
+
+    private PutObjectResult uploadFrom0(final byte[] buffer,
+            RequestMetricCollector requestMetricCollector) {
         ObjectMetadata objectMetadata = new ObjectMetadata();
         objectMetadata.setContentLength(buffer.length);
-        return getAmazonS3Client().putObject(getBucketName(), getKey(),
-                new ByteArrayInputStream(buffer), objectMetadata);
+        PutObjectRequest req = new PutObjectRequest(getBucketName(), getKey(),
+                new ByteArrayInputStream(buffer), objectMetadata)
+                .withRequestMetricCollector(requestMetricCollector);
+        return getAmazonS3Client().putObject(req);
     }
 
     /**
@@ -201,7 +235,16 @@ public class S3Link {
      *            object represented by this S3Link.
      */
     public void setAcl(CannedAccessControlList acl) {
-        getAmazonS3Client().setObjectAcl(getBucketName(), getKey(), acl);
+        setAcl0(acl, null);
+    }
+
+    public void setAcl(CannedAccessControlList acl, RequestMetricCollector col) {
+        setAcl0(acl, col);
+    }
+
+    private void setAcl0(CannedAccessControlList acl, RequestMetricCollector col) {
+        getAmazonS3Client()
+            .setObjectAcl(getBucketName(), getKey(), null, acl, col);
     }
 
     /**
@@ -215,7 +258,22 @@ public class S3Link {
      *            object represented by this S3Link.
      */
     public void setAcl(AccessControlList acl) {
-        getAmazonS3Client().setObjectAcl(getBucketName(), getKey(), acl);
+        setAcl0(acl, null);
+    }
+
+    /**
+     * Same as {@link #setAcl(AccessControlList)} but allows specifying a
+     * request metric collector.
+     */
+    public void setAcl(AccessControlList acl,
+            RequestMetricCollector requestMetricCollector) {
+        setAcl0(acl, requestMetricCollector);
+    }
+
+    private void setAcl0(AccessControlList acl,
+            RequestMetricCollector requestMetricCollector) {
+        getAmazonS3Client().setObjectAcl(getBucketName(), getKey(), null, acl,
+                requestMetricCollector);
     }
 
     /**
@@ -241,7 +299,23 @@ public class S3Link {
      * Returns null if constraints were specified but not met.
      */
     public ObjectMetadata downloadTo(final File destination) {
-        return getAmazonS3Client().getObject(new GetObjectRequest(getBucketName(), getKey()), destination);
+        return downloadTo0(destination, null);
+    }
+
+    /**
+     * Same as {@link #downloadTo(File)} but allows specifying a
+     * request metric collector.
+     */
+    public ObjectMetadata downloadTo(final File destination,
+            RequestMetricCollector requestMetricCollector) {
+        return downloadTo0(destination, requestMetricCollector);
+    }
+
+    private ObjectMetadata downloadTo0(final File destination,
+            RequestMetricCollector requestMetricCollector) {
+        GetObjectRequest req = new GetObjectRequest(getBucketName(), getKey())
+                .withRequestMetricCollector(requestMetricCollector);
+        return getAmazonS3Client().getObject(req, destination);
     }
 
     /**
@@ -254,7 +328,23 @@ public class S3Link {
      * @return The object's metadata.
      */
     public ObjectMetadata downloadTo(final OutputStream output) {
-        S3Object s3Object = getAmazonS3Client().getObject(getBucketName(), getKey());
+        return downloadTo0(output, null);
+    }
+
+    /**
+     * Same as {@link #downloadTo(OutputStream)} but allows specifying a
+     * request metric collector.
+     */
+    public ObjectMetadata downloadTo(final OutputStream output,
+            RequestMetricCollector requestMetricCollector) {
+        return downloadTo0(output, requestMetricCollector);
+    }
+
+    private ObjectMetadata downloadTo0(final OutputStream output,
+            RequestMetricCollector requestMetricCollector) {
+        GetObjectRequest req = new GetObjectRequest(getBucketName(), getKey())
+            .withRequestMetricCollector(requestMetricCollector);
+        S3Object s3Object = getAmazonS3Client().getObject(req);
         S3ObjectInputStream objectContent = s3Object.getObjectContent();
 
         try {
@@ -269,7 +359,7 @@ public class S3Link {
             } catch (IOException e) {}
             throw new AmazonClientException("Unable to transfer content from Amazon S3 to the output stream", ioe);
         } finally {
-            try {objectContent.close();} catch (IOException ioe) {}
+            try { objectContent.close(); } catch (IOException ioe) {}
         }
 
         return s3Object.getObjectMetadata();

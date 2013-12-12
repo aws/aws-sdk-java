@@ -33,8 +33,8 @@ public class DeleteRankExpressionRequestMarshaller implements Marshaller<Request
     public Request<DeleteRankExpressionRequest> marshall(DeleteRankExpressionRequest deleteRankExpressionRequest) {
 
         if (deleteRankExpressionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteRankExpressionRequest> request = new DefaultRequest<DeleteRankExpressionRequest>(deleteRankExpressionRequest, "AmazonCloudSearch");
         request.addParameter("Action", "DeleteRankExpression");
@@ -46,7 +46,6 @@ public class DeleteRankExpressionRequestMarshaller implements Marshaller<Request
         if (deleteRankExpressionRequest.getRankName() != null) {
             request.addParameter("RankName", StringUtils.fromString(deleteRankExpressionRequest.getRankName()));
         }
-
 
         return request;
     }

@@ -16,7 +16,6 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway

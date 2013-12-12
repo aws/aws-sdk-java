@@ -33,8 +33,8 @@ public class DeleteDBSubnetGroupRequestMarshaller implements Marshaller<Request<
     public Request<DeleteDBSubnetGroupRequest> marshall(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest) {
 
         if (deleteDBSubnetGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteDBSubnetGroupRequest> request = new DefaultRequest<DeleteDBSubnetGroupRequest>(deleteDBSubnetGroupRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteDBSubnetGroup");
@@ -43,7 +43,6 @@ public class DeleteDBSubnetGroupRequestMarshaller implements Marshaller<Request<
         if (deleteDBSubnetGroupRequest.getDBSubnetGroupName() != null) {
             request.addParameter("DBSubnetGroupName", StringUtils.fromString(deleteDBSubnetGroupRequest.getDBSubnetGroupName()));
         }
-
 
         return request;
     }

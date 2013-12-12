@@ -33,8 +33,8 @@ public class ResetInstanceAttributeRequestMarshaller implements Marshaller<Reque
     public Request<ResetInstanceAttributeRequest> marshall(ResetInstanceAttributeRequest resetInstanceAttributeRequest) {
 
         if (resetInstanceAttributeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ResetInstanceAttributeRequest> request = new DefaultRequest<ResetInstanceAttributeRequest>(resetInstanceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ResetInstanceAttribute");
@@ -46,7 +46,6 @@ public class ResetInstanceAttributeRequestMarshaller implements Marshaller<Reque
         if (resetInstanceAttributeRequest.getAttribute() != null) {
             request.addParameter("Attribute", StringUtils.fromString(resetInstanceAttributeRequest.getAttribute()));
         }
-
 
         return request;
     }

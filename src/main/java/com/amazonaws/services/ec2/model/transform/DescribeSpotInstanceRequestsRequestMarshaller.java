@@ -33,13 +33,12 @@ public class DescribeSpotInstanceRequestsRequestMarshaller implements Marshaller
     public Request<DescribeSpotInstanceRequestsRequest> marshall(DescribeSpotInstanceRequestsRequest describeSpotInstanceRequestsRequest) {
 
         if (describeSpotInstanceRequestsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeSpotInstanceRequestsRequest> request = new DefaultRequest<DescribeSpotInstanceRequestsRequest>(describeSpotInstanceRequestsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSpotInstanceRequests");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> spotInstanceRequestIdsList = describeSpotInstanceRequestsRequest.getSpotInstanceRequestIds();
         int spotInstanceRequestIdsListIndex = 1;
@@ -76,7 +75,6 @@ public class DescribeSpotInstanceRequestsRequestMarshaller implements Marshaller
 
             filtersListIndex++;
         }
-
 
         return request;
     }

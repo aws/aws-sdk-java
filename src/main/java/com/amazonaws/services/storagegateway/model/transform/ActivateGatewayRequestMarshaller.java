@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class ActivateGatewayRequestMarshaller implements Marshaller<Request<ActivateGatewayRequest>, ActivateGatewayRequest> {
 
-    
-
     public Request<ActivateGatewayRequest> marshall(ActivateGatewayRequest activateGatewayRequest) {
     if (activateGatewayRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class ActivateGatewayRequestMarshaller implements Marshaller<Request<Acti
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class ActivateGatewayRequestMarshaller implements Marshaller<Request<Acti
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (activateGatewayRequest.getActivationKey() != null) {
@@ -108,7 +99,6 @@ public class ActivateGatewayRequestMarshaller implements Marshaller<Request<Acti
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -117,7 +107,6 @@ public class ActivateGatewayRequestMarshaller implements Marshaller<Request<Acti
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

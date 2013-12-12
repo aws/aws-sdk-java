@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Stack Configuration Manager JSON Unmarshaller
  */
 public class StackConfigurationManagerJsonUnmarshaller implements Unmarshaller<StackConfigurationManager, JsonUnmarshallerContext> {
 
-    
-
     public StackConfigurationManager unmarshall(JsonUnmarshallerContext context) throws Exception {
         StackConfigurationManager stackConfigurationManager = new StackConfigurationManager();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class StackConfigurationManagerJsonUnmarshaller implements Unmarshaller<S
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class StackConfigurationManagerJsonUnmarshaller implements Unmarshaller<S
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

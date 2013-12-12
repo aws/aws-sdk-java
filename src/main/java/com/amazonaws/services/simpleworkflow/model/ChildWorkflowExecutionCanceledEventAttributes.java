@@ -16,7 +16,6 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Provide details of the <code>ChildWorkflowExecutionCanceled</code> event.

@@ -36,7 +36,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <i>Limit</i> .
  * </p>
  * <p>
- * To request a strongly consistent result, set <i>ConsistentRead</i> to true.
+ * You can query a table, a local secondary index (LSI), or a global secondary index (GSI). For a query on a table or on an LSI, you can set
+ * <i>ConsistentRead</i> to true and obtain a strongly consistent result. GSIs support eventually consistent reads only, so do not specify
+ * <i>ConsistentRead</i> when querying a GSI.
  * </p>
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#query(QueryRequest)
@@ -53,7 +55,8 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     private String tableName;
 
     /**
-     * The name of an index on the table to query.
+     * The name of an index to query. This can be any local secondary index
+     * or global secondary index on the table.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
@@ -86,7 +89,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * not the table. If any of the requested attributes are not projected
      * into the index, Amazon DynamoDB will need to fetch each matching item
      * from the table. This extra fetching incurs additional throughput cost
-     * and latency. </li> </ul> <p>When neither <i>Select</i> nor
+     * and latency. </li> </ul> <p>If neither <i>Select</i> nor
      * <i>AttributesToGet</i> are specified, Amazon DynamoDB defaults to
      * <code>ALL_ATTRIBUTES</code> when accessing a table, and
      * <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
@@ -144,6 +147,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     /**
      * If set to <code>true</code>, then the operation uses strongly
      * consistent reads; otherwise, eventually consistent reads are used.
+     * <p>Strongly consistent reads are not supported on global secondary
+     * indexes. If you query a global secondary index with
+     * <i>ConsistentRead</i> set to <code>true</code>, you will receive an
+     * error message.
      */
     private Boolean consistentRead;
 
@@ -152,23 +159,22 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * can only have conditions on the table primary key attributes. You must
      * specify the hash key attribute name and value as an <code>EQ</code>
      * condition. You can optionally specify a second condition, referring to
-     * the range key attribute. <p>For a query on a secondary index, you can
-     * only have conditions on the index key attributes. You must specify the
-     * index hash attribute name and value as an EQ condition. You can
-     * optionally specify a second condition, referring to the index key
-     * range attribute. <p>Multiple conditions are evaluated using "AND"; in
-     * other words, all of the conditions must be met in order for an item to
+     * the range key attribute. <p>For a query on an index, you can only have
+     * conditions on the index key attributes. You must specify the index
+     * hash attribute name and value as an EQ condition. You can optionally
+     * specify a second condition, referring to the index key range
+     * attribute. <p>Multiple conditions are evaluated using "AND"; in other
+     * words, all of the conditions must be met in order for an item to
      * appear in the results results. <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
      * <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
      * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     * which case the list contains two values. <note> <p>For type Number,
-     * value comparisons are numeric. <p>String value comparisons for greater
-     * than, equals, or less than are based on ASCII character code values.
-     * For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>aa</code> is greater than <code>B</code>. For a list of code
-     * values, see <a
+     * except for a <code>BETWEEN</code> comparison, in which case the list
+     * contains two values. <note> <p>For type Number, value comparisons are
+     * numeric. <p>String value comparisons for greater than, equals, or less
+     * than are based on ASCII character code values. For example,
+     * <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
+     * greater than <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
@@ -246,7 +252,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     private Boolean scanIndexForward;
 
     /**
-     * The primary key of the first item that this operation will evaluate.
+     * The primary key of the first item that this operation will evalute.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed.
@@ -254,12 +260,14 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     private java.util.Map<String,AttributeValue> exclusiveStartKey;
 
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      */
     private String returnConsumedCapacity;
 
@@ -326,33 +334,38 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
 
     /**
-     * The name of an index on the table to query.
+     * The name of an index to query. This can be any local secondary index
+     * or global secondary index on the table.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @return The name of an index on the table to query.
+     * @return The name of an index to query. This can be any local secondary index
+     *         or global secondary index on the table.
      */
     public String getIndexName() {
         return indexName;
     }
     
     /**
-     * The name of an index on the table to query.
+     * The name of an index to query. This can be any local secondary index
+     * or global secondary index on the table.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param indexName The name of an index on the table to query.
+     * @param indexName The name of an index to query. This can be any local secondary index
+     *         or global secondary index on the table.
      */
     public void setIndexName(String indexName) {
         this.indexName = indexName;
     }
     
     /**
-     * The name of an index on the table to query.
+     * The name of an index to query. This can be any local secondary index
+     * or global secondary index on the table.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -360,7 +373,8 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param indexName The name of an index on the table to query.
+     * @param indexName The name of an index to query. This can be any local secondary index
+     *         or global secondary index on the table.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -395,7 +409,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * not the table. If any of the requested attributes are not projected
      * into the index, Amazon DynamoDB will need to fetch each matching item
      * from the table. This extra fetching incurs additional throughput cost
-     * and latency. </li> </ul> <p>When neither <i>Select</i> nor
+     * and latency. </li> </ul> <p>If neither <i>Select</i> nor
      * <i>AttributesToGet</i> are specified, Amazon DynamoDB defaults to
      * <code>ALL_ATTRIBUTES</code> when accessing a table, and
      * <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
@@ -432,7 +446,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         not the table. If any of the requested attributes are not projected
      *         into the index, Amazon DynamoDB will need to fetch each matching item
      *         from the table. This extra fetching incurs additional throughput cost
-     *         and latency. </li> </ul> <p>When neither <i>Select</i> nor
+     *         and latency. </li> </ul> <p>If neither <i>Select</i> nor
      *         <i>AttributesToGet</i> are specified, Amazon DynamoDB defaults to
      *         <code>ALL_ATTRIBUTES</code> when accessing a table, and
      *         <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
@@ -473,7 +487,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * not the table. If any of the requested attributes are not projected
      * into the index, Amazon DynamoDB will need to fetch each matching item
      * from the table. This extra fetching incurs additional throughput cost
-     * and latency. </li> </ul> <p>When neither <i>Select</i> nor
+     * and latency. </li> </ul> <p>If neither <i>Select</i> nor
      * <i>AttributesToGet</i> are specified, Amazon DynamoDB defaults to
      * <code>ALL_ATTRIBUTES</code> when accessing a table, and
      * <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
@@ -510,7 +524,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         not the table. If any of the requested attributes are not projected
      *         into the index, Amazon DynamoDB will need to fetch each matching item
      *         from the table. This extra fetching incurs additional throughput cost
-     *         and latency. </li> </ul> <p>When neither <i>Select</i> nor
+     *         and latency. </li> </ul> <p>If neither <i>Select</i> nor
      *         <i>AttributesToGet</i> are specified, Amazon DynamoDB defaults to
      *         <code>ALL_ATTRIBUTES</code> when accessing a table, and
      *         <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
@@ -551,7 +565,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * not the table. If any of the requested attributes are not projected
      * into the index, Amazon DynamoDB will need to fetch each matching item
      * from the table. This extra fetching incurs additional throughput cost
-     * and latency. </li> </ul> <p>When neither <i>Select</i> nor
+     * and latency. </li> </ul> <p>If neither <i>Select</i> nor
      * <i>AttributesToGet</i> are specified, Amazon DynamoDB defaults to
      * <code>ALL_ATTRIBUTES</code> when accessing a table, and
      * <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
@@ -590,7 +604,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         not the table. If any of the requested attributes are not projected
      *         into the index, Amazon DynamoDB will need to fetch each matching item
      *         from the table. This extra fetching incurs additional throughput cost
-     *         and latency. </li> </ul> <p>When neither <i>Select</i> nor
+     *         and latency. </li> </ul> <p>If neither <i>Select</i> nor
      *         <i>AttributesToGet</i> are specified, Amazon DynamoDB defaults to
      *         <code>ALL_ATTRIBUTES</code> when accessing a table, and
      *         <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
@@ -635,7 +649,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * not the table. If any of the requested attributes are not projected
      * into the index, Amazon DynamoDB will need to fetch each matching item
      * from the table. This extra fetching incurs additional throughput cost
-     * and latency. </li> </ul> <p>When neither <i>Select</i> nor
+     * and latency. </li> </ul> <p>If neither <i>Select</i> nor
      * <i>AttributesToGet</i> are specified, Amazon DynamoDB defaults to
      * <code>ALL_ATTRIBUTES</code> when accessing a table, and
      * <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
@@ -672,7 +686,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         not the table. If any of the requested attributes are not projected
      *         into the index, Amazon DynamoDB will need to fetch each matching item
      *         from the table. This extra fetching incurs additional throughput cost
-     *         and latency. </li> </ul> <p>When neither <i>Select</i> nor
+     *         and latency. </li> </ul> <p>If neither <i>Select</i> nor
      *         <i>AttributesToGet</i> are specified, Amazon DynamoDB defaults to
      *         <code>ALL_ATTRIBUTES</code> when accessing a table, and
      *         <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
@@ -713,7 +727,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * not the table. If any of the requested attributes are not projected
      * into the index, Amazon DynamoDB will need to fetch each matching item
      * from the table. This extra fetching incurs additional throughput cost
-     * and latency. </li> </ul> <p>When neither <i>Select</i> nor
+     * and latency. </li> </ul> <p>If neither <i>Select</i> nor
      * <i>AttributesToGet</i> are specified, Amazon DynamoDB defaults to
      * <code>ALL_ATTRIBUTES</code> when accessing a table, and
      * <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
@@ -752,7 +766,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         not the table. If any of the requested attributes are not projected
      *         into the index, Amazon DynamoDB will need to fetch each matching item
      *         from the table. This extra fetching incurs additional throughput cost
-     *         and latency. </li> </ul> <p>When neither <i>Select</i> nor
+     *         and latency. </li> </ul> <p>If neither <i>Select</i> nor
      *         <i>AttributesToGet</i> are specified, Amazon DynamoDB defaults to
      *         <code>ALL_ATTRIBUTES</code> when accessing a table, and
      *         <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
@@ -1063,9 +1077,17 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     /**
      * If set to <code>true</code>, then the operation uses strongly
      * consistent reads; otherwise, eventually consistent reads are used.
+     * <p>Strongly consistent reads are not supported on global secondary
+     * indexes. If you query a global secondary index with
+     * <i>ConsistentRead</i> set to <code>true</code>, you will receive an
+     * error message.
      *
      * @return If set to <code>true</code>, then the operation uses strongly
      *         consistent reads; otherwise, eventually consistent reads are used.
+     *         <p>Strongly consistent reads are not supported on global secondary
+     *         indexes. If you query a global secondary index with
+     *         <i>ConsistentRead</i> set to <code>true</code>, you will receive an
+     *         error message.
      */
     public Boolean isConsistentRead() {
         return consistentRead;
@@ -1074,9 +1096,17 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     /**
      * If set to <code>true</code>, then the operation uses strongly
      * consistent reads; otherwise, eventually consistent reads are used.
+     * <p>Strongly consistent reads are not supported on global secondary
+     * indexes. If you query a global secondary index with
+     * <i>ConsistentRead</i> set to <code>true</code>, you will receive an
+     * error message.
      *
      * @param consistentRead If set to <code>true</code>, then the operation uses strongly
      *         consistent reads; otherwise, eventually consistent reads are used.
+     *         <p>Strongly consistent reads are not supported on global secondary
+     *         indexes. If you query a global secondary index with
+     *         <i>ConsistentRead</i> set to <code>true</code>, you will receive an
+     *         error message.
      */
     public void setConsistentRead(Boolean consistentRead) {
         this.consistentRead = consistentRead;
@@ -1085,11 +1115,19 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     /**
      * If set to <code>true</code>, then the operation uses strongly
      * consistent reads; otherwise, eventually consistent reads are used.
+     * <p>Strongly consistent reads are not supported on global secondary
+     * indexes. If you query a global secondary index with
+     * <i>ConsistentRead</i> set to <code>true</code>, you will receive an
+     * error message.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param consistentRead If set to <code>true</code>, then the operation uses strongly
      *         consistent reads; otherwise, eventually consistent reads are used.
+     *         <p>Strongly consistent reads are not supported on global secondary
+     *         indexes. If you query a global secondary index with
+     *         <i>ConsistentRead</i> set to <code>true</code>, you will receive an
+     *         error message.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1102,9 +1140,17 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     /**
      * If set to <code>true</code>, then the operation uses strongly
      * consistent reads; otherwise, eventually consistent reads are used.
+     * <p>Strongly consistent reads are not supported on global secondary
+     * indexes. If you query a global secondary index with
+     * <i>ConsistentRead</i> set to <code>true</code>, you will receive an
+     * error message.
      *
      * @return If set to <code>true</code>, then the operation uses strongly
      *         consistent reads; otherwise, eventually consistent reads are used.
+     *         <p>Strongly consistent reads are not supported on global secondary
+     *         indexes. If you query a global secondary index with
+     *         <i>ConsistentRead</i> set to <code>true</code>, you will receive an
+     *         error message.
      */
     public Boolean getConsistentRead() {
         return consistentRead;
@@ -1115,23 +1161,22 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * can only have conditions on the table primary key attributes. You must
      * specify the hash key attribute name and value as an <code>EQ</code>
      * condition. You can optionally specify a second condition, referring to
-     * the range key attribute. <p>For a query on a secondary index, you can
-     * only have conditions on the index key attributes. You must specify the
-     * index hash attribute name and value as an EQ condition. You can
-     * optionally specify a second condition, referring to the index key
-     * range attribute. <p>Multiple conditions are evaluated using "AND"; in
-     * other words, all of the conditions must be met in order for an item to
+     * the range key attribute. <p>For a query on an index, you can only have
+     * conditions on the index key attributes. You must specify the index
+     * hash attribute name and value as an EQ condition. You can optionally
+     * specify a second condition, referring to the index key range
+     * attribute. <p>Multiple conditions are evaluated using "AND"; in other
+     * words, all of the conditions must be met in order for an item to
      * appear in the results results. <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
      * <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
      * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     * which case the list contains two values. <note> <p>For type Number,
-     * value comparisons are numeric. <p>String value comparisons for greater
-     * than, equals, or less than are based on ASCII character code values.
-     * For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>aa</code> is greater than <code>B</code>. For a list of code
-     * values, see <a
+     * except for a <code>BETWEEN</code> comparison, in which case the list
+     * contains two values. <note> <p>For type Number, value comparisons are
+     * numeric. <p>String value comparisons for greater than, equals, or less
+     * than are based on ASCII character code values. For example,
+     * <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
+     * greater than <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
@@ -1198,23 +1243,22 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         can only have conditions on the table primary key attributes. You must
      *         specify the hash key attribute name and value as an <code>EQ</code>
      *         condition. You can optionally specify a second condition, referring to
-     *         the range key attribute. <p>For a query on a secondary index, you can
-     *         only have conditions on the index key attributes. You must specify the
-     *         index hash attribute name and value as an EQ condition. You can
-     *         optionally specify a second condition, referring to the index key
-     *         range attribute. <p>Multiple conditions are evaluated using "AND"; in
-     *         other words, all of the conditions must be met in order for an item to
+     *         the range key attribute. <p>For a query on an index, you can only have
+     *         conditions on the index key attributes. You must specify the index
+     *         hash attribute name and value as an EQ condition. You can optionally
+     *         specify a second condition, referring to the index key range
+     *         attribute. <p>Multiple conditions are evaluated using "AND"; in other
+     *         words, all of the conditions must be met in order for an item to
      *         appear in the results results. <p>Each <i>KeyConditions</i> element
      *         consists of an attribute name to compare, along with the following:
      *         <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
      *         against the supplied attribute. This list contains exactly one value,
-     *         except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     *         which case the list contains two values. <note> <p>For type Number,
-     *         value comparisons are numeric. <p>String value comparisons for greater
-     *         than, equals, or less than are based on ASCII character code values.
-     *         For example, <code>a</code> is greater than <code>A</code>, and
-     *         <code>aa</code> is greater than <code>B</code>. For a list of code
-     *         values, see <a
+     *         except for a <code>BETWEEN</code> comparison, in which case the list
+     *         contains two values. <note> <p>For type Number, value comparisons are
+     *         numeric. <p>String value comparisons for greater than, equals, or less
+     *         than are based on ASCII character code values. For example,
+     *         <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
+     *         greater than <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
@@ -1287,23 +1331,22 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * can only have conditions on the table primary key attributes. You must
      * specify the hash key attribute name and value as an <code>EQ</code>
      * condition. You can optionally specify a second condition, referring to
-     * the range key attribute. <p>For a query on a secondary index, you can
-     * only have conditions on the index key attributes. You must specify the
-     * index hash attribute name and value as an EQ condition. You can
-     * optionally specify a second condition, referring to the index key
-     * range attribute. <p>Multiple conditions are evaluated using "AND"; in
-     * other words, all of the conditions must be met in order for an item to
+     * the range key attribute. <p>For a query on an index, you can only have
+     * conditions on the index key attributes. You must specify the index
+     * hash attribute name and value as an EQ condition. You can optionally
+     * specify a second condition, referring to the index key range
+     * attribute. <p>Multiple conditions are evaluated using "AND"; in other
+     * words, all of the conditions must be met in order for an item to
      * appear in the results results. <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
      * <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
      * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     * which case the list contains two values. <note> <p>For type Number,
-     * value comparisons are numeric. <p>String value comparisons for greater
-     * than, equals, or less than are based on ASCII character code values.
-     * For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>aa</code> is greater than <code>B</code>. For a list of code
-     * values, see <a
+     * except for a <code>BETWEEN</code> comparison, in which case the list
+     * contains two values. <note> <p>For type Number, value comparisons are
+     * numeric. <p>String value comparisons for greater than, equals, or less
+     * than are based on ASCII character code values. For example,
+     * <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
+     * greater than <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
@@ -1370,23 +1413,22 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         can only have conditions on the table primary key attributes. You must
      *         specify the hash key attribute name and value as an <code>EQ</code>
      *         condition. You can optionally specify a second condition, referring to
-     *         the range key attribute. <p>For a query on a secondary index, you can
-     *         only have conditions on the index key attributes. You must specify the
-     *         index hash attribute name and value as an EQ condition. You can
-     *         optionally specify a second condition, referring to the index key
-     *         range attribute. <p>Multiple conditions are evaluated using "AND"; in
-     *         other words, all of the conditions must be met in order for an item to
+     *         the range key attribute. <p>For a query on an index, you can only have
+     *         conditions on the index key attributes. You must specify the index
+     *         hash attribute name and value as an EQ condition. You can optionally
+     *         specify a second condition, referring to the index key range
+     *         attribute. <p>Multiple conditions are evaluated using "AND"; in other
+     *         words, all of the conditions must be met in order for an item to
      *         appear in the results results. <p>Each <i>KeyConditions</i> element
      *         consists of an attribute name to compare, along with the following:
      *         <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
      *         against the supplied attribute. This list contains exactly one value,
-     *         except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     *         which case the list contains two values. <note> <p>For type Number,
-     *         value comparisons are numeric. <p>String value comparisons for greater
-     *         than, equals, or less than are based on ASCII character code values.
-     *         For example, <code>a</code> is greater than <code>A</code>, and
-     *         <code>aa</code> is greater than <code>B</code>. For a list of code
-     *         values, see <a
+     *         except for a <code>BETWEEN</code> comparison, in which case the list
+     *         contains two values. <note> <p>For type Number, value comparisons are
+     *         numeric. <p>String value comparisons for greater than, equals, or less
+     *         than are based on ASCII character code values. For example,
+     *         <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
+     *         greater than <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
@@ -1458,23 +1500,22 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * can only have conditions on the table primary key attributes. You must
      * specify the hash key attribute name and value as an <code>EQ</code>
      * condition. You can optionally specify a second condition, referring to
-     * the range key attribute. <p>For a query on a secondary index, you can
-     * only have conditions on the index key attributes. You must specify the
-     * index hash attribute name and value as an EQ condition. You can
-     * optionally specify a second condition, referring to the index key
-     * range attribute. <p>Multiple conditions are evaluated using "AND"; in
-     * other words, all of the conditions must be met in order for an item to
+     * the range key attribute. <p>For a query on an index, you can only have
+     * conditions on the index key attributes. You must specify the index
+     * hash attribute name and value as an EQ condition. You can optionally
+     * specify a second condition, referring to the index key range
+     * attribute. <p>Multiple conditions are evaluated using "AND"; in other
+     * words, all of the conditions must be met in order for an item to
      * appear in the results results. <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
      * <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
      * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     * which case the list contains two values. <note> <p>For type Number,
-     * value comparisons are numeric. <p>String value comparisons for greater
-     * than, equals, or less than are based on ASCII character code values.
-     * For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>aa</code> is greater than <code>B</code>. For a list of code
-     * values, see <a
+     * except for a <code>BETWEEN</code> comparison, in which case the list
+     * contains two values. <note> <p>For type Number, value comparisons are
+     * numeric. <p>String value comparisons for greater than, equals, or less
+     * than are based on ASCII character code values. For example,
+     * <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
+     * greater than <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
@@ -1543,23 +1584,22 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         can only have conditions on the table primary key attributes. You must
      *         specify the hash key attribute name and value as an <code>EQ</code>
      *         condition. You can optionally specify a second condition, referring to
-     *         the range key attribute. <p>For a query on a secondary index, you can
-     *         only have conditions on the index key attributes. You must specify the
-     *         index hash attribute name and value as an EQ condition. You can
-     *         optionally specify a second condition, referring to the index key
-     *         range attribute. <p>Multiple conditions are evaluated using "AND"; in
-     *         other words, all of the conditions must be met in order for an item to
+     *         the range key attribute. <p>For a query on an index, you can only have
+     *         conditions on the index key attributes. You must specify the index
+     *         hash attribute name and value as an EQ condition. You can optionally
+     *         specify a second condition, referring to the index key range
+     *         attribute. <p>Multiple conditions are evaluated using "AND"; in other
+     *         words, all of the conditions must be met in order for an item to
      *         appear in the results results. <p>Each <i>KeyConditions</i> element
      *         consists of an attribute name to compare, along with the following:
      *         <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
      *         against the supplied attribute. This list contains exactly one value,
-     *         except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     *         which case the list contains two values. <note> <p>For type Number,
-     *         value comparisons are numeric. <p>String value comparisons for greater
-     *         than, equals, or less than are based on ASCII character code values.
-     *         For example, <code>a</code> is greater than <code>A</code>, and
-     *         <code>aa</code> is greater than <code>B</code>. For a list of code
-     *         values, see <a
+     *         except for a <code>BETWEEN</code> comparison, in which case the list
+     *         contains two values. <note> <p>For type Number, value comparisons are
+     *         numeric. <p>String value comparisons for greater than, equals, or less
+     *         than are based on ASCII character code values. For example,
+     *         <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
+     *         greater than <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
@@ -1635,23 +1675,22 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * can only have conditions on the table primary key attributes. You must
      * specify the hash key attribute name and value as an <code>EQ</code>
      * condition. You can optionally specify a second condition, referring to
-     * the range key attribute. <p>For a query on a secondary index, you can
-     * only have conditions on the index key attributes. You must specify the
-     * index hash attribute name and value as an EQ condition. You can
-     * optionally specify a second condition, referring to the index key
-     * range attribute. <p>Multiple conditions are evaluated using "AND"; in
-     * other words, all of the conditions must be met in order for an item to
+     * the range key attribute. <p>For a query on an index, you can only have
+     * conditions on the index key attributes. You must specify the index
+     * hash attribute name and value as an EQ condition. You can optionally
+     * specify a second condition, referring to the index key range
+     * attribute. <p>Multiple conditions are evaluated using "AND"; in other
+     * words, all of the conditions must be met in order for an item to
      * appear in the results results. <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
      * <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
      * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     * which case the list contains two values. <note> <p>For type Number,
-     * value comparisons are numeric. <p>String value comparisons for greater
-     * than, equals, or less than are based on ASCII character code values.
-     * For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>aa</code> is greater than <code>B</code>. For a list of code
-     * values, see <a
+     * except for a <code>BETWEEN</code> comparison, in which case the list
+     * contains two values. <note> <p>For type Number, value comparisons are
+     * numeric. <p>String value comparisons for greater than, equals, or less
+     * than are based on ASCII character code values. For example,
+     * <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
+     * greater than <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
@@ -1721,26 +1760,26 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * @param key The key of the entry to be added into KeyConditions.
      * @param value The corresponding value of the entry to be added into KeyConditions.
      */
-	public QueryRequest addKeyConditionsEntry(String key, Condition value) {
-		if (null == this.keyConditions) {
-			this.keyConditions = new java.util.HashMap<String,Condition>();
-		}
-		if (this.keyConditions.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.keyConditions.put(key, value);
-		return this;
-	}
+    public QueryRequest addKeyConditionsEntry(String key, Condition value) {
+        if (null == this.keyConditions) {
+            this.keyConditions = new java.util.HashMap<String,Condition>();
+        }
+        if (this.keyConditions.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.keyConditions.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into KeyConditions.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public QueryRequest clearKeyConditionsEntries() {
-		this.keyConditions = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into KeyConditions.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public QueryRequest clearKeyConditionsEntries() {
+        this.keyConditions = null;
+        return this;
+    }
+    
     /**
      * Specifies ascending (true) or descending (false) traversal of the
      * index. Amazon DynamoDB returns results reflecting the requested order
@@ -1840,12 +1879,12 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
 
     /**
-     * The primary key of the first item that this operation will evaluate.
+     * The primary key of the first item that this operation will evalute.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed.
      *
-     * @return The primary key of the first item that this operation will evaluate.
+     * @return The primary key of the first item that this operation will evalute.
      *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
      *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      *         be String, Number or Binary. No set data types are allowed.
@@ -1856,12 +1895,12 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
-     * The primary key of the first item that this operation will evaluate.
+     * The primary key of the first item that this operation will evalute.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed.
      *
-     * @param exclusiveStartKey The primary key of the first item that this operation will evaluate.
+     * @param exclusiveStartKey The primary key of the first item that this operation will evalute.
      *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
      *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      *         be String, Number or Binary. No set data types are allowed.
@@ -1871,14 +1910,14 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
-     * The primary key of the first item that this operation will evaluate.
+     * The primary key of the first item that this operation will evalute.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exclusiveStartKey The primary key of the first item that this operation will evaluate.
+     * @param exclusiveStartKey The primary key of the first item that this operation will evalute.
      *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
      *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      *         be String, Number or Binary. No set data types are allowed.
@@ -1892,7 +1931,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
 
     /**
-     * The primary key of the first item that this operation will evaluate.
+     * The primary key of the first item that this operation will evalute.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed.
@@ -1905,19 +1944,19 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      */
     public void setExclusiveStartKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
         java.util.HashMap<String,AttributeValue> exclusiveStartKey = new java.util.HashMap<String,AttributeValue>();
-    	
-    	if (hashKey != null) {
-    	    exclusiveStartKey.put(hashKey.getKey(), hashKey.getValue());
-    	} else
+        
+        if (hashKey != null) {
+            exclusiveStartKey.put(hashKey.getKey(), hashKey.getValue());
+        } else
             throw new IllegalArgumentException("hashKey must be non-null object.");
-    	if (rangeKey != null) {
-    	    exclusiveStartKey.put(rangeKey.getKey(), rangeKey.getValue());
-    	} 
+        if (rangeKey != null) {
+            exclusiveStartKey.put(rangeKey.getKey(), rangeKey.getValue());
+        } 
         setExclusiveStartKey(exclusiveStartKey);
     }
     
     /**
-     * The primary key of the first item that this operation will evaluate.
+     * The primary key of the first item that this operation will evalute.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed.
@@ -1931,12 +1970,12 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * @param rangeKey Primary range key. (null if it a hash-only table)
      */
     public QueryRequest withExclusiveStartKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
-    	setExclusiveStartKey(hashKey, rangeKey);
-    	return this;
+        setExclusiveStartKey(hashKey, rangeKey);
+        return this;
     }
 
     /**
-     * The primary key of the first item that this operation will evaluate.
+     * The primary key of the first item that this operation will evalute.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed.
@@ -1948,37 +1987,41 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * @param key The key of the entry to be added into ExclusiveStartKey.
      * @param value The corresponding value of the entry to be added into ExclusiveStartKey.
      */
-	public QueryRequest addExclusiveStartKeyEntry(String key, AttributeValue value) {
-		if (null == this.exclusiveStartKey) {
-			this.exclusiveStartKey = new java.util.HashMap<String,AttributeValue>();
-		}
-		if (this.exclusiveStartKey.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.exclusiveStartKey.put(key, value);
-		return this;
-	}
+    public QueryRequest addExclusiveStartKeyEntry(String key, AttributeValue value) {
+        if (null == this.exclusiveStartKey) {
+            this.exclusiveStartKey = new java.util.HashMap<String,AttributeValue>();
+        }
+        if (this.exclusiveStartKey.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.exclusiveStartKey.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into ExclusiveStartKey.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public QueryRequest clearExclusiveStartKeyEntries() {
-		this.exclusiveStartKey = null;
-		return this;
-	}
-	
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * Removes all the entries added into ExclusiveStartKey.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public QueryRequest clearExclusiveStartKeyEntries() {
+        this.exclusiveStartKey = null;
+        return this;
+    }
+    
+    /**
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @return If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @return If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @see ReturnConsumedCapacity
      */
@@ -1987,16 +2030,20 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @see ReturnConsumedCapacity
      */
@@ -2005,18 +2052,22 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -2029,16 +2080,20 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
 
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @see ReturnConsumedCapacity
      */
@@ -2047,18 +2102,22 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
-     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     * the response; if set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included.
+     * If set to <code>TOTAL</code>, the response includes
+     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * for indexes. If set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TOTAL, NONE
+     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
      *
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
-     *         the response; if set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
+     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
+     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         for indexes. If set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included in the response.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -26,6 +26,7 @@ import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -33,7 +34,6 @@ import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.glacier.model.*;
 import com.amazonaws.services.glacier.model.transform.*;
-
 
 /**
  * Client for accessing AmazonGlacier.  All service calls made
@@ -204,13 +204,35 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AmazonGlacierClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonGlacier using the specified AWS account credentials
+     * provider, client configuration options and request metric collector.
+     * 
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AmazonGlacier
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public AmazonGlacierClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         
         this.awsCredentialsProvider = awsCredentialsProvider;
         
         init();
     }
-
 
     private void init() {
         exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, JSONObject>>();
@@ -229,11 +251,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 "/com/amazonaws/services/glacier/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
                 "/com/amazonaws/services/glacier/request.handler2s"));
-
-        
     }
 
-    
     /**
      * <p>
      * This operation lists all vaults owned by the calling user's account.
@@ -311,7 +330,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         }
     }
 
-   
     /**
      * <p>
      * This operation returns information about a job you previously
@@ -390,7 +408,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         }
     }
 
-   
     /**
      * <p>
      * This operation lists the parts of an archive that have been uploaded
@@ -472,7 +489,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         }
     }
 
-   
     /**
      * <p>
      * This operation retrieves the <code>notification-configuration</code>
@@ -549,7 +565,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         }
     }
 
-   
     /**
      * <p>
      * This operation lists jobs for a vault, including jobs that are
@@ -654,7 +669,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         }
     }
 
-   
     /**
      * <p>
      * This operation creates a new vault with the specified name. The name
@@ -745,7 +759,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         }
     }
 
-   
     /**
      * <p>
      * This operation initiates a multipart upload. Amazon Glacier creates a
@@ -841,7 +854,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         }
     }
 
-   
     /**
      * <p>
      * This operation aborts a multipart upload identified by the upload ID.
@@ -1092,7 +1104,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         }
     }
 
-   
     /**
      * <p>
      * This operation initiates a job of the specified type. In this release,
@@ -1241,7 +1252,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         }
     }
 
-   
     /**
      * <p>
      * This operation adds an archive to a vault. This is a synchronous
@@ -1341,7 +1351,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         }
     }
 
-   
     /**
      * <p>
      * This operation configures notifications that will be sent when
@@ -1532,7 +1541,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         }
     }
 
-   
     /**
      * <p>
      * This operation uploads a part of an archive. You can upload archive
@@ -1645,7 +1653,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         }
     }
 
-   
     /**
      * <p>
      * This operation returns information about a vault, including the
@@ -1722,7 +1729,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         }
     }
 
-   
     /**
      * <p>
      * This operation deletes the notification configuration set for a vault.
@@ -1871,7 +1877,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         }
     }
 
-   
     /**
      * <p>
      * This operation deletes a vault. Amazon Glacier will delete a vault
@@ -1940,20 +1945,15 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
         invoke(request, responseHandler, executionContext);
     }
-    
 
     @Override
     public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
-
-        
     }
 
     @Override
     public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
         super.setEndpoint(endpoint, serviceName, regionId);
-
-        
     }
 
     /**

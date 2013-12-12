@@ -16,7 +16,6 @@ package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A complex type that describes change information about changes made to your hosted zone.

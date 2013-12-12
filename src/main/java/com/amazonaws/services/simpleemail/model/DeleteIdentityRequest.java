@@ -23,6 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Deletes the specified identity (email address or domain) from the list of verified identities.
  * </p>
+ * <p>
+ * This action is throttled at one request per second.
+ * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#deleteIdentity(DeleteIdentityRequest)
  */

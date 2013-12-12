@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudwatch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The <code>Datapoint</code> data type encapsulates the statistical data that Amazon CloudWatch computes from metric data.

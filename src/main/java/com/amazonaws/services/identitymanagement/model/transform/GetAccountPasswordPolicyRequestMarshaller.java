@@ -33,14 +33,12 @@ public class GetAccountPasswordPolicyRequestMarshaller implements Marshaller<Req
     public Request<GetAccountPasswordPolicyRequest> marshall(GetAccountPasswordPolicyRequest getAccountPasswordPolicyRequest) {
 
         if (getAccountPasswordPolicyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetAccountPasswordPolicyRequest> request = new DefaultRequest<GetAccountPasswordPolicyRequest>(getAccountPasswordPolicyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "GetAccountPasswordPolicy");
         request.addParameter("Version", "2010-05-08");
-
-
 
         return request;
     }

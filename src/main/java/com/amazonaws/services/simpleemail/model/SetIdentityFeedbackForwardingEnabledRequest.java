@@ -22,8 +22,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#setIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest) SetIdentityFeedbackForwardingEnabled operation}.
  * <p>
  * Given an identity (email address or domain), enables or disables whether Amazon SES forwards feedback notifications as email. Feedback forwarding may
- * only be disabled when both complaint and bounce topics are set. For more information about feedback notification, see the <a
- * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide"> Amazon SES Developer Guide </a> .
+ * only be disabled when both complaint and bounce topics are set.
+ * </p>
+ * <p>
+ * This action is throttled at one request per second.
+ * </p>
+ * <p>
+ * For more information about feedback notification, see the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a> .
  * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#setIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest)

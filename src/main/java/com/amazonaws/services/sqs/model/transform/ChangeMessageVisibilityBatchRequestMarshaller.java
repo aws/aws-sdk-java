@@ -33,8 +33,8 @@ public class ChangeMessageVisibilityBatchRequestMarshaller implements Marshaller
     public Request<ChangeMessageVisibilityBatchRequest> marshall(ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest) {
 
         if (changeMessageVisibilityBatchRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ChangeMessageVisibilityBatchRequest> request = new DefaultRequest<ChangeMessageVisibilityBatchRequest>(changeMessageVisibilityBatchRequest, "AmazonSQS");
         request.addParameter("Action", "ChangeMessageVisibilityBatch");
@@ -63,7 +63,6 @@ public class ChangeMessageVisibilityBatchRequestMarshaller implements Marshaller
 
             entriesListIndex++;
         }
-
 
         return request;
     }

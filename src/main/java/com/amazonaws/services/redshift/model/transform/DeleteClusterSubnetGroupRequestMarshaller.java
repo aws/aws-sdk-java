@@ -33,8 +33,8 @@ public class DeleteClusterSubnetGroupRequestMarshaller implements Marshaller<Req
     public Request<DeleteClusterSubnetGroupRequest> marshall(DeleteClusterSubnetGroupRequest deleteClusterSubnetGroupRequest) {
 
         if (deleteClusterSubnetGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteClusterSubnetGroupRequest> request = new DefaultRequest<DeleteClusterSubnetGroupRequest>(deleteClusterSubnetGroupRequest, "AmazonRedshift");
         request.addParameter("Action", "DeleteClusterSubnetGroup");
@@ -43,7 +43,6 @@ public class DeleteClusterSubnetGroupRequestMarshaller implements Marshaller<Req
         if (deleteClusterSubnetGroupRequest.getClusterSubnetGroupName() != null) {
             request.addParameter("ClusterSubnetGroupName", StringUtils.fromString(deleteClusterSubnetGroupRequest.getClusterSubnetGroupName()));
         }
-
 
         return request;
     }

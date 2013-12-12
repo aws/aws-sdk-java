@@ -33,8 +33,8 @@ public class ValidateConfigurationSettingsRequestMarshaller implements Marshalle
     public Request<ValidateConfigurationSettingsRequest> marshall(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest) {
 
         if (validateConfigurationSettingsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ValidateConfigurationSettingsRequest> request = new DefaultRequest<ValidateConfigurationSettingsRequest>(validateConfigurationSettingsRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "ValidateConfigurationSettings");
@@ -69,7 +69,6 @@ public class ValidateConfigurationSettingsRequestMarshaller implements Marshalle
 
             optionSettingsListIndex++;
         }
-
 
         return request;
     }

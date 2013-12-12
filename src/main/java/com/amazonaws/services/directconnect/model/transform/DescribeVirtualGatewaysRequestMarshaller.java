@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.directconnect.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class DescribeVirtualGatewaysRequestMarshaller implements Marshaller<Request<DescribeVirtualGatewaysRequest>, DescribeVirtualGatewaysRequest> {
 
-    
-
     public Request<DescribeVirtualGatewaysRequest> marshall(DescribeVirtualGatewaysRequest describeVirtualGatewaysRequest) {
     if (describeVirtualGatewaysRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class DescribeVirtualGatewaysRequestMarshaller implements Marshaller<Requ
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,10 +70,7 @@ public class DescribeVirtualGatewaysRequestMarshaller implements Marshaller<Requ
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         request.setContent(new ByteArrayInputStream(new byte[0]));
-        
 
         return request;
     }

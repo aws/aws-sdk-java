@@ -33,8 +33,8 @@ public class DescribeVpcAttributeRequestMarshaller implements Marshaller<Request
     public Request<DescribeVpcAttributeRequest> marshall(DescribeVpcAttributeRequest describeVpcAttributeRequest) {
 
         if (describeVpcAttributeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeVpcAttributeRequest> request = new DefaultRequest<DescribeVpcAttributeRequest>(describeVpcAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVpcAttribute");
@@ -46,7 +46,6 @@ public class DescribeVpcAttributeRequestMarshaller implements Marshaller<Request
         if (describeVpcAttributeRequest.getAttribute() != null) {
             request.addParameter("Attribute", StringUtils.fromString(describeVpcAttributeRequest.getAttribute()));
         }
-
 
         return request;
     }

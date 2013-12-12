@@ -33,8 +33,8 @@ public class DescribeEventsRequestMarshaller implements Marshaller<Request<Descr
     public Request<DescribeEventsRequest> marshall(DescribeEventsRequest describeEventsRequest) {
 
         if (describeEventsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeEventsRequest> request = new DefaultRequest<DescribeEventsRequest>(describeEventsRequest, "AmazonElastiCache");
         request.addParameter("Action", "DescribeEvents");
@@ -61,7 +61,6 @@ public class DescribeEventsRequestMarshaller implements Marshaller<Request<Descr
         if (describeEventsRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeEventsRequest.getMarker()));
         }
-
 
         return request;
     }

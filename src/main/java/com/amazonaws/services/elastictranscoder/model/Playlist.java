@@ -16,7 +16,6 @@ package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Use Only for MPEG-TS Outputs. If you specify a preset for which the value of Container is <code>ts</code> (MPEG-TS), Playlists contains information

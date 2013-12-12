@@ -16,7 +16,6 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 
-
 /**
  * Cachedi S C S I Volume
  */

@@ -33,8 +33,8 @@ public class DescribeNetworkInterfaceAttributeRequestMarshaller implements Marsh
     public Request<DescribeNetworkInterfaceAttributeRequest> marshall(DescribeNetworkInterfaceAttributeRequest describeNetworkInterfaceAttributeRequest) {
 
         if (describeNetworkInterfaceAttributeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeNetworkInterfaceAttributeRequest> request = new DefaultRequest<DescribeNetworkInterfaceAttributeRequest>(describeNetworkInterfaceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeNetworkInterfaceAttribute");
@@ -55,7 +55,6 @@ public class DescribeNetworkInterfaceAttributeRequestMarshaller implements Marsh
         if (describeNetworkInterfaceAttributeRequest.getAttachment() != null) {
             request.addParameter("Attachment", StringUtils.fromString(describeNetworkInterfaceAttributeRequest.getAttachment()));
         }
-
 
         return request;
     }

@@ -34,8 +34,7 @@ public class ResourceNotFoundExceptionUnmarshaller extends GlacierErrorUnmarshal
             return null;
 
         ResourceNotFoundException e = (ResourceNotFoundException)super.unmarshall(json);
-        
-        
+
         e.setType(parseMember("Type", json));
         
         e.setCode(parseMember("Code", json));

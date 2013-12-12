@@ -16,7 +16,6 @@ package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents textual data, plus an optional character set specification.

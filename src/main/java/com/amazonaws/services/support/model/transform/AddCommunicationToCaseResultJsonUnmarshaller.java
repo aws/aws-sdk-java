@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Add Communication To Case Result JSON Unmarshaller
  */
 public class AddCommunicationToCaseResultJsonUnmarshaller implements Unmarshaller<AddCommunicationToCaseResult, JsonUnmarshallerContext> {
 
-    
-
     public AddCommunicationToCaseResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         AddCommunicationToCaseResult addCommunicationToCaseResult = new AddCommunicationToCaseResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class AddCommunicationToCaseResultJsonUnmarshaller implements Unmarshalle
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("result", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class AddCommunicationToCaseResultJsonUnmarshaller implements Unmarshalle
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -33,13 +33,12 @@ public class DescribeCustomerGatewaysRequestMarshaller implements Marshaller<Req
     public Request<DescribeCustomerGatewaysRequest> marshall(DescribeCustomerGatewaysRequest describeCustomerGatewaysRequest) {
 
         if (describeCustomerGatewaysRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeCustomerGatewaysRequest> request = new DefaultRequest<DescribeCustomerGatewaysRequest>(describeCustomerGatewaysRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeCustomerGateways");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> customerGatewayIdsList = describeCustomerGatewaysRequest.getCustomerGatewayIds();
         int customerGatewayIdsListIndex = 1;
@@ -76,7 +75,6 @@ public class DescribeCustomerGatewaysRequestMarshaller implements Marshaller<Req
 
             filtersListIndex++;
         }
-
 
         return request;
     }

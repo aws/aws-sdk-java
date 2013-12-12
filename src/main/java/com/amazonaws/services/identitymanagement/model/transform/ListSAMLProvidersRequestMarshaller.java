@@ -33,14 +33,12 @@ public class ListSAMLProvidersRequestMarshaller implements Marshaller<Request<Li
     public Request<ListSAMLProvidersRequest> marshall(ListSAMLProvidersRequest listSAMLProvidersRequest) {
 
         if (listSAMLProvidersRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListSAMLProvidersRequest> request = new DefaultRequest<ListSAMLProvidersRequest>(listSAMLProvidersRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListSAMLProviders");
         request.addParameter("Version", "2010-05-08");
-
-
 
         return request;
     }

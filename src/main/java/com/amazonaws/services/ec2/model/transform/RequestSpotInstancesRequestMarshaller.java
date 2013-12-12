@@ -33,8 +33,8 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
     public Request<RequestSpotInstancesRequest> marshall(RequestSpotInstancesRequest requestSpotInstancesRequest) {
 
         if (requestSpotInstancesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RequestSpotInstancesRequest> request = new DefaultRequest<RequestSpotInstancesRequest>(requestSpotInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RequestSpotInstances");
@@ -241,7 +241,6 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
                 request.addParameter("LaunchSpecification.EbsOptimized", StringUtils.fromBoolean(launchSpecificationLaunchSpecification.isEbsOptimized()));
             }
         }
-
 
         return request;
     }

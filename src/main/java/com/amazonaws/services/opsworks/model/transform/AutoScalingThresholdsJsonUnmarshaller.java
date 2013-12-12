@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Auto Scaling Thresholds JSON Unmarshaller
  */
 public class AutoScalingThresholdsJsonUnmarshaller implements Unmarshaller<AutoScalingThresholds, JsonUnmarshallerContext> {
 
-    
-
     public AutoScalingThresholds unmarshall(JsonUnmarshallerContext context) throws Exception {
         AutoScalingThresholds autoScalingThresholds = new AutoScalingThresholds();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class AutoScalingThresholdsJsonUnmarshaller implements Unmarshaller<AutoS
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceCount", targetDepth)) {
                     context.nextToken();
@@ -80,7 +74,6 @@ public class AutoScalingThresholdsJsonUnmarshaller implements Unmarshaller<AutoS
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * List Gateways Result JSON Unmarshaller
  */
 public class ListGatewaysResultJsonUnmarshaller implements Unmarshaller<ListGatewaysResult, JsonUnmarshallerContext> {
 
-    
-
     public ListGatewaysResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ListGatewaysResult listGatewaysResult = new ListGatewaysResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ListGatewaysResultJsonUnmarshaller implements Unmarshaller<ListGate
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Gateways", targetDepth)) {
                     listGatewaysResult.setGateways(new ListUnmarshaller<GatewayInfo>(GatewayInfoJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -63,7 +57,6 @@ public class ListGatewaysResultJsonUnmarshaller implements Unmarshaller<ListGate
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

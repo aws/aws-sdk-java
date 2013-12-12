@@ -33,8 +33,8 @@ public class UpdateAccessKeyRequestMarshaller implements Marshaller<Request<Upda
     public Request<UpdateAccessKeyRequest> marshall(UpdateAccessKeyRequest updateAccessKeyRequest) {
 
         if (updateAccessKeyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<UpdateAccessKeyRequest> request = new DefaultRequest<UpdateAccessKeyRequest>(updateAccessKeyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "UpdateAccessKey");
@@ -49,7 +49,6 @@ public class UpdateAccessKeyRequestMarshaller implements Marshaller<Request<Upda
         if (updateAccessKeyRequest.getStatus() != null) {
             request.addParameter("Status", StringUtils.fromString(updateAccessKeyRequest.getStatus()));
         }
-
 
         return request;
     }

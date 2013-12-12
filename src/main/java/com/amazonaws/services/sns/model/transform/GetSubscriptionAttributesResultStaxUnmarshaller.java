@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Get Subscription Attributes Result StAX Unmarshaller
  */
@@ -66,16 +65,13 @@ public class GetSubscriptionAttributesResultStaxUnmarshaller implements Unmarsha
         }
 
     }
-    
 
     public GetSubscriptionAttributesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         GetSubscriptionAttributesResult getSubscriptionAttributesResult = new GetSubscriptionAttributesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        
         if (context.isStartOfDocument()) targetDepth += 2;
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

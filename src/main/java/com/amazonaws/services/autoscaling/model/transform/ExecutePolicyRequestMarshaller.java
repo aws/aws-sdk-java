@@ -33,8 +33,8 @@ public class ExecutePolicyRequestMarshaller implements Marshaller<Request<Execut
     public Request<ExecutePolicyRequest> marshall(ExecutePolicyRequest executePolicyRequest) {
 
         if (executePolicyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ExecutePolicyRequest> request = new DefaultRequest<ExecutePolicyRequest>(executePolicyRequest, "AmazonAutoScaling");
         request.addParameter("Action", "ExecutePolicy");
@@ -49,7 +49,6 @@ public class ExecutePolicyRequestMarshaller implements Marshaller<Request<Execut
         if (executePolicyRequest.isHonorCooldown() != null) {
             request.addParameter("HonorCooldown", StringUtils.fromBoolean(executePolicyRequest.isHonorCooldown()));
         }
-
 
         return request;
     }

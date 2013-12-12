@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Delete Preset Result JSON Unmarshaller
  */
 public class DeletePresetResultJsonUnmarshaller implements Unmarshaller<DeletePresetResult, JsonUnmarshallerContext> {
 
-    
-
     public DeletePresetResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DeletePresetResult deletePresetResult = new DeletePresetResult();
 
-        
-        
         return deletePresetResult;
     }
 

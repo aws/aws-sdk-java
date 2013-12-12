@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.sqs.model.*;
 
-
 /**
  * Asynchronous client for accessing AmazonSQS.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -57,7 +56,6 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -257,7 +255,6 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -309,11 +306,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
             public Void call() throws Exception {
                 setQueueAttributes(setQueueAttributesRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Sets the value of one or more queue attributes. Valid attributes that
@@ -346,16 +342,16 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		setQueueAttributes(setQueueAttributesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(setQueueAttributesRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    setQueueAttributes(setQueueAttributesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(setQueueAttributesRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -387,11 +383,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<ChangeMessageVisibilityBatchResult>() {
             public ChangeMessageVisibilityBatchResult call() throws Exception {
                 return changeMessageVisibilityBatch(changeMessageVisibilityBatchRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This is a batch version of ChangeMessageVisibility. It takes multiple
@@ -426,17 +421,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ChangeMessageVisibilityBatchResult>() {
             public ChangeMessageVisibilityBatchResult call() throws Exception {
-            	ChangeMessageVisibilityBatchResult result;
+                ChangeMessageVisibilityBatchResult result;
                 try {
-            		result = changeMessageVisibilityBatch(changeMessageVisibilityBatchRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(changeMessageVisibilityBatchRequest, result);
-               	return result;
-		    }
-		});
+                    result = changeMessageVisibilityBatch(changeMessageVisibilityBatchRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(changeMessageVisibilityBatchRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -496,11 +491,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
             public Void call() throws Exception {
                 changeMessageVisibility(changeMessageVisibilityRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The <code>ChangeMessageVisibility</code> action changes the visibility
@@ -562,16 +556,16 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		changeMessageVisibility(changeMessageVisibilityRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(changeMessageVisibilityRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    changeMessageVisibility(changeMessageVisibilityRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(changeMessageVisibilityRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -600,11 +594,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<GetQueueUrlResult>() {
             public GetQueueUrlResult call() throws Exception {
                 return getQueueUrl(getQueueUrlRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The <code>GetQueueUrl</code> action returns the URL of an existing
@@ -636,17 +629,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetQueueUrlResult>() {
             public GetQueueUrlResult call() throws Exception {
-            	GetQueueUrlResult result;
+                GetQueueUrlResult result;
                 try {
-            		result = getQueueUrl(getQueueUrlRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getQueueUrlRequest, result);
-               	return result;
-		    }
-		});
+                    result = getQueueUrl(getQueueUrlRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getQueueUrlRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -677,11 +670,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
             public Void call() throws Exception {
                 removePermission(removePermissionRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The <code>RemovePermission</code> action revokes any permissions in
@@ -714,16 +706,16 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		removePermission(removePermissionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(removePermissionRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    removePermission(removePermissionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(removePermissionRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -787,11 +779,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<GetQueueAttributesResult>() {
             public GetQueueAttributesResult call() throws Exception {
                 return getQueueAttributes(getQueueAttributesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Gets attributes for the specified queue. The following attributes are
@@ -858,17 +849,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetQueueAttributesResult>() {
             public GetQueueAttributesResult call() throws Exception {
-            	GetQueueAttributesResult result;
+                GetQueueAttributesResult result;
                 try {
-            		result = getQueueAttributes(getQueueAttributesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getQueueAttributesRequest, result);
-               	return result;
-		    }
-		});
+                    result = getQueueAttributes(getQueueAttributesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getQueueAttributesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -898,11 +889,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<SendMessageBatchResult>() {
             public SendMessageBatchResult call() throws Exception {
                 return sendMessageBatch(sendMessageBatchRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This is a batch version of SendMessage. It takes multiple messages and
@@ -935,17 +925,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<SendMessageBatchResult>() {
             public SendMessageBatchResult call() throws Exception {
-            	SendMessageBatchResult result;
+                SendMessageBatchResult result;
                 try {
-            		result = sendMessageBatch(sendMessageBatchRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(sendMessageBatchRequest, result);
-               	return result;
-		    }
-		});
+                    result = sendMessageBatch(sendMessageBatchRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(sendMessageBatchRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -980,11 +970,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
             public Void call() throws Exception {
                 deleteQueue(deleteQueueRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This action unconditionally deletes the queue specified by the queue
@@ -1021,16 +1010,16 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteQueue(deleteQueueRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteQueueRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteQueue(deleteQueueRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteQueueRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1059,11 +1048,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<SendMessageResult>() {
             public SendMessageResult call() throws Exception {
                 return sendMessage(sendMessageRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The <code>SendMessage</code> action delivers a message to the
@@ -1095,17 +1083,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<SendMessageResult>() {
             public SendMessageResult call() throws Exception {
-            	SendMessageResult result;
+                SendMessageResult result;
                 try {
-            		result = sendMessage(sendMessageRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(sendMessageRequest, result);
-               	return result;
-		    }
-		});
+                    result = sendMessage(sendMessageRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(sendMessageRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1154,11 +1142,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<ReceiveMessageResult>() {
             public ReceiveMessageResult call() throws Exception {
                 return receiveMessage(receiveMessageRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves one or more messages from the specified queue, including the
@@ -1210,17 +1197,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ReceiveMessageResult>() {
             public ReceiveMessageResult call() throws Exception {
-            	ReceiveMessageResult result;
+                ReceiveMessageResult result;
                 try {
-            		result = receiveMessage(receiveMessageRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(receiveMessageRequest, result);
-               	return result;
-		    }
-		});
+                    result = receiveMessage(receiveMessageRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(receiveMessageRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1248,11 +1235,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<ListQueuesResult>() {
             public ListQueuesResult call() throws Exception {
                 return listQueues(listQueuesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a list of your queues.
@@ -1283,17 +1269,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListQueuesResult>() {
             public ListQueuesResult call() throws Exception {
-            	ListQueuesResult result;
+                ListQueuesResult result;
                 try {
-            		result = listQueues(listQueuesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listQueuesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listQueues(listQueuesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listQueuesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1323,11 +1309,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<DeleteMessageBatchResult>() {
             public DeleteMessageBatchResult call() throws Exception {
                 return deleteMessageBatch(deleteMessageBatchRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This is a batch version of DeleteMessage. It takes multiple receipt
@@ -1360,17 +1345,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteMessageBatchResult>() {
             public DeleteMessageBatchResult call() throws Exception {
-            	DeleteMessageBatchResult result;
+                DeleteMessageBatchResult result;
                 try {
-            		result = deleteMessageBatch(deleteMessageBatchRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteMessageBatchRequest, result);
-               	return result;
-		    }
-		});
+                    result = deleteMessageBatch(deleteMessageBatchRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteMessageBatchRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1414,11 +1399,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<CreateQueueResult>() {
             public CreateQueueResult call() throws Exception {
                 return createQueue(createQueueRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The <code>CreateQueue</code> action creates a new queue, or returns
@@ -1465,17 +1449,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateQueueResult>() {
             public CreateQueueResult call() throws Exception {
-            	CreateQueueResult result;
+                CreateQueueResult result;
                 try {
-            		result = createQueue(createQueueRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createQueueRequest, result);
-               	return result;
-		    }
-		});
+                    result = createQueue(createQueueRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createQueueRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1522,11 +1506,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
             public Void call() throws Exception {
                 addPermission(addPermissionRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The AddPermission action adds a permission to a queue for a specific
@@ -1575,16 +1558,16 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		addPermission(addPermissionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(addPermissionRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    addPermission(addPermissionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(addPermissionRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1616,11 +1599,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
             public Void call() throws Exception {
                 deleteMessage(deleteMessageRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The <code>DeleteMessage</code> action unconditionally removes the
@@ -1654,16 +1636,16 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteMessage(deleteMessageRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteMessageRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteMessage(deleteMessageRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteMessageRequest, null);
+                   return null;
+            }
+        });
     }
     
 }

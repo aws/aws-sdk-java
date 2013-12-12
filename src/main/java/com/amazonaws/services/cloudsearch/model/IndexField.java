@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudsearch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Defines a field in the index, including its name, type, and the source of its data. The <code>IndexFieldType</code> indicates which of the options

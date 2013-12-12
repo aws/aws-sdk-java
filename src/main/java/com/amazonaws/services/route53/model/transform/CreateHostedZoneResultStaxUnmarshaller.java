@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Create Hosted Zone Result StAX Unmarshaller
  */
@@ -37,12 +36,10 @@ public class CreateHostedZoneResultStaxUnmarshaller implements Unmarshaller<Crea
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
         if (context.isStartOfDocument()) targetDepth += 1;
-        
 
         if (context.isStartOfDocument()) {
             createHostedZoneResult.setLocation(context.getHeader("Location"));
         }
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

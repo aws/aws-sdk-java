@@ -23,6 +23,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Deletes a user profile.
  * </p>
+ * <p>
+ * <b>Required Permissions</b> : To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information
+ * on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a> .
+ * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deleteUserProfile(DeleteUserProfileRequest)
  */

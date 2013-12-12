@@ -33,8 +33,8 @@ public class SwapEnvironmentCNAMEsRequestMarshaller implements Marshaller<Reques
     public Request<SwapEnvironmentCNAMEsRequest> marshall(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) {
 
         if (swapEnvironmentCNAMEsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<SwapEnvironmentCNAMEsRequest> request = new DefaultRequest<SwapEnvironmentCNAMEsRequest>(swapEnvironmentCNAMEsRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "SwapEnvironmentCNAMEs");
@@ -52,7 +52,6 @@ public class SwapEnvironmentCNAMEsRequestMarshaller implements Marshaller<Reques
         if (swapEnvironmentCNAMEsRequest.getDestinationEnvironmentName() != null) {
             request.addParameter("DestinationEnvironmentName", StringUtils.fromString(swapEnvironmentCNAMEsRequest.getDestinationEnvironmentName()));
         }
-
 
         return request;
     }

@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudformation.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The output for ListStacks action.

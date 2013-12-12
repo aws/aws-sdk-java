@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.support.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class DescribeTrustedAdvisorCheckSummariesRequestMarshaller implements Marshaller<Request<DescribeTrustedAdvisorCheckSummariesRequest>, DescribeTrustedAdvisorCheckSummariesRequest> {
 
-    
-
     public Request<DescribeTrustedAdvisorCheckSummariesRequest> marshall(DescribeTrustedAdvisorCheckSummariesRequest describeTrustedAdvisorCheckSummariesRequest) {
     if (describeTrustedAdvisorCheckSummariesRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class DescribeTrustedAdvisorCheckSummariesRequestMarshaller implements Ma
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,16 +70,11 @@ public class DescribeTrustedAdvisorCheckSummariesRequestMarshaller implements Ma
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
-          
 
             com.amazonaws.internal.ListWithAutoConstructFlag<String> checkIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeTrustedAdvisorCheckSummariesRequest.getCheckIds());
             if (checkIdsList != null && !(checkIdsList.isAutoConstruct() && checkIdsList.isEmpty())) {
@@ -101,7 +91,6 @@ public class DescribeTrustedAdvisorCheckSummariesRequestMarshaller implements Ma
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -110,7 +99,6 @@ public class DescribeTrustedAdvisorCheckSummariesRequestMarshaller implements Ma
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

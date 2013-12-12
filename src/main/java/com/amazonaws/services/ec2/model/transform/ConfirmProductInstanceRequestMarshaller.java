@@ -33,8 +33,8 @@ public class ConfirmProductInstanceRequestMarshaller implements Marshaller<Reque
     public Request<ConfirmProductInstanceRequest> marshall(ConfirmProductInstanceRequest confirmProductInstanceRequest) {
 
         if (confirmProductInstanceRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ConfirmProductInstanceRequest> request = new DefaultRequest<ConfirmProductInstanceRequest>(confirmProductInstanceRequest, "AmazonEC2");
         request.addParameter("Action", "ConfirmProductInstance");
@@ -46,7 +46,6 @@ public class ConfirmProductInstanceRequestMarshaller implements Marshaller<Reque
         if (confirmProductInstanceRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(confirmProductInstanceRequest.getInstanceId()));
         }
-
 
         return request;
     }

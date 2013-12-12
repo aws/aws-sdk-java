@@ -33,8 +33,8 @@ public class DeleteClusterSecurityGroupRequestMarshaller implements Marshaller<R
     public Request<DeleteClusterSecurityGroupRequest> marshall(DeleteClusterSecurityGroupRequest deleteClusterSecurityGroupRequest) {
 
         if (deleteClusterSecurityGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteClusterSecurityGroupRequest> request = new DefaultRequest<DeleteClusterSecurityGroupRequest>(deleteClusterSecurityGroupRequest, "AmazonRedshift");
         request.addParameter("Action", "DeleteClusterSecurityGroup");
@@ -43,7 +43,6 @@ public class DeleteClusterSecurityGroupRequestMarshaller implements Marshaller<R
         if (deleteClusterSecurityGroupRequest.getClusterSecurityGroupName() != null) {
             request.addParameter("ClusterSecurityGroupName", StringUtils.fromString(deleteClusterSecurityGroupRequest.getClusterSecurityGroupName()));
         }
-
 
         return request;
     }

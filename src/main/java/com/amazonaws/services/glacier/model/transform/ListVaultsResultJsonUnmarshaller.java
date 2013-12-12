@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * List Vaults Result JSON Unmarshaller
  */
 public class ListVaultsResultJsonUnmarshaller implements Unmarshaller<ListVaultsResult, JsonUnmarshallerContext> {
 
-    
-
     public ListVaultsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ListVaultsResult listVaultsResult = new ListVaultsResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ListVaultsResultJsonUnmarshaller implements Unmarshaller<ListVaults
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VaultList", targetDepth)) {
                     listVaultsResult.setVaultList(new ListUnmarshaller<DescribeVaultOutput>(DescribeVaultOutputJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -63,7 +57,6 @@ public class ListVaultsResultJsonUnmarshaller implements Unmarshaller<ListVaults
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Describe V T L Devices Result JSON Unmarshaller
  */
 public class DescribeVTLDevicesResultJsonUnmarshaller implements Unmarshaller<DescribeVTLDevicesResult, JsonUnmarshallerContext> {
 
-    
-
     public DescribeVTLDevicesResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeVTLDevicesResult describeVTLDevicesResult = new DescribeVTLDevicesResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DescribeVTLDevicesResultJsonUnmarshaller implements Unmarshaller<De
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
@@ -67,7 +61,6 @@ public class DescribeVTLDevicesResultJsonUnmarshaller implements Unmarshaller<De
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

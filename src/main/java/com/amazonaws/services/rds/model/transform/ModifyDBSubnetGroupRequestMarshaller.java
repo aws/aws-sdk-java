@@ -33,8 +33,8 @@ public class ModifyDBSubnetGroupRequestMarshaller implements Marshaller<Request<
     public Request<ModifyDBSubnetGroupRequest> marshall(ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest) {
 
         if (modifyDBSubnetGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ModifyDBSubnetGroupRequest> request = new DefaultRequest<ModifyDBSubnetGroupRequest>(modifyDBSubnetGroupRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyDBSubnetGroup");
@@ -57,7 +57,6 @@ public class ModifyDBSubnetGroupRequestMarshaller implements Marshaller<Request<
 
             subnetIdsListIndex++;
         }
-
 
         return request;
     }

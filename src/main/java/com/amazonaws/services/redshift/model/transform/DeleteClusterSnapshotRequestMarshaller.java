@@ -33,8 +33,8 @@ public class DeleteClusterSnapshotRequestMarshaller implements Marshaller<Reques
     public Request<DeleteClusterSnapshotRequest> marshall(DeleteClusterSnapshotRequest deleteClusterSnapshotRequest) {
 
         if (deleteClusterSnapshotRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteClusterSnapshotRequest> request = new DefaultRequest<DeleteClusterSnapshotRequest>(deleteClusterSnapshotRequest, "AmazonRedshift");
         request.addParameter("Action", "DeleteClusterSnapshot");
@@ -46,7 +46,6 @@ public class DeleteClusterSnapshotRequestMarshaller implements Marshaller<Reques
         if (deleteClusterSnapshotRequest.getSnapshotClusterIdentifier() != null) {
             request.addParameter("SnapshotClusterIdentifier", StringUtils.fromString(deleteClusterSnapshotRequest.getSnapshotClusterIdentifier()));
         }
-
 
         return request;
     }

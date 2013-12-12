@@ -33,8 +33,8 @@ public class PurchaseReservedInstancesOfferingRequestMarshaller implements Marsh
     public Request<PurchaseReservedInstancesOfferingRequest> marshall(PurchaseReservedInstancesOfferingRequest purchaseReservedInstancesOfferingRequest) {
 
         if (purchaseReservedInstancesOfferingRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<PurchaseReservedInstancesOfferingRequest> request = new DefaultRequest<PurchaseReservedInstancesOfferingRequest>(purchaseReservedInstancesOfferingRequest, "AmazonEC2");
         request.addParameter("Action", "PurchaseReservedInstancesOffering");
@@ -55,7 +55,6 @@ public class PurchaseReservedInstancesOfferingRequestMarshaller implements Marsh
                 request.addParameter("LimitPrice.CurrencyCode", StringUtils.fromString(reservedInstanceLimitPriceLimitPrice.getCurrencyCode()));
             }
         }
-
 
         return request;
     }

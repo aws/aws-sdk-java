@@ -33,13 +33,12 @@ public class DescribeVpcsRequestMarshaller implements Marshaller<Request<Describ
     public Request<DescribeVpcsRequest> marshall(DescribeVpcsRequest describeVpcsRequest) {
 
         if (describeVpcsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeVpcsRequest> request = new DefaultRequest<DescribeVpcsRequest>(describeVpcsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVpcs");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> vpcIdsList = describeVpcsRequest.getVpcIds();
         int vpcIdsListIndex = 1;
@@ -76,7 +75,6 @@ public class DescribeVpcsRequestMarshaller implements Marshaller<Request<Describ
 
             filtersListIndex++;
         }
-
 
         return request;
     }

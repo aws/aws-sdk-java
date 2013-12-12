@@ -33,8 +33,8 @@ public class TerminateEnvironmentRequestMarshaller implements Marshaller<Request
     public Request<TerminateEnvironmentRequest> marshall(TerminateEnvironmentRequest terminateEnvironmentRequest) {
 
         if (terminateEnvironmentRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<TerminateEnvironmentRequest> request = new DefaultRequest<TerminateEnvironmentRequest>(terminateEnvironmentRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "TerminateEnvironment");
@@ -49,7 +49,6 @@ public class TerminateEnvironmentRequestMarshaller implements Marshaller<Request
         if (terminateEnvironmentRequest.isTerminateResources() != null) {
             request.addParameter("TerminateResources", StringUtils.fromBoolean(terminateEnvironmentRequest.isTerminateResources()));
         }
-
 
         return request;
     }

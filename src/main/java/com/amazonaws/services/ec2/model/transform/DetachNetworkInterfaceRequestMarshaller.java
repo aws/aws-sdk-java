@@ -33,8 +33,8 @@ public class DetachNetworkInterfaceRequestMarshaller implements Marshaller<Reque
     public Request<DetachNetworkInterfaceRequest> marshall(DetachNetworkInterfaceRequest detachNetworkInterfaceRequest) {
 
         if (detachNetworkInterfaceRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DetachNetworkInterfaceRequest> request = new DefaultRequest<DetachNetworkInterfaceRequest>(detachNetworkInterfaceRequest, "AmazonEC2");
         request.addParameter("Action", "DetachNetworkInterface");
@@ -46,7 +46,6 @@ public class DetachNetworkInterfaceRequestMarshaller implements Marshaller<Reque
         if (detachNetworkInterfaceRequest.isForce() != null) {
             request.addParameter("Force", StringUtils.fromBoolean(detachNetworkInterfaceRequest.isForce()));
         }
-
 
         return request;
     }

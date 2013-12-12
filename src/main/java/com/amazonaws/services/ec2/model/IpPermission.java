@@ -16,7 +16,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * An IP permission describing allowed incoming IP traffic to an Amazon EC2 security group.

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Permission JSON Unmarshaller
  */
 public class PermissionJsonUnmarshaller implements Unmarshaller<Permission, JsonUnmarshallerContext> {
 
-    
-
     public Permission unmarshall(JsonUnmarshallerContext context) throws Exception {
         Permission permission = new Permission();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class PermissionJsonUnmarshaller implements Unmarshaller<Permission, Json
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StackId", targetDepth)) {
                     context.nextToken();
@@ -67,12 +61,15 @@ public class PermissionJsonUnmarshaller implements Unmarshaller<Permission, Json
                     context.nextToken();
                     permission.setAllowSudo(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Level", targetDepth)) {
+                    context.nextToken();
+                    permission.setLevel(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

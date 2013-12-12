@@ -33,8 +33,8 @@ public class SetLoadBalancerPoliciesOfListenerRequestMarshaller implements Marsh
     public Request<SetLoadBalancerPoliciesOfListenerRequest> marshall(SetLoadBalancerPoliciesOfListenerRequest setLoadBalancerPoliciesOfListenerRequest) {
 
         if (setLoadBalancerPoliciesOfListenerRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<SetLoadBalancerPoliciesOfListenerRequest> request = new DefaultRequest<SetLoadBalancerPoliciesOfListenerRequest>(setLoadBalancerPoliciesOfListenerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "SetLoadBalancerPoliciesOfListener");
@@ -58,7 +58,6 @@ public class SetLoadBalancerPoliciesOfListenerRequestMarshaller implements Marsh
 
             policyNamesListIndex++;
         }
-
 
         return request;
     }

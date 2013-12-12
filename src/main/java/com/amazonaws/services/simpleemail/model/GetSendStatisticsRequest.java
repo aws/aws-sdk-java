@@ -26,6 +26,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Each data point in the list contains statistics for a 15-minute interval.
  * </p>
+ * <p>
+ * This action is throttled at one request per second.
+ * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getSendStatistics(GetSendStatisticsRequest)
  */

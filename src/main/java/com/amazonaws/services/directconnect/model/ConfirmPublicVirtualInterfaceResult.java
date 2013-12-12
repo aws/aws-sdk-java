@@ -16,7 +16,6 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The response received when ConfirmPublicVirtualInterface is called.

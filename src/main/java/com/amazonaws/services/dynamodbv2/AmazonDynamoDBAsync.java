@@ -144,9 +144,8 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * operation.
      * </p>
      * <p>
-     * You cannot add, modify or delete local secondary indexes using
-     * <i>UpdateTable</i> . Local secondary indexes can only be defined at
-     * table creation time.
+     * You cannot add, modify or delete indexes using <i>UpdateTable</i> .
+     * Indexes can only be defined at table creation time.
      * </p>
      *
      * @param updateTableRequest Container for the necessary parameters to
@@ -190,9 +189,8 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * operation.
      * </p>
      * <p>
-     * You cannot add, modify or delete local secondary indexes using
-     * <i>UpdateTable</i> . Local secondary indexes can only be defined at
-     * table creation time.
+     * You cannot add, modify or delete indexes using <i>UpdateTable</i> .
+     * Indexes can only be defined at table creation time.
      * </p>
      *
      * @param updateTableRequest Container for the necessary parameters to
@@ -237,8 +235,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * DELETING state until the table deletion is complete.
      * </p>
      * <p>
-     * When you delete a table, any local secondary indexes on that table are
-     * also deleted.
+     * When you delete a table, any indexes on that table are also deleted.
      * </p>
      * <p>
      * Use the <i>DescribeTable</i> API to check the status of the table.
@@ -281,8 +278,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * DELETING state until the table deletion is complete.
      * </p>
      * <p>
-     * When you delete a table, any local secondary indexes on that table are
-     * also deleted.
+     * When you delete a table, any indexes on that table are also deleted.
      * </p>
      * <p>
      * Use the <i>DescribeTable</i> API to check the status of the table.
@@ -755,10 +751,9 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * on an <code>ACTIVE</code> table.
      * </p>
      * <p>
-     * If you want to create multiple tables with local secondary indexes on
-     * them, you must create them sequentially. Only one table with local
-     * secondary indexes can be in the <code>CREATING</code> state at any
-     * given time.
+     * If you want to create multiple tables with secondary indexes on them,
+     * you must create them sequentially. Only one table with secondary
+     * indexes can be in the <code>CREATING</code> state at any given time.
      * </p>
      * <p>
      * You can use the <i>DescribeTable</i> API to check the table status.
@@ -798,10 +793,9 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * on an <code>ACTIVE</code> table.
      * </p>
      * <p>
-     * If you want to create multiple tables with local secondary indexes on
-     * them, you must create them sequentially. Only one table with local
-     * secondary indexes can be in the <code>CREATING</code> state at any
-     * given time.
+     * If you want to create multiple tables with secondary indexes on them,
+     * you must create them sequentially. Only one table with secondary
+     * indexes can be in the <code>CREATING</code> state at any given time.
      * </p>
      * <p>
      * You can use the <i>DescribeTable</i> API to check the table status.
@@ -854,8 +848,11 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * or if you have used <i>Limit</i> .
      * </p>
      * <p>
-     * To request a strongly consistent result, set <i>ConsistentRead</i> to
-     * true.
+     * You can query a table, a local secondary index (LSI), or a global
+     * secondary index (GSI). For a query on a table or on an LSI, you can
+     * set <i>ConsistentRead</i> to true and obtain a strongly consistent
+     * result. GSIs support eventually consistent reads only, so do not
+     * specify <i>ConsistentRead</i> when querying a GSI.
      * </p>
      *
      * @param queryRequest Container for the necessary parameters to execute
@@ -900,8 +897,11 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * or if you have used <i>Limit</i> .
      * </p>
      * <p>
-     * To request a strongly consistent result, set <i>ConsistentRead</i> to
-     * true.
+     * You can query a table, a local secondary index (LSI), or a global
+     * secondary index (GSI). For a query on a table or on an LSI, you can
+     * set <i>ConsistentRead</i> to true and obtain a strongly consistent
+     * result. GSIs support eventually consistent reads only, so do not
+     * specify <i>ConsistentRead</i> when querying a GSI.
      * </p>
      *
      * @param queryRequest Container for the necessary parameters to execute
@@ -1310,6 +1310,5 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
     public Future<BatchGetItemResult> batchGetItemAsync(BatchGetItemRequest batchGetItemRequest,
             AsyncHandler<BatchGetItemRequest, BatchGetItemResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

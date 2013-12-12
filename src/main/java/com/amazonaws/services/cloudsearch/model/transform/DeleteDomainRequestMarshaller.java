@@ -33,8 +33,8 @@ public class DeleteDomainRequestMarshaller implements Marshaller<Request<DeleteD
     public Request<DeleteDomainRequest> marshall(DeleteDomainRequest deleteDomainRequest) {
 
         if (deleteDomainRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteDomainRequest> request = new DefaultRequest<DeleteDomainRequest>(deleteDomainRequest, "AmazonCloudSearch");
         request.addParameter("Action", "DeleteDomain");
@@ -43,7 +43,6 @@ public class DeleteDomainRequestMarshaller implements Marshaller<Request<DeleteD
         if (deleteDomainRequest.getDomainName() != null) {
             request.addParameter("DomainName", StringUtils.fromString(deleteDomainRequest.getDomainName()));
         }
-
 
         return request;
     }

@@ -16,7 +16,6 @@ package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A complex type that contains information about the resource record sets that are returned by the request and information about the response.

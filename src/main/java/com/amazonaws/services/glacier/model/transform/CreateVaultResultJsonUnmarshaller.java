@@ -25,19 +25,13 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Create Vault Result JSON Unmarshaller
  */
 public class CreateVaultResultJsonUnmarshaller implements Unmarshaller<CreateVaultResult, JsonUnmarshallerContext> {
 
-    
-
     public CreateVaultResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         CreateVaultResult createVaultResult = new CreateVaultResult();
-
-        
-        
 
         if (context.isStartOfDocument()) {
             if (context.getHeader("Location") != null)

@@ -34,8 +34,7 @@ public class MaximumNumberOfTrailsExceededExceptionUnmarshaller extends JsonErro
             return null;
 
         MaximumNumberOfTrailsExceededException e = (MaximumNumberOfTrailsExceededException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

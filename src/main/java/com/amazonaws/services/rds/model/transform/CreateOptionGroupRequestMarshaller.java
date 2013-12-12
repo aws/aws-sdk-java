@@ -33,8 +33,8 @@ public class CreateOptionGroupRequestMarshaller implements Marshaller<Request<Cr
     public Request<CreateOptionGroupRequest> marshall(CreateOptionGroupRequest createOptionGroupRequest) {
 
         if (createOptionGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateOptionGroupRequest> request = new DefaultRequest<CreateOptionGroupRequest>(createOptionGroupRequest, "AmazonRDS");
         request.addParameter("Action", "CreateOptionGroup");
@@ -69,7 +69,6 @@ public class CreateOptionGroupRequestMarshaller implements Marshaller<Request<Cr
 
             tagsListIndex++;
         }
-
 
         return request;
     }

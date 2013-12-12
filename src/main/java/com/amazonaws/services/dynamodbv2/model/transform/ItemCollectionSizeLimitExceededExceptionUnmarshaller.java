@@ -34,8 +34,7 @@ public class ItemCollectionSizeLimitExceededExceptionUnmarshaller extends JsonEr
             return null;
 
         ItemCollectionSizeLimitExceededException e = (ItemCollectionSizeLimitExceededException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

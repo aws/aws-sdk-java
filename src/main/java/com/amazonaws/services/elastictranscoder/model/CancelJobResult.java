@@ -16,7 +16,6 @@ package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The response body contains a JSON object. If the job is successfully canceled, the value of <code>Success</code> is <code>true</code> .

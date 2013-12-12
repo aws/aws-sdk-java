@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Storedi S C S I Volume JSON Unmarshaller
  */
 public class StorediSCSIVolumeJsonUnmarshaller implements Unmarshaller<StorediSCSIVolume, JsonUnmarshallerContext> {
 
-    
-
     public StorediSCSIVolume unmarshall(JsonUnmarshallerContext context) throws Exception {
         StorediSCSIVolume storediSCSIVolume = new StorediSCSIVolume();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class StorediSCSIVolumeJsonUnmarshaller implements Unmarshaller<StorediSC
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
                     context.nextToken();
@@ -96,7 +90,6 @@ public class StorediSCSIVolumeJsonUnmarshaller implements Unmarshaller<StorediSC
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -16,7 +16,6 @@ package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Contains the AWSSupport <i>caseId</i> returned by a successful completion of the <a

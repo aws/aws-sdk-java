@@ -33,13 +33,12 @@ public class DescribeDomainsRequestMarshaller implements Marshaller<Request<Desc
     public Request<DescribeDomainsRequest> marshall(DescribeDomainsRequest describeDomainsRequest) {
 
         if (describeDomainsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeDomainsRequest> request = new DefaultRequest<DescribeDomainsRequest>(describeDomainsRequest, "AmazonCloudSearch");
         request.addParameter("Action", "DescribeDomains");
         request.addParameter("Version", "2011-02-01");
-
 
         java.util.List<String> domainNamesList = describeDomainsRequest.getDomainNames();
         int domainNamesListIndex = 1;
@@ -51,7 +50,6 @@ public class DescribeDomainsRequestMarshaller implements Marshaller<Request<Desc
 
             domainNamesListIndex++;
         }
-
 
         return request;
     }

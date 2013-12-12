@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * User Profile JSON Unmarshaller
  */
 public class UserProfileJsonUnmarshaller implements Unmarshaller<UserProfile, JsonUnmarshallerContext> {
 
-    
-
     public UserProfile unmarshall(JsonUnmarshallerContext context) throws Exception {
         UserProfile userProfile = new UserProfile();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class UserProfileJsonUnmarshaller implements Unmarshaller<UserProfile, Js
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IamUserArn", targetDepth)) {
                     context.nextToken();
@@ -67,12 +61,15 @@ public class UserProfileJsonUnmarshaller implements Unmarshaller<UserProfile, Js
                     context.nextToken();
                     userProfile.setSshPublicKey(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AllowSelfManagement", targetDepth)) {
+                    context.nextToken();
+                    userProfile.setAllowSelfManagement(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

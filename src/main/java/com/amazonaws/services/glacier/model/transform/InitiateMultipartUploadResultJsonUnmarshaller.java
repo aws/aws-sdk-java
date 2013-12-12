@@ -25,19 +25,13 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Initiate Multipart Upload Result JSON Unmarshaller
  */
 public class InitiateMultipartUploadResultJsonUnmarshaller implements Unmarshaller<InitiateMultipartUploadResult, JsonUnmarshallerContext> {
 
-    
-
     public InitiateMultipartUploadResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         InitiateMultipartUploadResult initiateMultipartUploadResult = new InitiateMultipartUploadResult();
-
-        
-        
 
         if (context.isStartOfDocument()) {
             if (context.getHeader("Location") != null)

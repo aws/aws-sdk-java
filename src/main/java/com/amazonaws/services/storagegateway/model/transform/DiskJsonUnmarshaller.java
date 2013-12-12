@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Disk JSON Unmarshaller
  */
 public class DiskJsonUnmarshaller implements Unmarshaller<Disk, JsonUnmarshallerContext> {
 
-    
-
     public Disk unmarshall(JsonUnmarshallerContext context) throws Exception {
         Disk disk = new Disk();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DiskJsonUnmarshaller implements Unmarshaller<Disk, JsonUnmarshaller
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DiskId", targetDepth)) {
                     context.nextToken();
@@ -80,7 +74,6 @@ public class DiskJsonUnmarshaller implements Unmarshaller<Disk, JsonUnmarshaller
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

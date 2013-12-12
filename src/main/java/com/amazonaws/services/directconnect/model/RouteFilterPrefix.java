@@ -16,7 +16,6 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A route filter prefix that the customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface.

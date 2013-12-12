@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -25,7 +26,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
@@ -49,9 +49,11 @@ public class DynamoDBReflector {
      * over twice as fast.
      */
     private final Map<Class<?>, Collection<Method>> getterCache = new HashMap<Class<?>, Collection<Method>>();
-    private final Map<Class<?>, Method> hashKeyGetterCache = new HashMap<Class<?>, Method>();
-    private final Map<Class<?>, Method> rangeKeyGetterCache = new HashMap<Class<?>, Method>();
-    private final IndexKeyNameToIndexNamesCache indexKeyNameToIndexNamesCache = new IndexKeyNameToIndexNamesCache();
+    private final Map<Class<?>, Method> primaryHashKeyGetterCache = new HashMap<Class<?>, Method>();
+    private final Map<Class<?>, Method> primaryRangeKeyGetterCache = new HashMap<Class<?>, Method>();
+    private final IndexKeyNameToIndexNamesCache indexRangeKeyNameToLocalSecondaryIndexNamesCache = new IndexKeyNameToIndexNamesCache();
+    private final IndexKeyNameToIndexNamesCache indexRangeKeyNameToGlobalSecondaryIndexNamesCache = new IndexKeyNameToIndexNamesCache();
+    private final IndexKeyNameToIndexNamesCache indexHashKeyNameToGlobalSecondaryIndexNamesCache = new IndexKeyNameToIndexNamesCache();
 
     /*
      * All caches keyed by a Method use the getter for a particular mapped
@@ -93,7 +95,7 @@ public class DynamoDBReflector {
      */
     private boolean isRelevantGetter(Method m) {
         return (m.getName().startsWith("get") || m.getName().startsWith("is"))
-        		&& m.getParameterTypes().length == 0
+                && m.getParameterTypes().length == 0
                 && m.getDeclaringClass().getAnnotation(DynamoDBTable.class) != null
                 && !m.isAnnotationPresent(DynamoDBIgnore.class);
     }
@@ -102,9 +104,9 @@ public class DynamoDBReflector {
      * Returns the annotated {@link DynamoDBRangeKey} getter for the class
      * given, or null if the class doesn't have one.
      */
-    <T> Method getRangeKeyGetter(Class<T> clazz) {
-        synchronized (rangeKeyGetterCache) {
-            if ( !rangeKeyGetterCache.containsKey(clazz) ) {
+    <T> Method getPrimaryRangeKeyGetter(Class<T> clazz) {
+        synchronized (primaryRangeKeyGetterCache) {
+            if ( !primaryRangeKeyGetterCache.containsKey(clazz) ) {
                 Method rangeKeyMethod = null;
                 for ( Method method : getRelevantGetters(clazz) ) {
                     if ( method.getParameterTypes().length == 0 && method.isAnnotationPresent(DynamoDBRangeKey.class)) {
@@ -112,9 +114,9 @@ public class DynamoDBReflector {
                         break;
                     }
                 }
-                rangeKeyGetterCache.put(clazz, rangeKeyMethod);
+                primaryRangeKeyGetterCache.put(clazz, rangeKeyMethod);
             }
-            return rangeKeyGetterCache.get(clazz);
+            return primaryRangeKeyGetterCache.get(clazz);
         }
     }
 
@@ -125,7 +127,7 @@ public class DynamoDBReflector {
      * 
      * TODO: caching
      */
-    <T> Collection<Method> getKeyGetters(Class<T> clazz) {
+    <T> Collection<Method> getPrimaryKeyGetters(Class<T> clazz) {
         List<Method> keyGetters = new LinkedList<Method>();
         for (Method getter : getRelevantGetters(clazz)) {
             if (getter.isAnnotationPresent(DynamoDBHashKey.class)
@@ -142,18 +144,18 @@ public class DynamoDBReflector {
      * Returns the annotated {@link DynamoDBHashKey} getter for the class given,
      * throwing an exception if there isn't one.
      */
-    <T> Method getHashKeyGetter(Class<T> clazz) {
+    <T> Method getPrimaryHashKeyGetter(Class<T> clazz) {
         Method hashKeyMethod;
-        synchronized (hashKeyGetterCache) {
-            if ( !hashKeyGetterCache.containsKey(clazz) ) {
+        synchronized (primaryHashKeyGetterCache) {
+            if ( !primaryHashKeyGetterCache.containsKey(clazz) ) {
                 for ( Method method : getRelevantGetters(clazz) ) {
                     if ( method.getParameterTypes().length == 0 && method.isAnnotationPresent(DynamoDBHashKey.class)) {
-                        hashKeyGetterCache.put(clazz, method);
+                        primaryHashKeyGetterCache.put(clazz, method);
                         break;
                     }
                 }
             }
-            hashKeyMethod = hashKeyGetterCache.get(clazz);
+            hashKeyMethod = primaryHashKeyGetterCache.get(clazz);
         }
 
         if ( hashKeyMethod == null ) {
@@ -934,6 +936,11 @@ public class DynamoDBReflector {
                         && hashKeyAnnotation.attributeName().length() > 0 )
                     return hashKeyAnnotation.attributeName();
 
+                // Then an index hash key
+                DynamoDBIndexHashKey indexHashKey = getter.getAnnotation(DynamoDBIndexHashKey.class);
+                if ( indexHashKey != null && indexHashKey.attributeName() != null && indexHashKey.attributeName().length() > 0 )
+                    return indexHashKey.attributeName();
+
                 // Then a primary range key
                 DynamoDBRangeKey rangeKey = getter.getAnnotation(DynamoDBRangeKey.class);
                 if ( rangeKey != null && rangeKey.attributeName() != null && rangeKey.attributeName().length() > 0 )
@@ -1138,42 +1145,132 @@ public class DynamoDBReflector {
     }
     
     /**
-     * Returns the name of the range key.
+     * Returns the name of the primary hash key.
      */
-    String getPrimaryRangeKeyName(Class<?> clazz) {
-    	return getAttributeName(getRangeKeyGetter(clazz));
+    String getPrimaryHashKeyName(Class<?> clazz) {
+        return getAttributeName(getPrimaryHashKeyGetter(clazz));
     }
     
     /**
-     * Returns the names of all the indexes that use the given index range key,
-     * or null if the range key is not annotated with any index.
+     * Returns the name of the primary range key.
      */
-    List<String> getIndexNameByIndexRangeKeyName(Class<?> clazz, String indexRangeKeyName) {
-        synchronized (indexKeyNameToIndexNamesCache) {
-            if ( !indexKeyNameToIndexNamesCache.isCached(clazz) ) {
-            	Map<String, List<String>> indexKeyNameToIndexNamesMap = new HashMap<String, List<String>>();
-            	for ( Method method : getRelevantGetters(clazz) ) {
-                    if ( method.getParameterTypes().length == 0 && method.isAnnotationPresent(DynamoDBIndexRangeKey.class)) {
-                    	DynamoDBIndexRangeKey indexRangeKeyAnnotation = method.getAnnotation(DynamoDBIndexRangeKey.class);
-                    	String localSecondaryIndexName = indexRangeKeyAnnotation.localSecondaryIndexName();
-                    	String[] localSecondaryIndexNames = indexRangeKeyAnnotation.localSecondaryIndexNames();
-                    	if (localSecondaryIndexName.length() != 0 && localSecondaryIndexNames.length != 0) {
-                    		throw new DynamoDBMappingException("@DynamoDBIndexRangeKey annotation on getter " + method + " contains both localSecondaryIndexName and localSecondaryIndexNames.");
-                    	} else if (localSecondaryIndexName.length() == 0 && localSecondaryIndexNames.length == 0) {
-                    		throw new DynamoDBMappingException("@DynamoDBIndexRangeKey annotation on getter " + method + " doesn't contain index name.");
-                    	}
-                    	
-                    	String attributeName = getAttributeName(method);
-                    	if (localSecondaryIndexName.length() != 0) {
-                    		indexKeyNameToIndexNamesMap.put(attributeName, Collections.singletonList(localSecondaryIndexName));   		
-                    	} else {
-                    		indexKeyNameToIndexNamesMap.put(attributeName, Arrays.asList(localSecondaryIndexNames));   		
-                    	}
+    String getPrimaryRangeKeyName(Class<?> clazz) {
+    	return getAttributeName(getPrimaryRangeKeyGetter(clazz));
+    }
+    
+    /**
+     * Returns the names of all the local secondary indexes that use the given
+     * index range key, or null if the attribute is not annotated with any LSI.
+     */
+    List<String> getLocalSecondaryIndexNamesByIndexKeyName(Class<?> clazz, String indexRangeKeyName) {
+        synchronized (indexRangeKeyNameToLocalSecondaryIndexNamesCache) {
+            if ( !indexRangeKeyNameToLocalSecondaryIndexNamesCache.isCached(clazz) ) {
+                Map<String, List<String>> indexRangeKeyNameToLocalSecondaryIndexNamesMap = new HashMap<String, List<String>>();
+                for ( Method method : getRelevantGetters(clazz) ) {
+                    String attributeName = getAttributeName(method);
+                    List<String> indexNames = new LinkedList<String>();
+                    
+                    // If it's annotated as a range key for one or more LSI
+                    if ( method.getParameterTypes().length == 0
+                            && method.isAnnotationPresent(DynamoDBIndexRangeKey.class)) {
+                        DynamoDBIndexRangeKey indexRangeKeyAnnotation = method.getAnnotation(DynamoDBIndexRangeKey.class);
+                        String localSecondaryIndexName = indexRangeKeyAnnotation.localSecondaryIndexName();
+                        String[] localSecondaryIndexNames = indexRangeKeyAnnotation.localSecondaryIndexNames();
+                        boolean singleLSIName = localSecondaryIndexName != null
+                                && localSecondaryIndexName.length() != 0;
+                        boolean multipleLSINames = localSecondaryIndexNames != null
+                                && localSecondaryIndexNames.length != 0;
+                        
+                        if (singleLSIName && multipleLSINames) {
+                            throw new DynamoDBMappingException(
+                                    "@DynamoDBIndexRangeKey annotation on getter "
+                                            + method
+                                            + " contains both localSecondaryIndexName and localSecondaryIndexNames.");
+                        }
+                        
+                        if (singleLSIName) {
+                            indexNames.add(localSecondaryIndexName);
+                        } else if (multipleLSINames){
+                            indexNames.addAll(Arrays.asList(localSecondaryIndexNames));
+                        }
+                    }
+                    
+                    if ( !indexNames.isEmpty() ) {
+                        indexRangeKeyNameToLocalSecondaryIndexNamesMap.put(attributeName, indexNames);
+                    } else {
+                        // Save as null instead of empty list
+                        indexRangeKeyNameToLocalSecondaryIndexNamesMap.put(attributeName, null);
                     }
                 }
-            	indexKeyNameToIndexNamesCache.cache(clazz, indexKeyNameToIndexNamesMap);
+                indexRangeKeyNameToLocalSecondaryIndexNamesCache.cache(clazz, indexRangeKeyNameToLocalSecondaryIndexNamesMap);
             }
-            return indexKeyNameToIndexNamesCache.getIndexNames(clazz, indexRangeKeyName);
+            return indexRangeKeyNameToLocalSecondaryIndexNamesCache.getIndexNames(clazz, indexRangeKeyName);
+        }
+    }
+    
+    /**
+     * Returns the names of all the global secondary indexes that use the given
+     * index key (either hash or range), or null if the attribute is not annotated with any GSI.
+     */
+    List<String> getGlobalSecondaryIndexNamesByIndexKeyName(Class<?> clazz, String indexKeyName, boolean isIndexHashKey) {
+        final Class<? extends Annotation> annotationInterface = isIndexHashKey ? DynamoDBIndexHashKey.class : DynamoDBIndexRangeKey.class;
+        IndexKeyNameToIndexNamesCache indexKeyNameToGlobalSecondaryIndexNamesCache = isIndexHashKey ?
+                indexHashKeyNameToGlobalSecondaryIndexNamesCache : indexRangeKeyNameToGlobalSecondaryIndexNamesCache;
+        synchronized (indexKeyNameToGlobalSecondaryIndexNamesCache) {
+            if ( !indexKeyNameToGlobalSecondaryIndexNamesCache.isCached(clazz) ) {
+                Map<String, List<String>> indexKeyNameToGlobalSecondaryIndexNamesMap = new HashMap<String, List<String>>();
+                for ( Method method : getRelevantGetters(clazz) ) {
+                    String attributeName = getAttributeName(method);
+                    List<String> indexNames = new LinkedList<String>();
+                    
+                    if ( method.getParameterTypes().length == 0
+                            && ( method.isAnnotationPresent(annotationInterface) )) {
+                        String globalSecondaryIndexName;
+                        String[] globalSecondaryIndexNames;
+                        Annotation indexHashKeyAnnotation = method.getAnnotation(annotationInterface);
+                        if (isIndexHashKey) {
+                            globalSecondaryIndexName = ((DynamoDBIndexHashKey)indexHashKeyAnnotation).globalSecondaryIndexName();
+                            globalSecondaryIndexNames = ((DynamoDBIndexHashKey)indexHashKeyAnnotation).globalSecondaryIndexNames();
+                        } else {
+                            globalSecondaryIndexName = ((DynamoDBIndexRangeKey)indexHashKeyAnnotation).globalSecondaryIndexName();
+                            globalSecondaryIndexNames = ((DynamoDBIndexRangeKey)indexHashKeyAnnotation).globalSecondaryIndexNames();
+                        }
+                        
+                        boolean singleGSIName = globalSecondaryIndexName != null
+                                && globalSecondaryIndexName.length() != 0;
+                        boolean multipleGSINames = globalSecondaryIndexNames != null
+                                && globalSecondaryIndexNames.length != 0;
+
+                        if ( singleGSIName && multipleGSINames) {
+                            throw new DynamoDBMappingException(
+                                    annotationInterface.getSimpleName() + " annotation on getter "
+                                            + method
+                                            + " contains both globalSecondaryIndexName and globalSecondaryIndexNames.");
+                        } else if ( (!singleGSIName) && (!multipleGSINames) 
+                                && isIndexHashKey ) {
+                            throw new DynamoDBMappingException(
+                                    "@DynamoDBIndexHashKey annotation on getter "
+                                            + method
+                                            + " doesn't contain any index name.");
+                        }
+                        
+                        if (singleGSIName) {
+                            indexNames.add(globalSecondaryIndexName);
+                        } else if (multipleGSINames) {
+                            indexNames.addAll(Arrays.asList(globalSecondaryIndexNames));
+                        }
+                    }
+                    
+                    if ( !indexNames.isEmpty() ) {
+                        indexKeyNameToGlobalSecondaryIndexNamesMap.put(attributeName, indexNames);
+                    } else {
+                        // null instead of an empty list
+                        indexKeyNameToGlobalSecondaryIndexNamesMap.put(attributeName, null);
+                    }
+                }
+                indexKeyNameToGlobalSecondaryIndexNamesCache.cache(clazz, indexKeyNameToGlobalSecondaryIndexNamesMap);
+            }
+            return indexKeyNameToGlobalSecondaryIndexNamesCache.getIndexNames(clazz, indexKeyName);
         }
     }
     

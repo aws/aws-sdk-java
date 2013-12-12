@@ -33,8 +33,8 @@ public class DescribeScheduledActionsRequestMarshaller implements Marshaller<Req
     public Request<DescribeScheduledActionsRequest> marshall(DescribeScheduledActionsRequest describeScheduledActionsRequest) {
 
         if (describeScheduledActionsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeScheduledActionsRequest> request = new DefaultRequest<DescribeScheduledActionsRequest>(describeScheduledActionsRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeScheduledActions");
@@ -66,7 +66,6 @@ public class DescribeScheduledActionsRequestMarshaller implements Marshaller<Req
         if (describeScheduledActionsRequest.getMaxRecords() != null) {
             request.addParameter("MaxRecords", StringUtils.fromInteger(describeScheduledActionsRequest.getMaxRecords()));
         }
-
 
         return request;
     }

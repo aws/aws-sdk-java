@@ -16,7 +16,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents metadata to associate with Amazon EC2 resources. Each tag consists of a user-defined key and value. Use tags to categorize EC2 resources,

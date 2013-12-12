@@ -33,8 +33,8 @@ public class UpdateServiceAccessPoliciesRequestMarshaller implements Marshaller<
     public Request<UpdateServiceAccessPoliciesRequest> marshall(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest) {
 
         if (updateServiceAccessPoliciesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<UpdateServiceAccessPoliciesRequest> request = new DefaultRequest<UpdateServiceAccessPoliciesRequest>(updateServiceAccessPoliciesRequest, "AmazonCloudSearch");
         request.addParameter("Action", "UpdateServiceAccessPolicies");
@@ -46,7 +46,6 @@ public class UpdateServiceAccessPoliciesRequestMarshaller implements Marshaller<
         if (updateServiceAccessPoliciesRequest.getAccessPolicies() != null) {
             request.addParameter("AccessPolicies", StringUtils.fromString(updateServiceAccessPoliciesRequest.getAccessPolicies()));
         }
-
 
         return request;
     }

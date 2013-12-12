@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Update Trail Result JSON Unmarshaller
  */
 public class UpdateTrailResultJsonUnmarshaller implements Unmarshaller<UpdateTrailResult, JsonUnmarshallerContext> {
 
-    
-
     public UpdateTrailResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         UpdateTrailResult updateTrailResult = new UpdateTrailResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class UpdateTrailResultJsonUnmarshaller implements Unmarshaller<UpdateTra
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("trail", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class UpdateTrailResultJsonUnmarshaller implements Unmarshaller<UpdateTra
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

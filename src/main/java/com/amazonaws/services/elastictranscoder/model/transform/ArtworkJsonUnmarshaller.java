@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Artwork JSON Unmarshaller
  */
 public class ArtworkJsonUnmarshaller implements Unmarshaller<Artwork, JsonUnmarshallerContext> {
 
-    
-
     public Artwork unmarshall(JsonUnmarshallerContext context) throws Exception {
         Artwork artwork = new Artwork();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ArtworkJsonUnmarshaller implements Unmarshaller<Artwork, JsonUnmars
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InputKey", targetDepth)) {
                     context.nextToken();
@@ -80,7 +74,6 @@ public class ArtworkJsonUnmarshaller implements Unmarshaller<Artwork, JsonUnmars
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

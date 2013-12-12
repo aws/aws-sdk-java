@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Create Distribution Result StAX Unmarshaller
  */
@@ -41,7 +40,6 @@ public class CreateDistributionResultStaxUnmarshaller implements Unmarshaller<Cr
             createDistributionResult.setLocation(context.getHeader("Location"));
             createDistributionResult.setETag(context.getHeader("ETag"));
         }
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

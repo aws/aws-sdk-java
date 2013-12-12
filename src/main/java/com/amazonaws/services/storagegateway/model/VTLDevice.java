@@ -16,7 +16,6 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents a device object associated with a Gateway-Virtual Tape Library.

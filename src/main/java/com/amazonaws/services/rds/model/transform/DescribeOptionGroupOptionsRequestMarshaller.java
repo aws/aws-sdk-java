@@ -33,8 +33,8 @@ public class DescribeOptionGroupOptionsRequestMarshaller implements Marshaller<R
     public Request<DescribeOptionGroupOptionsRequest> marshall(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) {
 
         if (describeOptionGroupOptionsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeOptionGroupOptionsRequest> request = new DefaultRequest<DescribeOptionGroupOptionsRequest>(describeOptionGroupOptionsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeOptionGroupOptions");
@@ -52,7 +52,6 @@ public class DescribeOptionGroupOptionsRequestMarshaller implements Marshaller<R
         if (describeOptionGroupOptionsRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeOptionGroupOptionsRequest.getMarker()));
         }
-
 
         return request;
     }

@@ -16,7 +16,6 @@ package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * JSON-formatted object that contains the metadata for a support case. It is contained the response from a <a

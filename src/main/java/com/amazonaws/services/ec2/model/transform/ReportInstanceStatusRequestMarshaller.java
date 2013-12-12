@@ -33,13 +33,12 @@ public class ReportInstanceStatusRequestMarshaller implements Marshaller<Request
     public Request<ReportInstanceStatusRequest> marshall(ReportInstanceStatusRequest reportInstanceStatusRequest) {
 
         if (reportInstanceStatusRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ReportInstanceStatusRequest> request = new DefaultRequest<ReportInstanceStatusRequest>(reportInstanceStatusRequest, "AmazonEC2");
         request.addParameter("Action", "ReportInstanceStatus");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> instancesList = reportInstanceStatusRequest.getInstances();
         int instancesListIndex = 1;
@@ -74,7 +73,6 @@ public class ReportInstanceStatusRequestMarshaller implements Marshaller<Request
         if (reportInstanceStatusRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(reportInstanceStatusRequest.getDescription()));
         }
-
 
         return request;
     }

@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudwatch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The <code>StatisticSet</code> data type describes the <code>StatisticValues</code> component of MetricDatum, and represents a set of statistics that

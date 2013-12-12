@@ -16,7 +16,6 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * AWS OpsWorks supports five lifecycle events, <b>setup</b> ,

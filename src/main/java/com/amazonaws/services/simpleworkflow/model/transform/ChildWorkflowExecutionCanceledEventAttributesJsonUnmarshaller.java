@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Child Workflow Execution Canceled Event Attributes JSON Unmarshaller
  */
 public class ChildWorkflowExecutionCanceledEventAttributesJsonUnmarshaller implements Unmarshaller<ChildWorkflowExecutionCanceledEventAttributes, JsonUnmarshallerContext> {
 
-    
-
     public ChildWorkflowExecutionCanceledEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         ChildWorkflowExecutionCanceledEventAttributes childWorkflowExecutionCanceledEventAttributes = new ChildWorkflowExecutionCanceledEventAttributes();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ChildWorkflowExecutionCanceledEventAttributesJsonUnmarshaller imple
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workflowExecution", targetDepth)) {
                     context.nextToken();
@@ -76,7 +70,6 @@ public class ChildWorkflowExecutionCanceledEventAttributesJsonUnmarshaller imple
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

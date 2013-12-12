@@ -16,7 +16,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The result of enabling monitoring on a set of Amazon EC2 instances. Contains the updated monitoring status for each instance specified in the

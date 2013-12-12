@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
@@ -44,8 +43,7 @@ public class DeleteCloudFrontOriginAccessIdentityRequestMarshaller implements Ma
         Request<DeleteCloudFrontOriginAccessIdentityRequest> request = new DefaultRequest<DeleteCloudFrontOriginAccessIdentityRequest>(deleteCloudFrontOriginAccessIdentityRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.DELETE);
         if (deleteCloudFrontOriginAccessIdentityRequest.getIfMatch() != null)
-        	request.addHeader("If-Match", StringUtils.fromString(deleteCloudFrontOriginAccessIdentityRequest.getIfMatch()));
-        
+            request.addHeader("If-Match", StringUtils.fromString(deleteCloudFrontOriginAccessIdentityRequest.getIfMatch()));
 
         String uriResourcePath = "2013-09-27/origin-access-identity/cloudfront/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(deleteCloudFrontOriginAccessIdentityRequest.getId())); 
@@ -65,8 +63,6 @@ public class DeleteCloudFrontOriginAccessIdentityRequestMarshaller implements Ma
         }
 
         request.setResourcePath(uriResourcePath);
-
-        
 
         return request;
     }

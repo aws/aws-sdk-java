@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Source Data Map StAX Unmarshaller
  */
@@ -66,16 +65,13 @@ public class SourceDataMapStaxUnmarshaller implements Unmarshaller<SourceDataMap
         }
 
     }
-    
 
     public SourceDataMap unmarshall(StaxUnmarshallerContext context) throws Exception {
         SourceDataMap sourceDataMap = new SourceDataMap();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        
         if (context.isStartOfDocument()) targetDepth += 2;
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

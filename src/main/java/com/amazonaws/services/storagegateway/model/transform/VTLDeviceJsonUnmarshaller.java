@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * V T L Device JSON Unmarshaller
  */
 public class VTLDeviceJsonUnmarshaller implements Unmarshaller<VTLDevice, JsonUnmarshallerContext> {
 
-    
-
     public VTLDevice unmarshall(JsonUnmarshallerContext context) throws Exception {
         VTLDevice vTLDevice = new VTLDevice();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class VTLDeviceJsonUnmarshaller implements Unmarshaller<VTLDevice, JsonUn
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VTLDeviceARN", targetDepth)) {
                     context.nextToken();
@@ -76,7 +70,6 @@ public class VTLDeviceJsonUnmarshaller implements Unmarshaller<VTLDevice, JsonUn
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

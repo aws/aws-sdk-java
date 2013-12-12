@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class DeletePresetRequestMarshaller implements Marshaller<Request<DeletePresetRequest>, DeletePresetRequest> {
 
-    
-
     public Request<DeletePresetRequest> marshall(DeletePresetRequest deletePresetRequest) {
     if (deletePresetRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class DeletePresetRequestMarshaller implements Marshaller<Request<DeleteP
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.DELETE);
-
 
         String uriResourcePath = "2012-09-25/presets/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", (deletePresetRequest.getId() == null) ? "" : StringUtils.fromString(deletePresetRequest.getId())); 
@@ -76,10 +71,7 @@ public class DeletePresetRequestMarshaller implements Marshaller<Request<DeleteP
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         request.setContent(new ByteArrayInputStream(new byte[0]));
-        
 
         return request;
     }

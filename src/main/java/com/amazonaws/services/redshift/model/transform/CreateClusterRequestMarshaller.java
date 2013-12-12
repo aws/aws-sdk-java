@@ -33,8 +33,8 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
     public Request<CreateClusterRequest> marshall(CreateClusterRequest createClusterRequest) {
 
         if (createClusterRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateClusterRequest> request = new DefaultRequest<CreateClusterRequest>(createClusterRequest, "AmazonRedshift");
         request.addParameter("Action", "CreateCluster");
@@ -122,7 +122,6 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
         if (createClusterRequest.getElasticIp() != null) {
             request.addParameter("ElasticIp", StringUtils.fromString(createClusterRequest.getElasticIp()));
         }
-
 
         return request;
     }

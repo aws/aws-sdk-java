@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Composes an email message based on input data, and then immediately queues the message for sending.
  * </p>
  * <p>
- * <b>IMPORTANT:</b>If you have not yet requested production access to Amazon SES, then you will only be able to send email to and from verified email
- * addresses and domains. For more information, go to the Amazon SES Developer Guide.
+ * <b>IMPORTANT:</b> You can only send email from verified email addresses and domains. If you have not requested production access to Amazon SES, you
+ * must also verify every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more information, go to the
+ * Amazon SES Developer Guide.
  * </p>
  * <p>
  * The total size of the message cannot exceed 10 MB.
@@ -37,8 +38,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your <i>sending quota</i> - the maximum number
- * of emails you can send in a 24-hour period. For information about your sending quota, go to the "Managing Your Sending Activity" section of the<a
- * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide"> Amazon SES Developer Guide </a> .
+ * of emails you can send in a 24-hour period. For information about your sending quota, go to the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html"> Amazon SES Developer Guide </a> .
  * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#sendEmail(SendEmailRequest)
@@ -46,7 +47,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class SendEmailRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The identity's email address.
+     * The identity's email address. <p> By default, the string must be 7-bit
+     * ASCII. If the text must contain any other characters, then you must
+     * use MIME encoded-word syntax (RFC 2047) instead of a literal string.
+     * MIME encoded-word syntax uses the following form:
+     * <code>=?charset?encoding?encoded-text?=</code>. For more information,
+     * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      */
     private String source;
 
@@ -86,7 +92,12 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param source The identity's email address.
+     * @param source The identity's email address. <p> By default, the string
+     * must be 7-bit ASCII. If the text must contain any other characters,
+     * then you must use MIME encoded-word syntax (RFC 2047) instead of a
+     * literal string. MIME encoded-word syntax uses the following form:
+     * <code>=?charset?encoding?encoded-text?=</code>. For more information,
+     * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      * @param destination The destination for this email, composed of To:,
      * CC:, and BCC: fields.
      * @param message The message to be sent.
@@ -98,29 +109,59 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * The identity's email address.
+     * The identity's email address. <p> By default, the string must be 7-bit
+     * ASCII. If the text must contain any other characters, then you must
+     * use MIME encoded-word syntax (RFC 2047) instead of a literal string.
+     * MIME encoded-word syntax uses the following form:
+     * <code>=?charset?encoding?encoded-text?=</code>. For more information,
+     * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      *
-     * @return The identity's email address.
+     * @return The identity's email address. <p> By default, the string must be 7-bit
+     *         ASCII. If the text must contain any other characters, then you must
+     *         use MIME encoded-word syntax (RFC 2047) instead of a literal string.
+     *         MIME encoded-word syntax uses the following form:
+     *         <code>=?charset?encoding?encoded-text?=</code>. For more information,
+     *         see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      */
     public String getSource() {
         return source;
     }
     
     /**
-     * The identity's email address.
+     * The identity's email address. <p> By default, the string must be 7-bit
+     * ASCII. If the text must contain any other characters, then you must
+     * use MIME encoded-word syntax (RFC 2047) instead of a literal string.
+     * MIME encoded-word syntax uses the following form:
+     * <code>=?charset?encoding?encoded-text?=</code>. For more information,
+     * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      *
-     * @param source The identity's email address.
+     * @param source The identity's email address. <p> By default, the string must be 7-bit
+     *         ASCII. If the text must contain any other characters, then you must
+     *         use MIME encoded-word syntax (RFC 2047) instead of a literal string.
+     *         MIME encoded-word syntax uses the following form:
+     *         <code>=?charset?encoding?encoded-text?=</code>. For more information,
+     *         see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      */
     public void setSource(String source) {
         this.source = source;
     }
     
     /**
-     * The identity's email address.
+     * The identity's email address. <p> By default, the string must be 7-bit
+     * ASCII. If the text must contain any other characters, then you must
+     * use MIME encoded-word syntax (RFC 2047) instead of a literal string.
+     * MIME encoded-word syntax uses the following form:
+     * <code>=?charset?encoding?encoded-text?=</code>. For more information,
+     * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param source The identity's email address.
+     * @param source The identity's email address. <p> By default, the string must be 7-bit
+     *         ASCII. If the text must contain any other characters, then you must
+     *         use MIME encoded-word syntax (RFC 2047) instead of a literal string.
+     *         MIME encoded-word syntax uses the following form:
+     *         <code>=?charset?encoding?encoded-text?=</code>. For more information,
+     *         see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

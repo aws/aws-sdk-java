@@ -16,7 +16,6 @@ package com.amazonaws.services.simpledb.model;
 
 import java.io.Serializable;
 
-
 /**
  * List Domains Result
  */

@@ -16,7 +16,6 @@ package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The <code>VideoParameters</code> structure.
@@ -702,26 +701,26 @@ public class VideoParameters implements Serializable {
      * @param key The key of the entry to be added into CodecOptions.
      * @param value The corresponding value of the entry to be added into CodecOptions.
      */
-	public VideoParameters addCodecOptionsEntry(String key, String value) {
-		if (null == this.codecOptions) {
-			this.codecOptions = new java.util.HashMap<String,String>();
-		}
-		if (this.codecOptions.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.codecOptions.put(key, value);
-		return this;
-	}
+    public VideoParameters addCodecOptionsEntry(String key, String value) {
+        if (null == this.codecOptions) {
+            this.codecOptions = new java.util.HashMap<String,String>();
+        }
+        if (this.codecOptions.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.codecOptions.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into CodecOptions.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public VideoParameters clearCodecOptionsEntries() {
-		this.codecOptions = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into CodecOptions.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public VideoParameters clearCodecOptionsEntries() {
+        this.codecOptions = null;
+        return this;
+    }
+    
     /**
      * The maximum number of frames between key frames. Key frames are fully
      * encoded frames; the frames between key frames are encoded based, in

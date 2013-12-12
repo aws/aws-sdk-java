@@ -33,8 +33,8 @@ public class CreatePlatformApplicationRequestMarshaller implements Marshaller<Re
     public Request<CreatePlatformApplicationRequest> marshall(CreatePlatformApplicationRequest createPlatformApplicationRequest) {
 
         if (createPlatformApplicationRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreatePlatformApplicationRequest> request = new DefaultRequest<CreatePlatformApplicationRequest>(createPlatformApplicationRequest, "AmazonSNS");
         request.addParameter("Action", "CreatePlatformApplication");
@@ -61,7 +61,6 @@ public class CreatePlatformApplicationRequestMarshaller implements Marshaller<Re
                 }
             }
         }
-
 
         return request;
     }

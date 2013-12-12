@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class ReadPipelineRequestMarshaller implements Marshaller<Request<ReadPipelineRequest>, ReadPipelineRequest> {
 
-    
-
     public Request<ReadPipelineRequest> marshall(ReadPipelineRequest readPipelineRequest) {
     if (readPipelineRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class ReadPipelineRequestMarshaller implements Marshaller<Request<ReadPip
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.GET);
-
 
         String uriResourcePath = "2012-09-25/pipelines/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", (readPipelineRequest.getId() == null) ? "" : StringUtils.fromString(readPipelineRequest.getId())); 
@@ -76,10 +71,7 @@ public class ReadPipelineRequestMarshaller implements Marshaller<Request<ReadPip
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         request.setContent(new ByteArrayInputStream(new byte[0]));
-        
 
         return request;
     }

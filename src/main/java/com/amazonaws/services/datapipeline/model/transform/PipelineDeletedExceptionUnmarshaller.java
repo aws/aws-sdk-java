@@ -34,8 +34,7 @@ public class PipelineDeletedExceptionUnmarshaller extends JsonErrorUnmarshaller 
             return null;
 
         PipelineDeletedException e = (PipelineDeletedException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

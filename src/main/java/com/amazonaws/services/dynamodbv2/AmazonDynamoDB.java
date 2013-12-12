@@ -152,9 +152,8 @@ public interface AmazonDynamoDB {
      * operation.
      * </p>
      * <p>
-     * You cannot add, modify or delete local secondary indexes using
-     * <i>UpdateTable</i> . Local secondary indexes can only be defined at
-     * table creation time.
+     * You cannot add, modify or delete indexes using <i>UpdateTable</i> .
+     * Indexes can only be defined at table creation time.
      * </p>
      *
      * @param updateTableRequest Container for the necessary parameters to
@@ -198,8 +197,7 @@ public interface AmazonDynamoDB {
      * DELETING state until the table deletion is complete.
      * </p>
      * <p>
-     * When you delete a table, any local secondary indexes on that table are
-     * also deleted.
+     * When you delete a table, any indexes on that table are also deleted.
      * </p>
      * <p>
      * Use the <i>DescribeTable</i> API to check the status of the table.
@@ -461,10 +459,9 @@ public interface AmazonDynamoDB {
      * on an <code>ACTIVE</code> table.
      * </p>
      * <p>
-     * If you want to create multiple tables with local secondary indexes on
-     * them, you must create them sequentially. Only one table with local
-     * secondary indexes can be in the <code>CREATING</code> state at any
-     * given time.
+     * If you want to create multiple tables with secondary indexes on them,
+     * you must create them sequentially. Only one table with secondary
+     * indexes can be in the <code>CREATING</code> state at any given time.
      * </p>
      * <p>
      * You can use the <i>DescribeTable</i> API to check the table status.
@@ -515,8 +512,11 @@ public interface AmazonDynamoDB {
      * or if you have used <i>Limit</i> .
      * </p>
      * <p>
-     * To request a strongly consistent result, set <i>ConsistentRead</i> to
-     * true.
+     * You can query a table, a local secondary index (LSI), or a global
+     * secondary index (GSI). For a query on a table or on an LSI, you can
+     * set <i>ConsistentRead</i> to true and obtain a strongly consistent
+     * result. GSIs support eventually consistent reads only, so do not
+     * specify <i>ConsistentRead</i> when querying a GSI.
      * </p>
      *
      * @param queryRequest Container for the necessary parameters to execute
@@ -1139,16 +1139,15 @@ public interface AmazonDynamoDB {
      * operation.
      * </p>
      * <p>
-     * You cannot add, modify or delete local secondary indexes using
-     * <i>UpdateTable</i> . Local secondary indexes can only be defined at
-     * table creation time.
+     * You cannot add, modify or delete indexes using <i>UpdateTable</i> .
+     * Indexes can only be defined at table creation time.
      * </p>
      * 
      * @param tableName The name of the table to be updated.
-     * @param provisionedThroughput The provisioned throughput settings for
-     * the specified table. The settings can be modified using the
-     * <i>UpdateTable</i> operation. <p>For current minimum and maximum
-     * provisioned throughput values, see <a
+     * @param provisionedThroughput Represents the provisioned throughput
+     * settings for a specified table or index. The settings can be modified
+     * using the <i>UpdateTable</i> operation. <p>For current minimum and
+     * maximum provisioned throughput values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the Amazon DynamoDB Developer Guide.
      * 
@@ -1190,8 +1189,7 @@ public interface AmazonDynamoDB {
      * DELETING state until the table deletion is complete.
      * </p>
      * <p>
-     * When you delete a table, any local secondary indexes on that table are
-     * also deleted.
+     * When you delete a table, any indexes on that table are also deleted.
      * </p>
      * <p>
      * Use the <i>DescribeTable</i> API to check the status of the table.
@@ -1562,10 +1560,9 @@ public interface AmazonDynamoDB {
      * on an <code>ACTIVE</code> table.
      * </p>
      * <p>
-     * If you want to create multiple tables with local secondary indexes on
-     * them, you must create them sequentially. Only one table with local
-     * secondary indexes can be in the <code>CREATING</code> state at any
-     * given time.
+     * If you want to create multiple tables with secondary indexes on them,
+     * you must create them sequentially. Only one table with secondary
+     * indexes can be in the <code>CREATING</code> state at any given time.
      * </p>
      * <p>
      * You can use the <i>DescribeTable</i> API to check the table status.
@@ -1575,8 +1572,9 @@ public interface AmazonDynamoDB {
      * key schema for the table and indexes.
      * @param tableName The name of the table to create.
      * @param keySchema Specifies the attributes that make up the primary key
-     * for the table. The attributes in <i>KeySchema</i> must also be defined
-     * in the <i>AttributeDefinitions</i> array. For more information, see <a
+     * for a table or an index. The attributes in <i>KeySchema</i> must also
+     * be defined in the <i>AttributeDefinitions</i> array. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      * Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      * <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
@@ -1592,10 +1590,10 @@ public interface AmazonDynamoDB {
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
      * the Primary Key</a> in the Amazon DynamoDB Developer Guide.
-     * @param provisionedThroughput The provisioned throughput settings for
-     * the specified table. The settings can be modified using the
-     * <i>UpdateTable</i> operation. <p>For current minimum and maximum
-     * provisioned throughput values, see <a
+     * @param provisionedThroughput Represents the provisioned throughput
+     * settings for a specified table or index. The settings can be modified
+     * using the <i>UpdateTable</i> operation. <p>For current minimum and
+     * maximum provisioned throughput values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the Amazon DynamoDB Developer Guide.
      * 
@@ -2141,10 +2139,11 @@ public interface AmazonDynamoDB {
      * <code>true</code>, a strongly consistent read is used; if
      * <code>false</code> (the default), an eventually consistent read is
      * used. </li> </ul>
-     * @param returnConsumedCapacity If set to <code>TOTAL</code>,
-     * <i>ConsumedCapacity</i> is included in the response; if set to
-     * <code>NONE</code> (the default), <i>ConsumedCapacity</i> is not
-     * included.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, the
+     * response includes <i>ConsumedCapacity</i> data for tables and indexes.
+     * If set to <code>INDEXES</code>, the repsonse includes
+     * <i>ConsumedCapacity</i> for indexes. If set to <code>NONE</code> (the
+     * default), <i>ConsumedCapacity</i> is not included in the response.
      * 
      * @return The response from the BatchGetItem service method, as returned
      *         by AmazonDynamoDBv2.
@@ -2274,6 +2273,5 @@ public interface AmazonDynamoDB {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

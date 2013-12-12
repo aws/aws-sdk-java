@@ -33,8 +33,8 @@ public class GetAttributesRequestMarshaller implements Marshaller<Request<GetAtt
     public Request<GetAttributesRequest> marshall(GetAttributesRequest getAttributesRequest) {
 
         if (getAttributesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetAttributesRequest> request = new DefaultRequest<GetAttributesRequest>(getAttributesRequest, "AmazonSimpleDB");
         request.addParameter("Action", "GetAttributes");
@@ -60,7 +60,6 @@ public class GetAttributesRequestMarshaller implements Marshaller<Request<GetAtt
         if (getAttributesRequest.isConsistentRead() != null) {
             request.addParameter("ConsistentRead", StringUtils.fromBoolean(getAttributesRequest.isConsistentRead()));
         }
-
 
         return request;
     }

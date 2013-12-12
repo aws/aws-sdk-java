@@ -16,7 +16,6 @@ package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * JSON-formatted pair of strings consisting of a code and name that represent a severity level that can be applied to a support case.

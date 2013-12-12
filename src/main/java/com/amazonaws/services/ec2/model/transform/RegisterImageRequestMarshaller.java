@@ -33,8 +33,8 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
     public Request<RegisterImageRequest> marshall(RegisterImageRequest registerImageRequest) {
 
         if (registerImageRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RegisterImageRequest> request = new DefaultRequest<RegisterImageRequest>(registerImageRequest, "AmazonEC2");
         request.addParameter("Action", "RegisterImage");
@@ -105,7 +105,6 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
         if (registerImageRequest.getSriovNetSupport() != null) {
             request.addParameter("SriovNetSupport", StringUtils.fromString(registerImageRequest.getSriovNetSupport()));
         }
-
 
         return request;
     }

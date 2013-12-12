@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class ListJobsByPipelineRequestMarshaller implements Marshaller<Request<ListJobsByPipelineRequest>, ListJobsByPipelineRequest> {
 
-    
-
     public Request<ListJobsByPipelineRequest> marshall(ListJobsByPipelineRequest listJobsByPipelineRequest) {
     if (listJobsByPipelineRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class ListJobsByPipelineRequestMarshaller implements Marshaller<Request<L
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.GET);
-
 
         String uriResourcePath = "2012-09-25/jobsByPipeline/{PipelineId}?Ascending={Ascending};PageToken={PageToken}"; 
         uriResourcePath = uriResourcePath.replace("{PipelineId}", (listJobsByPipelineRequest.getPipelineId() == null) ? "" : StringUtils.fromString(listJobsByPipelineRequest.getPipelineId())); 
@@ -78,10 +73,7 @@ public class ListJobsByPipelineRequestMarshaller implements Marshaller<Request<L
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         request.setContent(new ByteArrayInputStream(new byte[0]));
-        
 
         return request;
     }

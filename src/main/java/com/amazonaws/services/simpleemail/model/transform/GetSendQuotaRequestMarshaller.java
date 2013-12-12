@@ -33,14 +33,12 @@ public class GetSendQuotaRequestMarshaller implements Marshaller<Request<GetSend
     public Request<GetSendQuotaRequest> marshall(GetSendQuotaRequest getSendQuotaRequest) {
 
         if (getSendQuotaRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetSendQuotaRequest> request = new DefaultRequest<GetSendQuotaRequest>(getSendQuotaRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "GetSendQuota");
         request.addParameter("Version", "2010-12-01");
-
-
 
         return request;
     }

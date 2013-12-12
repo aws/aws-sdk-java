@@ -33,8 +33,8 @@ public class UpdateUserRequestMarshaller implements Marshaller<Request<UpdateUse
     public Request<UpdateUserRequest> marshall(UpdateUserRequest updateUserRequest) {
 
         if (updateUserRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<UpdateUserRequest> request = new DefaultRequest<UpdateUserRequest>(updateUserRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "UpdateUser");
@@ -49,7 +49,6 @@ public class UpdateUserRequestMarshaller implements Marshaller<Request<UpdateUse
         if (updateUserRequest.getNewUserName() != null) {
             request.addParameter("NewUserName", StringUtils.fromString(updateUserRequest.getNewUserName()));
         }
-
 
         return request;
     }

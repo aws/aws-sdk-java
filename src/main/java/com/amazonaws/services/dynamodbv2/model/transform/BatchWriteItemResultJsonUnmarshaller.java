@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Batch Write Item Result JSON Unmarshaller
  */
 public class BatchWriteItemResultJsonUnmarshaller implements Unmarshaller<BatchWriteItemResult, JsonUnmarshallerContext> {
 
-    
-
     public BatchWriteItemResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         BatchWriteItemResult batchWriteItemResult = new BatchWriteItemResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class BatchWriteItemResultJsonUnmarshaller implements Unmarshaller<BatchW
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UnprocessedItems", targetDepth)) {
                     batchWriteItemResult.setUnprocessedItems(new MapUnmarshaller<String,java.util.List<WriteRequest>>(StringJsonUnmarshaller.getInstance(), new ListUnmarshaller<WriteRequest>(WriteRequestJsonUnmarshaller.getInstance())).unmarshall(context));
@@ -65,7 +59,6 @@ public class BatchWriteItemResultJsonUnmarshaller implements Unmarshaller<BatchW
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

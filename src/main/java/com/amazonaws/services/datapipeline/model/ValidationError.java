@@ -16,7 +16,6 @@ package com.amazonaws.services.datapipeline.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Defines a validation error returned by PutPipelineDefinition or ValidatePipelineDefinition. Validation errors prevent pipeline activation. The set of

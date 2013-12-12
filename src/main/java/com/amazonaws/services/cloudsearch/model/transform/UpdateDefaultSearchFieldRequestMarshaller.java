@@ -33,8 +33,8 @@ public class UpdateDefaultSearchFieldRequestMarshaller implements Marshaller<Req
     public Request<UpdateDefaultSearchFieldRequest> marshall(UpdateDefaultSearchFieldRequest updateDefaultSearchFieldRequest) {
 
         if (updateDefaultSearchFieldRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<UpdateDefaultSearchFieldRequest> request = new DefaultRequest<UpdateDefaultSearchFieldRequest>(updateDefaultSearchFieldRequest, "AmazonCloudSearch");
         request.addParameter("Action", "UpdateDefaultSearchField");
@@ -46,7 +46,6 @@ public class UpdateDefaultSearchFieldRequestMarshaller implements Marshaller<Req
         if (updateDefaultSearchFieldRequest.getDefaultSearchField() != null) {
             request.addParameter("DefaultSearchField", StringUtils.fromString(updateDefaultSearchFieldRequest.getDefaultSearchField()));
         }
-
 
         return request;
     }

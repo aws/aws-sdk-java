@@ -16,7 +16,6 @@ package com.amazonaws.services.securitytoken.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * AWS credentials for API authentication.

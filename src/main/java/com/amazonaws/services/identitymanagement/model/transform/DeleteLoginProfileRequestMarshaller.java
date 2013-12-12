@@ -33,8 +33,8 @@ public class DeleteLoginProfileRequestMarshaller implements Marshaller<Request<D
     public Request<DeleteLoginProfileRequest> marshall(DeleteLoginProfileRequest deleteLoginProfileRequest) {
 
         if (deleteLoginProfileRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteLoginProfileRequest> request = new DefaultRequest<DeleteLoginProfileRequest>(deleteLoginProfileRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteLoginProfile");
@@ -43,7 +43,6 @@ public class DeleteLoginProfileRequestMarshaller implements Marshaller<Request<D
         if (deleteLoginProfileRequest.getUserName() != null) {
             request.addParameter("UserName", StringUtils.fromString(deleteLoginProfileRequest.getUserName()));
         }
-
 
         return request;
     }

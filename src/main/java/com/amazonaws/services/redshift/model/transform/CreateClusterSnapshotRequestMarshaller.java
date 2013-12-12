@@ -33,8 +33,8 @@ public class CreateClusterSnapshotRequestMarshaller implements Marshaller<Reques
     public Request<CreateClusterSnapshotRequest> marshall(CreateClusterSnapshotRequest createClusterSnapshotRequest) {
 
         if (createClusterSnapshotRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateClusterSnapshotRequest> request = new DefaultRequest<CreateClusterSnapshotRequest>(createClusterSnapshotRequest, "AmazonRedshift");
         request.addParameter("Action", "CreateClusterSnapshot");
@@ -46,7 +46,6 @@ public class CreateClusterSnapshotRequestMarshaller implements Marshaller<Reques
         if (createClusterSnapshotRequest.getClusterIdentifier() != null) {
             request.addParameter("ClusterIdentifier", StringUtils.fromString(createClusterSnapshotRequest.getClusterIdentifier()));
         }
-
 
         return request;
     }

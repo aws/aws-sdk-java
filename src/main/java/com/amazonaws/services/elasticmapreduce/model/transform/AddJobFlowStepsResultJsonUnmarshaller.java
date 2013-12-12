@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Add Job Flow Steps Result JSON Unmarshaller
  */
 public class AddJobFlowStepsResultJsonUnmarshaller implements Unmarshaller<AddJobFlowStepsResult, JsonUnmarshallerContext> {
 
-    
-
     public AddJobFlowStepsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         AddJobFlowStepsResult addJobFlowStepsResult = new AddJobFlowStepsResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class AddJobFlowStepsResultJsonUnmarshaller implements Unmarshaller<AddJo
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StepIds", targetDepth)) {
                     addJobFlowStepsResult.setStepIds(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -59,7 +53,6 @@ public class AddJobFlowStepsResultJsonUnmarshaller implements Unmarshaller<AddJo
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

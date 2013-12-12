@@ -33,8 +33,8 @@ public class DescribeEngineDefaultParametersRequestMarshaller implements Marshal
     public Request<DescribeEngineDefaultParametersRequest> marshall(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) {
 
         if (describeEngineDefaultParametersRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeEngineDefaultParametersRequest> request = new DefaultRequest<DescribeEngineDefaultParametersRequest>(describeEngineDefaultParametersRequest, "AmazonElastiCache");
         request.addParameter("Action", "DescribeEngineDefaultParameters");
@@ -49,7 +49,6 @@ public class DescribeEngineDefaultParametersRequestMarshaller implements Marshal
         if (describeEngineDefaultParametersRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeEngineDefaultParametersRequest.getMarker()));
         }
-
 
         return request;
     }

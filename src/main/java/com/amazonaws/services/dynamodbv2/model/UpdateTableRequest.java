@@ -35,8 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * after the <i>UpdateTable</i> operation.
  * </p>
  * <p>
- * You cannot add, modify or delete local secondary indexes using <i>UpdateTable</i> . Local secondary indexes can only be defined at table creation
- * time.
+ * You cannot add, modify or delete indexes using <i>UpdateTable</i> . Indexes can only be defined at table creation time.
  * </p>
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#updateTable(UpdateTableRequest)
@@ -53,14 +52,20 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
     private String tableName;
 
     /**
-     * The provisioned throughput settings for the specified table. The
-     * settings can be modified using the <i>UpdateTable</i> operation.
-     * <p>For current minimum and maximum provisioned throughput values, see
-     * <a
+     * Represents the provisioned throughput settings for a specified table
+     * or index. The settings can be modified using the <i>UpdateTable</i>
+     * operation. <p>For current minimum and maximum provisioned throughput
+     * values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the Amazon DynamoDB Developer Guide.
      */
     private ProvisionedThroughput provisionedThroughput;
+
+    /**
+     * An array of one or more global secondary indexes on the table,
+     * together with provisioned throughput settings for each index.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdates;
 
     /**
      * Default constructor for a new UpdateTableRequest object.  Callers should use the
@@ -74,10 +79,10 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
      * initialize any additional object members.
      * 
      * @param tableName The name of the table to be updated.
-     * @param provisionedThroughput The provisioned throughput settings for
-     * the specified table. The settings can be modified using the
-     * <i>UpdateTable</i> operation. <p>For current minimum and maximum
-     * provisioned throughput values, see <a
+     * @param provisionedThroughput Represents the provisioned throughput
+     * settings for a specified table or index. The settings can be modified
+     * using the <i>UpdateTable</i> operation. <p>For current minimum and
+     * maximum provisioned throughput values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the Amazon DynamoDB Developer Guide.
      */
@@ -132,17 +137,17 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The provisioned throughput settings for the specified table. The
-     * settings can be modified using the <i>UpdateTable</i> operation.
-     * <p>For current minimum and maximum provisioned throughput values, see
-     * <a
+     * Represents the provisioned throughput settings for a specified table
+     * or index. The settings can be modified using the <i>UpdateTable</i>
+     * operation. <p>For current minimum and maximum provisioned throughput
+     * values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the Amazon DynamoDB Developer Guide.
      *
-     * @return The provisioned throughput settings for the specified table. The
-     *         settings can be modified using the <i>UpdateTable</i> operation.
-     *         <p>For current minimum and maximum provisioned throughput values, see
-     *         <a
+     * @return Represents the provisioned throughput settings for a specified table
+     *         or index. The settings can be modified using the <i>UpdateTable</i>
+     *         operation. <p>For current minimum and maximum provisioned throughput
+     *         values, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      *         in the Amazon DynamoDB Developer Guide.
      */
@@ -151,17 +156,17 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * The provisioned throughput settings for the specified table. The
-     * settings can be modified using the <i>UpdateTable</i> operation.
-     * <p>For current minimum and maximum provisioned throughput values, see
-     * <a
+     * Represents the provisioned throughput settings for a specified table
+     * or index. The settings can be modified using the <i>UpdateTable</i>
+     * operation. <p>For current minimum and maximum provisioned throughput
+     * values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the Amazon DynamoDB Developer Guide.
      *
-     * @param provisionedThroughput The provisioned throughput settings for the specified table. The
-     *         settings can be modified using the <i>UpdateTable</i> operation.
-     *         <p>For current minimum and maximum provisioned throughput values, see
-     *         <a
+     * @param provisionedThroughput Represents the provisioned throughput settings for a specified table
+     *         or index. The settings can be modified using the <i>UpdateTable</i>
+     *         operation. <p>For current minimum and maximum provisioned throughput
+     *         values, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      *         in the Amazon DynamoDB Developer Guide.
      */
@@ -170,19 +175,19 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * The provisioned throughput settings for the specified table. The
-     * settings can be modified using the <i>UpdateTable</i> operation.
-     * <p>For current minimum and maximum provisioned throughput values, see
-     * <a
+     * Represents the provisioned throughput settings for a specified table
+     * or index. The settings can be modified using the <i>UpdateTable</i>
+     * operation. <p>For current minimum and maximum provisioned throughput
+     * values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the Amazon DynamoDB Developer Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param provisionedThroughput The provisioned throughput settings for the specified table. The
-     *         settings can be modified using the <i>UpdateTable</i> operation.
-     *         <p>For current minimum and maximum provisioned throughput values, see
-     *         <a
+     * @param provisionedThroughput Represents the provisioned throughput settings for a specified table
+     *         or index. The settings can be modified using the <i>UpdateTable</i>
+     *         operation. <p>For current minimum and maximum provisioned throughput
+     *         values, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      *         in the Amazon DynamoDB Developer Guide.
      *
@@ -191,6 +196,78 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
      */
     public UpdateTableRequest withProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;
+        return this;
+    }
+
+    /**
+     * An array of one or more global secondary indexes on the table,
+     * together with provisioned throughput settings for each index.
+     *
+     * @return An array of one or more global secondary indexes on the table,
+     *         together with provisioned throughput settings for each index.
+     */
+    public java.util.List<GlobalSecondaryIndexUpdate> getGlobalSecondaryIndexUpdates() {
+        return globalSecondaryIndexUpdates;
+    }
+    
+    /**
+     * An array of one or more global secondary indexes on the table,
+     * together with provisioned throughput settings for each index.
+     *
+     * @param globalSecondaryIndexUpdates An array of one or more global secondary indexes on the table,
+     *         together with provisioned throughput settings for each index.
+     */
+    public void setGlobalSecondaryIndexUpdates(java.util.Collection<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdates) {
+        if (globalSecondaryIndexUpdates == null) {
+            this.globalSecondaryIndexUpdates = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdatesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GlobalSecondaryIndexUpdate>(globalSecondaryIndexUpdates.size());
+        globalSecondaryIndexUpdatesCopy.addAll(globalSecondaryIndexUpdates);
+        this.globalSecondaryIndexUpdates = globalSecondaryIndexUpdatesCopy;
+    }
+    
+    /**
+     * An array of one or more global secondary indexes on the table,
+     * together with provisioned throughput settings for each index.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param globalSecondaryIndexUpdates An array of one or more global secondary indexes on the table,
+     *         together with provisioned throughput settings for each index.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public UpdateTableRequest withGlobalSecondaryIndexUpdates(GlobalSecondaryIndexUpdate... globalSecondaryIndexUpdates) {
+        if (getGlobalSecondaryIndexUpdates() == null) setGlobalSecondaryIndexUpdates(new java.util.ArrayList<GlobalSecondaryIndexUpdate>(globalSecondaryIndexUpdates.length));
+        for (GlobalSecondaryIndexUpdate value : globalSecondaryIndexUpdates) {
+            getGlobalSecondaryIndexUpdates().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * An array of one or more global secondary indexes on the table,
+     * together with provisioned throughput settings for each index.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param globalSecondaryIndexUpdates An array of one or more global secondary indexes on the table,
+     *         together with provisioned throughput settings for each index.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public UpdateTableRequest withGlobalSecondaryIndexUpdates(java.util.Collection<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdates) {
+        if (globalSecondaryIndexUpdates == null) {
+            this.globalSecondaryIndexUpdates = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdatesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GlobalSecondaryIndexUpdate>(globalSecondaryIndexUpdates.size());
+            globalSecondaryIndexUpdatesCopy.addAll(globalSecondaryIndexUpdates);
+            this.globalSecondaryIndexUpdates = globalSecondaryIndexUpdatesCopy;
+        }
+
         return this;
     }
 
@@ -207,7 +284,8 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");
-        if (getProvisionedThroughput() != null) sb.append("ProvisionedThroughput: " + getProvisionedThroughput() );
+        if (getProvisionedThroughput() != null) sb.append("ProvisionedThroughput: " + getProvisionedThroughput() + ",");
+        if (getGlobalSecondaryIndexUpdates() != null) sb.append("GlobalSecondaryIndexUpdates: " + getGlobalSecondaryIndexUpdates() );
         sb.append("}");
         return sb.toString();
     }
@@ -219,6 +297,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
         
         hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode()); 
         hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode()); 
+        hashCode = prime * hashCode + ((getGlobalSecondaryIndexUpdates() == null) ? 0 : getGlobalSecondaryIndexUpdates().hashCode()); 
         return hashCode;
     }
     
@@ -234,6 +313,8 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
         if (other.getTableName() != null && other.getTableName().equals(this.getTableName()) == false) return false; 
         if (other.getProvisionedThroughput() == null ^ this.getProvisionedThroughput() == null) return false;
         if (other.getProvisionedThroughput() != null && other.getProvisionedThroughput().equals(this.getProvisionedThroughput()) == false) return false; 
+        if (other.getGlobalSecondaryIndexUpdates() == null ^ this.getGlobalSecondaryIndexUpdates() == null) return false;
+        if (other.getGlobalSecondaryIndexUpdates() != null && other.getGlobalSecondaryIndexUpdates().equals(this.getGlobalSecondaryIndexUpdates()) == false) return false; 
         return true;
     }
     

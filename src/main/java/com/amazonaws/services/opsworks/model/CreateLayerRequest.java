@@ -29,6 +29,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, CreateLayer fails. A stack can have
  * an arbitrary number of custom layers, so you can call CreateLayer as many times as you like for that layer type.
  * </p>
+ * <p>
+ * <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that
+ * explicitly grants permissions. For more information on user permissions, see <a
+ * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a> .
+ * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createLayer(CreateLayerRequest)
  */
@@ -470,26 +475,26 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * @param key The key of the entry to be added into Attributes.
      * @param value The corresponding value of the entry to be added into Attributes.
      */
-	public CreateLayerRequest addAttributesEntry(String key, String value) {
-		if (null == this.attributes) {
-			this.attributes = new java.util.HashMap<String,String>();
-		}
-		if (this.attributes.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.attributes.put(key, value);
-		return this;
-	}
+    public CreateLayerRequest addAttributesEntry(String key, String value) {
+        if (null == this.attributes) {
+            this.attributes = new java.util.HashMap<String,String>();
+        }
+        if (this.attributes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.attributes.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Attributes.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public CreateLayerRequest clearAttributesEntries() {
-		this.attributes = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Attributes.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public CreateLayerRequest clearAttributesEntries() {
+        this.attributes = null;
+        return this;
+    }
+    
     /**
      * The ARN of an IAM profile that to be used for the layer's EC2
      * instances. For more information about IAM ARNs, see <a

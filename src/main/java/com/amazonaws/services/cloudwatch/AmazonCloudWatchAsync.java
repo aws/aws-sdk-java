@@ -811,6 +811,5 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
     public Future<Void> setAlarmStateAsync(SetAlarmStateRequest setAlarmStateRequest,
             AsyncHandler<SetAlarmStateRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

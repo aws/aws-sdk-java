@@ -33,8 +33,8 @@ public class DeleteVpnConnectionRouteRequestMarshaller implements Marshaller<Req
     public Request<DeleteVpnConnectionRouteRequest> marshall(DeleteVpnConnectionRouteRequest deleteVpnConnectionRouteRequest) {
 
         if (deleteVpnConnectionRouteRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteVpnConnectionRouteRequest> request = new DefaultRequest<DeleteVpnConnectionRouteRequest>(deleteVpnConnectionRouteRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteVpnConnectionRoute");
@@ -46,7 +46,6 @@ public class DeleteVpnConnectionRouteRequestMarshaller implements Marshaller<Req
         if (deleteVpnConnectionRouteRequest.getDestinationCidrBlock() != null) {
             request.addParameter("DestinationCidrBlock", StringUtils.fromString(deleteVpnConnectionRouteRequest.getDestinationCidrBlock()));
         }
-
 
         return request;
     }

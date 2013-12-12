@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Get Hostname Suggestion Result JSON Unmarshaller
  */
 public class GetHostnameSuggestionResultJsonUnmarshaller implements Unmarshaller<GetHostnameSuggestionResult, JsonUnmarshallerContext> {
 
-    
-
     public GetHostnameSuggestionResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         GetHostnameSuggestionResult getHostnameSuggestionResult = new GetHostnameSuggestionResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class GetHostnameSuggestionResultJsonUnmarshaller implements Unmarshaller
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LayerId", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class GetHostnameSuggestionResultJsonUnmarshaller implements Unmarshaller
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

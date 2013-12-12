@@ -16,7 +16,6 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents the output of a <i>Query</i> operation.
@@ -39,17 +38,22 @@ public class QueryResult implements Serializable {
     /**
      * The primary key of the item where the operation stopped, inclusive of
      * the previous result set. Use this value to start a new operation,
-     * excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
-     * null when the entire result set is complete (in other words, when the
-     * operation processed the "last page" of results).
+     * excluding this value in the new request. <p>If <i>LastEvaluatedKey</i>
+     * is null, then the "last page" of results has been processed and there
+     * is no more data to be retrieved. <p>If <i>LastEvaluatedKey</i> is
+     * anything other than null, this does not necessarily mean that there is
+     * more data in the result set. The only way to know when you have
+     * reached the end of the result set is when <i>LastEvaluatedKey</i> is
+     * null.
      */
     private java.util.Map<String,AttributeValue> lastEvaluatedKey;
 
     /**
-     * The table name that consumed provisioned throughput, and the number of
-     * capacity units consumed by it. <i>ConsumedCapacity</i> is only
-     * returned if it was asked for in the request. For more information, see
-     * <a
+     * Represents the capacity units consumed by an operation. The data
+     * returned includes the total provisioned throughput consumed, along
+     * with statistics for the table and any indexes involved in the
+     * operation. <i>ConsumedCapacity</i> is only returned if it was asked
+     * for in the request. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      * Throughput</a> in the Amazon DynamoDB Developer Guide.
      */
@@ -171,15 +175,23 @@ public class QueryResult implements Serializable {
     /**
      * The primary key of the item where the operation stopped, inclusive of
      * the previous result set. Use this value to start a new operation,
-     * excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
-     * null when the entire result set is complete (in other words, when the
-     * operation processed the "last page" of results).
+     * excluding this value in the new request. <p>If <i>LastEvaluatedKey</i>
+     * is null, then the "last page" of results has been processed and there
+     * is no more data to be retrieved. <p>If <i>LastEvaluatedKey</i> is
+     * anything other than null, this does not necessarily mean that there is
+     * more data in the result set. The only way to know when you have
+     * reached the end of the result set is when <i>LastEvaluatedKey</i> is
+     * null.
      *
      * @return The primary key of the item where the operation stopped, inclusive of
      *         the previous result set. Use this value to start a new operation,
-     *         excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
-     *         null when the entire result set is complete (in other words, when the
-     *         operation processed the "last page" of results).
+     *         excluding this value in the new request. <p>If <i>LastEvaluatedKey</i>
+     *         is null, then the "last page" of results has been processed and there
+     *         is no more data to be retrieved. <p>If <i>LastEvaluatedKey</i> is
+     *         anything other than null, this does not necessarily mean that there is
+     *         more data in the result set. The only way to know when you have
+     *         reached the end of the result set is when <i>LastEvaluatedKey</i> is
+     *         null.
      */
     public java.util.Map<String,AttributeValue> getLastEvaluatedKey() {
         
@@ -189,15 +201,23 @@ public class QueryResult implements Serializable {
     /**
      * The primary key of the item where the operation stopped, inclusive of
      * the previous result set. Use this value to start a new operation,
-     * excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
-     * null when the entire result set is complete (in other words, when the
-     * operation processed the "last page" of results).
+     * excluding this value in the new request. <p>If <i>LastEvaluatedKey</i>
+     * is null, then the "last page" of results has been processed and there
+     * is no more data to be retrieved. <p>If <i>LastEvaluatedKey</i> is
+     * anything other than null, this does not necessarily mean that there is
+     * more data in the result set. The only way to know when you have
+     * reached the end of the result set is when <i>LastEvaluatedKey</i> is
+     * null.
      *
      * @param lastEvaluatedKey The primary key of the item where the operation stopped, inclusive of
      *         the previous result set. Use this value to start a new operation,
-     *         excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
-     *         null when the entire result set is complete (in other words, when the
-     *         operation processed the "last page" of results).
+     *         excluding this value in the new request. <p>If <i>LastEvaluatedKey</i>
+     *         is null, then the "last page" of results has been processed and there
+     *         is no more data to be retrieved. <p>If <i>LastEvaluatedKey</i> is
+     *         anything other than null, this does not necessarily mean that there is
+     *         more data in the result set. The only way to know when you have
+     *         reached the end of the result set is when <i>LastEvaluatedKey</i> is
+     *         null.
      */
     public void setLastEvaluatedKey(java.util.Map<String,AttributeValue> lastEvaluatedKey) {
         this.lastEvaluatedKey = lastEvaluatedKey;
@@ -206,17 +226,25 @@ public class QueryResult implements Serializable {
     /**
      * The primary key of the item where the operation stopped, inclusive of
      * the previous result set. Use this value to start a new operation,
-     * excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
-     * null when the entire result set is complete (in other words, when the
-     * operation processed the "last page" of results).
+     * excluding this value in the new request. <p>If <i>LastEvaluatedKey</i>
+     * is null, then the "last page" of results has been processed and there
+     * is no more data to be retrieved. <p>If <i>LastEvaluatedKey</i> is
+     * anything other than null, this does not necessarily mean that there is
+     * more data in the result set. The only way to know when you have
+     * reached the end of the result set is when <i>LastEvaluatedKey</i> is
+     * null.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param lastEvaluatedKey The primary key of the item where the operation stopped, inclusive of
      *         the previous result set. Use this value to start a new operation,
-     *         excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
-     *         null when the entire result set is complete (in other words, when the
-     *         operation processed the "last page" of results).
+     *         excluding this value in the new request. <p>If <i>LastEvaluatedKey</i>
+     *         is null, then the "last page" of results has been processed and there
+     *         is no more data to be retrieved. <p>If <i>LastEvaluatedKey</i> is
+     *         anything other than null, this does not necessarily mean that there is
+     *         more data in the result set. The only way to know when you have
+     *         reached the end of the result set is when <i>LastEvaluatedKey</i> is
+     *         null.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -229,9 +257,13 @@ public class QueryResult implements Serializable {
     /**
      * The primary key of the item where the operation stopped, inclusive of
      * the previous result set. Use this value to start a new operation,
-     * excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
-     * null when the entire result set is complete (in other words, when the
-     * operation processed the "last page" of results).
+     * excluding this value in the new request. <p>If <i>LastEvaluatedKey</i>
+     * is null, then the "last page" of results has been processed and there
+     * is no more data to be retrieved. <p>If <i>LastEvaluatedKey</i> is
+     * anything other than null, this does not necessarily mean that there is
+     * more data in the result set. The only way to know when you have
+     * reached the end of the result set is when <i>LastEvaluatedKey</i> is
+     * null.
      * <p>
      * The method adds a new key-value pair into LastEvaluatedKey parameter,
      * and returns a reference to this object so that method calls can be
@@ -240,38 +272,40 @@ public class QueryResult implements Serializable {
      * @param key The key of the entry to be added into LastEvaluatedKey.
      * @param value The corresponding value of the entry to be added into LastEvaluatedKey.
      */
-	public QueryResult addLastEvaluatedKeyEntry(String key, AttributeValue value) {
-		if (null == this.lastEvaluatedKey) {
-			this.lastEvaluatedKey = new java.util.HashMap<String,AttributeValue>();
-		}
-		if (this.lastEvaluatedKey.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.lastEvaluatedKey.put(key, value);
-		return this;
-	}
+    public QueryResult addLastEvaluatedKeyEntry(String key, AttributeValue value) {
+        if (null == this.lastEvaluatedKey) {
+            this.lastEvaluatedKey = new java.util.HashMap<String,AttributeValue>();
+        }
+        if (this.lastEvaluatedKey.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.lastEvaluatedKey.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into LastEvaluatedKey.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public QueryResult clearLastEvaluatedKeyEntries() {
-		this.lastEvaluatedKey = null;
-		return this;
-	}
-	
     /**
-     * The table name that consumed provisioned throughput, and the number of
-     * capacity units consumed by it. <i>ConsumedCapacity</i> is only
-     * returned if it was asked for in the request. For more information, see
-     * <a
+     * Removes all the entries added into LastEvaluatedKey.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public QueryResult clearLastEvaluatedKeyEntries() {
+        this.lastEvaluatedKey = null;
+        return this;
+    }
+    
+    /**
+     * Represents the capacity units consumed by an operation. The data
+     * returned includes the total provisioned throughput consumed, along
+     * with statistics for the table and any indexes involved in the
+     * operation. <i>ConsumedCapacity</i> is only returned if it was asked
+     * for in the request. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      * Throughput</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @return The table name that consumed provisioned throughput, and the number of
-     *         capacity units consumed by it. <i>ConsumedCapacity</i> is only
-     *         returned if it was asked for in the request. For more information, see
-     *         <a
+     * @return Represents the capacity units consumed by an operation. The data
+     *         returned includes the total provisioned throughput consumed, along
+     *         with statistics for the table and any indexes involved in the
+     *         operation. <i>ConsumedCapacity</i> is only returned if it was asked
+     *         for in the request. For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      *         Throughput</a> in the Amazon DynamoDB Developer Guide.
      */
@@ -280,17 +314,19 @@ public class QueryResult implements Serializable {
     }
     
     /**
-     * The table name that consumed provisioned throughput, and the number of
-     * capacity units consumed by it. <i>ConsumedCapacity</i> is only
-     * returned if it was asked for in the request. For more information, see
-     * <a
+     * Represents the capacity units consumed by an operation. The data
+     * returned includes the total provisioned throughput consumed, along
+     * with statistics for the table and any indexes involved in the
+     * operation. <i>ConsumedCapacity</i> is only returned if it was asked
+     * for in the request. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      * Throughput</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @param consumedCapacity The table name that consumed provisioned throughput, and the number of
-     *         capacity units consumed by it. <i>ConsumedCapacity</i> is only
-     *         returned if it was asked for in the request. For more information, see
-     *         <a
+     * @param consumedCapacity Represents the capacity units consumed by an operation. The data
+     *         returned includes the total provisioned throughput consumed, along
+     *         with statistics for the table and any indexes involved in the
+     *         operation. <i>ConsumedCapacity</i> is only returned if it was asked
+     *         for in the request. For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      *         Throughput</a> in the Amazon DynamoDB Developer Guide.
      */
@@ -299,19 +335,21 @@ public class QueryResult implements Serializable {
     }
     
     /**
-     * The table name that consumed provisioned throughput, and the number of
-     * capacity units consumed by it. <i>ConsumedCapacity</i> is only
-     * returned if it was asked for in the request. For more information, see
-     * <a
+     * Represents the capacity units consumed by an operation. The data
+     * returned includes the total provisioned throughput consumed, along
+     * with statistics for the table and any indexes involved in the
+     * operation. <i>ConsumedCapacity</i> is only returned if it was asked
+     * for in the request. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      * Throughput</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param consumedCapacity The table name that consumed provisioned throughput, and the number of
-     *         capacity units consumed by it. <i>ConsumedCapacity</i> is only
-     *         returned if it was asked for in the request. For more information, see
-     *         <a
+     * @param consumedCapacity Represents the capacity units consumed by an operation. The data
+     *         returned includes the total provisioned throughput consumed, along
+     *         with statistics for the table and any indexes involved in the
+     *         operation. <i>ConsumedCapacity</i> is only returned if it was asked
+     *         for in the request. For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      *         Throughput</a> in the Amazon DynamoDB Developer Guide.
      *

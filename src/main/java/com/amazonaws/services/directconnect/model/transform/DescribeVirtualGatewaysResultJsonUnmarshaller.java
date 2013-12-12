@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Describe Virtual Gateways Result JSON Unmarshaller
  */
 public class DescribeVirtualGatewaysResultJsonUnmarshaller implements Unmarshaller<DescribeVirtualGatewaysResult, JsonUnmarshallerContext> {
 
-    
-
     public DescribeVirtualGatewaysResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeVirtualGatewaysResult describeVirtualGatewaysResult = new DescribeVirtualGatewaysResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DescribeVirtualGatewaysResultJsonUnmarshaller implements Unmarshall
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("virtualGateways", targetDepth)) {
                     describeVirtualGatewaysResult.setVirtualGateways(new ListUnmarshaller<VirtualGateway>(VirtualGatewayJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -59,7 +53,6 @@ public class DescribeVirtualGatewaysResultJsonUnmarshaller implements Unmarshall
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

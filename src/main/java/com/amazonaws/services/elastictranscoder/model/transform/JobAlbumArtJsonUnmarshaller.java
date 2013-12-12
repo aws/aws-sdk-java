@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Job Album Art JSON Unmarshaller
  */
 public class JobAlbumArtJsonUnmarshaller implements Unmarshaller<JobAlbumArt, JsonUnmarshallerContext> {
 
-    
-
     public JobAlbumArt unmarshall(JsonUnmarshallerContext context) throws Exception {
         JobAlbumArt jobAlbumArt = new JobAlbumArt();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class JobAlbumArtJsonUnmarshaller implements Unmarshaller<JobAlbumArt, Js
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MergePolicy", targetDepth)) {
                     context.nextToken();
@@ -63,7 +57,6 @@ public class JobAlbumArtJsonUnmarshaller implements Unmarshaller<JobAlbumArt, Js
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

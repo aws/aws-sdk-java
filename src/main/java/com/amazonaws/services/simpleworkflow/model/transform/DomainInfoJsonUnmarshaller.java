@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Domain Info JSON Unmarshaller
  */
 public class DomainInfoJsonUnmarshaller implements Unmarshaller<DomainInfo, JsonUnmarshallerContext> {
 
-    
-
     public DomainInfo unmarshall(JsonUnmarshallerContext context) throws Exception {
         DomainInfo domainInfo = new DomainInfo();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DomainInfoJsonUnmarshaller implements Unmarshaller<DomainInfo, Json
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
@@ -68,7 +62,6 @@ public class DomainInfoJsonUnmarshaller implements Unmarshaller<DomainInfo, Json
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

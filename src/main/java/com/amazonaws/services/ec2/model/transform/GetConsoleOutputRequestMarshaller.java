@@ -33,8 +33,8 @@ public class GetConsoleOutputRequestMarshaller implements Marshaller<Request<Get
     public Request<GetConsoleOutputRequest> marshall(GetConsoleOutputRequest getConsoleOutputRequest) {
 
         if (getConsoleOutputRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetConsoleOutputRequest> request = new DefaultRequest<GetConsoleOutputRequest>(getConsoleOutputRequest, "AmazonEC2");
         request.addParameter("Action", "GetConsoleOutput");
@@ -43,7 +43,6 @@ public class GetConsoleOutputRequestMarshaller implements Marshaller<Request<Get
         if (getConsoleOutputRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(getConsoleOutputRequest.getInstanceId()));
         }
-
 
         return request;
     }

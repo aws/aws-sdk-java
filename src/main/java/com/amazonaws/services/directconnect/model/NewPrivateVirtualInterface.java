@@ -16,7 +16,6 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A structure containing information about a new private virtual interface.

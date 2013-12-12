@@ -1002,6 +1002,5 @@ public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
     public Future<DomainMetadataResult> domainMetadataAsync(DomainMetadataRequest domainMetadataRequest,
             AsyncHandler<DomainMetadataRequest, DomainMetadataResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

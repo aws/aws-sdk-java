@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.simpledb.model.*;
 
-
 /**
  * Asynchronous client for accessing AmazonSimpleDB.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -57,7 +56,6 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -257,7 +255,6 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -320,11 +317,10 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
         return executorService.submit(new Callable<SelectResult>() {
             public SelectResult call() throws Exception {
                 return select(selectRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The <code>Select</code> operation returns a set of attributes for
@@ -369,17 +365,17 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<SelectResult>() {
             public SelectResult call() throws Exception {
-            	SelectResult result;
+                SelectResult result;
                 try {
-            		result = select(selectRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(selectRequest, result);
-               	return result;
-		    }
-		});
+                    result = select(selectRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(selectRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -459,11 +455,10 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
             public Void call() throws Exception {
                 putAttributes(putAttributesRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The PutAttributes operation creates or replaces attributes in an
@@ -545,16 +540,16 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		putAttributes(putAttributesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(putAttributesRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    putAttributes(putAttributesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(putAttributesRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -610,11 +605,10 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
             public Void call() throws Exception {
                 batchDeleteAttributes(batchDeleteAttributesRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Performs multiple DeleteAttributes operations in a single call, which
@@ -672,16 +666,16 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		batchDeleteAttributes(batchDeleteAttributesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(batchDeleteAttributesRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    batchDeleteAttributes(batchDeleteAttributesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(batchDeleteAttributesRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -718,11 +712,10 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
             public Void call() throws Exception {
                 deleteDomain(deleteDomainRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The <code>DeleteDomain</code> operation deletes a domain. Any items
@@ -761,16 +754,16 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteDomain(deleteDomainRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteDomainRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteDomain(deleteDomainRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteDomainRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -815,11 +808,10 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
             public Void call() throws Exception {
                 createDomain(createDomainRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The <code>CreateDomain</code> operation creates a new domain. The
@@ -866,16 +858,16 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		createDomain(createDomainRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createDomainRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    createDomain(createDomainRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createDomainRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -922,11 +914,10 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
             public Void call() throws Exception {
                 deleteAttributes(deleteAttributesRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes one or more attributes associated with an item. If all
@@ -975,16 +966,16 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteAttributes(deleteAttributesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteAttributesRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteAttributes(deleteAttributesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteAttributesRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1019,11 +1010,10 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
         return executorService.submit(new Callable<ListDomainsResult>() {
             public ListDomainsResult call() throws Exception {
                 return listDomains(listDomainsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The <code>ListDomains</code> operation lists all domains associated
@@ -1061,17 +1051,17 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListDomainsResult>() {
             public ListDomainsResult call() throws Exception {
-            	ListDomainsResult result;
+                ListDomainsResult result;
                 try {
-            		result = listDomains(listDomainsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listDomainsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listDomains(listDomainsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listDomainsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1111,11 +1101,10 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
         return executorService.submit(new Callable<GetAttributesResult>() {
             public GetAttributesResult call() throws Exception {
                 return getAttributes(getAttributesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns all of the attributes associated with the specified item.
@@ -1158,17 +1147,17 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetAttributesResult>() {
             public GetAttributesResult call() throws Exception {
-            	GetAttributesResult result;
+                GetAttributesResult result;
                 try {
-            		result = getAttributes(getAttributesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getAttributesRequest, result);
-               	return result;
-		    }
-		});
+                    result = getAttributes(getAttributesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getAttributesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1268,11 +1257,10 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
             public Void call() throws Exception {
                 batchPutAttributes(batchPutAttributesRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * The <code>BatchPutAttributes</code> operation creates or replaces
@@ -1374,16 +1362,16 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		batchPutAttributes(batchPutAttributesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(batchPutAttributesRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    batchPutAttributes(batchPutAttributesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(batchPutAttributesRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1413,11 +1401,10 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
         return executorService.submit(new Callable<DomainMetadataResult>() {
             public DomainMetadataResult call() throws Exception {
                 return domainMetadata(domainMetadataRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about the domain, including when the domain was
@@ -1450,17 +1437,17 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DomainMetadataResult>() {
             public DomainMetadataResult call() throws Exception {
-            	DomainMetadataResult result;
+                DomainMetadataResult result;
                 try {
-            		result = domainMetadata(domainMetadataRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(domainMetadataRequest, result);
-               	return result;
-		    }
-		});
+                    result = domainMetadata(domainMetadataRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(domainMetadataRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Describe Volumes Result JSON Unmarshaller
  */
 public class DescribeVolumesResultJsonUnmarshaller implements Unmarshaller<DescribeVolumesResult, JsonUnmarshallerContext> {
 
-    
-
     public DescribeVolumesResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeVolumesResult describeVolumesResult = new DescribeVolumesResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DescribeVolumesResultJsonUnmarshaller implements Unmarshaller<Descr
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Volumes", targetDepth)) {
                     describeVolumesResult.setVolumes(new ListUnmarshaller<Volume>(VolumeJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -59,7 +53,6 @@ public class DescribeVolumesResultJsonUnmarshaller implements Unmarshaller<Descr
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

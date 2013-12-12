@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.cloudformation.model.*;
 
-
 /**
  * Asynchronous client for accessing AmazonCloudFormation.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -63,7 +62,6 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -263,7 +261,6 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -312,11 +309,10 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         return executorService.submit(new Callable<ValidateTemplateResult>() {
             public ValidateTemplateResult call() throws Exception {
                 return validateTemplate(validateTemplateRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Validates a specified template.
@@ -347,17 +343,17 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ValidateTemplateResult>() {
             public ValidateTemplateResult call() throws Exception {
-            	ValidateTemplateResult result;
+                ValidateTemplateResult result;
                 try {
-            		result = validateTemplate(validateTemplateRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(validateTemplateRequest, result);
-               	return result;
-		    }
-		});
+                    result = validateTemplate(validateTemplateRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(validateTemplateRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -386,11 +382,10 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         return executorService.submit(new Callable<DescribeStacksResult>() {
             public DescribeStacksResult call() throws Exception {
                 return describeStacks(describeStacksRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the description for the specified stack; if no stack name was
@@ -422,17 +417,17 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeStacksResult>() {
             public DescribeStacksResult call() throws Exception {
-            	DescribeStacksResult result;
+                DescribeStacksResult result;
                 try {
-            		result = describeStacks(describeStacksRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeStacksRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeStacks(describeStacksRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeStacksRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -469,11 +464,10 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         return executorService.submit(new Callable<GetTemplateResult>() {
             public GetTemplateResult call() throws Exception {
                 return getTemplate(getTemplateRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the template body for a specified stack. You can get the
@@ -513,17 +507,17 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetTemplateResult>() {
             public GetTemplateResult call() throws Exception {
-            	GetTemplateResult result;
+                GetTemplateResult result;
                 try {
-            		result = getTemplate(getTemplateRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getTemplateRequest, result);
-               	return result;
-		    }
-		});
+                    result = getTemplate(getTemplateRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getTemplateRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -552,11 +546,10 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         return executorService.submit(new Callable<GetStackPolicyResult>() {
             public GetStackPolicyResult call() throws Exception {
                 return getStackPolicy(getStackPolicyRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the stack policy for a specified stack. If a stack doesn't
@@ -588,17 +581,17 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetStackPolicyResult>() {
             public GetStackPolicyResult call() throws Exception {
-            	GetStackPolicyResult result;
+                GetStackPolicyResult result;
                 try {
-            		result = getStackPolicy(getStackPolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getStackPolicyRequest, result);
-               	return result;
-		    }
-		});
+                    result = getStackPolicy(getStackPolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getStackPolicyRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -631,11 +624,10 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         return executorService.submit(new Callable<ListStacksResult>() {
             public ListStacksResult call() throws Exception {
                 return listStacks(listStacksRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the summary information for stacks whose status matches the
@@ -671,17 +663,17 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListStacksResult>() {
             public ListStacksResult call() throws Exception {
-            	ListStacksResult result;
+                ListStacksResult result;
                 try {
-            		result = listStacks(listStacksRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listStacksRequest, result);
-               	return result;
-		    }
-		});
+                    result = listStacks(listStacksRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listStacksRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -715,11 +707,10 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         return executorService.submit(new Callable<CreateStackResult>() {
             public CreateStackResult call() throws Exception {
                 return createStack(createStackRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a stack as specified in the template. After the call completes
@@ -756,17 +747,17 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateStackResult>() {
             public CreateStackResult call() throws Exception {
-            	CreateStackResult result;
+                CreateStackResult result;
                 try {
-            		result = createStack(createStackRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createStackRequest, result);
-               	return result;
-		    }
-		});
+                    result = createStack(createStackRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createStackRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -795,11 +786,10 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
             public Void call() throws Exception {
                 setStackPolicy(setStackPolicyRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Sets a stack policy for a specified stack.
@@ -830,16 +820,16 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		setStackPolicy(setStackPolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(setStackPolicyRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    setStackPolicy(setStackPolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(setStackPolicyRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -871,11 +861,10 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         return executorService.submit(new Callable<EstimateTemplateCostResult>() {
             public EstimateTemplateCostResult call() throws Exception {
                 return estimateTemplateCost(estimateTemplateCostRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the estimated monthly cost of a template. The return value is
@@ -910,17 +899,17 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<EstimateTemplateCostResult>() {
             public EstimateTemplateCostResult call() throws Exception {
-            	EstimateTemplateCostResult result;
+                EstimateTemplateCostResult result;
                 try {
-            		result = estimateTemplateCost(estimateTemplateCostRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(estimateTemplateCostRequest, result);
-               	return result;
-		    }
-		});
+                    result = estimateTemplateCost(estimateTemplateCostRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(estimateTemplateCostRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -957,11 +946,10 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         return executorService.submit(new Callable<DescribeStackEventsResult>() {
             public DescribeStackEventsResult call() throws Exception {
                 return describeStackEvents(describeStackEventsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns all stack related events for a specified stack. For more
@@ -1001,17 +989,17 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeStackEventsResult>() {
             public DescribeStackEventsResult call() throws Exception {
-            	DescribeStackEventsResult result;
+                DescribeStackEventsResult result;
                 try {
-            		result = describeStackEvents(describeStackEventsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeStackEventsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeStackEvents(describeStackEventsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeStackEventsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1046,11 +1034,10 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         return executorService.submit(new Callable<DescribeStackResourceResult>() {
             public DescribeStackResourceResult call() throws Exception {
                 return describeStackResource(describeStackResourceRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a description of the specified resource in the specified
@@ -1088,17 +1075,17 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeStackResourceResult>() {
             public DescribeStackResourceResult call() throws Exception {
-            	DescribeStackResourceResult result;
+                DescribeStackResourceResult result;
                 try {
-            		result = describeStackResource(describeStackResourceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeStackResourceRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeStackResource(describeStackResourceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeStackResourceRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1133,11 +1120,10 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
             public Void call() throws Exception {
                 cancelUpdateStack(cancelUpdateStackRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Cancels an update on the specified stack. If the call completes
@@ -1174,16 +1160,16 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		cancelUpdateStack(cancelUpdateStackRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(cancelUpdateStackRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    cancelUpdateStack(cancelUpdateStackRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(cancelUpdateStackRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1237,11 +1223,10 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         return executorService.submit(new Callable<UpdateStackResult>() {
             public UpdateStackResult call() throws Exception {
                 return updateStack(updateStackRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Updates a stack as specified in the template. After the call completes
@@ -1298,17 +1283,17 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateStackResult>() {
             public UpdateStackResult call() throws Exception {
-            	UpdateStackResult result;
+                UpdateStackResult result;
                 try {
-            		result = updateStack(updateStackRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateStackRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateStack(updateStackRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateStackRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1366,11 +1351,10 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         return executorService.submit(new Callable<DescribeStackResourcesResult>() {
             public DescribeStackResourcesResult call() throws Exception {
                 return describeStackResources(describeStackResourcesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns AWS resource descriptions for running and deleted stacks. If
@@ -1431,17 +1415,17 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeStackResourcesResult>() {
             public DescribeStackResourcesResult call() throws Exception {
-            	DescribeStackResourcesResult result;
+                DescribeStackResourcesResult result;
                 try {
-            		result = describeStackResources(describeStackResourcesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeStackResourcesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeStackResources(describeStackResourcesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeStackResourcesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1472,11 +1456,10 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
             public Void call() throws Exception {
                 deleteStack(deleteStackRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a specified stack. Once the call completes successfully, stack
@@ -1509,16 +1492,16 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteStack(deleteStackRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteStackRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteStack(deleteStackRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteStackRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1552,11 +1535,10 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         return executorService.submit(new Callable<ListStackResourcesResult>() {
             public ListStackResourcesResult call() throws Exception {
                 return listStackResources(listStackResourcesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns descriptions of all resources of the specified stack.
@@ -1593,17 +1575,17 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListStackResourcesResult>() {
             public ListStackResourcesResult call() throws Exception {
-            	ListStackResourcesResult result;
+                ListStackResourcesResult result;
                 try {
-            		result = listStackResources(listStackResourcesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listStackResourcesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listStackResources(listStackResourcesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listStackResourcesRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

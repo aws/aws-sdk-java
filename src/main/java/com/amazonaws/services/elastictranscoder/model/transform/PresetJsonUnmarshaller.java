@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Preset JSON Unmarshaller
  */
 public class PresetJsonUnmarshaller implements Unmarshaller<Preset, JsonUnmarshallerContext> {
 
-    
-
     public Preset unmarshall(JsonUnmarshallerContext context) throws Exception {
         Preset preset = new Preset();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class PresetJsonUnmarshaller implements Unmarshaller<Preset, JsonUnmarsha
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
@@ -88,7 +82,6 @@ public class PresetJsonUnmarshaller implements Unmarshaller<Preset, JsonUnmarsha
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

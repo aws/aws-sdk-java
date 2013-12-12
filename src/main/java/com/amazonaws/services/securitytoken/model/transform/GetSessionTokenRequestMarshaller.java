@@ -33,8 +33,8 @@ public class GetSessionTokenRequestMarshaller implements Marshaller<Request<GetS
     public Request<GetSessionTokenRequest> marshall(GetSessionTokenRequest getSessionTokenRequest) {
 
         if (getSessionTokenRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetSessionTokenRequest> request = new DefaultRequest<GetSessionTokenRequest>(getSessionTokenRequest, "AWSSecurityTokenService");
         request.addParameter("Action", "GetSessionToken");
@@ -49,7 +49,6 @@ public class GetSessionTokenRequestMarshaller implements Marshaller<Request<GetS
         if (getSessionTokenRequest.getTokenCode() != null) {
             request.addParameter("TokenCode", StringUtils.fromString(getSessionTokenRequest.getTokenCode()));
         }
-
 
         return request;
     }

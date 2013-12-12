@@ -16,7 +16,6 @@ package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * ServerCertificateMetadata contains information about a server certificate without its certificate body, certificate chain, and private key.

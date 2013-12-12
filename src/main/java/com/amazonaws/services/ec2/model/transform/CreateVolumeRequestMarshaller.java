@@ -33,8 +33,8 @@ public class CreateVolumeRequestMarshaller implements Marshaller<Request<CreateV
     public Request<CreateVolumeRequest> marshall(CreateVolumeRequest createVolumeRequest) {
 
         if (createVolumeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateVolumeRequest> request = new DefaultRequest<CreateVolumeRequest>(createVolumeRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVolume");
@@ -55,7 +55,6 @@ public class CreateVolumeRequestMarshaller implements Marshaller<Request<CreateV
         if (createVolumeRequest.getIops() != null) {
             request.addParameter("Iops", StringUtils.fromInteger(createVolumeRequest.getIops()));
         }
-
 
         return request;
     }

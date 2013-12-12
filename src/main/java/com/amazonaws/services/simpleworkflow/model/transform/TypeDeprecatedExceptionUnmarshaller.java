@@ -34,8 +34,7 @@ public class TypeDeprecatedExceptionUnmarshaller extends JsonErrorUnmarshaller {
             return null;
 
         TypeDeprecatedException e = (TypeDeprecatedException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

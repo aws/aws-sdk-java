@@ -33,8 +33,8 @@ public class ApplySecurityGroupsToLoadBalancerRequestMarshaller implements Marsh
     public Request<ApplySecurityGroupsToLoadBalancerRequest> marshall(ApplySecurityGroupsToLoadBalancerRequest applySecurityGroupsToLoadBalancerRequest) {
 
         if (applySecurityGroupsToLoadBalancerRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ApplySecurityGroupsToLoadBalancerRequest> request = new DefaultRequest<ApplySecurityGroupsToLoadBalancerRequest>(applySecurityGroupsToLoadBalancerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "ApplySecurityGroupsToLoadBalancer");
@@ -54,7 +54,6 @@ public class ApplySecurityGroupsToLoadBalancerRequestMarshaller implements Marsh
 
             securityGroupsListIndex++;
         }
-
 
         return request;
     }

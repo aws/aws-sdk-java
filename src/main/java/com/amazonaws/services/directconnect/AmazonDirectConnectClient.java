@@ -26,6 +26,7 @@ import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -33,7 +34,6 @@ import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.services.directconnect.model.transform.*;
-
 
 /**
  * Client for accessing AmazonDirectConnect.  All service calls made
@@ -189,13 +189,35 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AmazonDirectConnectClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonDirectConnect using the specified AWS account credentials
+     * provider, client configuration options and request metric collector.
+     * 
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AmazonDirectConnect
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public AmazonDirectConnectClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         
         this.awsCredentialsProvider = awsCredentialsProvider;
         
         init();
     }
-
 
     private void init() {
         exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, JSONObject>>();
@@ -210,11 +232,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 "/com/amazonaws/services/directconnect/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
                 "/com/amazonaws/services/directconnect/request.handler2s"));
-
-        
     }
 
-    
     /**
      * <p>
      * Returns the list of AWS Direct Connect locations in the current AWS
@@ -265,7 +284,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Accept ownership of a public virtual interface created by another
@@ -320,7 +338,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Creates a new private virtual interface. A virtual interface is the
@@ -372,7 +389,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Deletes a virtual interface.
@@ -421,7 +437,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Creates a new public virtual interface. A virtual interface is the
@@ -473,7 +488,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Creates a new interconnect between a AWS Direct Connect partner's
@@ -540,7 +554,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Displays all virtual interfaces for an AWS account. Virtual interfaces
@@ -603,7 +616,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Confirm the creation of a hosted connection on an interconnect.
@@ -657,7 +669,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Returns a list of interconnects owned by the AWS account.
@@ -710,7 +721,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Returns a list of virtual private gateways owned by the AWS account.
@@ -767,7 +777,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Accept ownership of a private virtual interface created by another
@@ -822,7 +831,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Displays all connections in this region.
@@ -875,7 +883,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Provisions a public virtual interface to be owned by a different
@@ -935,7 +942,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Provisions a private virtual interface to be owned by a different
@@ -995,7 +1001,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Deletes the connection.
@@ -1049,7 +1054,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Return a list of connections that have been provisioned on the given
@@ -1099,7 +1103,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Creates a hosted connection on an interconnect.
@@ -1152,7 +1155,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Creates a new connection between the customer network and a specific
@@ -1211,7 +1213,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Deletes the specified interconnect.
@@ -1260,7 +1261,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         }
     }
 
-   
     /**
      * <p>
      * Returns the list of AWS Direct Connect locations in the current AWS
@@ -1407,20 +1407,15 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     public DescribeConnectionsResult describeConnections() throws AmazonServiceException, AmazonClientException {
         return describeConnections(new DescribeConnectionsRequest());
     }
-    
 
     @Override
     public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
-
-        
     }
 
     @Override
     public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
         super.setEndpoint(endpoint, serviceName, regionId);
-
-        
     }
 
     /**

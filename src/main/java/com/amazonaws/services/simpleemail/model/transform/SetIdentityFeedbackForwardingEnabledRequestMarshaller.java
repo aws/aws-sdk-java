@@ -33,8 +33,8 @@ public class SetIdentityFeedbackForwardingEnabledRequestMarshaller implements Ma
     public Request<SetIdentityFeedbackForwardingEnabledRequest> marshall(SetIdentityFeedbackForwardingEnabledRequest setIdentityFeedbackForwardingEnabledRequest) {
 
         if (setIdentityFeedbackForwardingEnabledRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<SetIdentityFeedbackForwardingEnabledRequest> request = new DefaultRequest<SetIdentityFeedbackForwardingEnabledRequest>(setIdentityFeedbackForwardingEnabledRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "SetIdentityFeedbackForwardingEnabled");
@@ -46,7 +46,6 @@ public class SetIdentityFeedbackForwardingEnabledRequestMarshaller implements Ma
         if (setIdentityFeedbackForwardingEnabledRequest.isForwardingEnabled() != null) {
             request.addParameter("ForwardingEnabled", StringUtils.fromBoolean(setIdentityFeedbackForwardingEnabledRequest.isForwardingEnabled()));
         }
-
 
         return request;
     }

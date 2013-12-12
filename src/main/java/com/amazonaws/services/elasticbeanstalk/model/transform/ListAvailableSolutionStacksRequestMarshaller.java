@@ -33,14 +33,12 @@ public class ListAvailableSolutionStacksRequestMarshaller implements Marshaller<
     public Request<ListAvailableSolutionStacksRequest> marshall(ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest) {
 
         if (listAvailableSolutionStacksRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListAvailableSolutionStacksRequest> request = new DefaultRequest<ListAvailableSolutionStacksRequest>(listAvailableSolutionStacksRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "ListAvailableSolutionStacks");
         request.addParameter("Version", "2010-12-01");
-
-
 
         return request;
     }

@@ -33,13 +33,12 @@ public class DescribeVolumesRequestMarshaller implements Marshaller<Request<Desc
     public Request<DescribeVolumesRequest> marshall(DescribeVolumesRequest describeVolumesRequest) {
 
         if (describeVolumesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeVolumesRequest> request = new DefaultRequest<DescribeVolumesRequest>(describeVolumesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVolumes");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> volumeIdsList = describeVolumesRequest.getVolumeIds();
         int volumeIdsListIndex = 1;
@@ -76,7 +75,6 @@ public class DescribeVolumesRequestMarshaller implements Marshaller<Request<Desc
 
             filtersListIndex++;
         }
-
 
         return request;
     }

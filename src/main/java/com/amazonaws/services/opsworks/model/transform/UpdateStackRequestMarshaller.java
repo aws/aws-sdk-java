@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateStackRequest>, UpdateStackRequest> {
 
-    
-
     public Request<UpdateStackRequest> marshall(UpdateStackRequest updateStackRequest) {
     if (updateStackRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (updateStackRequest.getStackId() != null) {
@@ -175,7 +166,6 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -184,7 +174,6 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

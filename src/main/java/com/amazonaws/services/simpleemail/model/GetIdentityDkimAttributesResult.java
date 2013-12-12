@@ -16,7 +16,6 @@ package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents a list of all the DKIM attributes for the specified identity.
@@ -76,26 +75,26 @@ public class GetIdentityDkimAttributesResult implements Serializable {
      * @param key The key of the entry to be added into DkimAttributes.
      * @param value The corresponding value of the entry to be added into DkimAttributes.
      */
-	public GetIdentityDkimAttributesResult addDkimAttributesEntry(String key, IdentityDkimAttributes value) {
-		if (null == this.dkimAttributes) {
-			this.dkimAttributes = new java.util.HashMap<String,IdentityDkimAttributes>();
-		}
-		if (this.dkimAttributes.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.dkimAttributes.put(key, value);
-		return this;
-	}
+    public GetIdentityDkimAttributesResult addDkimAttributesEntry(String key, IdentityDkimAttributes value) {
+        if (null == this.dkimAttributes) {
+            this.dkimAttributes = new java.util.HashMap<String,IdentityDkimAttributes>();
+        }
+        if (this.dkimAttributes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.dkimAttributes.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into DkimAttributes.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public GetIdentityDkimAttributesResult clearDkimAttributesEntries() {
-		this.dkimAttributes = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into DkimAttributes.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public GetIdentityDkimAttributesResult clearDkimAttributesEntries() {
+        this.dkimAttributes = null;
+        return this;
+    }
+    
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

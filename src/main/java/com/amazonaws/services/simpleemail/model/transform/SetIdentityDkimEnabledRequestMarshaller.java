@@ -33,8 +33,8 @@ public class SetIdentityDkimEnabledRequestMarshaller implements Marshaller<Reque
     public Request<SetIdentityDkimEnabledRequest> marshall(SetIdentityDkimEnabledRequest setIdentityDkimEnabledRequest) {
 
         if (setIdentityDkimEnabledRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<SetIdentityDkimEnabledRequest> request = new DefaultRequest<SetIdentityDkimEnabledRequest>(setIdentityDkimEnabledRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "SetIdentityDkimEnabled");
@@ -46,7 +46,6 @@ public class SetIdentityDkimEnabledRequestMarshaller implements Marshaller<Reque
         if (setIdentityDkimEnabledRequest.isDkimEnabled() != null) {
             request.addParameter("DkimEnabled", StringUtils.fromBoolean(setIdentityDkimEnabledRequest.isDkimEnabled()));
         }
-
 
         return request;
     }

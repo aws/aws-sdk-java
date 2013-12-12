@@ -34,8 +34,7 @@ public class PipelineNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller
             return null;
 
         PipelineNotFoundException e = (PipelineNotFoundException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

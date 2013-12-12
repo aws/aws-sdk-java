@@ -2029,6 +2029,5 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
     public Future<DescribeLoadBalancersResult> describeLoadBalancersAsync(DescribeLoadBalancersRequest describeLoadBalancersRequest,
             AsyncHandler<DescribeLoadBalancersRequest, DescribeLoadBalancersResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

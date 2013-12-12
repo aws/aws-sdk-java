@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Create Connection Result JSON Unmarshaller
  */
 public class CreateConnectionResultJsonUnmarshaller implements Unmarshaller<CreateConnectionResult, JsonUnmarshallerContext> {
 
-    
-
     public CreateConnectionResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         CreateConnectionResult createConnectionResult = new CreateConnectionResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class CreateConnectionResultJsonUnmarshaller implements Unmarshaller<Crea
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ownerAccount", targetDepth)) {
                     context.nextToken();
@@ -92,7 +86,6 @@ public class CreateConnectionResultJsonUnmarshaller implements Unmarshaller<Crea
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

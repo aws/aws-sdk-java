@@ -33,8 +33,8 @@ public class SendMessageBatchRequestMarshaller implements Marshaller<Request<Sen
     public Request<SendMessageBatchRequest> marshall(SendMessageBatchRequest sendMessageBatchRequest) {
 
         if (sendMessageBatchRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<SendMessageBatchRequest> request = new DefaultRequest<SendMessageBatchRequest>(sendMessageBatchRequest, "AmazonSQS");
         request.addParameter("Action", "SendMessageBatch");
@@ -63,7 +63,6 @@ public class SendMessageBatchRequestMarshaller implements Marshaller<Request<Sen
 
             entriesListIndex++;
         }
-
 
         return request;
     }

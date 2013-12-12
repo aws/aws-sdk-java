@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Time Span JSON Unmarshaller
  */
 public class TimeSpanJsonUnmarshaller implements Unmarshaller<TimeSpan, JsonUnmarshallerContext> {
 
-    
-
     public TimeSpan unmarshall(JsonUnmarshallerContext context) throws Exception {
         TimeSpan timeSpan = new TimeSpan();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class TimeSpanJsonUnmarshaller implements Unmarshaller<TimeSpan, JsonUnma
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class TimeSpanJsonUnmarshaller implements Unmarshaller<TimeSpan, JsonUnma
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

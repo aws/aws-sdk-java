@@ -33,13 +33,12 @@ public class CreateOrUpdateTagsRequestMarshaller implements Marshaller<Request<C
     public Request<CreateOrUpdateTagsRequest> marshall(CreateOrUpdateTagsRequest createOrUpdateTagsRequest) {
 
         if (createOrUpdateTagsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateOrUpdateTagsRequest> request = new DefaultRequest<CreateOrUpdateTagsRequest>(createOrUpdateTagsRequest, "AmazonAutoScaling");
         request.addParameter("Action", "CreateOrUpdateTags");
         request.addParameter("Version", "2011-01-01");
-
 
         java.util.List<Tag> tagsList = createOrUpdateTagsRequest.getTags();
         int tagsListIndex = 1;
@@ -66,7 +65,6 @@ public class CreateOrUpdateTagsRequestMarshaller implements Marshaller<Request<C
 
             tagsListIndex++;
         }
-
 
         return request;
     }

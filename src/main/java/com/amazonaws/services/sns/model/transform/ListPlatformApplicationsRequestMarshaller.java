@@ -33,8 +33,8 @@ public class ListPlatformApplicationsRequestMarshaller implements Marshaller<Req
     public Request<ListPlatformApplicationsRequest> marshall(ListPlatformApplicationsRequest listPlatformApplicationsRequest) {
 
         if (listPlatformApplicationsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListPlatformApplicationsRequest> request = new DefaultRequest<ListPlatformApplicationsRequest>(listPlatformApplicationsRequest, "AmazonSNS");
         request.addParameter("Action", "ListPlatformApplications");
@@ -43,7 +43,6 @@ public class ListPlatformApplicationsRequestMarshaller implements Marshaller<Req
         if (listPlatformApplicationsRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(listPlatformApplicationsRequest.getNextToken()));
         }
-
 
         return request;
     }

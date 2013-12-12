@@ -853,6 +853,5 @@ public interface AmazonElasticMapReduce {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

@@ -33,8 +33,8 @@ public class RevokeSnapshotAccessRequestMarshaller implements Marshaller<Request
     public Request<RevokeSnapshotAccessRequest> marshall(RevokeSnapshotAccessRequest revokeSnapshotAccessRequest) {
 
         if (revokeSnapshotAccessRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RevokeSnapshotAccessRequest> request = new DefaultRequest<RevokeSnapshotAccessRequest>(revokeSnapshotAccessRequest, "AmazonRedshift");
         request.addParameter("Action", "RevokeSnapshotAccess");
@@ -49,7 +49,6 @@ public class RevokeSnapshotAccessRequestMarshaller implements Marshaller<Request
         if (revokeSnapshotAccessRequest.getAccountWithRestoreAccess() != null) {
             request.addParameter("AccountWithRestoreAccess", StringUtils.fromString(revokeSnapshotAccessRequest.getAccountWithRestoreAccess()));
         }
-
 
         return request;
     }

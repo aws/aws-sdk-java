@@ -2657,6 +2657,5 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
     public Future<Void> deleteVaultAsync(DeleteVaultRequest deleteVaultRequest,
             AsyncHandler<DeleteVaultRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

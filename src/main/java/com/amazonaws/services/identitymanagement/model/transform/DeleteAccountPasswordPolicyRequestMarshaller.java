@@ -33,14 +33,12 @@ public class DeleteAccountPasswordPolicyRequestMarshaller implements Marshaller<
     public Request<DeleteAccountPasswordPolicyRequest> marshall(DeleteAccountPasswordPolicyRequest deleteAccountPasswordPolicyRequest) {
 
         if (deleteAccountPasswordPolicyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteAccountPasswordPolicyRequest> request = new DefaultRequest<DeleteAccountPasswordPolicyRequest>(deleteAccountPasswordPolicyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteAccountPasswordPolicy");
         request.addParameter("Version", "2010-05-08");
-
-
 
         return request;
     }

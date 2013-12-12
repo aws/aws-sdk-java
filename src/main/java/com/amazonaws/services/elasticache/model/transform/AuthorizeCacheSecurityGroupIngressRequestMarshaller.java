@@ -33,8 +33,8 @@ public class AuthorizeCacheSecurityGroupIngressRequestMarshaller implements Mars
     public Request<AuthorizeCacheSecurityGroupIngressRequest> marshall(AuthorizeCacheSecurityGroupIngressRequest authorizeCacheSecurityGroupIngressRequest) {
 
         if (authorizeCacheSecurityGroupIngressRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AuthorizeCacheSecurityGroupIngressRequest> request = new DefaultRequest<AuthorizeCacheSecurityGroupIngressRequest>(authorizeCacheSecurityGroupIngressRequest, "AmazonElastiCache");
         request.addParameter("Action", "AuthorizeCacheSecurityGroupIngress");
@@ -49,7 +49,6 @@ public class AuthorizeCacheSecurityGroupIngressRequestMarshaller implements Mars
         if (authorizeCacheSecurityGroupIngressRequest.getEC2SecurityGroupOwnerId() != null) {
             request.addParameter("EC2SecurityGroupOwnerId", StringUtils.fromString(authorizeCacheSecurityGroupIngressRequest.getEC2SecurityGroupOwnerId()));
         }
-
 
         return request;
     }

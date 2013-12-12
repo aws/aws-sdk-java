@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Weekly Auto Scaling Schedule JSON Unmarshaller
  */
 public class WeeklyAutoScalingScheduleJsonUnmarshaller implements Unmarshaller<WeeklyAutoScalingSchedule, JsonUnmarshallerContext> {
 
-    
-
     public WeeklyAutoScalingSchedule unmarshall(JsonUnmarshallerContext context) throws Exception {
         WeeklyAutoScalingSchedule weeklyAutoScalingSchedule = new WeeklyAutoScalingSchedule();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class WeeklyAutoScalingScheduleJsonUnmarshaller implements Unmarshaller<W
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Monday", targetDepth)) {
                     weeklyAutoScalingSchedule.setMonday(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -77,7 +71,6 @@ public class WeeklyAutoScalingScheduleJsonUnmarshaller implements Unmarshaller<W
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Table Description JSON Unmarshaller
  */
 public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescription, JsonUnmarshallerContext> {
 
-    
-
     public TableDescription unmarshall(JsonUnmarshallerContext context) throws Exception {
         TableDescription tableDescription = new TableDescription();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AttributeDefinitions", targetDepth)) {
                     tableDescription.setAttributeDefinitions(new ListUnmarshaller<AttributeDefinition>(AttributeDefinitionJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -84,12 +78,14 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                 if (context.testExpression("LocalSecondaryIndexes", targetDepth)) {
                     tableDescription.setLocalSecondaryIndexes(new ListUnmarshaller<LocalSecondaryIndexDescription>(LocalSecondaryIndexDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("GlobalSecondaryIndexes", targetDepth)) {
+                    tableDescription.setGlobalSecondaryIndexes(new ListUnmarshaller<GlobalSecondaryIndexDescription>(GlobalSecondaryIndexDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

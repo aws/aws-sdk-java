@@ -33,13 +33,12 @@ public class DescribeImagesRequestMarshaller implements Marshaller<Request<Descr
     public Request<DescribeImagesRequest> marshall(DescribeImagesRequest describeImagesRequest) {
 
         if (describeImagesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeImagesRequest> request = new DefaultRequest<DescribeImagesRequest>(describeImagesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeImages");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> imageIdsList = describeImagesRequest.getImageIds();
         int imageIdsListIndex = 1;
@@ -98,7 +97,6 @@ public class DescribeImagesRequestMarshaller implements Marshaller<Request<Descr
 
             filtersListIndex++;
         }
-
 
         return request;
     }

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Severity Level JSON Unmarshaller
  */
 public class SeverityLevelJsonUnmarshaller implements Unmarshaller<SeverityLevel, JsonUnmarshallerContext> {
 
-    
-
     public SeverityLevel unmarshall(JsonUnmarshallerContext context) throws Exception {
         SeverityLevel severityLevel = new SeverityLevel();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class SeverityLevelJsonUnmarshaller implements Unmarshaller<SeverityLevel
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("code", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class SeverityLevelJsonUnmarshaller implements Unmarshaller<SeverityLevel
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

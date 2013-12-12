@@ -16,7 +16,6 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes a user's SSH information.
@@ -25,12 +24,12 @@ import java.io.Serializable;
 public class UserProfile implements Serializable {
 
     /**
-     * The user IAM ARN.
+     * The user's IAM ARN.
      */
     private String iamUserArn;
 
     /**
-     * The user name.
+     * The user's name.
      */
     private String name;
 
@@ -45,29 +44,37 @@ public class UserProfile implements Serializable {
     private String sshPublicKey;
 
     /**
-     * The user IAM ARN.
+     * Whether users can specify their own SSH public key through the My
+     * Settings page. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     * User Permissions</a>.
+     */
+    private Boolean allowSelfManagement;
+
+    /**
+     * The user's IAM ARN.
      *
-     * @return The user IAM ARN.
+     * @return The user's IAM ARN.
      */
     public String getIamUserArn() {
         return iamUserArn;
     }
     
     /**
-     * The user IAM ARN.
+     * The user's IAM ARN.
      *
-     * @param iamUserArn The user IAM ARN.
+     * @param iamUserArn The user's IAM ARN.
      */
     public void setIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
     }
     
     /**
-     * The user IAM ARN.
+     * The user's IAM ARN.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param iamUserArn The user IAM ARN.
+     * @param iamUserArn The user's IAM ARN.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -78,29 +85,29 @@ public class UserProfile implements Serializable {
     }
 
     /**
-     * The user name.
+     * The user's name.
      *
-     * @return The user name.
+     * @return The user's name.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * The user name.
+     * The user's name.
      *
-     * @param name The user name.
+     * @param name The user's name.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * The user name.
+     * The user's name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name The user name.
+     * @param name The user's name.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -177,6 +184,72 @@ public class UserProfile implements Serializable {
     }
 
     /**
+     * Whether users can specify their own SSH public key through the My
+     * Settings page. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     * User Permissions</a>.
+     *
+     * @return Whether users can specify their own SSH public key through the My
+     *         Settings page. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     *         User Permissions</a>.
+     */
+    public Boolean isAllowSelfManagement() {
+        return allowSelfManagement;
+    }
+    
+    /**
+     * Whether users can specify their own SSH public key through the My
+     * Settings page. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     * User Permissions</a>.
+     *
+     * @param allowSelfManagement Whether users can specify their own SSH public key through the My
+     *         Settings page. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     *         User Permissions</a>.
+     */
+    public void setAllowSelfManagement(Boolean allowSelfManagement) {
+        this.allowSelfManagement = allowSelfManagement;
+    }
+    
+    /**
+     * Whether users can specify their own SSH public key through the My
+     * Settings page. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     * User Permissions</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param allowSelfManagement Whether users can specify their own SSH public key through the My
+     *         Settings page. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     *         User Permissions</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public UserProfile withAllowSelfManagement(Boolean allowSelfManagement) {
+        this.allowSelfManagement = allowSelfManagement;
+        return this;
+    }
+
+    /**
+     * Whether users can specify their own SSH public key through the My
+     * Settings page. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     * User Permissions</a>.
+     *
+     * @return Whether users can specify their own SSH public key through the My
+     *         Settings page. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     *         User Permissions</a>.
+     */
+    public Boolean getAllowSelfManagement() {
+        return allowSelfManagement;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -191,7 +264,8 @@ public class UserProfile implements Serializable {
         if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ",");
         if (getName() != null) sb.append("Name: " + getName() + ",");
         if (getSshUsername() != null) sb.append("SshUsername: " + getSshUsername() + ",");
-        if (getSshPublicKey() != null) sb.append("SshPublicKey: " + getSshPublicKey() );
+        if (getSshPublicKey() != null) sb.append("SshPublicKey: " + getSshPublicKey() + ",");
+        if (isAllowSelfManagement() != null) sb.append("AllowSelfManagement: " + isAllowSelfManagement() );
         sb.append("}");
         return sb.toString();
     }
@@ -205,6 +279,7 @@ public class UserProfile implements Serializable {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
         hashCode = prime * hashCode + ((getSshUsername() == null) ? 0 : getSshUsername().hashCode()); 
         hashCode = prime * hashCode + ((getSshPublicKey() == null) ? 0 : getSshPublicKey().hashCode()); 
+        hashCode = prime * hashCode + ((isAllowSelfManagement() == null) ? 0 : isAllowSelfManagement().hashCode()); 
         return hashCode;
     }
     
@@ -224,6 +299,8 @@ public class UserProfile implements Serializable {
         if (other.getSshUsername() != null && other.getSshUsername().equals(this.getSshUsername()) == false) return false; 
         if (other.getSshPublicKey() == null ^ this.getSshPublicKey() == null) return false;
         if (other.getSshPublicKey() != null && other.getSshPublicKey().equals(this.getSshPublicKey()) == false) return false; 
+        if (other.isAllowSelfManagement() == null ^ this.isAllowSelfManagement() == null) return false;
+        if (other.isAllowSelfManagement() != null && other.isAllowSelfManagement().equals(this.isAllowSelfManagement()) == false) return false; 
         return true;
     }
     

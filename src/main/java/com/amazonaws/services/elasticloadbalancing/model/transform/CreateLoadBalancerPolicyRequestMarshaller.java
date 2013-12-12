@@ -33,8 +33,8 @@ public class CreateLoadBalancerPolicyRequestMarshaller implements Marshaller<Req
     public Request<CreateLoadBalancerPolicyRequest> marshall(CreateLoadBalancerPolicyRequest createLoadBalancerPolicyRequest) {
 
         if (createLoadBalancerPolicyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateLoadBalancerPolicyRequest> request = new DefaultRequest<CreateLoadBalancerPolicyRequest>(createLoadBalancerPolicyRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "CreateLoadBalancerPolicy");
@@ -66,7 +66,6 @@ public class CreateLoadBalancerPolicyRequestMarshaller implements Marshaller<Req
 
             policyAttributesListIndex++;
         }
-
 
         return request;
     }

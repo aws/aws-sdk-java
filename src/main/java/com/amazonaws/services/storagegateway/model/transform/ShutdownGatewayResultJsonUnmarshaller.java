@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Shutdown Gateway Result JSON Unmarshaller
  */
 public class ShutdownGatewayResultJsonUnmarshaller implements Unmarshaller<ShutdownGatewayResult, JsonUnmarshallerContext> {
 
-    
-
     public ShutdownGatewayResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ShutdownGatewayResult shutdownGatewayResult = new ShutdownGatewayResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ShutdownGatewayResultJsonUnmarshaller implements Unmarshaller<Shutd
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class ShutdownGatewayResultJsonUnmarshaller implements Unmarshaller<Shutd
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

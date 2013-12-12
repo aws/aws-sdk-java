@@ -33,8 +33,8 @@ public class PutMetricDataRequestMarshaller implements Marshaller<Request<PutMet
     public Request<PutMetricDataRequest> marshall(PutMetricDataRequest putMetricDataRequest) {
 
         if (putMetricDataRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<PutMetricDataRequest> request = new DefaultRequest<PutMetricDataRequest>(putMetricDataRequest, "AmazonCloudWatch");
         request.addParameter("Action", "PutMetricData");
@@ -98,7 +98,6 @@ public class PutMetricDataRequestMarshaller implements Marshaller<Request<PutMet
 
             metricDataListIndex++;
         }
-
 
         return request;
     }

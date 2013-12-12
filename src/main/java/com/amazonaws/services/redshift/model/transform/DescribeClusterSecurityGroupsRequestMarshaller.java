@@ -33,8 +33,8 @@ public class DescribeClusterSecurityGroupsRequestMarshaller implements Marshalle
     public Request<DescribeClusterSecurityGroupsRequest> marshall(DescribeClusterSecurityGroupsRequest describeClusterSecurityGroupsRequest) {
 
         if (describeClusterSecurityGroupsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeClusterSecurityGroupsRequest> request = new DefaultRequest<DescribeClusterSecurityGroupsRequest>(describeClusterSecurityGroupsRequest, "AmazonRedshift");
         request.addParameter("Action", "DescribeClusterSecurityGroups");
@@ -49,7 +49,6 @@ public class DescribeClusterSecurityGroupsRequestMarshaller implements Marshalle
         if (describeClusterSecurityGroupsRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeClusterSecurityGroupsRequest.getMarker()));
         }
-
 
         return request;
     }

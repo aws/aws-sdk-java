@@ -33,8 +33,8 @@ public class EstimateTemplateCostRequestMarshaller implements Marshaller<Request
     public Request<EstimateTemplateCostRequest> marshall(EstimateTemplateCostRequest estimateTemplateCostRequest) {
 
         if (estimateTemplateCostRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<EstimateTemplateCostRequest> request = new DefaultRequest<EstimateTemplateCostRequest>(estimateTemplateCostRequest, "AmazonCloudFormation");
         request.addParameter("Action", "EstimateTemplateCost");
@@ -63,7 +63,6 @@ public class EstimateTemplateCostRequestMarshaller implements Marshaller<Request
 
             parametersListIndex++;
         }
-
 
         return request;
     }

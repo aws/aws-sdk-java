@@ -16,7 +16,6 @@ package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, you can omit the

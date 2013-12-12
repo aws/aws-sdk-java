@@ -33,13 +33,12 @@ public class DescribePlacementGroupsRequestMarshaller implements Marshaller<Requ
     public Request<DescribePlacementGroupsRequest> marshall(DescribePlacementGroupsRequest describePlacementGroupsRequest) {
 
         if (describePlacementGroupsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribePlacementGroupsRequest> request = new DefaultRequest<DescribePlacementGroupsRequest>(describePlacementGroupsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribePlacementGroups");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> groupNamesList = describePlacementGroupsRequest.getGroupNames();
         int groupNamesListIndex = 1;
@@ -76,7 +75,6 @@ public class DescribePlacementGroupsRequestMarshaller implements Marshaller<Requ
 
             filtersListIndex++;
         }
-
 
         return request;
     }

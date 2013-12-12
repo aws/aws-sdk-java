@@ -27,6 +27,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <b>NOTE:</b>You must create the Elastic Load Balancing instance separately, by using the Elastic Load Balancing console, API, or CLI. For more
  * information, see Elastic Load Balancing Developer Guide.
  * </p>
+ * <p>
+ * <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that
+ * explicitly grants permissions. For more information on user permissions, see <a
+ * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a> .
+ * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#attachElasticLoadBalancer(AttachElasticLoadBalancerRequest)
  */

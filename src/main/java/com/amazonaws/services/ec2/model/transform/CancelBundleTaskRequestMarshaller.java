@@ -33,8 +33,8 @@ public class CancelBundleTaskRequestMarshaller implements Marshaller<Request<Can
     public Request<CancelBundleTaskRequest> marshall(CancelBundleTaskRequest cancelBundleTaskRequest) {
 
         if (cancelBundleTaskRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CancelBundleTaskRequest> request = new DefaultRequest<CancelBundleTaskRequest>(cancelBundleTaskRequest, "AmazonEC2");
         request.addParameter("Action", "CancelBundleTask");
@@ -43,7 +43,6 @@ public class CancelBundleTaskRequestMarshaller implements Marshaller<Request<Can
         if (cancelBundleTaskRequest.getBundleId() != null) {
             request.addParameter("BundleId", StringUtils.fromString(cancelBundleTaskRequest.getBundleId()));
         }
-
 
         return request;
     }

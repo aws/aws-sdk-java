@@ -33,8 +33,8 @@ public class DeletePlatformApplicationRequestMarshaller implements Marshaller<Re
     public Request<DeletePlatformApplicationRequest> marshall(DeletePlatformApplicationRequest deletePlatformApplicationRequest) {
 
         if (deletePlatformApplicationRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeletePlatformApplicationRequest> request = new DefaultRequest<DeletePlatformApplicationRequest>(deletePlatformApplicationRequest, "AmazonSNS");
         request.addParameter("Action", "DeletePlatformApplication");
@@ -43,7 +43,6 @@ public class DeletePlatformApplicationRequestMarshaller implements Marshaller<Re
         if (deletePlatformApplicationRequest.getPlatformApplicationArn() != null) {
             request.addParameter("PlatformApplicationArn", StringUtils.fromString(deletePlatformApplicationRequest.getPlatformApplicationArn()));
         }
-
 
         return request;
     }

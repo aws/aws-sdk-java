@@ -33,8 +33,8 @@ public class AddUserToGroupRequestMarshaller implements Marshaller<Request<AddUs
     public Request<AddUserToGroupRequest> marshall(AddUserToGroupRequest addUserToGroupRequest) {
 
         if (addUserToGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AddUserToGroupRequest> request = new DefaultRequest<AddUserToGroupRequest>(addUserToGroupRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "AddUserToGroup");
@@ -46,7 +46,6 @@ public class AddUserToGroupRequestMarshaller implements Marshaller<Request<AddUs
         if (addUserToGroupRequest.getUserName() != null) {
             request.addParameter("UserName", StringUtils.fromString(addUserToGroupRequest.getUserName()));
         }
-
 
         return request;
     }

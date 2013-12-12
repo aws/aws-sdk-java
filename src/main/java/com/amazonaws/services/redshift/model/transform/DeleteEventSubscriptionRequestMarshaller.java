@@ -33,8 +33,8 @@ public class DeleteEventSubscriptionRequestMarshaller implements Marshaller<Requ
     public Request<DeleteEventSubscriptionRequest> marshall(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest) {
 
         if (deleteEventSubscriptionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteEventSubscriptionRequest> request = new DefaultRequest<DeleteEventSubscriptionRequest>(deleteEventSubscriptionRequest, "AmazonRedshift");
         request.addParameter("Action", "DeleteEventSubscription");
@@ -43,7 +43,6 @@ public class DeleteEventSubscriptionRequestMarshaller implements Marshaller<Requ
         if (deleteEventSubscriptionRequest.getSubscriptionName() != null) {
             request.addParameter("SubscriptionName", StringUtils.fromString(deleteEventSubscriptionRequest.getSubscriptionName()));
         }
-
 
         return request;
     }

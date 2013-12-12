@@ -16,7 +16,6 @@ package com.amazonaws.services.simpledb.model;
 
 import java.io.Serializable;
 
-
 /**
  * Domain Metadata Result
  */

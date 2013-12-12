@@ -33,8 +33,8 @@ public class ReplaceRouteRequestMarshaller implements Marshaller<Request<Replace
     public Request<ReplaceRouteRequest> marshall(ReplaceRouteRequest replaceRouteRequest) {
 
         if (replaceRouteRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ReplaceRouteRequest> request = new DefaultRequest<ReplaceRouteRequest>(replaceRouteRequest, "AmazonEC2");
         request.addParameter("Action", "ReplaceRoute");
@@ -55,7 +55,6 @@ public class ReplaceRouteRequestMarshaller implements Marshaller<Request<Replace
         if (replaceRouteRequest.getNetworkInterfaceId() != null) {
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(replaceRouteRequest.getNetworkInterfaceId()));
         }
-
 
         return request;
     }

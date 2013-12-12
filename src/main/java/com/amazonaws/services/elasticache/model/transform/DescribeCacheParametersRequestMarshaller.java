@@ -33,8 +33,8 @@ public class DescribeCacheParametersRequestMarshaller implements Marshaller<Requ
     public Request<DescribeCacheParametersRequest> marshall(DescribeCacheParametersRequest describeCacheParametersRequest) {
 
         if (describeCacheParametersRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeCacheParametersRequest> request = new DefaultRequest<DescribeCacheParametersRequest>(describeCacheParametersRequest, "AmazonElastiCache");
         request.addParameter("Action", "DescribeCacheParameters");
@@ -52,7 +52,6 @@ public class DescribeCacheParametersRequestMarshaller implements Marshaller<Requ
         if (describeCacheParametersRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeCacheParametersRequest.getMarker()));
         }
-
 
         return request;
     }

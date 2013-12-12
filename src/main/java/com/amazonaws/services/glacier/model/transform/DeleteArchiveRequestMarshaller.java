@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class DeleteArchiveRequestMarshaller implements Marshaller<Request<DeleteArchiveRequest>, DeleteArchiveRequest> {
 
-    
-
     public Request<DeleteArchiveRequest> marshall(DeleteArchiveRequest deleteArchiveRequest) {
     if (deleteArchiveRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class DeleteArchiveRequestMarshaller implements Marshaller<Request<Delete
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.DELETE);
-
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/archives/{archiveId}"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", (deleteArchiveRequest.getAccountId() == null) ? "" : StringUtils.fromString(deleteArchiveRequest.getAccountId())); 
@@ -78,10 +73,7 @@ public class DeleteArchiveRequestMarshaller implements Marshaller<Request<Delete
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         request.setContent(new ByteArrayInputStream(new byte[0]));
-        
 
         return request;
     }

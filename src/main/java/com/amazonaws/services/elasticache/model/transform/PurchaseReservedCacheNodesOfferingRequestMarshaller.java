@@ -33,8 +33,8 @@ public class PurchaseReservedCacheNodesOfferingRequestMarshaller implements Mars
     public Request<PurchaseReservedCacheNodesOfferingRequest> marshall(PurchaseReservedCacheNodesOfferingRequest purchaseReservedCacheNodesOfferingRequest) {
 
         if (purchaseReservedCacheNodesOfferingRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<PurchaseReservedCacheNodesOfferingRequest> request = new DefaultRequest<PurchaseReservedCacheNodesOfferingRequest>(purchaseReservedCacheNodesOfferingRequest, "AmazonElastiCache");
         request.addParameter("Action", "PurchaseReservedCacheNodesOffering");
@@ -49,7 +49,6 @@ public class PurchaseReservedCacheNodesOfferingRequestMarshaller implements Mars
         if (purchaseReservedCacheNodesOfferingRequest.getCacheNodeCount() != null) {
             request.addParameter("CacheNodeCount", StringUtils.fromInteger(purchaseReservedCacheNodesOfferingRequest.getCacheNodeCount()));
         }
-
 
         return request;
     }

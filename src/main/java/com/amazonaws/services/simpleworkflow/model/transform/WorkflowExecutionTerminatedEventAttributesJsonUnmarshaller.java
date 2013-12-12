@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Workflow Execution Terminated Event Attributes JSON Unmarshaller
  */
 public class WorkflowExecutionTerminatedEventAttributesJsonUnmarshaller implements Unmarshaller<WorkflowExecutionTerminatedEventAttributes, JsonUnmarshallerContext> {
 
-    
-
     public WorkflowExecutionTerminatedEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         WorkflowExecutionTerminatedEventAttributes workflowExecutionTerminatedEventAttributes = new WorkflowExecutionTerminatedEventAttributes();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class WorkflowExecutionTerminatedEventAttributesJsonUnmarshaller implemen
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("reason", targetDepth)) {
                     context.nextToken();
@@ -72,7 +66,6 @@ public class WorkflowExecutionTerminatedEventAttributesJsonUnmarshaller implemen
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

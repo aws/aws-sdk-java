@@ -25,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
@@ -32,7 +33,6 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
 
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.services.ec2.model.transform.*;
-
 
 /**
  * Client for accessing AmazonEC2.  All service calls made
@@ -178,7 +178,30 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AmazonEC2Client(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonEC2 using the specified AWS account credentials
+     * provider, client configuration options, and request metric collector.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AmazonEC2
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public AmazonEC2Client(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
     }
@@ -195,7 +218,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 "/com/amazonaws/services/ec2/request.handler2s"));
     }
 
-    
     /**
      * <p>
      * The RebootInstances operation requests a reboot of one or more
@@ -7851,7 +7873,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             throw new AmazonClientException("Unrecognized service response for the dry-run request.", ase);
         }
     }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

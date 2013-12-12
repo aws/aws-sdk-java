@@ -34,8 +34,7 @@ public class S3BucketDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarsha
             return null;
 
         S3BucketDoesNotExistException e = (S3BucketDoesNotExistException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

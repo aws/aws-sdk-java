@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
@@ -63,12 +62,9 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
 
         request.setResourcePath(uriResourcePath);
 
-        
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter, "https://route53.amazonaws.com/doc/2012-12-12/");
 
-            
-            
             xmlWriter.startElement("ChangeResourceRecordSetsRequest");
                     if (changeResourceRecordSetsRequest != null) {
             ChangeBatch changeBatchChangeBatch = changeResourceRecordSetsRequest.getChangeBatch();
@@ -128,7 +124,6 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
                                                 }
                                             xmlWriter.endElement();
 
-
                                                 resourceRecordSetResourceRecordSetresourceRecordsListIndex++;
                                             }
                                             xmlWriter.endElement();
@@ -158,7 +153,6 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
                             }
                         xmlWriter.endElement();
 
-
                             changeBatchChangeBatchchangesListIndex++;
                         }
                         xmlWriter.endElement();
@@ -169,7 +163,6 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
         }
 
             xmlWriter.endElement();
-            
 
             try {
                 request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
@@ -178,7 +171,6 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
             } catch (UnsupportedEncodingException e) {
                 throw new AmazonClientException("Unable to marshall request to XML", e);
             }
-        
 
         return request;
     }

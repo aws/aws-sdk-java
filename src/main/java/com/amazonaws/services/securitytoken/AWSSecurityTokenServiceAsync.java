@@ -1061,6 +1061,5 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
     public Future<AssumeRoleResult> assumeRoleAsync(AssumeRoleRequest assumeRoleRequest,
             AsyncHandler<AssumeRoleRequest, AssumeRoleResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

@@ -728,6 +728,5 @@ public interface AmazonElasticTranscoder {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

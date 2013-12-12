@@ -33,8 +33,8 @@ public class CreateLoadBalancerListenersRequestMarshaller implements Marshaller<
     public Request<CreateLoadBalancerListenersRequest> marshall(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest) {
 
         if (createLoadBalancerListenersRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateLoadBalancerListenersRequest> request = new DefaultRequest<CreateLoadBalancerListenersRequest>(createLoadBalancerListenersRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "CreateLoadBalancerListeners");
@@ -69,7 +69,6 @@ public class CreateLoadBalancerListenersRequestMarshaller implements Marshaller<
 
             listenersListIndex++;
         }
-
 
         return request;
     }

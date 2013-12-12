@@ -16,7 +16,6 @@ package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Metadata assigned to an Amazon RDS resource consisting of a key-value pair.

@@ -35,8 +35,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <code>example.com</code> ) has been set up for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code> action.
  * </p>
  * <p>
- * For more information about Easy DKIM signing, go to the <a href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide"> Amazon SES Developer
- * Guide </a> .
+ * This action is throttled at one request per second.
+ * </p>
+ * <p>
+ * For more information about Easy DKIM signing, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html"> Amazon SES
+ * Developer Guide </a> .
  * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#setIdentityDkimEnabled(SetIdentityDkimEnabledRequest)

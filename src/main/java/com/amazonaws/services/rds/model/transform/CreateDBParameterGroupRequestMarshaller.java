@@ -33,8 +33,8 @@ public class CreateDBParameterGroupRequestMarshaller implements Marshaller<Reque
     public Request<CreateDBParameterGroupRequest> marshall(CreateDBParameterGroupRequest createDBParameterGroupRequest) {
 
         if (createDBParameterGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateDBParameterGroupRequest> request = new DefaultRequest<CreateDBParameterGroupRequest>(createDBParameterGroupRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBParameterGroup");
@@ -66,7 +66,6 @@ public class CreateDBParameterGroupRequestMarshaller implements Marshaller<Reque
 
             tagsListIndex++;
         }
-
 
         return request;
     }

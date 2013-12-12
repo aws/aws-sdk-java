@@ -646,6 +646,5 @@ public interface AmazonRoute53 {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

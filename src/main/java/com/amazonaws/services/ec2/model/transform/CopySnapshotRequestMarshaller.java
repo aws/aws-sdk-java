@@ -33,8 +33,8 @@ public class CopySnapshotRequestMarshaller implements Marshaller<Request<CopySna
     public Request<CopySnapshotRequest> marshall(CopySnapshotRequest copySnapshotRequest) {
 
         if (copySnapshotRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CopySnapshotRequest> request = new DefaultRequest<CopySnapshotRequest>(copySnapshotRequest, "AmazonEC2");
         request.addParameter("Action", "CopySnapshot");
@@ -49,7 +49,6 @@ public class CopySnapshotRequestMarshaller implements Marshaller<Request<CopySna
         if (copySnapshotRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(copySnapshotRequest.getDescription()));
         }
-
 
         return request;
     }

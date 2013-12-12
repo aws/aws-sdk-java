@@ -23,10 +23,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Creates an application that has one configuration template named <code>default</code> and no application versions.
  * </p>
- * <p>
- * <b>NOTE:</b> The default configuration template is for a 32-bit version of the Amazon Linux operating system running the Tomcat 6 application
- * container.
- * </p>
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createApplication(CreateApplicationRequest)
  */

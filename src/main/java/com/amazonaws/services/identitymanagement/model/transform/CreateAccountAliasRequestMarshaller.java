@@ -33,8 +33,8 @@ public class CreateAccountAliasRequestMarshaller implements Marshaller<Request<C
     public Request<CreateAccountAliasRequest> marshall(CreateAccountAliasRequest createAccountAliasRequest) {
 
         if (createAccountAliasRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateAccountAliasRequest> request = new DefaultRequest<CreateAccountAliasRequest>(createAccountAliasRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "CreateAccountAlias");
@@ -43,7 +43,6 @@ public class CreateAccountAliasRequestMarshaller implements Marshaller<Request<C
         if (createAccountAliasRequest.getAccountAlias() != null) {
             request.addParameter("AccountAlias", StringUtils.fromString(createAccountAliasRequest.getAccountAlias()));
         }
-
 
         return request;
     }

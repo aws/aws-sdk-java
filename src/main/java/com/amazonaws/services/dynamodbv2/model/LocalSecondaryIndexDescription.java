@@ -16,16 +16,15 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
- * Represents the properties of a secondary index.
+ * Represents the properties of a local secondary index.
  * </p>
  */
 public class LocalSecondaryIndexDescription implements Serializable {
 
     /**
-     * Represents the name of the secondary index.
+     * Represents the name of the local secondary index.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
@@ -34,8 +33,8 @@ public class LocalSecondaryIndexDescription implements Serializable {
     private String indexName;
 
     /**
-     * Represents the complete index key schema, which consists of one or
-     * more pairs of attribute names and key types (<code>HASH</code> or
+     * The complete index key schema, which consists of one or more pairs of
+     * attribute names and key types (<code>HASH</code> or
      * <code>RANGE</code>).
      * <p>
      * <b>Constraints:</b><br/>
@@ -45,53 +44,53 @@ public class LocalSecondaryIndexDescription implements Serializable {
 
     /**
      * Represents attributes that are copied (projected) from the table into
-     * the index. These are in addition to the primary key attributes and
+     * an index. These are in addition to the primary key attributes and
      * index key attributes, which are automatically projected.
      */
     private Projection projection;
 
     /**
-     * Represents the total size of the index, in bytes. Amazon DynamoDB
+     * The total size of the specified index, in bytes. Amazon DynamoDB
      * updates this value approximately every six hours. Recent changes might
      * not be reflected in this value.
      */
     private Long indexSizeBytes;
 
     /**
-     * Represents the number of items in the index. Amazon DynamoDB updates
+     * The number of items in the specified index. Amazon DynamoDB updates
      * this value approximately every six hours. Recent changes might not be
      * reflected in this value.
      */
     private Long itemCount;
 
     /**
-     * Represents the name of the secondary index.
+     * Represents the name of the local secondary index.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @return Represents the name of the secondary index.
+     * @return Represents the name of the local secondary index.
      */
     public String getIndexName() {
         return indexName;
     }
     
     /**
-     * Represents the name of the secondary index.
+     * Represents the name of the local secondary index.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param indexName Represents the name of the secondary index.
+     * @param indexName Represents the name of the local secondary index.
      */
     public void setIndexName(String indexName) {
         this.indexName = indexName;
     }
     
     /**
-     * Represents the name of the secondary index.
+     * Represents the name of the local secondary index.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -99,7 +98,7 @@ public class LocalSecondaryIndexDescription implements Serializable {
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param indexName Represents the name of the secondary index.
+     * @param indexName Represents the name of the local secondary index.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -110,15 +109,15 @@ public class LocalSecondaryIndexDescription implements Serializable {
     }
 
     /**
-     * Represents the complete index key schema, which consists of one or
-     * more pairs of attribute names and key types (<code>HASH</code> or
+     * The complete index key schema, which consists of one or more pairs of
+     * attribute names and key types (<code>HASH</code> or
      * <code>RANGE</code>).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
      *
-     * @return Represents the complete index key schema, which consists of one or
-     *         more pairs of attribute names and key types (<code>HASH</code> or
+     * @return The complete index key schema, which consists of one or more pairs of
+     *         attribute names and key types (<code>HASH</code> or
      *         <code>RANGE</code>).
      */
     public java.util.List<KeySchemaElement> getKeySchema() {
@@ -126,15 +125,15 @@ public class LocalSecondaryIndexDescription implements Serializable {
     }
     
     /**
-     * Represents the complete index key schema, which consists of one or
-     * more pairs of attribute names and key types (<code>HASH</code> or
+     * The complete index key schema, which consists of one or more pairs of
+     * attribute names and key types (<code>HASH</code> or
      * <code>RANGE</code>).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
      *
-     * @param keySchema Represents the complete index key schema, which consists of one or
-     *         more pairs of attribute names and key types (<code>HASH</code> or
+     * @param keySchema The complete index key schema, which consists of one or more pairs of
+     *         attribute names and key types (<code>HASH</code> or
      *         <code>RANGE</code>).
      */
     public void setKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
@@ -148,8 +147,8 @@ public class LocalSecondaryIndexDescription implements Serializable {
     }
     
     /**
-     * Represents the complete index key schema, which consists of one or
-     * more pairs of attribute names and key types (<code>HASH</code> or
+     * The complete index key schema, which consists of one or more pairs of
+     * attribute names and key types (<code>HASH</code> or
      * <code>RANGE</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -157,8 +156,8 @@ public class LocalSecondaryIndexDescription implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
      *
-     * @param keySchema Represents the complete index key schema, which consists of one or
-     *         more pairs of attribute names and key types (<code>HASH</code> or
+     * @param keySchema The complete index key schema, which consists of one or more pairs of
+     *         attribute names and key types (<code>HASH</code> or
      *         <code>RANGE</code>).
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -173,8 +172,8 @@ public class LocalSecondaryIndexDescription implements Serializable {
     }
     
     /**
-     * Represents the complete index key schema, which consists of one or
-     * more pairs of attribute names and key types (<code>HASH</code> or
+     * The complete index key schema, which consists of one or more pairs of
+     * attribute names and key types (<code>HASH</code> or
      * <code>RANGE</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -182,8 +181,8 @@ public class LocalSecondaryIndexDescription implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
      *
-     * @param keySchema Represents the complete index key schema, which consists of one or
-     *         more pairs of attribute names and key types (<code>HASH</code> or
+     * @param keySchema The complete index key schema, which consists of one or more pairs of
+     *         attribute names and key types (<code>HASH</code> or
      *         <code>RANGE</code>).
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -203,11 +202,11 @@ public class LocalSecondaryIndexDescription implements Serializable {
 
     /**
      * Represents attributes that are copied (projected) from the table into
-     * the index. These are in addition to the primary key attributes and
+     * an index. These are in addition to the primary key attributes and
      * index key attributes, which are automatically projected.
      *
      * @return Represents attributes that are copied (projected) from the table into
-     *         the index. These are in addition to the primary key attributes and
+     *         an index. These are in addition to the primary key attributes and
      *         index key attributes, which are automatically projected.
      */
     public Projection getProjection() {
@@ -216,11 +215,11 @@ public class LocalSecondaryIndexDescription implements Serializable {
     
     /**
      * Represents attributes that are copied (projected) from the table into
-     * the index. These are in addition to the primary key attributes and
+     * an index. These are in addition to the primary key attributes and
      * index key attributes, which are automatically projected.
      *
      * @param projection Represents attributes that are copied (projected) from the table into
-     *         the index. These are in addition to the primary key attributes and
+     *         an index. These are in addition to the primary key attributes and
      *         index key attributes, which are automatically projected.
      */
     public void setProjection(Projection projection) {
@@ -229,13 +228,13 @@ public class LocalSecondaryIndexDescription implements Serializable {
     
     /**
      * Represents attributes that are copied (projected) from the table into
-     * the index. These are in addition to the primary key attributes and
+     * an index. These are in addition to the primary key attributes and
      * index key attributes, which are automatically projected.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param projection Represents attributes that are copied (projected) from the table into
-     *         the index. These are in addition to the primary key attributes and
+     *         an index. These are in addition to the primary key attributes and
      *         index key attributes, which are automatically projected.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -247,11 +246,11 @@ public class LocalSecondaryIndexDescription implements Serializable {
     }
 
     /**
-     * Represents the total size of the index, in bytes. Amazon DynamoDB
+     * The total size of the specified index, in bytes. Amazon DynamoDB
      * updates this value approximately every six hours. Recent changes might
      * not be reflected in this value.
      *
-     * @return Represents the total size of the index, in bytes. Amazon DynamoDB
+     * @return The total size of the specified index, in bytes. Amazon DynamoDB
      *         updates this value approximately every six hours. Recent changes might
      *         not be reflected in this value.
      */
@@ -260,11 +259,11 @@ public class LocalSecondaryIndexDescription implements Serializable {
     }
     
     /**
-     * Represents the total size of the index, in bytes. Amazon DynamoDB
+     * The total size of the specified index, in bytes. Amazon DynamoDB
      * updates this value approximately every six hours. Recent changes might
      * not be reflected in this value.
      *
-     * @param indexSizeBytes Represents the total size of the index, in bytes. Amazon DynamoDB
+     * @param indexSizeBytes The total size of the specified index, in bytes. Amazon DynamoDB
      *         updates this value approximately every six hours. Recent changes might
      *         not be reflected in this value.
      */
@@ -273,13 +272,13 @@ public class LocalSecondaryIndexDescription implements Serializable {
     }
     
     /**
-     * Represents the total size of the index, in bytes. Amazon DynamoDB
+     * The total size of the specified index, in bytes. Amazon DynamoDB
      * updates this value approximately every six hours. Recent changes might
      * not be reflected in this value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param indexSizeBytes Represents the total size of the index, in bytes. Amazon DynamoDB
+     * @param indexSizeBytes The total size of the specified index, in bytes. Amazon DynamoDB
      *         updates this value approximately every six hours. Recent changes might
      *         not be reflected in this value.
      *
@@ -292,11 +291,11 @@ public class LocalSecondaryIndexDescription implements Serializable {
     }
 
     /**
-     * Represents the number of items in the index. Amazon DynamoDB updates
+     * The number of items in the specified index. Amazon DynamoDB updates
      * this value approximately every six hours. Recent changes might not be
      * reflected in this value.
      *
-     * @return Represents the number of items in the index. Amazon DynamoDB updates
+     * @return The number of items in the specified index. Amazon DynamoDB updates
      *         this value approximately every six hours. Recent changes might not be
      *         reflected in this value.
      */
@@ -305,11 +304,11 @@ public class LocalSecondaryIndexDescription implements Serializable {
     }
     
     /**
-     * Represents the number of items in the index. Amazon DynamoDB updates
+     * The number of items in the specified index. Amazon DynamoDB updates
      * this value approximately every six hours. Recent changes might not be
      * reflected in this value.
      *
-     * @param itemCount Represents the number of items in the index. Amazon DynamoDB updates
+     * @param itemCount The number of items in the specified index. Amazon DynamoDB updates
      *         this value approximately every six hours. Recent changes might not be
      *         reflected in this value.
      */
@@ -318,13 +317,13 @@ public class LocalSecondaryIndexDescription implements Serializable {
     }
     
     /**
-     * Represents the number of items in the index. Amazon DynamoDB updates
+     * The number of items in the specified index. Amazon DynamoDB updates
      * this value approximately every six hours. Recent changes might not be
      * reflected in this value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param itemCount Represents the number of items in the index. Amazon DynamoDB updates
+     * @param itemCount The number of items in the specified index. Amazon DynamoDB updates
      *         this value approximately every six hours. Recent changes might not be
      *         reflected in this value.
      *

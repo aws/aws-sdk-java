@@ -16,7 +16,6 @@ package com.amazonaws.services.datapipeline.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * If <code>True</code> , there are more results that can be returned in another call to DescribeObjects.

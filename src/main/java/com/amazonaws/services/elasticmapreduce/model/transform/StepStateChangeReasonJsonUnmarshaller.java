@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Step State Change Reason JSON Unmarshaller
  */
 public class StepStateChangeReasonJsonUnmarshaller implements Unmarshaller<StepStateChangeReason, JsonUnmarshallerContext> {
 
-    
-
     public StepStateChangeReason unmarshall(JsonUnmarshallerContext context) throws Exception {
         StepStateChangeReason stepStateChangeReason = new StepStateChangeReason();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class StepStateChangeReasonJsonUnmarshaller implements Unmarshaller<StepS
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Code", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class StepStateChangeReasonJsonUnmarshaller implements Unmarshaller<StepS
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

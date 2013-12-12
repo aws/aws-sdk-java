@@ -16,7 +16,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * An AWS user ID identifying an AWS account, and the name of a security group within that account.

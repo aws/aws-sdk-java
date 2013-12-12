@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Job Flow Execution Status Detail JSON Unmarshaller
  */
 public class JobFlowExecutionStatusDetailJsonUnmarshaller implements Unmarshaller<JobFlowExecutionStatusDetail, JsonUnmarshallerContext> {
 
-    
-
     public JobFlowExecutionStatusDetail unmarshall(JsonUnmarshallerContext context) throws Exception {
         JobFlowExecutionStatusDetail jobFlowExecutionStatusDetail = new JobFlowExecutionStatusDetail();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class JobFlowExecutionStatusDetailJsonUnmarshaller implements Unmarshalle
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
@@ -80,7 +74,6 @@ public class JobFlowExecutionStatusDetailJsonUnmarshaller implements Unmarshalle
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

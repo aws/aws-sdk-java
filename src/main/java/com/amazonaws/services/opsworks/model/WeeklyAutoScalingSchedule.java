@@ -16,7 +16,6 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.
@@ -122,26 +121,26 @@ public class WeeklyAutoScalingSchedule implements Serializable {
      * @param key The key of the entry to be added into Monday.
      * @param value The corresponding value of the entry to be added into Monday.
      */
-	public WeeklyAutoScalingSchedule addMondayEntry(String key, String value) {
-		if (null == this.monday) {
-			this.monday = new java.util.HashMap<String,String>();
-		}
-		if (this.monday.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.monday.put(key, value);
-		return this;
-	}
+    public WeeklyAutoScalingSchedule addMondayEntry(String key, String value) {
+        if (null == this.monday) {
+            this.monday = new java.util.HashMap<String,String>();
+        }
+        if (this.monday.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.monday.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Monday.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public WeeklyAutoScalingSchedule clearMondayEntries() {
-		this.monday = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Monday.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public WeeklyAutoScalingSchedule clearMondayEntries() {
+        this.monday = null;
+        return this;
+    }
+    
     /**
      * The schedule for Tuesday.
      *
@@ -189,26 +188,26 @@ public class WeeklyAutoScalingSchedule implements Serializable {
      * @param key The key of the entry to be added into Tuesday.
      * @param value The corresponding value of the entry to be added into Tuesday.
      */
-	public WeeklyAutoScalingSchedule addTuesdayEntry(String key, String value) {
-		if (null == this.tuesday) {
-			this.tuesday = new java.util.HashMap<String,String>();
-		}
-		if (this.tuesday.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.tuesday.put(key, value);
-		return this;
-	}
+    public WeeklyAutoScalingSchedule addTuesdayEntry(String key, String value) {
+        if (null == this.tuesday) {
+            this.tuesday = new java.util.HashMap<String,String>();
+        }
+        if (this.tuesday.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tuesday.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Tuesday.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public WeeklyAutoScalingSchedule clearTuesdayEntries() {
-		this.tuesday = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Tuesday.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public WeeklyAutoScalingSchedule clearTuesdayEntries() {
+        this.tuesday = null;
+        return this;
+    }
+    
     /**
      * The schedule for Wednesday.
      *
@@ -256,26 +255,26 @@ public class WeeklyAutoScalingSchedule implements Serializable {
      * @param key The key of the entry to be added into Wednesday.
      * @param value The corresponding value of the entry to be added into Wednesday.
      */
-	public WeeklyAutoScalingSchedule addWednesdayEntry(String key, String value) {
-		if (null == this.wednesday) {
-			this.wednesday = new java.util.HashMap<String,String>();
-		}
-		if (this.wednesday.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.wednesday.put(key, value);
-		return this;
-	}
+    public WeeklyAutoScalingSchedule addWednesdayEntry(String key, String value) {
+        if (null == this.wednesday) {
+            this.wednesday = new java.util.HashMap<String,String>();
+        }
+        if (this.wednesday.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.wednesday.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Wednesday.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public WeeklyAutoScalingSchedule clearWednesdayEntries() {
-		this.wednesday = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Wednesday.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public WeeklyAutoScalingSchedule clearWednesdayEntries() {
+        this.wednesday = null;
+        return this;
+    }
+    
     /**
      * The schedule for Thursday.
      *
@@ -323,26 +322,26 @@ public class WeeklyAutoScalingSchedule implements Serializable {
      * @param key The key of the entry to be added into Thursday.
      * @param value The corresponding value of the entry to be added into Thursday.
      */
-	public WeeklyAutoScalingSchedule addThursdayEntry(String key, String value) {
-		if (null == this.thursday) {
-			this.thursday = new java.util.HashMap<String,String>();
-		}
-		if (this.thursday.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.thursday.put(key, value);
-		return this;
-	}
+    public WeeklyAutoScalingSchedule addThursdayEntry(String key, String value) {
+        if (null == this.thursday) {
+            this.thursday = new java.util.HashMap<String,String>();
+        }
+        if (this.thursday.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.thursday.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Thursday.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public WeeklyAutoScalingSchedule clearThursdayEntries() {
-		this.thursday = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Thursday.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public WeeklyAutoScalingSchedule clearThursdayEntries() {
+        this.thursday = null;
+        return this;
+    }
+    
     /**
      * The schedule for Friday.
      *
@@ -390,26 +389,26 @@ public class WeeklyAutoScalingSchedule implements Serializable {
      * @param key The key of the entry to be added into Friday.
      * @param value The corresponding value of the entry to be added into Friday.
      */
-	public WeeklyAutoScalingSchedule addFridayEntry(String key, String value) {
-		if (null == this.friday) {
-			this.friday = new java.util.HashMap<String,String>();
-		}
-		if (this.friday.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.friday.put(key, value);
-		return this;
-	}
+    public WeeklyAutoScalingSchedule addFridayEntry(String key, String value) {
+        if (null == this.friday) {
+            this.friday = new java.util.HashMap<String,String>();
+        }
+        if (this.friday.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.friday.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Friday.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public WeeklyAutoScalingSchedule clearFridayEntries() {
-		this.friday = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Friday.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public WeeklyAutoScalingSchedule clearFridayEntries() {
+        this.friday = null;
+        return this;
+    }
+    
     /**
      * The schedule for Saturday.
      *
@@ -457,26 +456,26 @@ public class WeeklyAutoScalingSchedule implements Serializable {
      * @param key The key of the entry to be added into Saturday.
      * @param value The corresponding value of the entry to be added into Saturday.
      */
-	public WeeklyAutoScalingSchedule addSaturdayEntry(String key, String value) {
-		if (null == this.saturday) {
-			this.saturday = new java.util.HashMap<String,String>();
-		}
-		if (this.saturday.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.saturday.put(key, value);
-		return this;
-	}
+    public WeeklyAutoScalingSchedule addSaturdayEntry(String key, String value) {
+        if (null == this.saturday) {
+            this.saturday = new java.util.HashMap<String,String>();
+        }
+        if (this.saturday.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.saturday.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Saturday.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public WeeklyAutoScalingSchedule clearSaturdayEntries() {
-		this.saturday = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Saturday.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public WeeklyAutoScalingSchedule clearSaturdayEntries() {
+        this.saturday = null;
+        return this;
+    }
+    
     /**
      * The schedule for Sunday.
      *
@@ -524,26 +523,26 @@ public class WeeklyAutoScalingSchedule implements Serializable {
      * @param key The key of the entry to be added into Sunday.
      * @param value The corresponding value of the entry to be added into Sunday.
      */
-	public WeeklyAutoScalingSchedule addSundayEntry(String key, String value) {
-		if (null == this.sunday) {
-			this.sunday = new java.util.HashMap<String,String>();
-		}
-		if (this.sunday.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.sunday.put(key, value);
-		return this;
-	}
+    public WeeklyAutoScalingSchedule addSundayEntry(String key, String value) {
+        if (null == this.sunday) {
+            this.sunday = new java.util.HashMap<String,String>();
+        }
+        if (this.sunday.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.sunday.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Sunday.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public WeeklyAutoScalingSchedule clearSundayEntries() {
-		this.sunday = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Sunday.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public WeeklyAutoScalingSchedule clearSundayEntries() {
+        this.sunday = null;
+        return this;
+    }
+    
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

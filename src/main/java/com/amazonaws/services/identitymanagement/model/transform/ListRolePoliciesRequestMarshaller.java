@@ -33,8 +33,8 @@ public class ListRolePoliciesRequestMarshaller implements Marshaller<Request<Lis
     public Request<ListRolePoliciesRequest> marshall(ListRolePoliciesRequest listRolePoliciesRequest) {
 
         if (listRolePoliciesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListRolePoliciesRequest> request = new DefaultRequest<ListRolePoliciesRequest>(listRolePoliciesRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListRolePolicies");
@@ -49,7 +49,6 @@ public class ListRolePoliciesRequestMarshaller implements Marshaller<Request<Lis
         if (listRolePoliciesRequest.getMaxItems() != null) {
             request.addParameter("MaxItems", StringUtils.fromInteger(listRolePoliciesRequest.getMaxItems()));
         }
-
 
         return request;
     }

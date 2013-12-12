@@ -33,8 +33,8 @@ public class DescribeAlarmHistoryRequestMarshaller implements Marshaller<Request
     public Request<DescribeAlarmHistoryRequest> marshall(DescribeAlarmHistoryRequest describeAlarmHistoryRequest) {
 
         if (describeAlarmHistoryRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeAlarmHistoryRequest> request = new DefaultRequest<DescribeAlarmHistoryRequest>(describeAlarmHistoryRequest, "AmazonCloudWatch");
         request.addParameter("Action", "DescribeAlarmHistory");
@@ -58,7 +58,6 @@ public class DescribeAlarmHistoryRequestMarshaller implements Marshaller<Request
         if (describeAlarmHistoryRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(describeAlarmHistoryRequest.getNextToken()));
         }
-
 
         return request;
     }

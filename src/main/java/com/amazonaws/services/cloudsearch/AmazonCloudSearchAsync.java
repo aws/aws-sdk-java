@@ -1159,6 +1159,5 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
     public Future<DeleteIndexFieldResult> deleteIndexFieldAsync(DeleteIndexFieldRequest deleteIndexFieldRequest,
             AsyncHandler<DeleteIndexFieldRequest, DeleteIndexFieldResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

@@ -26,6 +26,7 @@ import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -33,7 +34,6 @@ import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.services.elasticmapreduce.model.transform.*;
-
 
 /**
  * Client for accessing AmazonElasticMapReduce.  All service calls made
@@ -176,13 +176,35 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AmazonElasticMapReduceClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonElasticMapReduce using the specified AWS account credentials
+     * provider, client configuration options and request metric collector.
+     * 
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AmazonElasticMapReduce
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public AmazonElasticMapReduceClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         
         this.awsCredentialsProvider = awsCredentialsProvider;
         
         init();
     }
-
 
     private void init() {
         exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, JSONObject>>();
@@ -198,11 +220,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 "/com/amazonaws/services/elasticmapreduce/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
                 "/com/amazonaws/services/elasticmapreduce/request.handler2s"));
-
-        
     }
 
-    
     /**
      * <p>
      * Provides information about the bootstrap actions associated with a
@@ -252,7 +271,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         }
     }
 
-   
     /**
      * <p>
      * Sets whether all AWS Identity and Access Management (IAM) users under
@@ -342,7 +360,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         }
     }
 
-   
     /**
      * <p>
      * AddJobFlowSteps adds new steps to a running job flow. A maximum of
@@ -419,7 +436,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         }
     }
 
-   
     /**
      * <p>
      * Provides more detail about the cluster step.
@@ -467,7 +483,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         }
     }
 
-   
     /**
      * <p>
      * Provides the status of all clusters visible to this AWS account.
@@ -520,7 +535,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         }
     }
 
-   
     /**
      * <p>
      * Provides all available details about the instance groups in a cluster.
@@ -569,7 +583,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         }
     }
 
-   
     /**
      * <p>
      * ModifyInstanceGroups modifies the number of nodes and configuration
@@ -660,7 +673,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         }
     }
 
-   
     /**
      * <p>
      * AddInstanceGroups adds an instance group to a running cluster.
@@ -708,7 +720,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         }
     }
 
-   
     /**
      * <p>
      * TerminateJobFlows shuts a list of job flows down. When a job flow is
@@ -829,7 +840,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         }
     }
 
-   
     /**
      * <p>
      * SetTerminationProtection locks a job flow so the Amazon EC2 instances
@@ -968,7 +978,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         }
     }
 
-   
     /**
      * <p>
      * Provides cluster-level details including status, hardware and software
@@ -1019,7 +1028,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         }
     }
 
-   
     /**
      * <p>
      * Provides information about the bootstrap actions associated with a
@@ -1264,20 +1272,15 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     public DescribeClusterResult describeCluster() throws AmazonServiceException, AmazonClientException {
         return describeCluster(new DescribeClusterRequest());
     }
-    
 
     @Override
     public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
-
-        
     }
 
     @Override
     public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
         super.setEndpoint(endpoint, serviceName, regionId);
-
-        
     }
 
     /**

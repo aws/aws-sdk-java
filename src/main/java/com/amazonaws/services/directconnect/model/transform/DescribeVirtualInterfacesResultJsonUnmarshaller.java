@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Describe Virtual Interfaces Result JSON Unmarshaller
  */
 public class DescribeVirtualInterfacesResultJsonUnmarshaller implements Unmarshaller<DescribeVirtualInterfacesResult, JsonUnmarshallerContext> {
 
-    
-
     public DescribeVirtualInterfacesResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeVirtualInterfacesResult describeVirtualInterfacesResult = new DescribeVirtualInterfacesResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DescribeVirtualInterfacesResultJsonUnmarshaller implements Unmarsha
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("virtualInterfaces", targetDepth)) {
                     describeVirtualInterfacesResult.setVirtualInterfaces(new ListUnmarshaller<VirtualInterface>(VirtualInterfaceJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -59,7 +53,6 @@ public class DescribeVirtualInterfacesResultJsonUnmarshaller implements Unmarsha
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -34,8 +34,7 @@ public class InternalErrorExceptionUnmarshaller extends JsonErrorUnmarshaller {
             return null;
 
         InternalErrorException e = (InternalErrorException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

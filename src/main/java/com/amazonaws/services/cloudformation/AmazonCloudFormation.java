@@ -618,79 +618,6 @@ public interface AmazonCloudFormation {
     public EstimateTemplateCostResult estimateTemplateCost() throws AmazonServiceException, AmazonClientException;
     
     /**
-     * <p>
-     * Returns all stack related events for a specified stack. For more
-     * information about a stack's event history, go to the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">
-     * AWS CloudFormation User Guide </a> .
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Events are returned, even if the stack never existed or
-     * has been successfully deleted.
-     * </p>
-     * 
-     * @return The response from the DescribeStackEvents service method, as
-     *         returned by AmazonCloudFormation.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeStackEventsResult describeStackEvents() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Returns AWS resource descriptions for running and deleted stacks. If
-     * <code>StackName</code> is specified, all the associated resources that
-     * are part of the stack are returned. If <code>PhysicalResourceId</code>
-     * is specified, the associated resources of the stack that the resource
-     * belongs to are returned.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Only the first 100 resources will be returned. If your
-     * stack has more resources than this, you should use ListStackResources
-     * instead.
-     * </p>
-     * <p>
-     * For deleted stacks, <code>DescribeStackResources</code> returns
-     * resource information for up to 90 days after the stack has been
-     * deleted.
-     * </p>
-     * <p>
-     * You must specify either <code>StackName</code> or
-     * <code>PhysicalResourceId</code> , but not both. In addition, you can
-     * specify <code>LogicalResourceId</code> to filter the returned result.
-     * For more information about resources, the
-     * <code>LogicalResourceId</code> and <code>PhysicalResourceId</code> ,
-     * go to the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">
-     * AWS CloudFormation User Guide </a> .
-     * </p>
-     * <p>
-     * <b>NOTE:</b>A ValidationError is returned if you specify both
-     * StackName and PhysicalResourceId in the same request.
-     * </p>
-     * 
-     * @return The response from the DescribeStackResources service method,
-     *         as returned by AmazonCloudFormation.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeStackResourcesResult describeStackResources() throws AmazonServiceException, AmazonClientException;
-    
-    /**
      * Shuts down this client object, releasing any resources that might be held
      * open. This is an optional method, and callers are not expected to call
      * it, but can if they want to explicitly release any open resources. Once a
@@ -716,6 +643,5 @@ public interface AmazonCloudFormation {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

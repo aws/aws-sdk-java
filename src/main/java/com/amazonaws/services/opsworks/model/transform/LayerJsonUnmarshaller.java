@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Layer JSON Unmarshaller
  */
 public class LayerJsonUnmarshaller implements Unmarshaller<Layer, JsonUnmarshallerContext> {
 
-    
-
     public Layer unmarshall(JsonUnmarshallerContext context) throws Exception {
         Layer layer = new Layer();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class LayerJsonUnmarshaller implements Unmarshaller<Layer, JsonUnmarshall
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StackId", targetDepth)) {
                     context.nextToken();
@@ -123,7 +117,6 @@ public class LayerJsonUnmarshaller implements Unmarshaller<Layer, JsonUnmarshall
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

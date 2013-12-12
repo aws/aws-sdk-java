@@ -33,8 +33,8 @@ public class CreateInstanceExportTaskRequestMarshaller implements Marshaller<Req
     public Request<CreateInstanceExportTaskRequest> marshall(CreateInstanceExportTaskRequest createInstanceExportTaskRequest) {
 
         if (createInstanceExportTaskRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateInstanceExportTaskRequest> request = new DefaultRequest<CreateInstanceExportTaskRequest>(createInstanceExportTaskRequest, "AmazonEC2");
         request.addParameter("Action", "CreateInstanceExportTask");
@@ -64,7 +64,6 @@ public class CreateInstanceExportTaskRequestMarshaller implements Marshaller<Req
                 request.addParameter("ExportToS3.S3Prefix", StringUtils.fromString(exportToS3TaskSpecificationExportToS3Task.getS3Prefix()));
             }
         }
-
 
         return request;
     }

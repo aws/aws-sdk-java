@@ -33,8 +33,8 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
     public Request<ModifyDBInstanceRequest> marshall(ModifyDBInstanceRequest modifyDBInstanceRequest) {
 
         if (modifyDBInstanceRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ModifyDBInstanceRequest> request = new DefaultRequest<ModifyDBInstanceRequest>(modifyDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyDBInstance");
@@ -110,7 +110,6 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
         if (modifyDBInstanceRequest.getNewDBInstanceIdentifier() != null) {
             request.addParameter("NewDBInstanceIdentifier", StringUtils.fromString(modifyDBInstanceRequest.getNewDBInstanceIdentifier()));
         }
-
 
         return request;
     }

@@ -33,8 +33,8 @@ public class AuthorizeSnapshotAccessRequestMarshaller implements Marshaller<Requ
     public Request<AuthorizeSnapshotAccessRequest> marshall(AuthorizeSnapshotAccessRequest authorizeSnapshotAccessRequest) {
 
         if (authorizeSnapshotAccessRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AuthorizeSnapshotAccessRequest> request = new DefaultRequest<AuthorizeSnapshotAccessRequest>(authorizeSnapshotAccessRequest, "AmazonRedshift");
         request.addParameter("Action", "AuthorizeSnapshotAccess");
@@ -49,7 +49,6 @@ public class AuthorizeSnapshotAccessRequestMarshaller implements Marshaller<Requ
         if (authorizeSnapshotAccessRequest.getAccountWithRestoreAccess() != null) {
             request.addParameter("AccountWithRestoreAccess", StringUtils.fromString(authorizeSnapshotAccessRequest.getAccountWithRestoreAccess()));
         }
-
 
         return request;
     }

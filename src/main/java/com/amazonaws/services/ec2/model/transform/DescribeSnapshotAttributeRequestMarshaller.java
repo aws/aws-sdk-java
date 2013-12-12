@@ -33,8 +33,8 @@ public class DescribeSnapshotAttributeRequestMarshaller implements Marshaller<Re
     public Request<DescribeSnapshotAttributeRequest> marshall(DescribeSnapshotAttributeRequest describeSnapshotAttributeRequest) {
 
         if (describeSnapshotAttributeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeSnapshotAttributeRequest> request = new DefaultRequest<DescribeSnapshotAttributeRequest>(describeSnapshotAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSnapshotAttribute");
@@ -46,7 +46,6 @@ public class DescribeSnapshotAttributeRequestMarshaller implements Marshaller<Re
         if (describeSnapshotAttributeRequest.getAttribute() != null) {
             request.addParameter("Attribute", StringUtils.fromString(describeSnapshotAttributeRequest.getAttribute()));
         }
-
 
         return request;
     }

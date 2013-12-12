@@ -33,8 +33,8 @@ public class ValidateTemplateRequestMarshaller implements Marshaller<Request<Val
     public Request<ValidateTemplateRequest> marshall(ValidateTemplateRequest validateTemplateRequest) {
 
         if (validateTemplateRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ValidateTemplateRequest> request = new DefaultRequest<ValidateTemplateRequest>(validateTemplateRequest, "AmazonCloudFormation");
         request.addParameter("Action", "ValidateTemplate");
@@ -46,7 +46,6 @@ public class ValidateTemplateRequestMarshaller implements Marshaller<Request<Val
         if (validateTemplateRequest.getTemplateURL() != null) {
             request.addParameter("TemplateURL", StringUtils.fromString(validateTemplateRequest.getTemplateURL()));
         }
-
 
         return request;
     }

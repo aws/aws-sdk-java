@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Cluster Timeline JSON Unmarshaller
  */
 public class ClusterTimelineJsonUnmarshaller implements Unmarshaller<ClusterTimeline, JsonUnmarshallerContext> {
 
-    
-
     public ClusterTimeline unmarshall(JsonUnmarshallerContext context) throws Exception {
         ClusterTimeline clusterTimeline = new ClusterTimeline();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ClusterTimelineJsonUnmarshaller implements Unmarshaller<ClusterTime
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
@@ -68,7 +62,6 @@ public class ClusterTimelineJsonUnmarshaller implements Unmarshaller<ClusterTime
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

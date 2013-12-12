@@ -33,8 +33,8 @@ public class DescribeHsmConfigurationsRequestMarshaller implements Marshaller<Re
     public Request<DescribeHsmConfigurationsRequest> marshall(DescribeHsmConfigurationsRequest describeHsmConfigurationsRequest) {
 
         if (describeHsmConfigurationsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeHsmConfigurationsRequest> request = new DefaultRequest<DescribeHsmConfigurationsRequest>(describeHsmConfigurationsRequest, "AmazonRedshift");
         request.addParameter("Action", "DescribeHsmConfigurations");
@@ -49,7 +49,6 @@ public class DescribeHsmConfigurationsRequestMarshaller implements Marshaller<Re
         if (describeHsmConfigurationsRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeHsmConfigurationsRequest.getMarker()));
         }
-
 
         return request;
     }

@@ -33,8 +33,8 @@ public class AttachLoadBalancerToSubnetsRequestMarshaller implements Marshaller<
     public Request<AttachLoadBalancerToSubnetsRequest> marshall(AttachLoadBalancerToSubnetsRequest attachLoadBalancerToSubnetsRequest) {
 
         if (attachLoadBalancerToSubnetsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AttachLoadBalancerToSubnetsRequest> request = new DefaultRequest<AttachLoadBalancerToSubnetsRequest>(attachLoadBalancerToSubnetsRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "AttachLoadBalancerToSubnets");
@@ -54,7 +54,6 @@ public class AttachLoadBalancerToSubnetsRequestMarshaller implements Marshaller<
 
             subnetsListIndex++;
         }
-
 
         return request;
     }

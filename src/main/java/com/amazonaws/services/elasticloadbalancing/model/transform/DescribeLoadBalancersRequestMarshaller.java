@@ -33,13 +33,12 @@ public class DescribeLoadBalancersRequestMarshaller implements Marshaller<Reques
     public Request<DescribeLoadBalancersRequest> marshall(DescribeLoadBalancersRequest describeLoadBalancersRequest) {
 
         if (describeLoadBalancersRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeLoadBalancersRequest> request = new DefaultRequest<DescribeLoadBalancersRequest>(describeLoadBalancersRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DescribeLoadBalancers");
         request.addParameter("Version", "2012-06-01");
-
 
         java.util.List<String> loadBalancerNamesList = describeLoadBalancersRequest.getLoadBalancerNames();
         int loadBalancerNamesListIndex = 1;
@@ -54,7 +53,6 @@ public class DescribeLoadBalancersRequestMarshaller implements Marshaller<Reques
         if (describeLoadBalancersRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeLoadBalancersRequest.getMarker()));
         }
-
 
         return request;
     }

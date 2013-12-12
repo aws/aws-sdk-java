@@ -33,14 +33,12 @@ public class ListVerifiedEmailAddressesRequestMarshaller implements Marshaller<R
     public Request<ListVerifiedEmailAddressesRequest> marshall(ListVerifiedEmailAddressesRequest listVerifiedEmailAddressesRequest) {
 
         if (listVerifiedEmailAddressesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListVerifiedEmailAddressesRequest> request = new DefaultRequest<ListVerifiedEmailAddressesRequest>(listVerifiedEmailAddressesRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "ListVerifiedEmailAddresses");
         request.addParameter("Version", "2010-12-01");
-
-
 
         return request;
     }

@@ -16,7 +16,6 @@ package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents the verification attributes for a list of identities.
@@ -76,26 +75,26 @@ public class GetIdentityVerificationAttributesResult implements Serializable {
      * @param key The key of the entry to be added into VerificationAttributes.
      * @param value The corresponding value of the entry to be added into VerificationAttributes.
      */
-	public GetIdentityVerificationAttributesResult addVerificationAttributesEntry(String key, IdentityVerificationAttributes value) {
-		if (null == this.verificationAttributes) {
-			this.verificationAttributes = new java.util.HashMap<String,IdentityVerificationAttributes>();
-		}
-		if (this.verificationAttributes.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.verificationAttributes.put(key, value);
-		return this;
-	}
+    public GetIdentityVerificationAttributesResult addVerificationAttributesEntry(String key, IdentityVerificationAttributes value) {
+        if (null == this.verificationAttributes) {
+            this.verificationAttributes = new java.util.HashMap<String,IdentityVerificationAttributes>();
+        }
+        if (this.verificationAttributes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.verificationAttributes.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into VerificationAttributes.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public GetIdentityVerificationAttributesResult clearVerificationAttributesEntries() {
-		this.verificationAttributes = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into VerificationAttributes.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public GetIdentityVerificationAttributesResult clearVerificationAttributesEntries() {
+        this.verificationAttributes = null;
+        return this;
+    }
+    
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

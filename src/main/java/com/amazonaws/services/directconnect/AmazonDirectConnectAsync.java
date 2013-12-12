@@ -1306,6 +1306,5 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
     public Future<DeleteInterconnectResult> deleteInterconnectAsync(DeleteInterconnectRequest deleteInterconnectRequest,
             AsyncHandler<DeleteInterconnectRequest, DeleteInterconnectResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

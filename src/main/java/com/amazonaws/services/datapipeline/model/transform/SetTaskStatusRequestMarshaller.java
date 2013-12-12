@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.datapipeline.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class SetTaskStatusRequestMarshaller implements Marshaller<Request<SetTaskStatusRequest>, SetTaskStatusRequest> {
 
-    
-
     public Request<SetTaskStatusRequest> marshall(SetTaskStatusRequest setTaskStatusRequest) {
     if (setTaskStatusRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class SetTaskStatusRequestMarshaller implements Marshaller<Request<SetTas
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class SetTaskStatusRequestMarshaller implements Marshaller<Request<SetTas
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (setTaskStatusRequest.getTaskId() != null) {
@@ -102,7 +93,6 @@ public class SetTaskStatusRequestMarshaller implements Marshaller<Request<SetTas
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -111,7 +101,6 @@ public class SetTaskStatusRequestMarshaller implements Marshaller<Request<SetTas
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

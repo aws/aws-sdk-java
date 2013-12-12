@@ -33,8 +33,8 @@ public class DescribeDefaultSearchFieldRequestMarshaller implements Marshaller<R
     public Request<DescribeDefaultSearchFieldRequest> marshall(DescribeDefaultSearchFieldRequest describeDefaultSearchFieldRequest) {
 
         if (describeDefaultSearchFieldRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeDefaultSearchFieldRequest> request = new DefaultRequest<DescribeDefaultSearchFieldRequest>(describeDefaultSearchFieldRequest, "AmazonCloudSearch");
         request.addParameter("Action", "DescribeDefaultSearchField");
@@ -43,7 +43,6 @@ public class DescribeDefaultSearchFieldRequestMarshaller implements Marshaller<R
         if (describeDefaultSearchFieldRequest.getDomainName() != null) {
             request.addParameter("DomainName", StringUtils.fromString(describeDefaultSearchFieldRequest.getDomainName()));
         }
-
 
         return request;
     }

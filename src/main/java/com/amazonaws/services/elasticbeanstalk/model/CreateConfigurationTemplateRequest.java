@@ -66,12 +66,12 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      * application server for a configuration template. It determines the set
      * of configuration options as well as the possible and default values.
      * <p> Use <a>ListAvailableSolutionStacks</a> to obtain a list of
-     * available solution stacks. <p> Default: If the
-     * <code>SolutionStackName</code> is not specified and the source
-     * configuration parameter is blank, AWS Elastic Beanstalk uses the
-     * default solution stack. <p>If not specified and the source
-     * configuration parameter is specified, AWS Elastic Beanstalk uses the
-     * same solution stack as the source configuration template.
+     * available solution stacks. <p> A solution stack name or a source
+     * configuration parameter must be specified, otherwise AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterValue</code> error. <p> If
+     * a solution stack name is not specified and the source configuration
+     * parameter is specified, AWS Elastic Beanstalk uses the same solution
+     * stack as the source configuration template.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 100<br/>
@@ -258,12 +258,12 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      * application server for a configuration template. It determines the set
      * of configuration options as well as the possible and default values.
      * <p> Use <a>ListAvailableSolutionStacks</a> to obtain a list of
-     * available solution stacks. <p> Default: If the
-     * <code>SolutionStackName</code> is not specified and the source
-     * configuration parameter is blank, AWS Elastic Beanstalk uses the
-     * default solution stack. <p>If not specified and the source
-     * configuration parameter is specified, AWS Elastic Beanstalk uses the
-     * same solution stack as the source configuration template.
+     * available solution stacks. <p> A solution stack name or a source
+     * configuration parameter must be specified, otherwise AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterValue</code> error. <p> If
+     * a solution stack name is not specified and the source configuration
+     * parameter is specified, AWS Elastic Beanstalk uses the same solution
+     * stack as the source configuration template.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 100<br/>
@@ -273,12 +273,12 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         application server for a configuration template. It determines the set
      *         of configuration options as well as the possible and default values.
      *         <p> Use <a>ListAvailableSolutionStacks</a> to obtain a list of
-     *         available solution stacks. <p> Default: If the
-     *         <code>SolutionStackName</code> is not specified and the source
-     *         configuration parameter is blank, AWS Elastic Beanstalk uses the
-     *         default solution stack. <p>If not specified and the source
-     *         configuration parameter is specified, AWS Elastic Beanstalk uses the
-     *         same solution stack as the source configuration template.
+     *         available solution stacks. <p> A solution stack name or a source
+     *         configuration parameter must be specified, otherwise AWS Elastic
+     *         Beanstalk returns an <code>InvalidParameterValue</code> error. <p> If
+     *         a solution stack name is not specified and the source configuration
+     *         parameter is specified, AWS Elastic Beanstalk uses the same solution
+     *         stack as the source configuration template.
      */
     public String getSolutionStackName() {
         return solutionStackName;
@@ -290,12 +290,12 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      * application server for a configuration template. It determines the set
      * of configuration options as well as the possible and default values.
      * <p> Use <a>ListAvailableSolutionStacks</a> to obtain a list of
-     * available solution stacks. <p> Default: If the
-     * <code>SolutionStackName</code> is not specified and the source
-     * configuration parameter is blank, AWS Elastic Beanstalk uses the
-     * default solution stack. <p>If not specified and the source
-     * configuration parameter is specified, AWS Elastic Beanstalk uses the
-     * same solution stack as the source configuration template.
+     * available solution stacks. <p> A solution stack name or a source
+     * configuration parameter must be specified, otherwise AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterValue</code> error. <p> If
+     * a solution stack name is not specified and the source configuration
+     * parameter is specified, AWS Elastic Beanstalk uses the same solution
+     * stack as the source configuration template.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 100<br/>
@@ -305,12 +305,12 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         application server for a configuration template. It determines the set
      *         of configuration options as well as the possible and default values.
      *         <p> Use <a>ListAvailableSolutionStacks</a> to obtain a list of
-     *         available solution stacks. <p> Default: If the
-     *         <code>SolutionStackName</code> is not specified and the source
-     *         configuration parameter is blank, AWS Elastic Beanstalk uses the
-     *         default solution stack. <p>If not specified and the source
-     *         configuration parameter is specified, AWS Elastic Beanstalk uses the
-     *         same solution stack as the source configuration template.
+     *         available solution stacks. <p> A solution stack name or a source
+     *         configuration parameter must be specified, otherwise AWS Elastic
+     *         Beanstalk returns an <code>InvalidParameterValue</code> error. <p> If
+     *         a solution stack name is not specified and the source configuration
+     *         parameter is specified, AWS Elastic Beanstalk uses the same solution
+     *         stack as the source configuration template.
      */
     public void setSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
@@ -322,12 +322,12 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      * application server for a configuration template. It determines the set
      * of configuration options as well as the possible and default values.
      * <p> Use <a>ListAvailableSolutionStacks</a> to obtain a list of
-     * available solution stacks. <p> Default: If the
-     * <code>SolutionStackName</code> is not specified and the source
-     * configuration parameter is blank, AWS Elastic Beanstalk uses the
-     * default solution stack. <p>If not specified and the source
-     * configuration parameter is specified, AWS Elastic Beanstalk uses the
-     * same solution stack as the source configuration template.
+     * available solution stacks. <p> A solution stack name or a source
+     * configuration parameter must be specified, otherwise AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterValue</code> error. <p> If
+     * a solution stack name is not specified and the source configuration
+     * parameter is specified, AWS Elastic Beanstalk uses the same solution
+     * stack as the source configuration template.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -339,12 +339,12 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         application server for a configuration template. It determines the set
      *         of configuration options as well as the possible and default values.
      *         <p> Use <a>ListAvailableSolutionStacks</a> to obtain a list of
-     *         available solution stacks. <p> Default: If the
-     *         <code>SolutionStackName</code> is not specified and the source
-     *         configuration parameter is blank, AWS Elastic Beanstalk uses the
-     *         default solution stack. <p>If not specified and the source
-     *         configuration parameter is specified, AWS Elastic Beanstalk uses the
-     *         same solution stack as the source configuration template.
+     *         available solution stacks. <p> A solution stack name or a source
+     *         configuration parameter must be specified, otherwise AWS Elastic
+     *         Beanstalk returns an <code>InvalidParameterValue</code> error. <p> If
+     *         a solution stack name is not specified and the source configuration
+     *         parameter is specified, AWS Elastic Beanstalk uses the same solution
+     *         stack as the source configuration template.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Describe Cache Result JSON Unmarshaller
  */
 public class DescribeCacheResultJsonUnmarshaller implements Unmarshaller<DescribeCacheResult, JsonUnmarshallerContext> {
 
-    
-
     public DescribeCacheResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeCacheResult describeCacheResult = new DescribeCacheResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DescribeCacheResultJsonUnmarshaller implements Unmarshaller<Describ
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
@@ -83,7 +77,6 @@ public class DescribeCacheResultJsonUnmarshaller implements Unmarshaller<Describ
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

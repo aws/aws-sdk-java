@@ -16,10 +16,9 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
- * Describes the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and
+ * Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and
  * decreases.
  * </p>
  */

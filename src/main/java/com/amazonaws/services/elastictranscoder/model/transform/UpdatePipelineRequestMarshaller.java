@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class UpdatePipelineRequestMarshaller implements Marshaller<Request<UpdatePipelineRequest>, UpdatePipelineRequest> {
 
-    
-
     public Request<UpdatePipelineRequest> marshall(UpdatePipelineRequest updatePipelineRequest) {
     if (updatePipelineRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class UpdatePipelineRequestMarshaller implements Marshaller<Request<Updat
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.PUT);
-
 
         String uriResourcePath = "2012-09-25/pipelines/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", (updatePipelineRequest.getId() == null) ? "" : StringUtils.fromString(updatePipelineRequest.getId())); 
@@ -76,14 +71,10 @@ public class UpdatePipelineRequestMarshaller implements Marshaller<Request<Updat
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (updatePipelineRequest.getName() != null) {
@@ -215,7 +206,6 @@ public class UpdatePipelineRequestMarshaller implements Marshaller<Request<Updat
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -224,7 +214,6 @@ public class UpdatePipelineRequestMarshaller implements Marshaller<Request<Updat
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

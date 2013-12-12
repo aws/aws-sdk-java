@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Permission JSON Unmarshaller
  */
 public class PermissionJsonUnmarshaller implements Unmarshaller<Permission, JsonUnmarshallerContext> {
 
-    
-
     public Permission unmarshall(JsonUnmarshallerContext context) throws Exception {
         Permission permission = new Permission();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class PermissionJsonUnmarshaller implements Unmarshaller<Permission, Json
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GranteeType", targetDepth)) {
                     context.nextToken();
@@ -67,7 +61,6 @@ public class PermissionJsonUnmarshaller implements Unmarshaller<Permission, Json
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

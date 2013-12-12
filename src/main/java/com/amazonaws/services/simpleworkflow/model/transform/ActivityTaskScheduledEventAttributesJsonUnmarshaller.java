@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Activity Task Scheduled Event Attributes JSON Unmarshaller
  */
 public class ActivityTaskScheduledEventAttributesJsonUnmarshaller implements Unmarshaller<ActivityTaskScheduledEventAttributes, JsonUnmarshallerContext> {
 
-    
-
     public ActivityTaskScheduledEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         ActivityTaskScheduledEventAttributes activityTaskScheduledEventAttributes = new ActivityTaskScheduledEventAttributes();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ActivityTaskScheduledEventAttributesJsonUnmarshaller implements Unm
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activityType", targetDepth)) {
                     context.nextToken();
@@ -96,7 +90,6 @@ public class ActivityTaskScheduledEventAttributesJsonUnmarshaller implements Unm
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

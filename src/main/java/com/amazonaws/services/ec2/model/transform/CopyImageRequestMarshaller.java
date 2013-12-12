@@ -33,8 +33,8 @@ public class CopyImageRequestMarshaller implements Marshaller<Request<CopyImageR
     public Request<CopyImageRequest> marshall(CopyImageRequest copyImageRequest) {
 
         if (copyImageRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CopyImageRequest> request = new DefaultRequest<CopyImageRequest>(copyImageRequest, "AmazonEC2");
         request.addParameter("Action", "CopyImage");
@@ -55,7 +55,6 @@ public class CopyImageRequestMarshaller implements Marshaller<Request<CopyImageR
         if (copyImageRequest.getClientToken() != null) {
             request.addParameter("ClientToken", StringUtils.fromString(copyImageRequest.getClientToken()));
         }
-
 
         return request;
     }

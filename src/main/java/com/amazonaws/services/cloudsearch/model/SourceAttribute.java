@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudsearch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Identifies the source data for an index field. An optional data transformation can be applied to the source data when populating the index field. By

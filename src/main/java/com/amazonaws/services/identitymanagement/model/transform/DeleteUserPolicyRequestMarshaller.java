@@ -33,8 +33,8 @@ public class DeleteUserPolicyRequestMarshaller implements Marshaller<Request<Del
     public Request<DeleteUserPolicyRequest> marshall(DeleteUserPolicyRequest deleteUserPolicyRequest) {
 
         if (deleteUserPolicyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteUserPolicyRequest> request = new DefaultRequest<DeleteUserPolicyRequest>(deleteUserPolicyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteUserPolicy");
@@ -46,7 +46,6 @@ public class DeleteUserPolicyRequestMarshaller implements Marshaller<Request<Del
         if (deleteUserPolicyRequest.getPolicyName() != null) {
             request.addParameter("PolicyName", StringUtils.fromString(deleteUserPolicyRequest.getPolicyName()));
         }
-
 
         return request;
     }

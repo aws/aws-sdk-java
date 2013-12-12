@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Delete Gateway Result JSON Unmarshaller
  */
 public class DeleteGatewayResultJsonUnmarshaller implements Unmarshaller<DeleteGatewayResult, JsonUnmarshallerContext> {
 
-    
-
     public DeleteGatewayResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DeleteGatewayResult deleteGatewayResult = new DeleteGatewayResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DeleteGatewayResultJsonUnmarshaller implements Unmarshaller<DeleteG
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class DeleteGatewayResultJsonUnmarshaller implements Unmarshaller<DeleteG
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

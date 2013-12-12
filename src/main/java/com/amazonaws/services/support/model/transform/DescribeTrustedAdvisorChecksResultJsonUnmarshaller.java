@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Describe Trusted Advisor Checks Result JSON Unmarshaller
  */
 public class DescribeTrustedAdvisorChecksResultJsonUnmarshaller implements Unmarshaller<DescribeTrustedAdvisorChecksResult, JsonUnmarshallerContext> {
 
-    
-
     public DescribeTrustedAdvisorChecksResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeTrustedAdvisorChecksResult describeTrustedAdvisorChecksResult = new DescribeTrustedAdvisorChecksResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DescribeTrustedAdvisorChecksResultJsonUnmarshaller implements Unmar
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("checks", targetDepth)) {
                     describeTrustedAdvisorChecksResult.setChecks(new ListUnmarshaller<TrustedAdvisorCheckDescription>(TrustedAdvisorCheckDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -59,7 +53,6 @@ public class DescribeTrustedAdvisorChecksResultJsonUnmarshaller implements Unmar
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

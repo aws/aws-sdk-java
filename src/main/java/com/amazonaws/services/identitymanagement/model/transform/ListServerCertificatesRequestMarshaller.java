@@ -33,8 +33,8 @@ public class ListServerCertificatesRequestMarshaller implements Marshaller<Reque
     public Request<ListServerCertificatesRequest> marshall(ListServerCertificatesRequest listServerCertificatesRequest) {
 
         if (listServerCertificatesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListServerCertificatesRequest> request = new DefaultRequest<ListServerCertificatesRequest>(listServerCertificatesRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListServerCertificates");
@@ -49,7 +49,6 @@ public class ListServerCertificatesRequestMarshaller implements Marshaller<Reque
         if (listServerCertificatesRequest.getMaxItems() != null) {
             request.addParameter("MaxItems", StringUtils.fromInteger(listServerCertificatesRequest.getMaxItems()));
         }
-
 
         return request;
     }

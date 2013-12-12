@@ -33,8 +33,8 @@ public class UpdateConfigurationTemplateRequestMarshaller implements Marshaller<
     public Request<UpdateConfigurationTemplateRequest> marshall(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest) {
 
         if (updateConfigurationTemplateRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<UpdateConfigurationTemplateRequest> request = new DefaultRequest<UpdateConfigurationTemplateRequest>(updateConfigurationTemplateRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "UpdateConfigurationTemplate");
@@ -86,7 +86,6 @@ public class UpdateConfigurationTemplateRequestMarshaller implements Marshaller<
 
             optionsToRemoveListIndex++;
         }
-
 
         return request;
     }

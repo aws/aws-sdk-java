@@ -33,8 +33,8 @@ public class DisableSnapshotCopyRequestMarshaller implements Marshaller<Request<
     public Request<DisableSnapshotCopyRequest> marshall(DisableSnapshotCopyRequest disableSnapshotCopyRequest) {
 
         if (disableSnapshotCopyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DisableSnapshotCopyRequest> request = new DefaultRequest<DisableSnapshotCopyRequest>(disableSnapshotCopyRequest, "AmazonRedshift");
         request.addParameter("Action", "DisableSnapshotCopy");
@@ -43,7 +43,6 @@ public class DisableSnapshotCopyRequestMarshaller implements Marshaller<Request<
         if (disableSnapshotCopyRequest.getClusterIdentifier() != null) {
             request.addParameter("ClusterIdentifier", StringUtils.fromString(disableSnapshotCopyRequest.getClusterIdentifier()));
         }
-
 
         return request;
     }

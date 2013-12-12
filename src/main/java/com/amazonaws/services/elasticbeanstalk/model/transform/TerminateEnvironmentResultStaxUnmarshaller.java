@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Terminate Environment Result StAX Unmarshaller
  */
@@ -37,9 +36,7 @@ public class TerminateEnvironmentResultStaxUnmarshaller implements Unmarshaller<
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        
         if (context.isStartOfDocument()) targetDepth += 2;
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
@@ -100,6 +97,10 @@ public class TerminateEnvironmentResultStaxUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("Resources", targetDepth)) {
                     terminateEnvironmentResult.setResources(EnvironmentResourcesDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Tier", targetDepth)) {
+                    terminateEnvironmentResult.setTier(EnvironmentTierStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

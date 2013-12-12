@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteApplication(DeleteApplicationRequest) DeleteApplication operation}.
  * <p>
- * Deletes the specified application along with all associated versions and configurations.
+ * Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your
+ * Amazon S3 bucket.
  * </p>
  * <p>
  * <b>NOTE:</b>You cannot delete an application that has a running environment.
@@ -38,6 +39,12 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
      * <b>Length: </b>1 - 100<br/>
      */
     private String applicationName;
+
+    /**
+     * When set to true, running environments will be terminated before
+     * deleting the application.
+     */
+    private Boolean terminateEnvByForce;
 
     /**
      * Default constructor for a new DeleteApplicationRequest object.  Callers should use the
@@ -99,6 +106,56 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * When set to true, running environments will be terminated before
+     * deleting the application.
+     *
+     * @return When set to true, running environments will be terminated before
+     *         deleting the application.
+     */
+    public Boolean isTerminateEnvByForce() {
+        return terminateEnvByForce;
+    }
+    
+    /**
+     * When set to true, running environments will be terminated before
+     * deleting the application.
+     *
+     * @param terminateEnvByForce When set to true, running environments will be terminated before
+     *         deleting the application.
+     */
+    public void setTerminateEnvByForce(Boolean terminateEnvByForce) {
+        this.terminateEnvByForce = terminateEnvByForce;
+    }
+    
+    /**
+     * When set to true, running environments will be terminated before
+     * deleting the application.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param terminateEnvByForce When set to true, running environments will be terminated before
+     *         deleting the application.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DeleteApplicationRequest withTerminateEnvByForce(Boolean terminateEnvByForce) {
+        this.terminateEnvByForce = terminateEnvByForce;
+        return this;
+    }
+
+    /**
+     * When set to true, running environments will be terminated before
+     * deleting the application.
+     *
+     * @return When set to true, running environments will be terminated before
+     *         deleting the application.
+     */
+    public Boolean getTerminateEnvByForce() {
+        return terminateEnvByForce;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -110,7 +167,8 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() );
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
+        if (isTerminateEnvByForce() != null) sb.append("TerminateEnvByForce: " + isTerminateEnvByForce() );
         sb.append("}");
         return sb.toString();
     }
@@ -121,6 +179,7 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode()); 
+        hashCode = prime * hashCode + ((isTerminateEnvByForce() == null) ? 0 : isTerminateEnvByForce().hashCode()); 
         return hashCode;
     }
     
@@ -134,6 +193,8 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
         
         if (other.getApplicationName() == null ^ this.getApplicationName() == null) return false;
         if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false) return false; 
+        if (other.isTerminateEnvByForce() == null ^ this.isTerminateEnvByForce() == null) return false;
+        if (other.isTerminateEnvByForce() != null && other.isTerminateEnvByForce().equals(this.isTerminateEnvByForce()) == false) return false; 
         return true;
     }
     

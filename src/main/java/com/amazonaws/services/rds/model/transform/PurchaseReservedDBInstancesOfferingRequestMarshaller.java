@@ -33,8 +33,8 @@ public class PurchaseReservedDBInstancesOfferingRequestMarshaller implements Mar
     public Request<PurchaseReservedDBInstancesOfferingRequest> marshall(PurchaseReservedDBInstancesOfferingRequest purchaseReservedDBInstancesOfferingRequest) {
 
         if (purchaseReservedDBInstancesOfferingRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<PurchaseReservedDBInstancesOfferingRequest> request = new DefaultRequest<PurchaseReservedDBInstancesOfferingRequest>(purchaseReservedDBInstancesOfferingRequest, "AmazonRDS");
         request.addParameter("Action", "PurchaseReservedDBInstancesOffering");
@@ -66,7 +66,6 @@ public class PurchaseReservedDBInstancesOfferingRequestMarshaller implements Mar
 
             tagsListIndex++;
         }
-
 
         return request;
     }

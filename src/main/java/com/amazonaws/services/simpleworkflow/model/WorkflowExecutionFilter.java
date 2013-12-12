@@ -16,7 +16,6 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Used to filter the workflow executions in visibility APIs by their <code>workflowId</code> .

@@ -33,8 +33,8 @@ public class AssumeRoleRequestMarshaller implements Marshaller<Request<AssumeRol
     public Request<AssumeRoleRequest> marshall(AssumeRoleRequest assumeRoleRequest) {
 
         if (assumeRoleRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AssumeRoleRequest> request = new DefaultRequest<AssumeRoleRequest>(assumeRoleRequest, "AWSSecurityTokenService");
         request.addParameter("Action", "AssumeRole");
@@ -55,7 +55,6 @@ public class AssumeRoleRequestMarshaller implements Marshaller<Request<AssumeRol
         if (assumeRoleRequest.getExternalId() != null) {
             request.addParameter("ExternalId", StringUtils.fromString(assumeRoleRequest.getExternalId()));
         }
-
 
         return request;
     }

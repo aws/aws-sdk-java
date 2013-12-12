@@ -33,8 +33,8 @@ public class CreateEventSubscriptionRequestMarshaller implements Marshaller<Requ
     public Request<CreateEventSubscriptionRequest> marshall(CreateEventSubscriptionRequest createEventSubscriptionRequest) {
 
         if (createEventSubscriptionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateEventSubscriptionRequest> request = new DefaultRequest<CreateEventSubscriptionRequest>(createEventSubscriptionRequest, "AmazonRedshift");
         request.addParameter("Action", "CreateEventSubscription");
@@ -77,7 +77,6 @@ public class CreateEventSubscriptionRequestMarshaller implements Marshaller<Requ
         if (createEventSubscriptionRequest.isEnabled() != null) {
             request.addParameter("Enabled", StringUtils.fromBoolean(createEventSubscriptionRequest.isEnabled()));
         }
-
 
         return request;
     }

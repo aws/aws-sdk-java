@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class CompleteMultipartUploadRequestMarshaller implements Marshaller<Request<CompleteMultipartUploadRequest>, CompleteMultipartUploadRequest> {
 
-    
-
     public Request<CompleteMultipartUploadRequest> marshall(CompleteMultipartUploadRequest completeMultipartUploadRequest) {
     if (completeMultipartUploadRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,15 +48,12 @@ public class CompleteMultipartUploadRequestMarshaller implements Marshaller<Requ
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
         if (completeMultipartUploadRequest.getArchiveSize() != null)
           request.addHeader("x-amz-archive-size", StringUtils.fromString(completeMultipartUploadRequest.getArchiveSize()));
         
         if (completeMultipartUploadRequest.getChecksum() != null)
           request.addHeader("x-amz-sha256-tree-hash", StringUtils.fromString(completeMultipartUploadRequest.getChecksum()));
-        
-
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", (completeMultipartUploadRequest.getAccountId() == null) ? "" : StringUtils.fromString(completeMultipartUploadRequest.getAccountId())); 
@@ -84,10 +78,7 @@ public class CompleteMultipartUploadRequestMarshaller implements Marshaller<Requ
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         request.setContent(new ByteArrayInputStream(new byte[0]));
-        
 
         return request;
     }

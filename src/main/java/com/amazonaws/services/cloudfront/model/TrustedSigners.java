@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content. If you want to require

@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.glacier.model.*;
 
-
 /**
  * Asynchronous client for accessing AmazonGlacier.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -79,7 +78,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -279,7 +277,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -356,11 +353,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
         return executorService.submit(new Callable<ListVaultsResult>() {
             public ListVaultsResult call() throws Exception {
                 return listVaults(listVaultsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation lists all vaults owned by the calling user's account.
@@ -419,17 +415,17 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListVaultsResult>() {
             public ListVaultsResult call() throws Exception {
-            	ListVaultsResult result;
+                ListVaultsResult result;
                 try {
-            		result = listVaults(listVaultsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listVaultsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listVaults(listVaultsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listVaultsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -486,11 +482,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
         return executorService.submit(new Callable<DescribeJobResult>() {
             public DescribeJobResult call() throws Exception {
                 return describeJob(describeJobRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation returns information about a job you previously
@@ -550,17 +545,17 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeJobResult>() {
             public DescribeJobResult call() throws Exception {
-            	DescribeJobResult result;
+                DescribeJobResult result;
                 try {
-            		result = describeJob(describeJobRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeJobRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeJob(describeJobRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeJobRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -620,11 +615,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
         return executorService.submit(new Callable<ListPartsResult>() {
             public ListPartsResult call() throws Exception {
                 return listParts(listPartsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation lists the parts of an archive that have been uploaded
@@ -687,17 +681,17 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListPartsResult>() {
             public ListPartsResult call() throws Exception {
-            	ListPartsResult result;
+                ListPartsResult result;
                 try {
-            		result = listParts(listPartsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listPartsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listParts(listPartsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listPartsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -752,11 +746,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
         return executorService.submit(new Callable<GetVaultNotificationsResult>() {
             public GetVaultNotificationsResult call() throws Exception {
                 return getVaultNotifications(getVaultNotificationsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation retrieves the <code>notification-configuration</code>
@@ -814,17 +807,17 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetVaultNotificationsResult>() {
             public GetVaultNotificationsResult call() throws Exception {
-            	GetVaultNotificationsResult result;
+                GetVaultNotificationsResult result;
                 try {
-            		result = getVaultNotifications(getVaultNotificationsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getVaultNotificationsRequest, result);
-               	return result;
-		    }
-		});
+                    result = getVaultNotifications(getVaultNotificationsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getVaultNotificationsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -907,11 +900,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
         return executorService.submit(new Callable<ListJobsResult>() {
             public ListJobsResult call() throws Exception {
                 return listJobs(listJobsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation lists jobs for a vault, including jobs that are
@@ -997,17 +989,17 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListJobsResult>() {
             public ListJobsResult call() throws Exception {
-            	ListJobsResult result;
+                ListJobsResult result;
                 try {
-            		result = listJobs(listJobsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listJobsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listJobs(listJobsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listJobsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1076,11 +1068,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
         return executorService.submit(new Callable<CreateVaultResult>() {
             public CreateVaultResult call() throws Exception {
                 return createVault(createVaultRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation creates a new vault with the specified name. The name
@@ -1152,17 +1143,17 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateVaultResult>() {
             public CreateVaultResult call() throws Exception {
-            	CreateVaultResult result;
+                CreateVaultResult result;
                 try {
-            		result = createVault(createVaultRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createVaultRequest, result);
-               	return result;
-		    }
-		});
+                    result = createVault(createVaultRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createVaultRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1236,11 +1227,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
         return executorService.submit(new Callable<InitiateMultipartUploadResult>() {
             public InitiateMultipartUploadResult call() throws Exception {
                 return initiateMultipartUpload(initiateMultipartUploadRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation initiates a multipart upload. Amazon Glacier creates a
@@ -1317,17 +1307,17 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<InitiateMultipartUploadResult>() {
             public InitiateMultipartUploadResult call() throws Exception {
-            	InitiateMultipartUploadResult result;
+                InitiateMultipartUploadResult result;
                 try {
-            		result = initiateMultipartUpload(initiateMultipartUploadRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(initiateMultipartUploadRequest, result);
-               	return result;
-		    }
-		});
+                    result = initiateMultipartUpload(initiateMultipartUploadRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(initiateMultipartUploadRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1385,11 +1375,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
             public Void call() throws Exception {
                 abortMultipartUpload(abortMultipartUploadRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation aborts a multipart upload identified by the upload ID.
@@ -1449,16 +1438,16 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		abortMultipartUpload(abortMultipartUploadRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(abortMultipartUploadRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    abortMultipartUpload(abortMultipartUploadRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(abortMultipartUploadRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1520,11 +1509,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
             public Void call() throws Exception {
                 deleteArchive(deleteArchiveRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation deletes an archive from a vault. Subsequent requests to
@@ -1588,16 +1576,16 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteArchive(deleteArchiveRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteArchiveRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteArchive(deleteArchiveRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteArchiveRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1686,11 +1674,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
         return executorService.submit(new Callable<GetJobOutputResult>() {
             public GetJobOutputResult call() throws Exception {
                 return getJobOutput(getJobOutputRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation downloads the output of the job you initiated using
@@ -1782,17 +1769,17 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetJobOutputResult>() {
             public GetJobOutputResult call() throws Exception {
-            	GetJobOutputResult result;
+                GetJobOutputResult result;
                 try {
-            		result = getJobOutput(getJobOutputRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getJobOutputRequest, result);
-               	return result;
-		    }
-		});
+                    result = getJobOutput(getJobOutputRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getJobOutputRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1919,11 +1906,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
         return executorService.submit(new Callable<InitiateJobResult>() {
             public InitiateJobResult call() throws Exception {
                 return initiateJob(initiateJobRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation initiates a job of the specified type. In this release,
@@ -2053,17 +2039,17 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<InitiateJobResult>() {
             public InitiateJobResult call() throws Exception {
-            	InitiateJobResult result;
+                InitiateJobResult result;
                 try {
-            		result = initiateJob(initiateJobRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(initiateJobRequest, result);
-               	return result;
-		    }
-		});
+                    result = initiateJob(initiateJobRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(initiateJobRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2140,11 +2126,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
         return executorService.submit(new Callable<UploadArchiveResult>() {
             public UploadArchiveResult call() throws Exception {
                 return uploadArchive(uploadArchiveRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation adds an archive to a vault. This is a synchronous
@@ -2224,17 +2209,17 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UploadArchiveResult>() {
             public UploadArchiveResult call() throws Exception {
-            	UploadArchiveResult result;
+                UploadArchiveResult result;
                 try {
-            		result = uploadArchive(uploadArchiveRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(uploadArchiveRequest, result);
-               	return result;
-		    }
-		});
+                    result = uploadArchive(uploadArchiveRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(uploadArchiveRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2309,11 +2294,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
             public Void call() throws Exception {
                 setVaultNotifications(setVaultNotificationsRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation configures notifications that will be sent when
@@ -2390,16 +2374,16 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		setVaultNotifications(setVaultNotificationsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(setVaultNotificationsRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    setVaultNotifications(setVaultNotificationsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(setVaultNotificationsRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2484,11 +2468,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
         return executorService.submit(new Callable<CompleteMultipartUploadResult>() {
             public CompleteMultipartUploadResult call() throws Exception {
                 return completeMultipartUpload(completeMultipartUploadRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * You call this operation to inform Amazon Glacier that all the archive
@@ -2576,17 +2559,17 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CompleteMultipartUploadResult>() {
             public CompleteMultipartUploadResult call() throws Exception {
-            	CompleteMultipartUploadResult result;
+                CompleteMultipartUploadResult result;
                 try {
-            		result = completeMultipartUpload(completeMultipartUploadRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(completeMultipartUploadRequest, result);
-               	return result;
-		    }
-		});
+                    result = completeMultipartUpload(completeMultipartUploadRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(completeMultipartUploadRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2676,11 +2659,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
         return executorService.submit(new Callable<UploadMultipartPartResult>() {
             public UploadMultipartPartResult call() throws Exception {
                 return uploadMultipartPart(uploadMultipartPartRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation uploads a part of an archive. You can upload archive
@@ -2773,17 +2755,17 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UploadMultipartPartResult>() {
             public UploadMultipartPartResult call() throws Exception {
-            	UploadMultipartPartResult result;
+                UploadMultipartPartResult result;
                 try {
-            		result = uploadMultipartPart(uploadMultipartPartRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(uploadMultipartPartRequest, result);
-               	return result;
-		    }
-		});
+                    result = uploadMultipartPart(uploadMultipartPartRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(uploadMultipartPartRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2838,11 +2820,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
         return executorService.submit(new Callable<DescribeVaultResult>() {
             public DescribeVaultResult call() throws Exception {
                 return describeVault(describeVaultRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation returns information about a vault, including the
@@ -2900,17 +2881,17 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVaultResult>() {
             public DescribeVaultResult call() throws Exception {
-            	DescribeVaultResult result;
+                DescribeVaultResult result;
                 try {
-            		result = describeVault(describeVaultRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeVaultRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeVault(describeVaultRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeVaultRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2960,11 +2941,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
             public Void call() throws Exception {
                 deleteVaultNotifications(deleteVaultNotificationsRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation deletes the notification configuration set for a vault.
@@ -3016,16 +2996,16 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteVaultNotifications(deleteVaultNotificationsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteVaultNotificationsRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteVaultNotifications(deleteVaultNotificationsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteVaultNotificationsRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3093,11 +3073,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
         return executorService.submit(new Callable<ListMultipartUploadsResult>() {
             public ListMultipartUploadsResult call() throws Exception {
                 return listMultipartUploads(listMultipartUploadsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation lists in-progress multipart uploads for the specified
@@ -3168,17 +3147,17 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListMultipartUploadsResult>() {
             public ListMultipartUploadsResult call() throws Exception {
-            	ListMultipartUploadsResult result;
+                ListMultipartUploadsResult result;
                 try {
-            		result = listMultipartUploads(listMultipartUploadsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listMultipartUploadsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listMultipartUploads(listMultipartUploadsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listMultipartUploadsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3238,11 +3217,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
             public Void call() throws Exception {
                 deleteVault(deleteVaultRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation deletes a vault. Amazon Glacier will delete a vault
@@ -3304,16 +3282,16 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteVault(deleteVaultRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteVaultRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteVault(deleteVaultRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteVaultRequest, null);
+                   return null;
+            }
+        });
     }
     
 }

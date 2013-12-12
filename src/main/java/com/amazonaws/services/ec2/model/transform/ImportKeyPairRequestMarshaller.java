@@ -33,8 +33,8 @@ public class ImportKeyPairRequestMarshaller implements Marshaller<Request<Import
     public Request<ImportKeyPairRequest> marshall(ImportKeyPairRequest importKeyPairRequest) {
 
         if (importKeyPairRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ImportKeyPairRequest> request = new DefaultRequest<ImportKeyPairRequest>(importKeyPairRequest, "AmazonEC2");
         request.addParameter("Action", "ImportKeyPair");
@@ -46,7 +46,6 @@ public class ImportKeyPairRequestMarshaller implements Marshaller<Request<Import
         if (importKeyPairRequest.getPublicKeyMaterial() != null) {
             request.addParameter("PublicKeyMaterial", StringUtils.fromString(importKeyPairRequest.getPublicKeyMaterial()));
         }
-
 
         return request;
     }

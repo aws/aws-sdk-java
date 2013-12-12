@@ -16,7 +16,6 @@ package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * <i>Alias resource record sets only:</i> Information about the domain to which you are redirecting traffic.

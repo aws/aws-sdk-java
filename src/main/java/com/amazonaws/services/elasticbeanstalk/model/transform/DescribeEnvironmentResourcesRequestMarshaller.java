@@ -33,8 +33,8 @@ public class DescribeEnvironmentResourcesRequestMarshaller implements Marshaller
     public Request<DescribeEnvironmentResourcesRequest> marshall(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest) {
 
         if (describeEnvironmentResourcesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeEnvironmentResourcesRequest> request = new DefaultRequest<DescribeEnvironmentResourcesRequest>(describeEnvironmentResourcesRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DescribeEnvironmentResources");
@@ -46,7 +46,6 @@ public class DescribeEnvironmentResourcesRequestMarshaller implements Marshaller
         if (describeEnvironmentResourcesRequest.getEnvironmentName() != null) {
             request.addParameter("EnvironmentName", StringUtils.fromString(describeEnvironmentResourcesRequest.getEnvironmentName()));
         }
-
 
         return request;
     }

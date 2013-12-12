@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Activate Pipeline Result JSON Unmarshaller
  */
 public class ActivatePipelineResultJsonUnmarshaller implements Unmarshaller<ActivatePipelineResult, JsonUnmarshallerContext> {
 
-    
-
     public ActivatePipelineResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ActivatePipelineResult activatePipelineResult = new ActivatePipelineResult();
 
-        
-        
         return activatePipelineResult;
     }
 

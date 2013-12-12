@@ -16,7 +16,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes a permission allowing either a user or group to create a new EBS volume from a snapshot.

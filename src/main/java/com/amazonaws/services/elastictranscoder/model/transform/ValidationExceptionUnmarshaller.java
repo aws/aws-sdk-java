@@ -34,8 +34,7 @@ public class ValidationExceptionUnmarshaller extends JsonErrorUnmarshaller {
             return null;
 
         ValidationException e = (ValidationException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

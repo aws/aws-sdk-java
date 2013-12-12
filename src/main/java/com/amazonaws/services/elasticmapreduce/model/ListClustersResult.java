@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * This contains a ClusterSummaryList with the cluster details; for example, the cluster IDs, names, and status.

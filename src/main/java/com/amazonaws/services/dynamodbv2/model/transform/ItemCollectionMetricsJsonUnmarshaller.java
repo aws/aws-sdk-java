@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Item Collection Metrics JSON Unmarshaller
  */
 public class ItemCollectionMetricsJsonUnmarshaller implements Unmarshaller<ItemCollectionMetrics, JsonUnmarshallerContext> {
 
-    
-
     public ItemCollectionMetrics unmarshall(JsonUnmarshallerContext context) throws Exception {
         ItemCollectionMetrics itemCollectionMetrics = new ItemCollectionMetrics();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ItemCollectionMetricsJsonUnmarshaller implements Unmarshaller<ItemC
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ItemCollectionKey", targetDepth)) {
                     itemCollectionMetrics.setItemCollectionKey(new MapUnmarshaller<String,AttributeValue>(StringJsonUnmarshaller.getInstance(), AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -62,7 +56,6 @@ public class ItemCollectionMetricsJsonUnmarshaller implements Unmarshaller<ItemC
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

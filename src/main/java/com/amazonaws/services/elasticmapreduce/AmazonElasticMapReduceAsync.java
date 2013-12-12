@@ -1110,6 +1110,5 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
     public Future<DescribeClusterResult> describeClusterAsync(DescribeClusterRequest describeClusterRequest,
             AsyncHandler<DescribeClusterRequest, DescribeClusterResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

@@ -690,6 +690,5 @@ public interface AWSSecurityTokenService {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

@@ -33,8 +33,8 @@ public class DescribeLoggingStatusRequestMarshaller implements Marshaller<Reques
     public Request<DescribeLoggingStatusRequest> marshall(DescribeLoggingStatusRequest describeLoggingStatusRequest) {
 
         if (describeLoggingStatusRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeLoggingStatusRequest> request = new DefaultRequest<DescribeLoggingStatusRequest>(describeLoggingStatusRequest, "AmazonRedshift");
         request.addParameter("Action", "DescribeLoggingStatus");
@@ -43,7 +43,6 @@ public class DescribeLoggingStatusRequestMarshaller implements Marshaller<Reques
         if (describeLoggingStatusRequest.getClusterIdentifier() != null) {
             request.addParameter("ClusterIdentifier", StringUtils.fromString(describeLoggingStatusRequest.getClusterIdentifier()));
         }
-
 
         return request;
     }

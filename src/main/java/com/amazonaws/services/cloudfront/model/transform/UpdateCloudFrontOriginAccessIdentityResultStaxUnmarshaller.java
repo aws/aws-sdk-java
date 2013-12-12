@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Update Cloud Front Origin Access Identity Result StAX Unmarshaller
  */
@@ -40,7 +39,6 @@ public class UpdateCloudFrontOriginAccessIdentityResultStaxUnmarshaller implemen
         if (context.isStartOfDocument()) {
             updateCloudFrontOriginAccessIdentityResult.setETag(context.getHeader("ETag"));
         }
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

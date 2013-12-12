@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
@@ -44,8 +43,7 @@ public class DeleteStreamingDistributionRequestMarshaller implements Marshaller<
         Request<DeleteStreamingDistributionRequest> request = new DefaultRequest<DeleteStreamingDistributionRequest>(deleteStreamingDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.DELETE);
         if (deleteStreamingDistributionRequest.getIfMatch() != null)
-        	request.addHeader("If-Match", StringUtils.fromString(deleteStreamingDistributionRequest.getIfMatch()));
-        
+            request.addHeader("If-Match", StringUtils.fromString(deleteStreamingDistributionRequest.getIfMatch()));
 
         String uriResourcePath = "2013-09-27/streaming-distribution/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(deleteStreamingDistributionRequest.getId())); 
@@ -65,8 +63,6 @@ public class DeleteStreamingDistributionRequestMarshaller implements Marshaller<
         }
 
         request.setResourcePath(uriResourcePath);
-
-        
 
         return request;
     }

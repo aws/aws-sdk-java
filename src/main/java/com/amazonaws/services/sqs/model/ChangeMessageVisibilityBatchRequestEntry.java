@@ -16,7 +16,6 @@ package com.amazonaws.services.sqs.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Encloses a receipt handle and an entry id for each message in ChangeMessageVisibilityBatch.

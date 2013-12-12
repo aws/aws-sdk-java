@@ -33,8 +33,8 @@ public class CreateRouteRequestMarshaller implements Marshaller<Request<CreateRo
     public Request<CreateRouteRequest> marshall(CreateRouteRequest createRouteRequest) {
 
         if (createRouteRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateRouteRequest> request = new DefaultRequest<CreateRouteRequest>(createRouteRequest, "AmazonEC2");
         request.addParameter("Action", "CreateRoute");
@@ -55,7 +55,6 @@ public class CreateRouteRequestMarshaller implements Marshaller<Request<CreateRo
         if (createRouteRequest.getNetworkInterfaceId() != null) {
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(createRouteRequest.getNetworkInterfaceId()));
         }
-
 
         return request;
     }

@@ -33,8 +33,8 @@ public class AssignPrivateIpAddressesRequestMarshaller implements Marshaller<Req
     public Request<AssignPrivateIpAddressesRequest> marshall(AssignPrivateIpAddressesRequest assignPrivateIpAddressesRequest) {
 
         if (assignPrivateIpAddressesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AssignPrivateIpAddressesRequest> request = new DefaultRequest<AssignPrivateIpAddressesRequest>(assignPrivateIpAddressesRequest, "AmazonEC2");
         request.addParameter("Action", "AssignPrivateIpAddresses");
@@ -60,7 +60,6 @@ public class AssignPrivateIpAddressesRequestMarshaller implements Marshaller<Req
         if (assignPrivateIpAddressesRequest.isAllowReassignment() != null) {
             request.addParameter("AllowReassignment", StringUtils.fromBoolean(assignPrivateIpAddressesRequest.isAllowReassignment()));
         }
-
 
         return request;
     }

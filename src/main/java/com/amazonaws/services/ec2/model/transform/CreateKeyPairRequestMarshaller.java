@@ -33,8 +33,8 @@ public class CreateKeyPairRequestMarshaller implements Marshaller<Request<Create
     public Request<CreateKeyPairRequest> marshall(CreateKeyPairRequest createKeyPairRequest) {
 
         if (createKeyPairRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateKeyPairRequest> request = new DefaultRequest<CreateKeyPairRequest>(createKeyPairRequest, "AmazonEC2");
         request.addParameter("Action", "CreateKeyPair");
@@ -43,7 +43,6 @@ public class CreateKeyPairRequestMarshaller implements Marshaller<Request<Create
         if (createKeyPairRequest.getKeyName() != null) {
             request.addParameter("KeyName", StringUtils.fromString(createKeyPairRequest.getKeyName()));
         }
-
 
         return request;
     }

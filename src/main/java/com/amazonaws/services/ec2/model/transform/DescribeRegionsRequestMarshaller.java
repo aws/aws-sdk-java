@@ -33,13 +33,12 @@ public class DescribeRegionsRequestMarshaller implements Marshaller<Request<Desc
     public Request<DescribeRegionsRequest> marshall(DescribeRegionsRequest describeRegionsRequest) {
 
         if (describeRegionsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeRegionsRequest> request = new DefaultRequest<DescribeRegionsRequest>(describeRegionsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeRegions");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> regionNamesList = describeRegionsRequest.getRegionNames();
         int regionNamesListIndex = 1;
@@ -76,7 +75,6 @@ public class DescribeRegionsRequestMarshaller implements Marshaller<Request<Desc
 
             filtersListIndex++;
         }
-
 
         return request;
     }

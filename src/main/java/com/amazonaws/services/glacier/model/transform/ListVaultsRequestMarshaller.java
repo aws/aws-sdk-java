@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class ListVaultsRequestMarshaller implements Marshaller<Request<ListVaultsRequest>, ListVaultsRequest> {
 
-    
-
     public Request<ListVaultsRequest> marshall(ListVaultsRequest listVaultsRequest) {
     if (listVaultsRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class ListVaultsRequestMarshaller implements Marshaller<Request<ListVault
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.GET);
-
 
         String uriResourcePath = "/{accountId}/vaults?marker={marker};limit={limit}"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", (listVaultsRequest.getAccountId() == null) ? "" : StringUtils.fromString(listVaultsRequest.getAccountId())); 
@@ -78,10 +73,7 @@ public class ListVaultsRequestMarshaller implements Marshaller<Request<ListVault
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         request.setContent(new ByteArrayInputStream(new byte[0]));
-        
 
         return request;
     }

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Volume Configuration JSON Unmarshaller
  */
 public class VolumeConfigurationJsonUnmarshaller implements Unmarshaller<VolumeConfiguration, JsonUnmarshallerContext> {
 
-    
-
     public VolumeConfiguration unmarshall(JsonUnmarshallerContext context) throws Exception {
         VolumeConfiguration volumeConfiguration = new VolumeConfiguration();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class VolumeConfigurationJsonUnmarshaller implements Unmarshaller<VolumeC
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MountPoint", targetDepth)) {
                     context.nextToken();
@@ -72,7 +66,6 @@ public class VolumeConfigurationJsonUnmarshaller implements Unmarshaller<VolumeC
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

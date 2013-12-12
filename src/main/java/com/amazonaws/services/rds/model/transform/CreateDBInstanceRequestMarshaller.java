@@ -33,8 +33,8 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
     public Request<CreateDBInstanceRequest> marshall(CreateDBInstanceRequest createDBInstanceRequest) {
 
         if (createDBInstanceRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateDBInstanceRequest> request = new DefaultRequest<CreateDBInstanceRequest>(createDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBInstance");
@@ -145,7 +145,6 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
 
             tagsListIndex++;
         }
-
 
         return request;
     }

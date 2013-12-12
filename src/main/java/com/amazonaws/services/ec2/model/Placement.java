@@ -16,7 +16,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Describes where an Amazon EC2 instance is running within an Amazon EC2 region.

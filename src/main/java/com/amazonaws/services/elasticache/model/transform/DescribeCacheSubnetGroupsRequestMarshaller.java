@@ -33,8 +33,8 @@ public class DescribeCacheSubnetGroupsRequestMarshaller implements Marshaller<Re
     public Request<DescribeCacheSubnetGroupsRequest> marshall(DescribeCacheSubnetGroupsRequest describeCacheSubnetGroupsRequest) {
 
         if (describeCacheSubnetGroupsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeCacheSubnetGroupsRequest> request = new DefaultRequest<DescribeCacheSubnetGroupsRequest>(describeCacheSubnetGroupsRequest, "AmazonElastiCache");
         request.addParameter("Action", "DescribeCacheSubnetGroups");
@@ -49,7 +49,6 @@ public class DescribeCacheSubnetGroupsRequestMarshaller implements Marshaller<Re
         if (describeCacheSubnetGroupsRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeCacheSubnetGroupsRequest.getMarker()));
         }
-
 
         return request;
     }

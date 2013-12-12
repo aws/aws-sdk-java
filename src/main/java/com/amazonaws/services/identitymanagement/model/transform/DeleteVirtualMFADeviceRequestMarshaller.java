@@ -33,8 +33,8 @@ public class DeleteVirtualMFADeviceRequestMarshaller implements Marshaller<Reque
     public Request<DeleteVirtualMFADeviceRequest> marshall(DeleteVirtualMFADeviceRequest deleteVirtualMFADeviceRequest) {
 
         if (deleteVirtualMFADeviceRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteVirtualMFADeviceRequest> request = new DefaultRequest<DeleteVirtualMFADeviceRequest>(deleteVirtualMFADeviceRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteVirtualMFADevice");
@@ -43,7 +43,6 @@ public class DeleteVirtualMFADeviceRequestMarshaller implements Marshaller<Reque
         if (deleteVirtualMFADeviceRequest.getSerialNumber() != null) {
             request.addParameter("SerialNumber", StringUtils.fromString(deleteVirtualMFADeviceRequest.getSerialNumber()));
         }
-
 
         return request;
     }

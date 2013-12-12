@@ -33,8 +33,8 @@ public class CreateDBSnapshotRequestMarshaller implements Marshaller<Request<Cre
     public Request<CreateDBSnapshotRequest> marshall(CreateDBSnapshotRequest createDBSnapshotRequest) {
 
         if (createDBSnapshotRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateDBSnapshotRequest> request = new DefaultRequest<CreateDBSnapshotRequest>(createDBSnapshotRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBSnapshot");
@@ -63,7 +63,6 @@ public class CreateDBSnapshotRequestMarshaller implements Marshaller<Request<Cre
 
             tagsListIndex++;
         }
-
 
         return request;
     }

@@ -2275,6 +2275,5 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
     public Future<TerminateInstanceInAutoScalingGroupResult> terminateInstanceInAutoScalingGroupAsync(TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest,
             AsyncHandler<TerminateInstanceInAutoScalingGroupRequest, TerminateInstanceInAutoScalingGroupResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

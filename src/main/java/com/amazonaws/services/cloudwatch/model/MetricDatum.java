@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudwatch.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The <code>MetricDatum</code> data type encapsulates the information sent with PutMetricData to either create a new metric or add new values to be

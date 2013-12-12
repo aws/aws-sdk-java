@@ -34,8 +34,7 @@ public class TaskNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller {
             return null;
 
         TaskNotFoundException e = (TaskNotFoundException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

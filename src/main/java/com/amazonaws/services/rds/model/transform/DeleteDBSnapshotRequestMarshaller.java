@@ -33,8 +33,8 @@ public class DeleteDBSnapshotRequestMarshaller implements Marshaller<Request<Del
     public Request<DeleteDBSnapshotRequest> marshall(DeleteDBSnapshotRequest deleteDBSnapshotRequest) {
 
         if (deleteDBSnapshotRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteDBSnapshotRequest> request = new DefaultRequest<DeleteDBSnapshotRequest>(deleteDBSnapshotRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteDBSnapshot");
@@ -43,7 +43,6 @@ public class DeleteDBSnapshotRequestMarshaller implements Marshaller<Request<Del
         if (deleteDBSnapshotRequest.getDBSnapshotIdentifier() != null) {
             request.addParameter("DBSnapshotIdentifier", StringUtils.fromString(deleteDBSnapshotRequest.getDBSnapshotIdentifier()));
         }
-
 
         return request;
     }

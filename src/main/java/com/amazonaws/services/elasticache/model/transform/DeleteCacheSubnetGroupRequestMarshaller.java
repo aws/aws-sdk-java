@@ -33,8 +33,8 @@ public class DeleteCacheSubnetGroupRequestMarshaller implements Marshaller<Reque
     public Request<DeleteCacheSubnetGroupRequest> marshall(DeleteCacheSubnetGroupRequest deleteCacheSubnetGroupRequest) {
 
         if (deleteCacheSubnetGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteCacheSubnetGroupRequest> request = new DefaultRequest<DeleteCacheSubnetGroupRequest>(deleteCacheSubnetGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "DeleteCacheSubnetGroup");
@@ -43,7 +43,6 @@ public class DeleteCacheSubnetGroupRequestMarshaller implements Marshaller<Reque
         if (deleteCacheSubnetGroupRequest.getCacheSubnetGroupName() != null) {
             request.addParameter("CacheSubnetGroupName", StringUtils.fromString(deleteCacheSubnetGroupRequest.getCacheSubnetGroupName()));
         }
-
 
         return request;
     }

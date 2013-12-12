@@ -686,6 +686,5 @@ public interface DataPipeline {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

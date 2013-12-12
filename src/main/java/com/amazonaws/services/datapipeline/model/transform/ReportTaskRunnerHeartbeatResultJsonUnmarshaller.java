@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Report Task Runner Heartbeat Result JSON Unmarshaller
  */
 public class ReportTaskRunnerHeartbeatResultJsonUnmarshaller implements Unmarshaller<ReportTaskRunnerHeartbeatResult, JsonUnmarshallerContext> {
 
-    
-
     public ReportTaskRunnerHeartbeatResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ReportTaskRunnerHeartbeatResult reportTaskRunnerHeartbeatResult = new ReportTaskRunnerHeartbeatResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ReportTaskRunnerHeartbeatResultJsonUnmarshaller implements Unmarsha
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("terminate", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class ReportTaskRunnerHeartbeatResultJsonUnmarshaller implements Unmarsha
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Pipeline Object JSON Unmarshaller
  */
 public class PipelineObjectJsonUnmarshaller implements Unmarshaller<PipelineObject, JsonUnmarshallerContext> {
 
-    
-
     public PipelineObject unmarshall(JsonUnmarshallerContext context) throws Exception {
         PipelineObject pipelineObject = new PipelineObject();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class PipelineObjectJsonUnmarshaller implements Unmarshaller<PipelineObje
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
@@ -67,7 +61,6 @@ public class PipelineObjectJsonUnmarshaller implements Unmarshaller<PipelineObje
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Confirm Public Virtual Interface Result JSON Unmarshaller
  */
 public class ConfirmPublicVirtualInterfaceResultJsonUnmarshaller implements Unmarshaller<ConfirmPublicVirtualInterfaceResult, JsonUnmarshallerContext> {
 
-    
-
     public ConfirmPublicVirtualInterfaceResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ConfirmPublicVirtualInterfaceResult confirmPublicVirtualInterfaceResult = new ConfirmPublicVirtualInterfaceResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ConfirmPublicVirtualInterfaceResultJsonUnmarshaller implements Unma
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("virtualInterfaceState", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class ConfirmPublicVirtualInterfaceResultJsonUnmarshaller implements Unma
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

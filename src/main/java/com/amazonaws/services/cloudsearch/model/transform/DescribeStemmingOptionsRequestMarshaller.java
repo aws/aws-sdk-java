@@ -33,8 +33,8 @@ public class DescribeStemmingOptionsRequestMarshaller implements Marshaller<Requ
     public Request<DescribeStemmingOptionsRequest> marshall(DescribeStemmingOptionsRequest describeStemmingOptionsRequest) {
 
         if (describeStemmingOptionsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeStemmingOptionsRequest> request = new DefaultRequest<DescribeStemmingOptionsRequest>(describeStemmingOptionsRequest, "AmazonCloudSearch");
         request.addParameter("Action", "DescribeStemmingOptions");
@@ -43,7 +43,6 @@ public class DescribeStemmingOptionsRequestMarshaller implements Marshaller<Requ
         if (describeStemmingOptionsRequest.getDomainName() != null) {
             request.addParameter("DomainName", StringUtils.fromString(describeStemmingOptionsRequest.getDomainName()));
         }
-
 
         return request;
     }

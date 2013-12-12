@@ -25,6 +25,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
@@ -32,7 +33,6 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
 
 import com.amazonaws.services.elasticbeanstalk.model.*;
 import com.amazonaws.services.elasticbeanstalk.model.transform.*;
-
 
 /**
  * Client for accessing AWSElasticBeanstalk.  All service calls made
@@ -49,20 +49,17 @@ import com.amazonaws.services.elasticbeanstalk.model.transform.*;
  * </p>
  * <p>
  * For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/"> AWS Elastic Beanstalk </a> details page. The
- * location of the lastest AWS Elastic Beanstalk WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">
+ * location of the latest AWS Elastic Beanstalk WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">
  * http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl </a> .
  * </p>
  * <p>
  * <b>Endpoints</b>
  * </p>
  * <p>
- * AWS Elastic Beanstalk supports the following region-specific endpoint:
+ * For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a
+ * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region"> Regions and Endpoints </a> in the <i>Amazon Web Services
+ * Glossary</i> .
  * </p>
- * 
- * <ul>
- * <li> https://elasticbeanstalk.us-east-1.amazonaws.com </li>
- * 
- * </ul>
  */
 public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements AWSElasticBeanstalk {
 
@@ -188,7 +185,30 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AWSElasticBeanstalkClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AWSElasticBeanstalk using the specified AWS account credentials
+     * provider, client configuration options, and request metric collector.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AWSElasticBeanstalk
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public AWSElasticBeanstalkClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
     }
@@ -198,7 +218,10 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers.add(new S3SubscriptionRequiredExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyApplicationVersionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyApplicationsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new OperationInProgressExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InsufficientPrivilegesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SourceBundleDeletionExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new S3LocationNotInServiceRegionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyConfigurationTemplatesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyBucketsExceptionUnmarshaller());
         
@@ -212,7 +235,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 "/com/amazonaws/services/elasticbeanstalk/request.handler2s"));
     }
 
-    
     /**
      * <p>
      * Checks if the specified CNAME is available.
@@ -309,6 +331,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *           on AWSElasticBeanstalk.
      * 
      * 
+     * @throws OperationInProgressException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -347,6 +370,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *         returned by AWSElasticBeanstalk.
      * 
      * @throws TooManyEnvironmentsException
+     * @throws InsufficientPrivilegesException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -388,6 +412,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @return The response from the CreateStorageLocation service method, as
      *         returned by AWSElasticBeanstalk.
      * 
+     * @throws InsufficientPrivilegesException
      * @throws S3SubscriptionRequiredException
      * @throws TooManyBucketsException
      *
@@ -485,7 +510,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *         as returned by AWSElasticBeanstalk.
      * 
      * @throws TooManyApplicationsException
+     * @throws InsufficientPrivilegesException
      * @throws TooManyApplicationVersionsException
+     * @throws S3LocationNotInServiceRegionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -526,7 +553,10 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *           AWSElasticBeanstalk.
      * 
      * 
+     * @throws OperationInProgressException
+     * @throws InsufficientPrivilegesException
      * @throws SourceBundleDeletionException
+     * @throws S3LocationNotInServiceRegionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -592,7 +622,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Deletes the specified application along with all associated versions
-     * and configurations.
+     * and configurations. The application versions will not be deleted from
+     * your Amazon S3 bucket.
      * </p>
      * <p>
      * <b>NOTE:</b>You cannot delete an application that has a running
@@ -604,6 +635,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *           AWSElasticBeanstalk.
      * 
      * 
+     * @throws OperationInProgressException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -676,11 +708,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * <p>
      * Creates an application that has one configuration template named
      * <code>default</code> and no application versions.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> The default configuration template is for a 32-bit
-     * version of the Amazon Linux operating system running the Tomcat 6
-     * application container.
      * </p>
      *
      * @param createApplicationRequest Container for the necessary parameters
@@ -777,6 +804,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @return The response from the UpdateConfigurationTemplate service
      *         method, as returned by AWSElasticBeanstalk.
      * 
+     * @throws InsufficientPrivilegesException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -981,6 +1009,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @return The response from the DescribeEnvironmentResources service
      *         method, as returned by AWSElasticBeanstalk.
      * 
+     * @throws InsufficientPrivilegesException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1019,6 +1048,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @return The response from the TerminateEnvironment service method, as
      *         returned by AWSElasticBeanstalk.
      * 
+     * @throws InsufficientPrivilegesException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1063,6 +1093,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @return The response from the ValidateConfigurationSettings service
      *         method, as returned by AWSElasticBeanstalk.
      * 
+     * @throws InsufficientPrivilegesException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1193,6 +1224,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @return The response from the UpdateEnvironment service method, as
      *         returned by AWSElasticBeanstalk.
      * 
+     * @throws InsufficientPrivilegesException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1243,6 +1275,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @return The response from the CreateConfigurationTemplate service
      *         method, as returned by AWSElasticBeanstalk.
      * 
+     * @throws InsufficientPrivilegesException
      * @throws TooManyConfigurationTemplatesException
      *
      * @throws AmazonClientException
@@ -1375,6 +1408,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *           AWSElasticBeanstalk.
      * 
      * 
+     * @throws InsufficientPrivilegesException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1452,6 +1486,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @return The response from the CreateStorageLocation service method, as
      *         returned by AWSElasticBeanstalk.
      * 
+     * @throws InsufficientPrivilegesException
      * @throws S3SubscriptionRequiredException
      * @throws TooManyBucketsException
      *
@@ -1595,7 +1630,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     public DescribeEventsResult describeEvents() throws AmazonServiceException, AmazonClientException {
         return describeEvents(new DescribeEventsRequest());
     }
-    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

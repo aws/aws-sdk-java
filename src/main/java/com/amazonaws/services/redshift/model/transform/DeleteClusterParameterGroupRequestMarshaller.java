@@ -33,8 +33,8 @@ public class DeleteClusterParameterGroupRequestMarshaller implements Marshaller<
     public Request<DeleteClusterParameterGroupRequest> marshall(DeleteClusterParameterGroupRequest deleteClusterParameterGroupRequest) {
 
         if (deleteClusterParameterGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteClusterParameterGroupRequest> request = new DefaultRequest<DeleteClusterParameterGroupRequest>(deleteClusterParameterGroupRequest, "AmazonRedshift");
         request.addParameter("Action", "DeleteClusterParameterGroup");
@@ -43,7 +43,6 @@ public class DeleteClusterParameterGroupRequestMarshaller implements Marshaller<
         if (deleteClusterParameterGroupRequest.getParameterGroupName() != null) {
             request.addParameter("ParameterGroupName", StringUtils.fromString(deleteClusterParameterGroupRequest.getParameterGroupName()));
         }
-
 
         return request;
     }

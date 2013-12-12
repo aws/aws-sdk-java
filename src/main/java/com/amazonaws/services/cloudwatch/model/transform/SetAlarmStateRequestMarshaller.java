@@ -33,8 +33,8 @@ public class SetAlarmStateRequestMarshaller implements Marshaller<Request<SetAla
     public Request<SetAlarmStateRequest> marshall(SetAlarmStateRequest setAlarmStateRequest) {
 
         if (setAlarmStateRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<SetAlarmStateRequest> request = new DefaultRequest<SetAlarmStateRequest>(setAlarmStateRequest, "AmazonCloudWatch");
         request.addParameter("Action", "SetAlarmState");
@@ -52,7 +52,6 @@ public class SetAlarmStateRequestMarshaller implements Marshaller<Request<SetAla
         if (setAlarmStateRequest.getStateReasonData() != null) {
             request.addParameter("StateReasonData", StringUtils.fromString(setAlarmStateRequest.getStateReasonData()));
         }
-
 
         return request;
     }

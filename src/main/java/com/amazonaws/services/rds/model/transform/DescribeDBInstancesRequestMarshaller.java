@@ -33,8 +33,8 @@ public class DescribeDBInstancesRequestMarshaller implements Marshaller<Request<
     public Request<DescribeDBInstancesRequest> marshall(DescribeDBInstancesRequest describeDBInstancesRequest) {
 
         if (describeDBInstancesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeDBInstancesRequest> request = new DefaultRequest<DescribeDBInstancesRequest>(describeDBInstancesRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBInstances");
@@ -74,7 +74,6 @@ public class DescribeDBInstancesRequestMarshaller implements Marshaller<Request<
         if (describeDBInstancesRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeDBInstancesRequest.getMarker()));
         }
-
 
         return request;
     }

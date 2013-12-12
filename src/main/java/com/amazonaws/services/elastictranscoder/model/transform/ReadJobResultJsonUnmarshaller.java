@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Read Job Result JSON Unmarshaller
  */
 public class ReadJobResultJsonUnmarshaller implements Unmarshaller<ReadJobResult, JsonUnmarshallerContext> {
 
-    
-
     public ReadJobResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ReadJobResult readJobResult = new ReadJobResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ReadJobResultJsonUnmarshaller implements Unmarshaller<ReadJobResult
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Job", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class ReadJobResultJsonUnmarshaller implements Unmarshaller<ReadJobResult
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

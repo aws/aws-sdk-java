@@ -1334,6 +1334,5 @@ public interface AmazonElastiCache {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

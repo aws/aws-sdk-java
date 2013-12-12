@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.importexport.model.*;
 
-
 /**
  * Asynchronous client for accessing AmazonImportExport.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -48,7 +47,6 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -248,7 +246,6 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -302,11 +299,10 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
         return executorService.submit(new Callable<CreateJobResult>() {
             public CreateJobResult call() throws Exception {
                 return createJob(createJobRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation initiates the process of scheduling an upload or
@@ -342,17 +338,17 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateJobResult>() {
             public CreateJobResult call() throws Exception {
-            	CreateJobResult result;
+                CreateJobResult result;
                 try {
-            		result = createJob(createJobRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createJobRequest, result);
-               	return result;
-		    }
-		});
+                    result = createJob(createJobRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createJobRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -381,11 +377,10 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
         return executorService.submit(new Callable<CancelJobResult>() {
             public CancelJobResult call() throws Exception {
                 return cancelJob(cancelJobRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation cancels a specified job. Only the job owner can cancel
@@ -417,17 +412,17 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CancelJobResult>() {
             public CancelJobResult call() throws Exception {
-            	CancelJobResult result;
+                CancelJobResult result;
                 try {
-            		result = cancelJob(cancelJobRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(cancelJobRequest, result);
-               	return result;
-		    }
-		});
+                    result = cancelJob(cancelJobRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(cancelJobRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -458,11 +453,10 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
         return executorService.submit(new Callable<GetStatusResult>() {
             public GetStatusResult call() throws Exception {
                 return getStatus(getStatusRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation returns information about a job, including where the
@@ -496,17 +490,17 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetStatusResult>() {
             public GetStatusResult call() throws Exception {
-            	GetStatusResult result;
+                GetStatusResult result;
                 try {
-            		result = getStatus(getStatusRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getStatusRequest, result);
-               	return result;
-		    }
-		});
+                    result = getStatus(getStatusRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getStatusRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -538,11 +532,10 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
         return executorService.submit(new Callable<ListJobsResult>() {
             public ListJobsResult call() throws Exception {
                 return listJobs(listJobsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This operation returns the jobs associated with the requester. AWS
@@ -577,17 +570,17 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListJobsResult>() {
             public ListJobsResult call() throws Exception {
-            	ListJobsResult result;
+                ListJobsResult result;
                 try {
-            		result = listJobs(listJobsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listJobsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listJobs(listJobsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listJobsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -619,11 +612,10 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
         return executorService.submit(new Callable<UpdateJobResult>() {
             public UpdateJobResult call() throws Exception {
                 return updateJob(updateJobRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * You use this operation to change the parameters specified in the
@@ -658,17 +650,17 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateJobResult>() {
             public UpdateJobResult call() throws Exception {
-            	UpdateJobResult result;
+                UpdateJobResult result;
                 try {
-            		result = updateJob(updateJobRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateJobRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateJob(updateJobRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateJobRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

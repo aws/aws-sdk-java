@@ -33,8 +33,8 @@ public class DeleteServerCertificateRequestMarshaller implements Marshaller<Requ
     public Request<DeleteServerCertificateRequest> marshall(DeleteServerCertificateRequest deleteServerCertificateRequest) {
 
         if (deleteServerCertificateRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteServerCertificateRequest> request = new DefaultRequest<DeleteServerCertificateRequest>(deleteServerCertificateRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteServerCertificate");
@@ -43,7 +43,6 @@ public class DeleteServerCertificateRequestMarshaller implements Marshaller<Requ
         if (deleteServerCertificateRequest.getServerCertificateName() != null) {
             request.addParameter("ServerCertificateName", StringUtils.fromString(deleteServerCertificateRequest.getServerCertificateName()));
         }
-
 
         return request;
     }

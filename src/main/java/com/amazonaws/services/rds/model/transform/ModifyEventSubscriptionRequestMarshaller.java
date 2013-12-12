@@ -33,8 +33,8 @@ public class ModifyEventSubscriptionRequestMarshaller implements Marshaller<Requ
     public Request<ModifyEventSubscriptionRequest> marshall(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest) {
 
         if (modifyEventSubscriptionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ModifyEventSubscriptionRequest> request = new DefaultRequest<ModifyEventSubscriptionRequest>(modifyEventSubscriptionRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyEventSubscription");
@@ -63,7 +63,6 @@ public class ModifyEventSubscriptionRequestMarshaller implements Marshaller<Requ
         if (modifyEventSubscriptionRequest.isEnabled() != null) {
             request.addParameter("Enabled", StringUtils.fromBoolean(modifyEventSubscriptionRequest.isEnabled()));
         }
-
 
         return request;
     }

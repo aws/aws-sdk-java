@@ -33,8 +33,8 @@ public class ListTagsForResourceRequestMarshaller implements Marshaller<Request<
     public Request<ListTagsForResourceRequest> marshall(ListTagsForResourceRequest listTagsForResourceRequest) {
 
         if (listTagsForResourceRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListTagsForResourceRequest> request = new DefaultRequest<ListTagsForResourceRequest>(listTagsForResourceRequest, "AmazonRDS");
         request.addParameter("Action", "ListTagsForResource");
@@ -43,7 +43,6 @@ public class ListTagsForResourceRequestMarshaller implements Marshaller<Request<
         if (listTagsForResourceRequest.getResourceName() != null) {
             request.addParameter("ResourceName", StringUtils.fromString(listTagsForResourceRequest.getResourceName()));
         }
-
 
         return request;
     }

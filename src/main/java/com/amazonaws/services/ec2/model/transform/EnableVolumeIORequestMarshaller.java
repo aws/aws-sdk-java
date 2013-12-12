@@ -33,8 +33,8 @@ public class EnableVolumeIORequestMarshaller implements Marshaller<Request<Enabl
     public Request<EnableVolumeIORequest> marshall(EnableVolumeIORequest enableVolumeIORequest) {
 
         if (enableVolumeIORequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<EnableVolumeIORequest> request = new DefaultRequest<EnableVolumeIORequest>(enableVolumeIORequest, "AmazonEC2");
         request.addParameter("Action", "EnableVolumeIO");
@@ -43,7 +43,6 @@ public class EnableVolumeIORequestMarshaller implements Marshaller<Request<Enabl
         if (enableVolumeIORequest.getVolumeId() != null) {
             request.addParameter("VolumeId", StringUtils.fromString(enableVolumeIORequest.getVolumeId()));
         }
-
 
         return request;
     }

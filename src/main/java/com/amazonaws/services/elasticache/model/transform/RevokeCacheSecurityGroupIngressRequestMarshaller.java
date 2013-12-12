@@ -33,8 +33,8 @@ public class RevokeCacheSecurityGroupIngressRequestMarshaller implements Marshal
     public Request<RevokeCacheSecurityGroupIngressRequest> marshall(RevokeCacheSecurityGroupIngressRequest revokeCacheSecurityGroupIngressRequest) {
 
         if (revokeCacheSecurityGroupIngressRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RevokeCacheSecurityGroupIngressRequest> request = new DefaultRequest<RevokeCacheSecurityGroupIngressRequest>(revokeCacheSecurityGroupIngressRequest, "AmazonElastiCache");
         request.addParameter("Action", "RevokeCacheSecurityGroupIngress");
@@ -49,7 +49,6 @@ public class RevokeCacheSecurityGroupIngressRequestMarshaller implements Marshal
         if (revokeCacheSecurityGroupIngressRequest.getEC2SecurityGroupOwnerId() != null) {
             request.addParameter("EC2SecurityGroupOwnerId", StringUtils.fromString(revokeCacheSecurityGroupIngressRequest.getEC2SecurityGroupOwnerId()));
         }
-
 
         return request;
     }

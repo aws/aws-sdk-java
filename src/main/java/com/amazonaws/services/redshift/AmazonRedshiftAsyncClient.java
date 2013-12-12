@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.redshift.model.*;
 
-
 /**
  * Asynchronous client for accessing AmazonRedshift.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -64,7 +63,6 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -264,7 +262,6 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -322,11 +319,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<Snapshot>() {
             public Snapshot call() throws Exception {
                 return revokeSnapshotAccess(revokeSnapshotAccessRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Removes the ability of the specified AWS customer account to restore
@@ -366,17 +362,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Snapshot>() {
             public Snapshot call() throws Exception {
-            	Snapshot result;
+                Snapshot result;
                 try {
-            		result = revokeSnapshotAccess(revokeSnapshotAccessRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(revokeSnapshotAccessRequest, result);
-               	return result;
-		    }
-		});
+                    result = revokeSnapshotAccess(revokeSnapshotAccessRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(revokeSnapshotAccessRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -407,11 +403,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
                 return modifySnapshotCopyRetentionPeriod(modifySnapshotCopyRetentionPeriodRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Modifies the number of days to retain automated snapshots in the
@@ -445,17 +440,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
-            	Cluster result;
+                Cluster result;
                 try {
-            		result = modifySnapshotCopyRetentionPeriod(modifySnapshotCopyRetentionPeriodRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(modifySnapshotCopyRetentionPeriodRequest, result);
-               	return result;
-		    }
-		});
+                    result = modifySnapshotCopyRetentionPeriod(modifySnapshotCopyRetentionPeriodRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(modifySnapshotCopyRetentionPeriodRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -487,11 +482,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<ClusterSubnetGroup>() {
             public ClusterSubnetGroup call() throws Exception {
                 return modifyClusterSubnetGroup(modifyClusterSubnetGroupRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Modifies a cluster subnet group to include the specified list of VPC
@@ -526,17 +520,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ClusterSubnetGroup>() {
             public ClusterSubnetGroup call() throws Exception {
-            	ClusterSubnetGroup result;
+                ClusterSubnetGroup result;
                 try {
-            		result = modifyClusterSubnetGroup(modifyClusterSubnetGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(modifyClusterSubnetGroupRequest, result);
-               	return result;
-		    }
-		});
+                    result = modifyClusterSubnetGroup(modifyClusterSubnetGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(modifyClusterSubnetGroupRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -566,11 +560,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
             public Void call() throws Exception {
                 deleteHsmConfiguration(deleteHsmConfigurationRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified Amazon Redshift HSM configuration.
@@ -602,16 +595,16 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteHsmConfiguration(deleteHsmConfigurationRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteHsmConfigurationRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteHsmConfiguration(deleteHsmConfigurationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteHsmConfigurationRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -654,11 +647,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<ReservedNode>() {
             public ReservedNode call() throws Exception {
                 return purchaseReservedNodeOffering(purchaseReservedNodeOfferingRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Allows you to purchase reserved nodes. Amazon Redshift offers a
@@ -704,17 +696,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ReservedNode>() {
             public ReservedNode call() throws Exception {
-            	ReservedNode result;
+                ReservedNode result;
                 try {
-            		result = purchaseReservedNodeOffering(purchaseReservedNodeOfferingRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(purchaseReservedNodeOfferingRequest, result);
-               	return result;
-		    }
-		});
+                    result = purchaseReservedNodeOffering(purchaseReservedNodeOfferingRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(purchaseReservedNodeOfferingRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -743,11 +735,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DisableLoggingResult>() {
             public DisableLoggingResult call() throws Exception {
                 return disableLogging(disableLoggingRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Stops logging information, such as queries and connection attempts,
@@ -779,17 +770,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DisableLoggingResult>() {
             public DisableLoggingResult call() throws Exception {
-            	DisableLoggingResult result;
+                DisableLoggingResult result;
                 try {
-            		result = disableLogging(disableLoggingRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(disableLoggingRequest, result);
-               	return result;
-		    }
-		});
+                    result = disableLogging(disableLoggingRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(disableLoggingRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -833,11 +824,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
                 return modifyCluster(modifyClusterRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Modifies the settings for a cluster. For example, you can add another
@@ -884,17 +874,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
-            	Cluster result;
+                Cluster result;
                 try {
-            		result = modifyCluster(modifyClusterRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(modifyClusterRequest, result);
-               	return result;
-		    }
-		});
+                    result = modifyCluster(modifyClusterRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(modifyClusterRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -939,11 +929,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<Snapshot>() {
             public Snapshot call() throws Exception {
                 return copyClusterSnapshot(copyClusterSnapshotRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Copies the specified automated cluster snapshot to a new manual
@@ -991,17 +980,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Snapshot>() {
             public Snapshot call() throws Exception {
-            	Snapshot result;
+                Snapshot result;
                 try {
-            		result = copyClusterSnapshot(copyClusterSnapshotRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(copyClusterSnapshotRequest, result);
-               	return result;
-		    }
-		});
+                    result = copyClusterSnapshot(copyClusterSnapshotRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(copyClusterSnapshotRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1041,11 +1030,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeOrderableClusterOptionsResult>() {
             public DescribeOrderableClusterOptionsResult call() throws Exception {
                 return describeOrderableClusterOptions(describeOrderableClusterOptionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a list of orderable cluster options. Before you create a new
@@ -1088,17 +1076,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeOrderableClusterOptionsResult>() {
             public DescribeOrderableClusterOptionsResult call() throws Exception {
-            	DescribeOrderableClusterOptionsResult result;
+                DescribeOrderableClusterOptionsResult result;
                 try {
-            		result = describeOrderableClusterOptions(describeOrderableClusterOptionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeOrderableClusterOptionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeOrderableClusterOptions(describeOrderableClusterOptionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeOrderableClusterOptionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1127,11 +1115,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<EnableLoggingResult>() {
             public EnableLoggingResult call() throws Exception {
                 return enableLogging(enableLoggingRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Starts logging information, such as queries and connection attempts,
@@ -1163,17 +1150,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<EnableLoggingResult>() {
             public EnableLoggingResult call() throws Exception {
-            	EnableLoggingResult result;
+                EnableLoggingResult result;
                 try {
-            		result = enableLogging(enableLoggingRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(enableLoggingRequest, result);
-               	return result;
-		    }
-		});
+                    result = enableLogging(enableLoggingRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(enableLoggingRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1212,11 +1199,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<ClusterSubnetGroup>() {
             public ClusterSubnetGroup call() throws Exception {
                 return createClusterSubnetGroup(createClusterSubnetGroupRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new Amazon Redshift subnet group. You must provide a list
@@ -1258,17 +1244,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ClusterSubnetGroup>() {
             public ClusterSubnetGroup call() throws Exception {
-            	ClusterSubnetGroup result;
+                ClusterSubnetGroup result;
                 try {
-            		result = createClusterSubnetGroup(createClusterSubnetGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createClusterSubnetGroupRequest, result);
-               	return result;
-		    }
-		});
+                    result = createClusterSubnetGroup(createClusterSubnetGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createClusterSubnetGroupRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1299,11 +1285,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
             public Void call() throws Exception {
                 deleteHsmClientCertificate(deleteHsmClientCertificateRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified HSM client certificate.
@@ -1336,16 +1321,16 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteHsmClientCertificate(deleteHsmClientCertificateRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteHsmClientCertificateRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteHsmClientCertificate(deleteHsmClientCertificateRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteHsmClientCertificateRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1381,11 +1366,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
                 return rebootCluster(rebootClusterRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Reboots a cluster. This action is taken as soon as possible. It
@@ -1424,17 +1408,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
-            	Cluster result;
+                Cluster result;
                 try {
-            		result = rebootCluster(rebootClusterRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(rebootClusterRequest, result);
-               	return result;
-		    }
-		});
+                    result = rebootCluster(rebootClusterRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(rebootClusterRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1465,11 +1449,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
             public Void call() throws Exception {
                 deleteClusterSubnetGroup(deleteClusterSubnetGroupRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified cluster subnet group.
@@ -1502,16 +1485,16 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteClusterSubnetGroup(deleteClusterSubnetGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteClusterSubnetGroupRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteClusterSubnetGroup(deleteClusterSubnetGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteClusterSubnetGroupRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1550,11 +1533,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
                 return deleteCluster(deleteClusterRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a previously provisioned cluster. A successful response from
@@ -1596,17 +1578,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
-            	Cluster result;
+                Cluster result;
                 try {
-            		result = deleteCluster(deleteClusterRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteClusterRequest, result);
-               	return result;
-		    }
-		});
+                    result = deleteCluster(deleteClusterRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteClusterRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1642,11 +1624,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<Snapshot>() {
             public Snapshot call() throws Exception {
                 return createClusterSnapshot(createClusterSnapshotRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a manual snapshot of the specified cluster. The cluster must
@@ -1685,17 +1666,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Snapshot>() {
             public Snapshot call() throws Exception {
-            	Snapshot result;
+                Snapshot result;
                 try {
-            		result = createClusterSnapshot(createClusterSnapshotRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createClusterSnapshotRequest, result);
-               	return result;
-		    }
-		});
+                    result = createClusterSnapshot(createClusterSnapshotRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createClusterSnapshotRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1732,11 +1713,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
                 return createCluster(createClusterRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new cluster. To create the cluster in virtual private cloud
@@ -1776,17 +1756,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
-            	Cluster result;
+                Cluster result;
                 try {
-            		result = createCluster(createClusterRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createClusterRequest, result);
-               	return result;
-		    }
-		});
+                    result = createCluster(createClusterRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createClusterRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1818,11 +1798,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeEventsResult>() {
             public DescribeEventsResult call() throws Exception {
                 return describeEvents(describeEventsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns events related to clusters, security groups, snapshots, and
@@ -1857,17 +1836,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeEventsResult>() {
             public DescribeEventsResult call() throws Exception {
-            	DescribeEventsResult result;
+                DescribeEventsResult result;
                 try {
-            		result = describeEvents(describeEventsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeEventsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeEvents(describeEventsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeEventsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1920,11 +1899,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<ClusterSecurityGroup>() {
             public ClusterSecurityGroup call() throws Exception {
                 return authorizeClusterSecurityGroupIngress(authorizeClusterSecurityGroupIngressRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Adds an inbound (ingress) rule to an Amazon Redshift security group.
@@ -1980,17 +1958,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ClusterSecurityGroup>() {
             public ClusterSecurityGroup call() throws Exception {
-            	ClusterSecurityGroup result;
+                ClusterSecurityGroup result;
                 try {
-            		result = authorizeClusterSecurityGroupIngress(authorizeClusterSecurityGroupIngressRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(authorizeClusterSecurityGroupIngressRequest, result);
-               	return result;
-		    }
-		});
+                    result = authorizeClusterSecurityGroupIngress(authorizeClusterSecurityGroupIngressRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(authorizeClusterSecurityGroupIngressRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2019,11 +1997,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
                 return rotateEncryptionKey(rotateEncryptionKeyRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Rotates the encryption keys for a cluster.
@@ -2055,17 +2032,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
-            	Cluster result;
+                Cluster result;
                 try {
-            		result = rotateEncryptionKey(rotateEncryptionKeyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(rotateEncryptionKeyRequest, result);
-               	return result;
-		    }
-		});
+                    result = rotateEncryptionKey(rotateEncryptionKeyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(rotateEncryptionKeyRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2106,11 +2083,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
             public Void call() throws Exception {
                 deleteClusterSecurityGroup(deleteClusterSecurityGroupRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes an Amazon Redshift security group.
@@ -2153,16 +2129,16 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteClusterSecurityGroup(deleteClusterSecurityGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteClusterSecurityGroupRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteClusterSecurityGroup(deleteClusterSecurityGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteClusterSecurityGroupRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2191,11 +2167,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeReservedNodesResult>() {
             public DescribeReservedNodesResult call() throws Exception {
                 return describeReservedNodes(describeReservedNodesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the descriptions of the reserved nodes.
@@ -2227,17 +2202,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeReservedNodesResult>() {
             public DescribeReservedNodesResult call() throws Exception {
-            	DescribeReservedNodesResult result;
+                DescribeReservedNodesResult result;
                 try {
-            		result = describeReservedNodes(describeReservedNodesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeReservedNodesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeReservedNodes(describeReservedNodesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeReservedNodesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2274,11 +2249,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DefaultClusterParameters>() {
             public DefaultClusterParameters call() throws Exception {
                 return describeDefaultClusterParameters(describeDefaultClusterParametersRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a list of parameter settings for the specified parameter
@@ -2318,17 +2292,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DefaultClusterParameters>() {
             public DefaultClusterParameters call() throws Exception {
-            	DefaultClusterParameters result;
+                DefaultClusterParameters result;
                 try {
-            		result = describeDefaultClusterParameters(describeDefaultClusterParametersRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeDefaultClusterParametersRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeDefaultClusterParameters(describeDefaultClusterParametersRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeDefaultClusterParametersRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2357,11 +2331,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<EventSubscription>() {
             public EventSubscription call() throws Exception {
                 return modifyEventSubscription(modifyEventSubscriptionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Modifies an existing Amazon Redshift event notification subscription.
@@ -2393,17 +2366,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<EventSubscription>() {
             public EventSubscription call() throws Exception {
-            	EventSubscription result;
+                EventSubscription result;
                 try {
-            		result = modifyEventSubscription(modifyEventSubscriptionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(modifyEventSubscriptionRequest, result);
-               	return result;
-		    }
-		});
+                    result = modifyEventSubscription(modifyEventSubscriptionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(modifyEventSubscriptionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2441,11 +2414,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<ClusterSecurityGroup>() {
             public ClusterSecurityGroup call() throws Exception {
                 return createClusterSecurityGroup(createClusterSecurityGroupRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new Amazon Redshift security group. You use security groups
@@ -2486,17 +2458,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ClusterSecurityGroup>() {
             public ClusterSecurityGroup call() throws Exception {
-            	ClusterSecurityGroup result;
+                ClusterSecurityGroup result;
                 try {
-            		result = createClusterSecurityGroup(createClusterSecurityGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createClusterSecurityGroupRequest, result);
-               	return result;
-		    }
-		});
+                    result = createClusterSecurityGroup(createClusterSecurityGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createClusterSecurityGroupRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2532,11 +2504,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeResizeResult>() {
             public DescribeResizeResult call() throws Exception {
                 return describeResize(describeResizeRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about the last resize operation for the specified
@@ -2575,17 +2546,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeResizeResult>() {
             public DescribeResizeResult call() throws Exception {
-            	DescribeResizeResult result;
+                DescribeResizeResult result;
                 try {
-            		result = describeResize(describeResizeRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeResizeRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeResize(describeResizeRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeResizeRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2620,11 +2591,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeClusterVersionsResult>() {
             public DescribeClusterVersionsResult call() throws Exception {
                 return describeClusterVersions(describeClusterVersionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns descriptions of the available Amazon Redshift cluster
@@ -2662,17 +2632,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeClusterVersionsResult>() {
             public DescribeClusterVersionsResult call() throws Exception {
-            	DescribeClusterVersionsResult result;
+                DescribeClusterVersionsResult result;
                 try {
-            		result = describeClusterVersions(describeClusterVersionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeClusterVersionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeClusterVersions(describeClusterVersionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeClusterVersionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2720,11 +2690,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
                 return restoreFromClusterSnapshot(restoreFromClusterSnapshotRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new cluster from a snapshot. Amazon Redshift creates the
@@ -2775,17 +2744,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
-            	Cluster result;
+                Cluster result;
                 try {
-            		result = restoreFromClusterSnapshot(restoreFromClusterSnapshotRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(restoreFromClusterSnapshotRequest, result);
-               	return result;
-		    }
-		});
+                    result = restoreFromClusterSnapshot(restoreFromClusterSnapshotRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(restoreFromClusterSnapshotRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2821,11 +2790,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<ModifyClusterParameterGroupResult>() {
             public ModifyClusterParameterGroupResult call() throws Exception {
                 return modifyClusterParameterGroup(modifyClusterParameterGroupRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Modifies the parameters of a parameter group.
@@ -2864,17 +2832,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ModifyClusterParameterGroupResult>() {
             public ModifyClusterParameterGroupResult call() throws Exception {
-            	ModifyClusterParameterGroupResult result;
+                ModifyClusterParameterGroupResult result;
                 try {
-            		result = modifyClusterParameterGroup(modifyClusterParameterGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(modifyClusterParameterGroupRequest, result);
-               	return result;
-		    }
-		});
+                    result = modifyClusterParameterGroup(modifyClusterParameterGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(modifyClusterParameterGroupRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2907,11 +2875,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeEventCategoriesResult>() {
             public DescribeEventCategoriesResult call() throws Exception {
                 return describeEventCategories(describeEventCategoriesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Displays a list of event categories for all event source types, or for
@@ -2947,17 +2914,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeEventCategoriesResult>() {
             public DescribeEventCategoriesResult call() throws Exception {
-            	DescribeEventCategoriesResult result;
+                DescribeEventCategoriesResult result;
                 try {
-            		result = describeEventCategories(describeEventCategoriesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeEventCategoriesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeEventCategories(describeEventCategoriesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeEventCategoriesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2995,11 +2962,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeClusterSecurityGroupsResult>() {
             public DescribeClusterSecurityGroupsResult call() throws Exception {
                 return describeClusterSecurityGroups(describeClusterSecurityGroupsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about Amazon Redshift security groups. If the
@@ -3040,17 +3006,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeClusterSecurityGroupsResult>() {
             public DescribeClusterSecurityGroupsResult call() throws Exception {
-            	DescribeClusterSecurityGroupsResult result;
+                DescribeClusterSecurityGroupsResult result;
                 try {
-            		result = describeClusterSecurityGroups(describeClusterSecurityGroupsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeClusterSecurityGroupsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeClusterSecurityGroups(describeClusterSecurityGroupsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeClusterSecurityGroupsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3083,11 +3049,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeClusterSubnetGroupsResult>() {
             public DescribeClusterSubnetGroupsResult call() throws Exception {
                 return describeClusterSubnetGroups(describeClusterSubnetGroupsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns one or more cluster subnet group objects, which contain
@@ -3123,17 +3088,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeClusterSubnetGroupsResult>() {
             public DescribeClusterSubnetGroupsResult call() throws Exception {
-            	DescribeClusterSubnetGroupsResult result;
+                DescribeClusterSubnetGroupsResult result;
                 try {
-            		result = describeClusterSubnetGroups(describeClusterSubnetGroupsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeClusterSubnetGroupsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeClusterSubnetGroups(describeClusterSubnetGroupsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeClusterSubnetGroupsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3166,11 +3131,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeHsmConfigurationsResult>() {
             public DescribeHsmConfigurationsResult call() throws Exception {
                 return describeHsmConfigurations(describeHsmConfigurationsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about the specified Amazon Redshift HSM
@@ -3206,17 +3170,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeHsmConfigurationsResult>() {
             public DescribeHsmConfigurationsResult call() throws Exception {
-            	DescribeHsmConfigurationsResult result;
+                DescribeHsmConfigurationsResult result;
                 try {
-            		result = describeHsmConfigurations(describeHsmConfigurationsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeHsmConfigurationsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeHsmConfigurations(describeHsmConfigurationsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeHsmConfigurationsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3255,11 +3219,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<Snapshot>() {
             public Snapshot call() throws Exception {
                 return deleteClusterSnapshot(deleteClusterSnapshotRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified manual snapshot. The snapshot must be in the
@@ -3301,17 +3264,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Snapshot>() {
             public Snapshot call() throws Exception {
-            	Snapshot result;
+                Snapshot result;
                 try {
-            		result = deleteClusterSnapshot(deleteClusterSnapshotRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteClusterSnapshotRequest, result);
-               	return result;
-		    }
-		});
+                    result = deleteClusterSnapshot(deleteClusterSnapshotRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteClusterSnapshotRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3346,11 +3309,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
             public Void call() throws Exception {
                 deleteClusterParameterGroup(deleteClusterParameterGroupRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a specified Amazon Redshift parameter group. <p>
@@ -3387,16 +3349,16 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteClusterParameterGroup(deleteClusterParameterGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteClusterParameterGroupRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteClusterParameterGroup(deleteClusterParameterGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteClusterParameterGroupRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3426,11 +3388,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
                 return disableSnapshotCopy(disableSnapshotCopyRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Disables the automatic copying of snapshots from one region to another
@@ -3463,17 +3424,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
-            	Cluster result;
+                Cluster result;
                 try {
-            		result = disableSnapshotCopy(disableSnapshotCopyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(disableSnapshotCopyRequest, result);
-               	return result;
-		    }
-		});
+                    result = disableSnapshotCopy(disableSnapshotCopyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(disableSnapshotCopyRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3528,11 +3489,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<EventSubscription>() {
             public EventSubscription call() throws Exception {
                 return createEventSubscription(createEventSubscriptionRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates an Amazon Redshift event notification subscription. This
@@ -3590,17 +3550,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<EventSubscription>() {
             public EventSubscription call() throws Exception {
-            	EventSubscription result;
+                EventSubscription result;
                 try {
-            		result = createEventSubscription(createEventSubscriptionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createEventSubscriptionRequest, result);
-               	return result;
-		    }
-		});
+                    result = createEventSubscription(createEventSubscriptionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createEventSubscriptionRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3634,11 +3594,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<ResetClusterParameterGroupResult>() {
             public ResetClusterParameterGroupResult call() throws Exception {
                 return resetClusterParameterGroup(resetClusterParameterGroupRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Sets one or more parameters of the specified parameter group to their
@@ -3675,17 +3634,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ResetClusterParameterGroupResult>() {
             public ResetClusterParameterGroupResult call() throws Exception {
-            	ResetClusterParameterGroupResult result;
+                ResetClusterParameterGroupResult result;
                 try {
-            		result = resetClusterParameterGroup(resetClusterParameterGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(resetClusterParameterGroupRequest, result);
-               	return result;
-		    }
-		});
+                    result = resetClusterParameterGroup(resetClusterParameterGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(resetClusterParameterGroupRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3721,11 +3680,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<Snapshot>() {
             public Snapshot call() throws Exception {
                 return authorizeSnapshotAccess(authorizeSnapshotAccessRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Authorizes the specified AWS customer account to restore the
@@ -3764,17 +3722,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Snapshot>() {
             public Snapshot call() throws Exception {
-            	Snapshot result;
+                Snapshot result;
                 try {
-            		result = authorizeSnapshotAccess(authorizeSnapshotAccessRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(authorizeSnapshotAccessRequest, result);
-               	return result;
-		    }
-		});
+                    result = authorizeSnapshotAccess(authorizeSnapshotAccessRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(authorizeSnapshotAccessRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3804,11 +3762,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
                 return enableSnapshotCopy(enableSnapshotCopyRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Enables the automatic copy of snapshots from one region to another
@@ -3841,17 +3798,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Cluster>() {
             public Cluster call() throws Exception {
-            	Cluster result;
+                Cluster result;
                 try {
-            		result = enableSnapshotCopy(enableSnapshotCopyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(enableSnapshotCopyRequest, result);
-               	return result;
-		    }
-		});
+                    result = enableSnapshotCopy(enableSnapshotCopyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(enableSnapshotCopyRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3895,11 +3852,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeReservedNodeOfferingsResult>() {
             public DescribeReservedNodeOfferingsResult call() throws Exception {
                 return describeReservedNodeOfferings(describeReservedNodeOfferingsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a list of the available reserved node offerings by Amazon
@@ -3946,17 +3902,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeReservedNodeOfferingsResult>() {
             public DescribeReservedNodeOfferingsResult call() throws Exception {
-            	DescribeReservedNodeOfferingsResult result;
+                DescribeReservedNodeOfferingsResult result;
                 try {
-            		result = describeReservedNodeOfferings(describeReservedNodeOfferingsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeReservedNodeOfferingsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeReservedNodeOfferings(describeReservedNodeOfferingsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeReservedNodeOfferingsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3988,11 +3944,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeEventSubscriptionsResult>() {
             public DescribeEventSubscriptionsResult call() throws Exception {
                 return describeEventSubscriptions(describeEventSubscriptionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists descriptions of all the Amazon Redshift event notifications
@@ -4027,17 +3982,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeEventSubscriptionsResult>() {
             public DescribeEventSubscriptionsResult call() throws Exception {
-            	DescribeEventSubscriptionsResult result;
+                DescribeEventSubscriptionsResult result;
                 try {
-            		result = describeEventSubscriptions(describeEventSubscriptionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeEventSubscriptionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeEventSubscriptions(describeEventSubscriptionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeEventSubscriptionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4067,11 +4022,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeLoggingStatusResult>() {
             public DescribeLoggingStatusResult call() throws Exception {
                 return describeLoggingStatus(describeLoggingStatusRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Describes whether information, such as queries and connection
@@ -4104,17 +4058,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeLoggingStatusResult>() {
             public DescribeLoggingStatusResult call() throws Exception {
-            	DescribeLoggingStatusResult result;
+                DescribeLoggingStatusResult result;
                 try {
-            		result = describeLoggingStatus(describeLoggingStatusRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeLoggingStatusRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeLoggingStatus(describeLoggingStatusRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeLoggingStatusRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4144,11 +4098,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
             public Void call() throws Exception {
                 deleteEventSubscription(deleteEventSubscriptionRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes an Amazon Redshift event notification subscription.
@@ -4180,16 +4133,16 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteEventSubscription(deleteEventSubscriptionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteEventSubscriptionRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteEventSubscription(deleteEventSubscriptionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteEventSubscriptionRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -4229,11 +4182,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<HsmClientCertificate>() {
             public HsmClientCertificate call() throws Exception {
                 return createHsmClientCertificate(createHsmClientCertificateRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates an HSM client certificate that an Amazon Redshift cluster will
@@ -4276,17 +4228,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<HsmClientCertificate>() {
             public HsmClientCertificate call() throws Exception {
-            	HsmClientCertificate result;
+                HsmClientCertificate result;
                 try {
-            		result = createHsmClientCertificate(createHsmClientCertificateRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createHsmClientCertificateRequest, result);
-               	return result;
-		    }
-		});
+                    result = createHsmClientCertificate(createHsmClientCertificateRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createHsmClientCertificateRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4323,11 +4275,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<ClusterSecurityGroup>() {
             public ClusterSecurityGroup call() throws Exception {
                 return revokeClusterSecurityGroupIngress(revokeClusterSecurityGroupIngressRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Revokes an ingress rule in an Amazon Redshift security group for a
@@ -4367,17 +4318,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ClusterSecurityGroup>() {
             public ClusterSecurityGroup call() throws Exception {
-            	ClusterSecurityGroup result;
+                ClusterSecurityGroup result;
                 try {
-            		result = revokeClusterSecurityGroupIngress(revokeClusterSecurityGroupIngressRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(revokeClusterSecurityGroupIngressRequest, result);
-               	return result;
-		    }
-		});
+                    result = revokeClusterSecurityGroupIngress(revokeClusterSecurityGroupIngressRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(revokeClusterSecurityGroupIngressRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4422,11 +4373,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeClusterParametersResult>() {
             public DescribeClusterParametersResult call() throws Exception {
                 return describeClusterParameters(describeClusterParametersRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a detailed list of parameters contained within the specified
@@ -4474,17 +4424,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeClusterParametersResult>() {
             public DescribeClusterParametersResult call() throws Exception {
-            	DescribeClusterParametersResult result;
+                DescribeClusterParametersResult result;
                 try {
-            		result = describeClusterParameters(describeClusterParametersRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeClusterParametersRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeClusterParameters(describeClusterParametersRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeClusterParametersRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4516,11 +4466,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeHsmClientCertificatesResult>() {
             public DescribeHsmClientCertificatesResult call() throws Exception {
                 return describeHsmClientCertificates(describeHsmClientCertificatesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about the specified HSM client certificate. If no
@@ -4555,17 +4504,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeHsmClientCertificatesResult>() {
             public DescribeHsmClientCertificatesResult call() throws Exception {
-            	DescribeHsmClientCertificatesResult result;
+                DescribeHsmClientCertificatesResult result;
                 try {
-            		result = describeHsmClientCertificates(describeHsmClientCertificatesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeHsmClientCertificatesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeHsmClientCertificates(describeHsmClientCertificatesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeHsmClientCertificatesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4603,11 +4552,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<HsmConfiguration>() {
             public HsmConfiguration call() throws Exception {
                 return createHsmConfiguration(createHsmConfigurationRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates an HSM configuration that contains the information required by
@@ -4648,17 +4596,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<HsmConfiguration>() {
             public HsmConfiguration call() throws Exception {
-            	HsmConfiguration result;
+                HsmConfiguration result;
                 try {
-            		result = createHsmConfiguration(createHsmConfigurationRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createHsmConfigurationRequest, result);
-               	return result;
-		    }
-		});
+                    result = createHsmConfiguration(createHsmConfigurationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createHsmConfigurationRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4694,11 +4642,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeClustersResult>() {
             public DescribeClustersResult call() throws Exception {
                 return describeClusters(describeClustersRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns properties of provisioned clusters including general cluster
@@ -4737,17 +4684,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeClustersResult>() {
             public DescribeClustersResult call() throws Exception {
-            	DescribeClustersResult result;
+                DescribeClustersResult result;
                 try {
-            		result = describeClusters(describeClustersRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeClustersRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeClusters(describeClustersRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeClustersRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4781,11 +4728,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeClusterSnapshotsResult>() {
             public DescribeClusterSnapshotsResult call() throws Exception {
                 return describeClusterSnapshots(describeClusterSnapshotsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns one or more snapshot objects, which contain metadata about
@@ -4822,17 +4768,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeClusterSnapshotsResult>() {
             public DescribeClusterSnapshotsResult call() throws Exception {
-            	DescribeClusterSnapshotsResult result;
+                DescribeClusterSnapshotsResult result;
                 try {
-            		result = describeClusterSnapshots(describeClusterSnapshotsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeClusterSnapshotsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeClusterSnapshots(describeClusterSnapshotsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeClusterSnapshotsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4877,11 +4823,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<ClusterParameterGroup>() {
             public ClusterParameterGroup call() throws Exception {
                 return createClusterParameterGroup(createClusterParameterGroupRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates an Amazon Redshift parameter group.
@@ -4929,17 +4874,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ClusterParameterGroup>() {
             public ClusterParameterGroup call() throws Exception {
-            	ClusterParameterGroup result;
+                ClusterParameterGroup result;
                 try {
-            		result = createClusterParameterGroup(createClusterParameterGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createClusterParameterGroupRequest, result);
-               	return result;
-		    }
-		});
+                    result = createClusterParameterGroup(createClusterParameterGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createClusterParameterGroupRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4980,11 +4925,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
         return executorService.submit(new Callable<DescribeClusterParameterGroupsResult>() {
             public DescribeClusterParameterGroupsResult call() throws Exception {
                 return describeClusterParameterGroups(describeClusterParameterGroupsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a list of Amazon Redshift parameter groups, including
@@ -5028,17 +4972,17 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeClusterParameterGroupsResult>() {
             public DescribeClusterParameterGroupsResult call() throws Exception {
-            	DescribeClusterParameterGroupsResult result;
+                DescribeClusterParameterGroupsResult result;
                 try {
-            		result = describeClusterParameterGroups(describeClusterParameterGroupsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeClusterParameterGroupsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeClusterParameterGroups(describeClusterParameterGroupsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeClusterParameterGroupsRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

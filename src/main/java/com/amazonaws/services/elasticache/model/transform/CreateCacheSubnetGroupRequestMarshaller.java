@@ -33,8 +33,8 @@ public class CreateCacheSubnetGroupRequestMarshaller implements Marshaller<Reque
     public Request<CreateCacheSubnetGroupRequest> marshall(CreateCacheSubnetGroupRequest createCacheSubnetGroupRequest) {
 
         if (createCacheSubnetGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateCacheSubnetGroupRequest> request = new DefaultRequest<CreateCacheSubnetGroupRequest>(createCacheSubnetGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "CreateCacheSubnetGroup");
@@ -57,7 +57,6 @@ public class CreateCacheSubnetGroupRequestMarshaller implements Marshaller<Reque
 
             subnetIdsListIndex++;
         }
-
 
         return request;
     }

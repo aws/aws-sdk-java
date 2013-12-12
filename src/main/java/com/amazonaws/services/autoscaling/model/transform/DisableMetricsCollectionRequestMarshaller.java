@@ -33,8 +33,8 @@ public class DisableMetricsCollectionRequestMarshaller implements Marshaller<Req
     public Request<DisableMetricsCollectionRequest> marshall(DisableMetricsCollectionRequest disableMetricsCollectionRequest) {
 
         if (disableMetricsCollectionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DisableMetricsCollectionRequest> request = new DefaultRequest<DisableMetricsCollectionRequest>(disableMetricsCollectionRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DisableMetricsCollection");
@@ -54,7 +54,6 @@ public class DisableMetricsCollectionRequestMarshaller implements Marshaller<Req
 
             metricsListIndex++;
         }
-
 
         return request;
     }

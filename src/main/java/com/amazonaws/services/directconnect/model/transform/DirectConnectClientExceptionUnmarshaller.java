@@ -34,8 +34,7 @@ public class DirectConnectClientExceptionUnmarshaller extends JsonErrorUnmarshal
             return null;
 
         DirectConnectClientException e = (DirectConnectClientException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

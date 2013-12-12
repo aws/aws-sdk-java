@@ -16,7 +16,6 @@ package com.amazonaws.services.elasticloadbalancing.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * This data type is used as a response element in the DescribeLoadBalancers action. For information about Elastic Load Balancing security groups, go to

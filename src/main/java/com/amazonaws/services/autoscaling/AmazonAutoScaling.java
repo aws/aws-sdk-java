@@ -1438,6 +1438,5 @@ public interface AmazonAutoScaling {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

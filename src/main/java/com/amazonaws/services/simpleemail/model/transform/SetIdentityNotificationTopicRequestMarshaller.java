@@ -33,8 +33,8 @@ public class SetIdentityNotificationTopicRequestMarshaller implements Marshaller
     public Request<SetIdentityNotificationTopicRequest> marshall(SetIdentityNotificationTopicRequest setIdentityNotificationTopicRequest) {
 
         if (setIdentityNotificationTopicRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<SetIdentityNotificationTopicRequest> request = new DefaultRequest<SetIdentityNotificationTopicRequest>(setIdentityNotificationTopicRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "SetIdentityNotificationTopic");
@@ -49,7 +49,6 @@ public class SetIdentityNotificationTopicRequestMarshaller implements Marshaller
         if (setIdentityNotificationTopicRequest.getSnsTopic() != null) {
             request.addParameter("SnsTopic", StringUtils.fromString(setIdentityNotificationTopicRequest.getSnsTopic()));
         }
-
 
         return request;
     }

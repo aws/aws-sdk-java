@@ -34,8 +34,7 @@ public class InvalidS3BucketNameExceptionUnmarshaller extends JsonErrorUnmarshal
             return null;
 
         InvalidS3BucketNameException e = (InvalidS3BucketNameException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

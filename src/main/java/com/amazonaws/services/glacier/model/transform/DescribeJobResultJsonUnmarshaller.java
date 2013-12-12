@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Describe Job Result JSON Unmarshaller
  */
 public class DescribeJobResultJsonUnmarshaller implements Unmarshaller<DescribeJobResult, JsonUnmarshallerContext> {
 
-    
-
     public DescribeJobResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeJobResult describeJobResult = new DescribeJobResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DescribeJobResultJsonUnmarshaller implements Unmarshaller<DescribeJ
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobId", targetDepth)) {
                     context.nextToken();
@@ -120,7 +114,6 @@ public class DescribeJobResultJsonUnmarshaller implements Unmarshaller<DescribeJ
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

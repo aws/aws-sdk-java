@@ -16,7 +16,6 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Used to specify a deployment operation.
@@ -27,12 +26,12 @@ public class DeploymentCommand implements Serializable {
     /**
      * Specifies the deployment operation. You can specify only one command.
      * <p>For stacks, the available commands are: <ul>
-     * <li><code></code>execute_recipes: Execute the recipes that are
+     * <li><code>execute_recipes</code>: Execute the recipes that are
      * specified by the <code>Args</code> parameter.</li>
-     * <li><code></code>install_dependencies: Installs the stack's
-     * dependencies.</li> <li><code></code>update_custom_cookbooks: Update
+     * <li><code>install_dependencies</code>: Installs the stack's
+     * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
-     * <li><code></code>update_dependencies: Update the stack's
+     * <li><code>update_dependencies</code>: Update the stack's
      * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
      * <li><code>deploy</code>: Deploy the app.</li>
      * <li><code>rollback</code> Roll the app back to the previous version.
@@ -59,12 +58,12 @@ public class DeploymentCommand implements Serializable {
     /**
      * Specifies the deployment operation. You can specify only one command.
      * <p>For stacks, the available commands are: <ul>
-     * <li><code></code>execute_recipes: Execute the recipes that are
+     * <li><code>execute_recipes</code>: Execute the recipes that are
      * specified by the <code>Args</code> parameter.</li>
-     * <li><code></code>install_dependencies: Installs the stack's
-     * dependencies.</li> <li><code></code>update_custom_cookbooks: Update
+     * <li><code>install_dependencies</code>: Installs the stack's
+     * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
-     * <li><code></code>update_dependencies: Update the stack's
+     * <li><code>update_dependencies</code>: Update the stack's
      * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
      * <li><code>deploy</code>: Deploy the app.</li>
      * <li><code>rollback</code> Roll the app back to the previous version.
@@ -81,12 +80,12 @@ public class DeploymentCommand implements Serializable {
      *
      * @return Specifies the deployment operation. You can specify only one command.
      *         <p>For stacks, the available commands are: <ul>
-     *         <li><code></code>execute_recipes: Execute the recipes that are
+     *         <li><code>execute_recipes</code>: Execute the recipes that are
      *         specified by the <code>Args</code> parameter.</li>
-     *         <li><code></code>install_dependencies: Installs the stack's
-     *         dependencies.</li> <li><code></code>update_custom_cookbooks: Update
+     *         <li><code>install_dependencies</code>: Installs the stack's
+     *         dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      *         the stack's custom cookbooks.</li>
-     *         <li><code></code>update_dependencies: Update the stack's
+     *         <li><code>update_dependencies</code>: Update the stack's
      *         dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
      *         <li><code>deploy</code>: Deploy the app.</li>
      *         <li><code>rollback</code> Roll the app back to the previous version.
@@ -107,12 +106,12 @@ public class DeploymentCommand implements Serializable {
     /**
      * Specifies the deployment operation. You can specify only one command.
      * <p>For stacks, the available commands are: <ul>
-     * <li><code></code>execute_recipes: Execute the recipes that are
+     * <li><code>execute_recipes</code>: Execute the recipes that are
      * specified by the <code>Args</code> parameter.</li>
-     * <li><code></code>install_dependencies: Installs the stack's
-     * dependencies.</li> <li><code></code>update_custom_cookbooks: Update
+     * <li><code>install_dependencies</code>: Installs the stack's
+     * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
-     * <li><code></code>update_dependencies: Update the stack's
+     * <li><code>update_dependencies</code>: Update the stack's
      * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
      * <li><code>deploy</code>: Deploy the app.</li>
      * <li><code>rollback</code> Roll the app back to the previous version.
@@ -129,12 +128,12 @@ public class DeploymentCommand implements Serializable {
      *
      * @param name Specifies the deployment operation. You can specify only one command.
      *         <p>For stacks, the available commands are: <ul>
-     *         <li><code></code>execute_recipes: Execute the recipes that are
+     *         <li><code>execute_recipes</code>: Execute the recipes that are
      *         specified by the <code>Args</code> parameter.</li>
-     *         <li><code></code>install_dependencies: Installs the stack's
-     *         dependencies.</li> <li><code></code>update_custom_cookbooks: Update
+     *         <li><code>install_dependencies</code>: Installs the stack's
+     *         dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      *         the stack's custom cookbooks.</li>
-     *         <li><code></code>update_dependencies: Update the stack's
+     *         <li><code>update_dependencies</code>: Update the stack's
      *         dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
      *         <li><code>deploy</code>: Deploy the app.</li>
      *         <li><code>rollback</code> Roll the app back to the previous version.
@@ -155,12 +154,12 @@ public class DeploymentCommand implements Serializable {
     /**
      * Specifies the deployment operation. You can specify only one command.
      * <p>For stacks, the available commands are: <ul>
-     * <li><code></code>execute_recipes: Execute the recipes that are
+     * <li><code>execute_recipes</code>: Execute the recipes that are
      * specified by the <code>Args</code> parameter.</li>
-     * <li><code></code>install_dependencies: Installs the stack's
-     * dependencies.</li> <li><code></code>update_custom_cookbooks: Update
+     * <li><code>install_dependencies</code>: Installs the stack's
+     * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
-     * <li><code></code>update_dependencies: Update the stack's
+     * <li><code>update_dependencies</code>: Update the stack's
      * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
      * <li><code>deploy</code>: Deploy the app.</li>
      * <li><code>rollback</code> Roll the app back to the previous version.
@@ -179,12 +178,12 @@ public class DeploymentCommand implements Serializable {
      *
      * @param name Specifies the deployment operation. You can specify only one command.
      *         <p>For stacks, the available commands are: <ul>
-     *         <li><code></code>execute_recipes: Execute the recipes that are
+     *         <li><code>execute_recipes</code>: Execute the recipes that are
      *         specified by the <code>Args</code> parameter.</li>
-     *         <li><code></code>install_dependencies: Installs the stack's
-     *         dependencies.</li> <li><code></code>update_custom_cookbooks: Update
+     *         <li><code>install_dependencies</code>: Installs the stack's
+     *         dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      *         the stack's custom cookbooks.</li>
-     *         <li><code></code>update_dependencies: Update the stack's
+     *         <li><code>update_dependencies</code>: Update the stack's
      *         dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
      *         <li><code>deploy</code>: Deploy the app.</li>
      *         <li><code>rollback</code> Roll the app back to the previous version.
@@ -209,12 +208,12 @@ public class DeploymentCommand implements Serializable {
     /**
      * Specifies the deployment operation. You can specify only one command.
      * <p>For stacks, the available commands are: <ul>
-     * <li><code></code>execute_recipes: Execute the recipes that are
+     * <li><code>execute_recipes</code>: Execute the recipes that are
      * specified by the <code>Args</code> parameter.</li>
-     * <li><code></code>install_dependencies: Installs the stack's
-     * dependencies.</li> <li><code></code>update_custom_cookbooks: Update
+     * <li><code>install_dependencies</code>: Installs the stack's
+     * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
-     * <li><code></code>update_dependencies: Update the stack's
+     * <li><code>update_dependencies</code>: Update the stack's
      * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
      * <li><code>deploy</code>: Deploy the app.</li>
      * <li><code>rollback</code> Roll the app back to the previous version.
@@ -231,12 +230,12 @@ public class DeploymentCommand implements Serializable {
      *
      * @param name Specifies the deployment operation. You can specify only one command.
      *         <p>For stacks, the available commands are: <ul>
-     *         <li><code></code>execute_recipes: Execute the recipes that are
+     *         <li><code>execute_recipes</code>: Execute the recipes that are
      *         specified by the <code>Args</code> parameter.</li>
-     *         <li><code></code>install_dependencies: Installs the stack's
-     *         dependencies.</li> <li><code></code>update_custom_cookbooks: Update
+     *         <li><code>install_dependencies</code>: Installs the stack's
+     *         dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      *         the stack's custom cookbooks.</li>
-     *         <li><code></code>update_dependencies: Update the stack's
+     *         <li><code>update_dependencies</code>: Update the stack's
      *         dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
      *         <li><code>deploy</code>: Deploy the app.</li>
      *         <li><code>rollback</code> Roll the app back to the previous version.
@@ -257,12 +256,12 @@ public class DeploymentCommand implements Serializable {
     /**
      * Specifies the deployment operation. You can specify only one command.
      * <p>For stacks, the available commands are: <ul>
-     * <li><code></code>execute_recipes: Execute the recipes that are
+     * <li><code>execute_recipes</code>: Execute the recipes that are
      * specified by the <code>Args</code> parameter.</li>
-     * <li><code></code>install_dependencies: Installs the stack's
-     * dependencies.</li> <li><code></code>update_custom_cookbooks: Update
+     * <li><code>install_dependencies</code>: Installs the stack's
+     * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
-     * <li><code></code>update_dependencies: Update the stack's
+     * <li><code>update_dependencies</code>: Update the stack's
      * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
      * <li><code>deploy</code>: Deploy the app.</li>
      * <li><code>rollback</code> Roll the app back to the previous version.
@@ -281,12 +280,12 @@ public class DeploymentCommand implements Serializable {
      *
      * @param name Specifies the deployment operation. You can specify only one command.
      *         <p>For stacks, the available commands are: <ul>
-     *         <li><code></code>execute_recipes: Execute the recipes that are
+     *         <li><code>execute_recipes</code>: Execute the recipes that are
      *         specified by the <code>Args</code> parameter.</li>
-     *         <li><code></code>install_dependencies: Installs the stack's
-     *         dependencies.</li> <li><code></code>update_custom_cookbooks: Update
+     *         <li><code>install_dependencies</code>: Installs the stack's
+     *         dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      *         the stack's custom cookbooks.</li>
-     *         <li><code></code>update_dependencies: Update the stack's
+     *         <li><code>update_dependencies</code>: Update the stack's
      *         dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
      *         <li><code>deploy</code>: Deploy the app.</li>
      *         <li><code>rollback</code> Roll the app back to the previous version.
@@ -369,26 +368,26 @@ public class DeploymentCommand implements Serializable {
      * @param key The key of the entry to be added into Args.
      * @param value The corresponding value of the entry to be added into Args.
      */
-	public DeploymentCommand addArgsEntry(String key, java.util.List<String> value) {
-		if (null == this.args) {
-			this.args = new java.util.HashMap<String,java.util.List<String>>();
-		}
-		if (this.args.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.args.put(key, value);
-		return this;
-	}
+    public DeploymentCommand addArgsEntry(String key, java.util.List<String> value) {
+        if (null == this.args) {
+            this.args = new java.util.HashMap<String,java.util.List<String>>();
+        }
+        if (this.args.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.args.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Args.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public DeploymentCommand clearArgsEntries() {
-		this.args = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Args.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public DeploymentCommand clearArgsEntries() {
+        this.args = null;
+        return this;
+    }
+    
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

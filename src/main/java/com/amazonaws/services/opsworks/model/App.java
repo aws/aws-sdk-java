@@ -16,7 +16,6 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A description of the app.
@@ -566,26 +565,26 @@ public class App implements Serializable {
      * @param key The key of the entry to be added into Attributes.
      * @param value The corresponding value of the entry to be added into Attributes.
      */
-	public App addAttributesEntry(String key, String value) {
-		if (null == this.attributes) {
-			this.attributes = new java.util.HashMap<String,String>();
-		}
-		if (this.attributes.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.attributes.put(key, value);
-		return this;
-	}
+    public App addAttributesEntry(String key, String value) {
+        if (null == this.attributes) {
+            this.attributes = new java.util.HashMap<String,String>();
+        }
+        if (this.attributes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.attributes.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Attributes.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public App clearAttributesEntries() {
-		this.attributes = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Attributes.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public App clearAttributesEntries() {
+        this.attributes = null;
+        return this;
+    }
+    
     /**
      * When the app was created.
      *

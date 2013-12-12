@@ -20,7 +20,6 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.AmazonClientException;
 import java.io.UnsupportedEncodingException;
 
-
 /**
  * <p>
  * The result of the GetConsoleOutput operation.

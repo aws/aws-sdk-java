@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.autoscaling.model.*;
 
-
 /**
  * Asynchronous client for accessing AmazonAutoScaling.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -76,7 +75,6 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -276,7 +274,6 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -335,11 +332,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         return executorService.submit(new Callable<DescribeAutoScalingGroupsResult>() {
             public DescribeAutoScalingGroupsResult call() throws Exception {
                 return describeAutoScalingGroups(describeAutoScalingGroupsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a full description of each Auto Scaling group in the given
@@ -380,17 +376,17 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeAutoScalingGroupsResult>() {
             public DescribeAutoScalingGroupsResult call() throws Exception {
-            	DescribeAutoScalingGroupsResult result;
+                DescribeAutoScalingGroupsResult result;
                 try {
-            		result = describeAutoScalingGroups(describeAutoScalingGroupsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeAutoScalingGroupsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeAutoScalingGroups(describeAutoScalingGroupsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeAutoScalingGroupsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -430,11 +426,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 enableMetricsCollection(enableMetricsCollectionRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Enables monitoring of group metrics for the Auto Scaling group
@@ -476,16 +471,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		enableMetricsCollection(enableMetricsCollectionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(enableMetricsCollectionRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    enableMetricsCollection(enableMetricsCollectionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(enableMetricsCollectionRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -518,11 +513,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 resumeProcesses(resumeProcessesRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Resumes all suspended Auto Scaling processes for an Auto Scaling
@@ -557,16 +551,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		resumeProcesses(resumeProcessesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(resumeProcessesRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    resumeProcesses(resumeProcessesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(resumeProcessesRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -602,11 +596,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 deleteLaunchConfiguration(deleteLaunchConfigurationRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified LaunchConfiguration.
@@ -644,16 +637,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteLaunchConfiguration(deleteLaunchConfigurationRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteLaunchConfigurationRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteLaunchConfiguration(deleteLaunchConfigurationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteLaunchConfigurationRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -684,11 +677,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         return executorService.submit(new Callable<DescribePoliciesResult>() {
             public DescribePoliciesResult call() throws Exception {
                 return describePolicies(describePoliciesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns descriptions of what each policy does. This action supports
@@ -722,17 +714,17 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribePoliciesResult>() {
             public DescribePoliciesResult call() throws Exception {
-            	DescribePoliciesResult result;
+                DescribePoliciesResult result;
                 try {
-            		result = describePolicies(describePoliciesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describePoliciesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describePolicies(describePoliciesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describePoliciesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -763,11 +755,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         return executorService.submit(new Callable<DescribeScalingProcessTypesResult>() {
             public DescribeScalingProcessTypesResult call() throws Exception {
                 return describeScalingProcessTypes(describeScalingProcessTypesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns scaling process types for use in the ResumeProcesses and
@@ -801,17 +792,17 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeScalingProcessTypesResult>() {
             public DescribeScalingProcessTypesResult call() throws Exception {
-            	DescribeScalingProcessTypesResult result;
+                DescribeScalingProcessTypesResult result;
                 try {
-            		result = describeScalingProcessTypes(describeScalingProcessTypesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeScalingProcessTypesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeScalingProcessTypes(describeScalingProcessTypesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeScalingProcessTypesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -848,11 +839,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 createAutoScalingGroup(createAutoScalingGroupRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new Auto Scaling group with the specified name and other
@@ -891,16 +881,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		createAutoScalingGroup(createAutoScalingGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createAutoScalingGroupRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    createAutoScalingGroup(createAutoScalingGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createAutoScalingGroupRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -942,11 +932,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         return executorService.submit(new Callable<DescribeScalingActivitiesResult>() {
             public DescribeScalingActivitiesResult call() throws Exception {
                 return describeScalingActivities(describeScalingActivitiesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the scaling activities for the specified Auto Scaling group.
@@ -991,17 +980,17 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeScalingActivitiesResult>() {
             public DescribeScalingActivitiesResult call() throws Exception {
-            	DescribeScalingActivitiesResult result;
+                DescribeScalingActivitiesResult result;
                 try {
-            		result = describeScalingActivities(describeScalingActivitiesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeScalingActivitiesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeScalingActivities(describeScalingActivitiesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeScalingActivitiesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1032,11 +1021,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         return executorService.submit(new Callable<DescribeNotificationConfigurationsResult>() {
             public DescribeNotificationConfigurationsResult call() throws Exception {
                 return describeNotificationConfigurations(describeNotificationConfigurationsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a list of notification actions associated with Auto Scaling
@@ -1070,17 +1058,17 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeNotificationConfigurationsResult>() {
             public DescribeNotificationConfigurationsResult call() throws Exception {
-            	DescribeNotificationConfigurationsResult result;
+                DescribeNotificationConfigurationsResult result;
                 try {
-            		result = describeNotificationConfigurations(describeNotificationConfigurationsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeNotificationConfigurationsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeNotificationConfigurations(describeNotificationConfigurationsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeNotificationConfigurationsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1110,11 +1098,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         return executorService.submit(new Callable<DescribeTerminationPolicyTypesResult>() {
             public DescribeTerminationPolicyTypesResult call() throws Exception {
                 return describeTerminationPolicyTypes(describeTerminationPolicyTypesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a list of all termination policies supported by Auto Scaling.
@@ -1147,17 +1134,17 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeTerminationPolicyTypesResult>() {
             public DescribeTerminationPolicyTypesResult call() throws Exception {
-            	DescribeTerminationPolicyTypesResult result;
+                DescribeTerminationPolicyTypesResult result;
                 try {
-            		result = describeTerminationPolicyTypes(describeTerminationPolicyTypesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeTerminationPolicyTypesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeTerminationPolicyTypes(describeTerminationPolicyTypesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeTerminationPolicyTypesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1197,11 +1184,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         return executorService.submit(new Callable<DescribeTagsResult>() {
             public DescribeTagsResult call() throws Exception {
                 return describeTags(describeTagsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists the Auto Scaling group tags.
@@ -1244,17 +1230,17 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeTagsResult>() {
             public DescribeTagsResult call() throws Exception {
-            	DescribeTagsResult result;
+                DescribeTagsResult result;
                 try {
-            		result = describeTags(describeTagsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeTagsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeTags(describeTagsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeTagsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1283,11 +1269,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 executePolicy(executePolicyRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Executes the specified policy.
@@ -1318,16 +1303,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		executePolicy(executePolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(executePolicyRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    executePolicy(executePolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(executePolicyRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1356,11 +1341,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 deleteTags(deleteTagsRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Removes the specified tags or a set of tags from a set of resources.
@@ -1391,16 +1375,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteTags(deleteTagsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteTagsRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteTags(deleteTagsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteTagsRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1431,11 +1415,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         return executorService.submit(new Callable<PutScalingPolicyResult>() {
             public PutScalingPolicyResult call() throws Exception {
                 return putScalingPolicy(putScalingPolicyRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates or updates a policy for an Auto Scaling group. To update an
@@ -1469,17 +1452,17 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<PutScalingPolicyResult>() {
             public PutScalingPolicyResult call() throws Exception {
-            	PutScalingPolicyResult result;
+                PutScalingPolicyResult result;
                 try {
-            		result = putScalingPolicy(putScalingPolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(putScalingPolicyRequest, result);
-               	return result;
-		    }
-		});
+                    result = putScalingPolicy(putScalingPolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(putScalingPolicyRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1521,11 +1504,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 putNotificationConfiguration(putNotificationConfigurationRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Configures an Auto Scaling group to send notifications when specified
@@ -1569,16 +1551,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		putNotificationConfiguration(putNotificationConfigurationRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(putNotificationConfigurationRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    putNotificationConfiguration(putNotificationConfigurationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(putNotificationConfigurationRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1607,11 +1589,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 deletePolicy(deletePolicyRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a policy created by PutScalingPolicy.
@@ -1642,16 +1623,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deletePolicy(deletePolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deletePolicyRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deletePolicy(deletePolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deletePolicyRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1682,11 +1663,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 deleteNotificationConfiguration(deleteNotificationConfigurationRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes notifications created by PutNotificationConfiguration.
@@ -1719,16 +1699,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteNotificationConfiguration(deleteNotificationConfigurationRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteNotificationConfigurationRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteNotificationConfiguration(deleteNotificationConfigurationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteNotificationConfigurationRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1760,11 +1740,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 deleteScheduledAction(deleteScheduledActionRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a scheduled action previously created using the
@@ -1798,16 +1777,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteScheduledAction(deleteScheduledActionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteScheduledActionRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteScheduledAction(deleteScheduledActionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteScheduledActionRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1842,11 +1821,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 setInstanceHealth(setInstanceHealthRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Sets the health status of a specified instance that belongs to any of
@@ -1883,16 +1861,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		setInstanceHealth(setInstanceHealthRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(setInstanceHealthRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    setInstanceHealth(setInstanceHealthRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(setInstanceHealthRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1923,11 +1901,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         return executorService.submit(new Callable<DescribeAutoScalingNotificationTypesResult>() {
             public DescribeAutoScalingNotificationTypesResult call() throws Exception {
                 return describeAutoScalingNotificationTypes(describeAutoScalingNotificationTypesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a list of all notification types that are supported by Auto
@@ -1961,17 +1938,17 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeAutoScalingNotificationTypesResult>() {
             public DescribeAutoScalingNotificationTypesResult call() throws Exception {
-            	DescribeAutoScalingNotificationTypesResult result;
+                DescribeAutoScalingNotificationTypesResult result;
                 try {
-            		result = describeAutoScalingNotificationTypes(describeAutoScalingNotificationTypesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeAutoScalingNotificationTypesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeAutoScalingNotificationTypes(describeAutoScalingNotificationTypesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeAutoScalingNotificationTypesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2012,11 +1989,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 createOrUpdateTags(createOrUpdateTagsRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates new tags or updates existing tags for an Auto Scaling group.
@@ -2059,16 +2035,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		createOrUpdateTags(createOrUpdateTagsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createOrUpdateTagsRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    createOrUpdateTags(createOrUpdateTagsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createOrUpdateTagsRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2113,11 +2089,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 suspendProcesses(suspendProcessesRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Suspends Auto Scaling processes for an Auto Scaling group. To suspend
@@ -2164,16 +2139,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		suspendProcesses(suspendProcessesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(suspendProcessesRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    suspendProcesses(suspendProcessesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(suspendProcessesRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2211,11 +2186,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         return executorService.submit(new Callable<DescribeAutoScalingInstancesResult>() {
             public DescribeAutoScalingInstancesResult call() throws Exception {
                 return describeAutoScalingInstances(describeAutoScalingInstancesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a description of each Auto Scaling instance in the
@@ -2256,17 +2230,17 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeAutoScalingInstancesResult>() {
             public DescribeAutoScalingInstancesResult call() throws Exception {
-            	DescribeAutoScalingInstancesResult result;
+                DescribeAutoScalingInstancesResult result;
                 try {
-            		result = describeAutoScalingInstances(describeAutoScalingInstancesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeAutoScalingInstancesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeAutoScalingInstances(describeAutoScalingInstancesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeAutoScalingInstancesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2311,11 +2285,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 createLaunchConfiguration(createLaunchConfigurationRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new launch configuration. The launch configuration name
@@ -2362,16 +2335,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		createLaunchConfiguration(createLaunchConfigurationRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createLaunchConfigurationRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    createLaunchConfiguration(createLaunchConfigurationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createLaunchConfigurationRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2408,11 +2381,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 deleteAutoScalingGroup(deleteAutoScalingGroupRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified Auto Scaling group if the group has no
@@ -2451,16 +2423,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteAutoScalingGroup(deleteAutoScalingGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteAutoScalingGroupRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteAutoScalingGroup(deleteAutoScalingGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteAutoScalingGroupRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2494,11 +2466,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 disableMetricsCollection(disableMetricsCollectionRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Disables monitoring of group metrics for the Auto Scaling group
@@ -2534,16 +2505,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		disableMetricsCollection(disableMetricsCollectionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(disableMetricsCollectionRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    disableMetricsCollection(disableMetricsCollectionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(disableMetricsCollectionRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2599,11 +2570,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 updateAutoScalingGroup(updateAutoScalingGroupRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Updates the configuration for the specified AutoScalingGroup.
@@ -2661,16 +2631,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		updateAutoScalingGroup(updateAutoScalingGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateAutoScalingGroupRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    updateAutoScalingGroup(updateAutoScalingGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateAutoScalingGroupRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2705,11 +2675,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         return executorService.submit(new Callable<DescribeLaunchConfigurationsResult>() {
             public DescribeLaunchConfigurationsResult call() throws Exception {
                 return describeLaunchConfigurations(describeLaunchConfigurationsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a full description of the launch configurations, or the
@@ -2747,17 +2716,17 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeLaunchConfigurationsResult>() {
             public DescribeLaunchConfigurationsResult call() throws Exception {
-            	DescribeLaunchConfigurationsResult result;
+                DescribeLaunchConfigurationsResult result;
                 try {
-            		result = describeLaunchConfigurations(describeLaunchConfigurationsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeLaunchConfigurationsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeLaunchConfigurations(describeLaunchConfigurationsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeLaunchConfigurationsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2788,11 +2757,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         return executorService.submit(new Callable<DescribeAdjustmentTypesResult>() {
             public DescribeAdjustmentTypesResult call() throws Exception {
                 return describeAdjustmentTypes(describeAdjustmentTypesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns policy adjustment types for use in the PutScalingPolicy
@@ -2826,17 +2794,17 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeAdjustmentTypesResult>() {
             public DescribeAdjustmentTypesResult call() throws Exception {
-            	DescribeAdjustmentTypesResult result;
+                DescribeAdjustmentTypesResult result;
                 try {
-            		result = describeAdjustmentTypes(describeAdjustmentTypesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeAdjustmentTypesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeAdjustmentTypes(describeAdjustmentTypesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeAdjustmentTypesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2868,11 +2836,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         return executorService.submit(new Callable<DescribeScheduledActionsResult>() {
             public DescribeScheduledActionsResult call() throws Exception {
                 return describeScheduledActions(describeScheduledActionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists all the actions scheduled for your Auto Scaling group that
@@ -2907,17 +2874,17 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeScheduledActionsResult>() {
             public DescribeScheduledActionsResult call() throws Exception {
-            	DescribeScheduledActionsResult result;
+                DescribeScheduledActionsResult result;
                 try {
-            		result = describeScheduledActions(describeScheduledActionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeScheduledActionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeScheduledActions(describeScheduledActionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeScheduledActionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2961,11 +2928,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 putScheduledUpdateGroupAction(putScheduledUpdateGroupActionRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates or updates a scheduled scaling action for an Auto Scaling
@@ -3011,16 +2977,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		putScheduledUpdateGroupAction(putScheduledUpdateGroupActionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(putScheduledUpdateGroupActionRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    putScheduledUpdateGroupAction(putScheduledUpdateGroupActionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(putScheduledUpdateGroupActionRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3051,11 +3017,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         return executorService.submit(new Callable<DescribeMetricCollectionTypesResult>() {
             public DescribeMetricCollectionTypesResult call() throws Exception {
                 return describeMetricCollectionTypes(describeMetricCollectionTypesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a list of metrics and a corresponding list of granularities
@@ -3089,17 +3054,17 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeMetricCollectionTypesResult>() {
             public DescribeMetricCollectionTypesResult call() throws Exception {
-            	DescribeMetricCollectionTypesResult result;
+                DescribeMetricCollectionTypesResult result;
                 try {
-            		result = describeMetricCollectionTypes(describeMetricCollectionTypesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeMetricCollectionTypesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeMetricCollectionTypes(describeMetricCollectionTypesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeMetricCollectionTypesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3129,11 +3094,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             public Void call() throws Exception {
                 setDesiredCapacity(setDesiredCapacityRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Sets the desired size of the specified AutoScalingGroup.
@@ -3165,16 +3129,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		setDesiredCapacity(setDesiredCapacityRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(setDesiredCapacityRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    setDesiredCapacity(setDesiredCapacityRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(setDesiredCapacityRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3209,11 +3173,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         return executorService.submit(new Callable<TerminateInstanceInAutoScalingGroupResult>() {
             public TerminateInstanceInAutoScalingGroupResult call() throws Exception {
                 return terminateInstanceInAutoScalingGroup(terminateInstanceInAutoScalingGroupRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Terminates the specified instance. Optionally, the desired group size
@@ -3251,17 +3214,17 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<TerminateInstanceInAutoScalingGroupResult>() {
             public TerminateInstanceInAutoScalingGroupResult call() throws Exception {
-            	TerminateInstanceInAutoScalingGroupResult result;
+                TerminateInstanceInAutoScalingGroupResult result;
                 try {
-            		result = terminateInstanceInAutoScalingGroup(terminateInstanceInAutoScalingGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(terminateInstanceInAutoScalingGroupRequest, result);
-               	return result;
-		    }
-		});
+                    result = terminateInstanceInAutoScalingGroup(terminateInstanceInAutoScalingGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(terminateInstanceInAutoScalingGroupRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

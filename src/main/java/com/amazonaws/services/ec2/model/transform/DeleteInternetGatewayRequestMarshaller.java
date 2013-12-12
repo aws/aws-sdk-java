@@ -33,8 +33,8 @@ public class DeleteInternetGatewayRequestMarshaller implements Marshaller<Reques
     public Request<DeleteInternetGatewayRequest> marshall(DeleteInternetGatewayRequest deleteInternetGatewayRequest) {
 
         if (deleteInternetGatewayRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteInternetGatewayRequest> request = new DefaultRequest<DeleteInternetGatewayRequest>(deleteInternetGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteInternetGateway");
@@ -43,7 +43,6 @@ public class DeleteInternetGatewayRequestMarshaller implements Marshaller<Reques
         if (deleteInternetGatewayRequest.getInternetGatewayId() != null) {
             request.addParameter("InternetGatewayId", StringUtils.fromString(deleteInternetGatewayRequest.getInternetGatewayId()));
         }
-
 
         return request;
     }

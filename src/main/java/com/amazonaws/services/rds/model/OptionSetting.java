@@ -16,7 +16,6 @@ package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Option settings are the actual settings being applied or configured for that option. It is used when you modify an option group or describe option

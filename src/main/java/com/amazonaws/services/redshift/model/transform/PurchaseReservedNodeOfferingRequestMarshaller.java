@@ -33,8 +33,8 @@ public class PurchaseReservedNodeOfferingRequestMarshaller implements Marshaller
     public Request<PurchaseReservedNodeOfferingRequest> marshall(PurchaseReservedNodeOfferingRequest purchaseReservedNodeOfferingRequest) {
 
         if (purchaseReservedNodeOfferingRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<PurchaseReservedNodeOfferingRequest> request = new DefaultRequest<PurchaseReservedNodeOfferingRequest>(purchaseReservedNodeOfferingRequest, "AmazonRedshift");
         request.addParameter("Action", "PurchaseReservedNodeOffering");
@@ -46,7 +46,6 @@ public class PurchaseReservedNodeOfferingRequestMarshaller implements Marshaller
         if (purchaseReservedNodeOfferingRequest.getNodeCount() != null) {
             request.addParameter("NodeCount", StringUtils.fromInteger(purchaseReservedNodeOfferingRequest.getNodeCount()));
         }
-
 
         return request;
     }

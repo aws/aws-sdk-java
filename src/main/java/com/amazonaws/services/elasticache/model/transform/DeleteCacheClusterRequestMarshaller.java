@@ -33,8 +33,8 @@ public class DeleteCacheClusterRequestMarshaller implements Marshaller<Request<D
     public Request<DeleteCacheClusterRequest> marshall(DeleteCacheClusterRequest deleteCacheClusterRequest) {
 
         if (deleteCacheClusterRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteCacheClusterRequest> request = new DefaultRequest<DeleteCacheClusterRequest>(deleteCacheClusterRequest, "AmazonElastiCache");
         request.addParameter("Action", "DeleteCacheCluster");
@@ -43,7 +43,6 @@ public class DeleteCacheClusterRequestMarshaller implements Marshaller<Request<D
         if (deleteCacheClusterRequest.getCacheClusterId() != null) {
             request.addParameter("CacheClusterId", StringUtils.fromString(deleteCacheClusterRequest.getCacheClusterId()));
         }
-
 
         return request;
     }

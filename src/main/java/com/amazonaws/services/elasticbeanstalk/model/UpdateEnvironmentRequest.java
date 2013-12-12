@@ -61,6 +61,23 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
     private String environmentName;
 
     /**
+     * If this parameter is specified, AWS Elastic Beanstalk updates the
+     * description of this environment.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 200<br/>
+     */
+    private String description;
+
+    /**
+     * This specifies the tier to use to update the environment. <p>
+     * Condition: You can only update the tier version for an environment. If
+     * you change the name of the type, AWS Elastic Beanstalk returns
+     * <code>InvalidParameterValue</code> error.
+     */
+    private EnvironmentTier tier;
+
+    /**
      * If this parameter is specified, AWS Elastic Beanstalk deploys the
      * named application version to the environment. If no such application
      * version is found, returns an <code>InvalidParameterValue</code> error.
@@ -80,15 +97,6 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * <b>Length: </b>1 - 100<br/>
      */
     private String templateName;
-
-    /**
-     * If this parameter is specified, AWS Elastic Beanstalk updates the
-     * description of this environment.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 200<br/>
-     */
-    private String description;
 
     /**
      * If specified, AWS Elastic Beanstalk updates the configuration set
@@ -245,6 +253,105 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * If this parameter is specified, AWS Elastic Beanstalk updates the
+     * description of this environment.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 200<br/>
+     *
+     * @return If this parameter is specified, AWS Elastic Beanstalk updates the
+     *         description of this environment.
+     */
+    public String getDescription() {
+        return description;
+    }
+    
+    /**
+     * If this parameter is specified, AWS Elastic Beanstalk updates the
+     * description of this environment.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 200<br/>
+     *
+     * @param description If this parameter is specified, AWS Elastic Beanstalk updates the
+     *         description of this environment.
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+    /**
+     * If this parameter is specified, AWS Elastic Beanstalk updates the
+     * description of this environment.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 200<br/>
+     *
+     * @param description If this parameter is specified, AWS Elastic Beanstalk updates the
+     *         description of this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public UpdateEnvironmentRequest withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * This specifies the tier to use to update the environment. <p>
+     * Condition: You can only update the tier version for an environment. If
+     * you change the name of the type, AWS Elastic Beanstalk returns
+     * <code>InvalidParameterValue</code> error.
+     *
+     * @return This specifies the tier to use to update the environment. <p>
+     *         Condition: You can only update the tier version for an environment. If
+     *         you change the name of the type, AWS Elastic Beanstalk returns
+     *         <code>InvalidParameterValue</code> error.
+     */
+    public EnvironmentTier getTier() {
+        return tier;
+    }
+    
+    /**
+     * This specifies the tier to use to update the environment. <p>
+     * Condition: You can only update the tier version for an environment. If
+     * you change the name of the type, AWS Elastic Beanstalk returns
+     * <code>InvalidParameterValue</code> error.
+     *
+     * @param tier This specifies the tier to use to update the environment. <p>
+     *         Condition: You can only update the tier version for an environment. If
+     *         you change the name of the type, AWS Elastic Beanstalk returns
+     *         <code>InvalidParameterValue</code> error.
+     */
+    public void setTier(EnvironmentTier tier) {
+        this.tier = tier;
+    }
+    
+    /**
+     * This specifies the tier to use to update the environment. <p>
+     * Condition: You can only update the tier version for an environment. If
+     * you change the name of the type, AWS Elastic Beanstalk returns
+     * <code>InvalidParameterValue</code> error.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tier This specifies the tier to use to update the environment. <p>
+     *         Condition: You can only update the tier version for an environment. If
+     *         you change the name of the type, AWS Elastic Beanstalk returns
+     *         <code>InvalidParameterValue</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public UpdateEnvironmentRequest withTier(EnvironmentTier tier) {
+        this.tier = tier;
+        return this;
+    }
+
+    /**
      * If this parameter is specified, AWS Elastic Beanstalk deploys the
      * named application version to the environment. If no such application
      * version is found, returns an <code>InvalidParameterValue</code> error.
@@ -355,54 +462,6 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      */
     public UpdateEnvironmentRequest withTemplateName(String templateName) {
         this.templateName = templateName;
-        return this;
-    }
-
-    /**
-     * If this parameter is specified, AWS Elastic Beanstalk updates the
-     * description of this environment.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 200<br/>
-     *
-     * @return If this parameter is specified, AWS Elastic Beanstalk updates the
-     *         description of this environment.
-     */
-    public String getDescription() {
-        return description;
-    }
-    
-    /**
-     * If this parameter is specified, AWS Elastic Beanstalk updates the
-     * description of this environment.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 200<br/>
-     *
-     * @param description If this parameter is specified, AWS Elastic Beanstalk updates the
-     *         description of this environment.
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
-    
-    /**
-     * If this parameter is specified, AWS Elastic Beanstalk updates the
-     * description of this environment.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 200<br/>
-     *
-     * @param description If this parameter is specified, AWS Elastic Beanstalk updates the
-     *         description of this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     */
-    public UpdateEnvironmentRequest withDescription(String description) {
-        this.description = description;
         return this;
     }
 
@@ -580,9 +639,10 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
         sb.append("{");
         if (getEnvironmentId() != null) sb.append("EnvironmentId: " + getEnvironmentId() + ",");
         if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getTier() != null) sb.append("Tier: " + getTier() + ",");
         if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");
         if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() + ",");
         if (getOptionsToRemove() != null) sb.append("OptionsToRemove: " + getOptionsToRemove() );
         sb.append("}");
@@ -596,9 +656,10 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
         
         hashCode = prime * hashCode + ((getEnvironmentId() == null) ? 0 : getEnvironmentId().hashCode()); 
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode()); 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode()); 
         hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode()); 
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode()); 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getOptionSettings() == null) ? 0 : getOptionSettings().hashCode()); 
         hashCode = prime * hashCode + ((getOptionsToRemove() == null) ? 0 : getOptionsToRemove().hashCode()); 
         return hashCode;
@@ -616,12 +677,14 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
         if (other.getEnvironmentId() != null && other.getEnvironmentId().equals(this.getEnvironmentId()) == false) return false; 
         if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null) return false;
         if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false) return false; 
+        if (other.getDescription() == null ^ this.getDescription() == null) return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getTier() == null ^ this.getTier() == null) return false;
+        if (other.getTier() != null && other.getTier().equals(this.getTier()) == false) return false; 
         if (other.getVersionLabel() == null ^ this.getVersionLabel() == null) return false;
         if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false) return false; 
         if (other.getTemplateName() == null ^ this.getTemplateName() == null) return false;
         if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false) return false; 
-        if (other.getDescription() == null ^ this.getDescription() == null) return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
         if (other.getOptionSettings() == null ^ this.getOptionSettings() == null) return false;
         if (other.getOptionSettings() != null && other.getOptionSettings().equals(this.getOptionSettings()) == false) return false; 
         if (other.getOptionsToRemove() == null ^ this.getOptionsToRemove() == null) return false;

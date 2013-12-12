@@ -34,8 +34,7 @@ public class TrailNotProvidedExceptionUnmarshaller extends JsonErrorUnmarshaller
             return null;
 
         TrailNotProvidedException e = (TrailNotProvidedException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

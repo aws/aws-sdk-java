@@ -16,7 +16,6 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location and the customer.

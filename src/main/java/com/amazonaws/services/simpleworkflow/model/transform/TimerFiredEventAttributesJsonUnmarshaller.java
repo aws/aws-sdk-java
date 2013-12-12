@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Timer Fired Event Attributes JSON Unmarshaller
  */
 public class TimerFiredEventAttributesJsonUnmarshaller implements Unmarshaller<TimerFiredEventAttributes, JsonUnmarshallerContext> {
 
-    
-
     public TimerFiredEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         TimerFiredEventAttributes timerFiredEventAttributes = new TimerFiredEventAttributes();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class TimerFiredEventAttributesJsonUnmarshaller implements Unmarshaller<T
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("timerId", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class TimerFiredEventAttributesJsonUnmarshaller implements Unmarshaller<T
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

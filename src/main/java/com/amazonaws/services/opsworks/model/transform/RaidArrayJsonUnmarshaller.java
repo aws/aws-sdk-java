@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Raid Array JSON Unmarshaller
  */
 public class RaidArrayJsonUnmarshaller implements Unmarshaller<RaidArray, JsonUnmarshallerContext> {
 
-    
-
     public RaidArray unmarshall(JsonUnmarshallerContext context) throws Exception {
         RaidArray raidArray = new RaidArray();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class RaidArrayJsonUnmarshaller implements Unmarshaller<RaidArray, JsonUn
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RaidArrayId", targetDepth)) {
                     context.nextToken();
@@ -96,7 +90,6 @@ public class RaidArrayJsonUnmarshaller implements Unmarshaller<RaidArray, JsonUn
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

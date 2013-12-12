@@ -33,8 +33,8 @@ public class DescribeSynonymOptionsRequestMarshaller implements Marshaller<Reque
     public Request<DescribeSynonymOptionsRequest> marshall(DescribeSynonymOptionsRequest describeSynonymOptionsRequest) {
 
         if (describeSynonymOptionsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeSynonymOptionsRequest> request = new DefaultRequest<DescribeSynonymOptionsRequest>(describeSynonymOptionsRequest, "AmazonCloudSearch");
         request.addParameter("Action", "DescribeSynonymOptions");
@@ -43,7 +43,6 @@ public class DescribeSynonymOptionsRequestMarshaller implements Marshaller<Reque
         if (describeSynonymOptionsRequest.getDomainName() != null) {
             request.addParameter("DomainName", StringUtils.fromString(describeSynonymOptionsRequest.getDomainName()));
         }
-
 
         return request;
     }

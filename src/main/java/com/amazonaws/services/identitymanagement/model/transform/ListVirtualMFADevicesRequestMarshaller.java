@@ -33,8 +33,8 @@ public class ListVirtualMFADevicesRequestMarshaller implements Marshaller<Reques
     public Request<ListVirtualMFADevicesRequest> marshall(ListVirtualMFADevicesRequest listVirtualMFADevicesRequest) {
 
         if (listVirtualMFADevicesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListVirtualMFADevicesRequest> request = new DefaultRequest<ListVirtualMFADevicesRequest>(listVirtualMFADevicesRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListVirtualMFADevices");
@@ -49,7 +49,6 @@ public class ListVirtualMFADevicesRequestMarshaller implements Marshaller<Reques
         if (listVirtualMFADevicesRequest.getMaxItems() != null) {
             request.addParameter("MaxItems", StringUtils.fromInteger(listVirtualMFADevicesRequest.getMaxItems()));
         }
-
 
         return request;
     }

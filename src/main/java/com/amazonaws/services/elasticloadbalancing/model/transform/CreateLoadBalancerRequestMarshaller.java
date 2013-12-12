@@ -33,8 +33,8 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
     public Request<CreateLoadBalancerRequest> marshall(CreateLoadBalancerRequest createLoadBalancerRequest) {
 
         if (createLoadBalancerRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateLoadBalancerRequest> request = new DefaultRequest<CreateLoadBalancerRequest>(createLoadBalancerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "CreateLoadBalancer");
@@ -105,7 +105,6 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
         if (createLoadBalancerRequest.getScheme() != null) {
             request.addParameter("Scheme", StringUtils.fromString(createLoadBalancerRequest.getScheme()));
         }
-
 
         return request;
     }

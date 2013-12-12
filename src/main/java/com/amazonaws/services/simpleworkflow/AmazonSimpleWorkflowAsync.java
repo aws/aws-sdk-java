@@ -4415,6 +4415,5 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
     public Future<WorkflowExecutionDetail> describeWorkflowExecutionAsync(DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest,
             AsyncHandler<DescribeWorkflowExecutionRequest, WorkflowExecutionDetail> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

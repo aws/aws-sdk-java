@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 
-
 /**
  * Asynchronous client for accessing AmazonElasticMapReduce.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -51,7 +50,6 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -251,7 +249,6 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -303,11 +300,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<ListBootstrapActionsResult>() {
             public ListBootstrapActionsResult call() throws Exception {
                 return listBootstrapActions(listBootstrapActionsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Provides information about the bootstrap actions associated with a
@@ -341,17 +337,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListBootstrapActionsResult>() {
             public ListBootstrapActionsResult call() throws Exception {
-            	ListBootstrapActionsResult result;
+                ListBootstrapActionsResult result;
                 try {
-            		result = listBootstrapActions(listBootstrapActionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listBootstrapActionsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listBootstrapActions(listBootstrapActionsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listBootstrapActionsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -388,11 +384,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
             public Void call() throws Exception {
                 setVisibleToAllUsers(setVisibleToAllUsersRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Sets whether all AWS Identity and Access Management (IAM) users under
@@ -431,16 +426,16 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		setVisibleToAllUsers(setVisibleToAllUsersRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(setVisibleToAllUsersRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    setVisibleToAllUsers(setVisibleToAllUsersRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(setVisibleToAllUsersRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -468,11 +463,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<ListStepsResult>() {
             public ListStepsResult call() throws Exception {
                 return listSteps(listStepsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Provides a list of steps for the cluster.
@@ -503,17 +497,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListStepsResult>() {
             public ListStepsResult call() throws Exception {
-            	ListStepsResult result;
+                ListStepsResult result;
                 try {
-            		result = listSteps(listStepsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listStepsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listSteps(listStepsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listStepsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -570,11 +564,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<AddJobFlowStepsResult>() {
             public AddJobFlowStepsResult call() throws Exception {
                 return addJobFlowSteps(addJobFlowStepsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * AddJobFlowSteps adds new steps to a running job flow. A maximum of
@@ -634,17 +627,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AddJobFlowStepsResult>() {
             public AddJobFlowStepsResult call() throws Exception {
-            	AddJobFlowStepsResult result;
+                AddJobFlowStepsResult result;
                 try {
-            		result = addJobFlowSteps(addJobFlowStepsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(addJobFlowStepsRequest, result);
-               	return result;
-		    }
-		});
+                    result = addJobFlowSteps(addJobFlowStepsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(addJobFlowStepsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -672,11 +665,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<DescribeStepResult>() {
             public DescribeStepResult call() throws Exception {
                 return describeStep(describeStepRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Provides more detail about the cluster step.
@@ -707,17 +699,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeStepResult>() {
             public DescribeStepResult call() throws Exception {
-            	DescribeStepResult result;
+                DescribeStepResult result;
                 try {
-            		result = describeStep(describeStepRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeStepRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeStep(describeStepRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeStepRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -750,11 +742,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<ListClustersResult>() {
             public ListClustersResult call() throws Exception {
                 return listClusters(listClustersRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Provides the status of all clusters visible to this AWS account.
@@ -790,17 +781,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListClustersResult>() {
             public ListClustersResult call() throws Exception {
-            	ListClustersResult result;
+                ListClustersResult result;
                 try {
-            		result = listClusters(listClustersRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listClustersRequest, result);
-               	return result;
-		    }
-		});
+                    result = listClusters(listClustersRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listClustersRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -830,11 +821,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<ListInstanceGroupsResult>() {
             public ListInstanceGroupsResult call() throws Exception {
                 return listInstanceGroups(listInstanceGroupsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Provides all available details about the instance groups in a cluster.
@@ -867,17 +857,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListInstanceGroupsResult>() {
             public ListInstanceGroupsResult call() throws Exception {
-            	ListInstanceGroupsResult result;
+                ListInstanceGroupsResult result;
                 try {
-            		result = listInstanceGroups(listInstanceGroupsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listInstanceGroupsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listInstanceGroups(listInstanceGroupsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listInstanceGroupsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -911,11 +901,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
             public Void call() throws Exception {
                 modifyInstanceGroups(modifyInstanceGroupsRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * ModifyInstanceGroups modifies the number of nodes and configuration
@@ -951,16 +940,16 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		modifyInstanceGroups(modifyInstanceGroupsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(modifyInstanceGroupsRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    modifyInstanceGroups(modifyInstanceGroupsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(modifyInstanceGroupsRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -992,11 +981,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<ListInstancesResult>() {
             public ListInstancesResult call() throws Exception {
                 return listInstances(listInstancesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Provides information about the cluster instances that Amazon EMR
@@ -1031,17 +1019,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListInstancesResult>() {
             public ListInstancesResult call() throws Exception {
-            	ListInstancesResult result;
+                ListInstancesResult result;
                 try {
-            		result = listInstances(listInstancesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listInstancesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listInstances(listInstancesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listInstancesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1070,11 +1058,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<AddInstanceGroupsResult>() {
             public AddInstanceGroupsResult call() throws Exception {
                 return addInstanceGroups(addInstanceGroupsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * AddInstanceGroups adds an instance group to a running cluster.
@@ -1106,17 +1093,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AddInstanceGroupsResult>() {
             public AddInstanceGroupsResult call() throws Exception {
-            	AddInstanceGroupsResult result;
+                AddInstanceGroupsResult result;
                 try {
-            		result = addInstanceGroups(addInstanceGroupsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(addInstanceGroupsRequest, result);
-               	return result;
-		    }
-		});
+                    result = addInstanceGroups(addInstanceGroupsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(addInstanceGroupsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1156,11 +1143,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
             public Void call() throws Exception {
                 terminateJobFlows(terminateJobFlowsRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * TerminateJobFlows shuts a list of job flows down. When a job flow is
@@ -1202,16 +1188,16 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		terminateJobFlows(terminateJobFlowsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(terminateJobFlowsRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    terminateJobFlows(terminateJobFlowsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(terminateJobFlowsRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1267,11 +1253,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<DescribeJobFlowsResult>() {
             public DescribeJobFlowsResult call() throws Exception {
                 return describeJobFlows(describeJobFlowsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * DescribeJobFlows returns a list of job flows that match all of the
@@ -1329,17 +1314,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeJobFlowsResult>() {
             public DescribeJobFlowsResult call() throws Exception {
-            	DescribeJobFlowsResult result;
+                DescribeJobFlowsResult result;
                 try {
-            		result = describeJobFlows(describeJobFlowsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeJobFlowsRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeJobFlows(describeJobFlowsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeJobFlowsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1395,11 +1380,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
             public Void call() throws Exception {
                 setTerminationProtection(setTerminationProtectionRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * SetTerminationProtection locks a job flow so the Amazon EC2 instances
@@ -1457,16 +1441,16 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		setTerminationProtection(setTerminationProtectionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(setTerminationProtectionRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    setTerminationProtection(setTerminationProtectionRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(setTerminationProtectionRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1525,11 +1509,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<RunJobFlowResult>() {
             public RunJobFlowResult call() throws Exception {
                 return runJobFlow(runJobFlowRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * RunJobFlow creates and starts running a new job flow. The job flow
@@ -1591,17 +1574,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RunJobFlowResult>() {
             public RunJobFlowResult call() throws Exception {
-            	RunJobFlowResult result;
+                RunJobFlowResult result;
                 try {
-            		result = runJobFlow(runJobFlowRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(runJobFlowRequest, result);
-               	return result;
-		    }
-		});
+                    result = runJobFlow(runJobFlowRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(runJobFlowRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1631,11 +1614,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<DescribeClusterResult>() {
             public DescribeClusterResult call() throws Exception {
                 return describeCluster(describeClusterRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Provides cluster-level details including status, hardware and software
@@ -1668,17 +1650,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeClusterResult>() {
             public DescribeClusterResult call() throws Exception {
-            	DescribeClusterResult result;
+                DescribeClusterResult result;
                 try {
-            		result = describeCluster(describeClusterRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeClusterRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeCluster(describeClusterRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeClusterRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Instance Group Timeline JSON Unmarshaller
  */
 public class InstanceGroupTimelineJsonUnmarshaller implements Unmarshaller<InstanceGroupTimeline, JsonUnmarshallerContext> {
 
-    
-
     public InstanceGroupTimeline unmarshall(JsonUnmarshallerContext context) throws Exception {
         InstanceGroupTimeline instanceGroupTimeline = new InstanceGroupTimeline();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class InstanceGroupTimelineJsonUnmarshaller implements Unmarshaller<Insta
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
@@ -68,7 +62,6 @@ public class InstanceGroupTimelineJsonUnmarshaller implements Unmarshaller<Insta
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

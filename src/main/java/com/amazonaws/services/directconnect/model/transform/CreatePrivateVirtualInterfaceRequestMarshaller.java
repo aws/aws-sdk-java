@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.directconnect.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class CreatePrivateVirtualInterfaceRequestMarshaller implements Marshaller<Request<CreatePrivateVirtualInterfaceRequest>, CreatePrivateVirtualInterfaceRequest> {
 
-    
-
     public Request<CreatePrivateVirtualInterfaceRequest> marshall(CreatePrivateVirtualInterfaceRequest createPrivateVirtualInterfaceRequest) {
     if (createPrivateVirtualInterfaceRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class CreatePrivateVirtualInterfaceRequestMarshaller implements Marshalle
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class CreatePrivateVirtualInterfaceRequestMarshaller implements Marshalle
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (createPrivateVirtualInterfaceRequest.getConnectionId() != null) {
@@ -119,7 +110,6 @@ public class CreatePrivateVirtualInterfaceRequestMarshaller implements Marshalle
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -128,7 +118,6 @@ public class CreatePrivateVirtualInterfaceRequestMarshaller implements Marshalle
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

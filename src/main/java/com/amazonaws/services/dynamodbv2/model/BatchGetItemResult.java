@@ -16,7 +16,6 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents the output of a <i>BatchGetItem</i> operation.
@@ -123,26 +122,26 @@ public class BatchGetItemResult implements Serializable {
      * @param key The key of the entry to be added into Responses.
      * @param value The corresponding value of the entry to be added into Responses.
      */
-	public BatchGetItemResult addResponsesEntry(String key, java.util.List<java.util.Map<String,AttributeValue>> value) {
-		if (null == this.responses) {
-			this.responses = new java.util.HashMap<String,java.util.List<java.util.Map<String,AttributeValue>>>();
-		}
-		if (this.responses.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.responses.put(key, value);
-		return this;
-	}
+    public BatchGetItemResult addResponsesEntry(String key, java.util.List<java.util.Map<String,AttributeValue>> value) {
+        if (null == this.responses) {
+            this.responses = new java.util.HashMap<String,java.util.List<java.util.Map<String,AttributeValue>>>();
+        }
+        if (this.responses.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.responses.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Responses.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public BatchGetItemResult clearResponsesEntries() {
-		this.responses = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Responses.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public BatchGetItemResult clearResponsesEntries() {
+        this.responses = null;
+        return this;
+    }
+    
     /**
      * A map of tables and their respective keys that were not processed with
      * the current response. The <i>UnprocessedKeys</i> value is in the same
@@ -325,26 +324,26 @@ public class BatchGetItemResult implements Serializable {
      * @param key The key of the entry to be added into UnprocessedKeys.
      * @param value The corresponding value of the entry to be added into UnprocessedKeys.
      */
-	public BatchGetItemResult addUnprocessedKeysEntry(String key, KeysAndAttributes value) {
-		if (null == this.unprocessedKeys) {
-			this.unprocessedKeys = new java.util.HashMap<String,KeysAndAttributes>();
-		}
-		if (this.unprocessedKeys.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.unprocessedKeys.put(key, value);
-		return this;
-	}
+    public BatchGetItemResult addUnprocessedKeysEntry(String key, KeysAndAttributes value) {
+        if (null == this.unprocessedKeys) {
+            this.unprocessedKeys = new java.util.HashMap<String,KeysAndAttributes>();
+        }
+        if (this.unprocessedKeys.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.unprocessedKeys.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into UnprocessedKeys.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public BatchGetItemResult clearUnprocessedKeysEntries() {
-		this.unprocessedKeys = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into UnprocessedKeys.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public BatchGetItemResult clearUnprocessedKeysEntries() {
+        this.unprocessedKeys = null;
+        return this;
+    }
+    
     /**
      * The write capacity units consumed by the operation. <p>Each element
      * consists of: <ul> <li> <p><i>TableName</i> - The table that consumed

@@ -33,13 +33,12 @@ public class DescribeSubnetsRequestMarshaller implements Marshaller<Request<Desc
     public Request<DescribeSubnetsRequest> marshall(DescribeSubnetsRequest describeSubnetsRequest) {
 
         if (describeSubnetsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeSubnetsRequest> request = new DefaultRequest<DescribeSubnetsRequest>(describeSubnetsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSubnets");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> subnetIdsList = describeSubnetsRequest.getSubnetIds();
         int subnetIdsListIndex = 1;
@@ -76,7 +75,6 @@ public class DescribeSubnetsRequestMarshaller implements Marshaller<Request<Desc
 
             filtersListIndex++;
         }
-
 
         return request;
     }

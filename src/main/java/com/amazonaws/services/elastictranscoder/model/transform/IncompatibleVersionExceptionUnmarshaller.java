@@ -34,8 +34,7 @@ public class IncompatibleVersionExceptionUnmarshaller extends JsonErrorUnmarshal
             return null;
 
         IncompatibleVersionException e = (IncompatibleVersionException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

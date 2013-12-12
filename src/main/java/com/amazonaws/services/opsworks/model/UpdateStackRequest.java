@@ -23,6 +23,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Updates a specified stack.
  * </p>
+ * <p>
+ * <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that
+ * explicitly grants permissions. For more information on user permissions, see <a
+ * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a> .
+ * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateStack(UpdateStackRequest)
  */
@@ -76,15 +81,18 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * The stack's new host name theme, with spaces are replaced by
      * underscores. The theme is used to generate host names for the stack's
      * instances. By default, <code>HostnameTheme</code> is set to
-     * Layer_Dependent, which creates host names by appending integers to the
-     * layer's short name. The other themes are: <ul> <li>Baked_Goods</li>
-     * <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li>
-     * <li>Greek_Deities</li> <li>Legendary_Creatures_from_Japan</li>
-     * <li>Planets_and_Moons</li> <li>Roman_Deities</li>
-     * <li>Scottish_Islands</li> <li>US_Cities</li> <li>Wild_Cats</li> </ul>
-     * <p>To obtain a generated host name, call
-     * <code>GetHostNameSuggestion</code>, which returns a host name based on
-     * the current theme.
+     * <code>Layer_Dependent</code>, which creates host names by appending
+     * integers to the layer's short name. The other themes are: <ul>
+     * <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
+     * <li><code>European_Cities</code></li> <li><code>Fruits</code></li>
+     * <li><code>Greek_Deities</code></li>
+     * <li><code>Legendary_Creatures_from_Japan</code></li>
+     * <li><code>Planets_and_Moons</code></li>
+     * <li><code>Roman_Deities</code></li>
+     * <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
+     * <li><code>Wild_Cats</code></li> </ul> <p>To obtain a generated host
+     * name, call <code>GetHostNameSuggestion</code>, which returns a host
+     * name based on the current theme.
      */
     private String hostnameTheme;
 
@@ -279,26 +287,26 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * @param key The key of the entry to be added into Attributes.
      * @param value The corresponding value of the entry to be added into Attributes.
      */
-	public UpdateStackRequest addAttributesEntry(String key, String value) {
-		if (null == this.attributes) {
-			this.attributes = new java.util.HashMap<String,String>();
-		}
-		if (this.attributes.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.attributes.put(key, value);
-		return this;
-	}
+    public UpdateStackRequest addAttributesEntry(String key, String value) {
+        if (null == this.attributes) {
+            this.attributes = new java.util.HashMap<String,String>();
+        }
+        if (this.attributes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.attributes.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Attributes.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public UpdateStackRequest clearAttributesEntries() {
-		this.attributes = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Attributes.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public UpdateStackRequest clearAttributesEntries() {
+        this.attributes = null;
+        return this;
+    }
+    
     /**
      * The stack AWS Identity and Access Management (IAM) role, which allows
      * AWS OpsWorks to work with AWS resources on your behalf. You must set
@@ -480,28 +488,34 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * The stack's new host name theme, with spaces are replaced by
      * underscores. The theme is used to generate host names for the stack's
      * instances. By default, <code>HostnameTheme</code> is set to
-     * Layer_Dependent, which creates host names by appending integers to the
-     * layer's short name. The other themes are: <ul> <li>Baked_Goods</li>
-     * <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li>
-     * <li>Greek_Deities</li> <li>Legendary_Creatures_from_Japan</li>
-     * <li>Planets_and_Moons</li> <li>Roman_Deities</li>
-     * <li>Scottish_Islands</li> <li>US_Cities</li> <li>Wild_Cats</li> </ul>
-     * <p>To obtain a generated host name, call
-     * <code>GetHostNameSuggestion</code>, which returns a host name based on
-     * the current theme.
+     * <code>Layer_Dependent</code>, which creates host names by appending
+     * integers to the layer's short name. The other themes are: <ul>
+     * <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
+     * <li><code>European_Cities</code></li> <li><code>Fruits</code></li>
+     * <li><code>Greek_Deities</code></li>
+     * <li><code>Legendary_Creatures_from_Japan</code></li>
+     * <li><code>Planets_and_Moons</code></li>
+     * <li><code>Roman_Deities</code></li>
+     * <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
+     * <li><code>Wild_Cats</code></li> </ul> <p>To obtain a generated host
+     * name, call <code>GetHostNameSuggestion</code>, which returns a host
+     * name based on the current theme.
      *
      * @return The stack's new host name theme, with spaces are replaced by
      *         underscores. The theme is used to generate host names for the stack's
      *         instances. By default, <code>HostnameTheme</code> is set to
-     *         Layer_Dependent, which creates host names by appending integers to the
-     *         layer's short name. The other themes are: <ul> <li>Baked_Goods</li>
-     *         <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li>
-     *         <li>Greek_Deities</li> <li>Legendary_Creatures_from_Japan</li>
-     *         <li>Planets_and_Moons</li> <li>Roman_Deities</li>
-     *         <li>Scottish_Islands</li> <li>US_Cities</li> <li>Wild_Cats</li> </ul>
-     *         <p>To obtain a generated host name, call
-     *         <code>GetHostNameSuggestion</code>, which returns a host name based on
-     *         the current theme.
+     *         <code>Layer_Dependent</code>, which creates host names by appending
+     *         integers to the layer's short name. The other themes are: <ul>
+     *         <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
+     *         <li><code>European_Cities</code></li> <li><code>Fruits</code></li>
+     *         <li><code>Greek_Deities</code></li>
+     *         <li><code>Legendary_Creatures_from_Japan</code></li>
+     *         <li><code>Planets_and_Moons</code></li>
+     *         <li><code>Roman_Deities</code></li>
+     *         <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
+     *         <li><code>Wild_Cats</code></li> </ul> <p>To obtain a generated host
+     *         name, call <code>GetHostNameSuggestion</code>, which returns a host
+     *         name based on the current theme.
      */
     public String getHostnameTheme() {
         return hostnameTheme;
@@ -511,28 +525,34 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * The stack's new host name theme, with spaces are replaced by
      * underscores. The theme is used to generate host names for the stack's
      * instances. By default, <code>HostnameTheme</code> is set to
-     * Layer_Dependent, which creates host names by appending integers to the
-     * layer's short name. The other themes are: <ul> <li>Baked_Goods</li>
-     * <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li>
-     * <li>Greek_Deities</li> <li>Legendary_Creatures_from_Japan</li>
-     * <li>Planets_and_Moons</li> <li>Roman_Deities</li>
-     * <li>Scottish_Islands</li> <li>US_Cities</li> <li>Wild_Cats</li> </ul>
-     * <p>To obtain a generated host name, call
-     * <code>GetHostNameSuggestion</code>, which returns a host name based on
-     * the current theme.
+     * <code>Layer_Dependent</code>, which creates host names by appending
+     * integers to the layer's short name. The other themes are: <ul>
+     * <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
+     * <li><code>European_Cities</code></li> <li><code>Fruits</code></li>
+     * <li><code>Greek_Deities</code></li>
+     * <li><code>Legendary_Creatures_from_Japan</code></li>
+     * <li><code>Planets_and_Moons</code></li>
+     * <li><code>Roman_Deities</code></li>
+     * <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
+     * <li><code>Wild_Cats</code></li> </ul> <p>To obtain a generated host
+     * name, call <code>GetHostNameSuggestion</code>, which returns a host
+     * name based on the current theme.
      *
      * @param hostnameTheme The stack's new host name theme, with spaces are replaced by
      *         underscores. The theme is used to generate host names for the stack's
      *         instances. By default, <code>HostnameTheme</code> is set to
-     *         Layer_Dependent, which creates host names by appending integers to the
-     *         layer's short name. The other themes are: <ul> <li>Baked_Goods</li>
-     *         <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li>
-     *         <li>Greek_Deities</li> <li>Legendary_Creatures_from_Japan</li>
-     *         <li>Planets_and_Moons</li> <li>Roman_Deities</li>
-     *         <li>Scottish_Islands</li> <li>US_Cities</li> <li>Wild_Cats</li> </ul>
-     *         <p>To obtain a generated host name, call
-     *         <code>GetHostNameSuggestion</code>, which returns a host name based on
-     *         the current theme.
+     *         <code>Layer_Dependent</code>, which creates host names by appending
+     *         integers to the layer's short name. The other themes are: <ul>
+     *         <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
+     *         <li><code>European_Cities</code></li> <li><code>Fruits</code></li>
+     *         <li><code>Greek_Deities</code></li>
+     *         <li><code>Legendary_Creatures_from_Japan</code></li>
+     *         <li><code>Planets_and_Moons</code></li>
+     *         <li><code>Roman_Deities</code></li>
+     *         <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
+     *         <li><code>Wild_Cats</code></li> </ul> <p>To obtain a generated host
+     *         name, call <code>GetHostNameSuggestion</code>, which returns a host
+     *         name based on the current theme.
      */
     public void setHostnameTheme(String hostnameTheme) {
         this.hostnameTheme = hostnameTheme;
@@ -542,30 +562,36 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * The stack's new host name theme, with spaces are replaced by
      * underscores. The theme is used to generate host names for the stack's
      * instances. By default, <code>HostnameTheme</code> is set to
-     * Layer_Dependent, which creates host names by appending integers to the
-     * layer's short name. The other themes are: <ul> <li>Baked_Goods</li>
-     * <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li>
-     * <li>Greek_Deities</li> <li>Legendary_Creatures_from_Japan</li>
-     * <li>Planets_and_Moons</li> <li>Roman_Deities</li>
-     * <li>Scottish_Islands</li> <li>US_Cities</li> <li>Wild_Cats</li> </ul>
-     * <p>To obtain a generated host name, call
-     * <code>GetHostNameSuggestion</code>, which returns a host name based on
-     * the current theme.
+     * <code>Layer_Dependent</code>, which creates host names by appending
+     * integers to the layer's short name. The other themes are: <ul>
+     * <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
+     * <li><code>European_Cities</code></li> <li><code>Fruits</code></li>
+     * <li><code>Greek_Deities</code></li>
+     * <li><code>Legendary_Creatures_from_Japan</code></li>
+     * <li><code>Planets_and_Moons</code></li>
+     * <li><code>Roman_Deities</code></li>
+     * <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
+     * <li><code>Wild_Cats</code></li> </ul> <p>To obtain a generated host
+     * name, call <code>GetHostNameSuggestion</code>, which returns a host
+     * name based on the current theme.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hostnameTheme The stack's new host name theme, with spaces are replaced by
      *         underscores. The theme is used to generate host names for the stack's
      *         instances. By default, <code>HostnameTheme</code> is set to
-     *         Layer_Dependent, which creates host names by appending integers to the
-     *         layer's short name. The other themes are: <ul> <li>Baked_Goods</li>
-     *         <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li>
-     *         <li>Greek_Deities</li> <li>Legendary_Creatures_from_Japan</li>
-     *         <li>Planets_and_Moons</li> <li>Roman_Deities</li>
-     *         <li>Scottish_Islands</li> <li>US_Cities</li> <li>Wild_Cats</li> </ul>
-     *         <p>To obtain a generated host name, call
-     *         <code>GetHostNameSuggestion</code>, which returns a host name based on
-     *         the current theme.
+     *         <code>Layer_Dependent</code>, which creates host names by appending
+     *         integers to the layer's short name. The other themes are: <ul>
+     *         <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
+     *         <li><code>European_Cities</code></li> <li><code>Fruits</code></li>
+     *         <li><code>Greek_Deities</code></li>
+     *         <li><code>Legendary_Creatures_from_Japan</code></li>
+     *         <li><code>Planets_and_Moons</code></li>
+     *         <li><code>Roman_Deities</code></li>
+     *         <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
+     *         <li><code>Wild_Cats</code></li> </ul> <p>To obtain a generated host
+     *         name, call <code>GetHostNameSuggestion</code>, which returns a host
+     *         name based on the current theme.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

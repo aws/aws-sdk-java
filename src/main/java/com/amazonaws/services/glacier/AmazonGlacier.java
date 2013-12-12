@@ -1460,6 +1460,5 @@ public interface AmazonGlacier {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if files don't match any of the values of

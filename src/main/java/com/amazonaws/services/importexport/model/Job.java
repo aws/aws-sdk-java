@@ -16,7 +16,6 @@ package com.amazonaws.services.importexport.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Representation of a job returned by the ListJobs operation.

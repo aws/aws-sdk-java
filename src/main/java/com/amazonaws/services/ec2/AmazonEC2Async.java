@@ -9543,6 +9543,5 @@ public interface AmazonEC2Async extends AmazonEC2 {
     public Future<Void> createVpnConnectionRouteAsync(CreateVpnConnectionRouteRequest createVpnConnectionRouteRequest,
             AsyncHandler<CreateVpnConnectionRouteRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

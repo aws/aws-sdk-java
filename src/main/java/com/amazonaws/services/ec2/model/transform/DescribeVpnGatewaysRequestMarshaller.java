@@ -33,13 +33,12 @@ public class DescribeVpnGatewaysRequestMarshaller implements Marshaller<Request<
     public Request<DescribeVpnGatewaysRequest> marshall(DescribeVpnGatewaysRequest describeVpnGatewaysRequest) {
 
         if (describeVpnGatewaysRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeVpnGatewaysRequest> request = new DefaultRequest<DescribeVpnGatewaysRequest>(describeVpnGatewaysRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVpnGateways");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> vpnGatewayIdsList = describeVpnGatewaysRequest.getVpnGatewayIds();
         int vpnGatewayIdsListIndex = 1;
@@ -76,7 +75,6 @@ public class DescribeVpnGatewaysRequestMarshaller implements Marshaller<Request<
 
             filtersListIndex++;
         }
-
 
         return request;
     }

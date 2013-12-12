@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * History JSON Unmarshaller
  */
 public class HistoryJsonUnmarshaller implements Unmarshaller<History, JsonUnmarshallerContext> {
 
-    
-
     public History unmarshall(JsonUnmarshallerContext context) throws Exception {
         History history = new History();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class HistoryJsonUnmarshaller implements Unmarshaller<History, JsonUnmars
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("events", targetDepth)) {
                     history.setEvents(new ListUnmarshaller<HistoryEvent>(HistoryEventJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -63,7 +57,6 @@ public class HistoryJsonUnmarshaller implements Unmarshaller<History, JsonUnmars
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

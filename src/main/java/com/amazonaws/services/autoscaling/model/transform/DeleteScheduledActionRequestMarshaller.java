@@ -33,8 +33,8 @@ public class DeleteScheduledActionRequestMarshaller implements Marshaller<Reques
     public Request<DeleteScheduledActionRequest> marshall(DeleteScheduledActionRequest deleteScheduledActionRequest) {
 
         if (deleteScheduledActionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteScheduledActionRequest> request = new DefaultRequest<DeleteScheduledActionRequest>(deleteScheduledActionRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DeleteScheduledAction");
@@ -46,7 +46,6 @@ public class DeleteScheduledActionRequestMarshaller implements Marshaller<Reques
         if (deleteScheduledActionRequest.getScheduledActionName() != null) {
             request.addParameter("ScheduledActionName", StringUtils.fromString(deleteScheduledActionRequest.getScheduledActionName()));
         }
-
 
         return request;
     }

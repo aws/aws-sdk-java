@@ -33,8 +33,8 @@ public class ListDomainsRequestMarshaller implements Marshaller<Request<ListDoma
     public Request<ListDomainsRequest> marshall(ListDomainsRequest listDomainsRequest) {
 
         if (listDomainsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListDomainsRequest> request = new DefaultRequest<ListDomainsRequest>(listDomainsRequest, "AmazonSimpleDB");
         request.addParameter("Action", "ListDomains");
@@ -46,7 +46,6 @@ public class ListDomainsRequestMarshaller implements Marshaller<Request<ListDoma
         if (listDomainsRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(listDomainsRequest.getNextToken()));
         }
-
 
         return request;
     }

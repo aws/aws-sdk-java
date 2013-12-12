@@ -33,8 +33,8 @@ public class CreateQueueRequestMarshaller implements Marshaller<Request<CreateQu
     public Request<CreateQueueRequest> marshall(CreateQueueRequest createQueueRequest) {
 
         if (createQueueRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateQueueRequest> request = new DefaultRequest<CreateQueueRequest>(createQueueRequest, "AmazonSQS");
         request.addParameter("Action", "CreateQueue");
@@ -58,7 +58,6 @@ public class CreateQueueRequestMarshaller implements Marshaller<Request<CreateQu
                 }
             }
         }
-
 
         return request;
     }

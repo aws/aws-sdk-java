@@ -33,8 +33,8 @@ public class EnableAvailabilityZonesForLoadBalancerRequestMarshaller implements 
     public Request<EnableAvailabilityZonesForLoadBalancerRequest> marshall(EnableAvailabilityZonesForLoadBalancerRequest enableAvailabilityZonesForLoadBalancerRequest) {
 
         if (enableAvailabilityZonesForLoadBalancerRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<EnableAvailabilityZonesForLoadBalancerRequest> request = new DefaultRequest<EnableAvailabilityZonesForLoadBalancerRequest>(enableAvailabilityZonesForLoadBalancerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "EnableAvailabilityZonesForLoadBalancer");
@@ -54,7 +54,6 @@ public class EnableAvailabilityZonesForLoadBalancerRequestMarshaller implements 
 
             availabilityZonesListIndex++;
         }
-
 
         return request;
     }

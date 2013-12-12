@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class BatchWriteItemRequestMarshaller implements Marshaller<Request<BatchWriteItemRequest>, BatchWriteItemRequest> {
 
-    
-
     public Request<BatchWriteItemRequest> marshall(BatchWriteItemRequest batchWriteItemRequest) {
     if (batchWriteItemRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (batchWriteItemRequest.getRequestItems() != null) {
@@ -256,7 +247,6 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -265,7 +255,6 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

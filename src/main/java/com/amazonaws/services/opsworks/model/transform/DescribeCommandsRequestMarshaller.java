@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class DescribeCommandsRequestMarshaller implements Marshaller<Request<DescribeCommandsRequest>, DescribeCommandsRequest> {
 
-    
-
     public Request<DescribeCommandsRequest> marshall(DescribeCommandsRequest describeCommandsRequest) {
     if (describeCommandsRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class DescribeCommandsRequestMarshaller implements Marshaller<Request<Des
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class DescribeCommandsRequestMarshaller implements Marshaller<Request<Des
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (describeCommandsRequest.getDeploymentId() != null) {
@@ -107,7 +98,6 @@ public class DescribeCommandsRequestMarshaller implements Marshaller<Request<Des
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -116,7 +106,6 @@ public class DescribeCommandsRequestMarshaller implements Marshaller<Request<Des
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

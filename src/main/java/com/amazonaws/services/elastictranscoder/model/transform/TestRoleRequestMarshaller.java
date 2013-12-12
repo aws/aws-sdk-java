@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class TestRoleRequestMarshaller implements Marshaller<Request<TestRoleRequest>, TestRoleRequest> {
 
-    
-
     public Request<TestRoleRequest> marshall(TestRoleRequest testRoleRequest) {
     if (testRoleRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class TestRoleRequestMarshaller implements Marshaller<Request<TestRoleReq
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = "2012-09-25/roleTests"; 
 
@@ -75,14 +70,10 @@ public class TestRoleRequestMarshaller implements Marshaller<Request<TestRoleReq
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (testRoleRequest.getRole() != null) {
@@ -110,7 +101,6 @@ public class TestRoleRequestMarshaller implements Marshaller<Request<TestRoleReq
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -119,7 +109,6 @@ public class TestRoleRequestMarshaller implements Marshaller<Request<TestRoleReq
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

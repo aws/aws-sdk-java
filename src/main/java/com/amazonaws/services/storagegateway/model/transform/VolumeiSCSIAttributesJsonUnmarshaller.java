@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Volumei S C S I Attributes JSON Unmarshaller
  */
 public class VolumeiSCSIAttributesJsonUnmarshaller implements Unmarshaller<VolumeiSCSIAttributes, JsonUnmarshallerContext> {
 
-    
-
     public VolumeiSCSIAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         VolumeiSCSIAttributes volumeiSCSIAttributes = new VolumeiSCSIAttributes();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class VolumeiSCSIAttributesJsonUnmarshaller implements Unmarshaller<Volum
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TargetARN", targetDepth)) {
                     context.nextToken();
@@ -76,7 +70,6 @@ public class VolumeiSCSIAttributesJsonUnmarshaller implements Unmarshaller<Volum
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

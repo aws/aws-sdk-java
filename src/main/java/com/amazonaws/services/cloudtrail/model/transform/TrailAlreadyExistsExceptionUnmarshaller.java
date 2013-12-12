@@ -34,8 +34,7 @@ public class TrailAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshall
             return null;
 
         TrailAlreadyExistsException e = (TrailAlreadyExistsException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

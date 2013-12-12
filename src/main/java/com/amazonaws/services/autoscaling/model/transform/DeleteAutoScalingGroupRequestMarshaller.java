@@ -33,8 +33,8 @@ public class DeleteAutoScalingGroupRequestMarshaller implements Marshaller<Reque
     public Request<DeleteAutoScalingGroupRequest> marshall(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest) {
 
         if (deleteAutoScalingGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteAutoScalingGroupRequest> request = new DefaultRequest<DeleteAutoScalingGroupRequest>(deleteAutoScalingGroupRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DeleteAutoScalingGroup");
@@ -46,7 +46,6 @@ public class DeleteAutoScalingGroupRequestMarshaller implements Marshaller<Reque
         if (deleteAutoScalingGroupRequest.isForceDelete() != null) {
             request.addParameter("ForceDelete", StringUtils.fromBoolean(deleteAutoScalingGroupRequest.isForceDelete()));
         }
-
 
         return request;
     }

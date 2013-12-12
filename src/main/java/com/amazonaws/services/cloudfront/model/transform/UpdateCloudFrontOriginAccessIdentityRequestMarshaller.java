@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
@@ -44,8 +43,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller implements Ma
         Request<UpdateCloudFrontOriginAccessIdentityRequest> request = new DefaultRequest<UpdateCloudFrontOriginAccessIdentityRequest>(updateCloudFrontOriginAccessIdentityRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.PUT);
         if (updateCloudFrontOriginAccessIdentityRequest.getIfMatch() != null)
-        	request.addHeader("If-Match", StringUtils.fromString(updateCloudFrontOriginAccessIdentityRequest.getIfMatch()));
-        
+            request.addHeader("If-Match", StringUtils.fromString(updateCloudFrontOriginAccessIdentityRequest.getIfMatch()));
 
         String uriResourcePath = "2013-09-27/origin-access-identity/cloudfront/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(updateCloudFrontOriginAccessIdentityRequest.getId())); 
@@ -66,11 +64,9 @@ public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller implements Ma
 
         request.setResourcePath(uriResourcePath);
 
-        
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-09-27/");
 
-            
                     if (updateCloudFrontOriginAccessIdentityRequest != null) {
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig = updateCloudFrontOriginAccessIdentityRequest.getCloudFrontOriginAccessIdentityConfig();
             if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig != null) {
@@ -85,7 +81,6 @@ public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller implements Ma
             }
         }
 
-
             try {
                 request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
                 request.addHeader("Content-Length", Integer.toString(stringWriter.getBuffer().toString().getBytes("UTF-8").length));
@@ -93,7 +88,6 @@ public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller implements Ma
             } catch (UnsupportedEncodingException e) {
                 throw new AmazonClientException("Unable to marshall request to XML", e);
             }
-        
 
         return request;
     }

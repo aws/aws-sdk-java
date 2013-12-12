@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class ListPresetsRequestMarshaller implements Marshaller<Request<ListPresetsRequest>, ListPresetsRequest> {
 
-    
-
     public Request<ListPresetsRequest> marshall(ListPresetsRequest listPresetsRequest) {
     if (listPresetsRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class ListPresetsRequestMarshaller implements Marshaller<Request<ListPres
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.GET);
-
 
         String uriResourcePath = "2012-09-25/presets"; 
 
@@ -75,10 +70,7 @@ public class ListPresetsRequestMarshaller implements Marshaller<Request<ListPres
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         request.setContent(new ByteArrayInputStream(new byte[0]));
-        
 
         return request;
     }

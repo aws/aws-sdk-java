@@ -34,8 +34,7 @@ public class InsufficientS3BucketPolicyExceptionUnmarshaller extends JsonErrorUn
             return null;
 
         InsufficientS3BucketPolicyException e = (InsufficientS3BucketPolicyException)super.unmarshall(json);
-        
-        
+
         return e;
     }
 }

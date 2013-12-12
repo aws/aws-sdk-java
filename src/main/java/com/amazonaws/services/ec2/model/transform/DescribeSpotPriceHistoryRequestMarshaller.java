@@ -33,8 +33,8 @@ public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Req
     public Request<DescribeSpotPriceHistoryRequest> marshall(DescribeSpotPriceHistoryRequest describeSpotPriceHistoryRequest) {
 
         if (describeSpotPriceHistoryRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeSpotPriceHistoryRequest> request = new DefaultRequest<DescribeSpotPriceHistoryRequest>(describeSpotPriceHistoryRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSpotPriceHistory");
@@ -102,7 +102,6 @@ public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Req
         if (describeSpotPriceHistoryRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(describeSpotPriceHistoryRequest.getNextToken()));
         }
-
 
         return request;
     }

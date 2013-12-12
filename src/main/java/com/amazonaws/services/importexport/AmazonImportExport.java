@@ -308,6 +308,5 @@ public interface AmazonImportExport {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

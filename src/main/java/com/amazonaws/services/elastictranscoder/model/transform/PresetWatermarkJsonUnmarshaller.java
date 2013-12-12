@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Preset Watermark JSON Unmarshaller
  */
 public class PresetWatermarkJsonUnmarshaller implements Unmarshaller<PresetWatermark, JsonUnmarshallerContext> {
 
-    
-
     public PresetWatermark unmarshall(JsonUnmarshallerContext context) throws Exception {
         PresetWatermark presetWatermark = new PresetWatermark();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class PresetWatermarkJsonUnmarshaller implements Unmarshaller<PresetWater
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
@@ -96,7 +90,6 @@ public class PresetWatermarkJsonUnmarshaller implements Unmarshaller<PresetWater
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

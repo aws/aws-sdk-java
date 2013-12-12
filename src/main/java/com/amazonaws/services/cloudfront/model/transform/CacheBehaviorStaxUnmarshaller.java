@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Cache Behavior StAX Unmarshaller
  */
@@ -37,7 +36,6 @@ public class CacheBehaviorStaxUnmarshaller implements Unmarshaller<CacheBehavior
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
         if (context.isStartOfDocument()) targetDepth += 1;
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

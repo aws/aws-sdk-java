@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * A complex type that lists the AWS accounts, if any, that you included in the TrustedSigners complex type for the default cache behavior or for any of

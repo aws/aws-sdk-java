@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Step Config JSON Unmarshaller
  */
 public class StepConfigJsonUnmarshaller implements Unmarshaller<StepConfig, JsonUnmarshallerContext> {
 
-    
-
     public StepConfig unmarshall(JsonUnmarshallerContext context) throws Exception {
         StepConfig stepConfig = new StepConfig();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class StepConfigJsonUnmarshaller implements Unmarshaller<StepConfig, Json
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
@@ -68,7 +62,6 @@ public class StepConfigJsonUnmarshaller implements Unmarshaller<StepConfig, Json
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

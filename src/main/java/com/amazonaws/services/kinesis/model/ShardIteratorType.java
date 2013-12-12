@@ -1,0 +1,62 @@
+/*
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+package com.amazonaws.services.kinesis.model;
+
+/**
+ * Shard Iterator Type
+ */
+public enum ShardIteratorType {
+    
+    AT_SEQUENCE_NUMBER("AT_SEQUENCE_NUMBER"),
+    AFTER_SEQUENCE_NUMBER("AFTER_SEQUENCE_NUMBER"),
+    TRIM_HORIZON("TRIM_HORIZON"),
+    LATEST("LATEST");
+
+    private String value;
+
+    private ShardIteratorType(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return this.value;
+    }
+
+    /**
+     * Use this in place of valueOf.
+     *
+     * @param value
+     *            real value
+     * @return ShardIteratorType corresponding to the value
+     */
+    public static ShardIteratorType fromValue(String value) {
+        if (value == null || "".equals(value)) {
+            throw new IllegalArgumentException("Value cannot be null or empty!");
+        
+        } else if ("AT_SEQUENCE_NUMBER".equals(value)) {
+            return ShardIteratorType.AT_SEQUENCE_NUMBER;
+        } else if ("AFTER_SEQUENCE_NUMBER".equals(value)) {
+            return ShardIteratorType.AFTER_SEQUENCE_NUMBER;
+        } else if ("TRIM_HORIZON".equals(value)) {
+            return ShardIteratorType.TRIM_HORIZON;
+        } else if ("LATEST".equals(value)) {
+            return ShardIteratorType.LATEST;
+        } else {
+            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+        }
+    }
+}
+    

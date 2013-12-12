@@ -33,8 +33,8 @@ public class CreateImageRequestMarshaller implements Marshaller<Request<CreateIm
     public Request<CreateImageRequest> marshall(CreateImageRequest createImageRequest) {
 
         if (createImageRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateImageRequest> request = new DefaultRequest<CreateImageRequest>(createImageRequest, "AmazonEC2");
         request.addParameter("Action", "CreateImage");
@@ -90,7 +90,6 @@ public class CreateImageRequestMarshaller implements Marshaller<Request<CreateIm
 
             blockDeviceMappingsListIndex++;
         }
-
 
         return request;
     }

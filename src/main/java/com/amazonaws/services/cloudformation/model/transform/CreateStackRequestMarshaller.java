@@ -33,8 +33,8 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
     public Request<CreateStackRequest> marshall(CreateStackRequest createStackRequest) {
 
         if (createStackRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateStackRequest> request = new DefaultRequest<CreateStackRequest>(createStackRequest, "AmazonCloudFormation");
         request.addParameter("Action", "CreateStack");
@@ -120,7 +120,6 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
 
             tagsListIndex++;
         }
-
 
         return request;
     }

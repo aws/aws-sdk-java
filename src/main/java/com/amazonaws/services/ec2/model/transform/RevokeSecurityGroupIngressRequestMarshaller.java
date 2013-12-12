@@ -33,8 +33,8 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
     public Request<RevokeSecurityGroupIngressRequest> marshall(RevokeSecurityGroupIngressRequest revokeSecurityGroupIngressRequest) {
 
         if (revokeSecurityGroupIngressRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RevokeSecurityGroupIngressRequest> request = new DefaultRequest<RevokeSecurityGroupIngressRequest>(revokeSecurityGroupIngressRequest, "AmazonEC2");
         request.addParameter("Action", "RevokeSecurityGroupIngress");
@@ -115,7 +115,6 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
 
             ipPermissionsListIndex++;
         }
-
 
         return request;
     }

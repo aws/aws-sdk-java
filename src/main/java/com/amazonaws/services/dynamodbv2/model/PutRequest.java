@@ -16,7 +16,6 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Represents a request to perform a <i>PutItem</i> operation on an item.
@@ -135,26 +134,26 @@ public class PutRequest implements Serializable {
      * @param key The key of the entry to be added into Item.
      * @param value The corresponding value of the entry to be added into Item.
      */
-	public PutRequest addItemEntry(String key, AttributeValue value) {
-		if (null == this.item) {
-			this.item = new java.util.HashMap<String,AttributeValue>();
-		}
-		if (this.item.containsKey(key))
-			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-		this.item.put(key, value);
-		return this;
-	}
+    public PutRequest addItemEntry(String key, AttributeValue value) {
+        if (null == this.item) {
+            this.item = new java.util.HashMap<String,AttributeValue>();
+        }
+        if (this.item.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.item.put(key, value);
+        return this;
+    }
 
-	/**
-	 * Removes all the entries added into Item.
-	 * <p>
-	 * Returns a reference to this object so that method calls can be chained together.
-	 */
-	public PutRequest clearItemEntries() {
-		this.item = null;
-		return this;
-	}
-	
+    /**
+     * Removes all the entries added into Item.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public PutRequest clearItemEntries() {
+        this.item = null;
+        return this;
+    }
+    
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Clone Stack Result JSON Unmarshaller
  */
 public class CloneStackResultJsonUnmarshaller implements Unmarshaller<CloneStackResult, JsonUnmarshallerContext> {
 
-    
-
     public CloneStackResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         CloneStackResult cloneStackResult = new CloneStackResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class CloneStackResultJsonUnmarshaller implements Unmarshaller<CloneStack
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StackId", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class CloneStackResultJsonUnmarshaller implements Unmarshaller<CloneStack
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -33,8 +33,8 @@ public class GetGroupRequestMarshaller implements Marshaller<Request<GetGroupReq
     public Request<GetGroupRequest> marshall(GetGroupRequest getGroupRequest) {
 
         if (getGroupRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetGroupRequest> request = new DefaultRequest<GetGroupRequest>(getGroupRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "GetGroup");
@@ -49,7 +49,6 @@ public class GetGroupRequestMarshaller implements Marshaller<Request<GetGroupReq
         if (getGroupRequest.getMaxItems() != null) {
             request.addParameter("MaxItems", StringUtils.fromInteger(getGroupRequest.getMaxItems()));
         }
-
 
         return request;
     }

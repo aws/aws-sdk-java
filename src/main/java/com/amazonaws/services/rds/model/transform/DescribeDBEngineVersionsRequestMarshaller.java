@@ -33,8 +33,8 @@ public class DescribeDBEngineVersionsRequestMarshaller implements Marshaller<Req
     public Request<DescribeDBEngineVersionsRequest> marshall(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest) {
 
         if (describeDBEngineVersionsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeDBEngineVersionsRequest> request = new DefaultRequest<DescribeDBEngineVersionsRequest>(describeDBEngineVersionsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBEngineVersions");
@@ -61,7 +61,6 @@ public class DescribeDBEngineVersionsRequestMarshaller implements Marshaller<Req
         if (describeDBEngineVersionsRequest.isListSupportedCharacterSets() != null) {
             request.addParameter("ListSupportedCharacterSets", StringUtils.fromBoolean(describeDBEngineVersionsRequest.isListSupportedCharacterSets()));
         }
-
 
         return request;
     }

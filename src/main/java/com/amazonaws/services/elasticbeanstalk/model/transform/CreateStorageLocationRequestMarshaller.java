@@ -33,14 +33,12 @@ public class CreateStorageLocationRequestMarshaller implements Marshaller<Reques
     public Request<CreateStorageLocationRequest> marshall(CreateStorageLocationRequest createStorageLocationRequest) {
 
         if (createStorageLocationRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateStorageLocationRequest> request = new DefaultRequest<CreateStorageLocationRequest>(createStorageLocationRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "CreateStorageLocation");
         request.addParameter("Version", "2010-12-01");
-
-
 
         return request;
     }

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Write Request JSON Unmarshaller
  */
 public class WriteRequestJsonUnmarshaller implements Unmarshaller<WriteRequest, JsonUnmarshallerContext> {
 
-    
-
     public WriteRequest unmarshall(JsonUnmarshallerContext context) throws Exception {
         WriteRequest writeRequest = new WriteRequest();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class WriteRequestJsonUnmarshaller implements Unmarshaller<WriteRequest, 
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PutRequest", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class WriteRequestJsonUnmarshaller implements Unmarshaller<WriteRequest, 
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

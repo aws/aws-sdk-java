@@ -16,10 +16,9 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
- * An attribute value used with conditional <i>DeleteItem</i> ,
+ * Represents an attribute value used with conditional <i>DeleteItem</i> ,
  * <i>PutItem</i> or <i>UpdateItem</i> operations. Amazon DynamoDB will check to see if the attribute value already exists; or if
  * the attribute exists and has a particular value before updating it.
  * </p>

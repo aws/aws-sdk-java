@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudtrail.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The settings for a trail.

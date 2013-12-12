@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Stop Logging Result JSON Unmarshaller
  */
 public class StopLoggingResultJsonUnmarshaller implements Unmarshaller<StopLoggingResult, JsonUnmarshallerContext> {
 
-    
-
     public StopLoggingResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         StopLoggingResult stopLoggingResult = new StopLoggingResult();
 
-        
-        
         return stopLoggingResult;
     }
 

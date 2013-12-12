@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Describe Cluster Result JSON Unmarshaller
  */
 public class DescribeClusterResultJsonUnmarshaller implements Unmarshaller<DescribeClusterResult, JsonUnmarshallerContext> {
 
-    
-
     public DescribeClusterResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeClusterResult describeClusterResult = new DescribeClusterResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DescribeClusterResultJsonUnmarshaller implements Unmarshaller<Descr
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Cluster", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class DescribeClusterResultJsonUnmarshaller implements Unmarshaller<Descr
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -33,8 +33,8 @@ public class DeleteVpnGatewayRequestMarshaller implements Marshaller<Request<Del
     public Request<DeleteVpnGatewayRequest> marshall(DeleteVpnGatewayRequest deleteVpnGatewayRequest) {
 
         if (deleteVpnGatewayRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteVpnGatewayRequest> request = new DefaultRequest<DeleteVpnGatewayRequest>(deleteVpnGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteVpnGateway");
@@ -43,7 +43,6 @@ public class DeleteVpnGatewayRequestMarshaller implements Marshaller<Request<Del
         if (deleteVpnGatewayRequest.getVpnGatewayId() != null) {
             request.addParameter("VpnGatewayId", StringUtils.fromString(deleteVpnGatewayRequest.getVpnGatewayId()));
         }
-
 
         return request;
     }

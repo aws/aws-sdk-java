@@ -33,13 +33,12 @@ public class DescribeAccountAttributesRequestMarshaller implements Marshaller<Re
     public Request<DescribeAccountAttributesRequest> marshall(DescribeAccountAttributesRequest describeAccountAttributesRequest) {
 
         if (describeAccountAttributesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeAccountAttributesRequest> request = new DefaultRequest<DescribeAccountAttributesRequest>(describeAccountAttributesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeAccountAttributes");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> attributeNamesList = describeAccountAttributesRequest.getAttributeNames();
         int attributeNamesListIndex = 1;
@@ -51,7 +50,6 @@ public class DescribeAccountAttributesRequestMarshaller implements Marshaller<Re
 
             attributeNamesListIndex++;
         }
-
 
         return request;
     }

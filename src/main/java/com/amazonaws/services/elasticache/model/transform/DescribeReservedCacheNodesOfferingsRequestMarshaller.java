@@ -33,8 +33,8 @@ public class DescribeReservedCacheNodesOfferingsRequestMarshaller implements Mar
     public Request<DescribeReservedCacheNodesOfferingsRequest> marshall(DescribeReservedCacheNodesOfferingsRequest describeReservedCacheNodesOfferingsRequest) {
 
         if (describeReservedCacheNodesOfferingsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeReservedCacheNodesOfferingsRequest> request = new DefaultRequest<DescribeReservedCacheNodesOfferingsRequest>(describeReservedCacheNodesOfferingsRequest, "AmazonElastiCache");
         request.addParameter("Action", "DescribeReservedCacheNodesOfferings");
@@ -61,7 +61,6 @@ public class DescribeReservedCacheNodesOfferingsRequestMarshaller implements Mar
         if (describeReservedCacheNodesOfferingsRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeReservedCacheNodesOfferingsRequest.getMarker()));
         }
-
 
         return request;
     }

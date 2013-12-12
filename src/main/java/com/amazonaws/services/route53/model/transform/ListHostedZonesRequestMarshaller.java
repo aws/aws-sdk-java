@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
@@ -63,8 +62,6 @@ public class ListHostedZonesRequestMarshaller implements Marshaller<Request<List
         }
 
         request.setResourcePath(uriResourcePath);
-
-        
 
         return request;
     }

@@ -1156,6 +1156,5 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     public Future<GetStreamingDistributionConfigResult> getStreamingDistributionConfigAsync(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest,
             AsyncHandler<GetStreamingDistributionConfigRequest, GetStreamingDistributionConfigResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
-
 }
         

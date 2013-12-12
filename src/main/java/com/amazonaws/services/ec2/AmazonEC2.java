@@ -5678,6 +5678,5 @@ public interface AmazonEC2 {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

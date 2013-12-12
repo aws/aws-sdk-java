@@ -16,7 +16,6 @@ package com.amazonaws.services.cloudformation.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * The Tag type is used by <code>CreateStack</code> in the <code>Tags</code> parameter. It allows you to specify a key/value pair that can be used to

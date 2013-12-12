@@ -33,8 +33,8 @@ public class CreateUserRequestMarshaller implements Marshaller<Request<CreateUse
     public Request<CreateUserRequest> marshall(CreateUserRequest createUserRequest) {
 
         if (createUserRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateUserRequest> request = new DefaultRequest<CreateUserRequest>(createUserRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "CreateUser");
@@ -46,7 +46,6 @@ public class CreateUserRequestMarshaller implements Marshaller<Request<CreateUse
         if (createUserRequest.getUserName() != null) {
             request.addParameter("UserName", StringUtils.fromString(createUserRequest.getUserName()));
         }
-
 
         return request;
     }

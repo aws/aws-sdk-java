@@ -33,8 +33,8 @@ public class DeleteMessageBatchRequestMarshaller implements Marshaller<Request<D
     public Request<DeleteMessageBatchRequest> marshall(DeleteMessageBatchRequest deleteMessageBatchRequest) {
 
         if (deleteMessageBatchRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteMessageBatchRequest> request = new DefaultRequest<DeleteMessageBatchRequest>(deleteMessageBatchRequest, "AmazonSQS");
         request.addParameter("Action", "DeleteMessageBatch");
@@ -60,7 +60,6 @@ public class DeleteMessageBatchRequestMarshaller implements Marshaller<Request<D
 
             entriesListIndex++;
         }
-
 
         return request;
     }

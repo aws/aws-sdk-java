@@ -33,8 +33,8 @@ public class DescribeReservedDBInstancesOfferingsRequestMarshaller implements Ma
     public Request<DescribeReservedDBInstancesOfferingsRequest> marshall(DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest) {
 
         if (describeReservedDBInstancesOfferingsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeReservedDBInstancesOfferingsRequest> request = new DefaultRequest<DescribeReservedDBInstancesOfferingsRequest>(describeReservedDBInstancesOfferingsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeReservedDBInstancesOfferings");
@@ -64,7 +64,6 @@ public class DescribeReservedDBInstancesOfferingsRequestMarshaller implements Ma
         if (describeReservedDBInstancesOfferingsRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeReservedDBInstancesOfferingsRequest.getMarker()));
         }
-
 
         return request;
     }

@@ -33,8 +33,8 @@ public class GetTemplateRequestMarshaller implements Marshaller<Request<GetTempl
     public Request<GetTemplateRequest> marshall(GetTemplateRequest getTemplateRequest) {
 
         if (getTemplateRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetTemplateRequest> request = new DefaultRequest<GetTemplateRequest>(getTemplateRequest, "AmazonCloudFormation");
         request.addParameter("Action", "GetTemplate");
@@ -43,7 +43,6 @@ public class GetTemplateRequestMarshaller implements Marshaller<Request<GetTempl
         if (getTemplateRequest.getStackName() != null) {
             request.addParameter("StackName", StringUtils.fromString(getTemplateRequest.getStackName()));
         }
-
 
         return request;
     }

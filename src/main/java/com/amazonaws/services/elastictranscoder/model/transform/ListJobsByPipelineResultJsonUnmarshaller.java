@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * List Jobs By Pipeline Result JSON Unmarshaller
  */
 public class ListJobsByPipelineResultJsonUnmarshaller implements Unmarshaller<ListJobsByPipelineResult, JsonUnmarshallerContext> {
 
-    
-
     public ListJobsByPipelineResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ListJobsByPipelineResult listJobsByPipelineResult = new ListJobsByPipelineResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ListJobsByPipelineResultJsonUnmarshaller implements Unmarshaller<Li
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Jobs", targetDepth)) {
                     listJobsByPipelineResult.setJobs(new ListUnmarshaller<Job>(JobJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -63,7 +57,6 @@ public class ListJobsByPipelineResultJsonUnmarshaller implements Unmarshaller<Li
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

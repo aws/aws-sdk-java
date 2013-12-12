@@ -33,8 +33,8 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
     public Request<CreateNetworkInterfaceRequest> marshall(CreateNetworkInterfaceRequest createNetworkInterfaceRequest) {
 
         if (createNetworkInterfaceRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateNetworkInterfaceRequest> request = new DefaultRequest<CreateNetworkInterfaceRequest>(createNetworkInterfaceRequest, "AmazonEC2");
         request.addParameter("Action", "CreateNetworkInterface");
@@ -80,7 +80,6 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
         if (createNetworkInterfaceRequest.getSecondaryPrivateIpAddressCount() != null) {
             request.addParameter("SecondaryPrivateIpAddressCount", StringUtils.fromInteger(createNetworkInterfaceRequest.getSecondaryPrivateIpAddressCount()));
         }
-
 
         return request;
     }

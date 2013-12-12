@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlowRequest>, RunJobFlowRequest> {
 
-    
-
     public Request<RunJobFlowRequest> marshall(RunJobFlowRequest runJobFlowRequest) {
     if (runJobFlowRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (runJobFlowRequest.getName() != null) {
@@ -194,7 +185,6 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
 
                             jsonWriter.key("HadoopJarStep");
                             jsonWriter.object();
-
 
                             com.amazonaws.internal.ListWithAutoConstructFlag<KeyValue> propertiesList = (com.amazonaws.internal.ListWithAutoConstructFlag<KeyValue>)(hadoopJarStep.getProperties());
                             if (propertiesList != null && !(propertiesList.isAutoConstruct() && propertiesList.isEmpty())) {
@@ -340,7 +330,6 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -349,7 +338,6 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

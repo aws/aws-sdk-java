@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Ssl Configuration JSON Unmarshaller
  */
 public class SslConfigurationJsonUnmarshaller implements Unmarshaller<SslConfiguration, JsonUnmarshallerContext> {
 
-    
-
     public SslConfiguration unmarshall(JsonUnmarshallerContext context) throws Exception {
         SslConfiguration sslConfiguration = new SslConfiguration();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class SslConfigurationJsonUnmarshaller implements Unmarshaller<SslConfigu
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Certificate", targetDepth)) {
                     context.nextToken();
@@ -68,7 +62,6 @@ public class SslConfigurationJsonUnmarshaller implements Unmarshaller<SslConfigu
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

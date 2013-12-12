@@ -33,8 +33,8 @@ public class RemoveTagsFromResourceRequestMarshaller implements Marshaller<Reque
     public Request<RemoveTagsFromResourceRequest> marshall(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
 
         if (removeTagsFromResourceRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RemoveTagsFromResourceRequest> request = new DefaultRequest<RemoveTagsFromResourceRequest>(removeTagsFromResourceRequest, "AmazonRDS");
         request.addParameter("Action", "RemoveTagsFromResource");
@@ -54,7 +54,6 @@ public class RemoveTagsFromResourceRequestMarshaller implements Marshaller<Reque
 
             tagKeysListIndex++;
         }
-
 
         return request;
     }

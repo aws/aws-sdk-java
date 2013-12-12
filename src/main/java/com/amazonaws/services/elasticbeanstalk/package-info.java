@@ -12,20 +12,17 @@
  * </p>
  * <p>
  * For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/"> AWS Elastic Beanstalk </a> details page. The
- * location of the lastest AWS Elastic Beanstalk WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">
+ * location of the latest AWS Elastic Beanstalk WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">
  * http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl </a> .
  * </p>
  * <p>
  * <b>Endpoints</b>
  * </p>
  * <p>
- * AWS Elastic Beanstalk supports the following region-specific endpoint:
+ * For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a
+ * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region"> Regions and Endpoints </a> in the <i>Amazon Web Services
+ * Glossary</i> .
  * </p>
- * 
- * <ul>
- * <li> https://elasticbeanstalk.us-east-1.amazonaws.com </li>
- * 
- * </ul>
  */
  package com.amazonaws.services.elasticbeanstalk;
         

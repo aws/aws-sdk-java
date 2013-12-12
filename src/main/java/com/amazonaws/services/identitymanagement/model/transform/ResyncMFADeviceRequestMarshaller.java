@@ -33,8 +33,8 @@ public class ResyncMFADeviceRequestMarshaller implements Marshaller<Request<Resy
     public Request<ResyncMFADeviceRequest> marshall(ResyncMFADeviceRequest resyncMFADeviceRequest) {
 
         if (resyncMFADeviceRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ResyncMFADeviceRequest> request = new DefaultRequest<ResyncMFADeviceRequest>(resyncMFADeviceRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ResyncMFADevice");
@@ -52,7 +52,6 @@ public class ResyncMFADeviceRequestMarshaller implements Marshaller<Request<Resy
         if (resyncMFADeviceRequest.getAuthenticationCode2() != null) {
             request.addParameter("AuthenticationCode2", StringUtils.fromString(resyncMFADeviceRequest.getAuthenticationCode2()));
         }
-
 
         return request;
     }

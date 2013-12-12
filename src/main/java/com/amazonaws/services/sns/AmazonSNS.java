@@ -1685,6 +1685,5 @@ public interface AmazonSNS {
      *         is available.
      */
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
-
 }
         

@@ -33,8 +33,8 @@ public class UnassignPrivateIpAddressesRequestMarshaller implements Marshaller<R
     public Request<UnassignPrivateIpAddressesRequest> marshall(UnassignPrivateIpAddressesRequest unassignPrivateIpAddressesRequest) {
 
         if (unassignPrivateIpAddressesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<UnassignPrivateIpAddressesRequest> request = new DefaultRequest<UnassignPrivateIpAddressesRequest>(unassignPrivateIpAddressesRequest, "AmazonEC2");
         request.addParameter("Action", "UnassignPrivateIpAddresses");
@@ -54,7 +54,6 @@ public class UnassignPrivateIpAddressesRequestMarshaller implements Marshaller<R
 
             privateIpAddressesListIndex++;
         }
-
 
         return request;
     }

@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Create User Profile Result JSON Unmarshaller
  */
 public class CreateUserProfileResultJsonUnmarshaller implements Unmarshaller<CreateUserProfileResult, JsonUnmarshallerContext> {
 
-    
-
     public CreateUserProfileResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         CreateUserProfileResult createUserProfileResult = new CreateUserProfileResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class CreateUserProfileResultJsonUnmarshaller implements Unmarshaller<Cre
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IamUserArn", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class CreateUserProfileResultJsonUnmarshaller implements Unmarshaller<Cre
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

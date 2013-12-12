@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
@@ -62,12 +61,9 @@ public class CreateHealthCheckRequestMarshaller implements Marshaller<Request<Cr
 
         request.setResourcePath(uriResourcePath);
 
-        
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter, "https://route53.amazonaws.com/doc/2012-12-12/");
 
-            
-            
             xmlWriter.startElement("CreateHealthCheckRequest");
                     if (createHealthCheckRequest.getCallerReference() != null) {
             xmlWriter.startElement("CallerReference").value(createHealthCheckRequest.getCallerReference()).endElement();
@@ -96,7 +92,6 @@ public class CreateHealthCheckRequestMarshaller implements Marshaller<Request<Cr
         }
 
             xmlWriter.endElement();
-            
 
             try {
                 request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
@@ -105,7 +100,6 @@ public class CreateHealthCheckRequestMarshaller implements Marshaller<Request<Cr
             } catch (UnsupportedEncodingException e) {
                 throw new AmazonClientException("Unable to marshall request to XML", e);
             }
-        
 
         return request;
     }

@@ -33,8 +33,8 @@ public class CopyClusterSnapshotRequestMarshaller implements Marshaller<Request<
     public Request<CopyClusterSnapshotRequest> marshall(CopyClusterSnapshotRequest copyClusterSnapshotRequest) {
 
         if (copyClusterSnapshotRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CopyClusterSnapshotRequest> request = new DefaultRequest<CopyClusterSnapshotRequest>(copyClusterSnapshotRequest, "AmazonRedshift");
         request.addParameter("Action", "CopyClusterSnapshot");
@@ -49,7 +49,6 @@ public class CopyClusterSnapshotRequestMarshaller implements Marshaller<Request<
         if (copyClusterSnapshotRequest.getTargetSnapshotIdentifier() != null) {
             request.addParameter("TargetSnapshotIdentifier", StringUtils.fromString(copyClusterSnapshotRequest.getTargetSnapshotIdentifier()));
         }
-
 
         return request;
     }

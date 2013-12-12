@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Delete Chap Credentials Result JSON Unmarshaller
  */
 public class DeleteChapCredentialsResultJsonUnmarshaller implements Unmarshaller<DeleteChapCredentialsResult, JsonUnmarshallerContext> {
 
-    
-
     public DeleteChapCredentialsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DeleteChapCredentialsResult deleteChapCredentialsResult = new DeleteChapCredentialsResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class DeleteChapCredentialsResultJsonUnmarshaller implements Unmarshaller
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TargetARN", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class DeleteChapCredentialsResultJsonUnmarshaller implements Unmarshaller
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

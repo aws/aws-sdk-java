@@ -33,8 +33,8 @@ public class PublishRequestMarshaller implements Marshaller<Request<PublishReque
     public Request<PublishRequest> marshall(PublishRequest publishRequest) {
 
         if (publishRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<PublishRequest> request = new DefaultRequest<PublishRequest>(publishRequest, "AmazonSNS");
         request.addParameter("Action", "Publish");
@@ -55,7 +55,6 @@ public class PublishRequestMarshaller implements Marshaller<Request<PublishReque
         if (publishRequest.getMessageStructure() != null) {
             request.addParameter("MessageStructure", StringUtils.fromString(publishRequest.getMessageStructure()));
         }
-
 
         return request;
     }

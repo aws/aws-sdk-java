@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class DeleteItemRequestMarshaller implements Marshaller<Request<DeleteItemRequest>, DeleteItemRequest> {
 
-    
-
     public Request<DeleteItemRequest> marshall(DeleteItemRequest deleteItemRequest) {
     if (deleteItemRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class DeleteItemRequestMarshaller implements Marshaller<Request<DeleteIte
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class DeleteItemRequestMarshaller implements Marshaller<Request<DeleteIte
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (deleteItemRequest.getTableName() != null) {
@@ -238,7 +229,6 @@ public class DeleteItemRequestMarshaller implements Marshaller<Request<DeleteIte
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -247,7 +237,6 @@ public class DeleteItemRequestMarshaller implements Marshaller<Request<DeleteIte
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

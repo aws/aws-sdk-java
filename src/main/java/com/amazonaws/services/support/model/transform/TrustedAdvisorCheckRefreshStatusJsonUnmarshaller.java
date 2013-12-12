@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Trusted Advisor Check Refresh Status JSON Unmarshaller
  */
 public class TrustedAdvisorCheckRefreshStatusJsonUnmarshaller implements Unmarshaller<TrustedAdvisorCheckRefreshStatus, JsonUnmarshallerContext> {
 
-    
-
     public TrustedAdvisorCheckRefreshStatus unmarshall(JsonUnmarshallerContext context) throws Exception {
         TrustedAdvisorCheckRefreshStatus trustedAdvisorCheckRefreshStatus = new TrustedAdvisorCheckRefreshStatus();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class TrustedAdvisorCheckRefreshStatusJsonUnmarshaller implements Unmarsh
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("checkId", targetDepth)) {
                     context.nextToken();
@@ -68,7 +62,6 @@ public class TrustedAdvisorCheckRefreshStatusJsonUnmarshaller implements Unmarsh
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -33,8 +33,8 @@ public class RemoveSourceIdentifierFromSubscriptionRequestMarshaller implements 
     public Request<RemoveSourceIdentifierFromSubscriptionRequest> marshall(RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest) {
 
         if (removeSourceIdentifierFromSubscriptionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RemoveSourceIdentifierFromSubscriptionRequest> request = new DefaultRequest<RemoveSourceIdentifierFromSubscriptionRequest>(removeSourceIdentifierFromSubscriptionRequest, "AmazonRDS");
         request.addParameter("Action", "RemoveSourceIdentifierFromSubscription");
@@ -46,7 +46,6 @@ public class RemoveSourceIdentifierFromSubscriptionRequestMarshaller implements 
         if (removeSourceIdentifierFromSubscriptionRequest.getSourceIdentifier() != null) {
             request.addParameter("SourceIdentifier", StringUtils.fromString(removeSourceIdentifierFromSubscriptionRequest.getSourceIdentifier()));
         }
-
 
         return request;
     }

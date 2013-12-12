@@ -26,6 +26,7 @@ import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -33,7 +34,6 @@ import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.services.datapipeline.model.transform.*;
-
 
 /**
  * Client for accessing DataPipeline.  All service calls made
@@ -195,13 +195,35 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public DataPipelineClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * DataPipeline using the specified AWS account credentials
+     * provider, client configuration options and request metric collector.
+     * 
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to DataPipeline
+     *                       (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector optional request metric collector
+     */
+    public DataPipelineClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
+        super(clientConfiguration, requestMetricCollector);
         
         this.awsCredentialsProvider = awsCredentialsProvider;
         
         init();
     }
-
 
     private void init() {
         exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, JSONObject>>();
@@ -219,11 +241,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 "/com/amazonaws/services/datapipeline/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
                 "/com/amazonaws/services/datapipeline/request.handler2s"));
-
-        
     }
 
-    
     /**
      * <p>
      * Validates a pipeline and initiates processing. If the pipeline does
@@ -280,7 +299,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         }
     }
 
-   
     /**
      * <p>
      * Returns a list of pipeline identifiers for all active pipelines.
@@ -330,7 +348,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         }
     }
 
-   
     /**
      * <p>
      * Updates the AWS Data Pipeline service on the progress of the calling
@@ -395,7 +412,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         }
     }
 
-   
     /**
      * <p>
      * Tests the pipeline definition with a set of validation checks to
@@ -447,7 +463,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         }
     }
 
-   
     /**
      * <p>
      * Task runners call this action to receive a task to perform from AWS
@@ -512,7 +527,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         }
     }
 
-   
     /**
      * <p>
      * Queries a pipeline for the names of objects that match a specified set
@@ -571,7 +585,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         }
     }
 
-   
     /**
      * <p>
      * Requests that the status of an array of physical or logical pipeline
@@ -711,7 +724,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         }
     }
 
-   
     /**
      * <p>
      * Notifies AWS Data Pipeline that a task is completed and provides
@@ -766,7 +778,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         }
     }
 
-   
     /**
      * <p>
      * Evaluates a string in the context of a specified object. A task runner
@@ -819,7 +830,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         }
     }
 
-   
     /**
      * <p>
      * Retrieve metadata about one or more pipelines. The information
@@ -879,7 +889,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         }
     }
 
-   
     /**
      * <p>
      * Creates a new empty pipeline. When this action succeeds, you can then
@@ -928,7 +937,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         }
     }
 
-   
     /**
      * <p>
      * Returns the object definitions for a set of objects associated with
@@ -980,7 +988,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         }
     }
 
-   
     /**
      * <p>
      * Task runners call ReportTaskRunnerHeartbeat every 15 minutes to
@@ -1033,7 +1040,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         }
     }
 
-   
     /**
      * <p>
      * Adds tasks, schedules, and preconditions that control the behavior of
@@ -1101,7 +1107,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         }
     }
 
-   
     /**
      * <p>
      * Returns a list of pipeline identifiers for all active pipelines.
@@ -1126,20 +1131,15 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
     public ListPipelinesResult listPipelines() throws AmazonServiceException, AmazonClientException {
         return listPipelines(new ListPipelinesRequest());
     }
-    
 
     @Override
     public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
-
-        
     }
 
     @Override
     public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
         super.setEndpoint(endpoint, serviceName, regionId);
-
-        
     }
 
     /**

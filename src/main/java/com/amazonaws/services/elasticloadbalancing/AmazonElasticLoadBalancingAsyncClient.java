@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.elasticloadbalancing.model.*;
 
-
 /**
  * Asynchronous client for accessing AmazonElasticLoadBalancing.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -77,7 +76,6 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -277,7 +275,6 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -332,11 +329,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DescribeLoadBalancerPolicyTypesResult>() {
             public DescribeLoadBalancerPolicyTypesResult call() throws Exception {
                 return describeLoadBalancerPolicyTypes(describeLoadBalancerPolicyTypesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns meta-information on the specified load balancer policies
@@ -373,17 +369,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeLoadBalancerPolicyTypesResult>() {
             public DescribeLoadBalancerPolicyTypesResult call() throws Exception {
-            	DescribeLoadBalancerPolicyTypesResult result;
+                DescribeLoadBalancerPolicyTypesResult result;
                 try {
-            		result = describeLoadBalancerPolicyTypes(describeLoadBalancerPolicyTypesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeLoadBalancerPolicyTypesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeLoadBalancerPolicyTypes(describeLoadBalancerPolicyTypesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeLoadBalancerPolicyTypesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -420,11 +416,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<ConfigureHealthCheckResult>() {
             public ConfigureHealthCheckResult call() throws Exception {
                 return configureHealthCheck(configureHealthCheckRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Specifies the health check settings to use for evaluating the health
@@ -464,17 +459,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ConfigureHealthCheckResult>() {
             public ConfigureHealthCheckResult call() throws Exception {
-            	ConfigureHealthCheckResult result;
+                ConfigureHealthCheckResult result;
                 try {
-            		result = configureHealthCheck(configureHealthCheckRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(configureHealthCheckRequest, result);
-               	return result;
-		    }
-		});
+                    result = configureHealthCheck(configureHealthCheckRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(configureHealthCheckRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -512,11 +507,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DetachLoadBalancerFromSubnetsResult>() {
             public DetachLoadBalancerFromSubnetsResult call() throws Exception {
                 return detachLoadBalancerFromSubnets(detachLoadBalancerFromSubnetsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Removes subnets from the set of configured subnets in the Amazon
@@ -557,17 +551,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DetachLoadBalancerFromSubnetsResult>() {
             public DetachLoadBalancerFromSubnetsResult call() throws Exception {
-            	DetachLoadBalancerFromSubnetsResult result;
+                DetachLoadBalancerFromSubnetsResult result;
                 try {
-            		result = detachLoadBalancerFromSubnets(detachLoadBalancerFromSubnetsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(detachLoadBalancerFromSubnetsRequest, result);
-               	return result;
-		    }
-		});
+                    result = detachLoadBalancerFromSubnets(detachLoadBalancerFromSubnetsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(detachLoadBalancerFromSubnetsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -597,11 +591,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<ModifyLoadBalancerAttributesResult>() {
             public ModifyLoadBalancerAttributesResult call() throws Exception {
                 return modifyLoadBalancerAttributes(modifyLoadBalancerAttributesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Modifies the attributes of a specified load balancer.
@@ -634,17 +627,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ModifyLoadBalancerAttributesResult>() {
             public ModifyLoadBalancerAttributesResult call() throws Exception {
-            	ModifyLoadBalancerAttributesResult result;
+                ModifyLoadBalancerAttributesResult result;
                 try {
-            		result = modifyLoadBalancerAttributes(modifyLoadBalancerAttributesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(modifyLoadBalancerAttributesRequest, result);
-               	return result;
-		    }
-		});
+                    result = modifyLoadBalancerAttributes(modifyLoadBalancerAttributesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(modifyLoadBalancerAttributesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -684,11 +677,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
             public Void call() throws Exception {
                 createLoadBalancerListeners(createLoadBalancerListenersRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates one or more listeners on a load balancer for the specified
@@ -730,16 +722,16 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		createLoadBalancerListeners(createLoadBalancerListenersRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createLoadBalancerListenersRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    createLoadBalancerListeners(createLoadBalancerListenersRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createLoadBalancerListenersRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -770,11 +762,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
             public Void call() throws Exception {
                 deleteLoadBalancerListeners(deleteLoadBalancerListenersRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes listeners from the load balancer for the specified port.
@@ -807,16 +798,16 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteLoadBalancerListeners(deleteLoadBalancerListenersRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteLoadBalancerListenersRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteLoadBalancerListeners(deleteLoadBalancerListenersRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteLoadBalancerListenersRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -872,11 +863,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<CreateAppCookieStickinessPolicyResult>() {
             public CreateAppCookieStickinessPolicyResult call() throws Exception {
                 return createAppCookieStickinessPolicy(createAppCookieStickinessPolicyRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Generates a stickiness policy with sticky session lifetimes that
@@ -935,17 +925,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateAppCookieStickinessPolicyResult>() {
             public CreateAppCookieStickinessPolicyResult call() throws Exception {
-            	CreateAppCookieStickinessPolicyResult result;
+                CreateAppCookieStickinessPolicyResult result;
                 try {
-            		result = createAppCookieStickinessPolicy(createAppCookieStickinessPolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createAppCookieStickinessPolicyRequest, result);
-               	return result;
-		    }
-		});
+                    result = createAppCookieStickinessPolicy(createAppCookieStickinessPolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createAppCookieStickinessPolicyRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -983,11 +973,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<ApplySecurityGroupsToLoadBalancerResult>() {
             public ApplySecurityGroupsToLoadBalancerResult call() throws Exception {
                 return applySecurityGroupsToLoadBalancer(applySecurityGroupsToLoadBalancerRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Associates one or more security groups with your load balancer in
@@ -1028,17 +1017,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ApplySecurityGroupsToLoadBalancerResult>() {
             public ApplySecurityGroupsToLoadBalancerResult call() throws Exception {
-            	ApplySecurityGroupsToLoadBalancerResult result;
+                ApplySecurityGroupsToLoadBalancerResult result;
                 try {
-            		result = applySecurityGroupsToLoadBalancer(applySecurityGroupsToLoadBalancerRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(applySecurityGroupsToLoadBalancerRequest, result);
-               	return result;
-		    }
-		});
+                    result = applySecurityGroupsToLoadBalancer(applySecurityGroupsToLoadBalancerRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(applySecurityGroupsToLoadBalancerRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1075,11 +1064,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DescribeLoadBalancerPoliciesResult>() {
             public DescribeLoadBalancerPoliciesResult call() throws Exception {
                 return describeLoadBalancerPolicies(describeLoadBalancerPoliciesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns detailed descriptions of the policies. If you specify a load
@@ -1119,17 +1107,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeLoadBalancerPoliciesResult>() {
             public DescribeLoadBalancerPoliciesResult call() throws Exception {
-            	DescribeLoadBalancerPoliciesResult result;
+                DescribeLoadBalancerPoliciesResult result;
                 try {
-            		result = describeLoadBalancerPolicies(describeLoadBalancerPoliciesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeLoadBalancerPoliciesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeLoadBalancerPolicies(describeLoadBalancerPoliciesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeLoadBalancerPoliciesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1160,11 +1148,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<SetLoadBalancerPoliciesOfListenerResult>() {
             public SetLoadBalancerPoliciesOfListenerResult call() throws Exception {
                 return setLoadBalancerPoliciesOfListener(setLoadBalancerPoliciesOfListenerRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Associates, updates, or disables a policy with a listener on the load
@@ -1198,17 +1185,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<SetLoadBalancerPoliciesOfListenerResult>() {
             public SetLoadBalancerPoliciesOfListenerResult call() throws Exception {
-            	SetLoadBalancerPoliciesOfListenerResult result;
+                SetLoadBalancerPoliciesOfListenerResult result;
                 try {
-            		result = setLoadBalancerPoliciesOfListener(setLoadBalancerPoliciesOfListenerRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(setLoadBalancerPoliciesOfListenerRequest, result);
-               	return result;
-		    }
-		});
+                    result = setLoadBalancerPoliciesOfListener(setLoadBalancerPoliciesOfListenerRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(setLoadBalancerPoliciesOfListenerRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1256,11 +1243,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DisableAvailabilityZonesForLoadBalancerResult>() {
             public DisableAvailabilityZonesForLoadBalancerResult call() throws Exception {
                 return disableAvailabilityZonesForLoadBalancer(disableAvailabilityZonesForLoadBalancerRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Removes the specified EC2 Availability Zones from the set of
@@ -1311,17 +1297,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DisableAvailabilityZonesForLoadBalancerResult>() {
             public DisableAvailabilityZonesForLoadBalancerResult call() throws Exception {
-            	DisableAvailabilityZonesForLoadBalancerResult result;
+                DisableAvailabilityZonesForLoadBalancerResult result;
                 try {
-            		result = disableAvailabilityZonesForLoadBalancer(disableAvailabilityZonesForLoadBalancerRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(disableAvailabilityZonesForLoadBalancerRequest, result);
-               	return result;
-		    }
-		});
+                    result = disableAvailabilityZonesForLoadBalancer(disableAvailabilityZonesForLoadBalancerRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(disableAvailabilityZonesForLoadBalancerRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1357,11 +1343,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DescribeInstanceHealthResult>() {
             public DescribeInstanceHealthResult call() throws Exception {
                 return describeInstanceHealth(describeInstanceHealthRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the current state of the specified instances registered with
@@ -1400,17 +1385,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeInstanceHealthResult>() {
             public DescribeInstanceHealthResult call() throws Exception {
-            	DescribeInstanceHealthResult result;
+                DescribeInstanceHealthResult result;
                 try {
-            		result = describeInstanceHealth(describeInstanceHealthRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeInstanceHealthRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeInstanceHealth(describeInstanceHealthRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeInstanceHealthRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1441,11 +1426,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DeleteLoadBalancerPolicyResult>() {
             public DeleteLoadBalancerPolicyResult call() throws Exception {
                 return deleteLoadBalancerPolicy(deleteLoadBalancerPolicyRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a policy from the load balancer. The specified policy must
@@ -1479,17 +1463,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteLoadBalancerPolicyResult>() {
             public DeleteLoadBalancerPolicyResult call() throws Exception {
-            	DeleteLoadBalancerPolicyResult result;
+                DeleteLoadBalancerPolicyResult result;
                 try {
-            		result = deleteLoadBalancerPolicy(deleteLoadBalancerPolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteLoadBalancerPolicyRequest, result);
-               	return result;
-		    }
-		});
+                    result = deleteLoadBalancerPolicy(deleteLoadBalancerPolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteLoadBalancerPolicyRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1522,11 +1506,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<CreateLoadBalancerPolicyResult>() {
             public CreateLoadBalancerPolicyResult call() throws Exception {
                 return createLoadBalancerPolicy(createLoadBalancerPolicyRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new policy that contains the necessary attributes depending
@@ -1562,17 +1545,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateLoadBalancerPolicyResult>() {
             public CreateLoadBalancerPolicyResult call() throws Exception {
-            	CreateLoadBalancerPolicyResult result;
+                CreateLoadBalancerPolicyResult result;
                 try {
-            		result = createLoadBalancerPolicy(createLoadBalancerPolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createLoadBalancerPolicyRequest, result);
-               	return result;
-		    }
-		});
+                    result = createLoadBalancerPolicy(createLoadBalancerPolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createLoadBalancerPolicyRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1618,11 +1601,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<EnableAvailabilityZonesForLoadBalancerResult>() {
             public EnableAvailabilityZonesForLoadBalancerResult call() throws Exception {
                 return enableAvailabilityZonesForLoadBalancer(enableAvailabilityZonesForLoadBalancerRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Adds one or more EC2 Availability Zones to the load balancer.
@@ -1671,17 +1653,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<EnableAvailabilityZonesForLoadBalancerResult>() {
             public EnableAvailabilityZonesForLoadBalancerResult call() throws Exception {
-            	EnableAvailabilityZonesForLoadBalancerResult result;
+                EnableAvailabilityZonesForLoadBalancerResult result;
                 try {
-            		result = enableAvailabilityZonesForLoadBalancer(enableAvailabilityZonesForLoadBalancerRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(enableAvailabilityZonesForLoadBalancerRequest, result);
-               	return result;
-		    }
-		});
+                    result = enableAvailabilityZonesForLoadBalancer(enableAvailabilityZonesForLoadBalancerRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(enableAvailabilityZonesForLoadBalancerRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1728,11 +1710,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
             public Void call() throws Exception {
                 deleteLoadBalancer(deleteLoadBalancerRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified load balancer.
@@ -1781,16 +1762,16 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteLoadBalancer(deleteLoadBalancerRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteLoadBalancerRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteLoadBalancer(deleteLoadBalancerRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteLoadBalancerRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1866,11 +1847,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<CreateLoadBalancerResult>() {
             public CreateLoadBalancerResult call() throws Exception {
                 return createLoadBalancer(createLoadBalancerRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new load balancer.
@@ -1949,17 +1929,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateLoadBalancerResult>() {
             public CreateLoadBalancerResult call() throws Exception {
-            	CreateLoadBalancerResult result;
+                CreateLoadBalancerResult result;
                 try {
-            		result = createLoadBalancer(createLoadBalancerRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createLoadBalancerRequest, result);
-               	return result;
-		    }
-		});
+                    result = createLoadBalancer(createLoadBalancerRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createLoadBalancerRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2006,11 +1986,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<SetLoadBalancerPoliciesForBackendServerResult>() {
             public SetLoadBalancerPoliciesForBackendServerResult call() throws Exception {
                 return setLoadBalancerPoliciesForBackendServer(setLoadBalancerPoliciesForBackendServerRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Replaces the current set of policies associated with a port on which
@@ -2060,17 +2039,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<SetLoadBalancerPoliciesForBackendServerResult>() {
             public SetLoadBalancerPoliciesForBackendServerResult call() throws Exception {
-            	SetLoadBalancerPoliciesForBackendServerResult result;
+                SetLoadBalancerPoliciesForBackendServerResult result;
                 try {
-            		result = setLoadBalancerPoliciesForBackendServer(setLoadBalancerPoliciesForBackendServerRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(setLoadBalancerPoliciesForBackendServerRequest, result);
-               	return result;
-		    }
-		});
+                    result = setLoadBalancerPoliciesForBackendServer(setLoadBalancerPoliciesForBackendServerRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(setLoadBalancerPoliciesForBackendServerRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2116,11 +2095,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DeregisterInstancesFromLoadBalancerResult>() {
             public DeregisterInstancesFromLoadBalancerResult call() throws Exception {
                 return deregisterInstancesFromLoadBalancer(deregisterInstancesFromLoadBalancerRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deregisters instances from the load balancer. Once the instance is
@@ -2169,17 +2147,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeregisterInstancesFromLoadBalancerResult>() {
             public DeregisterInstancesFromLoadBalancerResult call() throws Exception {
-            	DeregisterInstancesFromLoadBalancerResult result;
+                DeregisterInstancesFromLoadBalancerResult result;
                 try {
-            		result = deregisterInstancesFromLoadBalancer(deregisterInstancesFromLoadBalancerRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deregisterInstancesFromLoadBalancerRequest, result);
-               	return result;
-		    }
-		});
+                    result = deregisterInstancesFromLoadBalancer(deregisterInstancesFromLoadBalancerRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deregisterInstancesFromLoadBalancerRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2219,11 +2197,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
             public Void call() throws Exception {
                 setLoadBalancerListenerSSLCertificate(setLoadBalancerListenerSSLCertificateRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Sets the certificate that terminates the specified listener's SSL
@@ -2265,16 +2242,16 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		setLoadBalancerListenerSSLCertificate(setLoadBalancerListenerSSLCertificateRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(setLoadBalancerListenerSSLCertificateRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    setLoadBalancerListenerSSLCertificate(setLoadBalancerListenerSSLCertificateRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(setLoadBalancerListenerSSLCertificateRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2305,11 +2282,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DescribeLoadBalancerAttributesResult>() {
             public DescribeLoadBalancerAttributesResult call() throws Exception {
                 return describeLoadBalancerAttributes(describeLoadBalancerAttributesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns detailed information about all of the attributes associated
@@ -2343,17 +2319,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeLoadBalancerAttributesResult>() {
             public DescribeLoadBalancerAttributesResult call() throws Exception {
-            	DescribeLoadBalancerAttributesResult result;
+                DescribeLoadBalancerAttributesResult result;
                 try {
-            		result = describeLoadBalancerAttributes(describeLoadBalancerAttributesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeLoadBalancerAttributesRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeLoadBalancerAttributes(describeLoadBalancerAttributesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeLoadBalancerAttributesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2407,11 +2383,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<CreateLBCookieStickinessPolicyResult>() {
             public CreateLBCookieStickinessPolicyResult call() throws Exception {
                 return createLBCookieStickinessPolicy(createLBCookieStickinessPolicyRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Generates a stickiness policy with sticky session lifetimes
@@ -2468,17 +2443,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateLBCookieStickinessPolicyResult>() {
             public CreateLBCookieStickinessPolicyResult call() throws Exception {
-            	CreateLBCookieStickinessPolicyResult result;
+                CreateLBCookieStickinessPolicyResult result;
                 try {
-            		result = createLBCookieStickinessPolicy(createLBCookieStickinessPolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createLBCookieStickinessPolicyRequest, result);
-               	return result;
-		    }
-		});
+                    result = createLBCookieStickinessPolicy(createLBCookieStickinessPolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createLBCookieStickinessPolicyRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2517,11 +2492,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<AttachLoadBalancerToSubnetsResult>() {
             public AttachLoadBalancerToSubnetsResult call() throws Exception {
                 return attachLoadBalancerToSubnets(attachLoadBalancerToSubnetsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Adds one or more subnets to the set of configured subnets in the
@@ -2563,17 +2537,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AttachLoadBalancerToSubnetsResult>() {
             public AttachLoadBalancerToSubnetsResult call() throws Exception {
-            	AttachLoadBalancerToSubnetsResult result;
+                AttachLoadBalancerToSubnetsResult result;
                 try {
-            		result = attachLoadBalancerToSubnets(attachLoadBalancerToSubnetsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(attachLoadBalancerToSubnetsRequest, result);
-               	return result;
-		    }
-		});
+                    result = attachLoadBalancerToSubnets(attachLoadBalancerToSubnetsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(attachLoadBalancerToSubnetsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2640,11 +2614,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<RegisterInstancesWithLoadBalancerResult>() {
             public RegisterInstancesWithLoadBalancerResult call() throws Exception {
                 return registerInstancesWithLoadBalancer(registerInstancesWithLoadBalancerRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Adds new instances to the load balancer.
@@ -2714,17 +2687,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RegisterInstancesWithLoadBalancerResult>() {
             public RegisterInstancesWithLoadBalancerResult call() throws Exception {
-            	RegisterInstancesWithLoadBalancerResult result;
+                RegisterInstancesWithLoadBalancerResult result;
                 try {
-            		result = registerInstancesWithLoadBalancer(registerInstancesWithLoadBalancerRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(registerInstancesWithLoadBalancerRequest, result);
-               	return result;
-		    }
-		});
+                    result = registerInstancesWithLoadBalancer(registerInstancesWithLoadBalancerRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(registerInstancesWithLoadBalancerRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2762,11 +2735,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DescribeLoadBalancersResult>() {
             public DescribeLoadBalancersResult call() throws Exception {
                 return describeLoadBalancers(describeLoadBalancersRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns detailed configuration information for all the load balancers
@@ -2807,17 +2779,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeLoadBalancersResult>() {
             public DescribeLoadBalancersResult call() throws Exception {
-            	DescribeLoadBalancersResult result;
+                DescribeLoadBalancersResult result;
                 try {
-            		result = describeLoadBalancers(describeLoadBalancersRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeLoadBalancersRequest, result);
-               	return result;
-		    }
-		});
+                    result = describeLoadBalancers(describeLoadBalancersRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeLoadBalancersRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

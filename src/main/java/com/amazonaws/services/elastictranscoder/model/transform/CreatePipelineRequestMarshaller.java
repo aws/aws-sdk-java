@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class CreatePipelineRequestMarshaller implements Marshaller<Request<CreatePipelineRequest>, CreatePipelineRequest> {
 
-    
-
     public Request<CreatePipelineRequest> marshall(CreatePipelineRequest createPipelineRequest) {
     if (createPipelineRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class CreatePipelineRequestMarshaller implements Marshaller<Request<Creat
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = "2012-09-25/pipelines"; 
 
@@ -75,14 +70,10 @@ public class CreatePipelineRequestMarshaller implements Marshaller<Request<Creat
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (createPipelineRequest.getName() != null) {
@@ -217,7 +208,6 @@ public class CreatePipelineRequestMarshaller implements Marshaller<Request<Creat
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -226,7 +216,6 @@ public class CreatePipelineRequestMarshaller implements Marshaller<Request<Creat
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

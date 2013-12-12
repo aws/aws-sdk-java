@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Ec2 Instance Attributes JSON Unmarshaller
  */
 public class Ec2InstanceAttributesJsonUnmarshaller implements Unmarshaller<Ec2InstanceAttributes, JsonUnmarshallerContext> {
 
-    
-
     public Ec2InstanceAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         Ec2InstanceAttributes ec2InstanceAttributes = new Ec2InstanceAttributes();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class Ec2InstanceAttributesJsonUnmarshaller implements Unmarshaller<Ec2In
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Ec2KeyName", targetDepth)) {
                     context.nextToken();
@@ -72,7 +66,6 @@ public class Ec2InstanceAttributesJsonUnmarshaller implements Unmarshaller<Ec2In
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

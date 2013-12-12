@@ -33,8 +33,8 @@ public class SetInstanceHealthRequestMarshaller implements Marshaller<Request<Se
     public Request<SetInstanceHealthRequest> marshall(SetInstanceHealthRequest setInstanceHealthRequest) {
 
         if (setInstanceHealthRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<SetInstanceHealthRequest> request = new DefaultRequest<SetInstanceHealthRequest>(setInstanceHealthRequest, "AmazonAutoScaling");
         request.addParameter("Action", "SetInstanceHealth");
@@ -49,7 +49,6 @@ public class SetInstanceHealthRequestMarshaller implements Marshaller<Request<Se
         if (setInstanceHealthRequest.isShouldRespectGracePeriod() != null) {
             request.addParameter("ShouldRespectGracePeriod", StringUtils.fromBoolean(setInstanceHealthRequest.isShouldRespectGracePeriod()));
         }
-
 
         return request;
     }

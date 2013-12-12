@@ -33,8 +33,8 @@ public class CreateSpotDatafeedSubscriptionRequestMarshaller implements Marshall
     public Request<CreateSpotDatafeedSubscriptionRequest> marshall(CreateSpotDatafeedSubscriptionRequest createSpotDatafeedSubscriptionRequest) {
 
         if (createSpotDatafeedSubscriptionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateSpotDatafeedSubscriptionRequest> request = new DefaultRequest<CreateSpotDatafeedSubscriptionRequest>(createSpotDatafeedSubscriptionRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSpotDatafeedSubscription");
@@ -46,7 +46,6 @@ public class CreateSpotDatafeedSubscriptionRequestMarshaller implements Marshall
         if (createSpotDatafeedSubscriptionRequest.getPrefix() != null) {
             request.addParameter("Prefix", StringUtils.fromString(createSpotDatafeedSubscriptionRequest.getPrefix()));
         }
-
 
         return request;
     }

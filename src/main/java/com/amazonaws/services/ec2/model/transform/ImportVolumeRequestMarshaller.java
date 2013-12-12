@@ -33,8 +33,8 @@ public class ImportVolumeRequestMarshaller implements Marshaller<Request<ImportV
     public Request<ImportVolumeRequest> marshall(ImportVolumeRequest importVolumeRequest) {
 
         if (importVolumeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ImportVolumeRequest> request = new DefaultRequest<ImportVolumeRequest>(importVolumeRequest, "AmazonEC2");
         request.addParameter("Action", "ImportVolume");
@@ -64,7 +64,6 @@ public class ImportVolumeRequestMarshaller implements Marshaller<Request<ImportV
                 request.addParameter("Volume.Size", StringUtils.fromLong(volumeDetailVolume.getSize()));
             }
         }
-
 
         return request;
     }

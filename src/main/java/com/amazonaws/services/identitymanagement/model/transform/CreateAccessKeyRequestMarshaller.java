@@ -33,8 +33,8 @@ public class CreateAccessKeyRequestMarshaller implements Marshaller<Request<Crea
     public Request<CreateAccessKeyRequest> marshall(CreateAccessKeyRequest createAccessKeyRequest) {
 
         if (createAccessKeyRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateAccessKeyRequest> request = new DefaultRequest<CreateAccessKeyRequest>(createAccessKeyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "CreateAccessKey");
@@ -43,7 +43,6 @@ public class CreateAccessKeyRequestMarshaller implements Marshaller<Request<Crea
         if (createAccessKeyRequest.getUserName() != null) {
             request.addParameter("UserName", StringUtils.fromString(createAccessKeyRequest.getUserName()));
         }
-
 
         return request;
     }

@@ -33,8 +33,8 @@ public class RebootClusterRequestMarshaller implements Marshaller<Request<Reboot
     public Request<RebootClusterRequest> marshall(RebootClusterRequest rebootClusterRequest) {
 
         if (rebootClusterRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RebootClusterRequest> request = new DefaultRequest<RebootClusterRequest>(rebootClusterRequest, "AmazonRedshift");
         request.addParameter("Action", "RebootCluster");
@@ -43,7 +43,6 @@ public class RebootClusterRequestMarshaller implements Marshaller<Request<Reboot
         if (rebootClusterRequest.getClusterIdentifier() != null) {
             request.addParameter("ClusterIdentifier", StringUtils.fromString(rebootClusterRequest.getClusterIdentifier()));
         }
-
 
         return request;
     }

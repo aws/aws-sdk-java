@@ -23,6 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Returns a list containing all of the identities (email addresses and domains) for a specific AWS Account, regardless of verification status.
  * </p>
+ * <p>
+ * This action is throttled at one request per second.
+ * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#listIdentities(ListIdentitiesRequest)
  */

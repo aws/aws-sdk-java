@@ -33,8 +33,8 @@ public class DescribeConfigurationSettingsRequestMarshaller implements Marshalle
     public Request<DescribeConfigurationSettingsRequest> marshall(DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest) {
 
         if (describeConfigurationSettingsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeConfigurationSettingsRequest> request = new DefaultRequest<DescribeConfigurationSettingsRequest>(describeConfigurationSettingsRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DescribeConfigurationSettings");
@@ -49,7 +49,6 @@ public class DescribeConfigurationSettingsRequestMarshaller implements Marshalle
         if (describeConfigurationSettingsRequest.getEnvironmentName() != null) {
             request.addParameter("EnvironmentName", StringUtils.fromString(describeConfigurationSettingsRequest.getEnvironmentName()));
         }
-
 
         return request;
     }

@@ -33,13 +33,12 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements Mars
     public Request<DescribeReservedInstancesOfferingsRequest> marshall(DescribeReservedInstancesOfferingsRequest describeReservedInstancesOfferingsRequest) {
 
         if (describeReservedInstancesOfferingsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeReservedInstancesOfferingsRequest> request = new DefaultRequest<DescribeReservedInstancesOfferingsRequest>(describeReservedInstancesOfferingsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeReservedInstancesOfferings");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> reservedInstancesOfferingIdsList = describeReservedInstancesOfferingsRequest.getReservedInstancesOfferingIds();
         int reservedInstancesOfferingIdsListIndex = 1;
@@ -109,7 +108,6 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements Mars
         if (describeReservedInstancesOfferingsRequest.getMaxInstanceCount() != null) {
             request.addParameter("MaxInstanceCount", StringUtils.fromInteger(describeReservedInstancesOfferingsRequest.getMaxInstanceCount()));
         }
-
 
         return request;
     }

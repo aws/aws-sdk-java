@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.datapipeline.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class ReportTaskRunnerHeartbeatRequestMarshaller implements Marshaller<Request<ReportTaskRunnerHeartbeatRequest>, ReportTaskRunnerHeartbeatRequest> {
 
-    
-
     public Request<ReportTaskRunnerHeartbeatRequest> marshall(ReportTaskRunnerHeartbeatRequest reportTaskRunnerHeartbeatRequest) {
     if (reportTaskRunnerHeartbeatRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class ReportTaskRunnerHeartbeatRequestMarshaller implements Marshaller<Re
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        
         request.setHttpMethod(HttpMethodName.POST);
-
 
         String uriResourcePath = ""; 
 
@@ -75,14 +70,10 @@ public class ReportTaskRunnerHeartbeatRequestMarshaller implements Marshaller<Re
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          
-            
           jsonWriter.object();
           
             if (reportTaskRunnerHeartbeatRequest.getTaskrunnerId() != null) {
@@ -96,7 +87,6 @@ public class ReportTaskRunnerHeartbeatRequestMarshaller implements Marshaller<Re
             }
 
           jsonWriter.endObject();
-          
 
           String snippet = stringWriter.toString();
           byte[] content = snippet.getBytes("UTF-8");
@@ -105,7 +95,6 @@ public class ReportTaskRunnerHeartbeatRequestMarshaller implements Marshaller<Re
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        
 
         return request;
     }

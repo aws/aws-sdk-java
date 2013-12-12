@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -39,8 +38,6 @@ import com.amazonaws.util.json.*;
  */
 public class ListJobsRequestMarshaller implements Marshaller<Request<ListJobsRequest>, ListJobsRequest> {
 
-    
-
     public Request<ListJobsRequest> marshall(ListJobsRequest listJobsRequest) {
     if (listJobsRequest == null) {
         throw new AmazonClientException("Invalid argument passed to marshall(...)");
@@ -51,9 +48,7 @@ public class ListJobsRequestMarshaller implements Marshaller<Request<ListJobsReq
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
-        
         request.setHttpMethod(HttpMethodName.GET);
-
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs?marker={marker};limit={limit};completed={completed};statuscode={statuscode}"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", (listJobsRequest.getAccountId() == null) ? "" : StringUtils.fromString(listJobsRequest.getAccountId())); 
@@ -81,10 +76,7 @@ public class ListJobsRequestMarshaller implements Marshaller<Request<ListJobsReq
 
         request.setResourcePath(uriResourcePath);
 
-
-        
         request.setContent(new ByteArrayInputStream(new byte[0]));
-        
 
         return request;
     }

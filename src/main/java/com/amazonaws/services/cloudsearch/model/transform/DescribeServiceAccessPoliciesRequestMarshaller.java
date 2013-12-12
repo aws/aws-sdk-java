@@ -33,8 +33,8 @@ public class DescribeServiceAccessPoliciesRequestMarshaller implements Marshalle
     public Request<DescribeServiceAccessPoliciesRequest> marshall(DescribeServiceAccessPoliciesRequest describeServiceAccessPoliciesRequest) {
 
         if (describeServiceAccessPoliciesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeServiceAccessPoliciesRequest> request = new DefaultRequest<DescribeServiceAccessPoliciesRequest>(describeServiceAccessPoliciesRequest, "AmazonCloudSearch");
         request.addParameter("Action", "DescribeServiceAccessPolicies");
@@ -43,7 +43,6 @@ public class DescribeServiceAccessPoliciesRequestMarshaller implements Marshalle
         if (describeServiceAccessPoliciesRequest.getDomainName() != null) {
             request.addParameter("DomainName", StringUtils.fromString(describeServiceAccessPoliciesRequest.getDomainName()));
         }
-
 
         return request;
     }

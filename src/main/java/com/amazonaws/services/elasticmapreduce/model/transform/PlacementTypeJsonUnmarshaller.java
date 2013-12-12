@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Placement Type JSON Unmarshaller
  */
 public class PlacementTypeJsonUnmarshaller implements Unmarshaller<PlacementType, JsonUnmarshallerContext> {
 
-    
-
     public PlacementType unmarshall(JsonUnmarshallerContext context) throws Exception {
         PlacementType placementType = new PlacementType();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class PlacementTypeJsonUnmarshaller implements Unmarshaller<PlacementType
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
                     context.nextToken();
@@ -60,7 +54,6 @@ public class PlacementTypeJsonUnmarshaller implements Unmarshaller<PlacementType
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

@@ -33,8 +33,8 @@ public class DeleteTopicRequestMarshaller implements Marshaller<Request<DeleteTo
     public Request<DeleteTopicRequest> marshall(DeleteTopicRequest deleteTopicRequest) {
 
         if (deleteTopicRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteTopicRequest> request = new DefaultRequest<DeleteTopicRequest>(deleteTopicRequest, "AmazonSNS");
         request.addParameter("Action", "DeleteTopic");
@@ -43,7 +43,6 @@ public class DeleteTopicRequestMarshaller implements Marshaller<Request<DeleteTo
         if (deleteTopicRequest.getTopicArn() != null) {
             request.addParameter("TopicArn", StringUtils.fromString(deleteTopicRequest.getTopicArn()));
         }
-
 
         return request;
     }

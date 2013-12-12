@@ -33,8 +33,8 @@ public class ModifySnapshotAttributeRequestMarshaller implements Marshaller<Requ
     public Request<ModifySnapshotAttributeRequest> marshall(ModifySnapshotAttributeRequest modifySnapshotAttributeRequest) {
 
         if (modifySnapshotAttributeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ModifySnapshotAttributeRequest> request = new DefaultRequest<ModifySnapshotAttributeRequest>(modifySnapshotAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifySnapshotAttribute");
@@ -108,7 +108,6 @@ public class ModifySnapshotAttributeRequestMarshaller implements Marshaller<Requ
                 removeListIndex++;
             }
         }
-
 
         return request;
     }

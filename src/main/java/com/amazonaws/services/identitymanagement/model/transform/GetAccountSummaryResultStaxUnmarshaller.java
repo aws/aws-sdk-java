@@ -26,7 +26,6 @@ import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
-
 /**
  * Get Account Summary Result StAX Unmarshaller
  */
@@ -66,16 +65,13 @@ public class GetAccountSummaryResultStaxUnmarshaller implements Unmarshaller<Get
         }
 
     }
-    
 
     public GetAccountSummaryResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         GetAccountSummaryResult getAccountSummaryResult = new GetAccountSummaryResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        
         if (context.isStartOfDocument()) targetDepth += 2;
-        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

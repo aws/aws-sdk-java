@@ -16,7 +16,6 @@ package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
 
-
 /**
  * <p>
  * Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect

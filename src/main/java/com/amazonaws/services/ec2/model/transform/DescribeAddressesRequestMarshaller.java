@@ -33,13 +33,12 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
     public Request<DescribeAddressesRequest> marshall(DescribeAddressesRequest describeAddressesRequest) {
 
         if (describeAddressesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeAddressesRequest> request = new DefaultRequest<DescribeAddressesRequest>(describeAddressesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeAddresses");
         request.addParameter("Version", "2013-10-15");
-
 
         java.util.List<String> publicIpsList = describeAddressesRequest.getPublicIps();
         int publicIpsListIndex = 1;
@@ -87,7 +86,6 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
 
             allocationIdsListIndex++;
         }
-
 
         return request;
     }

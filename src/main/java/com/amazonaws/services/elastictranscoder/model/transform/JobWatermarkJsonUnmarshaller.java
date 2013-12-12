@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Job Watermark JSON Unmarshaller
  */
 public class JobWatermarkJsonUnmarshaller implements Unmarshaller<JobWatermark, JsonUnmarshallerContext> {
 
-    
-
     public JobWatermark unmarshall(JsonUnmarshallerContext context) throws Exception {
         JobWatermark jobWatermark = new JobWatermark();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class JobWatermarkJsonUnmarshaller implements Unmarshaller<JobWatermark, 
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PresetWatermarkId", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class JobWatermarkJsonUnmarshaller implements Unmarshaller<JobWatermark, 
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

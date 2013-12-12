@@ -29,7 +29,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.identitymanagement.model.*;
 
-
 /**
  * Asynchronous client for accessing AmazonIdentityManagement.
  * All asynchronous calls made using this client are non-blocking. Callers could either
@@ -84,7 +83,6 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
-
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -284,7 +282,6 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         this.executorService = executorService;
     }
 
-
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -340,11 +337,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 deleteAccountAlias(deleteAccountAliasRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified AWS account alias. For information about using
@@ -381,16 +377,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteAccountAlias(deleteAccountAliasRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteAccountAliasRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteAccountAlias(deleteAccountAliasRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteAccountAliasRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -422,11 +418,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<ListGroupsResult>() {
             public ListGroupsResult call() throws Exception {
                 return listGroups(listGroupsRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists the groups that have the specified path prefix.
@@ -461,17 +456,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListGroupsResult>() {
             public ListGroupsResult call() throws Exception {
-            	ListGroupsResult result;
+                ListGroupsResult result;
                 try {
-            		result = listGroups(listGroupsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listGroupsRequest, result);
-               	return result;
-		    }
-		});
+                    result = listGroups(listGroupsRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listGroupsRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -508,11 +503,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 deleteAccessKey(deleteAccessKeyRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the access key associated with the specified user.
@@ -551,16 +545,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteAccessKey(deleteAccessKeyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteAccessKeyRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteAccessKey(deleteAccessKeyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteAccessKeyRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -596,11 +590,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 deleteVirtualMFADevice(deleteVirtualMFADeviceRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a virtual MFA device.
@@ -638,16 +631,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteVirtualMFADevice(deleteVirtualMFADeviceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteVirtualMFADeviceRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteVirtualMFADevice(deleteVirtualMFADeviceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteVirtualMFADeviceRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -677,11 +670,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 deleteUserPolicy(deleteUserPolicyRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified policy associated with the specified user.
@@ -713,16 +705,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteUserPolicy(deleteUserPolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteUserPolicyRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteUserPolicy(deleteUserPolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteUserPolicyRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -770,11 +762,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 putUserPolicy(putUserPolicyRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Adds (or updates) a policy document associated with the specified
@@ -824,16 +815,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		putUserPolicy(putUserPolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(putUserPolicyRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    putUserPolicy(putUserPolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(putUserPolicyRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -868,11 +859,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<ListServerCertificatesResult>() {
             public ListServerCertificatesResult call() throws Exception {
                 return listServerCertificates(listServerCertificatesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists the server certificates that have the specified path prefix. If
@@ -910,17 +900,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListServerCertificatesResult>() {
             public ListServerCertificatesResult call() throws Exception {
-            	ListServerCertificatesResult result;
+                ListServerCertificatesResult result;
                 try {
-            		result = listServerCertificates(listServerCertificatesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listServerCertificatesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listServerCertificates(listServerCertificatesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listServerCertificatesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -953,11 +943,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<ListSAMLProvidersResult>() {
             public ListSAMLProvidersResult call() throws Exception {
                 return listSAMLProviders(listSAMLProvidersRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists the SAML providers in the account.
@@ -993,17 +982,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListSAMLProvidersResult>() {
             public ListSAMLProvidersResult call() throws Exception {
-            	ListSAMLProvidersResult result;
+                ListSAMLProvidersResult result;
                 try {
-            		result = listSAMLProviders(listSAMLProvidersRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listSAMLProvidersRequest, result);
-               	return result;
-		    }
-		});
+                    result = listSAMLProviders(listSAMLProvidersRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listSAMLProvidersRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1035,11 +1024,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<GetUserPolicyResult>() {
             public GetUserPolicyResult call() throws Exception {
                 return getUserPolicy(getUserPolicyRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves the specified policy document for the specified user. The
@@ -1074,17 +1062,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetUserPolicyResult>() {
             public GetUserPolicyResult call() throws Exception {
-            	GetUserPolicyResult result;
+                GetUserPolicyResult result;
                 try {
-            		result = getUserPolicy(getUserPolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getUserPolicyRequest, result);
-               	return result;
-		    }
-		});
+                    result = getUserPolicy(getUserPolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getUserPolicyRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1128,11 +1116,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 updateServerCertificate(updateServerCertificateRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Updates the name and/or the path of the specified server certificate.
@@ -1178,16 +1165,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		updateServerCertificate(updateServerCertificateRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateServerCertificateRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    updateServerCertificate(updateServerCertificateRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateServerCertificateRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1228,11 +1215,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 updateUser(updateUserRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Updates the name and/or the path of the specified user.
@@ -1275,16 +1261,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		updateUser(updateUserRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateUserRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    updateUser(updateUserRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateUserRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1332,11 +1318,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 putRolePolicy(putRolePolicyRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Adds (or updates) a policy document associated with the specified
@@ -1386,16 +1371,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		putRolePolicy(putRolePolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(putRolePolicyRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    putRolePolicy(putRolePolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(putRolePolicyRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1441,11 +1426,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 updateSigningCertificate(updateSigningCertificateRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Changes the status of the specified signing certificate from active to
@@ -1493,16 +1477,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		updateSigningCertificate(updateSigningCertificateRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateSigningCertificateRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    updateSigningCertificate(updateSigningCertificateRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateSigningCertificateRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1534,11 +1518,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 deleteGroupPolicy(deleteGroupPolicyRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified policy that is associated with the specified
@@ -1572,16 +1555,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteGroupPolicy(deleteGroupPolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteGroupPolicyRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteGroupPolicy(deleteGroupPolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteGroupPolicyRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1614,11 +1597,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<ListUsersResult>() {
             public ListUsersResult call() throws Exception {
                 return listUsers(listUsersRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists the users that have the specified path prefix. If there are
@@ -1654,17 +1636,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListUsersResult>() {
             public ListUsersResult call() throws Exception {
-            	ListUsersResult result;
+                ListUsersResult result;
                 try {
-            		result = listUsers(listUsersRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listUsersRequest, result);
-               	return result;
-		    }
-		});
+                    result = listUsers(listUsersRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listUsersRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1706,11 +1688,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 updateGroup(updateGroupRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Updates the name and/or the path of the specified group.
@@ -1754,16 +1735,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		updateGroup(updateGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateGroupRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    updateGroup(updateGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateGroupRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1798,11 +1779,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<CreateUserResult>() {
             public CreateUserResult call() throws Exception {
                 return createUser(createUserRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new user for your AWS account.
@@ -1840,17 +1820,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateUserResult>() {
             public CreateUserResult call() throws Exception {
-            	CreateUserResult result;
+                CreateUserResult result;
                 try {
-            		result = createUser(createUserRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createUserRequest, result);
-               	return result;
-		    }
-		});
+                    result = createUser(createUserRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createUserRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -1890,11 +1870,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 deleteSAMLProvider(deleteSAMLProviderRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes a SAML provider.
@@ -1936,16 +1915,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteSAMLProvider(deleteSAMLProviderRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteSAMLProviderRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteSAMLProvider(deleteSAMLProviderRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteSAMLProviderRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -1977,11 +1956,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 enableMFADevice(enableMFADeviceRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Enables the specified MFA device and associates it with the specified
@@ -2015,16 +1993,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		enableMFADevice(enableMFADeviceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(enableMFADeviceRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    enableMFADevice(enableMFADeviceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(enableMFADeviceRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2055,11 +2033,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 deleteAccountPasswordPolicy(deleteAccountPasswordPolicyRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the password policy for the AWS account.
@@ -2092,16 +2069,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteAccountPasswordPolicy(deleteAccountPasswordPolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteAccountPasswordPolicyRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteAccountPasswordPolicy(deleteAccountPasswordPolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteAccountPasswordPolicyRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2132,11 +2109,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<GetLoginProfileResult>() {
             public GetLoginProfileResult call() throws Exception {
                 return getLoginProfile(getLoginProfileRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves the user name and password-creation date for the specified
@@ -2170,17 +2146,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetLoginProfileResult>() {
             public GetLoginProfileResult call() throws Exception {
-            	GetLoginProfileResult result;
+                GetLoginProfileResult result;
                 try {
-            		result = getLoginProfile(getLoginProfileRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getLoginProfileRequest, result);
-               	return result;
-		    }
-		});
+                    result = getLoginProfile(getLoginProfileRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getLoginProfileRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2213,11 +2189,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<UpdateSAMLProviderResult>() {
             public UpdateSAMLProviderResult call() throws Exception {
                 return updateSAMLProvider(updateSAMLProviderRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Updates the metadata document for an existing SAML provider.
@@ -2253,17 +2228,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateSAMLProviderResult>() {
             public UpdateSAMLProviderResult call() throws Exception {
-            	UpdateSAMLProviderResult result;
+                UpdateSAMLProviderResult result;
                 try {
-            		result = updateSAMLProvider(updateSAMLProviderRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateSAMLProviderRequest, result);
-               	return result;
-		    }
-		});
+                    result = updateSAMLProvider(updateSAMLProviderRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateSAMLProviderRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2311,11 +2286,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<UploadServerCertificateResult>() {
             public UploadServerCertificateResult call() throws Exception {
                 return uploadServerCertificate(uploadServerCertificateRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Uploads a server certificate entity for the AWS account. The server
@@ -2366,17 +2340,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UploadServerCertificateResult>() {
             public UploadServerCertificateResult call() throws Exception {
-            	UploadServerCertificateResult result;
+                UploadServerCertificateResult result;
                 try {
-            		result = uploadServerCertificate(uploadServerCertificateRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(uploadServerCertificateRequest, result);
-               	return result;
-		    }
-		});
+                    result = uploadServerCertificate(uploadServerCertificateRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(uploadServerCertificateRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2410,11 +2384,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<CreateGroupResult>() {
             public CreateGroupResult call() throws Exception {
                 return createGroup(createGroupRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new group.
@@ -2451,17 +2424,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateGroupResult>() {
             public CreateGroupResult call() throws Exception {
-            	CreateGroupResult result;
+                CreateGroupResult result;
                 try {
-            		result = createGroup(createGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createGroupRequest, result);
-               	return result;
-		    }
-		});
+                    result = createGroup(createGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createGroupRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -2496,11 +2469,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 createAccountAlias(createAccountAliasRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * This action creates an alias for your AWS account. For information
@@ -2537,16 +2509,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		createAccountAlias(createAccountAliasRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createAccountAliasRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    createAccountAlias(createAccountAliasRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createAccountAliasRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2576,11 +2548,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 deleteUser(deleteUserRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified user. The user must not belong to any groups,
@@ -2612,16 +2583,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteUser(deleteUserRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteUserRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteUser(deleteUserRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteUserRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2653,11 +2624,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 deactivateMFADevice(deactivateMFADeviceRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deactivates the specified MFA device and removes it from association
@@ -2691,16 +2661,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deactivateMFADevice(deactivateMFADeviceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deactivateMFADeviceRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deactivateMFADevice(deactivateMFADeviceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deactivateMFADeviceRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2731,11 +2701,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 removeUserFromGroup(removeUserFromGroupRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Removes the specified user from the specified group.
@@ -2768,16 +2737,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		removeUserFromGroup(removeUserFromGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(removeUserFromGroupRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    removeUserFromGroup(removeUserFromGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(removeUserFromGroupRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2815,11 +2784,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 deleteRole(deleteRoleRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified role. The role must not have any policies
@@ -2859,16 +2827,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteRole(deleteRoleRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteRoleRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteRole(deleteRoleRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteRoleRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -2911,11 +2879,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 deleteServerCertificate(deleteServerCertificateRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified server certificate.
@@ -2960,16 +2927,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteServerCertificate(deleteServerCertificateRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteServerCertificateRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteServerCertificate(deleteServerCertificateRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteServerCertificateRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3021,11 +2988,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<CreateAccessKeyResult>() {
             public CreateAccessKeyResult call() throws Exception {
                 return createAccessKey(createAccessKeyRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new AWS secret access key and corresponding AWS access key
@@ -3080,17 +3046,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateAccessKeyResult>() {
             public CreateAccessKeyResult call() throws Exception {
-            	CreateAccessKeyResult result;
+                CreateAccessKeyResult result;
                 try {
-            		result = createAccessKey(createAccessKeyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createAccessKeyRequest, result);
-               	return result;
-		    }
-		});
+                    result = createAccessKey(createAccessKeyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createAccessKeyRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3123,11 +3089,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<GetUserResult>() {
             public GetUserResult call() throws Exception {
                 return getUser(getUserRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves information about the specified user, including the user's
@@ -3163,17 +3128,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetUserResult>() {
             public GetUserResult call() throws Exception {
-            	GetUserResult result;
+                GetUserResult result;
                 try {
-            		result = getUser(getUserRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getUserRequest, result);
-               	return result;
-		    }
-		});
+                    result = getUser(getUserRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getUserRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3203,11 +3168,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 resyncMFADevice(resyncMFADeviceRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Synchronizes the specified MFA device with AWS servers.
@@ -3239,16 +3203,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		resyncMFADevice(resyncMFADeviceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(resyncMFADeviceRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    resyncMFADevice(resyncMFADeviceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(resyncMFADeviceRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3284,11 +3248,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<ListMFADevicesResult>() {
             public ListMFADevicesResult call() throws Exception {
                 return listMFADevices(listMFADevicesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists the MFA devices. If the request includes the user name, then
@@ -3327,17 +3290,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListMFADevicesResult>() {
             public ListMFADevicesResult call() throws Exception {
-            	ListMFADevicesResult result;
+                ListMFADevicesResult result;
                 try {
-            		result = listMFADevices(listMFADevicesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listMFADevicesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listMFADevices(listMFADevicesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listMFADevicesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3389,11 +3352,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<CreateVirtualMFADeviceResult>() {
             public CreateVirtualMFADeviceResult call() throws Exception {
                 return createVirtualMFADevice(createVirtualMFADeviceRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new virtual MFA device for the AWS account. After creating
@@ -3448,17 +3410,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateVirtualMFADeviceResult>() {
             public CreateVirtualMFADeviceResult call() throws Exception {
-            	CreateVirtualMFADeviceResult result;
+                CreateVirtualMFADeviceResult result;
                 try {
-            		result = createVirtualMFADevice(createVirtualMFADeviceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createVirtualMFADeviceRequest, result);
-               	return result;
-		    }
-		});
+                    result = createVirtualMFADevice(createVirtualMFADeviceRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createVirtualMFADeviceRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3496,11 +3458,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<ListInstanceProfilesResult>() {
             public ListInstanceProfilesResult call() throws Exception {
                 return listInstanceProfiles(listInstanceProfilesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists the instance profiles that have the specified path prefix. If
@@ -3541,17 +3502,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListInstanceProfilesResult>() {
             public ListInstanceProfilesResult call() throws Exception {
-            	ListInstanceProfilesResult result;
+                ListInstanceProfilesResult result;
                 try {
-            		result = listInstanceProfiles(listInstanceProfilesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listInstanceProfilesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listInstanceProfiles(listInstanceProfilesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listInstanceProfilesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3596,11 +3557,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 updateAccessKey(updateAccessKeyRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Changes the status of the specified access key from Active to
@@ -3647,16 +3607,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		updateAccessKey(updateAccessKeyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateAccessKeyRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    updateAccessKey(updateAccessKeyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateAccessKeyRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3686,11 +3646,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 addUserToGroup(addUserToGroupRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Adds the specified user to the specified group.
@@ -3722,16 +3681,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		addUserToGroup(addUserToGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(addUserToGroupRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    addUserToGroup(addUserToGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(addUserToGroupRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -3761,11 +3720,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<GetGroupResult>() {
             public GetGroupResult call() throws Exception {
                 return getGroup(getGroupRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns a list of users that are in the specified group. You can
@@ -3798,17 +3756,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetGroupResult>() {
             public GetGroupResult call() throws Exception {
-            	GetGroupResult result;
+                GetGroupResult result;
                 try {
-            		result = getGroup(getGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getGroupRequest, result);
-               	return result;
-		    }
-		});
+                    result = getGroup(getGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getGroupRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3846,11 +3804,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<ListAccountAliasesResult>() {
             public ListAccountAliasesResult call() throws Exception {
                 return listAccountAliases(listAccountAliasesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists the account aliases associated with the account. For information
@@ -3891,17 +3848,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListAccountAliasesResult>() {
             public ListAccountAliasesResult call() throws Exception {
-            	ListAccountAliasesResult result;
+                ListAccountAliasesResult result;
                 try {
-            		result = listAccountAliases(listAccountAliasesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listAccountAliasesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listAccountAliases(listAccountAliasesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listAccountAliasesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -3931,11 +3888,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 deleteGroup(deleteGroupRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified group. The group must not contain any users or
@@ -3967,16 +3923,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteGroup(deleteGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteGroupRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteGroup(deleteGroupRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteGroupRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -4015,11 +3971,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<GetRoleResult>() {
             public GetRoleResult call() throws Exception {
                 return getRole(getRoleRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves information about the specified role, including the role's
@@ -4061,17 +4016,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetRoleResult>() {
             public GetRoleResult call() throws Exception {
-            	GetRoleResult result;
+                GetRoleResult result;
                 try {
-            		result = getRole(getRoleRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getRoleRequest, result);
-               	return result;
-		    }
-		});
+                    result = getRole(getRoleRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getRoleRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4105,11 +4060,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<ListRolePoliciesResult>() {
             public ListRolePoliciesResult call() throws Exception {
                 return listRolePolicies(listRolePoliciesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists the names of the policies associated with the specified role. If
@@ -4146,17 +4100,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListRolePoliciesResult>() {
             public ListRolePoliciesResult call() throws Exception {
-            	ListRolePoliciesResult result;
+                ListRolePoliciesResult result;
                 try {
-            		result = listRolePolicies(listRolePoliciesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listRolePoliciesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listRolePolicies(listRolePoliciesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listRolePoliciesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4199,11 +4153,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<ListSigningCertificatesResult>() {
             public ListSigningCertificatesResult call() throws Exception {
                 return listSigningCertificates(listSigningCertificatesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about the signing certificates associated with the
@@ -4249,17 +4202,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListSigningCertificatesResult>() {
             public ListSigningCertificatesResult call() throws Exception {
-            	ListSigningCertificatesResult result;
+                ListSigningCertificatesResult result;
                 try {
-            		result = listSigningCertificates(listSigningCertificatesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listSigningCertificatesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listSigningCertificates(listSigningCertificatesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listSigningCertificatesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4308,11 +4261,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<UploadSigningCertificateResult>() {
             public UploadSigningCertificateResult call() throws Exception {
                 return uploadSigningCertificate(uploadSigningCertificateRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Uploads an X.509 signing certificate and associates it with the
@@ -4364,17 +4316,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UploadSigningCertificateResult>() {
             public UploadSigningCertificateResult call() throws Exception {
-            	UploadSigningCertificateResult result;
+                UploadSigningCertificateResult result;
                 try {
-            		result = uploadSigningCertificate(uploadSigningCertificateRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(uploadSigningCertificateRequest, result);
-               	return result;
-		    }
-		});
+                    result = uploadSigningCertificate(uploadSigningCertificateRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(uploadSigningCertificateRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4417,11 +4369,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 deleteInstanceProfile(deleteInstanceProfileRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified instance profile. The instance profile must not
@@ -4466,16 +4417,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteInstanceProfile(deleteInstanceProfileRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteInstanceProfileRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteInstanceProfile(deleteInstanceProfileRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteInstanceProfileRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -4508,11 +4459,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<GetSAMLProviderResult>() {
             public GetSAMLProviderResult call() throws Exception {
                 return getSAMLProvider(getSAMLProviderRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns the SAML provider metadocument that was uploaded when the
@@ -4548,17 +4498,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetSAMLProviderResult>() {
             public GetSAMLProviderResult call() throws Exception {
-            	GetSAMLProviderResult result;
+                GetSAMLProviderResult result;
                 try {
-            		result = getSAMLProvider(getSAMLProviderRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getSAMLProviderRequest, result);
-               	return result;
-		    }
-		});
+                    result = getSAMLProvider(getSAMLProviderRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getSAMLProviderRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4600,11 +4550,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<CreateRoleResult>() {
             public CreateRoleResult call() throws Exception {
                 return createRole(createRoleRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new role for your AWS account. For more information about
@@ -4649,17 +4598,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateRoleResult>() {
             public CreateRoleResult call() throws Exception {
-            	CreateRoleResult result;
+                CreateRoleResult result;
                 try {
-            		result = createRole(createRoleRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createRoleRequest, result);
-               	return result;
-		    }
-		});
+                    result = createRole(createRoleRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createRoleRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -4690,11 +4639,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 updateLoginProfile(updateLoginProfileRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Changes the password for the specified user.
@@ -4727,16 +4675,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		updateLoginProfile(updateLoginProfileRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateLoginProfileRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    updateLoginProfile(updateLoginProfileRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateLoginProfileRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -4776,11 +4724,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 deleteLoginProfile(deleteLoginProfileRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the password for the specified user, which terminates the
@@ -4822,16 +4769,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteLoginProfile(deleteLoginProfileRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteLoginProfileRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteLoginProfile(deleteLoginProfileRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteLoginProfileRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -4866,11 +4813,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 changePassword(changePasswordRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Changes the password of the IAM user calling
@@ -4907,16 +4853,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		changePassword(changePasswordRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(changePasswordRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    changePassword(changePasswordRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(changePasswordRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -4946,11 +4892,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<GetServerCertificateResult>() {
             public GetServerCertificateResult call() throws Exception {
                 return getServerCertificate(getServerCertificateRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves information about the specified server certificate.
@@ -4983,17 +4928,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetServerCertificateResult>() {
             public GetServerCertificateResult call() throws Exception {
-            	GetServerCertificateResult result;
+                GetServerCertificateResult result;
                 try {
-            		result = getServerCertificate(getServerCertificateRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getServerCertificateRequest, result);
-               	return result;
-		    }
-		});
+                    result = getServerCertificate(getServerCertificateRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getServerCertificateRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5042,11 +4987,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 putGroupPolicy(putGroupPolicyRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Adds (or updates) a policy document associated with the specified
@@ -5097,16 +5041,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		putGroupPolicy(putGroupPolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(putGroupPolicyRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    putGroupPolicy(putGroupPolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(putGroupPolicyRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -5145,11 +5089,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 deleteSigningCertificate(deleteSigningCertificateRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified signing certificate associated with the
@@ -5190,16 +5133,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteSigningCertificate(deleteSigningCertificateRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteSigningCertificateRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteSigningCertificate(deleteSigningCertificateRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteSigningCertificateRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -5233,11 +5176,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<ListUserPoliciesResult>() {
             public ListUserPoliciesResult call() throws Exception {
                 return listUserPolicies(listUserPoliciesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists the names of the policies associated with the specified user. If
@@ -5274,17 +5216,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListUserPoliciesResult>() {
             public ListUserPoliciesResult call() throws Exception {
-            	ListUserPoliciesResult result;
+                ListUserPoliciesResult result;
                 try {
-            		result = listUserPolicies(listUserPoliciesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listUserPoliciesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listUserPolicies(listUserPoliciesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listUserPoliciesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5330,11 +5272,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<ListAccessKeysResult>() {
             public ListAccessKeysResult call() throws Exception {
                 return listAccessKeys(listAccessKeysRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Returns information about the access key IDs associated with the
@@ -5383,17 +5324,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListAccessKeysResult>() {
             public ListAccessKeysResult call() throws Exception {
-            	ListAccessKeysResult result;
+                ListAccessKeysResult result;
                 try {
-            		result = listAccessKeys(listAccessKeysRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listAccessKeysRequest, result);
-               	return result;
-		    }
-		});
+                    result = listAccessKeys(listAccessKeysRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listAccessKeysRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5427,11 +5368,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<ListGroupsForUserResult>() {
             public ListGroupsForUserResult call() throws Exception {
                 return listGroupsForUser(listGroupsForUserRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists the groups the specified user belongs to.
@@ -5468,17 +5408,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListGroupsForUserResult>() {
             public ListGroupsForUserResult call() throws Exception {
-            	ListGroupsForUserResult result;
+                ListGroupsForUserResult result;
                 try {
-            		result = listGroupsForUser(listGroupsForUserRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listGroupsForUserRequest, result);
-               	return result;
-		    }
-		});
+                    result = listGroupsForUser(listGroupsForUserRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listGroupsForUserRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5515,11 +5455,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 addRoleToInstanceProfile(addRoleToInstanceProfileRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Adds the specified role to the specified instance profile. For more
@@ -5558,16 +5497,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		addRoleToInstanceProfile(addRoleToInstanceProfileRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(addRoleToInstanceProfileRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    addRoleToInstanceProfile(addRoleToInstanceProfileRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(addRoleToInstanceProfileRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -5600,11 +5539,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<GetGroupPolicyResult>() {
             public GetGroupPolicyResult call() throws Exception {
                 return getGroupPolicy(getGroupPolicyRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves the specified policy document for the specified group. The
@@ -5640,17 +5578,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetGroupPolicyResult>() {
             public GetGroupPolicyResult call() throws Exception {
-            	GetGroupPolicyResult result;
+                GetGroupPolicyResult result;
                 try {
-            		result = getGroupPolicy(getGroupPolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getGroupPolicyRequest, result);
-               	return result;
-		    }
-		});
+                    result = getGroupPolicy(getGroupPolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getGroupPolicyRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5687,11 +5625,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<GetRolePolicyResult>() {
             public GetRolePolicyResult call() throws Exception {
                 return getRolePolicy(getRolePolicyRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves the specified policy document for the specified role. For
@@ -5731,17 +5668,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetRolePolicyResult>() {
             public GetRolePolicyResult call() throws Exception {
-            	GetRolePolicyResult result;
+                GetRolePolicyResult result;
                 try {
-            		result = getRolePolicy(getRolePolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getRolePolicyRequest, result);
-               	return result;
-		    }
-		});
+                    result = getRolePolicy(getRolePolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getRolePolicyRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5779,11 +5716,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<ListInstanceProfilesForRoleResult>() {
             public ListInstanceProfilesForRoleResult call() throws Exception {
                 return listInstanceProfilesForRole(listInstanceProfilesForRoleRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists the instance profiles that have the specified associated role.
@@ -5824,17 +5760,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListInstanceProfilesForRoleResult>() {
             public ListInstanceProfilesForRoleResult call() throws Exception {
-            	ListInstanceProfilesForRoleResult result;
+                ListInstanceProfilesForRoleResult result;
                 try {
-            		result = listInstanceProfilesForRole(listInstanceProfilesForRoleRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listInstanceProfilesForRoleRequest, result);
-               	return result;
-		    }
-		});
+                    result = listInstanceProfilesForRole(listInstanceProfilesForRoleRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listInstanceProfilesForRoleRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5872,11 +5808,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<ListVirtualMFADevicesResult>() {
             public ListVirtualMFADevicesResult call() throws Exception {
                 return listVirtualMFADevices(listVirtualMFADevicesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists the virtual MFA devices under the AWS account by assignment
@@ -5917,17 +5852,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListVirtualMFADevicesResult>() {
             public ListVirtualMFADevicesResult call() throws Exception {
-            	ListVirtualMFADevicesResult result;
+                ListVirtualMFADevicesResult result;
                 try {
-            		result = listVirtualMFADevices(listVirtualMFADevicesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listVirtualMFADevicesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listVirtualMFADevices(listVirtualMFADevicesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listVirtualMFADevicesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -5957,11 +5892,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 deleteRolePolicy(deleteRolePolicyRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Deletes the specified policy associated with the specified role.
@@ -5993,16 +5927,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		deleteRolePolicy(deleteRolePolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteRolePolicyRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    deleteRolePolicy(deleteRolePolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteRolePolicyRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -6042,11 +5976,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<CreateInstanceProfileResult>() {
             public CreateInstanceProfileResult call() throws Exception {
                 return createInstanceProfile(createInstanceProfileRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a new instance profile. For information about instance
@@ -6089,17 +6022,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateInstanceProfileResult>() {
             public CreateInstanceProfileResult call() throws Exception {
-            	CreateInstanceProfileResult result;
+                CreateInstanceProfileResult result;
                 try {
-            		result = createInstanceProfile(createInstanceProfileRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createInstanceProfileRequest, result);
-               	return result;
-		    }
-		});
+                    result = createInstanceProfile(createInstanceProfileRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createInstanceProfileRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -6134,11 +6067,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<ListGroupPoliciesResult>() {
             public ListGroupPoliciesResult call() throws Exception {
                 return listGroupPolicies(listGroupPoliciesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists the names of the policies associated with the specified group.
@@ -6176,17 +6108,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListGroupPoliciesResult>() {
             public ListGroupPoliciesResult call() throws Exception {
-            	ListGroupPoliciesResult result;
+                ListGroupPoliciesResult result;
                 try {
-            		result = listGroupPolicies(listGroupPoliciesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listGroupPoliciesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listGroupPolicies(listGroupPoliciesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listGroupPoliciesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -6220,11 +6152,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<CreateLoginProfileResult>() {
             public CreateLoginProfileResult call() throws Exception {
                 return createLoginProfile(createLoginProfileRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates a password for the specified user, giving the user the ability
@@ -6261,17 +6192,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateLoginProfileResult>() {
             public CreateLoginProfileResult call() throws Exception {
-            	CreateLoginProfileResult result;
+                CreateLoginProfileResult result;
                 try {
-            		result = createLoginProfile(createLoginProfileRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createLoginProfileRequest, result);
-               	return result;
-		    }
-		});
+                    result = createLoginProfile(createLoginProfileRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createLoginProfileRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -6317,11 +6248,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 removeRoleFromInstanceProfile(removeRoleFromInstanceProfileRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Removes the specified role from the specified instance profile.
@@ -6369,16 +6299,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		removeRoleFromInstanceProfile(removeRoleFromInstanceProfileRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(removeRoleFromInstanceProfileRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    removeRoleFromInstanceProfile(removeRoleFromInstanceProfileRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(removeRoleFromInstanceProfileRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -6412,11 +6342,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 updateAccountPasswordPolicy(updateAccountPasswordPolicyRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Updates the password policy settings for the account. For more
@@ -6452,16 +6381,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		updateAccountPasswordPolicy(updateAccountPasswordPolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateAccountPasswordPolicyRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    updateAccountPasswordPolicy(updateAccountPasswordPolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateAccountPasswordPolicyRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -6496,11 +6425,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             public Void call() throws Exception {
                 updateAssumeRolePolicy(updateAssumeRolePolicyRequest);
                 return null;
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Updates the policy that grants an entity permission to assume a role.
@@ -6537,16 +6465,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-            	try {
-            		updateAssumeRolePolicy(updateAssumeRolePolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(updateAssumeRolePolicyRequest, null);
-               	return null;
-		    }
-		});
+                try {
+                    updateAssumeRolePolicy(updateAssumeRolePolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateAssumeRolePolicyRequest, null);
+                   return null;
+            }
+        });
     }
     
     /**
@@ -6583,11 +6511,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<GetInstanceProfileResult>() {
             public GetInstanceProfileResult call() throws Exception {
                 return getInstanceProfile(getInstanceProfileRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves information about the specified instance profile, including
@@ -6627,17 +6554,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetInstanceProfileResult>() {
             public GetInstanceProfileResult call() throws Exception {
-            	GetInstanceProfileResult result;
+                GetInstanceProfileResult result;
                 try {
-            		result = getInstanceProfile(getInstanceProfileRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getInstanceProfileRequest, result);
-               	return result;
-		    }
-		});
+                    result = getInstanceProfile(getInstanceProfileRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getInstanceProfileRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -6679,11 +6606,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<ListRolesResult>() {
             public ListRolesResult call() throws Exception {
                 return listRoles(listRolesRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Lists the roles that have the specified path prefix. If there are
@@ -6728,17 +6654,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListRolesResult>() {
             public ListRolesResult call() throws Exception {
-            	ListRolesResult result;
+                ListRolesResult result;
                 try {
-            		result = listRoles(listRolesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listRolesRequest, result);
-               	return result;
-		    }
-		});
+                    result = listRoles(listRolesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listRolesRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -6775,11 +6701,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<GetAccountSummaryResult>() {
             public GetAccountSummaryResult call() throws Exception {
                 return getAccountSummary(getAccountSummaryRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves account level information about account entity usage and IAM
@@ -6819,17 +6744,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetAccountSummaryResult>() {
             public GetAccountSummaryResult call() throws Exception {
-            	GetAccountSummaryResult result;
+                GetAccountSummaryResult result;
                 try {
-            		result = getAccountSummary(getAccountSummaryRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getAccountSummaryRequest, result);
-               	return result;
-		    }
-		});
+                    result = getAccountSummary(getAccountSummaryRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getAccountSummaryRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -6886,11 +6811,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<CreateSAMLProviderResult>() {
             public CreateSAMLProviderResult call() throws Exception {
                 return createSAMLProvider(createSAMLProviderRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Creates an IAM entity to describe an identity provider (IdP) that
@@ -6950,17 +6874,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateSAMLProviderResult>() {
             public CreateSAMLProviderResult call() throws Exception {
-            	CreateSAMLProviderResult result;
+                CreateSAMLProviderResult result;
                 try {
-            		result = createSAMLProvider(createSAMLProviderRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createSAMLProviderRequest, result);
-               	return result;
-		    }
-		});
+                    result = createSAMLProvider(createSAMLProviderRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createSAMLProviderRequest, result);
+                   return result;
+            }
+        });
     }
     
     /**
@@ -6993,11 +6917,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<GetAccountPasswordPolicyResult>() {
             public GetAccountPasswordPolicyResult call() throws Exception {
                 return getAccountPasswordPolicy(getAccountPasswordPolicyRequest);
-		    }
-		});
+            }
+        });
     }
 
-    
     /**
      * <p>
      * Retrieves the password policy for the AWS account. For more
@@ -7033,17 +6956,17 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetAccountPasswordPolicyResult>() {
             public GetAccountPasswordPolicyResult call() throws Exception {
-            	GetAccountPasswordPolicyResult result;
+                GetAccountPasswordPolicyResult result;
                 try {
-            		result = getAccountPasswordPolicy(getAccountPasswordPolicyRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getAccountPasswordPolicyRequest, result);
-               	return result;
-		    }
-		});
+                    result = getAccountPasswordPolicy(getAccountPasswordPolicyRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(getAccountPasswordPolicyRequest, result);
+                   return result;
+            }
+        });
     }
     
 }

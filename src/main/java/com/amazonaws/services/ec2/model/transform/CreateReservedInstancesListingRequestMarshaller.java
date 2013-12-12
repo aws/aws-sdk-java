@@ -33,8 +33,8 @@ public class CreateReservedInstancesListingRequestMarshaller implements Marshall
     public Request<CreateReservedInstancesListingRequest> marshall(CreateReservedInstancesListingRequest createReservedInstancesListingRequest) {
 
         if (createReservedInstancesListingRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateReservedInstancesListingRequest> request = new DefaultRequest<CreateReservedInstancesListingRequest>(createReservedInstancesListingRequest, "AmazonEC2");
         request.addParameter("Action", "CreateReservedInstancesListing");
@@ -69,7 +69,6 @@ public class CreateReservedInstancesListingRequestMarshaller implements Marshall
         if (createReservedInstancesListingRequest.getClientToken() != null) {
             request.addParameter("ClientToken", StringUtils.fromString(createReservedInstancesListingRequest.getClientToken()));
         }
-
 
         return request;
     }

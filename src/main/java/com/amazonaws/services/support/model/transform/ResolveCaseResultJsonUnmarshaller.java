@@ -25,19 +25,14 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-
 /**
  * Resolve Case Result JSON Unmarshaller
  */
 public class ResolveCaseResultJsonUnmarshaller implements Unmarshaller<ResolveCaseResult, JsonUnmarshallerContext> {
 
-    
-
     public ResolveCaseResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ResolveCaseResult resolveCaseResult = new ResolveCaseResult();
 
-        
-        
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
@@ -49,7 +44,6 @@ public class ResolveCaseResultJsonUnmarshaller implements Unmarshaller<ResolveCa
         while (true) {
             if (token == null) break;
 
-            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("initialCaseStatus", targetDepth)) {
                     context.nextToken();
@@ -64,7 +58,6 @@ public class ResolveCaseResultJsonUnmarshaller implements Unmarshaller<ResolveCa
                     if (context.getCurrentDepth() <= originalDepth) break;
                 }
             }
-            
 
             token = context.nextToken();
         }

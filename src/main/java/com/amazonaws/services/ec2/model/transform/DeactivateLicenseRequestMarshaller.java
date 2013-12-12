@@ -33,8 +33,8 @@ public class DeactivateLicenseRequestMarshaller implements Marshaller<Request<De
     public Request<DeactivateLicenseRequest> marshall(DeactivateLicenseRequest deactivateLicenseRequest) {
 
         if (deactivateLicenseRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeactivateLicenseRequest> request = new DefaultRequest<DeactivateLicenseRequest>(deactivateLicenseRequest, "AmazonEC2");
         request.addParameter("Action", "DeactivateLicense");
@@ -46,7 +46,6 @@ public class DeactivateLicenseRequestMarshaller implements Marshaller<Request<De
         if (deactivateLicenseRequest.getCapacity() != null) {
             request.addParameter("Capacity", StringUtils.fromInteger(deactivateLicenseRequest.getCapacity()));
         }
-
 
         return request;
     }
