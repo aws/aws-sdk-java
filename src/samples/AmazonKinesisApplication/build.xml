@@ -1,0 +1,16 @@
+<!-- Ant build script for compiling and running the Amazon Kinesis Application Sample.
+     Don't forget to fill in your AWS access credentials in AwsCredentials.properties
+     before trying to run it.  -->
+<project name="Amazon Kinesis Application Sample" default="run" basedir=".">
+    <path id="aws.java.sdk.classpath">
+        <fileset dir="${basedir}/../../third-party" includes="**/*.jar"/>
+        <fileset dir="${basedir}/../../lib" includes="**/*.jar"/>
+        <fileset dir="${basedir}/../../../KinesisClientLibrary/lib" includes="**/*.jar"/>
+        <pathelement location="."/>
+    </path>
+
+    <target name="run">
+        <javac srcdir="." destdir="." classpathref="aws.java.sdk.classpath"/>
+        <java classname="SampleKinesisApplication" classpathref="aws.java.sdk.classpath" fork="true"/>
+    </target>
+</project>
