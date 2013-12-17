@@ -132,7 +132,11 @@ public class VersionInfoUtils {
         buffer.append(" ");
         buffer.append(replaceSpaces(System.getProperty("os.name")));
         buffer.append("/");
-        buffer.append(replaceSpaces(System.getProperty("os.version")));
+        String osVersion = System.getProperty("os.version");
+		if (osVersion != null)
+        	buffer.append(replaceSpaces(osVersion));
+        else
+        	buffer.append("unknown");
 
         buffer.append(" ");
         buffer.append(replaceSpaces(System.getProperty("java.vm.name")));

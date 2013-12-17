@@ -150,7 +150,14 @@ public class AmazonHttpClient {
      */
     public AmazonHttpClient(ClientConfiguration config, RequestMetricCollector requestMetricCollector) {
         this.config = config;
-        this.httpClient = httpClientFactory.createHttpClient(config);
+        
+        if(config.getHttpClientFactory() != null) {
+        	HttpClientFactory httpClientFactory = config.getHttpClientFactory();
+        	this.httpClient = httpClientFactory.createHttpClient(config);
+        } else {
+        	this.httpClient = httpClientFactory.createHttpClient(config);
+        }
+
         this.requestMetricCollector = requestMetricCollector;
     }
     /**

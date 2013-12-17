@@ -378,11 +378,12 @@ public abstract class AmazonWebServiceClient {
      * request; false otherwise.
      */
     private boolean isRequestMetricsEnabled(AmazonWebServiceRequest req) {
-        RequestMetricCollector c = req.getRequestMetricCollector(); // request level collector
-        if (c != null && c.isEnabled()) {
-            return true;
-        }
-        return isRMCEnabledAtClientOrSdkLevel();
+    	return false;
+//        RequestMetricCollector c = req.getRequestMetricCollector(); // request level collector
+//        if (c != null && c.isEnabled()) {
+//            return true;
+//        }
+//        return isRMCEnabledAtClientOrSdkLevel();
     }
 
     /**
@@ -474,12 +475,12 @@ public abstract class AmazonWebServiceClient {
      */
     protected final void endClientExecution(AWSRequestMetrics awsRequestMetrics,
             Request<?> request, Response<?> response) {
-        if (request != null) {
-            awsRequestMetrics.endEvent(Field.ClientExecuteTime);
-            awsRequestMetrics.getTimingInfo().endTiming();
-            RequestMetricCollector c = findRequestMetricCollector(request);
-            c.collectMetrics(request, response);
-        }
+//        if (request != null) {
+//            awsRequestMetrics.endEvent(Field.ClientExecuteTime);
+//            awsRequestMetrics.getTimingInfo().endTiming();
+//            RequestMetricCollector c = findRequestMetricCollector(request);
+//            c.collectMetrics(request, response);
+//        }
     }
 
     /**

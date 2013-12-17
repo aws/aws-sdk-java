@@ -59,7 +59,7 @@ import com.amazonaws.http.impl.client.SdkHttpClient;
 import com.amazonaws.http.impl.client.SdkHttpRequestRetryHandler;
 
 /** Responsible for creating and configuring instances of Apache HttpClient4. */
-class HttpClientFactory {
+public class HttpClientFactory {
 
 
     /**

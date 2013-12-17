@@ -18,6 +18,7 @@ import org.apache.http.annotation.NotThreadSafe;
 
 import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
+import com.amazonaws.http.HttpClientFactory;
 import com.amazonaws.http.IdleConnectionReaper;
 import com.amazonaws.util.VersionInfoUtils;
 /**
@@ -130,6 +131,11 @@ public class ClientConfiguration {
     private int socketReceiveBufferSizeHint = 0;
 
     /**
+     * Optional HttpClientConnectionFactory to use for creating HttpClients.
+     */
+    private HttpClientFactory httpClientFactory;
+
+    /**
      * Optional whether to use the {@link IdleConnectionReaper} to manage stale connections. A reason for not running
      * the {@link IdleConnectionReaper} can be if running in an environment where the modifyThread and modifyThreadGroup
      * permissions are not allowed.
@@ -157,6 +163,8 @@ public class ClientConfiguration {
 
         this.socketReceiveBufferSizeHint = other.socketReceiveBufferSizeHint;
         this.socketSendBufferSizeHint    = other.socketSendBufferSizeHint;
+        
+        this.httpClientFactory = other.httpClientFactory;
     }
 
     /**
@@ -668,6 +676,14 @@ public class ClientConfiguration {
         setConnectionTimeout(connectionTimeout);
         return this;
     }
+
+	public HttpClientFactory getHttpClientFactory() {
+		return httpClientFactory;
+	}
+
+	public void setHttpClientFactory(HttpClientFactory httpClientFactory) {
+		this.httpClientFactory = httpClientFactory;
+	}
 
     /**
      * Checks if the {@link IdleConnectionReaper} is to be started
