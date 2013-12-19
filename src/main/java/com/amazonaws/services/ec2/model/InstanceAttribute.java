@@ -74,6 +74,8 @@ public class InstanceAttribute implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode> productCodes;
 
+    private com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> securityGroups;
+
     /**
      * Boolean value
      */
@@ -522,6 +524,74 @@ public class InstanceAttribute implements Serializable {
     }
 
     /**
+     * Returns the value of the SecurityGroups property for this object.
+     *
+     * @return The value of the SecurityGroups property for this object.
+     */
+    public java.util.List<GroupIdentifier> getSecurityGroups() {
+        if (securityGroups == null) {
+            securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>();
+            securityGroups.setAutoConstruct(true);
+        }
+        return securityGroups;
+    }
+
+    /**
+     * Sets the value of the SecurityGroups property for this object.
+     *
+     * @param securityGroups The new value for the SecurityGroups property for this object.
+     */
+    public void setSecurityGroups(java.util.Collection<GroupIdentifier> securityGroups) {
+        if (securityGroups == null) {
+            this.securityGroups = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>(securityGroups.size());
+        securityGroupsCopy.addAll(securityGroups);
+        this.securityGroups = securityGroupsCopy;
+    }
+
+    /**
+     * Sets the value of the SecurityGroups property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param securityGroups The new value for the SecurityGroups property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public InstanceAttribute withSecurityGroups(GroupIdentifier... securityGroups) {
+        if (getSecurityGroups() == null) setSecurityGroups( new java.util.ArrayList<GroupIdentifier>( securityGroups.length ) );
+        for (GroupIdentifier value : securityGroups) {
+            getSecurityGroups().add(value);
+        }
+        return this;
+    }
+
+    /**
+     * Sets the value of the SecurityGroups property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param securityGroups The new value for the SecurityGroups property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public InstanceAttribute withSecurityGroups(java.util.Collection<GroupIdentifier> securityGroups) {
+        if (securityGroups == null) {
+            this.securityGroups = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>(securityGroups.size());
+            securityGroupsCopy.addAll(securityGroups);
+            this.securityGroups = securityGroupsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Boolean value
      *
      * @return Boolean value
@@ -618,6 +688,7 @@ public class InstanceAttribute implements Serializable {
         if (getRootDeviceName() != null) sb.append("RootDeviceName: " + getRootDeviceName() + ",");
         if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
         if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ",");
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");
         if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() + ",");
         if (getSriovNetSupport() != null) sb.append("SriovNetSupport: " + getSriovNetSupport() );
         sb.append("}");
@@ -639,6 +710,7 @@ public class InstanceAttribute implements Serializable {
         hashCode = prime * hashCode + ((getRootDeviceName() == null) ? 0 : getRootDeviceName().hashCode()); 
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
         hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode()); 
+        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
         hashCode = prime * hashCode + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport().hashCode()); 
         return hashCode;
@@ -672,6 +744,8 @@ public class InstanceAttribute implements Serializable {
         if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false) return false; 
         if (other.getProductCodes() == null ^ this.getProductCodes() == null) return false;
         if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false) return false; 
+        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null) return false;
+        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false) return false;
         if (other.isEbsOptimized() == null ^ this.isEbsOptimized() == null) return false;
         if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
         if (other.getSriovNetSupport() == null ^ this.getSriovNetSupport() == null) return false;
