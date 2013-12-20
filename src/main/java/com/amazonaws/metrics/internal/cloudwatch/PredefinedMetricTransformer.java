@@ -27,6 +27,7 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.http.annotation.ThreadSafe;
 
 import com.amazonaws.Request;
+import com.amazonaws.Response;
 import com.amazonaws.metrics.MetricType;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.metrics.internal.cloudwatch.spi.AWSMetricTransformerFactory;
@@ -55,14 +56,13 @@ public class PredefinedMetricTransformer {
     static final boolean INCLUDE_REQUEST_TYPE = true;
     static final boolean EXCLUDE_REQUEST_TYPE = !INCLUDE_REQUEST_TYPE;
 
-
     /**
      * Returns a non-null list of metric datum for the metrics collected for the
      * given request/response.
      * 
      * @param metricType the request metric type
      */
-    public List<MetricDatum> toMetricData(MetricType metricType, Request<?> request, Object response) {
+    public List<MetricDatum> toMetricData(MetricType metricType, Request<?> request, Response<?> response) {
         if (metricType instanceof Field) {
             // Predefined metrics across all aws http clients
             Field predefined = (Field) metricType;

@@ -14,6 +14,12 @@
  */
 package com.amazonaws.services.s3.internal;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import com.amazonaws.SDKGlobalConfiguration;
+import com.amazonaws.services.s3.AmazonS3Client;
+
 /**
  * Constants used by the AWS S3 Java client.
  */
@@ -63,4 +69,27 @@ public class Constants {
      * intervention.
      */
     public static final int DEFAULT_STREAM_BUFFER_SIZE = 128 * KB;
+    
+    /**
+     * Returns the buffer size override if it is specified in the system property,
+     * otherwise returns the default value.
+     */
+    public static int getStreamBufferSize() {
+    	int streamBufferSize = DEFAULT_STREAM_BUFFER_SIZE;
+        String bufferSizeOverride =
+            System.getProperty(SDKGlobalConfiguration
+                                   .DEFAULT_S3_STREAM_BUFFER_SIZE);
+
+        if (bufferSizeOverride != null) {
+            try {
+                streamBufferSize = Integer.parseInt(bufferSizeOverride);
+            } catch (Exception e) {
+                log.warn("Unable to parse buffer size override from value: " + bufferSizeOverride);
+            }
+        }
+        return streamBufferSize;
+    }
+    
+    /** Shared logger for client events */
+    private static Log log = LogFactory.getLog(AmazonS3Client.class);
 }

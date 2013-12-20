@@ -14,8 +14,6 @@
  */
 package com.amazonaws.regions;
 
-import static com.amazonaws.SDKGlobalConfiguration.REGIONS_FILE_OVERRIDE_SYSTEM_PROPERTY;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -36,9 +34,12 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
 
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.util.VersionInfoUtils;
 
 /**
@@ -46,21 +47,38 @@ import com.amazonaws.util.VersionInfoUtils;
  */
 public class RegionUtils {
 
-    // The CNAME "https://aws-sdk-configurations.amazonwebservices.com/" does not have a valid security cert,
-    // so we instead use the "*.cloudfront.net" endpoint to enable HTTPS access to the regions file.
-    private static final String CLOUDFRONT_DISTRO = "https://d3s62xsdspbbg2.cloudfront.net/endpoints.xml";
+    private static final String REGIONS_FILE_OVERRIDE =
+        SDKGlobalConfiguration.REGIONS_FILE_OVERRIDE_SYSTEM_PROPERTY;
+
+    private static final String DISABLE_REMOTE_REGIONS_FILE =
+        SDKGlobalConfiguration.DISABLE_REMOTE_REGIONS_FILE_SYSTEM_PROPERTY;
+
+    // The CNAME "https://aws-sdk-configurations.amazonwebservices.com/" does
+    // not have a valid security cert, so we instead use the "*.cloudfront.net"
+    // endpoint to enable HTTPS access to the regions file.
+    private static final String CLOUDFRONT_DISTRO =
+        "https://d3s62xsdspbbg2.cloudfront.net/endpoints.xml";
     
-    // If we cannot get the regions file from the cloudfront distribution, we first
-    // switch to the S3 bucket origin before fall back to using the local file.
-    private static final String S3_BUCKET_ORIGIN_ENDPOINT = "https://aws-sdk-configurations.s3.amazonaws.com/endpoints.xml";
+    // If we cannot get the regions file from the cloudfront distribution, we
+    // first switch to the S3 bucket origin before fall back to using the local
+    // file.
+    private static final String S3_BUCKET_ORIGIN_ENDPOINT =
+        "https://aws-sdk-configurations.s3.amazonaws.com/endpoints.xml";
     
     // If all things failed, this is the fall back config file. 
     private static final String FALLBACK = "/etc/regions.xml";
-    
-    private static List<Region> regions;
+
+    private static final int CONNECTION_TIMEOUT =
+        ClientConfiguration.DEFAULT_CONNECTION_TIMEOUT;
+
+    private static final int SOCKET_TIMEOUT =
+        ClientConfiguration.DEFAULT_SOCKET_TIMEOUT;
 
     // Use the same logger as the http client
     private static final Log log = LogFactory.getLog("com.amazonaws.request");
+
+
+    private static List<Region> regions;
 
     /**
      * Returns a list of the available AWS regions.
@@ -78,13 +96,16 @@ public class RegionUtils {
      *
      * @see ServiceAbbreviations
      */
-    public synchronized static List<Region> getRegionsForService(String serviceAbbreviation) {
+    public synchronized static List<Region> getRegionsForService(
+            String serviceAbbreviation) {
+
         List<Region> regions = new LinkedList<Region>();
         for ( Region r : getRegions() ) {
             if ( r.isServiceSupported(serviceAbbreviation) ) {
                 regions.add(r);
             }
         }
+
         return regions;
     }
 
@@ -121,15 +142,19 @@ public class RegionUtils {
     	String targetHost = targetEndpointUri.getHost();
 
         for ( Region region : getRegions() ) {
-            for ( String serviceEndpoint : region.getServiceEndpoints().values() ) {
+            for ( String serviceEndpoint
+                      : region.getServiceEndpoints().values() ) {
+
                 URI serviceEndpointUrl = getUriByEndpoint(serviceEndpoint);
                 
-                if ( serviceEndpointUrl.getHost().equals(targetHost) )
+                if ( serviceEndpointUrl.getHost().equals(targetHost) ) {
                     return region;
+                }
             }
         }
 
-        throw new IllegalArgumentException("No region found with any service for endpoint " + endpoint);
+        throw new IllegalArgumentException(
+            "No region found with any service for endpoint " + endpoint);
     }
 
     /**
@@ -138,18 +163,27 @@ public class RegionUtils {
      * initializes the static list of regions with it.
      */
     public static synchronized void init() {
-        if ( System.getProperty(REGIONS_FILE_OVERRIDE_SYSTEM_PROPERTY) != null ) {
+        String overrideFilePath = System.getProperty(REGIONS_FILE_OVERRIDE);
+
+        if (overrideFilePath != null) {
+
             try {
-                loadRegionsFromOverrideFile();
-            } catch ( FileNotFoundException e ) {
-                throw new RuntimeException("Couldn't find regions override file specified", e);
+                loadRegionsFromOverrideFile(overrideFilePath);
+            } catch ( FileNotFoundException exception ) {
+                throw new RuntimeException(
+                    "Couldn't find regions override file specified: "
+                    + overrideFilePath,
+                    exception);
             }
-        } else {
+
+        } else if (System.getProperty(DISABLE_REMOTE_REGIONS_FILE) == null) {
+
             try {
                 InputStream regionsFile = getRegionsFileFromCloudfront();
                 initRegions(regionsFile, true);
             } catch ( Exception e ) {
-                log.warn("Failed to initialize regional endpoints from cloudfront", e);
+                log.warn("Failed to initialize regional endpoints from "
+                         + "cloudfront", e);
                 regions = null;
             }
             
@@ -159,33 +193,41 @@ public class RegionUtils {
                     InputStream regionsFile = getRegionsFileFromS3Bucket();
                     initRegions(regionsFile, true);
                 } catch ( Exception e ) {
-                    log.warn("Failed to initialize regional endpoints from S3 bucket", e);
+                    log.warn("Failed to initialize regional endpoints from S3 "
+                             + "bucket", e);
                     regions = null;
                 }
             }
+
         }
 
         // Fall back onto the version we ship with the SDK
         if ( regions == null ) {
             initSDKRegions();
         }
-        // Throw out RuntimeException explicitly
-        if ( regions == null ) {
-            throw new RuntimeException("Failed to initialize the regions.");
-        }
+
     }
 
-    private static void loadRegionsFromOverrideFile() throws FileNotFoundException {
-        String overrideFilePath = System.getProperty(REGIONS_FILE_OVERRIDE_SYSTEM_PROPERTY);
+    private static void loadRegionsFromOverrideFile(String overrideFilePath)
+            throws FileNotFoundException {
+
         if ( log.isDebugEnabled() ) {
             log.debug("Using local override of the regions file (" 
                         + overrideFilePath
                         + ") to initiate regions data...");
         }
+
         File regionsFile = new File(overrideFilePath);
         FileInputStream override = new FileInputStream(regionsFile);
+
         // Disable endpoint verification
-        initRegions(override, false);
+        try {
+            initRegions(override, false);
+        } catch (IOException exception) {
+            log.warn("Failed to parse regional endpoints from override file "
+                     + overrideFilePath,
+                     exception);
+        }
     }
 
     /**
@@ -199,45 +241,65 @@ public class RegionUtils {
      *            (This should be disabled when regions file override is being
      *            used.)
      */
-    private static void initRegions(InputStream regionsFile, boolean enableEndpointVerification) {
-        try {
-            RegionMetadataParser parser = new RegionMetadataParser();
-            regions = parser.parseRegionMetadata(regionsFile, enableEndpointVerification);
-        } catch ( Exception e ) {
-            log.warn("Failed to parse regional endpoints", e);
-        }
+    private static void initRegions(InputStream regionsFile,
+                                    boolean enableEndpointVerification)
+            throws IOException {
+
+        RegionMetadataParser parser = new RegionMetadataParser();
+        regions = parser.parseRegionMetadata(regionsFile,
+                                             enableEndpointVerification);
     }
 
     /**
-     * Failsafe method to initialize the regions list from the list bundled with
-     * the SDK, in case it cannot be fetched from the remote source.
+     * Failsafe method to initialize the regions list from the list bundled
+     * with the SDK, in case it cannot be fetched from the remote source.
      */
     private static void initSDKRegions() {
         if ( log.isDebugEnabled() ) {
-            log.debug("Initializing the regions from the region file bundled with the SDK...");
+            log.debug("Initializing the regions from the region file bundled "
+                      + "with the SDK...");
         }
-        InputStream inputStream = RegionUtils.class.getResourceAsStream(FALLBACK);
-        initRegions(inputStream, true);
+
+        try {
+
+            InputStream inputStream =
+                RegionUtils.class.getResourceAsStream(FALLBACK);
+
+            initRegions(inputStream, true);
+
+        } catch (IOException exception) {
+            throw new RuntimeException("Failed to initialize region metadata: "
+                                       + exception.getMessage(),
+                                       exception);
+        }
     }
 
     /**
-     * Fetches the regions file from the cloudfront distribution and returns an input stream to it.
+     * Fetches the regions file from the cloudfront distribution and returns an
+     * input stream to it.
      */
-    private static InputStream getRegionsFileFromCloudfront() throws IOException {
+    private static InputStream getRegionsFileFromCloudfront()
+            throws IOException {
+
         String endpointsUrl = CLOUDFRONT_DISTRO;
         if ( log.isDebugEnabled() ) {
-            log.debug("Retreiving regions file from the cloudfront distribution: " + endpointsUrl);
+            log.debug("Retreiving regions file from the cloudfront "
+                      + "distribution: " + endpointsUrl);
         }
         return fetchFile(endpointsUrl);
     }
     
     /**
-     * Fetches the regions file from the S3 bucket and returns an input stream to it.
+     * Fetches the regions file from the S3 bucket and returns an input stream
+     * to it.
      */
-    private static InputStream getRegionsFileFromS3Bucket() throws IOException {
+    private static InputStream getRegionsFileFromS3Bucket()
+            throws IOException {
+
         String endpointsUrl = S3_BUCKET_ORIGIN_ENDPOINT;
         if ( log.isDebugEnabled() ) {
-            log.debug("Retreiving regions file from the S3 bucket: " + endpointsUrl);
+            log.debug("Retreiving regions file from the S3 bucket: "
+                      + endpointsUrl);
         }
         return fetchFile(endpointsUrl);
     }
@@ -245,11 +307,17 @@ public class RegionUtils {
     /**
      * Fetches a file from the URL given and returns an input stream to it.
      */
-    private static InputStream fetchFile(String url) throws IOException, ClientProtocolException,
-            FileNotFoundException {
+    private static InputStream fetchFile(String url) throws IOException {
 
         HttpParams httpClientParams = new BasicHttpParams();
-        HttpProtocolParams.setUserAgent(httpClientParams, VersionInfoUtils.getUserAgent());
+        HttpProtocolParams
+            .setUserAgent(httpClientParams, VersionInfoUtils.getUserAgent());
+
+        HttpConnectionParams
+            .setConnectionTimeout(httpClientParams, CONNECTION_TIMEOUT);
+        HttpConnectionParams
+            .setSoTimeout(httpClientParams, SOCKET_TIMEOUT);
+
         HttpClient httpclient = new DefaultHttpClient(httpClientParams);
         HttpGet httpget = new HttpGet(url);
         HttpResponse response = httpclient.execute(httpget);
@@ -261,8 +329,9 @@ public class RegionUtils {
     }
     
     /**
-     * Get the URI object for the given endpoint. URI class cannot correctly parse the endpoint
-     * if it doesn't include protocol. This method will add the protocol if this happens.
+     * Get the URI object for the given endpoint. URI class cannot correctly
+     * parse the endpoint if it doesn't include protocol. This method will add
+     * the protocol if this happens.
      */
     private static URI getUriByEndpoint(String endpoint) {
         URI targetEndpointUri= null;
@@ -272,7 +341,8 @@ public class RegionUtils {
                 targetEndpointUri = new URI("http://" + endpoint);
             }
         } catch (URISyntaxException e) {
-            throw new RuntimeException("Unable to parse service endpoint: " + e.getMessage());
+            throw new RuntimeException("Unable to parse service endpoint: "
+                                       + e.getMessage(), e);
         }
         return targetEndpointUri;
     }

@@ -18,6 +18,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.amazonaws.Request;
+import com.amazonaws.Response;
 import com.amazonaws.metrics.MetricType;
 import com.amazonaws.services.cloudwatch.model.MetricDatum;
 import com.amazonaws.util.TimingInfo;
@@ -33,17 +34,20 @@ public interface RequestMetricTransformer {
      * Returns a list of metric datum for the metrics collected for the given
      * request/response, or null if this transformer does not recognize the
      * specific input metric type.
+     * <p>
+     * Note returning an empty list means the transformer recognized the metric
+     * type but concluded there is no metrics to be generated for it.
      * 
      * @param metricType
      *            the predefined metric type
      */
     public List<MetricDatum> toMetricData(MetricType metricType,
-            Request<?> request, Object response);
+            Request<?> request, Response<?> response);
     
     /** A convenient instance of a no-op request metric transformer. */
     public static final RequestMetricTransformer NONE = new RequestMetricTransformer() {
         public List<MetricDatum> toMetricData(MetricType requestMetric,
-                Request<?> request, Object response) {
+                Request<?> request, Response<?> response) {
             return null;
         }
     };

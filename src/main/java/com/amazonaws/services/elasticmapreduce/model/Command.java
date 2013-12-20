@@ -25,9 +25,6 @@ public class Command implements Serializable {
 
     /**
      * The name of the command.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String name;
 
@@ -43,9 +40,6 @@ public class Command implements Serializable {
 
     /**
      * The name of the command.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return The name of the command.
      */
@@ -55,9 +49,6 @@ public class Command implements Serializable {
     
     /**
      * The name of the command.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param name The name of the command.
      */
@@ -69,9 +60,6 @@ public class Command implements Serializable {
      * The name of the command.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param name The name of the command.
      *

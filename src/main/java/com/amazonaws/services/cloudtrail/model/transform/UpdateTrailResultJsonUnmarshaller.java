@@ -45,6 +45,26 @@ public class UpdateTrailResultJsonUnmarshaller implements Unmarshaller<UpdateTra
             if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    updateTrailResult.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("S3BucketName", targetDepth)) {
+                    context.nextToken();
+                    updateTrailResult.setS3BucketName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("S3KeyPrefix", targetDepth)) {
+                    context.nextToken();
+                    updateTrailResult.setS3KeyPrefix(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SnsTopicName", targetDepth)) {
+                    context.nextToken();
+                    updateTrailResult.setSnsTopicName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("IncludeGlobalServiceEvents", targetDepth)) {
+                    context.nextToken();
+                    updateTrailResult.setIncludeGlobalServiceEvents(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("trail", targetDepth)) {
                     context.nextToken();
                     updateTrailResult.setTrail(TrailJsonUnmarshaller.getInstance().unmarshall(context));

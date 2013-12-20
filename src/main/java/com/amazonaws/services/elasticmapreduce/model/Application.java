@@ -26,8 +26,6 @@ import java.io.Serializable;
  * </p>
  * 
  * <ul>
- * <li>"karmasphere-enterprise-utility" - tag the job flow for management by <a href="http://aws.amazon.com/elasticmapreduce/karmasphere/"> Karmasphere
- * </a> .</li>
  * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
  * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
  * <li>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition, respectively.</li>
@@ -38,17 +36,11 @@ public class Application implements Serializable {
 
     /**
      * The name of the application.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String name;
 
     /**
      * The version of the application.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String version;
 
@@ -66,9 +58,6 @@ public class Application implements Serializable {
 
     /**
      * The name of the application.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return The name of the application.
      */
@@ -78,9 +67,6 @@ public class Application implements Serializable {
     
     /**
      * The name of the application.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param name The name of the application.
      */
@@ -92,9 +78,6 @@ public class Application implements Serializable {
      * The name of the application.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param name The name of the application.
      *
@@ -108,9 +91,6 @@ public class Application implements Serializable {
 
     /**
      * The version of the application.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return The version of the application.
      */
@@ -120,9 +100,6 @@ public class Application implements Serializable {
     
     /**
      * The version of the application.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param version The version of the application.
      */
@@ -134,9 +111,6 @@ public class Application implements Serializable {
      * The version of the application.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param version The version of the application.
      *

@@ -50,7 +50,9 @@ public class ListPresetsRequestMarshaller implements Marshaller<Request<ListPres
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2012-09-25/presets"; 
+        String uriResourcePath = "2012-09-25/presets?Ascending={Ascending};PageToken={PageToken}"; 
+        uriResourcePath = uriResourcePath.replace("{Ascending}", (listPresetsRequest.getAscending() == null) ? "" : StringUtils.fromString(listPresetsRequest.getAscending())); 
+        uriResourcePath = uriResourcePath.replace("{PageToken}", (listPresetsRequest.getPageToken() == null) ? "" : StringUtils.fromString(listPresetsRequest.getPageToken())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 

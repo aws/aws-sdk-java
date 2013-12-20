@@ -17,7 +17,9 @@ package com.amazonaws.services.cloudtrail.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AWSCloudTrail exception
+ * <p>
+ * This exception is thrown when the specified trail already exists.
+ * </p>
  */        
 public class TrailAlreadyExistsException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

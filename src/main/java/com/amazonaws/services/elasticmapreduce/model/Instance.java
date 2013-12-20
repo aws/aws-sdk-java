@@ -25,49 +25,31 @@ public class Instance implements Serializable {
 
     /**
      * The unique identifier for the instance in Amazon EMR.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      */
     private String id;
 
     /**
      * The unique identifier of the instance in Amazon EC2.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      */
     private String ec2InstanceId;
 
     /**
      * The public DNS name of the instance.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String publicDnsName;
 
     /**
      * The public IP address of the instance.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String publicIpAddress;
 
     /**
      * The private DNS name of the instance.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String privateDnsName;
 
     /**
      * The private IP address of the instance.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String privateIpAddress;
 
@@ -78,9 +60,6 @@ public class Instance implements Serializable {
 
     /**
      * The unique identifier for the instance in Amazon EMR.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @return The unique identifier for the instance in Amazon EMR.
      */
@@ -90,9 +69,6 @@ public class Instance implements Serializable {
     
     /**
      * The unique identifier for the instance in Amazon EMR.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @param id The unique identifier for the instance in Amazon EMR.
      */
@@ -104,9 +80,6 @@ public class Instance implements Serializable {
      * The unique identifier for the instance in Amazon EMR.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @param id The unique identifier for the instance in Amazon EMR.
      *
@@ -120,9 +93,6 @@ public class Instance implements Serializable {
 
     /**
      * The unique identifier of the instance in Amazon EC2.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @return The unique identifier of the instance in Amazon EC2.
      */
@@ -132,9 +102,6 @@ public class Instance implements Serializable {
     
     /**
      * The unique identifier of the instance in Amazon EC2.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @param ec2InstanceId The unique identifier of the instance in Amazon EC2.
      */
@@ -146,9 +113,6 @@ public class Instance implements Serializable {
      * The unique identifier of the instance in Amazon EC2.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @param ec2InstanceId The unique identifier of the instance in Amazon EC2.
      *
@@ -162,9 +126,6 @@ public class Instance implements Serializable {
 
     /**
      * The public DNS name of the instance.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return The public DNS name of the instance.
      */
@@ -174,9 +135,6 @@ public class Instance implements Serializable {
     
     /**
      * The public DNS name of the instance.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param publicDnsName The public DNS name of the instance.
      */
@@ -188,9 +146,6 @@ public class Instance implements Serializable {
      * The public DNS name of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param publicDnsName The public DNS name of the instance.
      *
@@ -204,9 +159,6 @@ public class Instance implements Serializable {
 
     /**
      * The public IP address of the instance.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return The public IP address of the instance.
      */
@@ -216,9 +168,6 @@ public class Instance implements Serializable {
     
     /**
      * The public IP address of the instance.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param publicIpAddress The public IP address of the instance.
      */
@@ -230,9 +179,6 @@ public class Instance implements Serializable {
      * The public IP address of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param publicIpAddress The public IP address of the instance.
      *
@@ -246,9 +192,6 @@ public class Instance implements Serializable {
 
     /**
      * The private DNS name of the instance.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return The private DNS name of the instance.
      */
@@ -258,9 +201,6 @@ public class Instance implements Serializable {
     
     /**
      * The private DNS name of the instance.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param privateDnsName The private DNS name of the instance.
      */
@@ -272,9 +212,6 @@ public class Instance implements Serializable {
      * The private DNS name of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param privateDnsName The private DNS name of the instance.
      *
@@ -288,9 +225,6 @@ public class Instance implements Serializable {
 
     /**
      * The private IP address of the instance.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return The private IP address of the instance.
      */
@@ -300,9 +234,6 @@ public class Instance implements Serializable {
     
     /**
      * The private IP address of the instance.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param privateIpAddress The private IP address of the instance.
      */
@@ -314,9 +245,6 @@ public class Instance implements Serializable {
      * The private IP address of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param privateIpAddress The private IP address of the instance.
      *

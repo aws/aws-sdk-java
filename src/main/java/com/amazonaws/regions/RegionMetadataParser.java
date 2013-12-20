@@ -34,8 +34,10 @@ import org.w3c.dom.NodeList;
  * in each region.
  */
 public class RegionMetadataParser {
+
     private static final String REGION_TAG = "Region";
     private static final String REGION_ID_TAG = "Name";
+    private static final String DOMAIN_TAG = "Domain";
     private static final String ENDPOINT_TAG = "Endpoint";
     private static final String SERVICE_TAG = "ServiceName";
     private static final String HTTP_TAG = "Http";
@@ -74,7 +76,10 @@ public class RegionMetadataParser {
         } catch (Exception e) {
             throw new RuntimeException("Unable to parse region metadata file: " + e.getMessage(), e);
         } finally {
-            input.close();
+            try {
+                input.close();
+            } catch (IOException exception) {
+            }
         }
         
         NodeList regionNodes = document.getElementsByTagName(REGION_TAG);
@@ -90,15 +95,23 @@ public class RegionMetadataParser {
         return regions;
     }
 
-    private Region parseRegionElement(Element regionElement, boolean endpointVerification) {
-        String name = getChildElementValue(REGION_ID_TAG, regionElement);
-        Region region = new Region(name);
+    private Region parseRegionElement(Element regionElement,
+                                      boolean endpointVerification) {
 
-        NodeList endpointNodes = regionElement.getElementsByTagName(ENDPOINT_TAG);
+        String name = getChildElementValue(REGION_ID_TAG, regionElement);
+        String domain = getChildElementValue(DOMAIN_TAG, regionElement);
+
+        Region region = new Region(name, domain);
+
+        NodeList endpointNodes =
+            regionElement.getElementsByTagName(ENDPOINT_TAG);
+
         for (int i = 0; i < endpointNodes.getLength(); i++) {
-            addRegionEndpoint(region, (Element) endpointNodes.item(i), endpointVerification);
+            addRegionEndpoint(region,
+                              (Element) endpointNodes.item(i),
+                              endpointVerification);
         }
-        
+
         return region;
     }
     
@@ -124,7 +137,7 @@ public class RegionMetadataParser {
      
         return node.getNodeValue();    
     }
-    
+
     /** Returns whether the provided endpoint is a valid AWS service endpoint.
      * TODO We might want to do more complicated verification in the future.
      */

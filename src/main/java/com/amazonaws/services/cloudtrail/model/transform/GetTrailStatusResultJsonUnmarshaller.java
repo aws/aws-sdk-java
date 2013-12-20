@@ -57,13 +57,25 @@ public class GetTrailStatusResultJsonUnmarshaller implements Unmarshaller<GetTra
                     context.nextToken();
                     getTrailStatusResult.setLatestNotificationError(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LatestDeliveryTime", targetDepth)) {
+                    context.nextToken();
+                    getTrailStatusResult.setLatestDeliveryTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("LatestNotificationTime", targetDepth)) {
+                    context.nextToken();
+                    getTrailStatusResult.setLatestNotificationTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("StartLoggingTime", targetDepth)) {
+                    context.nextToken();
+                    getTrailStatusResult.setStartLoggingTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("StopLoggingTime", targetDepth)) {
+                    context.nextToken();
+                    getTrailStatusResult.setStopLoggingTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("LatestDeliveryAttemptTime", targetDepth)) {
                     context.nextToken();
                     getTrailStatusResult.setLatestDeliveryAttemptTime(StringJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("LatestDeliveryAttemptSucceeded", targetDepth)) {
-                    context.nextToken();
-                    getTrailStatusResult.setLatestDeliveryAttemptSucceeded(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LatestNotificationAttemptTime", targetDepth)) {
                     context.nextToken();
@@ -72,6 +84,10 @@ public class GetTrailStatusResultJsonUnmarshaller implements Unmarshaller<GetTra
                 if (context.testExpression("LatestNotificationAttemptSucceeded", targetDepth)) {
                     context.nextToken();
                     getTrailStatusResult.setLatestNotificationAttemptSucceeded(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("LatestDeliveryAttemptSucceeded", targetDepth)) {
+                    context.nextToken();
+                    getTrailStatusResult.setLatestDeliveryAttemptSucceeded(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TimeLoggingStarted", targetDepth)) {
                     context.nextToken();

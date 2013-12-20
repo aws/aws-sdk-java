@@ -273,6 +273,57 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Adds tags to an Amazon EMR resource. Tags make it easier to associate
+     * clusters in various ways, such as grouping clusters to track your
+     * Amazon EMR resource allocation costs. For more information, see <a
+     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
+     * Tagging Amazon EMR Resources </a> .
+     * </p>
+     *
+     * @param addTagsRequest Container for the necessary parameters to
+     *           execute the AddTags service method on AmazonElasticMapReduce.
+     * 
+     * @return The response from the AddTags service method, as returned by
+     *         AmazonElasticMapReduce.
+     * 
+     * @throws InternalServerException
+     * @throws InvalidRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
+        ExecutionContext executionContext = createExecutionContext(addTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddTagsRequest> request = null;
+        Response<AddTagsResult> response = null;
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddTagsRequestMarshaller().marshall(addTagsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<AddTagsResult, JsonUnmarshallerContext> unmarshaller = new AddTagsResultJsonUnmarshaller();
+            JsonResponseHandler<AddTagsResult> responseHandler = new JsonResponseHandler<AddTagsResult>(unmarshaller);
+            
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sets whether all AWS Identity and Access Management (IAM) users under
      * your account can access the specified job flows. This action works on
      * running job flows. You can also set the visibility of a job flow when
@@ -537,6 +588,58 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Removes tags from an Amazon EMR resource. Tags make it easier to
+     * associate clusters in various ways, such as grouping clusters to track
+     * your Amazon EMR resource allocation costs. For more information, see
+     * <a
+     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
+     * Tagging Amazon EMR Resources </a> .
+     * </p>
+     *
+     * @param removeTagsRequest Container for the necessary parameters to
+     *           execute the RemoveTags service method on AmazonElasticMapReduce.
+     * 
+     * @return The response from the RemoveTags service method, as returned
+     *         by AmazonElasticMapReduce.
+     * 
+     * @throws InternalServerException
+     * @throws InvalidRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
+        ExecutionContext executionContext = createExecutionContext(removeTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveTagsRequest> request = null;
+        Response<RemoveTagsResult> response = null;
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveTagsRequestMarshaller().marshall(removeTagsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<RemoveTagsResult, JsonUnmarshallerContext> unmarshaller = new RemoveTagsResultJsonUnmarshaller();
+            JsonResponseHandler<RemoveTagsResult> responseHandler = new JsonResponseHandler<RemoveTagsResult>(unmarshaller);
+            
+            response = invoke(request, responseHandler, executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides all available details about the instance groups in a cluster.
      * </p>
      *
@@ -768,6 +871,67 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     
     /**
      * <p>
+     * SetTerminationProtection locks a job flow so the Amazon EC2 instances
+     * in the cluster cannot be terminated by user intervention, an API call,
+     * or in the event of a job-flow error. The cluster still terminates upon
+     * successful completion of the job flow. Calling
+     * SetTerminationProtection on a job flow is analogous to calling the
+     * Amazon EC2 DisableAPITermination API on all of the EC2 instances in a
+     * cluster.
+     * </p>
+     * <p>
+     * SetTerminationProtection is used to prevent accidental termination of
+     * a job flow and to ensure that in the event of an error, the instances
+     * will persist so you can recover any data stored in their ephemeral
+     * instance storage.
+     * </p>
+     * <p>
+     * To terminate a job flow that has been locked by setting
+     * SetTerminationProtection to <code>true</code> ,
+     * you must first unlock the job flow by a subsequent call to
+     * SetTerminationProtection in which you set the value to
+     * <code>false</code> .
+     * </p>
+     * <p>
+     * For more information, go to <a
+     * cMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">
+     * Protecting a Job Flow from Termination </a> in the <i>Amazon Elastic
+     * MapReduce Developer's Guide.</i>
+     * </p>
+     *
+     * @param setTerminationProtectionRequest Container for the necessary
+     *           parameters to execute the SetTerminationProtection service method on
+     *           AmazonElasticMapReduce.
+     * 
+     * 
+     * @throws InternalServerErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void setTerminationProtection(SetTerminationProtectionRequest setTerminationProtectionRequest) {
+        ExecutionContext executionContext = createExecutionContext(setTerminationProtectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SetTerminationProtectionRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new SetTerminationProtectionRequestMarshaller().marshall(setTerminationProtectionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
      * DescribeJobFlows returns a list of job flows that match all of the
      * supplied parameters. The parameters can include a list of job flow
      * IDs, job flow states, and restrictions on job flow creation date and
@@ -840,67 +1004,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         }
     }
 
-    /**
-     * <p>
-     * SetTerminationProtection locks a job flow so the Amazon EC2 instances
-     * in the cluster cannot be terminated by user intervention, an API call,
-     * or in the event of a job-flow error. The cluster still terminates upon
-     * successful completion of the job flow. Calling
-     * SetTerminationProtection on a job flow is analogous to calling the
-     * Amazon EC2 DisableAPITermination API on all of the EC2 instances in a
-     * cluster.
-     * </p>
-     * <p>
-     * SetTerminationProtection is used to prevent accidental termination of
-     * a job flow and to ensure that in the event of an error, the instances
-     * will persist so you can recover any data stored in their ephemeral
-     * instance storage.
-     * </p>
-     * <p>
-     * To terminate a job flow that has been locked by setting
-     * SetTerminationProtection to <code>true</code> ,
-     * you must first unlock the job flow by a subsequent call to
-     * SetTerminationProtection in which you set the value to
-     * <code>false</code> .
-     * </p>
-     * <p>
-     * For more information, go to <a
-     * cMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">
-     * Protecting a Job Flow from Termination </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide.</i>
-     * </p>
-     *
-     * @param setTerminationProtectionRequest Container for the necessary
-     *           parameters to execute the SetTerminationProtection service method on
-     *           AmazonElasticMapReduce.
-     * 
-     * 
-     * @throws InternalServerErrorException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticMapReduce indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void setTerminationProtection(SetTerminationProtectionRequest setTerminationProtectionRequest) {
-        ExecutionContext executionContext = createExecutionContext(setTerminationProtectionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<SetTerminationProtectionRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-        try {
-            request = new SetTerminationProtectionRequestMarshaller().marshall(setTerminationProtectionRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-        } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-        }
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
-    }
-    
     /**
      * <p>
      * RunJobFlow creates and starts running a new job flow. The job flow
@@ -1054,6 +1157,33 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     
     /**
      * <p>
+     * Adds tags to an Amazon EMR resource. Tags make it easier to associate
+     * clusters in various ways, such as grouping clusters to track your
+     * Amazon EMR resource allocation costs. For more information, see <a
+     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
+     * Tagging Amazon EMR Resources </a> .
+     * </p>
+     * 
+     * @return The response from the AddTags service method, as returned by
+     *         AmazonElasticMapReduce.
+     * 
+     * @throws InternalServerException
+     * @throws InvalidRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AddTagsResult addTags() throws AmazonServiceException, AmazonClientException {
+        return addTags(new AddTagsRequest());
+    }
+    
+    /**
+     * <p>
      * Provides a list of steps for the cluster.
      * </p>
      * 
@@ -1124,6 +1254,34 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     public ListClustersResult listClusters() throws AmazonServiceException, AmazonClientException {
         return listClusters(new ListClustersRequest());
+    }
+    
+    /**
+     * <p>
+     * Removes tags from an Amazon EMR resource. Tags make it easier to
+     * associate clusters in various ways, such as grouping clusters to track
+     * your Amazon EMR resource allocation costs. For more information, see
+     * <a
+     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
+     * Tagging Amazon EMR Resources </a> .
+     * </p>
+     * 
+     * @return The response from the RemoveTags service method, as returned
+     *         by AmazonElasticMapReduce.
+     * 
+     * @throws InternalServerException
+     * @throws InvalidRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public RemoveTagsResult removeTags() throws AmazonServiceException, AmazonClientException {
+        return removeTags(new RemoveTagsRequest());
     }
     
     /**

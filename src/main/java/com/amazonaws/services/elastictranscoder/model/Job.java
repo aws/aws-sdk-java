@@ -33,6 +33,11 @@ public class Job implements Serializable {
     private String id;
 
     /**
+     * The Amazon Resource Name (ARN) for the job.
+     */
+    private String arn;
+
+    /**
      * The <code>Id</code> of the pipeline that you want Elastic Transcoder
      * to use for transcoding. The pipeline determines several settings,
      * including the Amazon S3 bucket from which Elastic Transcoder gets the
@@ -149,6 +154,39 @@ public class Job implements Serializable {
      */
     public Job withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /**
+     * The Amazon Resource Name (ARN) for the job.
+     *
+     * @return The Amazon Resource Name (ARN) for the job.
+     */
+    public String getArn() {
+        return arn;
+    }
+    
+    /**
+     * The Amazon Resource Name (ARN) for the job.
+     *
+     * @param arn The Amazon Resource Name (ARN) for the job.
+     */
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+    
+    /**
+     * The Amazon Resource Name (ARN) for the job.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param arn The Amazon Resource Name (ARN) for the job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Job withArn(String arn) {
+        this.arn = arn;
         return this;
     }
 
@@ -685,6 +723,7 @@ public class Job implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ",");
         if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");
         if (getInput() != null) sb.append("Input: " + getInput() + ",");
         if (getOutput() != null) sb.append("Output: " + getOutput() + ",");
@@ -702,6 +741,7 @@ public class Job implements Serializable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode()); 
         hashCode = prime * hashCode + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode()); 
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode()); 
         hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode()); 
@@ -722,6 +762,8 @@ public class Job implements Serializable {
         
         if (other.getId() == null ^ this.getId() == null) return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
+        if (other.getArn() == null ^ this.getArn() == null) return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false) return false; 
         if (other.getPipelineId() == null ^ this.getPipelineId() == null) return false;
         if (other.getPipelineId() != null && other.getPipelineId().equals(this.getPipelineId()) == false) return false; 
         if (other.getInput() == null ^ this.getInput() == null) return false;

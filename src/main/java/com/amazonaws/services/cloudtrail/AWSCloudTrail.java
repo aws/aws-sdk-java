@@ -111,7 +111,6 @@ public interface AWSCloudTrail {
      * @return The response from the GetTrailStatus service method, as
      *         returned by AWSCloudTrail.
      * 
-     * @throws InternalErrorException
      * @throws InvalidTrailNameException
      * @throws TrailNotFoundException
      *
@@ -137,7 +136,6 @@ public interface AWSCloudTrail {
      * @return The response from the DeleteTrail service method, as returned
      *         by AWSCloudTrail.
      * 
-     * @throws InternalErrorException
      * @throws InvalidTrailNameException
      * @throws TrailNotFoundException
      *
@@ -183,7 +181,6 @@ public interface AWSCloudTrail {
      *         by AWSCloudTrail.
      * 
      * @throws S3BucketDoesNotExistException
-     * @throws InternalErrorException
      * @throws InvalidS3PrefixException
      * @throws InvalidTrailNameException
      * @throws TrailAlreadyExistsException
@@ -225,7 +222,6 @@ public interface AWSCloudTrail {
      *         by AWSCloudTrail.
      * 
      * @throws S3BucketDoesNotExistException
-     * @throws InternalErrorException
      * @throws InvalidS3PrefixException
      * @throws InvalidTrailNameException
      * @throws InvalidS3BucketNameException
@@ -258,7 +254,6 @@ public interface AWSCloudTrail {
      * @return The response from the DescribeTrails service method, as
      *         returned by AWSCloudTrail.
      * 
-     * @throws InternalErrorException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -285,7 +280,6 @@ public interface AWSCloudTrail {
      * @return The response from the StopLogging service method, as returned
      *         by AWSCloudTrail.
      * 
-     * @throws InternalErrorException
      * @throws InvalidTrailNameException
      * @throws TrailNotFoundException
      *
@@ -312,11 +306,7 @@ public interface AWSCloudTrail {
      * @return The response from the StartLogging service method, as returned
      *         by AWSCloudTrail.
      * 
-     * @throws S3BucketDoesNotExistException
-     * @throws InternalErrorException
      * @throws InvalidTrailNameException
-     * @throws InsufficientSnsTopicPolicyException
-     * @throws InsufficientS3BucketPolicyException
      * @throws TrailNotFoundException
      *
      * @throws AmazonClientException
@@ -339,7 +329,6 @@ public interface AWSCloudTrail {
      * @return The response from the DescribeTrails service method, as
      *         returned by AWSCloudTrail.
      * 
-     * @throws InternalErrorException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

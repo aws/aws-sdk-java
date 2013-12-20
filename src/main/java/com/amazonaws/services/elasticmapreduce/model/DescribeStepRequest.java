@@ -30,25 +30,16 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The identifier of the cluster with steps to describe.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      */
     private String clusterId;
 
     /**
      * The identifier of the step to describe.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      */
     private String stepId;
 
     /**
      * The identifier of the cluster with steps to describe.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @return The identifier of the cluster with steps to describe.
      */
@@ -58,9 +49,6 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The identifier of the cluster with steps to describe.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @param clusterId The identifier of the cluster with steps to describe.
      */
@@ -72,9 +60,6 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements Seri
      * The identifier of the cluster with steps to describe.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @param clusterId The identifier of the cluster with steps to describe.
      *
@@ -88,9 +73,6 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The identifier of the step to describe.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @return The identifier of the step to describe.
      */
@@ -100,9 +82,6 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The identifier of the step to describe.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @param stepId The identifier of the step to describe.
      */
@@ -114,9 +93,6 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements Seri
      * The identifier of the step to describe.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @param stepId The identifier of the step to describe.
      *

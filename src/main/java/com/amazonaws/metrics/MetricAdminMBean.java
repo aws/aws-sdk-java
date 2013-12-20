@@ -158,4 +158,19 @@ public interface MetricAdminMBean {
      * generated.
      */
     public void setJvmMetricName(String jvmMetricName);
+
+    /**
+     * Returns the host name for metric purposes. If the returned value is
+     * either null or blank, the host name will be automatically detected via
+     * {@link InetAddresss}.
+     */
+    public String getHostMetricName();
+
+    /**
+     * Sets the host name to enable per-host level metrics generation. If
+     * the given value is either null or blank but the per-host metric is
+     * enabled, the host name will be automatically detected via
+     * {@link InetAddresss}.
+     */
+    public void setHostMetricName(String hostMetricName);
 }

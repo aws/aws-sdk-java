@@ -27,7 +27,10 @@ import com.amazonaws.util.VersionInfoUtils;
 @NotThreadSafe
 public class ClientConfiguration {
 
-    /** The default timeout for a connected socket. */
+    /** The default timeout for creating new connections. */
+    public static final int DEFAULT_CONNECTION_TIMEOUT = 50 * 1000;
+
+    /** The default timeout for reading from a connected socket. */
     public static final int DEFAULT_SOCKET_TIMEOUT = 50 * 1000;
 
     /** The default max connection pool size. */
@@ -113,7 +116,7 @@ public class ClientConfiguration {
      * a connection before giving up and timing out. A value of 0 means
      * infinity, and is not recommended.
      */
-    private int connectionTimeout = 50 * 1000;
+    private int connectionTimeout = DEFAULT_CONNECTION_TIMEOUT;
 
     /**
      * Optional size hint (in bytes) for the low level TCP send buffer. This is

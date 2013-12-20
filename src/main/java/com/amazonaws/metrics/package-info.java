@@ -49,6 +49,10 @@
  * client type level. </li>
  * <li>RetryCount - Number of retries per logical request. Captured on a per service 
  * client type level. </li>
+ * <li>DynamoDBConsumedCapacity - Number of Amazon DynamoDB capacity units consumed.
+ * Captured on a per request type level, and is only available if the request
+ * has been specified with the necessary "ReturnConsumedCapacity" parameter.
+ * </li>
  * </ol>
  * <h3>AWS Service Metrics</h3>
  * <ol>

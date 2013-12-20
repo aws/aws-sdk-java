@@ -124,7 +124,7 @@ public class DynamoDBReflector {
      * Returns all annotated {@link DynamoDBHashKey} and
      * {@link DynamoDBRangeKey} getters for the class given, throwing an
      * exception if there isn't one.
-     * 
+     *
      * TODO: caching
      */
     <T> Collection<Method> getPrimaryKeyGetters(Class<T> clazz) {
@@ -135,11 +135,11 @@ public class DynamoDBReflector {
                 keyGetters.add(getter);
             }
         }
-        
+
         return keyGetters;
     }
 
-    
+
     /**
      * Returns the annotated {@link DynamoDBHashKey} getter for the class given,
      * throwing an exception if there isn't one.
@@ -191,7 +191,7 @@ public class DynamoDBReflector {
      * requires checking it against all supported types. This is expensive, so
      * we cache a lookup table of getter method to argument unmarhsaller which
      * can be reused.
-     * 
+     *
      * @param toReturn
      *            The typed domain object being unmarshalled for the client
      * @param getter
@@ -210,10 +210,10 @@ public class DynamoDBReflector {
             if ( parameterTypes.length != 1 ) {
                 throw new DynamoDBMappingException("Expected exactly one agument to " + setter);
             }
-    
+
             if ( isCustomMarshaller(getter) ) {
                 unmarshaller = new SUnmarshaller() {
-    
+
                     @Override
                     public Object unmarshall(AttributeValue value) {
                         return getCustomMarshalledValue(toReturn, getter, value);
@@ -226,7 +226,7 @@ public class DynamoDBReflector {
             return unmarshaller;
         }
     }
-    
+
     /**
      * Note this method is synchronized on {@link #argumentUnmarshallerCache} while being executed.
      */
@@ -490,7 +490,7 @@ public class DynamoDBReflector {
                 };
             } else {
                 unmarshaller = new SUnmarshaller() {
-                  
+
                     @Override
                     public Object unmarshall(AttributeValue value) throws ParseException {
                         Calendar cal = GregorianCalendar.getInstance();
@@ -514,7 +514,7 @@ public class DynamoDBReflector {
                   };
               } else {
                   unmarshaller = new BUnmarshaller() {
-                      
+
                       @Override
                       public Object unmarshall(AttributeValue value) throws ParseException {
                           return value.getB();
@@ -543,7 +543,7 @@ public class DynamoDBReflector {
                  };
           } else {
               unmarshaller = new BUnmarshaller() {
-                  
+
                      @Override
                      public Object unmarshall(AttributeValue value) throws ParseException {
                          ByteBuffer byteBuffer = value.getB();
@@ -595,7 +595,7 @@ public class DynamoDBReflector {
             } else {
                 if ( isCollection ) {
                     return new SSUnmarshaller() {
-    
+
                         @Override
                         public Object unmarshall(AttributeValue value) {
                             Set<String> argument = new HashSet<String>();
@@ -607,7 +607,7 @@ public class DynamoDBReflector {
                     };
                 } else {
                     return new SUnmarshaller() {
-    
+
                         @Override
                         public Object unmarshall(AttributeValue value) {
                             return value.getS();
@@ -658,7 +658,7 @@ public class DynamoDBReflector {
                     e);
         }
         String stringValue = marshaller.marshall(getterReturnResult);
-        
+
         if(stringValue == null) {
             return null;
         } else {
@@ -690,7 +690,7 @@ public class DynamoDBReflector {
         }
     }
 
-    /** 
+    /**
      * Note this method is synchronized on {@link #argumentMarshallerCache} while being executed.
      */
     private ArgumentMarshaller computeArgumentMarshaller(final Method getter) {
@@ -771,7 +771,7 @@ public class DynamoDBReflector {
                          return new AttributeValue().withBS(attributes);
                      }
                  };
-            } else if (byte[].class.isAssignableFrom(returnType)) { 
+            } else if (byte[].class.isAssignableFrom(returnType)) {
                  marshaller = new ArgumentMarshaller() {
 
                      @Override
@@ -898,7 +898,7 @@ public class DynamoDBReflector {
                     S3Link s3link = (S3Link) obj;
                     if ( s3link.getBucketName() == null || s3link.getKey() == null ) {
                         // insufficient S3 resource specification
-                        return null; 
+                        return null;
                     }
                     String json = s3link.toJson();
                     return new AttributeValue().withS(json);
@@ -950,7 +950,7 @@ public class DynamoDBReflector {
                 DynamoDBIndexRangeKey indexRangeKey = getter.getAnnotation(DynamoDBIndexRangeKey.class);
                 if ( indexRangeKey != null && indexRangeKey.attributeName() != null && indexRangeKey.attributeName().length() > 0 )
                     return indexRangeKey.attributeName();
-                
+
                 // Then an attribute
                 DynamoDBAttribute attribute = getter.getAnnotation(DynamoDBAttribute.class);
                 if ( attribute != null && attribute.attributeName() != null && attribute.attributeName().length() > 0 )
@@ -1127,7 +1127,7 @@ public class DynamoDBReflector {
             return versionAttributeGetterCache.get(getter);
         }
     }
-    
+
     /**
      * Returns whether the method given is an assignable key getter.
      */
@@ -1143,21 +1143,29 @@ public class DynamoDBReflector {
             return autoGeneratedKeyGetterCache.get(getter);
         }
     }
-    
+
     /**
      * Returns the name of the primary hash key.
      */
     String getPrimaryHashKeyName(Class<?> clazz) {
         return getAttributeName(getPrimaryHashKeyGetter(clazz));
     }
-    
+
     /**
      * Returns the name of the primary range key.
      */
     String getPrimaryRangeKeyName(Class<?> clazz) {
     	return getAttributeName(getPrimaryRangeKeyGetter(clazz));
     }
-    
+
+    /**
+     * Returns true if and only if the specified class has declared a
+     * primary range key.
+     */
+    boolean hasPrimaryRangeKey(Class<?> clazz) {
+    	return getPrimaryRangeKeyGetter(clazz) != null;
+    }
+
     /**
      * Returns the names of all the local secondary indexes that use the given
      * index range key, or null if the attribute is not annotated with any LSI.
@@ -1169,7 +1177,7 @@ public class DynamoDBReflector {
                 for ( Method method : getRelevantGetters(clazz) ) {
                     String attributeName = getAttributeName(method);
                     List<String> indexNames = new LinkedList<String>();
-                    
+
                     // If it's annotated as a range key for one or more LSI
                     if ( method.getParameterTypes().length == 0
                             && method.isAnnotationPresent(DynamoDBIndexRangeKey.class)) {
@@ -1180,21 +1188,21 @@ public class DynamoDBReflector {
                                 && localSecondaryIndexName.length() != 0;
                         boolean multipleLSINames = localSecondaryIndexNames != null
                                 && localSecondaryIndexNames.length != 0;
-                        
+
                         if (singleLSIName && multipleLSINames) {
                             throw new DynamoDBMappingException(
                                     "@DynamoDBIndexRangeKey annotation on getter "
                                             + method
                                             + " contains both localSecondaryIndexName and localSecondaryIndexNames.");
                         }
-                        
+
                         if (singleLSIName) {
                             indexNames.add(localSecondaryIndexName);
                         } else if (multipleLSINames){
                             indexNames.addAll(Arrays.asList(localSecondaryIndexNames));
                         }
                     }
-                    
+
                     if ( !indexNames.isEmpty() ) {
                         indexRangeKeyNameToLocalSecondaryIndexNamesMap.put(attributeName, indexNames);
                     } else {
@@ -1207,7 +1215,7 @@ public class DynamoDBReflector {
             return indexRangeKeyNameToLocalSecondaryIndexNamesCache.getIndexNames(clazz, indexRangeKeyName);
         }
     }
-    
+
     /**
      * Returns the names of all the global secondary indexes that use the given
      * index key (either hash or range), or null if the attribute is not annotated with any GSI.
@@ -1222,7 +1230,7 @@ public class DynamoDBReflector {
                 for ( Method method : getRelevantGetters(clazz) ) {
                     String attributeName = getAttributeName(method);
                     List<String> indexNames = new LinkedList<String>();
-                    
+
                     if ( method.getParameterTypes().length == 0
                             && ( method.isAnnotationPresent(annotationInterface) )) {
                         String globalSecondaryIndexName;
@@ -1235,7 +1243,7 @@ public class DynamoDBReflector {
                             globalSecondaryIndexName = ((DynamoDBIndexRangeKey)indexHashKeyAnnotation).globalSecondaryIndexName();
                             globalSecondaryIndexNames = ((DynamoDBIndexRangeKey)indexHashKeyAnnotation).globalSecondaryIndexNames();
                         }
-                        
+
                         boolean singleGSIName = globalSecondaryIndexName != null
                                 && globalSecondaryIndexName.length() != 0;
                         boolean multipleGSINames = globalSecondaryIndexNames != null
@@ -1246,21 +1254,21 @@ public class DynamoDBReflector {
                                     annotationInterface.getSimpleName() + " annotation on getter "
                                             + method
                                             + " contains both globalSecondaryIndexName and globalSecondaryIndexNames.");
-                        } else if ( (!singleGSIName) && (!multipleGSINames) 
+                        } else if ( (!singleGSIName) && (!multipleGSINames)
                                 && isIndexHashKey ) {
                             throw new DynamoDBMappingException(
                                     "@DynamoDBIndexHashKey annotation on getter "
                                             + method
                                             + " doesn't contain any index name.");
                         }
-                        
+
                         if (singleGSIName) {
                             indexNames.add(globalSecondaryIndexName);
                         } else if (multipleGSINames) {
                             indexNames.addAll(Arrays.asList(globalSecondaryIndexNames));
                         }
                     }
-                    
+
                     if ( !indexNames.isEmpty() ) {
                         indexKeyNameToGlobalSecondaryIndexNamesMap.put(attributeName, indexNames);
                     } else {
@@ -1273,21 +1281,21 @@ public class DynamoDBReflector {
             return indexKeyNameToGlobalSecondaryIndexNamesCache.getIndexNames(clazz, indexKeyName);
         }
     }
-    
+
     private static class IndexKeyNameToIndexNamesCache {
     	private Map<Class<?>, Map<String, List<String>>> cacheMap = new HashMap<Class<?>, Map<String, List<String>>>();
-    	
+
     	public boolean isCached(Class<?> clazz) {
     		return cacheMap.containsKey(clazz);
     	}
-    	
+
     	public List<String> getIndexNames(Class<?> clazz, String indexKeyName) {
     		return cacheMap.get(clazz).get(indexKeyName);
     	}
-    	
+
     	public Map<String, List<String>> cache(Class<?> clazz, Map<String, List<String>> indexKeyNameToIndexNamesMap) {
     		return cacheMap.put(clazz, indexKeyNameToIndexNamesMap);
     	}
     }
-    
+
 }

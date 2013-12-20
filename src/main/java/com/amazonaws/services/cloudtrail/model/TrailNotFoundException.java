@@ -17,7 +17,9 @@ package com.amazonaws.services.cloudtrail.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AWSCloudTrail exception
+ * <p>
+ * This exception is thrown when the trail with the given name is not found.
+ * </p>
  */        
 public class TrailNotFoundException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

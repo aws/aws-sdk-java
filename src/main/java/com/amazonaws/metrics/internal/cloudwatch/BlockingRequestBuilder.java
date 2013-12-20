@@ -120,12 +120,10 @@ class BlockingRequestBuilder {
      * within the maximum size limit imposed by CloudWatch.
      */
     private Iterable<PutMetricDataRequest> toPutMetricDataRequests(Map<String, MetricDatum> uniqueMetrics) {
-        if (!AwsSdkMetrics.isMachineMetricExcluded()) {
-            // Opportunistically generates some machine metrics whenever there
-            // is metrics consolidation
-            for (MetricDatum datum: machineMetricFactory.generateMetrics()) {
-                summarize(datum, uniqueMetrics);
-            }
+        // Opportunistically generates some machine metrics whenever there
+        // is metrics consolidation
+        for (MetricDatum datum: machineMetricFactory.generateMetrics()) {
+            summarize(datum, uniqueMetrics);
         }
         List<PutMetricDataRequest> list = new ArrayList<PutMetricDataRequest>();
         List<MetricDatum> data = new ArrayList<MetricDatum>();
@@ -149,10 +147,13 @@ class BlockingRequestBuilder {
         PutMetricDataRequest req = newPutMetricDataRequest(data, ns);
         list.add(req);
         String perHostNameSpace = null;
-        final boolean perHost = AwsSdkMetrics.isPerHostMetricIncluded();
+        final boolean perHost = AwsSdkMetrics.isPerHostMetricEnabled();
         if (perHost) {
-            perHostNameSpace = ns + NAMESPACE_DELIMITER
-                    + AwsHostNameUtils.localHostName();
+            String hostName = AwsSdkMetrics.getHostMetricName();
+            hostName = hostName == null ? "" : hostName.trim();
+            if (hostName.length() == 0)
+                hostName = AwsHostNameUtils.localHostName();
+            perHostNameSpace = ns + NAMESPACE_DELIMITER + hostName;
             req = newPutMetricDataRequest(data, perHostNameSpace);
             list.add(req);
         }

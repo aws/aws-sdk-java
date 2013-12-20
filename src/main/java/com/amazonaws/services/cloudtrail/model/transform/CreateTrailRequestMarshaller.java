@@ -76,6 +76,21 @@ public class CreateTrailRequestMarshaller implements Marshaller<Request<CreateTr
 
           jsonWriter.object();
           
+            if (createTrailRequest.getName() != null) {
+                jsonWriter.key("Name").value(createTrailRequest.getName());
+            }
+            if (createTrailRequest.getS3BucketName() != null) {
+                jsonWriter.key("S3BucketName").value(createTrailRequest.getS3BucketName());
+            }
+            if (createTrailRequest.getS3KeyPrefix() != null) {
+                jsonWriter.key("S3KeyPrefix").value(createTrailRequest.getS3KeyPrefix());
+            }
+            if (createTrailRequest.getSnsTopicName() != null) {
+                jsonWriter.key("SnsTopicName").value(createTrailRequest.getSnsTopicName());
+            }
+            if (createTrailRequest.isIncludeGlobalServiceEvents() != null) {
+                jsonWriter.key("IncludeGlobalServiceEvents").value(createTrailRequest.isIncludeGlobalServiceEvents());
+            }
             Trail trail = createTrailRequest.getTrail();
             if (trail != null) {
 

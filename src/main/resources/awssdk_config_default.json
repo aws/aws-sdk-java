@@ -1,7 +1,6 @@
 { // AWS Java SDK internal configuration
   "defaultSigner" : {
-    "signerType" : "AWS4SignerType",
-    "doubleUrlEncode" : true
+    "signerType" : "AWS4SignerType"
   },
   // "regionSigners" configuration takes precedence over 
   // the "serviceSigners" configuration,
@@ -35,6 +34,18 @@
     "key" : "sdb",
     "config" : {
       "signerType" : "QueryStringSignerType"
+    }
+  } ],
+  "regionSigners" : [ {
+    "key" : "cn-north-1",
+    "config" : {
+      "signerType" : "AWS4SignerType"
+    }
+  } ],
+  "serviceRegionSigners" : [ {
+    "key" : "s3/cn-north-1",
+    "config" : {
+      "signerType" : "AWSS3V4SignerType"
     }
   } ],
   // AWS http client internal configuration.

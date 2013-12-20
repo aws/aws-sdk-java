@@ -28,13 +28,28 @@ import com.amazonaws.auth.AWSCredentialsProvider;
  */
 public final class Region {
 
-    private final String name;
-    private final Map<String, String> serviceEndpoints = new HashMap<String, String>();
-    private final Map<String, Boolean> httpSupport = new HashMap<String, Boolean>();
-    private final Map<String, Boolean> httpsSupport = new HashMap<String, Boolean>();
+    private static final String DEFAULT_DOMAIN = "amazonaws.com";
 
-    Region(String name) {
+    private final String name;
+    private final String domain;
+
+    private final Map<String, String> serviceEndpoints =
+        new HashMap<String, String>();
+
+    private final Map<String, Boolean> httpSupport =
+        new HashMap<String, Boolean>();
+
+    private final Map<String, Boolean> httpsSupport =
+        new HashMap<String, Boolean>();
+
+    Region(final String name, final String domain) {
         this.name = name;
+
+        if (domain == null) {
+            this.domain = DEFAULT_DOMAIN;
+        } else {
+            this.domain = domain;
+        }
     }
 
     /**
@@ -46,12 +61,21 @@ public final class Region {
     }
 
     /**
-     * The unique system ID for this region; ex: us-east-1.
+     * The unique system ID for this region; ex: &quot;us-east-1&quot;.
      * 
      * @return The unique system ID for this region.
      */
     public String getName() {
         return name;
+    }
+
+    /**
+     * Returns the domain for this region; ex: &quot;amazonaws.com&quot;.
+     *
+     * @return The domain for this region.
+     */
+    public String getDomain() {
+        return domain;
     }
 
     /**

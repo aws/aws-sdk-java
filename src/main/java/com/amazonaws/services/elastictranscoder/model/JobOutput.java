@@ -121,7 +121,7 @@ public class JobOutput implements Serializable {
      * include it in <code>OutputKeys</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
+     * <b>Pattern: </b>^\d{1,5}(\.\d{0,5})?$<br/>
      */
     private String segmentDuration;
 
@@ -679,7 +679,7 @@ public class JobOutput implements Serializable {
      * include it in <code>OutputKeys</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
+     * <b>Pattern: </b>^\d{1,5}(\.\d{0,5})?$<br/>
      *
      * @return <important>(Outputs in MPEG-TS format only.</important>If you specify
      *         a preset in <code>PresetId</code> for which the value of
@@ -711,7 +711,7 @@ public class JobOutput implements Serializable {
      * include it in <code>OutputKeys</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
+     * <b>Pattern: </b>^\d{1,5}(\.\d{0,5})?$<br/>
      *
      * @param segmentDuration <important>(Outputs in MPEG-TS format only.</important>If you specify
      *         a preset in <code>PresetId</code> for which the value of
@@ -745,7 +745,7 @@ public class JobOutput implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
+     * <b>Pattern: </b>^\d{1,5}(\.\d{0,5})?$<br/>
      *
      * @param segmentDuration <important>(Outputs in MPEG-TS format only.</important>If you specify
      *         a preset in <code>PresetId</code> for which the value of

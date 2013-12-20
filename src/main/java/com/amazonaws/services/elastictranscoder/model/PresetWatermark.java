@@ -55,7 +55,7 @@ public class PresetWatermark implements Serializable {
      * <code>MaxWidth</code>.</ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
+     * <b>Pattern: </b>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
      */
     private String maxWidth;
 
@@ -71,7 +71,7 @@ public class PresetWatermark implements Serializable {
      * <code>MaxHeight</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
+     * <b>Pattern: </b>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
      */
     private String maxHeight;
 
@@ -131,7 +131,7 @@ public class PresetWatermark implements Serializable {
      * offset calculation.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
+     * <b>Pattern: </b>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
      */
     private String horizontalOffset;
 
@@ -170,7 +170,7 @@ public class PresetWatermark implements Serializable {
      * by Elastic Transcoder, if any, in the offset calculation.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
+     * <b>Pattern: </b>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
      */
     private String verticalOffset;
 
@@ -185,7 +185,7 @@ public class PresetWatermark implements Serializable {
      * The .jpg file format doesn't support transparency.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^\d{1,3}([.]\d{0,20})?$<br/>
+     * <b>Pattern: </b>^\d{1,3}(\.\d{0,20})?$<br/>
      */
     private String opacity;
 
@@ -272,7 +272,7 @@ public class PresetWatermark implements Serializable {
      * <code>MaxWidth</code>.</ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
+     * <b>Pattern: </b>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
      *
      * @return The maximum width of the watermark in one of the following formats:
      *         <ul> <li>number of pixels (px): The minimum value is 16 pixels, and
@@ -300,7 +300,7 @@ public class PresetWatermark implements Serializable {
      * <code>MaxWidth</code>.</ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
+     * <b>Pattern: </b>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
      *
      * @param maxWidth The maximum width of the watermark in one of the following formats:
      *         <ul> <li>number of pixels (px): The minimum value is 16 pixels, and
@@ -330,7 +330,7 @@ public class PresetWatermark implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
+     * <b>Pattern: </b>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
      *
      * @param maxWidth The maximum width of the watermark in one of the following formats:
      *         <ul> <li>number of pixels (px): The minimum value is 16 pixels, and
@@ -362,7 +362,7 @@ public class PresetWatermark implements Serializable {
      * <code>MaxHeight</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
+     * <b>Pattern: </b>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
      *
      * @return The maximum height of the watermark in one of the following formats:
      *         <ul> <li>number of pixels (px): The minimum value is 16 pixels, and
@@ -390,7 +390,7 @@ public class PresetWatermark implements Serializable {
      * <code>MaxHeight</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
+     * <b>Pattern: </b>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
      *
      * @param maxHeight The maximum height of the watermark in one of the following formats:
      *         <ul> <li>number of pixels (px): The minimum value is 16 pixels, and
@@ -420,7 +420,7 @@ public class PresetWatermark implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
+     * <b>Pattern: </b>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
      *
      * @param maxHeight The maximum height of the watermark in one of the following formats:
      *         <ul> <li>number of pixels (px): The minimum value is 16 pixels, and
@@ -659,7 +659,7 @@ public class PresetWatermark implements Serializable {
      * offset calculation.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
+     * <b>Pattern: </b>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
      *
      * @return The amount by which you want the horizontal position of the watermark
      *         to be offset from the position specified by HorizontalAlign: <ul>
@@ -705,7 +705,7 @@ public class PresetWatermark implements Serializable {
      * offset calculation.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
+     * <b>Pattern: </b>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
      *
      * @param horizontalOffset The amount by which you want the horizontal position of the watermark
      *         to be offset from the position specified by HorizontalAlign: <ul>
@@ -753,7 +753,7 @@ public class PresetWatermark implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
+     * <b>Pattern: </b>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
      *
      * @param horizontalOffset The amount by which you want the horizontal position of the watermark
      *         to be offset from the position specified by HorizontalAlign: <ul>
@@ -881,7 +881,7 @@ public class PresetWatermark implements Serializable {
      * by Elastic Transcoder, if any, in the offset calculation.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
+     * <b>Pattern: </b>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
      *
      * @return <code>VerticalOffset</code> <p>The amount by which you want the
      *         vertical position of the watermark to be offset from the position
@@ -927,7 +927,7 @@ public class PresetWatermark implements Serializable {
      * by Elastic Transcoder, if any, in the offset calculation.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
+     * <b>Pattern: </b>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
      *
      * @param verticalOffset <code>VerticalOffset</code> <p>The amount by which you want the
      *         vertical position of the watermark to be offset from the position
@@ -975,7 +975,7 @@ public class PresetWatermark implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
+     * <b>Pattern: </b>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)<br/>
      *
      * @param verticalOffset <code>VerticalOffset</code> <p>The amount by which you want the
      *         vertical position of the watermark to be offset from the position
@@ -1015,7 +1015,7 @@ public class PresetWatermark implements Serializable {
      * The .jpg file format doesn't support transparency.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^\d{1,3}([.]\d{0,20})?$<br/>
+     * <b>Pattern: </b>^\d{1,3}(\.\d{0,20})?$<br/>
      *
      * @return A percentage that indicates how much you want a watermark to obscure
      *         the video in the location where it appears. Valid values are 0 (the
@@ -1041,7 +1041,7 @@ public class PresetWatermark implements Serializable {
      * The .jpg file format doesn't support transparency.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^\d{1,3}([.]\d{0,20})?$<br/>
+     * <b>Pattern: </b>^\d{1,3}(\.\d{0,20})?$<br/>
      *
      * @param opacity A percentage that indicates how much you want a watermark to obscure
      *         the video in the location where it appears. Valid values are 0 (the
@@ -1069,7 +1069,7 @@ public class PresetWatermark implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^\d{1,3}([.]\d{0,20})?$<br/>
+     * <b>Pattern: </b>^\d{1,3}(\.\d{0,20})?$<br/>
      *
      * @param opacity A percentage that indicates how much you want a watermark to obscure
      *         the video in the location where it appears. Valid values are 0 (the

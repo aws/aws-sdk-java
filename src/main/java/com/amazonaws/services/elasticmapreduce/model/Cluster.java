@@ -25,17 +25,11 @@ public class Cluster implements Serializable {
 
     /**
      * The unique identifier for the cluster.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      */
     private String id;
 
     /**
      * The name of the cluster.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String name;
 
@@ -60,9 +54,6 @@ public class Cluster implements Serializable {
     /**
      * The AMI version requested for this cluster.<!-- For more information,
      * see <a>JobFlowDetail$AmiVersion</a>.-->
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String requestedAmiVersion;
 
@@ -71,9 +62,6 @@ public class Cluster implements Serializable {
      * requested version only if the requested version is a meta version,
      * such as "latest". <!--For more information, see
      * <a>JobFlowDetail$AmiVersion</a>.-->
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String runningAmiVersion;
 
@@ -107,10 +95,12 @@ public class Cluster implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Application> applications;
 
     /**
+     * A list of tags associated with a cluster.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
+
+    /**
      * The unique identifier for the cluster.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @return The unique identifier for the cluster.
      */
@@ -120,9 +110,6 @@ public class Cluster implements Serializable {
     
     /**
      * The unique identifier for the cluster.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @param id The unique identifier for the cluster.
      */
@@ -134,9 +121,6 @@ public class Cluster implements Serializable {
      * The unique identifier for the cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @param id The unique identifier for the cluster.
      *
@@ -150,9 +134,6 @@ public class Cluster implements Serializable {
 
     /**
      * The name of the cluster.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return The name of the cluster.
      */
@@ -162,9 +143,6 @@ public class Cluster implements Serializable {
     
     /**
      * The name of the cluster.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param name The name of the cluster.
      */
@@ -176,9 +154,6 @@ public class Cluster implements Serializable {
      * The name of the cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param name The name of the cluster.
      *
@@ -310,9 +285,6 @@ public class Cluster implements Serializable {
     /**
      * The AMI version requested for this cluster.<!-- For more information,
      * see <a>JobFlowDetail$AmiVersion</a>.-->
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return The AMI version requested for this cluster.<!-- For more information,
      *         see <a>JobFlowDetail$AmiVersion</a>.-->
@@ -324,9 +296,6 @@ public class Cluster implements Serializable {
     /**
      * The AMI version requested for this cluster.<!-- For more information,
      * see <a>JobFlowDetail$AmiVersion</a>.-->
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param requestedAmiVersion The AMI version requested for this cluster.<!-- For more information,
      *         see <a>JobFlowDetail$AmiVersion</a>.-->
@@ -340,9 +309,6 @@ public class Cluster implements Serializable {
      * see <a>JobFlowDetail$AmiVersion</a>.-->
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param requestedAmiVersion The AMI version requested for this cluster.<!-- For more information,
      *         see <a>JobFlowDetail$AmiVersion</a>.-->
@@ -360,9 +326,6 @@ public class Cluster implements Serializable {
      * requested version only if the requested version is a meta version,
      * such as "latest". <!--For more information, see
      * <a>JobFlowDetail$AmiVersion</a>.-->
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return The AMI version running on this cluster. This differs from the
      *         requested version only if the requested version is a meta version,
@@ -378,9 +341,6 @@ public class Cluster implements Serializable {
      * requested version only if the requested version is a meta version,
      * such as "latest". <!--For more information, see
      * <a>JobFlowDetail$AmiVersion</a>.-->
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param runningAmiVersion The AMI version running on this cluster. This differs from the
      *         requested version only if the requested version is a meta version,
@@ -398,9 +358,6 @@ public class Cluster implements Serializable {
      * <a>JobFlowDetail$AmiVersion</a>.-->
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param runningAmiVersion The AMI version running on this cluster. This differs from the
      *         requested version only if the requested version is a meta version,
@@ -682,6 +639,74 @@ public class Cluster implements Serializable {
     }
 
     /**
+     * A list of tags associated with a cluster.
+     *
+     * @return A list of tags associated with a cluster.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags associated with a cluster.
+     *
+     * @param tags A list of tags associated with a cluster.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags associated with a cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags associated with a cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Cluster withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags associated with a cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags associated with a cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Cluster withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -703,7 +728,8 @@ public class Cluster implements Serializable {
         if (isAutoTerminate() != null) sb.append("AutoTerminate: " + isAutoTerminate() + ",");
         if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() + ",");
         if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ",");
-        if (getApplications() != null) sb.append("Applications: " + getApplications() );
+        if (getApplications() != null) sb.append("Applications: " + getApplications() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -724,6 +750,7 @@ public class Cluster implements Serializable {
         hashCode = prime * hashCode + ((isTerminationProtected() == null) ? 0 : isTerminationProtected().hashCode()); 
         hashCode = prime * hashCode + ((isVisibleToAllUsers() == null) ? 0 : isVisibleToAllUsers().hashCode()); 
         hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -757,6 +784,8 @@ public class Cluster implements Serializable {
         if (other.isVisibleToAllUsers() != null && other.isVisibleToAllUsers().equals(this.isVisibleToAllUsers()) == false) return false; 
         if (other.getApplications() == null ^ this.getApplications() == null) return false;
         if (other.getApplications() != null && other.getApplications().equals(this.getApplications()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

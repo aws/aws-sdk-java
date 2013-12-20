@@ -119,6 +119,14 @@ public class MetricAdmin implements MetricAdminMBean {
         AwsSdkMetrics.setJvmMetricName(jvmMetricName);
     }
     @Override
+    public String getHostMetricName() {
+        return AwsSdkMetrics.getHostMetricName();
+    }
+    @Override
+    public void setHostMetricName(String hostMetricName) {
+        AwsSdkMetrics.setHostMetricName(hostMetricName);
+    }
+    @Override
     public String getCredentialFile() {
         return AwsSdkMetrics.getCredentailFile();
     }

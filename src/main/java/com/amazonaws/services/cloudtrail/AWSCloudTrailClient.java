@@ -226,7 +226,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         exceptionUnmarshallers.add(new InsufficientSnsTopicPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TrailNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTrailNameExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InternalErrorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new S3BucketDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientS3BucketPolicyExceptionUnmarshaller());
         
@@ -254,7 +253,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @return The response from the GetTrailStatus service method, as
      *         returned by AWSCloudTrail.
      * 
-     * @throws InternalErrorException
      * @throws InvalidTrailNameException
      * @throws TrailNotFoundException
      *
@@ -302,7 +300,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @return The response from the DeleteTrail service method, as returned
      *         by AWSCloudTrail.
      * 
-     * @throws InternalErrorException
      * @throws InvalidTrailNameException
      * @throws TrailNotFoundException
      *
@@ -370,7 +367,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         by AWSCloudTrail.
      * 
      * @throws S3BucketDoesNotExistException
-     * @throws InternalErrorException
      * @throws InvalidS3PrefixException
      * @throws InvalidTrailNameException
      * @throws TrailAlreadyExistsException
@@ -434,7 +430,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         by AWSCloudTrail.
      * 
      * @throws S3BucketDoesNotExistException
-     * @throws InternalErrorException
      * @throws InvalidS3PrefixException
      * @throws InvalidTrailNameException
      * @throws InvalidS3BucketNameException
@@ -489,7 +484,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @return The response from the DescribeTrails service method, as
      *         returned by AWSCloudTrail.
      * 
-     * @throws InternalErrorException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -538,7 +532,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @return The response from the StopLogging service method, as returned
      *         by AWSCloudTrail.
      * 
-     * @throws InternalErrorException
      * @throws InvalidTrailNameException
      * @throws TrailNotFoundException
      *
@@ -587,11 +580,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @return The response from the StartLogging service method, as returned
      *         by AWSCloudTrail.
      * 
-     * @throws S3BucketDoesNotExistException
-     * @throws InternalErrorException
      * @throws InvalidTrailNameException
-     * @throws InsufficientSnsTopicPolicyException
-     * @throws InsufficientS3BucketPolicyException
      * @throws TrailNotFoundException
      *
      * @throws AmazonClientException
@@ -636,7 +625,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @return The response from the DescribeTrails service method, as
      *         returned by AWSCloudTrail.
      * 
-     * @throws InternalErrorException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

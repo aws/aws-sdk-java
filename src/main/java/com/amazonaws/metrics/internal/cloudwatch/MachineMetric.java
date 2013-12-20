@@ -14,8 +14,14 @@
  */
 package com.amazonaws.metrics.internal.cloudwatch;
 
+import com.amazonaws.metrics.MetricType;
 
-enum MachineMetric {
+/**
+ * <a href=
+ * "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/metrics/package-summary.html"
+ * >Machine Metrics</a>.
+ */
+enum MachineMetric implements MetricType {
     // JVM Metrics
     TotalMemory(Dim.Memory, MetricName.JvmMetric),
     FreeMemory(Dim.Memory, MetricName.JvmMetric),
