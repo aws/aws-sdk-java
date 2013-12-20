@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class AudioParameters implements Serializable {
 
     /**
-     * the audio codec for the output file. Valid values include
+     * The audio codec for the output file. Valid values include
      * <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -65,13 +65,23 @@ public class AudioParameters implements Serializable {
     private String channels;
 
     /**
-     * the audio codec for the output file. Valid values include
+     * If you specified <code>AAC</code> for <code>Audio:Codec</code>, this
+     * is the <code>AAC</code> compression profile to use. Valid values
+     * include: <p><code>auto</code>, <code>AAC-LC</code>,
+     * <code>HE-AAC</code>, <code>HE-AACv2</code> <p>If you specify
+     * <code>auto</code>, Elastic Transcoder chooses a profile based on the
+     * bit rate of the output file.
+     */
+    private AudioCodecOptions codecOptions;
+
+    /**
+     * The audio codec for the output file. Valid values include
      * <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^AAC$)|(^vorbis$)|(^mp3$)<br/>
      *
-     * @return the audio codec for the output file. Valid values include
+     * @return The audio codec for the output file. Valid values include
      *         <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
      */
     public String getCodec() {
@@ -79,13 +89,13 @@ public class AudioParameters implements Serializable {
     }
     
     /**
-     * the audio codec for the output file. Valid values include
+     * The audio codec for the output file. Valid values include
      * <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^AAC$)|(^vorbis$)|(^mp3$)<br/>
      *
-     * @param codec the audio codec for the output file. Valid values include
+     * @param codec The audio codec for the output file. Valid values include
      *         <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
      */
     public void setCodec(String codec) {
@@ -93,7 +103,7 @@ public class AudioParameters implements Serializable {
     }
     
     /**
-     * the audio codec for the output file. Valid values include
+     * The audio codec for the output file. Valid values include
      * <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -101,7 +111,7 @@ public class AudioParameters implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^AAC$)|(^vorbis$)|(^mp3$)<br/>
      *
-     * @param codec the audio codec for the output file. Valid values include
+     * @param codec The audio codec for the output file. Valid values include
      *         <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -287,6 +297,69 @@ public class AudioParameters implements Serializable {
     }
 
     /**
+     * If you specified <code>AAC</code> for <code>Audio:Codec</code>, this
+     * is the <code>AAC</code> compression profile to use. Valid values
+     * include: <p><code>auto</code>, <code>AAC-LC</code>,
+     * <code>HE-AAC</code>, <code>HE-AACv2</code> <p>If you specify
+     * <code>auto</code>, Elastic Transcoder chooses a profile based on the
+     * bit rate of the output file.
+     *
+     * @return If you specified <code>AAC</code> for <code>Audio:Codec</code>, this
+     *         is the <code>AAC</code> compression profile to use. Valid values
+     *         include: <p><code>auto</code>, <code>AAC-LC</code>,
+     *         <code>HE-AAC</code>, <code>HE-AACv2</code> <p>If you specify
+     *         <code>auto</code>, Elastic Transcoder chooses a profile based on the
+     *         bit rate of the output file.
+     */
+    public AudioCodecOptions getCodecOptions() {
+        return codecOptions;
+    }
+    
+    /**
+     * If you specified <code>AAC</code> for <code>Audio:Codec</code>, this
+     * is the <code>AAC</code> compression profile to use. Valid values
+     * include: <p><code>auto</code>, <code>AAC-LC</code>,
+     * <code>HE-AAC</code>, <code>HE-AACv2</code> <p>If you specify
+     * <code>auto</code>, Elastic Transcoder chooses a profile based on the
+     * bit rate of the output file.
+     *
+     * @param codecOptions If you specified <code>AAC</code> for <code>Audio:Codec</code>, this
+     *         is the <code>AAC</code> compression profile to use. Valid values
+     *         include: <p><code>auto</code>, <code>AAC-LC</code>,
+     *         <code>HE-AAC</code>, <code>HE-AACv2</code> <p>If you specify
+     *         <code>auto</code>, Elastic Transcoder chooses a profile based on the
+     *         bit rate of the output file.
+     */
+    public void setCodecOptions(AudioCodecOptions codecOptions) {
+        this.codecOptions = codecOptions;
+    }
+    
+    /**
+     * If you specified <code>AAC</code> for <code>Audio:Codec</code>, this
+     * is the <code>AAC</code> compression profile to use. Valid values
+     * include: <p><code>auto</code>, <code>AAC-LC</code>,
+     * <code>HE-AAC</code>, <code>HE-AACv2</code> <p>If you specify
+     * <code>auto</code>, Elastic Transcoder chooses a profile based on the
+     * bit rate of the output file.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param codecOptions If you specified <code>AAC</code> for <code>Audio:Codec</code>, this
+     *         is the <code>AAC</code> compression profile to use. Valid values
+     *         include: <p><code>auto</code>, <code>AAC-LC</code>,
+     *         <code>HE-AAC</code>, <code>HE-AACv2</code> <p>If you specify
+     *         <code>auto</code>, Elastic Transcoder chooses a profile based on the
+     *         bit rate of the output file.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public AudioParameters withCodecOptions(AudioCodecOptions codecOptions) {
+        this.codecOptions = codecOptions;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -301,7 +374,8 @@ public class AudioParameters implements Serializable {
         if (getCodec() != null) sb.append("Codec: " + getCodec() + ",");
         if (getSampleRate() != null) sb.append("SampleRate: " + getSampleRate() + ",");
         if (getBitRate() != null) sb.append("BitRate: " + getBitRate() + ",");
-        if (getChannels() != null) sb.append("Channels: " + getChannels() );
+        if (getChannels() != null) sb.append("Channels: " + getChannels() + ",");
+        if (getCodecOptions() != null) sb.append("CodecOptions: " + getCodecOptions() );
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +389,7 @@ public class AudioParameters implements Serializable {
         hashCode = prime * hashCode + ((getSampleRate() == null) ? 0 : getSampleRate().hashCode()); 
         hashCode = prime * hashCode + ((getBitRate() == null) ? 0 : getBitRate().hashCode()); 
         hashCode = prime * hashCode + ((getChannels() == null) ? 0 : getChannels().hashCode()); 
+        hashCode = prime * hashCode + ((getCodecOptions() == null) ? 0 : getCodecOptions().hashCode()); 
         return hashCode;
     }
     
@@ -334,6 +409,8 @@ public class AudioParameters implements Serializable {
         if (other.getBitRate() != null && other.getBitRate().equals(this.getBitRate()) == false) return false; 
         if (other.getChannels() == null ^ this.getChannels() == null) return false;
         if (other.getChannels() != null && other.getChannels().equals(this.getChannels()) == false) return false; 
+        if (other.getCodecOptions() == null ^ this.getCodecOptions() == null) return false;
+        if (other.getCodecOptions() != null && other.getCodecOptions().equals(this.getCodecOptions()) == false) return false; 
         return true;
     }
     

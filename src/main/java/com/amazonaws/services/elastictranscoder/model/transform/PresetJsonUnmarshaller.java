@@ -49,6 +49,10 @@ public class PresetJsonUnmarshaller implements Unmarshaller<Preset, JsonUnmarsha
                     context.nextToken();
                     preset.setId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    preset.setArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     preset.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));

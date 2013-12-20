@@ -25,17 +25,11 @@ public class StepSummary implements Serializable {
 
     /**
      * The identifier of the cluster step.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      */
     private String id;
 
     /**
      * The name of the cluster step.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String name;
 
@@ -46,9 +40,6 @@ public class StepSummary implements Serializable {
 
     /**
      * The identifier of the cluster step.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @return The identifier of the cluster step.
      */
@@ -58,9 +49,6 @@ public class StepSummary implements Serializable {
     
     /**
      * The identifier of the cluster step.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @param id The identifier of the cluster step.
      */
@@ -72,9 +60,6 @@ public class StepSummary implements Serializable {
      * The identifier of the cluster step.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @param id The identifier of the cluster step.
      *
@@ -88,9 +73,6 @@ public class StepSummary implements Serializable {
 
     /**
      * The name of the cluster step.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return The name of the cluster step.
      */
@@ -100,9 +82,6 @@ public class StepSummary implements Serializable {
     
     /**
      * The name of the cluster step.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param name The name of the cluster step.
      */
@@ -114,9 +93,6 @@ public class StepSummary implements Serializable {
      * The name of the cluster step.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param name The name of the cluster step.
      *

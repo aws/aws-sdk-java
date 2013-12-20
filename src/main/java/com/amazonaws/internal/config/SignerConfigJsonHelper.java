@@ -21,16 +21,11 @@ package com.amazonaws.internal.config;
  * marshaller/unmarshaller.
  */
 class SignerConfigJsonHelper implements Builder<SignerConfig> {
+
     private String signerType;
-    private boolean doubleUrlEncode;
 
-    SignerConfigJsonHelper(SignerType signerType, boolean doubleUrlEncode) {
-        this.signerType = signerType.name();
-        this.doubleUrlEncode = doubleUrlEncode;
-    }
-
-    SignerConfigJsonHelper(SignerType signerType) {
-        this(signerType, false);
+    SignerConfigJsonHelper(String signerType) {
+        this.signerType = signerType;
     }
 
     SignerConfigJsonHelper() {}
@@ -39,20 +34,12 @@ class SignerConfigJsonHelper implements Builder<SignerConfig> {
         return signerType;
     }
 
-    public boolean isDoubleUrlEncode() {
-        return doubleUrlEncode;
-    }
-
     void setSignerType(String signerType) {
         this.signerType = signerType;
     }
 
-    void setDoubleUrlEncode(boolean doubleUrlEncode) {
-        this.doubleUrlEncode = doubleUrlEncode;
-    }
-
-    @Override public SignerConfig build() {
-        SignerType signerType = SignerType.valueOf(this.signerType);
-        return new SignerConfig(signerType, doubleUrlEncode);
+    @Override
+    public SignerConfig build() {
+        return new SignerConfig(signerType);
     }
 }

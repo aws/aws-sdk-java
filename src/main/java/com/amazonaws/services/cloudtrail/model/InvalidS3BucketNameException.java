@@ -17,7 +17,9 @@ package com.amazonaws.services.cloudtrail.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AWSCloudTrail exception
+ * <p>
+ * This exception is thrown when the provided S3 bucket name is not valid.
+ * </p>
  */        
 public class InvalidS3BucketNameException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

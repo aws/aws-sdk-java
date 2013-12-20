@@ -49,6 +49,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                     context.nextToken();
                     job.setId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    job.setArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("PipelineId", targetDepth)) {
                     context.nextToken();
                     job.setPipelineId(StringJsonUnmarshaller.getInstance().unmarshall(context));

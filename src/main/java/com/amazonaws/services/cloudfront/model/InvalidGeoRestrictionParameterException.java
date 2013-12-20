@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package com.amazonaws.services.cloudtrail.model;
+package com.amazonaws.services.cloudfront.model;
 
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AWSCloudTrail exception
+ * AmazonCloudFront exception
  */        
-public class InternalErrorException extends AmazonServiceException {
+public class InvalidGeoRestrictionParameterException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     
     /**
-     * Constructs a new InternalErrorException with the specified error
+     * Constructs a new InvalidGeoRestrictionParameterException with the specified error
      * message.
      * 
      * @param message Describes the error encountered.
      */
-    public InternalErrorException(String message) {
+    public InvalidGeoRestrictionParameterException(String message) {
         super(message);
     }
     

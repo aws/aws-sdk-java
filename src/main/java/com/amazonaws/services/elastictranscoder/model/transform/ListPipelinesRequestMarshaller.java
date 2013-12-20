@@ -50,7 +50,9 @@ public class ListPipelinesRequestMarshaller implements Marshaller<Request<ListPi
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2012-09-25/pipelines"; 
+        String uriResourcePath = "2012-09-25/pipelines?Ascending={Ascending};PageToken={PageToken}"; 
+        uriResourcePath = uriResourcePath.replace("{Ascending}", (listPipelinesRequest.getAscending() == null) ? "" : StringUtils.fromString(listPipelinesRequest.getAscending())); 
+        uriResourcePath = uriResourcePath.replace("{PageToken}", (listPipelinesRequest.getPageToken() == null) ? "" : StringUtils.fromString(listPipelinesRequest.getPageToken())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 

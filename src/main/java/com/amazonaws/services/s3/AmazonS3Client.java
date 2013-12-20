@@ -49,13 +49,16 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.HttpMethod;
 import com.amazonaws.Request;
 import com.amazonaws.Response;
+import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSCredentialsProviderChain;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.auth.EnvironmentVariableCredentialsProvider;
 import com.amazonaws.auth.InstanceProfileCredentialsProvider;
+import com.amazonaws.auth.Presigner;
 import com.amazonaws.auth.Signer;
+import com.amazonaws.auth.SignerFactory;
 import com.amazonaws.auth.SystemPropertiesCredentialsProvider;
 import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.event.ProgressListener;
@@ -70,6 +73,7 @@ import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.RegionUtils;
+import com.amazonaws.services.s3.internal.AWSS3V4Signer;
 import com.amazonaws.services.s3.internal.BucketNameUtils;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
@@ -188,7 +192,7 @@ import com.amazonaws.util.Md5Utils;
  * and is designed to make web-scale computing easier for developers.
  * </p>
  * <p>
- * The Amazon S3 Java SDK provides a simple interface that can be
+ * The Amazon S3 Java Client provides a simple interface that can be
  * used to store and retrieve any amount of data, at any time,
  * from anywhere on the web. It gives any developer access to the same
  * highly scalable, reliable, secure, fast, inexpensive infrastructure
@@ -206,11 +210,19 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     public static final String S3_SERVICE_NAME = "s3";
 
+    private static final String S3_SIGNER = "S3SignerType";
+    private static final String S3_V4_SIGNER = "AWSS3V4SignerType";
+
     /** Shared logger for client events */
     private static Log log = LogFactory.getLog(AmazonS3Client.class);
 
-    static { // enable S3 specific predefined request metrics
+    static {
+        // Enable S3 specific predefined request metrics.
         AwsSdkMetrics.addAll(Arrays.asList(S3ServiceMetric.values()));
+
+        // Register S3-specific signers.
+        SignerFactory.registerSigner(S3_SIGNER, S3Signer.class);
+        SignerFactory.registerSigner(S3_V4_SIGNER, AWSS3V4Signer.class);
     }
 
     /** Responsible for handling error responses from all S3 service calls. */
@@ -227,6 +239,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
+
+    private String serviceName;
+    private String regionName;
+    private AWSS3V4Signer v4Signer;
 
     /**
      * Constructs a new client to invoke service methods on Amazon S3. A
@@ -418,6 +434,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // default, strict hostname verification to be more lenient.
         client.disableStrictHostnameVerification();
 
+        // calling this.setEndpoint(...) will also modify the signer accordingly
         setEndpoint(Constants.S3_HOSTNAME);
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
@@ -425,6 +442,18 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 "/com/amazonaws/services/s3/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
                 "/com/amazonaws/services/s3/request.handler2s"));
+    }
+
+    @Override
+    public void setEndpoint(final String endpoint,
+                            final String serviceName,
+                            final String regionName) {
+
+        super.setEndpoint(endpoint, serviceName, regionName);
+
+        this.v4Signer = null;
+        this.serviceName = serviceName;
+        this.regionName = regionName;
     }
 
     /**
@@ -435,7 +464,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *            The S3 client options to use.
      */
     public void setS3ClientOptions(S3ClientOptions clientOptions) {
-      this.clientOptions = new S3ClientOptions(clientOptions);
+        this.clientOptions = new S3ClientOptions(clientOptions);
     }
 
     /* (non-Javadoc)
@@ -622,7 +651,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     /* (non-Javadoc)
-     * @see com.amazonaws.services.s3.AmazonS3#createBucket(java.lang.String)
+     * @see com.amazonaws.services.s3.AmazonS3#createBucketjava.lang.String)
      */
     public Bucket createBucket(String bucketName)
             throws AmazonClientException, AmazonServiceException {
@@ -2232,8 +2261,27 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         addResponseHeaderParameters(request, generatePresignedUrlRequest.getResponseHeaders());
 
-        presignRequest(request, generatePresignedUrlRequest.getMethod(),
-                bucketName, key, generatePresignedUrlRequest.getExpiration(), null);
+        Signer signer = getSigner();
+        if (signer instanceof Presigner) {
+            // If we have a signer which knows how to presign requests,
+            // delegate directly to it.
+            ((Presigner) signer).presignRequest(
+                request,
+                awsCredentialsProvider.getCredentials(),
+                generatePresignedUrlRequest.getExpiration()
+            );
+        } else {
+            // Otherwise use the default presigning method, which is hardcoded
+            // to use QueryStringSigner.
+            presignRequest(
+                request,
+                generatePresignedUrlRequest.getMethod(),
+                bucketName,
+                key,
+                generatePresignedUrlRequest.getExpiration(),
+                null
+            );
+        }
 
         // Remove the leading slash (if any) in the resource-path
         return ServiceUtils.convertRequestToUrl(request, true);
@@ -2702,13 +2750,67 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         invoke(request, voidResponseHandler, bucketName, key);
     }
 
-    protected Signer createSigner(Request<?> request, String bucketName, String key) {
-        String resourcePath =
+    protected Signer createSigner(final Request<?> request,
+                                  final String bucketName,
+                                  final String key) {
+
+        if (upgradeToSigV4()){
+            if (v4Signer == null) {
+                v4Signer = new AWSS3V4Signer();
+                v4Signer.setServiceName(serviceName);
+                v4Signer.setRegionName(regionName);
+            }
+            return v4Signer;
+        }
+
+        Signer signer = getSigner();
+
+        if (signer instanceof S3Signer) {
+
+            // The old S3Signer needs a method and path passed to its
+            // constructor; if that's what we should use, getSigner()
+            // will return a dummy instance and we need to create a
+            // new one with the appropriate values for this request.
+
+            String resourcePath =
                 "/" +
                 ((bucketName != null) ? bucketName + "/" : "") +
                 ((key != null) ? key : "");
 
-        return new S3Signer(request.getHttpMethod().toString(), resourcePath);
+            return new S3Signer(request.getHttpMethod().toString(),
+                                resourcePath);
+        }
+
+        return signer;
+    }
+
+    private boolean upgradeToSigV4() {
+
+        // User has said to always use SigV4 - this will fail if the user
+        // attempts to read from or write to a non-US-Standard bucket without
+        // explicitly setting the region.
+
+        if (System.getProperty(SDKGlobalConfiguration
+                .ENFORCE_S3_SIGV4_SYSTEM_PROPERTY) != null) {
+
+            return true;
+        }
+
+        // User has said to enable SigV4 if it's safe - this will fall back
+        // to SigV2 if the endpoint has not been set to one of the explicit
+        // regional endpoints because we can't be sure it will work otherwise.
+
+        if (System.getProperty(SDKGlobalConfiguration
+                .ENABLE_S3_SIGV4_SYSTEM_PROPERTY) != null
+            && !endpoint.getHost().endsWith(Constants.S3_HOSTNAME)) {
+
+            return true;
+        }
+
+        // Go with the default (SigV4 only if we know we're talking to an
+        // endpoint that requires SigV4).
+
+        return false;
     }
 
     /**

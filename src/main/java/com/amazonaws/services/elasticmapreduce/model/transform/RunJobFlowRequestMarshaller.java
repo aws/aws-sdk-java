@@ -329,6 +329,27 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
                 jsonWriter.key("JobFlowRole").value(runJobFlowRequest.getJobFlowRole());
             }
 
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsList = (com.amazonaws.internal.ListWithAutoConstructFlag<Tag>)(runJobFlowRequest.getTags());
+            if (tagsList != null && !(tagsList.isAutoConstruct() && tagsList.isEmpty())) {
+
+                jsonWriter.key("Tags");
+                jsonWriter.array();
+
+                for (Tag tagsListValue : tagsList) {
+                    if (tagsListValue != null) {
+                        jsonWriter.object();
+                        if (tagsListValue.getKey() != null) {
+                            jsonWriter.key("Key").value(tagsListValue.getKey());
+                        }
+                        if (tagsListValue.getValue() != null) {
+                            jsonWriter.key("Value").value(tagsListValue.getValue());
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
           jsonWriter.endObject();
 
           String snippet = stringWriter.toString();

@@ -117,6 +117,12 @@ public class DistributionConfig implements Serializable {
     private ViewerCertificate viewerCertificate;
 
     /**
+     * A complex type that identifies ways in which you want to restrict
+     * distribution of your content.
+     */
+    private Restrictions restrictions;
+
+    /**
      * Default constructor for a new DistributionConfig object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -787,6 +793,45 @@ public class DistributionConfig implements Serializable {
     }
 
     /**
+     * A complex type that identifies ways in which you want to restrict
+     * distribution of your content.
+     *
+     * @return A complex type that identifies ways in which you want to restrict
+     *         distribution of your content.
+     */
+    public Restrictions getRestrictions() {
+        return restrictions;
+    }
+    
+    /**
+     * A complex type that identifies ways in which you want to restrict
+     * distribution of your content.
+     *
+     * @param restrictions A complex type that identifies ways in which you want to restrict
+     *         distribution of your content.
+     */
+    public void setRestrictions(Restrictions restrictions) {
+        this.restrictions = restrictions;
+    }
+    
+    /**
+     * A complex type that identifies ways in which you want to restrict
+     * distribution of your content.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param restrictions A complex type that identifies ways in which you want to restrict
+     *         distribution of your content.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DistributionConfig withRestrictions(Restrictions restrictions) {
+        this.restrictions = restrictions;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -809,7 +854,8 @@ public class DistributionConfig implements Serializable {
         if (getLogging() != null) sb.append("Logging: " + getLogging() + ",");
         if (getPriceClass() != null) sb.append("PriceClass: " + getPriceClass() + ",");
         if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ",");
-        if (getViewerCertificate() != null) sb.append("ViewerCertificate: " + getViewerCertificate() );
+        if (getViewerCertificate() != null) sb.append("ViewerCertificate: " + getViewerCertificate() + ",");
+        if (getRestrictions() != null) sb.append("Restrictions: " + getRestrictions() );
         sb.append("}");
         return sb.toString();
     }
@@ -831,6 +877,7 @@ public class DistributionConfig implements Serializable {
         hashCode = prime * hashCode + ((getPriceClass() == null) ? 0 : getPriceClass().hashCode()); 
         hashCode = prime * hashCode + ((isEnabled() == null) ? 0 : isEnabled().hashCode()); 
         hashCode = prime * hashCode + ((getViewerCertificate() == null) ? 0 : getViewerCertificate().hashCode()); 
+        hashCode = prime * hashCode + ((getRestrictions() == null) ? 0 : getRestrictions().hashCode()); 
         return hashCode;
     }
     
@@ -866,6 +913,8 @@ public class DistributionConfig implements Serializable {
         if (other.isEnabled() != null && other.isEnabled().equals(this.isEnabled()) == false) return false; 
         if (other.getViewerCertificate() == null ^ this.getViewerCertificate() == null) return false;
         if (other.getViewerCertificate() != null && other.getViewerCertificate().equals(this.getViewerCertificate()) == false) return false; 
+        if (other.getRestrictions() == null ^ this.getRestrictions() == null) return false;
+        if (other.getRestrictions() != null && other.getRestrictions().equals(this.getRestrictions()) == false) return false; 
         return true;
     }
     

@@ -25,17 +25,11 @@ public class InstanceGroup implements Serializable {
 
     /**
      * The identifier of the instance group.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      */
     private String id;
 
     /**
      * The name of the instance group.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String name;
 
@@ -59,9 +53,6 @@ public class InstanceGroup implements Serializable {
     /**
      * The bid price for each EC2 instance in the instance group when
      * launching nodes as Spot Instances, expressed in USD.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String bidPrice;
 
@@ -91,9 +82,6 @@ public class InstanceGroup implements Serializable {
 
     /**
      * The identifier of the instance group.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @return The identifier of the instance group.
      */
@@ -103,9 +91,6 @@ public class InstanceGroup implements Serializable {
     
     /**
      * The identifier of the instance group.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @param id The identifier of the instance group.
      */
@@ -117,9 +102,6 @@ public class InstanceGroup implements Serializable {
      * The identifier of the instance group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @param id The identifier of the instance group.
      *
@@ -133,9 +115,6 @@ public class InstanceGroup implements Serializable {
 
     /**
      * The name of the instance group.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return The name of the instance group.
      */
@@ -145,9 +124,6 @@ public class InstanceGroup implements Serializable {
     
     /**
      * The name of the instance group.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param name The name of the instance group.
      */
@@ -159,9 +135,6 @@ public class InstanceGroup implements Serializable {
      * The name of the instance group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param name The name of the instance group.
      *
@@ -350,9 +323,6 @@ public class InstanceGroup implements Serializable {
     /**
      * The bid price for each EC2 instance in the instance group when
      * launching nodes as Spot Instances, expressed in USD.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return The bid price for each EC2 instance in the instance group when
      *         launching nodes as Spot Instances, expressed in USD.
@@ -364,9 +334,6 @@ public class InstanceGroup implements Serializable {
     /**
      * The bid price for each EC2 instance in the instance group when
      * launching nodes as Spot Instances, expressed in USD.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param bidPrice The bid price for each EC2 instance in the instance group when
      *         launching nodes as Spot Instances, expressed in USD.
@@ -380,9 +347,6 @@ public class InstanceGroup implements Serializable {
      * launching nodes as Spot Instances, expressed in USD.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param bidPrice The bid price for each EC2 instance in the instance group when
      *         launching nodes as Spot Instances, expressed in USD.

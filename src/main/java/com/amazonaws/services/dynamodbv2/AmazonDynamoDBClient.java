@@ -46,6 +46,11 @@ import com.amazonaws.services.dynamodbv2.model.transform.*;
  */
 public class AmazonDynamoDBClient extends AmazonWebServiceClient implements AmazonDynamoDB {
 
+    // register the service specific set of predefined metrics
+    static {
+        AwsSdkMetrics.addAll(Arrays.asList(com.amazonaws.services.dynamodbv2.metrics.DynamoDBRequestMetric.values()));
+    }
+
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 

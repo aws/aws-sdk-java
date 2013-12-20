@@ -22,6 +22,9 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SignerFactory;
 import com.amazonaws.handlers.RequestHandler;
@@ -48,6 +51,9 @@ public abstract class AmazonWebServiceClient {
 
     private static final String AMAZON = "Amazon";
     private static final String AWS = "AWS";
+
+    private static final Log log =
+        LogFactory.getLog(AmazonWebServiceClient.class);
 
     /** The service endpoint to which this client will send requests. */
     protected URI endpoint;
@@ -198,8 +204,10 @@ public abstract class AmazonWebServiceClient {
      * Configures the signer by the given URI.
      */
     protected void configSigner(URI uri) {
-        String region = AwsHostNameUtils.parseRegionName(uri);
         String service = getServiceNameIntern();
+        String region =
+            AwsHostNameUtils.parseRegionName(uri.getHost(), service);
+
         signer = SignerFactory.getSigner(service, region);
     }
 
@@ -236,19 +244,39 @@ public abstract class AmazonWebServiceClient {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws IllegalArgumentException {
-        if ( region == null )
+        if ( region == null ) {
             throw new IllegalArgumentException("No region provided");
-        String serviceName = getServiceNameIntern();
-        if ( !region.isServiceSupported(serviceName) )
-            throw new IllegalArgumentException(serviceName + " isn't supported in region "
-                    + region.getName());
-        String serviceEndpoint = region.getServiceEndpoint(serviceName);
-        int protocolIdx = serviceEndpoint.indexOf("://");
-        // Strip off the protocol to allow the client config to specify it
-        if ( protocolIdx >= 0 ) {
-            serviceEndpoint = serviceEndpoint.substring(protocolIdx + "://".length());
         }
-        setEndpoint(serviceEndpoint);
+
+        String serviceName = getServiceNameIntern();
+        String serviceEndpoint;
+
+        if ( region.isServiceSupported(serviceName) ) {
+
+            serviceEndpoint = region.getServiceEndpoint(serviceName);
+
+            int protocolIdx = serviceEndpoint.indexOf("://");
+            // Strip off the protocol to allow the client config to specify it
+            if ( protocolIdx >= 0 ) {
+                serviceEndpoint =
+                    serviceEndpoint.substring(protocolIdx + "://".length());
+            }
+
+        } else {
+
+            serviceEndpoint = String.format("%s.%s.%s",
+                                            serviceName,
+                                            region.getName(),
+                                            region.getDomain());
+
+            log.info("{" + serviceName + ", " + region.getName() + "} was not "
+                     + "found in region metadata, trying to construct an "
+                     + "endpoint using the standard pattern for this region: '"
+                     + serviceEndpoint + "'.");
+
+        }
+
+        setEndpoint(serviceEndpoint, serviceName, region.getName());
     }
 
     public void setConfiguration(ClientConfiguration clientConfiguration) {

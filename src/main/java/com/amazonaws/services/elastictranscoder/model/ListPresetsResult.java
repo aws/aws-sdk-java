@@ -29,6 +29,17 @@ public class ListPresetsResult implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Preset> presets;
 
     /**
+     * A value that you use to access the second and subsequent pages of
+     * results, if any. When the presets fit on one page or when you've
+     * reached the last page of results, the value of
+     * <code>NextPageToken</code> is <code>null</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
+     */
+    private String nextPageToken;
+
+    /**
      * An array of <code>Preset</code> objects.
      *
      * @return An array of <code>Preset</code> objects.
@@ -97,6 +108,66 @@ public class ListPresetsResult implements Serializable {
     }
 
     /**
+     * A value that you use to access the second and subsequent pages of
+     * results, if any. When the presets fit on one page or when you've
+     * reached the last page of results, the value of
+     * <code>NextPageToken</code> is <code>null</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
+     *
+     * @return A value that you use to access the second and subsequent pages of
+     *         results, if any. When the presets fit on one page or when you've
+     *         reached the last page of results, the value of
+     *         <code>NextPageToken</code> is <code>null</code>.
+     */
+    public String getNextPageToken() {
+        return nextPageToken;
+    }
+    
+    /**
+     * A value that you use to access the second and subsequent pages of
+     * results, if any. When the presets fit on one page or when you've
+     * reached the last page of results, the value of
+     * <code>NextPageToken</code> is <code>null</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
+     *
+     * @param nextPageToken A value that you use to access the second and subsequent pages of
+     *         results, if any. When the presets fit on one page or when you've
+     *         reached the last page of results, the value of
+     *         <code>NextPageToken</code> is <code>null</code>.
+     */
+    public void setNextPageToken(String nextPageToken) {
+        this.nextPageToken = nextPageToken;
+    }
+    
+    /**
+     * A value that you use to access the second and subsequent pages of
+     * results, if any. When the presets fit on one page or when you've
+     * reached the last page of results, the value of
+     * <code>NextPageToken</code> is <code>null</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
+     *
+     * @param nextPageToken A value that you use to access the second and subsequent pages of
+     *         results, if any. When the presets fit on one page or when you've
+     *         reached the last page of results, the value of
+     *         <code>NextPageToken</code> is <code>null</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public ListPresetsResult withNextPageToken(String nextPageToken) {
+        this.nextPageToken = nextPageToken;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -108,7 +179,8 @@ public class ListPresetsResult implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPresets() != null) sb.append("Presets: " + getPresets() );
+        if (getPresets() != null) sb.append("Presets: " + getPresets() + ",");
+        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() );
         sb.append("}");
         return sb.toString();
     }
@@ -119,6 +191,7 @@ public class ListPresetsResult implements Serializable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getPresets() == null) ? 0 : getPresets().hashCode()); 
+        hashCode = prime * hashCode + ((getNextPageToken() == null) ? 0 : getNextPageToken().hashCode()); 
         return hashCode;
     }
     
@@ -132,6 +205,8 @@ public class ListPresetsResult implements Serializable {
         
         if (other.getPresets() == null ^ this.getPresets() == null) return false;
         if (other.getPresets() != null && other.getPresets().equals(this.getPresets()) == false) return false; 
+        if (other.getNextPageToken() == null ^ this.getNextPageToken() == null) return false;
+        if (other.getNextPageToken() != null && other.getNextPageToken().equals(this.getNextPageToken()) == false) return false; 
         return true;
     }
     

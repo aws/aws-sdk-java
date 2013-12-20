@@ -94,6 +94,65 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Adds tags to an Amazon EMR resource. Tags make it easier to associate
+     * clusters in various ways, such as grouping clusters to track your
+     * Amazon EMR resource allocation costs. For more information, see <a
+     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
+     * Tagging Amazon EMR Resources </a> .
+     * </p>
+     *
+     * @param addTagsRequest Container for the necessary parameters to
+     *           execute the AddTags operation on AmazonElasticMapReduce.
+     * 
+     * @return A Java Future object containing the response from the AddTags
+     *         service method, as returned by AmazonElasticMapReduce.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AddTagsResult> addTagsAsync(AddTagsRequest addTagsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Adds tags to an Amazon EMR resource. Tags make it easier to associate
+     * clusters in various ways, such as grouping clusters to track your
+     * Amazon EMR resource allocation costs. For more information, see <a
+     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
+     * Tagging Amazon EMR Resources </a> .
+     * </p>
+     *
+     * @param addTagsRequest Container for the necessary parameters to
+     *           execute the AddTags operation on AmazonElasticMapReduce.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the AddTags
+     *         service method, as returned by AmazonElasticMapReduce.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AddTagsResult> addTagsAsync(AddTagsRequest addTagsRequest,
+            AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Sets whether all AWS Identity and Access Management (IAM) users under
      * your account can access the specified job flows. This action works on
      * running job flows. You can also set the visibility of a job flow when
@@ -433,6 +492,67 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Removes tags from an Amazon EMR resource. Tags make it easier to
+     * associate clusters in various ways, such as grouping clusters to track
+     * your Amazon EMR resource allocation costs. For more information, see
+     * <a
+     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
+     * Tagging Amazon EMR Resources </a> .
+     * </p>
+     *
+     * @param removeTagsRequest Container for the necessary parameters to
+     *           execute the RemoveTags operation on AmazonElasticMapReduce.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RemoveTags service method, as returned by AmazonElasticMapReduce.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<RemoveTagsResult> removeTagsAsync(RemoveTagsRequest removeTagsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Removes tags from an Amazon EMR resource. Tags make it easier to
+     * associate clusters in various ways, such as grouping clusters to track
+     * your Amazon EMR resource allocation costs. For more information, see
+     * <a
+     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
+     * Tagging Amazon EMR Resources </a> .
+     * </p>
+     *
+     * @param removeTagsRequest Container for the necessary parameters to
+     *           execute the RemoveTags operation on AmazonElasticMapReduce.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RemoveTags service method, as returned by AmazonElasticMapReduce.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<RemoveTagsResult> removeTagsAsync(RemoveTagsRequest removeTagsRequest,
+            AsyncHandler<RemoveTagsRequest, RemoveTagsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Provides all available details about the instance groups in a cluster.
      * </p>
      *
@@ -734,6 +854,111 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
 
     /**
      * <p>
+     * SetTerminationProtection locks a job flow so the Amazon EC2 instances
+     * in the cluster cannot be terminated by user intervention, an API call,
+     * or in the event of a job-flow error. The cluster still terminates upon
+     * successful completion of the job flow. Calling
+     * SetTerminationProtection on a job flow is analogous to calling the
+     * Amazon EC2 DisableAPITermination API on all of the EC2 instances in a
+     * cluster.
+     * </p>
+     * <p>
+     * SetTerminationProtection is used to prevent accidental termination of
+     * a job flow and to ensure that in the event of an error, the instances
+     * will persist so you can recover any data stored in their ephemeral
+     * instance storage.
+     * </p>
+     * <p>
+     * To terminate a job flow that has been locked by setting
+     * SetTerminationProtection to <code>true</code> ,
+     * you must first unlock the job flow by a subsequent call to
+     * SetTerminationProtection in which you set the value to
+     * <code>false</code> .
+     * </p>
+     * <p>
+     * For more information, go to <a
+     * cMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">
+     * Protecting a Job Flow from Termination </a> in the <i>Amazon Elastic
+     * MapReduce Developer's Guide.</i>
+     * </p>
+     *
+     * @param setTerminationProtectionRequest Container for the necessary
+     *           parameters to execute the SetTerminationProtection operation on
+     *           AmazonElasticMapReduce.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetTerminationProtection service method, as returned by
+     *         AmazonElasticMapReduce.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setTerminationProtectionAsync(SetTerminationProtectionRequest setTerminationProtectionRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * SetTerminationProtection locks a job flow so the Amazon EC2 instances
+     * in the cluster cannot be terminated by user intervention, an API call,
+     * or in the event of a job-flow error. The cluster still terminates upon
+     * successful completion of the job flow. Calling
+     * SetTerminationProtection on a job flow is analogous to calling the
+     * Amazon EC2 DisableAPITermination API on all of the EC2 instances in a
+     * cluster.
+     * </p>
+     * <p>
+     * SetTerminationProtection is used to prevent accidental termination of
+     * a job flow and to ensure that in the event of an error, the instances
+     * will persist so you can recover any data stored in their ephemeral
+     * instance storage.
+     * </p>
+     * <p>
+     * To terminate a job flow that has been locked by setting
+     * SetTerminationProtection to <code>true</code> ,
+     * you must first unlock the job flow by a subsequent call to
+     * SetTerminationProtection in which you set the value to
+     * <code>false</code> .
+     * </p>
+     * <p>
+     * For more information, go to <a
+     * cMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">
+     * Protecting a Job Flow from Termination </a> in the <i>Amazon Elastic
+     * MapReduce Developer's Guide.</i>
+     * </p>
+     *
+     * @param setTerminationProtectionRequest Container for the necessary
+     *           parameters to execute the SetTerminationProtection operation on
+     *           AmazonElasticMapReduce.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetTerminationProtection service method, as returned by
+     *         AmazonElasticMapReduce.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setTerminationProtectionAsync(SetTerminationProtectionRequest setTerminationProtectionRequest,
+            AsyncHandler<SetTerminationProtectionRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * DescribeJobFlows returns a list of job flows that match all of the
      * supplied parameters. The parameters can include a list of job flow
      * IDs, job flow states, and restrictions on job flow creation date and
@@ -836,111 +1061,6 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      */
     public Future<DescribeJobFlowsResult> describeJobFlowsAsync(DescribeJobFlowsRequest describeJobFlowsRequest,
             AsyncHandler<DescribeJobFlowsRequest, DescribeJobFlowsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * SetTerminationProtection locks a job flow so the Amazon EC2 instances
-     * in the cluster cannot be terminated by user intervention, an API call,
-     * or in the event of a job-flow error. The cluster still terminates upon
-     * successful completion of the job flow. Calling
-     * SetTerminationProtection on a job flow is analogous to calling the
-     * Amazon EC2 DisableAPITermination API on all of the EC2 instances in a
-     * cluster.
-     * </p>
-     * <p>
-     * SetTerminationProtection is used to prevent accidental termination of
-     * a job flow and to ensure that in the event of an error, the instances
-     * will persist so you can recover any data stored in their ephemeral
-     * instance storage.
-     * </p>
-     * <p>
-     * To terminate a job flow that has been locked by setting
-     * SetTerminationProtection to <code>true</code> ,
-     * you must first unlock the job flow by a subsequent call to
-     * SetTerminationProtection in which you set the value to
-     * <code>false</code> .
-     * </p>
-     * <p>
-     * For more information, go to <a
-     * cMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">
-     * Protecting a Job Flow from Termination </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide.</i>
-     * </p>
-     *
-     * @param setTerminationProtectionRequest Container for the necessary
-     *           parameters to execute the SetTerminationProtection operation on
-     *           AmazonElasticMapReduce.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SetTerminationProtection service method, as returned by
-     *         AmazonElasticMapReduce.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticMapReduce indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> setTerminationProtectionAsync(SetTerminationProtectionRequest setTerminationProtectionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * SetTerminationProtection locks a job flow so the Amazon EC2 instances
-     * in the cluster cannot be terminated by user intervention, an API call,
-     * or in the event of a job-flow error. The cluster still terminates upon
-     * successful completion of the job flow. Calling
-     * SetTerminationProtection on a job flow is analogous to calling the
-     * Amazon EC2 DisableAPITermination API on all of the EC2 instances in a
-     * cluster.
-     * </p>
-     * <p>
-     * SetTerminationProtection is used to prevent accidental termination of
-     * a job flow and to ensure that in the event of an error, the instances
-     * will persist so you can recover any data stored in their ephemeral
-     * instance storage.
-     * </p>
-     * <p>
-     * To terminate a job flow that has been locked by setting
-     * SetTerminationProtection to <code>true</code> ,
-     * you must first unlock the job flow by a subsequent call to
-     * SetTerminationProtection in which you set the value to
-     * <code>false</code> .
-     * </p>
-     * <p>
-     * For more information, go to <a
-     * cMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">
-     * Protecting a Job Flow from Termination </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide.</i>
-     * </p>
-     *
-     * @param setTerminationProtectionRequest Container for the necessary
-     *           parameters to execute the SetTerminationProtection operation on
-     *           AmazonElasticMapReduce.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SetTerminationProtection service method, as returned by
-     *         AmazonElasticMapReduce.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticMapReduce indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> setTerminationProtectionAsync(SetTerminationProtectionRequest setTerminationProtectionRequest,
-            AsyncHandler<SetTerminationProtectionRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**

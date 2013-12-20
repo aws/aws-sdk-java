@@ -76,6 +76,21 @@ public class UpdateTrailRequestMarshaller implements Marshaller<Request<UpdateTr
 
           jsonWriter.object();
           
+            if (updateTrailRequest.getName() != null) {
+                jsonWriter.key("Name").value(updateTrailRequest.getName());
+            }
+            if (updateTrailRequest.getS3BucketName() != null) {
+                jsonWriter.key("S3BucketName").value(updateTrailRequest.getS3BucketName());
+            }
+            if (updateTrailRequest.getS3KeyPrefix() != null) {
+                jsonWriter.key("S3KeyPrefix").value(updateTrailRequest.getS3KeyPrefix());
+            }
+            if (updateTrailRequest.getSnsTopicName() != null) {
+                jsonWriter.key("SnsTopicName").value(updateTrailRequest.getSnsTopicName());
+            }
+            if (updateTrailRequest.isIncludeGlobalServiceEvents() != null) {
+                jsonWriter.key("IncludeGlobalServiceEvents").value(updateTrailRequest.isIncludeGlobalServiceEvents());
+            }
             Trail trail = updateTrailRequest.getTrail();
             if (trail != null) {
 

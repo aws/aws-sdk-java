@@ -26,24 +26,24 @@ public class AttachVpnGatewayResult implements Serializable {
     /**
      * 
      */
-    private VpcAttachment vpcAttachement;
+    private VpcAttachment vpcAttachment;
 
     /**
      * 
      *
      * @return 
      */
-    public VpcAttachment getVpcAttachement() {
-        return vpcAttachement;
+    public VpcAttachment getVpcAttachment() {
+        return vpcAttachment;
     }
     
     /**
      * 
      *
-     * @param vpcAttachement 
+     * @param vpcAttachment 
      */
-    public void setVpcAttachement(VpcAttachment vpcAttachement) {
-        this.vpcAttachement = vpcAttachement;
+    public void setVpcAttachment(VpcAttachment vpcAttachment) {
+        this.vpcAttachment = vpcAttachment;
     }
     
     /**
@@ -51,13 +51,13 @@ public class AttachVpnGatewayResult implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcAttachement 
+     * @param vpcAttachment 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
-    public AttachVpnGatewayResult withVpcAttachement(VpcAttachment vpcAttachement) {
-        this.vpcAttachement = vpcAttachement;
+    public AttachVpnGatewayResult withVpcAttachment(VpcAttachment vpcAttachment) {
+        this.vpcAttachment = vpcAttachment;
         return this;
     }
 
@@ -73,7 +73,7 @@ public class AttachVpnGatewayResult implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpcAttachement() != null) sb.append("VpcAttachement: " + getVpcAttachement() );
+        if (getVpcAttachment() != null) sb.append("VpcAttachment: " + getVpcAttachment() );
         sb.append("}");
         return sb.toString();
     }
@@ -83,7 +83,7 @@ public class AttachVpnGatewayResult implements Serializable {
         final int prime = 31;
         int hashCode = 1;
         
-        hashCode = prime * hashCode + ((getVpcAttachement() == null) ? 0 : getVpcAttachement().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcAttachment() == null) ? 0 : getVpcAttachment().hashCode()); 
         return hashCode;
     }
     
@@ -95,8 +95,8 @@ public class AttachVpnGatewayResult implements Serializable {
         if (obj instanceof AttachVpnGatewayResult == false) return false;
         AttachVpnGatewayResult other = (AttachVpnGatewayResult)obj;
         
-        if (other.getVpcAttachement() == null ^ this.getVpcAttachement() == null) return false;
-        if (other.getVpcAttachement() != null && other.getVpcAttachement().equals(this.getVpcAttachement()) == false) return false; 
+        if (other.getVpcAttachment() == null ^ this.getVpcAttachment() == null) return false;
+        if (other.getVpcAttachment() != null && other.getVpcAttachment().equals(this.getVpcAttachment()) == false) return false; 
         return true;
     }
     

@@ -16,61 +16,28 @@ package com.amazonaws.internal.config;
 
 import org.apache.http.annotation.Immutable;
 
-import com.amazonaws.auth.Signer;
-
 /**
- * Signer configuration, which has the factory method for creating the
- * respective Signer instances.
+ * Signer configuration.
  */
 @Immutable
 public class SignerConfig {
-    private final SignerType signerType;
-    private final boolean doubleUrlEncode;
 
-    SignerConfig(SignerType signerType, boolean doubleUrlEncode) {
+    private final String signerType;
+
+    SignerConfig(String signerType) {
         this.signerType = signerType;
-        this.doubleUrlEncode = doubleUrlEncode;
     }
 
     SignerConfig(SignerConfig from) {
         this.signerType = from.getSignerType();
-        this.doubleUrlEncode = from.isDoubleUrlEncode();
     }
 
-    // for unit testing
-    SignerConfig(SignerType signerType) {
-        this(signerType, false);
-    }
-
-    public SignerType getSignerType() {
+    public String getSignerType() {
         return signerType;
     }
 
-    public boolean isDoubleUrlEncode() {
-        return doubleUrlEncode;
-    }
-
-    @Override public String toString() {
-        return signerType + ": doubleUrlEncode=" + doubleUrlEncode;
-    }
-
-    /**
-     * Returns the respective Signer instance, or null if it cannot be
-     * determined.
-     */
-    public Signer computeSigner() {
-        switch(signerType) {
-            case AWS4SignerType:
-                return signerType.createV4Signer(doubleUrlEncode);
-            case AWS3SignerType:        // V3
-            case QueryStringSignerType: // V2
-            case CloudFrontSignerType:
-                return signerType.createSigner();
-            case AWSS3V4SignerType:
-                // yet to invvestigate how to support this
-            case S3SignerType:
-                // yet to invvestigate how to support this
-        }
-        return null;
+    @Override
+    public String toString() {
+        return signerType;
     }
 }

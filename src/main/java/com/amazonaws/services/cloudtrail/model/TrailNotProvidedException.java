@@ -17,7 +17,9 @@ package com.amazonaws.services.cloudtrail.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AWSCloudTrail exception
+ * <p>
+ * This exception is thrown when no trail is provided.
+ * </p>
  */        
 public class TrailNotProvidedException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

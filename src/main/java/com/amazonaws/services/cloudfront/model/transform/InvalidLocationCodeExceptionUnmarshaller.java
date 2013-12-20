@@ -12,29 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package com.amazonaws.services.cloudtrail.model.transform;
+package com.amazonaws.services.cloudfront.model.transform;
+
+import org.w3c.dom.Node;
 
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.transform.JsonErrorUnmarshaller;
-import com.amazonaws.util.json.JSONObject;
+import com.amazonaws.util.XpathUtils;
+import com.amazonaws.transform.StandardErrorUnmarshaller;
 
-import com.amazonaws.services.cloudtrail.model.InternalErrorException;
+import com.amazonaws.services.cloudfront.model.InvalidLocationCodeException;
 
-public class InternalErrorExceptionUnmarshaller extends JsonErrorUnmarshaller {
+public class InvalidLocationCodeExceptionUnmarshaller extends StandardErrorUnmarshaller {
 
-    public InternalErrorExceptionUnmarshaller() {
-        super(InternalErrorException.class);
+    public InvalidLocationCodeExceptionUnmarshaller() {
+        super(InvalidLocationCodeException.class);
     }
 
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
+    public AmazonServiceException unmarshall(Node node) throws Exception {
         // Bail out if this isn't the right error code that this
         // marshaller understands.
-        String errorCode = parseErrorCode(json);
-        if (errorCode == null || !errorCode.equals("InternalErrorException"))
+        String errorCode = parseErrorCode(node);
+        if (errorCode == null || !errorCode.equals("InvalidLocationCode"))
             return null;
 
-        InternalErrorException e = (InternalErrorException)super.unmarshall(json);
-
+        InvalidLocationCodeException e = (InvalidLocationCodeException)super.unmarshall(node);
+        
         return e;
     }
 }

@@ -45,7 +45,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
         if (updateDistributionRequest.getIfMatch() != null)
             request.addHeader("If-Match", StringUtils.fromString(updateDistributionRequest.getIfMatch()));
 
-        String uriResourcePath = "2013-09-27/distribution/{Id}/config"; 
+        String uriResourcePath = "2013-11-11/distribution/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(updateDistributionRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {
@@ -65,7 +65,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
         request.setResourcePath(uriResourcePath);
 
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-09-27/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-11-11/");
 
                     if (updateDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = updateDistributionRequest.getDistributionConfig();
@@ -499,6 +499,43 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                         }
                         if (viewerCertificateViewerCertificate.isCloudFrontDefaultCertificate() != null) {
                             xmlWriter.startElement("CloudFrontDefaultCertificate").value(viewerCertificateViewerCertificate.isCloudFrontDefaultCertificate()).endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+                }
+                if (distributionConfigDistributionConfig != null) {
+                    Restrictions restrictionsRestrictions = distributionConfigDistributionConfig.getRestrictions();
+                    if (restrictionsRestrictions != null) {
+                        xmlWriter.startElement("Restrictions");
+                        if (restrictionsRestrictions != null) {
+                            GeoRestriction geoRestrictionGeoRestriction = restrictionsRestrictions.getGeoRestriction();
+                            if (geoRestrictionGeoRestriction != null) {
+                                xmlWriter.startElement("GeoRestriction");
+                                if (geoRestrictionGeoRestriction.getRestrictionType() != null) {
+                                    xmlWriter.startElement("RestrictionType").value(geoRestrictionGeoRestriction.getRestrictionType()).endElement();
+                                }
+                                if (geoRestrictionGeoRestriction.getQuantity() != null) {
+                                    xmlWriter.startElement("Quantity").value(geoRestrictionGeoRestriction.getQuantity()).endElement();
+                                }
+
+                                if (geoRestrictionGeoRestriction != null) {
+                                    java.util.List<String> geoRestrictionGeoRestrictionitemsList = geoRestrictionGeoRestriction.getItems();
+                                    if (geoRestrictionGeoRestrictionitemsList != null && geoRestrictionGeoRestrictionitemsList.size() > 0) {
+                                        int geoRestrictionGeoRestrictionitemsListIndex = 1;
+                                        xmlWriter.startElement("Items");
+                                        for (String geoRestrictionGeoRestrictionitemsListValue : geoRestrictionGeoRestrictionitemsList) {
+
+                                        xmlWriter.startElement("Location");
+                                            xmlWriter.value(geoRestrictionGeoRestrictionitemsListValue);
+                                        xmlWriter.endElement();
+
+                                            geoRestrictionGeoRestrictionitemsListIndex++;
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+                                xmlWriter.endElement();
+                            }
                         }
                         xmlWriter.endElement();
                     }

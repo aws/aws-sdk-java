@@ -36,7 +36,8 @@ import com.amazonaws.util.HttpUtils;
 /**
  * Signer implementation that signs requests with the AWS4 signing protocol.
  */
-public class AWS4Signer extends AbstractAWSSigner {
+public class AWS4Signer extends AbstractAWSSigner
+        implements ServiceAwareSigner, RegionAwareSigner {
 
     protected static final String ALGORITHM = "AWS4-HMAC-SHA256";
     protected static final String TERMINATOR = "aws4_request";
@@ -84,7 +85,8 @@ public class AWS4Signer extends AbstractAWSSigner {
         this.doubleUrlEncode = doubleUrlEncoding;
     }
 
-    protected ThreadLocal<SimpleDateFormat> dateTimeFormat = new ThreadLocal<SimpleDateFormat>() {
+    protected static final ThreadLocal<SimpleDateFormat> dateTimeFormat =
+            new ThreadLocal<SimpleDateFormat>() {
         @Override
         protected SimpleDateFormat initialValue() {
             final SimpleDateFormat dateTimeFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'");
@@ -93,7 +95,8 @@ public class AWS4Signer extends AbstractAWSSigner {
         }
     };
 
-    protected ThreadLocal<SimpleDateFormat> dateStampFormat = new ThreadLocal<SimpleDateFormat>() {
+    protected static final ThreadLocal<SimpleDateFormat> dateStampFormat =
+            new ThreadLocal<SimpleDateFormat>() {
         @Override
         protected SimpleDateFormat initialValue() {
             final SimpleDateFormat dateStampFormat = new SimpleDateFormat("yyyyMMdd");
@@ -108,7 +111,7 @@ public class AWS4Signer extends AbstractAWSSigner {
     /* (non-Javadoc)
      * @see com.amazonaws.auth.Signer#sign(com.amazonaws.Request, com.amazonaws.auth.AWSCredentials)
      */
-    public void sign(Request<?> request, AWSCredentials credentials) throws AmazonClientException {
+    public void sign(Request<?> request, AWSCredentials credentials) {
         // annonymous credentials, don't sign
         if ( credentials instanceof AnonymousAWSCredentials ) {
             return;
@@ -164,6 +167,7 @@ public class AWS4Signer extends AbstractAWSSigner {
      *            The service name to use when calculating signatures in this
      *            signer.
      */
+    @Override
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
@@ -178,6 +182,7 @@ public class AWS4Signer extends AbstractAWSSigner {
      *            The region name to use when calculating signatures in this
      *            signer.
      */
+    @Override
     public void setRegionName(String regionName) {
         this.regionName = regionName;
     }
@@ -190,11 +195,17 @@ public class AWS4Signer extends AbstractAWSSigner {
     protected String extractRegionName(URI endpoint) {
         if (regionName != null) return regionName;
 
-        return AwsHostNameUtils.parseRegionName(endpoint);
+        return AwsHostNameUtils.parseRegionName(endpoint.getHost(),
+                                                serviceName);
     }
 
     protected String extractServiceName(URI endpoint) {
         if (serviceName != null) return serviceName;
+
+        // This should never actually be called, as we should always be setting
+        // a service name on the signer; retain it for now in case anyone is
+        // using the AWS4Signer directly and not setting a service name
+        // explicitly.
 
         return AwsHostNameUtils.parseServiceName(endpoint);
     }

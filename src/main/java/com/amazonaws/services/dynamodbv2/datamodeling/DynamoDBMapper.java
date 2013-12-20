@@ -157,14 +157,14 @@ import com.amazonaws.util.VersionInfoUtils;
  * @see DynamoDBMapperConfig
  */
 public class DynamoDBMapper {
-    
+
     private final S3ClientCache s3cc;
     private final AmazonDynamoDB db;
     private final DynamoDBMapperConfig config;
     private final DynamoDBReflector reflector = new DynamoDBReflector();
 
     private final AttributeTransformer transformer;
-    
+
     /** The max back off time for batch write */
     private static final long MAX_BACKOFF_IN_MILLISECONDS = 1000 * 3;
 
@@ -174,7 +174,7 @@ public class DynamoDBMapper {
     private static final String USER_AGENT = DynamoDBMapper.class.getName() + "/" + VersionInfoUtils.getVersion();
 
     private static final String NO_RANGE_KEY = new String();
-    
+
     /**
      * Constructs a new mapper with the service object given, using the default
      * configuration.
@@ -199,10 +199,10 @@ public class DynamoDBMapper {
     public DynamoDBMapper(
             final AmazonDynamoDB dynamoDB,
             final DynamoDBMapperConfig config) {
-        
+
         this(dynamoDB, config, null, null);
     }
-    
+
     /**
      * Constructs a new mapper with the service object and S3 client cache
      * given, using the default configuration.
@@ -217,10 +217,10 @@ public class DynamoDBMapper {
     public DynamoDBMapper(
             final AmazonDynamoDB ddb,
             final AWSCredentialsProvider s3CredentialProvider) {
-        
+
         this(ddb, DynamoDBMapperConfig.DEFAULT, s3CredentialProvider);
     }
-    
+
     /**
      * Constructs a new mapper with the given service object, configuration,
      * and transform hook.
@@ -238,7 +238,7 @@ public class DynamoDBMapper {
             final AmazonDynamoDB dynamoDB,
             final DynamoDBMapperConfig config,
             final AttributeTransformer transformer) {
-        
+
         this(dynamoDB, config, transformer, null);
     }
 
@@ -259,10 +259,10 @@ public class DynamoDBMapper {
             final AmazonDynamoDB dynamoDB,
             final DynamoDBMapperConfig config,
             final AWSCredentialsProvider s3CredentialProvider) {
-        
+
         this(dynamoDB, config, null, validate(s3CredentialProvider));
     }
-    
+
     /**
      * Throws an exception if the given credentials provider is {@code null}.
      */
@@ -274,7 +274,7 @@ public class DynamoDBMapper {
         }
         return provider;
     }
-    
+
     /**
      * Constructor with all parameters.
      *
@@ -295,11 +295,11 @@ public class DynamoDBMapper {
             final DynamoDBMapperConfig config,
             final AttributeTransformer transformer,
             final AWSCredentialsProvider s3CredentialsProvider) {
-        
+
         this.db = dynamoDB;
         this.config = config;
         this.transformer = transformer;
-        
+
         if (s3CredentialsProvider == null) {
             this.s3cc = null;
         } else {
@@ -307,7 +307,7 @@ public class DynamoDBMapper {
         }
     }
 
-    
+
     /**
      * Loads an object with the hash key given and a configuration override.
      * This configuration overrides the default provided at object construction.
@@ -529,7 +529,7 @@ public class DynamoDBMapper {
             }
         }
 
-        return tableName;        
+        return tableName;
     }
 
     /**
@@ -564,14 +564,14 @@ public class DynamoDBMapper {
     @Deprecated
     public <T> T marshallIntoObject(Class<T> clazz, Map<String, AttributeValue> itemAttributes) {
         if (itemAttributes instanceof MapAnd) {
-            
+
             @SuppressWarnings("unchecked")
             AttributeTransformer.Parameters<T> parameters =
                 ((MapAnd<?, ?, AttributeTransformer.Parameters<T>>) itemAttributes)
                     .getExtra();
 
             return privateMarshalIntoObject(parameters);
-            
+
         } else {
             // Called via some unexpected external codepath; use the class-level
             // config.
@@ -579,7 +579,7 @@ public class DynamoDBMapper {
                 toParameters(itemAttributes, clazz, this.config));
         }
     }
-    
+
     /**
      * The one true implementation of marshalIntoObject.
      */
@@ -597,7 +597,7 @@ public class DynamoDBMapper {
 
         if ( parameters.getAttributeValues() == null
           || parameters.getAttributeValues().isEmpty() ) {
-            
+
             return toReturn;
         }
 
@@ -627,7 +627,7 @@ public class DynamoDBMapper {
         }
         return result;
     }
-    
+
     /**
      * A replacement for {@link #marshallIntoObjects(Class, List)} that takes
      * an extra set of parameters to be tunneled through to
@@ -657,7 +657,7 @@ public class DynamoDBMapper {
 
         return marshallIntoObjects(clazz, list);
     }
-    
+
     /**
      * Sets the value in the return object corresponding to the service result.
      */
@@ -821,7 +821,7 @@ public class DynamoDBMapper {
                     /* Send a putItem request */
                     Map<String, AttributeValue> attributeValues =
                             convertToItem(getAttributeValueUpdates());
-                    
+
                     attributeValues = transformAttributes(
                         toParameters(attributeValues, this.clazz, finalConfig));
                     PutItemRequest req = new PutItemRequest()
@@ -1209,7 +1209,7 @@ public class DynamoDBMapper {
             Method rangeKeyGetter,
             Map<String, ExpectedAttributeValue> userProvidedExpectedValues,
             DynamoDBMapperConfig config) {
-        
+
         Map<String, AttributeValue> attributes = new HashMap<String, AttributeValue>();
         Map<String, ExpectedAttributeValue> expectedValues = new HashMap<String, ExpectedAttributeValue>();
 
@@ -1224,7 +1224,7 @@ public class DynamoDBMapper {
             attributes.put(rangeKeyAttributeName, getSimpleAttributeValue(rangeKeyGetter, rangeGetterResult));
             expectedValues.put(rangeKeyAttributeName, new ExpectedAttributeValue().withExists(false));
         }
-        
+
         attributes = transformAttributes(
             toParameters(attributes, clazz, config));
 
@@ -1449,7 +1449,7 @@ public class DynamoDBMapper {
 
             AttributeTransformer.Parameters<?> parameters =
                 toParameters(attributeValues, clazz, config);
-            
+
             requestItems.get(tableName).add(
                 new WriteRequest().withPutRequest(
                     new PutRequest().withItem(
@@ -1745,7 +1745,7 @@ public class DynamoDBMapper {
             final Map<String, KeysAndAttributes> requestItems,
             final Map<String, List<Object>> resultSet,
             final DynamoDBMapperConfig config) {
-        
+
         BatchGetItemResult batchGetItemResult = null;
         BatchGetItemRequest batchGetItemRequest = new BatchGetItemRequest()
             .withRequestMetricCollector(config.getRequestMetricCollector());
@@ -2256,12 +2256,12 @@ public class DynamoDBMapper {
 
         return queryRequest;
     }
-    
+
     /**
      * Utility method for checking the validity of both hash and range key
      * conditions. It also tries to infer the correct index name from the POJO
      * annotation, if such information is not directly specified by the user.
-     * 
+     *
      * @param clazz
      *            The domain class of the queried items.
      * @param queryRequest
@@ -2294,7 +2294,7 @@ public class DynamoDBMapper {
                                             && (!rangeKeyConditions.isEmpty());
         final String userProvidedIndexName = queryRequest.getIndexName();
         final String primaryHashKeyName = reflector.getPrimaryHashKeyName(clazz);
-        
+
         // First collect the names of all the global/local secondary indexes that could be applied to this query.
         // If the user explicitly specified an index name, we also need to
         //   1) check the index is applicable for both hash and range key conditions
@@ -2302,20 +2302,22 @@ public class DynamoDBMapper {
         boolean hasPrimaryHashKeyCondition = false;
         final Map<String, Set<String>> annotatedGSIsOnHashKeys = new HashMap<String, Set<String>>();
         String hashKeyNameForThisQuery = null;
-        
+
         boolean hasPrimaryRangeKeyCondition = false;
         final Set<String> annotatedLSIsOnRangeKey = new HashSet<String>();
         final Set<String> annotatedGSIsOnRangeKey = new HashSet<String>();
-        
+
         // Range key condition
         String rangeKeyNameForThisQuery = null;
         if (hasRangeKeyCondition) {
             for (String rangeKeyName : rangeKeyConditions.keySet()) {
                 rangeKeyNameForThisQuery = rangeKeyName;
-                if (rangeKeyName.equals(reflector.getPrimaryRangeKeyName(clazz))) {
+
+                if (reflector.hasPrimaryRangeKey(clazz) 
+	                && rangeKeyName.equals(reflector.getPrimaryRangeKeyName(clazz))) {
                     hasPrimaryRangeKeyCondition = true;
                 }
-                
+
                 List<String> annotatedLSI = reflector.getLocalSecondaryIndexNamesByIndexKeyName(clazz, rangeKeyName);
                 if (annotatedLSI != null) {
                     annotatedLSIsOnRangeKey.addAll(annotatedLSI);
@@ -2325,16 +2327,17 @@ public class DynamoDBMapper {
                     annotatedGSIsOnRangeKey.addAll(annotatedGSI);
                 }
             }
-            
-            if ( (!hasPrimaryRangeKeyCondition)
-                    && annotatedLSIsOnRangeKey.isEmpty() && annotatedGSIsOnHashKeys.isEmpty()) {
+
+            if ( !hasPrimaryRangeKeyCondition
+                 && annotatedLSIsOnRangeKey.isEmpty()
+                 && annotatedGSIsOnRangeKey.isEmpty()) {
                 throw new DynamoDBMappingException(
                         "The query contains a condition on a range key (" +
                         rangeKeyNameForThisQuery + ") " +
-                        "that is not annotated with either @DynamoDBRangeKy or @DynamoDBIndexRangeKey.");
+                        "that is not annotated with either @DynamoDBRangeKey or @DynamoDBIndexRangeKey.");
             }
         }
-        
+
         final boolean userProvidedLSI = (userProvidedIndexName != null)
                                         && (annotatedLSIsOnRangeKey.contains(userProvidedIndexName));
         final boolean userProvidedGSI = (userProvidedIndexName != null)
@@ -2347,24 +2350,24 @@ public class DynamoDBMapper {
                     "is annotateded as both the LSI and GSI for attribute " +
                     "\"" + rangeKeyNameForThisQuery + "\".");
         }
-        
+
         // Hash key conditions
         for (String hashKeyName : hashKeyConditions.keySet()) {
             if (hashKeyName.equals(primaryHashKeyName)) {
                 hasPrimaryHashKeyCondition = true;
             }
-            
+
             List<String> annotatedGSINames = reflector.getGlobalSecondaryIndexNamesByIndexKeyName(clazz, hashKeyName, true);
-            annotatedGSIsOnHashKeys.put(hashKeyName, 
+            annotatedGSIsOnHashKeys.put(hashKeyName,
                     annotatedGSINames == null ? new HashSet<String>() : new HashSet<String>(annotatedGSINames));
-            
+
             // Additional validation if the user provided an index name.
             if (userProvidedIndexName != null) {
                 boolean foundHashKeyConditionValidWithUserProvidedIndex = false;
                 if (userProvidedLSI && hashKeyName.equals(primaryHashKeyName)) {
                     // found an applicable hash key condition (primary hash + LSI range)
                     foundHashKeyConditionValidWithUserProvidedIndex = true;
-                } else if (userProvidedGSI && 
+                } else if (userProvidedGSI &&
                         annotatedGSINames != null && annotatedGSINames.contains(userProvidedIndexName)) {
                     // found an applicable hash key condition (GSI hash + range)
                     foundHashKeyConditionValidWithUserProvidedIndex = true;
@@ -2387,7 +2390,7 @@ public class DynamoDBMapper {
 
         // Collate all the key conditions
         Map<String, Condition> keyConditions = new HashMap<String, Condition>();
-        
+
         // With user-provided index name
         if (userProvidedIndexName != null) {
             if (hasRangeKeyCondition
@@ -2402,12 +2405,12 @@ public class DynamoDBMapper {
                         "Illegal query expression: No hash key condition is applicable to the specified index ("
                         + userProvidedIndexName + "). ");
             }
-            
+
             keyConditions.put(hashKeyNameForThisQuery, hashKeyConditions.get(hashKeyNameForThisQuery));
             if (hasRangeKeyCondition) {
                 keyConditions.putAll(rangeKeyConditions);
             }
-        } 
+        }
         // Infer the index name by finding the index shared by both hash and range key annotations.
         else {
             if (hasRangeKeyCondition) {
@@ -2429,7 +2432,7 @@ public class DynamoDBMapper {
                                 indexNameInferredByThisHashKey = annotatedLSIsOnRangeKey.iterator().next();
                             }
                         }
-                        
+
                         Set<String> annotatedGSIsOnHashKey = annotatedGSIsOnHashKeys.get(hashKeyName);
                         // We don't need the data in annotatedGSIsOnHashKeys afterwards,
                         // so it's safe to do the intersection in-place.
@@ -2440,11 +2443,11 @@ public class DynamoDBMapper {
                                 hashKeyNameForThisQuery = hashKeyName;
                                 inferredIndexName = indexNameInferredByThisHashKey;
                             }
-                            
+
                             foundValidQueryExpressionWithInferredIndex = true;
                             indexNameInferredByThisHashKey = annotatedGSIsOnHashKey.iterator().next();
                         }
-                        
+
                         if (foundValidQueryExpressionWithInferredIndex) {
                             if (hashKeyNameForThisQuery != null) {
                                 throw new IllegalArgumentException(
@@ -2458,7 +2461,7 @@ public class DynamoDBMapper {
                         }
                     }
                 }
-                
+
                 if (hashKeyNameForThisQuery != null) {
                     keyConditions.put(hashKeyNameForThisQuery, hashKeyConditions.get(hashKeyNameForThisQuery));
                     keyConditions.putAll(rangeKeyConditions);
@@ -2467,7 +2470,7 @@ public class DynamoDBMapper {
                     throw new IllegalArgumentException(
                             "Illegal query expression: Cannot infer the index name from the query expression.");
                 }
-                
+
             } else {
                 // No range key condition is specified.
                 if (hashKeyConditions.size() > 1) {
@@ -2480,7 +2483,7 @@ public class DynamoDBMapper {
                                 ") are applicable to the query. " +
                                 "Please provide only one of them in the query expression, or specify the appropriate index name.");
                     }
-                   
+
                 } else {
                     // Only one hash key condition
                     String hashKeyName = annotatedGSIsOnHashKeys.keySet().iterator().next();
@@ -2502,10 +2505,10 @@ public class DynamoDBMapper {
                     }
                     keyConditions.putAll(hashKeyConditions);
                 }
-                
+
             }
         }
-        
+
         queryRequest.setKeyConditions(keyConditions);
     }
 
@@ -2545,7 +2548,7 @@ public class DynamoDBMapper {
 
         return rval;
     }
- 
+
     /**
      * The one true implementation of AttributeTransformer.Parameters.
      */
@@ -2557,7 +2560,7 @@ public class DynamoDBMapper {
         private final boolean partialUpdate;
         private final Class<T> modelClass;
         private final DynamoDBMapperConfig mapperConfig;
-        
+
         private String tableName;
         private String hashKeyName;
         private String rangeKeyName;
@@ -2576,7 +2579,7 @@ public class DynamoDBMapper {
             this.modelClass = modelClass;
             this.mapperConfig = mapperConfig;
         }
-        
+
         @Override
         public Map<String, AttributeValue> getAttributeValues() {
             return attributeValues;
@@ -2632,22 +2635,22 @@ public class DynamoDBMapper {
             return rangeKeyName;
         }
     }
-    
+
     private Map<String, AttributeValue> untransformAttributes(
             final AttributeTransformer.Parameters parameters
     ) {
         if (transformer != null) {
             return transformer.untransform(parameters);
         }
-        
+
         return untransformAttributes(
                 parameters.getModelClass(),
                 parameters.getAttributeValues());
     }
-    
+
     /**
      * By default, just calls {@link #untransformAttributes(String, String, Map)}.
-     * 
+     *
      * @deprecated in favor of {@link AttributeTransformer}
      */
     @Deprecated
@@ -2678,19 +2681,19 @@ public class DynamoDBMapper {
 
     private Map<String, AttributeValue> transformAttributes(
             final AttributeTransformer.Parameters parameters) {
-        
+
         if (transformer != null) {
             return transformer.transform(parameters);
         }
-        
+
         return transformAttributes(
                 parameters.getModelClass(),
                 parameters.getAttributeValues());
     }
-    
+
     /**
      * By default, just calls {@link #transformAttributes(String, String, Map)}.
-     * 
+     *
      * @param clazz
      * @param attributeValues
      * @return the decrypted attribute values
@@ -2737,12 +2740,12 @@ public class DynamoDBMapper {
                 item.put(e.getKey(), e.getValue());
             }
         }
-        
+
         AttributeTransformer.Parameters<?> parameters =
             toParameters(item, true, clazz, config);
-        
+
         String hashKey = parameters.getHashKeyName();
-        
+
         if (!item.containsKey(hashKey)) {
             item.put(hashKey, keys.get(hashKey));
         }

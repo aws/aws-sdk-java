@@ -44,7 +44,7 @@ public class AttachVpnGatewayResultStaxUnmarshaller implements Unmarshaller<Atta
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("attachment", targetDepth)) {
-                    attachVpnGatewayResult.setVpcAttachement(VpcAttachmentStaxUnmarshaller.getInstance().unmarshall(context));
+                    attachVpnGatewayResult.setVpcAttachment(VpcAttachmentStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

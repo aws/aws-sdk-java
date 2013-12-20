@@ -31,7 +31,7 @@ public class TimeSpan implements Serializable {
      * of the input file.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,5}([.]\d{0,3})?$)|(^(((([0-1]?\d)|(2[0-3])):)?(([0-5]?\d):))?(([0-5]?\d))([.]\d{0,3})?$)<br/>
+     * <b>Pattern: </b>(^\d{1,5}(\.\d{0,3})?$)|(^([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)<br/>
      */
     private String startTime;
 
@@ -45,7 +45,7 @@ public class TimeSpan implements Serializable {
      * warning message.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,5}([.]\d{0,3})?$)|(^(((([0-1]?\d)|(2[0-3])):)?(([0-5]?\d):))?(([0-5]?\d))([.]\d{0,3})?$)<br/>
+     * <b>Pattern: </b>(^\d{1,5}(\.\d{0,3})?$)|(^([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)<br/>
      */
     private String duration;
 
@@ -57,7 +57,7 @@ public class TimeSpan implements Serializable {
      * of the input file.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,5}([.]\d{0,3})?$)|(^(((([0-1]?\d)|(2[0-3])):)?(([0-5]?\d):))?(([0-5]?\d))([.]\d{0,3})?$)<br/>
+     * <b>Pattern: </b>(^\d{1,5}(\.\d{0,3})?$)|(^([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)<br/>
      *
      * @return The place in the input file where you want a clip to start. The format
      *         can be either HH:mm:ss.SSS (maximum value: 23:59:59.999; SSS is
@@ -77,7 +77,7 @@ public class TimeSpan implements Serializable {
      * of the input file.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,5}([.]\d{0,3})?$)|(^(((([0-1]?\d)|(2[0-3])):)?(([0-5]?\d):))?(([0-5]?\d))([.]\d{0,3})?$)<br/>
+     * <b>Pattern: </b>(^\d{1,5}(\.\d{0,3})?$)|(^([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)<br/>
      *
      * @param startTime The place in the input file where you want a clip to start. The format
      *         can be either HH:mm:ss.SSS (maximum value: 23:59:59.999; SSS is
@@ -99,7 +99,7 @@ public class TimeSpan implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,5}([.]\d{0,3})?$)|(^(((([0-1]?\d)|(2[0-3])):)?(([0-5]?\d):))?(([0-5]?\d))([.]\d{0,3})?$)<br/>
+     * <b>Pattern: </b>(^\d{1,5}(\.\d{0,3})?$)|(^([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)<br/>
      *
      * @param startTime The place in the input file where you want a clip to start. The format
      *         can be either HH:mm:ss.SSS (maximum value: 23:59:59.999; SSS is
@@ -125,7 +125,7 @@ public class TimeSpan implements Serializable {
      * warning message.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,5}([.]\d{0,3})?$)|(^(((([0-1]?\d)|(2[0-3])):)?(([0-5]?\d):))?(([0-5]?\d))([.]\d{0,3})?$)<br/>
+     * <b>Pattern: </b>(^\d{1,5}(\.\d{0,3})?$)|(^([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)<br/>
      *
      * @return The duration of the clip. The format can be either HH:mm:ss.SSS
      *         (maximum value: 23:59:59.999; SSS is thousandths of a second) or
@@ -149,7 +149,7 @@ public class TimeSpan implements Serializable {
      * warning message.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,5}([.]\d{0,3})?$)|(^(((([0-1]?\d)|(2[0-3])):)?(([0-5]?\d):))?(([0-5]?\d))([.]\d{0,3})?$)<br/>
+     * <b>Pattern: </b>(^\d{1,5}(\.\d{0,3})?$)|(^([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)<br/>
      *
      * @param duration The duration of the clip. The format can be either HH:mm:ss.SSS
      *         (maximum value: 23:59:59.999; SSS is thousandths of a second) or
@@ -175,7 +175,7 @@ public class TimeSpan implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^\d{1,5}([.]\d{0,3})?$)|(^(((([0-1]?\d)|(2[0-3])):)?(([0-5]?\d):))?(([0-5]?\d))([.]\d{0,3})?$)<br/>
+     * <b>Pattern: </b>(^\d{1,5}(\.\d{0,3})?$)|(^([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)<br/>
      *
      * @param duration The duration of the clip. The format can be either HH:mm:ss.SSS
      *         (maximum value: 23:59:59.999; SSS is thousandths of a second) or

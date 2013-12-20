@@ -19,6 +19,7 @@ import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_METRICS_SYSTEM_PROPER
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.InetAddress;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -163,7 +164,20 @@ public enum AwsSdkMetrics {
      * </pre>
      */
     public static final String JVM_METRIC_NAME = "jvmMetricName";
-    
+
+    /**
+     * Used to explicitly specify the host name for metric purposes, instead of
+     * detecting the host name via {@link InetAddress} when the AWS SDK default
+     * metrics is enabled. Specifying the host name also has the side effecting
+     * of enabling per host level metrics.
+     * 
+     * <pre>
+     * Example:
+     *  -Dcom.amazonaws.sdk.enableDefaultMetrics=hostMetricName=MyHost
+     * </pre>
+     */
+    public static final String HOST_METRIC_NAME = "hostMetricName";
+
     private static final String DEFAULT_METRIC_COLLECTOR_FACTORY =
         "com.amazonaws.metrics.internal.cloudwatch.DefaultMetricCollectorFactory";
     /**
@@ -177,7 +191,10 @@ public enum AwsSdkMetrics {
      */
     private static volatile boolean machineMetricsExcluded;
     /**
-     * True if per-host metrics is to be included; false otherwise.
+     * True if per-host metrics is to be included; false if per-host metrics is
+     * to be excluded when {@link #hostMetricName} is not specified. In the
+     * absence of {@link #hostMetricName}, the host name will be automatically
+     * detected via {@link InetAddress}.
      */
     private static volatile boolean perHostMetricsIncluded;
     private static volatile Regions region;
@@ -204,6 +221,7 @@ public enum AwsSdkMetrics {
      * </ol>
      */
     private static volatile String jvmMetricName;
+    private static volatile String hostMetricName;
 
     static {
         String defaultMetrics = System.getProperty(DEFAULT_METRICS_SYSTEM_PROPERTY);
@@ -242,6 +260,8 @@ public enum AwsSdkMetrics {
                                 metricNameSpace = value;
                             } else if (JVM_METRIC_NAME.equals(key)) {
                                 jvmMetricName = value;
+                            } else if (HOST_METRIC_NAME.equals(key)) {
+                                hostMetricName = value;
                             } else {
                                 LogFactory.getLog(AwsSdkMetrics.class).debug("Ignoring unrecognized parameter: " + part);
                             }
@@ -417,10 +437,21 @@ public enum AwsSdkMetrics {
     }
 
     /**
-     * Returns true if per-host metrics is to be included.
+     * Returns true if the per-host metrics flag has been set; false otherwise.
      */
     public static boolean isPerHostMetricIncluded() {
         return perHostMetricsIncluded;
+    }
+
+    /**
+     * Returns true if per-host metrics is enabled; false otherwise.
+     */
+    public static boolean isPerHostMetricEnabled() {
+        if (perHostMetricsIncluded)
+            return true;
+        String host = hostMetricName;
+        host = host == null ? "" : host.trim();
+        return host.length() > 0;
     }
 
     /**
@@ -661,6 +692,27 @@ public enum AwsSdkMetrics {
      */
     public static void setJvmMetricName(String jvmMetricName) {
         AwsSdkMetrics.jvmMetricName = jvmMetricName;
+    }
+
+    /**
+     * Returns the host name for generating per-host level metrics; or
+     * null or blank if the host is to be automatically detected via
+     * {@link InetAddress}.
+     */
+    public static String getHostMetricName() {
+        return hostMetricName;
+    }
+
+    /**
+     * Sets the host name for generating per-host level metrics.
+     * 
+     * @param hostMetricName
+     *            host name for generating per-host level metrics; or
+     *            null or blank if the host is to be automatically detected via
+     *            {@link InetAddress}.
+     */
+    public static void setHostMetricName(String hostMetricName) {
+        AwsSdkMetrics.hostMetricName = hostMetricName;
     }
 
     /**

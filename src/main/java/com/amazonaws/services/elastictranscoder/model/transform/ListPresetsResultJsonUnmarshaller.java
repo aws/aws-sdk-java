@@ -48,6 +48,10 @@ public class ListPresetsResultJsonUnmarshaller implements Unmarshaller<ListPrese
                 if (context.testExpression("Presets", targetDepth)) {
                     listPresetsResult.setPresets(new ListUnmarshaller<Preset>(PresetJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("NextPageToken", targetDepth)) {
+                    context.nextToken();
+                    listPresetsResult.setNextPageToken(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

@@ -31,17 +31,11 @@ public class DescribeClusterRequest extends AmazonWebServiceRequest implements S
 
     /**
      * The identifier of the cluster to describe.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      */
     private String clusterId;
 
     /**
      * The identifier of the cluster to describe.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @return The identifier of the cluster to describe.
      */
@@ -51,9 +45,6 @@ public class DescribeClusterRequest extends AmazonWebServiceRequest implements S
     
     /**
      * The identifier of the cluster to describe.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @param clusterId The identifier of the cluster to describe.
      */
@@ -65,9 +56,6 @@ public class DescribeClusterRequest extends AmazonWebServiceRequest implements S
      * The identifier of the cluster to describe.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
      *
      * @param clusterId The identifier of the cluster to describe.
      *

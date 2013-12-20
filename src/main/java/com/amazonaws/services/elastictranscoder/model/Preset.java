@@ -35,6 +35,11 @@ public class Preset implements Serializable {
     private String id;
 
     /**
+     * The Amazon Resource Name (ARN) for the preset.
+     */
+    private String arn;
+
+    /**
      * The name of the preset.
      * <p>
      * <b>Constraints:</b><br/>
@@ -133,6 +138,39 @@ public class Preset implements Serializable {
      */
     public Preset withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /**
+     * The Amazon Resource Name (ARN) for the preset.
+     *
+     * @return The Amazon Resource Name (ARN) for the preset.
+     */
+    public String getArn() {
+        return arn;
+    }
+    
+    /**
+     * The Amazon Resource Name (ARN) for the preset.
+     *
+     * @param arn The Amazon Resource Name (ARN) for the preset.
+     */
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+    
+    /**
+     * The Amazon Resource Name (ARN) for the preset.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param arn The Amazon Resource Name (ARN) for the preset.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Preset withArn(String arn) {
+        this.arn = arn;
         return this;
     }
 
@@ -458,6 +496,7 @@ public class Preset implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ",");
         if (getName() != null) sb.append("Name: " + getName() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getContainer() != null) sb.append("Container: " + getContainer() + ",");
@@ -475,6 +514,7 @@ public class Preset implements Serializable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode()); 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getContainer() == null) ? 0 : getContainer().hashCode()); 
@@ -495,6 +535,8 @@ public class Preset implements Serializable {
         
         if (other.getId() == null ^ this.getId() == null) return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
+        if (other.getArn() == null ^ this.getArn() == null) return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false) return false; 
         if (other.getName() == null ^ this.getName() == null) return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
         if (other.getDescription() == null ^ this.getDescription() == null) return false;

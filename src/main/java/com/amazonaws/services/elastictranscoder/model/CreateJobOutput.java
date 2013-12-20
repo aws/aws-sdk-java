@@ -100,7 +100,7 @@ public class CreateJobOutput implements Serializable {
      * to 60 seconds.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
+     * <b>Pattern: </b>^\d{1,5}(\.\d{0,5})?$<br/>
      */
     private String segmentDuration;
 
@@ -533,7 +533,7 @@ public class CreateJobOutput implements Serializable {
      * to 60 seconds.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
+     * <b>Pattern: </b>^\d{1,5}(\.\d{0,5})?$<br/>
      *
      * @return If you specify a preset in <code>PresetId</code> for which the value
      *         of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
@@ -551,7 +551,7 @@ public class CreateJobOutput implements Serializable {
      * to 60 seconds.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
+     * <b>Pattern: </b>^\d{1,5}(\.\d{0,5})?$<br/>
      *
      * @param segmentDuration If you specify a preset in <code>PresetId</code> for which the value
      *         of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
@@ -571,7 +571,7 @@ public class CreateJobOutput implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
+     * <b>Pattern: </b>^\d{1,5}(\.\d{0,5})?$<br/>
      *
      * @param segmentDuration If you specify a preset in <code>PresetId</code> for which the value
      *         of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the

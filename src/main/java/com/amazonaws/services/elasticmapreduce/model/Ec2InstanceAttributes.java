@@ -26,9 +26,6 @@ public class Ec2InstanceAttributes implements Serializable {
     /**
      * The name of the Amazon EC2 key pair to use when connecting with SSH
      * into the master node as a user named "hadoop".
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String ec2KeyName;
 
@@ -40,35 +37,23 @@ public class Ec2InstanceAttributes implements Serializable {
      * not support cluster compute quadruple extra large (cc1.4xlarge)
      * instances. Thus, you cannot specify the cc1.4xlarge instance type for
      * nodes of a job flow launched in a VPC.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String ec2SubnetId;
 
     /**
      * The Availability Zone in which the cluster will run.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String ec2AvailabilityZone;
 
     /**
      * The IAM role that was specified when the job flow was launched. The
      * EC2 instances of the job flow assume this role.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      */
     private String iamInstanceProfile;
 
     /**
      * The name of the Amazon EC2 key pair to use when connecting with SSH
      * into the master node as a user named "hadoop".
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return The name of the Amazon EC2 key pair to use when connecting with SSH
      *         into the master node as a user named "hadoop".
@@ -80,9 +65,6 @@ public class Ec2InstanceAttributes implements Serializable {
     /**
      * The name of the Amazon EC2 key pair to use when connecting with SSH
      * into the master node as a user named "hadoop".
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param ec2KeyName The name of the Amazon EC2 key pair to use when connecting with SSH
      *         into the master node as a user named "hadoop".
@@ -96,9 +78,6 @@ public class Ec2InstanceAttributes implements Serializable {
      * into the master node as a user named "hadoop".
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param ec2KeyName The name of the Amazon EC2 key pair to use when connecting with SSH
      *         into the master node as a user named "hadoop".
@@ -119,9 +98,6 @@ public class Ec2InstanceAttributes implements Serializable {
      * not support cluster compute quadruple extra large (cc1.4xlarge)
      * instances. Thus, you cannot specify the cc1.4xlarge instance type for
      * nodes of a job flow launched in a VPC.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return To launch the job flow in Amazon VPC, set this parameter to the
      *         identifier of the Amazon VPC subnet where you want the job flow to
@@ -143,9 +119,6 @@ public class Ec2InstanceAttributes implements Serializable {
      * not support cluster compute quadruple extra large (cc1.4xlarge)
      * instances. Thus, you cannot specify the cc1.4xlarge instance type for
      * nodes of a job flow launched in a VPC.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param ec2SubnetId To launch the job flow in Amazon VPC, set this parameter to the
      *         identifier of the Amazon VPC subnet where you want the job flow to
@@ -169,9 +142,6 @@ public class Ec2InstanceAttributes implements Serializable {
      * nodes of a job flow launched in a VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param ec2SubnetId To launch the job flow in Amazon VPC, set this parameter to the
      *         identifier of the Amazon VPC subnet where you want the job flow to
@@ -191,9 +161,6 @@ public class Ec2InstanceAttributes implements Serializable {
 
     /**
      * The Availability Zone in which the cluster will run.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return The Availability Zone in which the cluster will run.
      */
@@ -203,9 +170,6 @@ public class Ec2InstanceAttributes implements Serializable {
     
     /**
      * The Availability Zone in which the cluster will run.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param ec2AvailabilityZone The Availability Zone in which the cluster will run.
      */
@@ -217,9 +181,6 @@ public class Ec2InstanceAttributes implements Serializable {
      * The Availability Zone in which the cluster will run.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param ec2AvailabilityZone The Availability Zone in which the cluster will run.
      *
@@ -234,9 +195,6 @@ public class Ec2InstanceAttributes implements Serializable {
     /**
      * The IAM role that was specified when the job flow was launched. The
      * EC2 instances of the job flow assume this role.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @return The IAM role that was specified when the job flow was launched. The
      *         EC2 instances of the job flow assume this role.
@@ -248,9 +206,6 @@ public class Ec2InstanceAttributes implements Serializable {
     /**
      * The IAM role that was specified when the job flow was launched. The
      * EC2 instances of the job flow assume this role.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param iamInstanceProfile The IAM role that was specified when the job flow was launched. The
      *         EC2 instances of the job flow assume this role.
@@ -264,9 +219,6 @@ public class Ec2InstanceAttributes implements Serializable {
      * EC2 instances of the job flow assume this role.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 256<br/>
      *
      * @param iamInstanceProfile The IAM role that was specified when the job flow was launched. The
      *         EC2 instances of the job flow assume this role.

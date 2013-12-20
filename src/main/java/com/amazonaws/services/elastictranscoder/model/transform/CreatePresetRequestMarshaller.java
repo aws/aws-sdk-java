@@ -207,6 +207,17 @@ public class CreatePresetRequestMarshaller implements Marshaller<Request<CreateP
                 if (audio.getChannels() != null) {
                     jsonWriter.key("Channels").value(audio.getChannels());
                 }
+                AudioCodecOptions codecOptions = audio.getCodecOptions();
+                if (codecOptions != null) {
+
+                    jsonWriter.key("CodecOptions");
+                    jsonWriter.object();
+
+                    if (codecOptions.getProfile() != null) {
+                        jsonWriter.key("Profile").value(codecOptions.getProfile());
+                    }
+                    jsonWriter.endObject();
+                }
                 jsonWriter.endObject();
             }
             Thumbnails thumbnails = createPresetRequest.getThumbnails();

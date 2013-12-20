@@ -14,6 +14,7 @@
  */
 package com.amazonaws.metrics.internal.cloudwatch;
 
+import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.MetricCollector;
@@ -22,7 +23,7 @@ import com.amazonaws.regions.Regions;
 /**
  * The default AWS SDK metric collector factory.  This class is instantiated
  * via reflection if the default AWS SDK metrics is enabled via the
- * system property {@link AwsSdkMetrics#DEFAULT_METRICS_SYSTEM_PROPERTY}.
+ * system property {@link SDKGlobalConfiguration#DEFAULT_METRICS_SYSTEM_PROPERTY}.
  */
 public class DefaultMetricCollectorFactory 
     implements MetricCollector.Factory {

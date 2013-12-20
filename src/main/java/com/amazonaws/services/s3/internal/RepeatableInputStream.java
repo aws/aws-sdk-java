@@ -40,6 +40,7 @@ public class RepeatableInputStream extends InputStream {
     private int bufferOffset = 0;
     private long bytesReadPastMark = 0;
     private byte[] buffer = null;
+    private boolean hasWarnedBufferOverflow = false;
 
     /**
      * Creates a repeatable input stream based on another input stream.
@@ -167,10 +168,14 @@ public class RepeatableInputStream extends InputStream {
             bufferOffset += count;
         } else {
             // We have exceeded the buffer capacity, after which point it is of no use. Free the memory.
-        	if (log.isDebugEnabled()) {
-        		log.debug("Buffer size " + bufferSize + " has been exceeded and the input stream "
-                + "will not be repeatable until the next mark. Freeing buffer memory");
+        	if (! hasWarnedBufferOverflow) {
+        		if (log.isDebugEnabled()) {
+        			log.debug("Buffer size " + bufferSize + " has been exceeded and the input stream "
+        	                + "will not be repeatable until the next mark. Freeing buffer memory");
+        		}
+        		hasWarnedBufferOverflow = true;
         	}
+        		
             buffer = null;
         }
 
@@ -186,7 +191,8 @@ public class RepeatableInputStream extends InputStream {
         byte[] tmp = new byte[1];
         int count = read(tmp);
         if (count != -1) {
-            return tmp[0];
+            int unsignedByte = (int) tmp[0] & 0xFF;
+            return unsignedByte;
         } else {
             return count;
         }
