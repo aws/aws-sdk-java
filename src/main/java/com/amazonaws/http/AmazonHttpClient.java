@@ -690,7 +690,8 @@ public class AmazonHttpClient {
             }
 
             if (awsResponse == null)
-                throw new RuntimeException("Unable to unmarshall response metadata");
+                throw new RuntimeException("Unable to unmarshall response metadata. Response Code: " +
+                		httpResponse.getStatusCode() + ", Response Text: " + httpResponse.getStatusText());
 
             responseMetadataCache.add(request.getOriginalRequest(), awsResponse.getResponseMetadata());
 
@@ -704,7 +705,8 @@ public class AmazonHttpClient {
         } catch (CRC32MismatchException e) {
             throw e;
         } catch (Exception e) {
-            String errorMessage = "Unable to unmarshall response (" + e.getMessage() + ")";
+            String errorMessage = "Unable to unmarshall response (" + e.getMessage() + "). Response Code: " +
+                		httpResponse.getStatusCode() + ", Response Text: " + httpResponse.getStatusText();
             throw new AmazonClientException(errorMessage, e);
         }
     }
@@ -757,7 +759,8 @@ public class AmazonHttpClient {
                 exception.setErrorType(ErrorType.Service);
                 exception.setErrorCode("Service unavailable");
             } else {
-                String errorMessage = "Unable to unmarshall error response (" + e.getMessage() + ")";
+                String errorMessage = "Unable to unmarshall error response (" + e.getMessage() + "). Response Code: " +
+                		status + ", Response Text: " + apacheHttpResponse.getStatusLine().getReasonPhrase();
                 throw new AmazonClientException(errorMessage, e);
             }
         }
