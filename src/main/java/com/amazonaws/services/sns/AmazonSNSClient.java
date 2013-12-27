@@ -628,15 +628,18 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     
     /**
      * <p>
-     * The <code>CreatePlatformEndpoint</code> creates an endpoint for a
-     * device and mobile app on one of the supported push notification
+     * The <code>CreatePlatformEndpoint</code> action creates an endpoint for
+     * a device and mobile app on one of the supported push notification
      * services, such as GCM and APNS. <code>CreatePlatformEndpoint</code>
      * requires the PlatformApplicationArn that is returned from
      * <code>CreatePlatformApplication</code> . The EndpointArn that is
      * returned when using <code>CreatePlatformEndpoint</code> can then be
      * used by the <code>Publish</code> action to send a message to a mobile
      * app or by the <code>Subscribe</code> action for subscription to a
-     * topic. For more information, see <a
+     * topic. The <code>CreatePlatformEndpoint</code> action is idempotent,
+     * so if the requester already owns an endpoint with the same device
+     * token and attributes, that endpoint's ARN is returned without creating
+     * a new endpoint. For more information, see <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
      * Using Amazon SNS Mobile Push Notifications </a> .
      * </p>
@@ -720,7 +723,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     /**
      * <p>
      * The <code>CreateTopic</code> action creates a topic to which
-     * notifications can be published. Users can create at most 100 topics.
+     * notifications can be published. Users can create at most 3000 topics.
      * For more information, see <a href="http://aws.amazon.com/sns/">
      * http://aws.amazon.com/sns </a> . This action is idempotent, so if the
      * requester already owns a topic with the specified name, that topic's
@@ -1729,7 +1732,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @param subscriptionArn The ARN of the subscription to modify.
      * @param attributeName The name of the attribute you want to set. Only a
      * subset of the subscriptions attributes are mutable. <p>Valid values:
-     * <code>DeliveryPolicy</code>
+     * <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      * @param attributeValue The new value for the attribute in JSON format.
      * 
      * @return The response from the SetSubscriptionAttributes service
@@ -1759,7 +1762,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     /**
      * <p>
      * The <code>CreateTopic</code> action creates a topic to which
-     * notifications can be published. Users can create at most 100 topics.
+     * notifications can be published. Users can create at most 3000 topics.
      * For more information, see <a href="http://aws.amazon.com/sns/">
      * http://aws.amazon.com/sns </a> . This action is idempotent, so if the
      * requester already owns a topic with the specified name, that topic's
@@ -1949,10 +1952,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @param label A unique identifier for the new policy statement.
      * @param aWSAccountIds The AWS account IDs of the users (principals) who
      * will be given access to the specified actions. The users must have AWS
-     * accounts, but do not need to be signed up for this service. <!--For
-     * information about locating the AWS account identification, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/index.html?AWSCredentials.html">Your
-     * AWS Identifiers</aulink> in the &service; Developer Guide.-->
+     * accounts, but do not need to be signed up for this service.
      * @param actionNames The action you want to allow for the specified
      * principal(s). <p>Valid values: any Amazon SNS action name.
      * 

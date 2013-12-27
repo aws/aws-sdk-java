@@ -24,77 +24,44 @@ import java.io.Serializable;
 public class GetPlatformApplicationAttributesResult implements Serializable {
 
     /**
-     * Attributes include the following: <ul> <!-- AllowEndpointPolicies,
-     * EventDeliveryAttemptFailure, and Policy are not yet supported. Will
-     * remove comments once it is available --> <!--
-     * <li><code>AllowEndpointPolicies</code> true or false (default false) -
-     * If true, then policies on endpoints will be evaluated to determine if
-     * the topic or user has the rights to send messages to it. If false, the
-     * endpoint policy will be ignored and only the mobile app policy will be
-     * considered.</li> --> <li><code>EventEndpointCreated</code> -- Topic
-     * ARN to which EndpointCreated event notifications should be sent.</li>
+     * Attributes include the following: <ul>
+     * <li><code>EventEndpointCreated</code> -- Topic ARN to which
+     * EndpointCreated event notifications should be sent.</li>
      * <li><code>EventEndpointDeleted</code> -- Topic ARN to which
      * EndpointDeleted event notifications should be sent.</li>
      * <li><code>EventEndpointUpdated</code> -- Topic ARN to which
-     * EndpointUpdate event notifications should be sent.</li> <!--
-     * <li><code>EventDeliveryAttemptFailure</code> Topic ARN to which
-     * DeliveryAttemptFailure event notifications should be sent upon Direct
-     * Publish delivery attempt failures to one of the application's
-     * endpoints.</li> --> <li><code>EventDeliveryFailure</code> -- Topic ARN
-     * to which DeliveryFailure event notifications should be sent upon
-     * Direct Publish delivery failure (permanent) to one of the
-     * application's endpoints.</li> <!-- <li><code>Policy</code> Access
-     * policy controlling who can send messages to endpoints under this
-     * mobile app.</li> --> </ul>
+     * EndpointUpdate event notifications should be sent.</li>
+     * <li><code>EventDeliveryFailure</code> -- Topic ARN to which
+     * DeliveryFailure event notifications should be sent upon Direct Publish
+     * delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      */
     private java.util.Map<String,String> attributes;
 
     /**
-     * Attributes include the following: <ul> <!-- AllowEndpointPolicies,
-     * EventDeliveryAttemptFailure, and Policy are not yet supported. Will
-     * remove comments once it is available --> <!--
-     * <li><code>AllowEndpointPolicies</code> true or false (default false) -
-     * If true, then policies on endpoints will be evaluated to determine if
-     * the topic or user has the rights to send messages to it. If false, the
-     * endpoint policy will be ignored and only the mobile app policy will be
-     * considered.</li> --> <li><code>EventEndpointCreated</code> -- Topic
-     * ARN to which EndpointCreated event notifications should be sent.</li>
+     * Attributes include the following: <ul>
+     * <li><code>EventEndpointCreated</code> -- Topic ARN to which
+     * EndpointCreated event notifications should be sent.</li>
      * <li><code>EventEndpointDeleted</code> -- Topic ARN to which
      * EndpointDeleted event notifications should be sent.</li>
      * <li><code>EventEndpointUpdated</code> -- Topic ARN to which
-     * EndpointUpdate event notifications should be sent.</li> <!--
-     * <li><code>EventDeliveryAttemptFailure</code> Topic ARN to which
-     * DeliveryAttemptFailure event notifications should be sent upon Direct
-     * Publish delivery attempt failures to one of the application's
-     * endpoints.</li> --> <li><code>EventDeliveryFailure</code> -- Topic ARN
-     * to which DeliveryFailure event notifications should be sent upon
-     * Direct Publish delivery failure (permanent) to one of the
-     * application's endpoints.</li> <!-- <li><code>Policy</code> Access
-     * policy controlling who can send messages to endpoints under this
-     * mobile app.</li> --> </ul>
+     * EndpointUpdate event notifications should be sent.</li>
+     * <li><code>EventDeliveryFailure</code> -- Topic ARN to which
+     * DeliveryFailure event notifications should be sent upon Direct Publish
+     * delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      *
-     * @return Attributes include the following: <ul> <!-- AllowEndpointPolicies,
-     *         EventDeliveryAttemptFailure, and Policy are not yet supported. Will
-     *         remove comments once it is available --> <!--
-     *         <li><code>AllowEndpointPolicies</code> true or false (default false) -
-     *         If true, then policies on endpoints will be evaluated to determine if
-     *         the topic or user has the rights to send messages to it. If false, the
-     *         endpoint policy will be ignored and only the mobile app policy will be
-     *         considered.</li> --> <li><code>EventEndpointCreated</code> -- Topic
-     *         ARN to which EndpointCreated event notifications should be sent.</li>
+     * @return Attributes include the following: <ul>
+     *         <li><code>EventEndpointCreated</code> -- Topic ARN to which
+     *         EndpointCreated event notifications should be sent.</li>
      *         <li><code>EventEndpointDeleted</code> -- Topic ARN to which
      *         EndpointDeleted event notifications should be sent.</li>
      *         <li><code>EventEndpointUpdated</code> -- Topic ARN to which
-     *         EndpointUpdate event notifications should be sent.</li> <!--
-     *         <li><code>EventDeliveryAttemptFailure</code> Topic ARN to which
-     *         DeliveryAttemptFailure event notifications should be sent upon Direct
-     *         Publish delivery attempt failures to one of the application's
-     *         endpoints.</li> --> <li><code>EventDeliveryFailure</code> -- Topic ARN
-     *         to which DeliveryFailure event notifications should be sent upon
-     *         Direct Publish delivery failure (permanent) to one of the
-     *         application's endpoints.</li> <!-- <li><code>Policy</code> Access
-     *         policy controlling who can send messages to endpoints under this
-     *         mobile app.</li> --> </ul>
+     *         EndpointUpdate event notifications should be sent.</li>
+     *         <li><code>EventDeliveryFailure</code> -- Topic ARN to which
+     *         DeliveryFailure event notifications should be sent upon Direct Publish
+     *         delivery failure (permanent) to one of the application's
+     *         endpoints.</li> </ul>
      */
     public java.util.Map<String,String> getAttributes() {
         
@@ -105,104 +72,60 @@ public class GetPlatformApplicationAttributesResult implements Serializable {
     }
     
     /**
-     * Attributes include the following: <ul> <!-- AllowEndpointPolicies,
-     * EventDeliveryAttemptFailure, and Policy are not yet supported. Will
-     * remove comments once it is available --> <!--
-     * <li><code>AllowEndpointPolicies</code> true or false (default false) -
-     * If true, then policies on endpoints will be evaluated to determine if
-     * the topic or user has the rights to send messages to it. If false, the
-     * endpoint policy will be ignored and only the mobile app policy will be
-     * considered.</li> --> <li><code>EventEndpointCreated</code> -- Topic
-     * ARN to which EndpointCreated event notifications should be sent.</li>
+     * Attributes include the following: <ul>
+     * <li><code>EventEndpointCreated</code> -- Topic ARN to which
+     * EndpointCreated event notifications should be sent.</li>
      * <li><code>EventEndpointDeleted</code> -- Topic ARN to which
      * EndpointDeleted event notifications should be sent.</li>
      * <li><code>EventEndpointUpdated</code> -- Topic ARN to which
-     * EndpointUpdate event notifications should be sent.</li> <!--
-     * <li><code>EventDeliveryAttemptFailure</code> Topic ARN to which
-     * DeliveryAttemptFailure event notifications should be sent upon Direct
-     * Publish delivery attempt failures to one of the application's
-     * endpoints.</li> --> <li><code>EventDeliveryFailure</code> -- Topic ARN
-     * to which DeliveryFailure event notifications should be sent upon
-     * Direct Publish delivery failure (permanent) to one of the
-     * application's endpoints.</li> <!-- <li><code>Policy</code> Access
-     * policy controlling who can send messages to endpoints under this
-     * mobile app.</li> --> </ul>
+     * EndpointUpdate event notifications should be sent.</li>
+     * <li><code>EventDeliveryFailure</code> -- Topic ARN to which
+     * DeliveryFailure event notifications should be sent upon Direct Publish
+     * delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      *
-     * @param attributes Attributes include the following: <ul> <!-- AllowEndpointPolicies,
-     *         EventDeliveryAttemptFailure, and Policy are not yet supported. Will
-     *         remove comments once it is available --> <!--
-     *         <li><code>AllowEndpointPolicies</code> true or false (default false) -
-     *         If true, then policies on endpoints will be evaluated to determine if
-     *         the topic or user has the rights to send messages to it. If false, the
-     *         endpoint policy will be ignored and only the mobile app policy will be
-     *         considered.</li> --> <li><code>EventEndpointCreated</code> -- Topic
-     *         ARN to which EndpointCreated event notifications should be sent.</li>
+     * @param attributes Attributes include the following: <ul>
+     *         <li><code>EventEndpointCreated</code> -- Topic ARN to which
+     *         EndpointCreated event notifications should be sent.</li>
      *         <li><code>EventEndpointDeleted</code> -- Topic ARN to which
      *         EndpointDeleted event notifications should be sent.</li>
      *         <li><code>EventEndpointUpdated</code> -- Topic ARN to which
-     *         EndpointUpdate event notifications should be sent.</li> <!--
-     *         <li><code>EventDeliveryAttemptFailure</code> Topic ARN to which
-     *         DeliveryAttemptFailure event notifications should be sent upon Direct
-     *         Publish delivery attempt failures to one of the application's
-     *         endpoints.</li> --> <li><code>EventDeliveryFailure</code> -- Topic ARN
-     *         to which DeliveryFailure event notifications should be sent upon
-     *         Direct Publish delivery failure (permanent) to one of the
-     *         application's endpoints.</li> <!-- <li><code>Policy</code> Access
-     *         policy controlling who can send messages to endpoints under this
-     *         mobile app.</li> --> </ul>
+     *         EndpointUpdate event notifications should be sent.</li>
+     *         <li><code>EventDeliveryFailure</code> -- Topic ARN to which
+     *         DeliveryFailure event notifications should be sent upon Direct Publish
+     *         delivery failure (permanent) to one of the application's
+     *         endpoints.</li> </ul>
      */
     public void setAttributes(java.util.Map<String,String> attributes) {
         this.attributes = attributes;
     }
     
     /**
-     * Attributes include the following: <ul> <!-- AllowEndpointPolicies,
-     * EventDeliveryAttemptFailure, and Policy are not yet supported. Will
-     * remove comments once it is available --> <!--
-     * <li><code>AllowEndpointPolicies</code> true or false (default false) -
-     * If true, then policies on endpoints will be evaluated to determine if
-     * the topic or user has the rights to send messages to it. If false, the
-     * endpoint policy will be ignored and only the mobile app policy will be
-     * considered.</li> --> <li><code>EventEndpointCreated</code> -- Topic
-     * ARN to which EndpointCreated event notifications should be sent.</li>
+     * Attributes include the following: <ul>
+     * <li><code>EventEndpointCreated</code> -- Topic ARN to which
+     * EndpointCreated event notifications should be sent.</li>
      * <li><code>EventEndpointDeleted</code> -- Topic ARN to which
      * EndpointDeleted event notifications should be sent.</li>
      * <li><code>EventEndpointUpdated</code> -- Topic ARN to which
-     * EndpointUpdate event notifications should be sent.</li> <!--
-     * <li><code>EventDeliveryAttemptFailure</code> Topic ARN to which
-     * DeliveryAttemptFailure event notifications should be sent upon Direct
-     * Publish delivery attempt failures to one of the application's
-     * endpoints.</li> --> <li><code>EventDeliveryFailure</code> -- Topic ARN
-     * to which DeliveryFailure event notifications should be sent upon
-     * Direct Publish delivery failure (permanent) to one of the
-     * application's endpoints.</li> <!-- <li><code>Policy</code> Access
-     * policy controlling who can send messages to endpoints under this
-     * mobile app.</li> --> </ul>
+     * EndpointUpdate event notifications should be sent.</li>
+     * <li><code>EventDeliveryFailure</code> -- Topic ARN to which
+     * DeliveryFailure event notifications should be sent upon Direct Publish
+     * delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes Attributes include the following: <ul> <!-- AllowEndpointPolicies,
-     *         EventDeliveryAttemptFailure, and Policy are not yet supported. Will
-     *         remove comments once it is available --> <!--
-     *         <li><code>AllowEndpointPolicies</code> true or false (default false) -
-     *         If true, then policies on endpoints will be evaluated to determine if
-     *         the topic or user has the rights to send messages to it. If false, the
-     *         endpoint policy will be ignored and only the mobile app policy will be
-     *         considered.</li> --> <li><code>EventEndpointCreated</code> -- Topic
-     *         ARN to which EndpointCreated event notifications should be sent.</li>
+     * @param attributes Attributes include the following: <ul>
+     *         <li><code>EventEndpointCreated</code> -- Topic ARN to which
+     *         EndpointCreated event notifications should be sent.</li>
      *         <li><code>EventEndpointDeleted</code> -- Topic ARN to which
      *         EndpointDeleted event notifications should be sent.</li>
      *         <li><code>EventEndpointUpdated</code> -- Topic ARN to which
-     *         EndpointUpdate event notifications should be sent.</li> <!--
-     *         <li><code>EventDeliveryAttemptFailure</code> Topic ARN to which
-     *         DeliveryAttemptFailure event notifications should be sent upon Direct
-     *         Publish delivery attempt failures to one of the application's
-     *         endpoints.</li> --> <li><code>EventDeliveryFailure</code> -- Topic ARN
-     *         to which DeliveryFailure event notifications should be sent upon
-     *         Direct Publish delivery failure (permanent) to one of the
-     *         application's endpoints.</li> <!-- <li><code>Policy</code> Access
-     *         policy controlling who can send messages to endpoints under this
-     *         mobile app.</li> --> </ul>
+     *         EndpointUpdate event notifications should be sent.</li>
+     *         <li><code>EventDeliveryFailure</code> -- Topic ARN to which
+     *         DeliveryFailure event notifications should be sent upon Direct Publish
+     *         delivery failure (permanent) to one of the application's
+     *         endpoints.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -213,28 +136,17 @@ public class GetPlatformApplicationAttributesResult implements Serializable {
     }
 
     /**
-     * Attributes include the following: <ul> <!-- AllowEndpointPolicies,
-     * EventDeliveryAttemptFailure, and Policy are not yet supported. Will
-     * remove comments once it is available --> <!--
-     * <li><code>AllowEndpointPolicies</code> true or false (default false) -
-     * If true, then policies on endpoints will be evaluated to determine if
-     * the topic or user has the rights to send messages to it. If false, the
-     * endpoint policy will be ignored and only the mobile app policy will be
-     * considered.</li> --> <li><code>EventEndpointCreated</code> -- Topic
-     * ARN to which EndpointCreated event notifications should be sent.</li>
+     * Attributes include the following: <ul>
+     * <li><code>EventEndpointCreated</code> -- Topic ARN to which
+     * EndpointCreated event notifications should be sent.</li>
      * <li><code>EventEndpointDeleted</code> -- Topic ARN to which
      * EndpointDeleted event notifications should be sent.</li>
      * <li><code>EventEndpointUpdated</code> -- Topic ARN to which
-     * EndpointUpdate event notifications should be sent.</li> <!--
-     * <li><code>EventDeliveryAttemptFailure</code> Topic ARN to which
-     * DeliveryAttemptFailure event notifications should be sent upon Direct
-     * Publish delivery attempt failures to one of the application's
-     * endpoints.</li> --> <li><code>EventDeliveryFailure</code> -- Topic ARN
-     * to which DeliveryFailure event notifications should be sent upon
-     * Direct Publish delivery failure (permanent) to one of the
-     * application's endpoints.</li> <!-- <li><code>Policy</code> Access
-     * policy controlling who can send messages to endpoints under this
-     * mobile app.</li> --> </ul>
+     * EndpointUpdate event notifications should be sent.</li>
+     * <li><code>EventDeliveryFailure</code> -- Topic ARN to which
+     * DeliveryFailure event notifications should be sent upon Direct Publish
+     * delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      * <p>
      * The method adds a new key-value pair into Attributes parameter, and
      * returns a reference to this object so that method calls can be chained

@@ -36,7 +36,7 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest im
     /**
      * The name of the attribute you want to set. Only a subset of the
      * subscriptions attributes are mutable. <p>Valid values:
-     * <code>DeliveryPolicy</code>
+     * <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      */
     private String attributeName;
 
@@ -59,7 +59,7 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest im
      * @param subscriptionArn The ARN of the subscription to modify.
      * @param attributeName The name of the attribute you want to set. Only a
      * subset of the subscriptions attributes are mutable. <p>Valid values:
-     * <code>DeliveryPolicy</code>
+     * <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      * @param attributeValue The new value for the attribute in JSON format.
      */
     public SetSubscriptionAttributesRequest(String subscriptionArn, String attributeName, String attributeValue) {
@@ -104,11 +104,11 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest im
     /**
      * The name of the attribute you want to set. Only a subset of the
      * subscriptions attributes are mutable. <p>Valid values:
-     * <code>DeliveryPolicy</code>
+     * <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      *
      * @return The name of the attribute you want to set. Only a subset of the
      *         subscriptions attributes are mutable. <p>Valid values:
-     *         <code>DeliveryPolicy</code>
+     *         <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      */
     public String getAttributeName() {
         return attributeName;
@@ -117,11 +117,11 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest im
     /**
      * The name of the attribute you want to set. Only a subset of the
      * subscriptions attributes are mutable. <p>Valid values:
-     * <code>DeliveryPolicy</code>
+     * <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      *
      * @param attributeName The name of the attribute you want to set. Only a subset of the
      *         subscriptions attributes are mutable. <p>Valid values:
-     *         <code>DeliveryPolicy</code>
+     *         <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      */
     public void setAttributeName(String attributeName) {
         this.attributeName = attributeName;
@@ -130,13 +130,13 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest im
     /**
      * The name of the attribute you want to set. Only a subset of the
      * subscriptions attributes are mutable. <p>Valid values:
-     * <code>DeliveryPolicy</code>
+     * <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeName The name of the attribute you want to set. Only a subset of the
      *         subscriptions attributes are mutable. <p>Valid values:
-     *         <code>DeliveryPolicy</code>
+     *         <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

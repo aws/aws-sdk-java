@@ -1013,15 +1013,18 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
     
     /**
      * <p>
-     * The <code>CreatePlatformEndpoint</code> creates an endpoint for a
-     * device and mobile app on one of the supported push notification
+     * The <code>CreatePlatformEndpoint</code> action creates an endpoint for
+     * a device and mobile app on one of the supported push notification
      * services, such as GCM and APNS. <code>CreatePlatformEndpoint</code>
      * requires the PlatformApplicationArn that is returned from
      * <code>CreatePlatformApplication</code> . The EndpointArn that is
      * returned when using <code>CreatePlatformEndpoint</code> can then be
      * used by the <code>Publish</code> action to send a message to a mobile
      * app or by the <code>Subscribe</code> action for subscription to a
-     * topic. For more information, see <a
+     * topic. The <code>CreatePlatformEndpoint</code> action is idempotent,
+     * so if the requester already owns an endpoint with the same device
+     * token and attributes, that endpoint's ARN is returned without creating
+     * a new endpoint. For more information, see <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
      * Using Amazon SNS Mobile Push Notifications </a> .
      * </p>
@@ -1053,15 +1056,18 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
 
     /**
      * <p>
-     * The <code>CreatePlatformEndpoint</code> creates an endpoint for a
-     * device and mobile app on one of the supported push notification
+     * The <code>CreatePlatformEndpoint</code> action creates an endpoint for
+     * a device and mobile app on one of the supported push notification
      * services, such as GCM and APNS. <code>CreatePlatformEndpoint</code>
      * requires the PlatformApplicationArn that is returned from
      * <code>CreatePlatformApplication</code> . The EndpointArn that is
      * returned when using <code>CreatePlatformEndpoint</code> can then be
      * used by the <code>Publish</code> action to send a message to a mobile
      * app or by the <code>Subscribe</code> action for subscription to a
-     * topic. For more information, see <a
+     * topic. The <code>CreatePlatformEndpoint</code> action is idempotent,
+     * so if the requester already owns an endpoint with the same device
+     * token and attributes, that endpoint's ARN is returned without creating
+     * a new endpoint. For more information, see <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
      * Using Amazon SNS Mobile Push Notifications </a> .
      * </p>
@@ -1184,7 +1190,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
     /**
      * <p>
      * The <code>CreateTopic</code> action creates a topic to which
-     * notifications can be published. Users can create at most 100 topics.
+     * notifications can be published. Users can create at most 3000 topics.
      * For more information, see <a href="http://aws.amazon.com/sns/">
      * http://aws.amazon.com/sns </a> . This action is idempotent, so if the
      * requester already owns a topic with the specified name, that topic's
@@ -1218,7 +1224,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
     /**
      * <p>
      * The <code>CreateTopic</code> action creates a topic to which
-     * notifications can be published. Users can create at most 100 topics.
+     * notifications can be published. Users can create at most 3000 topics.
      * For more information, see <a href="http://aws.amazon.com/sns/">
      * http://aws.amazon.com/sns </a> . This action is idempotent, so if the
      * requester already owns a topic with the specified name, that topic's
