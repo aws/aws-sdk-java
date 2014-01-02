@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,13 +25,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * launch configurations, which by default is 100, must not yet have been met; otherwise, the call will fail. When created, the new launch configuration
  * is available for immediate use.
  * </p>
- * <p>
- * You can create a launch configuration with Amazon EC2 security groups or with Amazon VPC security groups. However, you can't use Amazon EC2 security
- * groups together with Amazon VPC security groups, or vice versa.
- * </p>
- * <p>
- * <b>NOTE:</b> At this time, Auto Scaling launch configurations don't support compressed (e.g. zipped) user data files.
- * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createLaunchConfiguration(CreateLaunchConfigurationRequest)
  */
@@ -47,9 +40,9 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     private String launchConfigurationName;
 
     /**
-     * Unique ID of the <i>Amazon Machine Image</i> (AMI) you want to use to
-     * launch your EC2 instances. For information about finding Amazon EC2
-     * AMIs, see <a
+     * Unique ID of the Amazon Machine Image (AMI) you want to use to launch
+     * your EC2 instances. For information about finding Amazon EC2 AMIs, see
+     * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * a Suitable AMI</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
@@ -78,9 +71,9 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * more information about Amazon EC2 security groups, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      * Using Security Groups</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. If your instances are launched within VPC, specify Amazon
-     * VPC security group IDs. For more information about Amazon VPC security
-     * groups, see <a
+     * Guide</i>. <p>If your instances are launched within VPC, specify
+     * Amazon VPC security group IDs. For more information about Amazon VPC
+     * security groups, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">Security
      * Groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
@@ -91,13 +84,36 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * For more information about Amazon EC2 user data, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html#instancedata-user-data-retrieval">User
      * Data Retrieval</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * Guide</i>. <note> At this time, Auto Scaling launch configurations
+     * don't support compressed (e.g. zipped) user data files. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 21847<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String userData;
+
+    /**
+     * The ID of the Amazon EC2 instance you want to use to create the launch
+     * configuration. Use this attribute if you want the launch configuration
+     * to derive its attributes from an EC2 instance. <p> When you use an
+     * instance to create a launch configuration, all you need to specify is
+     * the <code>InstanceId</code>. The new launch configuration, by default,
+     * derives all the attributes from the specified instance with the
+     * exception of <code>BlockDeviceMapping</code>. <p>If you want to create
+     * a launch configuration with <code>BlockDeviceMapping</code> or
+     * override any other instance attributes, specify them as part of the
+     * same request. <p>For more information on using an InstanceID to create
+     * a launch configuration, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create
+     * a Launch Configuration Using an Amazon EC2 Instance</a> in the <i>Auto
+     * Scaling Developer Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 16<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String instanceId;
 
     /**
      * The instance type of the Amazon EC2 instance. For information about
@@ -263,9 +279,9 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * Unique ID of the <i>Amazon Machine Image</i> (AMI) you want to use to
-     * launch your EC2 instances. For information about finding Amazon EC2
-     * AMIs, see <a
+     * Unique ID of the Amazon Machine Image (AMI) you want to use to launch
+     * your EC2 instances. For information about finding Amazon EC2 AMIs, see
+     * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * a Suitable AMI</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
@@ -274,9 +290,9 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Unique ID of the <i>Amazon Machine Image</i> (AMI) you want to use to
-     *         launch your EC2 instances. For information about finding Amazon EC2
-     *         AMIs, see <a
+     * @return Unique ID of the Amazon Machine Image (AMI) you want to use to launch
+     *         your EC2 instances. For information about finding Amazon EC2 AMIs, see
+     *         <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      *         a Suitable AMI</a> in the <i>Amazon Elastic Compute Cloud User
      *         Guide</i>.
@@ -286,9 +302,9 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * Unique ID of the <i>Amazon Machine Image</i> (AMI) you want to use to
-     * launch your EC2 instances. For information about finding Amazon EC2
-     * AMIs, see <a
+     * Unique ID of the Amazon Machine Image (AMI) you want to use to launch
+     * your EC2 instances. For information about finding Amazon EC2 AMIs, see
+     * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * a Suitable AMI</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
@@ -297,9 +313,9 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param imageId Unique ID of the <i>Amazon Machine Image</i> (AMI) you want to use to
-     *         launch your EC2 instances. For information about finding Amazon EC2
-     *         AMIs, see <a
+     * @param imageId Unique ID of the Amazon Machine Image (AMI) you want to use to launch
+     *         your EC2 instances. For information about finding Amazon EC2 AMIs, see
+     *         <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      *         a Suitable AMI</a> in the <i>Amazon Elastic Compute Cloud User
      *         Guide</i>.
@@ -309,9 +325,9 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * Unique ID of the <i>Amazon Machine Image</i> (AMI) you want to use to
-     * launch your EC2 instances. For information about finding Amazon EC2
-     * AMIs, see <a
+     * Unique ID of the Amazon Machine Image (AMI) you want to use to launch
+     * your EC2 instances. For information about finding Amazon EC2 AMIs, see
+     * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * a Suitable AMI</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
@@ -322,9 +338,9 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param imageId Unique ID of the <i>Amazon Machine Image</i> (AMI) you want to use to
-     *         launch your EC2 instances. For information about finding Amazon EC2
-     *         AMIs, see <a
+     * @param imageId Unique ID of the Amazon Machine Image (AMI) you want to use to launch
+     *         your EC2 instances. For information about finding Amazon EC2 AMIs, see
+     *         <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      *         a Suitable AMI</a> in the <i>Amazon Elastic Compute Cloud User
      *         Guide</i>.
@@ -401,9 +417,9 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * more information about Amazon EC2 security groups, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      * Using Security Groups</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. If your instances are launched within VPC, specify Amazon
-     * VPC security group IDs. For more information about Amazon VPC security
-     * groups, see <a
+     * Guide</i>. <p>If your instances are launched within VPC, specify
+     * Amazon VPC security group IDs. For more information about Amazon VPC
+     * security groups, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">Security
      * Groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      *
@@ -413,9 +429,9 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         more information about Amazon EC2 security groups, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      *         Using Security Groups</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>. If your instances are launched within VPC, specify Amazon
-     *         VPC security group IDs. For more information about Amazon VPC security
-     *         groups, see <a
+     *         Guide</i>. <p>If your instances are launched within VPC, specify
+     *         Amazon VPC security group IDs. For more information about Amazon VPC
+     *         security groups, see <a
      *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">Security
      *         Groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
@@ -434,9 +450,9 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * more information about Amazon EC2 security groups, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      * Using Security Groups</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. If your instances are launched within VPC, specify Amazon
-     * VPC security group IDs. For more information about Amazon VPC security
-     * groups, see <a
+     * Guide</i>. <p>If your instances are launched within VPC, specify
+     * Amazon VPC security group IDs. For more information about Amazon VPC
+     * security groups, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">Security
      * Groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      *
@@ -446,9 +462,9 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         more information about Amazon EC2 security groups, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      *         Using Security Groups</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>. If your instances are launched within VPC, specify Amazon
-     *         VPC security group IDs. For more information about Amazon VPC security
-     *         groups, see <a
+     *         Guide</i>. <p>If your instances are launched within VPC, specify
+     *         Amazon VPC security group IDs. For more information about Amazon VPC
+     *         security groups, see <a
      *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">Security
      *         Groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
@@ -469,9 +485,9 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * more information about Amazon EC2 security groups, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      * Using Security Groups</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. If your instances are launched within VPC, specify Amazon
-     * VPC security group IDs. For more information about Amazon VPC security
-     * groups, see <a
+     * Guide</i>. <p>If your instances are launched within VPC, specify
+     * Amazon VPC security group IDs. For more information about Amazon VPC
+     * security groups, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">Security
      * Groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * <p>
@@ -483,9 +499,9 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         more information about Amazon EC2 security groups, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      *         Using Security Groups</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>. If your instances are launched within VPC, specify Amazon
-     *         VPC security group IDs. For more information about Amazon VPC security
-     *         groups, see <a
+     *         Guide</i>. <p>If your instances are launched within VPC, specify
+     *         Amazon VPC security group IDs. For more information about Amazon VPC
+     *         security groups, see <a
      *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">Security
      *         Groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      *
@@ -507,9 +523,9 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * more information about Amazon EC2 security groups, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      * Using Security Groups</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>. If your instances are launched within VPC, specify Amazon
-     * VPC security group IDs. For more information about Amazon VPC security
-     * groups, see <a
+     * Guide</i>. <p>If your instances are launched within VPC, specify
+     * Amazon VPC security group IDs. For more information about Amazon VPC
+     * security groups, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">Security
      * Groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * <p>
@@ -521,9 +537,9 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         more information about Amazon EC2 security groups, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      *         Using Security Groups</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>. If your instances are launched within VPC, specify Amazon
-     *         VPC security group IDs. For more information about Amazon VPC security
-     *         groups, see <a
+     *         Guide</i>. <p>If your instances are launched within VPC, specify
+     *         Amazon VPC security group IDs. For more information about Amazon VPC
+     *         security groups, see <a
      *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">Security
      *         Groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      *
@@ -547,7 +563,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * For more information about Amazon EC2 user data, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html#instancedata-user-data-retrieval">User
      * Data Retrieval</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * Guide</i>. <note> At this time, Auto Scaling launch configurations
+     * don't support compressed (e.g. zipped) user data files. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 21847<br/>
@@ -557,7 +574,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         For more information about Amazon EC2 user data, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html#instancedata-user-data-retrieval">User
      *         Data Retrieval</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>.
+     *         Guide</i>. <note> At this time, Auto Scaling launch configurations
+     *         don't support compressed (e.g. zipped) user data files. </note>
      */
     public String getUserData() {
         return userData;
@@ -568,7 +586,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * For more information about Amazon EC2 user data, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html#instancedata-user-data-retrieval">User
      * Data Retrieval</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * Guide</i>. <note> At this time, Auto Scaling launch configurations
+     * don't support compressed (e.g. zipped) user data files. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 21847<br/>
@@ -578,7 +597,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         For more information about Amazon EC2 user data, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html#instancedata-user-data-retrieval">User
      *         Data Retrieval</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>.
+     *         Guide</i>. <note> At this time, Auto Scaling launch configurations
+     *         don't support compressed (e.g. zipped) user data files. </note>
      */
     public void setUserData(String userData) {
         this.userData = userData;
@@ -589,7 +609,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * For more information about Amazon EC2 user data, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html#instancedata-user-data-retrieval">User
      * Data Retrieval</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * Guide</i>. <note> At this time, Auto Scaling launch configurations
+     * don't support compressed (e.g. zipped) user data files. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -601,13 +622,137 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         For more information about Amazon EC2 user data, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html#instancedata-user-data-retrieval">User
      *         Data Retrieval</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>.
+     *         Guide</i>. <note> At this time, Auto Scaling launch configurations
+     *         don't support compressed (e.g. zipped) user data files. </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public CreateLaunchConfigurationRequest withUserData(String userData) {
         this.userData = userData;
+        return this;
+    }
+
+    /**
+     * The ID of the Amazon EC2 instance you want to use to create the launch
+     * configuration. Use this attribute if you want the launch configuration
+     * to derive its attributes from an EC2 instance. <p> When you use an
+     * instance to create a launch configuration, all you need to specify is
+     * the <code>InstanceId</code>. The new launch configuration, by default,
+     * derives all the attributes from the specified instance with the
+     * exception of <code>BlockDeviceMapping</code>. <p>If you want to create
+     * a launch configuration with <code>BlockDeviceMapping</code> or
+     * override any other instance attributes, specify them as part of the
+     * same request. <p>For more information on using an InstanceID to create
+     * a launch configuration, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create
+     * a Launch Configuration Using an Amazon EC2 Instance</a> in the <i>Auto
+     * Scaling Developer Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 16<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return The ID of the Amazon EC2 instance you want to use to create the launch
+     *         configuration. Use this attribute if you want the launch configuration
+     *         to derive its attributes from an EC2 instance. <p> When you use an
+     *         instance to create a launch configuration, all you need to specify is
+     *         the <code>InstanceId</code>. The new launch configuration, by default,
+     *         derives all the attributes from the specified instance with the
+     *         exception of <code>BlockDeviceMapping</code>. <p>If you want to create
+     *         a launch configuration with <code>BlockDeviceMapping</code> or
+     *         override any other instance attributes, specify them as part of the
+     *         same request. <p>For more information on using an InstanceID to create
+     *         a launch configuration, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create
+     *         a Launch Configuration Using an Amazon EC2 Instance</a> in the <i>Auto
+     *         Scaling Developer Guide</i>.
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+    
+    /**
+     * The ID of the Amazon EC2 instance you want to use to create the launch
+     * configuration. Use this attribute if you want the launch configuration
+     * to derive its attributes from an EC2 instance. <p> When you use an
+     * instance to create a launch configuration, all you need to specify is
+     * the <code>InstanceId</code>. The new launch configuration, by default,
+     * derives all the attributes from the specified instance with the
+     * exception of <code>BlockDeviceMapping</code>. <p>If you want to create
+     * a launch configuration with <code>BlockDeviceMapping</code> or
+     * override any other instance attributes, specify them as part of the
+     * same request. <p>For more information on using an InstanceID to create
+     * a launch configuration, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create
+     * a Launch Configuration Using an Amazon EC2 Instance</a> in the <i>Auto
+     * Scaling Developer Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 16<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param instanceId The ID of the Amazon EC2 instance you want to use to create the launch
+     *         configuration. Use this attribute if you want the launch configuration
+     *         to derive its attributes from an EC2 instance. <p> When you use an
+     *         instance to create a launch configuration, all you need to specify is
+     *         the <code>InstanceId</code>. The new launch configuration, by default,
+     *         derives all the attributes from the specified instance with the
+     *         exception of <code>BlockDeviceMapping</code>. <p>If you want to create
+     *         a launch configuration with <code>BlockDeviceMapping</code> or
+     *         override any other instance attributes, specify them as part of the
+     *         same request. <p>For more information on using an InstanceID to create
+     *         a launch configuration, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create
+     *         a Launch Configuration Using an Amazon EC2 Instance</a> in the <i>Auto
+     *         Scaling Developer Guide</i>.
+     */
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+    
+    /**
+     * The ID of the Amazon EC2 instance you want to use to create the launch
+     * configuration. Use this attribute if you want the launch configuration
+     * to derive its attributes from an EC2 instance. <p> When you use an
+     * instance to create a launch configuration, all you need to specify is
+     * the <code>InstanceId</code>. The new launch configuration, by default,
+     * derives all the attributes from the specified instance with the
+     * exception of <code>BlockDeviceMapping</code>. <p>If you want to create
+     * a launch configuration with <code>BlockDeviceMapping</code> or
+     * override any other instance attributes, specify them as part of the
+     * same request. <p>For more information on using an InstanceID to create
+     * a launch configuration, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create
+     * a Launch Configuration Using an Amazon EC2 Instance</a> in the <i>Auto
+     * Scaling Developer Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 16<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param instanceId The ID of the Amazon EC2 instance you want to use to create the launch
+     *         configuration. Use this attribute if you want the launch configuration
+     *         to derive its attributes from an EC2 instance. <p> When you use an
+     *         instance to create a launch configuration, all you need to specify is
+     *         the <code>InstanceId</code>. The new launch configuration, by default,
+     *         derives all the attributes from the specified instance with the
+     *         exception of <code>BlockDeviceMapping</code>. <p>If you want to create
+     *         a launch configuration with <code>BlockDeviceMapping</code> or
+     *         override any other instance attributes, specify them as part of the
+     *         same request. <p>For more information on using an InstanceID to create
+     *         a launch configuration, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create
+     *         a Launch Configuration Using an Amazon EC2 Instance</a> in the <i>Auto
+     *         Scaling Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateLaunchConfigurationRequest withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
         return this;
     }
 
@@ -1409,6 +1554,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
         if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");
         if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");
         if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
         if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
         if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");
         if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");
@@ -1432,6 +1578,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode()); 
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
         hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode()); 
         hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode()); 
         hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode()); 
@@ -1462,6 +1609,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
         if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false) return false; 
         if (other.getUserData() == null ^ this.getUserData() == null) return false;
         if (other.getUserData() != null && other.getUserData().equals(this.getUserData()) == false) return false; 
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null) return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false) return false; 
         if (other.getInstanceType() == null ^ this.getInstanceType() == null) return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false) return false; 
         if (other.getKernelId() == null ^ this.getKernelId() == null) return false;

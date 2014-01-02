@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ public class Record implements Serializable {
      * The data blob. The data in the blob is both opaque and immutable to
      * the Amazon Kinesis service, which does not inspect, interpret, or
      * change the data in the blob in any way. The maximum size of the data
-     * blob is 50 kilobytes (KB).
+     * blob (the payload after Base64-decoding) is 50 kilobytes (KB)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 51200<br/>
@@ -96,7 +96,7 @@ public class Record implements Serializable {
      * The data blob. The data in the blob is both opaque and immutable to
      * the Amazon Kinesis service, which does not inspect, interpret, or
      * change the data in the blob in any way. The maximum size of the data
-     * blob is 50 kilobytes (KB).
+     * blob (the payload after Base64-decoding) is 50 kilobytes (KB)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 51200<br/>
@@ -104,7 +104,7 @@ public class Record implements Serializable {
      * @return The data blob. The data in the blob is both opaque and immutable to
      *         the Amazon Kinesis service, which does not inspect, interpret, or
      *         change the data in the blob in any way. The maximum size of the data
-     *         blob is 50 kilobytes (KB).
+     *         blob (the payload after Base64-decoding) is 50 kilobytes (KB)
      */
     public java.nio.ByteBuffer getData() {
         return data;
@@ -114,7 +114,7 @@ public class Record implements Serializable {
      * The data blob. The data in the blob is both opaque and immutable to
      * the Amazon Kinesis service, which does not inspect, interpret, or
      * change the data in the blob in any way. The maximum size of the data
-     * blob is 50 kilobytes (KB).
+     * blob (the payload after Base64-decoding) is 50 kilobytes (KB)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 51200<br/>
@@ -122,7 +122,7 @@ public class Record implements Serializable {
      * @param data The data blob. The data in the blob is both opaque and immutable to
      *         the Amazon Kinesis service, which does not inspect, interpret, or
      *         change the data in the blob in any way. The maximum size of the data
-     *         blob is 50 kilobytes (KB).
+     *         blob (the payload after Base64-decoding) is 50 kilobytes (KB)
      */
     public void setData(java.nio.ByteBuffer data) {
         this.data = data;
@@ -132,7 +132,7 @@ public class Record implements Serializable {
      * The data blob. The data in the blob is both opaque and immutable to
      * the Amazon Kinesis service, which does not inspect, interpret, or
      * change the data in the blob in any way. The maximum size of the data
-     * blob is 50 kilobytes (KB).
+     * blob (the payload after Base64-decoding) is 50 kilobytes (KB)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -142,7 +142,7 @@ public class Record implements Serializable {
      * @param data The data blob. The data in the blob is both opaque and immutable to
      *         the Amazon Kinesis service, which does not inspect, interpret, or
      *         change the data in the blob in any way. The maximum size of the data
-     *         blob is 50 kilobytes (KB).
+     *         blob (the payload after Base64-decoding) is 50 kilobytes (KB)
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

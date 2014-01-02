@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,26 +19,27 @@ import java.util.Properties;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.http.annotation.ThreadSafe;
 
 /**
  * Utility class for accessing AWS SDK versioning information.
  */
+@ThreadSafe
 public class VersionInfoUtils {
-    
     /** The AWS SDK version info file with SDK versioning info */
     static final String VERSION_INFO_FILE = "/com/amazonaws/sdk/versionInfo.properties";
     
     /** SDK version info */
-    private static String version = null;
+    private static volatile String version;
 
     /** SDK platform info */
-    private static String platform = null;
+    private static volatile String platform;
 
     /** User Agent info */
-    private static String userAgent = null;
+    private static volatile String userAgent;
 
     /** Shared logger for any issues while loading version information */
-    private static Log log = LogFactory.getLog(VersionInfoUtils.class);
+    private static final Log log = LogFactory.getLog(VersionInfoUtils.class);
 
     /**
      * Returns the current version for the AWS SDK in which this class is
@@ -52,9 +53,11 @@ public class VersionInfoUtils {
      */
     public static String getVersion() {
         if (version == null) {
-            initializeVersion();
+            synchronized(VersionInfoUtils.class) {
+                if (version == null)
+                    initializeVersion();
+            }
         }
-        
         return version;
     }
 
@@ -70,9 +73,11 @@ public class VersionInfoUtils {
      */
     public static String getPlatform() {
         if (platform == null) {
-            initializeVersion();
+            synchronized(VersionInfoUtils.class) {
+                if (platform == null)
+                    initializeVersion();
+            }
         }
-        
         return platform;
     }
 
@@ -83,9 +88,11 @@ public class VersionInfoUtils {
      */
     public static String getUserAgent() {
         if (userAgent == null) {
-            initializeUserAgent();
+            synchronized(VersionInfoUtils.class) {
+                if (userAgent == null)
+                    initializeUserAgent();
+            }
         }
-        
         return userAgent;
     }
 
@@ -122,7 +129,11 @@ public class VersionInfoUtils {
      * next time the data is needed.
      */
     private static void initializeUserAgent() {
-        StringBuilder buffer = new StringBuilder(1024);
+        userAgent = userAgent();
+    }
+
+    static String userAgent() {
+        StringBuilder buffer = new StringBuilder(128);
 
         buffer.append("aws-sdk-");
         buffer.append(VersionInfoUtils.getPlatform().toLowerCase());
@@ -138,6 +149,8 @@ public class VersionInfoUtils {
         buffer.append(replaceSpaces(System.getProperty("java.vm.name")));
         buffer.append("/");
         buffer.append(replaceSpaces(System.getProperty("java.vm.version")));
+        buffer.append("/");
+        buffer.append(replaceSpaces(System.getProperty("java.version")));
 
         String language = System.getProperty("user.language");
         String region = System.getProperty("user.region");
@@ -148,8 +161,7 @@ public class VersionInfoUtils {
             buffer.append("_");
             buffer.append(replaceSpaces(region));
         }
-
-        userAgent = buffer.toString();
+        return buffer.toString();
     }
 
     /**

@@ -32,8 +32,11 @@
  * <b>Endpoints</b>
  * </p>
  * <p>
- * For information about this product's regions and endpoints, go to <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">
- * Regions and Endpoints </a> in the Amazon Web Services General Reference.
+ * The examples in this guide assume that your instances are launched in the US East (Northern Virginia) region and use us-east-1 as the endpoint.
+ * </p>
+ * <p>
+ * You can set up your Auto Scaling infrastructure in other AWS regions. For information about this product's regions and endpoints, see <a
+ * href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"> Regions and Endpoints </a> in the Amazon Web Services General Reference.
  * </p>
  */
  package com.amazonaws.services.autoscaling;

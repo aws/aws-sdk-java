@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,7 +60,7 @@ public class DomainStatusStaxUnmarshaller implements Unmarshaller<DomainStatus, 
                     continue;
                 }
                 if (context.testExpression("NumSearchableDocs", targetDepth)) {
-                    domainStatus.setNumSearchableDocs(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    domainStatus.setNumSearchableDocs(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("DocService", targetDepth)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -61,11 +61,13 @@ public final class IdleConnectionReaper extends Thread {
     private IdleConnectionReaper() {
         super("java-sdk-http-connection-reaper");
         setDaemon(true);
-        start();
     }
 
     public static synchronized void registerConnectionManager(ClientConnectionManager connectionManager) {
-        if (instance == null) instance = new IdleConnectionReaper();
+        if (instance == null) {
+            instance = new IdleConnectionReaper();
+            instance.start();
+        }
         connectionManagers.add(connectionManager);
     }
 

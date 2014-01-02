@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,6 +49,18 @@ public class EbsStaxUnmarshaller implements Unmarshaller<Ebs, StaxUnmarshallerCo
                 }
                 if (context.testExpression("VolumeSize", targetDepth)) {
                     ebs.setVolumeSize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("VolumeType", targetDepth)) {
+                    ebs.setVolumeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("DeleteOnTermination", targetDepth)) {
+                    ebs.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Iops", targetDepth)) {
+                    ebs.setIops(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

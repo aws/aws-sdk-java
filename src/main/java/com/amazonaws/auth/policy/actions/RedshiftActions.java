@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,106 +21,106 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum RedshiftActions implements Action {
     /** Represents any action executed on Amazon Redshift. */
-    AllRedshiftActions("Redshift:*"),
+    AllRedshiftActions("redshift:*"),
 
     /** Action for the AuthorizeClusterSecurityGroupIngress operation. */
-    AuthorizeClusterSecurityGroupIngress("Redshift:AuthorizeClusterSecurityGroupIngress"),
+    AuthorizeClusterSecurityGroupIngress("redshift:AuthorizeClusterSecurityGroupIngress"),
 
     /** Action for the CopyClusterSnapshot operation. */
-    CopyClusterSnapshot("Redshift:CopyClusterSnapshot"),
+    CopyClusterSnapshot("redshift:CopyClusterSnapshot"),
 
     /** Action for the CreateCluster operation. */
-    CreateCluster("Redshift:CreateCluster"),
+    CreateCluster("redshift:CreateCluster"),
 
     /** Action for the CreateClusterParameterGroup operation. */
-    CreateClusterParameterGroup("Redshift:CreateClusterParameterGroup"),
+    CreateClusterParameterGroup("redshift:CreateClusterParameterGroup"),
 
     /** Action for the CreateClusterSecurityGroup operation. */
-    CreateClusterSecurityGroup("Redshift:CreateClusterSecurityGroup"),
+    CreateClusterSecurityGroup("redshift:CreateClusterSecurityGroup"),
 
     /** Action for the CreateClusterSnapshot operation. */
-    CreateClusterSnapshot("Redshift:CreateClusterSnapshot"),
+    CreateClusterSnapshot("redshift:CreateClusterSnapshot"),
 
     /** Action for the CreateClusterSubnetGroup operation. */
-    CreateClusterSubnetGroup("Redshift:CreateClusterSubnetGroup"),
+    CreateClusterSubnetGroup("redshift:CreateClusterSubnetGroup"),
 
     /** Action for the DeleteCluster operation. */
-    DeleteCluster("Redshift:DeleteCluster"),
+    DeleteCluster("redshift:DeleteCluster"),
 
     /** Action for the DeleteClusterParameterGroup operation. */
-    DeleteClusterParameterGroup("Redshift:DeleteClusterParameterGroup"),
+    DeleteClusterParameterGroup("redshift:DeleteClusterParameterGroup"),
 
     /** Action for the DeleteClusterSecurityGroup operation. */
-    DeleteClusterSecurityGroup("Redshift:DeleteClusterSecurityGroup"),
+    DeleteClusterSecurityGroup("redshift:DeleteClusterSecurityGroup"),
 
     /** Action for the DeleteClusterSnapshot operation. */
-    DeleteClusterSnapshot("Redshift:DeleteClusterSnapshot"),
+    DeleteClusterSnapshot("redshift:DeleteClusterSnapshot"),
 
     /** Action for the DeleteClusterSubnetGroup operation. */
-    DeleteClusterSubnetGroup("Redshift:DeleteClusterSubnetGroup"),
+    DeleteClusterSubnetGroup("redshift:DeleteClusterSubnetGroup"),
 
     /** Action for the DescribeClusterParameterGroups operation. */
-    DescribeClusterParameterGroups("Redshift:DescribeClusterParameterGroups"),
+    DescribeClusterParameterGroups("redshift:DescribeClusterParameterGroups"),
 
     /** Action for the DescribeClusterParameters operation. */
-    DescribeClusterParameters("Redshift:DescribeClusterParameters"),
+    DescribeClusterParameters("redshift:DescribeClusterParameters"),
 
     /** Action for the DescribeClusterSecurityGroups operation. */
-    DescribeClusterSecurityGroups("Redshift:DescribeClusterSecurityGroups"),
+    DescribeClusterSecurityGroups("redshift:DescribeClusterSecurityGroups"),
 
     /** Action for the DescribeClusterSnapshots operation. */
-    DescribeClusterSnapshots("Redshift:DescribeClusterSnapshots"),
+    DescribeClusterSnapshots("redshift:DescribeClusterSnapshots"),
 
     /** Action for the DescribeClusterSubnetGroups operation. */
-    DescribeClusterSubnetGroups("Redshift:DescribeClusterSubnetGroups"),
+    DescribeClusterSubnetGroups("redshift:DescribeClusterSubnetGroups"),
 
     /** Action for the DescribeClusterVersions operation. */
-    DescribeClusterVersions("Redshift:DescribeClusterVersions"),
+    DescribeClusterVersions("redshift:DescribeClusterVersions"),
 
     /** Action for the DescribeClusters operation. */
-    DescribeClusters("Redshift:DescribeClusters"),
+    DescribeClusters("redshift:DescribeClusters"),
 
     /** Action for the DescribeDefaultClusterParameters operation. */
-    DescribeDefaultClusterParameters("Redshift:DescribeDefaultClusterParameters"),
+    DescribeDefaultClusterParameters("redshift:DescribeDefaultClusterParameters"),
 
     /** Action for the DescribeEvents operation. */
-    DescribeEvents("Redshift:DescribeEvents"),
+    DescribeEvents("redshift:DescribeEvents"),
 
     /** Action for the DescribeOrderableClusterOptions operation. */
-    DescribeOrderableClusterOptions("Redshift:DescribeOrderableClusterOptions"),
+    DescribeOrderableClusterOptions("redshift:DescribeOrderableClusterOptions"),
 
     /** Action for the DescribeReservedNodeOfferings operation. */
-    DescribeReservedNodeOfferings("Redshift:DescribeReservedNodeOfferings"),
+    DescribeReservedNodeOfferings("redshift:DescribeReservedNodeOfferings"),
 
     /** Action for the DescribeReservedNodes operation. */
-    DescribeReservedNodes("Redshift:DescribeReservedNodes"),
+    DescribeReservedNodes("redshift:DescribeReservedNodes"),
 
     /** Action for the DescribeResize operation. */
-    DescribeResize("Redshift:DescribeResize"),
+    DescribeResize("redshift:DescribeResize"),
 
     /** Action for the ModifyCluster operation. */
-    ModifyCluster("Redshift:ModifyCluster"),
+    ModifyCluster("redshift:ModifyCluster"),
 
     /** Action for the ModifyClusterParameterGroup operation. */
-    ModifyClusterParameterGroup("Redshift:ModifyClusterParameterGroup"),
+    ModifyClusterParameterGroup("redshift:ModifyClusterParameterGroup"),
 
     /** Action for the ModifyClusterSubnetGroup operation. */
-    ModifyClusterSubnetGroup("Redshift:ModifyClusterSubnetGroup"),
+    ModifyClusterSubnetGroup("redshift:ModifyClusterSubnetGroup"),
 
     /** Action for the PurchaseReservedNodeOffering operation. */
-    PurchaseReservedNodeOffering("Redshift:PurchaseReservedNodeOffering"),
+    PurchaseReservedNodeOffering("redshift:PurchaseReservedNodeOffering"),
 
     /** Action for the RebootCluster operation. */
-    RebootCluster("Redshift:RebootCluster"),
+    RebootCluster("redshift:RebootCluster"),
 
     /** Action for the ResetClusterParameterGroup operation. */
-    ResetClusterParameterGroup("Redshift:ResetClusterParameterGroup"),
+    ResetClusterParameterGroup("redshift:ResetClusterParameterGroup"),
 
     /** Action for the RestoreFromClusterSnapshot operation. */
-    RestoreFromClusterSnapshot("Redshift:RestoreFromClusterSnapshot"),
+    RestoreFromClusterSnapshot("redshift:RestoreFromClusterSnapshot"),
 
     /** Action for the RevokeClusterSecurityGroupIngress operation. */
-    RevokeClusterSecurityGroupIngress("Redshift:RevokeClusterSecurityGroupIngress");
+    RevokeClusterSecurityGroupIngress("redshift:RevokeClusterSecurityGroupIngress");
 
     private final String action;
 

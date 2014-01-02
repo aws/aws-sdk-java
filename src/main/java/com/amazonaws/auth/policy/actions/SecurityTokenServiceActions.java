@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,13 +21,13 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum SecurityTokenServiceActions implements Action {
     /** Represents any action executed on AWS Security Token Service. */
-    AllSecurityTokenServiceActions("SecurityTokenService:*"),
+    AllSecurityTokenServiceActions("sts:*"),
 
     /** Action for the GetFederationToken operation. */
-    GetFederationToken("SecurityTokenService:GetFederationToken"),
+    GetFederationToken("sts:GetFederationToken"),
 
     /** Action for the AssumeRole operation. */
-    AssumeRole("SecurityTokenService:AssumeRole");
+    AssumeRole("sts:AssumeRole");
 
     private final String action;
 

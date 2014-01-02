@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,7 +68,7 @@ public class DomainStatus implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      */
-    private Integer numSearchableDocs;
+    private Long numSearchableDocs;
 
     /**
      * The service endpoint for updating documents in a search domain.
@@ -377,7 +377,7 @@ public class DomainStatus implements Serializable {
      * @return The number of documents that have been submitted to the domain and
      *         indexed.
      */
-    public Integer getNumSearchableDocs() {
+    public Long getNumSearchableDocs() {
         return numSearchableDocs;
     }
     
@@ -391,7 +391,7 @@ public class DomainStatus implements Serializable {
      * @param numSearchableDocs The number of documents that have been submitted to the domain and
      *         indexed.
      */
-    public void setNumSearchableDocs(Integer numSearchableDocs) {
+    public void setNumSearchableDocs(Long numSearchableDocs) {
         this.numSearchableDocs = numSearchableDocs;
     }
     
@@ -410,7 +410,7 @@ public class DomainStatus implements Serializable {
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
-    public DomainStatus withNumSearchableDocs(Integer numSearchableDocs) {
+    public DomainStatus withNumSearchableDocs(Long numSearchableDocs) {
         this.numSearchableDocs = numSearchableDocs;
         return this;
     }

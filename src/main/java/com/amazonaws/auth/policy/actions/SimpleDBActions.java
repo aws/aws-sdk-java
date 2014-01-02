@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,37 +21,37 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum SimpleDBActions implements Action {
     /** Represents any action executed on Amazon SimpleDB. */
-    AllSimpleDBActions("SimpleDB:*"),
+    AllSimpleDBActions("sdb:*"),
 
     /** Action for the BatchDeleteAttributes operation. */
-    BatchDeleteAttributes("SimpleDB:BatchDeleteAttributes"),
+    BatchDeleteAttributes("sdb:BatchDeleteAttributes"),
 
     /** Action for the BatchPutAttributes operation. */
-    BatchPutAttributes("SimpleDB:BatchPutAttributes"),
+    BatchPutAttributes("sdb:BatchPutAttributes"),
 
     /** Action for the CreateDomain operation. */
-    CreateDomain("SimpleDB:CreateDomain"),
+    CreateDomain("sdb:CreateDomain"),
 
     /** Action for the DeleteAttributes operation. */
-    DeleteAttributes("SimpleDB:DeleteAttributes"),
+    DeleteAttributes("sdb:DeleteAttributes"),
 
     /** Action for the DeleteDomain operation. */
-    DeleteDomain("SimpleDB:DeleteDomain"),
+    DeleteDomain("sdb:DeleteDomain"),
 
     /** Action for the DomainMetadata operation. */
-    DomainMetadata("SimpleDB:DomainMetadata"),
+    DomainMetadata("sdb:DomainMetadata"),
 
     /** Action for the GetAttributes operation. */
-    GetAttributes("SimpleDB:GetAttributes"),
+    GetAttributes("sdb:GetAttributes"),
 
     /** Action for the ListDomains operation. */
-    ListDomains("SimpleDB:ListDomains"),
+    ListDomains("sdb:ListDomains"),
 
     /** Action for the PutAttributes operation. */
-    PutAttributes("SimpleDB:PutAttributes"),
+    PutAttributes("sdb:PutAttributes"),
 
     /** Action for the Select operation. */
-    Select("SimpleDB:Select");
+    Select("sdb:Select");
 
     private final String action;
 

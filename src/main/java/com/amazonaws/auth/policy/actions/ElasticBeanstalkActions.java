@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,94 +21,94 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum ElasticBeanstalkActions implements Action {
     /** Represents any action executed on AWS Elastic Beanstalk. */
-    AllElasticBeanstalkActions("ElasticBeanstalk:*"),
+    AllElasticBeanstalkActions("elasticbeanstalk:*"),
 
     /** Action for the CheckDNSAvailability operation. */
-    CheckDNSAvailability("ElasticBeanstalk:CheckDNSAvailability"),
+    CheckDNSAvailability("elasticbeanstalk:CheckDNSAvailability"),
 
     /** Action for the CreateApplication operation. */
-    CreateApplication("ElasticBeanstalk:CreateApplication"),
+    CreateApplication("elasticbeanstalk:CreateApplication"),
 
     /** Action for the CreateApplicationVersion operation. */
-    CreateApplicationVersion("ElasticBeanstalk:CreateApplicationVersion"),
+    CreateApplicationVersion("elasticbeanstalk:CreateApplicationVersion"),
 
     /** Action for the CreateConfigurationTemplate operation. */
-    CreateConfigurationTemplate("ElasticBeanstalk:CreateConfigurationTemplate"),
+    CreateConfigurationTemplate("elasticbeanstalk:CreateConfigurationTemplate"),
 
     /** Action for the CreateEnvironment operation. */
-    CreateEnvironment("ElasticBeanstalk:CreateEnvironment"),
+    CreateEnvironment("elasticbeanstalk:CreateEnvironment"),
 
     /** Action for the CreateStorageLocation operation. */
-    CreateStorageLocation("ElasticBeanstalk:CreateStorageLocation"),
+    CreateStorageLocation("elasticbeanstalk:CreateStorageLocation"),
 
     /** Action for the DeleteApplication operation. */
-    DeleteApplication("ElasticBeanstalk:DeleteApplication"),
+    DeleteApplication("elasticbeanstalk:DeleteApplication"),
 
     /** Action for the DeleteApplicationVersion operation. */
-    DeleteApplicationVersion("ElasticBeanstalk:DeleteApplicationVersion"),
+    DeleteApplicationVersion("elasticbeanstalk:DeleteApplicationVersion"),
 
     /** Action for the DeleteConfigurationTemplate operation. */
-    DeleteConfigurationTemplate("ElasticBeanstalk:DeleteConfigurationTemplate"),
+    DeleteConfigurationTemplate("elasticbeanstalk:DeleteConfigurationTemplate"),
 
     /** Action for the DeleteEnvironmentConfiguration operation. */
-    DeleteEnvironmentConfiguration("ElasticBeanstalk:DeleteEnvironmentConfiguration"),
+    DeleteEnvironmentConfiguration("elasticbeanstalk:DeleteEnvironmentConfiguration"),
 
     /** Action for the DescribeApplicationVersions operation. */
-    DescribeApplicationVersions("ElasticBeanstalk:DescribeApplicationVersions"),
+    DescribeApplicationVersions("elasticbeanstalk:DescribeApplicationVersions"),
 
     /** Action for the DescribeApplications operation. */
-    DescribeApplications("ElasticBeanstalk:DescribeApplications"),
+    DescribeApplications("elasticbeanstalk:DescribeApplications"),
 
     /** Action for the DescribeConfigurationOptions operation. */
-    DescribeConfigurationOptions("ElasticBeanstalk:DescribeConfigurationOptions"),
+    DescribeConfigurationOptions("elasticbeanstalk:DescribeConfigurationOptions"),
 
     /** Action for the DescribeConfigurationSettings operation. */
-    DescribeConfigurationSettings("ElasticBeanstalk:DescribeConfigurationSettings"),
+    DescribeConfigurationSettings("elasticbeanstalk:DescribeConfigurationSettings"),
 
     /** Action for the DescribeEnvironmentResources operation. */
-    DescribeEnvironmentResources("ElasticBeanstalk:DescribeEnvironmentResources"),
+    DescribeEnvironmentResources("elasticbeanstalk:DescribeEnvironmentResources"),
 
     /** Action for the DescribeEnvironments operation. */
-    DescribeEnvironments("ElasticBeanstalk:DescribeEnvironments"),
+    DescribeEnvironments("elasticbeanstalk:DescribeEnvironments"),
 
     /** Action for the DescribeEvents operation. */
-    DescribeEvents("ElasticBeanstalk:DescribeEvents"),
+    DescribeEvents("elasticbeanstalk:DescribeEvents"),
 
     /** Action for the ListAvailableSolutionStacks operation. */
-    ListAvailableSolutionStacks("ElasticBeanstalk:ListAvailableSolutionStacks"),
+    ListAvailableSolutionStacks("elasticbeanstalk:ListAvailableSolutionStacks"),
 
     /** Action for the RebuildEnvironment operation. */
-    RebuildEnvironment("ElasticBeanstalk:RebuildEnvironment"),
+    RebuildEnvironment("elasticbeanstalk:RebuildEnvironment"),
 
     /** Action for the RequestEnvironmentInfo operation. */
-    RequestEnvironmentInfo("ElasticBeanstalk:RequestEnvironmentInfo"),
+    RequestEnvironmentInfo("elasticbeanstalk:RequestEnvironmentInfo"),
 
     /** Action for the RestartAppServer operation. */
-    RestartAppServer("ElasticBeanstalk:RestartAppServer"),
+    RestartAppServer("elasticbeanstalk:RestartAppServer"),
 
     /** Action for the RetrieveEnvironmentInfo operation. */
-    RetrieveEnvironmentInfo("ElasticBeanstalk:RetrieveEnvironmentInfo"),
+    RetrieveEnvironmentInfo("elasticbeanstalk:RetrieveEnvironmentInfo"),
 
     /** Action for the SwapEnvironmentCNAMEs operation. */
-    SwapEnvironmentCNAMEs("ElasticBeanstalk:SwapEnvironmentCNAMEs"),
+    SwapEnvironmentCNAMEs("elasticbeanstalk:SwapEnvironmentCNAMEs"),
 
     /** Action for the TerminateEnvironment operation. */
-    TerminateEnvironment("ElasticBeanstalk:TerminateEnvironment"),
+    TerminateEnvironment("elasticbeanstalk:TerminateEnvironment"),
 
     /** Action for the UpdateApplication operation. */
-    UpdateApplication("ElasticBeanstalk:UpdateApplication"),
+    UpdateApplication("elasticbeanstalk:UpdateApplication"),
 
     /** Action for the UpdateApplicationVersion operation. */
-    UpdateApplicationVersion("ElasticBeanstalk:UpdateApplicationVersion"),
+    UpdateApplicationVersion("elasticbeanstalk:UpdateApplicationVersion"),
 
     /** Action for the UpdateConfigurationTemplate operation. */
-    UpdateConfigurationTemplate("ElasticBeanstalk:UpdateConfigurationTemplate"),
+    UpdateConfigurationTemplate("elasticbeanstalk:UpdateConfigurationTemplate"),
 
     /** Action for the UpdateEnvironment operation. */
-    UpdateEnvironment("ElasticBeanstalk:UpdateEnvironment"),
+    UpdateEnvironment("elasticbeanstalk:UpdateEnvironment"),
 
     /** Action for the ValidateConfigurationSettings operation. */
-    ValidateConfigurationSettings("ElasticBeanstalk:ValidateConfigurationSettings");
+    ValidateConfigurationSettings("elasticbeanstalk:ValidateConfigurationSettings");
 
     private final String action;
 

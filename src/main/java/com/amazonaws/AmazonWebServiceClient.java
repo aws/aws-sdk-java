@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -528,9 +528,11 @@ public abstract class AmazonWebServiceClient {
     }
 
     /**
-     * Internal method for implementing {@link #getServiceName()}.
+     * Internal method for implementing {@link #getServiceName()}. Method is
+     * protected by intent so peculiar subclass that don't follow the class
+     * naming convention can choose to return whatever service name as needed.
      */
-    private String getServiceNameIntern() {
+    protected String getServiceNameIntern() {
         if (serviceName == null) {
             synchronized(this) {
                 if (serviceName == null) {

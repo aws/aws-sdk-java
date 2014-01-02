@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -71,12 +71,31 @@ class BlockingRequestBuilder {
             if (datum == null) {
                 // timed out
                 if (uniqueMetrics.size() > 0) {
-                    return toPutMetricDataRequests(uniqueMetrics);   // return whatever we have so far
+                    // return whatever we have so far
+                    return toPutMetricDataRequests(uniqueMetrics);
                 }
-                datum = queue.take();   // zero metrics; so just wait indefinitely
-                startNano = System.nanoTime();
+                // zero AWS related metrics
+                if (AwsSdkMetrics.isMachineMetricExcluded()) {
+                    // Short note: nothing to do, so just wait indefinitely.
+                    // (Long note: There exists a pedagogical case where the
+                    // next statement is executed followed by no subsequent AWS
+                    // traffic whatsoever, and then the machine metric is enabled 
+                    // via JMX.
+                    // In such case, we require the metric generation to be
+                    // disabled and then re-enabled (eg via JMX).
+                    // So why not always wake up periodically instead of going
+                    // into long wait ?
+                    // I (hchar@) think we should optimize for the most typical
+                    // cases instead of the edge cases. Going into long wait has
+                    // the benefit of relatively less runtime footprint.)
+                    datum = queue.take();   
+                    startNano = System.nanoTime();
+                }
             }
-            summarize(datum, uniqueMetrics);
+            // Note at this point datum is null if and only if there is no
+            // pending AWS related metrics but machine metrics is enabled
+            if (datum != null)
+                summarize(datum, uniqueMetrics);
         }
     }
 

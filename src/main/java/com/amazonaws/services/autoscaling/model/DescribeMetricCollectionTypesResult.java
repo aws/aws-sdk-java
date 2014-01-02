@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class DescribeMetricCollectionTypesResult implements Serializable {
 
     /**
-     * The list of Metrics collected.The following metrics are supported:
+     * The list of Metrics collected. The following metrics are supported:
      * <ul> <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      * <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
      * <li><p>GroupPendingInstances</li>
@@ -39,14 +39,14 @@ public class DescribeMetricCollectionTypesResult implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<MetricGranularityType> granularities;
 
     /**
-     * The list of Metrics collected.The following metrics are supported:
+     * The list of Metrics collected. The following metrics are supported:
      * <ul> <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      * <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
      * <li><p>GroupPendingInstances</li>
      * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      * </ul>
      *
-     * @return The list of Metrics collected.The following metrics are supported:
+     * @return The list of Metrics collected. The following metrics are supported:
      *         <ul> <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      *         <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
      *         <li><p>GroupPendingInstances</li>
@@ -62,14 +62,14 @@ public class DescribeMetricCollectionTypesResult implements Serializable {
     }
     
     /**
-     * The list of Metrics collected.The following metrics are supported:
+     * The list of Metrics collected. The following metrics are supported:
      * <ul> <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      * <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
      * <li><p>GroupPendingInstances</li>
      * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      * </ul>
      *
-     * @param metrics The list of Metrics collected.The following metrics are supported:
+     * @param metrics The list of Metrics collected. The following metrics are supported:
      *         <ul> <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      *         <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
      *         <li><p>GroupPendingInstances</li>
@@ -87,7 +87,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable {
     }
     
     /**
-     * The list of Metrics collected.The following metrics are supported:
+     * The list of Metrics collected. The following metrics are supported:
      * <ul> <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      * <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
      * <li><p>GroupPendingInstances</li>
@@ -96,7 +96,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param metrics The list of Metrics collected.The following metrics are supported:
+     * @param metrics The list of Metrics collected. The following metrics are supported:
      *         <ul> <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      *         <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
      *         <li><p>GroupPendingInstances</li>
@@ -115,7 +115,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable {
     }
     
     /**
-     * The list of Metrics collected.The following metrics are supported:
+     * The list of Metrics collected. The following metrics are supported:
      * <ul> <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      * <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
      * <li><p>GroupPendingInstances</li>
@@ -124,7 +124,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param metrics The list of Metrics collected.The following metrics are supported:
+     * @param metrics The list of Metrics collected. The following metrics are supported:
      *         <ul> <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      *         <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
      *         <li><p>GroupPendingInstances</li>

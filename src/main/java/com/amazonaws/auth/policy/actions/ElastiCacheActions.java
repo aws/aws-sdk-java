@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,61 +21,61 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum ElastiCacheActions implements Action {
     /** Represents any action executed on AWS ElastiCache. */
-    AllElastiCacheActions("ElastiCache:*"),
+    AllElastiCacheActions("elasticache:*"),
 
     /** Action for the AuthorizeCacheSecurityGroupIngress operation. */
-    AuthorizeCacheSecurityGroupIngress("ElastiCache:AuthorizeCacheSecurityGroupIngress"),
+    AuthorizeCacheSecurityGroupIngress("elasticache:AuthorizeCacheSecurityGroupIngress"),
 
     /** Action for the CreateCacheCluster operation. */
-    CreateCacheCluster("ElastiCache:CreateCacheCluster"),
+    CreateCacheCluster("elasticache:CreateCacheCluster"),
 
     /** Action for the CreateCacheParameterGroup operation. */
-    CreateCacheParameterGroup("ElastiCache:CreateCacheParameterGroup"),
+    CreateCacheParameterGroup("elasticache:CreateCacheParameterGroup"),
 
     /** Action for the CreateCacheSecurityGroup operation. */
-    CreateCacheSecurityGroup("ElastiCache:CreateCacheSecurityGroup"),
+    CreateCacheSecurityGroup("elasticache:CreateCacheSecurityGroup"),
 
     /** Action for the DeleteCacheCluster operation. */
-    DeleteCacheCluster("ElastiCache:DeleteCacheCluster"),
+    DeleteCacheCluster("elasticache:DeleteCacheCluster"),
 
     /** Action for the DeleteCacheParameterGroup operation. */
-    DeleteCacheParameterGroup("ElastiCache:DeleteCacheParameterGroup"),
+    DeleteCacheParameterGroup("elasticache:DeleteCacheParameterGroup"),
 
     /** Action for the DeleteCacheSecurityGroup operation. */
-    DeleteCacheSecurityGroup("ElastiCache:DeleteCacheSecurityGroup"),
+    DeleteCacheSecurityGroup("elasticache:DeleteCacheSecurityGroup"),
 
     /** Action for the DescribeCacheClusters operation. */
-    DescribeCacheClusters("ElastiCache:DescribeCacheClusters"),
+    DescribeCacheClusters("elasticache:DescribeCacheClusters"),
 
     /** Action for the DescribeCacheParameterGroups operation. */
-    DescribeCacheParameterGroups("ElastiCache:DescribeCacheParameterGroups"),
+    DescribeCacheParameterGroups("elasticache:DescribeCacheParameterGroups"),
 
     /** Action for the DescribeCacheParameters operation. */
-    DescribeCacheParameters("ElastiCache:DescribeCacheParameters"),
+    DescribeCacheParameters("elasticache:DescribeCacheParameters"),
 
     /** Action for the DescribeCacheSecurityGroups operation. */
-    DescribeCacheSecurityGroups("ElastiCache:DescribeCacheSecurityGroups"),
+    DescribeCacheSecurityGroups("elasticache:DescribeCacheSecurityGroups"),
 
     /** Action for the DescribeEngineDefaultParameters operation. */
-    DescribeEngineDefaultParameters("ElastiCache:DescribeEngineDefaultParameters"),
+    DescribeEngineDefaultParameters("elasticache:DescribeEngineDefaultParameters"),
 
     /** Action for the DescribeEvents operation. */
-    DescribeEvents("ElastiCache:DescribeEvents"),
+    DescribeEvents("elasticache:DescribeEvents"),
 
     /** Action for the ModifyCacheCluster operation. */
-    ModifyCacheCluster("ElastiCache:ModifyCacheCluster"),
+    ModifyCacheCluster("elasticache:ModifyCacheCluster"),
 
     /** Action for the ModifyCacheParameterGroup operation. */
-    ModifyCacheParameterGroup("ElastiCache:ModifyCacheParameterGroup"),
+    ModifyCacheParameterGroup("elasticache:ModifyCacheParameterGroup"),
 
     /** Action for the RebootCacheCluster operation. */
-    RebootCacheCluster("ElastiCache:RebootCacheCluster"),
+    RebootCacheCluster("elasticache:RebootCacheCluster"),
 
     /** Action for the ResetCacheParameterGroup operation. */
-    ResetCacheParameterGroup("ElastiCache:ResetCacheParameterGroup"),
+    ResetCacheParameterGroup("elasticache:ResetCacheParameterGroup"),
 
     /** Action for the RevokeCacheSecurityGroupIngress operation. */
-    RevokeCacheSecurityGroupIngress("ElastiCache:RevokeCacheSecurityGroupIngress");
+    RevokeCacheSecurityGroupIngress("elasticache:RevokeCacheSecurityGroupIngress");
 
     private final String action;
 

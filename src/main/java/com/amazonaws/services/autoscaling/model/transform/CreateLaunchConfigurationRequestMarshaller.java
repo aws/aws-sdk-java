@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,6 +63,9 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
         if (createLaunchConfigurationRequest.getUserData() != null) {
             request.addParameter("UserData", StringUtils.fromString(createLaunchConfigurationRequest.getUserData()));
         }
+        if (createLaunchConfigurationRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils.fromString(createLaunchConfigurationRequest.getInstanceId()));
+        }
         if (createLaunchConfigurationRequest.getInstanceType() != null) {
             request.addParameter("InstanceType", StringUtils.fromString(createLaunchConfigurationRequest.getInstanceType()));
         }
@@ -93,6 +96,18 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
                     if (ebsEbs.getVolumeSize() != null) {
                         request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeSize", StringUtils.fromInteger(ebsEbs.getVolumeSize()));
                     }
+                    if (ebsEbs.getVolumeType() != null) {
+                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeType", StringUtils.fromString(ebsEbs.getVolumeType()));
+                    }
+                    if (ebsEbs.isDeleteOnTermination() != null) {
+                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination", StringUtils.fromBoolean(ebsEbs.isDeleteOnTermination()));
+                    }
+                    if (ebsEbs.getIops() != null) {
+                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.fromInteger(ebsEbs.getIops()));
+                    }
+                }
+                if (blockDeviceMappingMember.isNoDevice() != null) {
+                    request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".NoDevice", StringUtils.fromBoolean(blockDeviceMappingMember.isNoDevice()));
                 }
             }
 

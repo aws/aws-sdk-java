@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,8 +50,11 @@ import com.amazonaws.services.autoscaling.model.*;
  * <b>Endpoints</b>
  * </p>
  * <p>
- * For information about this product's regions and endpoints, go to <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">
- * Regions and Endpoints </a> in the Amazon Web Services General Reference.
+ * The examples in this guide assume that your instances are launched in the US East (Northern Virginia) region and use us-east-1 as the endpoint.
+ * </p>
+ * <p>
+ * You can set up your Auto Scaling infrastructure in other AWS regions. For information about this product's regions and endpoints, see <a
+ * href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"> Regions and Endpoints </a> in the Amazon Web Services General Reference.
  * </p>
  */
 public interface AmazonAutoScaling {
@@ -113,6 +116,42 @@ public interface AmazonAutoScaling {
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
     
+    /**
+     * <p>
+     * Returns the limits for the Auto Scaling resources currently allowed
+     * for your AWS account.
+     * </p>
+     * <p>
+     * Your AWS account comes with default limits on resources for Auto
+     * Scaling. There is a default limit of <code>20</code> Auto Scaling
+     * groups and <code>100</code> launch configurations per region.
+     * </p>
+     * <p>
+     * If you reach the limits for the number of Auto Scaling groups or the
+     * launch configurations, you can go to the <a
+     * href="https://aws.amazon.com/support/"> Support Center </a> and place
+     * a request to raise the limits.
+     * </p>
+     *
+     * @param describeAccountLimitsRequest Container for the necessary
+     *           parameters to execute the DescribeAccountLimits service method on
+     *           AmazonAutoScaling.
+     * 
+     * @return The response from the DescribeAccountLimits service method, as
+     *         returned by AmazonAutoScaling.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
     /**
      * <p>
      * Returns a full description of each Auto Scaling group in the given
@@ -314,12 +353,41 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
+     * Attaches one or more Amazon EC2 instances to an existing Auto Scaling
+     * group. After the instance(s) is attached, it becomes a part of the
+     * Auto Scaling group.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * mazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">
+     * Attach Amazon EC2 Instance(s) to Your Existing Auto Scaling Group </a>
+     * in the <i>Auto Scaling Developer Guide</i> .
+     * </p>
+     *
+     * @param attachInstancesRequest Container for the necessary parameters
+     *           to execute the AttachInstances service method on AmazonAutoScaling.
+     * 
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void attachInstances(AttachInstancesRequest attachInstancesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Returns the scaling activities for the specified Auto Scaling group.
      * </p>
      * <p>
      * If the specified <code>ActivityIds</code> list is empty, all the
      * activities from the past six weeks are returned. Activities are sorted
-     * by completion time. Activities still in progress appear first on the
+     * by the start time. Activities still in progress appear first on the
      * list.
      * </p>
      * <p>
@@ -437,6 +505,27 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
+     * Removes the specified tags or a set of tags from a set of resources.
+     * </p>
+     *
+     * @param deleteTagsRequest Container for the necessary parameters to
+     *           execute the DeleteTags service method on AmazonAutoScaling.
+     * 
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteTags(DeleteTagsRequest deleteTagsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Executes the specified policy.
      * </p>
      *
@@ -455,27 +544,6 @@ public interface AmazonAutoScaling {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void executePolicy(ExecutePolicyRequest executePolicyRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Removes the specified tags or a set of tags from a set of resources.
-     * </p>
-     *
-     * @param deleteTagsRequest Container for the necessary parameters to
-     *           execute the DeleteTags service method on AmazonAutoScaling.
-     * 
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonAutoScaling indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteTags(DeleteTagsRequest deleteTagsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -732,6 +800,34 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
+     * Creates a new launch configuration. The launch configuration name
+     * must be unique within the scope of the client's AWS account. The
+     * maximum limit of launch configurations, which by default is 100, must
+     * not yet have been met; otherwise, the call will fail. When created,
+     * the new launch configuration is available for immediate use.
+     * </p>
+     *
+     * @param createLaunchConfigurationRequest Container for the necessary
+     *           parameters to execute the CreateLaunchConfiguration service method on
+     *           AmazonAutoScaling.
+     * 
+     * 
+     * @throws LimitExceededException
+     * @throws AlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void createLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Returns a description of each Auto Scaling instance in the
      * <code>InstanceIds</code> list. If a list is not provided, the service
      * returns the full details of all instances up to a maximum of 50. By
@@ -761,44 +857,6 @@ public interface AmazonAutoScaling {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeAutoScalingInstancesResult describeAutoScalingInstances(DescribeAutoScalingInstancesRequest describeAutoScalingInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a new launch configuration. The launch configuration name
-     * must be unique within the scope of the client's AWS account. The
-     * maximum limit of launch configurations, which by default is 100, must
-     * not yet have been met; otherwise, the call will fail. When created,
-     * the new launch configuration is available for immediate use.
-     * </p>
-     * <p>
-     * You can create a launch configuration with Amazon EC2 security groups
-     * or with Amazon VPC security groups. However, you can't use Amazon EC2
-     * security groups together with Amazon VPC security groups, or vice
-     * versa.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> At this time, Auto Scaling launch configurations don't
-     * support compressed (e.g. zipped) user data files.
-     * </p>
-     *
-     * @param createLaunchConfigurationRequest Container for the necessary
-     *           parameters to execute the CreateLaunchConfiguration service method on
-     *           AmazonAutoScaling.
-     * 
-     * 
-     * @throws LimitExceededException
-     * @throws AlreadyExistsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonAutoScaling indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void createLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1104,6 +1162,37 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
+     * Returns the limits for the Auto Scaling resources currently allowed
+     * for your AWS account.
+     * </p>
+     * <p>
+     * Your AWS account comes with default limits on resources for Auto
+     * Scaling. There is a default limit of <code>20</code> Auto Scaling
+     * groups and <code>100</code> launch configurations per region.
+     * </p>
+     * <p>
+     * If you reach the limits for the number of Auto Scaling groups or the
+     * launch configurations, you can go to the <a
+     * href="https://aws.amazon.com/support/"> Support Center </a> and place
+     * a request to raise the limits.
+     * </p>
+     * 
+     * @return The response from the DescribeAccountLimits service method, as
+     *         returned by AmazonAutoScaling.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeAccountLimitsResult describeAccountLimits() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
      * Returns a full description of each Auto Scaling group in the given
      * list. This includes all Amazon EC2 instances that are members of the
      * group. If a list of names is not provided, the service returns the
@@ -1180,7 +1269,7 @@ public interface AmazonAutoScaling {
      * <p>
      * If the specified <code>ActivityIds</code> list is empty, all the
      * activities from the past six weeks are returned. Activities are sorted
-     * by completion time. Activities still in progress appear first on the
+     * by the start time. Activities still in progress appear first on the
      * list.
      * </p>
      * <p>

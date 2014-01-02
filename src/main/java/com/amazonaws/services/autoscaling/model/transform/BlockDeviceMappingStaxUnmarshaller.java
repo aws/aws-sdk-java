@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -53,6 +53,10 @@ public class BlockDeviceMappingStaxUnmarshaller implements Unmarshaller<BlockDev
                 }
                 if (context.testExpression("Ebs", targetDepth)) {
                     blockDeviceMapping.setEbs(EbsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("NoDevice", targetDepth)) {
+                    blockDeviceMapping.setNoDevice(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

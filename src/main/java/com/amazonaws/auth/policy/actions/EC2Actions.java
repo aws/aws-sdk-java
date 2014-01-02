@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,415 +21,415 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum EC2Actions implements Action {
     /** Represents any action executed on Amazon EC2. */
-    AllEC2Actions("EC2:*"),
+    AllEC2Actions("ec2:*"),
 
     /** Action for the ActivateLicense operation. */
-    ActivateLicense("EC2:ActivateLicense"),
+    ActivateLicense("ec2:ActivateLicense"),
 
     /** Action for the AllocateAddress operation. */
-    AllocateAddress("EC2:AllocateAddress"),
+    AllocateAddress("ec2:AllocateAddress"),
 
     /** Action for the AssociateAddress operation. */
-    AssociateAddress("EC2:AssociateAddress"),
+    AssociateAddress("ec2:AssociateAddress"),
 
     /** Action for the AssociateDhcpOptions operation. */
-    AssociateDhcpOptions("EC2:AssociateDhcpOptions"),
+    AssociateDhcpOptions("ec2:AssociateDhcpOptions"),
 
     /** Action for the AssociateRouteTable operation. */
-    AssociateRouteTable("EC2:AssociateRouteTable"),
+    AssociateRouteTable("ec2:AssociateRouteTable"),
 
     /** Action for the AttachInternetGateway operation. */
-    AttachInternetGateway("EC2:AttachInternetGateway"),
+    AttachInternetGateway("ec2:AttachInternetGateway"),
 
     /** Action for the AttachNetworkInterface operation. */
-    AttachNetworkInterface("EC2:AttachNetworkInterface"),
+    AttachNetworkInterface("ec2:AttachNetworkInterface"),
 
     /** Action for the AttachVolume operation. */
-    AttachVolume("EC2:AttachVolume"),
+    AttachVolume("ec2:AttachVolume"),
 
     /** Action for the AttachVpnGateway operation. */
-    AttachVpnGateway("EC2:AttachVpnGateway"),
+    AttachVpnGateway("ec2:AttachVpnGateway"),
 
     /** Action for the AuthorizeSecurityGroupEgress operation. */
-    AuthorizeSecurityGroupEgress("EC2:AuthorizeSecurityGroupEgress"),
+    AuthorizeSecurityGroupEgress("ec2:AuthorizeSecurityGroupEgress"),
 
     /** Action for the AuthorizeSecurityGroupIngress operation. */
-    AuthorizeSecurityGroupIngress("EC2:AuthorizeSecurityGroupIngress"),
+    AuthorizeSecurityGroupIngress("ec2:AuthorizeSecurityGroupIngress"),
 
     /** Action for the BundleInstance operation. */
-    BundleInstance("EC2:BundleInstance"),
+    BundleInstance("ec2:BundleInstance"),
 
     /** Action for the CancelBundleTask operation. */
-    CancelBundleTask("EC2:CancelBundleTask"),
+    CancelBundleTask("ec2:CancelBundleTask"),
 
     /** Action for the CancelConversionTask operation. */
-    CancelConversionTask("EC2:CancelConversionTask"),
+    CancelConversionTask("ec2:CancelConversionTask"),
 
     /** Action for the CancelExportTask operation. */
-    CancelExportTask("EC2:CancelExportTask"),
+    CancelExportTask("ec2:CancelExportTask"),
 
     /** Action for the CancelSpotInstanceRequests operation. */
-    CancelSpotInstanceRequests("EC2:CancelSpotInstanceRequests"),
+    CancelSpotInstanceRequests("ec2:CancelSpotInstanceRequests"),
 
     /** Action for the ConfirmProductInstance operation. */
-    ConfirmProductInstance("EC2:ConfirmProductInstance"),
+    ConfirmProductInstance("ec2:ConfirmProductInstance"),
 
     /** Action for the CopySnapshot operation. */
-    CopySnapshot("EC2:CopySnapshot"),
+    CopySnapshot("ec2:CopySnapshot"),
 
     /** Action for the CreateCustomerGateway operation. */
-    CreateCustomerGateway("EC2:CreateCustomerGateway"),
+    CreateCustomerGateway("ec2:CreateCustomerGateway"),
 
     /** Action for the CreateDhcpOptions operation. */
-    CreateDhcpOptions("EC2:CreateDhcpOptions"),
+    CreateDhcpOptions("ec2:CreateDhcpOptions"),
 
     /** Action for the CreateImage operation. */
-    CreateImage("EC2:CreateImage"),
+    CreateImage("ec2:CreateImage"),
 
     /** Action for the CreateInstanceExportTask operation. */
-    CreateInstanceExportTask("EC2:CreateInstanceExportTask"),
+    CreateInstanceExportTask("ec2:CreateInstanceExportTask"),
 
     /** Action for the CreateInternetGateway operation. */
-    CreateInternetGateway("EC2:CreateInternetGateway"),
+    CreateInternetGateway("ec2:CreateInternetGateway"),
 
     /** Action for the CreateKeyPair operation. */
-    CreateKeyPair("EC2:CreateKeyPair"),
+    CreateKeyPair("ec2:CreateKeyPair"),
 
     /** Action for the CreateNetworkAcl operation. */
-    CreateNetworkAcl("EC2:CreateNetworkAcl"),
+    CreateNetworkAcl("ec2:CreateNetworkAcl"),
 
     /** Action for the CreateNetworkAclEntry operation. */
-    CreateNetworkAclEntry("EC2:CreateNetworkAclEntry"),
+    CreateNetworkAclEntry("ec2:CreateNetworkAclEntry"),
 
     /** Action for the CreateNetworkInterface operation. */
-    CreateNetworkInterface("EC2:CreateNetworkInterface"),
+    CreateNetworkInterface("ec2:CreateNetworkInterface"),
 
     /** Action for the CreatePlacementGroup operation. */
-    CreatePlacementGroup("EC2:CreatePlacementGroup"),
+    CreatePlacementGroup("ec2:CreatePlacementGroup"),
 
     /** Action for the CreateRoute operation. */
-    CreateRoute("EC2:CreateRoute"),
+    CreateRoute("ec2:CreateRoute"),
 
     /** Action for the CreateRouteTable operation. */
-    CreateRouteTable("EC2:CreateRouteTable"),
+    CreateRouteTable("ec2:CreateRouteTable"),
 
     /** Action for the CreateSecurityGroup operation. */
-    CreateSecurityGroup("EC2:CreateSecurityGroup"),
+    CreateSecurityGroup("ec2:CreateSecurityGroup"),
 
     /** Action for the CreateSnapshot operation. */
-    CreateSnapshot("EC2:CreateSnapshot"),
+    CreateSnapshot("ec2:CreateSnapshot"),
 
     /** Action for the CreateSpotDatafeedSubscription operation. */
-    CreateSpotDatafeedSubscription("EC2:CreateSpotDatafeedSubscription"),
+    CreateSpotDatafeedSubscription("ec2:CreateSpotDatafeedSubscription"),
 
     /** Action for the CreateSubnet operation. */
-    CreateSubnet("EC2:CreateSubnet"),
+    CreateSubnet("ec2:CreateSubnet"),
 
     /** Action for the CreateTags operation. */
-    CreateTags("EC2:CreateTags"),
+    CreateTags("ec2:CreateTags"),
 
     /** Action for the CreateVolume operation. */
-    CreateVolume("EC2:CreateVolume"),
+    CreateVolume("ec2:CreateVolume"),
 
     /** Action for the CreateVpc operation. */
-    CreateVpc("EC2:CreateVpc"),
+    CreateVpc("ec2:CreateVpc"),
 
     /** Action for the CreateVpnConnection operation. */
-    CreateVpnConnection("EC2:CreateVpnConnection"),
+    CreateVpnConnection("ec2:CreateVpnConnection"),
 
     /** Action for the CreateVpnGateway operation. */
-    CreateVpnGateway("EC2:CreateVpnGateway"),
+    CreateVpnGateway("ec2:CreateVpnGateway"),
 
     /** Action for the DeactivateLicense operation. */
-    DeactivateLicense("EC2:DeactivateLicense"),
+    DeactivateLicense("ec2:DeactivateLicense"),
 
     /** Action for the DeleteCustomerGateway operation. */
-    DeleteCustomerGateway("EC2:DeleteCustomerGateway"),
+    DeleteCustomerGateway("ec2:DeleteCustomerGateway"),
 
     /** Action for the DeleteDhcpOptions operation. */
-    DeleteDhcpOptions("EC2:DeleteDhcpOptions"),
+    DeleteDhcpOptions("ec2:DeleteDhcpOptions"),
 
     /** Action for the DeleteInternetGateway operation. */
-    DeleteInternetGateway("EC2:DeleteInternetGateway"),
+    DeleteInternetGateway("ec2:DeleteInternetGateway"),
 
     /** Action for the DeleteKeyPair operation. */
-    DeleteKeyPair("EC2:DeleteKeyPair"),
+    DeleteKeyPair("ec2:DeleteKeyPair"),
 
     /** Action for the DeleteNetworkAcl operation. */
-    DeleteNetworkAcl("EC2:DeleteNetworkAcl"),
+    DeleteNetworkAcl("ec2:DeleteNetworkAcl"),
 
     /** Action for the DeleteNetworkAclEntry operation. */
-    DeleteNetworkAclEntry("EC2:DeleteNetworkAclEntry"),
+    DeleteNetworkAclEntry("ec2:DeleteNetworkAclEntry"),
 
     /** Action for the DeleteNetworkInterface operation. */
-    DeleteNetworkInterface("EC2:DeleteNetworkInterface"),
+    DeleteNetworkInterface("ec2:DeleteNetworkInterface"),
 
     /** Action for the DeletePlacementGroup operation. */
-    DeletePlacementGroup("EC2:DeletePlacementGroup"),
+    DeletePlacementGroup("ec2:DeletePlacementGroup"),
 
     /** Action for the DeleteRoute operation. */
-    DeleteRoute("EC2:DeleteRoute"),
+    DeleteRoute("ec2:DeleteRoute"),
 
     /** Action for the DeleteRouteTable operation. */
-    DeleteRouteTable("EC2:DeleteRouteTable"),
+    DeleteRouteTable("ec2:DeleteRouteTable"),
 
     /** Action for the DeleteSecurityGroup operation. */
-    DeleteSecurityGroup("EC2:DeleteSecurityGroup"),
+    DeleteSecurityGroup("ec2:DeleteSecurityGroup"),
 
     /** Action for the DeleteSnapshot operation. */
-    DeleteSnapshot("EC2:DeleteSnapshot"),
+    DeleteSnapshot("ec2:DeleteSnapshot"),
 
     /** Action for the DeleteSpotDatafeedSubscription operation. */
-    DeleteSpotDatafeedSubscription("EC2:DeleteSpotDatafeedSubscription"),
+    DeleteSpotDatafeedSubscription("ec2:DeleteSpotDatafeedSubscription"),
 
     /** Action for the DeleteSubnet operation. */
-    DeleteSubnet("EC2:DeleteSubnet"),
+    DeleteSubnet("ec2:DeleteSubnet"),
 
     /** Action for the DeleteTags operation. */
-    DeleteTags("EC2:DeleteTags"),
+    DeleteTags("ec2:DeleteTags"),
 
     /** Action for the DeleteVolume operation. */
-    DeleteVolume("EC2:DeleteVolume"),
+    DeleteVolume("ec2:DeleteVolume"),
 
     /** Action for the DeleteVpc operation. */
-    DeleteVpc("EC2:DeleteVpc"),
+    DeleteVpc("ec2:DeleteVpc"),
 
     /** Action for the DeleteVpnConnection operation. */
-    DeleteVpnConnection("EC2:DeleteVpnConnection"),
+    DeleteVpnConnection("ec2:DeleteVpnConnection"),
 
     /** Action for the DeleteVpnGateway operation. */
-    DeleteVpnGateway("EC2:DeleteVpnGateway"),
+    DeleteVpnGateway("ec2:DeleteVpnGateway"),
 
     /** Action for the DeregisterImage operation. */
-    DeregisterImage("EC2:DeregisterImage"),
+    DeregisterImage("ec2:DeregisterImage"),
 
     /** Action for the DescribeAddresses operation. */
-    DescribeAddresses("EC2:DescribeAddresses"),
+    DescribeAddresses("ec2:DescribeAddresses"),
 
     /** Action for the DescribeAvailabilityZones operation. */
-    DescribeAvailabilityZones("EC2:DescribeAvailabilityZones"),
+    DescribeAvailabilityZones("ec2:DescribeAvailabilityZones"),
 
     /** Action for the DescribeBundleTasks operation. */
-    DescribeBundleTasks("EC2:DescribeBundleTasks"),
+    DescribeBundleTasks("ec2:DescribeBundleTasks"),
 
     /** Action for the DescribeConversionTasks operation. */
-    DescribeConversionTasks("EC2:DescribeConversionTasks"),
+    DescribeConversionTasks("ec2:DescribeConversionTasks"),
 
     /** Action for the DescribeCustomerGateways operation. */
-    DescribeCustomerGateways("EC2:DescribeCustomerGateways"),
+    DescribeCustomerGateways("ec2:DescribeCustomerGateways"),
 
     /** Action for the DescribeDhcpOptions operation. */
-    DescribeDhcpOptions("EC2:DescribeDhcpOptions"),
+    DescribeDhcpOptions("ec2:DescribeDhcpOptions"),
 
     /** Action for the DescribeExportTasks operation. */
-    DescribeExportTasks("EC2:DescribeExportTasks"),
+    DescribeExportTasks("ec2:DescribeExportTasks"),
 
     /** Action for the DescribeImageAttribute operation. */
-    DescribeImageAttribute("EC2:DescribeImageAttribute"),
+    DescribeImageAttribute("ec2:DescribeImageAttribute"),
 
     /** Action for the DescribeImages operation. */
-    DescribeImages("EC2:DescribeImages"),
+    DescribeImages("ec2:DescribeImages"),
 
     /** Action for the DescribeInstanceAttribute operation. */
-    DescribeInstanceAttribute("EC2:DescribeInstanceAttribute"),
+    DescribeInstanceAttribute("ec2:DescribeInstanceAttribute"),
 
     /** Action for the DescribeInstanceStatus operation. */
-    DescribeInstanceStatus("EC2:DescribeInstanceStatus"),
+    DescribeInstanceStatus("ec2:DescribeInstanceStatus"),
 
     /** Action for the DescribeInstances operation. */
-    DescribeInstances("EC2:DescribeInstances"),
+    DescribeInstances("ec2:DescribeInstances"),
 
     /** Action for the DescribeInternetGateways operation. */
-    DescribeInternetGateways("EC2:DescribeInternetGateways"),
+    DescribeInternetGateways("ec2:DescribeInternetGateways"),
 
     /** Action for the DescribeKeyPairs operation. */
-    DescribeKeyPairs("EC2:DescribeKeyPairs"),
+    DescribeKeyPairs("ec2:DescribeKeyPairs"),
 
     /** Action for the DescribeLicenses operation. */
-    DescribeLicenses("EC2:DescribeLicenses"),
+    DescribeLicenses("ec2:DescribeLicenses"),
 
     /** Action for the DescribeNetworkAcls operation. */
-    DescribeNetworkAcls("EC2:DescribeNetworkAcls"),
+    DescribeNetworkAcls("ec2:DescribeNetworkAcls"),
 
     /** Action for the DescribeNetworkInterfaceAttribute operation. */
-    DescribeNetworkInterfaceAttribute("EC2:DescribeNetworkInterfaceAttribute"),
+    DescribeNetworkInterfaceAttribute("ec2:DescribeNetworkInterfaceAttribute"),
 
     /** Action for the DescribeNetworkInterfaces operation. */
-    DescribeNetworkInterfaces("EC2:DescribeNetworkInterfaces"),
+    DescribeNetworkInterfaces("ec2:DescribeNetworkInterfaces"),
 
     /** Action for the DescribePlacementGroups operation. */
-    DescribePlacementGroups("EC2:DescribePlacementGroups"),
+    DescribePlacementGroups("ec2:DescribePlacementGroups"),
 
     /** Action for the DescribeRegions operation. */
-    DescribeRegions("EC2:DescribeRegions"),
+    DescribeRegions("ec2:DescribeRegions"),
 
     /** Action for the DescribeReservedInstances operation. */
-    DescribeReservedInstances("EC2:DescribeReservedInstances"),
+    DescribeReservedInstances("ec2:DescribeReservedInstances"),
 
     /** Action for the DescribeReservedInstancesOfferings operation. */
-    DescribeReservedInstancesOfferings("EC2:DescribeReservedInstancesOfferings"),
+    DescribeReservedInstancesOfferings("ec2:DescribeReservedInstancesOfferings"),
 
     /** Action for the DescribeRouteTables operation. */
-    DescribeRouteTables("EC2:DescribeRouteTables"),
+    DescribeRouteTables("ec2:DescribeRouteTables"),
 
     /** Action for the DescribeSecurityGroups operation. */
-    DescribeSecurityGroups("EC2:DescribeSecurityGroups"),
+    DescribeSecurityGroups("ec2:DescribeSecurityGroups"),
 
     /** Action for the DescribeSnapshotAttribute operation. */
-    DescribeSnapshotAttribute("EC2:DescribeSnapshotAttribute"),
+    DescribeSnapshotAttribute("ec2:DescribeSnapshotAttribute"),
 
     /** Action for the DescribeSnapshots operation. */
-    DescribeSnapshots("EC2:DescribeSnapshots"),
+    DescribeSnapshots("ec2:DescribeSnapshots"),
 
     /** Action for the DescribeSpotDatafeedSubscription operation. */
-    DescribeSpotDatafeedSubscription("EC2:DescribeSpotDatafeedSubscription"),
+    DescribeSpotDatafeedSubscription("ec2:DescribeSpotDatafeedSubscription"),
 
     /** Action for the DescribeSpotInstanceRequests operation. */
-    DescribeSpotInstanceRequests("EC2:DescribeSpotInstanceRequests"),
+    DescribeSpotInstanceRequests("ec2:DescribeSpotInstanceRequests"),
 
     /** Action for the DescribeSpotPriceHistory operation. */
-    DescribeSpotPriceHistory("EC2:DescribeSpotPriceHistory"),
+    DescribeSpotPriceHistory("ec2:DescribeSpotPriceHistory"),
 
     /** Action for the DescribeSubnets operation. */
-    DescribeSubnets("EC2:DescribeSubnets"),
+    DescribeSubnets("ec2:DescribeSubnets"),
 
     /** Action for the DescribeTags operation. */
-    DescribeTags("EC2:DescribeTags"),
+    DescribeTags("ec2:DescribeTags"),
 
     /** Action for the DescribeVolumeAttribute operation. */
-    DescribeVolumeAttribute("EC2:DescribeVolumeAttribute"),
+    DescribeVolumeAttribute("ec2:DescribeVolumeAttribute"),
 
     /** Action for the DescribeVolumeStatus operation. */
-    DescribeVolumeStatus("EC2:DescribeVolumeStatus"),
+    DescribeVolumeStatus("ec2:DescribeVolumeStatus"),
 
     /** Action for the DescribeVolumes operation. */
-    DescribeVolumes("EC2:DescribeVolumes"),
+    DescribeVolumes("ec2:DescribeVolumes"),
 
     /** Action for the DescribeVpcs operation. */
-    DescribeVpcs("EC2:DescribeVpcs"),
+    DescribeVpcs("ec2:DescribeVpcs"),
 
     /** Action for the DescribeVpnConnections operation. */
-    DescribeVpnConnections("EC2:DescribeVpnConnections"),
+    DescribeVpnConnections("ec2:DescribeVpnConnections"),
 
     /** Action for the DescribeVpnGateways operation. */
-    DescribeVpnGateways("EC2:DescribeVpnGateways"),
+    DescribeVpnGateways("ec2:DescribeVpnGateways"),
 
     /** Action for the DetachInternetGateway operation. */
-    DetachInternetGateway("EC2:DetachInternetGateway"),
+    DetachInternetGateway("ec2:DetachInternetGateway"),
 
     /** Action for the DetachNetworkInterface operation. */
-    DetachNetworkInterface("EC2:DetachNetworkInterface"),
+    DetachNetworkInterface("ec2:DetachNetworkInterface"),
 
     /** Action for the DetachVolume operation. */
-    DetachVolume("EC2:DetachVolume"),
+    DetachVolume("ec2:DetachVolume"),
 
     /** Action for the DetachVpnGateway operation. */
-    DetachVpnGateway("EC2:DetachVpnGateway"),
+    DetachVpnGateway("ec2:DetachVpnGateway"),
 
     /** Action for the DisassociateAddress operation. */
-    DisassociateAddress("EC2:DisassociateAddress"),
+    DisassociateAddress("ec2:DisassociateAddress"),
 
     /** Action for the DisassociateRouteTable operation. */
-    DisassociateRouteTable("EC2:DisassociateRouteTable"),
+    DisassociateRouteTable("ec2:DisassociateRouteTable"),
 
     /** Action for the EnableVolumeIO operation. */
-    EnableVolumeIO("EC2:EnableVolumeIO"),
+    EnableVolumeIO("ec2:EnableVolumeIO"),
 
     /** Action for the GetConsoleOutput operation. */
-    GetConsoleOutput("EC2:GetConsoleOutput"),
+    GetConsoleOutput("ec2:GetConsoleOutput"),
 
     /** Action for the GetPasswordData operation. */
-    GetPasswordData("EC2:GetPasswordData"),
+    GetPasswordData("ec2:GetPasswordData"),
 
     /** Action for the ImportInstance operation. */
-    ImportInstance("EC2:ImportInstance"),
+    ImportInstance("ec2:ImportInstance"),
 
     /** Action for the ImportKeyPair operation. */
-    ImportKeyPair("EC2:ImportKeyPair"),
+    ImportKeyPair("ec2:ImportKeyPair"),
 
     /** Action for the ImportVolume operation. */
-    ImportVolume("EC2:ImportVolume"),
+    ImportVolume("ec2:ImportVolume"),
 
     /** Action for the ModifyImageAttribute operation. */
-    ModifyImageAttribute("EC2:ModifyImageAttribute"),
+    ModifyImageAttribute("ec2:ModifyImageAttribute"),
 
     /** Action for the ModifyInstanceAttribute operation. */
-    ModifyInstanceAttribute("EC2:ModifyInstanceAttribute"),
+    ModifyInstanceAttribute("ec2:ModifyInstanceAttribute"),
 
     /** Action for the ModifyNetworkInterfaceAttribute operation. */
-    ModifyNetworkInterfaceAttribute("EC2:ModifyNetworkInterfaceAttribute"),
+    ModifyNetworkInterfaceAttribute("ec2:ModifyNetworkInterfaceAttribute"),
 
     /** Action for the ModifySnapshotAttribute operation. */
-    ModifySnapshotAttribute("EC2:ModifySnapshotAttribute"),
+    ModifySnapshotAttribute("ec2:ModifySnapshotAttribute"),
 
     /** Action for the ModifyVolumeAttribute operation. */
-    ModifyVolumeAttribute("EC2:ModifyVolumeAttribute"),
+    ModifyVolumeAttribute("ec2:ModifyVolumeAttribute"),
 
     /** Action for the MonitorInstances operation. */
-    MonitorInstances("EC2:MonitorInstances"),
+    MonitorInstances("ec2:MonitorInstances"),
 
     /** Action for the PurchaseReservedInstancesOffering operation. */
-    PurchaseReservedInstancesOffering("EC2:PurchaseReservedInstancesOffering"),
+    PurchaseReservedInstancesOffering("ec2:PurchaseReservedInstancesOffering"),
 
     /** Action for the RebootInstances operation. */
-    RebootInstances("EC2:RebootInstances"),
+    RebootInstances("ec2:RebootInstances"),
 
     /** Action for the RegisterImage operation. */
-    RegisterImage("EC2:RegisterImage"),
+    RegisterImage("ec2:RegisterImage"),
 
     /** Action for the ReleaseAddress operation. */
-    ReleaseAddress("EC2:ReleaseAddress"),
+    ReleaseAddress("ec2:ReleaseAddress"),
 
     /** Action for the ReplaceNetworkAclAssociation operation. */
-    ReplaceNetworkAclAssociation("EC2:ReplaceNetworkAclAssociation"),
+    ReplaceNetworkAclAssociation("ec2:ReplaceNetworkAclAssociation"),
 
     /** Action for the ReplaceNetworkAclEntry operation. */
-    ReplaceNetworkAclEntry("EC2:ReplaceNetworkAclEntry"),
+    ReplaceNetworkAclEntry("ec2:ReplaceNetworkAclEntry"),
 
     /** Action for the ReplaceRoute operation. */
-    ReplaceRoute("EC2:ReplaceRoute"),
+    ReplaceRoute("ec2:ReplaceRoute"),
 
     /** Action for the ReplaceRouteTableAssociation operation. */
-    ReplaceRouteTableAssociation("EC2:ReplaceRouteTableAssociation"),
+    ReplaceRouteTableAssociation("ec2:ReplaceRouteTableAssociation"),
 
     /** Action for the ReportInstanceStatus operation. */
-    ReportInstanceStatus("EC2:ReportInstanceStatus"),
+    ReportInstanceStatus("ec2:ReportInstanceStatus"),
 
     /** Action for the RequestSpotInstances operation. */
-    RequestSpotInstances("EC2:RequestSpotInstances"),
+    RequestSpotInstances("ec2:RequestSpotInstances"),
 
     /** Action for the ResetImageAttribute operation. */
-    ResetImageAttribute("EC2:ResetImageAttribute"),
+    ResetImageAttribute("ec2:ResetImageAttribute"),
 
     /** Action for the ResetInstanceAttribute operation. */
-    ResetInstanceAttribute("EC2:ResetInstanceAttribute"),
+    ResetInstanceAttribute("ec2:ResetInstanceAttribute"),
 
     /** Action for the ResetNetworkInterfaceAttribute operation. */
-    ResetNetworkInterfaceAttribute("EC2:ResetNetworkInterfaceAttribute"),
+    ResetNetworkInterfaceAttribute("ec2:ResetNetworkInterfaceAttribute"),
 
     /** Action for the ResetSnapshotAttribute operation. */
-    ResetSnapshotAttribute("EC2:ResetSnapshotAttribute"),
+    ResetSnapshotAttribute("ec2:ResetSnapshotAttribute"),
 
     /** Action for the RevokeSecurityGroupEgress operation. */
-    RevokeSecurityGroupEgress("EC2:RevokeSecurityGroupEgress"),
+    RevokeSecurityGroupEgress("ec2:RevokeSecurityGroupEgress"),
 
     /** Action for the RevokeSecurityGroupIngress operation. */
-    RevokeSecurityGroupIngress("EC2:RevokeSecurityGroupIngress"),
+    RevokeSecurityGroupIngress("ec2:RevokeSecurityGroupIngress"),
 
     /** Action for the RunInstances operation. */
-    RunInstances("EC2:RunInstances"),
+    RunInstances("ec2:RunInstances"),
 
     /** Action for the StartInstances operation. */
-    StartInstances("EC2:StartInstances"),
+    StartInstances("ec2:StartInstances"),
 
     /** Action for the StopInstances operation. */
-    StopInstances("EC2:StopInstances"),
+    StopInstances("ec2:StopInstances"),
 
     /** Action for the TerminateInstances operation. */
-    TerminateInstances("EC2:TerminateInstances"),
+    TerminateInstances("ec2:TerminateInstances"),
 
     /** Action for the UnmonitorInstances operation. */
-    UnmonitorInstances("EC2:UnmonitorInstances");
+    UnmonitorInstances("ec2:UnmonitorInstances");
 
     private final String action;
 

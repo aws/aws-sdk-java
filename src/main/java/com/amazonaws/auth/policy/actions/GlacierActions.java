@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,64 +21,64 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum GlacierActions implements Action {
     /** Represents any action executed on Amazon Glacier. */
-    AllGlacierActions("Glacier:*"),
+    AllGlacierActions("glacier:*"),
 
     /** Action for the AbortMultipartUpload operation. */
-    AbortMultipartUpload("Glacier:AbortMultipartUpload"),
+    AbortMultipartUpload("glacier:AbortMultipartUpload"),
 
     /** Action for the CompleteMultipartUpload operation. */
-    CompleteMultipartUpload("Glacier:CompleteMultipartUpload"),
+    CompleteMultipartUpload("glacier:CompleteMultipartUpload"),
 
     /** Action for the CreateVault operation. */
-    CreateVault("Glacier:CreateVault"),
+    CreateVault("glacier:CreateVault"),
 
     /** Action for the DeleteArchive operation. */
-    DeleteArchive("Glacier:DeleteArchive"),
+    DeleteArchive("glacier:DeleteArchive"),
 
     /** Action for the DeleteVault operation. */
-    DeleteVault("Glacier:DeleteVault"),
+    DeleteVault("glacier:DeleteVault"),
 
     /** Action for the DeleteVaultNotifications operation. */
-    DeleteVaultNotifications("Glacier:DeleteVaultNotifications"),
+    DeleteVaultNotifications("glacier:DeleteVaultNotifications"),
 
     /** Action for the DescribeJob operation. */
-    DescribeJob("Glacier:DescribeJob"),
+    DescribeJob("glacier:DescribeJob"),
 
     /** Action for the DescribeVault operation. */
-    DescribeVault("Glacier:DescribeVault"),
+    DescribeVault("glacier:DescribeVault"),
 
     /** Action for the GetJobOutput operation. */
-    GetJobOutput("Glacier:GetJobOutput"),
+    GetJobOutput("glacier:GetJobOutput"),
 
     /** Action for the GetVaultNotifications operation. */
-    GetVaultNotifications("Glacier:GetVaultNotifications"),
+    GetVaultNotifications("glacier:GetVaultNotifications"),
 
     /** Action for the InitiateMultipartUpload operation. */
-    InitiateMultipartUpload("Glacier:InitiateMultipartUpload"),
+    InitiateMultipartUpload("glacier:InitiateMultipartUpload"),
 
     /** Action for the InitiateJob operation. */
-    InitiateJob("Glacier:InitiateJob"),
+    InitiateJob("glacier:InitiateJob"),
 
     /** Action for the ListJobs operation. */
-    ListJobs("Glacier:ListJobs"),
+    ListJobs("glacier:ListJobs"),
 
     /** Action for the ListMultipartUploads operation. */
-    ListMultipartUploads("Glacier:ListMultipartUploads"),
+    ListMultipartUploads("glacier:ListMultipartUploads"),
 
     /** Action for the ListParts operation. */
-    ListParts("Glacier:ListParts"),
+    ListParts("glacier:ListParts"),
 
     /** Action for the ListVaults operation. */
-    ListVaults("Glacier:ListVaults"),
+    ListVaults("glacier:ListVaults"),
 
     /** Action for the SetVaultNotifications operation. */
-    SetVaultNotifications("Glacier:SetVaultNotifications"),
+    SetVaultNotifications("glacier:SetVaultNotifications"),
 
     /** Action for the UploadArchive operation. */
-    UploadArchive("Glacier:UploadArchive"),
+    UploadArchive("glacier:UploadArchive"),
 
     /** Action for the UploadMultipartPart operation. */
-    UploadMultipartPart("Glacier:UploadMultipartPart");
+    UploadMultipartPart("glacier:UploadMultipartPart");
 
     private final String action;
 

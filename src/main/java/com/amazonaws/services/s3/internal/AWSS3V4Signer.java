@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -69,26 +69,33 @@ public class AWSS3V4Signer extends AWS4Signer implements Presigner {
             addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
         }
 
-        Date date = getDateFromRequest(request);
+        long dateMilli = getDateFromRequest(request);
+        final String dateStamp = getDateStamp(dateMilli);
 
-        String scope = getScope(request, date);
+        String scope = getScope(request, dateStamp);
 
         String signingCredentials = sanitizedCredentials.getAWSAccessKeyId() + "/" + scope;
         String expirationInSeconds = Long.toString((expiration.getTime() - System.currentTimeMillis()) / 1000L);
 
         // Add the important parameters for v4 signing
-        Date now = new Date();
+        long now = System.currentTimeMillis();
+        final String timeStamp = getTimeStamp(now);
         request.addParameter("X-Amz-Algorithm", "AWS4-HMAC-SHA256");
-        request.addParameter("X-Amz-Date", getDateTimeStamp(now));
+        request.addParameter("X-Amz-Date", timeStamp);
         request.addParameter("X-Amz-SignedHeaders", "Host");
         request.addParameter("X-Amz-Expires", expirationInSeconds);
         request.addParameter("X-Amz-Credential", signingCredentials);
 
         String contentSha256 = "UNSIGNED-PAYLOAD";
 
-        HeaderSigningResult headerSigningResult = computeSignature(request, date, ALGORITHM, contentSha256, sanitizedCredentials);
+        HeaderSigningResult headerSigningResult = computeSignature(
+                request,
+                dateStamp,
+                timeStamp,
+                ALGORITHM,
+                contentSha256,
+                sanitizedCredentials);
         request.addParameter("X-Amz-Signature", BinaryUtils.toHex(headerSigningResult.getSignature()));
-
     }
 
     /**

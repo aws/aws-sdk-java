@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,40 +21,40 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum DirectConnectActions implements Action {
     /** Represents any action executed on AWS Direct Connect. */
-    AllDirectConnectActions("DirectConnect:*"),
+    AllDirectConnectActions("directconnect::*"),
 
     /** Action for the CreateConnection operation. */
-    CreateConnection("DirectConnect:CreateConnection"),
+    CreateConnection("directconnect::CreateConnection"),
 
     /** Action for the CreatePrivateVirtualInterface operation. */
-    CreatePrivateVirtualInterface("DirectConnect:CreatePrivateVirtualInterface"),
+    CreatePrivateVirtualInterface("directconnect::CreatePrivateVirtualInterface"),
 
     /** Action for the CreatePublicVirtualInterface operation. */
-    CreatePublicVirtualInterface("DirectConnect:CreatePublicVirtualInterface"),
+    CreatePublicVirtualInterface("directconnect::CreatePublicVirtualInterface"),
 
     /** Action for the DeleteConnection operation. */
-    DeleteConnection("DirectConnect:DeleteConnection"),
+    DeleteConnection("directconnect::DeleteConnection"),
 
     /** Action for the DeleteVirtualInterface operation. */
-    DeleteVirtualInterface("DirectConnect:DeleteVirtualInterface"),
+    DeleteVirtualInterface("directconnect::DeleteVirtualInterface"),
 
     /** Action for the DescribeConnectionDetail operation. */
-    DescribeConnectionDetail("DirectConnect:DescribeConnectionDetail"),
+    DescribeConnectionDetail("directconnect::DescribeConnectionDetail"),
 
     /** Action for the DescribeConnections operation. */
-    DescribeConnections("DirectConnect:DescribeConnections"),
+    DescribeConnections("directconnect::DescribeConnections"),
 
     /** Action for the DescribeOfferingDetail operation. */
-    DescribeOfferingDetail("DirectConnect:DescribeOfferingDetail"),
+    DescribeOfferingDetail("directconnect::DescribeOfferingDetail"),
 
     /** Action for the DescribeOfferings operation. */
-    DescribeOfferings("DirectConnect:DescribeOfferings"),
+    DescribeOfferings("directconnect::DescribeOfferings"),
 
     /** Action for the DescribeVirtualGateways operation. */
-    DescribeVirtualGateways("DirectConnect:DescribeVirtualGateways"),
+    DescribeVirtualGateways("directconnect::DescribeVirtualGateways"),
 
     /** Action for the DescribeVirtualInterfaces operation. */
-    DescribeVirtualInterfaces("DirectConnect:DescribeVirtualInterfaces");
+    DescribeVirtualInterfaces("directconnect::DescribeVirtualInterfaces");
 
     private final String action;
 

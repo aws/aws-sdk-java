@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,43 +21,43 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum CloudFormationActions implements Action {
     /** Represents any action executed on AWS CloudFormation. */
-    AllCloudFormationActions("CloudFormation:*"),
+    AllCloudFormationActions("cloudformation:*"),
 
     /** Action for the CreateStack operation. */
-    CreateStack("CloudFormation:CreateStack"),
+    CreateStack("cloudformation:CreateStack"),
 
     /** Action for the DeleteStack operation. */
-    DeleteStack("CloudFormation:DeleteStack"),
+    DeleteStack("cloudformation:DeleteStack"),
 
     /** Action for the DescribeStackEvents operation. */
-    DescribeStackEvents("CloudFormation:DescribeStackEvents"),
+    DescribeStackEvents("cloudformation:DescribeStackEvents"),
 
     /** Action for the DescribeStackResource operation. */
-    DescribeStackResource("CloudFormation:DescribeStackResource"),
+    DescribeStackResource("cloudformation:DescribeStackResource"),
 
     /** Action for the DescribeStackResources operation. */
-    DescribeStackResources("CloudFormation:DescribeStackResources"),
+    DescribeStackResources("cloudformation:DescribeStackResources"),
 
     /** Action for the DescribeStacks operation. */
-    DescribeStacks("CloudFormation:DescribeStacks"),
+    DescribeStacks("cloudformation:DescribeStacks"),
 
     /** Action for the EstimateTemplateCost operation. */
-    EstimateTemplateCost("CloudFormation:EstimateTemplateCost"),
+    EstimateTemplateCost("cloudformation:EstimateTemplateCost"),
 
     /** Action for the GetTemplate operation. */
-    GetTemplate("CloudFormation:GetTemplate"),
+    GetTemplate("cloudformation:GetTemplate"),
 
     /** Action for the ListStacks operation. */
-    ListStacks("CloudFormation:ListStacks"),
+    ListStacks("cloudformation:ListStacks"),
 
     /** Action for the ListStackResources operation. */
-    ListStackResources("CloudFormation:ListStackResources"),
+    ListStackResources("cloudformation:ListStackResources"),
 
     /** Action for the UpdateStack operation. */
-    UpdateStack("CloudFormation:UpdateStack"),
+    UpdateStack("cloudformation:UpdateStack"),
 
     /** Action for the ValidateTemplate operation. */
-    ValidateTemplate("CloudFormation:ValidateTemplate");
+    ValidateTemplate("cloudformation:ValidateTemplate");
 
     private final String action;
 

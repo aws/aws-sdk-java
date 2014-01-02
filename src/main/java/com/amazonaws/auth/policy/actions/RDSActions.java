@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,94 +21,94 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum RDSActions implements Action {
     /** Represents any action executed on Amazon RDS. */
-    AllRDSActions("RDS:*"),
+    AllRDSActions("rds:*"),
 
     /** Action for the AuthorizeDBSecurityGroupIngress operation. */
-    AuthorizeDBSecurityGroupIngress("RDS:AuthorizeDBSecurityGroupIngress"),
+    AuthorizeDBSecurityGroupIngress("rds:AuthorizeDBSecurityGroupIngress"),
 
     /** Action for the CreateDBInstance operation. */
-    CreateDBInstance("RDS:CreateDBInstance"),
+    CreateDBInstance("rds:CreateDBInstance"),
 
     /** Action for the CreateDBInstanceReadReplica operation. */
-    CreateDBInstanceReadReplica("RDS:CreateDBInstanceReadReplica"),
+    CreateDBInstanceReadReplica("rds:CreateDBInstanceReadReplica"),
 
     /** Action for the CreateDBParameterGroup operation. */
-    CreateDBParameterGroup("RDS:CreateDBParameterGroup"),
+    CreateDBParameterGroup("rds:CreateDBParameterGroup"),
 
     /** Action for the CreateDBSecurityGroup operation. */
-    CreateDBSecurityGroup("RDS:CreateDBSecurityGroup"),
+    CreateDBSecurityGroup("rds:CreateDBSecurityGroup"),
 
     /** Action for the CreateDBSnapshot operation. */
-    CreateDBSnapshot("RDS:CreateDBSnapshot"),
+    CreateDBSnapshot("rds:CreateDBSnapshot"),
 
     /** Action for the DeleteDBInstance operation. */
-    DeleteDBInstance("RDS:DeleteDBInstance"),
+    DeleteDBInstance("rds:DeleteDBInstance"),
 
     /** Action for the DeleteDBParameterGroup operation. */
-    DeleteDBParameterGroup("RDS:DeleteDBParameterGroup"),
+    DeleteDBParameterGroup("rds:DeleteDBParameterGroup"),
 
     /** Action for the DeleteDBSecurityGroup operation. */
-    DeleteDBSecurityGroup("RDS:DeleteDBSecurityGroup"),
+    DeleteDBSecurityGroup("rds:DeleteDBSecurityGroup"),
 
     /** Action for the DeleteDBSnapshot operation. */
-    DeleteDBSnapshot("RDS:DeleteDBSnapshot"),
+    DeleteDBSnapshot("rds:DeleteDBSnapshot"),
 
     /** Action for the DescribeDBEngineVersions operation. */
-    DescribeDBEngineVersions("RDS:DescribeDBEngineVersions"),
+    DescribeDBEngineVersions("rds:DescribeDBEngineVersions"),
 
     /** Action for the DescribeDBInstances operation. */
-    DescribeDBInstances("RDS:DescribeDBInstances"),
+    DescribeDBInstances("rds:DescribeDBInstances"),
 
     /** Action for the DescribeDBParameterGroups operation. */
-    DescribeDBParameterGroups("RDS:DescribeDBParameterGroups"),
+    DescribeDBParameterGroups("rds:DescribeDBParameterGroups"),
 
     /** Action for the DescribeDBParameters operation. */
-    DescribeDBParameters("RDS:DescribeDBParameters"),
+    DescribeDBParameters("rds:DescribeDBParameters"),
 
     /** Action for the DescribeDBSecurityGroups operation. */
-    DescribeDBSecurityGroups("RDS:DescribeDBSecurityGroups"),
+    DescribeDBSecurityGroups("rds:DescribeDBSecurityGroups"),
 
     /** Action for the DescribeDBSnapshots operation. */
-    DescribeDBSnapshots("RDS:DescribeDBSnapshots"),
+    DescribeDBSnapshots("rds:DescribeDBSnapshots"),
 
     /** Action for the DescribeEngineDefaultParameters operation. */
-    DescribeEngineDefaultParameters("RDS:DescribeEngineDefaultParameters"),
+    DescribeEngineDefaultParameters("rds:DescribeEngineDefaultParameters"),
 
     /** Action for the DescribeEvents operation. */
-    DescribeEvents("RDS:DescribeEvents"),
+    DescribeEvents("rds:DescribeEvents"),
 
     /** Action for the DescribeReservedDBInstances operation. */
-    DescribeReservedDBInstances("RDS:DescribeReservedDBInstances"),
+    DescribeReservedDBInstances("rds:DescribeReservedDBInstances"),
 
     /** Action for the DescribeReservedDBInstancesOfferings operation. */
-    DescribeReservedDBInstancesOfferings("RDS:DescribeReservedDBInstancesOfferings"),
+    DescribeReservedDBInstancesOfferings("rds:DescribeReservedDBInstancesOfferings"),
 
     /** Action for the ListTagsForResource operation. */
-    ListTagsForResource("RDS:ListTagsForResource"),
+    ListTagsForResource("rds:ListTagsForResource"),
 
     /** Action for the ModifyDBInstance operation. */
-    ModifyDBInstance("RDS:ModifyDBInstance"),
+    ModifyDBInstance("rds:ModifyDBInstance"),
 
     /** Action for the ModifyDBParameterGroup operation. */
-    ModifyDBParameterGroup("RDS:ModifyDBParameterGroup"),
+    ModifyDBParameterGroup("rds:ModifyDBParameterGroup"),
 
     /** Action for the PurchaseReservedDBInstancesOffering operation. */
-    PurchaseReservedDBInstancesOffering("RDS:PurchaseReservedDBInstancesOffering"),
+    PurchaseReservedDBInstancesOffering("rds:PurchaseReservedDBInstancesOffering"),
 
     /** Action for the RebootDBInstance operation. */
-    RebootDBInstance("RDS:RebootDBInstance"),
+    RebootDBInstance("rds:RebootDBInstance"),
 
     /** Action for the ResetDBParameterGroup operation. */
-    ResetDBParameterGroup("RDS:ResetDBParameterGroup"),
+    ResetDBParameterGroup("rds:ResetDBParameterGroup"),
 
     /** Action for the RestoreDBInstanceFromDBSnapshot operation. */
-    RestoreDBInstanceFromDBSnapshot("RDS:RestoreDBInstanceFromDBSnapshot"),
+    RestoreDBInstanceFromDBSnapshot("rds:RestoreDBInstanceFromDBSnapshot"),
 
     /** Action for the RestoreDBInstanceToPointInTime operation. */
-    RestoreDBInstanceToPointInTime("RDS:RestoreDBInstanceToPointInTime"),
+    RestoreDBInstanceToPointInTime("rds:RestoreDBInstanceToPointInTime"),
 
     /** Action for the RevokeDBSecurityGroupIngress operation. */
-    RevokeDBSecurityGroupIngress("RDS:RevokeDBSecurityGroupIngress");
+    RevokeDBSecurityGroupIngress("rds:RevokeDBSecurityGroupIngress");
 
     private final String action;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,115 +21,115 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum AutoScalingActions implements Action {
     /** Represents any action executed on Amazon Auto Scaling. */
-    AllAutoScalingActions("AutoScaling:*"),
+    AllAutoScalingActions("autoscaling:*"),
 
     /** Action for the CreateAutoScalingGroup operation. */
-    CreateAutoScalingGroup("AutoScaling:CreateAutoScalingGroup"),
+    CreateAutoScalingGroup("autoscaling:CreateAutoScalingGroup"),
 
     /** Action for the CreateLaunchConfiguration operation. */
-    CreateLaunchConfiguration("AutoScaling:CreateLaunchConfiguration"),
+    CreateLaunchConfiguration("autoscaling:CreateLaunchConfiguration"),
 
     /** Action for the CreateOrUpdateScalingTrigger operation. */
-    CreateOrUpdateScalingTrigger("AutoScaling:CreateOrUpdateScalingTrigger"),
+    CreateOrUpdateScalingTrigger("autoscaling:CreateOrUpdateScalingTrigger"),
 
     /** Action for the CreateOrUpdateTags operation. */
-    CreateOrUpdateTags("AutoScaling:CreateOrUpdateTags"),
+    CreateOrUpdateTags("autoscaling:CreateOrUpdateTags"),
 
     /** Action for the DeleteAutoScalingGroup operation. */
-    DeleteAutoScalingGroup("AutoScaling:DeleteAutoScalingGroup"),
+    DeleteAutoScalingGroup("autoscaling:DeleteAutoScalingGroup"),
 
     /** Action for the DeleteLaunchConfiguration operation. */
-    DeleteLaunchConfiguration("AutoScaling:DeleteLaunchConfiguration"),
+    DeleteLaunchConfiguration("autoscaling:DeleteLaunchConfiguration"),
 
     /** Action for the DeleteNotificationConfiguration operation. */
-    DeleteNotificationConfiguration("AutoScaling:DeleteNotificationConfiguration"),
+    DeleteNotificationConfiguration("autoscaling:DeleteNotificationConfiguration"),
 
     /** Action for the DeletePolicy operation. */
-    DeletePolicy("AutoScaling:DeletePolicy"),
+    DeletePolicy("autoscaling:DeletePolicy"),
 
     /** Action for the DeleteScheduledAction operation. */
-    DeleteScheduledAction("AutoScaling:DeleteScheduledAction"),
+    DeleteScheduledAction("autoscaling:DeleteScheduledAction"),
 
     /** Action for the DeleteTags operation. */
-    DeleteTags("AutoScaling:DeleteTags"),
+    DeleteTags("autoscaling:DeleteTags"),
 
     /** Action for the DeleteTrigger operation. */
-    DeleteTrigger("AutoScaling:DeleteTrigger"),
+    DeleteTrigger("autoscaling:DeleteTrigger"),
 
     /** Action for the DescribeAdjustmentTypes operation. */
-    DescribeAdjustmentTypes("AutoScaling:DescribeAdjustmentTypes"),
+    DescribeAdjustmentTypes("autoscaling:DescribeAdjustmentTypes"),
 
     /** Action for the DescribeAutoScalingGroups operation. */
-    DescribeAutoScalingGroups("AutoScaling:DescribeAutoScalingGroups"),
+    DescribeAutoScalingGroups("autoscaling:DescribeAutoScalingGroups"),
 
     /** Action for the DescribeAutoScalingInstances operation. */
-    DescribeAutoScalingInstances("AutoScaling:DescribeAutoScalingInstances"),
+    DescribeAutoScalingInstances("autoscaling:DescribeAutoScalingInstances"),
 
     /** Action for the DescribeAutoScalingNotificationTypes operation. */
-    DescribeAutoScalingNotificationTypes("AutoScaling:DescribeAutoScalingNotificationTypes"),
+    DescribeAutoScalingNotificationTypes("autoscaling:DescribeAutoScalingNotificationTypes"),
 
     /** Action for the DescribeLaunchConfigurations operation. */
-    DescribeLaunchConfigurations("AutoScaling:DescribeLaunchConfigurations"),
+    DescribeLaunchConfigurations("autoscaling:DescribeLaunchConfigurations"),
 
     /** Action for the DescribeMetricCollectionTypes operation. */
-    DescribeMetricCollectionTypes("AutoScaling:DescribeMetricCollectionTypes"),
+    DescribeMetricCollectionTypes("autoscaling:DescribeMetricCollectionTypes"),
 
     /** Action for the DescribeNotificationConfigurations operation. */
-    DescribeNotificationConfigurations("AutoScaling:DescribeNotificationConfigurations"),
+    DescribeNotificationConfigurations("autoscaling:DescribeNotificationConfigurations"),
 
     /** Action for the DescribePolicies operation. */
-    DescribePolicies("AutoScaling:DescribePolicies"),
+    DescribePolicies("autoscaling:DescribePolicies"),
 
     /** Action for the DescribeScalingActivities operation. */
-    DescribeScalingActivities("AutoScaling:DescribeScalingActivities"),
+    DescribeScalingActivities("autoscaling:DescribeScalingActivities"),
 
     /** Action for the DescribeScalingProcessTypes operation. */
-    DescribeScalingProcessTypes("AutoScaling:DescribeScalingProcessTypes"),
+    DescribeScalingProcessTypes("autoscaling:DescribeScalingProcessTypes"),
 
     /** Action for the DescribeScheduledActions operation. */
-    DescribeScheduledActions("AutoScaling:DescribeScheduledActions"),
+    DescribeScheduledActions("autoscaling:DescribeScheduledActions"),
 
     /** Action for the DescribeTags operation. */
-    DescribeTags("AutoScaling:DescribeTags"),
+    DescribeTags("autoscaling:DescribeTags"),
 
     /** Action for the DescribeTriggers operation. */
-    DescribeTriggers("AutoScaling:DescribeTriggers"),
+    DescribeTriggers("autoscaling:DescribeTriggers"),
 
     /** Action for the DisableMetricsCollection operation. */
-    DisableMetricsCollection("AutoScaling:DisableMetricsCollection"),
+    DisableMetricsCollection("autoscaling:DisableMetricsCollection"),
 
     /** Action for the EnableMetricsCollection operation. */
-    EnableMetricsCollection("AutoScaling:EnableMetricsCollection"),
+    EnableMetricsCollection("autoscaling:EnableMetricsCollection"),
 
     /** Action for the ExecutePolicy operation. */
-    ExecutePolicy("AutoScaling:ExecutePolicy"),
+    ExecutePolicy("autoscaling:ExecutePolicy"),
 
     /** Action for the PutNotificationConfiguration operation. */
-    PutNotificationConfiguration("AutoScaling:PutNotificationConfiguration"),
+    PutNotificationConfiguration("autoscaling:PutNotificationConfiguration"),
 
     /** Action for the PutScalingPolicy operation. */
-    PutScalingPolicy("AutoScaling:PutScalingPolicy"),
+    PutScalingPolicy("autoscaling:PutScalingPolicy"),
 
     /** Action for the PutScheduledUpdateGroupAction operation. */
-    PutScheduledUpdateGroupAction("AutoScaling:PutScheduledUpdateGroupAction"),
+    PutScheduledUpdateGroupAction("autoscaling:PutScheduledUpdateGroupAction"),
 
     /** Action for the ResumeProcesses operation. */
-    ResumeProcesses("AutoScaling:ResumeProcesses"),
+    ResumeProcesses("autoscaling:ResumeProcesses"),
 
     /** Action for the SetDesiredCapacity operation. */
-    SetDesiredCapacity("AutoScaling:SetDesiredCapacity"),
+    SetDesiredCapacity("autoscaling:SetDesiredCapacity"),
 
     /** Action for the SetInstanceHealth operation. */
-    SetInstanceHealth("AutoScaling:SetInstanceHealth"),
+    SetInstanceHealth("autoscaling:SetInstanceHealth"),
 
     /** Action for the SuspendProcesses operation. */
-    SuspendProcesses("AutoScaling:SuspendProcesses"),
+    SuspendProcesses("autoscaling:SuspendProcesses"),
 
     /** Action for the TerminateInstanceInAutoScalingGroup operation. */
-    TerminateInstanceInAutoScalingGroup("AutoScaling:TerminateInstanceInAutoScalingGroup"),
+    TerminateInstanceInAutoScalingGroup("autoscaling:TerminateInstanceInAutoScalingGroup"),
 
     /** Action for the UpdateAutoScalingGroup operation. */
-    UpdateAutoScalingGroup("AutoScaling:UpdateAutoScalingGroup");
+    UpdateAutoScalingGroup("autoscaling:UpdateAutoScalingGroup");
 
     private final String action;
 

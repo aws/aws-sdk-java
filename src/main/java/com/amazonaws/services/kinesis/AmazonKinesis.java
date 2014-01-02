@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1161,8 +1161,10 @@ public interface AmazonKinesis {
      * </p>
      * 
      * @param streamName The name of the stream to put the data record into.
-     * @param data The data blob to put into the record, which must be Base64
-     * encoded. The maximum size of the data blob is 50 kilobytes (KB).
+     * @param data The data blob to put into the record, which is
+     * Base64-encoded by the AWS SDK for Java when the blob is serialized.
+     * The maximum size of the data blob (the payload after Base64-decoding)
+     * is 50 kilobytes (KB)
      * @param partitionKey Determines which shard in the stream the data
      * record is assigned to. Partition keys are Unicode strings with a
      * maximum length limit of 256 bytes. Amazon Kinesis uses the partition
@@ -1242,8 +1244,10 @@ public interface AmazonKinesis {
      * </p>
      * 
      * @param streamName The name of the stream to put the data record into.
-     * @param data The data blob to put into the record, which must be Base64
-     * encoded. The maximum size of the data blob is 50 kilobytes (KB).
+     * @param data The data blob to put into the record, which is
+     * Base64-encoded by the AWS SDK for Java when the blob is serialized.
+     * The maximum size of the data blob (the payload after Base64-decoding)
+     * is 50 kilobytes (KB)
      * @param partitionKey Determines which shard in the stream the data
      * record is assigned to. Partition keys are Unicode strings with a
      * maximum length limit of 256 bytes. Amazon Kinesis uses the partition

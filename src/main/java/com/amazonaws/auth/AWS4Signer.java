@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,15 +17,15 @@ package com.amazonaws.auth;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
-import java.util.SimpleTimeZone;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -41,7 +41,10 @@ public class AWS4Signer extends AbstractAWSSigner
 
     protected static final String ALGORITHM = "AWS4-HMAC-SHA256";
     protected static final String TERMINATOR = "aws4_request";
-
+    private static final DateTimeFormatter dateFormatter = DateTimeFormat
+            .forPattern("yyyyMMdd").withZoneUTC();
+    private static final DateTimeFormatter timeFormatter = DateTimeFormat
+            .forPattern("yyyyMMdd'T'HHmmss'Z'").withZoneUTC();
     /**
      * Service name override for use when the endpoint can't be used to
      * determine the service name.
@@ -85,32 +88,9 @@ public class AWS4Signer extends AbstractAWSSigner
         this.doubleUrlEncode = doubleUrlEncoding;
     }
 
-    protected static final ThreadLocal<SimpleDateFormat> dateTimeFormat =
-            new ThreadLocal<SimpleDateFormat>() {
-        @Override
-        protected SimpleDateFormat initialValue() {
-            final SimpleDateFormat dateTimeFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'");
-            dateTimeFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
-            return dateTimeFormat;
-        }
-    };
-
-    protected static final ThreadLocal<SimpleDateFormat> dateStampFormat =
-            new ThreadLocal<SimpleDateFormat>() {
-        @Override
-        protected SimpleDateFormat initialValue() {
-            final SimpleDateFormat dateStampFormat = new SimpleDateFormat("yyyyMMdd");
-            dateStampFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
-            return dateStampFormat;
-        }
-    };
-
     protected static final Log log = LogFactory.getLog(AWS4Signer.class);
 
-
-    /* (non-Javadoc)
-     * @see com.amazonaws.auth.Signer#sign(com.amazonaws.Request, com.amazonaws.auth.AWSCredentials)
-     */
+    @Override
     public void sign(Request<?> request, AWSCredentials credentials) {
         // annonymous credentials, don't sign
         if ( credentials instanceof AnonymousAWSCredentials ) {
@@ -124,13 +104,15 @@ public class AWS4Signer extends AbstractAWSSigner
 
         addHostHeader(request);
 
-        Date date = getDateFromRequest(request);
+        long dateMilli = getDateFromRequest(request);
 
-        String scope =  getScope(request, date);
+        final String dateStamp = getDateStamp(dateMilli);
+        String scope =  getScope(request, dateStamp);
 
         String contentSha256 = calculateContentHash(request);
 
-        request.addHeader("X-Amz-Date", getDateTimeStamp(date));
+        final String timeStamp = getTimeStamp(dateMilli);
+        request.addHeader("X-Amz-Date", timeStamp);
 
         if (request.getHeaders().get("x-amz-content-sha256") != null && request.getHeaders().get("x-amz-content-sha256").equals("required")) {
             request.addHeader("x-amz-content-sha256", contentSha256);
@@ -138,7 +120,13 @@ public class AWS4Signer extends AbstractAWSSigner
 
         String signingCredentials = sanitizedCredentials.getAWSAccessKeyId() + "/" + scope;
 
-        HeaderSigningResult headerSigningResult = computeSignature(request, date, ALGORITHM, contentSha256, sanitizedCredentials);
+        HeaderSigningResult headerSigningResult = computeSignature(
+            request,
+            dateStamp, 
+            timeStamp, 
+            ALGORITHM, 
+            contentSha256,
+            sanitizedCredentials);
 
         String credentialsAuthorizationHeader =
                 "Credential=" + signingCredentials;
@@ -270,16 +258,19 @@ public class AWS4Signer extends AbstractAWSSigner
     }
 
 
-    protected HeaderSigningResult computeSignature(Request<?> request, Date date, String algorithm, String contentSha256, AWSCredentials sanitizedCredentials) {
-
+    protected final HeaderSigningResult computeSignature(
+            Request<?> request,
+            String dateStamp,
+            String timeStamp,
+            String algorithm,
+            String contentSha256,
+            AWSCredentials sanitizedCredentials)
+    {
         String regionName = extractRegionName(request.getEndpoint());
         String serviceName = extractServiceName(request.getEndpoint());
-
-        String dateTime = getDateTimeStamp(date);
-        String dateStamp = getDateStamp(date);
         String scope =  dateStamp + "/" + regionName + "/" + serviceName + "/" + TERMINATOR;
 
-        String stringToSign = getStringToSign(algorithm, dateTime, scope, getCanonicalRequest(request,contentSha256 ));
+        String stringToSign = getStringToSign(algorithm, timeStamp, scope, getCanonicalRequest(request,contentSha256 ));
 
         // AWS4 uses a series of derived keys, formed by hashing different
         // pieces of data
@@ -290,22 +281,22 @@ public class AWS4Signer extends AbstractAWSSigner
         byte[] kSigning = sign(TERMINATOR, kService, SigningAlgorithm.HmacSHA256);
 
         byte[] signature = sign(stringToSign.getBytes(), kSigning, SigningAlgorithm.HmacSHA256);
-        return new HeaderSigningResult(dateTime, scope, kSigning, signature);
+        return new HeaderSigningResult(timeStamp, scope, kSigning, signature);
     }
 
-    protected String getDateTimeStamp(Date date) {
-        return dateTimeFormat.get().format(date);
+    protected final String getTimeStamp(long dateMilli) {
+        return timeFormatter.print(dateMilli);
     }
 
-    protected String getDateStamp(Date date) {
-        return dateStampFormat.get().format(date);
+    protected final String getDateStamp(long dateMilli) {
+        return dateFormatter.print(dateMilli);
     }
 
-    protected Date getDateFromRequest(Request<?> request) {
+    protected final long getDateFromRequest(Request<?> request) {
     	int timeOffset = getTimeOffset(request);
         Date date = getSignatureDate(timeOffset);
         if (overriddenDate != null) date = overriddenDate;
-        return date;
+        return date.getTime();
     }
 
 
@@ -319,11 +310,9 @@ public class AWS4Signer extends AbstractAWSSigner
         request.addHeader("Host", hostHeader);
     }
 
-    protected String getScope(Request<?> request, Date date) {
+    protected String getScope(Request<?> request, String dateStamp) {
         String regionName = extractRegionName(request.getEndpoint());
         String serviceName = extractServiceName(request.getEndpoint());
-
-        String dateStamp = getDateStamp(date);
         String scope =  dateStamp + "/" + regionName + "/" + serviceName + "/" + TERMINATOR;
         return scope;
     }

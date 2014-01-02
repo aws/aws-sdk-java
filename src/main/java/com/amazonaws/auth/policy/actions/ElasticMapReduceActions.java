@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,28 +21,28 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum ElasticMapReduceActions implements Action {
     /** Represents any action executed on Amazon Elastic MapReduce. */
-    AllElasticMapReduceActions("ElasticMapReduce:*"),
+    AllElasticMapReduceActions("elasticmapreduce:*"),
 
     /** Action for the AddInstanceGroups operation. */
-    AddInstanceGroups("ElasticMapReduce:AddInstanceGroups"),
+    AddInstanceGroups("elasticmapreduce:AddInstanceGroups"),
 
     /** Action for the AddJobFlowSteps operation. */
-    AddJobFlowSteps("ElasticMapReduce:AddJobFlowSteps"),
+    AddJobFlowSteps("elasticmapreduce:AddJobFlowSteps"),
 
     /** Action for the DescribeJobFlows operation. */
-    DescribeJobFlows("ElasticMapReduce:DescribeJobFlows"),
+    DescribeJobFlows("elasticmapreduce:DescribeJobFlows"),
 
     /** Action for the ModifyInstanceGroups operation. */
-    ModifyInstanceGroups("ElasticMapReduce:ModifyInstanceGroups"),
+    ModifyInstanceGroups("elasticmapreduce:ModifyInstanceGroups"),
 
     /** Action for the RunJobFlow operation. */
-    RunJobFlow("ElasticMapReduce:RunJobFlow"),
+    RunJobFlow("elasticmapreduce:RunJobFlow"),
 
     /** Action for the SetTerminationProtection operation. */
-    SetTerminationProtection("ElasticMapReduce:SetTerminationProtection"),
+    SetTerminationProtection("elasticmapreduce:SetTerminationProtection"),
 
     /** Action for the TerminateJobFlows operation. */
-    TerminateJobFlows("ElasticMapReduce:TerminateJobFlows");
+    TerminateJobFlows("elasticmapreduce:TerminateJobFlows");
 
     private final String action;
 

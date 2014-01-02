@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,43 +21,43 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum SQSActions implements Action {
     /** Represents any action executed on Amazon SQS. */
-    AllSQSActions("SQS:*"),
+    AllSQSActions("sqs:*"),
 
     /** Action for the AddPermission operation. */
-    AddPermission("SQS:AddPermission"),
+    AddPermission("sqs:AddPermission"),
 
     /** Action for the ChangeMessageVisibility operation. */
-    ChangeMessageVisibility("SQS:ChangeMessageVisibility"),
+    ChangeMessageVisibility("sqs:ChangeMessageVisibility"),
 
     /** Action for the CreateQueue operation. */
-    CreateQueue("SQS:CreateQueue"),
+    CreateQueue("sqs:CreateQueue"),
 
     /** Action for the DeleteMessage operation. */
-    DeleteMessage("SQS:DeleteMessage"),
+    DeleteMessage("sqs:DeleteMessage"),
 
     /** Action for the DeleteQueue operation. */
-    DeleteQueue("SQS:DeleteQueue"),
+    DeleteQueue("sqs:DeleteQueue"),
 
     /** Action for the GetQueueAttributes operation. */
-    GetQueueAttributes("SQS:GetQueueAttributes"),
+    GetQueueAttributes("sqs:GetQueueAttributes"),
 
     /** Action for the GetQueueUrl operation. */
-    GetQueueUrl("SQS:GetQueueUrl"),
+    GetQueueUrl("sqs:GetQueueUrl"),
 
     /** Action for the ListQueues operation. */
-    ListQueues("SQS:ListQueues"),
+    ListQueues("sqs:ListQueues"),
 
     /** Action for the ReceiveMessage operation. */
-    ReceiveMessage("SQS:ReceiveMessage"),
+    ReceiveMessage("sqs:ReceiveMessage"),
 
     /** Action for the RemovePermission operation. */
-    RemovePermission("SQS:RemovePermission"),
+    RemovePermission("sqs:RemovePermission"),
 
     /** Action for the SendMessage operation. */
-    SendMessage("SQS:SendMessage"),
+    SendMessage("sqs:SendMessage"),
 
     /** Action for the SetQueueAttributes operation. */
-    SetQueueAttributes("SQS:SetQueueAttributes");
+    SetQueueAttributes("sqs:SetQueueAttributes");
 
     private final String action;
 

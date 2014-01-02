@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,46 +21,46 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum SNSActions implements Action {
     /** Represents any action executed on Amazon SNS. */
-    AllSNSActions("SNS:*"),
+    AllSNSActions("sns:*"),
 
     /** Action for the AddPermission operation. */
-    AddPermission("SNS:AddPermission"),
+    AddPermission("sns:AddPermission"),
 
     /** Action for the ConfirmSubscription operation. */
-    ConfirmSubscription("SNS:ConfirmSubscription"),
+    ConfirmSubscription("sns:ConfirmSubscription"),
 
     /** Action for the CreateTopic operation. */
-    CreateTopic("SNS:CreateTopic"),
+    CreateTopic("sns:CreateTopic"),
 
     /** Action for the DeleteTopic operation. */
-    DeleteTopic("SNS:DeleteTopic"),
+    DeleteTopic("sns:DeleteTopic"),
 
     /** Action for the GetTopicAttributes operation. */
-    GetTopicAttributes("SNS:GetTopicAttributes"),
+    GetTopicAttributes("sns:GetTopicAttributes"),
 
     /** Action for the ListSubscriptions operation. */
-    ListSubscriptions("SNS:ListSubscriptions"),
+    ListSubscriptions("sns:ListSubscriptions"),
 
     /** Action for the ListSubscriptionsByTopic operation. */
-    ListSubscriptionsByTopic("SNS:ListSubscriptionsByTopic"),
+    ListSubscriptionsByTopic("sns:ListSubscriptionsByTopic"),
 
     /** Action for the ListTopics operation. */
-    ListTopics("SNS:ListTopics"),
+    ListTopics("sns:ListTopics"),
 
     /** Action for the Publish operation. */
-    Publish("SNS:Publish"),
+    Publish("sns:Publish"),
 
     /** Action for the RemovePermission operation. */
-    RemovePermission("SNS:RemovePermission"),
+    RemovePermission("sns:RemovePermission"),
 
     /** Action for the SetTopicAttributes operation. */
-    SetTopicAttributes("SNS:SetTopicAttributes"),
+    SetTopicAttributes("sns:SetTopicAttributes"),
 
     /** Action for the Subscribe operation. */
-    Subscribe("SNS:Subscribe"),
+    Subscribe("sns:Subscribe"),
 
     /** Action for the Unsubscribe operation. */
-    Unsubscribe("SNS:Unsubscribe");
+    Unsubscribe("sns:Unsubscribe");
 
     private final String action;
 

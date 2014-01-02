@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,10 +32,10 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
      * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></li>
      * <li><p><code>autoscaling:TEST_NOTIFICATION</code></li> </ul>
      * <examples>
-     * <queryrequest>https://autoscaling.&api-domain;/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
+     * <queryrequest>https://autoscaling.amazonaws.com/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
      * &AUTHPARAMS </queryrequest>
      * <queryresponse><DescribeAutoScalingNotificationTypesResponse
-     * xmlns="http://autoscaling.&api-domain;/doc/2011-01-01/">
+     * xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
      * <DescribeAutoScalingNotificationTypesResult>
      * <AutoScalingNotificationTypes>
      * <member>autoscaling:EC2_INSTANCE_LAUNCH</member>
@@ -61,10 +61,10 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
      * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></li>
      * <li><p><code>autoscaling:TEST_NOTIFICATION</code></li> </ul>
      * <examples>
-     * <queryrequest>https://autoscaling.&api-domain;/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
+     * <queryrequest>https://autoscaling.amazonaws.com/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
      * &AUTHPARAMS </queryrequest>
      * <queryresponse><DescribeAutoScalingNotificationTypesResponse
-     * xmlns="http://autoscaling.&api-domain;/doc/2011-01-01/">
+     * xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
      * <DescribeAutoScalingNotificationTypesResult>
      * <AutoScalingNotificationTypes>
      * <member>autoscaling:EC2_INSTANCE_LAUNCH</member>
@@ -87,10 +87,10 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
      *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></li>
      *         <li><p><code>autoscaling:TEST_NOTIFICATION</code></li> </ul>
      *         <examples>
-     *         <queryrequest>https://autoscaling.&api-domain;/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
+     *         <queryrequest>https://autoscaling.amazonaws.com/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
      *         &AUTHPARAMS </queryrequest>
      *         <queryresponse><DescribeAutoScalingNotificationTypesResponse
-     *         xmlns="http://autoscaling.&api-domain;/doc/2011-01-01/">
+     *         xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
      *         <DescribeAutoScalingNotificationTypesResult>
      *         <AutoScalingNotificationTypes>
      *         <member>autoscaling:EC2_INSTANCE_LAUNCH</member>
@@ -122,10 +122,10 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
      * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></li>
      * <li><p><code>autoscaling:TEST_NOTIFICATION</code></li> </ul>
      * <examples>
-     * <queryrequest>https://autoscaling.&api-domain;/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
+     * <queryrequest>https://autoscaling.amazonaws.com/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
      * &AUTHPARAMS </queryrequest>
      * <queryresponse><DescribeAutoScalingNotificationTypesResponse
-     * xmlns="http://autoscaling.&api-domain;/doc/2011-01-01/">
+     * xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
      * <DescribeAutoScalingNotificationTypesResult>
      * <AutoScalingNotificationTypes>
      * <member>autoscaling:EC2_INSTANCE_LAUNCH</member>
@@ -148,10 +148,10 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
      *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></li>
      *         <li><p><code>autoscaling:TEST_NOTIFICATION</code></li> </ul>
      *         <examples>
-     *         <queryrequest>https://autoscaling.&api-domain;/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
+     *         <queryrequest>https://autoscaling.amazonaws.com/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
      *         &AUTHPARAMS </queryrequest>
      *         <queryresponse><DescribeAutoScalingNotificationTypesResponse
-     *         xmlns="http://autoscaling.&api-domain;/doc/2011-01-01/">
+     *         xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
      *         <DescribeAutoScalingNotificationTypesResult>
      *         <AutoScalingNotificationTypes>
      *         <member>autoscaling:EC2_INSTANCE_LAUNCH</member>
@@ -185,10 +185,10 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
      * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></li>
      * <li><p><code>autoscaling:TEST_NOTIFICATION</code></li> </ul>
      * <examples>
-     * <queryrequest>https://autoscaling.&api-domain;/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
+     * <queryrequest>https://autoscaling.amazonaws.com/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
      * &AUTHPARAMS </queryrequest>
      * <queryresponse><DescribeAutoScalingNotificationTypesResponse
-     * xmlns="http://autoscaling.&api-domain;/doc/2011-01-01/">
+     * xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
      * <DescribeAutoScalingNotificationTypesResult>
      * <AutoScalingNotificationTypes>
      * <member>autoscaling:EC2_INSTANCE_LAUNCH</member>
@@ -213,10 +213,10 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
      *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></li>
      *         <li><p><code>autoscaling:TEST_NOTIFICATION</code></li> </ul>
      *         <examples>
-     *         <queryrequest>https://autoscaling.&api-domain;/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
+     *         <queryrequest>https://autoscaling.amazonaws.com/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
      *         &AUTHPARAMS </queryrequest>
      *         <queryresponse><DescribeAutoScalingNotificationTypesResponse
-     *         xmlns="http://autoscaling.&api-domain;/doc/2011-01-01/">
+     *         xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
      *         <DescribeAutoScalingNotificationTypesResult>
      *         <AutoScalingNotificationTypes>
      *         <member>autoscaling:EC2_INSTANCE_LAUNCH</member>
@@ -251,10 +251,10 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
      * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></li>
      * <li><p><code>autoscaling:TEST_NOTIFICATION</code></li> </ul>
      * <examples>
-     * <queryrequest>https://autoscaling.&api-domain;/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
+     * <queryrequest>https://autoscaling.amazonaws.com/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
      * &AUTHPARAMS </queryrequest>
      * <queryresponse><DescribeAutoScalingNotificationTypesResponse
-     * xmlns="http://autoscaling.&api-domain;/doc/2011-01-01/">
+     * xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
      * <DescribeAutoScalingNotificationTypesResult>
      * <AutoScalingNotificationTypes>
      * <member>autoscaling:EC2_INSTANCE_LAUNCH</member>
@@ -279,10 +279,10 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
      *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></li>
      *         <li><p><code>autoscaling:TEST_NOTIFICATION</code></li> </ul>
      *         <examples>
-     *         <queryrequest>https://autoscaling.&api-domain;/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
+     *         <queryrequest>https://autoscaling.amazonaws.com/?Version=2011-01-01&Action=DescribeAutoScalingNotificationTypes
      *         &AUTHPARAMS </queryrequest>
      *         <queryresponse><DescribeAutoScalingNotificationTypesResponse
-     *         xmlns="http://autoscaling.&api-domain;/doc/2011-01-01/">
+     *         xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
      *         <DescribeAutoScalingNotificationTypesResult>
      *         <AutoScalingNotificationTypes>
      *         <member>autoscaling:EC2_INSTANCE_LAUNCH</member>

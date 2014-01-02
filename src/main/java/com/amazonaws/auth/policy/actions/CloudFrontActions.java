@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,70 +21,70 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum CloudFrontActions implements Action {
     /** Represents any action executed on Amazon CloudFront. */
-    AllCloudFrontActions("CloudFront:*"),
+    AllCloudFrontActions("cloudfront:*"),
 
     /** Action for the CreateCloudFrontOriginAccessIdentity operation. */
-    CreateCloudFrontOriginAccessIdentity("CloudFront:CreateCloudFrontOriginAccessIdentity"),
+    CreateCloudFrontOriginAccessIdentity("cloudfront:CreateCloudFrontOriginAccessIdentity"),
 
     /** Action for the CreateDistribution operation. */
-    CreateDistribution("CloudFront:CreateDistribution"),
+    CreateDistribution("cloudfront:CreateDistribution"),
 
     /** Action for the CreateInvalidation operation. */
-    CreateInvalidation("CloudFront:CreateInvalidation"),
+    CreateInvalidation("cloudfront:CreateInvalidation"),
 
     /** Action for the CreateStreamingDistribution operation. */
-    CreateStreamingDistribution("CloudFront:CreateStreamingDistribution"),
+    CreateStreamingDistribution("cloudfront:CreateStreamingDistribution"),
 
     /** Action for the DeleteCloudFrontOriginAccessIdentity operation. */
-    DeleteCloudFrontOriginAccessIdentity("CloudFront:DeleteCloudFrontOriginAccessIdentity"),
+    DeleteCloudFrontOriginAccessIdentity("cloudfront:DeleteCloudFrontOriginAccessIdentity"),
 
     /** Action for the DeleteDistribution operation. */
-    DeleteDistribution("CloudFront:DeleteDistribution"),
+    DeleteDistribution("cloudfront:DeleteDistribution"),
 
     /** Action for the DeleteStreamingDistribution operation. */
-    DeleteStreamingDistribution("CloudFront:DeleteStreamingDistribution"),
+    DeleteStreamingDistribution("cloudfront:DeleteStreamingDistribution"),
 
     /** Action for the GetCloudFrontOriginAccessIdentity operation. */
-    GetCloudFrontOriginAccessIdentity("CloudFront:GetCloudFrontOriginAccessIdentity"),
+    GetCloudFrontOriginAccessIdentity("cloudfront:GetCloudFrontOriginAccessIdentity"),
 
     /** Action for the GetCloudFrontOriginAccessIdentityConfig operation. */
-    GetCloudFrontOriginAccessIdentityConfig("CloudFront:GetCloudFrontOriginAccessIdentityConfig"),
+    GetCloudFrontOriginAccessIdentityConfig("cloudfront:GetCloudFrontOriginAccessIdentityConfig"),
 
     /** Action for the GetDistribution operation. */
-    GetDistribution("CloudFront:GetDistribution"),
+    GetDistribution("cloudfront:GetDistribution"),
 
     /** Action for the GetDistributionConfig operation. */
-    GetDistributionConfig("CloudFront:GetDistributionConfig"),
+    GetDistributionConfig("cloudfront:GetDistributionConfig"),
 
     /** Action for the GetInvalidation operation. */
-    GetInvalidation("CloudFront:GetInvalidation"),
+    GetInvalidation("cloudfront:GetInvalidation"),
 
     /** Action for the GetStreamingDistribution operation. */
-    GetStreamingDistribution("CloudFront:GetStreamingDistribution"),
+    GetStreamingDistribution("cloudfront:GetStreamingDistribution"),
 
     /** Action for the GetStreamingDistributionConfig operation. */
-    GetStreamingDistributionConfig("CloudFront:GetStreamingDistributionConfig"),
+    GetStreamingDistributionConfig("cloudfront:GetStreamingDistributionConfig"),
 
     /** Action for the ListCloudFrontOriginAccessIdentities operation. */
-    ListCloudFrontOriginAccessIdentities("CloudFront:ListCloudFrontOriginAccessIdentities"),
+    ListCloudFrontOriginAccessIdentities("cloudfront:ListCloudFrontOriginAccessIdentities"),
 
     /** Action for the ListDistributions operation. */
-    ListDistributions("CloudFront:ListDistributions"),
+    ListDistributions("cloudfront:ListDistributions"),
 
     /** Action for the ListInvalidations operation. */
-    ListInvalidations("CloudFront:ListInvalidations"),
+    ListInvalidations("cloudfront:ListInvalidations"),
 
     /** Action for the ListStreamingDistributions operation. */
-    ListStreamingDistributions("CloudFront:ListStreamingDistributions"),
+    ListStreamingDistributions("cloudfront:ListStreamingDistributions"),
 
     /** Action for the UpdateCloudFrontOriginAccessIdentity operation. */
-    UpdateCloudFrontOriginAccessIdentity("CloudFront:UpdateCloudFrontOriginAccessIdentity"),
+    UpdateCloudFrontOriginAccessIdentity("cloudfront:UpdateCloudFrontOriginAccessIdentity"),
 
     /** Action for the UpdateDistribution operation. */
-    UpdateDistribution("CloudFront:UpdateDistribution"),
+    UpdateDistribution("cloudfront:UpdateDistribution"),
 
     /** Action for the UpdateStreamingDistribution operation. */
-    UpdateStreamingDistribution("CloudFront:UpdateStreamingDistribution");
+    UpdateStreamingDistribution("cloudfront:UpdateStreamingDistribution");
 
     private final String action;
 

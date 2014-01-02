@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2013 Amazon Technologies, Inc.
+ * Copyright 2013-2014 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,17 +12,17 @@
  * License for the specific language governing permissions and
  * limitations under the License.
  */
-
-/**
- * The available AWS access control policy actions for Amazon Security Token Service.
- *
- * @see Statement#setActions(java.util.Collection)
- */
 package com.amazonaws.auth.policy;
 
 import com.amazonaws.auth.policy.Action;
 import com.amazonaws.services.securitytoken.AWSSecurityTokenService;
 
+/**
+ * The available AWS access control policy actions for Amazon Security Token Service.
+ *
+ * @see Statement#setActions(java.util.Collection)
+ * @deprecated in favor of {@link com.amazonaws.auth.policy.actions.SecurityTokenServiceActions}
+ */
 @Deprecated
 public enum STSActions implements Action {
 

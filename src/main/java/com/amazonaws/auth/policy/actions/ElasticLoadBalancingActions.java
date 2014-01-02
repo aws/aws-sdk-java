@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,55 +21,55 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum ElasticLoadBalancingActions implements Action {
     /** Represents any action executed on Amazon Elastic Load Balancing. */
-    AllElasticLoadBalancingActions("ElasticLoadBalancing:*"),
+    AllElasticLoadBalancingActions("elasticloadbalancing:*"),
 
     /** Action for the ConfigureHealthCheck operation. */
-    ConfigureHealthCheck("ElasticLoadBalancing:ConfigureHealthCheck"),
+    ConfigureHealthCheck("elasticloadbalancing:ConfigureHealthCheck"),
 
     /** Action for the CreateAppCookieStickinessPolicy operation. */
-    CreateAppCookieStickinessPolicy("ElasticLoadBalancing:CreateAppCookieStickinessPolicy"),
+    CreateAppCookieStickinessPolicy("elasticloadbalancing:CreateAppCookieStickinessPolicy"),
 
     /** Action for the CreateLBCookieStickinessPolicy operation. */
-    CreateLBCookieStickinessPolicy("ElasticLoadBalancing:CreateLBCookieStickinessPolicy"),
+    CreateLBCookieStickinessPolicy("elasticloadbalancing:CreateLBCookieStickinessPolicy"),
 
     /** Action for the CreateLoadBalancer operation. */
-    CreateLoadBalancer("ElasticLoadBalancing:CreateLoadBalancer"),
+    CreateLoadBalancer("elasticloadbalancing:CreateLoadBalancer"),
 
     /** Action for the CreateLoadBalancerListeners operation. */
-    CreateLoadBalancerListeners("ElasticLoadBalancing:CreateLoadBalancerListeners"),
+    CreateLoadBalancerListeners("elasticloadbalancing:CreateLoadBalancerListeners"),
 
     /** Action for the DeleteLoadBalancer operation. */
-    DeleteLoadBalancer("ElasticLoadBalancing:DeleteLoadBalancer"),
+    DeleteLoadBalancer("elasticloadbalancing:DeleteLoadBalancer"),
 
     /** Action for the DeleteLoadBalancerListeners operation. */
-    DeleteLoadBalancerListeners("ElasticLoadBalancing:DeleteLoadBalancerListeners"),
+    DeleteLoadBalancerListeners("elasticloadbalancing:DeleteLoadBalancerListeners"),
 
     /** Action for the DeleteLoadBalancerPolicy operation. */
-    DeleteLoadBalancerPolicy("ElasticLoadBalancing:DeleteLoadBalancerPolicy"),
+    DeleteLoadBalancerPolicy("elasticloadbalancing:DeleteLoadBalancerPolicy"),
 
     /** Action for the DeregisterInstancesFromLoadBalancer operation. */
-    DeregisterInstancesFromLoadBalancer("ElasticLoadBalancing:DeregisterInstancesFromLoadBalancer"),
+    DeregisterInstancesFromLoadBalancer("elasticloadbalancing:DeregisterInstancesFromLoadBalancer"),
 
     /** Action for the DescribeInstanceHealth operation. */
-    DescribeInstanceHealth("ElasticLoadBalancing:DescribeInstanceHealth"),
+    DescribeInstanceHealth("elasticloadbalancing:DescribeInstanceHealth"),
 
     /** Action for the DescribeLoadBalancers operation. */
-    DescribeLoadBalancers("ElasticLoadBalancing:DescribeLoadBalancers"),
+    DescribeLoadBalancers("elasticloadbalancing:DescribeLoadBalancers"),
 
     /** Action for the DisableAvailabilityZonesForLoadBalancer operation. */
-    DisableAvailabilityZonesForLoadBalancer("ElasticLoadBalancing:DisableAvailabilityZonesForLoadBalancer"),
+    DisableAvailabilityZonesForLoadBalancer("elasticloadbalancing:DisableAvailabilityZonesForLoadBalancer"),
 
     /** Action for the EnableAvailabilityZonesForLoadBalancer operation. */
-    EnableAvailabilityZonesForLoadBalancer("ElasticLoadBalancing:EnableAvailabilityZonesForLoadBalancer"),
+    EnableAvailabilityZonesForLoadBalancer("elasticloadbalancing:EnableAvailabilityZonesForLoadBalancer"),
 
     /** Action for the RegisterInstancesWithLoadBalancer operation. */
-    RegisterInstancesWithLoadBalancer("ElasticLoadBalancing:RegisterInstancesWithLoadBalancer"),
+    RegisterInstancesWithLoadBalancer("elasticloadbalancing:RegisterInstancesWithLoadBalancer"),
 
     /** Action for the SetLoadBalancerListenerSSLCertificate operation. */
-    SetLoadBalancerListenerSSLCertificate("ElasticLoadBalancing:SetLoadBalancerListenerSSLCertificate"),
+    SetLoadBalancerListenerSSLCertificate("elasticloadbalancing:SetLoadBalancerListenerSSLCertificate"),
 
     /** Action for the SetLoadBalancerPoliciesOfListener operation. */
-    SetLoadBalancerPoliciesOfListener("ElasticLoadBalancing:SetLoadBalancerPoliciesOfListener");
+    SetLoadBalancerPoliciesOfListener("elasticloadbalancing:SetLoadBalancerPoliciesOfListener");
 
     private final String action;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -75,7 +75,7 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest impl
 
     /**
      * The archive description that you are uploading in parts. <p>The part
-     * size must be a megabyte (1024 KB) multiplied by a power of 2���for
+     * size must be a megabyte (1024 KB) multiplied by a power of 2?????????for
      * example, 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8
      * MB), and so on. The minimum allowable part size is 1 MB, and the
      * maximum is 4 GB (4096 MB).
@@ -102,7 +102,7 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest impl
      * @param vaultName The name of the vault.
      * @param archiveDescription The archive description that you are
      * uploading in parts. <p>The part size must be a megabyte (1024 KB)
-     * multiplied by a power of 2���for example, 1048576 (1 MB), 2097152 (2
+     * multiplied by a power of 2?????????for example, 1048576 (1 MB), 2097152 (2
      * MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable
      * part size is 1 MB, and the maximum is 4 GB (4096 MB).
      * @param partSize The size of each part except the last, in bytes. The
@@ -127,7 +127,7 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest impl
      * @param vaultName The name of the vault.
      * @param archiveDescription The archive description that you are
      * uploading in parts. <p>The part size must be a megabyte (1024 KB)
-     * multiplied by a power of 2���for example, 1048576 (1 MB), 2097152 (2
+     * multiplied by a power of 2?????????for example, 1048576 (1 MB), 2097152 (2
      * MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable
      * part size is 1 MB, and the maximum is 4 GB (4096 MB).
      * @param partSize The size of each part except the last, in bytes. The
@@ -232,13 +232,13 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest impl
 
     /**
      * The archive description that you are uploading in parts. <p>The part
-     * size must be a megabyte (1024 KB) multiplied by a power of 2���for
+     * size must be a megabyte (1024 KB) multiplied by a power of 2?????????for
      * example, 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8
      * MB), and so on. The minimum allowable part size is 1 MB, and the
      * maximum is 4 GB (4096 MB).
      *
      * @return The archive description that you are uploading in parts. <p>The part
-     *         size must be a megabyte (1024 KB) multiplied by a power of 2���for
+     *         size must be a megabyte (1024 KB) multiplied by a power of 2?????????for
      *         example, 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8
      *         MB), and so on. The minimum allowable part size is 1 MB, and the
      *         maximum is 4 GB (4096 MB).
@@ -249,13 +249,13 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest impl
     
     /**
      * The archive description that you are uploading in parts. <p>The part
-     * size must be a megabyte (1024 KB) multiplied by a power of 2���for
+     * size must be a megabyte (1024 KB) multiplied by a power of 2?????????for
      * example, 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8
      * MB), and so on. The minimum allowable part size is 1 MB, and the
      * maximum is 4 GB (4096 MB).
      *
      * @param archiveDescription The archive description that you are uploading in parts. <p>The part
-     *         size must be a megabyte (1024 KB) multiplied by a power of 2���for
+     *         size must be a megabyte (1024 KB) multiplied by a power of 2?????????for
      *         example, 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8
      *         MB), and so on. The minimum allowable part size is 1 MB, and the
      *         maximum is 4 GB (4096 MB).
@@ -266,7 +266,7 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest impl
     
     /**
      * The archive description that you are uploading in parts. <p>The part
-     * size must be a megabyte (1024 KB) multiplied by a power of 2���for
+     * size must be a megabyte (1024 KB) multiplied by a power of 2?????????for
      * example, 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8
      * MB), and so on. The minimum allowable part size is 1 MB, and the
      * maximum is 4 GB (4096 MB).
@@ -274,7 +274,7 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param archiveDescription The archive description that you are uploading in parts. <p>The part
-     *         size must be a megabyte (1024 KB) multiplied by a power of 2���for
+     *         size must be a megabyte (1024 KB) multiplied by a power of 2?????????for
      *         example, 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8
      *         MB), and so on. The minimum allowable part size is 1 MB, and the
      *         maximum is 4 GB (4096 MB).
