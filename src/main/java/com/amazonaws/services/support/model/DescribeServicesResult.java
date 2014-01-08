@@ -18,20 +18,20 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns the objects or data listed below if successful. Otherwise, returns an error.
+ * Contains the following objects or data if successful. Otherwise, returns an error.
  * </p>
  */
 public class DescribeServicesResult implements Serializable {
 
     /**
-     * JSON-formatted list of AWS services.
+     * A JSON-formatted list of AWS services.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Service> services;
 
     /**
-     * JSON-formatted list of AWS services.
+     * A JSON-formatted list of AWS services.
      *
-     * @return JSON-formatted list of AWS services.
+     * @return A JSON-formatted list of AWS services.
      */
     public java.util.List<Service> getServices() {
         if (services == null) {
@@ -42,9 +42,9 @@ public class DescribeServicesResult implements Serializable {
     }
     
     /**
-     * JSON-formatted list of AWS services.
+     * A JSON-formatted list of AWS services.
      *
-     * @param services JSON-formatted list of AWS services.
+     * @param services A JSON-formatted list of AWS services.
      */
     public void setServices(java.util.Collection<Service> services) {
         if (services == null) {
@@ -57,11 +57,11 @@ public class DescribeServicesResult implements Serializable {
     }
     
     /**
-     * JSON-formatted list of AWS services.
+     * A JSON-formatted list of AWS services.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param services JSON-formatted list of AWS services.
+     * @param services A JSON-formatted list of AWS services.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,11 +75,11 @@ public class DescribeServicesResult implements Serializable {
     }
     
     /**
-     * JSON-formatted list of AWS services.
+     * A JSON-formatted list of AWS services.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param services JSON-formatted list of AWS services.
+     * @param services A JSON-formatted list of AWS services.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

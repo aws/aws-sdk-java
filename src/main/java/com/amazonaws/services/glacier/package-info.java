@@ -6,7 +6,7 @@
  * Amazon Glacier is a storage solution for "cold data."
  * </p>
  * <p>
- * Amazon Glacier is an extremely low-cost storage service that provides secure, durable, and easy-to-use storage for data backup and archival. With
+ * Amazon Glacier is an extremely low-cost storage service that provides secure, durable and easy-to-use storage for data backup and archival. With
  * Amazon Glacier, customers can store their data cost effectively for months, years, or decades. Amazon Glacier also enables customers to offload the
  * administrative burdens of operating and scaling storage to AWS, so they don't have to worry about capacity planning, hardware provisioning, data
  * replication, hardware failure and recovery, or time-consuming hardware migrations.
@@ -26,14 +26,14 @@
  * 
  * <ul>
  * <li> <p>
- * <a href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/introduction.html"> What is Amazon Glacier </a> - This section of the Developer
- * Guide describes the underlying data model, the operations it supports, and the AWS SDKs that you can use to interact with the service.
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html"> What is Amazon Glacier </a> - This section of the Developer Guide
+ * describes the underlying data model, the operations it supports, and the AWS SDKs that you can use to interact with the service.
  * </p>
  * </li>
  * <li> <p>
- * <a href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html"> Getting Started with Amazon Glacier </a> -
- * The Getting Started section walks you through the process of creating a vault, uploading archives, creating jobs to download archives, retrieving the
- * job output, and deleting archives.
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html"> Getting Started with Amazon Glacier </a> - The
+ * Getting Started section walks you through the process of creating a vault, uploading archives, creating jobs to download archives, retrieving the job
+ * output, and deleting archives.
  * </p>
  * </li>
  * 

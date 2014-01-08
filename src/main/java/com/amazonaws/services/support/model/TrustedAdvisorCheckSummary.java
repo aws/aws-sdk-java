@@ -18,78 +18,68 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Reports a summary of the Trusted Advisor check. This object contains the following child objects that report summary information about specific checks
- * by category and resource:
+ * A summary of a Trusted Advisor check result, including the alert status, last refresh, and number of resources examined.
  * </p>
- * 
- * <ul>
- * <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCategorySpecificSummary.html">
- * TrustedAdvisorCategorySpecificSummary </a> </li>
- * <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourcesSummary.html"> TrustedAdvisorResourcesSummary </a>
- * </li>
- * 
- * </ul>
  */
 public class TrustedAdvisorCheckSummary implements Serializable {
 
     /**
-     * Unique identifier for a Trusted Advisor check.
+     * The unique identifier for the Trusted Advisor check.
      */
     private String checkId;
 
     /**
-     * 
+     * The time of the last refresh of the check.
      */
     private String timestamp;
 
     /**
-     * Overall status of the Trusted Advisor check.
+     * The alert status of the check: "ok" (green), "warning" (yellow),
+     * "error" (red), or "not_available".
      */
     private String status;
 
     /**
-     * Indicates that the Trusted Advisor check returned flagged resources.
+     * Specifies whether the Trusted Advisor check has flagged resources.
      */
     private Boolean hasFlaggedResources;
 
     /**
-     * JSON-formatted object that lists details about AWS resources that were
-     * analyzed in a call to Trusted Advisor <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
-     * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
+     * Details about AWS resources that were analyzed in a call to Trusted
+     * Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
      */
     private TrustedAdvisorResourcesSummary resourcesSummary;
 
     /**
-     * Reports the results of a Trusted Advisor check by category. Only
-     * <i>Cost Optimizing</i> is currently supported.
+     * Summary information that relates to the category of the check. Cost
+     * Optimizing is the only category that is currently supported.
      */
     private TrustedAdvisorCategorySpecificSummary categorySpecificSummary;
 
     /**
-     * Unique identifier for a Trusted Advisor check.
+     * The unique identifier for the Trusted Advisor check.
      *
-     * @return Unique identifier for a Trusted Advisor check.
+     * @return The unique identifier for the Trusted Advisor check.
      */
     public String getCheckId() {
         return checkId;
     }
     
     /**
-     * Unique identifier for a Trusted Advisor check.
+     * The unique identifier for the Trusted Advisor check.
      *
-     * @param checkId Unique identifier for a Trusted Advisor check.
+     * @param checkId The unique identifier for the Trusted Advisor check.
      */
     public void setCheckId(String checkId) {
         this.checkId = checkId;
     }
     
     /**
-     * Unique identifier for a Trusted Advisor check.
+     * The unique identifier for the Trusted Advisor check.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param checkId Unique identifier for a Trusted Advisor check.
+     * @param checkId The unique identifier for the Trusted Advisor check.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -100,29 +90,29 @@ public class TrustedAdvisorCheckSummary implements Serializable {
     }
 
     /**
-     * 
+     * The time of the last refresh of the check.
      *
-     * @return 
+     * @return The time of the last refresh of the check.
      */
     public String getTimestamp() {
         return timestamp;
     }
     
     /**
-     * 
+     * The time of the last refresh of the check.
      *
-     * @param timestamp 
+     * @param timestamp The time of the last refresh of the check.
      */
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
     
     /**
-     * 
+     * The time of the last refresh of the check.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param timestamp 
+     * @param timestamp The time of the last refresh of the check.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -133,29 +123,35 @@ public class TrustedAdvisorCheckSummary implements Serializable {
     }
 
     /**
-     * Overall status of the Trusted Advisor check.
+     * The alert status of the check: "ok" (green), "warning" (yellow),
+     * "error" (red), or "not_available".
      *
-     * @return Overall status of the Trusted Advisor check.
+     * @return The alert status of the check: "ok" (green), "warning" (yellow),
+     *         "error" (red), or "not_available".
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * Overall status of the Trusted Advisor check.
+     * The alert status of the check: "ok" (green), "warning" (yellow),
+     * "error" (red), or "not_available".
      *
-     * @param status Overall status of the Trusted Advisor check.
+     * @param status The alert status of the check: "ok" (green), "warning" (yellow),
+     *         "error" (red), or "not_available".
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * Overall status of the Trusted Advisor check.
+     * The alert status of the check: "ok" (green), "warning" (yellow),
+     * "error" (red), or "not_available".
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status Overall status of the Trusted Advisor check.
+     * @param status The alert status of the check: "ok" (green), "warning" (yellow),
+     *         "error" (red), or "not_available".
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -166,29 +162,29 @@ public class TrustedAdvisorCheckSummary implements Serializable {
     }
 
     /**
-     * Indicates that the Trusted Advisor check returned flagged resources.
+     * Specifies whether the Trusted Advisor check has flagged resources.
      *
-     * @return Indicates that the Trusted Advisor check returned flagged resources.
+     * @return Specifies whether the Trusted Advisor check has flagged resources.
      */
     public Boolean isHasFlaggedResources() {
         return hasFlaggedResources;
     }
     
     /**
-     * Indicates that the Trusted Advisor check returned flagged resources.
+     * Specifies whether the Trusted Advisor check has flagged resources.
      *
-     * @param hasFlaggedResources Indicates that the Trusted Advisor check returned flagged resources.
+     * @param hasFlaggedResources Specifies whether the Trusted Advisor check has flagged resources.
      */
     public void setHasFlaggedResources(Boolean hasFlaggedResources) {
         this.hasFlaggedResources = hasFlaggedResources;
     }
     
     /**
-     * Indicates that the Trusted Advisor check returned flagged resources.
+     * Specifies whether the Trusted Advisor check has flagged resources.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hasFlaggedResources Indicates that the Trusted Advisor check returned flagged resources.
+     * @param hasFlaggedResources Specifies whether the Trusted Advisor check has flagged resources.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -199,56 +195,44 @@ public class TrustedAdvisorCheckSummary implements Serializable {
     }
 
     /**
-     * Indicates that the Trusted Advisor check returned flagged resources.
+     * Specifies whether the Trusted Advisor check has flagged resources.
      *
-     * @return Indicates that the Trusted Advisor check returned flagged resources.
+     * @return Specifies whether the Trusted Advisor check has flagged resources.
      */
     public Boolean getHasFlaggedResources() {
         return hasFlaggedResources;
     }
 
     /**
-     * JSON-formatted object that lists details about AWS resources that were
-     * analyzed in a call to Trusted Advisor <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
-     * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
+     * Details about AWS resources that were analyzed in a call to Trusted
+     * Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
      *
-     * @return JSON-formatted object that lists details about AWS resources that were
-     *         analyzed in a call to Trusted Advisor <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
-     *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
+     * @return Details about AWS resources that were analyzed in a call to Trusted
+     *         Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
      */
     public TrustedAdvisorResourcesSummary getResourcesSummary() {
         return resourcesSummary;
     }
     
     /**
-     * JSON-formatted object that lists details about AWS resources that were
-     * analyzed in a call to Trusted Advisor <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
-     * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
+     * Details about AWS resources that were analyzed in a call to Trusted
+     * Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
      *
-     * @param resourcesSummary JSON-formatted object that lists details about AWS resources that were
-     *         analyzed in a call to Trusted Advisor <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
-     *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
+     * @param resourcesSummary Details about AWS resources that were analyzed in a call to Trusted
+     *         Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
      */
     public void setResourcesSummary(TrustedAdvisorResourcesSummary resourcesSummary) {
         this.resourcesSummary = resourcesSummary;
     }
     
     /**
-     * JSON-formatted object that lists details about AWS resources that were
-     * analyzed in a call to Trusted Advisor <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
-     * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
+     * Details about AWS resources that were analyzed in a call to Trusted
+     * Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourcesSummary JSON-formatted object that lists details about AWS resources that were
-     *         analyzed in a call to Trusted Advisor <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
-     *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
+     * @param resourcesSummary Details about AWS resources that were analyzed in a call to Trusted
+     *         Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -259,35 +243,35 @@ public class TrustedAdvisorCheckSummary implements Serializable {
     }
 
     /**
-     * Reports the results of a Trusted Advisor check by category. Only
-     * <i>Cost Optimizing</i> is currently supported.
+     * Summary information that relates to the category of the check. Cost
+     * Optimizing is the only category that is currently supported.
      *
-     * @return Reports the results of a Trusted Advisor check by category. Only
-     *         <i>Cost Optimizing</i> is currently supported.
+     * @return Summary information that relates to the category of the check. Cost
+     *         Optimizing is the only category that is currently supported.
      */
     public TrustedAdvisorCategorySpecificSummary getCategorySpecificSummary() {
         return categorySpecificSummary;
     }
     
     /**
-     * Reports the results of a Trusted Advisor check by category. Only
-     * <i>Cost Optimizing</i> is currently supported.
+     * Summary information that relates to the category of the check. Cost
+     * Optimizing is the only category that is currently supported.
      *
-     * @param categorySpecificSummary Reports the results of a Trusted Advisor check by category. Only
-     *         <i>Cost Optimizing</i> is currently supported.
+     * @param categorySpecificSummary Summary information that relates to the category of the check. Cost
+     *         Optimizing is the only category that is currently supported.
      */
     public void setCategorySpecificSummary(TrustedAdvisorCategorySpecificSummary categorySpecificSummary) {
         this.categorySpecificSummary = categorySpecificSummary;
     }
     
     /**
-     * Reports the results of a Trusted Advisor check by category. Only
-     * <i>Cost Optimizing</i> is currently supported.
+     * Summary information that relates to the category of the check. Cost
+     * Optimizing is the only category that is currently supported.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param categorySpecificSummary Reports the results of a Trusted Advisor check by category. Only
-     *         <i>Cost Optimizing</i> is currently supported.
+     * @param categorySpecificSummary Summary information that relates to the category of the check. Cost
+     *         Optimizing is the only category that is currently supported.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

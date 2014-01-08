@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Returned when the <i>CaseId</i> requested could not be located.
+ * The requested <code>CaseId</code> could not be located.
  * </p>
  */        
 public class CaseIdNotFoundException extends AmazonServiceException {

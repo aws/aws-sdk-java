@@ -18,38 +18,20 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns the objects or data listed below if successful. Otherwise, returns an error.
+ * Contains the following objects or data if successful. Otherwise, returns an error.
  * </p>
  */
 public class DescribeTrustedAdvisorCheckRefreshStatusesResult implements Serializable {
 
     /**
-     * List of the statuses of the Trusted Advisor checks you've specified
-     * for refresh. Status values are: <ul> <li><b>in_progress</b>. The
-     * refresh of the check is currently executing. </li>
-     * <li><b>successful</b>. The refresh of the check has completed
-     * successfully.</li> <li><b>enqueued</b>. The refresh check is queued
-     * for execution. </li> <li><b>abandoned</b>. An error has prevented the
-     * check from refreshing. </li> </ul>
+     * The refresh status of the specified Trusted Advisor checks.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckRefreshStatus> statuses;
 
     /**
-     * List of the statuses of the Trusted Advisor checks you've specified
-     * for refresh. Status values are: <ul> <li><b>in_progress</b>. The
-     * refresh of the check is currently executing. </li>
-     * <li><b>successful</b>. The refresh of the check has completed
-     * successfully.</li> <li><b>enqueued</b>. The refresh check is queued
-     * for execution. </li> <li><b>abandoned</b>. An error has prevented the
-     * check from refreshing. </li> </ul>
+     * The refresh status of the specified Trusted Advisor checks.
      *
-     * @return List of the statuses of the Trusted Advisor checks you've specified
-     *         for refresh. Status values are: <ul> <li><b>in_progress</b>. The
-     *         refresh of the check is currently executing. </li>
-     *         <li><b>successful</b>. The refresh of the check has completed
-     *         successfully.</li> <li><b>enqueued</b>. The refresh check is queued
-     *         for execution. </li> <li><b>abandoned</b>. An error has prevented the
-     *         check from refreshing. </li> </ul>
+     * @return The refresh status of the specified Trusted Advisor checks.
      */
     public java.util.List<TrustedAdvisorCheckRefreshStatus> getStatuses() {
         if (statuses == null) {
@@ -60,21 +42,9 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResult implements Seriali
     }
     
     /**
-     * List of the statuses of the Trusted Advisor checks you've specified
-     * for refresh. Status values are: <ul> <li><b>in_progress</b>. The
-     * refresh of the check is currently executing. </li>
-     * <li><b>successful</b>. The refresh of the check has completed
-     * successfully.</li> <li><b>enqueued</b>. The refresh check is queued
-     * for execution. </li> <li><b>abandoned</b>. An error has prevented the
-     * check from refreshing. </li> </ul>
+     * The refresh status of the specified Trusted Advisor checks.
      *
-     * @param statuses List of the statuses of the Trusted Advisor checks you've specified
-     *         for refresh. Status values are: <ul> <li><b>in_progress</b>. The
-     *         refresh of the check is currently executing. </li>
-     *         <li><b>successful</b>. The refresh of the check has completed
-     *         successfully.</li> <li><b>enqueued</b>. The refresh check is queued
-     *         for execution. </li> <li><b>abandoned</b>. An error has prevented the
-     *         check from refreshing. </li> </ul>
+     * @param statuses The refresh status of the specified Trusted Advisor checks.
      */
     public void setStatuses(java.util.Collection<TrustedAdvisorCheckRefreshStatus> statuses) {
         if (statuses == null) {
@@ -87,23 +57,11 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResult implements Seriali
     }
     
     /**
-     * List of the statuses of the Trusted Advisor checks you've specified
-     * for refresh. Status values are: <ul> <li><b>in_progress</b>. The
-     * refresh of the check is currently executing. </li>
-     * <li><b>successful</b>. The refresh of the check has completed
-     * successfully.</li> <li><b>enqueued</b>. The refresh check is queued
-     * for execution. </li> <li><b>abandoned</b>. An error has prevented the
-     * check from refreshing. </li> </ul>
+     * The refresh status of the specified Trusted Advisor checks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param statuses List of the statuses of the Trusted Advisor checks you've specified
-     *         for refresh. Status values are: <ul> <li><b>in_progress</b>. The
-     *         refresh of the check is currently executing. </li>
-     *         <li><b>successful</b>. The refresh of the check has completed
-     *         successfully.</li> <li><b>enqueued</b>. The refresh check is queued
-     *         for execution. </li> <li><b>abandoned</b>. An error has prevented the
-     *         check from refreshing. </li> </ul>
+     * @param statuses The refresh status of the specified Trusted Advisor checks.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -117,23 +75,11 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResult implements Seriali
     }
     
     /**
-     * List of the statuses of the Trusted Advisor checks you've specified
-     * for refresh. Status values are: <ul> <li><b>in_progress</b>. The
-     * refresh of the check is currently executing. </li>
-     * <li><b>successful</b>. The refresh of the check has completed
-     * successfully.</li> <li><b>enqueued</b>. The refresh check is queued
-     * for execution. </li> <li><b>abandoned</b>. An error has prevented the
-     * check from refreshing. </li> </ul>
+     * The refresh status of the specified Trusted Advisor checks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param statuses List of the statuses of the Trusted Advisor checks you've specified
-     *         for refresh. Status values are: <ul> <li><b>in_progress</b>. The
-     *         refresh of the check is currently executing. </li>
-     *         <li><b>successful</b>. The refresh of the check has completed
-     *         successfully.</li> <li><b>enqueued</b>. The refresh check is queued
-     *         for execution. </li> <li><b>abandoned</b>. An error has prevented the
-     *         check from refreshing. </li> </ul>
+     * @param statuses The refresh status of the specified Trusted Advisor checks.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -50,11 +50,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any
  * permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
- * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access
- * Management (IAM) </a> .
+ * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management
+ * (IAM) </a> .
  * </p>
  * <p>
- * For the underlying REST API, go to <a href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/api-jobs-get.html"> List Jobs </a>
+ * For the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html"> List Jobs </a>
  * </p>
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#listJobs(ListJobsRequest)

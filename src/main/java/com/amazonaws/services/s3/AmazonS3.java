@@ -149,7 +149,7 @@ public interface AmazonS3 {
      * By default, all service endpoints in all regions use the https protocol.
      * To use http instead, specify it in the {@link ClientConfiguration}
      * supplied at construction.
-     * 
+     *
      * @param region
      *            The region this client will communicate with. See
      *            {@link com.amazonaws.regions.Region#getRegion(com.amazonaws.regions.Regions)} for
@@ -162,7 +162,7 @@ public interface AmazonS3 {
      * @see com.amazonaws.regions.Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(com.amazonaws.regions.Region region) throws IllegalArgumentException;
-    
+
     /**
      * <p>
      * Override the default S3 client options for this client.
@@ -3407,6 +3407,13 @@ public interface AmazonS3 {
      * {@link #uploadPart(UploadPartRequest)} requests. You also include this
      * upload ID in the final request to either complete, or abort the multipart
      * upload request.
+     * <p>
+     * <b>Note:</b>
+     * After you initiate a multipart upload and upload one or more parts,
+     * you must either complete or abort the multipart upload in order to stop
+     * getting charged for storage of the uploaded parts.
+     * Once you complete or abort the multipart upload Amazon S3 will release the
+     * stored parts and stop charging you for their storage.
      *
      * @param request
      *            The InitiateMultipartUploadRequest object that specifies all
@@ -3448,6 +3455,13 @@ public interface AmazonS3 {
      * concatenating all the parts you uploaded, in ascending order based on the
      * part numbers. The CompleteMultipartUpload request requires you to send
      * all the part numbers and the corresponding ETag values.
+     * <p>
+     * <b>Note:</b>
+     * After you initiate a multipart upload and upload one or more parts,
+     * you must either complete or abort the multipart upload in order to stop
+     * getting charged for storage of the uploaded parts.
+     * Once you complete or abort the multipart upload Amazon S3 will release the
+     * stored parts and stop charging you for their storage.
      *
      * @param request
      *            The UploadPartRequest object that specifies all the parameters

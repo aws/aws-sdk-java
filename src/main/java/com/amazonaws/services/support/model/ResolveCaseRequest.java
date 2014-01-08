@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#resolveCase(ResolveCaseRequest) ResolveCase operation}.
  * <p>
- * Takes a <i>CaseId</i> and returns the initial state of the case along with the state of the case after the call to <a
- * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"> ResolveCase </a> completed.
+ * Takes a <code>CaseId</code> and returns the initial state of the case along with the state of the case after the call to ResolveCase completed.
  * </p>
  *
  * @see com.amazonaws.services.support.AWSSupport#resolveCase(ResolveCaseRequest)
@@ -30,48 +29,48 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ResolveCaseRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * String that indicates the AWS Support caseID requested or returned in
-     * the call. The caseID is an alphanumeric string formatted as shown in
-     * this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID
+     * is an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
     private String caseId;
 
     /**
-     * String that indicates the AWS Support caseID requested or returned in
-     * the call. The caseID is an alphanumeric string formatted as shown in
-     * this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID
+     * is an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      *
-     * @return String that indicates the AWS Support caseID requested or returned in
-     *         the call. The caseID is an alphanumeric string formatted as shown in
-     *         this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @return The AWS Support case ID requested or returned in the call. The case ID
+     *         is an alphanumeric string formatted as shown in this example:
+     *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
     public String getCaseId() {
         return caseId;
     }
     
     /**
-     * String that indicates the AWS Support caseID requested or returned in
-     * the call. The caseID is an alphanumeric string formatted as shown in
-     * this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID
+     * is an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      *
-     * @param caseId String that indicates the AWS Support caseID requested or returned in
-     *         the call. The caseID is an alphanumeric string formatted as shown in
-     *         this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @param caseId The AWS Support case ID requested or returned in the call. The case ID
+     *         is an alphanumeric string formatted as shown in this example:
+     *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
     public void setCaseId(String caseId) {
         this.caseId = caseId;
     }
     
     /**
-     * String that indicates the AWS Support caseID requested or returned in
-     * the call. The caseID is an alphanumeric string formatted as shown in
-     * this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID
+     * is an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param caseId String that indicates the AWS Support caseID requested or returned in
-     *         the call. The caseID is an alphanumeric string formatted as shown in
-     *         this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @param caseId The AWS Support case ID requested or returned in the call. The case ID
+     *         is an alphanumeric string formatted as shown in this example:
+     *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

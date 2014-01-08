@@ -25,20 +25,19 @@ import com.amazonaws.AmazonWebServiceRequest;
  * archives it contains, and the total size of all the archives in the vault. The number of archives and their total size are as of the last inventory
  * generation. This means that if you add or remove an archive from a vault, and then immediately use Describe Vault, the change in contents will not be
  * immediately reflected. If you want to retrieve the latest inventory of the vault, use InitiateJob. Amazon Glacier generates vault inventories
- * approximately daily. For more information, see <a href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/vault-inventory.html"> Downloading
- * a Vault Inventory in Amazon Glacier </a> .
+ * approximately daily. For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html"> Downloading a Vault
+ * Inventory in Amazon Glacier </a> .
  * </p>
  * <p>
  * An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any
  * permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
- * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access
- * Management (IAM) </a> .
+ * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management
+ * (IAM) </a> .
  * </p>
  * <p>
- * For conceptual information and underlying REST API, go to <a
- * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/retrieving-vault-info.html"> Retrieving Vault Metadata in Amazon Glacier </a> and <a
- * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/api-vault-get.html"> Describe Vault </a> in the <i>Amazon Glacier Developer
- * Guide</i> .
+ * For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">
+ * Retrieving Vault Metadata in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html"> Describe Vault
+ * </a> in the <i>Amazon Glacier Developer Guide</i> .
  * 
  * </p>
  *

@@ -21,9 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#describeSeverityLevels(DescribeSeverityLevelsRequest) DescribeSeverityLevels operation}.
  * <p>
- * This action returns the list of severity levels that you can assign to an AWS Support case. The severity level for a case is also a field in the <a
- * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"> CaseDetails </a> data type included in any <a
- * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"> CreateCase </a> request.
+ * Returns the list of severity levels that you can assign to an AWS Support case. The severity level for a case is also a field in the CaseDetails data
+ * type included in any CreateCase request.
  * </p>
  *
  * @see com.amazonaws.services.support.AWSSupport#describeSeverityLevels(DescribeSeverityLevelsRequest)
@@ -31,55 +30,55 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeSeverityLevelsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Specifies the ISO 639-1 code for the language in which AWS provides
-     * support. AWS Support currently supports English and Japanese, for
-     * which the codes are <i>en</i> and <i>ja</i>, respectively. Language
-     * parameters must be passed explicitly for operations that take them.
+     * The ISO 639-1 code for the language in which AWS provides support. AWS
+     * Support currently supports English ("en") and Japanese ("ja").
+     * Language parameters must be passed explicitly for operations that take
+     * them.
      */
     private String language;
 
     /**
-     * Specifies the ISO 639-1 code for the language in which AWS provides
-     * support. AWS Support currently supports English and Japanese, for
-     * which the codes are <i>en</i> and <i>ja</i>, respectively. Language
-     * parameters must be passed explicitly for operations that take them.
+     * The ISO 639-1 code for the language in which AWS provides support. AWS
+     * Support currently supports English ("en") and Japanese ("ja").
+     * Language parameters must be passed explicitly for operations that take
+     * them.
      *
-     * @return Specifies the ISO 639-1 code for the language in which AWS provides
-     *         support. AWS Support currently supports English and Japanese, for
-     *         which the codes are <i>en</i> and <i>ja</i>, respectively. Language
-     *         parameters must be passed explicitly for operations that take them.
+     * @return The ISO 639-1 code for the language in which AWS provides support. AWS
+     *         Support currently supports English ("en") and Japanese ("ja").
+     *         Language parameters must be passed explicitly for operations that take
+     *         them.
      */
     public String getLanguage() {
         return language;
     }
     
     /**
-     * Specifies the ISO 639-1 code for the language in which AWS provides
-     * support. AWS Support currently supports English and Japanese, for
-     * which the codes are <i>en</i> and <i>ja</i>, respectively. Language
-     * parameters must be passed explicitly for operations that take them.
+     * The ISO 639-1 code for the language in which AWS provides support. AWS
+     * Support currently supports English ("en") and Japanese ("ja").
+     * Language parameters must be passed explicitly for operations that take
+     * them.
      *
-     * @param language Specifies the ISO 639-1 code for the language in which AWS provides
-     *         support. AWS Support currently supports English and Japanese, for
-     *         which the codes are <i>en</i> and <i>ja</i>, respectively. Language
-     *         parameters must be passed explicitly for operations that take them.
+     * @param language The ISO 639-1 code for the language in which AWS provides support. AWS
+     *         Support currently supports English ("en") and Japanese ("ja").
+     *         Language parameters must be passed explicitly for operations that take
+     *         them.
      */
     public void setLanguage(String language) {
         this.language = language;
     }
     
     /**
-     * Specifies the ISO 639-1 code for the language in which AWS provides
-     * support. AWS Support currently supports English and Japanese, for
-     * which the codes are <i>en</i> and <i>ja</i>, respectively. Language
-     * parameters must be passed explicitly for operations that take them.
+     * The ISO 639-1 code for the language in which AWS provides support. AWS
+     * Support currently supports English ("en") and Japanese ("ja").
+     * Language parameters must be passed explicitly for operations that take
+     * them.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param language Specifies the ISO 639-1 code for the language in which AWS provides
-     *         support. AWS Support currently supports English and Japanese, for
-     *         which the codes are <i>en</i> and <i>ja</i>, respectively. Language
-     *         parameters must be passed explicitly for operations that take them.
+     * @param language The ISO 639-1 code for the language in which AWS provides support. AWS
+     *         Support currently supports English ("en") and Japanese ("ja").
+     *         Language parameters must be passed explicitly for operations that take
+     *         them.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

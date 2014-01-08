@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Returned when you have exceeded the case creation limit for an account.
+ * The case creation limit for the account has been exceeded.
  * </p>
  */        
 public class CaseCreationLimitExceededException extends AmazonServiceException {

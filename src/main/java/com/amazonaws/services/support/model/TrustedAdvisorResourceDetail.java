@@ -18,67 +18,71 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Structure that contains information about the resource to which the Trusted Advisor check pertains.
+ * Contains information about a resource identified by a Trusted Advisor check.
  * </p>
  */
 public class TrustedAdvisorResourceDetail implements Serializable {
 
     /**
-     * Status code for the resource identified in the Trusted Advisor check.
+     * The status code for the resource identified in the Trusted Advisor
+     * check.
      */
     private String status;
 
     /**
-     * AWS region in which the identified resource is located.
+     * The AWS region in which the identified resource is located.
      */
     private String region;
 
     /**
-     * Unique identifier for the identified resource.
+     * The unique identifier for the identified resource.
      */
     private String resourceId;
 
     /**
-     * Indicates whether the specified AWS resource has had its participation
-     * in Trusted Advisor checks suppressed.
+     * Specifies whether the AWS resource was ignored by Trusted Advisor
+     * because it was marked as suppressed by the user.
      */
     private Boolean isSuppressed;
 
     /**
      * Additional information about the identified resource. The exact
-     * metadata and its order can be obtained by inspecting the <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
-     * title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
-     * object returned by the call to <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
+     * metadata and its order can be obtained by inspecting the
+     * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
+     * <a>DescribeTrustedAdvisorChecks</a>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> metadata;
 
     /**
-     * Status code for the resource identified in the Trusted Advisor check.
+     * The status code for the resource identified in the Trusted Advisor
+     * check.
      *
-     * @return Status code for the resource identified in the Trusted Advisor check.
+     * @return The status code for the resource identified in the Trusted Advisor
+     *         check.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * Status code for the resource identified in the Trusted Advisor check.
+     * The status code for the resource identified in the Trusted Advisor
+     * check.
      *
-     * @param status Status code for the resource identified in the Trusted Advisor check.
+     * @param status The status code for the resource identified in the Trusted Advisor
+     *         check.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * Status code for the resource identified in the Trusted Advisor check.
+     * The status code for the resource identified in the Trusted Advisor
+     * check.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status Status code for the resource identified in the Trusted Advisor check.
+     * @param status The status code for the resource identified in the Trusted Advisor
+     *         check.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -89,29 +93,29 @@ public class TrustedAdvisorResourceDetail implements Serializable {
     }
 
     /**
-     * AWS region in which the identified resource is located.
+     * The AWS region in which the identified resource is located.
      *
-     * @return AWS region in which the identified resource is located.
+     * @return The AWS region in which the identified resource is located.
      */
     public String getRegion() {
         return region;
     }
     
     /**
-     * AWS region in which the identified resource is located.
+     * The AWS region in which the identified resource is located.
      *
-     * @param region AWS region in which the identified resource is located.
+     * @param region The AWS region in which the identified resource is located.
      */
     public void setRegion(String region) {
         this.region = region;
     }
     
     /**
-     * AWS region in which the identified resource is located.
+     * The AWS region in which the identified resource is located.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param region AWS region in which the identified resource is located.
+     * @param region The AWS region in which the identified resource is located.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -122,29 +126,29 @@ public class TrustedAdvisorResourceDetail implements Serializable {
     }
 
     /**
-     * Unique identifier for the identified resource.
+     * The unique identifier for the identified resource.
      *
-     * @return Unique identifier for the identified resource.
+     * @return The unique identifier for the identified resource.
      */
     public String getResourceId() {
         return resourceId;
     }
     
     /**
-     * Unique identifier for the identified resource.
+     * The unique identifier for the identified resource.
      *
-     * @param resourceId Unique identifier for the identified resource.
+     * @param resourceId The unique identifier for the identified resource.
      */
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
     
     /**
-     * Unique identifier for the identified resource.
+     * The unique identifier for the identified resource.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourceId Unique identifier for the identified resource.
+     * @param resourceId The unique identifier for the identified resource.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -155,35 +159,35 @@ public class TrustedAdvisorResourceDetail implements Serializable {
     }
 
     /**
-     * Indicates whether the specified AWS resource has had its participation
-     * in Trusted Advisor checks suppressed.
+     * Specifies whether the AWS resource was ignored by Trusted Advisor
+     * because it was marked as suppressed by the user.
      *
-     * @return Indicates whether the specified AWS resource has had its participation
-     *         in Trusted Advisor checks suppressed.
+     * @return Specifies whether the AWS resource was ignored by Trusted Advisor
+     *         because it was marked as suppressed by the user.
      */
     public Boolean isSuppressed() {
         return isSuppressed;
     }
     
     /**
-     * Indicates whether the specified AWS resource has had its participation
-     * in Trusted Advisor checks suppressed.
+     * Specifies whether the AWS resource was ignored by Trusted Advisor
+     * because it was marked as suppressed by the user.
      *
-     * @param isSuppressed Indicates whether the specified AWS resource has had its participation
-     *         in Trusted Advisor checks suppressed.
+     * @param isSuppressed Specifies whether the AWS resource was ignored by Trusted Advisor
+     *         because it was marked as suppressed by the user.
      */
     public void setIsSuppressed(Boolean isSuppressed) {
         this.isSuppressed = isSuppressed;
     }
     
     /**
-     * Indicates whether the specified AWS resource has had its participation
-     * in Trusted Advisor checks suppressed.
+     * Specifies whether the AWS resource was ignored by Trusted Advisor
+     * because it was marked as suppressed by the user.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param isSuppressed Indicates whether the specified AWS resource has had its participation
-     *         in Trusted Advisor checks suppressed.
+     * @param isSuppressed Specifies whether the AWS resource was ignored by Trusted Advisor
+     *         because it was marked as suppressed by the user.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -194,11 +198,11 @@ public class TrustedAdvisorResourceDetail implements Serializable {
     }
 
     /**
-     * Indicates whether the specified AWS resource has had its participation
-     * in Trusted Advisor checks suppressed.
+     * Specifies whether the AWS resource was ignored by Trusted Advisor
+     * because it was marked as suppressed by the user.
      *
-     * @return Indicates whether the specified AWS resource has had its participation
-     *         in Trusted Advisor checks suppressed.
+     * @return Specifies whether the AWS resource was ignored by Trusted Advisor
+     *         because it was marked as suppressed by the user.
      */
     public Boolean getIsSuppressed() {
         return isSuppressed;
@@ -206,20 +210,14 @@ public class TrustedAdvisorResourceDetail implements Serializable {
 
     /**
      * Additional information about the identified resource. The exact
-     * metadata and its order can be obtained by inspecting the <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
-     * title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
-     * object returned by the call to <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
+     * metadata and its order can be obtained by inspecting the
+     * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
+     * <a>DescribeTrustedAdvisorChecks</a>.
      *
      * @return Additional information about the identified resource. The exact
-     *         metadata and its order can be obtained by inspecting the <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
-     *         title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
-     *         object returned by the call to <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
+     *         metadata and its order can be obtained by inspecting the
+     *         <a>TrustedAdvisorCheckDescription</a> object returned by the call to
+     *         <a>DescribeTrustedAdvisorChecks</a>.
      */
     public java.util.List<String> getMetadata() {
         if (metadata == null) {
@@ -231,20 +229,14 @@ public class TrustedAdvisorResourceDetail implements Serializable {
     
     /**
      * Additional information about the identified resource. The exact
-     * metadata and its order can be obtained by inspecting the <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
-     * title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
-     * object returned by the call to <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
+     * metadata and its order can be obtained by inspecting the
+     * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
+     * <a>DescribeTrustedAdvisorChecks</a>.
      *
      * @param metadata Additional information about the identified resource. The exact
-     *         metadata and its order can be obtained by inspecting the <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
-     *         title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
-     *         object returned by the call to <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
+     *         metadata and its order can be obtained by inspecting the
+     *         <a>TrustedAdvisorCheckDescription</a> object returned by the call to
+     *         <a>DescribeTrustedAdvisorChecks</a>.
      */
     public void setMetadata(java.util.Collection<String> metadata) {
         if (metadata == null) {
@@ -258,22 +250,16 @@ public class TrustedAdvisorResourceDetail implements Serializable {
     
     /**
      * Additional information about the identified resource. The exact
-     * metadata and its order can be obtained by inspecting the <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
-     * title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
-     * object returned by the call to <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
+     * metadata and its order can be obtained by inspecting the
+     * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
+     * <a>DescribeTrustedAdvisorChecks</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metadata Additional information about the identified resource. The exact
-     *         metadata and its order can be obtained by inspecting the <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
-     *         title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
-     *         object returned by the call to <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
+     *         metadata and its order can be obtained by inspecting the
+     *         <a>TrustedAdvisorCheckDescription</a> object returned by the call to
+     *         <a>DescribeTrustedAdvisorChecks</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -288,22 +274,16 @@ public class TrustedAdvisorResourceDetail implements Serializable {
     
     /**
      * Additional information about the identified resource. The exact
-     * metadata and its order can be obtained by inspecting the <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
-     * title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
-     * object returned by the call to <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
+     * metadata and its order can be obtained by inspecting the
+     * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
+     * <a>DescribeTrustedAdvisorChecks</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metadata Additional information about the identified resource. The exact
-     *         metadata and its order can be obtained by inspecting the <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
-     *         title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
-     *         object returned by the call to <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
+     *         metadata and its order can be obtained by inspecting the
+     *         <a>TrustedAdvisorCheckDescription</a> object returned by the call to
+     *         <a>DescribeTrustedAdvisorChecks</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -18,26 +18,20 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns the objects or data listed below if successful. Otherwise, returns an error.
+ * Contains the following objects or data if successful. Otherwise, returns an error.
  * </p>
  */
 public class DescribeTrustedAdvisorChecksResult implements Serializable {
 
     /**
-     * List of the checks returned by calling <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
+     * Information about all available Trusted Advisor checks.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckDescription> checks;
 
     /**
-     * List of the checks returned by calling <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
+     * Information about all available Trusted Advisor checks.
      *
-     * @return List of the checks returned by calling <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
+     * @return Information about all available Trusted Advisor checks.
      */
     public java.util.List<TrustedAdvisorCheckDescription> getChecks() {
         if (checks == null) {
@@ -48,13 +42,9 @@ public class DescribeTrustedAdvisorChecksResult implements Serializable {
     }
     
     /**
-     * List of the checks returned by calling <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
+     * Information about all available Trusted Advisor checks.
      *
-     * @param checks List of the checks returned by calling <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
+     * @param checks Information about all available Trusted Advisor checks.
      */
     public void setChecks(java.util.Collection<TrustedAdvisorCheckDescription> checks) {
         if (checks == null) {
@@ -67,15 +57,11 @@ public class DescribeTrustedAdvisorChecksResult implements Serializable {
     }
     
     /**
-     * List of the checks returned by calling <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
+     * Information about all available Trusted Advisor checks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param checks List of the checks returned by calling <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
+     * @param checks Information about all available Trusted Advisor checks.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -89,15 +75,11 @@ public class DescribeTrustedAdvisorChecksResult implements Serializable {
     }
     
     /**
-     * List of the checks returned by calling <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
+     * Information about all available Trusted Advisor checks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param checks List of the checks returned by calling <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-     *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
+     * @param checks Information about all available Trusted Advisor checks.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -21,12 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#describeCommunications(DescribeCommunicationsRequest) DescribeCommunications operation}.
  * <p>
- * This action returns communications regarding the support case. You can use the <i>AfterTime</i> and <i>BeforeTime</i> parameters to filter by date.
- * The <i>CaseId</i> parameter enables you to identify a specific case by its <i>CaseId</i> number.
+ * Returns communications regarding the support case. You can use the <code>AfterTime</code> and <code>BeforeTime</code> parameters to filter by date.
+ * The <code>CaseId</code> parameter enables you to identify a specific case by its <code>CaseId</code> value.
  * </p>
  * <p>
- * The <i>MaxResults</i> and <i>NextToken</i> parameters enable you to control the pagination of the result set. Set <i>MaxResults</i> to the number of
- * cases you want displayed on each page, and use <i>NextToken</i> to specify the resumption of pagination.
+ * The <code>MaxResults</code> and <code>NextToken</code> parameters enable you to control the pagination of the result set. Set <code>MaxResults</code>
+ * to the number of cases you want displayed on each page, and use <code>NextToken</code> to specify the resumption of pagination.
  * </p>
  *
  * @see com.amazonaws.services.support.AWSSupport#describeCommunications(DescribeCommunicationsRequest)
@@ -34,30 +34,31 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeCommunicationsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * String that indicates the AWS Support caseID requested or returned in
-     * the call. The caseID is an alphanumeric string formatted as shown in
-     * this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID
+     * is an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
     private String caseId;
 
     /**
-     * End date for a filtered date search on support case communications.
+     * The end date for a filtered date search on support case
+     * communications.
      */
     private String beforeTime;
 
     /**
-     * Start date for a filtered date search on support case communications.
+     * The start date for a filtered date search on support case
+     * communications.
      */
     private String afterTime;
 
     /**
-     * Defines a resumption point for pagination.
+     * A resumption point for pagination.
      */
     private String nextToken;
 
     /**
-     * Integer that sets the maximum number of results to return before
-     * paginating.
+     * The maximum number of results to return before paginating.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>10 - 100<br/>
@@ -65,41 +66,41 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
     private Integer maxResults;
 
     /**
-     * String that indicates the AWS Support caseID requested or returned in
-     * the call. The caseID is an alphanumeric string formatted as shown in
-     * this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID
+     * is an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      *
-     * @return String that indicates the AWS Support caseID requested or returned in
-     *         the call. The caseID is an alphanumeric string formatted as shown in
-     *         this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @return The AWS Support case ID requested or returned in the call. The case ID
+     *         is an alphanumeric string formatted as shown in this example:
+     *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
     public String getCaseId() {
         return caseId;
     }
     
     /**
-     * String that indicates the AWS Support caseID requested or returned in
-     * the call. The caseID is an alphanumeric string formatted as shown in
-     * this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID
+     * is an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      *
-     * @param caseId String that indicates the AWS Support caseID requested or returned in
-     *         the call. The caseID is an alphanumeric string formatted as shown in
-     *         this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @param caseId The AWS Support case ID requested or returned in the call. The case ID
+     *         is an alphanumeric string formatted as shown in this example:
+     *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
     public void setCaseId(String caseId) {
         this.caseId = caseId;
     }
     
     /**
-     * String that indicates the AWS Support caseID requested or returned in
-     * the call. The caseID is an alphanumeric string formatted as shown in
-     * this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID
+     * is an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param caseId String that indicates the AWS Support caseID requested or returned in
-     *         the call. The caseID is an alphanumeric string formatted as shown in
-     *         this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @param caseId The AWS Support case ID requested or returned in the call. The case ID
+     *         is an alphanumeric string formatted as shown in this example:
+     *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -110,29 +111,35 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * End date for a filtered date search on support case communications.
+     * The end date for a filtered date search on support case
+     * communications.
      *
-     * @return End date for a filtered date search on support case communications.
+     * @return The end date for a filtered date search on support case
+     *         communications.
      */
     public String getBeforeTime() {
         return beforeTime;
     }
     
     /**
-     * End date for a filtered date search on support case communications.
+     * The end date for a filtered date search on support case
+     * communications.
      *
-     * @param beforeTime End date for a filtered date search on support case communications.
+     * @param beforeTime The end date for a filtered date search on support case
+     *         communications.
      */
     public void setBeforeTime(String beforeTime) {
         this.beforeTime = beforeTime;
     }
     
     /**
-     * End date for a filtered date search on support case communications.
+     * The end date for a filtered date search on support case
+     * communications.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param beforeTime End date for a filtered date search on support case communications.
+     * @param beforeTime The end date for a filtered date search on support case
+     *         communications.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -143,29 +150,35 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Start date for a filtered date search on support case communications.
+     * The start date for a filtered date search on support case
+     * communications.
      *
-     * @return Start date for a filtered date search on support case communications.
+     * @return The start date for a filtered date search on support case
+     *         communications.
      */
     public String getAfterTime() {
         return afterTime;
     }
     
     /**
-     * Start date for a filtered date search on support case communications.
+     * The start date for a filtered date search on support case
+     * communications.
      *
-     * @param afterTime Start date for a filtered date search on support case communications.
+     * @param afterTime The start date for a filtered date search on support case
+     *         communications.
      */
     public void setAfterTime(String afterTime) {
         this.afterTime = afterTime;
     }
     
     /**
-     * Start date for a filtered date search on support case communications.
+     * The start date for a filtered date search on support case
+     * communications.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param afterTime Start date for a filtered date search on support case communications.
+     * @param afterTime The start date for a filtered date search on support case
+     *         communications.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -176,29 +189,29 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Defines a resumption point for pagination.
+     * A resumption point for pagination.
      *
-     * @return Defines a resumption point for pagination.
+     * @return A resumption point for pagination.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * Defines a resumption point for pagination.
+     * A resumption point for pagination.
      *
-     * @param nextToken Defines a resumption point for pagination.
+     * @param nextToken A resumption point for pagination.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * Defines a resumption point for pagination.
+     * A resumption point for pagination.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken Defines a resumption point for pagination.
+     * @param nextToken A resumption point for pagination.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -209,44 +222,38 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Integer that sets the maximum number of results to return before
-     * paginating.
+     * The maximum number of results to return before paginating.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>10 - 100<br/>
      *
-     * @return Integer that sets the maximum number of results to return before
-     *         paginating.
+     * @return The maximum number of results to return before paginating.
      */
     public Integer getMaxResults() {
         return maxResults;
     }
     
     /**
-     * Integer that sets the maximum number of results to return before
-     * paginating.
+     * The maximum number of results to return before paginating.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>10 - 100<br/>
      *
-     * @param maxResults Integer that sets the maximum number of results to return before
-     *         paginating.
+     * @param maxResults The maximum number of results to return before paginating.
      */
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
     
     /**
-     * Integer that sets the maximum number of results to return before
-     * paginating.
+     * The maximum number of results to return before paginating.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>10 - 100<br/>
      *
-     * @param maxResults Integer that sets the maximum number of results to return before
-     *         paginating.
+     * @param maxResults The maximum number of results to return before paginating.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -18,61 +18,40 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns the objects or data listed below if successful. Otherwise, returns an error.
+ * Contains the following objects or data if successful. Otherwise, returns an error.
  * </p>
  */
 public class DescribeTrustedAdvisorCheckResultResult implements Serializable {
 
     /**
-     * Returns a <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
-     * title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a>
-     * object.
+     * The detailed results of the Trusted Advisor check.
      */
     private TrustedAdvisorCheckResult result;
 
     /**
-     * Returns a <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
-     * title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a>
-     * object.
+     * The detailed results of the Trusted Advisor check.
      *
-     * @return Returns a <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
-     *         title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a>
-     *         object.
+     * @return The detailed results of the Trusted Advisor check.
      */
     public TrustedAdvisorCheckResult getResult() {
         return result;
     }
     
     /**
-     * Returns a <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
-     * title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a>
-     * object.
+     * The detailed results of the Trusted Advisor check.
      *
-     * @param result Returns a <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
-     *         title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a>
-     *         object.
+     * @param result The detailed results of the Trusted Advisor check.
      */
     public void setResult(TrustedAdvisorCheckResult result) {
         this.result = result;
     }
     
     /**
-     * Returns a <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
-     * title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a>
-     * object.
+     * The detailed results of the Trusted Advisor check.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param result Returns a <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
-     *         title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a>
-     *         object.
+     * @param result The detailed results of the Trusted Advisor check.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

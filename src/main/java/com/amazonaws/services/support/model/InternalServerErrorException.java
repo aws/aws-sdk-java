@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Returns HTTP error 500.
+ * An internal server error occurred.
  * </p>
  */        
 public class InternalServerErrorException extends AmazonServiceException {

@@ -49,7 +49,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <b>Use Amazon SNS Notification</b> You can specify an Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Glacier can post a
  * notification after the job is completed. You can specify an SNS topic per job request. The notification is sent only after Amazon Glacier completes
  * the job. In addition to specifying an SNS topic per job request, you can configure vault notifications for a vault so that job notifications are
- * always sent. For more information, see SetVaultNotificationConfiguration.
+ * always sent. For more information, see SetVaultNotifications.
  * </p>
  * </li>
  * <li> <p>
@@ -64,13 +64,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * If for a specific event, you add both the notification configuration on the vault and also specify an SNS topic in your initiate job request, Amazon
- * Glacier sends both notifications. For more information, see SetVaultNotificationConfiguration.
+ * Glacier sends both notifications. For more information, see SetVaultNotifications.
  * </p>
  * <p>
  * An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any
  * permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
- * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access
- * Management (IAM) </a> .
+ * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management
+ * (IAM) </a> .
  * </p>
  * <p>
  * <b>About the Vault Inventory</b>
@@ -85,15 +85,25 @@ import com.amazonaws.AmazonWebServiceRequest;
  * information in your database with the actual vault inventory.
  * </p>
  * <p>
+ * <b>About Ranged Archive Retrieval</b>
+ * </p>
+ * <p>
+ * You can initiate an archive retrieval for the whole archive or a range of the archive. In the case of ranged archive retrieval, you specify a byte
+ * range to return or the whole archive. The range specified must be megabyte (MB) aligned, that is the range start value must be divisible by 1 MB and
+ * range end value plus 1 must be divisible by 1 MB or equal the end of the archive. If the ranged archive retrieval is not megabyte aligned, this
+ * operation returns a 400 response. Furthermore, to ensure you get checksum values for data you download using Get Job Output API, the range must be
+ * tree hash aligned.
+ * </p>
+ * <p>
  * An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any
  * permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
- * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access
- * Management (IAM) </a> .
+ * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management
+ * (IAM) </a> .
  * </p>
  * <p>
  * For conceptual information and the underlying REST API, go to <a
- * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/api-initiate-job-post.html"> Initiate a Job </a> and <a
- * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/vault-inventory.html"> Downloading a Vault Inventory </a>
+ * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html"> Initiate a Job </a> and <a
+ * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html"> Downloading a Vault Inventory </a>
  * </p>
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#initiateJob(InitiateJobRequest)

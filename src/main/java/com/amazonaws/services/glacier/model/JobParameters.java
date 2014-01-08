@@ -50,8 +50,8 @@ public class JobParameters implements Serializable {
     /**
      * The optional description for the job. The description must be less
      * than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
-     * without control codes?????????specifically, ASCII values 32?????????126 decimal or
-     * 0x20?????????0x7E hexadecimal.
+     * without control codes-specifically, ASCII values 32-126 decimal or
+     * 0x20-0x7E hexadecimal.
      */
     private String description;
 
@@ -63,7 +63,20 @@ public class JobParameters implements Serializable {
      */
     private String sNSTopic;
 
+    /**
+     * The byte range to retrieve for an archive retrieval. in the form
+     * "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the
+     * whole archive is retrieved. If specified, the byte range must be
+     * megabyte (1024*1024) aligned which means that <i>StartByteValue</i>
+     * must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be
+     * divisible by 1 MB or be the end of the archive specified as the
+     * archive byte size value minus 1. If RetrievalByteRange is not megabyte
+     * aligned, this operation returns a 400 response. <p> An error occurs if
+     * you specify this field for an inventory retrieval job request.
+     */
     private String retrievalByteRange;
+
+    private InventoryRetrievalJobInput inventoryRetrievalParameters;
 
     /**
      * Default constructor for a new JobParameters object.  Callers should use the
@@ -90,8 +103,8 @@ public class JobParameters implements Serializable {
      * parameter for an inventory retrieval job request.
      * @param description The optional description for the job. The
      * description must be less than or equal to 1,024 bytes. The allowable
-     * characters are 7-bit ASCII without control codes?????????specifically, ASCII
-     * values 32?????????126 decimal or 0x20?????????0x7E hexadecimal.
+     * characters are 7-bit ASCII without control codes-specifically, ASCII
+     * values 32-126 decimal or 0x20-0x7E hexadecimal.
      */
     public JobParameters(String format, String type, String archiveId, String description) {
         setFormat(format);
@@ -256,13 +269,13 @@ public class JobParameters implements Serializable {
     /**
      * The optional description for the job. The description must be less
      * than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
-     * without control codes?????????specifically, ASCII values 32?????????126 decimal or
-     * 0x20?????????0x7E hexadecimal.
+     * without control codes-specifically, ASCII values 32-126 decimal or
+     * 0x20-0x7E hexadecimal.
      *
      * @return The optional description for the job. The description must be less
      *         than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
-     *         without control codes?????????specifically, ASCII values 32?????????126 decimal or
-     *         0x20?????????0x7E hexadecimal.
+     *         without control codes-specifically, ASCII values 32-126 decimal or
+     *         0x20-0x7E hexadecimal.
      */
     public String getDescription() {
         return description;
@@ -271,13 +284,13 @@ public class JobParameters implements Serializable {
     /**
      * The optional description for the job. The description must be less
      * than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
-     * without control codes?????????specifically, ASCII values 32?????????126 decimal or
-     * 0x20?????????0x7E hexadecimal.
+     * without control codes-specifically, ASCII values 32-126 decimal or
+     * 0x20-0x7E hexadecimal.
      *
      * @param description The optional description for the job. The description must be less
      *         than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
-     *         without control codes?????????specifically, ASCII values 32?????????126 decimal or
-     *         0x20?????????0x7E hexadecimal.
+     *         without control codes-specifically, ASCII values 32-126 decimal or
+     *         0x20-0x7E hexadecimal.
      */
     public void setDescription(String description) {
         this.description = description;
@@ -286,15 +299,15 @@ public class JobParameters implements Serializable {
     /**
      * The optional description for the job. The description must be less
      * than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
-     * without control codes?????????specifically, ASCII values 32?????????126 decimal or
-     * 0x20?????????0x7E hexadecimal.
+     * without control codes-specifically, ASCII values 32-126 decimal or
+     * 0x20-0x7E hexadecimal.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The optional description for the job. The description must be less
      *         than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
-     *         without control codes?????????specifically, ASCII values 32?????????126 decimal or
-     *         0x20?????????0x7E hexadecimal.
+     *         without control codes-specifically, ASCII values 32-126 decimal or
+     *         0x20-0x7E hexadecimal.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -356,35 +369,122 @@ public class JobParameters implements Serializable {
     }
 
     /**
-     * Returns the value of the RetrievalByteRange property for this object.
+     * The byte range to retrieve for an archive retrieval. in the form
+     * "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the
+     * whole archive is retrieved. If specified, the byte range must be
+     * megabyte (1024*1024) aligned which means that <i>StartByteValue</i>
+     * must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be
+     * divisible by 1 MB or be the end of the archive specified as the
+     * archive byte size value minus 1. If RetrievalByteRange is not megabyte
+     * aligned, this operation returns a 400 response. <p> An error occurs if
+     * you specify this field for an inventory retrieval job request.
      *
-     * @return The value of the RetrievalByteRange property for this object.
+     * @return The byte range to retrieve for an archive retrieval. in the form
+     *         "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the
+     *         whole archive is retrieved. If specified, the byte range must be
+     *         megabyte (1024*1024) aligned which means that <i>StartByteValue</i>
+     *         must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be
+     *         divisible by 1 MB or be the end of the archive specified as the
+     *         archive byte size value minus 1. If RetrievalByteRange is not megabyte
+     *         aligned, this operation returns a 400 response. <p> An error occurs if
+     *         you specify this field for an inventory retrieval job request.
      */
     public String getRetrievalByteRange() {
         return retrievalByteRange;
     }
     
     /**
-     * Sets the value of the RetrievalByteRange property for this object.
+     * The byte range to retrieve for an archive retrieval. in the form
+     * "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the
+     * whole archive is retrieved. If specified, the byte range must be
+     * megabyte (1024*1024) aligned which means that <i>StartByteValue</i>
+     * must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be
+     * divisible by 1 MB or be the end of the archive specified as the
+     * archive byte size value minus 1. If RetrievalByteRange is not megabyte
+     * aligned, this operation returns a 400 response. <p> An error occurs if
+     * you specify this field for an inventory retrieval job request.
      *
-     * @param retrievalByteRange The new value for the RetrievalByteRange property for this object.
+     * @param retrievalByteRange The byte range to retrieve for an archive retrieval. in the form
+     *         "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the
+     *         whole archive is retrieved. If specified, the byte range must be
+     *         megabyte (1024*1024) aligned which means that <i>StartByteValue</i>
+     *         must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be
+     *         divisible by 1 MB or be the end of the archive specified as the
+     *         archive byte size value minus 1. If RetrievalByteRange is not megabyte
+     *         aligned, this operation returns a 400 response. <p> An error occurs if
+     *         you specify this field for an inventory retrieval job request.
      */
     public void setRetrievalByteRange(String retrievalByteRange) {
         this.retrievalByteRange = retrievalByteRange;
     }
     
     /**
-     * Sets the value of the RetrievalByteRange property for this object.
+     * The byte range to retrieve for an archive retrieval. in the form
+     * "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the
+     * whole archive is retrieved. If specified, the byte range must be
+     * megabyte (1024*1024) aligned which means that <i>StartByteValue</i>
+     * must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be
+     * divisible by 1 MB or be the end of the archive specified as the
+     * archive byte size value minus 1. If RetrievalByteRange is not megabyte
+     * aligned, this operation returns a 400 response. <p> An error occurs if
+     * you specify this field for an inventory retrieval job request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param retrievalByteRange The new value for the RetrievalByteRange property for this object.
+     * @param retrievalByteRange The byte range to retrieve for an archive retrieval. in the form
+     *         "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the
+     *         whole archive is retrieved. If specified, the byte range must be
+     *         megabyte (1024*1024) aligned which means that <i>StartByteValue</i>
+     *         must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be
+     *         divisible by 1 MB or be the end of the archive specified as the
+     *         archive byte size value minus 1. If RetrievalByteRange is not megabyte
+     *         aligned, this operation returns a 400 response. <p> An error occurs if
+     *         you specify this field for an inventory retrieval job request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public JobParameters withRetrievalByteRange(String retrievalByteRange) {
         this.retrievalByteRange = retrievalByteRange;
+        return this;
+    }
+
+    /**
+     * Returns the value of the InventoryRetrievalParameters property for
+     * this object.
+     *
+     * @return The value of the InventoryRetrievalParameters property for this
+     *         object.
+     */
+    public InventoryRetrievalJobInput getInventoryRetrievalParameters() {
+        return inventoryRetrievalParameters;
+    }
+    
+    /**
+     * Sets the value of the InventoryRetrievalParameters property for this
+     * object.
+     *
+     * @param inventoryRetrievalParameters The new value for the InventoryRetrievalParameters property for this
+     *         object.
+     */
+    public void setInventoryRetrievalParameters(InventoryRetrievalJobInput inventoryRetrievalParameters) {
+        this.inventoryRetrievalParameters = inventoryRetrievalParameters;
+    }
+    
+    /**
+     * Sets the value of the InventoryRetrievalParameters property for this
+     * object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param inventoryRetrievalParameters The new value for the InventoryRetrievalParameters property for this
+     *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public JobParameters withInventoryRetrievalParameters(InventoryRetrievalJobInput inventoryRetrievalParameters) {
+        this.inventoryRetrievalParameters = inventoryRetrievalParameters;
         return this;
     }
 
@@ -405,7 +505,8 @@ public class JobParameters implements Serializable {
         if (getArchiveId() != null) sb.append("ArchiveId: " + getArchiveId() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getSNSTopic() != null) sb.append("SNSTopic: " + getSNSTopic() + ",");
-        if (getRetrievalByteRange() != null) sb.append("RetrievalByteRange: " + getRetrievalByteRange() );
+        if (getRetrievalByteRange() != null) sb.append("RetrievalByteRange: " + getRetrievalByteRange() + ",");
+        if (getInventoryRetrievalParameters() != null) sb.append("InventoryRetrievalParameters: " + getInventoryRetrievalParameters() );
         sb.append("}");
         return sb.toString();
     }
@@ -421,6 +522,7 @@ public class JobParameters implements Serializable {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getSNSTopic() == null) ? 0 : getSNSTopic().hashCode()); 
         hashCode = prime * hashCode + ((getRetrievalByteRange() == null) ? 0 : getRetrievalByteRange().hashCode()); 
+        hashCode = prime * hashCode + ((getInventoryRetrievalParameters() == null) ? 0 : getInventoryRetrievalParameters().hashCode()); 
         return hashCode;
     }
     
@@ -444,6 +546,8 @@ public class JobParameters implements Serializable {
         if (other.getSNSTopic() != null && other.getSNSTopic().equals(this.getSNSTopic()) == false) return false; 
         if (other.getRetrievalByteRange() == null ^ this.getRetrievalByteRange() == null) return false;
         if (other.getRetrievalByteRange() != null && other.getRetrievalByteRange().equals(this.getRetrievalByteRange()) == false) return false; 
+        if (other.getInventoryRetrievalParameters() == null ^ this.getInventoryRetrievalParameters() == null) return false;
+        if (other.getInventoryRetrievalParameters() != null && other.getInventoryRetrievalParameters().equals(this.getInventoryRetrievalParameters()) == false) return false; 
         return true;
     }
     

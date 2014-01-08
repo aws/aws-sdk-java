@@ -18,23 +18,23 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns the objects or data listed below if successful. Otherwise, returns an error.
+ * Contains the following objects or data if successful. Otherwise, returns an error.
  * </p>
  */
 public class DescribeSeverityLevelsResult implements Serializable {
 
     /**
-     * List of available severity levels for the support case. Available
-     * severity levels are defined by your service level agreement with AWS.
+     * The available severity levels for the support case. Available severity
+     * levels are defined by your service level agreement with AWS.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<SeverityLevel> severityLevels;
 
     /**
-     * List of available severity levels for the support case. Available
-     * severity levels are defined by your service level agreement with AWS.
+     * The available severity levels for the support case. Available severity
+     * levels are defined by your service level agreement with AWS.
      *
-     * @return List of available severity levels for the support case. Available
-     *         severity levels are defined by your service level agreement with AWS.
+     * @return The available severity levels for the support case. Available severity
+     *         levels are defined by your service level agreement with AWS.
      */
     public java.util.List<SeverityLevel> getSeverityLevels() {
         if (severityLevels == null) {
@@ -45,11 +45,11 @@ public class DescribeSeverityLevelsResult implements Serializable {
     }
     
     /**
-     * List of available severity levels for the support case. Available
-     * severity levels are defined by your service level agreement with AWS.
+     * The available severity levels for the support case. Available severity
+     * levels are defined by your service level agreement with AWS.
      *
-     * @param severityLevels List of available severity levels for the support case. Available
-     *         severity levels are defined by your service level agreement with AWS.
+     * @param severityLevels The available severity levels for the support case. Available severity
+     *         levels are defined by your service level agreement with AWS.
      */
     public void setSeverityLevels(java.util.Collection<SeverityLevel> severityLevels) {
         if (severityLevels == null) {
@@ -62,13 +62,13 @@ public class DescribeSeverityLevelsResult implements Serializable {
     }
     
     /**
-     * List of available severity levels for the support case. Available
-     * severity levels are defined by your service level agreement with AWS.
+     * The available severity levels for the support case. Available severity
+     * levels are defined by your service level agreement with AWS.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param severityLevels List of available severity levels for the support case. Available
-     *         severity levels are defined by your service level agreement with AWS.
+     * @param severityLevels The available severity levels for the support case. Available severity
+     *         levels are defined by your service level agreement with AWS.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -82,13 +82,13 @@ public class DescribeSeverityLevelsResult implements Serializable {
     }
     
     /**
-     * List of available severity levels for the support case. Available
-     * severity levels are defined by your service level agreement with AWS.
+     * The available severity levels for the support case. Available severity
+     * levels are defined by your service level agreement with AWS.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param severityLevels List of available severity levels for the support case. Available
-     *         severity levels are defined by your service level agreement with AWS.
+     * @param severityLevels The available severity levels for the support case. Available severity
+     *         levels are defined by your service level agreement with AWS.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

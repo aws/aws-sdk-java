@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <b>SHA256 tree hash does not match</b> To ensure that part data is not corrupted in transmission, you compute a SHA256 tree hash of the part and
  * include it in your request. Upon receiving the part data, Amazon Glacier also computes a SHA256 tree hash. If these hash values don't match, the
  * operation fails. For information about computing a SHA256 tree hash, see <a
- * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/checksum-calculations.html"> Computing Checksums </a> .
+ * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html"> Computing Checksums </a> .
  * </p>
  * </li>
  * <li> <p>
@@ -57,14 +57,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any
  * permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
- * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access
- * Management (IAM) </a> .
+ * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management
+ * (IAM) </a> .
  * </p>
  * <p>
- * For conceptual information and underlying REST API, go to <a
- * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/uploading-archive-mpu.html"> Uploading Large Archives in Parts (Multipart Upload)
- * </a> and <a href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/api-upload-part.html"> Upload Part </a> in the <i>Amazon Glacier
- * Developer Guide</i> .
+ * For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">
+ * Uploading Large Archives in Parts (Multipart Upload) </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html">
+ * Upload Part </a> in the <i>Amazon Glacier Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#uploadMultipartPart(UploadMultipartPartRequest)

@@ -131,7 +131,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AmazonElasticTranscoderClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        super(adjustClientConfiguration(clientConfiguration));
         
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
         
@@ -194,7 +194,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
     public AmazonElasticTranscoderClient(AWSCredentialsProvider awsCredentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(clientConfiguration, requestMetricCollector);
+        super(adjustClientConfiguration(clientConfiguration), requestMetricCollector);
         
         this.awsCredentialsProvider = awsCredentialsProvider;
         
@@ -219,6 +219,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 "/com/amazonaws/services/elastictranscoder/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
                 "/com/amazonaws/services/elastictranscoder/request.handler2s"));
+    }
+
+    private static ClientConfiguration adjustClientConfiguration(ClientConfiguration orig) {
+        ClientConfiguration config = orig;
+        
+        return config;
     }
 
     /**

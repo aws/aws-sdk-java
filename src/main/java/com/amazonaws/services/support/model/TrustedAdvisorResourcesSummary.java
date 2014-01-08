@@ -18,67 +18,65 @@ import java.io.Serializable;
 
 /**
  * <p>
- * JSON-formatted object that lists details about AWS resources that were analyzed in a call to Trusted Advisor <a
- * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"> DescribeTrustedAdvisorCheckSummaries
- * </a> .
+ * Details about AWS resources that were analyzed in a call to Trusted Advisor DescribeTrustedAdvisorCheckSummaries.
  * </p>
  */
 public class TrustedAdvisorResourcesSummary implements Serializable {
 
     /**
-     * Reports the number of AWS resources that were analyzed in your Trusted
-     * Advisor check.
+     * The number of AWS resources that were analyzed by the Trusted Advisor
+     * check.
      */
     private Long resourcesProcessed;
 
     /**
-     * Reports the number of AWS resources that were flagged in your Trusted
+     * The number of AWS resources that were flagged (listed) by the Trusted
      * Advisor check.
      */
     private Long resourcesFlagged;
 
     /**
-     * Indicates the number of resources ignored by Trusted Advisor due to
-     * unavailability of information.
+     * The number of AWS resources ignored by Trusted Advisor because
+     * information was unavailable.
      */
     private Long resourcesIgnored;
 
     /**
-     * Indicates whether the specified AWS resource has had its participation
-     * in Trusted Advisor checks suppressed.
+     * The number of AWS resources ignored by Trusted Advisor because they
+     * were marked as suppressed by the user.
      */
     private Long resourcesSuppressed;
 
     /**
-     * Reports the number of AWS resources that were analyzed in your Trusted
-     * Advisor check.
+     * The number of AWS resources that were analyzed by the Trusted Advisor
+     * check.
      *
-     * @return Reports the number of AWS resources that were analyzed in your Trusted
-     *         Advisor check.
+     * @return The number of AWS resources that were analyzed by the Trusted Advisor
+     *         check.
      */
     public Long getResourcesProcessed() {
         return resourcesProcessed;
     }
     
     /**
-     * Reports the number of AWS resources that were analyzed in your Trusted
-     * Advisor check.
+     * The number of AWS resources that were analyzed by the Trusted Advisor
+     * check.
      *
-     * @param resourcesProcessed Reports the number of AWS resources that were analyzed in your Trusted
-     *         Advisor check.
+     * @param resourcesProcessed The number of AWS resources that were analyzed by the Trusted Advisor
+     *         check.
      */
     public void setResourcesProcessed(Long resourcesProcessed) {
         this.resourcesProcessed = resourcesProcessed;
     }
     
     /**
-     * Reports the number of AWS resources that were analyzed in your Trusted
-     * Advisor check.
+     * The number of AWS resources that were analyzed by the Trusted Advisor
+     * check.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourcesProcessed Reports the number of AWS resources that were analyzed in your Trusted
-     *         Advisor check.
+     * @param resourcesProcessed The number of AWS resources that were analyzed by the Trusted Advisor
+     *         check.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -89,10 +87,10 @@ public class TrustedAdvisorResourcesSummary implements Serializable {
     }
 
     /**
-     * Reports the number of AWS resources that were flagged in your Trusted
+     * The number of AWS resources that were flagged (listed) by the Trusted
      * Advisor check.
      *
-     * @return Reports the number of AWS resources that were flagged in your Trusted
+     * @return The number of AWS resources that were flagged (listed) by the Trusted
      *         Advisor check.
      */
     public Long getResourcesFlagged() {
@@ -100,10 +98,10 @@ public class TrustedAdvisorResourcesSummary implements Serializable {
     }
     
     /**
-     * Reports the number of AWS resources that were flagged in your Trusted
+     * The number of AWS resources that were flagged (listed) by the Trusted
      * Advisor check.
      *
-     * @param resourcesFlagged Reports the number of AWS resources that were flagged in your Trusted
+     * @param resourcesFlagged The number of AWS resources that were flagged (listed) by the Trusted
      *         Advisor check.
      */
     public void setResourcesFlagged(Long resourcesFlagged) {
@@ -111,12 +109,12 @@ public class TrustedAdvisorResourcesSummary implements Serializable {
     }
     
     /**
-     * Reports the number of AWS resources that were flagged in your Trusted
+     * The number of AWS resources that were flagged (listed) by the Trusted
      * Advisor check.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourcesFlagged Reports the number of AWS resources that were flagged in your Trusted
+     * @param resourcesFlagged The number of AWS resources that were flagged (listed) by the Trusted
      *         Advisor check.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -128,35 +126,35 @@ public class TrustedAdvisorResourcesSummary implements Serializable {
     }
 
     /**
-     * Indicates the number of resources ignored by Trusted Advisor due to
-     * unavailability of information.
+     * The number of AWS resources ignored by Trusted Advisor because
+     * information was unavailable.
      *
-     * @return Indicates the number of resources ignored by Trusted Advisor due to
-     *         unavailability of information.
+     * @return The number of AWS resources ignored by Trusted Advisor because
+     *         information was unavailable.
      */
     public Long getResourcesIgnored() {
         return resourcesIgnored;
     }
     
     /**
-     * Indicates the number of resources ignored by Trusted Advisor due to
-     * unavailability of information.
+     * The number of AWS resources ignored by Trusted Advisor because
+     * information was unavailable.
      *
-     * @param resourcesIgnored Indicates the number of resources ignored by Trusted Advisor due to
-     *         unavailability of information.
+     * @param resourcesIgnored The number of AWS resources ignored by Trusted Advisor because
+     *         information was unavailable.
      */
     public void setResourcesIgnored(Long resourcesIgnored) {
         this.resourcesIgnored = resourcesIgnored;
     }
     
     /**
-     * Indicates the number of resources ignored by Trusted Advisor due to
-     * unavailability of information.
+     * The number of AWS resources ignored by Trusted Advisor because
+     * information was unavailable.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourcesIgnored Indicates the number of resources ignored by Trusted Advisor due to
-     *         unavailability of information.
+     * @param resourcesIgnored The number of AWS resources ignored by Trusted Advisor because
+     *         information was unavailable.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -167,35 +165,35 @@ public class TrustedAdvisorResourcesSummary implements Serializable {
     }
 
     /**
-     * Indicates whether the specified AWS resource has had its participation
-     * in Trusted Advisor checks suppressed.
+     * The number of AWS resources ignored by Trusted Advisor because they
+     * were marked as suppressed by the user.
      *
-     * @return Indicates whether the specified AWS resource has had its participation
-     *         in Trusted Advisor checks suppressed.
+     * @return The number of AWS resources ignored by Trusted Advisor because they
+     *         were marked as suppressed by the user.
      */
     public Long getResourcesSuppressed() {
         return resourcesSuppressed;
     }
     
     /**
-     * Indicates whether the specified AWS resource has had its participation
-     * in Trusted Advisor checks suppressed.
+     * The number of AWS resources ignored by Trusted Advisor because they
+     * were marked as suppressed by the user.
      *
-     * @param resourcesSuppressed Indicates whether the specified AWS resource has had its participation
-     *         in Trusted Advisor checks suppressed.
+     * @param resourcesSuppressed The number of AWS resources ignored by Trusted Advisor because they
+     *         were marked as suppressed by the user.
      */
     public void setResourcesSuppressed(Long resourcesSuppressed) {
         this.resourcesSuppressed = resourcesSuppressed;
     }
     
     /**
-     * Indicates whether the specified AWS resource has had its participation
-     * in Trusted Advisor checks suppressed.
+     * The number of AWS resources ignored by Trusted Advisor because they
+     * were marked as suppressed by the user.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourcesSuppressed Indicates whether the specified AWS resource has had its participation
-     *         in Trusted Advisor checks suppressed.
+     * @param resourcesSuppressed The number of AWS resources ignored by Trusted Advisor because they
+     *         were marked as suppressed by the user.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
