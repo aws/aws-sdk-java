@@ -17,60 +17,48 @@ package com.amazonaws.services.support.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The current refresh status of a Trusted Advisor check.
+ * </p>
  */
 public class RefreshTrustedAdvisorCheckResult implements Serializable {
 
     /**
-     * Returns the overall status of the <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
-     * title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a>
-     * call.
+     * The current refresh status for a check, including the amount of time
+     * until the check is eligible for refresh.
      */
     private TrustedAdvisorCheckRefreshStatus status;
 
     /**
-     * Returns the overall status of the <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
-     * title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a>
-     * call.
+     * The current refresh status for a check, including the amount of time
+     * until the check is eligible for refresh.
      *
-     * @return Returns the overall status of the <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
-     *         title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a>
-     *         call.
+     * @return The current refresh status for a check, including the amount of time
+     *         until the check is eligible for refresh.
      */
     public TrustedAdvisorCheckRefreshStatus getStatus() {
         return status;
     }
     
     /**
-     * Returns the overall status of the <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
-     * title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a>
-     * call.
+     * The current refresh status for a check, including the amount of time
+     * until the check is eligible for refresh.
      *
-     * @param status Returns the overall status of the <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
-     *         title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a>
-     *         call.
+     * @param status The current refresh status for a check, including the amount of time
+     *         until the check is eligible for refresh.
      */
     public void setStatus(TrustedAdvisorCheckRefreshStatus status) {
         this.status = status;
     }
     
     /**
-     * Returns the overall status of the <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
-     * title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a>
-     * call.
+     * The current refresh status for a check, including the amount of time
+     * until the check is eligible for refresh.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status Returns the overall status of the <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
-     *         title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a>
-     *         call.
+     * @param status The current refresh status for a check, including the amount of time
+     *         until the check is eligible for refresh.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

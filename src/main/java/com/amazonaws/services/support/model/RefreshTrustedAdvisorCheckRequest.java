@@ -21,45 +21,52 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#refreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest) RefreshTrustedAdvisorCheck operation}.
  * <p>
- * This action enables you to query the service to request a refresh for a specific Trusted Advisor check. Your request body contains a <i>CheckId</i>
- * for which you are querying. The response body contains a <a
- * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheckResult.html"> RefreshTrustedAdvisorCheckResult </a>
- * object containing <i>Status</i> and <i>TimeUntilNextRefresh</i> fields.
+ * Requests a refresh of the Trusted Advisor check that has the specified check ID. Check IDs can be obtained by calling DescribeTrustedAdvisorChecks.
  * </p>
+ * <p>
+ * The response contains a RefreshTrustedAdvisorCheckResult object, which contains these fields:
+ * </p>
+ * 
+ * <ul>
+ * <li> <b>Status.</b> The refresh status of the check: "none", "enqueued", "processing", "success", or "abandoned".</li>
+ * <li> <b>MillisUntilNextRefreshable.</b> The amount of time, in milliseconds, until the check is eligible for refresh.</li>
+ * <li> <b>CheckId.</b> The unique identifier for the check.</li>
+ * 
+ * </ul>
  *
  * @see com.amazonaws.services.support.AWSSupport#refreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest)
  */
 public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * 
+     * The unique identifier for the Trusted Advisor check.
      */
     private String checkId;
 
     /**
-     * 
+     * The unique identifier for the Trusted Advisor check.
      *
-     * @return 
+     * @return The unique identifier for the Trusted Advisor check.
      */
     public String getCheckId() {
         return checkId;
     }
     
     /**
-     * 
+     * The unique identifier for the Trusted Advisor check.
      *
-     * @param checkId 
+     * @param checkId The unique identifier for the Trusted Advisor check.
      */
     public void setCheckId(String checkId) {
         this.checkId = checkId;
     }
     
     /**
-     * 
+     * The unique identifier for the Trusted Advisor check.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param checkId 
+     * @param checkId The unique identifier for the Trusted Advisor check.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

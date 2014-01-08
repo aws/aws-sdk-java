@@ -18,53 +18,53 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Reports the estimated monthly savings and percentage of monthly savings determined by the Trusted Advisor check for your account.
+ * The estimated cost savings that might be realized if the recommended actions are taken.
  * </p>
  */
 public class TrustedAdvisorCostOptimizingSummary implements Serializable {
 
     /**
-     * Reports the estimated monthly savings determined by the Trusted
-     * Advisor check for your account.
+     * The estimated monthly savings that might be realized if the
+     * recommended actions are taken.
      */
     private Double estimatedMonthlySavings;
 
     /**
-     * Reports the estimated percentage of savings determined for your
-     * account by the Trusted Advisor check.
+     * The estimated percentage of savings that might be realized if the
+     * recommended actions are taken.
      */
     private Double estimatedPercentMonthlySavings;
 
     /**
-     * Reports the estimated monthly savings determined by the Trusted
-     * Advisor check for your account.
+     * The estimated monthly savings that might be realized if the
+     * recommended actions are taken.
      *
-     * @return Reports the estimated monthly savings determined by the Trusted
-     *         Advisor check for your account.
+     * @return The estimated monthly savings that might be realized if the
+     *         recommended actions are taken.
      */
     public Double getEstimatedMonthlySavings() {
         return estimatedMonthlySavings;
     }
     
     /**
-     * Reports the estimated monthly savings determined by the Trusted
-     * Advisor check for your account.
+     * The estimated monthly savings that might be realized if the
+     * recommended actions are taken.
      *
-     * @param estimatedMonthlySavings Reports the estimated monthly savings determined by the Trusted
-     *         Advisor check for your account.
+     * @param estimatedMonthlySavings The estimated monthly savings that might be realized if the
+     *         recommended actions are taken.
      */
     public void setEstimatedMonthlySavings(Double estimatedMonthlySavings) {
         this.estimatedMonthlySavings = estimatedMonthlySavings;
     }
     
     /**
-     * Reports the estimated monthly savings determined by the Trusted
-     * Advisor check for your account.
+     * The estimated monthly savings that might be realized if the
+     * recommended actions are taken.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param estimatedMonthlySavings Reports the estimated monthly savings determined by the Trusted
-     *         Advisor check for your account.
+     * @param estimatedMonthlySavings The estimated monthly savings that might be realized if the
+     *         recommended actions are taken.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,35 +75,35 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable {
     }
 
     /**
-     * Reports the estimated percentage of savings determined for your
-     * account by the Trusted Advisor check.
+     * The estimated percentage of savings that might be realized if the
+     * recommended actions are taken.
      *
-     * @return Reports the estimated percentage of savings determined for your
-     *         account by the Trusted Advisor check.
+     * @return The estimated percentage of savings that might be realized if the
+     *         recommended actions are taken.
      */
     public Double getEstimatedPercentMonthlySavings() {
         return estimatedPercentMonthlySavings;
     }
     
     /**
-     * Reports the estimated percentage of savings determined for your
-     * account by the Trusted Advisor check.
+     * The estimated percentage of savings that might be realized if the
+     * recommended actions are taken.
      *
-     * @param estimatedPercentMonthlySavings Reports the estimated percentage of savings determined for your
-     *         account by the Trusted Advisor check.
+     * @param estimatedPercentMonthlySavings The estimated percentage of savings that might be realized if the
+     *         recommended actions are taken.
      */
     public void setEstimatedPercentMonthlySavings(Double estimatedPercentMonthlySavings) {
         this.estimatedPercentMonthlySavings = estimatedPercentMonthlySavings;
     }
     
     /**
-     * Reports the estimated percentage of savings determined for your
-     * account by the Trusted Advisor check.
+     * The estimated percentage of savings that might be realized if the
+     * recommended actions are taken.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param estimatedPercentMonthlySavings Reports the estimated percentage of savings determined for your
-     *         account by the Trusted Advisor check.
+     * @param estimatedPercentMonthlySavings The estimated percentage of savings that might be realized if the
+     *         recommended actions are taken.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

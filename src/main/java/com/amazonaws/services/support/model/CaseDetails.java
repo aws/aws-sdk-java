@@ -18,144 +18,137 @@ import java.io.Serializable;
 
 /**
  * <p>
- * JSON-formatted object that contains the metadata for a support case. It is contained the response from a <a
- * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html"> DescribeCases </a> request. This structure contains the
- * following fields:
+ * A JSON-formatted object that contains the metadata for a support case. It is contained the response from a DescribeCases request. <b>CaseDetails</b>
+ * contains the following fields:
  * </p>
- * <ol> <li> <b>CaseID</b> . String that indicates the AWS Support caseID requested or returned in the call. The caseID is an alphanumeric string
- * formatted as shown in this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i> </li>
- * <li> <b>CategoryCode</b> . Specifies the category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to
- * <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"> DescribeServices </a> </li>
- * <li> <b>DisplayId</b> . String that identifies the case on pages in the AWS Support Center</li>
- * <li> <b>Language</b> . Specifies the ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English and
- * Japanese, for which the codes are <i>en</i> and <i>ja</i> , respectively. Language parameters must be passed explicitly for operations that take
- * them.</li>
- * <li> <b>RecentCommunications</b> . One ore more <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html">
- * Communication </a> data types. Subfields of these structures are Body, CaseId, SubmittedBy, and TimeCreated.</li>
- * <li> <b>NextToken</b> . Defines a resumption point for pagination.</li>
- * <li> <b>ServiceCode</b> . Identifier for the AWS service that corresponds to the service code defined in the call to <a
- * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html"> DescribeServices </a> </li>
- * <li> <b>SeverityCode. </b> Specifies the severity code assigned to the case. Contains one of the values returned by the call to <a
- * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"> DescribeSeverityLevels </a> </li>
- * <li> <b>Status</b> . Represents the status of your case in the AWS Support Center</li>
- * <li> <b>Subject</b> . Represents the subject line of the case.</li>
- * <li> <b>SubmittedBy</b> .Email address of the account that submitted the case.</li>
- * <li> <b>TimeCreated</b> .Time the case was created, using ISO 8601 format. </li>
+ * <ol> <li> <b>CaseID.</b> The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this
+ * example: case- <i>12345678910-2013-c4c1d2bf33c5cf47</i> .</li>
+ * <li> <b>CategoryCode.</b> The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to
+ * DescribeServices.</li>
+ * <li> <b>DisplayId.</b> The identifier for the case on pages in the AWS Support Center.</li>
+ * <li> <b>Language.</b> The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese
+ * ("ja"). Language parameters must be passed explicitly for operations that take them.</li>
+ * <li> <b>RecentCommunications.</b> One or more Communication objects. Fields of these objects are <code>Body</code> ,
+ * <code>CaseId</code> ,
+ * <code>SubmittedBy</code> , and <code>TimeCreated</code> .</li>
+ * <li> <b>NextToken.</b> A resumption point for pagination.</li>
+ * <li> <b>ServiceCode.</b> The identifier for the AWS service that corresponds to the service code defined in the call to DescribeServices.</li>
+ * <li> <b>SeverityCode. </b> The severity code assigned to the case. Contains one of the values returned by the call to DescribeSeverityLevels.</li>
+ * <li> <b>Status.</b> The status of the case in the AWS Support Center.</li>
+ * <li> <b>Subject.</b> The subject line of the case.</li>
+ * <li> <b>SubmittedBy.</b> The email address of the account that submitted the case.</li>
+ * <li> <b>TimeCreated.</b> The time the case was created, in ISO-8601 format.</li>
  * </ol>
  */
 public class CaseDetails implements Serializable {
 
     /**
-     * String that indicates the AWS Support caseID requested or returned in
-     * the call. The caseID is an alphanumeric string formatted as shown in
-     * this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID
+     * is an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
     private String caseId;
 
     /**
-     * Represents the Id value displayed on pages for the case in AWS Support
-     * Center. This is a numeric string.
+     * The ID displayed for the case in the AWS Support Center. This is a
+     * numeric string.
      */
     private String displayId;
 
     /**
-     * Represents the subject line for a support case in the AWS Support
-     * Center user interface.
+     * The subject line for the case in the AWS Support Center.
      */
     private String subject;
 
     /**
-     * Represents the status of a case submitted to AWS Support.
+     * The status of the case.
      */
     private String status;
 
     /**
-     * Code for the AWS service returned by the call to <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
-     * title="DescribeServices">DescribeServices</a>.
+     * The code for the AWS service returned by the call to
+     * <a>DescribeServices</a>.
      */
     private String serviceCode;
 
     /**
-     * Specifies the category of problem for the AWS Support case.
+     * The category of problem for the AWS Support case.
      */
     private String categoryCode;
 
     /**
-     * Code for the severity level returned by the call to <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
-     * title="DescribeSeverityLevels">DescribeSeverityLevels</a>.
+     * The code for the severity level returned by the call to
+     * <a>DescribeSeverityLevels</a>.
      */
     private String severityCode;
 
     /**
-     * Represents the email address of the account that submitted the case to
-     * support.
+     * The email address of the account that submitted the case.
      */
     private String submittedBy;
 
     /**
-     * Time that the case was case created in AWS Support Center.
+     * The time that the case was case created in the AWS Support Center.
      */
     private String timeCreated;
 
     /**
-     * Returns up to the five most recent communications between you and AWS
-     * Support Center. Includes a <i>nextToken</i> to retrieve the next set
-     * of communications.
+     * The five most recent communications between you and AWS Support
+     * Center. Includes a <code>nextToken</code> to retrieve the next set of
+     * communications.
      */
     private RecentCaseCommunications recentCommunications;
 
     /**
-     * List of email addresses that are copied in any communication about the
+     * The email addresses that receive copies of communication about the
      * case.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> ccEmailAddresses;
 
     /**
-     * Specifies the ISO 639-1 code for the language in which AWS provides
-     * support. AWS Support currently supports English and Japanese, for
-     * which the codes are <i>en</i> and <i>ja</i>, respectively. Language
-     * parameters must be passed explicitly for operations that take them.
+     * The ISO 639-1 code for the language in which AWS provides support. AWS
+     * Support currently supports English ("en") and Japanese ("ja").
+     * Language parameters must be passed explicitly for operations that take
+     * them.
      */
     private String language;
 
     /**
-     * String that indicates the AWS Support caseID requested or returned in
-     * the call. The caseID is an alphanumeric string formatted as shown in
-     * this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID
+     * is an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      *
-     * @return String that indicates the AWS Support caseID requested or returned in
-     *         the call. The caseID is an alphanumeric string formatted as shown in
-     *         this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @return The AWS Support case ID requested or returned in the call. The case ID
+     *         is an alphanumeric string formatted as shown in this example:
+     *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
     public String getCaseId() {
         return caseId;
     }
     
     /**
-     * String that indicates the AWS Support caseID requested or returned in
-     * the call. The caseID is an alphanumeric string formatted as shown in
-     * this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID
+     * is an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      *
-     * @param caseId String that indicates the AWS Support caseID requested or returned in
-     *         the call. The caseID is an alphanumeric string formatted as shown in
-     *         this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @param caseId The AWS Support case ID requested or returned in the call. The case ID
+     *         is an alphanumeric string formatted as shown in this example:
+     *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
     public void setCaseId(String caseId) {
         this.caseId = caseId;
     }
     
     /**
-     * String that indicates the AWS Support caseID requested or returned in
-     * the call. The caseID is an alphanumeric string formatted as shown in
-     * this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID
+     * is an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param caseId String that indicates the AWS Support caseID requested or returned in
-     *         the call. The caseID is an alphanumeric string formatted as shown in
-     *         this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @param caseId The AWS Support case ID requested or returned in the call. The case ID
+     *         is an alphanumeric string formatted as shown in this example:
+     *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -166,35 +159,35 @@ public class CaseDetails implements Serializable {
     }
 
     /**
-     * Represents the Id value displayed on pages for the case in AWS Support
-     * Center. This is a numeric string.
+     * The ID displayed for the case in the AWS Support Center. This is a
+     * numeric string.
      *
-     * @return Represents the Id value displayed on pages for the case in AWS Support
-     *         Center. This is a numeric string.
+     * @return The ID displayed for the case in the AWS Support Center. This is a
+     *         numeric string.
      */
     public String getDisplayId() {
         return displayId;
     }
     
     /**
-     * Represents the Id value displayed on pages for the case in AWS Support
-     * Center. This is a numeric string.
+     * The ID displayed for the case in the AWS Support Center. This is a
+     * numeric string.
      *
-     * @param displayId Represents the Id value displayed on pages for the case in AWS Support
-     *         Center. This is a numeric string.
+     * @param displayId The ID displayed for the case in the AWS Support Center. This is a
+     *         numeric string.
      */
     public void setDisplayId(String displayId) {
         this.displayId = displayId;
     }
     
     /**
-     * Represents the Id value displayed on pages for the case in AWS Support
-     * Center. This is a numeric string.
+     * The ID displayed for the case in the AWS Support Center. This is a
+     * numeric string.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param displayId Represents the Id value displayed on pages for the case in AWS Support
-     *         Center. This is a numeric string.
+     * @param displayId The ID displayed for the case in the AWS Support Center. This is a
+     *         numeric string.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -205,35 +198,29 @@ public class CaseDetails implements Serializable {
     }
 
     /**
-     * Represents the subject line for a support case in the AWS Support
-     * Center user interface.
+     * The subject line for the case in the AWS Support Center.
      *
-     * @return Represents the subject line for a support case in the AWS Support
-     *         Center user interface.
+     * @return The subject line for the case in the AWS Support Center.
      */
     public String getSubject() {
         return subject;
     }
     
     /**
-     * Represents the subject line for a support case in the AWS Support
-     * Center user interface.
+     * The subject line for the case in the AWS Support Center.
      *
-     * @param subject Represents the subject line for a support case in the AWS Support
-     *         Center user interface.
+     * @param subject The subject line for the case in the AWS Support Center.
      */
     public void setSubject(String subject) {
         this.subject = subject;
     }
     
     /**
-     * Represents the subject line for a support case in the AWS Support
-     * Center user interface.
+     * The subject line for the case in the AWS Support Center.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subject Represents the subject line for a support case in the AWS Support
-     *         Center user interface.
+     * @param subject The subject line for the case in the AWS Support Center.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -244,29 +231,29 @@ public class CaseDetails implements Serializable {
     }
 
     /**
-     * Represents the status of a case submitted to AWS Support.
+     * The status of the case.
      *
-     * @return Represents the status of a case submitted to AWS Support.
+     * @return The status of the case.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * Represents the status of a case submitted to AWS Support.
+     * The status of the case.
      *
-     * @param status Represents the status of a case submitted to AWS Support.
+     * @param status The status of the case.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * Represents the status of a case submitted to AWS Support.
+     * The status of the case.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status Represents the status of a case submitted to AWS Support.
+     * @param status The status of the case.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -277,41 +264,35 @@ public class CaseDetails implements Serializable {
     }
 
     /**
-     * Code for the AWS service returned by the call to <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
-     * title="DescribeServices">DescribeServices</a>.
+     * The code for the AWS service returned by the call to
+     * <a>DescribeServices</a>.
      *
-     * @return Code for the AWS service returned by the call to <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
-     *         title="DescribeServices">DescribeServices</a>.
+     * @return The code for the AWS service returned by the call to
+     *         <a>DescribeServices</a>.
      */
     public String getServiceCode() {
         return serviceCode;
     }
     
     /**
-     * Code for the AWS service returned by the call to <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
-     * title="DescribeServices">DescribeServices</a>.
+     * The code for the AWS service returned by the call to
+     * <a>DescribeServices</a>.
      *
-     * @param serviceCode Code for the AWS service returned by the call to <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
-     *         title="DescribeServices">DescribeServices</a>.
+     * @param serviceCode The code for the AWS service returned by the call to
+     *         <a>DescribeServices</a>.
      */
     public void setServiceCode(String serviceCode) {
         this.serviceCode = serviceCode;
     }
     
     /**
-     * Code for the AWS service returned by the call to <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
-     * title="DescribeServices">DescribeServices</a>.
+     * The code for the AWS service returned by the call to
+     * <a>DescribeServices</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param serviceCode Code for the AWS service returned by the call to <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
-     *         title="DescribeServices">DescribeServices</a>.
+     * @param serviceCode The code for the AWS service returned by the call to
+     *         <a>DescribeServices</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -322,29 +303,29 @@ public class CaseDetails implements Serializable {
     }
 
     /**
-     * Specifies the category of problem for the AWS Support case.
+     * The category of problem for the AWS Support case.
      *
-     * @return Specifies the category of problem for the AWS Support case.
+     * @return The category of problem for the AWS Support case.
      */
     public String getCategoryCode() {
         return categoryCode;
     }
     
     /**
-     * Specifies the category of problem for the AWS Support case.
+     * The category of problem for the AWS Support case.
      *
-     * @param categoryCode Specifies the category of problem for the AWS Support case.
+     * @param categoryCode The category of problem for the AWS Support case.
      */
     public void setCategoryCode(String categoryCode) {
         this.categoryCode = categoryCode;
     }
     
     /**
-     * Specifies the category of problem for the AWS Support case.
+     * The category of problem for the AWS Support case.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param categoryCode Specifies the category of problem for the AWS Support case.
+     * @param categoryCode The category of problem for the AWS Support case.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -355,41 +336,35 @@ public class CaseDetails implements Serializable {
     }
 
     /**
-     * Code for the severity level returned by the call to <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
-     * title="DescribeSeverityLevels">DescribeSeverityLevels</a>.
+     * The code for the severity level returned by the call to
+     * <a>DescribeSeverityLevels</a>.
      *
-     * @return Code for the severity level returned by the call to <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
-     *         title="DescribeSeverityLevels">DescribeSeverityLevels</a>.
+     * @return The code for the severity level returned by the call to
+     *         <a>DescribeSeverityLevels</a>.
      */
     public String getSeverityCode() {
         return severityCode;
     }
     
     /**
-     * Code for the severity level returned by the call to <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
-     * title="DescribeSeverityLevels">DescribeSeverityLevels</a>.
+     * The code for the severity level returned by the call to
+     * <a>DescribeSeverityLevels</a>.
      *
-     * @param severityCode Code for the severity level returned by the call to <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
-     *         title="DescribeSeverityLevels">DescribeSeverityLevels</a>.
+     * @param severityCode The code for the severity level returned by the call to
+     *         <a>DescribeSeverityLevels</a>.
      */
     public void setSeverityCode(String severityCode) {
         this.severityCode = severityCode;
     }
     
     /**
-     * Code for the severity level returned by the call to <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
-     * title="DescribeSeverityLevels">DescribeSeverityLevels</a>.
+     * The code for the severity level returned by the call to
+     * <a>DescribeSeverityLevels</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param severityCode Code for the severity level returned by the call to <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
-     *         title="DescribeSeverityLevels">DescribeSeverityLevels</a>.
+     * @param severityCode The code for the severity level returned by the call to
+     *         <a>DescribeSeverityLevels</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -400,35 +375,29 @@ public class CaseDetails implements Serializable {
     }
 
     /**
-     * Represents the email address of the account that submitted the case to
-     * support.
+     * The email address of the account that submitted the case.
      *
-     * @return Represents the email address of the account that submitted the case to
-     *         support.
+     * @return The email address of the account that submitted the case.
      */
     public String getSubmittedBy() {
         return submittedBy;
     }
     
     /**
-     * Represents the email address of the account that submitted the case to
-     * support.
+     * The email address of the account that submitted the case.
      *
-     * @param submittedBy Represents the email address of the account that submitted the case to
-     *         support.
+     * @param submittedBy The email address of the account that submitted the case.
      */
     public void setSubmittedBy(String submittedBy) {
         this.submittedBy = submittedBy;
     }
     
     /**
-     * Represents the email address of the account that submitted the case to
-     * support.
+     * The email address of the account that submitted the case.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param submittedBy Represents the email address of the account that submitted the case to
-     *         support.
+     * @param submittedBy The email address of the account that submitted the case.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -439,29 +408,29 @@ public class CaseDetails implements Serializable {
     }
 
     /**
-     * Time that the case was case created in AWS Support Center.
+     * The time that the case was case created in the AWS Support Center.
      *
-     * @return Time that the case was case created in AWS Support Center.
+     * @return The time that the case was case created in the AWS Support Center.
      */
     public String getTimeCreated() {
         return timeCreated;
     }
     
     /**
-     * Time that the case was case created in AWS Support Center.
+     * The time that the case was case created in the AWS Support Center.
      *
-     * @param timeCreated Time that the case was case created in AWS Support Center.
+     * @param timeCreated The time that the case was case created in the AWS Support Center.
      */
     public void setTimeCreated(String timeCreated) {
         this.timeCreated = timeCreated;
     }
     
     /**
-     * Time that the case was case created in AWS Support Center.
+     * The time that the case was case created in the AWS Support Center.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param timeCreated Time that the case was case created in AWS Support Center.
+     * @param timeCreated The time that the case was case created in the AWS Support Center.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -472,41 +441,41 @@ public class CaseDetails implements Serializable {
     }
 
     /**
-     * Returns up to the five most recent communications between you and AWS
-     * Support Center. Includes a <i>nextToken</i> to retrieve the next set
-     * of communications.
+     * The five most recent communications between you and AWS Support
+     * Center. Includes a <code>nextToken</code> to retrieve the next set of
+     * communications.
      *
-     * @return Returns up to the five most recent communications between you and AWS
-     *         Support Center. Includes a <i>nextToken</i> to retrieve the next set
-     *         of communications.
+     * @return The five most recent communications between you and AWS Support
+     *         Center. Includes a <code>nextToken</code> to retrieve the next set of
+     *         communications.
      */
     public RecentCaseCommunications getRecentCommunications() {
         return recentCommunications;
     }
     
     /**
-     * Returns up to the five most recent communications between you and AWS
-     * Support Center. Includes a <i>nextToken</i> to retrieve the next set
-     * of communications.
+     * The five most recent communications between you and AWS Support
+     * Center. Includes a <code>nextToken</code> to retrieve the next set of
+     * communications.
      *
-     * @param recentCommunications Returns up to the five most recent communications between you and AWS
-     *         Support Center. Includes a <i>nextToken</i> to retrieve the next set
-     *         of communications.
+     * @param recentCommunications The five most recent communications between you and AWS Support
+     *         Center. Includes a <code>nextToken</code> to retrieve the next set of
+     *         communications.
      */
     public void setRecentCommunications(RecentCaseCommunications recentCommunications) {
         this.recentCommunications = recentCommunications;
     }
     
     /**
-     * Returns up to the five most recent communications between you and AWS
-     * Support Center. Includes a <i>nextToken</i> to retrieve the next set
-     * of communications.
+     * The five most recent communications between you and AWS Support
+     * Center. Includes a <code>nextToken</code> to retrieve the next set of
+     * communications.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param recentCommunications Returns up to the five most recent communications between you and AWS
-     *         Support Center. Includes a <i>nextToken</i> to retrieve the next set
-     *         of communications.
+     * @param recentCommunications The five most recent communications between you and AWS Support
+     *         Center. Includes a <code>nextToken</code> to retrieve the next set of
+     *         communications.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -517,10 +486,10 @@ public class CaseDetails implements Serializable {
     }
 
     /**
-     * List of email addresses that are copied in any communication about the
+     * The email addresses that receive copies of communication about the
      * case.
      *
-     * @return List of email addresses that are copied in any communication about the
+     * @return The email addresses that receive copies of communication about the
      *         case.
      */
     public java.util.List<String> getCcEmailAddresses() {
@@ -532,10 +501,10 @@ public class CaseDetails implements Serializable {
     }
     
     /**
-     * List of email addresses that are copied in any communication about the
+     * The email addresses that receive copies of communication about the
      * case.
      *
-     * @param ccEmailAddresses List of email addresses that are copied in any communication about the
+     * @param ccEmailAddresses The email addresses that receive copies of communication about the
      *         case.
      */
     public void setCcEmailAddresses(java.util.Collection<String> ccEmailAddresses) {
@@ -549,12 +518,12 @@ public class CaseDetails implements Serializable {
     }
     
     /**
-     * List of email addresses that are copied in any communication about the
+     * The email addresses that receive copies of communication about the
      * case.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ccEmailAddresses List of email addresses that are copied in any communication about the
+     * @param ccEmailAddresses The email addresses that receive copies of communication about the
      *         case.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -569,12 +538,12 @@ public class CaseDetails implements Serializable {
     }
     
     /**
-     * List of email addresses that are copied in any communication about the
+     * The email addresses that receive copies of communication about the
      * case.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ccEmailAddresses List of email addresses that are copied in any communication about the
+     * @param ccEmailAddresses The email addresses that receive copies of communication about the
      *         case.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -593,47 +562,47 @@ public class CaseDetails implements Serializable {
     }
 
     /**
-     * Specifies the ISO 639-1 code for the language in which AWS provides
-     * support. AWS Support currently supports English and Japanese, for
-     * which the codes are <i>en</i> and <i>ja</i>, respectively. Language
-     * parameters must be passed explicitly for operations that take them.
+     * The ISO 639-1 code for the language in which AWS provides support. AWS
+     * Support currently supports English ("en") and Japanese ("ja").
+     * Language parameters must be passed explicitly for operations that take
+     * them.
      *
-     * @return Specifies the ISO 639-1 code for the language in which AWS provides
-     *         support. AWS Support currently supports English and Japanese, for
-     *         which the codes are <i>en</i> and <i>ja</i>, respectively. Language
-     *         parameters must be passed explicitly for operations that take them.
+     * @return The ISO 639-1 code for the language in which AWS provides support. AWS
+     *         Support currently supports English ("en") and Japanese ("ja").
+     *         Language parameters must be passed explicitly for operations that take
+     *         them.
      */
     public String getLanguage() {
         return language;
     }
     
     /**
-     * Specifies the ISO 639-1 code for the language in which AWS provides
-     * support. AWS Support currently supports English and Japanese, for
-     * which the codes are <i>en</i> and <i>ja</i>, respectively. Language
-     * parameters must be passed explicitly for operations that take them.
+     * The ISO 639-1 code for the language in which AWS provides support. AWS
+     * Support currently supports English ("en") and Japanese ("ja").
+     * Language parameters must be passed explicitly for operations that take
+     * them.
      *
-     * @param language Specifies the ISO 639-1 code for the language in which AWS provides
-     *         support. AWS Support currently supports English and Japanese, for
-     *         which the codes are <i>en</i> and <i>ja</i>, respectively. Language
-     *         parameters must be passed explicitly for operations that take them.
+     * @param language The ISO 639-1 code for the language in which AWS provides support. AWS
+     *         Support currently supports English ("en") and Japanese ("ja").
+     *         Language parameters must be passed explicitly for operations that take
+     *         them.
      */
     public void setLanguage(String language) {
         this.language = language;
     }
     
     /**
-     * Specifies the ISO 639-1 code for the language in which AWS provides
-     * support. AWS Support currently supports English and Japanese, for
-     * which the codes are <i>en</i> and <i>ja</i>, respectively. Language
-     * parameters must be passed explicitly for operations that take them.
+     * The ISO 639-1 code for the language in which AWS provides support. AWS
+     * Support currently supports English ("en") and Japanese ("ja").
+     * Language parameters must be passed explicitly for operations that take
+     * them.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param language Specifies the ISO 639-1 code for the language in which AWS provides
-     *         support. AWS Support currently supports English and Japanese, for
-     *         which the codes are <i>en</i> and <i>ja</i>, respectively. Language
-     *         parameters must be passed explicitly for operations that take them.
+     * @param language The ISO 639-1 code for the language in which AWS provides support. AWS
+     *         Support currently supports English ("en") and Japanese ("ja").
+     *         Language parameters must be passed explicitly for operations that take
+     *         them.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

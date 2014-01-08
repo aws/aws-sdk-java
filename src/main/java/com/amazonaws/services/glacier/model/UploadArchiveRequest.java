@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * You must provide a SHA256 tree hash of the data you are uploading. For information about computing a SHA256 tree hash, see <a
- * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/checksum-calculations.html"> Computing Checksums </a> .
+ * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html"> Computing Checksums </a> .
  * </p>
  * <p>
  * You can optionally specify an archive description of up to 1,024 printable ASCII characters. You can get the archive description when you either
@@ -46,14 +46,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any
  * permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
- * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access
- * Management (IAM) </a> .
+ * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management
+ * (IAM) </a> .
  * </p>
  * <p>
- * For conceptual information and underlying REST API, go to <a
- * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/uploading-an-archive.html"> Uploading an Archive in Amazon Glacier </a> and <a
- * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/api-archive-post.html"> Upload Archive </a> in the <i>Amazon Glacier Developer
- * Guide</i> .
+ * For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html">
+ * Uploading an Archive in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html"> Upload Archive
+ * </a> in the <i>Amazon Glacier Developer Guide</i> .
  * 
  * </p>
  *

@@ -21,13 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest) DescribeTrustedAdvisorCheckSummaries operation}.
  * <p>
- * This action enables you to get the latest summaries for Trusted Advisor checks that you specify in your request. You submit the list of Trusted
- * Advisor checks for which you want summaries. You obtain these <i>CheckIds</i> by submitting a <a
- * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"> DescribeTrustedAdvisorChecks </a> request.
+ * Returns the summaries of the results of the Trusted Advisor checks that have the specified check IDs. Check IDs can be obtained by calling
+ * DescribeTrustedAdvisorChecks.
  * </p>
  * <p>
- * The response body contains an array of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckSummary.html">
- * TrustedAdvisorCheckSummary </a> objects.
+ * The response contains an array of TrustedAdvisorCheckSummary objects.
  * </p>
  *
  * @see com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest)
@@ -35,14 +33,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Unique identifier for a Trusted Advisor check.
+     * The IDs of the Trusted Advisor checks.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> checkIds;
 
     /**
-     * Unique identifier for a Trusted Advisor check.
+     * The IDs of the Trusted Advisor checks.
      *
-     * @return Unique identifier for a Trusted Advisor check.
+     * @return The IDs of the Trusted Advisor checks.
      */
     public java.util.List<String> getCheckIds() {
         if (checkIds == null) {
@@ -53,9 +51,9 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServic
     }
     
     /**
-     * Unique identifier for a Trusted Advisor check.
+     * The IDs of the Trusted Advisor checks.
      *
-     * @param checkIds Unique identifier for a Trusted Advisor check.
+     * @param checkIds The IDs of the Trusted Advisor checks.
      */
     public void setCheckIds(java.util.Collection<String> checkIds) {
         if (checkIds == null) {
@@ -68,11 +66,11 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServic
     }
     
     /**
-     * Unique identifier for a Trusted Advisor check.
+     * The IDs of the Trusted Advisor checks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param checkIds Unique identifier for a Trusted Advisor check.
+     * @param checkIds The IDs of the Trusted Advisor checks.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -86,11 +84,11 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServic
     }
     
     /**
-     * Unique identifier for a Trusted Advisor check.
+     * The IDs of the Trusted Advisor checks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param checkIds Unique identifier for a Trusted Advisor check.
+     * @param checkIds The IDs of the Trusted Advisor checks.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

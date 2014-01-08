@@ -18,32 +18,25 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns an array of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"> CaseDetails </a> objects and a
- * <i>NextToken</i> that defines a point for pagination in the result set.
+ * Returns an array of CaseDetails objects and a <code>NextToken</code> that defines a point for pagination in the result set.
  * </p>
  */
 public class DescribeCasesResult implements Serializable {
 
     /**
-     * Array of <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
-     * title="CaseDetails">CaseDetails</a> objects.
+     * The details for the cases that match the request.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<CaseDetails> cases;
 
     /**
-     * Defines a resumption point for pagination.
+     * A resumption point for pagination.
      */
     private String nextToken;
 
     /**
-     * Array of <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
-     * title="CaseDetails">CaseDetails</a> objects.
+     * The details for the cases that match the request.
      *
-     * @return Array of <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
-     *         title="CaseDetails">CaseDetails</a> objects.
+     * @return The details for the cases that match the request.
      */
     public java.util.List<CaseDetails> getCases() {
         if (cases == null) {
@@ -54,13 +47,9 @@ public class DescribeCasesResult implements Serializable {
     }
     
     /**
-     * Array of <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
-     * title="CaseDetails">CaseDetails</a> objects.
+     * The details for the cases that match the request.
      *
-     * @param cases Array of <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
-     *         title="CaseDetails">CaseDetails</a> objects.
+     * @param cases The details for the cases that match the request.
      */
     public void setCases(java.util.Collection<CaseDetails> cases) {
         if (cases == null) {
@@ -73,15 +62,11 @@ public class DescribeCasesResult implements Serializable {
     }
     
     /**
-     * Array of <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
-     * title="CaseDetails">CaseDetails</a> objects.
+     * The details for the cases that match the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cases Array of <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
-     *         title="CaseDetails">CaseDetails</a> objects.
+     * @param cases The details for the cases that match the request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -95,15 +80,11 @@ public class DescribeCasesResult implements Serializable {
     }
     
     /**
-     * Array of <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
-     * title="CaseDetails">CaseDetails</a> objects.
+     * The details for the cases that match the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cases Array of <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
-     *         title="CaseDetails">CaseDetails</a> objects.
+     * @param cases The details for the cases that match the request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -121,29 +102,29 @@ public class DescribeCasesResult implements Serializable {
     }
 
     /**
-     * Defines a resumption point for pagination.
+     * A resumption point for pagination.
      *
-     * @return Defines a resumption point for pagination.
+     * @return A resumption point for pagination.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * Defines a resumption point for pagination.
+     * A resumption point for pagination.
      *
-     * @param nextToken Defines a resumption point for pagination.
+     * @param nextToken A resumption point for pagination.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * Defines a resumption point for pagination.
+     * A resumption point for pagination.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken Defines a resumption point for pagination.
+     * @param nextToken A resumption point for pagination.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

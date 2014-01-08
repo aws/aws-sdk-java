@@ -18,55 +18,47 @@ import java.io.Serializable;
 
 /**
  * <p>
- * JSON-formatted child object of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html">
- * TrustedAdvisorCheckResult </a> objects.
+ * The container for summary information that relates to the category of the Trusted Advisor check.
  * </p>
  */
 public class TrustedAdvisorCategorySpecificSummary implements Serializable {
 
     /**
-     * Corresponds to the <i>Cost Optimizing</i> tab on the AWS Support
-     * Center Trusted Advisor page. This field is only available to checks in
-     * the Cost Optimizing category.
+     * The summary information about cost savings for a Trusted Advisor check
+     * that is in the Cost Optimizing category.
      */
     private TrustedAdvisorCostOptimizingSummary costOptimizing;
 
     /**
-     * Corresponds to the <i>Cost Optimizing</i> tab on the AWS Support
-     * Center Trusted Advisor page. This field is only available to checks in
-     * the Cost Optimizing category.
+     * The summary information about cost savings for a Trusted Advisor check
+     * that is in the Cost Optimizing category.
      *
-     * @return Corresponds to the <i>Cost Optimizing</i> tab on the AWS Support
-     *         Center Trusted Advisor page. This field is only available to checks in
-     *         the Cost Optimizing category.
+     * @return The summary information about cost savings for a Trusted Advisor check
+     *         that is in the Cost Optimizing category.
      */
     public TrustedAdvisorCostOptimizingSummary getCostOptimizing() {
         return costOptimizing;
     }
     
     /**
-     * Corresponds to the <i>Cost Optimizing</i> tab on the AWS Support
-     * Center Trusted Advisor page. This field is only available to checks in
-     * the Cost Optimizing category.
+     * The summary information about cost savings for a Trusted Advisor check
+     * that is in the Cost Optimizing category.
      *
-     * @param costOptimizing Corresponds to the <i>Cost Optimizing</i> tab on the AWS Support
-     *         Center Trusted Advisor page. This field is only available to checks in
-     *         the Cost Optimizing category.
+     * @param costOptimizing The summary information about cost savings for a Trusted Advisor check
+     *         that is in the Cost Optimizing category.
      */
     public void setCostOptimizing(TrustedAdvisorCostOptimizingSummary costOptimizing) {
         this.costOptimizing = costOptimizing;
     }
     
     /**
-     * Corresponds to the <i>Cost Optimizing</i> tab on the AWS Support
-     * Center Trusted Advisor page. This field is only available to checks in
-     * the Cost Optimizing category.
+     * The summary information about cost savings for a Trusted Advisor check
+     * that is in the Cost Optimizing category.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param costOptimizing Corresponds to the <i>Cost Optimizing</i> tab on the AWS Support
-     *         Center Trusted Advisor page. This field is only available to checks in
-     *         the Cost Optimizing category.
+     * @param costOptimizing The summary information about cost savings for a Trusted Advisor check
+     *         that is in the Cost Optimizing category.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

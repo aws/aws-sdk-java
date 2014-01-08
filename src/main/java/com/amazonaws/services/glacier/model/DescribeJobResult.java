@@ -106,13 +106,36 @@ public class DescribeJobResult implements Serializable {
 
     /**
      * For an ArchiveRetrieval job, it is the checksum of the archive.
-     * Otherwise, the value is null.
+     * Otherwise, the value is null. <p> The SHA256 tree hash value for the
+     * requested range of an archive. If the Initiate a Job request for an
+     * archive specified a tree-hash aligned range, then this field returns a
+     * value. <p> For the specific case when the whole archive is retrieved,
+     * this value is the same as the ArchiveSHA256TreeHash value. <p> This
+     * field is null in the following situations: <ul> <li><p>Archive
+     * retrieval jobs that specify a range that is not tree-hash
+     * aligned.</li> </ul> <ul> <li><p>Archival jobs that specify a range
+     * that is equal to the whole archive and the job status is
+     * InProgress.</li> </ul> <ul> <li><p>Inventory jobs.</li> </ul>
      */
     private String sHA256TreeHash;
 
+    /**
+     * The SHA256 tree hash of the entire archive for an archive retrieval.
+     * For inventory retrieval jobs, this field is null.
+     */
     private String archiveSHA256TreeHash;
 
+    /**
+     * The retrieved byte range for archive retrieval jobs in the form
+     * "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was specified
+     * in the archive retrieval, then the whole archive is retrieved and
+     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size
+     * of the archive minus 1. For inventory retrieval jobs this field is
+     * null.
+     */
     private String retrievalByteRange;
+
+    private InventoryRetrievalJobDescription inventoryRetrievalParameters;
 
     /**
      * An opaque string that identifies an Amazon Glacier job.
@@ -716,10 +739,28 @@ public class DescribeJobResult implements Serializable {
 
     /**
      * For an ArchiveRetrieval job, it is the checksum of the archive.
-     * Otherwise, the value is null.
+     * Otherwise, the value is null. <p> The SHA256 tree hash value for the
+     * requested range of an archive. If the Initiate a Job request for an
+     * archive specified a tree-hash aligned range, then this field returns a
+     * value. <p> For the specific case when the whole archive is retrieved,
+     * this value is the same as the ArchiveSHA256TreeHash value. <p> This
+     * field is null in the following situations: <ul> <li><p>Archive
+     * retrieval jobs that specify a range that is not tree-hash
+     * aligned.</li> </ul> <ul> <li><p>Archival jobs that specify a range
+     * that is equal to the whole archive and the job status is
+     * InProgress.</li> </ul> <ul> <li><p>Inventory jobs.</li> </ul>
      *
      * @return For an ArchiveRetrieval job, it is the checksum of the archive.
-     *         Otherwise, the value is null.
+     *         Otherwise, the value is null. <p> The SHA256 tree hash value for the
+     *         requested range of an archive. If the Initiate a Job request for an
+     *         archive specified a tree-hash aligned range, then this field returns a
+     *         value. <p> For the specific case when the whole archive is retrieved,
+     *         this value is the same as the ArchiveSHA256TreeHash value. <p> This
+     *         field is null in the following situations: <ul> <li><p>Archive
+     *         retrieval jobs that specify a range that is not tree-hash
+     *         aligned.</li> </ul> <ul> <li><p>Archival jobs that specify a range
+     *         that is equal to the whole archive and the job status is
+     *         InProgress.</li> </ul> <ul> <li><p>Inventory jobs.</li> </ul>
      */
     public String getSHA256TreeHash() {
         return sHA256TreeHash;
@@ -727,10 +768,28 @@ public class DescribeJobResult implements Serializable {
     
     /**
      * For an ArchiveRetrieval job, it is the checksum of the archive.
-     * Otherwise, the value is null.
+     * Otherwise, the value is null. <p> The SHA256 tree hash value for the
+     * requested range of an archive. If the Initiate a Job request for an
+     * archive specified a tree-hash aligned range, then this field returns a
+     * value. <p> For the specific case when the whole archive is retrieved,
+     * this value is the same as the ArchiveSHA256TreeHash value. <p> This
+     * field is null in the following situations: <ul> <li><p>Archive
+     * retrieval jobs that specify a range that is not tree-hash
+     * aligned.</li> </ul> <ul> <li><p>Archival jobs that specify a range
+     * that is equal to the whole archive and the job status is
+     * InProgress.</li> </ul> <ul> <li><p>Inventory jobs.</li> </ul>
      *
      * @param sHA256TreeHash For an ArchiveRetrieval job, it is the checksum of the archive.
-     *         Otherwise, the value is null.
+     *         Otherwise, the value is null. <p> The SHA256 tree hash value for the
+     *         requested range of an archive. If the Initiate a Job request for an
+     *         archive specified a tree-hash aligned range, then this field returns a
+     *         value. <p> For the specific case when the whole archive is retrieved,
+     *         this value is the same as the ArchiveSHA256TreeHash value. <p> This
+     *         field is null in the following situations: <ul> <li><p>Archive
+     *         retrieval jobs that specify a range that is not tree-hash
+     *         aligned.</li> </ul> <ul> <li><p>Archival jobs that specify a range
+     *         that is equal to the whole archive and the job status is
+     *         InProgress.</li> </ul> <ul> <li><p>Inventory jobs.</li> </ul>
      */
     public void setSHA256TreeHash(String sHA256TreeHash) {
         this.sHA256TreeHash = sHA256TreeHash;
@@ -738,12 +797,30 @@ public class DescribeJobResult implements Serializable {
     
     /**
      * For an ArchiveRetrieval job, it is the checksum of the archive.
-     * Otherwise, the value is null.
+     * Otherwise, the value is null. <p> The SHA256 tree hash value for the
+     * requested range of an archive. If the Initiate a Job request for an
+     * archive specified a tree-hash aligned range, then this field returns a
+     * value. <p> For the specific case when the whole archive is retrieved,
+     * this value is the same as the ArchiveSHA256TreeHash value. <p> This
+     * field is null in the following situations: <ul> <li><p>Archive
+     * retrieval jobs that specify a range that is not tree-hash
+     * aligned.</li> </ul> <ul> <li><p>Archival jobs that specify a range
+     * that is equal to the whole archive and the job status is
+     * InProgress.</li> </ul> <ul> <li><p>Inventory jobs.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sHA256TreeHash For an ArchiveRetrieval job, it is the checksum of the archive.
-     *         Otherwise, the value is null.
+     *         Otherwise, the value is null. <p> The SHA256 tree hash value for the
+     *         requested range of an archive. If the Initiate a Job request for an
+     *         archive specified a tree-hash aligned range, then this field returns a
+     *         value. <p> For the specific case when the whole archive is retrieved,
+     *         this value is the same as the ArchiveSHA256TreeHash value. <p> This
+     *         field is null in the following situations: <ul> <li><p>Archive
+     *         retrieval jobs that specify a range that is not tree-hash
+     *         aligned.</li> </ul> <ul> <li><p>Archival jobs that specify a range
+     *         that is equal to the whole archive and the job status is
+     *         InProgress.</li> </ul> <ul> <li><p>Inventory jobs.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -754,30 +831,35 @@ public class DescribeJobResult implements Serializable {
     }
 
     /**
-     * Returns the value of the ArchiveSHA256TreeHash property for this
-     * object.
+     * The SHA256 tree hash of the entire archive for an archive retrieval.
+     * For inventory retrieval jobs, this field is null.
      *
-     * @return The value of the ArchiveSHA256TreeHash property for this object.
+     * @return The SHA256 tree hash of the entire archive for an archive retrieval.
+     *         For inventory retrieval jobs, this field is null.
      */
     public String getArchiveSHA256TreeHash() {
         return archiveSHA256TreeHash;
     }
     
     /**
-     * Sets the value of the ArchiveSHA256TreeHash property for this object.
+     * The SHA256 tree hash of the entire archive for an archive retrieval.
+     * For inventory retrieval jobs, this field is null.
      *
-     * @param archiveSHA256TreeHash The new value for the ArchiveSHA256TreeHash property for this object.
+     * @param archiveSHA256TreeHash The SHA256 tree hash of the entire archive for an archive retrieval.
+     *         For inventory retrieval jobs, this field is null.
      */
     public void setArchiveSHA256TreeHash(String archiveSHA256TreeHash) {
         this.archiveSHA256TreeHash = archiveSHA256TreeHash;
     }
     
     /**
-     * Sets the value of the ArchiveSHA256TreeHash property for this object.
+     * The SHA256 tree hash of the entire archive for an archive retrieval.
+     * For inventory retrieval jobs, this field is null.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param archiveSHA256TreeHash The new value for the ArchiveSHA256TreeHash property for this object.
+     * @param archiveSHA256TreeHash The SHA256 tree hash of the entire archive for an archive retrieval.
+     *         For inventory retrieval jobs, this field is null.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -788,35 +870,104 @@ public class DescribeJobResult implements Serializable {
     }
 
     /**
-     * Returns the value of the RetrievalByteRange property for this object.
+     * The retrieved byte range for archive retrieval jobs in the form
+     * "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was specified
+     * in the archive retrieval, then the whole archive is retrieved and
+     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size
+     * of the archive minus 1. For inventory retrieval jobs this field is
+     * null.
      *
-     * @return The value of the RetrievalByteRange property for this object.
+     * @return The retrieved byte range for archive retrieval jobs in the form
+     *         "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was specified
+     *         in the archive retrieval, then the whole archive is retrieved and
+     *         <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size
+     *         of the archive minus 1. For inventory retrieval jobs this field is
+     *         null.
      */
     public String getRetrievalByteRange() {
         return retrievalByteRange;
     }
     
     /**
-     * Sets the value of the RetrievalByteRange property for this object.
+     * The retrieved byte range for archive retrieval jobs in the form
+     * "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was specified
+     * in the archive retrieval, then the whole archive is retrieved and
+     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size
+     * of the archive minus 1. For inventory retrieval jobs this field is
+     * null.
      *
-     * @param retrievalByteRange The new value for the RetrievalByteRange property for this object.
+     * @param retrievalByteRange The retrieved byte range for archive retrieval jobs in the form
+     *         "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was specified
+     *         in the archive retrieval, then the whole archive is retrieved and
+     *         <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size
+     *         of the archive minus 1. For inventory retrieval jobs this field is
+     *         null.
      */
     public void setRetrievalByteRange(String retrievalByteRange) {
         this.retrievalByteRange = retrievalByteRange;
     }
     
     /**
-     * Sets the value of the RetrievalByteRange property for this object.
+     * The retrieved byte range for archive retrieval jobs in the form
+     * "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was specified
+     * in the archive retrieval, then the whole archive is retrieved and
+     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size
+     * of the archive minus 1. For inventory retrieval jobs this field is
+     * null.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param retrievalByteRange The new value for the RetrievalByteRange property for this object.
+     * @param retrievalByteRange The retrieved byte range for archive retrieval jobs in the form
+     *         "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was specified
+     *         in the archive retrieval, then the whole archive is retrieved and
+     *         <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size
+     *         of the archive minus 1. For inventory retrieval jobs this field is
+     *         null.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public DescribeJobResult withRetrievalByteRange(String retrievalByteRange) {
         this.retrievalByteRange = retrievalByteRange;
+        return this;
+    }
+
+    /**
+     * Returns the value of the InventoryRetrievalParameters property for
+     * this object.
+     *
+     * @return The value of the InventoryRetrievalParameters property for this
+     *         object.
+     */
+    public InventoryRetrievalJobDescription getInventoryRetrievalParameters() {
+        return inventoryRetrievalParameters;
+    }
+    
+    /**
+     * Sets the value of the InventoryRetrievalParameters property for this
+     * object.
+     *
+     * @param inventoryRetrievalParameters The new value for the InventoryRetrievalParameters property for this
+     *         object.
+     */
+    public void setInventoryRetrievalParameters(InventoryRetrievalJobDescription inventoryRetrievalParameters) {
+        this.inventoryRetrievalParameters = inventoryRetrievalParameters;
+    }
+    
+    /**
+     * Sets the value of the InventoryRetrievalParameters property for this
+     * object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param inventoryRetrievalParameters The new value for the InventoryRetrievalParameters property for this
+     *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DescribeJobResult withInventoryRetrievalParameters(InventoryRetrievalJobDescription inventoryRetrievalParameters) {
+        this.inventoryRetrievalParameters = inventoryRetrievalParameters;
         return this;
     }
 
@@ -847,7 +998,8 @@ public class DescribeJobResult implements Serializable {
         if (getCompletionDate() != null) sb.append("CompletionDate: " + getCompletionDate() + ",");
         if (getSHA256TreeHash() != null) sb.append("SHA256TreeHash: " + getSHA256TreeHash() + ",");
         if (getArchiveSHA256TreeHash() != null) sb.append("ArchiveSHA256TreeHash: " + getArchiveSHA256TreeHash() + ",");
-        if (getRetrievalByteRange() != null) sb.append("RetrievalByteRange: " + getRetrievalByteRange() );
+        if (getRetrievalByteRange() != null) sb.append("RetrievalByteRange: " + getRetrievalByteRange() + ",");
+        if (getInventoryRetrievalParameters() != null) sb.append("InventoryRetrievalParameters: " + getInventoryRetrievalParameters() );
         sb.append("}");
         return sb.toString();
     }
@@ -873,6 +1025,7 @@ public class DescribeJobResult implements Serializable {
         hashCode = prime * hashCode + ((getSHA256TreeHash() == null) ? 0 : getSHA256TreeHash().hashCode()); 
         hashCode = prime * hashCode + ((getArchiveSHA256TreeHash() == null) ? 0 : getArchiveSHA256TreeHash().hashCode()); 
         hashCode = prime * hashCode + ((getRetrievalByteRange() == null) ? 0 : getRetrievalByteRange().hashCode()); 
+        hashCode = prime * hashCode + ((getInventoryRetrievalParameters() == null) ? 0 : getInventoryRetrievalParameters().hashCode()); 
         return hashCode;
     }
     
@@ -916,6 +1069,8 @@ public class DescribeJobResult implements Serializable {
         if (other.getArchiveSHA256TreeHash() != null && other.getArchiveSHA256TreeHash().equals(this.getArchiveSHA256TreeHash()) == false) return false; 
         if (other.getRetrievalByteRange() == null ^ this.getRetrievalByteRange() == null) return false;
         if (other.getRetrievalByteRange() != null && other.getRetrievalByteRange().equals(this.getRetrievalByteRange()) == false) return false; 
+        if (other.getInventoryRetrievalParameters() == null ^ this.getInventoryRetrievalParameters() == null) return false;
+        if (other.getInventoryRetrievalParameters() != null && other.getInventoryRetrievalParameters().equals(this.getInventoryRetrievalParameters()) == false) return false; 
         return true;
     }
     

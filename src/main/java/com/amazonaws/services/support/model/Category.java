@@ -18,46 +18,46 @@ import java.io.Serializable;
 
 /**
  * <p>
- * JSON-formatted name/value pair that represents the name and category of problem selected from the <a
- * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"> DescribeServices </a> response for each AWS service.
+ * A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the DescribeServices response for
+ * each AWS service.
  * </p>
  */
 public class Category implements Serializable {
 
     /**
-     * Category code for the support case.
+     * The category code for the support case.
      */
     private String code;
 
     /**
-     * Category name for the support case.
+     * The category name for the support case.
      */
     private String name;
 
     /**
-     * Category code for the support case.
+     * The category code for the support case.
      *
-     * @return Category code for the support case.
+     * @return The category code for the support case.
      */
     public String getCode() {
         return code;
     }
     
     /**
-     * Category code for the support case.
+     * The category code for the support case.
      *
-     * @param code Category code for the support case.
+     * @param code The category code for the support case.
      */
     public void setCode(String code) {
         this.code = code;
     }
     
     /**
-     * Category code for the support case.
+     * The category code for the support case.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param code Category code for the support case.
+     * @param code The category code for the support case.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -68,29 +68,29 @@ public class Category implements Serializable {
     }
 
     /**
-     * Category name for the support case.
+     * The category name for the support case.
      *
-     * @return Category name for the support case.
+     * @return The category name for the support case.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Category name for the support case.
+     * The category name for the support case.
      *
-     * @param name Category name for the support case.
+     * @param name The category name for the support case.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Category name for the support case.
+     * The category name for the support case.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name Category name for the support case.
+     * @param name The category name for the support case.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -18,59 +18,60 @@ import java.io.Serializable;
 
 /**
  * <p>
- * JSON-formatted pair of strings consisting of a code and name that represent a severity level that can be applied to a support case.
+ * A code and name pair that represent a severity level that can be applied to a support case.
  * </p>
  */
 public class SeverityLevel implements Serializable {
 
     /**
-     * String that represents one of four values: "low," "medium," "high,"
-     * and "urgent". These values correspond to response times returned to
-     * the caller in the string <code>SeverityLevel.name</code>.
+     * One of four values: "low," "medium," "high," and "urgent". These
+     * values correspond to response times returned to the caller in
+     * <code>SeverityLevel.name</code>.
      */
     private String code;
 
     /**
-     * Name of severity levels that correspond to the severity level codes.
+     * The name of the severity level that corresponds to the severity level
+     * code.
      */
     private String name;
 
     /**
-     * String that represents one of four values: "low," "medium," "high,"
-     * and "urgent". These values correspond to response times returned to
-     * the caller in the string <code>SeverityLevel.name</code>.
+     * One of four values: "low," "medium," "high," and "urgent". These
+     * values correspond to response times returned to the caller in
+     * <code>SeverityLevel.name</code>.
      *
-     * @return String that represents one of four values: "low," "medium," "high,"
-     *         and "urgent". These values correspond to response times returned to
-     *         the caller in the string <code>SeverityLevel.name</code>.
+     * @return One of four values: "low," "medium," "high," and "urgent". These
+     *         values correspond to response times returned to the caller in
+     *         <code>SeverityLevel.name</code>.
      */
     public String getCode() {
         return code;
     }
     
     /**
-     * String that represents one of four values: "low," "medium," "high,"
-     * and "urgent". These values correspond to response times returned to
-     * the caller in the string <code>SeverityLevel.name</code>.
+     * One of four values: "low," "medium," "high," and "urgent". These
+     * values correspond to response times returned to the caller in
+     * <code>SeverityLevel.name</code>.
      *
-     * @param code String that represents one of four values: "low," "medium," "high,"
-     *         and "urgent". These values correspond to response times returned to
-     *         the caller in the string <code>SeverityLevel.name</code>.
+     * @param code One of four values: "low," "medium," "high," and "urgent". These
+     *         values correspond to response times returned to the caller in
+     *         <code>SeverityLevel.name</code>.
      */
     public void setCode(String code) {
         this.code = code;
     }
     
     /**
-     * String that represents one of four values: "low," "medium," "high,"
-     * and "urgent". These values correspond to response times returned to
-     * the caller in the string <code>SeverityLevel.name</code>.
+     * One of four values: "low," "medium," "high," and "urgent". These
+     * values correspond to response times returned to the caller in
+     * <code>SeverityLevel.name</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param code String that represents one of four values: "low," "medium," "high,"
-     *         and "urgent". These values correspond to response times returned to
-     *         the caller in the string <code>SeverityLevel.name</code>.
+     * @param code One of four values: "low," "medium," "high," and "urgent". These
+     *         values correspond to response times returned to the caller in
+     *         <code>SeverityLevel.name</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -81,29 +82,35 @@ public class SeverityLevel implements Serializable {
     }
 
     /**
-     * Name of severity levels that correspond to the severity level codes.
+     * The name of the severity level that corresponds to the severity level
+     * code.
      *
-     * @return Name of severity levels that correspond to the severity level codes.
+     * @return The name of the severity level that corresponds to the severity level
+     *         code.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Name of severity levels that correspond to the severity level codes.
+     * The name of the severity level that corresponds to the severity level
+     * code.
      *
-     * @param name Name of severity levels that correspond to the severity level codes.
+     * @param name The name of the severity level that corresponds to the severity level
+     *         code.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Name of severity levels that correspond to the severity level codes.
+     * The name of the severity level that corresponds to the severity level
+     * code.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name Name of severity levels that correspond to the severity level codes.
+     * @param name The name of the severity level that corresponds to the severity level
+     *         code.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

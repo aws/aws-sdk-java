@@ -279,9 +279,20 @@ public abstract class AmazonWebServiceClient {
         setEndpoint(serviceEndpoint, serviceName, region.getName());
     }
 
+    /**
+     * @deprecated by client configuration via the constructor.
+     * This method will be removed later on.
+     */
+    @Deprecated
     public void setConfiguration(ClientConfiguration clientConfiguration) {
+        AmazonHttpClient existingClient = this.client;
+        RequestMetricCollector requestMetricCollector = null;
+        if (existingClient != null) {
+            requestMetricCollector = existingClient.getRequestMetricCollector();
+            existingClient.shutdown();
+        }
         this.clientConfiguration = clientConfiguration;
-        client = new AmazonHttpClient(clientConfiguration);
+        this.client = new AmazonHttpClient(clientConfiguration, requestMetricCollector);
     }
 
     /**

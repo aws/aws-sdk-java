@@ -245,7 +245,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public AmazonDynamoDBClient(AWSCredentials awsCredentials,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(clientConfiguration, requestMetricCollector);
+        super(adjustClientConfiguration(clientConfiguration), requestMetricCollector);
         this.awsCredentialsProvider = new StaticCredentialsProvider(
                 awsCredentials);
         init();
@@ -309,7 +309,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public AmazonDynamoDBClient(AWSCredentialsProvider awsCredentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(clientConfiguration, requestMetricCollector);
+        super(adjustClientConfiguration(clientConfiguration), requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
     }
@@ -330,17 +330,19 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
         signer.setServiceName("dynamodb");
 
-
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/dynamodb/request.handlers"));
+    }
 
-
-        clientConfiguration = new ClientConfiguration(clientConfiguration);
-        if (clientConfiguration.getRetryPolicy() == com.amazonaws.retry.PredefinedRetryPolicies.DEFAULT) {
-            clientConfiguration.setRetryPolicy(com.amazonaws.retry.PredefinedRetryPolicies.DYNAMODB_DEFAULT);
+    private static ClientConfiguration adjustClientConfiguration(ClientConfiguration orig) {
+        ClientConfiguration config = orig;
+        if (config.getRetryPolicy() == com.amazonaws.retry.PredefinedRetryPolicies.DEFAULT) {
+            config = new ClientConfiguration(orig);
+            config.setRetryPolicy(
+                com.amazonaws.retry.PredefinedRetryPolicies.DYNAMODB_DEFAULT);
         }
-        setConfiguration(clientConfiguration);
+        return config;
     }
 
     /**
@@ -943,6 +945,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         signer.setRegionName(regionId);
     }
 
+    @Override
     protected String getServiceAbbreviation() {
         return "dynamodb";
     }

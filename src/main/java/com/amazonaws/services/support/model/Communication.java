@@ -18,70 +18,69 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Object that exposes the fields used by a communication for an AWS Support case.
+ * Exposes the fields used by a communication for an AWS Support case.
  * </p>
  */
 public class Communication implements Serializable {
 
     /**
-     * String that indicates the AWS Support caseID requested or returned in
-     * the call. The caseID is an alphanumeric string formatted as shown in
-     * this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID
+     * is an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
     private String caseId;
 
     /**
-     * Contains the text of the the commmunication between the customer and
-     * AWS Support.
+     * The text of the communication between the customer and AWS Support.
      */
     private String body;
 
     /**
-     * Email address of the account that submitted the AWS Support case.
+     * The email address of the account that submitted the AWS Support case.
      */
     private String submittedBy;
 
     /**
-     * Time the support case was created.
+     * The time the support case was created.
      */
     private String timeCreated;
 
     /**
-     * String that indicates the AWS Support caseID requested or returned in
-     * the call. The caseID is an alphanumeric string formatted as shown in
-     * this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID
+     * is an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      *
-     * @return String that indicates the AWS Support caseID requested or returned in
-     *         the call. The caseID is an alphanumeric string formatted as shown in
-     *         this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @return The AWS Support case ID requested or returned in the call. The case ID
+     *         is an alphanumeric string formatted as shown in this example:
+     *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
     public String getCaseId() {
         return caseId;
     }
     
     /**
-     * String that indicates the AWS Support caseID requested or returned in
-     * the call. The caseID is an alphanumeric string formatted as shown in
-     * this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID
+     * is an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      *
-     * @param caseId String that indicates the AWS Support caseID requested or returned in
-     *         the call. The caseID is an alphanumeric string formatted as shown in
-     *         this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @param caseId The AWS Support case ID requested or returned in the call. The case ID
+     *         is an alphanumeric string formatted as shown in this example:
+     *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
     public void setCaseId(String caseId) {
         this.caseId = caseId;
     }
     
     /**
-     * String that indicates the AWS Support caseID requested or returned in
-     * the call. The caseID is an alphanumeric string formatted as shown in
-     * this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID
+     * is an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param caseId String that indicates the AWS Support caseID requested or returned in
-     *         the call. The caseID is an alphanumeric string formatted as shown in
-     *         this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @param caseId The AWS Support case ID requested or returned in the call. The case ID
+     *         is an alphanumeric string formatted as shown in this example:
+     *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -92,35 +91,29 @@ public class Communication implements Serializable {
     }
 
     /**
-     * Contains the text of the the commmunication between the customer and
-     * AWS Support.
+     * The text of the communication between the customer and AWS Support.
      *
-     * @return Contains the text of the the commmunication between the customer and
-     *         AWS Support.
+     * @return The text of the communication between the customer and AWS Support.
      */
     public String getBody() {
         return body;
     }
     
     /**
-     * Contains the text of the the commmunication between the customer and
-     * AWS Support.
+     * The text of the communication between the customer and AWS Support.
      *
-     * @param body Contains the text of the the commmunication between the customer and
-     *         AWS Support.
+     * @param body The text of the communication between the customer and AWS Support.
      */
     public void setBody(String body) {
         this.body = body;
     }
     
     /**
-     * Contains the text of the the commmunication between the customer and
-     * AWS Support.
+     * The text of the communication between the customer and AWS Support.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param body Contains the text of the the commmunication between the customer and
-     *         AWS Support.
+     * @param body The text of the communication between the customer and AWS Support.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -131,29 +124,29 @@ public class Communication implements Serializable {
     }
 
     /**
-     * Email address of the account that submitted the AWS Support case.
+     * The email address of the account that submitted the AWS Support case.
      *
-     * @return Email address of the account that submitted the AWS Support case.
+     * @return The email address of the account that submitted the AWS Support case.
      */
     public String getSubmittedBy() {
         return submittedBy;
     }
     
     /**
-     * Email address of the account that submitted the AWS Support case.
+     * The email address of the account that submitted the AWS Support case.
      *
-     * @param submittedBy Email address of the account that submitted the AWS Support case.
+     * @param submittedBy The email address of the account that submitted the AWS Support case.
      */
     public void setSubmittedBy(String submittedBy) {
         this.submittedBy = submittedBy;
     }
     
     /**
-     * Email address of the account that submitted the AWS Support case.
+     * The email address of the account that submitted the AWS Support case.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param submittedBy Email address of the account that submitted the AWS Support case.
+     * @param submittedBy The email address of the account that submitted the AWS Support case.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -164,29 +157,29 @@ public class Communication implements Serializable {
     }
 
     /**
-     * Time the support case was created.
+     * The time the support case was created.
      *
-     * @return Time the support case was created.
+     * @return The time the support case was created.
      */
     public String getTimeCreated() {
         return timeCreated;
     }
     
     /**
-     * Time the support case was created.
+     * The time the support case was created.
      *
-     * @param timeCreated Time the support case was created.
+     * @param timeCreated The time the support case was created.
      */
     public void setTimeCreated(String timeCreated) {
         this.timeCreated = timeCreated;
     }
     
     /**
-     * Time the support case was created.
+     * The time the support case was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param timeCreated Time the support case was created.
+     * @param timeCreated The time the support case was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

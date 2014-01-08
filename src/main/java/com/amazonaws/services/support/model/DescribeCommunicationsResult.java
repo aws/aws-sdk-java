@@ -18,31 +18,25 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns the objects or data listed below if successful. Otherwise, returns an error.
+ * Contains the following objects or data if successful. Otherwise, returns an error.
  * </p>
  */
 public class DescribeCommunicationsResult implements Serializable {
 
     /**
-     * Contains a list of <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
-     * title="Communication">Communications</a> objects.
+     * The communications for the case.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Communication> communications;
 
     /**
-     * Defines a resumption point for pagination.
+     * A resumption point for pagination.
      */
     private String nextToken;
 
     /**
-     * Contains a list of <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
-     * title="Communication">Communications</a> objects.
+     * The communications for the case.
      *
-     * @return Contains a list of <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
-     *         title="Communication">Communications</a> objects.
+     * @return The communications for the case.
      */
     public java.util.List<Communication> getCommunications() {
         if (communications == null) {
@@ -53,13 +47,9 @@ public class DescribeCommunicationsResult implements Serializable {
     }
     
     /**
-     * Contains a list of <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
-     * title="Communication">Communications</a> objects.
+     * The communications for the case.
      *
-     * @param communications Contains a list of <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
-     *         title="Communication">Communications</a> objects.
+     * @param communications The communications for the case.
      */
     public void setCommunications(java.util.Collection<Communication> communications) {
         if (communications == null) {
@@ -72,15 +62,11 @@ public class DescribeCommunicationsResult implements Serializable {
     }
     
     /**
-     * Contains a list of <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
-     * title="Communication">Communications</a> objects.
+     * The communications for the case.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param communications Contains a list of <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
-     *         title="Communication">Communications</a> objects.
+     * @param communications The communications for the case.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -94,15 +80,11 @@ public class DescribeCommunicationsResult implements Serializable {
     }
     
     /**
-     * Contains a list of <a
-     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
-     * title="Communication">Communications</a> objects.
+     * The communications for the case.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param communications Contains a list of <a
-     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
-     *         title="Communication">Communications</a> objects.
+     * @param communications The communications for the case.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -120,29 +102,29 @@ public class DescribeCommunicationsResult implements Serializable {
     }
 
     /**
-     * Defines a resumption point for pagination.
+     * A resumption point for pagination.
      *
-     * @return Defines a resumption point for pagination.
+     * @return A resumption point for pagination.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * Defines a resumption point for pagination.
+     * A resumption point for pagination.
      *
-     * @param nextToken Defines a resumption point for pagination.
+     * @param nextToken A resumption point for pagination.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * Defines a resumption point for pagination.
+     * A resumption point for pagination.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken Defines a resumption point for pagination.
+     * @param nextToken A resumption point for pagination.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

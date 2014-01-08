@@ -99,6 +99,26 @@ public class InitiateJobRequestMarshaller implements Marshaller<Request<Initiate
                 if (jobParameters.getRetrievalByteRange() != null) {
                     jsonWriter.key("RetrievalByteRange").value(jobParameters.getRetrievalByteRange());
                 }
+                InventoryRetrievalJobInput inventoryRetrievalParameters = jobParameters.getInventoryRetrievalParameters();
+                if (inventoryRetrievalParameters != null) {
+
+                    jsonWriter.key("InventoryRetrievalParameters");
+                    jsonWriter.object();
+
+                    if (inventoryRetrievalParameters.getStartDate() != null) {
+                        jsonWriter.key("StartDate").value(inventoryRetrievalParameters.getStartDate());
+                    }
+                    if (inventoryRetrievalParameters.getEndDate() != null) {
+                        jsonWriter.key("EndDate").value(inventoryRetrievalParameters.getEndDate());
+                    }
+                    if (inventoryRetrievalParameters.getLimit() != null) {
+                        jsonWriter.key("Limit").value(inventoryRetrievalParameters.getLimit());
+                    }
+                    if (inventoryRetrievalParameters.getMarker() != null) {
+                        jsonWriter.key("Marker").value(inventoryRetrievalParameters.getMarker());
+                    }
+                    jsonWriter.endObject();
+                }
                 jsonWriter.endObject();
             }
 
