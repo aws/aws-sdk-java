@@ -89,6 +89,7 @@ public class AWSS3V4Signer extends AWS4Signer implements Presigner {
         String contentSha256 = "UNSIGNED-PAYLOAD";
 
         HeaderSigningResult headerSigningResult = computeSignature(
+                dateMilli,
                 request,
                 dateStamp,
                 timeStamp,

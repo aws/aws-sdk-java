@@ -21,6 +21,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -45,6 +47,7 @@ public class AWS4Signer extends AbstractAWSSigner
             .forPattern("yyyyMMdd").withZoneUTC();
     private static final DateTimeFormatter timeFormatter = DateTimeFormat
             .forPattern("yyyyMMdd'T'HHmmss'Z'").withZoneUTC();
+    protected static final long NORMALIZE_TIME = 60 * 1000L;
     /**
      * Service name override for use when the endpoint can't be used to
      * determine the service name.
@@ -68,6 +71,9 @@ public class AWS4Signer extends AbstractAWSSigner
      * services that want to suppress this, they should use new AWS4Signer(false).
      */
     protected boolean doubleUrlEncode;
+
+    protected final ConcurrentMap<String , SignCacheItem> signMemo =
+            new ConcurrentHashMap<String , SignCacheItem>(32);
 
     /**
      * Construct a new AWS4 signer instance.
@@ -121,6 +127,7 @@ public class AWS4Signer extends AbstractAWSSigner
         String signingCredentials = sanitizedCredentials.getAWSAccessKeyId() + "/" + scope;
 
         HeaderSigningResult headerSigningResult = computeSignature(
+            dateMilli,
             request,
             dateStamp, 
             timeStamp, 
@@ -259,6 +266,7 @@ public class AWS4Signer extends AbstractAWSSigner
 
 
     protected final HeaderSigningResult computeSignature(
+            long dateMilli,
             Request<?> request,
             String dateStamp,
             String timeStamp,
@@ -272,16 +280,19 @@ public class AWS4Signer extends AbstractAWSSigner
 
         String stringToSign = getStringToSign(algorithm, timeStamp, scope, getCanonicalRequest(request,contentSha256 ));
 
+        SignCacheItem signCacheItem = new SignCacheItem(dateStamp , regionName , serviceName , sanitizedCredentials);
+        SignCacheItem memo = this.signMemo.get(signCacheItem.getSignMemoKey());
+        if (memo == null || memo.aliveTime(dateMilli) == false) {
+            signCacheItem.setupSigning(dateMilli);
+            this.signMemo.put(signCacheItem.getSignMemoKey() , signCacheItem);
+            memo = signCacheItem;
+        }
+
         // AWS4 uses a series of derived keys, formed by hashing different
         // pieces of data
-        byte[] kSecret = ("AWS4" + sanitizedCredentials.getAWSSecretKey()).getBytes();
-        byte[] kDate = sign(dateStamp, kSecret, SigningAlgorithm.HmacSHA256);
-        byte[] kRegion = sign(regionName, kDate, SigningAlgorithm.HmacSHA256);
-        byte[] kService = sign(serviceName, kRegion, SigningAlgorithm.HmacSHA256);
-        byte[] kSigning = sign(TERMINATOR, kService, SigningAlgorithm.HmacSHA256);
 
-        byte[] signature = sign(stringToSign.getBytes(), kSigning, SigningAlgorithm.HmacSHA256);
-        return new HeaderSigningResult(timeStamp, scope, kSigning, signature);
+        byte[] signature = sign(stringToSign.getBytes(), memo.kSigning, SigningAlgorithm.HmacSHA256);
+        return new HeaderSigningResult(timeStamp, scope, memo.kSigning, signature);
     }
 
     protected final String getTimeStamp(long dateMilli) {
@@ -296,7 +307,11 @@ public class AWS4Signer extends AbstractAWSSigner
     	int timeOffset = getTimeOffset(request);
         Date date = getSignatureDate(timeOffset);
         if (overriddenDate != null) date = overriddenDate;
-        return date.getTime();
+        return convertRequestTime(date.getTime());
+    }
+
+    protected final long convertRequestTime(final long requestTime) {
+        return (requestTime / NORMALIZE_TIME) * NORMALIZE_TIME;
     }
 
 
@@ -380,4 +395,47 @@ public class AWS4Signer extends AbstractAWSSigner
             return signatureCopy;
         }
     }
+
+    protected class SignCacheItem {
+        public long timestamp;
+        public byte[] kSigning;
+        public final String dateStamp;
+        private final String sigMemoKey;
+        public final String secretKey;
+        public final String regionName;
+        public final String serviceName;
+
+        public SignCacheItem(
+                String dateStamp,
+                String regionName,
+                String serviceName,
+                AWSCredentials sanitizedCredentials
+        ) {
+            this.secretKey = sanitizedCredentials.getAWSSecretKey();
+            this.dateStamp = dateStamp;
+            this.regionName = regionName;
+            this.serviceName = serviceName;
+            this.sigMemoKey = dateStamp + regionName + serviceName + this.secretKey;
+        }
+
+        public void setupSigning(long timestamp) {
+            this.timestamp = timestamp + NORMALIZE_TIME;
+            byte[] kSecret = ("AWS4" + this.secretKey).getBytes();
+            byte[] kDate = sign(dateStamp, kSecret, SigningAlgorithm.HmacSHA256);
+            byte[] kRegion = sign(regionName, kDate, SigningAlgorithm.HmacSHA256);
+            byte[] kService = sign(serviceName, kRegion, SigningAlgorithm.HmacSHA256);
+            this.kSigning = sign(TERMINATOR, kService, SigningAlgorithm.HmacSHA256);
+        }
+        public String getSignMemoKey() {
+            return sigMemoKey;
+        }
+
+        public boolean aliveTime(long timestamp) {
+            if (timestamp < this.timestamp) {
+                return true;
+            }
+            return false;
+        }
+    }
+
 }
