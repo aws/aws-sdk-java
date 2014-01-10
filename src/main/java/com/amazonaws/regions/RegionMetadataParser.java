@@ -142,6 +142,6 @@ public class RegionMetadataParser {
      * TODO We might want to do more complicated verification in the future.
      */
     private static boolean verifyEndpoint(String endpoint) {
-        return endpoint.endsWith(".amazonaws.com");
+        return endpoint.endsWith(".amazonaws.com") || endpoint.endsWith(".amazonaws.com.cn");
     }
 }
