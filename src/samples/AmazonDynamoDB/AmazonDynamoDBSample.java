@@ -37,6 +37,7 @@ import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.amazonaws.services.dynamodbv2.model.TableDescription;
 import com.amazonaws.services.dynamodbv2.model.TableStatus;
+import com.amazonaws.services.dynamodbv2.util.Tables;
 
 /**
  * This sample demonstrates how to perform a few simple operations with the
@@ -81,17 +82,23 @@ public class AmazonDynamoDBSample {
         try {
             String tableName = "my-favorite-movies-table";
 
-            // Create a table with a primary hash key named 'name', which holds a string
-            CreateTableRequest createTableRequest = new CreateTableRequest().withTableName(tableName)
-                .withKeySchema(new KeySchemaElement().withAttributeName("name").withKeyType(KeyType.HASH))
-                .withAttributeDefinitions(new AttributeDefinition().withAttributeName("name").withAttributeType(ScalarAttributeType.S))
-                .withProvisionedThroughput(new ProvisionedThroughput().withReadCapacityUnits(1L).withWriteCapacityUnits(1L));
-            TableDescription createdTableDescription = dynamoDB.createTable(createTableRequest).getTableDescription();
-            System.out.println("Created Table: " + createdTableDescription);
+            // Create table if it does not exist yet
+            if (Tables.doesTableExist(dynamoDB, tableName)) {
+            	System.out.println("Table " + tableName + " is already ACTIVE");
+            } else {
+                // Create a table with a primary hash key named 'name', which holds a string
+                CreateTableRequest createTableRequest = new CreateTableRequest().withTableName(tableName)
+                    .withKeySchema(new KeySchemaElement().withAttributeName("name").withKeyType(KeyType.HASH))
+                    .withAttributeDefinitions(new AttributeDefinition().withAttributeName("name").withAttributeType(ScalarAttributeType.S))
+                    .withProvisionedThroughput(new ProvisionedThroughput().withReadCapacityUnits(1L).withWriteCapacityUnits(1L));
+                    TableDescription createdTableDescription = dynamoDB.createTable(createTableRequest).getTableDescription();
+                System.out.println("Created Table: " + createdTableDescription);
 
-            // Wait for it to become active
-            waitForTableToBecomeAvailable(tableName);
-
+                // Wait for it to become active
+                System.out.println("Waiting for " + tableName + " to become ACTIVE...");
+                Tables.waitForTableToBecomeActive(dynamoDB, tableName);
+            }
+            
             // Describe our new table
             DescribeTableRequest describeTableRequest = new DescribeTableRequest().withTableName(tableName);
             TableDescription tableDescription = dynamoDB.describeTable(describeTableRequest).getTable();
@@ -143,27 +150,6 @@ public class AmazonDynamoDBSample {
         item.put("fans", new AttributeValue().withSS(fans));
 
         return item;
-    }
-
-    private static void waitForTableToBecomeAvailable(String tableName) {
-        System.out.println("Waiting for " + tableName + " to become ACTIVE...");
-
-        long startTime = System.currentTimeMillis();
-        long endTime = startTime + (10 * 60 * 1000);
-        while (System.currentTimeMillis() < endTime) {
-            try {Thread.sleep(1000 * 20);} catch (Exception e) {}
-            try {
-                DescribeTableRequest request = new DescribeTableRequest().withTableName(tableName);
-                TableDescription tableDescription = dynamoDB.describeTable(request).getTable();
-                String tableStatus = tableDescription.getTableStatus();
-                System.out.println("  - current state: " + tableStatus);
-                if (tableStatus.equals(TableStatus.ACTIVE.toString())) return;
-            } catch (AmazonServiceException ase) {
-                if (ase.getErrorCode().equalsIgnoreCase("ResourceNotFoundException") == false) throw ase;
-            }
-        }
-
-        throw new RuntimeException("Table " + tableName + " never went active");
     }
 
 }
