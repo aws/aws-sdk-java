@@ -35,14 +35,22 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpEntityEnclosingRequest;
+import org.apache.http.HttpHost;
 import org.apache.http.HttpStatus;
 import org.apache.http.annotation.ThreadSafe;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.ChallengeState;
+import org.apache.http.client.AuthCache;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
 import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.client.protocol.ClientContext;
+import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.conn.scheme.Scheme;
 import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.ssl.SSLSocketFactory;
+import org.apache.http.impl.auth.BasicScheme;
+import org.apache.http.impl.client.BasicAuthCache;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 
@@ -372,6 +380,22 @@ public class AmazonHttpClient {
                         AWSRequestMetrics.class.getSimpleName(),
                         awsRequestMetrics);
                 retriedException = null;
+                
+                // Set up pre-emptive basic proxy authentication if all required configuration is present.
+                if (this.config.getPreemptiveBasicProxyAuth() && httpClient.getParams().getParameter(ConnRoutePNames.DEFAULT_PROXY) != null){
+                    
+                    if (this.config.getProxyUsername() != null && this.config.getProxyPassword() != null){
+                        
+                        AuthCache authCache = new BasicAuthCache();
+                        
+                        // Set up the a Basic Auth scheme scoped for a proxy - we don't want to do this for non-proxy authentication.
+                        BasicScheme basicScheme = new BasicScheme(ChallengeState.PROXY);
+                        authCache.put((HttpHost)httpClient.getParams().getParameter(ConnRoutePNames.DEFAULT_PROXY), basicScheme);
+                        
+                        httpContext.setAttribute(ClientContext.AUTH_CACHE, authCache);
+                    }
+                }
+                
                 awsRequestMetrics.startEvent(Field.HttpRequestTime);
                 try {
                     apacheResponse = httpClient.execute(httpRequest, httpContext);
