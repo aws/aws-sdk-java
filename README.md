@@ -20,7 +20,7 @@ The **AWS SDK for Java** enables Java developers to easily work with [Amazon Web
 ## Getting Started
 
 1. **Sign up for AWS** - Before you begin, you need an AWS account. Please see the [AWS Account and Credentials][docs-signup] section of the developer guide for information about how to create an AWS account and retrieve your AWS credentials.
-1. **Minimum requirements** - To run the SDK you will need **Java 1.6+**. For more information about the requirements and optimum settings for the SDK, please see the [Java Development Environment][docs-signup] section of the developer guide.
+1. **Minimum requirements** - To run the SDK you will need **Java 1.6+**. For more information about the requirements and optimum settings for the SDK, please see the [Java Development Environment][docs-signup] section of the developer guide. Some components require Java 1.7 (e.g. [Kinesis][kinesis-getting-started]) 
 1. **Install the SDK** - Using ***Maven*** is the recommended way to install the AWS SDK for Java. Please see the
    [Install the AWS SDK for Java][docs-signup] section of the user guide for more detailed information about installing the SDK through other means.
 1. **Using the SDK** - The best way to become familiar with how to use the SDK is to read the [Developer Guide][docs-guide].
@@ -39,3 +39,4 @@ Once you check out the code from GitHub, you can build it using Maven.  To disab
 [docs-signup]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/java-dg-setup.html
 [aws-iam-credentials]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/java-dg-roles.html
 [docs-guide]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/welcome.html
+[kinesis-getting-started]: http://docs.aws.amazon.com/kinesis/latest/dev/before-you-begin.html
