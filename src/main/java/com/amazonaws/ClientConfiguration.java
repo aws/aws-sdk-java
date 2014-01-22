@@ -101,6 +101,9 @@ public class ClientConfiguration {
     /** Optional Windows workstation name for configuring NTLM proxy support. */
     private String proxyWorkstation = null;
 
+    /** Whether to pre-emptively authenticate against a proxy server using basic authentication */
+    private Boolean preemptiveBasicProxyAuth = false;
+    
     /** The maximum number of open HTTP connections. */
     private int maxConnections = DEFAULT_MAX_CONNECTIONS;
 
@@ -143,20 +146,21 @@ public class ClientConfiguration {
     public ClientConfiguration() {}
 
     public ClientConfiguration(ClientConfiguration other) {
-        this.connectionTimeout = other.connectionTimeout;
-        this.maxConnections    = other.maxConnections;
-        this.maxErrorRetry     = other.maxErrorRetry;
-        this.retryPolicy       = other.retryPolicy;
-        this.protocol          = other.protocol;
-        this.proxyDomain       = other.proxyDomain;
-        this.proxyHost         = other.proxyHost;
-        this.proxyPassword     = other.proxyPassword;
-        this.proxyPort         = other.proxyPort;
-        this.proxyUsername     = other.proxyUsername;
-        this.proxyWorkstation  = other.proxyWorkstation;
-        this.socketTimeout     = other.socketTimeout;
-        this.userAgent         = other.userAgent;
-        this.useReaper         = other.useReaper;
+        this.connectionTimeout          = other.connectionTimeout;
+        this.maxConnections             = other.maxConnections;
+        this.maxErrorRetry              = other.maxErrorRetry;
+        this.retryPolicy                = other.retryPolicy;
+        this.protocol                   = other.protocol;
+        this.proxyDomain                = other.proxyDomain;
+        this.proxyHost                  = other.proxyHost;
+        this.proxyPassword              = other.proxyPassword;
+        this.proxyPort                  = other.proxyPort;
+        this.proxyUsername              = other.proxyUsername;
+        this.proxyWorkstation           = other.proxyWorkstation;
+        this.preemptiveBasicProxyAuth   = other.preemptiveBasicProxyAuth;
+        this.socketTimeout              = other.socketTimeout;
+        this.userAgent                  = other.userAgent;
+        this.useReaper                  = other.useReaper;
 
         this.socketReceiveBufferSizeHint = other.socketReceiveBufferSizeHint;
         this.socketSendBufferSizeHint    = other.socketSendBufferSizeHint;
@@ -828,4 +832,41 @@ public class ClientConfiguration {
         return this;
     }
 
+    /**
+     * Returns whether to attempt to authenticate preemptively against proxy servers 
+     * using basic authentication
+     * 
+     * @return Whether to authenticate preemptively against proxy server.
+     */
+    public Boolean getPreemptiveBasicProxyAuth() {
+        return preemptiveBasicProxyAuth;
+    }
+
+    /**
+     * Sets whether to attempt to authenticate preemptively against proxy servers 
+     * using basic authentication
+     * 
+     * @param preemptiveBasicProxyAuth
+     *             Whether to authenticate preemptively against proxy server.
+     */
+    public void setPreemptiveBasicProxyAuth(Boolean preemptiveBasicProxyAuth) {
+        this.preemptiveBasicProxyAuth = preemptiveBasicProxyAuth;
+    }
+    
+    
+    /**
+     * Sets whether to attempt to authenticate preemptively against proxy servers 
+     * using basic authentication, and returns the updated ClientConfiguration object
+     * so that additional method calls may be chained together.
+     *  
+     * @param preemptiveBasicProxyAuth
+     *             Whether to authenticate preemptively against proxy server.
+     * @return The updated ClientConfiguration objectt=
+     *         
+     */
+    public ClientConfiguration withPreemptiveBasicProxyAuth(Boolean preemptiveBasicProxyAuth) {
+        setPreemptiveBasicProxyAuth(preemptiveBasicProxyAuth);
+        return this;
+    }
+    
 }

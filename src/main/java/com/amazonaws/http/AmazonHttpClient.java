@@ -372,6 +372,7 @@ public class AmazonHttpClient {
                         AWSRequestMetrics.class.getSimpleName(),
                         awsRequestMetrics);
                 retriedException = null;
+                
                 awsRequestMetrics.startEvent(Field.HttpRequestTime);
                 try {
                     apacheResponse = httpClient.execute(httpRequest, httpContext);
