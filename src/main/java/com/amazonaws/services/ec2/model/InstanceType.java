@@ -24,6 +24,8 @@ public enum InstanceType {
     M1Medium("m1.medium"),
     M1Large("m1.large"),
     M1Xlarge("m1.xlarge"),
+    M3Medium("m3.medium"),
+    M3Large("m3.large"),
     M3Xlarge("m3.xlarge"),
     M32xlarge("m3.2xlarge"),
     M2Xlarge("m2.xlarge"),
@@ -69,66 +71,15 @@ public enum InstanceType {
     public static InstanceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
-        } else if ("t1.micro".equals(value)) {
-            return InstanceType.T1Micro;
-        } else if ("m1.small".equals(value)) {
-            return InstanceType.M1Small;
-        } else if ("m1.medium".equals(value)) {
-            return InstanceType.M1Medium;
-        } else if ("m1.large".equals(value)) {
-            return InstanceType.M1Large;
-        } else if ("m1.xlarge".equals(value)) {
-            return InstanceType.M1Xlarge;
-        } else if ("m3.xlarge".equals(value)) {
-            return InstanceType.M3Xlarge;
-        } else if ("m3.2xlarge".equals(value)) {
-            return InstanceType.M32xlarge;
-        } else if ("m2.xlarge".equals(value)) {
-            return InstanceType.M2Xlarge;
-        } else if ("m2.2xlarge".equals(value)) {
-            return InstanceType.M22xlarge;
-        } else if ("m2.4xlarge".equals(value)) {
-            return InstanceType.M24xlarge;
-        } else if ("cr1.8xlarge".equals(value)) {
-            return InstanceType.Cr18xlarge;
-        } else if ("i2.xlarge".equals(value)) {
-            return InstanceType.I2Xlarge;
-        } else if ("i2.2xlarge".equals(value)) {
-            return InstanceType.I22xlarge;
-        } else if ("i2.4xlarge".equals(value)) {
-            return InstanceType.I24xlarge;
-        } else if ("i2.8xlarge".equals(value)) {
-            return InstanceType.I28xlarge;
-        } else if ("hi1.4xlarge".equals(value)) {
-            return InstanceType.Hi14xlarge;
-        } else if ("hs1.8xlarge".equals(value)) {
-            return InstanceType.Hs18xlarge;
-        } else if ("c1.medium".equals(value)) {
-            return InstanceType.C1Medium;
-        } else if ("c1.xlarge".equals(value)) {
-            return InstanceType.C1Xlarge;
-        } else if ("c3.large".equals(value)) {
-            return InstanceType.C3Large;
-        } else if ("c3.xlarge".equals(value)) {
-            return InstanceType.C3Xlarge;
-        } else if ("c3.2xlarge".equals(value)) {
-            return InstanceType.C32xlarge;
-        } else if ("c3.4xlarge".equals(value)) {
-            return InstanceType.C34xlarge;
-        } else if ("c3.8xlarge".equals(value)) {
-            return InstanceType.C38xlarge;
-        } else if ("cc1.4xlarge".equals(value)) {
-            return InstanceType.Cc14xlarge;
-        } else if ("cc2.8xlarge".equals(value)) {
-            return InstanceType.Cc28xlarge;
-        } else if ("g2.2xlarge".equals(value)) {
-            return InstanceType.G22xlarge;
-        } else if ("cg1.4xlarge".equals(value)) {
-            return InstanceType.Cg14xlarge;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }
+        
+        for (InstanceType instanceType : values()) {
+            if (instanceType.value.equals(value)) {
+                return instanceType;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
     }
 }
     
