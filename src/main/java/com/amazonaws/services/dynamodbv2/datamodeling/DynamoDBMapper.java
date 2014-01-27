@@ -32,6 +32,8 @@ import java.util.Map.Entry;
 import java.util.Random;
 import java.util.Set;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.ReflectionUtilities;
+
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
@@ -455,7 +457,7 @@ public class DynamoDBMapper {
         boolean seenHashKey = false;
         boolean seenRangeKey = false;
         for ( Method getter : reflector.getPrimaryKeyGetters(clazz) ) {
-            if ( getter.isAnnotationPresent(DynamoDBHashKey.class) ) {
+            if (ReflectionUtilities.getterHasAnnotation(getter, DynamoDBHashKey.class) ) {
                 if ( seenHashKey ) {
                     throw new DynamoDBMappingException("Found more than one method annotated with "
                             + DynamoDBHashKey.class + " for class " + clazz
@@ -463,7 +465,7 @@ public class DynamoDBMapper {
                 }
                 seenHashKey = true;
                 safeInvoke(reflector.getSetter(getter), keyObject, hashKey);
-            } else if ( getter.isAnnotationPresent(DynamoDBRangeKey.class) ) {
+            } else if ( ReflectionUtilities.getterHasAnnotation(getter, DynamoDBRangeKey.class) ) {
                 if ( seenRangeKey ) {
                     throw new DynamoDBMappingException("Found more than one method annotated with "
                             + DynamoDBRangeKey.class + " for class " + clazz
@@ -491,8 +493,8 @@ public class DynamoDBMapper {
     private Map<String, Condition> getHashKeyEqualsConditions(Object obj) {
         Map<String, Condition> conditions = new HashMap<String, Condition>();
         for ( Method getter : reflector.getRelevantGetters(obj.getClass()) ) {
-            if ( getter.isAnnotationPresent(DynamoDBHashKey.class)
-                    || getter.isAnnotationPresent(DynamoDBIndexHashKey.class) ) {
+            if ( ReflectionUtilities.getterHasAnnotation(getter, DynamoDBHashKey.class)
+                    || ReflectionUtilities.getterHasAnnotation(getter, DynamoDBIndexHashKey.class) ) {
                 Object getterReturnResult = safeInvoke(getter, obj, (Object[])null);
                 if (getterReturnResult != null) {
                     conditions.put(
@@ -722,7 +724,7 @@ public class DynamoDBMapper {
             if ( getterResult == null && reflector.isAssignableKey(method) ) {
                 forcePut = true;
             }
-            if ( method.isAnnotationPresent(DynamoDBHashKey.class) ) {
+            if ( ReflectionUtilities.getterHasAnnotation(method, DynamoDBHashKey.class) ) {
                 hashKeyGetterFound = true;
             }
         }
@@ -2580,27 +2582,26 @@ public class DynamoDBMapper {
             this.mapperConfig = mapperConfig;
         }
 
-        @Override
+        
         public Map<String, AttributeValue> getAttributeValues() {
             return attributeValues;
         }
 
-        @Override
+        
         public boolean isPartialUpdate() {
             return partialUpdate;
         }
 
-        @Override
         public Class<T> getModelClass() {
             return modelClass;
         }
 
-        @Override
+        
         public DynamoDBMapperConfig getMapperConfig() {
             return mapperConfig;
         }
 
-        @Override
+        
         public String getTableName() {
             if (tableName == null) {
                 tableName = DynamoDBMapper
@@ -2609,7 +2610,7 @@ public class DynamoDBMapper {
             return tableName;
         }
 
-        @Override
+        
         public String getHashKeyName() {
             if (hashKeyName == null) {
                 Method hashKeyGetter = reflector.getPrimaryHashKeyGetter(modelClass);
@@ -2618,7 +2619,7 @@ public class DynamoDBMapper {
             return hashKeyName;
         }
 
-        @Override
+        
         public String getRangeKeyName() {
             if (rangeKeyName == null) {
                 Method rangeKeyGetter =

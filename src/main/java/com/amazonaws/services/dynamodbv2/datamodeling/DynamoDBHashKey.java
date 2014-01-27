@@ -27,7 +27,7 @@ import java.lang.annotation.Target;
  * This annotation is required.
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
+@Target(value={ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBHashKey {
 
     /**

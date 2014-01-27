@@ -27,7 +27,7 @@ import java.lang.annotation.Target;
  * This annotation is required for tables that use a range key.
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
+@Target(value={ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBRangeKey {
 
     /**

@@ -36,6 +36,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.ReflectionUtilities;
+
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.util.DateUtils;
 
@@ -97,7 +99,7 @@ public class DynamoDBReflector {
         return (m.getName().startsWith("get") || m.getName().startsWith("is"))
                 && m.getParameterTypes().length == 0
                 && m.getDeclaringClass().getAnnotation(DynamoDBTable.class) != null
-                && !m.isAnnotationPresent(DynamoDBIgnore.class);
+                && !ReflectionUtilities.getterHasAnnotation(m, DynamoDBIgnore.class);
     }
 
     /**
@@ -109,7 +111,7 @@ public class DynamoDBReflector {
             if ( !primaryRangeKeyGetterCache.containsKey(clazz) ) {
                 Method rangeKeyMethod = null;
                 for ( Method method : getRelevantGetters(clazz) ) {
-                    if ( method.getParameterTypes().length == 0 && method.isAnnotationPresent(DynamoDBRangeKey.class)) {
+                    if ( method.getParameterTypes().length == 0 && ReflectionUtilities.getterHasAnnotation(method, DynamoDBRangeKey.class)) {
                         rangeKeyMethod = method;
                         break;
                     }
@@ -130,8 +132,8 @@ public class DynamoDBReflector {
     <T> Collection<Method> getPrimaryKeyGetters(Class<T> clazz) {
         List<Method> keyGetters = new LinkedList<Method>();
         for (Method getter : getRelevantGetters(clazz)) {
-            if (getter.isAnnotationPresent(DynamoDBHashKey.class)
-                    || getter.isAnnotationPresent(DynamoDBRangeKey.class)) {
+            if (ReflectionUtilities.getterHasAnnotation(getter, DynamoDBHashKey.class)
+                    || ReflectionUtilities.getterHasAnnotation(getter, DynamoDBRangeKey.class)) {
                 keyGetters.add(getter);
             }
         }
@@ -149,7 +151,7 @@ public class DynamoDBReflector {
         synchronized (primaryHashKeyGetterCache) {
             if ( !primaryHashKeyGetterCache.containsKey(clazz) ) {
                 for ( Method method : getRelevantGetters(clazz) ) {
-                    if ( method.getParameterTypes().length == 0 && method.isAnnotationPresent(DynamoDBHashKey.class)) {
+                    if ( method.getParameterTypes().length == 0 && ReflectionUtilities.getterHasAnnotation(method, DynamoDBHashKey.class)) {
                         primaryHashKeyGetterCache.put(clazz, method);
                         break;
                     }
@@ -180,7 +182,7 @@ public class DynamoDBReflector {
      * Returns whether or not this getter has a custom marshaller
      */
     private boolean isCustomMarshaller(Method getter) {
-        return getter.isAnnotationPresent(DynamoDBMarshalling.class);
+        return ReflectionUtilities.getterHasAnnotation(getter, DynamoDBMarshalling.class);
     }
 
     /**
@@ -214,7 +216,7 @@ public class DynamoDBReflector {
             if ( isCustomMarshaller(getter) ) {
                 unmarshaller = new SUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         return getCustomMarshalledValue(toReturn, getter, value);
                     }
@@ -255,7 +257,7 @@ public class DynamoDBReflector {
             if ( isCollection ) {
                 unmarshaller = new NSUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         Set<Double> argument = new HashSet<Double>();
                         for ( String s : value.getNS() ) {
@@ -268,7 +270,7 @@ public class DynamoDBReflector {
             } else {
                 unmarshaller = new NUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         return Double.parseDouble(value.getN());
                     }
@@ -278,7 +280,7 @@ public class DynamoDBReflector {
             if ( isCollection ) {
                 unmarshaller = new NSUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         Set<BigDecimal> argument = new HashSet<BigDecimal>();
                         for ( String s : value.getNS() ) {
@@ -290,7 +292,7 @@ public class DynamoDBReflector {
             } else {
                 unmarshaller = new NUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         return new BigDecimal(value.getN());
                     }
@@ -301,7 +303,7 @@ public class DynamoDBReflector {
             if ( isCollection ) {
                 unmarshaller = new NSUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         Set<BigInteger> argument = new HashSet<BigInteger>();
                         for ( String s : value.getNS() ) {
@@ -313,7 +315,7 @@ public class DynamoDBReflector {
             } else {
                 unmarshaller = new NUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         return new BigInteger(value.getN());
                     }
@@ -323,7 +325,7 @@ public class DynamoDBReflector {
             if ( isCollection ) {
                 unmarshaller = new NSUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         Set<Integer> argument = new HashSet<Integer>();
                         for ( String s : value.getNS() ) {
@@ -335,7 +337,7 @@ public class DynamoDBReflector {
             } else {
                 unmarshaller = new NUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         return Integer.parseInt(value.getN());
                     }
@@ -345,7 +347,7 @@ public class DynamoDBReflector {
             if ( isCollection ) {
                 unmarshaller = new NSUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         Set<Float> argument = new HashSet<Float>();
                         for ( String s : value.getNS() ) {
@@ -357,7 +359,7 @@ public class DynamoDBReflector {
             } else {
                 unmarshaller = new NUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         return Float.parseFloat(value.getN());
                     }
@@ -367,7 +369,7 @@ public class DynamoDBReflector {
             if ( isCollection ) {
                 unmarshaller = new NSUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         Set<Byte> argument = new HashSet<Byte>();
                         for ( String s : value.getNS() ) {
@@ -379,7 +381,7 @@ public class DynamoDBReflector {
             } else {
                 unmarshaller = new NUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         return Byte.parseByte(value.getN());
                     }
@@ -389,7 +391,7 @@ public class DynamoDBReflector {
             if ( isCollection ) {
                 unmarshaller = new NSUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         Set<Long> argument = new HashSet<Long>();
                         for ( String s : value.getNS() ) {
@@ -401,7 +403,7 @@ public class DynamoDBReflector {
             } else {
                 unmarshaller = new NUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         return Long.parseLong(value.getN());
                     }
@@ -411,7 +413,7 @@ public class DynamoDBReflector {
             if ( isCollection ) {
                 unmarshaller = new NSUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         Set<Short> argument = new HashSet<Short>();
                         for ( String s : value.getNS() ) {
@@ -423,7 +425,7 @@ public class DynamoDBReflector {
             } else {
                 unmarshaller = new NUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         return Short.parseShort(value.getN());
                     }
@@ -433,7 +435,7 @@ public class DynamoDBReflector {
             if ( isCollection ) {
                 unmarshaller = new NSUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         Set<Boolean> argument = new HashSet<Boolean>();
                         for ( String s : value.getNS() ) {
@@ -445,7 +447,7 @@ public class DynamoDBReflector {
             } else {
                 unmarshaller = new NUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         return parseBoolean(value.getN());
                     }
@@ -455,7 +457,7 @@ public class DynamoDBReflector {
             if ( isCollection ) {
                 unmarshaller = new SSUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) throws ParseException {
                         Set<Date> argument = new HashSet<Date>();
                         for ( String s : value.getSS() ) {
@@ -467,7 +469,7 @@ public class DynamoDBReflector {
             } else {
                 unmarshaller = new SUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) throws ParseException {
                         return new DateUtils().parseIso8601Date(value.getS());
                     }
@@ -477,7 +479,7 @@ public class DynamoDBReflector {
             if ( isCollection ) {
                 unmarshaller = new SSUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) throws ParseException {
                         Set<Calendar> argument = new HashSet<Calendar>();
                         for ( String s : value.getSS() ) {
@@ -491,7 +493,7 @@ public class DynamoDBReflector {
             } else {
                 unmarshaller = new SUnmarshaller() {
 
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) throws ParseException {
                         Calendar cal = GregorianCalendar.getInstance();
                         cal.setTime(new DateUtils().parseIso8601Date(value.getS()));
@@ -503,7 +505,7 @@ public class DynamoDBReflector {
               if ( isCollection ) {
                   unmarshaller = new BSUnmarshaller() {
 
-                      @Override
+                      
                       public Object unmarshall(AttributeValue value) throws ParseException {
                          Set<ByteBuffer> argument = new HashSet<ByteBuffer>();
                          for (ByteBuffer b : value.getBS()) {
@@ -515,7 +517,7 @@ public class DynamoDBReflector {
               } else {
                   unmarshaller = new BUnmarshaller() {
 
-                      @Override
+                      
                       public Object unmarshall(AttributeValue value) throws ParseException {
                           return value.getB();
                       }
@@ -525,7 +527,7 @@ public class DynamoDBReflector {
              if ( isCollection ) {
               unmarshaller = new BSUnmarshaller() {
 
-                     @Override
+                     
                      public Object unmarshall(AttributeValue value) throws ParseException {
                      Set<byte[]> argument = new HashSet<byte[]>();
                      for (ByteBuffer b : value.getBS()) {
@@ -544,7 +546,7 @@ public class DynamoDBReflector {
           } else {
               unmarshaller = new BUnmarshaller() {
 
-                     @Override
+                     
                      public Object unmarshall(AttributeValue value) throws ParseException {
                          ByteBuffer byteBuffer = value.getB();
                          byte[] bytes = null;
@@ -578,7 +580,7 @@ public class DynamoDBReflector {
                 throw new DynamoDBMappingException("Collection types are not permitted for " + S3Link.class);
             } else {
                 return new SUnmarshaller() {
-                    @Override
+                    
                     public Object unmarshall(AttributeValue value) {
                         if ( s3cc == null ) {
                             throw new IllegalStateException("Mapper must be constructed with S3 AWS Credentials to load S3Link");
@@ -596,7 +598,7 @@ public class DynamoDBReflector {
                 if ( isCollection ) {
                     return new SSUnmarshaller() {
 
-                        @Override
+                        
                         public Object unmarshall(AttributeValue value) {
                             Set<String> argument = new HashSet<String>();
                             for ( String s : value.getSS() ) {
@@ -608,7 +610,7 @@ public class DynamoDBReflector {
                 } else {
                     return new SUnmarshaller() {
 
-                        @Override
+                        
                         public Object unmarshall(AttributeValue value) {
                             return value.getS();
                         }
@@ -623,7 +625,7 @@ public class DynamoDBReflector {
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
     private <T> T getCustomMarshalledValue(T toReturn, Method getter, AttributeValue value) {
-        DynamoDBMarshalling annotation = getter.getAnnotation(DynamoDBMarshalling.class);
+        DynamoDBMarshalling annotation = (DynamoDBMarshalling)ReflectionUtilities.getGetterAnnotation(getter, DynamoDBMarshalling.class);
         Class<? extends DynamoDBMarshaller<? extends Object>> marshallerClass = annotation.marshallerClass();
 
         DynamoDBMarshaller marshaller;
@@ -644,7 +646,7 @@ public class DynamoDBReflector {
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
     private AttributeValue getCustomerMarshallerAttributeValue(Method getter, Object getterReturnResult) {
-        DynamoDBMarshalling annotation = getter.getAnnotation(DynamoDBMarshalling.class);
+        DynamoDBMarshalling annotation = (DynamoDBMarshalling)ReflectionUtilities.getGetterAnnotation(getter, DynamoDBMarshalling.class);
         Class<? extends DynamoDBMarshaller<? extends Object>> marshallerClass = annotation.marshallerClass();
 
         DynamoDBMarshaller marshaller;
@@ -678,7 +680,7 @@ public class DynamoDBReflector {
             }
             if ( isCustomMarshaller(getter) ) {
                 marshaller = new ArgumentMarshaller() {
-                    @Override public AttributeValue marshall(Object obj) {
+                     public AttributeValue marshall(Object obj) {
                         return getCustomerMarshallerAttributeValue(getter, obj);
                     }
                 };
@@ -709,7 +711,7 @@ public class DynamoDBReflector {
             if ( Date.class.isAssignableFrom(returnType) ) {
                 marshaller = new ArgumentMarshaller() {
 
-                    @Override
+                    
                     public AttributeValue marshall(Object obj) {
                         List<String> timestamps = new LinkedList<String>();
                         for ( Object o : (Set<?>) obj ) {
@@ -721,7 +723,7 @@ public class DynamoDBReflector {
             } else if ( Calendar.class.isAssignableFrom(returnType) ) {
                 marshaller = new ArgumentMarshaller() {
 
-                    @Override
+                    
                     public AttributeValue marshall(Object obj) {
                         List<String> timestamps = new LinkedList<String>();
                         for ( Object o : (Set<?>) obj ) {
@@ -734,7 +736,7 @@ public class DynamoDBReflector {
                     || Boolean.class.isAssignableFrom(returnType) ) {
                 marshaller = new ArgumentMarshaller() {
 
-                    @Override
+                    
                     public AttributeValue marshall(Object obj) {
                         List<String> booleanAttributes = new ArrayList<String>();
                         for ( Object b : (Set<?>) obj ) {
@@ -750,7 +752,7 @@ public class DynamoDBReflector {
             } else if ( returnType.isPrimitive() || Number.class.isAssignableFrom(returnType) ) {
                 marshaller = new ArgumentMarshaller() {
 
-                    @Override
+                    
                     public AttributeValue marshall(Object obj) {
                         List<String> attributes = new ArrayList<String>();
                         for ( Object o : (Set<?>) obj ) {
@@ -762,7 +764,7 @@ public class DynamoDBReflector {
             } else if (ByteBuffer.class.isAssignableFrom(returnType)) {
                  marshaller = new ArgumentMarshaller() {
 
-                     @Override
+                     
                      public AttributeValue marshall(Object obj) {
                          List<ByteBuffer> attributes = new ArrayList<ByteBuffer>();
                          for ( Object o : (Set<?>) obj ) {
@@ -774,7 +776,7 @@ public class DynamoDBReflector {
             } else if (byte[].class.isAssignableFrom(returnType)) {
                  marshaller = new ArgumentMarshaller() {
 
-                     @Override
+                     
                      public AttributeValue marshall(Object obj) {
                          List<ByteBuffer> attributes = new ArrayList<ByteBuffer>();
                          for ( Object o : (Set<?>) obj ) {
@@ -795,7 +797,7 @@ public class DynamoDBReflector {
             if ( Date.class.isAssignableFrom(returnType) ) {
                 marshaller = new ArgumentMarshaller() {
 
-                    @Override
+                    
                     public AttributeValue marshall(Object obj) {
                         return new AttributeValue().withS(new DateUtils().formatIso8601Date((Date) obj));
                     }
@@ -803,7 +805,7 @@ public class DynamoDBReflector {
             } else if ( Calendar.class.isAssignableFrom(returnType) ) {
                 marshaller = new ArgumentMarshaller() {
 
-                    @Override
+                    
                     public AttributeValue marshall(Object obj) {
                         return new AttributeValue().withS(new DateUtils()
                                 .formatIso8601Date(((Calendar) obj).getTime()));
@@ -813,7 +815,7 @@ public class DynamoDBReflector {
                     || Boolean.class.isAssignableFrom(returnType) ) {
                 marshaller = new ArgumentMarshaller() {
 
-                    @Override
+                    
                     public AttributeValue marshall(Object obj) {
                         if ( obj == null || !(Boolean) obj ) {
                             return new AttributeValue().withN("0");
@@ -825,7 +827,7 @@ public class DynamoDBReflector {
             } else if ( returnType.isPrimitive() || Number.class.isAssignableFrom(returnType) ) {
                 marshaller = new ArgumentMarshaller() {
 
-                    @Override
+                    
                     public AttributeValue marshall(Object obj) {
                         return new AttributeValue().withN(String.valueOf(obj));
                     }
@@ -833,7 +835,7 @@ public class DynamoDBReflector {
             } else if ( returnType == String.class ) {
                 marshaller = new ArgumentMarshaller() {
 
-                    @Override
+                    
                     public AttributeValue marshall(Object obj) {
                         if ( ((String) obj).length() == 0 )
                             return null;
@@ -843,7 +845,7 @@ public class DynamoDBReflector {
             } else if ( returnType == ByteBuffer.class ) {
                 marshaller = new ArgumentMarshaller() {
 
-                    @Override
+                    
                     public AttributeValue marshall(Object obj) {
                         return new AttributeValue().withB((ByteBuffer)obj);
                     }
@@ -851,7 +853,7 @@ public class DynamoDBReflector {
             } else if ( returnType == byte[].class) {
                  marshaller = new ArgumentMarshaller() {
 
-                     @Override
+                     
                      public AttributeValue marshall(Object obj) {
                          return new AttributeValue().withB(ByteBuffer.wrap((byte[])obj));
                      }
@@ -873,7 +875,7 @@ public class DynamoDBReflector {
             throw new DynamoDBMappingException("Collection types not permitted for " + S3Link.class);
         } else {
             return new ArgumentMarshaller() {
-                @Override
+                
                 public AttributeValue marshall(Object obj) {
                     List<String> attributes = new ArrayList<String>();
                     for ( Object o : (Set<?>) obj ) {
@@ -893,7 +895,7 @@ public class DynamoDBReflector {
     private ArgumentMarshaller defaultArgumentMarshaller(final Class<?> returnType, final Method getter) {
         if ( returnType == S3Link.class ) {
             return new ArgumentMarshaller() {
-                @Override
+                
                 public AttributeValue marshall(Object obj) {
                     S3Link s3link = (S3Link) obj;
                     if ( s3link.getBucketName() == null || s3link.getKey() == null ) {
@@ -931,33 +933,33 @@ public class DynamoDBReflector {
             if ( !attributeNameCache.containsKey(getter) ) {
 
                 // First check for a hash key annotation
-                DynamoDBHashKey hashKeyAnnotation = getter.getAnnotation(DynamoDBHashKey.class);
+                DynamoDBHashKey hashKeyAnnotation = (DynamoDBHashKey)ReflectionUtilities.getGetterAnnotation(getter, DynamoDBHashKey.class);
                 if ( hashKeyAnnotation != null && hashKeyAnnotation.attributeName() != null
                         && hashKeyAnnotation.attributeName().length() > 0 )
                     return hashKeyAnnotation.attributeName();
 
                 // Then an index hash key
-                DynamoDBIndexHashKey indexHashKey = getter.getAnnotation(DynamoDBIndexHashKey.class);
+                DynamoDBIndexHashKey indexHashKey = (DynamoDBIndexHashKey)ReflectionUtilities.getGetterAnnotation(getter, DynamoDBIndexHashKey.class);
                 if ( indexHashKey != null && indexHashKey.attributeName() != null && indexHashKey.attributeName().length() > 0 )
                     return indexHashKey.attributeName();
 
                 // Then a primary range key
-                DynamoDBRangeKey rangeKey = getter.getAnnotation(DynamoDBRangeKey.class);
+                DynamoDBRangeKey rangeKey = (DynamoDBRangeKey)ReflectionUtilities.getGetterAnnotation(getter, DynamoDBRangeKey.class);
                 if ( rangeKey != null && rangeKey.attributeName() != null && rangeKey.attributeName().length() > 0 )
                     return rangeKey.attributeName();
 
                 // Then an index range key
-                DynamoDBIndexRangeKey indexRangeKey = getter.getAnnotation(DynamoDBIndexRangeKey.class);
+                DynamoDBIndexRangeKey indexRangeKey = (DynamoDBIndexRangeKey)ReflectionUtilities.getGetterAnnotation(getter, DynamoDBIndexRangeKey.class);
                 if ( indexRangeKey != null && indexRangeKey.attributeName() != null && indexRangeKey.attributeName().length() > 0 )
                     return indexRangeKey.attributeName();
 
                 // Then an attribute
-                DynamoDBAttribute attribute = getter.getAnnotation(DynamoDBAttribute.class);
+                DynamoDBAttribute attribute = (DynamoDBAttribute)ReflectionUtilities.getGetterAnnotation(getter, DynamoDBAttribute.class);
                 if ( attribute != null && attribute.attributeName() != null && attribute.attributeName().length() > 0 )
                     return attribute.attributeName();
 
                 // Finally a version attribute
-                DynamoDBVersionAttribute version = getter.getAnnotation(DynamoDBVersionAttribute.class);
+                DynamoDBVersionAttribute version = (DynamoDBVersionAttribute)ReflectionUtilities.getGetterAnnotation(getter, DynamoDBVersionAttribute.class);
                 if ( version != null && version.attributeName() != null && version.attributeName().length() > 0 )
                     return version.attributeName();
 
@@ -1028,7 +1030,7 @@ public class DynamoDBReflector {
                 if ( BigInteger.class.isAssignableFrom(returnType) ) {
                     marshaller = new ArgumentMarshaller() {
 
-                        @Override
+                        
                         public AttributeValue marshall(Object obj) {
                             if ( obj == null )
                                 obj = BigInteger.ZERO;
@@ -1040,7 +1042,7 @@ public class DynamoDBReflector {
                 } else if ( Integer.class.isAssignableFrom(returnType) ) {
                     marshaller = new ArgumentMarshaller() {
 
-                        @Override
+                        
                         public AttributeValue marshall(Object obj) {
                             if ( obj == null )
                                 obj = new Integer(0);
@@ -1052,7 +1054,7 @@ public class DynamoDBReflector {
                 } else if ( Byte.class.isAssignableFrom(returnType) ) {
                     marshaller = new ArgumentMarshaller() {
 
-                        @Override
+                        
                         public AttributeValue marshall(Object obj) {
                             if ( obj == null )
                                 obj = new Byte((byte) 0);
@@ -1064,7 +1066,7 @@ public class DynamoDBReflector {
                 } else if ( Long.class.isAssignableFrom(returnType) ) {
                     marshaller = new ArgumentMarshaller() {
 
-                        @Override
+                        
                         public AttributeValue marshall(Object obj) {
                             if ( obj == null )
                                 obj = new Long(0);
@@ -1095,7 +1097,7 @@ public class DynamoDBReflector {
                 if ( String.class.isAssignableFrom(returnType) ) {
                     marshaller = new ArgumentMarshaller() {
 
-                        @Override
+                        
                         public AttributeValue marshall(Object obj) {
                             String newValue = UUID.randomUUID().toString();
                             return getArgumentMarshaller(getter).marshall(newValue);
@@ -1122,7 +1124,7 @@ public class DynamoDBReflector {
                 versionAttributeGetterCache.put(
                         getter,
                         getter.getName().startsWith("get") && getter.getParameterTypes().length == 0
-                                && getter.isAnnotationPresent(DynamoDBVersionAttribute.class));
+                                && ReflectionUtilities.getterHasAnnotation(getter, DynamoDBVersionAttribute.class));
             }
             return versionAttributeGetterCache.get(getter);
         }
@@ -1136,9 +1138,8 @@ public class DynamoDBReflector {
             if ( !autoGeneratedKeyGetterCache.containsKey(getter) ) {
                 autoGeneratedKeyGetterCache.put(
                         getter,
-                        getter.isAnnotationPresent(DynamoDBAutoGeneratedKey.class)
-                                && (getter.isAnnotationPresent(DynamoDBHashKey.class) || getter
-                                        .isAnnotationPresent(DynamoDBRangeKey.class)));
+                        ReflectionUtilities.getterHasAnnotation(getter, DynamoDBAutoGeneratedKey.class)
+                                && (ReflectionUtilities.getterHasAnnotation(getter, DynamoDBHashKey.class) || ReflectionUtilities.getterHasAnnotation(getter, DynamoDBRangeKey.class)));
             }
             return autoGeneratedKeyGetterCache.get(getter);
         }
@@ -1180,8 +1181,8 @@ public class DynamoDBReflector {
 
                     // If it's annotated as a range key for one or more LSI
                     if ( method.getParameterTypes().length == 0
-                            && method.isAnnotationPresent(DynamoDBIndexRangeKey.class)) {
-                        DynamoDBIndexRangeKey indexRangeKeyAnnotation = method.getAnnotation(DynamoDBIndexRangeKey.class);
+                            && ReflectionUtilities.getterHasAnnotation(method, DynamoDBIndexRangeKey.class)) {
+                        DynamoDBIndexRangeKey indexRangeKeyAnnotation = (DynamoDBIndexRangeKey)ReflectionUtilities.getGetterAnnotation(method, DynamoDBIndexRangeKey.class);
                         String localSecondaryIndexName = indexRangeKeyAnnotation.localSecondaryIndexName();
                         String[] localSecondaryIndexNames = indexRangeKeyAnnotation.localSecondaryIndexNames();
                         boolean singleLSIName = localSecondaryIndexName != null
@@ -1232,10 +1233,10 @@ public class DynamoDBReflector {
                     List<String> indexNames = new LinkedList<String>();
 
                     if ( method.getParameterTypes().length == 0
-                            && ( method.isAnnotationPresent(annotationInterface) )) {
+                            && ( ReflectionUtilities.getterHasAnnotation(method, annotationInterface) )) {
                         String globalSecondaryIndexName;
                         String[] globalSecondaryIndexNames;
-                        Annotation indexHashKeyAnnotation = method.getAnnotation(annotationInterface);
+                        Annotation indexHashKeyAnnotation = ReflectionUtilities.getGetterAnnotation(method, annotationInterface);
                         if (isIndexHashKey) {
                             globalSecondaryIndexName = ((DynamoDBIndexHashKey)indexHashKeyAnnotation).globalSecondaryIndexName();
                             globalSecondaryIndexNames = ((DynamoDBIndexHashKey)indexHashKeyAnnotation).globalSecondaryIndexNames();

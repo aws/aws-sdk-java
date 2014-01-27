@@ -29,7 +29,7 @@ import java.lang.annotation.Target;
  * item queries.
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
+@Target(value={ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBIndexHashKey {
 
     /**

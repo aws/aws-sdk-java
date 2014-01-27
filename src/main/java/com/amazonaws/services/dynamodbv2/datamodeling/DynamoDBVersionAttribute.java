@@ -35,7 +35,7 @@ import java.lang.annotation.Target;
  * API.
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
+@Target(value={ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBVersionAttribute {
     /**
      * Optional parameter when the name of the attribute as stored in DynamoDB
