@@ -23,11 +23,23 @@ import com.amazonaws.services.ec2.model.transform.AssociateAddressRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#associateAddress(AssociateAddressRequest) AssociateAddress operation}.
  * <p>
- * The AssociateAddress operation associates an elastic IP address with an instance.
+ * Associates an Elastic IP address with an instance or a network interface.
  * </p>
  * <p>
- * If the IP address is currently assigned to another instance, the IP address is assigned to the new instance. This is an idempotent operation. If you
- * enter it more than once, Amazon EC2 does not return an error.
+ * An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a> in the <i>Amazon Elastic Compute
+ * Cloud User Guide</i> .
+ * </p>
+ * <p>
+ * [EC2-Classic, default VPC] If the Elastic IP address is already associated with a different instance, it is disassociated from that instance and
+ * associated with the specified instance.
+ * </p>
+ * <p>
+ * [EC2-VPC] If you don't specify a private IP address, the Elastic IP address is associated with the primary IP address. If the Elastic IP address is
+ * already associated with a different instance or a network interface, you get an error unless you allow reassociation.
+ * </p>
+ * <p>
+ * This is an idempotent operation. If you perform the operation more than once, Amazon EC2 doesn't return an error.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#associateAddress(AssociateAddressRequest)
@@ -35,25 +47,41 @@ import com.amazonaws.services.ec2.model.transform.AssociateAddressRequestMarshal
 public class AssociateAddressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AssociateAddressRequest> {
 
     /**
-     * The instance to associate with the IP address.
+     * The ID of the instance. The operation fails if you specify an instance
+     * ID unless exactly one network interface is attached.
      */
     private String instanceId;
 
     /**
-     * IP address that you are assigning to the instance.
+     * The Elastic IP address.
      */
     private String publicIp;
 
     /**
-     * The allocation ID that AWS returned when you allocated the elastic IP
-     * address for use with Amazon VPC.
+     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
      */
     private String allocationId;
 
+    /**
+     * [EC2-VPC] The ID of the network interface. If the instance has more
+     * than one network interface, you must specify a network interface ID.
+     */
     private String networkInterfaceId;
 
+    /**
+     * [EC2-VPC] The primary or secondary private IP address to associate
+     * with the Elastic IP address. If no private IP address is specified,
+     * the Elastic IP address is associated with the primary private IP
+     * address.
+     */
     private String privateIpAddress;
 
+    /**
+     * [EC2-VPC] Allows an Elastic IP address that is already associated with
+     * an instance or network interface to be re-associated with the
+     * specified instance or network interface. Otherwise, the operation
+     * fails. <p>Default: <code>false</code>
+     */
     private Boolean allowReassociation;
 
     /**
@@ -67,8 +95,10 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param instanceId The instance to associate with the IP address.
-     * @param publicIp IP address that you are assigning to the instance.
+     * @param instanceId The ID of the instance. The operation fails if you
+     * specify an instance ID unless exactly one network interface is
+     * attached.
+     * @param publicIp The Elastic IP address.
      */
     public AssociateAddressRequest(String instanceId, String publicIp) {
         setInstanceId(instanceId);
@@ -76,29 +106,35 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The instance to associate with the IP address.
+     * The ID of the instance. The operation fails if you specify an instance
+     * ID unless exactly one network interface is attached.
      *
-     * @return The instance to associate with the IP address.
+     * @return The ID of the instance. The operation fails if you specify an instance
+     *         ID unless exactly one network interface is attached.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The instance to associate with the IP address.
+     * The ID of the instance. The operation fails if you specify an instance
+     * ID unless exactly one network interface is attached.
      *
-     * @param instanceId The instance to associate with the IP address.
+     * @param instanceId The ID of the instance. The operation fails if you specify an instance
+     *         ID unless exactly one network interface is attached.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The instance to associate with the IP address.
+     * The ID of the instance. The operation fails if you specify an instance
+     * ID unless exactly one network interface is attached.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The instance to associate with the IP address.
+     * @param instanceId The ID of the instance. The operation fails if you specify an instance
+     *         ID unless exactly one network interface is attached.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -109,29 +145,29 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * IP address that you are assigning to the instance.
+     * The Elastic IP address.
      *
-     * @return IP address that you are assigning to the instance.
+     * @return The Elastic IP address.
      */
     public String getPublicIp() {
         return publicIp;
     }
     
     /**
-     * IP address that you are assigning to the instance.
+     * The Elastic IP address.
      *
-     * @param publicIp IP address that you are assigning to the instance.
+     * @param publicIp The Elastic IP address.
      */
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
     
     /**
-     * IP address that you are assigning to the instance.
+     * The Elastic IP address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicIp IP address that you are assigning to the instance.
+     * @param publicIp The Elastic IP address.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -142,35 +178,29 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The allocation ID that AWS returned when you allocated the elastic IP
-     * address for use with Amazon VPC.
+     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
      *
-     * @return The allocation ID that AWS returned when you allocated the elastic IP
-     *         address for use with Amazon VPC.
+     * @return [EC2-VPC] The allocation ID. This is required for EC2-VPC.
      */
     public String getAllocationId() {
         return allocationId;
     }
     
     /**
-     * The allocation ID that AWS returned when you allocated the elastic IP
-     * address for use with Amazon VPC.
+     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
      *
-     * @param allocationId The allocation ID that AWS returned when you allocated the elastic IP
-     *         address for use with Amazon VPC.
+     * @param allocationId [EC2-VPC] The allocation ID. This is required for EC2-VPC.
      */
     public void setAllocationId(String allocationId) {
         this.allocationId = allocationId;
     }
     
     /**
-     * The allocation ID that AWS returned when you allocated the elastic IP
-     * address for use with Amazon VPC.
+     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allocationId The allocation ID that AWS returned when you allocated the elastic IP
-     *         address for use with Amazon VPC.
+     * @param allocationId [EC2-VPC] The allocation ID. This is required for EC2-VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -181,29 +211,35 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Returns the value of the NetworkInterfaceId property for this object.
+     * [EC2-VPC] The ID of the network interface. If the instance has more
+     * than one network interface, you must specify a network interface ID.
      *
-     * @return The value of the NetworkInterfaceId property for this object.
+     * @return [EC2-VPC] The ID of the network interface. If the instance has more
+     *         than one network interface, you must specify a network interface ID.
      */
     public String getNetworkInterfaceId() {
         return networkInterfaceId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceId property for this object.
+     * [EC2-VPC] The ID of the network interface. If the instance has more
+     * than one network interface, you must specify a network interface ID.
      *
-     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     * @param networkInterfaceId [EC2-VPC] The ID of the network interface. If the instance has more
+     *         than one network interface, you must specify a network interface ID.
      */
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceId property for this object.
+     * [EC2-VPC] The ID of the network interface. If the instance has more
+     * than one network interface, you must specify a network interface ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     * @param networkInterfaceId [EC2-VPC] The ID of the network interface. If the instance has more
+     *         than one network interface, you must specify a network interface ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -214,29 +250,47 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Returns the value of the PrivateIpAddress property for this object.
+     * [EC2-VPC] The primary or secondary private IP address to associate
+     * with the Elastic IP address. If no private IP address is specified,
+     * the Elastic IP address is associated with the primary private IP
+     * address.
      *
-     * @return The value of the PrivateIpAddress property for this object.
+     * @return [EC2-VPC] The primary or secondary private IP address to associate
+     *         with the Elastic IP address. If no private IP address is specified,
+     *         the Elastic IP address is associated with the primary private IP
+     *         address.
      */
     public String getPrivateIpAddress() {
         return privateIpAddress;
     }
     
     /**
-     * Sets the value of the PrivateIpAddress property for this object.
+     * [EC2-VPC] The primary or secondary private IP address to associate
+     * with the Elastic IP address. If no private IP address is specified,
+     * the Elastic IP address is associated with the primary private IP
+     * address.
      *
-     * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     * @param privateIpAddress [EC2-VPC] The primary or secondary private IP address to associate
+     *         with the Elastic IP address. If no private IP address is specified,
+     *         the Elastic IP address is associated with the primary private IP
+     *         address.
      */
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
     
     /**
-     * Sets the value of the PrivateIpAddress property for this object.
+     * [EC2-VPC] The primary or secondary private IP address to associate
+     * with the Elastic IP address. If no private IP address is specified,
+     * the Elastic IP address is associated with the primary private IP
+     * address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     * @param privateIpAddress [EC2-VPC] The primary or secondary private IP address to associate
+     *         with the Elastic IP address. If no private IP address is specified,
+     *         the Elastic IP address is associated with the primary private IP
+     *         address.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -247,29 +301,47 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Returns the value of the AllowReassociation property for this object.
+     * [EC2-VPC] Allows an Elastic IP address that is already associated with
+     * an instance or network interface to be re-associated with the
+     * specified instance or network interface. Otherwise, the operation
+     * fails. <p>Default: <code>false</code>
      *
-     * @return The value of the AllowReassociation property for this object.
+     * @return [EC2-VPC] Allows an Elastic IP address that is already associated with
+     *         an instance or network interface to be re-associated with the
+     *         specified instance or network interface. Otherwise, the operation
+     *         fails. <p>Default: <code>false</code>
      */
     public Boolean isAllowReassociation() {
         return allowReassociation;
     }
     
     /**
-     * Sets the value of the AllowReassociation property for this object.
+     * [EC2-VPC] Allows an Elastic IP address that is already associated with
+     * an instance or network interface to be re-associated with the
+     * specified instance or network interface. Otherwise, the operation
+     * fails. <p>Default: <code>false</code>
      *
-     * @param allowReassociation The new value for the AllowReassociation property for this object.
+     * @param allowReassociation [EC2-VPC] Allows an Elastic IP address that is already associated with
+     *         an instance or network interface to be re-associated with the
+     *         specified instance or network interface. Otherwise, the operation
+     *         fails. <p>Default: <code>false</code>
      */
     public void setAllowReassociation(Boolean allowReassociation) {
         this.allowReassociation = allowReassociation;
     }
     
     /**
-     * Sets the value of the AllowReassociation property for this object.
+     * [EC2-VPC] Allows an Elastic IP address that is already associated with
+     * an instance or network interface to be re-associated with the
+     * specified instance or network interface. Otherwise, the operation
+     * fails. <p>Default: <code>false</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allowReassociation The new value for the AllowReassociation property for this object.
+     * @param allowReassociation [EC2-VPC] Allows an Elastic IP address that is already associated with
+     *         an instance or network interface to be re-associated with the
+     *         specified instance or network interface. Otherwise, the operation
+     *         fails. <p>Default: <code>false</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -280,9 +352,15 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Returns the value of the AllowReassociation property for this object.
+     * [EC2-VPC] Allows an Elastic IP address that is already associated with
+     * an instance or network interface to be re-associated with the
+     * specified instance or network interface. Otherwise, the operation
+     * fails. <p>Default: <code>false</code>
      *
-     * @return The value of the AllowReassociation property for this object.
+     * @return [EC2-VPC] Allows an Elastic IP address that is already associated with
+     *         an instance or network interface to be re-associated with the
+     *         specified instance or network interface. Otherwise, the operation
+     *         fails. <p>Default: <code>false</code>
      */
     public Boolean getAllowReassociation() {
         return allowReassociation;

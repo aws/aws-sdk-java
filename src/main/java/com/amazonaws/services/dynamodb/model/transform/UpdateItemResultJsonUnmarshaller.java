@@ -27,6 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * Update Item Result JSON Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.UpdateItemResultJsonUnmarshaller} instead.
  */
 @Deprecated
 public class UpdateItemResultJsonUnmarshaller implements Unmarshaller<UpdateItemResult, JsonUnmarshallerContext> {

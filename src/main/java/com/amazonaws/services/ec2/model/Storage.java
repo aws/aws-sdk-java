@@ -18,40 +18,40 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the storage destination for a BundleTask when bundling a Windows instance.
+ * Describes the storage location for an instance store-backed AMI.
  * </p>
  */
 public class Storage implements Serializable {
 
     /**
-     * The details of S3 storage for bundling a Windows instance.
+     * An Amazon S3 storage location.
      */
     private S3Storage s3;
 
     /**
-     * The details of S3 storage for bundling a Windows instance.
+     * An Amazon S3 storage location.
      *
-     * @return The details of S3 storage for bundling a Windows instance.
+     * @return An Amazon S3 storage location.
      */
     public S3Storage getS3() {
         return s3;
     }
     
     /**
-     * The details of S3 storage for bundling a Windows instance.
+     * An Amazon S3 storage location.
      *
-     * @param s3 The details of S3 storage for bundling a Windows instance.
+     * @param s3 An Amazon S3 storage location.
      */
     public void setS3(S3Storage s3) {
         this.s3 = s3;
     }
     
     /**
-     * The details of S3 storage for bundling a Windows instance.
+     * An Amazon S3 storage location.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param s3 The details of S3 storage for bundling a Windows instance.
+     * @param s3 An Amazon S3 storage location.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

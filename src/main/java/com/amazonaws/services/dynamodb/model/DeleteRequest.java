@@ -19,6 +19,7 @@ import java.io.Serializable;
  * <p>
  * A container for a Delete BatchWrite request
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.DeleteRequest} instead.
  */
 @Deprecated
 public class DeleteRequest  implements Serializable  {

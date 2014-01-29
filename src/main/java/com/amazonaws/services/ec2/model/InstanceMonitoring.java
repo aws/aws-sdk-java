@@ -18,45 +18,45 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the monitoring state of an EC2 instance.
+ * Describes the monitoring information of the instance.
  * </p>
  */
 public class InstanceMonitoring implements Serializable {
 
     /**
-     * Instance ID.
+     * The ID of the instance.
      */
     private String instanceId;
 
     /**
-     * Monitoring state for the associated instance.
+     * The monitoring information.
      */
     private Monitoring monitoring;
 
     /**
-     * Instance ID.
+     * The ID of the instance.
      *
-     * @return Instance ID.
+     * @return The ID of the instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * Instance ID.
+     * The ID of the instance.
      *
-     * @param instanceId Instance ID.
+     * @param instanceId The ID of the instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * Instance ID.
+     * The ID of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId Instance ID.
+     * @param instanceId The ID of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -67,29 +67,29 @@ public class InstanceMonitoring implements Serializable {
     }
 
     /**
-     * Monitoring state for the associated instance.
+     * The monitoring information.
      *
-     * @return Monitoring state for the associated instance.
+     * @return The monitoring information.
      */
     public Monitoring getMonitoring() {
         return monitoring;
     }
     
     /**
-     * Monitoring state for the associated instance.
+     * The monitoring information.
      *
-     * @param monitoring Monitoring state for the associated instance.
+     * @param monitoring The monitoring information.
      */
     public void setMonitoring(Monitoring monitoring) {
         this.monitoring = monitoring;
     }
     
     /**
-     * Monitoring state for the associated instance.
+     * The monitoring information.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param monitoring Monitoring state for the associated instance.
+     * @param monitoring The monitoring information.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -26,6 +26,8 @@ import java.io.Serializable;
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#updateTable(UpdateTableRequest)
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.UpdateTableRequest} instead.
  */
 @Deprecated
 public class UpdateTableRequest extends AmazonWebServiceRequest  implements Serializable  {

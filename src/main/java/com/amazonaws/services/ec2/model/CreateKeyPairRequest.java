@@ -23,8 +23,16 @@ import com.amazonaws.services.ec2.model.transform.CreateKeyPairRequestMarshaller
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createKeyPair(CreateKeyPairRequest) CreateKeyPair operation}.
  * <p>
- * The CreateKeyPair operation creates a new 2048 bit RSA key pair and returns a unique ID that can be used to reference this key pair when launching
- * new instances. For more information, see RunInstances.
+ * Creates a 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public key and displays the private key for you to save to a file. The
+ * private key is returned as an unencrypted PEM encoded PKCS#8 private key. If a key with the specified name already exists, Amazon EC2 returns an
+ * error.
+ * </p>
+ * <p>
+ * You can have up to five thousand key pairs per region.
+ * </p>
+ * <p>
+ * For more information about key pairs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a> in the
+ * <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createKeyPair(CreateKeyPairRequest)
@@ -32,7 +40,7 @@ import com.amazonaws.services.ec2.model.transform.CreateKeyPairRequestMarshaller
 public class CreateKeyPairRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateKeyPairRequest> {
 
     /**
-     * The unique name for the new key pair.
+     * A unique name for the key pair.
      */
     private String keyName;
 
@@ -47,36 +55,36 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest implements Ser
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param keyName The unique name for the new key pair.
+     * @param keyName A unique name for the key pair.
      */
     public CreateKeyPairRequest(String keyName) {
         setKeyName(keyName);
     }
 
     /**
-     * The unique name for the new key pair.
+     * A unique name for the key pair.
      *
-     * @return The unique name for the new key pair.
+     * @return A unique name for the key pair.
      */
     public String getKeyName() {
         return keyName;
     }
     
     /**
-     * The unique name for the new key pair.
+     * A unique name for the key pair.
      *
-     * @param keyName The unique name for the new key pair.
+     * @param keyName A unique name for the key pair.
      */
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
     
     /**
-     * The unique name for the new key pair.
+     * A unique name for the key pair.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param keyName The unique name for the new key pair.
+     * @param keyName A unique name for the key pair.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

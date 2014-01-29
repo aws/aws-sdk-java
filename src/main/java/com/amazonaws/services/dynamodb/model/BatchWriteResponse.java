@@ -17,6 +17,7 @@ import java.io.Serializable;
 
 /**
  * Batch Write Response
+ * @deprecated This class is no longer suppored by the latest service API.
  */
 @Deprecated
 public class BatchWriteResponse  implements Serializable  {

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudfront_2012_03_15;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
@@ -31,6 +32,7 @@ import com.amazonaws.ResponseMetadata;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.CloudFrontSigner;
+import com.amazonaws.auth.Signer;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.http.DefaultErrorResponseHandler;
 import com.amazonaws.http.ExecutionContext;
@@ -202,7 +204,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
 
     /** AWS signer for authenticating requests. */
-    private CloudFrontSigner signer;
+    private final CloudFrontSigner signer = new CloudFrontSigner();
 
 
     /**
@@ -313,8 +315,6 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
         setEndpoint("cloudfront.amazonaws.com/");
-
-        signer = new CloudFrontSigner();
 
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
@@ -1034,4 +1034,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         Response<X> res = client.execute(request, responseHandler, errorResponseHandler, executionContext);
         return res.getAwsResponse();
     }
+
+    /**
+     * Always return the same AWS CloudFrontSigner for this old AWS CloudFront
+     * client.
+     */
+    @Override public Signer getSignerByURI(URI uri) { return signer; }
 }

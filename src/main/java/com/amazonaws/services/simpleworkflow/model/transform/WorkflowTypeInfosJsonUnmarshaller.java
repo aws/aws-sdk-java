@@ -46,6 +46,7 @@ public class WorkflowTypeInfosJsonUnmarshaller implements Unmarshaller<WorkflowT
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("typeInfos", targetDepth)) {
+                    context.nextToken();
                     workflowTypeInfos.setTypeInfos(new ListUnmarshaller<WorkflowTypeInfo>(WorkflowTypeInfoJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {

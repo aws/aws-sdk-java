@@ -31,13 +31,13 @@ public class ContentLengthValidationInputStream extends FilterInputStream {
 	private long expectedLength;
 
 	/** This variables holds the number of bytes read from the stream so far. */
-	private int bytesRead;
+	private long bytesRead;
 
 	/**
 	 * This variable holds the number of bytes read from the stream at the
 	 * instance when mark method was called.
 	 */
-	private int mark;
+	private long mark;
 
 	public ContentLengthValidationInputStream(InputStream in, long expectedLength) {
 		super(in);

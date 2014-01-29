@@ -18,44 +18,44 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Information about a specific modification request to your Reserved Instances.
+ * Describes a Reserved Instance modification.
  * </p>
  */
 public class ReservedInstancesModification implements Serializable {
 
     /**
-     * The unique ID for the submitted modification request.
+     * A unique ID for the Reserved Instance modification.
      */
     private String reservedInstancesModificationId;
 
     /**
-     * The IDs of the Reserved Instances submitted for modification.
+     * The IDs of one or more Reserved Instances.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesId> reservedInstancesIds;
 
     /**
-     * The resulting information about the modified Reserved Instances.
+     * Contains target configurations along with their corresponding new
+     * Reserved Instance IDs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesModificationResult> modificationResults;
 
     /**
-     * The time the modification request was created.
+     * The time when the modification request was created.
      */
     private java.util.Date createDate;
 
     /**
-     * The time the modification request was last updated.
+     * The time when the modification request was last updated.
      */
     private java.util.Date updateDate;
 
     /**
-     * The time the modification becomes effective.
+     * The time for the modification to become effective.
      */
     private java.util.Date effectiveDate;
 
     /**
-     * The status of the modification request, which can be any of the
-     * following values: processing, fulfilled, failed.
+     * The status of the Reserved Instances modification request.
      */
     private String status;
 
@@ -65,34 +65,35 @@ public class ReservedInstancesModification implements Serializable {
     private String statusMessage;
 
     /**
-     * The idempotency token for the modification request.
+     * A unique, case-sensitive key supplied by the client to ensure that the
+     * modification request is idempotent.
      */
     private String clientToken;
 
     /**
-     * The unique ID for the submitted modification request.
+     * A unique ID for the Reserved Instance modification.
      *
-     * @return The unique ID for the submitted modification request.
+     * @return A unique ID for the Reserved Instance modification.
      */
     public String getReservedInstancesModificationId() {
         return reservedInstancesModificationId;
     }
     
     /**
-     * The unique ID for the submitted modification request.
+     * A unique ID for the Reserved Instance modification.
      *
-     * @param reservedInstancesModificationId The unique ID for the submitted modification request.
+     * @param reservedInstancesModificationId A unique ID for the Reserved Instance modification.
      */
     public void setReservedInstancesModificationId(String reservedInstancesModificationId) {
         this.reservedInstancesModificationId = reservedInstancesModificationId;
     }
     
     /**
-     * The unique ID for the submitted modification request.
+     * A unique ID for the Reserved Instance modification.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesModificationId The unique ID for the submitted modification request.
+     * @param reservedInstancesModificationId A unique ID for the Reserved Instance modification.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -103,9 +104,9 @@ public class ReservedInstancesModification implements Serializable {
     }
 
     /**
-     * The IDs of the Reserved Instances submitted for modification.
+     * The IDs of one or more Reserved Instances.
      *
-     * @return The IDs of the Reserved Instances submitted for modification.
+     * @return The IDs of one or more Reserved Instances.
      */
     public java.util.List<ReservedInstancesId> getReservedInstancesIds() {
         if (reservedInstancesIds == null) {
@@ -116,9 +117,9 @@ public class ReservedInstancesModification implements Serializable {
     }
     
     /**
-     * The IDs of the Reserved Instances submitted for modification.
+     * The IDs of one or more Reserved Instances.
      *
-     * @param reservedInstancesIds The IDs of the Reserved Instances submitted for modification.
+     * @param reservedInstancesIds The IDs of one or more Reserved Instances.
      */
     public void setReservedInstancesIds(java.util.Collection<ReservedInstancesId> reservedInstancesIds) {
         if (reservedInstancesIds == null) {
@@ -131,11 +132,11 @@ public class ReservedInstancesModification implements Serializable {
     }
     
     /**
-     * The IDs of the Reserved Instances submitted for modification.
+     * The IDs of one or more Reserved Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesIds The IDs of the Reserved Instances submitted for modification.
+     * @param reservedInstancesIds The IDs of one or more Reserved Instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -149,11 +150,11 @@ public class ReservedInstancesModification implements Serializable {
     }
     
     /**
-     * The IDs of the Reserved Instances submitted for modification.
+     * The IDs of one or more Reserved Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesIds The IDs of the Reserved Instances submitted for modification.
+     * @param reservedInstancesIds The IDs of one or more Reserved Instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -171,9 +172,11 @@ public class ReservedInstancesModification implements Serializable {
     }
 
     /**
-     * The resulting information about the modified Reserved Instances.
+     * Contains target configurations along with their corresponding new
+     * Reserved Instance IDs.
      *
-     * @return The resulting information about the modified Reserved Instances.
+     * @return Contains target configurations along with their corresponding new
+     *         Reserved Instance IDs.
      */
     public java.util.List<ReservedInstancesModificationResult> getModificationResults() {
         if (modificationResults == null) {
@@ -184,9 +187,11 @@ public class ReservedInstancesModification implements Serializable {
     }
     
     /**
-     * The resulting information about the modified Reserved Instances.
+     * Contains target configurations along with their corresponding new
+     * Reserved Instance IDs.
      *
-     * @param modificationResults The resulting information about the modified Reserved Instances.
+     * @param modificationResults Contains target configurations along with their corresponding new
+     *         Reserved Instance IDs.
      */
     public void setModificationResults(java.util.Collection<ReservedInstancesModificationResult> modificationResults) {
         if (modificationResults == null) {
@@ -199,11 +204,13 @@ public class ReservedInstancesModification implements Serializable {
     }
     
     /**
-     * The resulting information about the modified Reserved Instances.
+     * Contains target configurations along with their corresponding new
+     * Reserved Instance IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param modificationResults The resulting information about the modified Reserved Instances.
+     * @param modificationResults Contains target configurations along with their corresponding new
+     *         Reserved Instance IDs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -217,11 +224,13 @@ public class ReservedInstancesModification implements Serializable {
     }
     
     /**
-     * The resulting information about the modified Reserved Instances.
+     * Contains target configurations along with their corresponding new
+     * Reserved Instance IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param modificationResults The resulting information about the modified Reserved Instances.
+     * @param modificationResults Contains target configurations along with their corresponding new
+     *         Reserved Instance IDs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -239,29 +248,29 @@ public class ReservedInstancesModification implements Serializable {
     }
 
     /**
-     * The time the modification request was created.
+     * The time when the modification request was created.
      *
-     * @return The time the modification request was created.
+     * @return The time when the modification request was created.
      */
     public java.util.Date getCreateDate() {
         return createDate;
     }
     
     /**
-     * The time the modification request was created.
+     * The time when the modification request was created.
      *
-     * @param createDate The time the modification request was created.
+     * @param createDate The time when the modification request was created.
      */
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
     
     /**
-     * The time the modification request was created.
+     * The time when the modification request was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createDate The time the modification request was created.
+     * @param createDate The time when the modification request was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -272,29 +281,29 @@ public class ReservedInstancesModification implements Serializable {
     }
 
     /**
-     * The time the modification request was last updated.
+     * The time when the modification request was last updated.
      *
-     * @return The time the modification request was last updated.
+     * @return The time when the modification request was last updated.
      */
     public java.util.Date getUpdateDate() {
         return updateDate;
     }
     
     /**
-     * The time the modification request was last updated.
+     * The time when the modification request was last updated.
      *
-     * @param updateDate The time the modification request was last updated.
+     * @param updateDate The time when the modification request was last updated.
      */
     public void setUpdateDate(java.util.Date updateDate) {
         this.updateDate = updateDate;
     }
     
     /**
-     * The time the modification request was last updated.
+     * The time when the modification request was last updated.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param updateDate The time the modification request was last updated.
+     * @param updateDate The time when the modification request was last updated.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -305,29 +314,29 @@ public class ReservedInstancesModification implements Serializable {
     }
 
     /**
-     * The time the modification becomes effective.
+     * The time for the modification to become effective.
      *
-     * @return The time the modification becomes effective.
+     * @return The time for the modification to become effective.
      */
     public java.util.Date getEffectiveDate() {
         return effectiveDate;
     }
     
     /**
-     * The time the modification becomes effective.
+     * The time for the modification to become effective.
      *
-     * @param effectiveDate The time the modification becomes effective.
+     * @param effectiveDate The time for the modification to become effective.
      */
     public void setEffectiveDate(java.util.Date effectiveDate) {
         this.effectiveDate = effectiveDate;
     }
     
     /**
-     * The time the modification becomes effective.
+     * The time for the modification to become effective.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param effectiveDate The time the modification becomes effective.
+     * @param effectiveDate The time for the modification to become effective.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -338,35 +347,29 @@ public class ReservedInstancesModification implements Serializable {
     }
 
     /**
-     * The status of the modification request, which can be any of the
-     * following values: processing, fulfilled, failed.
+     * The status of the Reserved Instances modification request.
      *
-     * @return The status of the modification request, which can be any of the
-     *         following values: processing, fulfilled, failed.
+     * @return The status of the Reserved Instances modification request.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * The status of the modification request, which can be any of the
-     * following values: processing, fulfilled, failed.
+     * The status of the Reserved Instances modification request.
      *
-     * @param status The status of the modification request, which can be any of the
-     *         following values: processing, fulfilled, failed.
+     * @param status The status of the Reserved Instances modification request.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * The status of the modification request, which can be any of the
-     * following values: processing, fulfilled, failed.
+     * The status of the Reserved Instances modification request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status The status of the modification request, which can be any of the
-     *         following values: processing, fulfilled, failed.
+     * @param status The status of the Reserved Instances modification request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -410,29 +413,35 @@ public class ReservedInstancesModification implements Serializable {
     }
 
     /**
-     * The idempotency token for the modification request.
+     * A unique, case-sensitive key supplied by the client to ensure that the
+     * modification request is idempotent.
      *
-     * @return The idempotency token for the modification request.
+     * @return A unique, case-sensitive key supplied by the client to ensure that the
+     *         modification request is idempotent.
      */
     public String getClientToken() {
         return clientToken;
     }
     
     /**
-     * The idempotency token for the modification request.
+     * A unique, case-sensitive key supplied by the client to ensure that the
+     * modification request is idempotent.
      *
-     * @param clientToken The idempotency token for the modification request.
+     * @param clientToken A unique, case-sensitive key supplied by the client to ensure that the
+     *         modification request is idempotent.
      */
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
     
     /**
-     * The idempotency token for the modification request.
+     * A unique, case-sensitive key supplied by the client to ensure that the
+     * modification request is idempotent.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param clientToken The idempotency token for the modification request.
+     * @param clientToken A unique, case-sensitive key supplied by the client to ensure that the
+     *         modification request is idempotent.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

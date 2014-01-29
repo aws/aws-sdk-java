@@ -18,33 +18,33 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents an Amazon <i>Elastic Block Storage</i> (EBS) volume.
+ * Describes a volume.
  * </p>
  */
 public class Volume implements Serializable {
 
     /**
-     * The unique ID of this volume.
+     * The ID of the volume.
      */
     private String volumeId;
 
     /**
-     * The size of this volume, in gigabytes.
+     * The size of the volume, in GiBs.
      */
     private Integer size;
 
     /**
-     * Optional snapshot from which this volume was created.
+     * The snapshot from which the volume was created, if applicable.
      */
     private String snapshotId;
 
     /**
-     * Availability zone in which this volume was created.
+     * The Availability Zone for the volume.
      */
     private String availabilityZone;
 
     /**
-     * State of this volume (e.g., creating, available).
+     * The volume state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>creating, available, in-use, deleting, deleted, error
@@ -52,48 +52,58 @@ public class Volume implements Serializable {
     private String state;
 
     /**
-     * Timestamp when volume creation was initiated.
+     * The time stamp when volume creation was initiated.
      */
     private java.util.Date createTime;
 
     /**
-     * Information on what this volume is attached to.
+     * 
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeAttachment> attachments;
 
     /**
-     * A list of tags for the Volume.
+     * Any tags assigned to the volume.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
+    /**
+     * The volume type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>standard, io1
+     */
     private String volumeType;
 
+    /**
+     * The number of I/O operations per second (IOPS) that the volume
+     * supports.
+     */
     private Integer iops;
 
     /**
-     * The unique ID of this volume.
+     * The ID of the volume.
      *
-     * @return The unique ID of this volume.
+     * @return The ID of the volume.
      */
     public String getVolumeId() {
         return volumeId;
     }
     
     /**
-     * The unique ID of this volume.
+     * The ID of the volume.
      *
-     * @param volumeId The unique ID of this volume.
+     * @param volumeId The ID of the volume.
      */
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
     
     /**
-     * The unique ID of this volume.
+     * The ID of the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeId The unique ID of this volume.
+     * @param volumeId The ID of the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -104,29 +114,29 @@ public class Volume implements Serializable {
     }
 
     /**
-     * The size of this volume, in gigabytes.
+     * The size of the volume, in GiBs.
      *
-     * @return The size of this volume, in gigabytes.
+     * @return The size of the volume, in GiBs.
      */
     public Integer getSize() {
         return size;
     }
     
     /**
-     * The size of this volume, in gigabytes.
+     * The size of the volume, in GiBs.
      *
-     * @param size The size of this volume, in gigabytes.
+     * @param size The size of the volume, in GiBs.
      */
     public void setSize(Integer size) {
         this.size = size;
     }
     
     /**
-     * The size of this volume, in gigabytes.
+     * The size of the volume, in GiBs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param size The size of this volume, in gigabytes.
+     * @param size The size of the volume, in GiBs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -137,29 +147,29 @@ public class Volume implements Serializable {
     }
 
     /**
-     * Optional snapshot from which this volume was created.
+     * The snapshot from which the volume was created, if applicable.
      *
-     * @return Optional snapshot from which this volume was created.
+     * @return The snapshot from which the volume was created, if applicable.
      */
     public String getSnapshotId() {
         return snapshotId;
     }
     
     /**
-     * Optional snapshot from which this volume was created.
+     * The snapshot from which the volume was created, if applicable.
      *
-     * @param snapshotId Optional snapshot from which this volume was created.
+     * @param snapshotId The snapshot from which the volume was created, if applicable.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
     
     /**
-     * Optional snapshot from which this volume was created.
+     * The snapshot from which the volume was created, if applicable.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotId Optional snapshot from which this volume was created.
+     * @param snapshotId The snapshot from which the volume was created, if applicable.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -170,29 +180,29 @@ public class Volume implements Serializable {
     }
 
     /**
-     * Availability zone in which this volume was created.
+     * The Availability Zone for the volume.
      *
-     * @return Availability zone in which this volume was created.
+     * @return The Availability Zone for the volume.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * Availability zone in which this volume was created.
+     * The Availability Zone for the volume.
      *
-     * @param availabilityZone Availability zone in which this volume was created.
+     * @param availabilityZone The Availability Zone for the volume.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * Availability zone in which this volume was created.
+     * The Availability Zone for the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone Availability zone in which this volume was created.
+     * @param availabilityZone The Availability Zone for the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -203,12 +213,12 @@ public class Volume implements Serializable {
     }
 
     /**
-     * State of this volume (e.g., creating, available).
+     * The volume state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>creating, available, in-use, deleting, deleted, error
      *
-     * @return State of this volume (e.g., creating, available).
+     * @return The volume state.
      *
      * @see VolumeState
      */
@@ -217,12 +227,12 @@ public class Volume implements Serializable {
     }
     
     /**
-     * State of this volume (e.g., creating, available).
+     * The volume state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>creating, available, in-use, deleting, deleted, error
      *
-     * @param state State of this volume (e.g., creating, available).
+     * @param state The volume state.
      *
      * @see VolumeState
      */
@@ -231,14 +241,14 @@ public class Volume implements Serializable {
     }
     
     /**
-     * State of this volume (e.g., creating, available).
+     * The volume state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>creating, available, in-use, deleting, deleted, error
      *
-     * @param state State of this volume (e.g., creating, available).
+     * @param state The volume state.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -251,12 +261,12 @@ public class Volume implements Serializable {
     }
 
     /**
-     * State of this volume (e.g., creating, available).
+     * The volume state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>creating, available, in-use, deleting, deleted, error
      *
-     * @param state State of this volume (e.g., creating, available).
+     * @param state The volume state.
      *
      * @see VolumeState
      */
@@ -265,14 +275,14 @@ public class Volume implements Serializable {
     }
     
     /**
-     * State of this volume (e.g., creating, available).
+     * The volume state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>creating, available, in-use, deleting, deleted, error
      *
-     * @param state State of this volume (e.g., creating, available).
+     * @param state The volume state.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -285,29 +295,29 @@ public class Volume implements Serializable {
     }
 
     /**
-     * Timestamp when volume creation was initiated.
+     * The time stamp when volume creation was initiated.
      *
-     * @return Timestamp when volume creation was initiated.
+     * @return The time stamp when volume creation was initiated.
      */
     public java.util.Date getCreateTime() {
         return createTime;
     }
     
     /**
-     * Timestamp when volume creation was initiated.
+     * The time stamp when volume creation was initiated.
      *
-     * @param createTime Timestamp when volume creation was initiated.
+     * @param createTime The time stamp when volume creation was initiated.
      */
     public void setCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
     }
     
     /**
-     * Timestamp when volume creation was initiated.
+     * The time stamp when volume creation was initiated.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createTime Timestamp when volume creation was initiated.
+     * @param createTime The time stamp when volume creation was initiated.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -318,9 +328,9 @@ public class Volume implements Serializable {
     }
 
     /**
-     * Information on what this volume is attached to.
+     * 
      *
-     * @return Information on what this volume is attached to.
+     * @return 
      */
     public java.util.List<VolumeAttachment> getAttachments() {
         if (attachments == null) {
@@ -331,9 +341,9 @@ public class Volume implements Serializable {
     }
     
     /**
-     * Information on what this volume is attached to.
+     * 
      *
-     * @param attachments Information on what this volume is attached to.
+     * @param attachments 
      */
     public void setAttachments(java.util.Collection<VolumeAttachment> attachments) {
         if (attachments == null) {
@@ -346,11 +356,11 @@ public class Volume implements Serializable {
     }
     
     /**
-     * Information on what this volume is attached to.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachments Information on what this volume is attached to.
+     * @param attachments 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -364,11 +374,11 @@ public class Volume implements Serializable {
     }
     
     /**
-     * Information on what this volume is attached to.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachments Information on what this volume is attached to.
+     * @param attachments 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -386,9 +396,9 @@ public class Volume implements Serializable {
     }
 
     /**
-     * A list of tags for the Volume.
+     * Any tags assigned to the volume.
      *
-     * @return A list of tags for the Volume.
+     * @return Any tags assigned to the volume.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
@@ -399,9 +409,9 @@ public class Volume implements Serializable {
     }
     
     /**
-     * A list of tags for the Volume.
+     * Any tags assigned to the volume.
      *
-     * @param tags A list of tags for the Volume.
+     * @param tags Any tags assigned to the volume.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -414,11 +424,11 @@ public class Volume implements Serializable {
     }
     
     /**
-     * A list of tags for the Volume.
+     * Any tags assigned to the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags A list of tags for the Volume.
+     * @param tags Any tags assigned to the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -432,11 +442,11 @@ public class Volume implements Serializable {
     }
     
     /**
-     * A list of tags for the Volume.
+     * Any tags assigned to the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags A list of tags for the Volume.
+     * @param tags Any tags assigned to the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -454,12 +464,12 @@ public class Volume implements Serializable {
     }
 
     /**
-     * Returns the value of the VolumeType property for this object.
+     * The volume type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @return The value of the VolumeType property for this object.
+     * @return The volume type.
      *
      * @see VolumeType
      */
@@ -468,12 +478,12 @@ public class Volume implements Serializable {
     }
     
     /**
-     * Sets the value of the VolumeType property for this object.
+     * The volume type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The new value for the VolumeType property for this object.
+     * @param volumeType The volume type.
      *
      * @see VolumeType
      */
@@ -482,14 +492,14 @@ public class Volume implements Serializable {
     }
     
     /**
-     * Sets the value of the VolumeType property for this object.
+     * The volume type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The new value for the VolumeType property for this object.
+     * @param volumeType The volume type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -502,12 +512,12 @@ public class Volume implements Serializable {
     }
 
     /**
-     * Sets the value of the VolumeType property for this object.
+     * The volume type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The new value for the VolumeType property for this object.
+     * @param volumeType The volume type.
      *
      * @see VolumeType
      */
@@ -516,14 +526,14 @@ public class Volume implements Serializable {
     }
     
     /**
-     * Sets the value of the VolumeType property for this object.
+     * The volume type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The new value for the VolumeType property for this object.
+     * @param volumeType The volume type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -536,29 +546,35 @@ public class Volume implements Serializable {
     }
 
     /**
-     * Returns the value of the Iops property for this object.
+     * The number of I/O operations per second (IOPS) that the volume
+     * supports.
      *
-     * @return The value of the Iops property for this object.
+     * @return The number of I/O operations per second (IOPS) that the volume
+     *         supports.
      */
     public Integer getIops() {
         return iops;
     }
     
     /**
-     * Sets the value of the Iops property for this object.
+     * The number of I/O operations per second (IOPS) that the volume
+     * supports.
      *
-     * @param iops The new value for the Iops property for this object.
+     * @param iops The number of I/O operations per second (IOPS) that the volume
+     *         supports.
      */
     public void setIops(Integer iops) {
         this.iops = iops;
     }
     
     /**
-     * Sets the value of the Iops property for this object.
+     * The number of I/O operations per second (IOPS) that the volume
+     * supports.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param iops The new value for the Iops property for this object.
+     * @param iops The number of I/O operations per second (IOPS) that the volume
+     *         supports.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -2917,7 +2917,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);

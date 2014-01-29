@@ -18,21 +18,18 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes where an Amazon EC2 instance is running within an Amazon EC2 region.
+ * Describes Spot Instance placement.
  * </p>
  */
 public class SpotPlacement implements Serializable {
 
     /**
-     * The availability zone in which an Amazon EC2 instance runs.
+     * The Availability Zone.
      */
     private String availabilityZone;
 
     /**
-     * The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
-     * runs. Placement groups are primarily used for launching High
-     * Performance Computing instances in the same group to ensure fast
-     * connection speeds.
+     * The Availability Zone group name.
      */
     private String groupName;
 
@@ -47,37 +44,36 @@ public class SpotPlacement implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param availabilityZone The availability zone in which an Amazon EC2
-     * instance runs.
+     * @param availabilityZone The Availability Zone.
      */
     public SpotPlacement(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
     }
 
     /**
-     * The availability zone in which an Amazon EC2 instance runs.
+     * The Availability Zone.
      *
-     * @return The availability zone in which an Amazon EC2 instance runs.
+     * @return The Availability Zone.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * The availability zone in which an Amazon EC2 instance runs.
+     * The Availability Zone.
      *
-     * @param availabilityZone The availability zone in which an Amazon EC2 instance runs.
+     * @param availabilityZone The Availability Zone.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * The availability zone in which an Amazon EC2 instance runs.
+     * The Availability Zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The availability zone in which an Amazon EC2 instance runs.
+     * @param availabilityZone The Availability Zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -88,47 +84,29 @@ public class SpotPlacement implements Serializable {
     }
 
     /**
-     * The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
-     * runs. Placement groups are primarily used for launching High
-     * Performance Computing instances in the same group to ensure fast
-     * connection speeds.
+     * The Availability Zone group name.
      *
-     * @return The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
-     *         runs. Placement groups are primarily used for launching High
-     *         Performance Computing instances in the same group to ensure fast
-     *         connection speeds.
+     * @return The Availability Zone group name.
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
-     * runs. Placement groups are primarily used for launching High
-     * Performance Computing instances in the same group to ensure fast
-     * connection speeds.
+     * The Availability Zone group name.
      *
-     * @param groupName The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
-     *         runs. Placement groups are primarily used for launching High
-     *         Performance Computing instances in the same group to ensure fast
-     *         connection speeds.
+     * @param groupName The Availability Zone group name.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
-     * runs. Placement groups are primarily used for launching High
-     * Performance Computing instances in the same group to ensure fast
-     * connection speeds.
+     * The Availability Zone group name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupName The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
-     *         runs. Placement groups are primarily used for launching High
-     *         Performance Computing instances in the same group to ensure fast
-     *         connection speeds.
+     * @param groupName The Availability Zone group name.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

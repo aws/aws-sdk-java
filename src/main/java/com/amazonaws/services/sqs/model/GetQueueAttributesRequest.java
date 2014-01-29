@@ -24,12 +24,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Gets attributes for the specified queue. The following attributes are supported:
  * <ul>
  * <li> <code>All</code> - returns all values.</li>
- * <li> <code>ApproximateNumberOfMessages</code> - returns the approximate number of visible messages in a queue. For more information, see Resources
- * Required to Process Messages in the Amazon SQS Developer Guide.</li>
+ * <li> <code>ApproximateNumberOfMessages</code> - returns the approximate number of visible messages in a queue. For more information, see <a
+ * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"> Resources Required to Process Messages </a>
+ * in the <i>Amazon SQS Developer Guide</i> .</li>
  * <li> <code>ApproximateNumberOfMessagesNotVisible</code> - returns the approximate number of messages that are not timed-out and not deleted. For more
- * information, see Resources Required to Process Messages in the Amazon SQS Developer Guide.</li>
- * <li> <code>VisibilityTimeout</code> - returns the visibility timeout for the queue. For more information about visibility timeout, see Visibility
- * Timeout in the Amazon SQS Developer Guide.</li>
+ * information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"> Resources Required to
+ * Process Messages </a> in the <i>Amazon SQS Developer Guide</i> .</li>
+ * <li> <code>VisibilityTimeout</code> - returns the visibility timeout for the queue. For more information about visibility timeout, see <a
+ * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a> in the <i>Amazon SQS Developer
+ * Guide</i> .</li>
  * <li> <code>CreatedTimestamp</code> - returns the time when the queue was created (epoch time in seconds).</li>
  * <li> <code>LastModifiedTimestamp</code> - returns the time when the queue was last changed (epoch time in seconds).</li>
  * <li> <code>Policy</code> - returns the queue's policy.</li>
@@ -39,9 +42,26 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <li> <code>ApproximateNumberOfMessagesDelayed</code> - returns the approximate number of messages that are pending to be added to the queue.</li>
  * <li> <code>DelaySeconds</code> - returns the default delay on the queue in seconds.</li>
  * <li> <code>ReceiveMessageWaitTimeSeconds</code> - returns the time for which a ReceiveMessage call will wait for a message to arrive.</li>
+ * <li> <code>RedrivePolicy</code> - returns the parameters for dead letter queue functionality of the source queue. For more information about
+ * RedrivePolicy and dead letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">
+ * Using Amazon SQS Dead Letter Queues </a> in the <i>Amazon SQS Developer Guide</i> .</li>
  * 
  * </ul>
  * 
+ * </p>
+ * <p>
+ * <b>NOTE:</b>Going forward, new attributes might be added. If you are writing code that calls this action, we recommend that you structure your code so
+ * that it can handle new attributes gracefully.
+ * </p>
+ * <p>
+ * <b>NOTE:</b>Some API actions take lists of parameters. These lists are specified using the param.n notation. Values of n are integers starting from 1.
+ * For example, a parameter list with two elements looks like this:
+ * </p>
+ * <p>
+ * <code>&Attribute.1=this</code>
+ * </p>
+ * <p>
+ * <code>&Attribute.2=that</code>
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#getQueueAttributes(GetQueueAttributesRequest)
@@ -49,7 +69,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetQueueAttributesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The URL of the SQS queue to take action on.
+     * The URL of the Amazon SQS queue to take action on.
      */
     private String queueUrl;
 
@@ -69,7 +89,7 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest implement
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The URL of the Amazon SQS queue to take action on.
      */
     public GetQueueAttributesRequest(String queueUrl) {
         setQueueUrl(queueUrl);
@@ -80,7 +100,7 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest implement
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The URL of the Amazon SQS queue to take action on.
      * @param attributeNames A list of attributes to retrieve information
      * for.
      */
@@ -90,29 +110,29 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The URL of the SQS queue to take action on.
+     * The URL of the Amazon SQS queue to take action on.
      *
-     * @return The URL of the SQS queue to take action on.
+     * @return The URL of the Amazon SQS queue to take action on.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * The URL of the SQS queue to take action on.
+     * The URL of the Amazon SQS queue to take action on.
      *
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The URL of the Amazon SQS queue to take action on.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * The URL of the SQS queue to take action on.
+     * The URL of the Amazon SQS queue to take action on.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The URL of the Amazon SQS queue to take action on.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

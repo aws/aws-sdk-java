@@ -36,6 +36,7 @@ import com.amazonaws.util.json.*;
 
 /**
  * Update Table Request Marshaller
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.UpdateTableRequestMarshaller} instead.
  */
 @Deprecated
 public class UpdateTableRequestMarshaller implements Marshaller<Request<UpdateTableRequest>, UpdateTableRequest> {

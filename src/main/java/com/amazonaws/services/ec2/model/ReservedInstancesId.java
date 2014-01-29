@@ -17,36 +17,41 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Reserved Instances Id
+ * <p>
+ * Describes the ID of a Reserved Instance.
+ * </p>
  */
 public class ReservedInstancesId implements Serializable {
 
+    /**
+     * The ID of the Reserved Instance.
+     */
     private String reservedInstancesId;
 
     /**
-     * Returns the value of the ReservedInstancesId property for this object.
+     * The ID of the Reserved Instance.
      *
-     * @return The value of the ReservedInstancesId property for this object.
+     * @return The ID of the Reserved Instance.
      */
     public String getReservedInstancesId() {
         return reservedInstancesId;
     }
     
     /**
-     * Sets the value of the ReservedInstancesId property for this object.
+     * The ID of the Reserved Instance.
      *
-     * @param reservedInstancesId The new value for the ReservedInstancesId property for this object.
+     * @param reservedInstancesId The ID of the Reserved Instance.
      */
     public void setReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
     }
     
     /**
-     * Sets the value of the ReservedInstancesId property for this object.
+     * The ID of the Reserved Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesId The new value for the ReservedInstancesId property for this object.
+     * @param reservedInstancesId The ID of the Reserved Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

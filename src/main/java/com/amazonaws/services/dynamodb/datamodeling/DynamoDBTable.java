@@ -30,6 +30,8 @@ import com.amazonaws.services.dynamodb.datamodeling.DynamoDBMapperConfig.TableNa
  * well.
  * 
  * @see TableNameOverride
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable} instead.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)

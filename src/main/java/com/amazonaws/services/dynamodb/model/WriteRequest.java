@@ -20,6 +20,7 @@ import java.io.Serializable;
  * This structure is a Union of PutRequest and DeleteRequest. It can contain exactly one of <code>PutRequest</code> or <code>DeleteRequest</code> . Never
  * Both. This is enforced in the code.
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.WriteRequest} instead.
  */
 @Deprecated
 public class WriteRequest  implements Serializable  {

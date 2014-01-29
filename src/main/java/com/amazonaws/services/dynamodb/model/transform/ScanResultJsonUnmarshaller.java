@@ -27,6 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * Scan Result JSON Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.ScanResultJsonUnmarshaller} instead.
  */
 @Deprecated
 public class ScanResultJsonUnmarshaller implements Unmarshaller<ScanResult, JsonUnmarshallerContext> {

@@ -28,7 +28,7 @@ public class Attribute implements Serializable {
     private String name;
 
     /**
-     * 
+     * <p/>
      */
     private String alternateNameEncoding;
 
@@ -38,7 +38,7 @@ public class Attribute implements Serializable {
     private String value;
 
     /**
-     * 
+     * <p/>
      */
     private String alternateValueEncoding;
 
@@ -95,29 +95,29 @@ public class Attribute implements Serializable {
     }
 
     /**
-     * 
+     * <p/>
      *
-     * @return 
+     * @return <p/>
      */
     public String getAlternateNameEncoding() {
         return alternateNameEncoding;
     }
     
     /**
-     * 
+     * <p/>
      *
-     * @param alternateNameEncoding 
+     * @param alternateNameEncoding <p/>
      */
     public void setAlternateNameEncoding(String alternateNameEncoding) {
         this.alternateNameEncoding = alternateNameEncoding;
     }
     
     /**
-     * 
+     * <p/>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param alternateNameEncoding 
+     * @param alternateNameEncoding <p/>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -161,29 +161,29 @@ public class Attribute implements Serializable {
     }
 
     /**
-     * 
+     * <p/>
      *
-     * @return 
+     * @return <p/>
      */
     public String getAlternateValueEncoding() {
         return alternateValueEncoding;
     }
     
     /**
-     * 
+     * <p/>
      *
-     * @param alternateValueEncoding 
+     * @param alternateValueEncoding <p/>
      */
     public void setAlternateValueEncoding(String alternateValueEncoding) {
         this.alternateValueEncoding = alternateValueEncoding;
     }
     
     /**
-     * 
+     * <p/>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param alternateValueEncoding 
+     * @param alternateValueEncoding <p/>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

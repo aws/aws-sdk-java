@@ -17,23 +17,25 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of describing Amazon EC2 instances.
- * </p>
+ * 
  */
 public class DescribeInstancesResult implements Serializable {
 
     /**
-     * The list of reservations containing the describes instances.
+     * One or more reservations.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Reservation> reservations;
 
+    /**
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
+     */
     private String nextToken;
 
     /**
-     * The list of reservations containing the describes instances.
+     * One or more reservations.
      *
-     * @return The list of reservations containing the describes instances.
+     * @return One or more reservations.
      */
     public java.util.List<Reservation> getReservations() {
         if (reservations == null) {
@@ -44,9 +46,9 @@ public class DescribeInstancesResult implements Serializable {
     }
     
     /**
-     * The list of reservations containing the describes instances.
+     * One or more reservations.
      *
-     * @param reservations The list of reservations containing the describes instances.
+     * @param reservations One or more reservations.
      */
     public void setReservations(java.util.Collection<Reservation> reservations) {
         if (reservations == null) {
@@ -59,11 +61,11 @@ public class DescribeInstancesResult implements Serializable {
     }
     
     /**
-     * The list of reservations containing the describes instances.
+     * One or more reservations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservations The list of reservations containing the describes instances.
+     * @param reservations One or more reservations.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -77,11 +79,11 @@ public class DescribeInstancesResult implements Serializable {
     }
     
     /**
-     * The list of reservations containing the describes instances.
+     * One or more reservations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservations The list of reservations containing the describes instances.
+     * @param reservations One or more reservations.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -99,29 +101,35 @@ public class DescribeInstancesResult implements Serializable {
     }
 
     /**
-     * Returns the value of the NextToken property for this object.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      *
-     * @return The value of the NextToken property for this object.
+     * @return The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * The token to use when requesting the next set of items. If there are
+     * no additional items to return, the string is empty.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken The token to use when requesting the next set of items. If there are
+     *         no additional items to return, the string is empty.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

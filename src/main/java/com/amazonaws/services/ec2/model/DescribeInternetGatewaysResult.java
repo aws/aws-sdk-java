@@ -17,16 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Describe Internet Gateways Result
+ * 
  */
 public class DescribeInternetGatewaysResult implements Serializable {
 
+    /**
+     * Information about one or more Internet gateways.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<InternetGateway> internetGateways;
 
     /**
-     * Returns the value of the InternetGateways property for this object.
+     * Information about one or more Internet gateways.
      *
-     * @return The value of the InternetGateways property for this object.
+     * @return Information about one or more Internet gateways.
      */
     public java.util.List<InternetGateway> getInternetGateways() {
         if (internetGateways == null) {
@@ -37,9 +40,9 @@ public class DescribeInternetGatewaysResult implements Serializable {
     }
     
     /**
-     * Sets the value of the InternetGateways property for this object.
+     * Information about one or more Internet gateways.
      *
-     * @param internetGateways The new value for the InternetGateways property for this object.
+     * @param internetGateways Information about one or more Internet gateways.
      */
     public void setInternetGateways(java.util.Collection<InternetGateway> internetGateways) {
         if (internetGateways == null) {
@@ -52,11 +55,11 @@ public class DescribeInternetGatewaysResult implements Serializable {
     }
     
     /**
-     * Sets the value of the InternetGateways property for this object.
+     * Information about one or more Internet gateways.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param internetGateways The new value for the InternetGateways property for this object.
+     * @param internetGateways Information about one or more Internet gateways.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -70,11 +73,11 @@ public class DescribeInternetGatewaysResult implements Serializable {
     }
     
     /**
-     * Sets the value of the InternetGateways property for this object.
+     * Information about one or more Internet gateways.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param internetGateways The new value for the InternetGateways property for this object.
+     * @param internetGateways Information about one or more Internet gateways.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

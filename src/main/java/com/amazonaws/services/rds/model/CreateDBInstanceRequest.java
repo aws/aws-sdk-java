@@ -226,10 +226,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * Indicates that the DB instance should be associated with the specified
-     * option group. <p> <!-- Note that persistent options, such as the
-     * TDE_SQLServer option for Microsoft SQL Server, cannot be removed from
-     * an option group while DB instances are associated with the option
-     * group. --> Permanent options, such as the TDE option for Oracle
+     * option group. <p> Permanent options, such as the TDE option for Oracle
      * Advanced Security TDE, cannot be removed from an option group, and
      * that option group cannot be removed from a DB instance once it is
      * associated with a DB instance
@@ -1668,19 +1665,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * Indicates that the DB instance should be associated with the specified
-     * option group. <p> <!-- Note that persistent options, such as the
-     * TDE_SQLServer option for Microsoft SQL Server, cannot be removed from
-     * an option group while DB instances are associated with the option
-     * group. --> Permanent options, such as the TDE option for Oracle
+     * option group. <p> Permanent options, such as the TDE option for Oracle
      * Advanced Security TDE, cannot be removed from an option group, and
      * that option group cannot be removed from a DB instance once it is
      * associated with a DB instance
      *
      * @return Indicates that the DB instance should be associated with the specified
-     *         option group. <p> <!-- Note that persistent options, such as the
-     *         TDE_SQLServer option for Microsoft SQL Server, cannot be removed from
-     *         an option group while DB instances are associated with the option
-     *         group. --> Permanent options, such as the TDE option for Oracle
+     *         option group. <p> Permanent options, such as the TDE option for Oracle
      *         Advanced Security TDE, cannot be removed from an option group, and
      *         that option group cannot be removed from a DB instance once it is
      *         associated with a DB instance
@@ -1691,19 +1682,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * Indicates that the DB instance should be associated with the specified
-     * option group. <p> <!-- Note that persistent options, such as the
-     * TDE_SQLServer option for Microsoft SQL Server, cannot be removed from
-     * an option group while DB instances are associated with the option
-     * group. --> Permanent options, such as the TDE option for Oracle
+     * option group. <p> Permanent options, such as the TDE option for Oracle
      * Advanced Security TDE, cannot be removed from an option group, and
      * that option group cannot be removed from a DB instance once it is
      * associated with a DB instance
      *
      * @param optionGroupName Indicates that the DB instance should be associated with the specified
-     *         option group. <p> <!-- Note that persistent options, such as the
-     *         TDE_SQLServer option for Microsoft SQL Server, cannot be removed from
-     *         an option group while DB instances are associated with the option
-     *         group. --> Permanent options, such as the TDE option for Oracle
+     *         option group. <p> Permanent options, such as the TDE option for Oracle
      *         Advanced Security TDE, cannot be removed from an option group, and
      *         that option group cannot be removed from a DB instance once it is
      *         associated with a DB instance
@@ -1714,10 +1699,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * Indicates that the DB instance should be associated with the specified
-     * option group. <p> <!-- Note that persistent options, such as the
-     * TDE_SQLServer option for Microsoft SQL Server, cannot be removed from
-     * an option group while DB instances are associated with the option
-     * group. --> Permanent options, such as the TDE option for Oracle
+     * option group. <p> Permanent options, such as the TDE option for Oracle
      * Advanced Security TDE, cannot be removed from an option group, and
      * that option group cannot be removed from a DB instance once it is
      * associated with a DB instance
@@ -1725,10 +1707,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionGroupName Indicates that the DB instance should be associated with the specified
-     *         option group. <p> <!-- Note that persistent options, such as the
-     *         TDE_SQLServer option for Microsoft SQL Server, cannot be removed from
-     *         an option group while DB instances are associated with the option
-     *         group. --> Permanent options, such as the TDE option for Oracle
+     *         option group. <p> Permanent options, such as the TDE option for Oracle
      *         Advanced Security TDE, cannot be removed from an option group, and
      *         that option group cannot be removed from a DB instance once it is
      *         associated with a DB instance

@@ -46,6 +46,7 @@ public class DescribePermissionsResultJsonUnmarshaller implements Unmarshaller<D
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Permissions", targetDepth)) {
+                    context.nextToken();
                     describePermissionsResult.setPermissions(new ListUnmarshaller<Permission>(PermissionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -17,42 +17,63 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Volume Status Action
+ * <p>
+ * Describes a volume status operation code.
+ * </p>
  */
 public class VolumeStatusAction implements Serializable {
 
+    /**
+     * The code identifying the operation, for example,
+     * <code>enable-volume-io</code>.
+     */
     private String code;
 
+    /**
+     * A description of the operation.
+     */
     private String description;
 
+    /**
+     * The event type associated with this operation.
+     */
     private String eventType;
 
+    /**
+     * The ID of the event associated with this operation.
+     */
     private String eventId;
 
     /**
-     * Returns the value of the Code property for this object.
+     * The code identifying the operation, for example,
+     * <code>enable-volume-io</code>.
      *
-     * @return The value of the Code property for this object.
+     * @return The code identifying the operation, for example,
+     *         <code>enable-volume-io</code>.
      */
     public String getCode() {
         return code;
     }
     
     /**
-     * Sets the value of the Code property for this object.
+     * The code identifying the operation, for example,
+     * <code>enable-volume-io</code>.
      *
-     * @param code The new value for the Code property for this object.
+     * @param code The code identifying the operation, for example,
+     *         <code>enable-volume-io</code>.
      */
     public void setCode(String code) {
         this.code = code;
     }
     
     /**
-     * Sets the value of the Code property for this object.
+     * The code identifying the operation, for example,
+     * <code>enable-volume-io</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param code The new value for the Code property for this object.
+     * @param code The code identifying the operation, for example,
+     *         <code>enable-volume-io</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -63,29 +84,29 @@ public class VolumeStatusAction implements Serializable {
     }
 
     /**
-     * Returns the value of the Description property for this object.
+     * A description of the operation.
      *
-     * @return The value of the Description property for this object.
+     * @return A description of the operation.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * A description of the operation.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description A description of the operation.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * A description of the operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description A description of the operation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -96,29 +117,29 @@ public class VolumeStatusAction implements Serializable {
     }
 
     /**
-     * Returns the value of the EventType property for this object.
+     * The event type associated with this operation.
      *
-     * @return The value of the EventType property for this object.
+     * @return The event type associated with this operation.
      */
     public String getEventType() {
         return eventType;
     }
     
     /**
-     * Sets the value of the EventType property for this object.
+     * The event type associated with this operation.
      *
-     * @param eventType The new value for the EventType property for this object.
+     * @param eventType The event type associated with this operation.
      */
     public void setEventType(String eventType) {
         this.eventType = eventType;
     }
     
     /**
-     * Sets the value of the EventType property for this object.
+     * The event type associated with this operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eventType The new value for the EventType property for this object.
+     * @param eventType The event type associated with this operation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -129,29 +150,29 @@ public class VolumeStatusAction implements Serializable {
     }
 
     /**
-     * Returns the value of the EventId property for this object.
+     * The ID of the event associated with this operation.
      *
-     * @return The value of the EventId property for this object.
+     * @return The ID of the event associated with this operation.
      */
     public String getEventId() {
         return eventId;
     }
     
     /**
-     * Sets the value of the EventId property for this object.
+     * The ID of the event associated with this operation.
      *
-     * @param eventId The new value for the EventId property for this object.
+     * @param eventId The ID of the event associated with this operation.
      */
     public void setEventId(String eventId) {
         this.eventId = eventId;
     }
     
     /**
-     * Sets the value of the EventId property for this object.
+     * The ID of the event associated with this operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eventId The new value for the EventId property for this object.
+     * @param eventId The ID of the event associated with this operation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

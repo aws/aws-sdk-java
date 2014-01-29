@@ -23,15 +23,23 @@ import com.amazonaws.services.ec2.model.transform.CreateSubnetRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createSubnet(CreateSubnetRequest) CreateSubnet operation}.
  * <p>
- * Creates a subnet in an existing VPC. You can create up to 20 subnets in a VPC. If you add more than one subnet to a VPC, they're set up in a star
- * topology with a logical router in the middle. When you create each subnet, you provide the VPC ID and the CIDR block you want for the subnet. Once you
- * create a subnet, you can't change its CIDR block. The subnet's CIDR block can be the same as the VPC's CIDR block (assuming you want only a single
- * subnet in the VPC), or a subset of the VPC's CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR blocks must not overlap. The
- * smallest subnet (and VPC) you can create uses a <code>/28</code> netmask (16 IP addresses), and the largest uses a <code>/18</code> netmask (16,384 IP
- * addresses).
+ * Creates a subnet in an existing VPC.
+ * </p>
+ * <p>
+ * When you create each subnet, you provide the VPC ID and the CIDR block you want for the subnet. After you create a subnet, you can't change its CIDR
+ * block. The subnet's CIDR block can be the same as the VPC's CIDR block (assuming you want only a single subnet in the VPC), or a subset of the VPC's
+ * CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest subnet (and VPC) you can create uses
+ * a /28 netmask (16 IP addresses), and the largest uses a /16 netmask (65,536 IP addresses).
  * </p>
  * <p>
  * <b>IMPORTANT:</b> AWS reserves both the first four and the last IP address in each subnet's CIDR block. They're not available for use.
+ * </p>
+ * <p>
+ * If you add more than one subnet to a VPC, they're set up in a star topology with a logical router in the middle.
+ * </p>
+ * <p>
+ * For more information about subnets, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a> in
+ * the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSubnet(CreateSubnetRequest)
@@ -39,17 +47,19 @@ import com.amazonaws.services.ec2.model.transform.CreateSubnetRequestMarshaller;
 public class CreateSubnetRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateSubnetRequest> {
 
     /**
-     * The ID of the VPC to create the subnet in.
+     * The ID of the VPC.
      */
     private String vpcId;
 
     /**
-     * The CIDR block the subnet is to cover.
+     * The network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>.
      */
     private String cidrBlock;
 
     /**
-     * The Availability Zone to create the subnet in.
+     * The Availability Zone for the subnet. <p>Default: Amazon EC2 selects
+     * one for you (recommended).
      */
     private String availabilityZone;
 
@@ -64,8 +74,9 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param vpcId The ID of the VPC to create the subnet in.
-     * @param cidrBlock The CIDR block the subnet is to cover.
+     * @param vpcId The ID of the VPC.
+     * @param cidrBlock The network range for the subnet, in CIDR notation.
+     * For example, <code>10.0.0.0/24</code>.
      */
     public CreateSubnetRequest(String vpcId, String cidrBlock) {
         setVpcId(vpcId);
@@ -73,29 +84,29 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The ID of the VPC to create the subnet in.
+     * The ID of the VPC.
      *
-     * @return The ID of the VPC to create the subnet in.
+     * @return The ID of the VPC.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * The ID of the VPC to create the subnet in.
+     * The ID of the VPC.
      *
-     * @param vpcId The ID of the VPC to create the subnet in.
+     * @param vpcId The ID of the VPC.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * The ID of the VPC to create the subnet in.
+     * The ID of the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The ID of the VPC to create the subnet in.
+     * @param vpcId The ID of the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -106,29 +117,35 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The CIDR block the subnet is to cover.
+     * The network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>.
      *
-     * @return The CIDR block the subnet is to cover.
+     * @return The network range for the subnet, in CIDR notation. For example,
+     *         <code>10.0.0.0/24</code>.
      */
     public String getCidrBlock() {
         return cidrBlock;
     }
     
     /**
-     * The CIDR block the subnet is to cover.
+     * The network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>.
      *
-     * @param cidrBlock The CIDR block the subnet is to cover.
+     * @param cidrBlock The network range for the subnet, in CIDR notation. For example,
+     *         <code>10.0.0.0/24</code>.
      */
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
     
     /**
-     * The CIDR block the subnet is to cover.
+     * The network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cidrBlock The CIDR block the subnet is to cover.
+     * @param cidrBlock The network range for the subnet, in CIDR notation. For example,
+     *         <code>10.0.0.0/24</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -139,29 +156,35 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The Availability Zone to create the subnet in.
+     * The Availability Zone for the subnet. <p>Default: Amazon EC2 selects
+     * one for you (recommended).
      *
-     * @return The Availability Zone to create the subnet in.
+     * @return The Availability Zone for the subnet. <p>Default: Amazon EC2 selects
+     *         one for you (recommended).
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * The Availability Zone to create the subnet in.
+     * The Availability Zone for the subnet. <p>Default: Amazon EC2 selects
+     * one for you (recommended).
      *
-     * @param availabilityZone The Availability Zone to create the subnet in.
+     * @param availabilityZone The Availability Zone for the subnet. <p>Default: Amazon EC2 selects
+     *         one for you (recommended).
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * The Availability Zone to create the subnet in.
+     * The Availability Zone for the subnet. <p>Default: Amazon EC2 selects
+     * one for you (recommended).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The Availability Zone to create the subnet in.
+     * @param availabilityZone The Availability Zone for the subnet. <p>Default: Amazon EC2 selects
+     *         one for you (recommended).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

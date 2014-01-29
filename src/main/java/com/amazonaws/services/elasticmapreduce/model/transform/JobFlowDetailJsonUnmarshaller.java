@@ -70,12 +70,15 @@ public class JobFlowDetailJsonUnmarshaller implements Unmarshaller<JobFlowDetail
                     jobFlowDetail.setInstances(JobFlowInstancesDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Steps", targetDepth)) {
+                    context.nextToken();
                     jobFlowDetail.setSteps(new ListUnmarshaller<StepDetail>(StepDetailJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("BootstrapActions", targetDepth)) {
+                    context.nextToken();
                     jobFlowDetail.setBootstrapActions(new ListUnmarshaller<BootstrapActionDetail>(BootstrapActionDetailJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("SupportedProducts", targetDepth)) {
+                    context.nextToken();
                     jobFlowDetail.setSupportedProducts(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("VisibleToAllUsers", targetDepth)) {

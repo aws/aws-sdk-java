@@ -20,43 +20,47 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#cancelReservedInstancesListing(CancelReservedInstancesListingRequest) CancelReservedInstancesListing operation}.
- * 
+ * <p>
+ * Cancels the specified Reserved Instance listing in the Reserved Instance Marketplace.
+ * </p>
+ * <p>
+ * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a> in
+ * the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelReservedInstancesListing(CancelReservedInstancesListingRequest)
  */
 public class CancelReservedInstancesListingRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * The ID of the Reserved Instance listing.
+     */
     private String reservedInstancesListingId;
 
     /**
-     * Returns the value of the ReservedInstancesListingId property for this
-     * object.
+     * The ID of the Reserved Instance listing.
      *
-     * @return The value of the ReservedInstancesListingId property for this object.
+     * @return The ID of the Reserved Instance listing.
      */
     public String getReservedInstancesListingId() {
         return reservedInstancesListingId;
     }
     
     /**
-     * Sets the value of the ReservedInstancesListingId property for this
-     * object.
+     * The ID of the Reserved Instance listing.
      *
-     * @param reservedInstancesListingId The new value for the ReservedInstancesListingId property for this
-     *         object.
+     * @param reservedInstancesListingId The ID of the Reserved Instance listing.
      */
     public void setReservedInstancesListingId(String reservedInstancesListingId) {
         this.reservedInstancesListingId = reservedInstancesListingId;
     }
     
     /**
-     * Sets the value of the ReservedInstancesListingId property for this
-     * object.
+     * The ID of the Reserved Instance listing.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesListingId The new value for the ReservedInstancesListingId property for this
-     *         object.
+     * @param reservedInstancesListingId The ID of the Reserved Instance listing.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

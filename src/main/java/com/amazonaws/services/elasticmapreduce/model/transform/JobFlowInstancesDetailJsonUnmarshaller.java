@@ -66,6 +66,7 @@ public class JobFlowInstancesDetailJsonUnmarshaller implements Unmarshaller<JobF
                     jobFlowInstancesDetail.setInstanceCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InstanceGroups", targetDepth)) {
+                    context.nextToken();
                     jobFlowInstancesDetail.setInstanceGroups(new ListUnmarshaller<InstanceGroupDetail>(InstanceGroupDetailJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("NormalizedInstanceHours", targetDepth)) {

@@ -17,43 +17,111 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Spot Instance Request
+ * <p>
+ * Describe a Spot Instance request.
+ * </p>
  */
 public class SpotInstanceRequest implements Serializable {
 
+    /**
+     * The ID of the Spot Instance request.
+     */
     private String spotInstanceRequestId;
 
+    /**
+     * The maximum hourly price for any Spot Instance launched to fulfill the
+     * request.
+     */
     private String spotPrice;
 
+    /**
+     * The Spot Instance request type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>one-time, persistent
+     */
     private String type;
 
+    /**
+     * The state of the Spot Instance request. Spot bid status information
+     * can help you track your Spot Instance requests. For information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
+     * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>open, active, closed, cancelled, failed
+     */
     private String state;
 
+    /**
+     * The fault codes for the Spot Instance request, if any.
+     */
     private SpotInstanceStateFault fault;
 
+    /**
+     * The status code and status message describing the Spot Instance
+     * request.
+     */
     private SpotInstanceStatus status;
 
+    /**
+     * The start date of the request. If this is a one-time request, the
+     * request becomes active at this date and time and remains active until
+     * all instances launch, the request expires, or the request is canceled.
+     * If the request is persistent, the request becomes active at this date
+     * and time and remains active until it expires or is canceled.
+     */
     private java.util.Date validFrom;
 
+    /**
+     * The end date of the request. If this is a one-time request, the
+     * request remains active until all instances launch, the request is
+     * canceled, or this date is reached. If the request is persistent, it
+     * remains active until it is canceled or this date is reached.
+     */
     private java.util.Date validUntil;
 
+    /**
+     * The instance launch group. Launch groups are Spot Instances that
+     * launch together and terminate together.
+     */
     private String launchGroup;
 
+    /**
+     * The Availability Zone group. If you specify the same Availability Zone
+     * group for all Spot Instance requests, all Spot Instances are launched
+     * in the same Availability Zone.
+     */
     private String availabilityZoneGroup;
 
     /**
-     * The LaunchSpecificationType data type.
+     * Additional information for launching instances.
      */
     private LaunchSpecification launchSpecification;
 
+    /**
+     * The instance ID, if an instance has been launched to fulfill the Spot
+     * Instance request.
+     */
     private String instanceId;
 
+    /**
+     * The time stamp when the Spot Instance request was created.
+     */
     private java.util.Date createTime;
 
+    /**
+     * The product description associated with the Spot Instance.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
+     */
     private String productDescription;
 
     /**
-     * A list of tags for this spot instance request.
+     * Any tags assigned to the resource.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
@@ -63,30 +131,29 @@ public class SpotInstanceRequest implements Serializable {
     private String launchedAvailabilityZone;
 
     /**
-     * Returns the value of the SpotInstanceRequestId property for this
-     * object.
+     * The ID of the Spot Instance request.
      *
-     * @return The value of the SpotInstanceRequestId property for this object.
+     * @return The ID of the Spot Instance request.
      */
     public String getSpotInstanceRequestId() {
         return spotInstanceRequestId;
     }
     
     /**
-     * Sets the value of the SpotInstanceRequestId property for this object.
+     * The ID of the Spot Instance request.
      *
-     * @param spotInstanceRequestId The new value for the SpotInstanceRequestId property for this object.
+     * @param spotInstanceRequestId The ID of the Spot Instance request.
      */
     public void setSpotInstanceRequestId(String spotInstanceRequestId) {
         this.spotInstanceRequestId = spotInstanceRequestId;
     }
     
     /**
-     * Sets the value of the SpotInstanceRequestId property for this object.
+     * The ID of the Spot Instance request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequestId The new value for the SpotInstanceRequestId property for this object.
+     * @param spotInstanceRequestId The ID of the Spot Instance request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -97,29 +164,35 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * Returns the value of the SpotPrice property for this object.
+     * The maximum hourly price for any Spot Instance launched to fulfill the
+     * request.
      *
-     * @return The value of the SpotPrice property for this object.
+     * @return The maximum hourly price for any Spot Instance launched to fulfill the
+     *         request.
      */
     public String getSpotPrice() {
         return spotPrice;
     }
     
     /**
-     * Sets the value of the SpotPrice property for this object.
+     * The maximum hourly price for any Spot Instance launched to fulfill the
+     * request.
      *
-     * @param spotPrice The new value for the SpotPrice property for this object.
+     * @param spotPrice The maximum hourly price for any Spot Instance launched to fulfill the
+     *         request.
      */
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
     }
     
     /**
-     * Sets the value of the SpotPrice property for this object.
+     * The maximum hourly price for any Spot Instance launched to fulfill the
+     * request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotPrice The new value for the SpotPrice property for this object.
+     * @param spotPrice The maximum hourly price for any Spot Instance launched to fulfill the
+     *         request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -130,12 +203,12 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * Returns the value of the Type property for this object.
+     * The Spot Instance request type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @return The value of the Type property for this object.
+     * @return The Spot Instance request type.
      *
      * @see SpotInstanceType
      */
@@ -144,12 +217,12 @@ public class SpotInstanceRequest implements Serializable {
     }
     
     /**
-     * Sets the value of the Type property for this object.
+     * The Spot Instance request type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @param type The new value for the Type property for this object.
+     * @param type The Spot Instance request type.
      *
      * @see SpotInstanceType
      */
@@ -158,14 +231,14 @@ public class SpotInstanceRequest implements Serializable {
     }
     
     /**
-     * Sets the value of the Type property for this object.
+     * The Spot Instance request type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @param type The new value for the Type property for this object.
+     * @param type The Spot Instance request type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -178,12 +251,12 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * Sets the value of the Type property for this object.
+     * The Spot Instance request type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @param type The new value for the Type property for this object.
+     * @param type The Spot Instance request type.
      *
      * @see SpotInstanceType
      */
@@ -192,14 +265,14 @@ public class SpotInstanceRequest implements Serializable {
     }
     
     /**
-     * Sets the value of the Type property for this object.
+     * The Spot Instance request type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @param type The new value for the Type property for this object.
+     * @param type The Spot Instance request type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -212,12 +285,22 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * Returns the value of the State property for this object.
+     * The state of the Spot Instance request. Spot bid status information
+     * can help you track your Spot Instance requests. For information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
+     * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
      *
-     * @return The value of the State property for this object.
+     * @return The state of the Spot Instance request. Spot bid status information
+     *         can help you track your Spot Instance requests. For information, see
+     *         <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
+     *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
+     *         Compute Cloud User Guide</i>.
      *
      * @see SpotInstanceState
      */
@@ -226,12 +309,22 @@ public class SpotInstanceRequest implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the Spot Instance request. Spot bid status information
+     * can help you track your Spot Instance requests. For information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
+     * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the Spot Instance request. Spot bid status information
+     *         can help you track your Spot Instance requests. For information, see
+     *         <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
+     *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
+     *         Compute Cloud User Guide</i>.
      *
      * @see SpotInstanceState
      */
@@ -240,14 +333,24 @@ public class SpotInstanceRequest implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the Spot Instance request. Spot bid status information
+     * can help you track your Spot Instance requests. For information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
+     * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the Spot Instance request. Spot bid status information
+     *         can help you track your Spot Instance requests. For information, see
+     *         <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
+     *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
+     *         Compute Cloud User Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -260,12 +363,22 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * Sets the value of the State property for this object.
+     * The state of the Spot Instance request. Spot bid status information
+     * can help you track your Spot Instance requests. For information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
+     * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the Spot Instance request. Spot bid status information
+     *         can help you track your Spot Instance requests. For information, see
+     *         <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
+     *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
+     *         Compute Cloud User Guide</i>.
      *
      * @see SpotInstanceState
      */
@@ -274,14 +387,24 @@ public class SpotInstanceRequest implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the Spot Instance request. Spot bid status information
+     * can help you track your Spot Instance requests. For information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
+     * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the Spot Instance request. Spot bid status information
+     *         can help you track your Spot Instance requests. For information, see
+     *         <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
+     *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
+     *         Compute Cloud User Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -294,29 +417,29 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * Returns the value of the Fault property for this object.
+     * The fault codes for the Spot Instance request, if any.
      *
-     * @return The value of the Fault property for this object.
+     * @return The fault codes for the Spot Instance request, if any.
      */
     public SpotInstanceStateFault getFault() {
         return fault;
     }
     
     /**
-     * Sets the value of the Fault property for this object.
+     * The fault codes for the Spot Instance request, if any.
      *
-     * @param fault The new value for the Fault property for this object.
+     * @param fault The fault codes for the Spot Instance request, if any.
      */
     public void setFault(SpotInstanceStateFault fault) {
         this.fault = fault;
     }
     
     /**
-     * Sets the value of the Fault property for this object.
+     * The fault codes for the Spot Instance request, if any.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param fault The new value for the Fault property for this object.
+     * @param fault The fault codes for the Spot Instance request, if any.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -327,29 +450,35 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * Returns the value of the Status property for this object.
+     * The status code and status message describing the Spot Instance
+     * request.
      *
-     * @return The value of the Status property for this object.
+     * @return The status code and status message describing the Spot Instance
+     *         request.
      */
     public SpotInstanceStatus getStatus() {
         return status;
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status code and status message describing the Spot Instance
+     * request.
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status code and status message describing the Spot Instance
+     *         request.
      */
     public void setStatus(SpotInstanceStatus status) {
         this.status = status;
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status code and status message describing the Spot Instance
+     * request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status code and status message describing the Spot Instance
+     *         request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -360,29 +489,53 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * Returns the value of the ValidFrom property for this object.
+     * The start date of the request. If this is a one-time request, the
+     * request becomes active at this date and time and remains active until
+     * all instances launch, the request expires, or the request is canceled.
+     * If the request is persistent, the request becomes active at this date
+     * and time and remains active until it expires or is canceled.
      *
-     * @return The value of the ValidFrom property for this object.
+     * @return The start date of the request. If this is a one-time request, the
+     *         request becomes active at this date and time and remains active until
+     *         all instances launch, the request expires, or the request is canceled.
+     *         If the request is persistent, the request becomes active at this date
+     *         and time and remains active until it expires or is canceled.
      */
     public java.util.Date getValidFrom() {
         return validFrom;
     }
     
     /**
-     * Sets the value of the ValidFrom property for this object.
+     * The start date of the request. If this is a one-time request, the
+     * request becomes active at this date and time and remains active until
+     * all instances launch, the request expires, or the request is canceled.
+     * If the request is persistent, the request becomes active at this date
+     * and time and remains active until it expires or is canceled.
      *
-     * @param validFrom The new value for the ValidFrom property for this object.
+     * @param validFrom The start date of the request. If this is a one-time request, the
+     *         request becomes active at this date and time and remains active until
+     *         all instances launch, the request expires, or the request is canceled.
+     *         If the request is persistent, the request becomes active at this date
+     *         and time and remains active until it expires or is canceled.
      */
     public void setValidFrom(java.util.Date validFrom) {
         this.validFrom = validFrom;
     }
     
     /**
-     * Sets the value of the ValidFrom property for this object.
+     * The start date of the request. If this is a one-time request, the
+     * request becomes active at this date and time and remains active until
+     * all instances launch, the request expires, or the request is canceled.
+     * If the request is persistent, the request becomes active at this date
+     * and time and remains active until it expires or is canceled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param validFrom The new value for the ValidFrom property for this object.
+     * @param validFrom The start date of the request. If this is a one-time request, the
+     *         request becomes active at this date and time and remains active until
+     *         all instances launch, the request expires, or the request is canceled.
+     *         If the request is persistent, the request becomes active at this date
+     *         and time and remains active until it expires or is canceled.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -393,29 +546,47 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * Returns the value of the ValidUntil property for this object.
+     * The end date of the request. If this is a one-time request, the
+     * request remains active until all instances launch, the request is
+     * canceled, or this date is reached. If the request is persistent, it
+     * remains active until it is canceled or this date is reached.
      *
-     * @return The value of the ValidUntil property for this object.
+     * @return The end date of the request. If this is a one-time request, the
+     *         request remains active until all instances launch, the request is
+     *         canceled, or this date is reached. If the request is persistent, it
+     *         remains active until it is canceled or this date is reached.
      */
     public java.util.Date getValidUntil() {
         return validUntil;
     }
     
     /**
-     * Sets the value of the ValidUntil property for this object.
+     * The end date of the request. If this is a one-time request, the
+     * request remains active until all instances launch, the request is
+     * canceled, or this date is reached. If the request is persistent, it
+     * remains active until it is canceled or this date is reached.
      *
-     * @param validUntil The new value for the ValidUntil property for this object.
+     * @param validUntil The end date of the request. If this is a one-time request, the
+     *         request remains active until all instances launch, the request is
+     *         canceled, or this date is reached. If the request is persistent, it
+     *         remains active until it is canceled or this date is reached.
      */
     public void setValidUntil(java.util.Date validUntil) {
         this.validUntil = validUntil;
     }
     
     /**
-     * Sets the value of the ValidUntil property for this object.
+     * The end date of the request. If this is a one-time request, the
+     * request remains active until all instances launch, the request is
+     * canceled, or this date is reached. If the request is persistent, it
+     * remains active until it is canceled or this date is reached.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param validUntil The new value for the ValidUntil property for this object.
+     * @param validUntil The end date of the request. If this is a one-time request, the
+     *         request remains active until all instances launch, the request is
+     *         canceled, or this date is reached. If the request is persistent, it
+     *         remains active until it is canceled or this date is reached.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -426,29 +597,35 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * Returns the value of the LaunchGroup property for this object.
+     * The instance launch group. Launch groups are Spot Instances that
+     * launch together and terminate together.
      *
-     * @return The value of the LaunchGroup property for this object.
+     * @return The instance launch group. Launch groups are Spot Instances that
+     *         launch together and terminate together.
      */
     public String getLaunchGroup() {
         return launchGroup;
     }
     
     /**
-     * Sets the value of the LaunchGroup property for this object.
+     * The instance launch group. Launch groups are Spot Instances that
+     * launch together and terminate together.
      *
-     * @param launchGroup The new value for the LaunchGroup property for this object.
+     * @param launchGroup The instance launch group. Launch groups are Spot Instances that
+     *         launch together and terminate together.
      */
     public void setLaunchGroup(String launchGroup) {
         this.launchGroup = launchGroup;
     }
     
     /**
-     * Sets the value of the LaunchGroup property for this object.
+     * The instance launch group. Launch groups are Spot Instances that
+     * launch together and terminate together.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchGroup The new value for the LaunchGroup property for this object.
+     * @param launchGroup The instance launch group. Launch groups are Spot Instances that
+     *         launch together and terminate together.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -459,30 +636,41 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * Returns the value of the AvailabilityZoneGroup property for this
-     * object.
+     * The Availability Zone group. If you specify the same Availability Zone
+     * group for all Spot Instance requests, all Spot Instances are launched
+     * in the same Availability Zone.
      *
-     * @return The value of the AvailabilityZoneGroup property for this object.
+     * @return The Availability Zone group. If you specify the same Availability Zone
+     *         group for all Spot Instance requests, all Spot Instances are launched
+     *         in the same Availability Zone.
      */
     public String getAvailabilityZoneGroup() {
         return availabilityZoneGroup;
     }
     
     /**
-     * Sets the value of the AvailabilityZoneGroup property for this object.
+     * The Availability Zone group. If you specify the same Availability Zone
+     * group for all Spot Instance requests, all Spot Instances are launched
+     * in the same Availability Zone.
      *
-     * @param availabilityZoneGroup The new value for the AvailabilityZoneGroup property for this object.
+     * @param availabilityZoneGroup The Availability Zone group. If you specify the same Availability Zone
+     *         group for all Spot Instance requests, all Spot Instances are launched
+     *         in the same Availability Zone.
      */
     public void setAvailabilityZoneGroup(String availabilityZoneGroup) {
         this.availabilityZoneGroup = availabilityZoneGroup;
     }
     
     /**
-     * Sets the value of the AvailabilityZoneGroup property for this object.
+     * The Availability Zone group. If you specify the same Availability Zone
+     * group for all Spot Instance requests, all Spot Instances are launched
+     * in the same Availability Zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZoneGroup The new value for the AvailabilityZoneGroup property for this object.
+     * @param availabilityZoneGroup The Availability Zone group. If you specify the same Availability Zone
+     *         group for all Spot Instance requests, all Spot Instances are launched
+     *         in the same Availability Zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -493,29 +681,29 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * The LaunchSpecificationType data type.
+     * Additional information for launching instances.
      *
-     * @return The LaunchSpecificationType data type.
+     * @return Additional information for launching instances.
      */
     public LaunchSpecification getLaunchSpecification() {
         return launchSpecification;
     }
     
     /**
-     * The LaunchSpecificationType data type.
+     * Additional information for launching instances.
      *
-     * @param launchSpecification The LaunchSpecificationType data type.
+     * @param launchSpecification Additional information for launching instances.
      */
     public void setLaunchSpecification(LaunchSpecification launchSpecification) {
         this.launchSpecification = launchSpecification;
     }
     
     /**
-     * The LaunchSpecificationType data type.
+     * Additional information for launching instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchSpecification The LaunchSpecificationType data type.
+     * @param launchSpecification Additional information for launching instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -526,29 +714,35 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * Returns the value of the InstanceId property for this object.
+     * The instance ID, if an instance has been launched to fulfill the Spot
+     * Instance request.
      *
-     * @return The value of the InstanceId property for this object.
+     * @return The instance ID, if an instance has been launched to fulfill the Spot
+     *         Instance request.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * Sets the value of the InstanceId property for this object.
+     * The instance ID, if an instance has been launched to fulfill the Spot
+     * Instance request.
      *
-     * @param instanceId The new value for the InstanceId property for this object.
+     * @param instanceId The instance ID, if an instance has been launched to fulfill the Spot
+     *         Instance request.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * Sets the value of the InstanceId property for this object.
+     * The instance ID, if an instance has been launched to fulfill the Spot
+     * Instance request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The new value for the InstanceId property for this object.
+     * @param instanceId The instance ID, if an instance has been launched to fulfill the Spot
+     *         Instance request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -559,29 +753,29 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * Returns the value of the CreateTime property for this object.
+     * The time stamp when the Spot Instance request was created.
      *
-     * @return The value of the CreateTime property for this object.
+     * @return The time stamp when the Spot Instance request was created.
      */
     public java.util.Date getCreateTime() {
         return createTime;
     }
     
     /**
-     * Sets the value of the CreateTime property for this object.
+     * The time stamp when the Spot Instance request was created.
      *
-     * @param createTime The new value for the CreateTime property for this object.
+     * @param createTime The time stamp when the Spot Instance request was created.
      */
     public void setCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
     }
     
     /**
-     * Sets the value of the CreateTime property for this object.
+     * The time stamp when the Spot Instance request was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createTime The new value for the CreateTime property for this object.
+     * @param createTime The time stamp when the Spot Instance request was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -592,12 +786,12 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * Returns the value of the ProductDescription property for this object.
+     * The product description associated with the Spot Instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @return The value of the ProductDescription property for this object.
+     * @return The product description associated with the Spot Instance.
      *
      * @see RIProductDescription
      */
@@ -606,12 +800,12 @@ public class SpotInstanceRequest implements Serializable {
     }
     
     /**
-     * Sets the value of the ProductDescription property for this object.
+     * The product description associated with the Spot Instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @param productDescription The new value for the ProductDescription property for this object.
+     * @param productDescription The product description associated with the Spot Instance.
      *
      * @see RIProductDescription
      */
@@ -620,14 +814,14 @@ public class SpotInstanceRequest implements Serializable {
     }
     
     /**
-     * Sets the value of the ProductDescription property for this object.
+     * The product description associated with the Spot Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @param productDescription The new value for the ProductDescription property for this object.
+     * @param productDescription The product description associated with the Spot Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -640,12 +834,12 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * Sets the value of the ProductDescription property for this object.
+     * The product description associated with the Spot Instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @param productDescription The new value for the ProductDescription property for this object.
+     * @param productDescription The product description associated with the Spot Instance.
      *
      * @see RIProductDescription
      */
@@ -654,14 +848,14 @@ public class SpotInstanceRequest implements Serializable {
     }
     
     /**
-     * Sets the value of the ProductDescription property for this object.
+     * The product description associated with the Spot Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @param productDescription The new value for the ProductDescription property for this object.
+     * @param productDescription The product description associated with the Spot Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -674,9 +868,9 @@ public class SpotInstanceRequest implements Serializable {
     }
 
     /**
-     * A list of tags for this spot instance request.
+     * Any tags assigned to the resource.
      *
-     * @return A list of tags for this spot instance request.
+     * @return Any tags assigned to the resource.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
@@ -687,9 +881,9 @@ public class SpotInstanceRequest implements Serializable {
     }
     
     /**
-     * A list of tags for this spot instance request.
+     * Any tags assigned to the resource.
      *
-     * @param tags A list of tags for this spot instance request.
+     * @param tags Any tags assigned to the resource.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -702,11 +896,11 @@ public class SpotInstanceRequest implements Serializable {
     }
     
     /**
-     * A list of tags for this spot instance request.
+     * Any tags assigned to the resource.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags A list of tags for this spot instance request.
+     * @param tags Any tags assigned to the resource.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -720,11 +914,11 @@ public class SpotInstanceRequest implements Serializable {
     }
     
     /**
-     * A list of tags for this spot instance request.
+     * Any tags assigned to the resource.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags A list of tags for this spot instance request.
+     * @param tags Any tags assigned to the resource.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

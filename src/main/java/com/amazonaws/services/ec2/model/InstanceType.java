@@ -24,6 +24,8 @@ public enum InstanceType {
     M1Medium("m1.medium"),
     M1Large("m1.large"),
     M1Xlarge("m1.xlarge"),
+    M3Medium("m3.medium"),
+    M3Large("m3.large"),
     M3Xlarge("m3.xlarge"),
     M32xlarge("m3.2xlarge"),
     M2Xlarge("m2.xlarge"),
@@ -80,6 +82,10 @@ public enum InstanceType {
             return InstanceType.M1Large;
         } else if ("m1.xlarge".equals(value)) {
             return InstanceType.M1Xlarge;
+        } else if ("m3.medium".equals(value)) {
+            return InstanceType.M3Medium;
+        } else if ("m3.large".equals(value)) {
+            return InstanceType.M3Large;
         } else if ("m3.xlarge".equals(value)) {
             return InstanceType.M3Xlarge;
         } else if ("m3.2xlarge".equals(value)) {

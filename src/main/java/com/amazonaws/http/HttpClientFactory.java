@@ -44,7 +44,6 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.protocol.ClientContext;
 import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.conn.params.ConnRoutePNames;
-import org.apache.http.conn.routing.RouteInfo;
 import org.apache.http.conn.scheme.PlainSocketFactory;
 import org.apache.http.conn.scheme.Scheme;
 import org.apache.http.conn.scheme.SchemeLayeredSocketFactory;
@@ -141,9 +140,9 @@ class HttpClientFactory {
                         new AuthScope(proxyHost, proxyPort),
                         new NTCredentials(proxyUsername, proxyPassword, proxyWorkstation, proxyDomain));
             }
-            
+
             // Add a request interceptor that sets up proxy authentication pre-emptively if configured
-            if (config.getPreemptiveBasicProxyAuth()){
+            if (config.isPreemptiveBasicProxyAuth()){
                 httpClient.addRequestInterceptor(new PreemptiveProxyAuth(proxyHttpHost), 0);
             }
         }
@@ -249,37 +248,34 @@ class HttpClientFactory {
             // No-op, to trust all certs
         }
     };
-    
+
     /**
-     * HttpRequestInterceptor implementation to set up pre-emptive authentication against a defined basic proxy server.
+     * HttpRequestInterceptor implementation to set up pre-emptive
+     * authentication against a defined basic proxy server.
      */
-    private static class PreemptiveProxyAuth implements HttpRequestInterceptor{
-        
+    private static class PreemptiveProxyAuth implements HttpRequestInterceptor {
         private final HttpHost proxyHost;
-        
-        public PreemptiveProxyAuth(HttpHost proxyHost){
+
+        public PreemptiveProxyAuth(HttpHost proxyHost) {
             this.proxyHost = proxyHost;
         }
-                
-        public void process(HttpRequest request, HttpContext context){
-            
+
+        public void process(HttpRequest request, HttpContext context) {
             AuthCache authCache;
-            
-            // Set up the a Basic Auth scheme scoped for the proxy - we don't want to do this for non-proxy authentication.
+            // Set up the a Basic Auth scheme scoped for the proxy - we don't
+            // want to do this for non-proxy authentication.
             BasicScheme basicScheme = new BasicScheme(ChallengeState.PROXY);
-            
-            if (context.getAttribute(ClientContext.AUTH_CACHE) == null){
+
+            if (context.getAttribute(ClientContext.AUTH_CACHE) == null) {
                 authCache = new BasicAuthCache();
-                                                
                 authCache.put(this.proxyHost, basicScheme);
                 context.setAttribute(ClientContext.AUTH_CACHE, authCache);
-            }
-            else{
-                authCache = (AuthCache)context.getAttribute(ClientContext.AUTH_CACHE);
+            } else {
+                authCache = 
+                    (AuthCache) context.getAttribute(ClientContext.AUTH_CACHE);
                 authCache.put(this.proxyHost, basicScheme);
             }
         }
-        
     }
-    
+
 }

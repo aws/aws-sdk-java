@@ -23,7 +23,15 @@ import com.amazonaws.services.ec2.model.transform.ModifySnapshotAttributeRequest
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#modifySnapshotAttribute(ModifySnapshotAttributeRequest) ModifySnapshotAttribute operation}.
  * <p>
- * Adds or remove permission settings for the specified snapshot.
+ * Adds or removes permission settings for the specified snapshot.
+ * </p>
+ * <p>
+ * For more information on modifying snapshot permissions, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a> in the <i>Amazon Elastic
+ * Compute Cloud User Guide</i> .
+ * </p>
+ * <p>
+ * <b>NOTE:</b> Snapshots with AWS Marketplace product codes cannot be made public.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifySnapshotAttribute(ModifySnapshotAttributeRequest)
@@ -31,13 +39,12 @@ import com.amazonaws.services.ec2.model.transform.ModifySnapshotAttributeRequest
 public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ModifySnapshotAttributeRequest> {
 
     /**
-     * The ID of the EBS snapshot whose attributes are being modified.
+     * The ID of the snapshot.
      */
     private String snapshotId;
 
     /**
-     * The name of the attribute being modified. <p> Available attribute
-     * names: <code>createVolumePermission</code>
+     * 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
@@ -45,29 +52,23 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     private String attribute;
 
     /**
-     * The operation to perform on the attribute. <p> Available operation
-     * names: <code>add</code>, <code>remove</code>
+     * 
      */
     private String operationType;
 
     /**
-     * The AWS user IDs to add to or remove from the list of users that have
-     * permission to create EBS volumes from the specified snapshot.
-     * Currently supports "all". <note> Only valid when the
-     * <code>createVolumePermission</code> attribute is being modified.
-     * </note>
+     * 
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> userIds;
 
     /**
-     * The AWS group names to add to or remove from the list of groups that
-     * have permission to create EBS volumes from the specified snapshot.
-     * Currently supports "all". <note> Only valid when the
-     * <code>createVolumePermission</code> attribute is being modified.
-     * </note>
+     * 
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNames;
 
+    /**
+     * 
+     */
     private CreateVolumePermissionModifications createVolumePermission;
 
     /**
@@ -81,12 +82,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param snapshotId The ID of the EBS snapshot whose attributes are
-     * being modified.
-     * @param attribute The name of the attribute being modified. <p>
-     * Available attribute names: <code>createVolumePermission</code>
-     * @param operationType The operation to perform on the attribute. <p>
-     * Available operation names: <code>add</code>, <code>remove</code>
+     * @param snapshotId The ID of the snapshot.
+     * @param attribute
+     * @param operationType
      */
     public ModifySnapshotAttributeRequest(String snapshotId, String attribute, String operationType) {
         setSnapshotId(snapshotId);
@@ -99,12 +97,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param snapshotId The ID of the EBS snapshot whose attributes are
-     * being modified.
-     * @param attribute The name of the attribute being modified. <p>
-     * Available attribute names: <code>createVolumePermission</code>
-     * @param operationType The operation to perform on the attribute. <p>
-     * Available operation names: <code>add</code>, <code>remove</code>
+     * @param snapshotId The ID of the snapshot.
+     * @param attribute
+     * @param operationType
      */
     public ModifySnapshotAttributeRequest(String snapshotId, SnapshotAttributeName attribute, String operationType) {
         this.snapshotId = snapshotId;
@@ -113,29 +108,29 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * The ID of the EBS snapshot whose attributes are being modified.
+     * The ID of the snapshot.
      *
-     * @return The ID of the EBS snapshot whose attributes are being modified.
+     * @return The ID of the snapshot.
      */
     public String getSnapshotId() {
         return snapshotId;
     }
     
     /**
-     * The ID of the EBS snapshot whose attributes are being modified.
+     * The ID of the snapshot.
      *
-     * @param snapshotId The ID of the EBS snapshot whose attributes are being modified.
+     * @param snapshotId The ID of the snapshot.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
     
     /**
-     * The ID of the EBS snapshot whose attributes are being modified.
+     * The ID of the snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotId The ID of the EBS snapshot whose attributes are being modified.
+     * @param snapshotId The ID of the snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -146,14 +141,12 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * The name of the attribute being modified. <p> Available attribute
-     * names: <code>createVolumePermission</code>
+     * 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @return The name of the attribute being modified. <p> Available attribute
-     *         names: <code>createVolumePermission</code>
+     * @return 
      *
      * @see SnapshotAttributeName
      */
@@ -162,14 +155,12 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The name of the attribute being modified. <p> Available attribute
-     * names: <code>createVolumePermission</code>
+     * 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The name of the attribute being modified. <p> Available attribute
-     *         names: <code>createVolumePermission</code>
+     * @param attribute 
      *
      * @see SnapshotAttributeName
      */
@@ -178,16 +169,14 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The name of the attribute being modified. <p> Available attribute
-     * names: <code>createVolumePermission</code>
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The name of the attribute being modified. <p> Available attribute
-     *         names: <code>createVolumePermission</code>
+     * @param attribute 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -200,14 +189,12 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * The name of the attribute being modified. <p> Available attribute
-     * names: <code>createVolumePermission</code>
+     * 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The name of the attribute being modified. <p> Available attribute
-     *         names: <code>createVolumePermission</code>
+     * @param attribute 
      *
      * @see SnapshotAttributeName
      */
@@ -216,16 +203,14 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The name of the attribute being modified. <p> Available attribute
-     * names: <code>createVolumePermission</code>
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The name of the attribute being modified. <p> Available attribute
-     *         names: <code>createVolumePermission</code>
+     * @param attribute 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -238,35 +223,29 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * The operation to perform on the attribute. <p> Available operation
-     * names: <code>add</code>, <code>remove</code>
+     * 
      *
-     * @return The operation to perform on the attribute. <p> Available operation
-     *         names: <code>add</code>, <code>remove</code>
+     * @return 
      */
     public String getOperationType() {
         return operationType;
     }
     
     /**
-     * The operation to perform on the attribute. <p> Available operation
-     * names: <code>add</code>, <code>remove</code>
+     * 
      *
-     * @param operationType The operation to perform on the attribute. <p> Available operation
-     *         names: <code>add</code>, <code>remove</code>
+     * @param operationType 
      */
     public void setOperationType(String operationType) {
         this.operationType = operationType;
     }
     
     /**
-     * The operation to perform on the attribute. <p> Available operation
-     * names: <code>add</code>, <code>remove</code>
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param operationType The operation to perform on the attribute. <p> Available operation
-     *         names: <code>add</code>, <code>remove</code>
+     * @param operationType 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -277,17 +256,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * The AWS user IDs to add to or remove from the list of users that have
-     * permission to create EBS volumes from the specified snapshot.
-     * Currently supports "all". <note> Only valid when the
-     * <code>createVolumePermission</code> attribute is being modified.
-     * </note>
+     * 
      *
-     * @return The AWS user IDs to add to or remove from the list of users that have
-     *         permission to create EBS volumes from the specified snapshot.
-     *         Currently supports "all". <note> Only valid when the
-     *         <code>createVolumePermission</code> attribute is being modified.
-     *         </note>
+     * @return 
      */
     public java.util.List<String> getUserIds() {
         if (userIds == null) {
@@ -298,17 +269,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The AWS user IDs to add to or remove from the list of users that have
-     * permission to create EBS volumes from the specified snapshot.
-     * Currently supports "all". <note> Only valid when the
-     * <code>createVolumePermission</code> attribute is being modified.
-     * </note>
+     * 
      *
-     * @param userIds The AWS user IDs to add to or remove from the list of users that have
-     *         permission to create EBS volumes from the specified snapshot.
-     *         Currently supports "all". <note> Only valid when the
-     *         <code>createVolumePermission</code> attribute is being modified.
-     *         </note>
+     * @param userIds 
      */
     public void setUserIds(java.util.Collection<String> userIds) {
         if (userIds == null) {
@@ -321,19 +284,11 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The AWS user IDs to add to or remove from the list of users that have
-     * permission to create EBS volumes from the specified snapshot.
-     * Currently supports "all". <note> Only valid when the
-     * <code>createVolumePermission</code> attribute is being modified.
-     * </note>
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param userIds The AWS user IDs to add to or remove from the list of users that have
-     *         permission to create EBS volumes from the specified snapshot.
-     *         Currently supports "all". <note> Only valid when the
-     *         <code>createVolumePermission</code> attribute is being modified.
-     *         </note>
+     * @param userIds 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -347,19 +302,11 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The AWS user IDs to add to or remove from the list of users that have
-     * permission to create EBS volumes from the specified snapshot.
-     * Currently supports "all". <note> Only valid when the
-     * <code>createVolumePermission</code> attribute is being modified.
-     * </note>
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param userIds The AWS user IDs to add to or remove from the list of users that have
-     *         permission to create EBS volumes from the specified snapshot.
-     *         Currently supports "all". <note> Only valid when the
-     *         <code>createVolumePermission</code> attribute is being modified.
-     *         </note>
+     * @param userIds 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -377,17 +324,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * The AWS group names to add to or remove from the list of groups that
-     * have permission to create EBS volumes from the specified snapshot.
-     * Currently supports "all". <note> Only valid when the
-     * <code>createVolumePermission</code> attribute is being modified.
-     * </note>
+     * 
      *
-     * @return The AWS group names to add to or remove from the list of groups that
-     *         have permission to create EBS volumes from the specified snapshot.
-     *         Currently supports "all". <note> Only valid when the
-     *         <code>createVolumePermission</code> attribute is being modified.
-     *         </note>
+     * @return 
      */
     public java.util.List<String> getGroupNames() {
         if (groupNames == null) {
@@ -398,17 +337,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The AWS group names to add to or remove from the list of groups that
-     * have permission to create EBS volumes from the specified snapshot.
-     * Currently supports "all". <note> Only valid when the
-     * <code>createVolumePermission</code> attribute is being modified.
-     * </note>
+     * 
      *
-     * @param groupNames The AWS group names to add to or remove from the list of groups that
-     *         have permission to create EBS volumes from the specified snapshot.
-     *         Currently supports "all". <note> Only valid when the
-     *         <code>createVolumePermission</code> attribute is being modified.
-     *         </note>
+     * @param groupNames 
      */
     public void setGroupNames(java.util.Collection<String> groupNames) {
         if (groupNames == null) {
@@ -421,19 +352,11 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The AWS group names to add to or remove from the list of groups that
-     * have permission to create EBS volumes from the specified snapshot.
-     * Currently supports "all". <note> Only valid when the
-     * <code>createVolumePermission</code> attribute is being modified.
-     * </note>
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupNames The AWS group names to add to or remove from the list of groups that
-     *         have permission to create EBS volumes from the specified snapshot.
-     *         Currently supports "all". <note> Only valid when the
-     *         <code>createVolumePermission</code> attribute is being modified.
-     *         </note>
+     * @param groupNames 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -447,19 +370,11 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The AWS group names to add to or remove from the list of groups that
-     * have permission to create EBS volumes from the specified snapshot.
-     * Currently supports "all". <note> Only valid when the
-     * <code>createVolumePermission</code> attribute is being modified.
-     * </note>
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupNames The AWS group names to add to or remove from the list of groups that
-     *         have permission to create EBS volumes from the specified snapshot.
-     *         Currently supports "all". <note> Only valid when the
-     *         <code>createVolumePermission</code> attribute is being modified.
-     *         </note>
+     * @param groupNames 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -477,30 +392,29 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns the value of the CreateVolumePermission property for this
-     * object.
+     * 
      *
-     * @return The value of the CreateVolumePermission property for this object.
+     * @return 
      */
     public CreateVolumePermissionModifications getCreateVolumePermission() {
         return createVolumePermission;
     }
     
     /**
-     * Sets the value of the CreateVolumePermission property for this object.
+     * 
      *
-     * @param createVolumePermission The new value for the CreateVolumePermission property for this object.
+     * @param createVolumePermission 
      */
     public void setCreateVolumePermission(CreateVolumePermissionModifications createVolumePermission) {
         this.createVolumePermission = createVolumePermission;
     }
     
     /**
-     * Sets the value of the CreateVolumePermission property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createVolumePermission The new value for the CreateVolumePermission property for this object.
+     * @param createVolumePermission 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

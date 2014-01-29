@@ -23,9 +23,11 @@ import com.amazonaws.services.ec2.model.transform.CreateRouteTableRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createRouteTable(CreateRouteTableRequest) CreateRouteTable operation}.
  * <p>
- * Creates a new route table within a VPC. After you create a new route table, you can add routes and associate the table with a subnet. For more
- * information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
- * in the Amazon Virtual Private Cloud User Guide.
+ * Creates a route table for the specified VPC. After you create a route table, you can add routes and associate the table with a subnet.
+ * </p>
+ * <p>
+ * For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createRouteTable(CreateRouteTableRequest)
@@ -33,34 +35,34 @@ import com.amazonaws.services.ec2.model.transform.CreateRouteTableRequestMarshal
 public class CreateRouteTableRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateRouteTableRequest> {
 
     /**
-     * The ID of the VPC where the route table will be created.
+     * The ID of the VPC.
      */
     private String vpcId;
 
     /**
-     * The ID of the VPC where the route table will be created.
+     * The ID of the VPC.
      *
-     * @return The ID of the VPC where the route table will be created.
+     * @return The ID of the VPC.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * The ID of the VPC where the route table will be created.
+     * The ID of the VPC.
      *
-     * @param vpcId The ID of the VPC where the route table will be created.
+     * @param vpcId The ID of the VPC.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * The ID of the VPC where the route table will be created.
+     * The ID of the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The ID of the VPC where the route table will be created.
+     * @param vpcId The ID of the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

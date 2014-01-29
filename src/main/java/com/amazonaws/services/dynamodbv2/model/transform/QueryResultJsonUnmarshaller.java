@@ -46,6 +46,7 @@ public class QueryResultJsonUnmarshaller implements Unmarshaller<QueryResult, Js
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Items", targetDepth)) {
+                    context.nextToken();
                     queryResult.setItems(new ListUnmarshaller<java.util.Map<String,AttributeValue>>(new MapUnmarshaller<String,AttributeValue>(StringJsonUnmarshaller.getInstance(), AttributeValueJsonUnmarshaller.getInstance())).unmarshall(context));
                 }
                 if (context.testExpression("Count", targetDepth)) {
@@ -53,6 +54,7 @@ public class QueryResultJsonUnmarshaller implements Unmarshaller<QueryResult, Js
                     queryResult.setCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastEvaluatedKey", targetDepth)) {
+                    context.nextToken();
                     queryResult.setLastEvaluatedKey(new MapUnmarshaller<String,AttributeValue>(StringJsonUnmarshaller.getInstance(), AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("ConsumedCapacity", targetDepth)) {

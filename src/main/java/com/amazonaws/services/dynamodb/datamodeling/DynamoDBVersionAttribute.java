@@ -28,6 +28,8 @@ import java.lang.annotation.Target;
  * version properties. On a save() operation, the {@link DynamoDBMapper} will
  * attempt to increment the version property and assert that the service's value
  * matches the client's. New objects will be assigned a version of 1 when saved.
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBVersionAttribute} instead.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)

@@ -25,19 +25,24 @@ import com.amazonaws.services.ec2.model.transform.ResetSnapshotAttributeRequestM
  * <p>
  * Resets permission settings for the specified snapshot.
  * </p>
+ * <p>
+ * For more information on modifying snapshot permissions, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a> in the <i>Amazon Elastic
+ * Compute Cloud User Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#resetSnapshotAttribute(ResetSnapshotAttributeRequest)
  */
 public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ResetSnapshotAttributeRequest> {
 
     /**
-     * The ID of the snapshot whose attribute is being reset.
+     * The ID of the snapshot.
      */
     private String snapshotId;
 
     /**
-     * The name of the attribute being reset. <p> Available attribute names:
-     * <code>createVolumePermission</code>
+     * The attribute to reset (currently only the attribute for permission to
+     * create volumes can be reset).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
@@ -55,10 +60,9 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param snapshotId The ID of the snapshot whose attribute is being
-     * reset.
-     * @param attribute The name of the attribute being reset. <p> Available
-     * attribute names: <code>createVolumePermission</code>
+     * @param snapshotId The ID of the snapshot.
+     * @param attribute The attribute to reset (currently only the attribute
+     * for permission to create volumes can be reset).
      */
     public ResetSnapshotAttributeRequest(String snapshotId, String attribute) {
         setSnapshotId(snapshotId);
@@ -70,10 +74,9 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param snapshotId The ID of the snapshot whose attribute is being
-     * reset.
-     * @param attribute The name of the attribute being reset. <p> Available
-     * attribute names: <code>createVolumePermission</code>
+     * @param snapshotId The ID of the snapshot.
+     * @param attribute The attribute to reset (currently only the attribute
+     * for permission to create volumes can be reset).
      */
     public ResetSnapshotAttributeRequest(String snapshotId, SnapshotAttributeName attribute) {
         this.snapshotId = snapshotId;
@@ -81,29 +84,29 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The ID of the snapshot whose attribute is being reset.
+     * The ID of the snapshot.
      *
-     * @return The ID of the snapshot whose attribute is being reset.
+     * @return The ID of the snapshot.
      */
     public String getSnapshotId() {
         return snapshotId;
     }
     
     /**
-     * The ID of the snapshot whose attribute is being reset.
+     * The ID of the snapshot.
      *
-     * @param snapshotId The ID of the snapshot whose attribute is being reset.
+     * @param snapshotId The ID of the snapshot.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
     
     /**
-     * The ID of the snapshot whose attribute is being reset.
+     * The ID of the snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotId The ID of the snapshot whose attribute is being reset.
+     * @param snapshotId The ID of the snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -114,14 +117,14 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The name of the attribute being reset. <p> Available attribute names:
-     * <code>createVolumePermission</code>
+     * The attribute to reset (currently only the attribute for permission to
+     * create volumes can be reset).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @return The name of the attribute being reset. <p> Available attribute names:
-     *         <code>createVolumePermission</code>
+     * @return The attribute to reset (currently only the attribute for permission to
+     *         create volumes can be reset).
      *
      * @see SnapshotAttributeName
      */
@@ -130,14 +133,14 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The name of the attribute being reset. <p> Available attribute names:
-     * <code>createVolumePermission</code>
+     * The attribute to reset (currently only the attribute for permission to
+     * create volumes can be reset).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The name of the attribute being reset. <p> Available attribute names:
-     *         <code>createVolumePermission</code>
+     * @param attribute The attribute to reset (currently only the attribute for permission to
+     *         create volumes can be reset).
      *
      * @see SnapshotAttributeName
      */
@@ -146,16 +149,16 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The name of the attribute being reset. <p> Available attribute names:
-     * <code>createVolumePermission</code>
+     * The attribute to reset (currently only the attribute for permission to
+     * create volumes can be reset).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The name of the attribute being reset. <p> Available attribute names:
-     *         <code>createVolumePermission</code>
+     * @param attribute The attribute to reset (currently only the attribute for permission to
+     *         create volumes can be reset).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -168,14 +171,14 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The name of the attribute being reset. <p> Available attribute names:
-     * <code>createVolumePermission</code>
+     * The attribute to reset (currently only the attribute for permission to
+     * create volumes can be reset).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The name of the attribute being reset. <p> Available attribute names:
-     *         <code>createVolumePermission</code>
+     * @param attribute The attribute to reset (currently only the attribute for permission to
+     *         create volumes can be reset).
      *
      * @see SnapshotAttributeName
      */
@@ -184,16 +187,16 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The name of the attribute being reset. <p> Available attribute names:
-     * <code>createVolumePermission</code>
+     * The attribute to reset (currently only the attribute for permission to
+     * create volumes can be reset).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The name of the attribute being reset. <p> Available attribute names:
-     *         <code>createVolumePermission</code>
+     * @param attribute The attribute to reset (currently only the attribute for permission to
+     *         create volumes can be reset).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

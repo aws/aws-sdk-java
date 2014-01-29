@@ -23,7 +23,10 @@ import com.amazonaws.services.ec2.model.transform.DeletePlacementGroupRequestMar
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deletePlacementGroup(DeletePlacementGroupRequest) DeletePlacementGroup operation}.
  * <p>
- * Deletes a PlacementGroup from a user's account. Terminate all Amazon EC2 instances in the placement group before deletion.
+ * Deletes the specified placement group. You must terminate all instances in the placement group before you can delete the placement group. For more
+ * information about placement groups and cluster instances, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a> in the <i>Amazon Elastic Compute Cloud
+ * User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deletePlacementGroup(DeletePlacementGroupRequest)
@@ -31,7 +34,7 @@ import com.amazonaws.services.ec2.model.transform.DeletePlacementGroupRequestMar
 public class DeletePlacementGroupRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeletePlacementGroupRequest> {
 
     /**
-     * The name of the <code>PlacementGroup</code> to delete.
+     * The name of the placement group.
      */
     private String groupName;
 
@@ -46,37 +49,36 @@ public class DeletePlacementGroupRequest extends AmazonWebServiceRequest impleme
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param groupName The name of the <code>PlacementGroup</code> to
-     * delete.
+     * @param groupName The name of the placement group.
      */
     public DeletePlacementGroupRequest(String groupName) {
         setGroupName(groupName);
     }
 
     /**
-     * The name of the <code>PlacementGroup</code> to delete.
+     * The name of the placement group.
      *
-     * @return The name of the <code>PlacementGroup</code> to delete.
+     * @return The name of the placement group.
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * The name of the <code>PlacementGroup</code> to delete.
+     * The name of the placement group.
      *
-     * @param groupName The name of the <code>PlacementGroup</code> to delete.
+     * @param groupName The name of the placement group.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * The name of the <code>PlacementGroup</code> to delete.
+     * The name of the placement group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupName The name of the <code>PlacementGroup</code> to delete.
+     * @param groupName The name of the placement group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

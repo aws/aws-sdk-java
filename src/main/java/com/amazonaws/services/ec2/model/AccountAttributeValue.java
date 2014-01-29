@@ -17,36 +17,41 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Account Attribute Value
+ * <p>
+ * Describes a value of an account attribute.
+ * </p>
  */
 public class AccountAttributeValue implements Serializable {
 
+    /**
+     * The value.
+     */
     private String attributeValue;
 
     /**
-     * Returns the value of the AttributeValue property for this object.
+     * The value.
      *
-     * @return The value of the AttributeValue property for this object.
+     * @return The value.
      */
     public String getAttributeValue() {
         return attributeValue;
     }
     
     /**
-     * Sets the value of the AttributeValue property for this object.
+     * The value.
      *
-     * @param attributeValue The new value for the AttributeValue property for this object.
+     * @param attributeValue The value.
      */
     public void setAttributeValue(String attributeValue) {
         this.attributeValue = attributeValue;
     }
     
     /**
-     * Sets the value of the AttributeValue property for this object.
+     * The value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeValue The new value for the AttributeValue property for this object.
+     * @param attributeValue The value.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

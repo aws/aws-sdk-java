@@ -27,6 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * Describe Table Result JSON Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.DescribeTableResultJsonUnmarshaller} instead.
  */
 @Deprecated
 public class DescribeTableResultJsonUnmarshaller implements Unmarshaller<DescribeTableResult, JsonUnmarshallerContext> {

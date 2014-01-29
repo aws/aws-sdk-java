@@ -23,7 +23,10 @@ import com.amazonaws.services.ec2.model.transform.CreateRouteRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createRoute(CreateRouteRequest) CreateRoute operation}.
  * <p>
- * Creates a new route in a route table within a VPC. The route's target can be either a gateway attached to the VPC or a NAT instance in the VPC.
+ * Creates a route in a route table within a VPC.
+ * </p>
+ * <p>
+ * You must specify one of the following targets: Internet gateway, NAT instance, or network interface.
  * </p>
  * <p>
  * When determining how to route traffic, we use the route with the most specific match. For example, let's say the traffic is destined for
@@ -31,17 +34,23 @@ import com.amazonaws.services.ec2.model.transform.CreateRouteRequestMarshaller;
  * </p>
  * 
  * <ul>
- * <li> <code>192.0.2.0/24</code> (goes to some target A) </li>
- * <li> <code>192.0.2.0/28</code> (goes to some target B) </li>
+ * <li> <p>
+ * <code>192.0.2.0/24</code> (goes to some target A)
+ * </p>
+ * </li>
+ * <li> <p>
+ * <code>192.0.2.0/28</code> (goes to some target B)
+ * </p>
+ * </li>
  * 
  * </ul>
  * <p>
- * Both routes apply to the traffic destined for <code>192.0.2.3</code> . However, the second route in the list is more specific, so we use that route
- * to determine where to target the traffic.
+ * Both routes apply to the traffic destined for <code>192.0.2.3</code> . However, the second route in the list covers a smaller number of IP addresses
+ * and is therefore more specific, so we use that route to determine where to target the traffic.
  * </p>
  * <p>
- * For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route
- * Tables </a> in the Amazon Virtual Private Cloud User Guide.
+ * For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createRoute(CreateRouteRequest)
@@ -49,56 +58,57 @@ import com.amazonaws.services.ec2.model.transform.CreateRouteRequestMarshaller;
 public class CreateRouteRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateRouteRequest> {
 
     /**
-     * The ID of the route table where the route will be added.
+     * The ID of the route table for the route.
      */
     private String routeTableId;
 
     /**
-     * The CIDR address block used for the destination match. For example:
-     * <code>0.0.0.0/0</code>. Routing decisions are based on the most
-     * specific match.
+     * The CIDR address block used for the destination match. Routing
+     * decisions are based on the most specific match.
      */
     private String destinationCidrBlock;
 
     /**
-     * The ID of a VPN or Internet gateway attached to your VPC. You must
-     * provide either <code>GatewayId</code> or <code>InstanceId</code>, but
-     * not both.
+     * The ID of an Internet gateway attached to your VPC.
      */
     private String gatewayId;
 
     /**
-     * The ID of a NAT instance in your VPC. You must provide either
-     * <code>GatewayId</code> or <code>InstanceId</code>, but not both.
+     * The ID of a NAT instance in your VPC. The operation fails if you
+     * specify an instance ID unless exactly one network interface is
+     * attached.
      */
     private String instanceId;
 
+    /**
+     * The ID of a network interface.
+     */
     private String networkInterfaceId;
 
     /**
-     * The ID of the route table where the route will be added.
+     * The ID of the route table for the route.
      *
-     * @return The ID of the route table where the route will be added.
+     * @return The ID of the route table for the route.
      */
     public String getRouteTableId() {
         return routeTableId;
     }
     
     /**
-     * The ID of the route table where the route will be added.
+     * The ID of the route table for the route.
      *
-     * @param routeTableId The ID of the route table where the route will be added.
+     * @param routeTableId The ID of the route table for the route.
      */
     public void setRouteTableId(String routeTableId) {
         this.routeTableId = routeTableId;
     }
     
     /**
-     * The ID of the route table where the route will be added.
+     * The ID of the route table for the route.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param routeTableId The ID of the route table where the route will be added.
+     * @param routeTableId The ID of the route table for the route.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -109,41 +119,35 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The CIDR address block used for the destination match. For example:
-     * <code>0.0.0.0/0</code>. Routing decisions are based on the most
-     * specific match.
+     * The CIDR address block used for the destination match. Routing
+     * decisions are based on the most specific match.
      *
-     * @return The CIDR address block used for the destination match. For example:
-     *         <code>0.0.0.0/0</code>. Routing decisions are based on the most
-     *         specific match.
+     * @return The CIDR address block used for the destination match. Routing
+     *         decisions are based on the most specific match.
      */
     public String getDestinationCidrBlock() {
         return destinationCidrBlock;
     }
     
     /**
-     * The CIDR address block used for the destination match. For example:
-     * <code>0.0.0.0/0</code>. Routing decisions are based on the most
-     * specific match.
+     * The CIDR address block used for the destination match. Routing
+     * decisions are based on the most specific match.
      *
-     * @param destinationCidrBlock The CIDR address block used for the destination match. For example:
-     *         <code>0.0.0.0/0</code>. Routing decisions are based on the most
-     *         specific match.
+     * @param destinationCidrBlock The CIDR address block used for the destination match. Routing
+     *         decisions are based on the most specific match.
      */
     public void setDestinationCidrBlock(String destinationCidrBlock) {
         this.destinationCidrBlock = destinationCidrBlock;
     }
     
     /**
-     * The CIDR address block used for the destination match. For example:
-     * <code>0.0.0.0/0</code>. Routing decisions are based on the most
-     * specific match.
+     * The CIDR address block used for the destination match. Routing
+     * decisions are based on the most specific match.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param destinationCidrBlock The CIDR address block used for the destination match. For example:
-     *         <code>0.0.0.0/0</code>. Routing decisions are based on the most
-     *         specific match.
+     * @param destinationCidrBlock The CIDR address block used for the destination match. Routing
+     *         decisions are based on the most specific match.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -154,41 +158,29 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The ID of a VPN or Internet gateway attached to your VPC. You must
-     * provide either <code>GatewayId</code> or <code>InstanceId</code>, but
-     * not both.
+     * The ID of an Internet gateway attached to your VPC.
      *
-     * @return The ID of a VPN or Internet gateway attached to your VPC. You must
-     *         provide either <code>GatewayId</code> or <code>InstanceId</code>, but
-     *         not both.
+     * @return The ID of an Internet gateway attached to your VPC.
      */
     public String getGatewayId() {
         return gatewayId;
     }
     
     /**
-     * The ID of a VPN or Internet gateway attached to your VPC. You must
-     * provide either <code>GatewayId</code> or <code>InstanceId</code>, but
-     * not both.
+     * The ID of an Internet gateway attached to your VPC.
      *
-     * @param gatewayId The ID of a VPN or Internet gateway attached to your VPC. You must
-     *         provide either <code>GatewayId</code> or <code>InstanceId</code>, but
-     *         not both.
+     * @param gatewayId The ID of an Internet gateway attached to your VPC.
      */
     public void setGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
     }
     
     /**
-     * The ID of a VPN or Internet gateway attached to your VPC. You must
-     * provide either <code>GatewayId</code> or <code>InstanceId</code>, but
-     * not both.
+     * The ID of an Internet gateway attached to your VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param gatewayId The ID of a VPN or Internet gateway attached to your VPC. You must
-     *         provide either <code>GatewayId</code> or <code>InstanceId</code>, but
-     *         not both.
+     * @param gatewayId The ID of an Internet gateway attached to your VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -199,35 +191,41 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The ID of a NAT instance in your VPC. You must provide either
-     * <code>GatewayId</code> or <code>InstanceId</code>, but not both.
+     * The ID of a NAT instance in your VPC. The operation fails if you
+     * specify an instance ID unless exactly one network interface is
+     * attached.
      *
-     * @return The ID of a NAT instance in your VPC. You must provide either
-     *         <code>GatewayId</code> or <code>InstanceId</code>, but not both.
+     * @return The ID of a NAT instance in your VPC. The operation fails if you
+     *         specify an instance ID unless exactly one network interface is
+     *         attached.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The ID of a NAT instance in your VPC. You must provide either
-     * <code>GatewayId</code> or <code>InstanceId</code>, but not both.
+     * The ID of a NAT instance in your VPC. The operation fails if you
+     * specify an instance ID unless exactly one network interface is
+     * attached.
      *
-     * @param instanceId The ID of a NAT instance in your VPC. You must provide either
-     *         <code>GatewayId</code> or <code>InstanceId</code>, but not both.
+     * @param instanceId The ID of a NAT instance in your VPC. The operation fails if you
+     *         specify an instance ID unless exactly one network interface is
+     *         attached.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The ID of a NAT instance in your VPC. You must provide either
-     * <code>GatewayId</code> or <code>InstanceId</code>, but not both.
+     * The ID of a NAT instance in your VPC. The operation fails if you
+     * specify an instance ID unless exactly one network interface is
+     * attached.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The ID of a NAT instance in your VPC. You must provide either
-     *         <code>GatewayId</code> or <code>InstanceId</code>, but not both.
+     * @param instanceId The ID of a NAT instance in your VPC. The operation fails if you
+     *         specify an instance ID unless exactly one network interface is
+     *         attached.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -238,29 +236,29 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Returns the value of the NetworkInterfaceId property for this object.
+     * The ID of a network interface.
      *
-     * @return The value of the NetworkInterfaceId property for this object.
+     * @return The ID of a network interface.
      */
     public String getNetworkInterfaceId() {
         return networkInterfaceId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceId property for this object.
+     * The ID of a network interface.
      *
-     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     * @param networkInterfaceId The ID of a network interface.
      */
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceId property for this object.
+     * The ID of a network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     * @param networkInterfaceId The ID of a network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

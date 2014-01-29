@@ -23,8 +23,12 @@ import com.amazonaws.services.ec2.model.transform.CreateVpnGatewayRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVpnGateway(CreateVpnGatewayRequest) CreateVpnGateway operation}.
  * <p>
- * Creates a new VPN gateway. A VPN gateway is the VPC-side endpoint for your VPN connection. You can create a VPN gateway before creating the VPC
- * itself.
+ * Creates a virtual private gateway. A virtual private gateway is the endpoint on the VPC side of your VPN connection. You can create a virtual private
+ * gateway before creating the VPC itself.
+ * </p>
+ * <p>
+ * For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a
+ * Hardware Virtual Private Gateway to Your VPC </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpnGateway(CreateVpnGatewayRequest)
@@ -32,7 +36,7 @@ import com.amazonaws.services.ec2.model.transform.CreateVpnGatewayRequestMarshal
 public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateVpnGatewayRequest> {
 
     /**
-     * The type of VPN connection this VPN gateway supports.
+     * The type of VPN connection this virtual private gateway supports.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
@@ -40,7 +44,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
     private String type;
 
     /**
-     * The Availability Zone in which to create the VPN gateway.
+     * The Availability Zone for the virtual private gateway.
      */
     private String availabilityZone;
 
@@ -55,7 +59,8 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param type The type of VPN connection this VPN gateway supports.
+     * @param type The type of VPN connection this virtual private gateway
+     * supports.
      */
     public CreateVpnGatewayRequest(String type) {
         setType(type);
@@ -66,19 +71,20 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param type The type of VPN connection this VPN gateway supports.
+     * @param type The type of VPN connection this virtual private gateway
+     * supports.
      */
     public CreateVpnGatewayRequest(GatewayType type) {
         this.type = type.toString();
     }
 
     /**
-     * The type of VPN connection this VPN gateway supports.
+     * The type of VPN connection this virtual private gateway supports.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
      *
-     * @return The type of VPN connection this VPN gateway supports.
+     * @return The type of VPN connection this virtual private gateway supports.
      *
      * @see GatewayType
      */
@@ -87,12 +93,12 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The type of VPN connection this VPN gateway supports.
+     * The type of VPN connection this virtual private gateway supports.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
      *
-     * @param type The type of VPN connection this VPN gateway supports.
+     * @param type The type of VPN connection this virtual private gateway supports.
      *
      * @see GatewayType
      */
@@ -101,14 +107,14 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The type of VPN connection this VPN gateway supports.
+     * The type of VPN connection this virtual private gateway supports.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
      *
-     * @param type The type of VPN connection this VPN gateway supports.
+     * @param type The type of VPN connection this virtual private gateway supports.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -121,12 +127,12 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The type of VPN connection this VPN gateway supports.
+     * The type of VPN connection this virtual private gateway supports.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
      *
-     * @param type The type of VPN connection this VPN gateway supports.
+     * @param type The type of VPN connection this virtual private gateway supports.
      *
      * @see GatewayType
      */
@@ -135,14 +141,14 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The type of VPN connection this VPN gateway supports.
+     * The type of VPN connection this virtual private gateway supports.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
      *
-     * @param type The type of VPN connection this VPN gateway supports.
+     * @param type The type of VPN connection this virtual private gateway supports.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -155,29 +161,29 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The Availability Zone in which to create the VPN gateway.
+     * The Availability Zone for the virtual private gateway.
      *
-     * @return The Availability Zone in which to create the VPN gateway.
+     * @return The Availability Zone for the virtual private gateway.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * The Availability Zone in which to create the VPN gateway.
+     * The Availability Zone for the virtual private gateway.
      *
-     * @param availabilityZone The Availability Zone in which to create the VPN gateway.
+     * @param availabilityZone The Availability Zone for the virtual private gateway.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * The Availability Zone in which to create the VPN gateway.
+     * The Availability Zone for the virtual private gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The Availability Zone in which to create the VPN gateway.
+     * @param availabilityZone The Availability Zone for the virtual private gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

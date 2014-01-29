@@ -27,6 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * Delete Item Result JSON Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.DeleteItemResultJsonUnmarshaller} instead.
  */
 @Deprecated
 public class DeleteItemResultJsonUnmarshaller implements Unmarshaller<DeleteItemResult, JsonUnmarshallerContext> {

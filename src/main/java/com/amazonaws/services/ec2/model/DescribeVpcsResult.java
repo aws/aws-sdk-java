@@ -17,21 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
  * 
- * </p>
  */
 public class DescribeVpcsResult implements Serializable {
 
     /**
-     * 
+     * Information about one or more VPCs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Vpc> vpcs;
 
     /**
-     * 
+     * Information about one or more VPCs.
      *
-     * @return 
+     * @return Information about one or more VPCs.
      */
     public java.util.List<Vpc> getVpcs() {
         if (vpcs == null) {
@@ -42,9 +40,9 @@ public class DescribeVpcsResult implements Serializable {
     }
     
     /**
-     * 
+     * Information about one or more VPCs.
      *
-     * @param vpcs 
+     * @param vpcs Information about one or more VPCs.
      */
     public void setVpcs(java.util.Collection<Vpc> vpcs) {
         if (vpcs == null) {
@@ -57,11 +55,11 @@ public class DescribeVpcsResult implements Serializable {
     }
     
     /**
-     * 
+     * Information about one or more VPCs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcs 
+     * @param vpcs Information about one or more VPCs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,11 +73,11 @@ public class DescribeVpcsResult implements Serializable {
     }
     
     /**
-     * 
+     * Information about one or more VPCs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcs 
+     * @param vpcs Information about one or more VPCs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

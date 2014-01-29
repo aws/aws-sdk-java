@@ -17,44 +17,61 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Import Volume Task Details
+ * <p>
+ * Describes an import volume task.
+ * </p>
  */
 public class ImportVolumeTaskDetails implements Serializable {
 
+    /**
+     * The number of bytes converted so far.
+     */
     private Long bytesConverted;
 
+    /**
+     * The Availability Zone where the resulting volume will reside.
+     */
     private String availabilityZone;
 
+    /**
+     * The description you provided when starting the import volume task.
+     */
     private String description;
 
+    /**
+     * The image.
+     */
     private DiskImageDescription image;
 
+    /**
+     * The volume.
+     */
     private DiskImageVolumeDescription volume;
 
     /**
-     * Returns the value of the BytesConverted property for this object.
+     * The number of bytes converted so far.
      *
-     * @return The value of the BytesConverted property for this object.
+     * @return The number of bytes converted so far.
      */
     public Long getBytesConverted() {
         return bytesConverted;
     }
     
     /**
-     * Sets the value of the BytesConverted property for this object.
+     * The number of bytes converted so far.
      *
-     * @param bytesConverted The new value for the BytesConverted property for this object.
+     * @param bytesConverted The number of bytes converted so far.
      */
     public void setBytesConverted(Long bytesConverted) {
         this.bytesConverted = bytesConverted;
     }
     
     /**
-     * Sets the value of the BytesConverted property for this object.
+     * The number of bytes converted so far.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bytesConverted The new value for the BytesConverted property for this object.
+     * @param bytesConverted The number of bytes converted so far.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -65,29 +82,29 @@ public class ImportVolumeTaskDetails implements Serializable {
     }
 
     /**
-     * Returns the value of the AvailabilityZone property for this object.
+     * The Availability Zone where the resulting volume will reside.
      *
-     * @return The value of the AvailabilityZone property for this object.
+     * @return The Availability Zone where the resulting volume will reside.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * Sets the value of the AvailabilityZone property for this object.
+     * The Availability Zone where the resulting volume will reside.
      *
-     * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     * @param availabilityZone The Availability Zone where the resulting volume will reside.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * Sets the value of the AvailabilityZone property for this object.
+     * The Availability Zone where the resulting volume will reside.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     * @param availabilityZone The Availability Zone where the resulting volume will reside.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -98,29 +115,29 @@ public class ImportVolumeTaskDetails implements Serializable {
     }
 
     /**
-     * Returns the value of the Description property for this object.
+     * The description you provided when starting the import volume task.
      *
-     * @return The value of the Description property for this object.
+     * @return The description you provided when starting the import volume task.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * The description you provided when starting the import volume task.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description The description you provided when starting the import volume task.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * The description you provided when starting the import volume task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description The description you provided when starting the import volume task.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -131,29 +148,29 @@ public class ImportVolumeTaskDetails implements Serializable {
     }
 
     /**
-     * Returns the value of the Image property for this object.
+     * The image.
      *
-     * @return The value of the Image property for this object.
+     * @return The image.
      */
     public DiskImageDescription getImage() {
         return image;
     }
     
     /**
-     * Sets the value of the Image property for this object.
+     * The image.
      *
-     * @param image The new value for the Image property for this object.
+     * @param image The image.
      */
     public void setImage(DiskImageDescription image) {
         this.image = image;
     }
     
     /**
-     * Sets the value of the Image property for this object.
+     * The image.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param image The new value for the Image property for this object.
+     * @param image The image.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -164,29 +181,29 @@ public class ImportVolumeTaskDetails implements Serializable {
     }
 
     /**
-     * Returns the value of the Volume property for this object.
+     * The volume.
      *
-     * @return The value of the Volume property for this object.
+     * @return The volume.
      */
     public DiskImageVolumeDescription getVolume() {
         return volume;
     }
     
     /**
-     * Sets the value of the Volume property for this object.
+     * The volume.
      *
-     * @param volume The new value for the Volume property for this object.
+     * @param volume The volume.
      */
     public void setVolume(DiskImageVolumeDescription volume) {
         this.volume = volume;
     }
     
     /**
-     * Sets the value of the Volume property for this object.
+     * The volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volume The new value for the Volume property for this object.
+     * @param volume The volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

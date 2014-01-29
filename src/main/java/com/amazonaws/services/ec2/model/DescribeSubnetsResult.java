@@ -17,21 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
  * 
- * </p>
  */
 public class DescribeSubnetsResult implements Serializable {
 
     /**
-     * Contains a set of one or more <a>Subnet</a> instances.
+     * Information about one or more subnets.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Subnet> subnets;
 
     /**
-     * Contains a set of one or more <a>Subnet</a> instances.
+     * Information about one or more subnets.
      *
-     * @return Contains a set of one or more <a>Subnet</a> instances.
+     * @return Information about one or more subnets.
      */
     public java.util.List<Subnet> getSubnets() {
         if (subnets == null) {
@@ -42,9 +40,9 @@ public class DescribeSubnetsResult implements Serializable {
     }
     
     /**
-     * Contains a set of one or more <a>Subnet</a> instances.
+     * Information about one or more subnets.
      *
-     * @param subnets Contains a set of one or more <a>Subnet</a> instances.
+     * @param subnets Information about one or more subnets.
      */
     public void setSubnets(java.util.Collection<Subnet> subnets) {
         if (subnets == null) {
@@ -57,11 +55,11 @@ public class DescribeSubnetsResult implements Serializable {
     }
     
     /**
-     * Contains a set of one or more <a>Subnet</a> instances.
+     * Information about one or more subnets.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnets Contains a set of one or more <a>Subnet</a> instances.
+     * @param subnets Information about one or more subnets.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,11 +73,11 @@ public class DescribeSubnetsResult implements Serializable {
     }
     
     /**
-     * Contains a set of one or more <a>Subnet</a> instances.
+     * Information about one or more subnets.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnets Contains a set of one or more <a>Subnet</a> instances.
+     * @param subnets Information about one or more subnets.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

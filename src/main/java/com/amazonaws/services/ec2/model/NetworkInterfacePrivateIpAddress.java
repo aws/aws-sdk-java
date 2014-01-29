@@ -17,42 +17,58 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Network Interface Private Ip Address
+ * <p>
+ * Describes the private IP address of a network interface.
+ * </p>
  */
 public class NetworkInterfacePrivateIpAddress implements Serializable {
 
+    /**
+     * The private IP address.
+     */
     private String privateIpAddress;
 
+    /**
+     * The private DNS name.
+     */
     private String privateDnsName;
 
+    /**
+     * Indicates whether this IP address is the primary private IP address of
+     * the network interface.
+     */
     private Boolean primary;
 
+    /**
+     * The association information for an Elastic IP address associated with
+     * the network interface.
+     */
     private NetworkInterfaceAssociation association;
 
     /**
-     * Returns the value of the PrivateIpAddress property for this object.
+     * The private IP address.
      *
-     * @return The value of the PrivateIpAddress property for this object.
+     * @return The private IP address.
      */
     public String getPrivateIpAddress() {
         return privateIpAddress;
     }
     
     /**
-     * Sets the value of the PrivateIpAddress property for this object.
+     * The private IP address.
      *
-     * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     * @param privateIpAddress The private IP address.
      */
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
     
     /**
-     * Sets the value of the PrivateIpAddress property for this object.
+     * The private IP address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     * @param privateIpAddress The private IP address.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -63,29 +79,29 @@ public class NetworkInterfacePrivateIpAddress implements Serializable {
     }
 
     /**
-     * Returns the value of the PrivateDnsName property for this object.
+     * The private DNS name.
      *
-     * @return The value of the PrivateDnsName property for this object.
+     * @return The private DNS name.
      */
     public String getPrivateDnsName() {
         return privateDnsName;
     }
     
     /**
-     * Sets the value of the PrivateDnsName property for this object.
+     * The private DNS name.
      *
-     * @param privateDnsName The new value for the PrivateDnsName property for this object.
+     * @param privateDnsName The private DNS name.
      */
     public void setPrivateDnsName(String privateDnsName) {
         this.privateDnsName = privateDnsName;
     }
     
     /**
-     * Sets the value of the PrivateDnsName property for this object.
+     * The private DNS name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param privateDnsName The new value for the PrivateDnsName property for this object.
+     * @param privateDnsName The private DNS name.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -96,29 +112,35 @@ public class NetworkInterfacePrivateIpAddress implements Serializable {
     }
 
     /**
-     * Returns the value of the Primary property for this object.
+     * Indicates whether this IP address is the primary private IP address of
+     * the network interface.
      *
-     * @return The value of the Primary property for this object.
+     * @return Indicates whether this IP address is the primary private IP address of
+     *         the network interface.
      */
     public Boolean isPrimary() {
         return primary;
     }
     
     /**
-     * Sets the value of the Primary property for this object.
+     * Indicates whether this IP address is the primary private IP address of
+     * the network interface.
      *
-     * @param primary The new value for the Primary property for this object.
+     * @param primary Indicates whether this IP address is the primary private IP address of
+     *         the network interface.
      */
     public void setPrimary(Boolean primary) {
         this.primary = primary;
     }
     
     /**
-     * Sets the value of the Primary property for this object.
+     * Indicates whether this IP address is the primary private IP address of
+     * the network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param primary The new value for the Primary property for this object.
+     * @param primary Indicates whether this IP address is the primary private IP address of
+     *         the network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -129,38 +151,46 @@ public class NetworkInterfacePrivateIpAddress implements Serializable {
     }
 
     /**
-     * Returns the value of the Primary property for this object.
+     * Indicates whether this IP address is the primary private IP address of
+     * the network interface.
      *
-     * @return The value of the Primary property for this object.
+     * @return Indicates whether this IP address is the primary private IP address of
+     *         the network interface.
      */
     public Boolean getPrimary() {
         return primary;
     }
 
     /**
-     * Returns the value of the Association property for this object.
+     * The association information for an Elastic IP address associated with
+     * the network interface.
      *
-     * @return The value of the Association property for this object.
+     * @return The association information for an Elastic IP address associated with
+     *         the network interface.
      */
     public NetworkInterfaceAssociation getAssociation() {
         return association;
     }
     
     /**
-     * Sets the value of the Association property for this object.
+     * The association information for an Elastic IP address associated with
+     * the network interface.
      *
-     * @param association The new value for the Association property for this object.
+     * @param association The association information for an Elastic IP address associated with
+     *         the network interface.
      */
     public void setAssociation(NetworkInterfaceAssociation association) {
         this.association = association;
     }
     
     /**
-     * Sets the value of the Association property for this object.
+     * The association information for an Elastic IP address associated with
+     * the network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param association The new value for the Association property for this object.
+     * @param association The association information for an Elastic IP address associated with
+     *         the network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

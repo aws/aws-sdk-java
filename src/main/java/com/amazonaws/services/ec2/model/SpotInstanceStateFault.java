@@ -17,38 +17,46 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Spot Instance State Fault
+ * <p>
+ * Describes a Spot Instance state change.
+ * </p>
  */
 public class SpotInstanceStateFault implements Serializable {
 
+    /**
+     * The reason code for the Spot Instance state change.
+     */
     private String code;
 
+    /**
+     * The message for the Spot Instance state change.
+     */
     private String message;
 
     /**
-     * Returns the value of the Code property for this object.
+     * The reason code for the Spot Instance state change.
      *
-     * @return The value of the Code property for this object.
+     * @return The reason code for the Spot Instance state change.
      */
     public String getCode() {
         return code;
     }
     
     /**
-     * Sets the value of the Code property for this object.
+     * The reason code for the Spot Instance state change.
      *
-     * @param code The new value for the Code property for this object.
+     * @param code The reason code for the Spot Instance state change.
      */
     public void setCode(String code) {
         this.code = code;
     }
     
     /**
-     * Sets the value of the Code property for this object.
+     * The reason code for the Spot Instance state change.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param code The new value for the Code property for this object.
+     * @param code The reason code for the Spot Instance state change.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -59,29 +67,29 @@ public class SpotInstanceStateFault implements Serializable {
     }
 
     /**
-     * Returns the value of the Message property for this object.
+     * The message for the Spot Instance state change.
      *
-     * @return The value of the Message property for this object.
+     * @return The message for the Spot Instance state change.
      */
     public String getMessage() {
         return message;
     }
     
     /**
-     * Sets the value of the Message property for this object.
+     * The message for the Spot Instance state change.
      *
-     * @param message The new value for the Message property for this object.
+     * @param message The message for the Spot Instance state change.
      */
     public void setMessage(String message) {
         this.message = message;
     }
     
     /**
-     * Sets the value of the Message property for this object.
+     * The message for the Spot Instance state change.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param message The new value for the Message property for this object.
+     * @param message The message for the Spot Instance state change.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

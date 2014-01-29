@@ -17,16 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Describe Export Tasks Result
+ * 
  */
 public class DescribeExportTasksResult implements Serializable {
 
+    /**
+     * 
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ExportTask> exportTasks;
 
     /**
-     * Returns the value of the ExportTasks property for this object.
+     * 
      *
-     * @return The value of the ExportTasks property for this object.
+     * @return 
      */
     public java.util.List<ExportTask> getExportTasks() {
         if (exportTasks == null) {
@@ -37,9 +40,9 @@ public class DescribeExportTasksResult implements Serializable {
     }
     
     /**
-     * Sets the value of the ExportTasks property for this object.
+     * 
      *
-     * @param exportTasks The new value for the ExportTasks property for this object.
+     * @param exportTasks 
      */
     public void setExportTasks(java.util.Collection<ExportTask> exportTasks) {
         if (exportTasks == null) {
@@ -52,11 +55,11 @@ public class DescribeExportTasksResult implements Serializable {
     }
     
     /**
-     * Sets the value of the ExportTasks property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exportTasks The new value for the ExportTasks property for this object.
+     * @param exportTasks 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -70,11 +73,11 @@ public class DescribeExportTasksResult implements Serializable {
     }
     
     /**
-     * Sets the value of the ExportTasks property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exportTasks The new value for the ExportTasks property for this object.
+     * @param exportTasks 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

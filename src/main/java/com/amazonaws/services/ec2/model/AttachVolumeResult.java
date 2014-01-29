@@ -17,9 +17,7 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Result of attaching an Amazon EBS volume to a running instance.
- * </p>
+ * 
  */
 public class AttachVolumeResult implements Serializable {
 

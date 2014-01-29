@@ -155,10 +155,6 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     instance.setSpotInstanceRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("license", targetDepth)) {
-                    instance.setLicense(InstanceLicenseStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
                 if (context.testExpression("clientToken", targetDepth)) {
                     instance.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -52,16 +52,14 @@ public class Cluster implements Serializable {
     private String logUri;
 
     /**
-     * The AMI version requested for this cluster.<!-- For more information,
-     * see <a>JobFlowDetail$AmiVersion</a>.-->
+     * The AMI version requested for this cluster.
      */
     private String requestedAmiVersion;
 
     /**
      * The AMI version running on this cluster. This differs from the
      * requested version only if the requested version is a meta version,
-     * such as "latest". <!--For more information, see
-     * <a>JobFlowDetail$AmiVersion</a>.-->
+     * such as "latest".
      */
     private String runningAmiVersion;
 
@@ -283,35 +281,29 @@ public class Cluster implements Serializable {
     }
 
     /**
-     * The AMI version requested for this cluster.<!-- For more information,
-     * see <a>JobFlowDetail$AmiVersion</a>.-->
+     * The AMI version requested for this cluster.
      *
-     * @return The AMI version requested for this cluster.<!-- For more information,
-     *         see <a>JobFlowDetail$AmiVersion</a>.-->
+     * @return The AMI version requested for this cluster.
      */
     public String getRequestedAmiVersion() {
         return requestedAmiVersion;
     }
     
     /**
-     * The AMI version requested for this cluster.<!-- For more information,
-     * see <a>JobFlowDetail$AmiVersion</a>.-->
+     * The AMI version requested for this cluster.
      *
-     * @param requestedAmiVersion The AMI version requested for this cluster.<!-- For more information,
-     *         see <a>JobFlowDetail$AmiVersion</a>.-->
+     * @param requestedAmiVersion The AMI version requested for this cluster.
      */
     public void setRequestedAmiVersion(String requestedAmiVersion) {
         this.requestedAmiVersion = requestedAmiVersion;
     }
     
     /**
-     * The AMI version requested for this cluster.<!-- For more information,
-     * see <a>JobFlowDetail$AmiVersion</a>.-->
+     * The AMI version requested for this cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param requestedAmiVersion The AMI version requested for this cluster.<!-- For more information,
-     *         see <a>JobFlowDetail$AmiVersion</a>.-->
+     * @param requestedAmiVersion The AMI version requested for this cluster.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -324,13 +316,11 @@ public class Cluster implements Serializable {
     /**
      * The AMI version running on this cluster. This differs from the
      * requested version only if the requested version is a meta version,
-     * such as "latest". <!--For more information, see
-     * <a>JobFlowDetail$AmiVersion</a>.-->
+     * such as "latest".
      *
      * @return The AMI version running on this cluster. This differs from the
      *         requested version only if the requested version is a meta version,
-     *         such as "latest". <!--For more information, see
-     *         <a>JobFlowDetail$AmiVersion</a>.-->
+     *         such as "latest".
      */
     public String getRunningAmiVersion() {
         return runningAmiVersion;
@@ -339,13 +329,11 @@ public class Cluster implements Serializable {
     /**
      * The AMI version running on this cluster. This differs from the
      * requested version only if the requested version is a meta version,
-     * such as "latest". <!--For more information, see
-     * <a>JobFlowDetail$AmiVersion</a>.-->
+     * such as "latest".
      *
      * @param runningAmiVersion The AMI version running on this cluster. This differs from the
      *         requested version only if the requested version is a meta version,
-     *         such as "latest". <!--For more information, see
-     *         <a>JobFlowDetail$AmiVersion</a>.-->
+     *         such as "latest".
      */
     public void setRunningAmiVersion(String runningAmiVersion) {
         this.runningAmiVersion = runningAmiVersion;
@@ -354,15 +342,13 @@ public class Cluster implements Serializable {
     /**
      * The AMI version running on this cluster. This differs from the
      * requested version only if the requested version is a meta version,
-     * such as "latest". <!--For more information, see
-     * <a>JobFlowDetail$AmiVersion</a>.-->
+     * such as "latest".
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param runningAmiVersion The AMI version running on this cluster. This differs from the
      *         requested version only if the requested version is a meta version,
-     *         such as "latest". <!--For more information, see
-     *         <a>JobFlowDetail$AmiVersion</a>.-->
+     *         such as "latest".
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

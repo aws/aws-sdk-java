@@ -64,57 +64,72 @@ public final class SignerFactory {
     }
 
     /**
-     * Returns a non-null signer for the specified service and region.
-     *
-     * @param serviceName   The name of the service to talk to.
-     * @param regionName    The name of the region to talk to.
+     * Returns a non-null signer for the specified service and region according
+     * to the internal configuration which provides a basic default algorithm
+     * used for signer determination.
+     * 
+     * @param serviceName
+     *            The name of the service to talk to.
+     * @param regionName
+     *            The name of the region to talk to; not necessarily the region
+     *            used for signing.
      */
     public static Signer getSigner(String serviceName, String regionName) {
+        return lookupAndCreateSigner(serviceName, regionName);
+    }
 
+    /**
+     * Returns an instance of the given signer type and configures it with the
+     * given service name (if applicable).
+     * 
+     * @param signerType
+     *            The type of signer to create.
+     * @param serviceName
+     *            The name of the service to configure on the signer.
+     * @return a non-null signer.
+     */
+    public static Signer getSignerByTypeAndService(String signerType,
+            final String serviceName) {
+        return createSigner(signerType, serviceName);
+    }
+
+    /**
+     * Internal implementation for looking up and creating a signer by service
+     * name and region.
+     */
+    private static Signer lookupAndCreateSigner(String serviceName, String regionName) {
         InternalConfig config = InternalConfig.Factory.getInternalConfig();
-        SignerConfig signerConfig = config.getSignerConfig(serviceName, regionName);
+        SignerConfig signerConfig =
+            config.getSignerConfig(serviceName, regionName);
         String signerType = signerConfig.getSignerType();
+        return createSigner(signerType, serviceName);
+    }
+
+    /**
+     * Internal implementation to create a signer by type and service name,
+     * and configuring it with the service name if applicable.
+     */
+    private static Signer createSigner(String signerType,
+            final String serviceName) {
         Class<? extends Signer> signerClass = SIGNERS.get(signerType);
-
-        if (signerClass == null) {
-            throw new IllegalStateException(
-                "No signer implementation registered for signer type "
-                + signerType + ".");
-        }
-
+        if (signerClass == null)
+            throw new IllegalArgumentException();
         Signer signer;
         try {
             signer = signerClass.newInstance();
-        } catch (InstantiationException exception) {
+        } catch (InstantiationException ex) {
             throw new IllegalStateException(
-                "Cannot create an instance of " + signerClass.getName()
-                + " for signer type " + signerType + ".",
-                exception);
-        } catch (IllegalAccessException exception) {
+                "Cannot create an instance of " + signerClass.getName(),
+                ex);
+        } catch (IllegalAccessException ex) {
             throw new IllegalStateException(
-                "Cannot create an instance of " + signerClass.getName()
-                + " for signer type " + signerType + ".",
-                exception);
+                "Cannot create an instance of " + signerClass.getName(),
+                ex);
         }
 
         if (signer instanceof ServiceAwareSigner) {
             ((ServiceAwareSigner) signer).setServiceName(serviceName);
         }
-        if (signer instanceof RegionAwareSigner) {
-            ((RegionAwareSigner) signer).setRegionName(regionName);
-        }
-
         return signer;
-    }
-
-    /**
-     * Returns a non-null signer for the specified service.
-     * 
-     * @throws UnsupportedOperationException
-     *             if the internal signer type configured is not currently
-     *             supported.
-     */
-    public static Signer getSigner(String serviceName) {
-        return getSigner(serviceName, null);
     }
 }

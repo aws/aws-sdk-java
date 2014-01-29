@@ -1934,7 +1934,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);

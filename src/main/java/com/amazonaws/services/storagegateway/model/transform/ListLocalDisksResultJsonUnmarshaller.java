@@ -50,6 +50,7 @@ public class ListLocalDisksResultJsonUnmarshaller implements Unmarshaller<ListLo
                     listLocalDisksResult.setGatewayARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Disks", targetDepth)) {
+                    context.nextToken();
                     listLocalDisksResult.setDisks(new ListUnmarshaller<Disk>(DiskJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

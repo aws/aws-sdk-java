@@ -17,38 +17,46 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Iam Instance Profile Specification
+ * <p>
+ * Describes an IAM instance profile.
+ * </p>
  */
 public class IamInstanceProfileSpecification implements Serializable {
 
+    /**
+     * The Amazon Resource Name (ARN) of the instance profile.
+     */
     private String arn;
 
+    /**
+     * The name of the instance profile.
+     */
     private String name;
 
     /**
-     * Returns the value of the Arn property for this object.
+     * The Amazon Resource Name (ARN) of the instance profile.
      *
-     * @return The value of the Arn property for this object.
+     * @return The Amazon Resource Name (ARN) of the instance profile.
      */
     public String getArn() {
         return arn;
     }
     
     /**
-     * Sets the value of the Arn property for this object.
+     * The Amazon Resource Name (ARN) of the instance profile.
      *
-     * @param arn The new value for the Arn property for this object.
+     * @param arn The Amazon Resource Name (ARN) of the instance profile.
      */
     public void setArn(String arn) {
         this.arn = arn;
     }
     
     /**
-     * Sets the value of the Arn property for this object.
+     * The Amazon Resource Name (ARN) of the instance profile.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param arn The new value for the Arn property for this object.
+     * @param arn The Amazon Resource Name (ARN) of the instance profile.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -59,29 +67,29 @@ public class IamInstanceProfileSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the Name property for this object.
+     * The name of the instance profile.
      *
-     * @return The value of the Name property for this object.
+     * @return The name of the instance profile.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * The name of the instance profile.
      *
-     * @param name The new value for the Name property for this object.
+     * @param name The name of the instance profile.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * The name of the instance profile.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name The new value for the Name property for this object.
+     * @param name The name of the instance profile.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

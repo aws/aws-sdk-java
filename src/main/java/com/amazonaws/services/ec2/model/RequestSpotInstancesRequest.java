@@ -23,15 +23,10 @@ import com.amazonaws.services.ec2.model.transform.RequestSpotInstancesRequestMar
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#requestSpotInstances(RequestSpotInstancesRequest) RequestSpotInstances operation}.
  * <p>
- * Creates a Spot Instance request.
- * </p>
- * <p>
- * Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you specify exceeds the current Spot Price. Amazon EC2
- * periodically sets the Spot Price based on available Spot Instance capacity and current spot instance requests.
- * </p>
- * <p>
- * For conceptual information about Spot Instances, refer to the Amazon Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud User
- * Guide.
+ * Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you specify exceeds
+ * the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity and current Spot Instance requests. For
+ * more information about Spot Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#requestSpotInstances(RequestSpotInstancesRequest)
@@ -39,18 +34,18 @@ import com.amazonaws.services.ec2.model.transform.RequestSpotInstancesRequestMar
 public class RequestSpotInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<RequestSpotInstancesRequest> {
 
     /**
-     * Specifies the maximum hourly price for any Spot Instance launched to
-     * fulfill the request.
+     * The maximum hourly price for any Spot Instance launched to fulfill the
+     * request.
      */
     private String spotPrice;
 
     /**
-     * Specifies the maximum number of Spot Instances to launch.
+     * The maximum number of Spot Instances to launch. <p>Default: 1
      */
     private Integer instanceCount;
 
     /**
-     * Specifies the Spot Instance type.
+     * The Spot Instance request type. <p>Default: <code>one-time</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
@@ -58,38 +53,54 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     private String type;
 
     /**
-     * Defines the start date of the request. <p> If this is a one-time
-     * request, the request becomes active at this date and time and remains
-     * active until all instances launch, the request expires, or the request
-     * is canceled. If the request is persistent, the request becomes active
-     * at this date and time and remains active until it expires or is
-     * canceled.
+     * The start date of the request. If this is a one-time request, the
+     * request becomes active at this date and time and remains active until
+     * all instances launch, the request expires, or the request is canceled.
+     * If the request is persistent, the request becomes active at this date
+     * and time and remains active until it expires or is canceled.
+     * <p>Default: The request is effective indefinitely.
      */
     private java.util.Date validFrom;
 
     /**
-     * End date of the request. <p> If this is a one-time request, the
+     * The end date of the request. If this is a one-time request, the
      * request remains active until all instances launch, the request is
      * canceled, or this date is reached. If the request is persistent, it
      * remains active until it is canceled or this date and time is reached.
+     * <p>Default: The request is effective indefinitely.
      */
     private java.util.Date validUntil;
 
     /**
-     * Specifies the instance launch group. Launch groups are Spot Instances
-     * that launch and terminate together.
+     * The instance launch group. Launch groups are Spot Instances that
+     * launch together and terminate together. <p>Default: Instances are
+     * launched and terminated individually
      */
     private String launchGroup;
 
     /**
-     * Specifies the Availability Zone group. <p> When specifying the same
-     * Availability Zone group for all Spot Instance requests, all Spot
-     * Instances are launched in the same Availability Zone.
+     * The user-specified name for a logical grouping of bids. <p>When you
+     * specify an Availability Zone group in a Spot Instance request, all
+     * Spot Instances in the request are launched in the same Availability
+     * Zone. Instance proximity is maintained with this parameter, but the
+     * choice of Availability Zone is not. The group applies only to bids for
+     * Spot Instances of the same instance type. Any additional Spot Instance
+     * requests that are specified with the same Availability Zone group name
+     * are launched in that same Availability Zone, as long as at least one
+     * instance from the group is still active. <p>If there is no active
+     * instance running in the Availability Zone group that you specify for a
+     * new Spot Instance request (all instances are terminated, the bid is
+     * expired, or the bid falls below current market), then Amazon EC2
+     * launches the instance in any Availability Zone where the constraint
+     * can be met. Consequently, the subsequent set of Spot Instances could
+     * be placed in a different zone from the original request, even if you
+     * specified the same Availability Zone group. <p>Default: Instances are
+     * launched in any available Availability Zone.
      */
     private String availabilityZoneGroup;
 
     /**
-     * Specifies additional launch instance information.
+     * The launch specification.
      */
     private LaunchSpecification launchSpecification;
 
@@ -104,43 +115,43 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param spotPrice Specifies the maximum hourly price for any Spot
-     * Instance launched to fulfill the request.
+     * @param spotPrice The maximum hourly price for any Spot Instance
+     * launched to fulfill the request.
      */
     public RequestSpotInstancesRequest(String spotPrice) {
         setSpotPrice(spotPrice);
     }
 
     /**
-     * Specifies the maximum hourly price for any Spot Instance launched to
-     * fulfill the request.
+     * The maximum hourly price for any Spot Instance launched to fulfill the
+     * request.
      *
-     * @return Specifies the maximum hourly price for any Spot Instance launched to
-     *         fulfill the request.
+     * @return The maximum hourly price for any Spot Instance launched to fulfill the
+     *         request.
      */
     public String getSpotPrice() {
         return spotPrice;
     }
     
     /**
-     * Specifies the maximum hourly price for any Spot Instance launched to
-     * fulfill the request.
+     * The maximum hourly price for any Spot Instance launched to fulfill the
+     * request.
      *
-     * @param spotPrice Specifies the maximum hourly price for any Spot Instance launched to
-     *         fulfill the request.
+     * @param spotPrice The maximum hourly price for any Spot Instance launched to fulfill the
+     *         request.
      */
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
     }
     
     /**
-     * Specifies the maximum hourly price for any Spot Instance launched to
-     * fulfill the request.
+     * The maximum hourly price for any Spot Instance launched to fulfill the
+     * request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotPrice Specifies the maximum hourly price for any Spot Instance launched to
-     *         fulfill the request.
+     * @param spotPrice The maximum hourly price for any Spot Instance launched to fulfill the
+     *         request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -151,29 +162,29 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Specifies the maximum number of Spot Instances to launch.
+     * The maximum number of Spot Instances to launch. <p>Default: 1
      *
-     * @return Specifies the maximum number of Spot Instances to launch.
+     * @return The maximum number of Spot Instances to launch. <p>Default: 1
      */
     public Integer getInstanceCount() {
         return instanceCount;
     }
     
     /**
-     * Specifies the maximum number of Spot Instances to launch.
+     * The maximum number of Spot Instances to launch. <p>Default: 1
      *
-     * @param instanceCount Specifies the maximum number of Spot Instances to launch.
+     * @param instanceCount The maximum number of Spot Instances to launch. <p>Default: 1
      */
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
     
     /**
-     * Specifies the maximum number of Spot Instances to launch.
+     * The maximum number of Spot Instances to launch. <p>Default: 1
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceCount Specifies the maximum number of Spot Instances to launch.
+     * @param instanceCount The maximum number of Spot Instances to launch. <p>Default: 1
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -184,12 +195,12 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Specifies the Spot Instance type.
+     * The Spot Instance request type. <p>Default: <code>one-time</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @return Specifies the Spot Instance type.
+     * @return The Spot Instance request type. <p>Default: <code>one-time</code>
      *
      * @see SpotInstanceType
      */
@@ -198,12 +209,12 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Specifies the Spot Instance type.
+     * The Spot Instance request type. <p>Default: <code>one-time</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @param type Specifies the Spot Instance type.
+     * @param type The Spot Instance request type. <p>Default: <code>one-time</code>
      *
      * @see SpotInstanceType
      */
@@ -212,14 +223,14 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Specifies the Spot Instance type.
+     * The Spot Instance request type. <p>Default: <code>one-time</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @param type Specifies the Spot Instance type.
+     * @param type The Spot Instance request type. <p>Default: <code>one-time</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -232,12 +243,12 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Specifies the Spot Instance type.
+     * The Spot Instance request type. <p>Default: <code>one-time</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @param type Specifies the Spot Instance type.
+     * @param type The Spot Instance request type. <p>Default: <code>one-time</code>
      *
      * @see SpotInstanceType
      */
@@ -246,14 +257,14 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Specifies the Spot Instance type.
+     * The Spot Instance request type. <p>Default: <code>one-time</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @param type Specifies the Spot Instance type.
+     * @param type The Spot Instance request type. <p>Default: <code>one-time</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -266,59 +277,59 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Defines the start date of the request. <p> If this is a one-time
-     * request, the request becomes active at this date and time and remains
-     * active until all instances launch, the request expires, or the request
-     * is canceled. If the request is persistent, the request becomes active
-     * at this date and time and remains active until it expires or is
-     * canceled.
+     * The start date of the request. If this is a one-time request, the
+     * request becomes active at this date and time and remains active until
+     * all instances launch, the request expires, or the request is canceled.
+     * If the request is persistent, the request becomes active at this date
+     * and time and remains active until it expires or is canceled.
+     * <p>Default: The request is effective indefinitely.
      *
-     * @return Defines the start date of the request. <p> If this is a one-time
-     *         request, the request becomes active at this date and time and remains
-     *         active until all instances launch, the request expires, or the request
-     *         is canceled. If the request is persistent, the request becomes active
-     *         at this date and time and remains active until it expires or is
-     *         canceled.
+     * @return The start date of the request. If this is a one-time request, the
+     *         request becomes active at this date and time and remains active until
+     *         all instances launch, the request expires, or the request is canceled.
+     *         If the request is persistent, the request becomes active at this date
+     *         and time and remains active until it expires or is canceled.
+     *         <p>Default: The request is effective indefinitely.
      */
     public java.util.Date getValidFrom() {
         return validFrom;
     }
     
     /**
-     * Defines the start date of the request. <p> If this is a one-time
-     * request, the request becomes active at this date and time and remains
-     * active until all instances launch, the request expires, or the request
-     * is canceled. If the request is persistent, the request becomes active
-     * at this date and time and remains active until it expires or is
-     * canceled.
+     * The start date of the request. If this is a one-time request, the
+     * request becomes active at this date and time and remains active until
+     * all instances launch, the request expires, or the request is canceled.
+     * If the request is persistent, the request becomes active at this date
+     * and time and remains active until it expires or is canceled.
+     * <p>Default: The request is effective indefinitely.
      *
-     * @param validFrom Defines the start date of the request. <p> If this is a one-time
-     *         request, the request becomes active at this date and time and remains
-     *         active until all instances launch, the request expires, or the request
-     *         is canceled. If the request is persistent, the request becomes active
-     *         at this date and time and remains active until it expires or is
-     *         canceled.
+     * @param validFrom The start date of the request. If this is a one-time request, the
+     *         request becomes active at this date and time and remains active until
+     *         all instances launch, the request expires, or the request is canceled.
+     *         If the request is persistent, the request becomes active at this date
+     *         and time and remains active until it expires or is canceled.
+     *         <p>Default: The request is effective indefinitely.
      */
     public void setValidFrom(java.util.Date validFrom) {
         this.validFrom = validFrom;
     }
     
     /**
-     * Defines the start date of the request. <p> If this is a one-time
-     * request, the request becomes active at this date and time and remains
-     * active until all instances launch, the request expires, or the request
-     * is canceled. If the request is persistent, the request becomes active
-     * at this date and time and remains active until it expires or is
-     * canceled.
+     * The start date of the request. If this is a one-time request, the
+     * request becomes active at this date and time and remains active until
+     * all instances launch, the request expires, or the request is canceled.
+     * If the request is persistent, the request becomes active at this date
+     * and time and remains active until it expires or is canceled.
+     * <p>Default: The request is effective indefinitely.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param validFrom Defines the start date of the request. <p> If this is a one-time
-     *         request, the request becomes active at this date and time and remains
-     *         active until all instances launch, the request expires, or the request
-     *         is canceled. If the request is persistent, the request becomes active
-     *         at this date and time and remains active until it expires or is
-     *         canceled.
+     * @param validFrom The start date of the request. If this is a one-time request, the
+     *         request becomes active at this date and time and remains active until
+     *         all instances launch, the request expires, or the request is canceled.
+     *         If the request is persistent, the request becomes active at this date
+     *         and time and remains active until it expires or is canceled.
+     *         <p>Default: The request is effective indefinitely.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -329,47 +340,53 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * End date of the request. <p> If this is a one-time request, the
+     * The end date of the request. If this is a one-time request, the
      * request remains active until all instances launch, the request is
      * canceled, or this date is reached. If the request is persistent, it
      * remains active until it is canceled or this date and time is reached.
+     * <p>Default: The request is effective indefinitely.
      *
-     * @return End date of the request. <p> If this is a one-time request, the
+     * @return The end date of the request. If this is a one-time request, the
      *         request remains active until all instances launch, the request is
      *         canceled, or this date is reached. If the request is persistent, it
      *         remains active until it is canceled or this date and time is reached.
+     *         <p>Default: The request is effective indefinitely.
      */
     public java.util.Date getValidUntil() {
         return validUntil;
     }
     
     /**
-     * End date of the request. <p> If this is a one-time request, the
+     * The end date of the request. If this is a one-time request, the
      * request remains active until all instances launch, the request is
      * canceled, or this date is reached. If the request is persistent, it
      * remains active until it is canceled or this date and time is reached.
+     * <p>Default: The request is effective indefinitely.
      *
-     * @param validUntil End date of the request. <p> If this is a one-time request, the
+     * @param validUntil The end date of the request. If this is a one-time request, the
      *         request remains active until all instances launch, the request is
      *         canceled, or this date is reached. If the request is persistent, it
      *         remains active until it is canceled or this date and time is reached.
+     *         <p>Default: The request is effective indefinitely.
      */
     public void setValidUntil(java.util.Date validUntil) {
         this.validUntil = validUntil;
     }
     
     /**
-     * End date of the request. <p> If this is a one-time request, the
+     * The end date of the request. If this is a one-time request, the
      * request remains active until all instances launch, the request is
      * canceled, or this date is reached. If the request is persistent, it
      * remains active until it is canceled or this date and time is reached.
+     * <p>Default: The request is effective indefinitely.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param validUntil End date of the request. <p> If this is a one-time request, the
+     * @param validUntil The end date of the request. If this is a one-time request, the
      *         request remains active until all instances launch, the request is
      *         canceled, or this date is reached. If the request is persistent, it
      *         remains active until it is canceled or this date and time is reached.
+     *         <p>Default: The request is effective indefinitely.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -380,35 +397,41 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Specifies the instance launch group. Launch groups are Spot Instances
-     * that launch and terminate together.
+     * The instance launch group. Launch groups are Spot Instances that
+     * launch together and terminate together. <p>Default: Instances are
+     * launched and terminated individually
      *
-     * @return Specifies the instance launch group. Launch groups are Spot Instances
-     *         that launch and terminate together.
+     * @return The instance launch group. Launch groups are Spot Instances that
+     *         launch together and terminate together. <p>Default: Instances are
+     *         launched and terminated individually
      */
     public String getLaunchGroup() {
         return launchGroup;
     }
     
     /**
-     * Specifies the instance launch group. Launch groups are Spot Instances
-     * that launch and terminate together.
+     * The instance launch group. Launch groups are Spot Instances that
+     * launch together and terminate together. <p>Default: Instances are
+     * launched and terminated individually
      *
-     * @param launchGroup Specifies the instance launch group. Launch groups are Spot Instances
-     *         that launch and terminate together.
+     * @param launchGroup The instance launch group. Launch groups are Spot Instances that
+     *         launch together and terminate together. <p>Default: Instances are
+     *         launched and terminated individually
      */
     public void setLaunchGroup(String launchGroup) {
         this.launchGroup = launchGroup;
     }
     
     /**
-     * Specifies the instance launch group. Launch groups are Spot Instances
-     * that launch and terminate together.
+     * The instance launch group. Launch groups are Spot Instances that
+     * launch together and terminate together. <p>Default: Instances are
+     * launched and terminated individually
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchGroup Specifies the instance launch group. Launch groups are Spot Instances
-     *         that launch and terminate together.
+     * @param launchGroup The instance launch group. Launch groups are Spot Instances that
+     *         launch together and terminate together. <p>Default: Instances are
+     *         launched and terminated individually
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -419,41 +442,125 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Specifies the Availability Zone group. <p> When specifying the same
-     * Availability Zone group for all Spot Instance requests, all Spot
-     * Instances are launched in the same Availability Zone.
+     * The user-specified name for a logical grouping of bids. <p>When you
+     * specify an Availability Zone group in a Spot Instance request, all
+     * Spot Instances in the request are launched in the same Availability
+     * Zone. Instance proximity is maintained with this parameter, but the
+     * choice of Availability Zone is not. The group applies only to bids for
+     * Spot Instances of the same instance type. Any additional Spot Instance
+     * requests that are specified with the same Availability Zone group name
+     * are launched in that same Availability Zone, as long as at least one
+     * instance from the group is still active. <p>If there is no active
+     * instance running in the Availability Zone group that you specify for a
+     * new Spot Instance request (all instances are terminated, the bid is
+     * expired, or the bid falls below current market), then Amazon EC2
+     * launches the instance in any Availability Zone where the constraint
+     * can be met. Consequently, the subsequent set of Spot Instances could
+     * be placed in a different zone from the original request, even if you
+     * specified the same Availability Zone group. <p>Default: Instances are
+     * launched in any available Availability Zone.
      *
-     * @return Specifies the Availability Zone group. <p> When specifying the same
-     *         Availability Zone group for all Spot Instance requests, all Spot
-     *         Instances are launched in the same Availability Zone.
+     * @return The user-specified name for a logical grouping of bids. <p>When you
+     *         specify an Availability Zone group in a Spot Instance request, all
+     *         Spot Instances in the request are launched in the same Availability
+     *         Zone. Instance proximity is maintained with this parameter, but the
+     *         choice of Availability Zone is not. The group applies only to bids for
+     *         Spot Instances of the same instance type. Any additional Spot Instance
+     *         requests that are specified with the same Availability Zone group name
+     *         are launched in that same Availability Zone, as long as at least one
+     *         instance from the group is still active. <p>If there is no active
+     *         instance running in the Availability Zone group that you specify for a
+     *         new Spot Instance request (all instances are terminated, the bid is
+     *         expired, or the bid falls below current market), then Amazon EC2
+     *         launches the instance in any Availability Zone where the constraint
+     *         can be met. Consequently, the subsequent set of Spot Instances could
+     *         be placed in a different zone from the original request, even if you
+     *         specified the same Availability Zone group. <p>Default: Instances are
+     *         launched in any available Availability Zone.
      */
     public String getAvailabilityZoneGroup() {
         return availabilityZoneGroup;
     }
     
     /**
-     * Specifies the Availability Zone group. <p> When specifying the same
-     * Availability Zone group for all Spot Instance requests, all Spot
-     * Instances are launched in the same Availability Zone.
+     * The user-specified name for a logical grouping of bids. <p>When you
+     * specify an Availability Zone group in a Spot Instance request, all
+     * Spot Instances in the request are launched in the same Availability
+     * Zone. Instance proximity is maintained with this parameter, but the
+     * choice of Availability Zone is not. The group applies only to bids for
+     * Spot Instances of the same instance type. Any additional Spot Instance
+     * requests that are specified with the same Availability Zone group name
+     * are launched in that same Availability Zone, as long as at least one
+     * instance from the group is still active. <p>If there is no active
+     * instance running in the Availability Zone group that you specify for a
+     * new Spot Instance request (all instances are terminated, the bid is
+     * expired, or the bid falls below current market), then Amazon EC2
+     * launches the instance in any Availability Zone where the constraint
+     * can be met. Consequently, the subsequent set of Spot Instances could
+     * be placed in a different zone from the original request, even if you
+     * specified the same Availability Zone group. <p>Default: Instances are
+     * launched in any available Availability Zone.
      *
-     * @param availabilityZoneGroup Specifies the Availability Zone group. <p> When specifying the same
-     *         Availability Zone group for all Spot Instance requests, all Spot
-     *         Instances are launched in the same Availability Zone.
+     * @param availabilityZoneGroup The user-specified name for a logical grouping of bids. <p>When you
+     *         specify an Availability Zone group in a Spot Instance request, all
+     *         Spot Instances in the request are launched in the same Availability
+     *         Zone. Instance proximity is maintained with this parameter, but the
+     *         choice of Availability Zone is not. The group applies only to bids for
+     *         Spot Instances of the same instance type. Any additional Spot Instance
+     *         requests that are specified with the same Availability Zone group name
+     *         are launched in that same Availability Zone, as long as at least one
+     *         instance from the group is still active. <p>If there is no active
+     *         instance running in the Availability Zone group that you specify for a
+     *         new Spot Instance request (all instances are terminated, the bid is
+     *         expired, or the bid falls below current market), then Amazon EC2
+     *         launches the instance in any Availability Zone where the constraint
+     *         can be met. Consequently, the subsequent set of Spot Instances could
+     *         be placed in a different zone from the original request, even if you
+     *         specified the same Availability Zone group. <p>Default: Instances are
+     *         launched in any available Availability Zone.
      */
     public void setAvailabilityZoneGroup(String availabilityZoneGroup) {
         this.availabilityZoneGroup = availabilityZoneGroup;
     }
     
     /**
-     * Specifies the Availability Zone group. <p> When specifying the same
-     * Availability Zone group for all Spot Instance requests, all Spot
-     * Instances are launched in the same Availability Zone.
+     * The user-specified name for a logical grouping of bids. <p>When you
+     * specify an Availability Zone group in a Spot Instance request, all
+     * Spot Instances in the request are launched in the same Availability
+     * Zone. Instance proximity is maintained with this parameter, but the
+     * choice of Availability Zone is not. The group applies only to bids for
+     * Spot Instances of the same instance type. Any additional Spot Instance
+     * requests that are specified with the same Availability Zone group name
+     * are launched in that same Availability Zone, as long as at least one
+     * instance from the group is still active. <p>If there is no active
+     * instance running in the Availability Zone group that you specify for a
+     * new Spot Instance request (all instances are terminated, the bid is
+     * expired, or the bid falls below current market), then Amazon EC2
+     * launches the instance in any Availability Zone where the constraint
+     * can be met. Consequently, the subsequent set of Spot Instances could
+     * be placed in a different zone from the original request, even if you
+     * specified the same Availability Zone group. <p>Default: Instances are
+     * launched in any available Availability Zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZoneGroup Specifies the Availability Zone group. <p> When specifying the same
-     *         Availability Zone group for all Spot Instance requests, all Spot
-     *         Instances are launched in the same Availability Zone.
+     * @param availabilityZoneGroup The user-specified name for a logical grouping of bids. <p>When you
+     *         specify an Availability Zone group in a Spot Instance request, all
+     *         Spot Instances in the request are launched in the same Availability
+     *         Zone. Instance proximity is maintained with this parameter, but the
+     *         choice of Availability Zone is not. The group applies only to bids for
+     *         Spot Instances of the same instance type. Any additional Spot Instance
+     *         requests that are specified with the same Availability Zone group name
+     *         are launched in that same Availability Zone, as long as at least one
+     *         instance from the group is still active. <p>If there is no active
+     *         instance running in the Availability Zone group that you specify for a
+     *         new Spot Instance request (all instances are terminated, the bid is
+     *         expired, or the bid falls below current market), then Amazon EC2
+     *         launches the instance in any Availability Zone where the constraint
+     *         can be met. Consequently, the subsequent set of Spot Instances could
+     *         be placed in a different zone from the original request, even if you
+     *         specified the same Availability Zone group. <p>Default: Instances are
+     *         launched in any available Availability Zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -464,29 +571,29 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Specifies additional launch instance information.
+     * The launch specification.
      *
-     * @return Specifies additional launch instance information.
+     * @return The launch specification.
      */
     public LaunchSpecification getLaunchSpecification() {
         return launchSpecification;
     }
     
     /**
-     * Specifies additional launch instance information.
+     * The launch specification.
      *
-     * @param launchSpecification Specifies additional launch instance information.
+     * @param launchSpecification The launch specification.
      */
     public void setLaunchSpecification(LaunchSpecification launchSpecification) {
         this.launchSpecification = launchSpecification;
     }
     
     /**
-     * Specifies additional launch instance information.
+     * The launch specification.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchSpecification Specifies additional launch instance information.
+     * @param launchSpecification The launch specification.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

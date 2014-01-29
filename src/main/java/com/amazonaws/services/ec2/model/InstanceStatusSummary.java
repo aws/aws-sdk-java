@@ -17,21 +17,32 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Instance Status Summary
+ * <p>
+ * Describes the status of an instance.
+ * </p>
  */
 public class InstanceStatusSummary implements Serializable {
 
+    /**
+     * The status.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
+     */
     private String status;
 
+    /**
+     * The system instance health or application instance health.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStatusDetails> details;
 
     /**
-     * Returns the value of the Status property for this object.
+     * The status.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
      *
-     * @return The value of the Status property for this object.
+     * @return The status.
      *
      * @see SummaryStatus
      */
@@ -40,12 +51,12 @@ public class InstanceStatusSummary implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status.
      *
      * @see SummaryStatus
      */
@@ -54,14 +65,14 @@ public class InstanceStatusSummary implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -74,12 +85,12 @@ public class InstanceStatusSummary implements Serializable {
     }
 
     /**
-     * Sets the value of the Status property for this object.
+     * The status.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status.
      *
      * @see SummaryStatus
      */
@@ -88,14 +99,14 @@ public class InstanceStatusSummary implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -108,9 +119,9 @@ public class InstanceStatusSummary implements Serializable {
     }
 
     /**
-     * Returns the value of the Details property for this object.
+     * The system instance health or application instance health.
      *
-     * @return The value of the Details property for this object.
+     * @return The system instance health or application instance health.
      */
     public java.util.List<InstanceStatusDetails> getDetails() {
         if (details == null) {
@@ -121,9 +132,9 @@ public class InstanceStatusSummary implements Serializable {
     }
     
     /**
-     * Sets the value of the Details property for this object.
+     * The system instance health or application instance health.
      *
-     * @param details The new value for the Details property for this object.
+     * @param details The system instance health or application instance health.
      */
     public void setDetails(java.util.Collection<InstanceStatusDetails> details) {
         if (details == null) {
@@ -136,11 +147,11 @@ public class InstanceStatusSummary implements Serializable {
     }
     
     /**
-     * Sets the value of the Details property for this object.
+     * The system instance health or application instance health.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param details The new value for the Details property for this object.
+     * @param details The system instance health or application instance health.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -154,11 +165,11 @@ public class InstanceStatusSummary implements Serializable {
     }
     
     /**
-     * Sets the value of the Details property for this object.
+     * The system instance health or application instance health.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param details The new value for the Details property for this object.
+     * @param details The system instance health or application instance health.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

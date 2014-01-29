@@ -23,9 +23,42 @@ import com.amazonaws.services.ec2.model.transform.DescribeSnapshotsRequestMarsha
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSnapshots(DescribeSnapshotsRequest) DescribeSnapshots operation}.
  * <p>
- * Returns information about the Amazon EBS snapshots available to you. Snapshots available to you include public snapshots available for any AWS
- * account to launch, private snapshots you own, and private snapshots owned by another AWS account but for which you've been given explicit create
- * volume permissions.
+ * Describes one or more of the Amazon EBS snapshots available to you. Available snapshots include public snapshots available for any AWS account to
+ * launch, private snapshots that you own, and private snapshots owned by another AWS account but for which you've been given explicit create volume
+ * permissions.
+ * </p>
+ * <p>
+ * The create volume permissions fall into the following categories:
+ * </p>
+ * 
+ * <ul>
+ * <li> <i>public</i> : The owner of the snapshot granted create volume permissions for the snapshot to the <code>all</code> group. All AWS accounts
+ * have create volume permissions for these snapshots.</li>
+ * <li> <i>explicit</i> : The owner of the snapshot granted create volume permissions to a specific AWS account.</li>
+ * <li> <i>implicit</i> : An AWS account has implicit create volume permissions for all snapshots it owns.</li>
+ * 
+ * </ul>
+ * <p>
+ * The list of snapshots returned can be modified by specifying snapshot IDs, snapshot owners, or AWS accounts with create volume permissions. If no
+ * options are specified, Amazon EC2 returns all snapshots for which you have create volume permissions.
+ * </p>
+ * <p>
+ * If you specify one or more snapshot IDs, only snapshots that have the specified IDs are returned. If you specify an invalid snapshot ID, an error is
+ * returned. If you specify a snapshot ID for which you do not have access, it is not included in the returned results.
+ * </p>
+ * <p>
+ * If you specify one or more snapshot owners, only snapshots from the specified owners and for which you have access are returned. The results can
+ * include the AWS account IDs of the specified owners, <code>amazon</code> for snapshots owned by Amazon, or <code>self</code> for snapshots that you
+ * own.
+ * </p>
+ * <p>
+ * If you specify a list of restorable users, only snapshots with create snapshot permissions for those users are returned. You can specify AWS account
+ * IDs (if you own the snapshots), <code>self</code> for snapshots for which you own or have explicit permissions, or <code>all</code> for public
+ * snapshots.
+ * </p>
+ * <p>
+ * For more information about Amazon EBS snapshots, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS
+ * Snapshots </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSnapshots(DescribeSnapshotsRequest)
@@ -33,39 +66,59 @@ import com.amazonaws.services.ec2.model.transform.DescribeSnapshotsRequestMarsha
 public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeSnapshotsRequest> {
 
     /**
-     * The optional list of EBS snapshot IDs to describe.
+     * One or more snapshot IDs. <p>Default: Describes snapshots for which
+     * you have launch permissions.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> snapshotIds;
 
     /**
-     * An optional list of owners by which to scope the described EBS
-     * snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
-     * owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
-     * this account ID </li> <li> <code>amazon</code> : Snapshots owned by
-     * Amazon </li> </ul> <p> The values <code>self</code> and
-     * <code>amazon</code> are literals.
+     * Returns the snapshots owned by the specified owner. Multiple owners
+     * can be specified.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> ownerIds;
 
     /**
-     * An optional list of users. The described snapshots are scoped to only
-     * those snapshots from which these users can create volumes.
+     * One or more AWS accounts IDs that can create volumes from the
+     * snapshot.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> restorableByUserIds;
 
     /**
-     * A list of filters used to match properties for Snapshots. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>description</code> - A
+     * description of the snapshot. </li> <li> <p><code>owner-alias</code> -
+     * The AWS account alias (for example, <code>amazon</code>) that owns the
+     * snapshot. </li> <li> <p><code>owner-id</code> - The ID of the AWS
+     * account that owns the snapshot. </li> <li> <p><code>progress</code> -
+     * The progress of the snapshot, as a percentage (for example, 80%).
+     * </li> <li> <p><code>snapshot-id</code> - The snapshot ID. </li> <li>
+     * <p><code>start-time</code> - The time stamp when the snapshot was
+     * initiated. </li> <li> <p><code>status</code> - The status of the
+     * snapshot (<code>pending</code> | <code>completed</code> |
+     * <code>error</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>volume-id</code> - The ID of the volume
+     * the snapshot is for. </li> <li> <p><code>volume-size</code> - The size
+     * of the volume, in GiB. </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * The optional list of EBS snapshot IDs to describe.
+     * One or more snapshot IDs. <p>Default: Describes snapshots for which
+     * you have launch permissions.
      *
-     * @return The optional list of EBS snapshot IDs to describe.
+     * @return One or more snapshot IDs. <p>Default: Describes snapshots for which
+     *         you have launch permissions.
      */
     public java.util.List<String> getSnapshotIds() {
         if (snapshotIds == null) {
@@ -76,9 +129,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * The optional list of EBS snapshot IDs to describe.
+     * One or more snapshot IDs. <p>Default: Describes snapshots for which
+     * you have launch permissions.
      *
-     * @param snapshotIds The optional list of EBS snapshot IDs to describe.
+     * @param snapshotIds One or more snapshot IDs. <p>Default: Describes snapshots for which
+     *         you have launch permissions.
      */
     public void setSnapshotIds(java.util.Collection<String> snapshotIds) {
         if (snapshotIds == null) {
@@ -91,11 +146,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * The optional list of EBS snapshot IDs to describe.
+     * One or more snapshot IDs. <p>Default: Describes snapshots for which
+     * you have launch permissions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotIds The optional list of EBS snapshot IDs to describe.
+     * @param snapshotIds One or more snapshot IDs. <p>Default: Describes snapshots for which
+     *         you have launch permissions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -109,11 +166,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * The optional list of EBS snapshot IDs to describe.
+     * One or more snapshot IDs. <p>Default: Describes snapshots for which
+     * you have launch permissions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotIds The optional list of EBS snapshot IDs to describe.
+     * @param snapshotIds One or more snapshot IDs. <p>Default: Describes snapshots for which
+     *         you have launch permissions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -131,19 +190,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * An optional list of owners by which to scope the described EBS
-     * snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
-     * owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
-     * this account ID </li> <li> <code>amazon</code> : Snapshots owned by
-     * Amazon </li> </ul> <p> The values <code>self</code> and
-     * <code>amazon</code> are literals.
+     * Returns the snapshots owned by the specified owner. Multiple owners
+     * can be specified.
      *
-     * @return An optional list of owners by which to scope the described EBS
-     *         snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
-     *         owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
-     *         this account ID </li> <li> <code>amazon</code> : Snapshots owned by
-     *         Amazon </li> </ul> <p> The values <code>self</code> and
-     *         <code>amazon</code> are literals.
+     * @return Returns the snapshots owned by the specified owner. Multiple owners
+     *         can be specified.
      */
     public java.util.List<String> getOwnerIds() {
         if (ownerIds == null) {
@@ -154,19 +205,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * An optional list of owners by which to scope the described EBS
-     * snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
-     * owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
-     * this account ID </li> <li> <code>amazon</code> : Snapshots owned by
-     * Amazon </li> </ul> <p> The values <code>self</code> and
-     * <code>amazon</code> are literals.
+     * Returns the snapshots owned by the specified owner. Multiple owners
+     * can be specified.
      *
-     * @param ownerIds An optional list of owners by which to scope the described EBS
-     *         snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
-     *         owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
-     *         this account ID </li> <li> <code>amazon</code> : Snapshots owned by
-     *         Amazon </li> </ul> <p> The values <code>self</code> and
-     *         <code>amazon</code> are literals.
+     * @param ownerIds Returns the snapshots owned by the specified owner. Multiple owners
+     *         can be specified.
      */
     public void setOwnerIds(java.util.Collection<String> ownerIds) {
         if (ownerIds == null) {
@@ -179,21 +222,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * An optional list of owners by which to scope the described EBS
-     * snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
-     * owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
-     * this account ID </li> <li> <code>amazon</code> : Snapshots owned by
-     * Amazon </li> </ul> <p> The values <code>self</code> and
-     * <code>amazon</code> are literals.
+     * Returns the snapshots owned by the specified owner. Multiple owners
+     * can be specified.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ownerIds An optional list of owners by which to scope the described EBS
-     *         snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
-     *         owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
-     *         this account ID </li> <li> <code>amazon</code> : Snapshots owned by
-     *         Amazon </li> </ul> <p> The values <code>self</code> and
-     *         <code>amazon</code> are literals.
+     * @param ownerIds Returns the snapshots owned by the specified owner. Multiple owners
+     *         can be specified.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -207,21 +242,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * An optional list of owners by which to scope the described EBS
-     * snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
-     * owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
-     * this account ID </li> <li> <code>amazon</code> : Snapshots owned by
-     * Amazon </li> </ul> <p> The values <code>self</code> and
-     * <code>amazon</code> are literals.
+     * Returns the snapshots owned by the specified owner. Multiple owners
+     * can be specified.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ownerIds An optional list of owners by which to scope the described EBS
-     *         snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
-     *         owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
-     *         this account ID </li> <li> <code>amazon</code> : Snapshots owned by
-     *         Amazon </li> </ul> <p> The values <code>self</code> and
-     *         <code>amazon</code> are literals.
+     * @param ownerIds Returns the snapshots owned by the specified owner. Multiple owners
+     *         can be specified.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -239,11 +266,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * An optional list of users. The described snapshots are scoped to only
-     * those snapshots from which these users can create volumes.
+     * One or more AWS accounts IDs that can create volumes from the
+     * snapshot.
      *
-     * @return An optional list of users. The described snapshots are scoped to only
-     *         those snapshots from which these users can create volumes.
+     * @return One or more AWS accounts IDs that can create volumes from the
+     *         snapshot.
      */
     public java.util.List<String> getRestorableByUserIds() {
         if (restorableByUserIds == null) {
@@ -254,11 +281,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * An optional list of users. The described snapshots are scoped to only
-     * those snapshots from which these users can create volumes.
+     * One or more AWS accounts IDs that can create volumes from the
+     * snapshot.
      *
-     * @param restorableByUserIds An optional list of users. The described snapshots are scoped to only
-     *         those snapshots from which these users can create volumes.
+     * @param restorableByUserIds One or more AWS accounts IDs that can create volumes from the
+     *         snapshot.
      */
     public void setRestorableByUserIds(java.util.Collection<String> restorableByUserIds) {
         if (restorableByUserIds == null) {
@@ -271,13 +298,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * An optional list of users. The described snapshots are scoped to only
-     * those snapshots from which these users can create volumes.
+     * One or more AWS accounts IDs that can create volumes from the
+     * snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param restorableByUserIds An optional list of users. The described snapshots are scoped to only
-     *         those snapshots from which these users can create volumes.
+     * @param restorableByUserIds One or more AWS accounts IDs that can create volumes from the
+     *         snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -291,13 +318,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * An optional list of users. The described snapshots are scoped to only
-     * those snapshots from which these users can create volumes.
+     * One or more AWS accounts IDs that can create volumes from the
+     * snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param restorableByUserIds An optional list of users. The described snapshots are scoped to only
-     *         those snapshots from which these users can create volumes.
+     * @param restorableByUserIds One or more AWS accounts IDs that can create volumes from the
+     *         snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -315,17 +342,59 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * A list of filters used to match properties for Snapshots. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>description</code> - A
+     * description of the snapshot. </li> <li> <p><code>owner-alias</code> -
+     * The AWS account alias (for example, <code>amazon</code>) that owns the
+     * snapshot. </li> <li> <p><code>owner-id</code> - The ID of the AWS
+     * account that owns the snapshot. </li> <li> <p><code>progress</code> -
+     * The progress of the snapshot, as a percentage (for example, 80%).
+     * </li> <li> <p><code>snapshot-id</code> - The snapshot ID. </li> <li>
+     * <p><code>start-time</code> - The time stamp when the snapshot was
+     * initiated. </li> <li> <p><code>status</code> - The status of the
+     * snapshot (<code>pending</code> | <code>completed</code> |
+     * <code>error</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>volume-id</code> - The ID of the volume
+     * the snapshot is for. </li> <li> <p><code>volume-size</code> - The size
+     * of the volume, in GiB. </li> </ul>
      *
-     * @return A list of filters used to match properties for Snapshots. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @return One or more filters. <ul> <li> <p><code>description</code> - A
+     *         description of the snapshot. </li> <li> <p><code>owner-alias</code> -
+     *         The AWS account alias (for example, <code>amazon</code>) that owns the
+     *         snapshot. </li> <li> <p><code>owner-id</code> - The ID of the AWS
+     *         account that owns the snapshot. </li> <li> <p><code>progress</code> -
+     *         The progress of the snapshot, as a percentage (for example, 80%).
+     *         </li> <li> <p><code>snapshot-id</code> - The snapshot ID. </li> <li>
+     *         <p><code>start-time</code> - The time stamp when the snapshot was
+     *         initiated. </li> <li> <p><code>status</code> - The status of the
+     *         snapshot (<code>pending</code> | <code>completed</code> |
+     *         <code>error</code>). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>volume-id</code> - The ID of the volume
+     *         the snapshot is for. </li> <li> <p><code>volume-size</code> - The size
+     *         of the volume, in GiB. </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -336,17 +405,59 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * A list of filters used to match properties for Snapshots. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>description</code> - A
+     * description of the snapshot. </li> <li> <p><code>owner-alias</code> -
+     * The AWS account alias (for example, <code>amazon</code>) that owns the
+     * snapshot. </li> <li> <p><code>owner-id</code> - The ID of the AWS
+     * account that owns the snapshot. </li> <li> <p><code>progress</code> -
+     * The progress of the snapshot, as a percentage (for example, 80%).
+     * </li> <li> <p><code>snapshot-id</code> - The snapshot ID. </li> <li>
+     * <p><code>start-time</code> - The time stamp when the snapshot was
+     * initiated. </li> <li> <p><code>status</code> - The status of the
+     * snapshot (<code>pending</code> | <code>completed</code> |
+     * <code>error</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>volume-id</code> - The ID of the volume
+     * the snapshot is for. </li> <li> <p><code>volume-size</code> - The size
+     * of the volume, in GiB. </li> </ul>
      *
-     * @param filters A list of filters used to match properties for Snapshots. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>description</code> - A
+     *         description of the snapshot. </li> <li> <p><code>owner-alias</code> -
+     *         The AWS account alias (for example, <code>amazon</code>) that owns the
+     *         snapshot. </li> <li> <p><code>owner-id</code> - The ID of the AWS
+     *         account that owns the snapshot. </li> <li> <p><code>progress</code> -
+     *         The progress of the snapshot, as a percentage (for example, 80%).
+     *         </li> <li> <p><code>snapshot-id</code> - The snapshot ID. </li> <li>
+     *         <p><code>start-time</code> - The time stamp when the snapshot was
+     *         initiated. </li> <li> <p><code>status</code> - The status of the
+     *         snapshot (<code>pending</code> | <code>completed</code> |
+     *         <code>error</code>). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>volume-id</code> - The ID of the volume
+     *         the snapshot is for. </li> <li> <p><code>volume-size</code> - The size
+     *         of the volume, in GiB. </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -359,19 +470,61 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * A list of filters used to match properties for Snapshots. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>description</code> - A
+     * description of the snapshot. </li> <li> <p><code>owner-alias</code> -
+     * The AWS account alias (for example, <code>amazon</code>) that owns the
+     * snapshot. </li> <li> <p><code>owner-id</code> - The ID of the AWS
+     * account that owns the snapshot. </li> <li> <p><code>progress</code> -
+     * The progress of the snapshot, as a percentage (for example, 80%).
+     * </li> <li> <p><code>snapshot-id</code> - The snapshot ID. </li> <li>
+     * <p><code>start-time</code> - The time stamp when the snapshot was
+     * initiated. </li> <li> <p><code>status</code> - The status of the
+     * snapshot (<code>pending</code> | <code>completed</code> |
+     * <code>error</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>volume-id</code> - The ID of the volume
+     * the snapshot is for. </li> <li> <p><code>volume-size</code> - The size
+     * of the volume, in GiB. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for Snapshots. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>description</code> - A
+     *         description of the snapshot. </li> <li> <p><code>owner-alias</code> -
+     *         The AWS account alias (for example, <code>amazon</code>) that owns the
+     *         snapshot. </li> <li> <p><code>owner-id</code> - The ID of the AWS
+     *         account that owns the snapshot. </li> <li> <p><code>progress</code> -
+     *         The progress of the snapshot, as a percentage (for example, 80%).
+     *         </li> <li> <p><code>snapshot-id</code> - The snapshot ID. </li> <li>
+     *         <p><code>start-time</code> - The time stamp when the snapshot was
+     *         initiated. </li> <li> <p><code>status</code> - The status of the
+     *         snapshot (<code>pending</code> | <code>completed</code> |
+     *         <code>error</code>). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>volume-id</code> - The ID of the volume
+     *         the snapshot is for. </li> <li> <p><code>volume-size</code> - The size
+     *         of the volume, in GiB. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -385,19 +538,61 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * A list of filters used to match properties for Snapshots. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>description</code> - A
+     * description of the snapshot. </li> <li> <p><code>owner-alias</code> -
+     * The AWS account alias (for example, <code>amazon</code>) that owns the
+     * snapshot. </li> <li> <p><code>owner-id</code> - The ID of the AWS
+     * account that owns the snapshot. </li> <li> <p><code>progress</code> -
+     * The progress of the snapshot, as a percentage (for example, 80%).
+     * </li> <li> <p><code>snapshot-id</code> - The snapshot ID. </li> <li>
+     * <p><code>start-time</code> - The time stamp when the snapshot was
+     * initiated. </li> <li> <p><code>status</code> - The status of the
+     * snapshot (<code>pending</code> | <code>completed</code> |
+     * <code>error</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>volume-id</code> - The ID of the volume
+     * the snapshot is for. </li> <li> <p><code>volume-size</code> - The size
+     * of the volume, in GiB. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for Snapshots. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>description</code> - A
+     *         description of the snapshot. </li> <li> <p><code>owner-alias</code> -
+     *         The AWS account alias (for example, <code>amazon</code>) that owns the
+     *         snapshot. </li> <li> <p><code>owner-id</code> - The ID of the AWS
+     *         account that owns the snapshot. </li> <li> <p><code>progress</code> -
+     *         The progress of the snapshot, as a percentage (for example, 80%).
+     *         </li> <li> <p><code>snapshot-id</code> - The snapshot ID. </li> <li>
+     *         <p><code>start-time</code> - The time stamp when the snapshot was
+     *         initiated. </li> <li> <p><code>status</code> - The status of the
+     *         snapshot (<code>pending</code> | <code>completed</code> |
+     *         <code>error</code>). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>volume-id</code> - The ID of the volume
+     *         the snapshot is for. </li> <li> <p><code>volume-size</code> - The size
+     *         of the volume, in GiB. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -39,9 +39,12 @@ import com.amazonaws.util.BinaryUtils;
  * AWS4 signer implementation for AWS S3
  */
 public class AWSS3V4Signer extends AWS4Signer implements Presigner {
-	
+
     /** We use the logger for AmazonS3Client to */
     private static Log clientLog = LogFactory.getLog(AmazonS3Client.class);
+
+    /** Seconds in a week, which is the max expiration time Sig-v4 accepts */
+    private final static long MAX_EXPIRATION_TIME_IN_SECONDS = 60 * 60 * 24 * 7;
 
     /**
      * Don't double-url-encode path elements; S3 expects path elements to be
@@ -75,7 +78,12 @@ public class AWSS3V4Signer extends AWS4Signer implements Presigner {
         String scope = getScope(request, dateStamp);
 
         String signingCredentials = sanitizedCredentials.getAWSAccessKeyId() + "/" + scope;
-        String expirationInSeconds = Long.toString((expiration.getTime() - System.currentTimeMillis()) / 1000L);
+        long expirationInSeconds = (expiration.getTime() - System.currentTimeMillis()) / 1000L;
+        if (expirationInSeconds > MAX_EXPIRATION_TIME_IN_SECONDS) {
+            throw new AmazonClientException("Requests that are pre-signed by SigV4 algorithm are valid for at most 7 days. " +
+                    "The expiration date set on the current request ["
+                    + getTimeStamp(expiration.getTime()) + "] has exceeded this limit.");
+        }
 
         // Add the important parameters for v4 signing
         long now = System.currentTimeMillis();
@@ -83,7 +91,7 @@ public class AWSS3V4Signer extends AWS4Signer implements Presigner {
         request.addParameter("X-Amz-Algorithm", "AWS4-HMAC-SHA256");
         request.addParameter("X-Amz-Date", timeStamp);
         request.addParameter("X-Amz-SignedHeaders", "Host");
-        request.addParameter("X-Amz-Expires", expirationInSeconds);
+        request.addParameter("X-Amz-Expires", Long.toString(expirationInSeconds));
         request.addParameter("X-Amz-Credential", signingCredentials);
 
         String contentSha256 = "UNSIGNED-PAYLOAD";
@@ -98,13 +106,6 @@ public class AWSS3V4Signer extends AWS4Signer implements Presigner {
         request.addParameter("X-Amz-Signature", BinaryUtils.toHex(headerSigningResult.getSignature()));
     }
 
-    /**
-     * Whether the S3 sigv4 signer is using an explicit region name override.
-     */
-    public boolean isUsingRegionOverride() {
-    	return regionName != null;
-    }
-    
 	/**
 	 * If necessary, creates a chunk-encoding wrapper on the request payload.
 	 */

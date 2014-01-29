@@ -50,6 +50,7 @@ public class VaultNotificationConfigJsonUnmarshaller implements Unmarshaller<Vau
                     vaultNotificationConfig.setSNSTopic(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Events", targetDepth)) {
+                    context.nextToken();
                     vaultNotificationConfig.setEvents(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

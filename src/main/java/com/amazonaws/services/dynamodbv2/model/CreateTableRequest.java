@@ -88,7 +88,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * a local secondary index is unconstrained. <p>Each local secondary
      * index in the array includes the following: <ul> <li>
      * <p><i>IndexName</i> - The name of the local secondary index. Must be
-     * unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     * unique only for this table. <p/> </li> <li> <p><i>KeySchema</i> -
      * Specifies the key schema for the local secondary index. The key schema
      * must begin with the same hash key attribute as the table. </li> <li>
      * <p><i>Projection</i> - Specifies attributes that are copied
@@ -115,7 +115,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * One or more global secondary indexes (the maximum is five) to be
      * created on the table. Each global secondary index in the array
      * includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     * the global secondary index. Must be unique only for this table. <p>
+     * the global secondary index. Must be unique only for this table. <p/>
      * </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
      * global secondary index. </li> <li> <p><i>Projection</i> - Specifies
      * attributes that are copied (projected) from the table into the index.
@@ -564,7 +564,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * a local secondary index is unconstrained. <p>Each local secondary
      * index in the array includes the following: <ul> <li>
      * <p><i>IndexName</i> - The name of the local secondary index. Must be
-     * unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     * unique only for this table. <p/> </li> <li> <p><i>KeySchema</i> -
      * Specifies the key schema for the local secondary index. The key schema
      * must begin with the same hash key attribute as the table. </li> <li>
      * <p><i>Projection</i> - Specifies attributes that are copied
@@ -591,7 +591,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         a local secondary index is unconstrained. <p>Each local secondary
      *         index in the array includes the following: <ul> <li>
      *         <p><i>IndexName</i> - The name of the local secondary index. Must be
-     *         unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     *         unique only for this table. <p/> </li> <li> <p><i>KeySchema</i> -
      *         Specifies the key schema for the local secondary index. The key schema
      *         must begin with the same hash key attribute as the table. </li> <li>
      *         <p><i>Projection</i> - Specifies attributes that are copied
@@ -623,7 +623,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * a local secondary index is unconstrained. <p>Each local secondary
      * index in the array includes the following: <ul> <li>
      * <p><i>IndexName</i> - The name of the local secondary index. Must be
-     * unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     * unique only for this table. <p/> </li> <li> <p><i>KeySchema</i> -
      * Specifies the key schema for the local secondary index. The key schema
      * must begin with the same hash key attribute as the table. </li> <li>
      * <p><i>Projection</i> - Specifies attributes that are copied
@@ -650,7 +650,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         a local secondary index is unconstrained. <p>Each local secondary
      *         index in the array includes the following: <ul> <li>
      *         <p><i>IndexName</i> - The name of the local secondary index. Must be
-     *         unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     *         unique only for this table. <p/> </li> <li> <p><i>KeySchema</i> -
      *         Specifies the key schema for the local secondary index. The key schema
      *         must begin with the same hash key attribute as the table. </li> <li>
      *         <p><i>Projection</i> - Specifies attributes that are copied
@@ -688,7 +688,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * a local secondary index is unconstrained. <p>Each local secondary
      * index in the array includes the following: <ul> <li>
      * <p><i>IndexName</i> - The name of the local secondary index. Must be
-     * unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     * unique only for this table. <p/> </li> <li> <p><i>KeySchema</i> -
      * Specifies the key schema for the local secondary index. The key schema
      * must begin with the same hash key attribute as the table. </li> <li>
      * <p><i>Projection</i> - Specifies attributes that are copied
@@ -717,7 +717,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         a local secondary index is unconstrained. <p>Each local secondary
      *         index in the array includes the following: <ul> <li>
      *         <p><i>IndexName</i> - The name of the local secondary index. Must be
-     *         unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     *         unique only for this table. <p/> </li> <li> <p><i>KeySchema</i> -
      *         Specifies the key schema for the local secondary index. The key schema
      *         must begin with the same hash key attribute as the table. </li> <li>
      *         <p><i>Projection</i> - Specifies attributes that are copied
@@ -756,7 +756,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * a local secondary index is unconstrained. <p>Each local secondary
      * index in the array includes the following: <ul> <li>
      * <p><i>IndexName</i> - The name of the local secondary index. Must be
-     * unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     * unique only for this table. <p/> </li> <li> <p><i>KeySchema</i> -
      * Specifies the key schema for the local secondary index. The key schema
      * must begin with the same hash key attribute as the table. </li> <li>
      * <p><i>Projection</i> - Specifies attributes that are copied
@@ -785,7 +785,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         a local secondary index is unconstrained. <p>Each local secondary
      *         index in the array includes the following: <ul> <li>
      *         <p><i>IndexName</i> - The name of the local secondary index. Must be
-     *         unique only for this table. <p> </li> <li> <p><i>KeySchema</i> -
+     *         unique only for this table. <p/> </li> <li> <p><i>KeySchema</i> -
      *         Specifies the key schema for the local secondary index. The key schema
      *         must begin with the same hash key attribute as the table. </li> <li>
      *         <p><i>Projection</i> - Specifies attributes that are copied
@@ -825,7 +825,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * One or more global secondary indexes (the maximum is five) to be
      * created on the table. Each global secondary index in the array
      * includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     * the global secondary index. Must be unique only for this table. <p>
+     * the global secondary index. Must be unique only for this table. <p/>
      * </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
      * global secondary index. </li> <li> <p><i>Projection</i> - Specifies
      * attributes that are copied (projected) from the table into the index.
@@ -851,7 +851,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * @return One or more global secondary indexes (the maximum is five) to be
      *         created on the table. Each global secondary index in the array
      *         includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     *         the global secondary index. Must be unique only for this table. <p>
+     *         the global secondary index. Must be unique only for this table. <p/>
      *         </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
      *         global secondary index. </li> <li> <p><i>Projection</i> - Specifies
      *         attributes that are copied (projected) from the table into the index.
@@ -882,7 +882,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * One or more global secondary indexes (the maximum is five) to be
      * created on the table. Each global secondary index in the array
      * includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     * the global secondary index. Must be unique only for this table. <p>
+     * the global secondary index. Must be unique only for this table. <p/>
      * </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
      * global secondary index. </li> <li> <p><i>Projection</i> - Specifies
      * attributes that are copied (projected) from the table into the index.
@@ -908,7 +908,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * @param globalSecondaryIndexes One or more global secondary indexes (the maximum is five) to be
      *         created on the table. Each global secondary index in the array
      *         includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     *         the global secondary index. Must be unique only for this table. <p>
+     *         the global secondary index. Must be unique only for this table. <p/>
      *         </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
      *         global secondary index. </li> <li> <p><i>Projection</i> - Specifies
      *         attributes that are copied (projected) from the table into the index.
@@ -945,7 +945,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * One or more global secondary indexes (the maximum is five) to be
      * created on the table. Each global secondary index in the array
      * includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     * the global secondary index. Must be unique only for this table. <p>
+     * the global secondary index. Must be unique only for this table. <p/>
      * </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
      * global secondary index. </li> <li> <p><i>Projection</i> - Specifies
      * attributes that are copied (projected) from the table into the index.
@@ -973,7 +973,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * @param globalSecondaryIndexes One or more global secondary indexes (the maximum is five) to be
      *         created on the table. Each global secondary index in the array
      *         includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     *         the global secondary index. Must be unique only for this table. <p>
+     *         the global secondary index. Must be unique only for this table. <p/>
      *         </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
      *         global secondary index. </li> <li> <p><i>Projection</i> - Specifies
      *         attributes that are copied (projected) from the table into the index.
@@ -1011,7 +1011,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * One or more global secondary indexes (the maximum is five) to be
      * created on the table. Each global secondary index in the array
      * includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     * the global secondary index. Must be unique only for this table. <p>
+     * the global secondary index. Must be unique only for this table. <p/>
      * </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
      * global secondary index. </li> <li> <p><i>Projection</i> - Specifies
      * attributes that are copied (projected) from the table into the index.
@@ -1039,7 +1039,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * @param globalSecondaryIndexes One or more global secondary indexes (the maximum is five) to be
      *         created on the table. Each global secondary index in the array
      *         includes the following: <ul> <li> <p><i>IndexName</i> - The name of
-     *         the global secondary index. Must be unique only for this table. <p>
+     *         the global secondary index. Must be unique only for this table. <p/>
      *         </li> <li> <p><i>KeySchema</i> - Specifies the key schema for the
      *         global secondary index. </li> <li> <p><i>Projection</i> - Specifies
      *         attributes that are copied (projected) from the table into the index.

@@ -17,21 +17,32 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Volume Status Details
+ * <p>
+ * Describes a volume status.
+ * </p>
  */
 public class VolumeStatusDetails implements Serializable {
 
+    /**
+     * The name of the volume status.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>io-enabled, io-performance
+     */
     private String name;
 
+    /**
+     * The intended status of the volume status.
+     */
     private String status;
 
     /**
-     * Returns the value of the Name property for this object.
+     * The name of the volume status.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>io-enabled, io-performance
      *
-     * @return The value of the Name property for this object.
+     * @return The name of the volume status.
      *
      * @see VolumeStatusName
      */
@@ -40,12 +51,12 @@ public class VolumeStatusDetails implements Serializable {
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * The name of the volume status.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>io-enabled, io-performance
      *
-     * @param name The new value for the Name property for this object.
+     * @param name The name of the volume status.
      *
      * @see VolumeStatusName
      */
@@ -54,14 +65,14 @@ public class VolumeStatusDetails implements Serializable {
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * The name of the volume status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>io-enabled, io-performance
      *
-     * @param name The new value for the Name property for this object.
+     * @param name The name of the volume status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -74,12 +85,12 @@ public class VolumeStatusDetails implements Serializable {
     }
 
     /**
-     * Sets the value of the Name property for this object.
+     * The name of the volume status.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>io-enabled, io-performance
      *
-     * @param name The new value for the Name property for this object.
+     * @param name The name of the volume status.
      *
      * @see VolumeStatusName
      */
@@ -88,14 +99,14 @@ public class VolumeStatusDetails implements Serializable {
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * The name of the volume status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>io-enabled, io-performance
      *
-     * @param name The new value for the Name property for this object.
+     * @param name The name of the volume status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -108,29 +119,29 @@ public class VolumeStatusDetails implements Serializable {
     }
 
     /**
-     * Returns the value of the Status property for this object.
+     * The intended status of the volume status.
      *
-     * @return The value of the Status property for this object.
+     * @return The intended status of the volume status.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The intended status of the volume status.
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The intended status of the volume status.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The intended status of the volume status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The intended status of the volume status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -17,18 +17,24 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Describe Volume Status Result
+ * 
  */
 public class DescribeVolumeStatusResult implements Serializable {
 
+    /**
+     * A list of volumes.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeStatusItem> volumeStatuses;
 
+    /**
+     * The next paginated set of results to return.
+     */
     private String nextToken;
 
     /**
-     * Returns the value of the VolumeStatuses property for this object.
+     * A list of volumes.
      *
-     * @return The value of the VolumeStatuses property for this object.
+     * @return A list of volumes.
      */
     public java.util.List<VolumeStatusItem> getVolumeStatuses() {
         if (volumeStatuses == null) {
@@ -39,9 +45,9 @@ public class DescribeVolumeStatusResult implements Serializable {
     }
     
     /**
-     * Sets the value of the VolumeStatuses property for this object.
+     * A list of volumes.
      *
-     * @param volumeStatuses The new value for the VolumeStatuses property for this object.
+     * @param volumeStatuses A list of volumes.
      */
     public void setVolumeStatuses(java.util.Collection<VolumeStatusItem> volumeStatuses) {
         if (volumeStatuses == null) {
@@ -54,11 +60,11 @@ public class DescribeVolumeStatusResult implements Serializable {
     }
     
     /**
-     * Sets the value of the VolumeStatuses property for this object.
+     * A list of volumes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeStatuses The new value for the VolumeStatuses property for this object.
+     * @param volumeStatuses A list of volumes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -72,11 +78,11 @@ public class DescribeVolumeStatusResult implements Serializable {
     }
     
     /**
-     * Sets the value of the VolumeStatuses property for this object.
+     * A list of volumes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeStatuses The new value for the VolumeStatuses property for this object.
+     * @param volumeStatuses A list of volumes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -94,29 +100,29 @@ public class DescribeVolumeStatusResult implements Serializable {
     }
 
     /**
-     * Returns the value of the NextToken property for this object.
+     * The next paginated set of results to return.
      *
-     * @return The value of the NextToken property for this object.
+     * @return The next paginated set of results to return.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * The next paginated set of results to return.
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken The next paginated set of results to return.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * The next paginated set of results to return.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken The next paginated set of results to return.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

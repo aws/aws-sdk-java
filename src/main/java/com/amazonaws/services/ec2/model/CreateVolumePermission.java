@@ -17,20 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Describes a permission allowing either a user or group to create a new EBS volume from a snapshot.
- * </p>
+ * 
  */
 public class CreateVolumePermission implements Serializable {
 
     /**
-     * The user ID of the user that can create volumes from the snapshot.
+     * The specific AWS account ID that is to be added or removed from a
+     * volume's list of create volume permissions.
      */
     private String userId;
 
     /**
-     * The group that is allowed to create volumes from the snapshot
-     * (currently supports "all").
+     * The specific group that is to be added or removed from a volume's list
+     * of create volume permissions.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>all
@@ -38,29 +37,35 @@ public class CreateVolumePermission implements Serializable {
     private String group;
 
     /**
-     * The user ID of the user that can create volumes from the snapshot.
+     * The specific AWS account ID that is to be added or removed from a
+     * volume's list of create volume permissions.
      *
-     * @return The user ID of the user that can create volumes from the snapshot.
+     * @return The specific AWS account ID that is to be added or removed from a
+     *         volume's list of create volume permissions.
      */
     public String getUserId() {
         return userId;
     }
     
     /**
-     * The user ID of the user that can create volumes from the snapshot.
+     * The specific AWS account ID that is to be added or removed from a
+     * volume's list of create volume permissions.
      *
-     * @param userId The user ID of the user that can create volumes from the snapshot.
+     * @param userId The specific AWS account ID that is to be added or removed from a
+     *         volume's list of create volume permissions.
      */
     public void setUserId(String userId) {
         this.userId = userId;
     }
     
     /**
-     * The user ID of the user that can create volumes from the snapshot.
+     * The specific AWS account ID that is to be added or removed from a
+     * volume's list of create volume permissions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param userId The user ID of the user that can create volumes from the snapshot.
+     * @param userId The specific AWS account ID that is to be added or removed from a
+     *         volume's list of create volume permissions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -71,14 +76,14 @@ public class CreateVolumePermission implements Serializable {
     }
 
     /**
-     * The group that is allowed to create volumes from the snapshot
-     * (currently supports "all").
+     * The specific group that is to be added or removed from a volume's list
+     * of create volume permissions.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>all
      *
-     * @return The group that is allowed to create volumes from the snapshot
-     *         (currently supports "all").
+     * @return The specific group that is to be added or removed from a volume's list
+     *         of create volume permissions.
      *
      * @see PermissionGroup
      */
@@ -87,14 +92,14 @@ public class CreateVolumePermission implements Serializable {
     }
     
     /**
-     * The group that is allowed to create volumes from the snapshot
-     * (currently supports "all").
+     * The specific group that is to be added or removed from a volume's list
+     * of create volume permissions.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>all
      *
-     * @param group The group that is allowed to create volumes from the snapshot
-     *         (currently supports "all").
+     * @param group The specific group that is to be added or removed from a volume's list
+     *         of create volume permissions.
      *
      * @see PermissionGroup
      */
@@ -103,16 +108,16 @@ public class CreateVolumePermission implements Serializable {
     }
     
     /**
-     * The group that is allowed to create volumes from the snapshot
-     * (currently supports "all").
+     * The specific group that is to be added or removed from a volume's list
+     * of create volume permissions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>all
      *
-     * @param group The group that is allowed to create volumes from the snapshot
-     *         (currently supports "all").
+     * @param group The specific group that is to be added or removed from a volume's list
+     *         of create volume permissions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -125,14 +130,14 @@ public class CreateVolumePermission implements Serializable {
     }
 
     /**
-     * The group that is allowed to create volumes from the snapshot
-     * (currently supports "all").
+     * The specific group that is to be added or removed from a volume's list
+     * of create volume permissions.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>all
      *
-     * @param group The group that is allowed to create volumes from the snapshot
-     *         (currently supports "all").
+     * @param group The specific group that is to be added or removed from a volume's list
+     *         of create volume permissions.
      *
      * @see PermissionGroup
      */
@@ -141,16 +146,16 @@ public class CreateVolumePermission implements Serializable {
     }
     
     /**
-     * The group that is allowed to create volumes from the snapshot
-     * (currently supports "all").
+     * The specific group that is to be added or removed from a volume's list
+     * of create volume permissions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>all
      *
-     * @param group The group that is allowed to create volumes from the snapshot
-     *         (currently supports "all").
+     * @param group The specific group that is to be added or removed from a volume's list
+     *         of create volume permissions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

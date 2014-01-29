@@ -23,8 +23,16 @@ import com.amazonaws.services.ec2.model.transform.CreateImageRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createImage(CreateImageRequest) CreateImage operation}.
  * <p>
- * Creates an Amazon EBS-backed AMI from a "running" or "stopped" instance. AMIs that use an Amazon EBS root device boot faster than AMIs that use
- * instance stores. They can be up to 1 TiB in size, use storage that persists on instance failure, and can be stopped and started.
+ * Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is either running or stopped.
+ * </p>
+ * <p>
+ * If you customized your instance with instance store volumes or EBS volumes in addition to the root device volume, the new AMI contains block device
+ * mapping information for those volumes. When you launch an instance from this new AMI, the instance automatically launches with those additional
+ * volumes.
+ * </p>
+ * <p>
+ * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html"> Creating Amazon EBS-Backed Linux AMIs
+ * </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createImage(CreateImageRequest)
@@ -32,30 +40,35 @@ import com.amazonaws.services.ec2.model.transform.CreateImageRequestMarshaller;
 public class CreateImageRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateImageRequest> {
 
     /**
-     * The ID of the instance from which to create the new image.
+     * The ID of the instance.
      */
     private String instanceId;
 
     /**
-     * The name for the new AMI being created.
+     * A name for the new image. <p>Constraints: 3-128 alphanumeric
+     * characters, parenthesis (()), periods (.), slashes (/), dashes (-), or
+     * underscores(_)
      */
     private String name;
 
     /**
-     * The description for the new AMI being created.
+     * A description for the new image.
      */
     private String description;
 
     /**
-     * By default this property is set to <code>false</code>, which means
-     * Amazon EC2 attempts to cleanly shut down the instance before image
-     * creation and reboots the instance afterwards. When set to true, Amazon
-     * EC2 will not shut down the instance before creating the image. When
-     * this option is used, file system integrity on the created image cannot
-     * be guaranteed.
+     * By default, this parameter is set to <code>false</code>, which means
+     * Amazon EC2 attempts to shut down the instance cleanly before image
+     * creation and then reboots the instance. When the parameter is set to
+     * <code>true</code>, Amazon EC2 doesn't shut down the instance before
+     * creating the image. When this option is used, file system integrity on
+     * the created image can't be guaranteed.
      */
     private Boolean noReboot;
 
+    /**
+     * Information about one or more block device mappings.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
 
     /**
@@ -69,9 +82,10 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param instanceId The ID of the instance from which to create the new
-     * image.
-     * @param name The name for the new AMI being created.
+     * @param instanceId The ID of the instance.
+     * @param name A name for the new image. <p>Constraints: 3-128
+     * alphanumeric characters, parenthesis (()), periods (.), slashes (/),
+     * dashes (-), or underscores(_)
      */
     public CreateImageRequest(String instanceId, String name) {
         setInstanceId(instanceId);
@@ -79,29 +93,29 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The ID of the instance from which to create the new image.
+     * The ID of the instance.
      *
-     * @return The ID of the instance from which to create the new image.
+     * @return The ID of the instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The ID of the instance from which to create the new image.
+     * The ID of the instance.
      *
-     * @param instanceId The ID of the instance from which to create the new image.
+     * @param instanceId The ID of the instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The ID of the instance from which to create the new image.
+     * The ID of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The ID of the instance from which to create the new image.
+     * @param instanceId The ID of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -112,29 +126,41 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The name for the new AMI being created.
+     * A name for the new image. <p>Constraints: 3-128 alphanumeric
+     * characters, parenthesis (()), periods (.), slashes (/), dashes (-), or
+     * underscores(_)
      *
-     * @return The name for the new AMI being created.
+     * @return A name for the new image. <p>Constraints: 3-128 alphanumeric
+     *         characters, parenthesis (()), periods (.), slashes (/), dashes (-), or
+     *         underscores(_)
      */
     public String getName() {
         return name;
     }
     
     /**
-     * The name for the new AMI being created.
+     * A name for the new image. <p>Constraints: 3-128 alphanumeric
+     * characters, parenthesis (()), periods (.), slashes (/), dashes (-), or
+     * underscores(_)
      *
-     * @param name The name for the new AMI being created.
+     * @param name A name for the new image. <p>Constraints: 3-128 alphanumeric
+     *         characters, parenthesis (()), periods (.), slashes (/), dashes (-), or
+     *         underscores(_)
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * The name for the new AMI being created.
+     * A name for the new image. <p>Constraints: 3-128 alphanumeric
+     * characters, parenthesis (()), periods (.), slashes (/), dashes (-), or
+     * underscores(_)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name The name for the new AMI being created.
+     * @param name A name for the new image. <p>Constraints: 3-128 alphanumeric
+     *         characters, parenthesis (()), periods (.), slashes (/), dashes (-), or
+     *         underscores(_)
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -145,29 +171,29 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The description for the new AMI being created.
+     * A description for the new image.
      *
-     * @return The description for the new AMI being created.
+     * @return A description for the new image.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * The description for the new AMI being created.
+     * A description for the new image.
      *
-     * @param description The description for the new AMI being created.
+     * @param description A description for the new image.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * The description for the new AMI being created.
+     * A description for the new image.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description The description for the new AMI being created.
+     * @param description A description for the new image.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -178,59 +204,59 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * By default this property is set to <code>false</code>, which means
-     * Amazon EC2 attempts to cleanly shut down the instance before image
-     * creation and reboots the instance afterwards. When set to true, Amazon
-     * EC2 will not shut down the instance before creating the image. When
-     * this option is used, file system integrity on the created image cannot
-     * be guaranteed.
+     * By default, this parameter is set to <code>false</code>, which means
+     * Amazon EC2 attempts to shut down the instance cleanly before image
+     * creation and then reboots the instance. When the parameter is set to
+     * <code>true</code>, Amazon EC2 doesn't shut down the instance before
+     * creating the image. When this option is used, file system integrity on
+     * the created image can't be guaranteed.
      *
-     * @return By default this property is set to <code>false</code>, which means
-     *         Amazon EC2 attempts to cleanly shut down the instance before image
-     *         creation and reboots the instance afterwards. When set to true, Amazon
-     *         EC2 will not shut down the instance before creating the image. When
-     *         this option is used, file system integrity on the created image cannot
-     *         be guaranteed.
+     * @return By default, this parameter is set to <code>false</code>, which means
+     *         Amazon EC2 attempts to shut down the instance cleanly before image
+     *         creation and then reboots the instance. When the parameter is set to
+     *         <code>true</code>, Amazon EC2 doesn't shut down the instance before
+     *         creating the image. When this option is used, file system integrity on
+     *         the created image can't be guaranteed.
      */
     public Boolean isNoReboot() {
         return noReboot;
     }
     
     /**
-     * By default this property is set to <code>false</code>, which means
-     * Amazon EC2 attempts to cleanly shut down the instance before image
-     * creation and reboots the instance afterwards. When set to true, Amazon
-     * EC2 will not shut down the instance before creating the image. When
-     * this option is used, file system integrity on the created image cannot
-     * be guaranteed.
+     * By default, this parameter is set to <code>false</code>, which means
+     * Amazon EC2 attempts to shut down the instance cleanly before image
+     * creation and then reboots the instance. When the parameter is set to
+     * <code>true</code>, Amazon EC2 doesn't shut down the instance before
+     * creating the image. When this option is used, file system integrity on
+     * the created image can't be guaranteed.
      *
-     * @param noReboot By default this property is set to <code>false</code>, which means
-     *         Amazon EC2 attempts to cleanly shut down the instance before image
-     *         creation and reboots the instance afterwards. When set to true, Amazon
-     *         EC2 will not shut down the instance before creating the image. When
-     *         this option is used, file system integrity on the created image cannot
-     *         be guaranteed.
+     * @param noReboot By default, this parameter is set to <code>false</code>, which means
+     *         Amazon EC2 attempts to shut down the instance cleanly before image
+     *         creation and then reboots the instance. When the parameter is set to
+     *         <code>true</code>, Amazon EC2 doesn't shut down the instance before
+     *         creating the image. When this option is used, file system integrity on
+     *         the created image can't be guaranteed.
      */
     public void setNoReboot(Boolean noReboot) {
         this.noReboot = noReboot;
     }
     
     /**
-     * By default this property is set to <code>false</code>, which means
-     * Amazon EC2 attempts to cleanly shut down the instance before image
-     * creation and reboots the instance afterwards. When set to true, Amazon
-     * EC2 will not shut down the instance before creating the image. When
-     * this option is used, file system integrity on the created image cannot
-     * be guaranteed.
+     * By default, this parameter is set to <code>false</code>, which means
+     * Amazon EC2 attempts to shut down the instance cleanly before image
+     * creation and then reboots the instance. When the parameter is set to
+     * <code>true</code>, Amazon EC2 doesn't shut down the instance before
+     * creating the image. When this option is used, file system integrity on
+     * the created image can't be guaranteed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param noReboot By default this property is set to <code>false</code>, which means
-     *         Amazon EC2 attempts to cleanly shut down the instance before image
-     *         creation and reboots the instance afterwards. When set to true, Amazon
-     *         EC2 will not shut down the instance before creating the image. When
-     *         this option is used, file system integrity on the created image cannot
-     *         be guaranteed.
+     * @param noReboot By default, this parameter is set to <code>false</code>, which means
+     *         Amazon EC2 attempts to shut down the instance cleanly before image
+     *         creation and then reboots the instance. When the parameter is set to
+     *         <code>true</code>, Amazon EC2 doesn't shut down the instance before
+     *         creating the image. When this option is used, file system integrity on
+     *         the created image can't be guaranteed.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -241,28 +267,28 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * By default this property is set to <code>false</code>, which means
-     * Amazon EC2 attempts to cleanly shut down the instance before image
-     * creation and reboots the instance afterwards. When set to true, Amazon
-     * EC2 will not shut down the instance before creating the image. When
-     * this option is used, file system integrity on the created image cannot
-     * be guaranteed.
+     * By default, this parameter is set to <code>false</code>, which means
+     * Amazon EC2 attempts to shut down the instance cleanly before image
+     * creation and then reboots the instance. When the parameter is set to
+     * <code>true</code>, Amazon EC2 doesn't shut down the instance before
+     * creating the image. When this option is used, file system integrity on
+     * the created image can't be guaranteed.
      *
-     * @return By default this property is set to <code>false</code>, which means
-     *         Amazon EC2 attempts to cleanly shut down the instance before image
-     *         creation and reboots the instance afterwards. When set to true, Amazon
-     *         EC2 will not shut down the instance before creating the image. When
-     *         this option is used, file system integrity on the created image cannot
-     *         be guaranteed.
+     * @return By default, this parameter is set to <code>false</code>, which means
+     *         Amazon EC2 attempts to shut down the instance cleanly before image
+     *         creation and then reboots the instance. When the parameter is set to
+     *         <code>true</code>, Amazon EC2 doesn't shut down the instance before
+     *         creating the image. When this option is used, file system integrity on
+     *         the created image can't be guaranteed.
      */
     public Boolean getNoReboot() {
         return noReboot;
     }
 
     /**
-     * Returns the value of the BlockDeviceMappings property for this object.
+     * Information about one or more block device mappings.
      *
-     * @return The value of the BlockDeviceMappings property for this object.
+     * @return Information about one or more block device mappings.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
@@ -273,9 +299,9 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * Sets the value of the BlockDeviceMappings property for this object.
+     * Information about one or more block device mappings.
      *
-     * @param blockDeviceMappings The new value for the BlockDeviceMappings property for this object.
+     * @param blockDeviceMappings Information about one or more block device mappings.
      */
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -288,11 +314,11 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * Sets the value of the BlockDeviceMappings property for this object.
+     * Information about one or more block device mappings.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param blockDeviceMappings The new value for the BlockDeviceMappings property for this object.
+     * @param blockDeviceMappings Information about one or more block device mappings.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -306,11 +332,11 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * Sets the value of the BlockDeviceMappings property for this object.
+     * Information about one or more block device mappings.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param blockDeviceMappings The new value for the BlockDeviceMappings property for this object.
+     * @param blockDeviceMappings Information about one or more block device mappings.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -23,7 +23,12 @@ import com.amazonaws.services.ec2.model.transform.DescribeAddressesRequestMarsha
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeAddresses(DescribeAddressesRequest) DescribeAddresses operation}.
  * <p>
- * The DescribeAddresses operation lists elastic IP addresses assigned to your account.
+ * Describes one or more of your Elastic IP addresses.
+ * </p>
+ * <p>
+ * An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a> in the <i>Amazon Elastic Compute
+ * Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeAddresses(DescribeAddressesRequest)
@@ -31,25 +36,40 @@ import com.amazonaws.services.ec2.model.transform.DescribeAddressesRequestMarsha
 public class DescribeAddressesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeAddressesRequest> {
 
     /**
-     * The optional list of Elastic IP addresses to describe.
+     * [EC2-Classic] One or more Elastic IP addresses. <p>Default: Describes
+     * all your Elastic IP addresses.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> publicIps;
 
     /**
-     * A list of filters used to match properties for Addresses. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>allocation-id</code> -
+     * [EC2-VPC] The allocation ID for the address. </li> <li>
+     * <p><code>association-id</code> - [EC2-VPC] The association ID for the
+     * address. </li> <li> <p><code>domain</code> - Indicates whether the
+     * address is for use in EC2-Classic (<code>standard</code>) or in a VPC
+     * (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
+     * the instance the address is associated with, if any. </li> <li>
+     * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     * interface that the address is associated with, if any. </li> <li>
+     * <p><code>network-interface-owner-id</code> - The AWS account ID of the
+     * owner. </li> <li> <p><code>private-ip-address</code> - [EC2-VPC] The
+     * private IP address associated with the Elastic IP address. </li> <li>
+     * <p><code>public-ip</code> - The Elastic IP address. </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
+    /**
+     * [EC2-VPC] One or more allocation IDs. <p>Default: Describes all your
+     * Elastic IP addresses.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> allocationIds;
 
     /**
-     * The optional list of Elastic IP addresses to describe.
+     * [EC2-Classic] One or more Elastic IP addresses. <p>Default: Describes
+     * all your Elastic IP addresses.
      *
-     * @return The optional list of Elastic IP addresses to describe.
+     * @return [EC2-Classic] One or more Elastic IP addresses. <p>Default: Describes
+     *         all your Elastic IP addresses.
      */
     public java.util.List<String> getPublicIps() {
         if (publicIps == null) {
@@ -60,9 +80,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * The optional list of Elastic IP addresses to describe.
+     * [EC2-Classic] One or more Elastic IP addresses. <p>Default: Describes
+     * all your Elastic IP addresses.
      *
-     * @param publicIps The optional list of Elastic IP addresses to describe.
+     * @param publicIps [EC2-Classic] One or more Elastic IP addresses. <p>Default: Describes
+     *         all your Elastic IP addresses.
      */
     public void setPublicIps(java.util.Collection<String> publicIps) {
         if (publicIps == null) {
@@ -75,11 +97,13 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * The optional list of Elastic IP addresses to describe.
+     * [EC2-Classic] One or more Elastic IP addresses. <p>Default: Describes
+     * all your Elastic IP addresses.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicIps The optional list of Elastic IP addresses to describe.
+     * @param publicIps [EC2-Classic] One or more Elastic IP addresses. <p>Default: Describes
+     *         all your Elastic IP addresses.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -93,11 +117,13 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * The optional list of Elastic IP addresses to describe.
+     * [EC2-Classic] One or more Elastic IP addresses. <p>Default: Describes
+     * all your Elastic IP addresses.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicIps The optional list of Elastic IP addresses to describe.
+     * @param publicIps [EC2-Classic] One or more Elastic IP addresses. <p>Default: Describes
+     *         all your Elastic IP addresses.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -115,17 +141,33 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * A list of filters used to match properties for Addresses. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>allocation-id</code> -
+     * [EC2-VPC] The allocation ID for the address. </li> <li>
+     * <p><code>association-id</code> - [EC2-VPC] The association ID for the
+     * address. </li> <li> <p><code>domain</code> - Indicates whether the
+     * address is for use in EC2-Classic (<code>standard</code>) or in a VPC
+     * (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
+     * the instance the address is associated with, if any. </li> <li>
+     * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     * interface that the address is associated with, if any. </li> <li>
+     * <p><code>network-interface-owner-id</code> - The AWS account ID of the
+     * owner. </li> <li> <p><code>private-ip-address</code> - [EC2-VPC] The
+     * private IP address associated with the Elastic IP address. </li> <li>
+     * <p><code>public-ip</code> - The Elastic IP address. </li> </ul>
      *
-     * @return A list of filters used to match properties for Addresses. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @return One or more filters. <ul> <li> <p><code>allocation-id</code> -
+     *         [EC2-VPC] The allocation ID for the address. </li> <li>
+     *         <p><code>association-id</code> - [EC2-VPC] The association ID for the
+     *         address. </li> <li> <p><code>domain</code> - Indicates whether the
+     *         address is for use in EC2-Classic (<code>standard</code>) or in a VPC
+     *         (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
+     *         the instance the address is associated with, if any. </li> <li>
+     *         <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     *         interface that the address is associated with, if any. </li> <li>
+     *         <p><code>network-interface-owner-id</code> - The AWS account ID of the
+     *         owner. </li> <li> <p><code>private-ip-address</code> - [EC2-VPC] The
+     *         private IP address associated with the Elastic IP address. </li> <li>
+     *         <p><code>public-ip</code> - The Elastic IP address. </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -136,17 +178,33 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * A list of filters used to match properties for Addresses. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>allocation-id</code> -
+     * [EC2-VPC] The allocation ID for the address. </li> <li>
+     * <p><code>association-id</code> - [EC2-VPC] The association ID for the
+     * address. </li> <li> <p><code>domain</code> - Indicates whether the
+     * address is for use in EC2-Classic (<code>standard</code>) or in a VPC
+     * (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
+     * the instance the address is associated with, if any. </li> <li>
+     * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     * interface that the address is associated with, if any. </li> <li>
+     * <p><code>network-interface-owner-id</code> - The AWS account ID of the
+     * owner. </li> <li> <p><code>private-ip-address</code> - [EC2-VPC] The
+     * private IP address associated with the Elastic IP address. </li> <li>
+     * <p><code>public-ip</code> - The Elastic IP address. </li> </ul>
      *
-     * @param filters A list of filters used to match properties for Addresses. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>allocation-id</code> -
+     *         [EC2-VPC] The allocation ID for the address. </li> <li>
+     *         <p><code>association-id</code> - [EC2-VPC] The association ID for the
+     *         address. </li> <li> <p><code>domain</code> - Indicates whether the
+     *         address is for use in EC2-Classic (<code>standard</code>) or in a VPC
+     *         (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
+     *         the instance the address is associated with, if any. </li> <li>
+     *         <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     *         interface that the address is associated with, if any. </li> <li>
+     *         <p><code>network-interface-owner-id</code> - The AWS account ID of the
+     *         owner. </li> <li> <p><code>private-ip-address</code> - [EC2-VPC] The
+     *         private IP address associated with the Elastic IP address. </li> <li>
+     *         <p><code>public-ip</code> - The Elastic IP address. </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -159,19 +217,35 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * A list of filters used to match properties for Addresses. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>allocation-id</code> -
+     * [EC2-VPC] The allocation ID for the address. </li> <li>
+     * <p><code>association-id</code> - [EC2-VPC] The association ID for the
+     * address. </li> <li> <p><code>domain</code> - Indicates whether the
+     * address is for use in EC2-Classic (<code>standard</code>) or in a VPC
+     * (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
+     * the instance the address is associated with, if any. </li> <li>
+     * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     * interface that the address is associated with, if any. </li> <li>
+     * <p><code>network-interface-owner-id</code> - The AWS account ID of the
+     * owner. </li> <li> <p><code>private-ip-address</code> - [EC2-VPC] The
+     * private IP address associated with the Elastic IP address. </li> <li>
+     * <p><code>public-ip</code> - The Elastic IP address. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for Addresses. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>allocation-id</code> -
+     *         [EC2-VPC] The allocation ID for the address. </li> <li>
+     *         <p><code>association-id</code> - [EC2-VPC] The association ID for the
+     *         address. </li> <li> <p><code>domain</code> - Indicates whether the
+     *         address is for use in EC2-Classic (<code>standard</code>) or in a VPC
+     *         (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
+     *         the instance the address is associated with, if any. </li> <li>
+     *         <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     *         interface that the address is associated with, if any. </li> <li>
+     *         <p><code>network-interface-owner-id</code> - The AWS account ID of the
+     *         owner. </li> <li> <p><code>private-ip-address</code> - [EC2-VPC] The
+     *         private IP address associated with the Elastic IP address. </li> <li>
+     *         <p><code>public-ip</code> - The Elastic IP address. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -185,19 +259,35 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * A list of filters used to match properties for Addresses. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>allocation-id</code> -
+     * [EC2-VPC] The allocation ID for the address. </li> <li>
+     * <p><code>association-id</code> - [EC2-VPC] The association ID for the
+     * address. </li> <li> <p><code>domain</code> - Indicates whether the
+     * address is for use in EC2-Classic (<code>standard</code>) or in a VPC
+     * (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
+     * the instance the address is associated with, if any. </li> <li>
+     * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     * interface that the address is associated with, if any. </li> <li>
+     * <p><code>network-interface-owner-id</code> - The AWS account ID of the
+     * owner. </li> <li> <p><code>private-ip-address</code> - [EC2-VPC] The
+     * private IP address associated with the Elastic IP address. </li> <li>
+     * <p><code>public-ip</code> - The Elastic IP address. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for Addresses. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>allocation-id</code> -
+     *         [EC2-VPC] The allocation ID for the address. </li> <li>
+     *         <p><code>association-id</code> - [EC2-VPC] The association ID for the
+     *         address. </li> <li> <p><code>domain</code> - Indicates whether the
+     *         address is for use in EC2-Classic (<code>standard</code>) or in a VPC
+     *         (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
+     *         the instance the address is associated with, if any. </li> <li>
+     *         <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     *         interface that the address is associated with, if any. </li> <li>
+     *         <p><code>network-interface-owner-id</code> - The AWS account ID of the
+     *         owner. </li> <li> <p><code>private-ip-address</code> - [EC2-VPC] The
+     *         private IP address associated with the Elastic IP address. </li> <li>
+     *         <p><code>public-ip</code> - The Elastic IP address. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -215,9 +305,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns the value of the AllocationIds property for this object.
+     * [EC2-VPC] One or more allocation IDs. <p>Default: Describes all your
+     * Elastic IP addresses.
      *
-     * @return The value of the AllocationIds property for this object.
+     * @return [EC2-VPC] One or more allocation IDs. <p>Default: Describes all your
+     *         Elastic IP addresses.
      */
     public java.util.List<String> getAllocationIds() {
         if (allocationIds == null) {
@@ -228,9 +320,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * Sets the value of the AllocationIds property for this object.
+     * [EC2-VPC] One or more allocation IDs. <p>Default: Describes all your
+     * Elastic IP addresses.
      *
-     * @param allocationIds The new value for the AllocationIds property for this object.
+     * @param allocationIds [EC2-VPC] One or more allocation IDs. <p>Default: Describes all your
+     *         Elastic IP addresses.
      */
     public void setAllocationIds(java.util.Collection<String> allocationIds) {
         if (allocationIds == null) {
@@ -243,11 +337,13 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * Sets the value of the AllocationIds property for this object.
+     * [EC2-VPC] One or more allocation IDs. <p>Default: Describes all your
+     * Elastic IP addresses.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allocationIds The new value for the AllocationIds property for this object.
+     * @param allocationIds [EC2-VPC] One or more allocation IDs. <p>Default: Describes all your
+     *         Elastic IP addresses.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -261,11 +357,13 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * Sets the value of the AllocationIds property for this object.
+     * [EC2-VPC] One or more allocation IDs. <p>Default: Describes all your
+     * Elastic IP addresses.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allocationIds The new value for the AllocationIds property for this object.
+     * @param allocationIds [EC2-VPC] One or more allocation IDs. <p>Default: Describes all your
+     *         Elastic IP addresses.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -23,7 +23,14 @@ import com.amazonaws.services.ec2.model.transform.DeleteVolumeRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteVolume(DeleteVolumeRequest) DeleteVolume operation}.
  * <p>
- * Deletes a previously created volume. Once successfully deleted, a new volume can be created with the same name.
+ * Deletes the specified Amazon EBS volume. The volume must be in the <code>available</code> state (not attached to an instance).
+ * </p>
+ * <p>
+ * <b>NOTE:</b> The volume remains in the deleting state for several minutes.
+ * </p>
+ * <p>
+ * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html"> Deleting an Amazon EBS Volume </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVolume(DeleteVolumeRequest)
@@ -31,7 +38,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteVolumeRequestMarshaller;
 public class DeleteVolumeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteVolumeRequest> {
 
     /**
-     * The ID of the EBS volume to delete.
+     * The ID of the volume.
      */
     private String volumeId;
 
@@ -46,36 +53,36 @@ public class DeleteVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param volumeId The ID of the EBS volume to delete.
+     * @param volumeId The ID of the volume.
      */
     public DeleteVolumeRequest(String volumeId) {
         setVolumeId(volumeId);
     }
 
     /**
-     * The ID of the EBS volume to delete.
+     * The ID of the volume.
      *
-     * @return The ID of the EBS volume to delete.
+     * @return The ID of the volume.
      */
     public String getVolumeId() {
         return volumeId;
     }
     
     /**
-     * The ID of the EBS volume to delete.
+     * The ID of the volume.
      *
-     * @param volumeId The ID of the EBS volume to delete.
+     * @param volumeId The ID of the volume.
      */
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
     
     /**
-     * The ID of the EBS volume to delete.
+     * The ID of the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeId The ID of the EBS volume to delete.
+     * @param volumeId The ID of the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

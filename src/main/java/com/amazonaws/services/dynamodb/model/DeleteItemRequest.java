@@ -26,6 +26,8 @@ import java.io.Serializable;
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#deleteItem(DeleteItemRequest)
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.DeleteItemRequest} instead.
  */
 @Deprecated
 public class DeleteItemRequest extends AmazonWebServiceRequest  implements Serializable  {

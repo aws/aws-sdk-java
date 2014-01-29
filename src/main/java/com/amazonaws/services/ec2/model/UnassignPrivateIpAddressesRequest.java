@@ -20,40 +20,50 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#unassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest) UnassignPrivateIpAddresses operation}.
- * 
+ * <p>
+ * Unassigns one or more secondary private IP addresses from a network interface.
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#unassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest)
  */
 public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * The ID of the network interface.
+     */
     private String networkInterfaceId;
 
+    /**
+     * The secondary private IP addresses to unassign from the network
+     * interface. You can specify this option multiple times to unassign more
+     * than one IP address.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> privateIpAddresses;
 
     /**
-     * Returns the value of the NetworkInterfaceId property for this object.
+     * The ID of the network interface.
      *
-     * @return The value of the NetworkInterfaceId property for this object.
+     * @return The ID of the network interface.
      */
     public String getNetworkInterfaceId() {
         return networkInterfaceId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceId property for this object.
+     * The ID of the network interface.
      *
-     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     * @param networkInterfaceId The ID of the network interface.
      */
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceId property for this object.
+     * The ID of the network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     * @param networkInterfaceId The ID of the network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -64,9 +74,13 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * Returns the value of the PrivateIpAddresses property for this object.
+     * The secondary private IP addresses to unassign from the network
+     * interface. You can specify this option multiple times to unassign more
+     * than one IP address.
      *
-     * @return The value of the PrivateIpAddresses property for this object.
+     * @return The secondary private IP addresses to unassign from the network
+     *         interface. You can specify this option multiple times to unassign more
+     *         than one IP address.
      */
     public java.util.List<String> getPrivateIpAddresses() {
         if (privateIpAddresses == null) {
@@ -77,9 +91,13 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * Sets the value of the PrivateIpAddresses property for this object.
+     * The secondary private IP addresses to unassign from the network
+     * interface. You can specify this option multiple times to unassign more
+     * than one IP address.
      *
-     * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     * @param privateIpAddresses The secondary private IP addresses to unassign from the network
+     *         interface. You can specify this option multiple times to unassign more
+     *         than one IP address.
      */
     public void setPrivateIpAddresses(java.util.Collection<String> privateIpAddresses) {
         if (privateIpAddresses == null) {
@@ -92,11 +110,15 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * Sets the value of the PrivateIpAddresses property for this object.
+     * The secondary private IP addresses to unassign from the network
+     * interface. You can specify this option multiple times to unassign more
+     * than one IP address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     * @param privateIpAddresses The secondary private IP addresses to unassign from the network
+     *         interface. You can specify this option multiple times to unassign more
+     *         than one IP address.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -110,11 +132,15 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * Sets the value of the PrivateIpAddresses property for this object.
+     * The secondary private IP addresses to unassign from the network
+     * interface. You can specify this option multiple times to unassign more
+     * than one IP address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     * @param privateIpAddresses The secondary private IP addresses to unassign from the network
+     *         interface. You can specify this option multiple times to unassign more
+     *         than one IP address.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

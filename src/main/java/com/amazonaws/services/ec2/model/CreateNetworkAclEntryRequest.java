@@ -23,19 +23,20 @@ import com.amazonaws.services.ec2.model.transform.CreateNetworkAclEntryRequestMa
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createNetworkAclEntry(CreateNetworkAclEntryRequest) CreateNetworkAclEntry operation}.
  * <p>
- * Creates an entry (i.e., rule) in a network ACL with a rule number you specify. Each network ACL has a set of numbered ingress rules and a separate
- * set of numbered egress rules. When determining whether a packet should be allowed in or out of a subnet associated with the ACL, Amazon VPC processes
- * the entries in the ACL according to the rule numbers, in ascending order.
+ * Creates an entry (a rule) in a network ACL with the specified rule number. Each network ACL has a set of numbered ingress rules and a separate set of
+ * numbered egress rules. When determining whether a packet should be allowed in or out of a subnet associated with the ACL, we process the entries in
+ * the ACL according to the rule numbers, in ascending order. Each network ACL has a set of ingress rules and a separate set of egress rules.
  * </p>
  * <p>
- * <b>Important:</b> We recommend that you leave room between the rules (e.g., 100, 110, 120, etc.), and not number them sequentially (101, 102, 103,
- * etc.). This allows you to easily add a new rule between existing ones without having to renumber the rules.
+ * We recommend that you leave room between the rule numbers (for example, 100, 110, 120, ...), and not number them one right after the other (for
+ * example, 101, 102, 103, ...). This makes it easier to add a rule between existing ones without having to renumber the rules.
  * </p>
  * <p>
- * After you add an entry, you can't modify it; you must either replace it, or create a new entry and delete the old one.
+ * After you add an entry, you can't modify it; you must either replace it, or create an entry and delete the old one.
  * </p>
  * <p>
- * For more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide.
+ * For more information about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a> in the
+ * <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createNetworkAclEntry(CreateNetworkAclEntryRequest)
@@ -43,24 +44,24 @@ import com.amazonaws.services.ec2.model.transform.CreateNetworkAclEntryRequestMa
 public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateNetworkAclEntryRequest> {
 
     /**
-     * ID of the ACL where the entry will be created.
+     * The ID of the ACL.
      */
     private String networkAclId;
 
     /**
-     * Rule number to assign to the entry (e.g., 100). ACL entries are
-     * processed in ascending order by rule number.
+     * The rule number for the entry (for example, 100). ACL entries are
+     * processed in ascending order by rule number. <p>Constraints: Positive
+     * integer from 1 to 32766
      */
     private Integer ruleNumber;
 
     /**
-     * IP protocol the rule applies to. Valid Values: <code>tcp</code>,
-     * <code>udp</code>, <code>icmp</code> or an IP protocol number.
+     * The protocol. A value of -1 means all protocols.
      */
     private String protocol;
 
     /**
-     * Whether to allow or deny traffic that matches the rule.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
@@ -68,52 +69,50 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     private String ruleAction;
 
     /**
-     * Whether this rule applies to egress traffic from the subnet
-     * (<code>true</code>) or ingress traffic to the subnet
-     * (<code>false</code>).
+     * Indicates whether this is an egress rule (rule is applied to traffic
+     * leaving the subnet).
      */
     private Boolean egress;
 
     /**
-     * The CIDR range to allow or deny, in CIDR notation (e.g.,
-     * <code>172.16.0.0/24</code>).
+     * The network range to allow or deny, in CIDR notation.
      */
     private String cidrBlock;
 
     /**
-     * ICMP values.
+     * ICMP protocol: The ICMP type and code.
      */
     private IcmpTypeCode icmpTypeCode;
 
     /**
-     * Port ranges.
+     * TCP or UDP protocols: The range of ports the rule applies to.
      */
     private PortRange portRange;
 
     /**
-     * ID of the ACL where the entry will be created.
+     * The ID of the ACL.
      *
-     * @return ID of the ACL where the entry will be created.
+     * @return The ID of the ACL.
      */
     public String getNetworkAclId() {
         return networkAclId;
     }
     
     /**
-     * ID of the ACL where the entry will be created.
+     * The ID of the ACL.
      *
-     * @param networkAclId ID of the ACL where the entry will be created.
+     * @param networkAclId The ID of the ACL.
      */
     public void setNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
     }
     
     /**
-     * ID of the ACL where the entry will be created.
+     * The ID of the ACL.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkAclId ID of the ACL where the entry will be created.
+     * @param networkAclId The ID of the ACL.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -124,35 +123,41 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * Rule number to assign to the entry (e.g., 100). ACL entries are
-     * processed in ascending order by rule number.
+     * The rule number for the entry (for example, 100). ACL entries are
+     * processed in ascending order by rule number. <p>Constraints: Positive
+     * integer from 1 to 32766
      *
-     * @return Rule number to assign to the entry (e.g., 100). ACL entries are
-     *         processed in ascending order by rule number.
+     * @return The rule number for the entry (for example, 100). ACL entries are
+     *         processed in ascending order by rule number. <p>Constraints: Positive
+     *         integer from 1 to 32766
      */
     public Integer getRuleNumber() {
         return ruleNumber;
     }
     
     /**
-     * Rule number to assign to the entry (e.g., 100). ACL entries are
-     * processed in ascending order by rule number.
+     * The rule number for the entry (for example, 100). ACL entries are
+     * processed in ascending order by rule number. <p>Constraints: Positive
+     * integer from 1 to 32766
      *
-     * @param ruleNumber Rule number to assign to the entry (e.g., 100). ACL entries are
-     *         processed in ascending order by rule number.
+     * @param ruleNumber The rule number for the entry (for example, 100). ACL entries are
+     *         processed in ascending order by rule number. <p>Constraints: Positive
+     *         integer from 1 to 32766
      */
     public void setRuleNumber(Integer ruleNumber) {
         this.ruleNumber = ruleNumber;
     }
     
     /**
-     * Rule number to assign to the entry (e.g., 100). ACL entries are
-     * processed in ascending order by rule number.
+     * The rule number for the entry (for example, 100). ACL entries are
+     * processed in ascending order by rule number. <p>Constraints: Positive
+     * integer from 1 to 32766
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ruleNumber Rule number to assign to the entry (e.g., 100). ACL entries are
-     *         processed in ascending order by rule number.
+     * @param ruleNumber The rule number for the entry (for example, 100). ACL entries are
+     *         processed in ascending order by rule number. <p>Constraints: Positive
+     *         integer from 1 to 32766
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -163,35 +168,29 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * IP protocol the rule applies to. Valid Values: <code>tcp</code>,
-     * <code>udp</code>, <code>icmp</code> or an IP protocol number.
+     * The protocol. A value of -1 means all protocols.
      *
-     * @return IP protocol the rule applies to. Valid Values: <code>tcp</code>,
-     *         <code>udp</code>, <code>icmp</code> or an IP protocol number.
+     * @return The protocol. A value of -1 means all protocols.
      */
     public String getProtocol() {
         return protocol;
     }
     
     /**
-     * IP protocol the rule applies to. Valid Values: <code>tcp</code>,
-     * <code>udp</code>, <code>icmp</code> or an IP protocol number.
+     * The protocol. A value of -1 means all protocols.
      *
-     * @param protocol IP protocol the rule applies to. Valid Values: <code>tcp</code>,
-     *         <code>udp</code>, <code>icmp</code> or an IP protocol number.
+     * @param protocol The protocol. A value of -1 means all protocols.
      */
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
     
     /**
-     * IP protocol the rule applies to. Valid Values: <code>tcp</code>,
-     * <code>udp</code>, <code>icmp</code> or an IP protocol number.
+     * The protocol. A value of -1 means all protocols.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param protocol IP protocol the rule applies to. Valid Values: <code>tcp</code>,
-     *         <code>udp</code>, <code>icmp</code> or an IP protocol number.
+     * @param protocol The protocol. A value of -1 means all protocols.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -202,12 +201,12 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * Whether to allow or deny traffic that matches the rule.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
      *
-     * @return Whether to allow or deny traffic that matches the rule.
+     * @return Indicates whether to allow or deny the traffic that matches the rule.
      *
      * @see RuleAction
      */
@@ -216,12 +215,12 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
     
     /**
-     * Whether to allow or deny traffic that matches the rule.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
      *
-     * @param ruleAction Whether to allow or deny traffic that matches the rule.
+     * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
      * @see RuleAction
      */
@@ -230,14 +229,14 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
     
     /**
-     * Whether to allow or deny traffic that matches the rule.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
      *
-     * @param ruleAction Whether to allow or deny traffic that matches the rule.
+     * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -250,12 +249,12 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * Whether to allow or deny traffic that matches the rule.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
      *
-     * @param ruleAction Whether to allow or deny traffic that matches the rule.
+     * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
      * @see RuleAction
      */
@@ -264,14 +263,14 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
     
     /**
-     * Whether to allow or deny traffic that matches the rule.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
      *
-     * @param ruleAction Whether to allow or deny traffic that matches the rule.
+     * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -284,41 +283,35 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * Whether this rule applies to egress traffic from the subnet
-     * (<code>true</code>) or ingress traffic to the subnet
-     * (<code>false</code>).
+     * Indicates whether this is an egress rule (rule is applied to traffic
+     * leaving the subnet).
      *
-     * @return Whether this rule applies to egress traffic from the subnet
-     *         (<code>true</code>) or ingress traffic to the subnet
-     *         (<code>false</code>).
+     * @return Indicates whether this is an egress rule (rule is applied to traffic
+     *         leaving the subnet).
      */
     public Boolean isEgress() {
         return egress;
     }
     
     /**
-     * Whether this rule applies to egress traffic from the subnet
-     * (<code>true</code>) or ingress traffic to the subnet
-     * (<code>false</code>).
+     * Indicates whether this is an egress rule (rule is applied to traffic
+     * leaving the subnet).
      *
-     * @param egress Whether this rule applies to egress traffic from the subnet
-     *         (<code>true</code>) or ingress traffic to the subnet
-     *         (<code>false</code>).
+     * @param egress Indicates whether this is an egress rule (rule is applied to traffic
+     *         leaving the subnet).
      */
     public void setEgress(Boolean egress) {
         this.egress = egress;
     }
     
     /**
-     * Whether this rule applies to egress traffic from the subnet
-     * (<code>true</code>) or ingress traffic to the subnet
-     * (<code>false</code>).
+     * Indicates whether this is an egress rule (rule is applied to traffic
+     * leaving the subnet).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param egress Whether this rule applies to egress traffic from the subnet
-     *         (<code>true</code>) or ingress traffic to the subnet
-     *         (<code>false</code>).
+     * @param egress Indicates whether this is an egress rule (rule is applied to traffic
+     *         leaving the subnet).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -329,48 +322,40 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * Whether this rule applies to egress traffic from the subnet
-     * (<code>true</code>) or ingress traffic to the subnet
-     * (<code>false</code>).
+     * Indicates whether this is an egress rule (rule is applied to traffic
+     * leaving the subnet).
      *
-     * @return Whether this rule applies to egress traffic from the subnet
-     *         (<code>true</code>) or ingress traffic to the subnet
-     *         (<code>false</code>).
+     * @return Indicates whether this is an egress rule (rule is applied to traffic
+     *         leaving the subnet).
      */
     public Boolean getEgress() {
         return egress;
     }
 
     /**
-     * The CIDR range to allow or deny, in CIDR notation (e.g.,
-     * <code>172.16.0.0/24</code>).
+     * The network range to allow or deny, in CIDR notation.
      *
-     * @return The CIDR range to allow or deny, in CIDR notation (e.g.,
-     *         <code>172.16.0.0/24</code>).
+     * @return The network range to allow or deny, in CIDR notation.
      */
     public String getCidrBlock() {
         return cidrBlock;
     }
     
     /**
-     * The CIDR range to allow or deny, in CIDR notation (e.g.,
-     * <code>172.16.0.0/24</code>).
+     * The network range to allow or deny, in CIDR notation.
      *
-     * @param cidrBlock The CIDR range to allow or deny, in CIDR notation (e.g.,
-     *         <code>172.16.0.0/24</code>).
+     * @param cidrBlock The network range to allow or deny, in CIDR notation.
      */
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
     
     /**
-     * The CIDR range to allow or deny, in CIDR notation (e.g.,
-     * <code>172.16.0.0/24</code>).
+     * The network range to allow or deny, in CIDR notation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cidrBlock The CIDR range to allow or deny, in CIDR notation (e.g.,
-     *         <code>172.16.0.0/24</code>).
+     * @param cidrBlock The network range to allow or deny, in CIDR notation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -381,29 +366,29 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * ICMP values.
+     * ICMP protocol: The ICMP type and code.
      *
-     * @return ICMP values.
+     * @return ICMP protocol: The ICMP type and code.
      */
     public IcmpTypeCode getIcmpTypeCode() {
         return icmpTypeCode;
     }
     
     /**
-     * ICMP values.
+     * ICMP protocol: The ICMP type and code.
      *
-     * @param icmpTypeCode ICMP values.
+     * @param icmpTypeCode ICMP protocol: The ICMP type and code.
      */
     public void setIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
         this.icmpTypeCode = icmpTypeCode;
     }
     
     /**
-     * ICMP values.
+     * ICMP protocol: The ICMP type and code.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param icmpTypeCode ICMP values.
+     * @param icmpTypeCode ICMP protocol: The ICMP type and code.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -414,29 +399,29 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * Port ranges.
+     * TCP or UDP protocols: The range of ports the rule applies to.
      *
-     * @return Port ranges.
+     * @return TCP or UDP protocols: The range of ports the rule applies to.
      */
     public PortRange getPortRange() {
         return portRange;
     }
     
     /**
-     * Port ranges.
+     * TCP or UDP protocols: The range of ports the rule applies to.
      *
-     * @param portRange Port ranges.
+     * @param portRange TCP or UDP protocols: The range of ports the rule applies to.
      */
     public void setPortRange(PortRange portRange) {
         this.portRange = portRange;
     }
     
     /**
-     * Port ranges.
+     * TCP or UDP protocols: The range of ports the rule applies to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param portRange Port ranges.
+     * @param portRange TCP or UDP protocols: The range of ports the rule applies to.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

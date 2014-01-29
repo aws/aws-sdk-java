@@ -50,6 +50,7 @@ public class ValidationErrorJsonUnmarshaller implements Unmarshaller<ValidationE
                     validationError.setId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("errors", targetDepth)) {
+                    context.nextToken();
                     validationError.setErrors(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -17,41 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of describing an instance's attribute.
- * </p>
+ * 
  */
 public class DescribeInstanceAttributeResult implements Serializable {
 
     /**
-     * The described instance attribute.
+     * 
      */
     private InstanceAttribute instanceAttribute;
 
     /**
-     * The described instance attribute.
+     * 
      *
-     * @return The described instance attribute.
+     * @return 
      */
     public InstanceAttribute getInstanceAttribute() {
         return instanceAttribute;
     }
     
     /**
-     * The described instance attribute.
+     * 
      *
-     * @param instanceAttribute The described instance attribute.
+     * @param instanceAttribute 
      */
     public void setInstanceAttribute(InstanceAttribute instanceAttribute) {
         this.instanceAttribute = instanceAttribute;
     }
     
     /**
-     * The described instance attribute.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceAttribute The described instance attribute.
+     * @param instanceAttribute 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

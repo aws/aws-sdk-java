@@ -19,6 +19,7 @@ import java.io.Serializable;
  * <p>
  * The item attributes from a response in a specific table, along with the read resources consumed on the table during the request.
  * </p>
+ * @deprecated This class is no longer supported by the latest service API.
  */
 @Deprecated
 public class BatchResponse  implements Serializable  {

@@ -20,6 +20,9 @@ import com.amazonaws.util.json.JSONObject;
 
 import com.amazonaws.services.dynamodb.model.ResourceNotFoundException;
 
+/**
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.ResourceNotFoundExceptionUnmarshaller} instead.
+ */
 @Deprecated
 public class ResourceNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller {
 

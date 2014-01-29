@@ -18,50 +18,50 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The DhcpOptions data type.
+ * Describes a set of DHCP options.
  * </p>
  */
 public class DhcpOptions implements Serializable {
 
     /**
-     * Specifies the ID of the set of DHCP options.
+     * The ID of the set of DHCP options.
      */
     private String dhcpOptionsId;
 
     /**
-     * Contains information about the set of DHCP options.
+     * One or more DHCP options in the set.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<DhcpConfiguration> dhcpConfigurations;
 
     /**
-     * A list of tags for the DhcpOptions.
+     * Any tags assigned to the DHCP options set.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * Specifies the ID of the set of DHCP options.
+     * The ID of the set of DHCP options.
      *
-     * @return Specifies the ID of the set of DHCP options.
+     * @return The ID of the set of DHCP options.
      */
     public String getDhcpOptionsId() {
         return dhcpOptionsId;
     }
     
     /**
-     * Specifies the ID of the set of DHCP options.
+     * The ID of the set of DHCP options.
      *
-     * @param dhcpOptionsId Specifies the ID of the set of DHCP options.
+     * @param dhcpOptionsId The ID of the set of DHCP options.
      */
     public void setDhcpOptionsId(String dhcpOptionsId) {
         this.dhcpOptionsId = dhcpOptionsId;
     }
     
     /**
-     * Specifies the ID of the set of DHCP options.
+     * The ID of the set of DHCP options.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpOptionsId Specifies the ID of the set of DHCP options.
+     * @param dhcpOptionsId The ID of the set of DHCP options.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -72,9 +72,9 @@ public class DhcpOptions implements Serializable {
     }
 
     /**
-     * Contains information about the set of DHCP options.
+     * One or more DHCP options in the set.
      *
-     * @return Contains information about the set of DHCP options.
+     * @return One or more DHCP options in the set.
      */
     public java.util.List<DhcpConfiguration> getDhcpConfigurations() {
         if (dhcpConfigurations == null) {
@@ -85,9 +85,9 @@ public class DhcpOptions implements Serializable {
     }
     
     /**
-     * Contains information about the set of DHCP options.
+     * One or more DHCP options in the set.
      *
-     * @param dhcpConfigurations Contains information about the set of DHCP options.
+     * @param dhcpConfigurations One or more DHCP options in the set.
      */
     public void setDhcpConfigurations(java.util.Collection<DhcpConfiguration> dhcpConfigurations) {
         if (dhcpConfigurations == null) {
@@ -100,11 +100,11 @@ public class DhcpOptions implements Serializable {
     }
     
     /**
-     * Contains information about the set of DHCP options.
+     * One or more DHCP options in the set.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpConfigurations Contains information about the set of DHCP options.
+     * @param dhcpConfigurations One or more DHCP options in the set.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -118,11 +118,11 @@ public class DhcpOptions implements Serializable {
     }
     
     /**
-     * Contains information about the set of DHCP options.
+     * One or more DHCP options in the set.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpConfigurations Contains information about the set of DHCP options.
+     * @param dhcpConfigurations One or more DHCP options in the set.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -140,9 +140,9 @@ public class DhcpOptions implements Serializable {
     }
 
     /**
-     * A list of tags for the DhcpOptions.
+     * Any tags assigned to the DHCP options set.
      *
-     * @return A list of tags for the DhcpOptions.
+     * @return Any tags assigned to the DHCP options set.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
@@ -153,9 +153,9 @@ public class DhcpOptions implements Serializable {
     }
     
     /**
-     * A list of tags for the DhcpOptions.
+     * Any tags assigned to the DHCP options set.
      *
-     * @param tags A list of tags for the DhcpOptions.
+     * @param tags Any tags assigned to the DHCP options set.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -168,11 +168,11 @@ public class DhcpOptions implements Serializable {
     }
     
     /**
-     * A list of tags for the DhcpOptions.
+     * Any tags assigned to the DHCP options set.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags A list of tags for the DhcpOptions.
+     * @param tags Any tags assigned to the DHCP options set.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -186,11 +186,11 @@ public class DhcpOptions implements Serializable {
     }
     
     /**
-     * A list of tags for the DhcpOptions.
+     * Any tags assigned to the DHCP options set.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags A list of tags for the DhcpOptions.
+     * @param tags Any tags assigned to the DHCP options set.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

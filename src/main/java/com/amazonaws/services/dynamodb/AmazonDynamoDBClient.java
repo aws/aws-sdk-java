@@ -125,6 +125,7 @@ import com.amazonaws.util.json.JSONObject;
  * <p>
  * Amazon DynamoDB removes traditional scalability limitations on data storage while maintaining low latency and predictable performance.
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient} instead.
  */
 @Deprecated
 public class AmazonDynamoDBClient extends AmazonWebServiceClient implements AmazonDynamoDB {

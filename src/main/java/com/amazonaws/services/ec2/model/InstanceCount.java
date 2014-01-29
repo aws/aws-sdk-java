@@ -17,21 +17,33 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Instance Count
+ * <p>
+ * Describes a Reserved Instance listing state.
+ * </p>
  */
 public class InstanceCount implements Serializable {
 
+    /**
+     * The states of the listed Reserved Instances.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>available, sold, cancelled, pending
+     */
     private String state;
 
+    /**
+     * he number of listed Reserved Instances in the state specified by the
+     * <code>state</code>.
+     */
     private Integer instanceCount;
 
     /**
-     * Returns the value of the State property for this object.
+     * The states of the listed Reserved Instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, sold, cancelled, pending
      *
-     * @return The value of the State property for this object.
+     * @return The states of the listed Reserved Instances.
      *
      * @see ListingState
      */
@@ -40,12 +52,12 @@ public class InstanceCount implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The states of the listed Reserved Instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, sold, cancelled, pending
      *
-     * @param state The new value for the State property for this object.
+     * @param state The states of the listed Reserved Instances.
      *
      * @see ListingState
      */
@@ -54,14 +66,14 @@ public class InstanceCount implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The states of the listed Reserved Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, sold, cancelled, pending
      *
-     * @param state The new value for the State property for this object.
+     * @param state The states of the listed Reserved Instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -74,12 +86,12 @@ public class InstanceCount implements Serializable {
     }
 
     /**
-     * Sets the value of the State property for this object.
+     * The states of the listed Reserved Instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, sold, cancelled, pending
      *
-     * @param state The new value for the State property for this object.
+     * @param state The states of the listed Reserved Instances.
      *
      * @see ListingState
      */
@@ -88,14 +100,14 @@ public class InstanceCount implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The states of the listed Reserved Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, sold, cancelled, pending
      *
-     * @param state The new value for the State property for this object.
+     * @param state The states of the listed Reserved Instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -108,29 +120,35 @@ public class InstanceCount implements Serializable {
     }
 
     /**
-     * Returns the value of the InstanceCount property for this object.
+     * he number of listed Reserved Instances in the state specified by the
+     * <code>state</code>.
      *
-     * @return The value of the InstanceCount property for this object.
+     * @return he number of listed Reserved Instances in the state specified by the
+     *         <code>state</code>.
      */
     public Integer getInstanceCount() {
         return instanceCount;
     }
     
     /**
-     * Sets the value of the InstanceCount property for this object.
+     * he number of listed Reserved Instances in the state specified by the
+     * <code>state</code>.
      *
-     * @param instanceCount The new value for the InstanceCount property for this object.
+     * @param instanceCount he number of listed Reserved Instances in the state specified by the
+     *         <code>state</code>.
      */
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
     
     /**
-     * Sets the value of the InstanceCount property for this object.
+     * he number of listed Reserved Instances in the state specified by the
+     * <code>state</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceCount The new value for the InstanceCount property for this object.
+     * @param instanceCount he number of listed Reserved Instances in the state specified by the
+     *         <code>state</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

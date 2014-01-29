@@ -20,38 +20,51 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#cancelExportTask(CancelExportTaskRequest) CancelExportTask operation}.
- * 
+ * <p>
+ * Cancels an active export task. The request removes all artifacts of the export, including any partially-created Amazon S3 objects. If the export task
+ * is complete or is in the process of transferring the final disk image, the command fails and returns an error.
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelExportTask(CancelExportTaskRequest)
  */
 public class CancelExportTaskRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * The ID of the export task. This is the ID returned by
+     * <code>CreateInstanceExportTask</code>.
+     */
     private String exportTaskId;
 
     /**
-     * Returns the value of the ExportTaskId property for this object.
+     * The ID of the export task. This is the ID returned by
+     * <code>CreateInstanceExportTask</code>.
      *
-     * @return The value of the ExportTaskId property for this object.
+     * @return The ID of the export task. This is the ID returned by
+     *         <code>CreateInstanceExportTask</code>.
      */
     public String getExportTaskId() {
         return exportTaskId;
     }
     
     /**
-     * Sets the value of the ExportTaskId property for this object.
+     * The ID of the export task. This is the ID returned by
+     * <code>CreateInstanceExportTask</code>.
      *
-     * @param exportTaskId The new value for the ExportTaskId property for this object.
+     * @param exportTaskId The ID of the export task. This is the ID returned by
+     *         <code>CreateInstanceExportTask</code>.
      */
     public void setExportTaskId(String exportTaskId) {
         this.exportTaskId = exportTaskId;
     }
     
     /**
-     * Sets the value of the ExportTaskId property for this object.
+     * The ID of the export task. This is the ID returned by
+     * <code>CreateInstanceExportTask</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exportTaskId The new value for the ExportTaskId property for this object.
+     * @param exportTaskId The ID of the export task. This is the ID returned by
+     *         <code>CreateInstanceExportTask</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

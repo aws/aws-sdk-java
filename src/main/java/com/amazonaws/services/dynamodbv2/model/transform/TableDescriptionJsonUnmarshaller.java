@@ -46,6 +46,7 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AttributeDefinitions", targetDepth)) {
+                    context.nextToken();
                     tableDescription.setAttributeDefinitions(new ListUnmarshaller<AttributeDefinition>(AttributeDefinitionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
@@ -53,6 +54,7 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                     tableDescription.setTableName(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
+                    context.nextToken();
                     tableDescription.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("TableStatus", targetDepth)) {
@@ -76,9 +78,11 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                     tableDescription.setItemCount(LongJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LocalSecondaryIndexes", targetDepth)) {
+                    context.nextToken();
                     tableDescription.setLocalSecondaryIndexes(new ListUnmarshaller<LocalSecondaryIndexDescription>(LocalSecondaryIndexDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("GlobalSecondaryIndexes", targetDepth)) {
+                    context.nextToken();
                     tableDescription.setGlobalSecondaryIndexes(new ListUnmarshaller<GlobalSecondaryIndexDescription>(GlobalSecondaryIndexDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

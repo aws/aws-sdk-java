@@ -20,6 +20,9 @@ import com.amazonaws.util.json.JSONObject;
 
 import com.amazonaws.services.dynamodb.model.ConditionalCheckFailedException;
 
+/**
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.ConditionalCheckFailedExceptionUnmarshaller} instead.
+ */
 @Deprecated
 public class ConditionalCheckFailedExceptionUnmarshaller extends JsonErrorUnmarshaller {
 

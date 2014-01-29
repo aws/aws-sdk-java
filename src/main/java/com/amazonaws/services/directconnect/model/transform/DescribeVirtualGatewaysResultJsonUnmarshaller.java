@@ -46,6 +46,7 @@ public class DescribeVirtualGatewaysResultJsonUnmarshaller implements Unmarshall
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("virtualGateways", targetDepth)) {
+                    context.nextToken();
                     describeVirtualGatewaysResult.setVirtualGateways(new ListUnmarshaller<VirtualGateway>(VirtualGatewayJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

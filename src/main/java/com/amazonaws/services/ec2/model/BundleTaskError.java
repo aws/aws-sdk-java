@@ -18,45 +18,45 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents an error that occurred during a bundle task.
+ * Describes an error for BundleInstance.
  * </p>
  */
 public class BundleTaskError implements Serializable {
 
     /**
-     * Error code.
+     * The error code.
      */
     private String code;
 
     /**
-     * Error message.
+     * The error message.
      */
     private String message;
 
     /**
-     * Error code.
+     * The error code.
      *
-     * @return Error code.
+     * @return The error code.
      */
     public String getCode() {
         return code;
     }
     
     /**
-     * Error code.
+     * The error code.
      *
-     * @param code Error code.
+     * @param code The error code.
      */
     public void setCode(String code) {
         this.code = code;
     }
     
     /**
-     * Error code.
+     * The error code.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param code Error code.
+     * @param code The error code.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -67,29 +67,29 @@ public class BundleTaskError implements Serializable {
     }
 
     /**
-     * Error message.
+     * The error message.
      *
-     * @return Error message.
+     * @return The error message.
      */
     public String getMessage() {
         return message;
     }
     
     /**
-     * Error message.
+     * The error message.
      *
-     * @param message Error message.
+     * @param message The error message.
      */
     public void setMessage(String message) {
         this.message = message;
     }
     
     /**
-     * Error message.
+     * The error message.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param message Error message.
+     * @param message The error message.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

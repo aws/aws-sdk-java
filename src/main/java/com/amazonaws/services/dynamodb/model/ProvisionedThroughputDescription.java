@@ -17,6 +17,7 @@ import java.io.Serializable;
 
 /**
  * Provisioned Throughput Description
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.ProvisionedThroughputDescription} instead.
  */
 @Deprecated
 public class ProvisionedThroughputDescription  implements Serializable  {

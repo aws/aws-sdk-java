@@ -17,42 +17,75 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Price Schedule
+ * <p>
+ * Describes the price for a Reserved Instance.
+ * </p>
  */
 public class PriceSchedule implements Serializable {
 
+    /**
+     * The number of months remaining in the reservation. For example, 2 is
+     * the second to the last month before the capacity reservation expires.
+     */
     private Long term;
 
+    /**
+     * The fixed price for the term.
+     */
     private Double price;
 
+    /**
+     * The currency for transacting the Reserved Instance resale. At this
+     * time, the only supported currency is <code>USD</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>USD
+     */
     private String currencyCode;
 
+    /**
+     * The current price schedule, as determined by the term remaining for
+     * the Reserved Instance in the listing. <p>A specific price schedule is
+     * always in effect, but only one price schedule can be active at any
+     * time. Take, for example, a Reserved Instance listing that has five
+     * months remaining in its term. When you specify price schedules for
+     * five months and two months, this means that schedule 1, covering the
+     * first three months of the remaining term, will be active during months
+     * 5, 4, and 3. Then schedule 2, covering the last two months of the
+     * term, will be active for months 2 and 1.
+     */
     private Boolean active;
 
     /**
-     * Returns the value of the Term property for this object.
+     * The number of months remaining in the reservation. For example, 2 is
+     * the second to the last month before the capacity reservation expires.
      *
-     * @return The value of the Term property for this object.
+     * @return The number of months remaining in the reservation. For example, 2 is
+     *         the second to the last month before the capacity reservation expires.
      */
     public Long getTerm() {
         return term;
     }
     
     /**
-     * Sets the value of the Term property for this object.
+     * The number of months remaining in the reservation. For example, 2 is
+     * the second to the last month before the capacity reservation expires.
      *
-     * @param term The new value for the Term property for this object.
+     * @param term The number of months remaining in the reservation. For example, 2 is
+     *         the second to the last month before the capacity reservation expires.
      */
     public void setTerm(Long term) {
         this.term = term;
     }
     
     /**
-     * Sets the value of the Term property for this object.
+     * The number of months remaining in the reservation. For example, 2 is
+     * the second to the last month before the capacity reservation expires.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param term The new value for the Term property for this object.
+     * @param term The number of months remaining in the reservation. For example, 2 is
+     *         the second to the last month before the capacity reservation expires.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -63,29 +96,29 @@ public class PriceSchedule implements Serializable {
     }
 
     /**
-     * Returns the value of the Price property for this object.
+     * The fixed price for the term.
      *
-     * @return The value of the Price property for this object.
+     * @return The fixed price for the term.
      */
     public Double getPrice() {
         return price;
     }
     
     /**
-     * Sets the value of the Price property for this object.
+     * The fixed price for the term.
      *
-     * @param price The new value for the Price property for this object.
+     * @param price The fixed price for the term.
      */
     public void setPrice(Double price) {
         this.price = price;
     }
     
     /**
-     * Sets the value of the Price property for this object.
+     * The fixed price for the term.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param price The new value for the Price property for this object.
+     * @param price The fixed price for the term.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -96,12 +129,14 @@ public class PriceSchedule implements Serializable {
     }
 
     /**
-     * Returns the value of the CurrencyCode property for this object.
+     * The currency for transacting the Reserved Instance resale. At this
+     * time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @return The value of the CurrencyCode property for this object.
+     * @return The currency for transacting the Reserved Instance resale. At this
+     *         time, the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
      */
@@ -110,12 +145,14 @@ public class PriceSchedule implements Serializable {
     }
     
     /**
-     * Sets the value of the CurrencyCode property for this object.
+     * The currency for transacting the Reserved Instance resale. At this
+     * time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The new value for the CurrencyCode property for this object.
+     * @param currencyCode The currency for transacting the Reserved Instance resale. At this
+     *         time, the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
      */
@@ -124,14 +161,16 @@ public class PriceSchedule implements Serializable {
     }
     
     /**
-     * Sets the value of the CurrencyCode property for this object.
+     * The currency for transacting the Reserved Instance resale. At this
+     * time, the only supported currency is <code>USD</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The new value for the CurrencyCode property for this object.
+     * @param currencyCode The currency for transacting the Reserved Instance resale. At this
+     *         time, the only supported currency is <code>USD</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -144,12 +183,14 @@ public class PriceSchedule implements Serializable {
     }
 
     /**
-     * Sets the value of the CurrencyCode property for this object.
+     * The currency for transacting the Reserved Instance resale. At this
+     * time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The new value for the CurrencyCode property for this object.
+     * @param currencyCode The currency for transacting the Reserved Instance resale. At this
+     *         time, the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
      */
@@ -158,14 +199,16 @@ public class PriceSchedule implements Serializable {
     }
     
     /**
-     * Sets the value of the CurrencyCode property for this object.
+     * The currency for transacting the Reserved Instance resale. At this
+     * time, the only supported currency is <code>USD</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The new value for the CurrencyCode property for this object.
+     * @param currencyCode The currency for transacting the Reserved Instance resale. At this
+     *         time, the only supported currency is <code>USD</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -178,29 +221,77 @@ public class PriceSchedule implements Serializable {
     }
 
     /**
-     * Returns the value of the Active property for this object.
+     * The current price schedule, as determined by the term remaining for
+     * the Reserved Instance in the listing. <p>A specific price schedule is
+     * always in effect, but only one price schedule can be active at any
+     * time. Take, for example, a Reserved Instance listing that has five
+     * months remaining in its term. When you specify price schedules for
+     * five months and two months, this means that schedule 1, covering the
+     * first three months of the remaining term, will be active during months
+     * 5, 4, and 3. Then schedule 2, covering the last two months of the
+     * term, will be active for months 2 and 1.
      *
-     * @return The value of the Active property for this object.
+     * @return The current price schedule, as determined by the term remaining for
+     *         the Reserved Instance in the listing. <p>A specific price schedule is
+     *         always in effect, but only one price schedule can be active at any
+     *         time. Take, for example, a Reserved Instance listing that has five
+     *         months remaining in its term. When you specify price schedules for
+     *         five months and two months, this means that schedule 1, covering the
+     *         first three months of the remaining term, will be active during months
+     *         5, 4, and 3. Then schedule 2, covering the last two months of the
+     *         term, will be active for months 2 and 1.
      */
     public Boolean isActive() {
         return active;
     }
     
     /**
-     * Sets the value of the Active property for this object.
+     * The current price schedule, as determined by the term remaining for
+     * the Reserved Instance in the listing. <p>A specific price schedule is
+     * always in effect, but only one price schedule can be active at any
+     * time. Take, for example, a Reserved Instance listing that has five
+     * months remaining in its term. When you specify price schedules for
+     * five months and two months, this means that schedule 1, covering the
+     * first three months of the remaining term, will be active during months
+     * 5, 4, and 3. Then schedule 2, covering the last two months of the
+     * term, will be active for months 2 and 1.
      *
-     * @param active The new value for the Active property for this object.
+     * @param active The current price schedule, as determined by the term remaining for
+     *         the Reserved Instance in the listing. <p>A specific price schedule is
+     *         always in effect, but only one price schedule can be active at any
+     *         time. Take, for example, a Reserved Instance listing that has five
+     *         months remaining in its term. When you specify price schedules for
+     *         five months and two months, this means that schedule 1, covering the
+     *         first three months of the remaining term, will be active during months
+     *         5, 4, and 3. Then schedule 2, covering the last two months of the
+     *         term, will be active for months 2 and 1.
      */
     public void setActive(Boolean active) {
         this.active = active;
     }
     
     /**
-     * Sets the value of the Active property for this object.
+     * The current price schedule, as determined by the term remaining for
+     * the Reserved Instance in the listing. <p>A specific price schedule is
+     * always in effect, but only one price schedule can be active at any
+     * time. Take, for example, a Reserved Instance listing that has five
+     * months remaining in its term. When you specify price schedules for
+     * five months and two months, this means that schedule 1, covering the
+     * first three months of the remaining term, will be active during months
+     * 5, 4, and 3. Then schedule 2, covering the last two months of the
+     * term, will be active for months 2 and 1.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param active The new value for the Active property for this object.
+     * @param active The current price schedule, as determined by the term remaining for
+     *         the Reserved Instance in the listing. <p>A specific price schedule is
+     *         always in effect, but only one price schedule can be active at any
+     *         time. Take, for example, a Reserved Instance listing that has five
+     *         months remaining in its term. When you specify price schedules for
+     *         five months and two months, this means that schedule 1, covering the
+     *         first three months of the remaining term, will be active during months
+     *         5, 4, and 3. Then schedule 2, covering the last two months of the
+     *         term, will be active for months 2 and 1.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -211,9 +302,25 @@ public class PriceSchedule implements Serializable {
     }
 
     /**
-     * Returns the value of the Active property for this object.
+     * The current price schedule, as determined by the term remaining for
+     * the Reserved Instance in the listing. <p>A specific price schedule is
+     * always in effect, but only one price schedule can be active at any
+     * time. Take, for example, a Reserved Instance listing that has five
+     * months remaining in its term. When you specify price schedules for
+     * five months and two months, this means that schedule 1, covering the
+     * first three months of the remaining term, will be active during months
+     * 5, 4, and 3. Then schedule 2, covering the last two months of the
+     * term, will be active for months 2 and 1.
      *
-     * @return The value of the Active property for this object.
+     * @return The current price schedule, as determined by the term remaining for
+     *         the Reserved Instance in the listing. <p>A specific price schedule is
+     *         always in effect, but only one price schedule can be active at any
+     *         time. Take, for example, a Reserved Instance listing that has five
+     *         months remaining in its term. When you specify price schedules for
+     *         five months and two months, this means that schedule 1, covering the
+     *         first three months of the remaining term, will be active during months
+     *         5, 4, and 3. Then schedule 2, covering the last two months of the
+     *         term, will be active for months 2 and 1.
      */
     public Boolean getActive() {
         return active;

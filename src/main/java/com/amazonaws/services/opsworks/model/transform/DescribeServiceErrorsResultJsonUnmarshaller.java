@@ -46,6 +46,7 @@ public class DescribeServiceErrorsResultJsonUnmarshaller implements Unmarshaller
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ServiceErrors", targetDepth)) {
+                    context.nextToken();
                     describeServiceErrorsResult.setServiceErrors(new ListUnmarshaller<ServiceError>(ServiceErrorJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

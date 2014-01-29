@@ -46,6 +46,7 @@ public class ActivityTypeInfosJsonUnmarshaller implements Unmarshaller<ActivityT
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("typeInfos", targetDepth)) {
+                    context.nextToken();
                     activityTypeInfos.setTypeInfos(new ListUnmarshaller<ActivityTypeInfo>(ActivityTypeInfoJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {

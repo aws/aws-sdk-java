@@ -18,57 +18,82 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
+ * Describes an Elastic IP address.
  * </p>
  */
 public class Address implements Serializable {
 
     /**
-     * 
+     * The ID of the instance the address is associated with (if any).
      */
     private String instanceId;
 
     /**
-     * 
+     * The Elastic IP address.
      */
     private String publicIp;
 
+    /**
+     * The ID representing the allocation of the address for use with
+     * EC2-VPC.
+     */
     private String allocationId;
 
+    /**
+     * The ID representing the association of the address with an instance in
+     * a VPC.
+     */
     private String associationId;
 
+    /**
+     * Indicates whether this Elastic IP address is for use with instances in
+     * EC2-Classic (<code>standard</code>) or instances in a VPC
+     * (<code>vpc</code>).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>vpc, standard
+     */
     private String domain;
 
+    /**
+     * The ID of the network interface.
+     */
     private String networkInterfaceId;
 
+    /**
+     * The ID of the AWS account that owns the network interface.
+     */
     private String networkInterfaceOwnerId;
 
+    /**
+     * The private IP address associated with the Elastic IP address.
+     */
     private String privateIpAddress;
 
     /**
-     * 
+     * The ID of the instance the address is associated with (if any).
      *
-     * @return 
+     * @return The ID of the instance the address is associated with (if any).
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * 
+     * The ID of the instance the address is associated with (if any).
      *
-     * @param instanceId 
+     * @param instanceId The ID of the instance the address is associated with (if any).
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * 
+     * The ID of the instance the address is associated with (if any).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId 
+     * @param instanceId The ID of the instance the address is associated with (if any).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -79,29 +104,29 @@ public class Address implements Serializable {
     }
 
     /**
-     * 
+     * The Elastic IP address.
      *
-     * @return 
+     * @return The Elastic IP address.
      */
     public String getPublicIp() {
         return publicIp;
     }
     
     /**
-     * 
+     * The Elastic IP address.
      *
-     * @param publicIp 
+     * @param publicIp The Elastic IP address.
      */
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
     
     /**
-     * 
+     * The Elastic IP address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicIp 
+     * @param publicIp The Elastic IP address.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -112,29 +137,35 @@ public class Address implements Serializable {
     }
 
     /**
-     * Returns the value of the AllocationId property for this object.
+     * The ID representing the allocation of the address for use with
+     * EC2-VPC.
      *
-     * @return The value of the AllocationId property for this object.
+     * @return The ID representing the allocation of the address for use with
+     *         EC2-VPC.
      */
     public String getAllocationId() {
         return allocationId;
     }
     
     /**
-     * Sets the value of the AllocationId property for this object.
+     * The ID representing the allocation of the address for use with
+     * EC2-VPC.
      *
-     * @param allocationId The new value for the AllocationId property for this object.
+     * @param allocationId The ID representing the allocation of the address for use with
+     *         EC2-VPC.
      */
     public void setAllocationId(String allocationId) {
         this.allocationId = allocationId;
     }
     
     /**
-     * Sets the value of the AllocationId property for this object.
+     * The ID representing the allocation of the address for use with
+     * EC2-VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allocationId The new value for the AllocationId property for this object.
+     * @param allocationId The ID representing the allocation of the address for use with
+     *         EC2-VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -145,29 +176,35 @@ public class Address implements Serializable {
     }
 
     /**
-     * Returns the value of the AssociationId property for this object.
+     * The ID representing the association of the address with an instance in
+     * a VPC.
      *
-     * @return The value of the AssociationId property for this object.
+     * @return The ID representing the association of the address with an instance in
+     *         a VPC.
      */
     public String getAssociationId() {
         return associationId;
     }
     
     /**
-     * Sets the value of the AssociationId property for this object.
+     * The ID representing the association of the address with an instance in
+     * a VPC.
      *
-     * @param associationId The new value for the AssociationId property for this object.
+     * @param associationId The ID representing the association of the address with an instance in
+     *         a VPC.
      */
     public void setAssociationId(String associationId) {
         this.associationId = associationId;
     }
     
     /**
-     * Sets the value of the AssociationId property for this object.
+     * The ID representing the association of the address with an instance in
+     * a VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param associationId The new value for the AssociationId property for this object.
+     * @param associationId The ID representing the association of the address with an instance in
+     *         a VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -178,12 +215,16 @@ public class Address implements Serializable {
     }
 
     /**
-     * Returns the value of the Domain property for this object.
+     * Indicates whether this Elastic IP address is for use with instances in
+     * EC2-Classic (<code>standard</code>) or instances in a VPC
+     * (<code>vpc</code>).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>vpc, standard
      *
-     * @return The value of the Domain property for this object.
+     * @return Indicates whether this Elastic IP address is for use with instances in
+     *         EC2-Classic (<code>standard</code>) or instances in a VPC
+     *         (<code>vpc</code>).
      *
      * @see DomainType
      */
@@ -192,12 +233,16 @@ public class Address implements Serializable {
     }
     
     /**
-     * Sets the value of the Domain property for this object.
+     * Indicates whether this Elastic IP address is for use with instances in
+     * EC2-Classic (<code>standard</code>) or instances in a VPC
+     * (<code>vpc</code>).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>vpc, standard
      *
-     * @param domain The new value for the Domain property for this object.
+     * @param domain Indicates whether this Elastic IP address is for use with instances in
+     *         EC2-Classic (<code>standard</code>) or instances in a VPC
+     *         (<code>vpc</code>).
      *
      * @see DomainType
      */
@@ -206,14 +251,18 @@ public class Address implements Serializable {
     }
     
     /**
-     * Sets the value of the Domain property for this object.
+     * Indicates whether this Elastic IP address is for use with instances in
+     * EC2-Classic (<code>standard</code>) or instances in a VPC
+     * (<code>vpc</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>vpc, standard
      *
-     * @param domain The new value for the Domain property for this object.
+     * @param domain Indicates whether this Elastic IP address is for use with instances in
+     *         EC2-Classic (<code>standard</code>) or instances in a VPC
+     *         (<code>vpc</code>).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -226,12 +275,16 @@ public class Address implements Serializable {
     }
 
     /**
-     * Sets the value of the Domain property for this object.
+     * Indicates whether this Elastic IP address is for use with instances in
+     * EC2-Classic (<code>standard</code>) or instances in a VPC
+     * (<code>vpc</code>).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>vpc, standard
      *
-     * @param domain The new value for the Domain property for this object.
+     * @param domain Indicates whether this Elastic IP address is for use with instances in
+     *         EC2-Classic (<code>standard</code>) or instances in a VPC
+     *         (<code>vpc</code>).
      *
      * @see DomainType
      */
@@ -240,14 +293,18 @@ public class Address implements Serializable {
     }
     
     /**
-     * Sets the value of the Domain property for this object.
+     * Indicates whether this Elastic IP address is for use with instances in
+     * EC2-Classic (<code>standard</code>) or instances in a VPC
+     * (<code>vpc</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>vpc, standard
      *
-     * @param domain The new value for the Domain property for this object.
+     * @param domain Indicates whether this Elastic IP address is for use with instances in
+     *         EC2-Classic (<code>standard</code>) or instances in a VPC
+     *         (<code>vpc</code>).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -260,29 +317,29 @@ public class Address implements Serializable {
     }
 
     /**
-     * Returns the value of the NetworkInterfaceId property for this object.
+     * The ID of the network interface.
      *
-     * @return The value of the NetworkInterfaceId property for this object.
+     * @return The ID of the network interface.
      */
     public String getNetworkInterfaceId() {
         return networkInterfaceId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceId property for this object.
+     * The ID of the network interface.
      *
-     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     * @param networkInterfaceId The ID of the network interface.
      */
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceId property for this object.
+     * The ID of the network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     * @param networkInterfaceId The ID of the network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -293,34 +350,29 @@ public class Address implements Serializable {
     }
 
     /**
-     * Returns the value of the NetworkInterfaceOwnerId property for this
-     * object.
+     * The ID of the AWS account that owns the network interface.
      *
-     * @return The value of the NetworkInterfaceOwnerId property for this object.
+     * @return The ID of the AWS account that owns the network interface.
      */
     public String getNetworkInterfaceOwnerId() {
         return networkInterfaceOwnerId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceOwnerId property for this
-     * object.
+     * The ID of the AWS account that owns the network interface.
      *
-     * @param networkInterfaceOwnerId The new value for the NetworkInterfaceOwnerId property for this
-     *         object.
+     * @param networkInterfaceOwnerId The ID of the AWS account that owns the network interface.
      */
     public void setNetworkInterfaceOwnerId(String networkInterfaceOwnerId) {
         this.networkInterfaceOwnerId = networkInterfaceOwnerId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceOwnerId property for this
-     * object.
+     * The ID of the AWS account that owns the network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterfaceOwnerId The new value for the NetworkInterfaceOwnerId property for this
-     *         object.
+     * @param networkInterfaceOwnerId The ID of the AWS account that owns the network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -331,29 +383,29 @@ public class Address implements Serializable {
     }
 
     /**
-     * Returns the value of the PrivateIpAddress property for this object.
+     * The private IP address associated with the Elastic IP address.
      *
-     * @return The value of the PrivateIpAddress property for this object.
+     * @return The private IP address associated with the Elastic IP address.
      */
     public String getPrivateIpAddress() {
         return privateIpAddress;
     }
     
     /**
-     * Sets the value of the PrivateIpAddress property for this object.
+     * The private IP address associated with the Elastic IP address.
      *
-     * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     * @param privateIpAddress The private IP address associated with the Elastic IP address.
      */
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
     
     /**
-     * Sets the value of the PrivateIpAddress property for this object.
+     * The private IP address associated with the Elastic IP address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     * @param privateIpAddress The private IP address associated with the Elastic IP address.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

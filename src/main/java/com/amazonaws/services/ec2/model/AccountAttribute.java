@@ -17,38 +17,46 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Account Attribute
+ * <p>
+ * Describes an account attribute.
+ * </p>
  */
 public class AccountAttribute implements Serializable {
 
+    /**
+     * The name of the account attribute.
+     */
     private String attributeName;
 
+    /**
+     * One or more values for the account attribute.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<AccountAttributeValue> attributeValues;
 
     /**
-     * Returns the value of the AttributeName property for this object.
+     * The name of the account attribute.
      *
-     * @return The value of the AttributeName property for this object.
+     * @return The name of the account attribute.
      */
     public String getAttributeName() {
         return attributeName;
     }
     
     /**
-     * Sets the value of the AttributeName property for this object.
+     * The name of the account attribute.
      *
-     * @param attributeName The new value for the AttributeName property for this object.
+     * @param attributeName The name of the account attribute.
      */
     public void setAttributeName(String attributeName) {
         this.attributeName = attributeName;
     }
     
     /**
-     * Sets the value of the AttributeName property for this object.
+     * The name of the account attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeName The new value for the AttributeName property for this object.
+     * @param attributeName The name of the account attribute.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -59,9 +67,9 @@ public class AccountAttribute implements Serializable {
     }
 
     /**
-     * Returns the value of the AttributeValues property for this object.
+     * One or more values for the account attribute.
      *
-     * @return The value of the AttributeValues property for this object.
+     * @return One or more values for the account attribute.
      */
     public java.util.List<AccountAttributeValue> getAttributeValues() {
         if (attributeValues == null) {
@@ -72,9 +80,9 @@ public class AccountAttribute implements Serializable {
     }
     
     /**
-     * Sets the value of the AttributeValues property for this object.
+     * One or more values for the account attribute.
      *
-     * @param attributeValues The new value for the AttributeValues property for this object.
+     * @param attributeValues One or more values for the account attribute.
      */
     public void setAttributeValues(java.util.Collection<AccountAttributeValue> attributeValues) {
         if (attributeValues == null) {
@@ -87,11 +95,11 @@ public class AccountAttribute implements Serializable {
     }
     
     /**
-     * Sets the value of the AttributeValues property for this object.
+     * One or more values for the account attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeValues The new value for the AttributeValues property for this object.
+     * @param attributeValues One or more values for the account attribute.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -105,11 +113,11 @@ public class AccountAttribute implements Serializable {
     }
     
     /**
-     * Sets the value of the AttributeValues property for this object.
+     * One or more values for the account attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeValues The new value for the AttributeValues property for this object.
+     * @param attributeValues One or more values for the account attribute.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

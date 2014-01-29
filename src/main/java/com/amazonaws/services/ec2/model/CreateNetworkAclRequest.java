@@ -23,8 +23,11 @@ import com.amazonaws.services.ec2.model.transform.CreateNetworkAclRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createNetworkAcl(CreateNetworkAclRequest) CreateNetworkAcl operation}.
  * <p>
- * Creates a new network ACL in a VPC. Network ACLs provide an optional layer of security (on top of security groups) for the instances in your VPC. For
- * more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide.
+ * Creates a network ACL in a VPC. Network ACLs provide an optional layer of security (in addition to security groups) for the instances in your VPC.
+ * </p>
+ * <p>
+ * For more information about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a> in the
+ * <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createNetworkAcl(CreateNetworkAclRequest)
@@ -32,34 +35,34 @@ import com.amazonaws.services.ec2.model.transform.CreateNetworkAclRequestMarshal
 public class CreateNetworkAclRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateNetworkAclRequest> {
 
     /**
-     * The ID of the VPC where the network ACL will be created.
+     * The ID of the VPC.
      */
     private String vpcId;
 
     /**
-     * The ID of the VPC where the network ACL will be created.
+     * The ID of the VPC.
      *
-     * @return The ID of the VPC where the network ACL will be created.
+     * @return The ID of the VPC.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * The ID of the VPC where the network ACL will be created.
+     * The ID of the VPC.
      *
-     * @param vpcId The ID of the VPC where the network ACL will be created.
+     * @param vpcId The ID of the VPC.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * The ID of the VPC where the network ACL will be created.
+     * The ID of the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The ID of the VPC where the network ACL will be created.
+     * @param vpcId The ID of the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

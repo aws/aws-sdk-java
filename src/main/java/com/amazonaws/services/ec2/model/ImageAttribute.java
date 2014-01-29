@@ -18,75 +18,75 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents an attribute of an <i>Amazon Machine Image</i> (AMI).
+ * Describes an image attribute.
  * </p>
  */
 public class ImageAttribute implements Serializable {
 
     /**
-     * The ID of the associated AMI.
+     * The ID of the AMI.
      */
     private String imageId;
 
     /**
-     * Launch permissions for the associated AMI.
+     * One or more launch permissions.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission> launchPermissions;
 
     /**
-     * Product codes for the associated AMI.
+     * One or more product codes.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode> productCodes;
 
     /**
-     * Kernel ID of the associated AMI.
+     * The kernel ID.
      */
     private String kernelId;
 
     /**
-     * Ramdisk ID of the associated AMI.
+     * The RAM disk ID.
      */
     private String ramdiskId;
 
     /**
-     * User-created description of the associated AMI.
+     * A description for the AMI.
      */
     private String description;
 
     /**
-     * String value
+     * 
      */
     private String sriovNetSupport;
 
     /**
-     * Block device mappings for the associated AMI.
+     * One or more block device mapping entries.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
 
     /**
-     * The ID of the associated AMI.
+     * The ID of the AMI.
      *
-     * @return The ID of the associated AMI.
+     * @return The ID of the AMI.
      */
     public String getImageId() {
         return imageId;
     }
     
     /**
-     * The ID of the associated AMI.
+     * The ID of the AMI.
      *
-     * @param imageId The ID of the associated AMI.
+     * @param imageId The ID of the AMI.
      */
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
     
     /**
-     * The ID of the associated AMI.
+     * The ID of the AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param imageId The ID of the associated AMI.
+     * @param imageId The ID of the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -97,9 +97,9 @@ public class ImageAttribute implements Serializable {
     }
 
     /**
-     * Launch permissions for the associated AMI.
+     * One or more launch permissions.
      *
-     * @return Launch permissions for the associated AMI.
+     * @return One or more launch permissions.
      */
     public java.util.List<LaunchPermission> getLaunchPermissions() {
         if (launchPermissions == null) {
@@ -110,9 +110,9 @@ public class ImageAttribute implements Serializable {
     }
     
     /**
-     * Launch permissions for the associated AMI.
+     * One or more launch permissions.
      *
-     * @param launchPermissions Launch permissions for the associated AMI.
+     * @param launchPermissions One or more launch permissions.
      */
     public void setLaunchPermissions(java.util.Collection<LaunchPermission> launchPermissions) {
         if (launchPermissions == null) {
@@ -125,11 +125,11 @@ public class ImageAttribute implements Serializable {
     }
     
     /**
-     * Launch permissions for the associated AMI.
+     * One or more launch permissions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchPermissions Launch permissions for the associated AMI.
+     * @param launchPermissions One or more launch permissions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -143,11 +143,11 @@ public class ImageAttribute implements Serializable {
     }
     
     /**
-     * Launch permissions for the associated AMI.
+     * One or more launch permissions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchPermissions Launch permissions for the associated AMI.
+     * @param launchPermissions One or more launch permissions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -165,9 +165,9 @@ public class ImageAttribute implements Serializable {
     }
 
     /**
-     * Product codes for the associated AMI.
+     * One or more product codes.
      *
-     * @return Product codes for the associated AMI.
+     * @return One or more product codes.
      */
     public java.util.List<ProductCode> getProductCodes() {
         if (productCodes == null) {
@@ -178,9 +178,9 @@ public class ImageAttribute implements Serializable {
     }
     
     /**
-     * Product codes for the associated AMI.
+     * One or more product codes.
      *
-     * @param productCodes Product codes for the associated AMI.
+     * @param productCodes One or more product codes.
      */
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
         if (productCodes == null) {
@@ -193,11 +193,11 @@ public class ImageAttribute implements Serializable {
     }
     
     /**
-     * Product codes for the associated AMI.
+     * One or more product codes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param productCodes Product codes for the associated AMI.
+     * @param productCodes One or more product codes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -211,11 +211,11 @@ public class ImageAttribute implements Serializable {
     }
     
     /**
-     * Product codes for the associated AMI.
+     * One or more product codes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param productCodes Product codes for the associated AMI.
+     * @param productCodes One or more product codes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -233,29 +233,29 @@ public class ImageAttribute implements Serializable {
     }
 
     /**
-     * Kernel ID of the associated AMI.
+     * The kernel ID.
      *
-     * @return Kernel ID of the associated AMI.
+     * @return The kernel ID.
      */
     public String getKernelId() {
         return kernelId;
     }
     
     /**
-     * Kernel ID of the associated AMI.
+     * The kernel ID.
      *
-     * @param kernelId Kernel ID of the associated AMI.
+     * @param kernelId The kernel ID.
      */
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
     
     /**
-     * Kernel ID of the associated AMI.
+     * The kernel ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param kernelId Kernel ID of the associated AMI.
+     * @param kernelId The kernel ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -266,29 +266,29 @@ public class ImageAttribute implements Serializable {
     }
 
     /**
-     * Ramdisk ID of the associated AMI.
+     * The RAM disk ID.
      *
-     * @return Ramdisk ID of the associated AMI.
+     * @return The RAM disk ID.
      */
     public String getRamdiskId() {
         return ramdiskId;
     }
     
     /**
-     * Ramdisk ID of the associated AMI.
+     * The RAM disk ID.
      *
-     * @param ramdiskId Ramdisk ID of the associated AMI.
+     * @param ramdiskId The RAM disk ID.
      */
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
     
     /**
-     * Ramdisk ID of the associated AMI.
+     * The RAM disk ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ramdiskId Ramdisk ID of the associated AMI.
+     * @param ramdiskId The RAM disk ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -299,29 +299,29 @@ public class ImageAttribute implements Serializable {
     }
 
     /**
-     * User-created description of the associated AMI.
+     * A description for the AMI.
      *
-     * @return User-created description of the associated AMI.
+     * @return A description for the AMI.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * User-created description of the associated AMI.
+     * A description for the AMI.
      *
-     * @param description User-created description of the associated AMI.
+     * @param description A description for the AMI.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * User-created description of the associated AMI.
+     * A description for the AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description User-created description of the associated AMI.
+     * @param description A description for the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -332,29 +332,29 @@ public class ImageAttribute implements Serializable {
     }
 
     /**
-     * String value
+     * 
      *
-     * @return String value
+     * @return 
      */
     public String getSriovNetSupport() {
         return sriovNetSupport;
     }
     
     /**
-     * String value
+     * 
      *
-     * @param sriovNetSupport String value
+     * @param sriovNetSupport 
      */
     public void setSriovNetSupport(String sriovNetSupport) {
         this.sriovNetSupport = sriovNetSupport;
     }
     
     /**
-     * String value
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sriovNetSupport String value
+     * @param sriovNetSupport 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -365,9 +365,9 @@ public class ImageAttribute implements Serializable {
     }
 
     /**
-     * Block device mappings for the associated AMI.
+     * One or more block device mapping entries.
      *
-     * @return Block device mappings for the associated AMI.
+     * @return One or more block device mapping entries.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
@@ -378,9 +378,9 @@ public class ImageAttribute implements Serializable {
     }
     
     /**
-     * Block device mappings for the associated AMI.
+     * One or more block device mapping entries.
      *
-     * @param blockDeviceMappings Block device mappings for the associated AMI.
+     * @param blockDeviceMappings One or more block device mapping entries.
      */
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -393,11 +393,11 @@ public class ImageAttribute implements Serializable {
     }
     
     /**
-     * Block device mappings for the associated AMI.
+     * One or more block device mapping entries.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param blockDeviceMappings Block device mappings for the associated AMI.
+     * @param blockDeviceMappings One or more block device mapping entries.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -411,11 +411,11 @@ public class ImageAttribute implements Serializable {
     }
     
     /**
-     * Block device mappings for the associated AMI.
+     * One or more block device mapping entries.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param blockDeviceMappings Block device mappings for the associated AMI.
+     * @param blockDeviceMappings One or more block device mapping entries.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

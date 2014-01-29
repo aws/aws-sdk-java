@@ -17,40 +17,51 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Instance Network Interface Association
+ * <p>
+ * Describes association information for an Elastic IP address.
+ * </p>
  */
 public class InstanceNetworkInterfaceAssociation implements Serializable {
 
+    /**
+     * The address of the Elastic IP address bound to the network interface.
+     */
     private String publicIp;
 
+    /**
+     * The public DNS name.
+     */
     private String publicDnsName;
 
+    /**
+     * The ID of the owner of the Elastic IP address.
+     */
     private String ipOwnerId;
 
     /**
-     * Returns the value of the PublicIp property for this object.
+     * The address of the Elastic IP address bound to the network interface.
      *
-     * @return The value of the PublicIp property for this object.
+     * @return The address of the Elastic IP address bound to the network interface.
      */
     public String getPublicIp() {
         return publicIp;
     }
     
     /**
-     * Sets the value of the PublicIp property for this object.
+     * The address of the Elastic IP address bound to the network interface.
      *
-     * @param publicIp The new value for the PublicIp property for this object.
+     * @param publicIp The address of the Elastic IP address bound to the network interface.
      */
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
     
     /**
-     * Sets the value of the PublicIp property for this object.
+     * The address of the Elastic IP address bound to the network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicIp The new value for the PublicIp property for this object.
+     * @param publicIp The address of the Elastic IP address bound to the network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -61,29 +72,29 @@ public class InstanceNetworkInterfaceAssociation implements Serializable {
     }
 
     /**
-     * Returns the value of the PublicDnsName property for this object.
+     * The public DNS name.
      *
-     * @return The value of the PublicDnsName property for this object.
+     * @return The public DNS name.
      */
     public String getPublicDnsName() {
         return publicDnsName;
     }
     
     /**
-     * Sets the value of the PublicDnsName property for this object.
+     * The public DNS name.
      *
-     * @param publicDnsName The new value for the PublicDnsName property for this object.
+     * @param publicDnsName The public DNS name.
      */
     public void setPublicDnsName(String publicDnsName) {
         this.publicDnsName = publicDnsName;
     }
     
     /**
-     * Sets the value of the PublicDnsName property for this object.
+     * The public DNS name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicDnsName The new value for the PublicDnsName property for this object.
+     * @param publicDnsName The public DNS name.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -94,29 +105,29 @@ public class InstanceNetworkInterfaceAssociation implements Serializable {
     }
 
     /**
-     * Returns the value of the IpOwnerId property for this object.
+     * The ID of the owner of the Elastic IP address.
      *
-     * @return The value of the IpOwnerId property for this object.
+     * @return The ID of the owner of the Elastic IP address.
      */
     public String getIpOwnerId() {
         return ipOwnerId;
     }
     
     /**
-     * Sets the value of the IpOwnerId property for this object.
+     * The ID of the owner of the Elastic IP address.
      *
-     * @param ipOwnerId The new value for the IpOwnerId property for this object.
+     * @param ipOwnerId The ID of the owner of the Elastic IP address.
      */
     public void setIpOwnerId(String ipOwnerId) {
         this.ipOwnerId = ipOwnerId;
     }
     
     /**
-     * Sets the value of the IpOwnerId property for this object.
+     * The ID of the owner of the Elastic IP address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ipOwnerId The new value for the IpOwnerId property for this object.
+     * @param ipOwnerId The ID of the owner of the Elastic IP address.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

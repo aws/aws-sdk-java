@@ -27,6 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * Get Item Result JSON Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.GetItemResultJsonUnmarshaller} instead.
  */
 @Deprecated
 public class GetItemResultJsonUnmarshaller implements Unmarshaller<GetItemResult, JsonUnmarshallerContext> {

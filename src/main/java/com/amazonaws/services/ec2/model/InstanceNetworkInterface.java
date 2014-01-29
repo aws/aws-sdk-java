@@ -17,60 +17,106 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Instance Network Interface
+ * <p>
+ * Describes a network interface.
+ * </p>
  */
 public class InstanceNetworkInterface implements Serializable {
 
+    /**
+     * The ID of the network interface.
+     */
     private String networkInterfaceId;
 
+    /**
+     * The ID of the subnet.
+     */
     private String subnetId;
 
+    /**
+     * The ID of the VPC.
+     */
     private String vpcId;
 
+    /**
+     * The description.
+     */
     private String description;
 
+    /**
+     * The ID of the AWS account that created the network interface.
+     */
     private String ownerId;
 
+    /**
+     * The status of the network interface.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>available, attaching, in-use, detaching
+     */
     private String status;
 
+    /**
+     * The IP address of the network interface within the subnet.
+     */
     private String privateIpAddress;
 
+    /**
+     * The private DNS name.
+     */
     private String privateDnsName;
 
+    /**
+     * Indicates whether to validate network traffic to or from this network
+     * interface.
+     */
     private Boolean sourceDestCheck;
 
+    /**
+     * One or more security groups.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> groups;
 
+    /**
+     * The network interface attachment.
+     */
     private InstanceNetworkInterfaceAttachment attachment;
 
+    /**
+     * The association information for an Elastic IP associated with the
+     * network interface.
+     */
     private InstanceNetworkInterfaceAssociation association;
 
+    /**
+     * The private IP addresses associated with the network interface.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstancePrivateIpAddress> privateIpAddresses;
 
     /**
-     * Returns the value of the NetworkInterfaceId property for this object.
+     * The ID of the network interface.
      *
-     * @return The value of the NetworkInterfaceId property for this object.
+     * @return The ID of the network interface.
      */
     public String getNetworkInterfaceId() {
         return networkInterfaceId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceId property for this object.
+     * The ID of the network interface.
      *
-     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     * @param networkInterfaceId The ID of the network interface.
      */
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceId property for this object.
+     * The ID of the network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     * @param networkInterfaceId The ID of the network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -81,29 +127,29 @@ public class InstanceNetworkInterface implements Serializable {
     }
 
     /**
-     * Returns the value of the SubnetId property for this object.
+     * The ID of the subnet.
      *
-     * @return The value of the SubnetId property for this object.
+     * @return The ID of the subnet.
      */
     public String getSubnetId() {
         return subnetId;
     }
     
     /**
-     * Sets the value of the SubnetId property for this object.
+     * The ID of the subnet.
      *
-     * @param subnetId The new value for the SubnetId property for this object.
+     * @param subnetId The ID of the subnet.
      */
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
     
     /**
-     * Sets the value of the SubnetId property for this object.
+     * The ID of the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetId The new value for the SubnetId property for this object.
+     * @param subnetId The ID of the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -114,29 +160,29 @@ public class InstanceNetworkInterface implements Serializable {
     }
 
     /**
-     * Returns the value of the VpcId property for this object.
+     * The ID of the VPC.
      *
-     * @return The value of the VpcId property for this object.
+     * @return The ID of the VPC.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * The ID of the VPC.
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId The ID of the VPC.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * The ID of the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId The ID of the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -147,29 +193,29 @@ public class InstanceNetworkInterface implements Serializable {
     }
 
     /**
-     * Returns the value of the Description property for this object.
+     * The description.
      *
-     * @return The value of the Description property for this object.
+     * @return The description.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * The description.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description The description.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * The description.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description The description.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -180,29 +226,29 @@ public class InstanceNetworkInterface implements Serializable {
     }
 
     /**
-     * Returns the value of the OwnerId property for this object.
+     * The ID of the AWS account that created the network interface.
      *
-     * @return The value of the OwnerId property for this object.
+     * @return The ID of the AWS account that created the network interface.
      */
     public String getOwnerId() {
         return ownerId;
     }
     
     /**
-     * Sets the value of the OwnerId property for this object.
+     * The ID of the AWS account that created the network interface.
      *
-     * @param ownerId The new value for the OwnerId property for this object.
+     * @param ownerId The ID of the AWS account that created the network interface.
      */
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
     
     /**
-     * Sets the value of the OwnerId property for this object.
+     * The ID of the AWS account that created the network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ownerId The new value for the OwnerId property for this object.
+     * @param ownerId The ID of the AWS account that created the network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -213,12 +259,12 @@ public class InstanceNetworkInterface implements Serializable {
     }
 
     /**
-     * Returns the value of the Status property for this object.
+     * The status of the network interface.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, attaching, in-use, detaching
      *
-     * @return The value of the Status property for this object.
+     * @return The status of the network interface.
      *
      * @see NetworkInterfaceStatus
      */
@@ -227,12 +273,12 @@ public class InstanceNetworkInterface implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status of the network interface.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, attaching, in-use, detaching
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of the network interface.
      *
      * @see NetworkInterfaceStatus
      */
@@ -241,14 +287,14 @@ public class InstanceNetworkInterface implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status of the network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, attaching, in-use, detaching
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of the network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -261,12 +307,12 @@ public class InstanceNetworkInterface implements Serializable {
     }
 
     /**
-     * Sets the value of the Status property for this object.
+     * The status of the network interface.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, attaching, in-use, detaching
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of the network interface.
      *
      * @see NetworkInterfaceStatus
      */
@@ -275,14 +321,14 @@ public class InstanceNetworkInterface implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status of the network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available, attaching, in-use, detaching
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of the network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -295,29 +341,29 @@ public class InstanceNetworkInterface implements Serializable {
     }
 
     /**
-     * Returns the value of the PrivateIpAddress property for this object.
+     * The IP address of the network interface within the subnet.
      *
-     * @return The value of the PrivateIpAddress property for this object.
+     * @return The IP address of the network interface within the subnet.
      */
     public String getPrivateIpAddress() {
         return privateIpAddress;
     }
     
     /**
-     * Sets the value of the PrivateIpAddress property for this object.
+     * The IP address of the network interface within the subnet.
      *
-     * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     * @param privateIpAddress The IP address of the network interface within the subnet.
      */
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
     
     /**
-     * Sets the value of the PrivateIpAddress property for this object.
+     * The IP address of the network interface within the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     * @param privateIpAddress The IP address of the network interface within the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -328,29 +374,29 @@ public class InstanceNetworkInterface implements Serializable {
     }
 
     /**
-     * Returns the value of the PrivateDnsName property for this object.
+     * The private DNS name.
      *
-     * @return The value of the PrivateDnsName property for this object.
+     * @return The private DNS name.
      */
     public String getPrivateDnsName() {
         return privateDnsName;
     }
     
     /**
-     * Sets the value of the PrivateDnsName property for this object.
+     * The private DNS name.
      *
-     * @param privateDnsName The new value for the PrivateDnsName property for this object.
+     * @param privateDnsName The private DNS name.
      */
     public void setPrivateDnsName(String privateDnsName) {
         this.privateDnsName = privateDnsName;
     }
     
     /**
-     * Sets the value of the PrivateDnsName property for this object.
+     * The private DNS name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param privateDnsName The new value for the PrivateDnsName property for this object.
+     * @param privateDnsName The private DNS name.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -361,29 +407,35 @@ public class InstanceNetworkInterface implements Serializable {
     }
 
     /**
-     * Returns the value of the SourceDestCheck property for this object.
+     * Indicates whether to validate network traffic to or from this network
+     * interface.
      *
-     * @return The value of the SourceDestCheck property for this object.
+     * @return Indicates whether to validate network traffic to or from this network
+     *         interface.
      */
     public Boolean isSourceDestCheck() {
         return sourceDestCheck;
     }
     
     /**
-     * Sets the value of the SourceDestCheck property for this object.
+     * Indicates whether to validate network traffic to or from this network
+     * interface.
      *
-     * @param sourceDestCheck The new value for the SourceDestCheck property for this object.
+     * @param sourceDestCheck Indicates whether to validate network traffic to or from this network
+     *         interface.
      */
     public void setSourceDestCheck(Boolean sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
     }
     
     /**
-     * Sets the value of the SourceDestCheck property for this object.
+     * Indicates whether to validate network traffic to or from this network
+     * interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceDestCheck The new value for the SourceDestCheck property for this object.
+     * @param sourceDestCheck Indicates whether to validate network traffic to or from this network
+     *         interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -394,18 +446,20 @@ public class InstanceNetworkInterface implements Serializable {
     }
 
     /**
-     * Returns the value of the SourceDestCheck property for this object.
+     * Indicates whether to validate network traffic to or from this network
+     * interface.
      *
-     * @return The value of the SourceDestCheck property for this object.
+     * @return Indicates whether to validate network traffic to or from this network
+     *         interface.
      */
     public Boolean getSourceDestCheck() {
         return sourceDestCheck;
     }
 
     /**
-     * Returns the value of the Groups property for this object.
+     * One or more security groups.
      *
-     * @return The value of the Groups property for this object.
+     * @return One or more security groups.
      */
     public java.util.List<GroupIdentifier> getGroups() {
         if (groups == null) {
@@ -416,9 +470,9 @@ public class InstanceNetworkInterface implements Serializable {
     }
     
     /**
-     * Sets the value of the Groups property for this object.
+     * One or more security groups.
      *
-     * @param groups The new value for the Groups property for this object.
+     * @param groups One or more security groups.
      */
     public void setGroups(java.util.Collection<GroupIdentifier> groups) {
         if (groups == null) {
@@ -431,11 +485,11 @@ public class InstanceNetworkInterface implements Serializable {
     }
     
     /**
-     * Sets the value of the Groups property for this object.
+     * One or more security groups.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groups The new value for the Groups property for this object.
+     * @param groups One or more security groups.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -449,11 +503,11 @@ public class InstanceNetworkInterface implements Serializable {
     }
     
     /**
-     * Sets the value of the Groups property for this object.
+     * One or more security groups.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groups The new value for the Groups property for this object.
+     * @param groups One or more security groups.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -471,29 +525,29 @@ public class InstanceNetworkInterface implements Serializable {
     }
 
     /**
-     * Returns the value of the Attachment property for this object.
+     * The network interface attachment.
      *
-     * @return The value of the Attachment property for this object.
+     * @return The network interface attachment.
      */
     public InstanceNetworkInterfaceAttachment getAttachment() {
         return attachment;
     }
     
     /**
-     * Sets the value of the Attachment property for this object.
+     * The network interface attachment.
      *
-     * @param attachment The new value for the Attachment property for this object.
+     * @param attachment The network interface attachment.
      */
     public void setAttachment(InstanceNetworkInterfaceAttachment attachment) {
         this.attachment = attachment;
     }
     
     /**
-     * Sets the value of the Attachment property for this object.
+     * The network interface attachment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachment The new value for the Attachment property for this object.
+     * @param attachment The network interface attachment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -504,29 +558,35 @@ public class InstanceNetworkInterface implements Serializable {
     }
 
     /**
-     * Returns the value of the Association property for this object.
+     * The association information for an Elastic IP associated with the
+     * network interface.
      *
-     * @return The value of the Association property for this object.
+     * @return The association information for an Elastic IP associated with the
+     *         network interface.
      */
     public InstanceNetworkInterfaceAssociation getAssociation() {
         return association;
     }
     
     /**
-     * Sets the value of the Association property for this object.
+     * The association information for an Elastic IP associated with the
+     * network interface.
      *
-     * @param association The new value for the Association property for this object.
+     * @param association The association information for an Elastic IP associated with the
+     *         network interface.
      */
     public void setAssociation(InstanceNetworkInterfaceAssociation association) {
         this.association = association;
     }
     
     /**
-     * Sets the value of the Association property for this object.
+     * The association information for an Elastic IP associated with the
+     * network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param association The new value for the Association property for this object.
+     * @param association The association information for an Elastic IP associated with the
+     *         network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -537,9 +597,9 @@ public class InstanceNetworkInterface implements Serializable {
     }
 
     /**
-     * Returns the value of the PrivateIpAddresses property for this object.
+     * The private IP addresses associated with the network interface.
      *
-     * @return The value of the PrivateIpAddresses property for this object.
+     * @return The private IP addresses associated with the network interface.
      */
     public java.util.List<InstancePrivateIpAddress> getPrivateIpAddresses() {
         if (privateIpAddresses == null) {
@@ -550,9 +610,9 @@ public class InstanceNetworkInterface implements Serializable {
     }
     
     /**
-     * Sets the value of the PrivateIpAddresses property for this object.
+     * The private IP addresses associated with the network interface.
      *
-     * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     * @param privateIpAddresses The private IP addresses associated with the network interface.
      */
     public void setPrivateIpAddresses(java.util.Collection<InstancePrivateIpAddress> privateIpAddresses) {
         if (privateIpAddresses == null) {
@@ -565,11 +625,11 @@ public class InstanceNetworkInterface implements Serializable {
     }
     
     /**
-     * Sets the value of the PrivateIpAddresses property for this object.
+     * The private IP addresses associated with the network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     * @param privateIpAddresses The private IP addresses associated with the network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -583,11 +643,11 @@ public class InstanceNetworkInterface implements Serializable {
     }
     
     /**
-     * Sets the value of the PrivateIpAddresses property for this object.
+     * The private IP addresses associated with the network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     * @param privateIpAddresses The private IP addresses associated with the network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

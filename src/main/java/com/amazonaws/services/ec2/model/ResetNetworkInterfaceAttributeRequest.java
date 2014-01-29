@@ -22,40 +22,51 @@ import com.amazonaws.services.ec2.model.transform.ResetNetworkInterfaceAttribute
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#resetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest) ResetNetworkInterfaceAttribute operation}.
- * 
+ * <p>
+ * Resets a network interface attribute. You can specify only one attribute at a time.
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#resetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest)
  */
 public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ResetNetworkInterfaceAttributeRequest> {
 
+    /**
+     * The ID of the network interface.
+     */
     private String networkInterfaceId;
 
+    /**
+     * Indicates whether source/destination checking is enabled. A value of
+     * <code>true</code> means checking is enabled, and <code>false</code>
+     * means checking is disabled. This value must be <code>false</code> for
+     * a NAT instance to perform NAT.
+     */
     private String sourceDestCheck;
 
     /**
-     * Returns the value of the NetworkInterfaceId property for this object.
+     * The ID of the network interface.
      *
-     * @return The value of the NetworkInterfaceId property for this object.
+     * @return The ID of the network interface.
      */
     public String getNetworkInterfaceId() {
         return networkInterfaceId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceId property for this object.
+     * The ID of the network interface.
      *
-     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     * @param networkInterfaceId The ID of the network interface.
      */
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceId property for this object.
+     * The ID of the network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     * @param networkInterfaceId The ID of the network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -66,29 +77,47 @@ public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceReque
     }
 
     /**
-     * Returns the value of the SourceDestCheck property for this object.
+     * Indicates whether source/destination checking is enabled. A value of
+     * <code>true</code> means checking is enabled, and <code>false</code>
+     * means checking is disabled. This value must be <code>false</code> for
+     * a NAT instance to perform NAT.
      *
-     * @return The value of the SourceDestCheck property for this object.
+     * @return Indicates whether source/destination checking is enabled. A value of
+     *         <code>true</code> means checking is enabled, and <code>false</code>
+     *         means checking is disabled. This value must be <code>false</code> for
+     *         a NAT instance to perform NAT.
      */
     public String getSourceDestCheck() {
         return sourceDestCheck;
     }
     
     /**
-     * Sets the value of the SourceDestCheck property for this object.
+     * Indicates whether source/destination checking is enabled. A value of
+     * <code>true</code> means checking is enabled, and <code>false</code>
+     * means checking is disabled. This value must be <code>false</code> for
+     * a NAT instance to perform NAT.
      *
-     * @param sourceDestCheck The new value for the SourceDestCheck property for this object.
+     * @param sourceDestCheck Indicates whether source/destination checking is enabled. A value of
+     *         <code>true</code> means checking is enabled, and <code>false</code>
+     *         means checking is disabled. This value must be <code>false</code> for
+     *         a NAT instance to perform NAT.
      */
     public void setSourceDestCheck(String sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
     }
     
     /**
-     * Sets the value of the SourceDestCheck property for this object.
+     * Indicates whether source/destination checking is enabled. A value of
+     * <code>true</code> means checking is enabled, and <code>false</code>
+     * means checking is disabled. This value must be <code>false</code> for
+     * a NAT instance to perform NAT.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceDestCheck The new value for the SourceDestCheck property for this object.
+     * @param sourceDestCheck Indicates whether source/destination checking is enabled. A value of
+     *         <code>true</code> means checking is enabled, and <code>false</code>
+     *         means checking is disabled. This value must be <code>false</code> for
+     *         a NAT instance to perform NAT.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -18,13 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The LaunchSpecificationType data type.
+ * Describes the launch specification of a Spot Instance.
  * </p>
  */
 public class LaunchSpecification implements Serializable {
 
     /**
-     * The AMI ID.
+     * The ID of the AMI.
      */
     private String imageId;
 
@@ -33,96 +33,108 @@ public class LaunchSpecification implements Serializable {
      */
     private String keyName;
 
+    /**
+     * One or more security groups.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> allSecurityGroups;
 
+    /**
+     * One or more security groups.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroups;
 
     /**
-     * Optional data, specific to a user's application, to provide in the
-     * launch request. All instances that collectively comprise the launch
-     * request have access to this data. User data is never returned through
-     * API responses.
+     * The Base64-encoded MIME user data to make available to the instances.
      */
     private String userData;
 
     /**
-     * Deprecated.
+     * <p/>
      */
     private String addressingType;
 
     /**
-     * Specifies the instance type.
+     * The instance type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      */
     private String instanceType;
 
     /**
-     * Defines a placement item.
+     * The placement information for the instance.
      */
     private SpotPlacement placement;
 
     /**
-     * Specifies the ID of the kernel to select.
+     * The ID of the kernel.
      */
     private String kernelId;
 
     /**
-     * Specifies the ID of the RAM disk to select. Some kernels require
-     * additional drivers at launch. Check the kernel requirements for
-     * information on whether or not you need to specify a RAM disk and
-     * search for the kernel ID.
+     * The ID of the RAM disk.
      */
     private String ramdiskId;
 
     /**
-     * Specifies how block devices are exposed to the instance. Each mapping
-     * is made up of a virtualName and a deviceName.
+     * One or more block device mapping entries.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
 
     /**
-     * Enables monitoring for the instance.
+     * Enables monitoring for the instance. <p>Default: Disabled
      */
     private Boolean monitoringEnabled;
 
     /**
-     * Specifies the Amazon VPC subnet ID within which to launch the
-     * instance(s) for Amazon Virtual Private Cloud.
+     * The ID of the subnet in which to launch the Spot Instance.
      */
     private String subnetId;
 
+    /**
+     * One or more network interfaces.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterfaceSpecification> networkInterfaces;
 
+    /**
+     * The IAM instance profile.
+     */
     private IamInstanceProfileSpecification iamInstanceProfile;
 
+    /**
+     * Indicates whether the instance is optimized for EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an
+     * optimized configuration stack to provide optimal EBS I/O performance.
+     * This optimization isn't available with all instance types. Additional
+     * usage charges apply when using an EBS Optimized instance. <p>Default:
+     * <code>false</code>
+     */
     private Boolean ebsOptimized;
 
     /**
-     * The AMI ID.
+     * The ID of the AMI.
      *
-     * @return The AMI ID.
+     * @return The ID of the AMI.
      */
     public String getImageId() {
         return imageId;
     }
     
     /**
-     * The AMI ID.
+     * The ID of the AMI.
      *
-     * @param imageId The AMI ID.
+     * @param imageId The ID of the AMI.
      */
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
     
     /**
-     * The AMI ID.
+     * The ID of the AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param imageId The AMI ID.
+     * @param imageId The ID of the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -166,9 +178,9 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the AllSecurityGroups property for this object.
+     * One or more security groups.
      *
-     * @return The value of the AllSecurityGroups property for this object.
+     * @return One or more security groups.
      */
     public java.util.List<GroupIdentifier> getAllSecurityGroups() {
         if (allSecurityGroups == null) {
@@ -179,9 +191,9 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the AllSecurityGroups property for this object.
+     * One or more security groups.
      *
-     * @param allSecurityGroups The new value for the AllSecurityGroups property for this object.
+     * @param allSecurityGroups One or more security groups.
      */
     public void setAllSecurityGroups(java.util.Collection<GroupIdentifier> allSecurityGroups) {
         if (allSecurityGroups == null) {
@@ -194,11 +206,11 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the AllSecurityGroups property for this object.
+     * One or more security groups.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allSecurityGroups The new value for the AllSecurityGroups property for this object.
+     * @param allSecurityGroups One or more security groups.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -212,11 +224,11 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the AllSecurityGroups property for this object.
+     * One or more security groups.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allSecurityGroups The new value for the AllSecurityGroups property for this object.
+     * @param allSecurityGroups One or more security groups.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -234,9 +246,9 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the SecurityGroups property for this object.
+     * One or more security groups.
      *
-     * @return The value of the SecurityGroups property for this object.
+     * @return One or more security groups.
      */
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
@@ -247,9 +259,9 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the SecurityGroups property for this object.
+     * One or more security groups.
      *
-     * @param securityGroups The new value for the SecurityGroups property for this object.
+     * @param securityGroups One or more security groups.
      */
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
@@ -262,11 +274,11 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the SecurityGroups property for this object.
+     * One or more security groups.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups The new value for the SecurityGroups property for this object.
+     * @param securityGroups One or more security groups.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -280,11 +292,11 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the SecurityGroups property for this object.
+     * One or more security groups.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups The new value for the SecurityGroups property for this object.
+     * @param securityGroups One or more security groups.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -302,47 +314,29 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * Optional data, specific to a user's application, to provide in the
-     * launch request. All instances that collectively comprise the launch
-     * request have access to this data. User data is never returned through
-     * API responses.
+     * The Base64-encoded MIME user data to make available to the instances.
      *
-     * @return Optional data, specific to a user's application, to provide in the
-     *         launch request. All instances that collectively comprise the launch
-     *         request have access to this data. User data is never returned through
-     *         API responses.
+     * @return The Base64-encoded MIME user data to make available to the instances.
      */
     public String getUserData() {
         return userData;
     }
     
     /**
-     * Optional data, specific to a user's application, to provide in the
-     * launch request. All instances that collectively comprise the launch
-     * request have access to this data. User data is never returned through
-     * API responses.
+     * The Base64-encoded MIME user data to make available to the instances.
      *
-     * @param userData Optional data, specific to a user's application, to provide in the
-     *         launch request. All instances that collectively comprise the launch
-     *         request have access to this data. User data is never returned through
-     *         API responses.
+     * @param userData The Base64-encoded MIME user data to make available to the instances.
      */
     public void setUserData(String userData) {
         this.userData = userData;
     }
     
     /**
-     * Optional data, specific to a user's application, to provide in the
-     * launch request. All instances that collectively comprise the launch
-     * request have access to this data. User data is never returned through
-     * API responses.
+     * The Base64-encoded MIME user data to make available to the instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param userData Optional data, specific to a user's application, to provide in the
-     *         launch request. All instances that collectively comprise the launch
-     *         request have access to this data. User data is never returned through
-     *         API responses.
+     * @param userData The Base64-encoded MIME user data to make available to the instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -353,29 +347,29 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * Deprecated.
+     * <p/>
      *
-     * @return Deprecated.
+     * @return <p/>
      */
     public String getAddressingType() {
         return addressingType;
     }
     
     /**
-     * Deprecated.
+     * <p/>
      *
-     * @param addressingType Deprecated.
+     * @param addressingType <p/>
      */
     public void setAddressingType(String addressingType) {
         this.addressingType = addressingType;
     }
     
     /**
-     * Deprecated.
+     * <p/>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param addressingType Deprecated.
+     * @param addressingType <p/>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -386,12 +380,12 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * Specifies the instance type.
+     * The instance type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @return Specifies the instance type.
+     * @return The instance type.
      *
      * @see InstanceType
      */
@@ -400,12 +394,12 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * Specifies the instance type.
+     * The instance type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @param instanceType Specifies the instance type.
+     * @param instanceType The instance type.
      *
      * @see InstanceType
      */
@@ -414,14 +408,14 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * Specifies the instance type.
+     * The instance type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @param instanceType Specifies the instance type.
+     * @param instanceType The instance type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -434,12 +428,12 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * Specifies the instance type.
+     * The instance type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @param instanceType Specifies the instance type.
+     * @param instanceType The instance type.
      *
      * @see InstanceType
      */
@@ -448,14 +442,14 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * Specifies the instance type.
+     * The instance type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @param instanceType Specifies the instance type.
+     * @param instanceType The instance type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -468,29 +462,29 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * Defines a placement item.
+     * The placement information for the instance.
      *
-     * @return Defines a placement item.
+     * @return The placement information for the instance.
      */
     public SpotPlacement getPlacement() {
         return placement;
     }
     
     /**
-     * Defines a placement item.
+     * The placement information for the instance.
      *
-     * @param placement Defines a placement item.
+     * @param placement The placement information for the instance.
      */
     public void setPlacement(SpotPlacement placement) {
         this.placement = placement;
     }
     
     /**
-     * Defines a placement item.
+     * The placement information for the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param placement Defines a placement item.
+     * @param placement The placement information for the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -501,29 +495,29 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * Specifies the ID of the kernel to select.
+     * The ID of the kernel.
      *
-     * @return Specifies the ID of the kernel to select.
+     * @return The ID of the kernel.
      */
     public String getKernelId() {
         return kernelId;
     }
     
     /**
-     * Specifies the ID of the kernel to select.
+     * The ID of the kernel.
      *
-     * @param kernelId Specifies the ID of the kernel to select.
+     * @param kernelId The ID of the kernel.
      */
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
     
     /**
-     * Specifies the ID of the kernel to select.
+     * The ID of the kernel.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param kernelId Specifies the ID of the kernel to select.
+     * @param kernelId The ID of the kernel.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -534,47 +528,29 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * Specifies the ID of the RAM disk to select. Some kernels require
-     * additional drivers at launch. Check the kernel requirements for
-     * information on whether or not you need to specify a RAM disk and
-     * search for the kernel ID.
+     * The ID of the RAM disk.
      *
-     * @return Specifies the ID of the RAM disk to select. Some kernels require
-     *         additional drivers at launch. Check the kernel requirements for
-     *         information on whether or not you need to specify a RAM disk and
-     *         search for the kernel ID.
+     * @return The ID of the RAM disk.
      */
     public String getRamdiskId() {
         return ramdiskId;
     }
     
     /**
-     * Specifies the ID of the RAM disk to select. Some kernels require
-     * additional drivers at launch. Check the kernel requirements for
-     * information on whether or not you need to specify a RAM disk and
-     * search for the kernel ID.
+     * The ID of the RAM disk.
      *
-     * @param ramdiskId Specifies the ID of the RAM disk to select. Some kernels require
-     *         additional drivers at launch. Check the kernel requirements for
-     *         information on whether or not you need to specify a RAM disk and
-     *         search for the kernel ID.
+     * @param ramdiskId The ID of the RAM disk.
      */
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
     
     /**
-     * Specifies the ID of the RAM disk to select. Some kernels require
-     * additional drivers at launch. Check the kernel requirements for
-     * information on whether or not you need to specify a RAM disk and
-     * search for the kernel ID.
+     * The ID of the RAM disk.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ramdiskId Specifies the ID of the RAM disk to select. Some kernels require
-     *         additional drivers at launch. Check the kernel requirements for
-     *         information on whether or not you need to specify a RAM disk and
-     *         search for the kernel ID.
+     * @param ramdiskId The ID of the RAM disk.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -585,11 +561,9 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * Specifies how block devices are exposed to the instance. Each mapping
-     * is made up of a virtualName and a deviceName.
+     * One or more block device mapping entries.
      *
-     * @return Specifies how block devices are exposed to the instance. Each mapping
-     *         is made up of a virtualName and a deviceName.
+     * @return One or more block device mapping entries.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
@@ -600,11 +574,9 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * Specifies how block devices are exposed to the instance. Each mapping
-     * is made up of a virtualName and a deviceName.
+     * One or more block device mapping entries.
      *
-     * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
-     *         is made up of a virtualName and a deviceName.
+     * @param blockDeviceMappings One or more block device mapping entries.
      */
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -617,13 +589,11 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * Specifies how block devices are exposed to the instance. Each mapping
-     * is made up of a virtualName and a deviceName.
+     * One or more block device mapping entries.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
-     *         is made up of a virtualName and a deviceName.
+     * @param blockDeviceMappings One or more block device mapping entries.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -637,13 +607,11 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * Specifies how block devices are exposed to the instance. Each mapping
-     * is made up of a virtualName and a deviceName.
+     * One or more block device mapping entries.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
-     *         is made up of a virtualName and a deviceName.
+     * @param blockDeviceMappings One or more block device mapping entries.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -661,29 +629,29 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * Enables monitoring for the instance.
+     * Enables monitoring for the instance. <p>Default: Disabled
      *
-     * @return Enables monitoring for the instance.
+     * @return Enables monitoring for the instance. <p>Default: Disabled
      */
     public Boolean isMonitoringEnabled() {
         return monitoringEnabled;
     }
     
     /**
-     * Enables monitoring for the instance.
+     * Enables monitoring for the instance. <p>Default: Disabled
      *
-     * @param monitoringEnabled Enables monitoring for the instance.
+     * @param monitoringEnabled Enables monitoring for the instance. <p>Default: Disabled
      */
     public void setMonitoringEnabled(Boolean monitoringEnabled) {
         this.monitoringEnabled = monitoringEnabled;
     }
     
     /**
-     * Enables monitoring for the instance.
+     * Enables monitoring for the instance. <p>Default: Disabled
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param monitoringEnabled Enables monitoring for the instance.
+     * @param monitoringEnabled Enables monitoring for the instance. <p>Default: Disabled
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -694,44 +662,38 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * Enables monitoring for the instance.
+     * Enables monitoring for the instance. <p>Default: Disabled
      *
-     * @return Enables monitoring for the instance.
+     * @return Enables monitoring for the instance. <p>Default: Disabled
      */
     public Boolean getMonitoringEnabled() {
         return monitoringEnabled;
     }
 
     /**
-     * Specifies the Amazon VPC subnet ID within which to launch the
-     * instance(s) for Amazon Virtual Private Cloud.
+     * The ID of the subnet in which to launch the Spot Instance.
      *
-     * @return Specifies the Amazon VPC subnet ID within which to launch the
-     *         instance(s) for Amazon Virtual Private Cloud.
+     * @return The ID of the subnet in which to launch the Spot Instance.
      */
     public String getSubnetId() {
         return subnetId;
     }
     
     /**
-     * Specifies the Amazon VPC subnet ID within which to launch the
-     * instance(s) for Amazon Virtual Private Cloud.
+     * The ID of the subnet in which to launch the Spot Instance.
      *
-     * @param subnetId Specifies the Amazon VPC subnet ID within which to launch the
-     *         instance(s) for Amazon Virtual Private Cloud.
+     * @param subnetId The ID of the subnet in which to launch the Spot Instance.
      */
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
     
     /**
-     * Specifies the Amazon VPC subnet ID within which to launch the
-     * instance(s) for Amazon Virtual Private Cloud.
+     * The ID of the subnet in which to launch the Spot Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetId Specifies the Amazon VPC subnet ID within which to launch the
-     *         instance(s) for Amazon Virtual Private Cloud.
+     * @param subnetId The ID of the subnet in which to launch the Spot Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -742,9 +704,9 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the NetworkInterfaces property for this object.
+     * One or more network interfaces.
      *
-     * @return The value of the NetworkInterfaces property for this object.
+     * @return One or more network interfaces.
      */
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
         if (networkInterfaces == null) {
@@ -755,9 +717,9 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the NetworkInterfaces property for this object.
+     * One or more network interfaces.
      *
-     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     * @param networkInterfaces One or more network interfaces.
      */
     public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
         if (networkInterfaces == null) {
@@ -770,11 +732,11 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the NetworkInterfaces property for this object.
+     * One or more network interfaces.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     * @param networkInterfaces One or more network interfaces.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -788,11 +750,11 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the NetworkInterfaces property for this object.
+     * One or more network interfaces.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     * @param networkInterfaces One or more network interfaces.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -810,29 +772,29 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the IamInstanceProfile property for this object.
+     * The IAM instance profile.
      *
-     * @return The value of the IamInstanceProfile property for this object.
+     * @return The IAM instance profile.
      */
     public IamInstanceProfileSpecification getIamInstanceProfile() {
         return iamInstanceProfile;
     }
     
     /**
-     * Sets the value of the IamInstanceProfile property for this object.
+     * The IAM instance profile.
      *
-     * @param iamInstanceProfile The new value for the IamInstanceProfile property for this object.
+     * @param iamInstanceProfile The IAM instance profile.
      */
     public void setIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
     }
     
     /**
-     * Sets the value of the IamInstanceProfile property for this object.
+     * The IAM instance profile.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param iamInstanceProfile The new value for the IamInstanceProfile property for this object.
+     * @param iamInstanceProfile The IAM instance profile.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -843,29 +805,59 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the EbsOptimized property for this object.
+     * Indicates whether the instance is optimized for EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an
+     * optimized configuration stack to provide optimal EBS I/O performance.
+     * This optimization isn't available with all instance types. Additional
+     * usage charges apply when using an EBS Optimized instance. <p>Default:
+     * <code>false</code>
      *
-     * @return The value of the EbsOptimized property for this object.
+     * @return Indicates whether the instance is optimized for EBS I/O. This
+     *         optimization provides dedicated throughput to Amazon EBS and an
+     *         optimized configuration stack to provide optimal EBS I/O performance.
+     *         This optimization isn't available with all instance types. Additional
+     *         usage charges apply when using an EBS Optimized instance. <p>Default:
+     *         <code>false</code>
      */
     public Boolean isEbsOptimized() {
         return ebsOptimized;
     }
     
     /**
-     * Sets the value of the EbsOptimized property for this object.
+     * Indicates whether the instance is optimized for EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an
+     * optimized configuration stack to provide optimal EBS I/O performance.
+     * This optimization isn't available with all instance types. Additional
+     * usage charges apply when using an EBS Optimized instance. <p>Default:
+     * <code>false</code>
      *
-     * @param ebsOptimized The new value for the EbsOptimized property for this object.
+     * @param ebsOptimized Indicates whether the instance is optimized for EBS I/O. This
+     *         optimization provides dedicated throughput to Amazon EBS and an
+     *         optimized configuration stack to provide optimal EBS I/O performance.
+     *         This optimization isn't available with all instance types. Additional
+     *         usage charges apply when using an EBS Optimized instance. <p>Default:
+     *         <code>false</code>
      */
     public void setEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;
     }
     
     /**
-     * Sets the value of the EbsOptimized property for this object.
+     * Indicates whether the instance is optimized for EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an
+     * optimized configuration stack to provide optimal EBS I/O performance.
+     * This optimization isn't available with all instance types. Additional
+     * usage charges apply when using an EBS Optimized instance. <p>Default:
+     * <code>false</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ebsOptimized The new value for the EbsOptimized property for this object.
+     * @param ebsOptimized Indicates whether the instance is optimized for EBS I/O. This
+     *         optimization provides dedicated throughput to Amazon EBS and an
+     *         optimized configuration stack to provide optimal EBS I/O performance.
+     *         This optimization isn't available with all instance types. Additional
+     *         usage charges apply when using an EBS Optimized instance. <p>Default:
+     *         <code>false</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -876,9 +868,19 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the EbsOptimized property for this object.
+     * Indicates whether the instance is optimized for EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an
+     * optimized configuration stack to provide optimal EBS I/O performance.
+     * This optimization isn't available with all instance types. Additional
+     * usage charges apply when using an EBS Optimized instance. <p>Default:
+     * <code>false</code>
      *
-     * @return The value of the EbsOptimized property for this object.
+     * @return Indicates whether the instance is optimized for EBS I/O. This
+     *         optimization provides dedicated throughput to Amazon EBS and an
+     *         optimized configuration stack to provide optimal EBS I/O performance.
+     *         This optimization isn't available with all instance types. Additional
+     *         usage charges apply when using an EBS Optimized instance. <p>Default:
+     *         <code>false</code>
      */
     public Boolean getEbsOptimized() {
         return ebsOptimized;

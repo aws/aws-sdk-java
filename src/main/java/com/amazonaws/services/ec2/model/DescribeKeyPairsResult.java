@@ -17,21 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of describing a user's key pairs.
- * </p>
+ * 
  */
 public class DescribeKeyPairsResult implements Serializable {
 
     /**
-     * The list of described key pairs.
+     * Information about one or more key pairs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<KeyPairInfo> keyPairs;
 
     /**
-     * The list of described key pairs.
+     * Information about one or more key pairs.
      *
-     * @return The list of described key pairs.
+     * @return Information about one or more key pairs.
      */
     public java.util.List<KeyPairInfo> getKeyPairs() {
         if (keyPairs == null) {
@@ -42,9 +40,9 @@ public class DescribeKeyPairsResult implements Serializable {
     }
     
     /**
-     * The list of described key pairs.
+     * Information about one or more key pairs.
      *
-     * @param keyPairs The list of described key pairs.
+     * @param keyPairs Information about one or more key pairs.
      */
     public void setKeyPairs(java.util.Collection<KeyPairInfo> keyPairs) {
         if (keyPairs == null) {
@@ -57,11 +55,11 @@ public class DescribeKeyPairsResult implements Serializable {
     }
     
     /**
-     * The list of described key pairs.
+     * Information about one or more key pairs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param keyPairs The list of described key pairs.
+     * @param keyPairs Information about one or more key pairs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,11 +73,11 @@ public class DescribeKeyPairsResult implements Serializable {
     }
     
     /**
-     * The list of described key pairs.
+     * Information about one or more key pairs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param keyPairs The list of described key pairs.
+     * @param keyPairs Information about one or more key pairs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

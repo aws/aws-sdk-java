@@ -44,6 +44,16 @@ public class ListPartsRequest extends AmazonWebServiceRequest {
     /** The optional part number marker indicating where in the results to being listing parts. */
     private Integer partNumberMarker;
 
+    /**
+     * Optional parameter indicating the encoding method to be applied on the
+     * response. An object key can contain any Unicode character; however, XML
+     * 1.0 parser cannot parse some characters, such as characters with an ASCII
+     * value from 0 to 10. For characters that are not supported in XML 1.0, you
+     * can add this parameter to request that Amazon S3 encode the keys in the
+     * response.
+     */
+    private String encodingType;
+
 
     /**
      * Constructs a new ListPartsRequest from the required parameters bucket
@@ -247,6 +257,51 @@ public class ListPartsRequest extends AmazonWebServiceRequest {
      */
     public ListPartsRequest withPartNumberMarker(Integer partNumberMarker) {
         this.partNumberMarker = partNumberMarker;
+        return this;
+    }
+
+    /**
+     * Gets the optional <code>encodingType</code> parameter indicating the
+     * encoding method to be applied on the response.
+     * 
+     * @return The encoding method to be applied on the response.
+     */
+    public String getEncodingType() {
+        return encodingType;
+    }
+
+    /**
+     * Sets the optional <code>encodingType</code> parameter indicating the
+     * encoding method to be applied on the response. An object key can contain
+     * any Unicode character; however, XML 1.0 parser cannot parse some
+     * characters, such as characters with an ASCII value from 0 to 10. For
+     * characters that are not supported in XML 1.0, you can add this parameter
+     * to request that Amazon S3 encode the keys in the response.
+     * 
+     * @param encodingType
+     *            The encoding method to be applied on the response. Valid
+     *            values: null (not encoded) or "url".
+     */
+    public void setEncodingType(String encodingType) {
+        this.encodingType = encodingType;
+    }
+    
+    /**
+     * Sets the optional <code>encodingType</code> parameter indicating the
+     * encoding method to be applied on the response. An object key can contain
+     * any Unicode character; however, XML 1.0 parser cannot parse some
+     * characters, such as characters with an ASCII value from 0 to 10. For
+     * characters that are not supported in XML 1.0, you can add this parameter
+     * to request that Amazon S3 encode the keys in the response. 
+     * Returns this {@link ListPartsRequest}, enabling additional method calls
+     * to be chained together.
+     * 
+     * @param encodingType
+     *            The encoding method to be applied on the response. Valid
+     *            values: null (not encoded) or "url".
+     */
+    public ListPartsRequest withEncodingType(String encodingType) {
+        setEncodingType(encodingType);
         return this;
     }
 

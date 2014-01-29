@@ -36,6 +36,7 @@ import com.amazonaws.util.json.*;
 
 /**
  * Delete Table Request Marshaller
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.DeleteTableRequestMarshaller} instead.
  */
 @Deprecated
 public class DeleteTableRequestMarshaller implements Marshaller<Request<DeleteTableRequest>, DeleteTableRequest> {

@@ -23,16 +23,20 @@ import com.amazonaws.services.ec2.model.transform.ReleaseAddressRequestMarshalle
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#releaseAddress(ReleaseAddressRequest) ReleaseAddress operation}.
  * <p>
- * The ReleaseAddress operation releases an elastic IP address associated with your account.
+ * Releases the specified Elastic IP address.
  * </p>
  * <p>
- * <b>NOTE:</b> Releasing an IP address automatically disassociates it from any instance with which it is associated. For more information, see
- * DisassociateAddress.
+ * After releasing an Elastic IP address, it is released to the IP address pool and might be unavailable to you. Be sure to update your DNS records and
+ * any servers or devices that communicate with the address. If you attempt to release an Elastic IP address that you already released, you'll get an
+ * <code>AuthFailure</code> error if the address is already allocated to another AWS account.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> After releasing an elastic IP address, it is released to the IP address pool and might no longer be available to your account. Make
- * sure to update your DNS records and any servers or devices that communicate with the address. If you run this operation on an elastic IP address that
- * is already released, the address might be assigned to another account which will cause Amazon EC2 to return an error.
+ * [EC2-Classic, default VPC] Releasing an Elastic IP address automatically disassociates it from any instance that it's associated with. To disassociate
+ * an Elastic IP address without releasing it, use DisassociateAddress.
+ * </p>
+ * <p>
+ * [Nondefault VPC] You must use the DisassociateAddress to disassociate the Elastic IP address before you try to release it. Otherwise, Amazon EC2
+ * returns an error ( <code>InvalidIPAddress.InUse</code> ).
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#releaseAddress(ReleaseAddressRequest)
@@ -40,13 +44,12 @@ import com.amazonaws.services.ec2.model.transform.ReleaseAddressRequestMarshalle
 public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ReleaseAddressRequest> {
 
     /**
-     * The elastic IP address that you are releasing from your account.
+     * [EC2-Classic] The Elastic IP address.
      */
     private String publicIp;
 
     /**
-     * The allocation ID that AWS provided when you allocated the address for
-     * use with Amazon VPC.
+     * [EC2-VPC] The allocation ID.
      */
     private String allocationId;
 
@@ -61,37 +64,36 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param publicIp The elastic IP address that you are releasing from
-     * your account.
+     * @param publicIp [EC2-Classic] The Elastic IP address.
      */
     public ReleaseAddressRequest(String publicIp) {
         setPublicIp(publicIp);
     }
 
     /**
-     * The elastic IP address that you are releasing from your account.
+     * [EC2-Classic] The Elastic IP address.
      *
-     * @return The elastic IP address that you are releasing from your account.
+     * @return [EC2-Classic] The Elastic IP address.
      */
     public String getPublicIp() {
         return publicIp;
     }
     
     /**
-     * The elastic IP address that you are releasing from your account.
+     * [EC2-Classic] The Elastic IP address.
      *
-     * @param publicIp The elastic IP address that you are releasing from your account.
+     * @param publicIp [EC2-Classic] The Elastic IP address.
      */
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
     
     /**
-     * The elastic IP address that you are releasing from your account.
+     * [EC2-Classic] The Elastic IP address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicIp The elastic IP address that you are releasing from your account.
+     * @param publicIp [EC2-Classic] The Elastic IP address.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -102,35 +104,29 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * The allocation ID that AWS provided when you allocated the address for
-     * use with Amazon VPC.
+     * [EC2-VPC] The allocation ID.
      *
-     * @return The allocation ID that AWS provided when you allocated the address for
-     *         use with Amazon VPC.
+     * @return [EC2-VPC] The allocation ID.
      */
     public String getAllocationId() {
         return allocationId;
     }
     
     /**
-     * The allocation ID that AWS provided when you allocated the address for
-     * use with Amazon VPC.
+     * [EC2-VPC] The allocation ID.
      *
-     * @param allocationId The allocation ID that AWS provided when you allocated the address for
-     *         use with Amazon VPC.
+     * @param allocationId [EC2-VPC] The allocation ID.
      */
     public void setAllocationId(String allocationId) {
         this.allocationId = allocationId;
     }
     
     /**
-     * The allocation ID that AWS provided when you allocated the address for
-     * use with Amazon VPC.
+     * [EC2-VPC] The allocation ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allocationId The allocation ID that AWS provided when you allocated the address for
-     *         use with Amazon VPC.
+     * @param allocationId [EC2-VPC] The allocation ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

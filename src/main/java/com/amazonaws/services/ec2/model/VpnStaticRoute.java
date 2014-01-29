@@ -17,41 +17,64 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Vpn Static Route
+ * <p>
+ * Describes a static route for a VPN connection.
+ * </p>
  */
 public class VpnStaticRoute implements Serializable {
 
+    /**
+     * The CIDR block associated with the local subnet of the customer data
+     * center.
+     */
     private String destinationCidrBlock;
 
+    /**
+     * Indicates how the routes were provided.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Static
+     */
     private String source;
 
+    /**
+     * The current state of the static route.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available, deleting, deleted
+     */
     private String state;
 
     /**
-     * Returns the value of the DestinationCidrBlock property for this
-     * object.
+     * The CIDR block associated with the local subnet of the customer data
+     * center.
      *
-     * @return The value of the DestinationCidrBlock property for this object.
+     * @return The CIDR block associated with the local subnet of the customer data
+     *         center.
      */
     public String getDestinationCidrBlock() {
         return destinationCidrBlock;
     }
     
     /**
-     * Sets the value of the DestinationCidrBlock property for this object.
+     * The CIDR block associated with the local subnet of the customer data
+     * center.
      *
-     * @param destinationCidrBlock The new value for the DestinationCidrBlock property for this object.
+     * @param destinationCidrBlock The CIDR block associated with the local subnet of the customer data
+     *         center.
      */
     public void setDestinationCidrBlock(String destinationCidrBlock) {
         this.destinationCidrBlock = destinationCidrBlock;
     }
     
     /**
-     * Sets the value of the DestinationCidrBlock property for this object.
+     * The CIDR block associated with the local subnet of the customer data
+     * center.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param destinationCidrBlock The new value for the DestinationCidrBlock property for this object.
+     * @param destinationCidrBlock The CIDR block associated with the local subnet of the customer data
+     *         center.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -62,12 +85,12 @@ public class VpnStaticRoute implements Serializable {
     }
 
     /**
-     * Returns the value of the Source property for this object.
+     * Indicates how the routes were provided.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Static
      *
-     * @return The value of the Source property for this object.
+     * @return Indicates how the routes were provided.
      *
      * @see VpnStaticRouteSource
      */
@@ -76,12 +99,12 @@ public class VpnStaticRoute implements Serializable {
     }
     
     /**
-     * Sets the value of the Source property for this object.
+     * Indicates how the routes were provided.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Static
      *
-     * @param source The new value for the Source property for this object.
+     * @param source Indicates how the routes were provided.
      *
      * @see VpnStaticRouteSource
      */
@@ -90,14 +113,14 @@ public class VpnStaticRoute implements Serializable {
     }
     
     /**
-     * Sets the value of the Source property for this object.
+     * Indicates how the routes were provided.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Static
      *
-     * @param source The new value for the Source property for this object.
+     * @param source Indicates how the routes were provided.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -110,12 +133,12 @@ public class VpnStaticRoute implements Serializable {
     }
 
     /**
-     * Sets the value of the Source property for this object.
+     * Indicates how the routes were provided.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Static
      *
-     * @param source The new value for the Source property for this object.
+     * @param source Indicates how the routes were provided.
      *
      * @see VpnStaticRouteSource
      */
@@ -124,14 +147,14 @@ public class VpnStaticRoute implements Serializable {
     }
     
     /**
-     * Sets the value of the Source property for this object.
+     * Indicates how the routes were provided.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Static
      *
-     * @param source The new value for the Source property for this object.
+     * @param source Indicates how the routes were provided.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -144,12 +167,12 @@ public class VpnStaticRoute implements Serializable {
     }
 
     /**
-     * Returns the value of the State property for this object.
+     * The current state of the static route.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available, deleting, deleted
      *
-     * @return The value of the State property for this object.
+     * @return The current state of the static route.
      *
      * @see VpnState
      */
@@ -158,12 +181,12 @@ public class VpnStaticRoute implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The current state of the static route.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available, deleting, deleted
      *
-     * @param state The new value for the State property for this object.
+     * @param state The current state of the static route.
      *
      * @see VpnState
      */
@@ -172,14 +195,14 @@ public class VpnStaticRoute implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The current state of the static route.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available, deleting, deleted
      *
-     * @param state The new value for the State property for this object.
+     * @param state The current state of the static route.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -192,12 +215,12 @@ public class VpnStaticRoute implements Serializable {
     }
 
     /**
-     * Sets the value of the State property for this object.
+     * The current state of the static route.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available, deleting, deleted
      *
-     * @param state The new value for the State property for this object.
+     * @param state The current state of the static route.
      *
      * @see VpnState
      */
@@ -206,14 +229,14 @@ public class VpnStaticRoute implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The current state of the static route.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available, deleting, deleted
      *
-     * @param state The new value for the State property for this object.
+     * @param state The current state of the static route.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -50,6 +50,7 @@ public class DescribeUploadBufferResultJsonUnmarshaller implements Unmarshaller<
                     describeUploadBufferResult.setGatewayARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DiskIds", targetDepth)) {
+                    context.nextToken();
                     describeUploadBufferResult.setDiskIds(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("UploadBufferUsedInBytes", targetDepth)) {

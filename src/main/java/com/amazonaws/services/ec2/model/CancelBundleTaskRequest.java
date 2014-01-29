@@ -23,9 +23,7 @@ import com.amazonaws.services.ec2.model.transform.CancelBundleTaskRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#cancelBundleTask(CancelBundleTaskRequest) CancelBundleTask operation}.
  * <p>
- * CancelBundleTask operation cancels a pending or in-progress bundling task. This is an asynchronous call and it make take a while for the task to be
- * canceled. If a task is canceled while it is storing items, there may be parts of the incomplete AMI stored in S3. It is up to the caller to clean up
- * these parts from S3.
+ * Cancels a bundling operation for an instance store-backed Windows instance.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelBundleTask(CancelBundleTaskRequest)
@@ -33,7 +31,7 @@ import com.amazonaws.services.ec2.model.transform.CancelBundleTaskRequestMarshal
 public class CancelBundleTaskRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CancelBundleTaskRequest> {
 
     /**
-     * The ID of the bundle task to cancel.
+     * The ID of the bundle task.
      */
     private String bundleId;
 
@@ -48,36 +46,36 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest implements 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param bundleId The ID of the bundle task to cancel.
+     * @param bundleId The ID of the bundle task.
      */
     public CancelBundleTaskRequest(String bundleId) {
         setBundleId(bundleId);
     }
 
     /**
-     * The ID of the bundle task to cancel.
+     * The ID of the bundle task.
      *
-     * @return The ID of the bundle task to cancel.
+     * @return The ID of the bundle task.
      */
     public String getBundleId() {
         return bundleId;
     }
     
     /**
-     * The ID of the bundle task to cancel.
+     * The ID of the bundle task.
      *
-     * @param bundleId The ID of the bundle task to cancel.
+     * @param bundleId The ID of the bundle task.
      */
     public void setBundleId(String bundleId) {
         this.bundleId = bundleId;
     }
     
     /**
-     * The ID of the bundle task to cancel.
+     * The ID of the bundle task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bundleId The ID of the bundle task to cancel.
+     * @param bundleId The ID of the bundle task.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

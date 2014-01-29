@@ -23,16 +23,15 @@ import com.amazonaws.services.ec2.model.transform.RevokeSecurityGroupIngressRequ
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#revokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest) RevokeSecurityGroupIngress operation}.
  * <p>
- * The RevokeSecurityGroupIngress operation revokes permissions from a security group. The permissions used to revoke must be specified using the same
- * values used to grant the permissions.
+ * Removes one or more ingress rules from a security group. The values that you specify in the revoke request (for example, ports) must match the
+ * existing rule's values for the rule to be removed.
  * </p>
  * <p>
- * Permissions are specified by IP protocol (TCP, UDP, or ICMP), the source of the request (by IP range or an Amazon EC2 user-group pair), the source
- * and destination port ranges (for TCP and UDP), and the ICMP codes and types (for ICMP).
+ * Each rule consists of the protocol and the CIDR range or source security group. For the TCP and UDP protocols, you must also specify the destination
+ * port or range of ports. For the ICMP protocol, you must also specify the ICMP type and code.
  * </p>
  * <p>
- * Permission changes are quickly propagated to instances within the security group. However, depending on the number of instances in the group, a small
- * delay might occur.
+ * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might occur.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#revokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest)
@@ -40,55 +39,57 @@ import com.amazonaws.services.ec2.model.transform.RevokeSecurityGroupIngressRequ
 public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<RevokeSecurityGroupIngressRequest> {
 
     /**
-     * Name of the standard (EC2) security group to modify. The group must
-     * belong to your account. Can be used instead of GroupID for standard
-     * (EC2) security groups.
+     * [EC2-Classic, default VPC] The name of the security group.
      */
     private String groupName;
 
     /**
-     * ID of the standard (EC2) or VPC security group to modify. The group
-     * must belong to your account. Required for VPC security groups; can be
-     * used instead of GroupName for standard (EC2) security groups.
+     * The ID of the security group.
      */
     private String groupId;
 
     /**
-     * Deprecated
+     * [EC2-Classic, default VPC] The name of the source security group. You
+     * can't specify a source security group and a CIDR IP address range.
      */
     private String sourceSecurityGroupName;
 
     /**
-     * Deprecated
+     * The ID of the source security group. You can't specify a source
+     * security group and a CIDR IP address range.
      */
     private String sourceSecurityGroupOwnerId;
 
     /**
-     * Deprecated
+     * The IP protocol name (<code>tcp</code>, <code>udp</code>,
+     * <code>icmp</code>) or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers</a>). Use <code>-1</code> to specify all.
      */
     private String ipProtocol;
 
     /**
-     * Deprecated
+     * The start of port range for the TCP and UDP protocols, or an ICMP type
+     * number. For the ICMP type number, use <code>-1</code> to specify all
+     * ICMP types.
      */
     private Integer fromPort;
 
     /**
-     * Deprecated
+     * The end of port range for the TCP and UDP protocols, or an ICMP code
+     * number. For the ICMP code number, use <code>-1</code> to specify all
+     * ICMP codes for the ICMP type.
      */
     private Integer toPort;
 
     /**
-     * Deprecated
+     * The CIDR IP address range. You can't specify this parameter when
+     * specifying a source security group.
      */
     private String cidrIp;
 
     /**
-     * List of IP permissions to revoke on the specified security group. For
-     * an IP permission to be removed, it must exactly match one of the IP
-     * permissions you specify in this list. Specifying permissions through
-     * IP permissions is the preferred way of revoking permissions since it
-     * offers more flexibility and control.
+     * <p/>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission> ipPermissions;
 
@@ -103,14 +104,9 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param groupName Name of the standard (EC2) security group to modify.
-     * The group must belong to your account. Can be used instead of GroupID
-     * for standard (EC2) security groups.
-     * @param ipPermissions List of IP permissions to revoke on the specified
-     * security group. For an IP permission to be removed, it must exactly
-     * match one of the IP permissions you specify in this list. Specifying
-     * permissions through IP permissions is the preferred way of revoking
-     * permissions since it offers more flexibility and control.
+     * @param groupName [EC2-Classic, default VPC] The name of the security
+     * group.
+     * @param ipPermissions <p/>
      */
     public RevokeSecurityGroupIngressRequest(String groupName, java.util.List<IpPermission> ipPermissions) {
         setGroupName(groupName);
@@ -118,41 +114,29 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * Name of the standard (EC2) security group to modify. The group must
-     * belong to your account. Can be used instead of GroupID for standard
-     * (EC2) security groups.
+     * [EC2-Classic, default VPC] The name of the security group.
      *
-     * @return Name of the standard (EC2) security group to modify. The group must
-     *         belong to your account. Can be used instead of GroupID for standard
-     *         (EC2) security groups.
+     * @return [EC2-Classic, default VPC] The name of the security group.
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * Name of the standard (EC2) security group to modify. The group must
-     * belong to your account. Can be used instead of GroupID for standard
-     * (EC2) security groups.
+     * [EC2-Classic, default VPC] The name of the security group.
      *
-     * @param groupName Name of the standard (EC2) security group to modify. The group must
-     *         belong to your account. Can be used instead of GroupID for standard
-     *         (EC2) security groups.
+     * @param groupName [EC2-Classic, default VPC] The name of the security group.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * Name of the standard (EC2) security group to modify. The group must
-     * belong to your account. Can be used instead of GroupID for standard
-     * (EC2) security groups.
+     * [EC2-Classic, default VPC] The name of the security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupName Name of the standard (EC2) security group to modify. The group must
-     *         belong to your account. Can be used instead of GroupID for standard
-     *         (EC2) security groups.
+     * @param groupName [EC2-Classic, default VPC] The name of the security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -163,41 +147,29 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * ID of the standard (EC2) or VPC security group to modify. The group
-     * must belong to your account. Required for VPC security groups; can be
-     * used instead of GroupName for standard (EC2) security groups.
+     * The ID of the security group.
      *
-     * @return ID of the standard (EC2) or VPC security group to modify. The group
-     *         must belong to your account. Required for VPC security groups; can be
-     *         used instead of GroupName for standard (EC2) security groups.
+     * @return The ID of the security group.
      */
     public String getGroupId() {
         return groupId;
     }
     
     /**
-     * ID of the standard (EC2) or VPC security group to modify. The group
-     * must belong to your account. Required for VPC security groups; can be
-     * used instead of GroupName for standard (EC2) security groups.
+     * The ID of the security group.
      *
-     * @param groupId ID of the standard (EC2) or VPC security group to modify. The group
-     *         must belong to your account. Required for VPC security groups; can be
-     *         used instead of GroupName for standard (EC2) security groups.
+     * @param groupId The ID of the security group.
      */
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
     
     /**
-     * ID of the standard (EC2) or VPC security group to modify. The group
-     * must belong to your account. Required for VPC security groups; can be
-     * used instead of GroupName for standard (EC2) security groups.
+     * The ID of the security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupId ID of the standard (EC2) or VPC security group to modify. The group
-     *         must belong to your account. Required for VPC security groups; can be
-     *         used instead of GroupName for standard (EC2) security groups.
+     * @param groupId The ID of the security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -208,29 +180,35 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * Deprecated
+     * [EC2-Classic, default VPC] The name of the source security group. You
+     * can't specify a source security group and a CIDR IP address range.
      *
-     * @return Deprecated
+     * @return [EC2-Classic, default VPC] The name of the source security group. You
+     *         can't specify a source security group and a CIDR IP address range.
      */
     public String getSourceSecurityGroupName() {
         return sourceSecurityGroupName;
     }
     
     /**
-     * Deprecated
+     * [EC2-Classic, default VPC] The name of the source security group. You
+     * can't specify a source security group and a CIDR IP address range.
      *
-     * @param sourceSecurityGroupName Deprecated
+     * @param sourceSecurityGroupName [EC2-Classic, default VPC] The name of the source security group. You
+     *         can't specify a source security group and a CIDR IP address range.
      */
     public void setSourceSecurityGroupName(String sourceSecurityGroupName) {
         this.sourceSecurityGroupName = sourceSecurityGroupName;
     }
     
     /**
-     * Deprecated
+     * [EC2-Classic, default VPC] The name of the source security group. You
+     * can't specify a source security group and a CIDR IP address range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceSecurityGroupName Deprecated
+     * @param sourceSecurityGroupName [EC2-Classic, default VPC] The name of the source security group. You
+     *         can't specify a source security group and a CIDR IP address range.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -241,29 +219,35 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * Deprecated
+     * The ID of the source security group. You can't specify a source
+     * security group and a CIDR IP address range.
      *
-     * @return Deprecated
+     * @return The ID of the source security group. You can't specify a source
+     *         security group and a CIDR IP address range.
      */
     public String getSourceSecurityGroupOwnerId() {
         return sourceSecurityGroupOwnerId;
     }
     
     /**
-     * Deprecated
+     * The ID of the source security group. You can't specify a source
+     * security group and a CIDR IP address range.
      *
-     * @param sourceSecurityGroupOwnerId Deprecated
+     * @param sourceSecurityGroupOwnerId The ID of the source security group. You can't specify a source
+     *         security group and a CIDR IP address range.
      */
     public void setSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
         this.sourceSecurityGroupOwnerId = sourceSecurityGroupOwnerId;
     }
     
     /**
-     * Deprecated
+     * The ID of the source security group. You can't specify a source
+     * security group and a CIDR IP address range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceSecurityGroupOwnerId Deprecated
+     * @param sourceSecurityGroupOwnerId The ID of the source security group. You can't specify a source
+     *         security group and a CIDR IP address range.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -274,29 +258,47 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * Deprecated
+     * The IP protocol name (<code>tcp</code>, <code>udp</code>,
+     * <code>icmp</code>) or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers</a>). Use <code>-1</code> to specify all.
      *
-     * @return Deprecated
+     * @return The IP protocol name (<code>tcp</code>, <code>udp</code>,
+     *         <code>icmp</code>) or number (see <a
+     *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     *         Numbers</a>). Use <code>-1</code> to specify all.
      */
     public String getIpProtocol() {
         return ipProtocol;
     }
     
     /**
-     * Deprecated
+     * The IP protocol name (<code>tcp</code>, <code>udp</code>,
+     * <code>icmp</code>) or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers</a>). Use <code>-1</code> to specify all.
      *
-     * @param ipProtocol Deprecated
+     * @param ipProtocol The IP protocol name (<code>tcp</code>, <code>udp</code>,
+     *         <code>icmp</code>) or number (see <a
+     *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     *         Numbers</a>). Use <code>-1</code> to specify all.
      */
     public void setIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
     }
     
     /**
-     * Deprecated
+     * The IP protocol name (<code>tcp</code>, <code>udp</code>,
+     * <code>icmp</code>) or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers</a>). Use <code>-1</code> to specify all.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ipProtocol Deprecated
+     * @param ipProtocol The IP protocol name (<code>tcp</code>, <code>udp</code>,
+     *         <code>icmp</code>) or number (see <a
+     *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     *         Numbers</a>). Use <code>-1</code> to specify all.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -307,29 +309,41 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * Deprecated
+     * The start of port range for the TCP and UDP protocols, or an ICMP type
+     * number. For the ICMP type number, use <code>-1</code> to specify all
+     * ICMP types.
      *
-     * @return Deprecated
+     * @return The start of port range for the TCP and UDP protocols, or an ICMP type
+     *         number. For the ICMP type number, use <code>-1</code> to specify all
+     *         ICMP types.
      */
     public Integer getFromPort() {
         return fromPort;
     }
     
     /**
-     * Deprecated
+     * The start of port range for the TCP and UDP protocols, or an ICMP type
+     * number. For the ICMP type number, use <code>-1</code> to specify all
+     * ICMP types.
      *
-     * @param fromPort Deprecated
+     * @param fromPort The start of port range for the TCP and UDP protocols, or an ICMP type
+     *         number. For the ICMP type number, use <code>-1</code> to specify all
+     *         ICMP types.
      */
     public void setFromPort(Integer fromPort) {
         this.fromPort = fromPort;
     }
     
     /**
-     * Deprecated
+     * The start of port range for the TCP and UDP protocols, or an ICMP type
+     * number. For the ICMP type number, use <code>-1</code> to specify all
+     * ICMP types.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param fromPort Deprecated
+     * @param fromPort The start of port range for the TCP and UDP protocols, or an ICMP type
+     *         number. For the ICMP type number, use <code>-1</code> to specify all
+     *         ICMP types.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -340,29 +354,41 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * Deprecated
+     * The end of port range for the TCP and UDP protocols, or an ICMP code
+     * number. For the ICMP code number, use <code>-1</code> to specify all
+     * ICMP codes for the ICMP type.
      *
-     * @return Deprecated
+     * @return The end of port range for the TCP and UDP protocols, or an ICMP code
+     *         number. For the ICMP code number, use <code>-1</code> to specify all
+     *         ICMP codes for the ICMP type.
      */
     public Integer getToPort() {
         return toPort;
     }
     
     /**
-     * Deprecated
+     * The end of port range for the TCP and UDP protocols, or an ICMP code
+     * number. For the ICMP code number, use <code>-1</code> to specify all
+     * ICMP codes for the ICMP type.
      *
-     * @param toPort Deprecated
+     * @param toPort The end of port range for the TCP and UDP protocols, or an ICMP code
+     *         number. For the ICMP code number, use <code>-1</code> to specify all
+     *         ICMP codes for the ICMP type.
      */
     public void setToPort(Integer toPort) {
         this.toPort = toPort;
     }
     
     /**
-     * Deprecated
+     * The end of port range for the TCP and UDP protocols, or an ICMP code
+     * number. For the ICMP code number, use <code>-1</code> to specify all
+     * ICMP codes for the ICMP type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param toPort Deprecated
+     * @param toPort The end of port range for the TCP and UDP protocols, or an ICMP code
+     *         number. For the ICMP code number, use <code>-1</code> to specify all
+     *         ICMP codes for the ICMP type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -373,29 +399,35 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * Deprecated
+     * The CIDR IP address range. You can't specify this parameter when
+     * specifying a source security group.
      *
-     * @return Deprecated
+     * @return The CIDR IP address range. You can't specify this parameter when
+     *         specifying a source security group.
      */
     public String getCidrIp() {
         return cidrIp;
     }
     
     /**
-     * Deprecated
+     * The CIDR IP address range. You can't specify this parameter when
+     * specifying a source security group.
      *
-     * @param cidrIp Deprecated
+     * @param cidrIp The CIDR IP address range. You can't specify this parameter when
+     *         specifying a source security group.
      */
     public void setCidrIp(String cidrIp) {
         this.cidrIp = cidrIp;
     }
     
     /**
-     * Deprecated
+     * The CIDR IP address range. You can't specify this parameter when
+     * specifying a source security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cidrIp Deprecated
+     * @param cidrIp The CIDR IP address range. You can't specify this parameter when
+     *         specifying a source security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -406,17 +438,9 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * List of IP permissions to revoke on the specified security group. For
-     * an IP permission to be removed, it must exactly match one of the IP
-     * permissions you specify in this list. Specifying permissions through
-     * IP permissions is the preferred way of revoking permissions since it
-     * offers more flexibility and control.
+     * <p/>
      *
-     * @return List of IP permissions to revoke on the specified security group. For
-     *         an IP permission to be removed, it must exactly match one of the IP
-     *         permissions you specify in this list. Specifying permissions through
-     *         IP permissions is the preferred way of revoking permissions since it
-     *         offers more flexibility and control.
+     * @return <p/>
      */
     public java.util.List<IpPermission> getIpPermissions() {
         if (ipPermissions == null) {
@@ -427,17 +451,9 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * List of IP permissions to revoke on the specified security group. For
-     * an IP permission to be removed, it must exactly match one of the IP
-     * permissions you specify in this list. Specifying permissions through
-     * IP permissions is the preferred way of revoking permissions since it
-     * offers more flexibility and control.
+     * <p/>
      *
-     * @param ipPermissions List of IP permissions to revoke on the specified security group. For
-     *         an IP permission to be removed, it must exactly match one of the IP
-     *         permissions you specify in this list. Specifying permissions through
-     *         IP permissions is the preferred way of revoking permissions since it
-     *         offers more flexibility and control.
+     * @param ipPermissions <p/>
      */
     public void setIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
         if (ipPermissions == null) {
@@ -450,19 +466,11 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * List of IP permissions to revoke on the specified security group. For
-     * an IP permission to be removed, it must exactly match one of the IP
-     * permissions you specify in this list. Specifying permissions through
-     * IP permissions is the preferred way of revoking permissions since it
-     * offers more flexibility and control.
+     * <p/>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ipPermissions List of IP permissions to revoke on the specified security group. For
-     *         an IP permission to be removed, it must exactly match one of the IP
-     *         permissions you specify in this list. Specifying permissions through
-     *         IP permissions is the preferred way of revoking permissions since it
-     *         offers more flexibility and control.
+     * @param ipPermissions <p/>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -476,19 +484,11 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * List of IP permissions to revoke on the specified security group. For
-     * an IP permission to be removed, it must exactly match one of the IP
-     * permissions you specify in this list. Specifying permissions through
-     * IP permissions is the preferred way of revoking permissions since it
-     * offers more flexibility and control.
+     * <p/>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ipPermissions List of IP permissions to revoke on the specified security group. For
-     *         an IP permission to be removed, it must exactly match one of the IP
-     *         permissions you specify in this list. Specifying permissions through
-     *         IP permissions is the preferred way of revoking permissions since it
-     *         offers more flexibility and control.
+     * @param ipPermissions <p/>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

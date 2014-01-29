@@ -23,7 +23,11 @@ import com.amazonaws.services.ec2.model.transform.DescribeSnapshotAttributeReque
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSnapshotAttribute(DescribeSnapshotAttributeRequest) DescribeSnapshotAttribute operation}.
  * <p>
- * Returns information about an attribute of a snapshot. Only one attribute can be specified per call.
+ * Describes an attribute of the specified snapshot. You can specify only one attribute at a time.
+ * </p>
+ * <p>
+ * For more information about Amazon EBS snapshots, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS
+ * Snapshots </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSnapshotAttribute(DescribeSnapshotAttributeRequest)
@@ -31,13 +35,12 @@ import com.amazonaws.services.ec2.model.transform.DescribeSnapshotAttributeReque
 public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeSnapshotAttributeRequest> {
 
     /**
-     * The ID of the EBS snapshot whose attribute is being described.
+     * The ID of the Amazon EBS snapshot.
      */
     private String snapshotId;
 
     /**
-     * The name of the EBS attribute to describe. <p> Available attribute
-     * names: createVolumePermission
+     * The snapshot attribute.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
@@ -55,10 +58,8 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param snapshotId The ID of the EBS snapshot whose attribute is being
-     * described.
-     * @param attribute The name of the EBS attribute to describe. <p>
-     * Available attribute names: createVolumePermission
+     * @param snapshotId The ID of the Amazon EBS snapshot.
+     * @param attribute The snapshot attribute.
      */
     public DescribeSnapshotAttributeRequest(String snapshotId, String attribute) {
         setSnapshotId(snapshotId);
@@ -70,10 +71,8 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param snapshotId The ID of the EBS snapshot whose attribute is being
-     * described.
-     * @param attribute The name of the EBS attribute to describe. <p>
-     * Available attribute names: createVolumePermission
+     * @param snapshotId The ID of the Amazon EBS snapshot.
+     * @param attribute The snapshot attribute.
      */
     public DescribeSnapshotAttributeRequest(String snapshotId, SnapshotAttributeName attribute) {
         this.snapshotId = snapshotId;
@@ -81,29 +80,29 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * The ID of the EBS snapshot whose attribute is being described.
+     * The ID of the Amazon EBS snapshot.
      *
-     * @return The ID of the EBS snapshot whose attribute is being described.
+     * @return The ID of the Amazon EBS snapshot.
      */
     public String getSnapshotId() {
         return snapshotId;
     }
     
     /**
-     * The ID of the EBS snapshot whose attribute is being described.
+     * The ID of the Amazon EBS snapshot.
      *
-     * @param snapshotId The ID of the EBS snapshot whose attribute is being described.
+     * @param snapshotId The ID of the Amazon EBS snapshot.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
     
     /**
-     * The ID of the EBS snapshot whose attribute is being described.
+     * The ID of the Amazon EBS snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotId The ID of the EBS snapshot whose attribute is being described.
+     * @param snapshotId The ID of the Amazon EBS snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -114,14 +113,12 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * The name of the EBS attribute to describe. <p> Available attribute
-     * names: createVolumePermission
+     * The snapshot attribute.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @return The name of the EBS attribute to describe. <p> Available attribute
-     *         names: createVolumePermission
+     * @return The snapshot attribute.
      *
      * @see SnapshotAttributeName
      */
@@ -130,14 +127,12 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The name of the EBS attribute to describe. <p> Available attribute
-     * names: createVolumePermission
+     * The snapshot attribute.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The name of the EBS attribute to describe. <p> Available attribute
-     *         names: createVolumePermission
+     * @param attribute The snapshot attribute.
      *
      * @see SnapshotAttributeName
      */
@@ -146,16 +141,14 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The name of the EBS attribute to describe. <p> Available attribute
-     * names: createVolumePermission
+     * The snapshot attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The name of the EBS attribute to describe. <p> Available attribute
-     *         names: createVolumePermission
+     * @param attribute The snapshot attribute.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -168,14 +161,12 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * The name of the EBS attribute to describe. <p> Available attribute
-     * names: createVolumePermission
+     * The snapshot attribute.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The name of the EBS attribute to describe. <p> Available attribute
-     *         names: createVolumePermission
+     * @param attribute The snapshot attribute.
      *
      * @see SnapshotAttributeName
      */
@@ -184,16 +175,14 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The name of the EBS attribute to describe. <p> Available attribute
-     * names: createVolumePermission
+     * The snapshot attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The name of the EBS attribute to describe. <p> Available attribute
-     *         names: createVolumePermission
+     * @param attribute The snapshot attribute.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

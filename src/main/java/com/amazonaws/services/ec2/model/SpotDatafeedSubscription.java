@@ -18,29 +18,28 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The SpotDatafeedSubscriptionType data type.
+ * Describes the datafeed for a Spot Instance.
  * </p>
  */
 public class SpotDatafeedSubscription implements Serializable {
 
     /**
-     * Specifies the AWS account ID of the account.
+     * The AWS account ID of the account.
      */
     private String ownerId;
 
     /**
-     * Specifies the Amazon S3 bucket where the Spot Instance data feed is
-     * located.
+     * The Amazon S3 bucket where the Spot Instance datafeed is located.
      */
     private String bucket;
 
     /**
-     * Contains the prefix that is prepended to data feed files.
+     * The prefix that is prepended to datafeed files.
      */
     private String prefix;
 
     /**
-     * Specifies the state of the Spot Instance request.
+     * The state of the Spot Instance datafeed subscription.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
@@ -48,34 +47,34 @@ public class SpotDatafeedSubscription implements Serializable {
     private String state;
 
     /**
-     * Specifies a fault code for the Spot Instance request, if present.
+     * The fault codes for the Spot Instance request, if any.
      */
     private SpotInstanceStateFault fault;
 
     /**
-     * Specifies the AWS account ID of the account.
+     * The AWS account ID of the account.
      *
-     * @return Specifies the AWS account ID of the account.
+     * @return The AWS account ID of the account.
      */
     public String getOwnerId() {
         return ownerId;
     }
     
     /**
-     * Specifies the AWS account ID of the account.
+     * The AWS account ID of the account.
      *
-     * @param ownerId Specifies the AWS account ID of the account.
+     * @param ownerId The AWS account ID of the account.
      */
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
     
     /**
-     * Specifies the AWS account ID of the account.
+     * The AWS account ID of the account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ownerId Specifies the AWS account ID of the account.
+     * @param ownerId The AWS account ID of the account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -86,35 +85,29 @@ public class SpotDatafeedSubscription implements Serializable {
     }
 
     /**
-     * Specifies the Amazon S3 bucket where the Spot Instance data feed is
-     * located.
+     * The Amazon S3 bucket where the Spot Instance datafeed is located.
      *
-     * @return Specifies the Amazon S3 bucket where the Spot Instance data feed is
-     *         located.
+     * @return The Amazon S3 bucket where the Spot Instance datafeed is located.
      */
     public String getBucket() {
         return bucket;
     }
     
     /**
-     * Specifies the Amazon S3 bucket where the Spot Instance data feed is
-     * located.
+     * The Amazon S3 bucket where the Spot Instance datafeed is located.
      *
-     * @param bucket Specifies the Amazon S3 bucket where the Spot Instance data feed is
-     *         located.
+     * @param bucket The Amazon S3 bucket where the Spot Instance datafeed is located.
      */
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
     
     /**
-     * Specifies the Amazon S3 bucket where the Spot Instance data feed is
-     * located.
+     * The Amazon S3 bucket where the Spot Instance datafeed is located.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bucket Specifies the Amazon S3 bucket where the Spot Instance data feed is
-     *         located.
+     * @param bucket The Amazon S3 bucket where the Spot Instance datafeed is located.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -125,29 +118,29 @@ public class SpotDatafeedSubscription implements Serializable {
     }
 
     /**
-     * Contains the prefix that is prepended to data feed files.
+     * The prefix that is prepended to datafeed files.
      *
-     * @return Contains the prefix that is prepended to data feed files.
+     * @return The prefix that is prepended to datafeed files.
      */
     public String getPrefix() {
         return prefix;
     }
     
     /**
-     * Contains the prefix that is prepended to data feed files.
+     * The prefix that is prepended to datafeed files.
      *
-     * @param prefix Contains the prefix that is prepended to data feed files.
+     * @param prefix The prefix that is prepended to datafeed files.
      */
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
     
     /**
-     * Contains the prefix that is prepended to data feed files.
+     * The prefix that is prepended to datafeed files.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param prefix Contains the prefix that is prepended to data feed files.
+     * @param prefix The prefix that is prepended to datafeed files.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -158,12 +151,12 @@ public class SpotDatafeedSubscription implements Serializable {
     }
 
     /**
-     * Specifies the state of the Spot Instance request.
+     * The state of the Spot Instance datafeed subscription.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
-     * @return Specifies the state of the Spot Instance request.
+     * @return The state of the Spot Instance datafeed subscription.
      *
      * @see DatafeedSubscriptionState
      */
@@ -172,12 +165,12 @@ public class SpotDatafeedSubscription implements Serializable {
     }
     
     /**
-     * Specifies the state of the Spot Instance request.
+     * The state of the Spot Instance datafeed subscription.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
-     * @param state Specifies the state of the Spot Instance request.
+     * @param state The state of the Spot Instance datafeed subscription.
      *
      * @see DatafeedSubscriptionState
      */
@@ -186,14 +179,14 @@ public class SpotDatafeedSubscription implements Serializable {
     }
     
     /**
-     * Specifies the state of the Spot Instance request.
+     * The state of the Spot Instance datafeed subscription.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
-     * @param state Specifies the state of the Spot Instance request.
+     * @param state The state of the Spot Instance datafeed subscription.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -206,12 +199,12 @@ public class SpotDatafeedSubscription implements Serializable {
     }
 
     /**
-     * Specifies the state of the Spot Instance request.
+     * The state of the Spot Instance datafeed subscription.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
-     * @param state Specifies the state of the Spot Instance request.
+     * @param state The state of the Spot Instance datafeed subscription.
      *
      * @see DatafeedSubscriptionState
      */
@@ -220,14 +213,14 @@ public class SpotDatafeedSubscription implements Serializable {
     }
     
     /**
-     * Specifies the state of the Spot Instance request.
+     * The state of the Spot Instance datafeed subscription.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
-     * @param state Specifies the state of the Spot Instance request.
+     * @param state The state of the Spot Instance datafeed subscription.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -240,29 +233,29 @@ public class SpotDatafeedSubscription implements Serializable {
     }
 
     /**
-     * Specifies a fault code for the Spot Instance request, if present.
+     * The fault codes for the Spot Instance request, if any.
      *
-     * @return Specifies a fault code for the Spot Instance request, if present.
+     * @return The fault codes for the Spot Instance request, if any.
      */
     public SpotInstanceStateFault getFault() {
         return fault;
     }
     
     /**
-     * Specifies a fault code for the Spot Instance request, if present.
+     * The fault codes for the Spot Instance request, if any.
      *
-     * @param fault Specifies a fault code for the Spot Instance request, if present.
+     * @param fault The fault codes for the Spot Instance request, if any.
      */
     public void setFault(SpotInstanceStateFault fault) {
         this.fault = fault;
     }
     
     /**
-     * Specifies a fault code for the Spot Instance request, if present.
+     * The fault codes for the Spot Instance request, if any.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param fault Specifies a fault code for the Spot Instance request, if present.
+     * @param fault The fault codes for the Spot Instance request, if any.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

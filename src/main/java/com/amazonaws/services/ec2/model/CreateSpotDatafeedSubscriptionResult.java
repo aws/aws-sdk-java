@@ -17,39 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Create Spot Datafeed Subscription Result
+ * 
  */
 public class CreateSpotDatafeedSubscriptionResult implements Serializable {
 
     /**
-     * The SpotDatafeedSubscriptionType data type.
+     * The Spot Instance datafeed subscription.
      */
     private SpotDatafeedSubscription spotDatafeedSubscription;
 
     /**
-     * The SpotDatafeedSubscriptionType data type.
+     * The Spot Instance datafeed subscription.
      *
-     * @return The SpotDatafeedSubscriptionType data type.
+     * @return The Spot Instance datafeed subscription.
      */
     public SpotDatafeedSubscription getSpotDatafeedSubscription() {
         return spotDatafeedSubscription;
     }
     
     /**
-     * The SpotDatafeedSubscriptionType data type.
+     * The Spot Instance datafeed subscription.
      *
-     * @param spotDatafeedSubscription The SpotDatafeedSubscriptionType data type.
+     * @param spotDatafeedSubscription The Spot Instance datafeed subscription.
      */
     public void setSpotDatafeedSubscription(SpotDatafeedSubscription spotDatafeedSubscription) {
         this.spotDatafeedSubscription = spotDatafeedSubscription;
     }
     
     /**
-     * The SpotDatafeedSubscriptionType data type.
+     * The Spot Instance datafeed subscription.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotDatafeedSubscription The SpotDatafeedSubscriptionType data type.
+     * @param spotDatafeedSubscription The Spot Instance datafeed subscription.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

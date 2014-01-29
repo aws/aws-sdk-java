@@ -25,6 +25,8 @@ import java.lang.annotation.Target;
  * Applied to the getter method for a hash key property.
  * <p>
  * This annotation is required.
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey} instead.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)

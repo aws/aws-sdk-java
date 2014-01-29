@@ -18,26 +18,26 @@ import java.io.Serializable;
 
 /**
  * <p>
- * An active offer for Amazon EC2 Reserved Instances.
+ * Describes a Reserved Instance offering.
  * </p>
  */
 public class ReservedInstancesOffering implements Serializable {
 
     /**
-     * The unique ID of this Reserved Instances offering.
+     * The ID of the Reserved Instance offering.
      */
     private String reservedInstancesOfferingId;
 
     /**
-     * The instance type on which the Reserved Instances can be used.
+     * The instance type on which the Reserved Instance can be used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      */
     private String instanceType;
 
     /**
-     * The Availability Zone in which the Reserved Instances can be used.
+     * The Availability Zone in which the Reserved Instance can be used.
      */
     private String availabilityZone;
 
@@ -57,7 +57,7 @@ public class ReservedInstancesOffering implements Serializable {
     private Float fixedPrice;
 
     /**
-     * The Reserved Instances description (ex: Windows or Unix/Linux).
+     * The Reserved Instance description.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
@@ -65,7 +65,7 @@ public class ReservedInstancesOffering implements Serializable {
     private String productDescription;
 
     /**
-     * The tenancy of the reserved instance (ex: default or dedicated).
+     * The tenancy of the reserved instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated
@@ -73,8 +73,9 @@ public class ReservedInstancesOffering implements Serializable {
     private String instanceTenancy;
 
     /**
-     * The currency of the reserved instance. Specified using ISO 4217
-     * standard (e.g., USD, JPY).
+     * The currency of the Reserved Instance offering you are purchasing.
+     * It's specified using ISO 4217 standard currency codes. At this time,
+     * the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
@@ -94,34 +95,42 @@ public class ReservedInstancesOffering implements Serializable {
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge> recurringCharges;
 
+    /**
+     * Indicates whether the offering is available through the Reserved
+     * Instance Marketplace (resale) or AWS. If it's a Reserved Instance
+     * Marketplace offering, this is <code>true</code>.
+     */
     private Boolean marketplace;
 
+    /**
+     * The pricing details of the Reserved Instance offering.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<PricingDetail> pricingDetails;
 
     /**
-     * The unique ID of this Reserved Instances offering.
+     * The ID of the Reserved Instance offering.
      *
-     * @return The unique ID of this Reserved Instances offering.
+     * @return The ID of the Reserved Instance offering.
      */
     public String getReservedInstancesOfferingId() {
         return reservedInstancesOfferingId;
     }
     
     /**
-     * The unique ID of this Reserved Instances offering.
+     * The ID of the Reserved Instance offering.
      *
-     * @param reservedInstancesOfferingId The unique ID of this Reserved Instances offering.
+     * @param reservedInstancesOfferingId The ID of the Reserved Instance offering.
      */
     public void setReservedInstancesOfferingId(String reservedInstancesOfferingId) {
         this.reservedInstancesOfferingId = reservedInstancesOfferingId;
     }
     
     /**
-     * The unique ID of this Reserved Instances offering.
+     * The ID of the Reserved Instance offering.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesOfferingId The unique ID of this Reserved Instances offering.
+     * @param reservedInstancesOfferingId The ID of the Reserved Instance offering.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -132,12 +141,12 @@ public class ReservedInstancesOffering implements Serializable {
     }
 
     /**
-     * The instance type on which the Reserved Instances can be used.
+     * The instance type on which the Reserved Instance can be used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @return The instance type on which the Reserved Instances can be used.
+     * @return The instance type on which the Reserved Instance can be used.
      *
      * @see InstanceType
      */
@@ -146,12 +155,12 @@ public class ReservedInstancesOffering implements Serializable {
     }
     
     /**
-     * The instance type on which the Reserved Instances can be used.
+     * The instance type on which the Reserved Instance can be used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @param instanceType The instance type on which the Reserved Instances can be used.
+     * @param instanceType The instance type on which the Reserved Instance can be used.
      *
      * @see InstanceType
      */
@@ -160,14 +169,14 @@ public class ReservedInstancesOffering implements Serializable {
     }
     
     /**
-     * The instance type on which the Reserved Instances can be used.
+     * The instance type on which the Reserved Instance can be used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @param instanceType The instance type on which the Reserved Instances can be used.
+     * @param instanceType The instance type on which the Reserved Instance can be used.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -180,12 +189,12 @@ public class ReservedInstancesOffering implements Serializable {
     }
 
     /**
-     * The instance type on which the Reserved Instances can be used.
+     * The instance type on which the Reserved Instance can be used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @param instanceType The instance type on which the Reserved Instances can be used.
+     * @param instanceType The instance type on which the Reserved Instance can be used.
      *
      * @see InstanceType
      */
@@ -194,14 +203,14 @@ public class ReservedInstancesOffering implements Serializable {
     }
     
     /**
-     * The instance type on which the Reserved Instances can be used.
+     * The instance type on which the Reserved Instance can be used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @param instanceType The instance type on which the Reserved Instances can be used.
+     * @param instanceType The instance type on which the Reserved Instance can be used.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -214,29 +223,29 @@ public class ReservedInstancesOffering implements Serializable {
     }
 
     /**
-     * The Availability Zone in which the Reserved Instances can be used.
+     * The Availability Zone in which the Reserved Instance can be used.
      *
-     * @return The Availability Zone in which the Reserved Instances can be used.
+     * @return The Availability Zone in which the Reserved Instance can be used.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * The Availability Zone in which the Reserved Instances can be used.
+     * The Availability Zone in which the Reserved Instance can be used.
      *
-     * @param availabilityZone The Availability Zone in which the Reserved Instances can be used.
+     * @param availabilityZone The Availability Zone in which the Reserved Instance can be used.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * The Availability Zone in which the Reserved Instances can be used.
+     * The Availability Zone in which the Reserved Instance can be used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The Availability Zone in which the Reserved Instances can be used.
+     * @param availabilityZone The Availability Zone in which the Reserved Instance can be used.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -346,12 +355,12 @@ public class ReservedInstancesOffering implements Serializable {
     }
 
     /**
-     * The Reserved Instances description (ex: Windows or Unix/Linux).
+     * The Reserved Instance description.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @return The Reserved Instances description (ex: Windows or Unix/Linux).
+     * @return The Reserved Instance description.
      *
      * @see RIProductDescription
      */
@@ -360,12 +369,12 @@ public class ReservedInstancesOffering implements Serializable {
     }
     
     /**
-     * The Reserved Instances description (ex: Windows or Unix/Linux).
+     * The Reserved Instance description.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @param productDescription The Reserved Instances description (ex: Windows or Unix/Linux).
+     * @param productDescription The Reserved Instance description.
      *
      * @see RIProductDescription
      */
@@ -374,14 +383,14 @@ public class ReservedInstancesOffering implements Serializable {
     }
     
     /**
-     * The Reserved Instances description (ex: Windows or Unix/Linux).
+     * The Reserved Instance description.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @param productDescription The Reserved Instances description (ex: Windows or Unix/Linux).
+     * @param productDescription The Reserved Instance description.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -394,12 +403,12 @@ public class ReservedInstancesOffering implements Serializable {
     }
 
     /**
-     * The Reserved Instances description (ex: Windows or Unix/Linux).
+     * The Reserved Instance description.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @param productDescription The Reserved Instances description (ex: Windows or Unix/Linux).
+     * @param productDescription The Reserved Instance description.
      *
      * @see RIProductDescription
      */
@@ -408,14 +417,14 @@ public class ReservedInstancesOffering implements Serializable {
     }
     
     /**
-     * The Reserved Instances description (ex: Windows or Unix/Linux).
+     * The Reserved Instance description.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @param productDescription The Reserved Instances description (ex: Windows or Unix/Linux).
+     * @param productDescription The Reserved Instance description.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -428,12 +437,12 @@ public class ReservedInstancesOffering implements Serializable {
     }
 
     /**
-     * The tenancy of the reserved instance (ex: default or dedicated).
+     * The tenancy of the reserved instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated
      *
-     * @return The tenancy of the reserved instance (ex: default or dedicated).
+     * @return The tenancy of the reserved instance.
      *
      * @see Tenancy
      */
@@ -442,12 +451,12 @@ public class ReservedInstancesOffering implements Serializable {
     }
     
     /**
-     * The tenancy of the reserved instance (ex: default or dedicated).
+     * The tenancy of the reserved instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated
      *
-     * @param instanceTenancy The tenancy of the reserved instance (ex: default or dedicated).
+     * @param instanceTenancy The tenancy of the reserved instance.
      *
      * @see Tenancy
      */
@@ -456,14 +465,14 @@ public class ReservedInstancesOffering implements Serializable {
     }
     
     /**
-     * The tenancy of the reserved instance (ex: default or dedicated).
+     * The tenancy of the reserved instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated
      *
-     * @param instanceTenancy The tenancy of the reserved instance (ex: default or dedicated).
+     * @param instanceTenancy The tenancy of the reserved instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -476,12 +485,12 @@ public class ReservedInstancesOffering implements Serializable {
     }
 
     /**
-     * The tenancy of the reserved instance (ex: default or dedicated).
+     * The tenancy of the reserved instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated
      *
-     * @param instanceTenancy The tenancy of the reserved instance (ex: default or dedicated).
+     * @param instanceTenancy The tenancy of the reserved instance.
      *
      * @see Tenancy
      */
@@ -490,14 +499,14 @@ public class ReservedInstancesOffering implements Serializable {
     }
     
     /**
-     * The tenancy of the reserved instance (ex: default or dedicated).
+     * The tenancy of the reserved instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated
      *
-     * @param instanceTenancy The tenancy of the reserved instance (ex: default or dedicated).
+     * @param instanceTenancy The tenancy of the reserved instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -510,14 +519,16 @@ public class ReservedInstancesOffering implements Serializable {
     }
 
     /**
-     * The currency of the reserved instance. Specified using ISO 4217
-     * standard (e.g., USD, JPY).
+     * The currency of the Reserved Instance offering you are purchasing.
+     * It's specified using ISO 4217 standard currency codes. At this time,
+     * the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @return The currency of the reserved instance. Specified using ISO 4217
-     *         standard (e.g., USD, JPY).
+     * @return The currency of the Reserved Instance offering you are purchasing.
+     *         It's specified using ISO 4217 standard currency codes. At this time,
+     *         the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
      */
@@ -526,14 +537,16 @@ public class ReservedInstancesOffering implements Serializable {
     }
     
     /**
-     * The currency of the reserved instance. Specified using ISO 4217
-     * standard (e.g., USD, JPY).
+     * The currency of the Reserved Instance offering you are purchasing.
+     * It's specified using ISO 4217 standard currency codes. At this time,
+     * the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The currency of the reserved instance. Specified using ISO 4217
-     *         standard (e.g., USD, JPY).
+     * @param currencyCode The currency of the Reserved Instance offering you are purchasing.
+     *         It's specified using ISO 4217 standard currency codes. At this time,
+     *         the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
      */
@@ -542,16 +555,18 @@ public class ReservedInstancesOffering implements Serializable {
     }
     
     /**
-     * The currency of the reserved instance. Specified using ISO 4217
-     * standard (e.g., USD, JPY).
+     * The currency of the Reserved Instance offering you are purchasing.
+     * It's specified using ISO 4217 standard currency codes. At this time,
+     * the only supported currency is <code>USD</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The currency of the reserved instance. Specified using ISO 4217
-     *         standard (e.g., USD, JPY).
+     * @param currencyCode The currency of the Reserved Instance offering you are purchasing.
+     *         It's specified using ISO 4217 standard currency codes. At this time,
+     *         the only supported currency is <code>USD</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -564,14 +579,16 @@ public class ReservedInstancesOffering implements Serializable {
     }
 
     /**
-     * The currency of the reserved instance. Specified using ISO 4217
-     * standard (e.g., USD, JPY).
+     * The currency of the Reserved Instance offering you are purchasing.
+     * It's specified using ISO 4217 standard currency codes. At this time,
+     * the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The currency of the reserved instance. Specified using ISO 4217
-     *         standard (e.g., USD, JPY).
+     * @param currencyCode The currency of the Reserved Instance offering you are purchasing.
+     *         It's specified using ISO 4217 standard currency codes. At this time,
+     *         the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
      */
@@ -580,16 +597,18 @@ public class ReservedInstancesOffering implements Serializable {
     }
     
     /**
-     * The currency of the reserved instance. Specified using ISO 4217
-     * standard (e.g., USD, JPY).
+     * The currency of the Reserved Instance offering you are purchasing.
+     * It's specified using ISO 4217 standard currency codes. At this time,
+     * the only supported currency is <code>USD</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The currency of the reserved instance. Specified using ISO 4217
-     *         standard (e.g., USD, JPY).
+     * @param currencyCode The currency of the Reserved Instance offering you are purchasing.
+     *         It's specified using ISO 4217 standard currency codes. At this time,
+     *         the only supported currency is <code>USD</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -752,29 +771,41 @@ public class ReservedInstancesOffering implements Serializable {
     }
 
     /**
-     * Returns the value of the Marketplace property for this object.
+     * Indicates whether the offering is available through the Reserved
+     * Instance Marketplace (resale) or AWS. If it's a Reserved Instance
+     * Marketplace offering, this is <code>true</code>.
      *
-     * @return The value of the Marketplace property for this object.
+     * @return Indicates whether the offering is available through the Reserved
+     *         Instance Marketplace (resale) or AWS. If it's a Reserved Instance
+     *         Marketplace offering, this is <code>true</code>.
      */
     public Boolean isMarketplace() {
         return marketplace;
     }
     
     /**
-     * Sets the value of the Marketplace property for this object.
+     * Indicates whether the offering is available through the Reserved
+     * Instance Marketplace (resale) or AWS. If it's a Reserved Instance
+     * Marketplace offering, this is <code>true</code>.
      *
-     * @param marketplace The new value for the Marketplace property for this object.
+     * @param marketplace Indicates whether the offering is available through the Reserved
+     *         Instance Marketplace (resale) or AWS. If it's a Reserved Instance
+     *         Marketplace offering, this is <code>true</code>.
      */
     public void setMarketplace(Boolean marketplace) {
         this.marketplace = marketplace;
     }
     
     /**
-     * Sets the value of the Marketplace property for this object.
+     * Indicates whether the offering is available through the Reserved
+     * Instance Marketplace (resale) or AWS. If it's a Reserved Instance
+     * Marketplace offering, this is <code>true</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marketplace The new value for the Marketplace property for this object.
+     * @param marketplace Indicates whether the offering is available through the Reserved
+     *         Instance Marketplace (resale) or AWS. If it's a Reserved Instance
+     *         Marketplace offering, this is <code>true</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -785,18 +816,22 @@ public class ReservedInstancesOffering implements Serializable {
     }
 
     /**
-     * Returns the value of the Marketplace property for this object.
+     * Indicates whether the offering is available through the Reserved
+     * Instance Marketplace (resale) or AWS. If it's a Reserved Instance
+     * Marketplace offering, this is <code>true</code>.
      *
-     * @return The value of the Marketplace property for this object.
+     * @return Indicates whether the offering is available through the Reserved
+     *         Instance Marketplace (resale) or AWS. If it's a Reserved Instance
+     *         Marketplace offering, this is <code>true</code>.
      */
     public Boolean getMarketplace() {
         return marketplace;
     }
 
     /**
-     * Returns the value of the PricingDetails property for this object.
+     * The pricing details of the Reserved Instance offering.
      *
-     * @return The value of the PricingDetails property for this object.
+     * @return The pricing details of the Reserved Instance offering.
      */
     public java.util.List<PricingDetail> getPricingDetails() {
         if (pricingDetails == null) {
@@ -807,9 +842,9 @@ public class ReservedInstancesOffering implements Serializable {
     }
     
     /**
-     * Sets the value of the PricingDetails property for this object.
+     * The pricing details of the Reserved Instance offering.
      *
-     * @param pricingDetails The new value for the PricingDetails property for this object.
+     * @param pricingDetails The pricing details of the Reserved Instance offering.
      */
     public void setPricingDetails(java.util.Collection<PricingDetail> pricingDetails) {
         if (pricingDetails == null) {
@@ -822,11 +857,11 @@ public class ReservedInstancesOffering implements Serializable {
     }
     
     /**
-     * Sets the value of the PricingDetails property for this object.
+     * The pricing details of the Reserved Instance offering.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pricingDetails The new value for the PricingDetails property for this object.
+     * @param pricingDetails The pricing details of the Reserved Instance offering.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -840,11 +875,11 @@ public class ReservedInstancesOffering implements Serializable {
     }
     
     /**
-     * Sets the value of the PricingDetails property for this object.
+     * The pricing details of the Reserved Instance offering.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pricingDetails The new value for the PricingDetails property for this object.
+     * @param pricingDetails The pricing details of the Reserved Instance offering.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

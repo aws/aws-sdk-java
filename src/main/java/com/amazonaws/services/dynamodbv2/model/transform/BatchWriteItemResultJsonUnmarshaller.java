@@ -46,12 +46,15 @@ public class BatchWriteItemResultJsonUnmarshaller implements Unmarshaller<BatchW
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UnprocessedItems", targetDepth)) {
+                    context.nextToken();
                     batchWriteItemResult.setUnprocessedItems(new MapUnmarshaller<String,java.util.List<WriteRequest>>(StringJsonUnmarshaller.getInstance(), new ListUnmarshaller<WriteRequest>(WriteRequestJsonUnmarshaller.getInstance())).unmarshall(context));
                 }
                 if (context.testExpression("ItemCollectionMetrics", targetDepth)) {
+                    context.nextToken();
                     batchWriteItemResult.setItemCollectionMetrics(new MapUnmarshaller<String,java.util.List<ItemCollectionMetrics>>(StringJsonUnmarshaller.getInstance(), new ListUnmarshaller<ItemCollectionMetrics>(ItemCollectionMetricsJsonUnmarshaller.getInstance())).unmarshall(context));
                 }
                 if (context.testExpression("ConsumedCapacity", targetDepth)) {
+                    context.nextToken();
                     batchWriteItemResult.setConsumedCapacity(new ListUnmarshaller<ConsumedCapacity>(ConsumedCapacityJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

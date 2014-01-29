@@ -23,36 +23,27 @@ import com.amazonaws.services.ec2.model.transform.ImportKeyPairRequestMarshaller
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#importKeyPair(ImportKeyPairRequest) ImportKeyPair operation}.
  * <p>
- * Imports the public key from an RSA key pair created with a third-party tool. This operation differs from CreateKeyPair as the private key is never
- * transferred between the caller and AWS servers.
+ * Imports the public key from an RSA key pair that you created with a third-party tool. Compare this with CreateKeyPair, in which AWS creates the key
+ * pair and gives the keys to you (AWS keeps a copy of the public key). With ImportKeyPair, you create the key pair and give AWS just the public key. The
+ * private key is never transferred between you and AWS.
  * </p>
  * <p>
- * RSA key pairs are easily created on Microsoft Windows and Linux OS systems using the <code>ssh-keygen</code> command line tool provided with the
- * standard OpenSSH installation. Standard library support for RSA key pair creation is also available for Java, Ruby, Python, and many other
- * programming languages.
+ * For more information about key pairs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a> in the
+ * <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
- * <p>
- * The following formats are supported:
- * </p>
- * 
- * <ul>
- * <li> OpenSSH public key format, </li>
- * <li> Base64 encoded DER format. </li>
- * <li> SSH public key file format as specified in <a href="http://tools.ietf.org/html/rfc4716"> RFC4716 </a> . </li>
- * 
- * </ul>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#importKeyPair(ImportKeyPairRequest)
  */
 public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ImportKeyPairRequest> {
 
     /**
-     * The unique name for the key pair.
+     * A unique name for the key pair.
      */
     private String keyName;
 
     /**
-     * The public key portion of the key pair being imported.
+     * The public key. You must base64 encode the public key material before
+     * sending it to AWS.
      */
     private String publicKeyMaterial;
 
@@ -67,9 +58,9 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Ser
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param keyName The unique name for the key pair.
-     * @param publicKeyMaterial The public key portion of the key pair being
-     * imported.
+     * @param keyName A unique name for the key pair.
+     * @param publicKeyMaterial The public key. You must base64 encode the
+     * public key material before sending it to AWS.
      */
     public ImportKeyPairRequest(String keyName, String publicKeyMaterial) {
         setKeyName(keyName);
@@ -77,29 +68,29 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * The unique name for the key pair.
+     * A unique name for the key pair.
      *
-     * @return The unique name for the key pair.
+     * @return A unique name for the key pair.
      */
     public String getKeyName() {
         return keyName;
     }
     
     /**
-     * The unique name for the key pair.
+     * A unique name for the key pair.
      *
-     * @param keyName The unique name for the key pair.
+     * @param keyName A unique name for the key pair.
      */
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
     
     /**
-     * The unique name for the key pair.
+     * A unique name for the key pair.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param keyName The unique name for the key pair.
+     * @param keyName A unique name for the key pair.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -110,29 +101,35 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * The public key portion of the key pair being imported.
+     * The public key. You must base64 encode the public key material before
+     * sending it to AWS.
      *
-     * @return The public key portion of the key pair being imported.
+     * @return The public key. You must base64 encode the public key material before
+     *         sending it to AWS.
      */
     public String getPublicKeyMaterial() {
         return publicKeyMaterial;
     }
     
     /**
-     * The public key portion of the key pair being imported.
+     * The public key. You must base64 encode the public key material before
+     * sending it to AWS.
      *
-     * @param publicKeyMaterial The public key portion of the key pair being imported.
+     * @param publicKeyMaterial The public key. You must base64 encode the public key material before
+     *         sending it to AWS.
      */
     public void setPublicKeyMaterial(String publicKeyMaterial) {
         this.publicKeyMaterial = publicKeyMaterial;
     }
     
     /**
-     * The public key portion of the key pair being imported.
+     * The public key. You must base64 encode the public key material before
+     * sending it to AWS.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicKeyMaterial The public key portion of the key pair being imported.
+     * @param publicKeyMaterial The public key. You must base64 encode the public key material before
+     *         sending it to AWS.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

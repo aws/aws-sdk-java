@@ -20,40 +20,54 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVpnConnectionRoute(CreateVpnConnectionRouteRequest) CreateVpnConnectionRoute operation}.
- * 
+ * <p>
+ * Creates a static route associated with a VPN connection between an existing virtual private gateway and a VPN customer gateway. The static route
+ * allows traffic to be routed from the virtual private gateway to the VPN customer gateway.
+ * </p>
+ * <p>
+ * For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware
+ * Virtual Private Gateway to Your VPC </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpnConnectionRoute(CreateVpnConnectionRouteRequest)
  */
 public class CreateVpnConnectionRouteRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * The ID of the VPN connection.
+     */
     private String vpnConnectionId;
 
+    /**
+     * The CIDR block associated with the local subnet of the customer
+     * network.
+     */
     private String destinationCidrBlock;
 
     /**
-     * Returns the value of the VpnConnectionId property for this object.
+     * The ID of the VPN connection.
      *
-     * @return The value of the VpnConnectionId property for this object.
+     * @return The ID of the VPN connection.
      */
     public String getVpnConnectionId() {
         return vpnConnectionId;
     }
     
     /**
-     * Sets the value of the VpnConnectionId property for this object.
+     * The ID of the VPN connection.
      *
-     * @param vpnConnectionId The new value for the VpnConnectionId property for this object.
+     * @param vpnConnectionId The ID of the VPN connection.
      */
     public void setVpnConnectionId(String vpnConnectionId) {
         this.vpnConnectionId = vpnConnectionId;
     }
     
     /**
-     * Sets the value of the VpnConnectionId property for this object.
+     * The ID of the VPN connection.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnConnectionId The new value for the VpnConnectionId property for this object.
+     * @param vpnConnectionId The ID of the VPN connection.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -64,30 +78,35 @@ public class CreateVpnConnectionRouteRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns the value of the DestinationCidrBlock property for this
-     * object.
+     * The CIDR block associated with the local subnet of the customer
+     * network.
      *
-     * @return The value of the DestinationCidrBlock property for this object.
+     * @return The CIDR block associated with the local subnet of the customer
+     *         network.
      */
     public String getDestinationCidrBlock() {
         return destinationCidrBlock;
     }
     
     /**
-     * Sets the value of the DestinationCidrBlock property for this object.
+     * The CIDR block associated with the local subnet of the customer
+     * network.
      *
-     * @param destinationCidrBlock The new value for the DestinationCidrBlock property for this object.
+     * @param destinationCidrBlock The CIDR block associated with the local subnet of the customer
+     *         network.
      */
     public void setDestinationCidrBlock(String destinationCidrBlock) {
         this.destinationCidrBlock = destinationCidrBlock;
     }
     
     /**
-     * Sets the value of the DestinationCidrBlock property for this object.
+     * The CIDR block associated with the local subnet of the customer
+     * network.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param destinationCidrBlock The new value for the DestinationCidrBlock property for this object.
+     * @param destinationCidrBlock The CIDR block associated with the local subnet of the customer
+     *         network.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -46,6 +46,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResultJsonUnmarshaller im
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("statuses", targetDepth)) {
+                    context.nextToken();
                     describeTrustedAdvisorCheckRefreshStatusesResult.setStatuses(new ListUnmarshaller<TrustedAdvisorCheckRefreshStatus>(TrustedAdvisorCheckRefreshStatusJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -17,27 +17,24 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Describe Instance Status Result
+ * 
  */
 public class DescribeInstanceStatusResult implements Serializable {
 
     /**
-     * Collection of instance statuses describing the state of the requested
-     * instances.
+     * One or more instance status descriptions.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStatus> instanceStatuses;
 
     /**
-     * A string specifying the next paginated set of results to return.
+     * The next paginated set of results to return.
      */
     private String nextToken;
 
     /**
-     * Collection of instance statuses describing the state of the requested
-     * instances.
+     * One or more instance status descriptions.
      *
-     * @return Collection of instance statuses describing the state of the requested
-     *         instances.
+     * @return One or more instance status descriptions.
      */
     public java.util.List<InstanceStatus> getInstanceStatuses() {
         if (instanceStatuses == null) {
@@ -48,11 +45,9 @@ public class DescribeInstanceStatusResult implements Serializable {
     }
     
     /**
-     * Collection of instance statuses describing the state of the requested
-     * instances.
+     * One or more instance status descriptions.
      *
-     * @param instanceStatuses Collection of instance statuses describing the state of the requested
-     *         instances.
+     * @param instanceStatuses One or more instance status descriptions.
      */
     public void setInstanceStatuses(java.util.Collection<InstanceStatus> instanceStatuses) {
         if (instanceStatuses == null) {
@@ -65,13 +60,11 @@ public class DescribeInstanceStatusResult implements Serializable {
     }
     
     /**
-     * Collection of instance statuses describing the state of the requested
-     * instances.
+     * One or more instance status descriptions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceStatuses Collection of instance statuses describing the state of the requested
-     *         instances.
+     * @param instanceStatuses One or more instance status descriptions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -85,13 +78,11 @@ public class DescribeInstanceStatusResult implements Serializable {
     }
     
     /**
-     * Collection of instance statuses describing the state of the requested
-     * instances.
+     * One or more instance status descriptions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceStatuses Collection of instance statuses describing the state of the requested
-     *         instances.
+     * @param instanceStatuses One or more instance status descriptions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -109,29 +100,29 @@ public class DescribeInstanceStatusResult implements Serializable {
     }
 
     /**
-     * A string specifying the next paginated set of results to return.
+     * The next paginated set of results to return.
      *
-     * @return A string specifying the next paginated set of results to return.
+     * @return The next paginated set of results to return.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * A string specifying the next paginated set of results to return.
+     * The next paginated set of results to return.
      *
-     * @param nextToken A string specifying the next paginated set of results to return.
+     * @param nextToken The next paginated set of results to return.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * A string specifying the next paginated set of results to return.
+     * The next paginated set of results to return.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken A string specifying the next paginated set of results to return.
+     * @param nextToken The next paginated set of results to return.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

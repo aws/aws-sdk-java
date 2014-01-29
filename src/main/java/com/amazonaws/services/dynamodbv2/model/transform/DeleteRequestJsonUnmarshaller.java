@@ -46,6 +46,7 @@ public class DeleteRequestJsonUnmarshaller implements Unmarshaller<DeleteRequest
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Key", targetDepth)) {
+                    context.nextToken();
                     deleteRequest.setKey(new MapUnmarshaller<String,AttributeValue>(StringJsonUnmarshaller.getInstance(), AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

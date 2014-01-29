@@ -18,59 +18,69 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the status of an Amazon EC2 instance.
+ * Describes the status of an instance.
  * </p>
  */
 public class InstanceStatus implements Serializable {
 
     /**
-     * The ID of the Amazon EC2 instance.
+     * The ID of the instance.
      */
     private String instanceId;
 
     /**
-     * The Amazon EC2 instance's availability zone.
+     * The Availability Zone of the instance.
      */
     private String availabilityZone;
 
     /**
-     * Events that affect the status of the associated Amazon EC2 instance.
+     * Extra information regarding events associated with the instance.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStatusEvent> events;
 
     /**
-     * Represents the state of an Amazon EC2 instance.
+     * The intended state of the instance. <a>DescribeInstanceStatus</a>
+     * requires that an instance be in the <code>running</code> state.
      */
     private InstanceState instanceState;
 
+    /**
+     * Reports impaired functionality that stems from issues related to the
+     * systems that support an instance, such as hardware failures and
+     * network connectivity problems.
+     */
     private InstanceStatusSummary systemStatus;
 
+    /**
+     * Reports impaired functionality that stems from issues internal to the
+     * instance, such as impaired reachability.
+     */
     private InstanceStatusSummary instanceStatus;
 
     /**
-     * The ID of the Amazon EC2 instance.
+     * The ID of the instance.
      *
-     * @return The ID of the Amazon EC2 instance.
+     * @return The ID of the instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The ID of the Amazon EC2 instance.
+     * The ID of the instance.
      *
-     * @param instanceId The ID of the Amazon EC2 instance.
+     * @param instanceId The ID of the instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The ID of the Amazon EC2 instance.
+     * The ID of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The ID of the Amazon EC2 instance.
+     * @param instanceId The ID of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -81,29 +91,29 @@ public class InstanceStatus implements Serializable {
     }
 
     /**
-     * The Amazon EC2 instance's availability zone.
+     * The Availability Zone of the instance.
      *
-     * @return The Amazon EC2 instance's availability zone.
+     * @return The Availability Zone of the instance.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * The Amazon EC2 instance's availability zone.
+     * The Availability Zone of the instance.
      *
-     * @param availabilityZone The Amazon EC2 instance's availability zone.
+     * @param availabilityZone The Availability Zone of the instance.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * The Amazon EC2 instance's availability zone.
+     * The Availability Zone of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The Amazon EC2 instance's availability zone.
+     * @param availabilityZone The Availability Zone of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -114,9 +124,9 @@ public class InstanceStatus implements Serializable {
     }
 
     /**
-     * Events that affect the status of the associated Amazon EC2 instance.
+     * Extra information regarding events associated with the instance.
      *
-     * @return Events that affect the status of the associated Amazon EC2 instance.
+     * @return Extra information regarding events associated with the instance.
      */
     public java.util.List<InstanceStatusEvent> getEvents() {
         if (events == null) {
@@ -127,9 +137,9 @@ public class InstanceStatus implements Serializable {
     }
     
     /**
-     * Events that affect the status of the associated Amazon EC2 instance.
+     * Extra information regarding events associated with the instance.
      *
-     * @param events Events that affect the status of the associated Amazon EC2 instance.
+     * @param events Extra information regarding events associated with the instance.
      */
     public void setEvents(java.util.Collection<InstanceStatusEvent> events) {
         if (events == null) {
@@ -142,11 +152,11 @@ public class InstanceStatus implements Serializable {
     }
     
     /**
-     * Events that affect the status of the associated Amazon EC2 instance.
+     * Extra information regarding events associated with the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param events Events that affect the status of the associated Amazon EC2 instance.
+     * @param events Extra information regarding events associated with the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -160,11 +170,11 @@ public class InstanceStatus implements Serializable {
     }
     
     /**
-     * Events that affect the status of the associated Amazon EC2 instance.
+     * Extra information regarding events associated with the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param events Events that affect the status of the associated Amazon EC2 instance.
+     * @param events Extra information regarding events associated with the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -182,29 +192,35 @@ public class InstanceStatus implements Serializable {
     }
 
     /**
-     * Represents the state of an Amazon EC2 instance.
+     * The intended state of the instance. <a>DescribeInstanceStatus</a>
+     * requires that an instance be in the <code>running</code> state.
      *
-     * @return Represents the state of an Amazon EC2 instance.
+     * @return The intended state of the instance. <a>DescribeInstanceStatus</a>
+     *         requires that an instance be in the <code>running</code> state.
      */
     public InstanceState getInstanceState() {
         return instanceState;
     }
     
     /**
-     * Represents the state of an Amazon EC2 instance.
+     * The intended state of the instance. <a>DescribeInstanceStatus</a>
+     * requires that an instance be in the <code>running</code> state.
      *
-     * @param instanceState Represents the state of an Amazon EC2 instance.
+     * @param instanceState The intended state of the instance. <a>DescribeInstanceStatus</a>
+     *         requires that an instance be in the <code>running</code> state.
      */
     public void setInstanceState(InstanceState instanceState) {
         this.instanceState = instanceState;
     }
     
     /**
-     * Represents the state of an Amazon EC2 instance.
+     * The intended state of the instance. <a>DescribeInstanceStatus</a>
+     * requires that an instance be in the <code>running</code> state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceState Represents the state of an Amazon EC2 instance.
+     * @param instanceState The intended state of the instance. <a>DescribeInstanceStatus</a>
+     *         requires that an instance be in the <code>running</code> state.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -215,29 +231,41 @@ public class InstanceStatus implements Serializable {
     }
 
     /**
-     * Returns the value of the SystemStatus property for this object.
+     * Reports impaired functionality that stems from issues related to the
+     * systems that support an instance, such as hardware failures and
+     * network connectivity problems.
      *
-     * @return The value of the SystemStatus property for this object.
+     * @return Reports impaired functionality that stems from issues related to the
+     *         systems that support an instance, such as hardware failures and
+     *         network connectivity problems.
      */
     public InstanceStatusSummary getSystemStatus() {
         return systemStatus;
     }
     
     /**
-     * Sets the value of the SystemStatus property for this object.
+     * Reports impaired functionality that stems from issues related to the
+     * systems that support an instance, such as hardware failures and
+     * network connectivity problems.
      *
-     * @param systemStatus The new value for the SystemStatus property for this object.
+     * @param systemStatus Reports impaired functionality that stems from issues related to the
+     *         systems that support an instance, such as hardware failures and
+     *         network connectivity problems.
      */
     public void setSystemStatus(InstanceStatusSummary systemStatus) {
         this.systemStatus = systemStatus;
     }
     
     /**
-     * Sets the value of the SystemStatus property for this object.
+     * Reports impaired functionality that stems from issues related to the
+     * systems that support an instance, such as hardware failures and
+     * network connectivity problems.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param systemStatus The new value for the SystemStatus property for this object.
+     * @param systemStatus Reports impaired functionality that stems from issues related to the
+     *         systems that support an instance, such as hardware failures and
+     *         network connectivity problems.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -248,29 +276,35 @@ public class InstanceStatus implements Serializable {
     }
 
     /**
-     * Returns the value of the InstanceStatus property for this object.
+     * Reports impaired functionality that stems from issues internal to the
+     * instance, such as impaired reachability.
      *
-     * @return The value of the InstanceStatus property for this object.
+     * @return Reports impaired functionality that stems from issues internal to the
+     *         instance, such as impaired reachability.
      */
     public InstanceStatusSummary getInstanceStatus() {
         return instanceStatus;
     }
     
     /**
-     * Sets the value of the InstanceStatus property for this object.
+     * Reports impaired functionality that stems from issues internal to the
+     * instance, such as impaired reachability.
      *
-     * @param instanceStatus The new value for the InstanceStatus property for this object.
+     * @param instanceStatus Reports impaired functionality that stems from issues internal to the
+     *         instance, such as impaired reachability.
      */
     public void setInstanceStatus(InstanceStatusSummary instanceStatus) {
         this.instanceStatus = instanceStatus;
     }
     
     /**
-     * Sets the value of the InstanceStatus property for this object.
+     * Reports impaired functionality that stems from issues internal to the
+     * instance, such as impaired reachability.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceStatus The new value for the InstanceStatus property for this object.
+     * @param instanceStatus Reports impaired functionality that stems from issues internal to the
+     *         instance, such as impaired reachability.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

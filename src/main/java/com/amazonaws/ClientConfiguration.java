@@ -48,12 +48,12 @@ public class ClientConfiguration {
      * implementation by {@link #setRetryPolicy(RetryPolicy)}. For example,
      * AmazonDynamoDBClient by default uses a different retry policy
      * {@link PredefinedRetryPolicies#DYNAMODB_DEFAULT}.
-     * 
+     *
      * @see PredefinedRetryPolicies#DEFAULT
      * @see PredefinedRetryPolicies#DYNAMODB_DEFAULT
      */
     public static final RetryPolicy DEFAULT_RETRY_POLICY = PredefinedRetryPolicies.DEFAULT;
-    
+
     /**
      * The default on whether to use the {@link IdleConnectionReaper} to manage stale connections
      *
@@ -71,7 +71,7 @@ public class ClientConfiguration {
      * be used to control the retry count.
      */
     private int maxErrorRetry = -1;
-    
+
     /** The retry policy upon failed requests. **/
     private RetryPolicy retryPolicy = DEFAULT_RETRY_POLICY;
 
@@ -101,9 +101,12 @@ public class ClientConfiguration {
     /** Optional Windows workstation name for configuring NTLM proxy support. */
     private String proxyWorkstation = null;
 
-    /** Whether to pre-emptively authenticate against a proxy server using basic authentication */
-    private Boolean preemptiveBasicProxyAuth = false;
-    
+    /**
+     * Whether to pre-emptively authenticate against a proxy server using basic
+     * authentication
+     */
+    private boolean preemptiveBasicProxyAuth;
+
     /** The maximum number of open HTTP connections. */
     private int maxConnections = DEFAULT_MAX_CONNECTIONS;
 
@@ -142,6 +145,14 @@ public class ClientConfiguration {
      */
     private boolean useReaper = DEFAULT_USE_REAPER;
 
+    /**
+     * Optional override to control which signature algorithm should be used to
+     * sign requests to the service. If not explicitly set, the client will
+     * determine the algorithm to use by inspecting a configuration file baked
+     * in to the SDK.
+     */
+    private String signerOverride;
+
 
     public ClientConfiguration() {}
 
@@ -164,6 +175,8 @@ public class ClientConfiguration {
 
         this.socketReceiveBufferSizeHint = other.socketReceiveBufferSizeHint;
         this.socketSendBufferSizeHint    = other.socketSendBufferSizeHint;
+
+        this.signerOverride    = other.signerOverride;
     }
 
     /**
@@ -510,7 +523,7 @@ public class ClientConfiguration {
 
     /**
      * Returns the retry policy upon failed requests.
-     * 
+     *
      * @return The retry policy upon failed requests.
      */
     public RetryPolicy getRetryPolicy() {
@@ -521,19 +534,19 @@ public class ClientConfiguration {
      * Sets the retry policy upon failed requests. User could specify whether
      * the RetryPolicy should honor maxErrorRetry set by
      * {@link #setMaxErrorRetry(int)}.
-     * 
+     *
      * @param retryPolicy
      *            The retry policy upon failed requests.
      */
     public void setRetryPolicy(RetryPolicy retryPolicy) {
         this.retryPolicy = retryPolicy;
     }
-    
+
     /**
      * Sets the retry policy upon failed requests, and returns the updated
      * ClientConfiguration object. User could specify whether the RetryPolicy
      * should honor maxErrorRetry set by {@link #setMaxErrorRetry(int)}
-     * 
+     *
      * @param retryPolicy
      *            The retry policy upon failed requests.
      */
@@ -541,14 +554,14 @@ public class ClientConfiguration {
         setRetryPolicy(retryPolicy);
         return this;
     }
-    
+
     /**
      * Returns the maximum number of retry attempts for failed retryable
      * requests (ex: 5xx error responses from a service). This method returns -1
      * before a maxErrorRetry value is explicitly set by
      * {@link #setMaxErrorRetry(int)}, in which case the configured RetryPolicy
      * will be used to control the retry count.
-     * 
+     *
      * @return The maximum number of retry attempts for failed retryable
      *         requests, or -1 if maxErrorRetry has not been set by
      *         {@link #setMaxErrorRetry(int)}.
@@ -833,40 +846,130 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns whether to attempt to authenticate preemptively against proxy servers 
+     * Returns the name of the signature algorithm to use for signing requests
+     * made by this client. If not set or explicitly set to null, the client
+     * will choose a signature algorithm to use based on a configuration file
+     * of supported signature algorithms for the service and region.
+     * <p>
+     * Most users do not need to concern themselves with which signature
+     * algorithm is being used, as the defaults will be sufficient. This
+     * setting exists only so advanced users can opt in to newer signature
+     * protocols which have not yet been made the default for a particular
+     * service/region.
+     * <p>
+     * Not all services support all signature algorithms, and configuring an
+     * unsupported signature algorithm will lead to authentication failures.
+     * Use me at your own risk, and only after consulting the documentation
+     * for the service to ensure it actually does supports your chosen
+     * algorithm.
+     * <p>
+     * If non-null, the name returned from this method is used to look up
+     * a {@code Signer} class implementing the chosen algorithm by the
+     * {@code com.amazonaws.auth.SignerFactory} class.
+     *
+     * @return The signature algorithm to use for this client, or null to use
+     *         the default.
+     */
+    public String getSignerOverride() {
+        return signerOverride;
+    }
+
+    /**
+     * Sets the name of the signature algorithm to use for signing requests
+     * made by this client. If not set or explicitly set to null, the client
+     * will choose a signature algorithm to use based on a configuration file
+     * of supported signature algorithms for the service and region.
+     * <p>
+     * Most users do not need to concern themselves with which signature
+     * algorithm is being used, as the defaults will be sufficient. This
+     * setting exists only so advanced users can opt in to newer signature
+     * protocols which have not yet been made the default for a particular
+     * service/region.
+     * <p>
+     * Not all services support all signature algorithms, and configuring an
+     * unsupported signature algorithm will lead to authentication failures.
+     * Use me at your own risk, and only after consulting the documentation
+     * for the service to ensure it actually does supports your chosen
+     * algorithm.
+     * <p>
+     * If non-null, the name returned from this method is used to look up
+     * a {@code Signer} class implementing the chosen algorithm by the
+     * {@code com.amazonaws.auth.SignerFactory} class.
+     *
+     * @param value   The signature algorithm to use for this client, or null
+     *                to use the default.
+     */
+    public void setSignerOverride(final String value) {
+        signerOverride = value;
+    }
+
+    /**
+     * Sets the name of the signature algorithm to use for signing requests
+     * made by this client. If not set or explicitly set to null, the client
+     * will choose a signature algorithm to use based on a configuration file
+     * of supported signature algorithms for the service and region.
+     * <p>
+     * Most users do not need to concern themselves with which signature
+     * algorithm is being used, as the defaults will be sufficient. This
+     * setting exists only so advanced users can opt in to newer signature
+     * protocols which have not yet been made the default for a particular
+     * service/region.
+     * <p>
+     * Not all services support all signature algorithms, and configuring an
+     * unsupported signature algorithm will lead to authentication failures.
+     * Use me at your own risk, and only after consulting the documentation
+     * for the service to ensure it actually does supports your chosen
+     * algorithm.
+     * <p>
+     * If non-null, the name returned from this method is used to look up
+     * a {@code Signer} class implementing the chosen algorithm by the
+     * {@code com.amazonaws.auth.SignerFactory} class.
+     *
+     * @param value   The signature algorithm to use for this client, or null
+     *                to use the default.
+     * @return        The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withSignerOverride(final String value) {
+        setSignerOverride(value);
+        return this;
+    }
+
+    /**
+     * Returns whether to attempt to authenticate preemptively against proxy servers
      * using basic authentication
-     * 
+     *
      * @return Whether to authenticate preemptively against proxy server.
      */
-    public Boolean getPreemptiveBasicProxyAuth() {
+    public boolean isPreemptiveBasicProxyAuth() {
         return preemptiveBasicProxyAuth;
     }
 
     /**
-     * Sets whether to attempt to authenticate preemptively against proxy servers 
+     * Sets whether to attempt to authenticate preemptively against proxy servers
      * using basic authentication
-     * 
+     *
      * @param preemptiveBasicProxyAuth
      *             Whether to authenticate preemptively against proxy server.
      */
     public void setPreemptiveBasicProxyAuth(Boolean preemptiveBasicProxyAuth) {
         this.preemptiveBasicProxyAuth = preemptiveBasicProxyAuth;
     }
-    
-    
+
+
     /**
-     * Sets whether to attempt to authenticate preemptively against proxy servers 
-     * using basic authentication, and returns the updated ClientConfiguration object
-     * so that additional method calls may be chained together.
-     *  
+     * Sets whether to attempt to authenticate preemptively against proxy
+     * servers using basic authentication, and returns the updated
+     * ClientConfiguration object so that additional method calls may be chained
+     * together.
+     * 
      * @param preemptiveBasicProxyAuth
-     *             Whether to authenticate preemptively against proxy server.
+     *            Whether to authenticate preemptively against proxy server.
      * @return The updated ClientConfiguration objectt=
-     *         
+     * 
      */
-    public ClientConfiguration withPreemptiveBasicProxyAuth(Boolean preemptiveBasicProxyAuth) {
+    public ClientConfiguration withPreemptiveBasicProxyAuth(boolean preemptiveBasicProxyAuth) {
         setPreemptiveBasicProxyAuth(preemptiveBasicProxyAuth);
         return this;
     }
-    
+
 }

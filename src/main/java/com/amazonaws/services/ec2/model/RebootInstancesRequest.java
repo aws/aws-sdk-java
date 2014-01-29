@@ -23,9 +23,11 @@ import com.amazonaws.services.ec2.model.transform.RebootInstancesRequestMarshall
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#rebootInstances(RebootInstancesRequest) RebootInstances operation}.
  * <p>
- * The RebootInstances operation requests a reboot of one or more instances. This operation is asynchronous; it only queues a request to reboot the
- * specified instance(s). The operation will succeed if the instances are valid and belong to the user. Requests to reboot terminated instances are
- * ignored.
+ * Requests a reboot of one or more instances. This operation is asynchronous; it only queues a request to reboot the specified instances. The operation
+ * succeeds if the instances are valid and belong to you. Requests to reboot terminated instances are ignored.
+ * </p>
+ * <p>
+ * If a Linux/Unix instance does not cleanly shut down within four minutes, Amazon EC2 performs a hard reboot.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#rebootInstances(RebootInstancesRequest)
@@ -33,7 +35,7 @@ import com.amazonaws.services.ec2.model.transform.RebootInstancesRequestMarshall
 public class RebootInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<RebootInstancesRequest> {
 
     /**
-     * The list of instances to terminate.
+     * One or more instance IDs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
 
@@ -48,16 +50,16 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest implements S
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param instanceIds The list of instances to terminate.
+     * @param instanceIds One or more instance IDs.
      */
     public RebootInstancesRequest(java.util.List<String> instanceIds) {
         setInstanceIds(instanceIds);
     }
 
     /**
-     * The list of instances to terminate.
+     * One or more instance IDs.
      *
-     * @return The list of instances to terminate.
+     * @return One or more instance IDs.
      */
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
@@ -68,9 +70,9 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The list of instances to terminate.
+     * One or more instance IDs.
      *
-     * @param instanceIds The list of instances to terminate.
+     * @param instanceIds One or more instance IDs.
      */
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
@@ -83,11 +85,11 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The list of instances to terminate.
+     * One or more instance IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds The list of instances to terminate.
+     * @param instanceIds One or more instance IDs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -101,11 +103,11 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The list of instances to terminate.
+     * One or more instance IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds The list of instances to terminate.
+     * @param instanceIds One or more instance IDs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

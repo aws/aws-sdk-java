@@ -17,48 +17,46 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of calling the ConfirmProductInstance operation.
- * </p>
+ * 
  */
 public class ConfirmProductInstanceResult implements Serializable {
 
     /**
-     * The instance owner's account ID. Only present if the product code is
-     * attached to the instance.
+     * The AWS account ID of the instance owner. This is only present if the
+     * product code is attached to the instance.
      */
     private String ownerId;
 
     /**
-     * The instance owner's account ID. Only present if the product code is
-     * attached to the instance.
+     * The AWS account ID of the instance owner. This is only present if the
+     * product code is attached to the instance.
      *
-     * @return The instance owner's account ID. Only present if the product code is
-     *         attached to the instance.
+     * @return The AWS account ID of the instance owner. This is only present if the
+     *         product code is attached to the instance.
      */
     public String getOwnerId() {
         return ownerId;
     }
     
     /**
-     * The instance owner's account ID. Only present if the product code is
-     * attached to the instance.
+     * The AWS account ID of the instance owner. This is only present if the
+     * product code is attached to the instance.
      *
-     * @param ownerId The instance owner's account ID. Only present if the product code is
-     *         attached to the instance.
+     * @param ownerId The AWS account ID of the instance owner. This is only present if the
+     *         product code is attached to the instance.
      */
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
     
     /**
-     * The instance owner's account ID. Only present if the product code is
-     * attached to the instance.
+     * The AWS account ID of the instance owner. This is only present if the
+     * product code is attached to the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ownerId The instance owner's account ID. Only present if the product code is
-     *         attached to the instance.
+     * @param ownerId The AWS account ID of the instance owner. This is only present if the
+     *         product code is attached to the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

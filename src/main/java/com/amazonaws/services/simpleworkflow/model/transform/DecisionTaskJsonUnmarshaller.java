@@ -62,6 +62,7 @@ public class DecisionTaskJsonUnmarshaller implements Unmarshaller<DecisionTask, 
                     decisionTask.setWorkflowType(WorkflowTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("events", targetDepth)) {
+                    context.nextToken();
                     decisionTask.setEvents(new ListUnmarshaller<HistoryEvent>(HistoryEventJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {

@@ -23,16 +23,11 @@ import com.amazonaws.services.ec2.model.transform.DescribeVpnGatewaysRequestMars
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVpnGateways(DescribeVpnGatewaysRequest) DescribeVpnGateways operation}.
  * <p>
- * Gives you information about your VPN gateways. You can filter the results to return information only about VPN gateways that match criteria you
- * specify.
+ * Describes one or more of your virtual private gateways.
  * </p>
  * <p>
- * For example, you could ask to get information about a particular VPN gateway (or all) only if the gateway's state is pending or available. You can
- * specify multiple filters (e.g., the VPN gateway is in a particular Availability Zone and the gateway's state is pending or available).
- * </p>
- * <p>
- * The result includes information for a particular VPN gateway only if the gateway matches all your filters. If there's no match, no special message is
- * returned; the response is simply empty. The following table shows the available filters.
+ * For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding an IPsec
+ * Hardware VPN to Your VPC </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpnGateways(DescribeVpnGatewaysRequest)
@@ -40,35 +35,47 @@ import com.amazonaws.services.ec2.model.transform.DescribeVpnGatewaysRequestMars
 public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVpnGatewaysRequest> {
 
     /**
-     * A list of filters used to match properties for VPN Gateways. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more virtual private gateway IDs. <p>Default: Describes all
+     * your virtual private gateways.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> vpnGatewayIds;
 
     /**
-     * A list of filters used to match properties for VPN Gateways. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>attachment.state</code> - The
+     * current state of the attachment between the gateway and the VPC
+     * (<code>attaching</code> | <code>attached</code> |
+     * <code>detaching</code> | <code>detached</code>). </li> <li>
+     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
+     * <li> <p><code>availability-zone</code> - The Availability Zone for the
+     * virtual private gateway. </li> <li> <p><code>state</code> - The state
+     * of the virtual private gateway (<code>pending</code> |
+     * <code>available</code> | <code>deleting</code> |
+     * <code>deleted</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>type</code> - The type of virtual private
+     * gateway. Currently the only supported type is <code>ipsec.1</code>.
+     * </li> <li> <p><code>vpn-gateway-id</code> - The ID of the virtual
+     * private gateway. </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * A list of filters used to match properties for VPN Gateways. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more virtual private gateway IDs. <p>Default: Describes all
+     * your virtual private gateways.
      *
-     * @return A list of filters used to match properties for VPN Gateways. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @return One or more virtual private gateway IDs. <p>Default: Describes all
+     *         your virtual private gateways.
      */
     public java.util.List<String> getVpnGatewayIds() {
         if (vpnGatewayIds == null) {
@@ -79,17 +86,11 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * A list of filters used to match properties for VPN Gateways. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more virtual private gateway IDs. <p>Default: Describes all
+     * your virtual private gateways.
      *
-     * @param vpnGatewayIds A list of filters used to match properties for VPN Gateways. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param vpnGatewayIds One or more virtual private gateway IDs. <p>Default: Describes all
+     *         your virtual private gateways.
      */
     public void setVpnGatewayIds(java.util.Collection<String> vpnGatewayIds) {
         if (vpnGatewayIds == null) {
@@ -102,19 +103,13 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * A list of filters used to match properties for VPN Gateways. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more virtual private gateway IDs. <p>Default: Describes all
+     * your virtual private gateways.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGatewayIds A list of filters used to match properties for VPN Gateways. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param vpnGatewayIds One or more virtual private gateway IDs. <p>Default: Describes all
+     *         your virtual private gateways.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -128,19 +123,13 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * A list of filters used to match properties for VPN Gateways. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more virtual private gateway IDs. <p>Default: Describes all
+     * your virtual private gateways.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGatewayIds A list of filters used to match properties for VPN Gateways. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param vpnGatewayIds One or more virtual private gateway IDs. <p>Default: Describes all
+     *         your virtual private gateways.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -158,17 +147,59 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * A list of filters used to match properties for VPN Gateways. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>attachment.state</code> - The
+     * current state of the attachment between the gateway and the VPC
+     * (<code>attaching</code> | <code>attached</code> |
+     * <code>detaching</code> | <code>detached</code>). </li> <li>
+     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
+     * <li> <p><code>availability-zone</code> - The Availability Zone for the
+     * virtual private gateway. </li> <li> <p><code>state</code> - The state
+     * of the virtual private gateway (<code>pending</code> |
+     * <code>available</code> | <code>deleting</code> |
+     * <code>deleted</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>type</code> - The type of virtual private
+     * gateway. Currently the only supported type is <code>ipsec.1</code>.
+     * </li> <li> <p><code>vpn-gateway-id</code> - The ID of the virtual
+     * private gateway. </li> </ul>
      *
-     * @return A list of filters used to match properties for VPN Gateways. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @return One or more filters. <ul> <li> <p><code>attachment.state</code> - The
+     *         current state of the attachment between the gateway and the VPC
+     *         (<code>attaching</code> | <code>attached</code> |
+     *         <code>detaching</code> | <code>detached</code>). </li> <li>
+     *         <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
+     *         <li> <p><code>availability-zone</code> - The Availability Zone for the
+     *         virtual private gateway. </li> <li> <p><code>state</code> - The state
+     *         of the virtual private gateway (<code>pending</code> |
+     *         <code>available</code> | <code>deleting</code> |
+     *         <code>deleted</code>). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>type</code> - The type of virtual private
+     *         gateway. Currently the only supported type is <code>ipsec.1</code>.
+     *         </li> <li> <p><code>vpn-gateway-id</code> - The ID of the virtual
+     *         private gateway. </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -179,17 +210,59 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * A list of filters used to match properties for VPN Gateways. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>attachment.state</code> - The
+     * current state of the attachment between the gateway and the VPC
+     * (<code>attaching</code> | <code>attached</code> |
+     * <code>detaching</code> | <code>detached</code>). </li> <li>
+     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
+     * <li> <p><code>availability-zone</code> - The Availability Zone for the
+     * virtual private gateway. </li> <li> <p><code>state</code> - The state
+     * of the virtual private gateway (<code>pending</code> |
+     * <code>available</code> | <code>deleting</code> |
+     * <code>deleted</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>type</code> - The type of virtual private
+     * gateway. Currently the only supported type is <code>ipsec.1</code>.
+     * </li> <li> <p><code>vpn-gateway-id</code> - The ID of the virtual
+     * private gateway. </li> </ul>
      *
-     * @param filters A list of filters used to match properties for VPN Gateways. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>attachment.state</code> - The
+     *         current state of the attachment between the gateway and the VPC
+     *         (<code>attaching</code> | <code>attached</code> |
+     *         <code>detaching</code> | <code>detached</code>). </li> <li>
+     *         <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
+     *         <li> <p><code>availability-zone</code> - The Availability Zone for the
+     *         virtual private gateway. </li> <li> <p><code>state</code> - The state
+     *         of the virtual private gateway (<code>pending</code> |
+     *         <code>available</code> | <code>deleting</code> |
+     *         <code>deleted</code>). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>type</code> - The type of virtual private
+     *         gateway. Currently the only supported type is <code>ipsec.1</code>.
+     *         </li> <li> <p><code>vpn-gateway-id</code> - The ID of the virtual
+     *         private gateway. </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -202,19 +275,61 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * A list of filters used to match properties for VPN Gateways. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>attachment.state</code> - The
+     * current state of the attachment between the gateway and the VPC
+     * (<code>attaching</code> | <code>attached</code> |
+     * <code>detaching</code> | <code>detached</code>). </li> <li>
+     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
+     * <li> <p><code>availability-zone</code> - The Availability Zone for the
+     * virtual private gateway. </li> <li> <p><code>state</code> - The state
+     * of the virtual private gateway (<code>pending</code> |
+     * <code>available</code> | <code>deleting</code> |
+     * <code>deleted</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>type</code> - The type of virtual private
+     * gateway. Currently the only supported type is <code>ipsec.1</code>.
+     * </li> <li> <p><code>vpn-gateway-id</code> - The ID of the virtual
+     * private gateway. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for VPN Gateways. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>attachment.state</code> - The
+     *         current state of the attachment between the gateway and the VPC
+     *         (<code>attaching</code> | <code>attached</code> |
+     *         <code>detaching</code> | <code>detached</code>). </li> <li>
+     *         <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
+     *         <li> <p><code>availability-zone</code> - The Availability Zone for the
+     *         virtual private gateway. </li> <li> <p><code>state</code> - The state
+     *         of the virtual private gateway (<code>pending</code> |
+     *         <code>available</code> | <code>deleting</code> |
+     *         <code>deleted</code>). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>type</code> - The type of virtual private
+     *         gateway. Currently the only supported type is <code>ipsec.1</code>.
+     *         </li> <li> <p><code>vpn-gateway-id</code> - The ID of the virtual
+     *         private gateway. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -228,19 +343,61 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * A list of filters used to match properties for VPN Gateways. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>attachment.state</code> - The
+     * current state of the attachment between the gateway and the VPC
+     * (<code>attaching</code> | <code>attached</code> |
+     * <code>detaching</code> | <code>detached</code>). </li> <li>
+     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
+     * <li> <p><code>availability-zone</code> - The Availability Zone for the
+     * virtual private gateway. </li> <li> <p><code>state</code> - The state
+     * of the virtual private gateway (<code>pending</code> |
+     * <code>available</code> | <code>deleting</code> |
+     * <code>deleted</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>type</code> - The type of virtual private
+     * gateway. Currently the only supported type is <code>ipsec.1</code>.
+     * </li> <li> <p><code>vpn-gateway-id</code> - The ID of the virtual
+     * private gateway. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for VPN Gateways. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>attachment.state</code> - The
+     *         current state of the attachment between the gateway and the VPC
+     *         (<code>attaching</code> | <code>attached</code> |
+     *         <code>detaching</code> | <code>detached</code>). </li> <li>
+     *         <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
+     *         <li> <p><code>availability-zone</code> - The Availability Zone for the
+     *         virtual private gateway. </li> <li> <p><code>state</code> - The state
+     *         of the virtual private gateway (<code>pending</code> |
+     *         <code>available</code> | <code>deleting</code> |
+     *         <code>deleted</code>). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>type</code> - The type of virtual private
+     *         gateway. Currently the only supported type is <code>ipsec.1</code>.
+     *         </li> <li> <p><code>vpn-gateway-id</code> - The ID of the virtual
+     *         private gateway. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

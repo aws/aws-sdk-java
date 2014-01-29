@@ -17,38 +17,57 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Reserved Instance Limit Price
+ * <p>
+ * Describes the limit price of a Reserved Instance offering.
+ * </p>
  */
 public class ReservedInstanceLimitPrice implements Serializable {
 
+    /**
+     * Used for Reserved Instance Marketplace offerings. Specifies the limit
+     * price on the total order (instanceCount * price).
+     */
     private Double amount;
 
+    /**
+     * The currency in which the <code>limitPrice</code> amount is specified.
+     * At this time, the only supported currency is <code>USD</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>USD
+     */
     private String currencyCode;
 
     /**
-     * Returns the value of the Amount property for this object.
+     * Used for Reserved Instance Marketplace offerings. Specifies the limit
+     * price on the total order (instanceCount * price).
      *
-     * @return The value of the Amount property for this object.
+     * @return Used for Reserved Instance Marketplace offerings. Specifies the limit
+     *         price on the total order (instanceCount * price).
      */
     public Double getAmount() {
         return amount;
     }
     
     /**
-     * Sets the value of the Amount property for this object.
+     * Used for Reserved Instance Marketplace offerings. Specifies the limit
+     * price on the total order (instanceCount * price).
      *
-     * @param amount The new value for the Amount property for this object.
+     * @param amount Used for Reserved Instance Marketplace offerings. Specifies the limit
+     *         price on the total order (instanceCount * price).
      */
     public void setAmount(Double amount) {
         this.amount = amount;
     }
     
     /**
-     * Sets the value of the Amount property for this object.
+     * Used for Reserved Instance Marketplace offerings. Specifies the limit
+     * price on the total order (instanceCount * price).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param amount The new value for the Amount property for this object.
+     * @param amount Used for Reserved Instance Marketplace offerings. Specifies the limit
+     *         price on the total order (instanceCount * price).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -59,12 +78,14 @@ public class ReservedInstanceLimitPrice implements Serializable {
     }
 
     /**
-     * Returns the value of the CurrencyCode property for this object.
+     * The currency in which the <code>limitPrice</code> amount is specified.
+     * At this time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @return The value of the CurrencyCode property for this object.
+     * @return The currency in which the <code>limitPrice</code> amount is specified.
+     *         At this time, the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
      */
@@ -73,12 +94,14 @@ public class ReservedInstanceLimitPrice implements Serializable {
     }
     
     /**
-     * Sets the value of the CurrencyCode property for this object.
+     * The currency in which the <code>limitPrice</code> amount is specified.
+     * At this time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The new value for the CurrencyCode property for this object.
+     * @param currencyCode The currency in which the <code>limitPrice</code> amount is specified.
+     *         At this time, the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
      */
@@ -87,14 +110,16 @@ public class ReservedInstanceLimitPrice implements Serializable {
     }
     
     /**
-     * Sets the value of the CurrencyCode property for this object.
+     * The currency in which the <code>limitPrice</code> amount is specified.
+     * At this time, the only supported currency is <code>USD</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The new value for the CurrencyCode property for this object.
+     * @param currencyCode The currency in which the <code>limitPrice</code> amount is specified.
+     *         At this time, the only supported currency is <code>USD</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -107,12 +132,14 @@ public class ReservedInstanceLimitPrice implements Serializable {
     }
 
     /**
-     * Sets the value of the CurrencyCode property for this object.
+     * The currency in which the <code>limitPrice</code> amount is specified.
+     * At this time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The new value for the CurrencyCode property for this object.
+     * @param currencyCode The currency in which the <code>limitPrice</code> amount is specified.
+     *         At this time, the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
      */
@@ -121,14 +148,16 @@ public class ReservedInstanceLimitPrice implements Serializable {
     }
     
     /**
-     * Sets the value of the CurrencyCode property for this object.
+     * The currency in which the <code>limitPrice</code> amount is specified.
+     * At this time, the only supported currency is <code>USD</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The new value for the CurrencyCode property for this object.
+     * @param currencyCode The currency in which the <code>limitPrice</code> amount is specified.
+     *         At this time, the only supported currency is <code>USD</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

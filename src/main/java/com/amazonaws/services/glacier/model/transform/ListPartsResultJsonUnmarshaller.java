@@ -66,6 +66,7 @@ public class ListPartsResultJsonUnmarshaller implements Unmarshaller<ListPartsRe
                     listPartsResult.setCreationDate(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Parts", targetDepth)) {
+                    context.nextToken();
                     listPartsResult.setParts(new ListUnmarshaller<PartListElement>(PartListElementJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {

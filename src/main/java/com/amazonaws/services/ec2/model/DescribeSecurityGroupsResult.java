@@ -17,21 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of describing the Amazon EC2 security groups for your account.
- * </p>
+ * 
  */
 public class DescribeSecurityGroupsResult implements Serializable {
 
     /**
-     * The list of described Amazon EC2 security groups.
+     * Information about one or more security groups.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<SecurityGroup> securityGroups;
 
     /**
-     * The list of described Amazon EC2 security groups.
+     * Information about one or more security groups.
      *
-     * @return The list of described Amazon EC2 security groups.
+     * @return Information about one or more security groups.
      */
     public java.util.List<SecurityGroup> getSecurityGroups() {
         if (securityGroups == null) {
@@ -42,9 +40,9 @@ public class DescribeSecurityGroupsResult implements Serializable {
     }
     
     /**
-     * The list of described Amazon EC2 security groups.
+     * Information about one or more security groups.
      *
-     * @param securityGroups The list of described Amazon EC2 security groups.
+     * @param securityGroups Information about one or more security groups.
      */
     public void setSecurityGroups(java.util.Collection<SecurityGroup> securityGroups) {
         if (securityGroups == null) {
@@ -57,11 +55,11 @@ public class DescribeSecurityGroupsResult implements Serializable {
     }
     
     /**
-     * The list of described Amazon EC2 security groups.
+     * Information about one or more security groups.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups The list of described Amazon EC2 security groups.
+     * @param securityGroups Information about one or more security groups.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,11 +73,11 @@ public class DescribeSecurityGroupsResult implements Serializable {
     }
     
     /**
-     * The list of described Amazon EC2 security groups.
+     * Information about one or more security groups.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups The list of described Amazon EC2 security groups.
+     * @param securityGroups Information about one or more security groups.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

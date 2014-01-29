@@ -17,24 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of calling the StopInstances operation. Contains details on how the specified instances are changing state.
- * </p>
+ * 
  */
 public class StopInstancesResult implements Serializable {
 
     /**
-     * The list of the stopping instances and details on how their state has
-     * changed.
+     * Information about one or more stopped instances.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStateChange> stoppingInstances;
 
     /**
-     * The list of the stopping instances and details on how their state has
-     * changed.
+     * Information about one or more stopped instances.
      *
-     * @return The list of the stopping instances and details on how their state has
-     *         changed.
+     * @return Information about one or more stopped instances.
      */
     public java.util.List<InstanceStateChange> getStoppingInstances() {
         if (stoppingInstances == null) {
@@ -45,11 +40,9 @@ public class StopInstancesResult implements Serializable {
     }
     
     /**
-     * The list of the stopping instances and details on how their state has
-     * changed.
+     * Information about one or more stopped instances.
      *
-     * @param stoppingInstances The list of the stopping instances and details on how their state has
-     *         changed.
+     * @param stoppingInstances Information about one or more stopped instances.
      */
     public void setStoppingInstances(java.util.Collection<InstanceStateChange> stoppingInstances) {
         if (stoppingInstances == null) {
@@ -62,13 +55,11 @@ public class StopInstancesResult implements Serializable {
     }
     
     /**
-     * The list of the stopping instances and details on how their state has
-     * changed.
+     * Information about one or more stopped instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stoppingInstances The list of the stopping instances and details on how their state has
-     *         changed.
+     * @param stoppingInstances Information about one or more stopped instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -82,13 +73,11 @@ public class StopInstancesResult implements Serializable {
     }
     
     /**
-     * The list of the stopping instances and details on how their state has
-     * changed.
+     * Information about one or more stopped instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stoppingInstances The list of the stopping instances and details on how their state has
-     *         changed.
+     * @param stoppingInstances Information about one or more stopped instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

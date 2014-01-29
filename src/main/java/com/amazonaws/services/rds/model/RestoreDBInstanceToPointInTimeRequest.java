@@ -154,13 +154,10 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
 
     /**
      * The name of the option group to be used for the restored DB instance.
-     * <p> <!-- Note that persistent options, such as the TDE_SQLServer
-     * option for Microsoft SQL Server, cannot be removed from an option
-     * group while DB instances are associated with the option group. -->
-     * Permanent options, such as the TDE option for Oracle Advanced Security
-     * TDE, cannot be removed from an option group, and that option group
-     * cannot be removed from a DB instance once it is associated with a DB
-     * instance
+     * <p> Permanent options, such as the TDE option for Oracle Advanced
+     * Security TDE, cannot be removed from an option group, and that option
+     * group cannot be removed from a DB instance once it is associated with
+     * a DB instance
      */
     private String optionGroupName;
 
@@ -1048,22 +1045,16 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
 
     /**
      * The name of the option group to be used for the restored DB instance.
-     * <p> <!-- Note that persistent options, such as the TDE_SQLServer
-     * option for Microsoft SQL Server, cannot be removed from an option
-     * group while DB instances are associated with the option group. -->
-     * Permanent options, such as the TDE option for Oracle Advanced Security
-     * TDE, cannot be removed from an option group, and that option group
-     * cannot be removed from a DB instance once it is associated with a DB
-     * instance
+     * <p> Permanent options, such as the TDE option for Oracle Advanced
+     * Security TDE, cannot be removed from an option group, and that option
+     * group cannot be removed from a DB instance once it is associated with
+     * a DB instance
      *
      * @return The name of the option group to be used for the restored DB instance.
-     *         <p> <!-- Note that persistent options, such as the TDE_SQLServer
-     *         option for Microsoft SQL Server, cannot be removed from an option
-     *         group while DB instances are associated with the option group. -->
-     *         Permanent options, such as the TDE option for Oracle Advanced Security
-     *         TDE, cannot be removed from an option group, and that option group
-     *         cannot be removed from a DB instance once it is associated with a DB
-     *         instance
+     *         <p> Permanent options, such as the TDE option for Oracle Advanced
+     *         Security TDE, cannot be removed from an option group, and that option
+     *         group cannot be removed from a DB instance once it is associated with
+     *         a DB instance
      */
     public String getOptionGroupName() {
         return optionGroupName;
@@ -1071,22 +1062,16 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     
     /**
      * The name of the option group to be used for the restored DB instance.
-     * <p> <!-- Note that persistent options, such as the TDE_SQLServer
-     * option for Microsoft SQL Server, cannot be removed from an option
-     * group while DB instances are associated with the option group. -->
-     * Permanent options, such as the TDE option for Oracle Advanced Security
-     * TDE, cannot be removed from an option group, and that option group
-     * cannot be removed from a DB instance once it is associated with a DB
-     * instance
+     * <p> Permanent options, such as the TDE option for Oracle Advanced
+     * Security TDE, cannot be removed from an option group, and that option
+     * group cannot be removed from a DB instance once it is associated with
+     * a DB instance
      *
      * @param optionGroupName The name of the option group to be used for the restored DB instance.
-     *         <p> <!-- Note that persistent options, such as the TDE_SQLServer
-     *         option for Microsoft SQL Server, cannot be removed from an option
-     *         group while DB instances are associated with the option group. -->
-     *         Permanent options, such as the TDE option for Oracle Advanced Security
-     *         TDE, cannot be removed from an option group, and that option group
-     *         cannot be removed from a DB instance once it is associated with a DB
-     *         instance
+     *         <p> Permanent options, such as the TDE option for Oracle Advanced
+     *         Security TDE, cannot be removed from an option group, and that option
+     *         group cannot be removed from a DB instance once it is associated with
+     *         a DB instance
      */
     public void setOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;
@@ -1094,24 +1079,18 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     
     /**
      * The name of the option group to be used for the restored DB instance.
-     * <p> <!-- Note that persistent options, such as the TDE_SQLServer
-     * option for Microsoft SQL Server, cannot be removed from an option
-     * group while DB instances are associated with the option group. -->
-     * Permanent options, such as the TDE option for Oracle Advanced Security
-     * TDE, cannot be removed from an option group, and that option group
-     * cannot be removed from a DB instance once it is associated with a DB
-     * instance
+     * <p> Permanent options, such as the TDE option for Oracle Advanced
+     * Security TDE, cannot be removed from an option group, and that option
+     * group cannot be removed from a DB instance once it is associated with
+     * a DB instance
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionGroupName The name of the option group to be used for the restored DB instance.
-     *         <p> <!-- Note that persistent options, such as the TDE_SQLServer
-     *         option for Microsoft SQL Server, cannot be removed from an option
-     *         group while DB instances are associated with the option group. -->
-     *         Permanent options, such as the TDE option for Oracle Advanced Security
-     *         TDE, cannot be removed from an option group, and that option group
-     *         cannot be removed from a DB instance once it is associated with a DB
-     *         instance
+     *         <p> Permanent options, such as the TDE option for Oracle Advanced
+     *         Security TDE, cannot be removed from an option group, and that option
+     *         group cannot be removed from a DB instance once it is associated with
+     *         a DB instance
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

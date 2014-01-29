@@ -22,40 +22,55 @@ import com.amazonaws.services.ec2.model.transform.DescribeVolumeAttributeRequest
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVolumeAttribute(DescribeVolumeAttributeRequest) DescribeVolumeAttribute operation}.
- * 
+ * <p>
+ * Describes the specified attribute of the specified volume. You can specify only one attribute at a time.
+ * </p>
+ * <p>
+ * For more information about Amazon EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes
+ * </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVolumeAttribute(DescribeVolumeAttributeRequest)
  */
 public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVolumeAttributeRequest> {
 
+    /**
+     * The ID of the volume.
+     */
     private String volumeId;
 
+    /**
+     * The instance attribute.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>autoEnableIO, productCodes
+     */
     private String attribute;
 
     /**
-     * Returns the value of the VolumeId property for this object.
+     * The ID of the volume.
      *
-     * @return The value of the VolumeId property for this object.
+     * @return The ID of the volume.
      */
     public String getVolumeId() {
         return volumeId;
     }
     
     /**
-     * Sets the value of the VolumeId property for this object.
+     * The ID of the volume.
      *
-     * @param volumeId The new value for the VolumeId property for this object.
+     * @param volumeId The ID of the volume.
      */
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
     
     /**
-     * Sets the value of the VolumeId property for this object.
+     * The ID of the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeId The new value for the VolumeId property for this object.
+     * @param volumeId The ID of the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -66,12 +81,12 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns the value of the Attribute property for this object.
+     * The instance attribute.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>autoEnableIO, productCodes
      *
-     * @return The value of the Attribute property for this object.
+     * @return The instance attribute.
      *
      * @see VolumeAttributeName
      */
@@ -80,12 +95,12 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * Sets the value of the Attribute property for this object.
+     * The instance attribute.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>autoEnableIO, productCodes
      *
-     * @param attribute The new value for the Attribute property for this object.
+     * @param attribute The instance attribute.
      *
      * @see VolumeAttributeName
      */
@@ -94,14 +109,14 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * Sets the value of the Attribute property for this object.
+     * The instance attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>autoEnableIO, productCodes
      *
-     * @param attribute The new value for the Attribute property for this object.
+     * @param attribute The instance attribute.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -114,12 +129,12 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * Sets the value of the Attribute property for this object.
+     * The instance attribute.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>autoEnableIO, productCodes
      *
-     * @param attribute The new value for the Attribute property for this object.
+     * @param attribute The instance attribute.
      *
      * @see VolumeAttributeName
      */
@@ -128,14 +143,14 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * Sets the value of the Attribute property for this object.
+     * The instance attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>autoEnableIO, productCodes
      *
-     * @param attribute The new value for the Attribute property for this object.
+     * @param attribute The instance attribute.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -46,6 +46,7 @@ public class ListClustersResultJsonUnmarshaller implements Unmarshaller<ListClus
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Clusters", targetDepth)) {
+                    context.nextToken();
                     listClustersResult.setClusters(new ListUnmarshaller<ClusterSummary>(ClusterSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {

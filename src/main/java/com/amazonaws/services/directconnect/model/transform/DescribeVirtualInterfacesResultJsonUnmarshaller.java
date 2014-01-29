@@ -46,6 +46,7 @@ public class DescribeVirtualInterfacesResultJsonUnmarshaller implements Unmarsha
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("virtualInterfaces", targetDepth)) {
+                    context.nextToken();
                     describeVirtualInterfacesResult.setVirtualInterfaces(new ListUnmarshaller<VirtualInterface>(VirtualInterfaceJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

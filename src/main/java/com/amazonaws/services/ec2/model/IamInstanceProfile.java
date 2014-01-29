@@ -17,38 +17,46 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Iam Instance Profile
+ * <p>
+ * Describes an IAM instance profile.
+ * </p>
  */
 public class IamInstanceProfile implements Serializable {
 
+    /**
+     * The Amazon Resource Name (ARN) of the instance profile.
+     */
     private String arn;
 
+    /**
+     * The ID of the instance profile.
+     */
     private String id;
 
     /**
-     * Returns the value of the Arn property for this object.
+     * The Amazon Resource Name (ARN) of the instance profile.
      *
-     * @return The value of the Arn property for this object.
+     * @return The Amazon Resource Name (ARN) of the instance profile.
      */
     public String getArn() {
         return arn;
     }
     
     /**
-     * Sets the value of the Arn property for this object.
+     * The Amazon Resource Name (ARN) of the instance profile.
      *
-     * @param arn The new value for the Arn property for this object.
+     * @param arn The Amazon Resource Name (ARN) of the instance profile.
      */
     public void setArn(String arn) {
         this.arn = arn;
     }
     
     /**
-     * Sets the value of the Arn property for this object.
+     * The Amazon Resource Name (ARN) of the instance profile.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param arn The new value for the Arn property for this object.
+     * @param arn The Amazon Resource Name (ARN) of the instance profile.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -59,29 +67,29 @@ public class IamInstanceProfile implements Serializable {
     }
 
     /**
-     * Returns the value of the Id property for this object.
+     * The ID of the instance profile.
      *
-     * @return The value of the Id property for this object.
+     * @return The ID of the instance profile.
      */
     public String getId() {
         return id;
     }
     
     /**
-     * Sets the value of the Id property for this object.
+     * The ID of the instance profile.
      *
-     * @param id The new value for the Id property for this object.
+     * @param id The ID of the instance profile.
      */
     public void setId(String id) {
         this.id = id;
     }
     
     /**
-     * Sets the value of the Id property for this object.
+     * The ID of the instance profile.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param id The new value for the Id property for this object.
+     * @param id The ID of the instance profile.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

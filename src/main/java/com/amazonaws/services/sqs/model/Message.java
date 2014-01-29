@@ -17,32 +17,45 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * An Amazon SQS message.
+ * </p>
  */
 public class Message implements Serializable {
 
     /**
-     * 
+     * A unique identifier for the message. Message IDs are considered unique
+     * across all AWS accounts for an extended period of time.
      */
     private String messageId;
 
     /**
-     * 
+     * An identifier associated with the act of receiving the message. A new
+     * receipt handle is returned every time you receive a message. When
+     * deleting a message, you provide the last received receipt handle to
+     * delete the message.
      */
     private String receiptHandle;
 
     /**
-     * 
+     * An MD5 digest of the non-URL-encoded message body string.
      */
     private String mD5OfBody;
 
     /**
-     * 
+     * The message's contents (not URL-encoded).
      */
     private String body;
 
     /**
-     * 
+     * <code>SenderId</code>, <code>SentTimestamp</code>,
+     * <code>ApproximateReceiveCount</code>, and/or
+     * <code>ApproximateFirstReceiveTimestamp</code>.
+     * <code>SentTimestamp</code> and
+     * <code>ApproximateFirstReceiveTimestamp</code> are each returned as an
+     * integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.
      */
     private java.util.Map<String,String> attributes;
 
@@ -53,29 +66,35 @@ public class Message implements Serializable {
     public Message() {}
     
     /**
-     * 
+     * A unique identifier for the message. Message IDs are considered unique
+     * across all AWS accounts for an extended period of time.
      *
-     * @return 
+     * @return A unique identifier for the message. Message IDs are considered unique
+     *         across all AWS accounts for an extended period of time.
      */
     public String getMessageId() {
         return messageId;
     }
     
     /**
-     * 
+     * A unique identifier for the message. Message IDs are considered unique
+     * across all AWS accounts for an extended period of time.
      *
-     * @param messageId 
+     * @param messageId A unique identifier for the message. Message IDs are considered unique
+     *         across all AWS accounts for an extended period of time.
      */
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
     
     /**
-     * 
+     * A unique identifier for the message. Message IDs are considered unique
+     * across all AWS accounts for an extended period of time.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param messageId 
+     * @param messageId A unique identifier for the message. Message IDs are considered unique
+     *         across all AWS accounts for an extended period of time.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -86,29 +105,47 @@ public class Message implements Serializable {
     }
 
     /**
-     * 
+     * An identifier associated with the act of receiving the message. A new
+     * receipt handle is returned every time you receive a message. When
+     * deleting a message, you provide the last received receipt handle to
+     * delete the message.
      *
-     * @return 
+     * @return An identifier associated with the act of receiving the message. A new
+     *         receipt handle is returned every time you receive a message. When
+     *         deleting a message, you provide the last received receipt handle to
+     *         delete the message.
      */
     public String getReceiptHandle() {
         return receiptHandle;
     }
     
     /**
-     * 
+     * An identifier associated with the act of receiving the message. A new
+     * receipt handle is returned every time you receive a message. When
+     * deleting a message, you provide the last received receipt handle to
+     * delete the message.
      *
-     * @param receiptHandle 
+     * @param receiptHandle An identifier associated with the act of receiving the message. A new
+     *         receipt handle is returned every time you receive a message. When
+     *         deleting a message, you provide the last received receipt handle to
+     *         delete the message.
      */
     public void setReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;
     }
     
     /**
-     * 
+     * An identifier associated with the act of receiving the message. A new
+     * receipt handle is returned every time you receive a message. When
+     * deleting a message, you provide the last received receipt handle to
+     * delete the message.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param receiptHandle 
+     * @param receiptHandle An identifier associated with the act of receiving the message. A new
+     *         receipt handle is returned every time you receive a message. When
+     *         deleting a message, you provide the last received receipt handle to
+     *         delete the message.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -119,29 +156,29 @@ public class Message implements Serializable {
     }
 
     /**
-     * 
+     * An MD5 digest of the non-URL-encoded message body string.
      *
-     * @return 
+     * @return An MD5 digest of the non-URL-encoded message body string.
      */
     public String getMD5OfBody() {
         return mD5OfBody;
     }
     
     /**
-     * 
+     * An MD5 digest of the non-URL-encoded message body string.
      *
-     * @param mD5OfBody 
+     * @param mD5OfBody An MD5 digest of the non-URL-encoded message body string.
      */
     public void setMD5OfBody(String mD5OfBody) {
         this.mD5OfBody = mD5OfBody;
     }
     
     /**
-     * 
+     * An MD5 digest of the non-URL-encoded message body string.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param mD5OfBody 
+     * @param mD5OfBody An MD5 digest of the non-URL-encoded message body string.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -152,29 +189,29 @@ public class Message implements Serializable {
     }
 
     /**
-     * 
+     * The message's contents (not URL-encoded).
      *
-     * @return 
+     * @return The message's contents (not URL-encoded).
      */
     public String getBody() {
         return body;
     }
     
     /**
-     * 
+     * The message's contents (not URL-encoded).
      *
-     * @param body 
+     * @param body The message's contents (not URL-encoded).
      */
     public void setBody(String body) {
         this.body = body;
     }
     
     /**
-     * 
+     * The message's contents (not URL-encoded).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param body 
+     * @param body The message's contents (not URL-encoded).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -185,9 +222,23 @@ public class Message implements Serializable {
     }
 
     /**
-     * 
+     * <code>SenderId</code>, <code>SentTimestamp</code>,
+     * <code>ApproximateReceiveCount</code>, and/or
+     * <code>ApproximateFirstReceiveTimestamp</code>.
+     * <code>SentTimestamp</code> and
+     * <code>ApproximateFirstReceiveTimestamp</code> are each returned as an
+     * integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.
      *
-     * @return 
+     * @return <code>SenderId</code>, <code>SentTimestamp</code>,
+     *         <code>ApproximateReceiveCount</code>, and/or
+     *         <code>ApproximateFirstReceiveTimestamp</code>.
+     *         <code>SentTimestamp</code> and
+     *         <code>ApproximateFirstReceiveTimestamp</code> are each returned as an
+     *         integer representing the <a
+     *         href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     *         milliseconds.
      */
     public java.util.Map<String,String> getAttributes() {
         
@@ -198,20 +249,48 @@ public class Message implements Serializable {
     }
     
     /**
-     * 
+     * <code>SenderId</code>, <code>SentTimestamp</code>,
+     * <code>ApproximateReceiveCount</code>, and/or
+     * <code>ApproximateFirstReceiveTimestamp</code>.
+     * <code>SentTimestamp</code> and
+     * <code>ApproximateFirstReceiveTimestamp</code> are each returned as an
+     * integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.
      *
-     * @param attributes 
+     * @param attributes <code>SenderId</code>, <code>SentTimestamp</code>,
+     *         <code>ApproximateReceiveCount</code>, and/or
+     *         <code>ApproximateFirstReceiveTimestamp</code>.
+     *         <code>SentTimestamp</code> and
+     *         <code>ApproximateFirstReceiveTimestamp</code> are each returned as an
+     *         integer representing the <a
+     *         href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     *         milliseconds.
      */
     public void setAttributes(java.util.Map<String,String> attributes) {
         this.attributes = attributes;
     }
     
     /**
-     * 
+     * <code>SenderId</code>, <code>SentTimestamp</code>,
+     * <code>ApproximateReceiveCount</code>, and/or
+     * <code>ApproximateFirstReceiveTimestamp</code>.
+     * <code>SentTimestamp</code> and
+     * <code>ApproximateFirstReceiveTimestamp</code> are each returned as an
+     * integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes 
+     * @param attributes <code>SenderId</code>, <code>SentTimestamp</code>,
+     *         <code>ApproximateReceiveCount</code>, and/or
+     *         <code>ApproximateFirstReceiveTimestamp</code>.
+     *         <code>SentTimestamp</code> and
+     *         <code>ApproximateFirstReceiveTimestamp</code> are each returned as an
+     *         integer representing the <a
+     *         href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     *         milliseconds.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -222,7 +301,14 @@ public class Message implements Serializable {
     }
 
     /**
-     * 
+     * <code>SenderId</code>, <code>SentTimestamp</code>,
+     * <code>ApproximateReceiveCount</code>, and/or
+     * <code>ApproximateFirstReceiveTimestamp</code>.
+     * <code>SentTimestamp</code> and
+     * <code>ApproximateFirstReceiveTimestamp</code> are each returned as an
+     * integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.
      * <p>
      * The method adds a new key-value pair into Attributes parameter, and
      * returns a reference to this object so that method calls can be chained

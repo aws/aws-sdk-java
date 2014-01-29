@@ -17,6 +17,7 @@ package com.amazonaws.services.dynamodb.datamodeling;
 /**
  * Generic exception for problems occuring when mapping DynamoDB items to Java
  * objects or vice versa. Excludes service exceptions.
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMappingException} instead.
  */
 @Deprecated
 public class DynamoDBMappingException extends RuntimeException {

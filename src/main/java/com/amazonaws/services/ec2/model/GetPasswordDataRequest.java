@@ -23,11 +23,18 @@ import com.amazonaws.services.ec2.model.transform.GetPasswordDataRequestMarshall
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#getPasswordData(GetPasswordDataRequest) GetPasswordData operation}.
  * <p>
- * Retrieves the encrypted administrator password for the instances running Windows.
+ * Retrieves the encrypted administrator password for an instance running Windows.
  * </p>
  * <p>
- * <b>NOTE:</b> The Windows password is only generated the first time an AMI is launched. It is not generated for rebundled AMIs or after the password is
- * changed on an instance. The password is encrypted using the key pair that you provided.
+ * The Windows password is only generated the first time an AMI is launched. It is not generated for rebundled AMIs or after the password is changed on
+ * an instance.
+ * </p>
+ * <p>
+ * The password is encrypted using the key pair that you specified when you launched the instance. You must provide the corresponding key pair file.
+ * </p>
+ * <p>
+ * Password generation and encryption takes a few moments. We recommend that you wait up to 15 minutes after launching an instance before trying to
+ * retrieve the generated password.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#getPasswordData(GetPasswordDataRequest)
@@ -35,8 +42,7 @@ import com.amazonaws.services.ec2.model.transform.GetPasswordDataRequestMarshall
 public class GetPasswordDataRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<GetPasswordDataRequest> {
 
     /**
-     * The ID of the instance for which you want the Windows administrator
-     * password.
+     * The ID of the Windows instance.
      */
     private String instanceId;
 
@@ -51,43 +57,36 @@ public class GetPasswordDataRequest extends AmazonWebServiceRequest implements S
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param instanceId The ID of the instance for which you want the
-     * Windows administrator password.
+     * @param instanceId The ID of the Windows instance.
      */
     public GetPasswordDataRequest(String instanceId) {
         setInstanceId(instanceId);
     }
 
     /**
-     * The ID of the instance for which you want the Windows administrator
-     * password.
+     * The ID of the Windows instance.
      *
-     * @return The ID of the instance for which you want the Windows administrator
-     *         password.
+     * @return The ID of the Windows instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The ID of the instance for which you want the Windows administrator
-     * password.
+     * The ID of the Windows instance.
      *
-     * @param instanceId The ID of the instance for which you want the Windows administrator
-     *         password.
+     * @param instanceId The ID of the Windows instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The ID of the instance for which you want the Windows administrator
-     * password.
+     * The ID of the Windows instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The ID of the instance for which you want the Windows administrator
-     *         password.
+     * @param instanceId The ID of the Windows instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

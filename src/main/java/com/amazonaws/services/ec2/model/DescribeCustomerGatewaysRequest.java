@@ -23,11 +23,11 @@ import com.amazonaws.services.ec2.model.transform.DescribeCustomerGatewaysReques
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeCustomerGateways(DescribeCustomerGatewaysRequest) DescribeCustomerGateways operation}.
  * <p>
- * Gives you information about your customer gateways. You can filter the results to return information only about customer gateways that match criteria
- * you specify. For example, you could ask to get information about a particular customer gateway (or all) only if the gateway's state is pending or
- * available. You can specify multiple filters (e.g., the customer gateway has a particular IP address for the Internet-routable external interface, and
- * the gateway's state is pending or available). The result includes information for a particular customer gateway only if the gateway matches all your
- * filters. If there's no match, no special message is returned; the response is simply empty. The following table shows the available filters.
+ * Describes one or more of your VPN customer gateways.
+ * </p>
+ * <p>
+ * For more information about VPN customer gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware
+ * Virtual Private Gateway to Your VPC </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeCustomerGateways(DescribeCustomerGatewaysRequest)
@@ -35,23 +35,44 @@ import com.amazonaws.services.ec2.model.transform.DescribeCustomerGatewaysReques
 public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeCustomerGatewaysRequest> {
 
     /**
-     * A set of one or more customer gateway IDs.
+     * One or more customer gateway IDs. <p>Default: Describes all your
+     * customer gateways.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> customerGatewayIds;
 
     /**
-     * A list of filters used to match properties for Customer Gateways. For
-     * a complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>bgp-asn</code> - The customer
+     * gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN). </li> <li> <p><code>customer-gateway-id</code> - The ID of the
+     * customer gateway. </li> <li> <p><code>ip-address</code> - The IP
+     * address of the customer gateway's Internet-routable external
+     * interface. </li> <li> <p><code>state</code> - The state of the
+     * customer gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>). </li> <li>
+     * <p><code>type</code> - The type of customer gateway. Currently, the
+     * only supported type is <code>ipsec.1</code>. </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * A set of one or more customer gateway IDs.
+     * One or more customer gateway IDs. <p>Default: Describes all your
+     * customer gateways.
      *
-     * @return A set of one or more customer gateway IDs.
+     * @return One or more customer gateway IDs. <p>Default: Describes all your
+     *         customer gateways.
      */
     public java.util.List<String> getCustomerGatewayIds() {
         if (customerGatewayIds == null) {
@@ -62,9 +83,11 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * A set of one or more customer gateway IDs.
+     * One or more customer gateway IDs. <p>Default: Describes all your
+     * customer gateways.
      *
-     * @param customerGatewayIds A set of one or more customer gateway IDs.
+     * @param customerGatewayIds One or more customer gateway IDs. <p>Default: Describes all your
+     *         customer gateways.
      */
     public void setCustomerGatewayIds(java.util.Collection<String> customerGatewayIds) {
         if (customerGatewayIds == null) {
@@ -77,11 +100,13 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * A set of one or more customer gateway IDs.
+     * One or more customer gateway IDs. <p>Default: Describes all your
+     * customer gateways.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customerGatewayIds A set of one or more customer gateway IDs.
+     * @param customerGatewayIds One or more customer gateway IDs. <p>Default: Describes all your
+     *         customer gateways.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -95,11 +120,13 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * A set of one or more customer gateway IDs.
+     * One or more customer gateway IDs. <p>Default: Describes all your
+     * customer gateways.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customerGatewayIds A set of one or more customer gateway IDs.
+     * @param customerGatewayIds One or more customer gateway IDs. <p>Default: Describes all your
+     *         customer gateways.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -117,17 +144,53 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * A list of filters used to match properties for Customer Gateways. For
-     * a complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>bgp-asn</code> - The customer
+     * gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN). </li> <li> <p><code>customer-gateway-id</code> - The ID of the
+     * customer gateway. </li> <li> <p><code>ip-address</code> - The IP
+     * address of the customer gateway's Internet-routable external
+     * interface. </li> <li> <p><code>state</code> - The state of the
+     * customer gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>). </li> <li>
+     * <p><code>type</code> - The type of customer gateway. Currently, the
+     * only supported type is <code>ipsec.1</code>. </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> </ul>
      *
-     * @return A list of filters used to match properties for Customer Gateways. For
-     *         a complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @return One or more filters. <ul> <li> <p><code>bgp-asn</code> - The customer
+     *         gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     *         (ASN). </li> <li> <p><code>customer-gateway-id</code> - The ID of the
+     *         customer gateway. </li> <li> <p><code>ip-address</code> - The IP
+     *         address of the customer gateway's Internet-routable external
+     *         interface. </li> <li> <p><code>state</code> - The state of the
+     *         customer gateway (<code>pending</code> | <code>available</code> |
+     *         <code>deleting</code> | <code>deleted</code>). </li> <li>
+     *         <p><code>type</code> - The type of customer gateway. Currently, the
+     *         only supported type is <code>ipsec.1</code>. </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -138,17 +201,53 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * A list of filters used to match properties for Customer Gateways. For
-     * a complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>bgp-asn</code> - The customer
+     * gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN). </li> <li> <p><code>customer-gateway-id</code> - The ID of the
+     * customer gateway. </li> <li> <p><code>ip-address</code> - The IP
+     * address of the customer gateway's Internet-routable external
+     * interface. </li> <li> <p><code>state</code> - The state of the
+     * customer gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>). </li> <li>
+     * <p><code>type</code> - The type of customer gateway. Currently, the
+     * only supported type is <code>ipsec.1</code>. </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> </ul>
      *
-     * @param filters A list of filters used to match properties for Customer Gateways. For
-     *         a complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>bgp-asn</code> - The customer
+     *         gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     *         (ASN). </li> <li> <p><code>customer-gateway-id</code> - The ID of the
+     *         customer gateway. </li> <li> <p><code>ip-address</code> - The IP
+     *         address of the customer gateway's Internet-routable external
+     *         interface. </li> <li> <p><code>state</code> - The state of the
+     *         customer gateway (<code>pending</code> | <code>available</code> |
+     *         <code>deleting</code> | <code>deleted</code>). </li> <li>
+     *         <p><code>type</code> - The type of customer gateway. Currently, the
+     *         only supported type is <code>ipsec.1</code>. </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -161,19 +260,55 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * A list of filters used to match properties for Customer Gateways. For
-     * a complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>bgp-asn</code> - The customer
+     * gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN). </li> <li> <p><code>customer-gateway-id</code> - The ID of the
+     * customer gateway. </li> <li> <p><code>ip-address</code> - The IP
+     * address of the customer gateway's Internet-routable external
+     * interface. </li> <li> <p><code>state</code> - The state of the
+     * customer gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>). </li> <li>
+     * <p><code>type</code> - The type of customer gateway. Currently, the
+     * only supported type is <code>ipsec.1</code>. </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for Customer Gateways. For
-     *         a complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>bgp-asn</code> - The customer
+     *         gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     *         (ASN). </li> <li> <p><code>customer-gateway-id</code> - The ID of the
+     *         customer gateway. </li> <li> <p><code>ip-address</code> - The IP
+     *         address of the customer gateway's Internet-routable external
+     *         interface. </li> <li> <p><code>state</code> - The state of the
+     *         customer gateway (<code>pending</code> | <code>available</code> |
+     *         <code>deleting</code> | <code>deleted</code>). </li> <li>
+     *         <p><code>type</code> - The type of customer gateway. Currently, the
+     *         only supported type is <code>ipsec.1</code>. </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -187,19 +322,55 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * A list of filters used to match properties for Customer Gateways. For
-     * a complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>bgp-asn</code> - The customer
+     * gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN). </li> <li> <p><code>customer-gateway-id</code> - The ID of the
+     * customer gateway. </li> <li> <p><code>ip-address</code> - The IP
+     * address of the customer gateway's Internet-routable external
+     * interface. </li> <li> <p><code>state</code> - The state of the
+     * customer gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>). </li> <li>
+     * <p><code>type</code> - The type of customer gateway. Currently, the
+     * only supported type is <code>ipsec.1</code>. </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for Customer Gateways. For
-     *         a complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>bgp-asn</code> - The customer
+     *         gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     *         (ASN). </li> <li> <p><code>customer-gateway-id</code> - The ID of the
+     *         customer gateway. </li> <li> <p><code>ip-address</code> - The IP
+     *         address of the customer gateway's Internet-routable external
+     *         interface. </li> <li> <p><code>state</code> - The state of the
+     *         customer gateway (<code>pending</code> | <code>available</code> |
+     *         <code>deleting</code> | <code>deleted</code>). </li> <li>
+     *         <p><code>type</code> - The type of customer gateway. Currently, the
+     *         only supported type is <code>ipsec.1</code>. </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

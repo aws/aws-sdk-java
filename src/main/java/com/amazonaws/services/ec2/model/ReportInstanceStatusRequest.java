@@ -22,28 +22,70 @@ import com.amazonaws.services.ec2.model.transform.ReportInstanceStatusRequestMar
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#reportInstanceStatus(ReportInstanceStatusRequest) ReportInstanceStatus operation}.
- * 
+ * <p>
+ * Submits feedback about the status of an instance. The instance must be in the <code>running</code> state. If your experience with the instance differs
+ * from the instance status returned by DescribeInstanceStatus, use ReportInstanceStatus to report your experience with the instance. Amazon EC2 collects
+ * this information to improve the accuracy of status checks.
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#reportInstanceStatus(ReportInstanceStatusRequest)
  */
 public class ReportInstanceStatusRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ReportInstanceStatusRequest> {
 
+    /**
+     * One or more instances.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> instances;
 
+    /**
+     * The status of all instances listed.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ok, impaired
+     */
     private String status;
 
+    /**
+     * The time at which the reported instance health state began.
+     */
     private java.util.Date startTime;
 
+    /**
+     * The time at which the reported instance health state ended.
+     */
     private java.util.Date endTime;
 
+    /**
+     * One or more reason codes that describes the health state of your
+     * instance. <ul> <li><p><code>instance-stuck-in-state</code>: My
+     * instance is stuck in a state.</li> <li><p><code>unresponsive</code>:
+     * My instance is unresponsive.</li>
+     * <li><p><code>not-accepting-credentials</code>: My instance is not
+     * accepting my credentials.</li>
+     * <li><p><code>password-not-available</code>: A password is not
+     * available for my instance.</li>
+     * <li><p><code>performance-network</code>: My instance is experiencing
+     * performance problems which I believe are network related.</li>
+     * <li><p><code>performance-instance-store</code>: My instance is
+     * experiencing performance problems which I believe are related to the
+     * instance stores.</li> <li><p><code>performance-ebs-volume</code>: My
+     * instance is experiencing performance problems which I believe are
+     * related to an EBS volume.</li> <li><p><code>performance-other</code>:
+     * My instance is experiencing performance problems.</li>
+     * <li><p><code>other</code>: [explain using the description
+     * parameter]</li> </ul>
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> reasonCodes;
 
+    /**
+     * Descriptive text about the health state of your instance.
+     */
     private String description;
 
     /**
-     * Returns the value of the Instances property for this object.
+     * One or more instances.
      *
-     * @return The value of the Instances property for this object.
+     * @return One or more instances.
      */
     public java.util.List<String> getInstances() {
         if (instances == null) {
@@ -54,9 +96,9 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Sets the value of the Instances property for this object.
+     * One or more instances.
      *
-     * @param instances The new value for the Instances property for this object.
+     * @param instances One or more instances.
      */
     public void setInstances(java.util.Collection<String> instances) {
         if (instances == null) {
@@ -69,11 +111,11 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Sets the value of the Instances property for this object.
+     * One or more instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances The new value for the Instances property for this object.
+     * @param instances One or more instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -87,11 +129,11 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Sets the value of the Instances property for this object.
+     * One or more instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances The new value for the Instances property for this object.
+     * @param instances One or more instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -109,12 +151,12 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Returns the value of the Status property for this object.
+     * The status of all instances listed.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ok, impaired
      *
-     * @return The value of the Status property for this object.
+     * @return The status of all instances listed.
      *
      * @see ReportStatusType
      */
@@ -123,12 +165,12 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status of all instances listed.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ok, impaired
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of all instances listed.
      *
      * @see ReportStatusType
      */
@@ -137,14 +179,14 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status of all instances listed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ok, impaired
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of all instances listed.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -157,12 +199,12 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Sets the value of the Status property for this object.
+     * The status of all instances listed.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ok, impaired
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of all instances listed.
      *
      * @see ReportStatusType
      */
@@ -171,14 +213,14 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status of all instances listed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ok, impaired
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of all instances listed.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -191,29 +233,29 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Returns the value of the StartTime property for this object.
+     * The time at which the reported instance health state began.
      *
-     * @return The value of the StartTime property for this object.
+     * @return The time at which the reported instance health state began.
      */
     public java.util.Date getStartTime() {
         return startTime;
     }
     
     /**
-     * Sets the value of the StartTime property for this object.
+     * The time at which the reported instance health state began.
      *
-     * @param startTime The new value for the StartTime property for this object.
+     * @param startTime The time at which the reported instance health state began.
      */
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
     
     /**
-     * Sets the value of the StartTime property for this object.
+     * The time at which the reported instance health state began.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startTime The new value for the StartTime property for this object.
+     * @param startTime The time at which the reported instance health state began.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -224,29 +266,29 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Returns the value of the EndTime property for this object.
+     * The time at which the reported instance health state ended.
      *
-     * @return The value of the EndTime property for this object.
+     * @return The time at which the reported instance health state ended.
      */
     public java.util.Date getEndTime() {
         return endTime;
     }
     
     /**
-     * Sets the value of the EndTime property for this object.
+     * The time at which the reported instance health state ended.
      *
-     * @param endTime The new value for the EndTime property for this object.
+     * @param endTime The time at which the reported instance health state ended.
      */
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
     }
     
     /**
-     * Sets the value of the EndTime property for this object.
+     * The time at which the reported instance health state ended.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param endTime The new value for the EndTime property for this object.
+     * @param endTime The time at which the reported instance health state ended.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -257,9 +299,43 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Returns the value of the ReasonCodes property for this object.
+     * One or more reason codes that describes the health state of your
+     * instance. <ul> <li><p><code>instance-stuck-in-state</code>: My
+     * instance is stuck in a state.</li> <li><p><code>unresponsive</code>:
+     * My instance is unresponsive.</li>
+     * <li><p><code>not-accepting-credentials</code>: My instance is not
+     * accepting my credentials.</li>
+     * <li><p><code>password-not-available</code>: A password is not
+     * available for my instance.</li>
+     * <li><p><code>performance-network</code>: My instance is experiencing
+     * performance problems which I believe are network related.</li>
+     * <li><p><code>performance-instance-store</code>: My instance is
+     * experiencing performance problems which I believe are related to the
+     * instance stores.</li> <li><p><code>performance-ebs-volume</code>: My
+     * instance is experiencing performance problems which I believe are
+     * related to an EBS volume.</li> <li><p><code>performance-other</code>:
+     * My instance is experiencing performance problems.</li>
+     * <li><p><code>other</code>: [explain using the description
+     * parameter]</li> </ul>
      *
-     * @return The value of the ReasonCodes property for this object.
+     * @return One or more reason codes that describes the health state of your
+     *         instance. <ul> <li><p><code>instance-stuck-in-state</code>: My
+     *         instance is stuck in a state.</li> <li><p><code>unresponsive</code>:
+     *         My instance is unresponsive.</li>
+     *         <li><p><code>not-accepting-credentials</code>: My instance is not
+     *         accepting my credentials.</li>
+     *         <li><p><code>password-not-available</code>: A password is not
+     *         available for my instance.</li>
+     *         <li><p><code>performance-network</code>: My instance is experiencing
+     *         performance problems which I believe are network related.</li>
+     *         <li><p><code>performance-instance-store</code>: My instance is
+     *         experiencing performance problems which I believe are related to the
+     *         instance stores.</li> <li><p><code>performance-ebs-volume</code>: My
+     *         instance is experiencing performance problems which I believe are
+     *         related to an EBS volume.</li> <li><p><code>performance-other</code>:
+     *         My instance is experiencing performance problems.</li>
+     *         <li><p><code>other</code>: [explain using the description
+     *         parameter]</li> </ul>
      */
     public java.util.List<String> getReasonCodes() {
         if (reasonCodes == null) {
@@ -270,9 +346,43 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Sets the value of the ReasonCodes property for this object.
+     * One or more reason codes that describes the health state of your
+     * instance. <ul> <li><p><code>instance-stuck-in-state</code>: My
+     * instance is stuck in a state.</li> <li><p><code>unresponsive</code>:
+     * My instance is unresponsive.</li>
+     * <li><p><code>not-accepting-credentials</code>: My instance is not
+     * accepting my credentials.</li>
+     * <li><p><code>password-not-available</code>: A password is not
+     * available for my instance.</li>
+     * <li><p><code>performance-network</code>: My instance is experiencing
+     * performance problems which I believe are network related.</li>
+     * <li><p><code>performance-instance-store</code>: My instance is
+     * experiencing performance problems which I believe are related to the
+     * instance stores.</li> <li><p><code>performance-ebs-volume</code>: My
+     * instance is experiencing performance problems which I believe are
+     * related to an EBS volume.</li> <li><p><code>performance-other</code>:
+     * My instance is experiencing performance problems.</li>
+     * <li><p><code>other</code>: [explain using the description
+     * parameter]</li> </ul>
      *
-     * @param reasonCodes The new value for the ReasonCodes property for this object.
+     * @param reasonCodes One or more reason codes that describes the health state of your
+     *         instance. <ul> <li><p><code>instance-stuck-in-state</code>: My
+     *         instance is stuck in a state.</li> <li><p><code>unresponsive</code>:
+     *         My instance is unresponsive.</li>
+     *         <li><p><code>not-accepting-credentials</code>: My instance is not
+     *         accepting my credentials.</li>
+     *         <li><p><code>password-not-available</code>: A password is not
+     *         available for my instance.</li>
+     *         <li><p><code>performance-network</code>: My instance is experiencing
+     *         performance problems which I believe are network related.</li>
+     *         <li><p><code>performance-instance-store</code>: My instance is
+     *         experiencing performance problems which I believe are related to the
+     *         instance stores.</li> <li><p><code>performance-ebs-volume</code>: My
+     *         instance is experiencing performance problems which I believe are
+     *         related to an EBS volume.</li> <li><p><code>performance-other</code>:
+     *         My instance is experiencing performance problems.</li>
+     *         <li><p><code>other</code>: [explain using the description
+     *         parameter]</li> </ul>
      */
     public void setReasonCodes(java.util.Collection<String> reasonCodes) {
         if (reasonCodes == null) {
@@ -285,11 +395,45 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Sets the value of the ReasonCodes property for this object.
+     * One or more reason codes that describes the health state of your
+     * instance. <ul> <li><p><code>instance-stuck-in-state</code>: My
+     * instance is stuck in a state.</li> <li><p><code>unresponsive</code>:
+     * My instance is unresponsive.</li>
+     * <li><p><code>not-accepting-credentials</code>: My instance is not
+     * accepting my credentials.</li>
+     * <li><p><code>password-not-available</code>: A password is not
+     * available for my instance.</li>
+     * <li><p><code>performance-network</code>: My instance is experiencing
+     * performance problems which I believe are network related.</li>
+     * <li><p><code>performance-instance-store</code>: My instance is
+     * experiencing performance problems which I believe are related to the
+     * instance stores.</li> <li><p><code>performance-ebs-volume</code>: My
+     * instance is experiencing performance problems which I believe are
+     * related to an EBS volume.</li> <li><p><code>performance-other</code>:
+     * My instance is experiencing performance problems.</li>
+     * <li><p><code>other</code>: [explain using the description
+     * parameter]</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reasonCodes The new value for the ReasonCodes property for this object.
+     * @param reasonCodes One or more reason codes that describes the health state of your
+     *         instance. <ul> <li><p><code>instance-stuck-in-state</code>: My
+     *         instance is stuck in a state.</li> <li><p><code>unresponsive</code>:
+     *         My instance is unresponsive.</li>
+     *         <li><p><code>not-accepting-credentials</code>: My instance is not
+     *         accepting my credentials.</li>
+     *         <li><p><code>password-not-available</code>: A password is not
+     *         available for my instance.</li>
+     *         <li><p><code>performance-network</code>: My instance is experiencing
+     *         performance problems which I believe are network related.</li>
+     *         <li><p><code>performance-instance-store</code>: My instance is
+     *         experiencing performance problems which I believe are related to the
+     *         instance stores.</li> <li><p><code>performance-ebs-volume</code>: My
+     *         instance is experiencing performance problems which I believe are
+     *         related to an EBS volume.</li> <li><p><code>performance-other</code>:
+     *         My instance is experiencing performance problems.</li>
+     *         <li><p><code>other</code>: [explain using the description
+     *         parameter]</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -303,11 +447,45 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Sets the value of the ReasonCodes property for this object.
+     * One or more reason codes that describes the health state of your
+     * instance. <ul> <li><p><code>instance-stuck-in-state</code>: My
+     * instance is stuck in a state.</li> <li><p><code>unresponsive</code>:
+     * My instance is unresponsive.</li>
+     * <li><p><code>not-accepting-credentials</code>: My instance is not
+     * accepting my credentials.</li>
+     * <li><p><code>password-not-available</code>: A password is not
+     * available for my instance.</li>
+     * <li><p><code>performance-network</code>: My instance is experiencing
+     * performance problems which I believe are network related.</li>
+     * <li><p><code>performance-instance-store</code>: My instance is
+     * experiencing performance problems which I believe are related to the
+     * instance stores.</li> <li><p><code>performance-ebs-volume</code>: My
+     * instance is experiencing performance problems which I believe are
+     * related to an EBS volume.</li> <li><p><code>performance-other</code>:
+     * My instance is experiencing performance problems.</li>
+     * <li><p><code>other</code>: [explain using the description
+     * parameter]</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reasonCodes The new value for the ReasonCodes property for this object.
+     * @param reasonCodes One or more reason codes that describes the health state of your
+     *         instance. <ul> <li><p><code>instance-stuck-in-state</code>: My
+     *         instance is stuck in a state.</li> <li><p><code>unresponsive</code>:
+     *         My instance is unresponsive.</li>
+     *         <li><p><code>not-accepting-credentials</code>: My instance is not
+     *         accepting my credentials.</li>
+     *         <li><p><code>password-not-available</code>: A password is not
+     *         available for my instance.</li>
+     *         <li><p><code>performance-network</code>: My instance is experiencing
+     *         performance problems which I believe are network related.</li>
+     *         <li><p><code>performance-instance-store</code>: My instance is
+     *         experiencing performance problems which I believe are related to the
+     *         instance stores.</li> <li><p><code>performance-ebs-volume</code>: My
+     *         instance is experiencing performance problems which I believe are
+     *         related to an EBS volume.</li> <li><p><code>performance-other</code>:
+     *         My instance is experiencing performance problems.</li>
+     *         <li><p><code>other</code>: [explain using the description
+     *         parameter]</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -325,11 +503,45 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Sets the value of the ReasonCodes property for this object.
+     * One or more reason codes that describes the health state of your
+     * instance. <ul> <li><p><code>instance-stuck-in-state</code>: My
+     * instance is stuck in a state.</li> <li><p><code>unresponsive</code>:
+     * My instance is unresponsive.</li>
+     * <li><p><code>not-accepting-credentials</code>: My instance is not
+     * accepting my credentials.</li>
+     * <li><p><code>password-not-available</code>: A password is not
+     * available for my instance.</li>
+     * <li><p><code>performance-network</code>: My instance is experiencing
+     * performance problems which I believe are network related.</li>
+     * <li><p><code>performance-instance-store</code>: My instance is
+     * experiencing performance problems which I believe are related to the
+     * instance stores.</li> <li><p><code>performance-ebs-volume</code>: My
+     * instance is experiencing performance problems which I believe are
+     * related to an EBS volume.</li> <li><p><code>performance-other</code>:
+     * My instance is experiencing performance problems.</li>
+     * <li><p><code>other</code>: [explain using the description
+     * parameter]</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reasonCodes The new value for the ReasonCodes property for this object.
+     * @param reasonCodes One or more reason codes that describes the health state of your
+     *         instance. <ul> <li><p><code>instance-stuck-in-state</code>: My
+     *         instance is stuck in a state.</li> <li><p><code>unresponsive</code>:
+     *         My instance is unresponsive.</li>
+     *         <li><p><code>not-accepting-credentials</code>: My instance is not
+     *         accepting my credentials.</li>
+     *         <li><p><code>password-not-available</code>: A password is not
+     *         available for my instance.</li>
+     *         <li><p><code>performance-network</code>: My instance is experiencing
+     *         performance problems which I believe are network related.</li>
+     *         <li><p><code>performance-instance-store</code>: My instance is
+     *         experiencing performance problems which I believe are related to the
+     *         instance stores.</li> <li><p><code>performance-ebs-volume</code>: My
+     *         instance is experiencing performance problems which I believe are
+     *         related to an EBS volume.</li> <li><p><code>performance-other</code>:
+     *         My instance is experiencing performance problems.</li>
+     *         <li><p><code>other</code>: [explain using the description
+     *         parameter]</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -348,29 +560,29 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Returns the value of the Description property for this object.
+     * Descriptive text about the health state of your instance.
      *
-     * @return The value of the Description property for this object.
+     * @return Descriptive text about the health state of your instance.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * Descriptive text about the health state of your instance.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description Descriptive text about the health state of your instance.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * Descriptive text about the health state of your instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description Descriptive text about the health state of your instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -19,6 +19,7 @@ import java.io.Serializable;
  * <p>
  * <code>KeySchemaElement</code> is the primary key (hash or hash-and-range) structure for the table.
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.KeySchemaElement} instead.
  */
 @Deprecated
 public class KeySchemaElement  implements Serializable  {

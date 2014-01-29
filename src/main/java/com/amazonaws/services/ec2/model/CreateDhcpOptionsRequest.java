@@ -23,9 +23,13 @@ import com.amazonaws.services.ec2.model.transform.CreateDhcpOptionsRequestMarsha
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createDhcpOptions(CreateDhcpOptionsRequest) CreateDhcpOptions operation}.
  * <p>
- * Creates a set of DHCP options that you can then associate with one or more VPCs, causing all existing and new instances that you launch in those VPCs
- * to use the set of DHCP options. The following table lists the individual DHCP options you can specify. For more information about the options, go to
- * <a href="http://www.ietf.org/rfc/rfc2132.txt"> http://www.ietf.org/rfc/rfc2132.txt </a>
+ * Creates a set of DHCP options for your VPC. After creating the set, you must associate it with the VPC, causing all existing and new instances that
+ * you launch in the VPC to use this set of DHCP options. The following are the individual DHCP options you can specify. For more information about the
+ * options, see <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a> .
+ * </p>
+ * <p>
+ * For more information about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets
+ * </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createDhcpOptions(CreateDhcpOptionsRequest)
@@ -33,7 +37,7 @@ import com.amazonaws.services.ec2.model.transform.CreateDhcpOptionsRequestMarsha
 public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateDhcpOptionsRequest> {
 
     /**
-     * A set of one or more DHCP configurations.
+     * A DHCP configuration option.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<DhcpConfiguration> dhcpConfigurations;
 
@@ -48,16 +52,16 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dhcpConfigurations A set of one or more DHCP configurations.
+     * @param dhcpConfigurations A DHCP configuration option.
      */
     public CreateDhcpOptionsRequest(java.util.List<DhcpConfiguration> dhcpConfigurations) {
         setDhcpConfigurations(dhcpConfigurations);
     }
 
     /**
-     * A set of one or more DHCP configurations.
+     * A DHCP configuration option.
      *
-     * @return A set of one or more DHCP configurations.
+     * @return A DHCP configuration option.
      */
     public java.util.List<DhcpConfiguration> getDhcpConfigurations() {
         if (dhcpConfigurations == null) {
@@ -68,9 +72,9 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * A set of one or more DHCP configurations.
+     * A DHCP configuration option.
      *
-     * @param dhcpConfigurations A set of one or more DHCP configurations.
+     * @param dhcpConfigurations A DHCP configuration option.
      */
     public void setDhcpConfigurations(java.util.Collection<DhcpConfiguration> dhcpConfigurations) {
         if (dhcpConfigurations == null) {
@@ -83,11 +87,11 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * A set of one or more DHCP configurations.
+     * A DHCP configuration option.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpConfigurations A set of one or more DHCP configurations.
+     * @param dhcpConfigurations A DHCP configuration option.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -101,11 +105,11 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * A set of one or more DHCP configurations.
+     * A DHCP configuration option.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpConfigurations A set of one or more DHCP configurations.
+     * @param dhcpConfigurations A DHCP configuration option.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

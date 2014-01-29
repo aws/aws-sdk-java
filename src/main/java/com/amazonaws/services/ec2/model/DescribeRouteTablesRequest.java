@@ -23,20 +23,11 @@ import com.amazonaws.services.ec2.model.transform.DescribeRouteTablesRequestMars
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeRouteTables(DescribeRouteTablesRequest) DescribeRouteTables operation}.
  * <p>
- * Gives you information about your route tables. You can filter the results to return information only about tables that match criteria you specify.
- * For example, you could get information only about a table associated with a particular subnet. You can specify multiple values for the filter. The
- * table must match at least one of the specified values for it to be included in the results.
+ * Describes one or more of your route tables.
  * </p>
  * <p>
- * You can specify multiple filters (e.g., the table has a particular route, and is associated with a particular subnet). The result includes
- * information for a particular table only if it matches all your filters. If there's no match, no special message is returned; the response is simply
- * empty.
- * </p>
- * <p>
- * You can use wildcards with the filter values: an asterisk matches zero or more characters, and <code>?</code> matches exactly one character. You can
- * escape special characters using a backslash before the character. For example, a value of <code>\*amazon\?\\</code> searches for the literal string
- * <code>*amazon?\</code> .
- * 
+ * For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeRouteTables(DescribeRouteTablesRequest)
@@ -44,23 +35,57 @@ import com.amazonaws.services.ec2.model.transform.DescribeRouteTablesRequestMars
 public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeRouteTablesRequest> {
 
     /**
-     * One or more route table IDs.
+     * One or more route table IDs. <p>Default: Describes all your route
+     * tables.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> routeTableIds;
 
     /**
-     * A list of filters used to match properties for Route Tables. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li>
+     * <p><code>association.route-table-association-id</code> - The ID of an
+     * association ID for the route table. </li> <li>
+     * <p><code>association.route-table-id</code> - The ID of the route table
+     * involved in the association. </li> <li>
+     * <p><code>association.subnet-id</code> - The ID of the subnet involved
+     * in the association. </li> <li> <p><code>association.main</code> -
+     * Indicates whether the route table is the main route table for the VPC.
+     * </li> <li> <p><code>route-table-id</code> - The ID of the route table.
+     * </li> <li> <p><code>route.destination-cidr-block</code> - The CIDR
+     * range specified in a route in the table. </li> <li>
+     * <p><code>route.gateway-id</code> - The ID of a gateway specified in a
+     * route in the table. </li> <li> <p><code>route.instance-id</code> - The
+     * ID of an instance specified in a route in the table. </li> <li>
+     * <p><code>route.origin</code> - Describes how the route was created
+     * (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
+     * <code>EnableVgwRoutePropagation</code>). </li> <li>
+     * <p><code>route.state</code> - The state of a route in the route table
+     * (<code>active</code> | <code>blackhole</code>). The blackhole state
+     * indicates that the route's target isn't available (for example, the
+     * specified gateway isn't attached to the VPC, the specified NAT
+     * instance has been terminated, and so on). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
+     * route table. </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * One or more route table IDs.
+     * One or more route table IDs. <p>Default: Describes all your route
+     * tables.
      *
-     * @return One or more route table IDs.
+     * @return One or more route table IDs. <p>Default: Describes all your route
+     *         tables.
      */
     public java.util.List<String> getRouteTableIds() {
         if (routeTableIds == null) {
@@ -71,9 +96,11 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * One or more route table IDs.
+     * One or more route table IDs. <p>Default: Describes all your route
+     * tables.
      *
-     * @param routeTableIds One or more route table IDs.
+     * @param routeTableIds One or more route table IDs. <p>Default: Describes all your route
+     *         tables.
      */
     public void setRouteTableIds(java.util.Collection<String> routeTableIds) {
         if (routeTableIds == null) {
@@ -86,11 +113,13 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * One or more route table IDs.
+     * One or more route table IDs. <p>Default: Describes all your route
+     * tables.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param routeTableIds One or more route table IDs.
+     * @param routeTableIds One or more route table IDs. <p>Default: Describes all your route
+     *         tables.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -104,11 +133,13 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * One or more route table IDs.
+     * One or more route table IDs. <p>Default: Describes all your route
+     * tables.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param routeTableIds One or more route table IDs.
+     * @param routeTableIds One or more route table IDs. <p>Default: Describes all your route
+     *         tables.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -126,17 +157,79 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * A list of filters used to match properties for Route Tables. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li>
+     * <p><code>association.route-table-association-id</code> - The ID of an
+     * association ID for the route table. </li> <li>
+     * <p><code>association.route-table-id</code> - The ID of the route table
+     * involved in the association. </li> <li>
+     * <p><code>association.subnet-id</code> - The ID of the subnet involved
+     * in the association. </li> <li> <p><code>association.main</code> -
+     * Indicates whether the route table is the main route table for the VPC.
+     * </li> <li> <p><code>route-table-id</code> - The ID of the route table.
+     * </li> <li> <p><code>route.destination-cidr-block</code> - The CIDR
+     * range specified in a route in the table. </li> <li>
+     * <p><code>route.gateway-id</code> - The ID of a gateway specified in a
+     * route in the table. </li> <li> <p><code>route.instance-id</code> - The
+     * ID of an instance specified in a route in the table. </li> <li>
+     * <p><code>route.origin</code> - Describes how the route was created
+     * (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
+     * <code>EnableVgwRoutePropagation</code>). </li> <li>
+     * <p><code>route.state</code> - The state of a route in the route table
+     * (<code>active</code> | <code>blackhole</code>). The blackhole state
+     * indicates that the route's target isn't available (for example, the
+     * specified gateway isn't attached to the VPC, the specified NAT
+     * instance has been terminated, and so on). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
+     * route table. </li> </ul>
      *
-     * @return A list of filters used to match properties for Route Tables. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @return One or more filters. <ul> <li>
+     *         <p><code>association.route-table-association-id</code> - The ID of an
+     *         association ID for the route table. </li> <li>
+     *         <p><code>association.route-table-id</code> - The ID of the route table
+     *         involved in the association. </li> <li>
+     *         <p><code>association.subnet-id</code> - The ID of the subnet involved
+     *         in the association. </li> <li> <p><code>association.main</code> -
+     *         Indicates whether the route table is the main route table for the VPC.
+     *         </li> <li> <p><code>route-table-id</code> - The ID of the route table.
+     *         </li> <li> <p><code>route.destination-cidr-block</code> - The CIDR
+     *         range specified in a route in the table. </li> <li>
+     *         <p><code>route.gateway-id</code> - The ID of a gateway specified in a
+     *         route in the table. </li> <li> <p><code>route.instance-id</code> - The
+     *         ID of an instance specified in a route in the table. </li> <li>
+     *         <p><code>route.origin</code> - Describes how the route was created
+     *         (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
+     *         <code>EnableVgwRoutePropagation</code>). </li> <li>
+     *         <p><code>route.state</code> - The state of a route in the route table
+     *         (<code>active</code> | <code>blackhole</code>). The blackhole state
+     *         indicates that the route's target isn't available (for example, the
+     *         specified gateway isn't attached to the VPC, the specified NAT
+     *         instance has been terminated, and so on). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
+     *         route table. </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -147,17 +240,79 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * A list of filters used to match properties for Route Tables. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li>
+     * <p><code>association.route-table-association-id</code> - The ID of an
+     * association ID for the route table. </li> <li>
+     * <p><code>association.route-table-id</code> - The ID of the route table
+     * involved in the association. </li> <li>
+     * <p><code>association.subnet-id</code> - The ID of the subnet involved
+     * in the association. </li> <li> <p><code>association.main</code> -
+     * Indicates whether the route table is the main route table for the VPC.
+     * </li> <li> <p><code>route-table-id</code> - The ID of the route table.
+     * </li> <li> <p><code>route.destination-cidr-block</code> - The CIDR
+     * range specified in a route in the table. </li> <li>
+     * <p><code>route.gateway-id</code> - The ID of a gateway specified in a
+     * route in the table. </li> <li> <p><code>route.instance-id</code> - The
+     * ID of an instance specified in a route in the table. </li> <li>
+     * <p><code>route.origin</code> - Describes how the route was created
+     * (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
+     * <code>EnableVgwRoutePropagation</code>). </li> <li>
+     * <p><code>route.state</code> - The state of a route in the route table
+     * (<code>active</code> | <code>blackhole</code>). The blackhole state
+     * indicates that the route's target isn't available (for example, the
+     * specified gateway isn't attached to the VPC, the specified NAT
+     * instance has been terminated, and so on). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
+     * route table. </li> </ul>
      *
-     * @param filters A list of filters used to match properties for Route Tables. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li>
+     *         <p><code>association.route-table-association-id</code> - The ID of an
+     *         association ID for the route table. </li> <li>
+     *         <p><code>association.route-table-id</code> - The ID of the route table
+     *         involved in the association. </li> <li>
+     *         <p><code>association.subnet-id</code> - The ID of the subnet involved
+     *         in the association. </li> <li> <p><code>association.main</code> -
+     *         Indicates whether the route table is the main route table for the VPC.
+     *         </li> <li> <p><code>route-table-id</code> - The ID of the route table.
+     *         </li> <li> <p><code>route.destination-cidr-block</code> - The CIDR
+     *         range specified in a route in the table. </li> <li>
+     *         <p><code>route.gateway-id</code> - The ID of a gateway specified in a
+     *         route in the table. </li> <li> <p><code>route.instance-id</code> - The
+     *         ID of an instance specified in a route in the table. </li> <li>
+     *         <p><code>route.origin</code> - Describes how the route was created
+     *         (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
+     *         <code>EnableVgwRoutePropagation</code>). </li> <li>
+     *         <p><code>route.state</code> - The state of a route in the route table
+     *         (<code>active</code> | <code>blackhole</code>). The blackhole state
+     *         indicates that the route's target isn't available (for example, the
+     *         specified gateway isn't attached to the VPC, the specified NAT
+     *         instance has been terminated, and so on). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
+     *         route table. </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -170,19 +325,81 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * A list of filters used to match properties for Route Tables. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li>
+     * <p><code>association.route-table-association-id</code> - The ID of an
+     * association ID for the route table. </li> <li>
+     * <p><code>association.route-table-id</code> - The ID of the route table
+     * involved in the association. </li> <li>
+     * <p><code>association.subnet-id</code> - The ID of the subnet involved
+     * in the association. </li> <li> <p><code>association.main</code> -
+     * Indicates whether the route table is the main route table for the VPC.
+     * </li> <li> <p><code>route-table-id</code> - The ID of the route table.
+     * </li> <li> <p><code>route.destination-cidr-block</code> - The CIDR
+     * range specified in a route in the table. </li> <li>
+     * <p><code>route.gateway-id</code> - The ID of a gateway specified in a
+     * route in the table. </li> <li> <p><code>route.instance-id</code> - The
+     * ID of an instance specified in a route in the table. </li> <li>
+     * <p><code>route.origin</code> - Describes how the route was created
+     * (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
+     * <code>EnableVgwRoutePropagation</code>). </li> <li>
+     * <p><code>route.state</code> - The state of a route in the route table
+     * (<code>active</code> | <code>blackhole</code>). The blackhole state
+     * indicates that the route's target isn't available (for example, the
+     * specified gateway isn't attached to the VPC, the specified NAT
+     * instance has been terminated, and so on). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
+     * route table. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for Route Tables. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li>
+     *         <p><code>association.route-table-association-id</code> - The ID of an
+     *         association ID for the route table. </li> <li>
+     *         <p><code>association.route-table-id</code> - The ID of the route table
+     *         involved in the association. </li> <li>
+     *         <p><code>association.subnet-id</code> - The ID of the subnet involved
+     *         in the association. </li> <li> <p><code>association.main</code> -
+     *         Indicates whether the route table is the main route table for the VPC.
+     *         </li> <li> <p><code>route-table-id</code> - The ID of the route table.
+     *         </li> <li> <p><code>route.destination-cidr-block</code> - The CIDR
+     *         range specified in a route in the table. </li> <li>
+     *         <p><code>route.gateway-id</code> - The ID of a gateway specified in a
+     *         route in the table. </li> <li> <p><code>route.instance-id</code> - The
+     *         ID of an instance specified in a route in the table. </li> <li>
+     *         <p><code>route.origin</code> - Describes how the route was created
+     *         (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
+     *         <code>EnableVgwRoutePropagation</code>). </li> <li>
+     *         <p><code>route.state</code> - The state of a route in the route table
+     *         (<code>active</code> | <code>blackhole</code>). The blackhole state
+     *         indicates that the route's target isn't available (for example, the
+     *         specified gateway isn't attached to the VPC, the specified NAT
+     *         instance has been terminated, and so on). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
+     *         route table. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -196,19 +413,81 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * A list of filters used to match properties for Route Tables. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li>
+     * <p><code>association.route-table-association-id</code> - The ID of an
+     * association ID for the route table. </li> <li>
+     * <p><code>association.route-table-id</code> - The ID of the route table
+     * involved in the association. </li> <li>
+     * <p><code>association.subnet-id</code> - The ID of the subnet involved
+     * in the association. </li> <li> <p><code>association.main</code> -
+     * Indicates whether the route table is the main route table for the VPC.
+     * </li> <li> <p><code>route-table-id</code> - The ID of the route table.
+     * </li> <li> <p><code>route.destination-cidr-block</code> - The CIDR
+     * range specified in a route in the table. </li> <li>
+     * <p><code>route.gateway-id</code> - The ID of a gateway specified in a
+     * route in the table. </li> <li> <p><code>route.instance-id</code> - The
+     * ID of an instance specified in a route in the table. </li> <li>
+     * <p><code>route.origin</code> - Describes how the route was created
+     * (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
+     * <code>EnableVgwRoutePropagation</code>). </li> <li>
+     * <p><code>route.state</code> - The state of a route in the route table
+     * (<code>active</code> | <code>blackhole</code>). The blackhole state
+     * indicates that the route's target isn't available (for example, the
+     * specified gateway isn't attached to the VPC, the specified NAT
+     * instance has been terminated, and so on). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
+     * route table. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for Route Tables. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li>
+     *         <p><code>association.route-table-association-id</code> - The ID of an
+     *         association ID for the route table. </li> <li>
+     *         <p><code>association.route-table-id</code> - The ID of the route table
+     *         involved in the association. </li> <li>
+     *         <p><code>association.subnet-id</code> - The ID of the subnet involved
+     *         in the association. </li> <li> <p><code>association.main</code> -
+     *         Indicates whether the route table is the main route table for the VPC.
+     *         </li> <li> <p><code>route-table-id</code> - The ID of the route table.
+     *         </li> <li> <p><code>route.destination-cidr-block</code> - The CIDR
+     *         range specified in a route in the table. </li> <li>
+     *         <p><code>route.gateway-id</code> - The ID of a gateway specified in a
+     *         route in the table. </li> <li> <p><code>route.instance-id</code> - The
+     *         ID of an instance specified in a route in the table. </li> <li>
+     *         <p><code>route.origin</code> - Describes how the route was created
+     *         (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
+     *         <code>EnableVgwRoutePropagation</code>). </li> <li>
+     *         <p><code>route.state</code> - The state of a route in the route table
+     *         (<code>active</code> | <code>blackhole</code>). The blackhole state
+     *         indicates that the route's target isn't available (for example, the
+     *         specified gateway isn't attached to the VPC, the specified NAT
+     *         instance has been terminated, and so on). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
+     *         route table. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

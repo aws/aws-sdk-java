@@ -23,8 +23,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteNetworkAclRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteNetworkAcl(DeleteNetworkAclRequest) DeleteNetworkAcl operation}.
  * <p>
- * Deletes a network ACL from a VPC. The ACL must not have any subnets associated with it. You can't delete the default network ACL. For more
- * information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide.
+ * Deletes the specified network ACL. You can't delete the ACL if it's associated with any subnets. You can't delete the default network ACL.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteNetworkAcl(DeleteNetworkAclRequest)
@@ -32,34 +31,34 @@ import com.amazonaws.services.ec2.model.transform.DeleteNetworkAclRequestMarshal
 public class DeleteNetworkAclRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteNetworkAclRequest> {
 
     /**
-     * The ID of the network ACL to be deleted.
+     * The ID of the network ACL.
      */
     private String networkAclId;
 
     /**
-     * The ID of the network ACL to be deleted.
+     * The ID of the network ACL.
      *
-     * @return The ID of the network ACL to be deleted.
+     * @return The ID of the network ACL.
      */
     public String getNetworkAclId() {
         return networkAclId;
     }
     
     /**
-     * The ID of the network ACL to be deleted.
+     * The ID of the network ACL.
      *
-     * @param networkAclId The ID of the network ACL to be deleted.
+     * @param networkAclId The ID of the network ACL.
      */
     public void setNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
     }
     
     /**
-     * The ID of the network ACL to be deleted.
+     * The ID of the network ACL.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkAclId The ID of the network ACL to be deleted.
+     * @param networkAclId The ID of the network ACL.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

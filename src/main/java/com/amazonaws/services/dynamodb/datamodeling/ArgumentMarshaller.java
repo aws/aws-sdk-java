@@ -18,7 +18,9 @@ import com.amazonaws.services.dynamodb.model.AttributeValue;
 
 /**
  * Interface to make it possible to cache the expensive type determination behavior.
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller} instead.
  */
+@Deprecated
 interface ArgumentMarshaller {
     
     /**

@@ -46,6 +46,7 @@ public class DescribeTimeBasedAutoScalingResultJsonUnmarshaller implements Unmar
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TimeBasedAutoScalingConfigurations", targetDepth)) {
+                    context.nextToken();
                     describeTimeBasedAutoScalingResult.setTimeBasedAutoScalingConfigurations(new ListUnmarshaller<TimeBasedAutoScalingConfiguration>(TimeBasedAutoScalingConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

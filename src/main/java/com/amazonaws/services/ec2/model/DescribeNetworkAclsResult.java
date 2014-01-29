@@ -17,16 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Describe Network Acls Result
+ * 
  */
 public class DescribeNetworkAclsResult implements Serializable {
 
+    /**
+     * Information about one or more network ACLs.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAcl> networkAcls;
 
     /**
-     * Returns the value of the NetworkAcls property for this object.
+     * Information about one or more network ACLs.
      *
-     * @return The value of the NetworkAcls property for this object.
+     * @return Information about one or more network ACLs.
      */
     public java.util.List<NetworkAcl> getNetworkAcls() {
         if (networkAcls == null) {
@@ -37,9 +40,9 @@ public class DescribeNetworkAclsResult implements Serializable {
     }
     
     /**
-     * Sets the value of the NetworkAcls property for this object.
+     * Information about one or more network ACLs.
      *
-     * @param networkAcls The new value for the NetworkAcls property for this object.
+     * @param networkAcls Information about one or more network ACLs.
      */
     public void setNetworkAcls(java.util.Collection<NetworkAcl> networkAcls) {
         if (networkAcls == null) {
@@ -52,11 +55,11 @@ public class DescribeNetworkAclsResult implements Serializable {
     }
     
     /**
-     * Sets the value of the NetworkAcls property for this object.
+     * Information about one or more network ACLs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkAcls The new value for the NetworkAcls property for this object.
+     * @param networkAcls Information about one or more network ACLs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -70,11 +73,11 @@ public class DescribeNetworkAclsResult implements Serializable {
     }
     
     /**
-     * Sets the value of the NetworkAcls property for this object.
+     * Information about one or more network ACLs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkAcls The new value for the NetworkAcls property for this object.
+     * @param networkAcls Information about one or more network ACLs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

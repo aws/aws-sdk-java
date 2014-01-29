@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest) DescribeReservedInstancesModifications operation}.
  * <p>
- * The DescribeReservedInstancesModifications operation describes modifications made to Reserved Instances in your account.
+ * Describes the modifications made to your Reserved Instances. If no parameter is specified, information about all your Reserved Instances modification
+ * requests is returned. If a modification ID is specified, only information about the specific modification is returned.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest)
@@ -29,28 +30,50 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeReservedInstancesModificationsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * An optional list of Reserved Instances modification IDs to describe.
+     * IDs for the submitted modification request.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> reservedInstancesModificationIds;
 
     /**
-     * A string specifying the next paginated set of results to return.
+     * The token for the next page of data.
      */
     private String nextToken;
 
     /**
-     * A list of filters used to match properties for
-     * ReservedInstancesModifications. For a complete reference to the
-     * available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>client-token</code> - The
+     * idempotency token for the modification request. </li> <li>
+     * <p><code>create-date</code> - The time when the modification request
+     * was created. </li> <li> <p><code>effective-date</code> - The time when
+     * the modification becomes effective. </li> <li>
+     * <p><code>modification-result.reserved-instances-id</code> - The ID for
+     * the Reserved Instances created as part of the modification request.
+     * This ID is only available when the status of the modification is
+     * <code>fulfilled</code>. </li> <li>
+     * <p><code>modification-result.target-configuration.availability-zone</code>
+     * - The Availability Zone for the new Reserved Instances. </li> <li>
+     * <p><code>modification-result.target-configuration.instance-count
+     * </code> - The number of new Reserved Instances. </li> <li>
+     * <p><code>modification-result.target-configuration.instance-type</code>
+     * - The instance type of the new Reserved Instances. </li> <li>
+     * <p><code>modification-result.target-configuration.platform</code> -
+     * The network platform of the new Reserved Instances
+     * (<code>EC2-Classic</code> | <code>EC2-VPC</code>). </li> <li>
+     * <p><code>reserved-instances-id</code> - The ID of the Reserved
+     * Instances modified. </li> <li>
+     * <p><code>reserved-instances-modification-id</code> - The ID of the
+     * modification request. </li> <li> <p><code>status</code> - The status
+     * of the Reserved Instances modification request
+     * (<code>processing</code> | <code>fulfilled</code> |
+     * <code>failed</code>). </li> <li> <p><code>status-message</code> - The
+     * reason for the status. </li> <li> <p><code>update-date</code> - The
+     * time when the modification request was last updated. </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * An optional list of Reserved Instances modification IDs to describe.
+     * IDs for the submitted modification request.
      *
-     * @return An optional list of Reserved Instances modification IDs to describe.
+     * @return IDs for the submitted modification request.
      */
     public java.util.List<String> getReservedInstancesModificationIds() {
         if (reservedInstancesModificationIds == null) {
@@ -61,9 +84,9 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
     }
     
     /**
-     * An optional list of Reserved Instances modification IDs to describe.
+     * IDs for the submitted modification request.
      *
-     * @param reservedInstancesModificationIds An optional list of Reserved Instances modification IDs to describe.
+     * @param reservedInstancesModificationIds IDs for the submitted modification request.
      */
     public void setReservedInstancesModificationIds(java.util.Collection<String> reservedInstancesModificationIds) {
         if (reservedInstancesModificationIds == null) {
@@ -76,11 +99,11 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
     }
     
     /**
-     * An optional list of Reserved Instances modification IDs to describe.
+     * IDs for the submitted modification request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesModificationIds An optional list of Reserved Instances modification IDs to describe.
+     * @param reservedInstancesModificationIds IDs for the submitted modification request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -94,11 +117,11 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
     }
     
     /**
-     * An optional list of Reserved Instances modification IDs to describe.
+     * IDs for the submitted modification request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesModificationIds An optional list of Reserved Instances modification IDs to describe.
+     * @param reservedInstancesModificationIds IDs for the submitted modification request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -116,29 +139,29 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
     }
 
     /**
-     * A string specifying the next paginated set of results to return.
+     * The token for the next page of data.
      *
-     * @return A string specifying the next paginated set of results to return.
+     * @return The token for the next page of data.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * A string specifying the next paginated set of results to return.
+     * The token for the next page of data.
      *
-     * @param nextToken A string specifying the next paginated set of results to return.
+     * @param nextToken The token for the next page of data.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * A string specifying the next paginated set of results to return.
+     * The token for the next page of data.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken A string specifying the next paginated set of results to return.
+     * @param nextToken The token for the next page of data.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -149,17 +172,61 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
     }
 
     /**
-     * A list of filters used to match properties for
-     * ReservedInstancesModifications. For a complete reference to the
-     * available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>client-token</code> - The
+     * idempotency token for the modification request. </li> <li>
+     * <p><code>create-date</code> - The time when the modification request
+     * was created. </li> <li> <p><code>effective-date</code> - The time when
+     * the modification becomes effective. </li> <li>
+     * <p><code>modification-result.reserved-instances-id</code> - The ID for
+     * the Reserved Instances created as part of the modification request.
+     * This ID is only available when the status of the modification is
+     * <code>fulfilled</code>. </li> <li>
+     * <p><code>modification-result.target-configuration.availability-zone</code>
+     * - The Availability Zone for the new Reserved Instances. </li> <li>
+     * <p><code>modification-result.target-configuration.instance-count
+     * </code> - The number of new Reserved Instances. </li> <li>
+     * <p><code>modification-result.target-configuration.instance-type</code>
+     * - The instance type of the new Reserved Instances. </li> <li>
+     * <p><code>modification-result.target-configuration.platform</code> -
+     * The network platform of the new Reserved Instances
+     * (<code>EC2-Classic</code> | <code>EC2-VPC</code>). </li> <li>
+     * <p><code>reserved-instances-id</code> - The ID of the Reserved
+     * Instances modified. </li> <li>
+     * <p><code>reserved-instances-modification-id</code> - The ID of the
+     * modification request. </li> <li> <p><code>status</code> - The status
+     * of the Reserved Instances modification request
+     * (<code>processing</code> | <code>fulfilled</code> |
+     * <code>failed</code>). </li> <li> <p><code>status-message</code> - The
+     * reason for the status. </li> <li> <p><code>update-date</code> - The
+     * time when the modification request was last updated. </li> </ul>
      *
-     * @return A list of filters used to match properties for
-     *         ReservedInstancesModifications. For a complete reference to the
-     *         available filter keys for this operation, see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @return One or more filters. <ul> <li> <p><code>client-token</code> - The
+     *         idempotency token for the modification request. </li> <li>
+     *         <p><code>create-date</code> - The time when the modification request
+     *         was created. </li> <li> <p><code>effective-date</code> - The time when
+     *         the modification becomes effective. </li> <li>
+     *         <p><code>modification-result.reserved-instances-id</code> - The ID for
+     *         the Reserved Instances created as part of the modification request.
+     *         This ID is only available when the status of the modification is
+     *         <code>fulfilled</code>. </li> <li>
+     *         <p><code>modification-result.target-configuration.availability-zone</code>
+     *         - The Availability Zone for the new Reserved Instances. </li> <li>
+     *         <p><code>modification-result.target-configuration.instance-count
+     *         </code> - The number of new Reserved Instances. </li> <li>
+     *         <p><code>modification-result.target-configuration.instance-type</code>
+     *         - The instance type of the new Reserved Instances. </li> <li>
+     *         <p><code>modification-result.target-configuration.platform</code> -
+     *         The network platform of the new Reserved Instances
+     *         (<code>EC2-Classic</code> | <code>EC2-VPC</code>). </li> <li>
+     *         <p><code>reserved-instances-id</code> - The ID of the Reserved
+     *         Instances modified. </li> <li>
+     *         <p><code>reserved-instances-modification-id</code> - The ID of the
+     *         modification request. </li> <li> <p><code>status</code> - The status
+     *         of the Reserved Instances modification request
+     *         (<code>processing</code> | <code>fulfilled</code> |
+     *         <code>failed</code>). </li> <li> <p><code>status-message</code> - The
+     *         reason for the status. </li> <li> <p><code>update-date</code> - The
+     *         time when the modification request was last updated. </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -170,17 +237,61 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
     }
     
     /**
-     * A list of filters used to match properties for
-     * ReservedInstancesModifications. For a complete reference to the
-     * available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>client-token</code> - The
+     * idempotency token for the modification request. </li> <li>
+     * <p><code>create-date</code> - The time when the modification request
+     * was created. </li> <li> <p><code>effective-date</code> - The time when
+     * the modification becomes effective. </li> <li>
+     * <p><code>modification-result.reserved-instances-id</code> - The ID for
+     * the Reserved Instances created as part of the modification request.
+     * This ID is only available when the status of the modification is
+     * <code>fulfilled</code>. </li> <li>
+     * <p><code>modification-result.target-configuration.availability-zone</code>
+     * - The Availability Zone for the new Reserved Instances. </li> <li>
+     * <p><code>modification-result.target-configuration.instance-count
+     * </code> - The number of new Reserved Instances. </li> <li>
+     * <p><code>modification-result.target-configuration.instance-type</code>
+     * - The instance type of the new Reserved Instances. </li> <li>
+     * <p><code>modification-result.target-configuration.platform</code> -
+     * The network platform of the new Reserved Instances
+     * (<code>EC2-Classic</code> | <code>EC2-VPC</code>). </li> <li>
+     * <p><code>reserved-instances-id</code> - The ID of the Reserved
+     * Instances modified. </li> <li>
+     * <p><code>reserved-instances-modification-id</code> - The ID of the
+     * modification request. </li> <li> <p><code>status</code> - The status
+     * of the Reserved Instances modification request
+     * (<code>processing</code> | <code>fulfilled</code> |
+     * <code>failed</code>). </li> <li> <p><code>status-message</code> - The
+     * reason for the status. </li> <li> <p><code>update-date</code> - The
+     * time when the modification request was last updated. </li> </ul>
      *
-     * @param filters A list of filters used to match properties for
-     *         ReservedInstancesModifications. For a complete reference to the
-     *         available filter keys for this operation, see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>client-token</code> - The
+     *         idempotency token for the modification request. </li> <li>
+     *         <p><code>create-date</code> - The time when the modification request
+     *         was created. </li> <li> <p><code>effective-date</code> - The time when
+     *         the modification becomes effective. </li> <li>
+     *         <p><code>modification-result.reserved-instances-id</code> - The ID for
+     *         the Reserved Instances created as part of the modification request.
+     *         This ID is only available when the status of the modification is
+     *         <code>fulfilled</code>. </li> <li>
+     *         <p><code>modification-result.target-configuration.availability-zone</code>
+     *         - The Availability Zone for the new Reserved Instances. </li> <li>
+     *         <p><code>modification-result.target-configuration.instance-count
+     *         </code> - The number of new Reserved Instances. </li> <li>
+     *         <p><code>modification-result.target-configuration.instance-type</code>
+     *         - The instance type of the new Reserved Instances. </li> <li>
+     *         <p><code>modification-result.target-configuration.platform</code> -
+     *         The network platform of the new Reserved Instances
+     *         (<code>EC2-Classic</code> | <code>EC2-VPC</code>). </li> <li>
+     *         <p><code>reserved-instances-id</code> - The ID of the Reserved
+     *         Instances modified. </li> <li>
+     *         <p><code>reserved-instances-modification-id</code> - The ID of the
+     *         modification request. </li> <li> <p><code>status</code> - The status
+     *         of the Reserved Instances modification request
+     *         (<code>processing</code> | <code>fulfilled</code> |
+     *         <code>failed</code>). </li> <li> <p><code>status-message</code> - The
+     *         reason for the status. </li> <li> <p><code>update-date</code> - The
+     *         time when the modification request was last updated. </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -193,19 +304,63 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
     }
     
     /**
-     * A list of filters used to match properties for
-     * ReservedInstancesModifications. For a complete reference to the
-     * available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>client-token</code> - The
+     * idempotency token for the modification request. </li> <li>
+     * <p><code>create-date</code> - The time when the modification request
+     * was created. </li> <li> <p><code>effective-date</code> - The time when
+     * the modification becomes effective. </li> <li>
+     * <p><code>modification-result.reserved-instances-id</code> - The ID for
+     * the Reserved Instances created as part of the modification request.
+     * This ID is only available when the status of the modification is
+     * <code>fulfilled</code>. </li> <li>
+     * <p><code>modification-result.target-configuration.availability-zone</code>
+     * - The Availability Zone for the new Reserved Instances. </li> <li>
+     * <p><code>modification-result.target-configuration.instance-count
+     * </code> - The number of new Reserved Instances. </li> <li>
+     * <p><code>modification-result.target-configuration.instance-type</code>
+     * - The instance type of the new Reserved Instances. </li> <li>
+     * <p><code>modification-result.target-configuration.platform</code> -
+     * The network platform of the new Reserved Instances
+     * (<code>EC2-Classic</code> | <code>EC2-VPC</code>). </li> <li>
+     * <p><code>reserved-instances-id</code> - The ID of the Reserved
+     * Instances modified. </li> <li>
+     * <p><code>reserved-instances-modification-id</code> - The ID of the
+     * modification request. </li> <li> <p><code>status</code> - The status
+     * of the Reserved Instances modification request
+     * (<code>processing</code> | <code>fulfilled</code> |
+     * <code>failed</code>). </li> <li> <p><code>status-message</code> - The
+     * reason for the status. </li> <li> <p><code>update-date</code> - The
+     * time when the modification request was last updated. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for
-     *         ReservedInstancesModifications. For a complete reference to the
-     *         available filter keys for this operation, see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>client-token</code> - The
+     *         idempotency token for the modification request. </li> <li>
+     *         <p><code>create-date</code> - The time when the modification request
+     *         was created. </li> <li> <p><code>effective-date</code> - The time when
+     *         the modification becomes effective. </li> <li>
+     *         <p><code>modification-result.reserved-instances-id</code> - The ID for
+     *         the Reserved Instances created as part of the modification request.
+     *         This ID is only available when the status of the modification is
+     *         <code>fulfilled</code>. </li> <li>
+     *         <p><code>modification-result.target-configuration.availability-zone</code>
+     *         - The Availability Zone for the new Reserved Instances. </li> <li>
+     *         <p><code>modification-result.target-configuration.instance-count
+     *         </code> - The number of new Reserved Instances. </li> <li>
+     *         <p><code>modification-result.target-configuration.instance-type</code>
+     *         - The instance type of the new Reserved Instances. </li> <li>
+     *         <p><code>modification-result.target-configuration.platform</code> -
+     *         The network platform of the new Reserved Instances
+     *         (<code>EC2-Classic</code> | <code>EC2-VPC</code>). </li> <li>
+     *         <p><code>reserved-instances-id</code> - The ID of the Reserved
+     *         Instances modified. </li> <li>
+     *         <p><code>reserved-instances-modification-id</code> - The ID of the
+     *         modification request. </li> <li> <p><code>status</code> - The status
+     *         of the Reserved Instances modification request
+     *         (<code>processing</code> | <code>fulfilled</code> |
+     *         <code>failed</code>). </li> <li> <p><code>status-message</code> - The
+     *         reason for the status. </li> <li> <p><code>update-date</code> - The
+     *         time when the modification request was last updated. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -219,19 +374,63 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
     }
     
     /**
-     * A list of filters used to match properties for
-     * ReservedInstancesModifications. For a complete reference to the
-     * available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>client-token</code> - The
+     * idempotency token for the modification request. </li> <li>
+     * <p><code>create-date</code> - The time when the modification request
+     * was created. </li> <li> <p><code>effective-date</code> - The time when
+     * the modification becomes effective. </li> <li>
+     * <p><code>modification-result.reserved-instances-id</code> - The ID for
+     * the Reserved Instances created as part of the modification request.
+     * This ID is only available when the status of the modification is
+     * <code>fulfilled</code>. </li> <li>
+     * <p><code>modification-result.target-configuration.availability-zone</code>
+     * - The Availability Zone for the new Reserved Instances. </li> <li>
+     * <p><code>modification-result.target-configuration.instance-count
+     * </code> - The number of new Reserved Instances. </li> <li>
+     * <p><code>modification-result.target-configuration.instance-type</code>
+     * - The instance type of the new Reserved Instances. </li> <li>
+     * <p><code>modification-result.target-configuration.platform</code> -
+     * The network platform of the new Reserved Instances
+     * (<code>EC2-Classic</code> | <code>EC2-VPC</code>). </li> <li>
+     * <p><code>reserved-instances-id</code> - The ID of the Reserved
+     * Instances modified. </li> <li>
+     * <p><code>reserved-instances-modification-id</code> - The ID of the
+     * modification request. </li> <li> <p><code>status</code> - The status
+     * of the Reserved Instances modification request
+     * (<code>processing</code> | <code>fulfilled</code> |
+     * <code>failed</code>). </li> <li> <p><code>status-message</code> - The
+     * reason for the status. </li> <li> <p><code>update-date</code> - The
+     * time when the modification request was last updated. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for
-     *         ReservedInstancesModifications. For a complete reference to the
-     *         available filter keys for this operation, see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>client-token</code> - The
+     *         idempotency token for the modification request. </li> <li>
+     *         <p><code>create-date</code> - The time when the modification request
+     *         was created. </li> <li> <p><code>effective-date</code> - The time when
+     *         the modification becomes effective. </li> <li>
+     *         <p><code>modification-result.reserved-instances-id</code> - The ID for
+     *         the Reserved Instances created as part of the modification request.
+     *         This ID is only available when the status of the modification is
+     *         <code>fulfilled</code>. </li> <li>
+     *         <p><code>modification-result.target-configuration.availability-zone</code>
+     *         - The Availability Zone for the new Reserved Instances. </li> <li>
+     *         <p><code>modification-result.target-configuration.instance-count
+     *         </code> - The number of new Reserved Instances. </li> <li>
+     *         <p><code>modification-result.target-configuration.instance-type</code>
+     *         - The instance type of the new Reserved Instances. </li> <li>
+     *         <p><code>modification-result.target-configuration.platform</code> -
+     *         The network platform of the new Reserved Instances
+     *         (<code>EC2-Classic</code> | <code>EC2-VPC</code>). </li> <li>
+     *         <p><code>reserved-instances-id</code> - The ID of the Reserved
+     *         Instances modified. </li> <li>
+     *         <p><code>reserved-instances-modification-id</code> - The ID of the
+     *         modification request. </li> <li> <p><code>status</code> - The status
+     *         of the Reserved Instances modification request
+     *         (<code>processing</code> | <code>fulfilled</code> |
+     *         <code>failed</code>). </li> <li> <p><code>status-message</code> - The
+     *         reason for the status. </li> <li> <p><code>update-date</code> - The
+     *         time when the modification request was last updated. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

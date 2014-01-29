@@ -17,24 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of calling the TerminateInstances operation. Contains details on how the specified instances are changing state.
- * </p>
+ * 
  */
 public class TerminateInstancesResult implements Serializable {
 
     /**
-     * The list of the terminating instances and details on how their state
-     * has changed.
+     * Information about one or more terminated instances.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStateChange> terminatingInstances;
 
     /**
-     * The list of the terminating instances and details on how their state
-     * has changed.
+     * Information about one or more terminated instances.
      *
-     * @return The list of the terminating instances and details on how their state
-     *         has changed.
+     * @return Information about one or more terminated instances.
      */
     public java.util.List<InstanceStateChange> getTerminatingInstances() {
         if (terminatingInstances == null) {
@@ -45,11 +40,9 @@ public class TerminateInstancesResult implements Serializable {
     }
     
     /**
-     * The list of the terminating instances and details on how their state
-     * has changed.
+     * Information about one or more terminated instances.
      *
-     * @param terminatingInstances The list of the terminating instances and details on how their state
-     *         has changed.
+     * @param terminatingInstances Information about one or more terminated instances.
      */
     public void setTerminatingInstances(java.util.Collection<InstanceStateChange> terminatingInstances) {
         if (terminatingInstances == null) {
@@ -62,13 +55,11 @@ public class TerminateInstancesResult implements Serializable {
     }
     
     /**
-     * The list of the terminating instances and details on how their state
-     * has changed.
+     * Information about one or more terminated instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param terminatingInstances The list of the terminating instances and details on how their state
-     *         has changed.
+     * @param terminatingInstances Information about one or more terminated instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -82,13 +73,11 @@ public class TerminateInstancesResult implements Serializable {
     }
     
     /**
-     * The list of the terminating instances and details on how their state
-     * has changed.
+     * Information about one or more terminated instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param terminatingInstances The list of the terminating instances and details on how their state
-     *         has changed.
+     * @param terminatingInstances Information about one or more terminated instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -17,46 +17,44 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * </p>
+ * 
  */
 public class ImportKeyPairResult implements Serializable {
 
     /**
-     * The specified unique key pair name.
+     * The key pair name you provided.
      */
     private String keyName;
 
     /**
-     * The MD5 public key fingerprint as specified in section 4 of <a
-     * href="http://tools.ietf.org/html/rfc4716"> RFC4716 </a>.
+     * The MD5 public key fingerprint as specified in section 4 of RFC 4716.
      */
     private String keyFingerprint;
 
     /**
-     * The specified unique key pair name.
+     * The key pair name you provided.
      *
-     * @return The specified unique key pair name.
+     * @return The key pair name you provided.
      */
     public String getKeyName() {
         return keyName;
     }
     
     /**
-     * The specified unique key pair name.
+     * The key pair name you provided.
      *
-     * @param keyName The specified unique key pair name.
+     * @param keyName The key pair name you provided.
      */
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
     
     /**
-     * The specified unique key pair name.
+     * The key pair name you provided.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param keyName The specified unique key pair name.
+     * @param keyName The key pair name you provided.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -67,35 +65,29 @@ public class ImportKeyPairResult implements Serializable {
     }
 
     /**
-     * The MD5 public key fingerprint as specified in section 4 of <a
-     * href="http://tools.ietf.org/html/rfc4716"> RFC4716 </a>.
+     * The MD5 public key fingerprint as specified in section 4 of RFC 4716.
      *
-     * @return The MD5 public key fingerprint as specified in section 4 of <a
-     *         href="http://tools.ietf.org/html/rfc4716"> RFC4716 </a>.
+     * @return The MD5 public key fingerprint as specified in section 4 of RFC 4716.
      */
     public String getKeyFingerprint() {
         return keyFingerprint;
     }
     
     /**
-     * The MD5 public key fingerprint as specified in section 4 of <a
-     * href="http://tools.ietf.org/html/rfc4716"> RFC4716 </a>.
+     * The MD5 public key fingerprint as specified in section 4 of RFC 4716.
      *
-     * @param keyFingerprint The MD5 public key fingerprint as specified in section 4 of <a
-     *         href="http://tools.ietf.org/html/rfc4716"> RFC4716 </a>.
+     * @param keyFingerprint The MD5 public key fingerprint as specified in section 4 of RFC 4716.
      */
     public void setKeyFingerprint(String keyFingerprint) {
         this.keyFingerprint = keyFingerprint;
     }
     
     /**
-     * The MD5 public key fingerprint as specified in section 4 of <a
-     * href="http://tools.ietf.org/html/rfc4716"> RFC4716 </a>.
+     * The MD5 public key fingerprint as specified in section 4 of RFC 4716.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param keyFingerprint The MD5 public key fingerprint as specified in section 4 of <a
-     *         href="http://tools.ietf.org/html/rfc4716"> RFC4716 </a>.
+     * @param keyFingerprint The MD5 public key fingerprint as specified in section 4 of RFC 4716.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

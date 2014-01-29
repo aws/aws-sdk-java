@@ -23,35 +23,50 @@ import com.amazonaws.services.ec2.model.transform.DescribeDhcpOptionsRequestMars
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeDhcpOptions(DescribeDhcpOptionsRequest) DescribeDhcpOptions operation}.
  * <p>
- * Gives you information about one or more sets of DHCP options. You can specify one or more DHCP options set IDs, or no IDs (to describe all your sets
- * of DHCP options). The returned information consists of:
+ * Describes one or more of your DHCP options sets.
  * </p>
- * 
- * <ul>
- * <li> The DHCP options set ID </li>
- * <li> The options </li>
- * 
- * </ul>
+ * <p>
+ * For more information about DHCP options sets, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options
+ * Sets </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeDhcpOptions(DescribeDhcpOptionsRequest)
  */
 public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeDhcpOptionsRequest> {
 
+    /**
+     * The IDs of one or more DHCP options sets. <p>Default: Describes all
+     * your DHCP options sets.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> dhcpOptionsIds;
 
     /**
-     * A list of filters used to match properties for DhcpOptions. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>dhcp-options-id</code> - The
+     * ID of a set of DHCP options. </li> <li> <p><code>key</code> - The key
+     * for one of the options (for example, <code>domain-name</code>). </li>
+     * <li> <p><code>value</code> - The value for one of the options. </li>
+     * <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * Returns the value of the DhcpOptionsIds property for this object.
+     * The IDs of one or more DHCP options sets. <p>Default: Describes all
+     * your DHCP options sets.
      *
-     * @return The value of the DhcpOptionsIds property for this object.
+     * @return The IDs of one or more DHCP options sets. <p>Default: Describes all
+     *         your DHCP options sets.
      */
     public java.util.List<String> getDhcpOptionsIds() {
         if (dhcpOptionsIds == null) {
@@ -62,9 +77,11 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * Sets the value of the DhcpOptionsIds property for this object.
+     * The IDs of one or more DHCP options sets. <p>Default: Describes all
+     * your DHCP options sets.
      *
-     * @param dhcpOptionsIds The new value for the DhcpOptionsIds property for this object.
+     * @param dhcpOptionsIds The IDs of one or more DHCP options sets. <p>Default: Describes all
+     *         your DHCP options sets.
      */
     public void setDhcpOptionsIds(java.util.Collection<String> dhcpOptionsIds) {
         if (dhcpOptionsIds == null) {
@@ -77,11 +94,13 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * Sets the value of the DhcpOptionsIds property for this object.
+     * The IDs of one or more DHCP options sets. <p>Default: Describes all
+     * your DHCP options sets.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpOptionsIds The new value for the DhcpOptionsIds property for this object.
+     * @param dhcpOptionsIds The IDs of one or more DHCP options sets. <p>Default: Describes all
+     *         your DHCP options sets.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -95,11 +114,13 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * Sets the value of the DhcpOptionsIds property for this object.
+     * The IDs of one or more DHCP options sets. <p>Default: Describes all
+     * your DHCP options sets.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpOptionsIds The new value for the DhcpOptionsIds property for this object.
+     * @param dhcpOptionsIds The IDs of one or more DHCP options sets. <p>Default: Describes all
+     *         your DHCP options sets.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -117,17 +138,41 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * A list of filters used to match properties for DhcpOptions. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>dhcp-options-id</code> - The
+     * ID of a set of DHCP options. </li> <li> <p><code>key</code> - The key
+     * for one of the options (for example, <code>domain-name</code>). </li>
+     * <li> <p><code>value</code> - The value for one of the options. </li>
+     * <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> </ul>
      *
-     * @return A list of filters used to match properties for DhcpOptions. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @return One or more filters. <ul> <li> <p><code>dhcp-options-id</code> - The
+     *         ID of a set of DHCP options. </li> <li> <p><code>key</code> - The key
+     *         for one of the options (for example, <code>domain-name</code>). </li>
+     *         <li> <p><code>value</code> - The value for one of the options. </li>
+     *         <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -138,17 +183,41 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * A list of filters used to match properties for DhcpOptions. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>dhcp-options-id</code> - The
+     * ID of a set of DHCP options. </li> <li> <p><code>key</code> - The key
+     * for one of the options (for example, <code>domain-name</code>). </li>
+     * <li> <p><code>value</code> - The value for one of the options. </li>
+     * <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> </ul>
      *
-     * @param filters A list of filters used to match properties for DhcpOptions. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>dhcp-options-id</code> - The
+     *         ID of a set of DHCP options. </li> <li> <p><code>key</code> - The key
+     *         for one of the options (for example, <code>domain-name</code>). </li>
+     *         <li> <p><code>value</code> - The value for one of the options. </li>
+     *         <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -161,19 +230,43 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * A list of filters used to match properties for DhcpOptions. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>dhcp-options-id</code> - The
+     * ID of a set of DHCP options. </li> <li> <p><code>key</code> - The key
+     * for one of the options (for example, <code>domain-name</code>). </li>
+     * <li> <p><code>value</code> - The value for one of the options. </li>
+     * <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for DhcpOptions. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>dhcp-options-id</code> - The
+     *         ID of a set of DHCP options. </li> <li> <p><code>key</code> - The key
+     *         for one of the options (for example, <code>domain-name</code>). </li>
+     *         <li> <p><code>value</code> - The value for one of the options. </li>
+     *         <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -187,19 +280,43 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * A list of filters used to match properties for DhcpOptions. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>dhcp-options-id</code> - The
+     * ID of a set of DHCP options. </li> <li> <p><code>key</code> - The key
+     * for one of the options (for example, <code>domain-name</code>). </li>
+     * <li> <p><code>value</code> - The value for one of the options. </li>
+     * <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for DhcpOptions. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>dhcp-options-id</code> - The
+     *         ID of a set of DHCP options. </li> <li> <p><code>key</code> - The key
+     *         for one of the options (for example, <code>domain-name</code>). </li>
+     *         <li> <p><code>value</code> - The value for one of the options. </li>
+     *         <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

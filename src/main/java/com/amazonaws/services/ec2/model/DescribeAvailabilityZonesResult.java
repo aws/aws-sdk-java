@@ -17,21 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of describing the Amazon EC2 availability zones in the current region.
- * </p>
+ * 
  */
 public class DescribeAvailabilityZonesResult implements Serializable {
 
     /**
-     * The list of described Amazon EC2 availability zones.
+     * Information about one or more Availability Zones.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZone> availabilityZones;
 
     /**
-     * The list of described Amazon EC2 availability zones.
+     * Information about one or more Availability Zones.
      *
-     * @return The list of described Amazon EC2 availability zones.
+     * @return Information about one or more Availability Zones.
      */
     public java.util.List<AvailabilityZone> getAvailabilityZones() {
         if (availabilityZones == null) {
@@ -42,9 +40,9 @@ public class DescribeAvailabilityZonesResult implements Serializable {
     }
     
     /**
-     * The list of described Amazon EC2 availability zones.
+     * Information about one or more Availability Zones.
      *
-     * @param availabilityZones The list of described Amazon EC2 availability zones.
+     * @param availabilityZones Information about one or more Availability Zones.
      */
     public void setAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
         if (availabilityZones == null) {
@@ -57,11 +55,11 @@ public class DescribeAvailabilityZonesResult implements Serializable {
     }
     
     /**
-     * The list of described Amazon EC2 availability zones.
+     * Information about one or more Availability Zones.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones The list of described Amazon EC2 availability zones.
+     * @param availabilityZones Information about one or more Availability Zones.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,11 +73,11 @@ public class DescribeAvailabilityZonesResult implements Serializable {
     }
     
     /**
-     * The list of described Amazon EC2 availability zones.
+     * Information about one or more Availability Zones.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones The list of described Amazon EC2 availability zones.
+     * @param availabilityZones Information about one or more Availability Zones.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -18,45 +18,60 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a state change for an Amazon EC2 instance.
+ * Describes a state change.
  * </p>
  */
 public class StateReason implements Serializable {
 
     /**
-     * Reason code for the state change.
+     * The reason code for the state change.
      */
     private String code;
 
     /**
-     * Descriptive message for the state change.
+     * The message for the state change. <ul>
+     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance
+     * was terminated due to an increase in the market price.</li>
+     * <li><p><code>Server.InternalError</code>: An internal error occurred
+     * during instance launch, resulting in termination.</li>
+     * <li><p><code>Server.InsufficientInstanceCapacity</code>: There was
+     * insufficient instance capacity to satisfy the launch request.</li>
+     * <li><p><code>Client.InternalError</code>: A client error caused the
+     * instance to terminate on launch.</li>
+     * <li><p><code>Client.InstanceInitiatedShutdown</code>: The instance was
+     * shut down using the <code>shutdown -h</code> command from the
+     * instance.</li> <li><p><code>Client.UserInitiatedShutdown</code>: The
+     * instance was shut down using the Amazon EC2 API.</li>
+     * <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
+     * exceeded.</li> <li><p><code>Client.InvalidSnapshot.NotFound</code>:
+     * The specified snapshot was not found.</li> </ul>
      */
     private String message;
 
     /**
-     * Reason code for the state change.
+     * The reason code for the state change.
      *
-     * @return Reason code for the state change.
+     * @return The reason code for the state change.
      */
     public String getCode() {
         return code;
     }
     
     /**
-     * Reason code for the state change.
+     * The reason code for the state change.
      *
-     * @param code Reason code for the state change.
+     * @param code The reason code for the state change.
      */
     public void setCode(String code) {
         this.code = code;
     }
     
     /**
-     * Reason code for the state change.
+     * The reason code for the state change.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param code Reason code for the state change.
+     * @param code The reason code for the state change.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -67,29 +82,119 @@ public class StateReason implements Serializable {
     }
 
     /**
-     * Descriptive message for the state change.
+     * The message for the state change. <ul>
+     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance
+     * was terminated due to an increase in the market price.</li>
+     * <li><p><code>Server.InternalError</code>: An internal error occurred
+     * during instance launch, resulting in termination.</li>
+     * <li><p><code>Server.InsufficientInstanceCapacity</code>: There was
+     * insufficient instance capacity to satisfy the launch request.</li>
+     * <li><p><code>Client.InternalError</code>: A client error caused the
+     * instance to terminate on launch.</li>
+     * <li><p><code>Client.InstanceInitiatedShutdown</code>: The instance was
+     * shut down using the <code>shutdown -h</code> command from the
+     * instance.</li> <li><p><code>Client.UserInitiatedShutdown</code>: The
+     * instance was shut down using the Amazon EC2 API.</li>
+     * <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
+     * exceeded.</li> <li><p><code>Client.InvalidSnapshot.NotFound</code>:
+     * The specified snapshot was not found.</li> </ul>
      *
-     * @return Descriptive message for the state change.
+     * @return The message for the state change. <ul>
+     *         <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance
+     *         was terminated due to an increase in the market price.</li>
+     *         <li><p><code>Server.InternalError</code>: An internal error occurred
+     *         during instance launch, resulting in termination.</li>
+     *         <li><p><code>Server.InsufficientInstanceCapacity</code>: There was
+     *         insufficient instance capacity to satisfy the launch request.</li>
+     *         <li><p><code>Client.InternalError</code>: A client error caused the
+     *         instance to terminate on launch.</li>
+     *         <li><p><code>Client.InstanceInitiatedShutdown</code>: The instance was
+     *         shut down using the <code>shutdown -h</code> command from the
+     *         instance.</li> <li><p><code>Client.UserInitiatedShutdown</code>: The
+     *         instance was shut down using the Amazon EC2 API.</li>
+     *         <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
+     *         exceeded.</li> <li><p><code>Client.InvalidSnapshot.NotFound</code>:
+     *         The specified snapshot was not found.</li> </ul>
      */
     public String getMessage() {
         return message;
     }
     
     /**
-     * Descriptive message for the state change.
+     * The message for the state change. <ul>
+     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance
+     * was terminated due to an increase in the market price.</li>
+     * <li><p><code>Server.InternalError</code>: An internal error occurred
+     * during instance launch, resulting in termination.</li>
+     * <li><p><code>Server.InsufficientInstanceCapacity</code>: There was
+     * insufficient instance capacity to satisfy the launch request.</li>
+     * <li><p><code>Client.InternalError</code>: A client error caused the
+     * instance to terminate on launch.</li>
+     * <li><p><code>Client.InstanceInitiatedShutdown</code>: The instance was
+     * shut down using the <code>shutdown -h</code> command from the
+     * instance.</li> <li><p><code>Client.UserInitiatedShutdown</code>: The
+     * instance was shut down using the Amazon EC2 API.</li>
+     * <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
+     * exceeded.</li> <li><p><code>Client.InvalidSnapshot.NotFound</code>:
+     * The specified snapshot was not found.</li> </ul>
      *
-     * @param message Descriptive message for the state change.
+     * @param message The message for the state change. <ul>
+     *         <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance
+     *         was terminated due to an increase in the market price.</li>
+     *         <li><p><code>Server.InternalError</code>: An internal error occurred
+     *         during instance launch, resulting in termination.</li>
+     *         <li><p><code>Server.InsufficientInstanceCapacity</code>: There was
+     *         insufficient instance capacity to satisfy the launch request.</li>
+     *         <li><p><code>Client.InternalError</code>: A client error caused the
+     *         instance to terminate on launch.</li>
+     *         <li><p><code>Client.InstanceInitiatedShutdown</code>: The instance was
+     *         shut down using the <code>shutdown -h</code> command from the
+     *         instance.</li> <li><p><code>Client.UserInitiatedShutdown</code>: The
+     *         instance was shut down using the Amazon EC2 API.</li>
+     *         <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
+     *         exceeded.</li> <li><p><code>Client.InvalidSnapshot.NotFound</code>:
+     *         The specified snapshot was not found.</li> </ul>
      */
     public void setMessage(String message) {
         this.message = message;
     }
     
     /**
-     * Descriptive message for the state change.
+     * The message for the state change. <ul>
+     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance
+     * was terminated due to an increase in the market price.</li>
+     * <li><p><code>Server.InternalError</code>: An internal error occurred
+     * during instance launch, resulting in termination.</li>
+     * <li><p><code>Server.InsufficientInstanceCapacity</code>: There was
+     * insufficient instance capacity to satisfy the launch request.</li>
+     * <li><p><code>Client.InternalError</code>: A client error caused the
+     * instance to terminate on launch.</li>
+     * <li><p><code>Client.InstanceInitiatedShutdown</code>: The instance was
+     * shut down using the <code>shutdown -h</code> command from the
+     * instance.</li> <li><p><code>Client.UserInitiatedShutdown</code>: The
+     * instance was shut down using the Amazon EC2 API.</li>
+     * <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
+     * exceeded.</li> <li><p><code>Client.InvalidSnapshot.NotFound</code>:
+     * The specified snapshot was not found.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param message Descriptive message for the state change.
+     * @param message The message for the state change. <ul>
+     *         <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance
+     *         was terminated due to an increase in the market price.</li>
+     *         <li><p><code>Server.InternalError</code>: An internal error occurred
+     *         during instance launch, resulting in termination.</li>
+     *         <li><p><code>Server.InsufficientInstanceCapacity</code>: There was
+     *         insufficient instance capacity to satisfy the launch request.</li>
+     *         <li><p><code>Client.InternalError</code>: A client error caused the
+     *         instance to terminate on launch.</li>
+     *         <li><p><code>Client.InstanceInitiatedShutdown</code>: The instance was
+     *         shut down using the <code>shutdown -h</code> command from the
+     *         instance.</li> <li><p><code>Client.UserInitiatedShutdown</code>: The
+     *         instance was shut down using the Amazon EC2 API.</li>
+     *         <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
+     *         exceeded.</li> <li><p><code>Client.InvalidSnapshot.NotFound</code>:
+     *         The specified snapshot was not found.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

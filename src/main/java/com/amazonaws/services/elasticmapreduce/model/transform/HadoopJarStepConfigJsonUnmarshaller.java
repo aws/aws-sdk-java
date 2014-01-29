@@ -46,6 +46,7 @@ public class HadoopJarStepConfigJsonUnmarshaller implements Unmarshaller<HadoopJ
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Properties", targetDepth)) {
+                    context.nextToken();
                     hadoopJarStepConfig.setProperties(new ListUnmarshaller<KeyValue>(KeyValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Jar", targetDepth)) {
@@ -57,6 +58,7 @@ public class HadoopJarStepConfigJsonUnmarshaller implements Unmarshaller<HadoopJ
                     hadoopJarStepConfig.setMainClass(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Args", targetDepth)) {
+                    context.nextToken();
                     hadoopJarStepConfig.setArgs(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

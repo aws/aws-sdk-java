@@ -17,21 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
  * 
- * </p>
  */
 public class DescribeVpnConnectionsResult implements Serializable {
 
     /**
-     * 
+     * Information about one or more VPN connections.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<VpnConnection> vpnConnections;
 
     /**
-     * 
+     * Information about one or more VPN connections.
      *
-     * @return 
+     * @return Information about one or more VPN connections.
      */
     public java.util.List<VpnConnection> getVpnConnections() {
         if (vpnConnections == null) {
@@ -42,9 +40,9 @@ public class DescribeVpnConnectionsResult implements Serializable {
     }
     
     /**
-     * 
+     * Information about one or more VPN connections.
      *
-     * @param vpnConnections 
+     * @param vpnConnections Information about one or more VPN connections.
      */
     public void setVpnConnections(java.util.Collection<VpnConnection> vpnConnections) {
         if (vpnConnections == null) {
@@ -57,11 +55,11 @@ public class DescribeVpnConnectionsResult implements Serializable {
     }
     
     /**
-     * 
+     * Information about one or more VPN connections.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnConnections 
+     * @param vpnConnections Information about one or more VPN connections.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,11 +73,11 @@ public class DescribeVpnConnectionsResult implements Serializable {
     }
     
     /**
-     * 
+     * Information about one or more VPN connections.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnConnections 
+     * @param vpnConnections Information about one or more VPN connections.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

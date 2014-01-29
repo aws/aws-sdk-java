@@ -18,19 +18,18 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The Vpc data type.
+ * Describes a VPC.
  * </p>
  */
 public class Vpc implements Serializable {
 
     /**
-     * Specifies the ID of the VPC.
+     * The ID of the VPC.
      */
     private String vpcId;
 
     /**
-     * Describes the current state of the VPC. The state of the subnet may be
-     * either <code>pending</code> or <code>available</code>.
+     * The current state of the VPC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available
@@ -38,19 +37,19 @@ public class Vpc implements Serializable {
     private String state;
 
     /**
-     * Specifies the CIDR block the VPC covers.
+     * The CIDR block for the VPC.
      */
     private String cidrBlock;
 
     /**
-     * Specifies the ID of the set of DHCP options associated with the VPC.
-     * Contains a value of <code>default</code> if the default options are
-     * associated with the VPC.
+     * The ID of the set of DHCP options you've associated with the VPC (or
+     * <code>default</code> if the default options are associated with the
+     * VPC).
      */
     private String dhcpOptionsId;
 
     /**
-     * A list of tags for the VPC.
+     * Any tags assigned to the VPC.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
@@ -63,34 +62,34 @@ public class Vpc implements Serializable {
     private String instanceTenancy;
 
     /**
-     * 
+     * Indicates whether the VPC is the default VPC.
      */
     private Boolean isDefault;
 
     /**
-     * Specifies the ID of the VPC.
+     * The ID of the VPC.
      *
-     * @return Specifies the ID of the VPC.
+     * @return The ID of the VPC.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * Specifies the ID of the VPC.
+     * The ID of the VPC.
      *
-     * @param vpcId Specifies the ID of the VPC.
+     * @param vpcId The ID of the VPC.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * Specifies the ID of the VPC.
+     * The ID of the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId Specifies the ID of the VPC.
+     * @param vpcId The ID of the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -101,14 +100,12 @@ public class Vpc implements Serializable {
     }
 
     /**
-     * Describes the current state of the VPC. The state of the subnet may be
-     * either <code>pending</code> or <code>available</code>.
+     * The current state of the VPC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available
      *
-     * @return Describes the current state of the VPC. The state of the subnet may be
-     *         either <code>pending</code> or <code>available</code>.
+     * @return The current state of the VPC.
      *
      * @see VpcState
      */
@@ -117,14 +114,12 @@ public class Vpc implements Serializable {
     }
     
     /**
-     * Describes the current state of the VPC. The state of the subnet may be
-     * either <code>pending</code> or <code>available</code>.
+     * The current state of the VPC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available
      *
-     * @param state Describes the current state of the VPC. The state of the subnet may be
-     *         either <code>pending</code> or <code>available</code>.
+     * @param state The current state of the VPC.
      *
      * @see VpcState
      */
@@ -133,16 +128,14 @@ public class Vpc implements Serializable {
     }
     
     /**
-     * Describes the current state of the VPC. The state of the subnet may be
-     * either <code>pending</code> or <code>available</code>.
+     * The current state of the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available
      *
-     * @param state Describes the current state of the VPC. The state of the subnet may be
-     *         either <code>pending</code> or <code>available</code>.
+     * @param state The current state of the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -155,14 +148,12 @@ public class Vpc implements Serializable {
     }
 
     /**
-     * Describes the current state of the VPC. The state of the subnet may be
-     * either <code>pending</code> or <code>available</code>.
+     * The current state of the VPC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available
      *
-     * @param state Describes the current state of the VPC. The state of the subnet may be
-     *         either <code>pending</code> or <code>available</code>.
+     * @param state The current state of the VPC.
      *
      * @see VpcState
      */
@@ -171,16 +162,14 @@ public class Vpc implements Serializable {
     }
     
     /**
-     * Describes the current state of the VPC. The state of the subnet may be
-     * either <code>pending</code> or <code>available</code>.
+     * The current state of the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available
      *
-     * @param state Describes the current state of the VPC. The state of the subnet may be
-     *         either <code>pending</code> or <code>available</code>.
+     * @param state The current state of the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -193,29 +182,29 @@ public class Vpc implements Serializable {
     }
 
     /**
-     * Specifies the CIDR block the VPC covers.
+     * The CIDR block for the VPC.
      *
-     * @return Specifies the CIDR block the VPC covers.
+     * @return The CIDR block for the VPC.
      */
     public String getCidrBlock() {
         return cidrBlock;
     }
     
     /**
-     * Specifies the CIDR block the VPC covers.
+     * The CIDR block for the VPC.
      *
-     * @param cidrBlock Specifies the CIDR block the VPC covers.
+     * @param cidrBlock The CIDR block for the VPC.
      */
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
     
     /**
-     * Specifies the CIDR block the VPC covers.
+     * The CIDR block for the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cidrBlock Specifies the CIDR block the VPC covers.
+     * @param cidrBlock The CIDR block for the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -226,41 +215,41 @@ public class Vpc implements Serializable {
     }
 
     /**
-     * Specifies the ID of the set of DHCP options associated with the VPC.
-     * Contains a value of <code>default</code> if the default options are
-     * associated with the VPC.
+     * The ID of the set of DHCP options you've associated with the VPC (or
+     * <code>default</code> if the default options are associated with the
+     * VPC).
      *
-     * @return Specifies the ID of the set of DHCP options associated with the VPC.
-     *         Contains a value of <code>default</code> if the default options are
-     *         associated with the VPC.
+     * @return The ID of the set of DHCP options you've associated with the VPC (or
+     *         <code>default</code> if the default options are associated with the
+     *         VPC).
      */
     public String getDhcpOptionsId() {
         return dhcpOptionsId;
     }
     
     /**
-     * Specifies the ID of the set of DHCP options associated with the VPC.
-     * Contains a value of <code>default</code> if the default options are
-     * associated with the VPC.
+     * The ID of the set of DHCP options you've associated with the VPC (or
+     * <code>default</code> if the default options are associated with the
+     * VPC).
      *
-     * @param dhcpOptionsId Specifies the ID of the set of DHCP options associated with the VPC.
-     *         Contains a value of <code>default</code> if the default options are
-     *         associated with the VPC.
+     * @param dhcpOptionsId The ID of the set of DHCP options you've associated with the VPC (or
+     *         <code>default</code> if the default options are associated with the
+     *         VPC).
      */
     public void setDhcpOptionsId(String dhcpOptionsId) {
         this.dhcpOptionsId = dhcpOptionsId;
     }
     
     /**
-     * Specifies the ID of the set of DHCP options associated with the VPC.
-     * Contains a value of <code>default</code> if the default options are
-     * associated with the VPC.
+     * The ID of the set of DHCP options you've associated with the VPC (or
+     * <code>default</code> if the default options are associated with the
+     * VPC).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpOptionsId Specifies the ID of the set of DHCP options associated with the VPC.
-     *         Contains a value of <code>default</code> if the default options are
-     *         associated with the VPC.
+     * @param dhcpOptionsId The ID of the set of DHCP options you've associated with the VPC (or
+     *         <code>default</code> if the default options are associated with the
+     *         VPC).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -271,9 +260,9 @@ public class Vpc implements Serializable {
     }
 
     /**
-     * A list of tags for the VPC.
+     * Any tags assigned to the VPC.
      *
-     * @return A list of tags for the VPC.
+     * @return Any tags assigned to the VPC.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
@@ -284,9 +273,9 @@ public class Vpc implements Serializable {
     }
     
     /**
-     * A list of tags for the VPC.
+     * Any tags assigned to the VPC.
      *
-     * @param tags A list of tags for the VPC.
+     * @param tags Any tags assigned to the VPC.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -299,11 +288,11 @@ public class Vpc implements Serializable {
     }
     
     /**
-     * A list of tags for the VPC.
+     * Any tags assigned to the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags A list of tags for the VPC.
+     * @param tags Any tags assigned to the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -317,11 +306,11 @@ public class Vpc implements Serializable {
     }
     
     /**
-     * A list of tags for the VPC.
+     * Any tags assigned to the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags A list of tags for the VPC.
+     * @param tags Any tags assigned to the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -421,29 +410,29 @@ public class Vpc implements Serializable {
     }
 
     /**
-     * 
+     * Indicates whether the VPC is the default VPC.
      *
-     * @return 
+     * @return Indicates whether the VPC is the default VPC.
      */
     public Boolean isDefault() {
         return isDefault;
     }
     
     /**
-     * 
+     * Indicates whether the VPC is the default VPC.
      *
-     * @param isDefault 
+     * @param isDefault Indicates whether the VPC is the default VPC.
      */
     public void setIsDefault(Boolean isDefault) {
         this.isDefault = isDefault;
     }
     
     /**
-     * 
+     * Indicates whether the VPC is the default VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param isDefault 
+     * @param isDefault Indicates whether the VPC is the default VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -454,9 +443,9 @@ public class Vpc implements Serializable {
     }
 
     /**
-     * 
+     * Indicates whether the VPC is the default VPC.
      *
-     * @return 
+     * @return Indicates whether the VPC is the default VPC.
      */
     public Boolean getIsDefault() {
         return isDefault;

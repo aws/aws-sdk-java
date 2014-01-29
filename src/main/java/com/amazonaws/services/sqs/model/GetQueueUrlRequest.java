@@ -21,7 +21,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#getQueueUrl(GetQueueUrlRequest) GetQueueUrl operation}.
  * <p>
- * The <code>GetQueueUrl</code> action returns the URL of an existing queue.
+ * Returns the URL of an existing queue. This action provides a simple way to retrieve the URL of an Amazon SQS queue.
+ * </p>
+ * <p>
+ * To access a queue that belongs to another AWS account, use the <code>QueueOwnerAWSAccountId</code> parameter to specify the account ID of the queue's
+ * owner. The queue's owner must grant you permission to access the queue. For more information about shared queue access, see AddPermission or go to <a
+ * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html"> Shared Queues </a> in the <i>Amazon SQS Developer
+ * Guide</i> .
+ * 
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#getQueueUrl(GetQueueUrlRequest)
@@ -29,12 +36,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetQueueUrlRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the queue whose URL must be fetched.
+     * The name of the queue whose URL must be fetched. Maximum 80
+     * characters; alphanumeric characters, hyphens (-), and underscores (_)
+     * are allowed.
      */
     private String queueName;
 
     /**
-     * The AWS account number of the queue's owner.
+     * The AWS account ID of the account that created the queue.
      */
     private String queueOwnerAWSAccountId;
 
@@ -50,35 +59,49 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest implements Seria
      * initialize any additional object members.
      * 
      * @param queueName The name of the queue whose URL must be fetched.
+     * Maximum 80 characters; alphanumeric characters, hyphens (-), and
+     * underscores (_) are allowed.
      */
     public GetQueueUrlRequest(String queueName) {
         setQueueName(queueName);
     }
 
     /**
-     * The name of the queue whose URL must be fetched.
+     * The name of the queue whose URL must be fetched. Maximum 80
+     * characters; alphanumeric characters, hyphens (-), and underscores (_)
+     * are allowed.
      *
-     * @return The name of the queue whose URL must be fetched.
+     * @return The name of the queue whose URL must be fetched. Maximum 80
+     *         characters; alphanumeric characters, hyphens (-), and underscores (_)
+     *         are allowed.
      */
     public String getQueueName() {
         return queueName;
     }
     
     /**
-     * The name of the queue whose URL must be fetched.
+     * The name of the queue whose URL must be fetched. Maximum 80
+     * characters; alphanumeric characters, hyphens (-), and underscores (_)
+     * are allowed.
      *
-     * @param queueName The name of the queue whose URL must be fetched.
+     * @param queueName The name of the queue whose URL must be fetched. Maximum 80
+     *         characters; alphanumeric characters, hyphens (-), and underscores (_)
+     *         are allowed.
      */
     public void setQueueName(String queueName) {
         this.queueName = queueName;
     }
     
     /**
-     * The name of the queue whose URL must be fetched.
+     * The name of the queue whose URL must be fetched. Maximum 80
+     * characters; alphanumeric characters, hyphens (-), and underscores (_)
+     * are allowed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueName The name of the queue whose URL must be fetched.
+     * @param queueName The name of the queue whose URL must be fetched. Maximum 80
+     *         characters; alphanumeric characters, hyphens (-), and underscores (_)
+     *         are allowed.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -89,29 +112,29 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The AWS account number of the queue's owner.
+     * The AWS account ID of the account that created the queue.
      *
-     * @return The AWS account number of the queue's owner.
+     * @return The AWS account ID of the account that created the queue.
      */
     public String getQueueOwnerAWSAccountId() {
         return queueOwnerAWSAccountId;
     }
     
     /**
-     * The AWS account number of the queue's owner.
+     * The AWS account ID of the account that created the queue.
      *
-     * @param queueOwnerAWSAccountId The AWS account number of the queue's owner.
+     * @param queueOwnerAWSAccountId The AWS account ID of the account that created the queue.
      */
     public void setQueueOwnerAWSAccountId(String queueOwnerAWSAccountId) {
         this.queueOwnerAWSAccountId = queueOwnerAWSAccountId;
     }
     
     /**
-     * The AWS account number of the queue's owner.
+     * The AWS account ID of the account that created the queue.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueOwnerAWSAccountId The AWS account number of the queue's owner.
+     * @param queueOwnerAWSAccountId The AWS account ID of the account that created the queue.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

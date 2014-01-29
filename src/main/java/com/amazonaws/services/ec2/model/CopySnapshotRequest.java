@@ -22,42 +22,58 @@ import com.amazonaws.services.ec2.model.transform.CopySnapshotRequestMarshaller;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#copySnapshot(CopySnapshotRequest) CopySnapshot operation}.
- * 
+ * <p>
+ * Copies a point-in-time snapshot of an Amazon EBS volume and stores it in Amazon S3. You can copy the snapshot within the same region or from one
+ * region to another. You can use the snapshot to create Amazon EBS volumes or Amazon Machine Images (AMIs).
+ * </p>
+ * <p>
+ * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html"> Copying an Amazon EBS Snapshot </a> in
+ * the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#copySnapshot(CopySnapshotRequest)
  */
 public class CopySnapshotRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CopySnapshotRequest> {
 
+    /**
+     * The ID of the region that contains the snapshot to be copied.
+     */
     private String sourceRegion;
 
+    /**
+     * The ID of the Amazon EBS snapshot to copy.
+     */
     private String sourceSnapshotId;
 
+    /**
+     * A description for the new Amazon EBS snapshot.
+     */
     private String description;
 
     /**
-     * Returns the value of the SourceRegion property for this object.
+     * The ID of the region that contains the snapshot to be copied.
      *
-     * @return The value of the SourceRegion property for this object.
+     * @return The ID of the region that contains the snapshot to be copied.
      */
     public String getSourceRegion() {
         return sourceRegion;
     }
     
     /**
-     * Sets the value of the SourceRegion property for this object.
+     * The ID of the region that contains the snapshot to be copied.
      *
-     * @param sourceRegion The new value for the SourceRegion property for this object.
+     * @param sourceRegion The ID of the region that contains the snapshot to be copied.
      */
     public void setSourceRegion(String sourceRegion) {
         this.sourceRegion = sourceRegion;
     }
     
     /**
-     * Sets the value of the SourceRegion property for this object.
+     * The ID of the region that contains the snapshot to be copied.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceRegion The new value for the SourceRegion property for this object.
+     * @param sourceRegion The ID of the region that contains the snapshot to be copied.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -68,29 +84,29 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * Returns the value of the SourceSnapshotId property for this object.
+     * The ID of the Amazon EBS snapshot to copy.
      *
-     * @return The value of the SourceSnapshotId property for this object.
+     * @return The ID of the Amazon EBS snapshot to copy.
      */
     public String getSourceSnapshotId() {
         return sourceSnapshotId;
     }
     
     /**
-     * Sets the value of the SourceSnapshotId property for this object.
+     * The ID of the Amazon EBS snapshot to copy.
      *
-     * @param sourceSnapshotId The new value for the SourceSnapshotId property for this object.
+     * @param sourceSnapshotId The ID of the Amazon EBS snapshot to copy.
      */
     public void setSourceSnapshotId(String sourceSnapshotId) {
         this.sourceSnapshotId = sourceSnapshotId;
     }
     
     /**
-     * Sets the value of the SourceSnapshotId property for this object.
+     * The ID of the Amazon EBS snapshot to copy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceSnapshotId The new value for the SourceSnapshotId property for this object.
+     * @param sourceSnapshotId The ID of the Amazon EBS snapshot to copy.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -101,29 +117,29 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * Returns the value of the Description property for this object.
+     * A description for the new Amazon EBS snapshot.
      *
-     * @return The value of the Description property for this object.
+     * @return A description for the new Amazon EBS snapshot.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * A description for the new Amazon EBS snapshot.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description A description for the new Amazon EBS snapshot.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * A description for the new Amazon EBS snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description A description for the new Amazon EBS snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

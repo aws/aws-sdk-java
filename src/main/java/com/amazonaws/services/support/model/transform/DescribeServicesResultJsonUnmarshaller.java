@@ -46,6 +46,7 @@ public class DescribeServicesResultJsonUnmarshaller implements Unmarshaller<Desc
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("services", targetDepth)) {
+                    context.nextToken();
                     describeServicesResult.setServices(new ListUnmarshaller<Service>(ServiceJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

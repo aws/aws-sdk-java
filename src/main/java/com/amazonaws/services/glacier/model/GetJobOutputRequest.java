@@ -48,7 +48,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * <li> <p>
  * After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these values to find the
- * checksum of the entire output. Using the Describe Job API, obtain job information of the job that provided you the output. The response includes the
+ * checksum of the entire output. Using the DescribeJob API, obtain job information of the job that provided you the output. The response includes the
  * checksum of the entire archive stored in Amazon Glacier. You compare this value with the checksum you computed to ensure you have downloaded the
  * entire archive content with no errors.
  * </p>

@@ -27,6 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * Key JSON Unmarshaller
+ * @deprecated {@link Key} is no longer supported in the latest service API.
  */
 @Deprecated
 public class KeyJsonUnmarshaller implements Unmarshaller<Key, JsonUnmarshallerContext> {

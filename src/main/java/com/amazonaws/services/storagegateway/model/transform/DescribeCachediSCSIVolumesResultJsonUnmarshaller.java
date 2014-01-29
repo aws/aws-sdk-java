@@ -46,6 +46,7 @@ public class DescribeCachediSCSIVolumesResultJsonUnmarshaller implements Unmarsh
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CachediSCSIVolumes", targetDepth)) {
+                    context.nextToken();
                     describeCachediSCSIVolumesResult.setCachediSCSIVolumes(new ListUnmarshaller<CachediSCSIVolume>(CachediSCSIVolumeJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

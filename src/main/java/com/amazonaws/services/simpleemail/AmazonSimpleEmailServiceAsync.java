@@ -26,12 +26,11 @@ import com.amazonaws.services.simpleemail.model.*;
  * Each asynchronous method will return a Java Future object, and users are also allowed
  * to provide a callback handler.
  * Amazon Simple Email Service <p>
- * This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to be used in conjunction with the Amazon SES
- * Developer Guide.
+ * This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to be used in conjunction with the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html"> Amazon SES Developer Guide </a> .
  * </p>
  * <p>
- * For specific details on how to construct a service request, please consult the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide"> Amazon
- * SES Developer Guide </a> .
+ * <b>NOTE:</b>For a list of Amazon SES endpoints to use in service requests, see Regions and Amazon SES in the Amazon SES Developer Guide.
  * </p>
  */
 public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService {

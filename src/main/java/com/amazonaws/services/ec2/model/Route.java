@@ -17,47 +17,74 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Route
+ * <p>
+ * Describes a route in a route table.
+ * </p>
  */
 public class Route implements Serializable {
 
+    /**
+     * The CIDR block used for the destination match.
+     */
     private String destinationCidrBlock;
 
+    /**
+     * The ID of a gateway attached to your VPC.
+     */
     private String gatewayId;
 
+    /**
+     * The ID of a NAT instance in your VPC.
+     */
     private String instanceId;
 
+    /**
+     * The AWS account ID of the owner of the instance.
+     */
     private String instanceOwnerId;
 
+    /**
+     * The ID of the network interface.
+     */
     private String networkInterfaceId;
 
+    /**
+     * The state of the route. The <code>blackhole</code> state indicates
+     * that the route's target isn't available (for example, the specified
+     * gateway isn't attached to the VPC, or the specified NAT instance has
+     * been terminated).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>active, blackhole
+     */
     private String state;
 
+    private String origin;
+
     /**
-     * Returns the value of the DestinationCidrBlock property for this
-     * object.
+     * The CIDR block used for the destination match.
      *
-     * @return The value of the DestinationCidrBlock property for this object.
+     * @return The CIDR block used for the destination match.
      */
     public String getDestinationCidrBlock() {
         return destinationCidrBlock;
     }
     
     /**
-     * Sets the value of the DestinationCidrBlock property for this object.
+     * The CIDR block used for the destination match.
      *
-     * @param destinationCidrBlock The new value for the DestinationCidrBlock property for this object.
+     * @param destinationCidrBlock The CIDR block used for the destination match.
      */
     public void setDestinationCidrBlock(String destinationCidrBlock) {
         this.destinationCidrBlock = destinationCidrBlock;
     }
     
     /**
-     * Sets the value of the DestinationCidrBlock property for this object.
+     * The CIDR block used for the destination match.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param destinationCidrBlock The new value for the DestinationCidrBlock property for this object.
+     * @param destinationCidrBlock The CIDR block used for the destination match.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -68,29 +95,29 @@ public class Route implements Serializable {
     }
 
     /**
-     * Returns the value of the GatewayId property for this object.
+     * The ID of a gateway attached to your VPC.
      *
-     * @return The value of the GatewayId property for this object.
+     * @return The ID of a gateway attached to your VPC.
      */
     public String getGatewayId() {
         return gatewayId;
     }
     
     /**
-     * Sets the value of the GatewayId property for this object.
+     * The ID of a gateway attached to your VPC.
      *
-     * @param gatewayId The new value for the GatewayId property for this object.
+     * @param gatewayId The ID of a gateway attached to your VPC.
      */
     public void setGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
     }
     
     /**
-     * Sets the value of the GatewayId property for this object.
+     * The ID of a gateway attached to your VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param gatewayId The new value for the GatewayId property for this object.
+     * @param gatewayId The ID of a gateway attached to your VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -101,29 +128,29 @@ public class Route implements Serializable {
     }
 
     /**
-     * Returns the value of the InstanceId property for this object.
+     * The ID of a NAT instance in your VPC.
      *
-     * @return The value of the InstanceId property for this object.
+     * @return The ID of a NAT instance in your VPC.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * Sets the value of the InstanceId property for this object.
+     * The ID of a NAT instance in your VPC.
      *
-     * @param instanceId The new value for the InstanceId property for this object.
+     * @param instanceId The ID of a NAT instance in your VPC.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * Sets the value of the InstanceId property for this object.
+     * The ID of a NAT instance in your VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The new value for the InstanceId property for this object.
+     * @param instanceId The ID of a NAT instance in your VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -134,29 +161,29 @@ public class Route implements Serializable {
     }
 
     /**
-     * Returns the value of the InstanceOwnerId property for this object.
+     * The AWS account ID of the owner of the instance.
      *
-     * @return The value of the InstanceOwnerId property for this object.
+     * @return The AWS account ID of the owner of the instance.
      */
     public String getInstanceOwnerId() {
         return instanceOwnerId;
     }
     
     /**
-     * Sets the value of the InstanceOwnerId property for this object.
+     * The AWS account ID of the owner of the instance.
      *
-     * @param instanceOwnerId The new value for the InstanceOwnerId property for this object.
+     * @param instanceOwnerId The AWS account ID of the owner of the instance.
      */
     public void setInstanceOwnerId(String instanceOwnerId) {
         this.instanceOwnerId = instanceOwnerId;
     }
     
     /**
-     * Sets the value of the InstanceOwnerId property for this object.
+     * The AWS account ID of the owner of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceOwnerId The new value for the InstanceOwnerId property for this object.
+     * @param instanceOwnerId The AWS account ID of the owner of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -167,29 +194,29 @@ public class Route implements Serializable {
     }
 
     /**
-     * Returns the value of the NetworkInterfaceId property for this object.
+     * The ID of the network interface.
      *
-     * @return The value of the NetworkInterfaceId property for this object.
+     * @return The ID of the network interface.
      */
     public String getNetworkInterfaceId() {
         return networkInterfaceId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceId property for this object.
+     * The ID of the network interface.
      *
-     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     * @param networkInterfaceId The ID of the network interface.
      */
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceId property for this object.
+     * The ID of the network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     * @param networkInterfaceId The ID of the network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -200,12 +227,18 @@ public class Route implements Serializable {
     }
 
     /**
-     * Returns the value of the State property for this object.
+     * The state of the route. The <code>blackhole</code> state indicates
+     * that the route's target isn't available (for example, the specified
+     * gateway isn't attached to the VPC, or the specified NAT instance has
+     * been terminated).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, blackhole
      *
-     * @return The value of the State property for this object.
+     * @return The state of the route. The <code>blackhole</code> state indicates
+     *         that the route's target isn't available (for example, the specified
+     *         gateway isn't attached to the VPC, or the specified NAT instance has
+     *         been terminated).
      *
      * @see RouteState
      */
@@ -214,12 +247,18 @@ public class Route implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the route. The <code>blackhole</code> state indicates
+     * that the route's target isn't available (for example, the specified
+     * gateway isn't attached to the VPC, or the specified NAT instance has
+     * been terminated).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, blackhole
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the route. The <code>blackhole</code> state indicates
+     *         that the route's target isn't available (for example, the specified
+     *         gateway isn't attached to the VPC, or the specified NAT instance has
+     *         been terminated).
      *
      * @see RouteState
      */
@@ -228,14 +267,20 @@ public class Route implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the route. The <code>blackhole</code> state indicates
+     * that the route's target isn't available (for example, the specified
+     * gateway isn't attached to the VPC, or the specified NAT instance has
+     * been terminated).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, blackhole
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the route. The <code>blackhole</code> state indicates
+     *         that the route's target isn't available (for example, the specified
+     *         gateway isn't attached to the VPC, or the specified NAT instance has
+     *         been terminated).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -248,12 +293,18 @@ public class Route implements Serializable {
     }
 
     /**
-     * Sets the value of the State property for this object.
+     * The state of the route. The <code>blackhole</code> state indicates
+     * that the route's target isn't available (for example, the specified
+     * gateway isn't attached to the VPC, or the specified NAT instance has
+     * been terminated).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, blackhole
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the route. The <code>blackhole</code> state indicates
+     *         that the route's target isn't available (for example, the specified
+     *         gateway isn't attached to the VPC, or the specified NAT instance has
+     *         been terminated).
      *
      * @see RouteState
      */
@@ -262,14 +313,20 @@ public class Route implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the route. The <code>blackhole</code> state indicates
+     * that the route's target isn't available (for example, the specified
+     * gateway isn't attached to the VPC, or the specified NAT instance has
+     * been terminated).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, blackhole
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the route. The <code>blackhole</code> state indicates
+     *         that the route's target isn't available (for example, the specified
+     *         gateway isn't attached to the VPC, or the specified NAT instance has
+     *         been terminated).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -278,6 +335,88 @@ public class Route implements Serializable {
      */
     public Route withState(RouteState state) {
         this.state = state.toString();
+        return this;
+    }
+
+    /**
+     * Returns the value of the Origin property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>CreateRouteTable, CreateRoute, EnableVgwRoutePropagation
+     *
+     * @return The value of the Origin property for this object.
+     *
+     * @see RouteOrigin
+     */
+    public String getOrigin() {
+        return origin;
+    }
+    
+    /**
+     * Sets the value of the Origin property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>CreateRouteTable, CreateRoute, EnableVgwRoutePropagation
+     *
+     * @param origin The new value for the Origin property for this object.
+     *
+     * @see RouteOrigin
+     */
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+    
+    /**
+     * Sets the value of the Origin property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>CreateRouteTable, CreateRoute, EnableVgwRoutePropagation
+     *
+     * @param origin The new value for the Origin property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see RouteOrigin
+     */
+    public Route withOrigin(String origin) {
+        this.origin = origin;
+        return this;
+    }
+
+    /**
+     * Sets the value of the Origin property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>CreateRouteTable, CreateRoute, EnableVgwRoutePropagation
+     *
+     * @param origin The new value for the Origin property for this object.
+     *
+     * @see RouteOrigin
+     */
+    public void setOrigin(RouteOrigin origin) {
+        this.origin = origin.toString();
+    }
+    
+    /**
+     * Sets the value of the Origin property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>CreateRouteTable, CreateRoute, EnableVgwRoutePropagation
+     *
+     * @param origin The new value for the Origin property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see RouteOrigin
+     */
+    public Route withOrigin(RouteOrigin origin) {
+        this.origin = origin.toString();
         return this;
     }
 
@@ -298,7 +437,8 @@ public class Route implements Serializable {
         if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
         if (getInstanceOwnerId() != null) sb.append("InstanceOwnerId: " + getInstanceOwnerId() + ",");
         if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
-        if (getState() != null) sb.append("State: " + getState() );
+        if (getState() != null) sb.append("State: " + getState() + ",");
+        if (getOrigin() != null) sb.append("Origin: " + getOrigin() );
         sb.append("}");
         return sb.toString();
     }
@@ -314,6 +454,7 @@ public class Route implements Serializable {
         hashCode = prime * hashCode + ((getInstanceOwnerId() == null) ? 0 : getInstanceOwnerId().hashCode()); 
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode()); 
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
+        hashCode = prime * hashCode + ((getOrigin() == null) ? 0 : getOrigin().hashCode()); 
         return hashCode;
     }
     
@@ -337,6 +478,8 @@ public class Route implements Serializable {
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false) return false; 
         if (other.getState() == null ^ this.getState() == null) return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
+        if (other.getOrigin() == null ^ this.getOrigin() == null) return false;
+        if (other.getOrigin() != null && other.getOrigin().equals(this.getOrigin()) == false) return false; 
         return true;
     }
     

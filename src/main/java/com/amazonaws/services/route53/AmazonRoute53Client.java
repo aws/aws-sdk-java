@@ -952,7 +952,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);

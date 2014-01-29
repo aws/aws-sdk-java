@@ -14,6 +14,9 @@
  */
 package com.amazonaws.util;
 
+import java.io.FilterInputStream;
+import java.io.InputStream;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URLEncoder;
@@ -24,10 +27,25 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpHost;
+import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.NTCredentials;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.utils.URLEncodedUtils;
+import org.apache.http.conn.params.ConnRoutePNames;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
+import org.apache.http.params.HttpProtocolParams;
 
+import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
 import com.amazonaws.http.HttpMethodName;
 
@@ -196,5 +214,124 @@ public class HttpUtils {
         }
 
         return resultUri;
+    }
+
+    /**
+     * Fetches a file from the URI given and returns an input stream to it.
+     *
+     * @param uri the uri of the file to fetch
+     * @param config optional configuration overrides
+     * @return an InputStream containing the retrieved data
+     * @throws IOException on error
+     */
+    public static InputStream fetchFile(
+            final URI uri,
+            final ClientConfiguration config) throws IOException {
+
+        HttpParams httpClientParams = new BasicHttpParams();
+        HttpProtocolParams.setUserAgent(
+                httpClientParams, getUserAgent(config));
+
+        HttpConnectionParams.setConnectionTimeout(
+                httpClientParams, getConnectionTimeout(config));
+        HttpConnectionParams.setSoTimeout(
+                httpClientParams, getSocketTimeout(config));
+
+        DefaultHttpClient httpclient = new DefaultHttpClient(httpClientParams);
+
+        if (config != null) {
+            String proxyHost = config.getProxyHost();
+            int proxyPort = config.getProxyPort();
+
+            if (proxyHost != null && proxyPort > 0) {
+
+                HttpHost proxy = new HttpHost(proxyHost, proxyPort);
+                httpclient.getParams().setParameter(
+                        ConnRoutePNames.DEFAULT_PROXY, proxy);
+
+                if (config.getProxyUsername() != null
+                    && config.getProxyPassword() != null) {
+
+                    httpclient.getCredentialsProvider().setCredentials(
+                            new AuthScope(proxyHost, proxyPort),
+                            new NTCredentials(config.getProxyUsername(),
+                                              config.getProxyPassword(),
+                                              config.getProxyWorkstation(),
+                                              config.getProxyDomain()));
+                }
+            }
+        }
+
+        HttpResponse response = httpclient.execute(new HttpGet(uri));
+
+        if (response.getStatusLine().getStatusCode() != 200) {
+            throw new IOException("Error fetching file from " + uri + ": "
+                                  + response);
+        }
+
+        return new HttpClientWrappingInputStream(
+                httpclient,
+                response.getEntity().getContent());
+    }
+
+    /**
+     * An {@code InputStream} that closes the associated {@code HttpClient}
+     * when the stream is closed.
+     */
+    private static class HttpClientWrappingInputStream
+            extends FilterInputStream {
+
+        private final HttpClient client;
+
+        /**
+         * @param client the {@code HttpClient} to wrap
+         * @param stream the {@code InputStream} to wrap
+         */
+        public HttpClientWrappingInputStream(
+                final HttpClient client,
+                final InputStream stream) {
+
+            super(stream);
+            this.client = client;
+        }
+
+        @Override
+        public void close() throws IOException {
+            try {
+                super.close();
+            } finally {
+                client.getConnectionManager().shutdown();
+            }
+        }
+    }
+
+    private static String getUserAgent(final ClientConfiguration config) {
+        String userAgent = null;
+
+        if (config != null) {
+            userAgent = config.getUserAgent();
+        }
+
+        if (userAgent == null) {
+            userAgent = ClientConfiguration.DEFAULT_USER_AGENT;
+        } else if (!ClientConfiguration.DEFAULT_USER_AGENT.equals(userAgent)) {
+            userAgent += ", " + ClientConfiguration.DEFAULT_USER_AGENT;
+        }
+
+        return userAgent;
+    }
+
+    private static int getConnectionTimeout(final ClientConfiguration config) {
+        if (config != null) {
+            return config.getConnectionTimeout();
+        }
+        return ClientConfiguration.DEFAULT_CONNECTION_TIMEOUT;
+    }
+
+    private static int getSocketTimeout(final ClientConfiguration config) {
+        if (config != null) {
+            return config.getSocketTimeout();
+        }
+        return ClientConfiguration.DEFAULT_SOCKET_TIMEOUT;
     }
 }

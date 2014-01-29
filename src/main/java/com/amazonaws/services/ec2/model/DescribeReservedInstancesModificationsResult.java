@@ -17,26 +17,24 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of describing Reserved Instances modifications.
- * </p>
+ * 
  */
 public class DescribeReservedInstancesModificationsResult implements Serializable {
 
     /**
-     * The list of Reserved Instances modification requests.
+     * The Reserved Instance modification information.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesModification> reservedInstancesModifications;
 
     /**
-     * The string specifying the next paginated set of results to return.
+     * The token for the next page of data.
      */
     private String nextToken;
 
     /**
-     * The list of Reserved Instances modification requests.
+     * The Reserved Instance modification information.
      *
-     * @return The list of Reserved Instances modification requests.
+     * @return The Reserved Instance modification information.
      */
     public java.util.List<ReservedInstancesModification> getReservedInstancesModifications() {
         if (reservedInstancesModifications == null) {
@@ -47,9 +45,9 @@ public class DescribeReservedInstancesModificationsResult implements Serializabl
     }
     
     /**
-     * The list of Reserved Instances modification requests.
+     * The Reserved Instance modification information.
      *
-     * @param reservedInstancesModifications The list of Reserved Instances modification requests.
+     * @param reservedInstancesModifications The Reserved Instance modification information.
      */
     public void setReservedInstancesModifications(java.util.Collection<ReservedInstancesModification> reservedInstancesModifications) {
         if (reservedInstancesModifications == null) {
@@ -62,11 +60,11 @@ public class DescribeReservedInstancesModificationsResult implements Serializabl
     }
     
     /**
-     * The list of Reserved Instances modification requests.
+     * The Reserved Instance modification information.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesModifications The list of Reserved Instances modification requests.
+     * @param reservedInstancesModifications The Reserved Instance modification information.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -80,11 +78,11 @@ public class DescribeReservedInstancesModificationsResult implements Serializabl
     }
     
     /**
-     * The list of Reserved Instances modification requests.
+     * The Reserved Instance modification information.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesModifications The list of Reserved Instances modification requests.
+     * @param reservedInstancesModifications The Reserved Instance modification information.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -102,29 +100,29 @@ public class DescribeReservedInstancesModificationsResult implements Serializabl
     }
 
     /**
-     * The string specifying the next paginated set of results to return.
+     * The token for the next page of data.
      *
-     * @return The string specifying the next paginated set of results to return.
+     * @return The token for the next page of data.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * The string specifying the next paginated set of results to return.
+     * The token for the next page of data.
      *
-     * @param nextToken The string specifying the next paginated set of results to return.
+     * @param nextToken The token for the next page of data.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * The string specifying the next paginated set of results to return.
+     * The token for the next page of data.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The string specifying the next paginated set of results to return.
+     * @param nextToken The token for the next page of data.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

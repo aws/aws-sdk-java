@@ -36,6 +36,7 @@ import com.amazonaws.util.json.*;
 
 /**
  * Batch Get Item Request Marshaller
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.BatchGetItemRequestMarshaller} instead.
  */
 @Deprecated
 public class BatchGetItemRequestMarshaller implements Marshaller<Request<BatchGetItemRequest>, BatchGetItemRequest> {

@@ -34,6 +34,8 @@ import com.amazonaws.services.dynamodb.model.ScanResult;
  * @param <T>
  *            The type of objects held in this list.
  * @see PaginatedList
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.PaginatedScanList} instead.
  */
 @Deprecated
 public class PaginatedScanList<T> extends PaginatedList<T> {

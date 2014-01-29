@@ -36,6 +36,7 @@ import com.amazonaws.util.json.*;
 
 /**
  * Scan Request Marshaller
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.ScanRequestMarshaller} instead.
  */
 @Deprecated
 public class ScanRequestMarshaller implements Marshaller<Request<ScanRequest>, ScanRequest> {

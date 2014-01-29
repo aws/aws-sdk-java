@@ -17,41 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of describing an AMI attribute.
- * </p>
+ * 
  */
 public class DescribeImageAttributeResult implements Serializable {
 
     /**
-     * The described image attribute of the associated AMI.
+     * Information about the image attribute.
      */
     private ImageAttribute imageAttribute;
 
     /**
-     * The described image attribute of the associated AMI.
+     * Information about the image attribute.
      *
-     * @return The described image attribute of the associated AMI.
+     * @return Information about the image attribute.
      */
     public ImageAttribute getImageAttribute() {
         return imageAttribute;
     }
     
     /**
-     * The described image attribute of the associated AMI.
+     * Information about the image attribute.
      *
-     * @param imageAttribute The described image attribute of the associated AMI.
+     * @param imageAttribute Information about the image attribute.
      */
     public void setImageAttribute(ImageAttribute imageAttribute) {
         this.imageAttribute = imageAttribute;
     }
     
     /**
-     * The described image attribute of the associated AMI.
+     * Information about the image attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param imageAttribute The described image attribute of the associated AMI.
+     * @param imageAttribute Information about the image attribute.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -17,6 +17,7 @@ import java.io.Serializable;
 
 /**
  * Update Table Result
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.UpdateTableResult} instead.
  */
 @Deprecated
 public class UpdateTableResult  implements Serializable  {

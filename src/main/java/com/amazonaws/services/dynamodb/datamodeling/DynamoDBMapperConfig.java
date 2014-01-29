@@ -32,6 +32,8 @@ package com.amazonaws.services.dynamodb.datamodeling;
  * // Delete the object even if the version field is out of date
  * mapper.delete(obj, new DynamoDBMapperConfig(SaveBehavior.CLOBBER));
  * </pre>
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig} instead.
  */
 @Deprecated
 public class DynamoDBMapperConfig {

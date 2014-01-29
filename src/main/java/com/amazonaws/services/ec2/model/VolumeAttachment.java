@@ -18,29 +18,28 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Specifies the details of a how an EC2 EBS volume is attached to an instance.
+ * Describes volume attachment details.
  * </p>
  */
 public class VolumeAttachment implements Serializable {
 
     /**
-     * 
+     * The ID of the volume.
      */
     private String volumeId;
 
     /**
-     * 
+     * The ID of the instance.
      */
     private String instanceId;
 
     /**
-     * How the device is exposed to the instance (e.g.,
-     * <code>/dev/sdh</code>).
+     * The device name.
      */
     private String device;
 
     /**
-     * 
+     * The attachment state of the volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
@@ -48,40 +47,40 @@ public class VolumeAttachment implements Serializable {
     private String state;
 
     /**
-     * Timestamp when this attachment initiated.
+     * The time stamp when the attachment initiated.
      */
     private java.util.Date attachTime;
 
     /**
-     * ` <p> Whether this volume will be deleted or not when the associated
-     * instance is terminated.
+     * Indicates whether the Amazon EBS volume is deleted on instance
+     * termination.
      */
     private Boolean deleteOnTermination;
 
     /**
-     * 
+     * The ID of the volume.
      *
-     * @return 
+     * @return The ID of the volume.
      */
     public String getVolumeId() {
         return volumeId;
     }
     
     /**
-     * 
+     * The ID of the volume.
      *
-     * @param volumeId 
+     * @param volumeId The ID of the volume.
      */
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
     
     /**
-     * 
+     * The ID of the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeId 
+     * @param volumeId The ID of the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -92,29 +91,29 @@ public class VolumeAttachment implements Serializable {
     }
 
     /**
-     * 
+     * The ID of the instance.
      *
-     * @return 
+     * @return The ID of the instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * 
+     * The ID of the instance.
      *
-     * @param instanceId 
+     * @param instanceId The ID of the instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * 
+     * The ID of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId 
+     * @param instanceId The ID of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -125,35 +124,29 @@ public class VolumeAttachment implements Serializable {
     }
 
     /**
-     * How the device is exposed to the instance (e.g.,
-     * <code>/dev/sdh</code>).
+     * The device name.
      *
-     * @return How the device is exposed to the instance (e.g.,
-     *         <code>/dev/sdh</code>).
+     * @return The device name.
      */
     public String getDevice() {
         return device;
     }
     
     /**
-     * How the device is exposed to the instance (e.g.,
-     * <code>/dev/sdh</code>).
+     * The device name.
      *
-     * @param device How the device is exposed to the instance (e.g.,
-     *         <code>/dev/sdh</code>).
+     * @param device The device name.
      */
     public void setDevice(String device) {
         this.device = device;
     }
     
     /**
-     * How the device is exposed to the instance (e.g.,
-     * <code>/dev/sdh</code>).
+     * The device name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param device How the device is exposed to the instance (e.g.,
-     *         <code>/dev/sdh</code>).
+     * @param device The device name.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -164,12 +157,12 @@ public class VolumeAttachment implements Serializable {
     }
 
     /**
-     * 
+     * The attachment state of the volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @return 
+     * @return The attachment state of the volume.
      *
      * @see VolumeAttachmentState
      */
@@ -178,12 +171,12 @@ public class VolumeAttachment implements Serializable {
     }
     
     /**
-     * 
+     * The attachment state of the volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param state 
+     * @param state The attachment state of the volume.
      *
      * @see VolumeAttachmentState
      */
@@ -192,14 +185,14 @@ public class VolumeAttachment implements Serializable {
     }
     
     /**
-     * 
+     * The attachment state of the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param state 
+     * @param state The attachment state of the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -212,12 +205,12 @@ public class VolumeAttachment implements Serializable {
     }
 
     /**
-     * 
+     * The attachment state of the volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param state 
+     * @param state The attachment state of the volume.
      *
      * @see VolumeAttachmentState
      */
@@ -226,14 +219,14 @@ public class VolumeAttachment implements Serializable {
     }
     
     /**
-     * 
+     * The attachment state of the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param state 
+     * @param state The attachment state of the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -246,29 +239,29 @@ public class VolumeAttachment implements Serializable {
     }
 
     /**
-     * Timestamp when this attachment initiated.
+     * The time stamp when the attachment initiated.
      *
-     * @return Timestamp when this attachment initiated.
+     * @return The time stamp when the attachment initiated.
      */
     public java.util.Date getAttachTime() {
         return attachTime;
     }
     
     /**
-     * Timestamp when this attachment initiated.
+     * The time stamp when the attachment initiated.
      *
-     * @param attachTime Timestamp when this attachment initiated.
+     * @param attachTime The time stamp when the attachment initiated.
      */
     public void setAttachTime(java.util.Date attachTime) {
         this.attachTime = attachTime;
     }
     
     /**
-     * Timestamp when this attachment initiated.
+     * The time stamp when the attachment initiated.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachTime Timestamp when this attachment initiated.
+     * @param attachTime The time stamp when the attachment initiated.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -279,35 +272,35 @@ public class VolumeAttachment implements Serializable {
     }
 
     /**
-     * ` <p> Whether this volume will be deleted or not when the associated
-     * instance is terminated.
+     * Indicates whether the Amazon EBS volume is deleted on instance
+     * termination.
      *
-     * @return ` <p> Whether this volume will be deleted or not when the associated
-     *         instance is terminated.
+     * @return Indicates whether the Amazon EBS volume is deleted on instance
+     *         termination.
      */
     public Boolean isDeleteOnTermination() {
         return deleteOnTermination;
     }
     
     /**
-     * ` <p> Whether this volume will be deleted or not when the associated
-     * instance is terminated.
+     * Indicates whether the Amazon EBS volume is deleted on instance
+     * termination.
      *
-     * @param deleteOnTermination ` <p> Whether this volume will be deleted or not when the associated
-     *         instance is terminated.
+     * @param deleteOnTermination Indicates whether the Amazon EBS volume is deleted on instance
+     *         termination.
      */
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
     
     /**
-     * ` <p> Whether this volume will be deleted or not when the associated
-     * instance is terminated.
+     * Indicates whether the Amazon EBS volume is deleted on instance
+     * termination.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deleteOnTermination ` <p> Whether this volume will be deleted or not when the associated
-     *         instance is terminated.
+     * @param deleteOnTermination Indicates whether the Amazon EBS volume is deleted on instance
+     *         termination.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -318,11 +311,11 @@ public class VolumeAttachment implements Serializable {
     }
 
     /**
-     * ` <p> Whether this volume will be deleted or not when the associated
-     * instance is terminated.
+     * Indicates whether the Amazon EBS volume is deleted on instance
+     * termination.
      *
-     * @return ` <p> Whether this volume will be deleted or not when the associated
-     *         instance is terminated.
+     * @return Indicates whether the Amazon EBS volume is deleted on instance
+     *         termination.
      */
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;

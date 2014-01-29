@@ -46,6 +46,7 @@ public class DescribeSeverityLevelsResultJsonUnmarshaller implements Unmarshalle
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("severityLevels", targetDepth)) {
+                    context.nextToken();
                     describeSeverityLevelsResult.setSeverityLevels(new ListUnmarshaller<SeverityLevel>(SeverityLevelJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

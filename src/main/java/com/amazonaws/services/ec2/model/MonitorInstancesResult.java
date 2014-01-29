@@ -17,25 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of enabling monitoring on a set of Amazon EC2 instances. Contains the updated monitoring status for each instance specified in the
- * request.
- * </p>
+ * 
  */
 public class MonitorInstancesResult implements Serializable {
 
     /**
-     * A list of updated monitoring information for the instances specified
-     * in the request.
+     * Monitoring information for one or more instances.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceMonitoring> instanceMonitorings;
 
     /**
-     * A list of updated monitoring information for the instances specified
-     * in the request.
+     * Monitoring information for one or more instances.
      *
-     * @return A list of updated monitoring information for the instances specified
-     *         in the request.
+     * @return Monitoring information for one or more instances.
      */
     public java.util.List<InstanceMonitoring> getInstanceMonitorings() {
         if (instanceMonitorings == null) {
@@ -46,11 +40,9 @@ public class MonitorInstancesResult implements Serializable {
     }
     
     /**
-     * A list of updated monitoring information for the instances specified
-     * in the request.
+     * Monitoring information for one or more instances.
      *
-     * @param instanceMonitorings A list of updated monitoring information for the instances specified
-     *         in the request.
+     * @param instanceMonitorings Monitoring information for one or more instances.
      */
     public void setInstanceMonitorings(java.util.Collection<InstanceMonitoring> instanceMonitorings) {
         if (instanceMonitorings == null) {
@@ -63,13 +55,11 @@ public class MonitorInstancesResult implements Serializable {
     }
     
     /**
-     * A list of updated monitoring information for the instances specified
-     * in the request.
+     * Monitoring information for one or more instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceMonitorings A list of updated monitoring information for the instances specified
-     *         in the request.
+     * @param instanceMonitorings Monitoring information for one or more instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -83,13 +73,11 @@ public class MonitorInstancesResult implements Serializable {
     }
     
     /**
-     * A list of updated monitoring information for the instances specified
-     * in the request.
+     * Monitoring information for one or more instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceMonitorings A list of updated monitoring information for the instances specified
-     *         in the request.
+     * @param instanceMonitorings Monitoring information for one or more instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

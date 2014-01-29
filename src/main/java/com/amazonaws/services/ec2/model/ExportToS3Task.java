@@ -17,25 +17,46 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Export To S3 Task
+ * 
  */
 public class ExportToS3Task implements Serializable {
 
+    /**
+     * The format for the exported image.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>VMDK, RAW, VHD
+     */
     private String diskImageFormat;
 
+    /**
+     * The container format used to combine disk images with metadata (such
+     * as OVF). If absent, only the disk image is exported.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ova
+     */
     private String containerFormat;
 
+    /**
+     * The Amazon S3 bucket for the destination image. The destination bucket
+     * must exist and grant WRITE and READ_ACL permissions to the AWS account
+     * <code>vm-import-export@amazon.com</code>.
+     */
     private String s3Bucket;
 
+    /**
+     * 
+     */
     private String s3Key;
 
     /**
-     * Returns the value of the DiskImageFormat property for this object.
+     * The format for the exported image.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
-     * @return The value of the DiskImageFormat property for this object.
+     * @return The format for the exported image.
      *
      * @see DiskImageFormat
      */
@@ -44,12 +65,12 @@ public class ExportToS3Task implements Serializable {
     }
     
     /**
-     * Sets the value of the DiskImageFormat property for this object.
+     * The format for the exported image.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
-     * @param diskImageFormat The new value for the DiskImageFormat property for this object.
+     * @param diskImageFormat The format for the exported image.
      *
      * @see DiskImageFormat
      */
@@ -58,14 +79,14 @@ public class ExportToS3Task implements Serializable {
     }
     
     /**
-     * Sets the value of the DiskImageFormat property for this object.
+     * The format for the exported image.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
-     * @param diskImageFormat The new value for the DiskImageFormat property for this object.
+     * @param diskImageFormat The format for the exported image.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -78,12 +99,12 @@ public class ExportToS3Task implements Serializable {
     }
 
     /**
-     * Sets the value of the DiskImageFormat property for this object.
+     * The format for the exported image.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
-     * @param diskImageFormat The new value for the DiskImageFormat property for this object.
+     * @param diskImageFormat The format for the exported image.
      *
      * @see DiskImageFormat
      */
@@ -92,14 +113,14 @@ public class ExportToS3Task implements Serializable {
     }
     
     /**
-     * Sets the value of the DiskImageFormat property for this object.
+     * The format for the exported image.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
-     * @param diskImageFormat The new value for the DiskImageFormat property for this object.
+     * @param diskImageFormat The format for the exported image.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -112,12 +133,14 @@ public class ExportToS3Task implements Serializable {
     }
 
     /**
-     * Returns the value of the ContainerFormat property for this object.
+     * The container format used to combine disk images with metadata (such
+     * as OVF). If absent, only the disk image is exported.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ova
      *
-     * @return The value of the ContainerFormat property for this object.
+     * @return The container format used to combine disk images with metadata (such
+     *         as OVF). If absent, only the disk image is exported.
      *
      * @see ContainerFormat
      */
@@ -126,12 +149,14 @@ public class ExportToS3Task implements Serializable {
     }
     
     /**
-     * Sets the value of the ContainerFormat property for this object.
+     * The container format used to combine disk images with metadata (such
+     * as OVF). If absent, only the disk image is exported.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ova
      *
-     * @param containerFormat The new value for the ContainerFormat property for this object.
+     * @param containerFormat The container format used to combine disk images with metadata (such
+     *         as OVF). If absent, only the disk image is exported.
      *
      * @see ContainerFormat
      */
@@ -140,14 +165,16 @@ public class ExportToS3Task implements Serializable {
     }
     
     /**
-     * Sets the value of the ContainerFormat property for this object.
+     * The container format used to combine disk images with metadata (such
+     * as OVF). If absent, only the disk image is exported.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ova
      *
-     * @param containerFormat The new value for the ContainerFormat property for this object.
+     * @param containerFormat The container format used to combine disk images with metadata (such
+     *         as OVF). If absent, only the disk image is exported.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -160,12 +187,14 @@ public class ExportToS3Task implements Serializable {
     }
 
     /**
-     * Sets the value of the ContainerFormat property for this object.
+     * The container format used to combine disk images with metadata (such
+     * as OVF). If absent, only the disk image is exported.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ova
      *
-     * @param containerFormat The new value for the ContainerFormat property for this object.
+     * @param containerFormat The container format used to combine disk images with metadata (such
+     *         as OVF). If absent, only the disk image is exported.
      *
      * @see ContainerFormat
      */
@@ -174,14 +203,16 @@ public class ExportToS3Task implements Serializable {
     }
     
     /**
-     * Sets the value of the ContainerFormat property for this object.
+     * The container format used to combine disk images with metadata (such
+     * as OVF). If absent, only the disk image is exported.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ova
      *
-     * @param containerFormat The new value for the ContainerFormat property for this object.
+     * @param containerFormat The container format used to combine disk images with metadata (such
+     *         as OVF). If absent, only the disk image is exported.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -194,29 +225,41 @@ public class ExportToS3Task implements Serializable {
     }
 
     /**
-     * Returns the value of the S3Bucket property for this object.
+     * The Amazon S3 bucket for the destination image. The destination bucket
+     * must exist and grant WRITE and READ_ACL permissions to the AWS account
+     * <code>vm-import-export@amazon.com</code>.
      *
-     * @return The value of the S3Bucket property for this object.
+     * @return The Amazon S3 bucket for the destination image. The destination bucket
+     *         must exist and grant WRITE and READ_ACL permissions to the AWS account
+     *         <code>vm-import-export@amazon.com</code>.
      */
     public String getS3Bucket() {
         return s3Bucket;
     }
     
     /**
-     * Sets the value of the S3Bucket property for this object.
+     * The Amazon S3 bucket for the destination image. The destination bucket
+     * must exist and grant WRITE and READ_ACL permissions to the AWS account
+     * <code>vm-import-export@amazon.com</code>.
      *
-     * @param s3Bucket The new value for the S3Bucket property for this object.
+     * @param s3Bucket The Amazon S3 bucket for the destination image. The destination bucket
+     *         must exist and grant WRITE and READ_ACL permissions to the AWS account
+     *         <code>vm-import-export@amazon.com</code>.
      */
     public void setS3Bucket(String s3Bucket) {
         this.s3Bucket = s3Bucket;
     }
     
     /**
-     * Sets the value of the S3Bucket property for this object.
+     * The Amazon S3 bucket for the destination image. The destination bucket
+     * must exist and grant WRITE and READ_ACL permissions to the AWS account
+     * <code>vm-import-export@amazon.com</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param s3Bucket The new value for the S3Bucket property for this object.
+     * @param s3Bucket The Amazon S3 bucket for the destination image. The destination bucket
+     *         must exist and grant WRITE and READ_ACL permissions to the AWS account
+     *         <code>vm-import-export@amazon.com</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -227,29 +270,29 @@ public class ExportToS3Task implements Serializable {
     }
 
     /**
-     * Returns the value of the S3Key property for this object.
+     * 
      *
-     * @return The value of the S3Key property for this object.
+     * @return 
      */
     public String getS3Key() {
         return s3Key;
     }
     
     /**
-     * Sets the value of the S3Key property for this object.
+     * 
      *
-     * @param s3Key The new value for the S3Key property for this object.
+     * @param s3Key 
      */
     public void setS3Key(String s3Key) {
         this.s3Key = s3Key;
     }
     
     /**
-     * Sets the value of the S3Key property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param s3Key The new value for the S3Key property for this object.
+     * @param s3Key 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

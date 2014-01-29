@@ -46,6 +46,7 @@ public class CreateTapesResultJsonUnmarshaller implements Unmarshaller<CreateTap
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TapeARNs", targetDepth)) {
+                    context.nextToken();
                     createTapesResult.setTapeARNs(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

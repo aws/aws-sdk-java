@@ -23,25 +23,92 @@ import com.amazonaws.services.ec2.model.transform.DescribeVolumeStatusRequestMar
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVolumeStatus(DescribeVolumeStatusRequest) DescribeVolumeStatus operation}.
  * <p>
- * Describes the status of a volume.
+ * Describes the status of the specified volumes. Volume status provides the result of the checks performed on your volumes to determine events that can
+ * impair the performance of your volumes. The performance of a volume can be affected if an issue occurs on the volume's underlying host. If the
+ * volume's underlying host experiences a power outage or system issue, after the system is restored, there could be data inconsistencies on the volume.
+ * Volume events notify you if this occurs. Volume actions notify you if any action needs to be taken in response to the event.
+ * </p>
+ * <p>
+ * The <code>DescribeVolumeStatus</code> operation provides the following information about the specified volumes:
+ * </p>
+ * <p>
+ * <i>Status</i> : Reflects the current status of the volume. The possible values are <code>ok</code> ,
+ * <code>impaired</code> ,
+ * <code>warning</code> , or <code>insufficient-data</code> . If all checks pass, the overall status of the volume is <code>ok</code>
+ * . If the check fails, the overall status is <code>impaired</code> . If the status is <code>insufficient-data</code> , then the checks may still be
+ * taking place on your volume at the time. We recommend that you retry the request. For more information on volume status, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html"> Monitoring the Status of Your Volumes </a> .
+ * </p>
+ * <p>
+ * <i>Events</i> : Reflect the cause of a volume status and may require you to take action. For example, if your volume returns an <code>impaired</code>
+ * status, then the volume event might be <code>potential-data-inconsistency</code> . This means that your volume has been affected by an issue with the
+ * underlying host, has all I/O operations disabled, and may have inconsistent data.
+ * </p>
+ * <p>
+ * <i>Actions</i> : Reflect the actions you may have to take in response to an event. For example, if the status of the volume is <code>impaired</code>
+ * and the volume event shows <code>potential-data-inconsistency</code> , then the action shows <code>enable-volume-io</code> . This means that you may
+ * want to enable the I/O operations for the volume by calling the EnableVolumeIO action and then check the volume for data consistency.
+ * </p>
+ * <p>
+ * <b>NOTE:</b> Volume status is based on the volume status checks, and does not reflect the volume state. Therefore, volume status does not indicate
+ * volumes in the error state (for example, when a volume is incapable of accepting I/O.)
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVolumeStatus(DescribeVolumeStatusRequest)
  */
 public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVolumeStatusRequest> {
 
+    /**
+     * One or more volume IDs. <p>Default: Describes all your volumes.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> volumeIds;
 
+    /**
+     * One or more filters. <ul> <li> <p><code>action.code</code> - The
+     * action code for the event (for example,
+     * <code>enable-volume-io</code>). </li> <li>
+     * <p><code>action.description</code> - A description of the action.
+     * </li> <li> <p><code>action.event-id</code> - The event ID associated
+     * with the action. </li> <li> <p><code>availability-zone</code> - The
+     * Availability Zone of the instance. </li> <li>
+     * <p><code>event.description</code> - A description of the event. </li>
+     * <li> <p><code>event.event-id</code> - The event ID. </li> <li>
+     * <p><code>event.event-type</code> - The event type (for
+     * <code>io-enabled</code>: <code>passed</code> | <code>failed</code>;
+     * for <code>io-performance</code>: <code>io-performance:degraded</code>
+     * | <code>io-performance:severely-degraded</code> |
+     * <code>io-performance:stalled</code>). </li> <li>
+     * <p><code>event.not-after</code> - The latest end time for the event.
+     * </li> <li> <p><code>event.not-before</code> - The earliest start time
+     * for the event. </li> <li> <p><code>volume-status.details-name</code> -
+     * The cause for <code>volume-status.status</code>
+     * (<code>io-enabled</code> | <code>io-performance</code>). </li> <li>
+     * <p><code>volume-status.details-status</code> - The status of
+     * <code>volume-status.details-name</code> (for <code>io-enabled</code>:
+     * <code>passed</code> | <code>failed</code>; for
+     * <code>io-performance</code>: <code>normal</code> |
+     * <code>degraded</code> | <code>severely-degraded</code> |
+     * <code>stalled</code>). </li> <li> <p><code>volume-status.status</code>
+     * - The status of the volume (<code>ok</code> | <code>impaired</code> |
+     * <code>warning</code> | <code>insufficient-data</code>). </li> </ul>
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
+    /**
+     * The next paginated set of results to return using the pagination token
+     * returned by a previous call.
+     */
     private String nextToken;
 
+    /**
+     * The maximum number of paginated volume items per response.
+     */
     private Integer maxResults;
 
     /**
-     * Returns the value of the VolumeIds property for this object.
+     * One or more volume IDs. <p>Default: Describes all your volumes.
      *
-     * @return The value of the VolumeIds property for this object.
+     * @return One or more volume IDs. <p>Default: Describes all your volumes.
      */
     public java.util.List<String> getVolumeIds() {
         if (volumeIds == null) {
@@ -52,9 +119,9 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Sets the value of the VolumeIds property for this object.
+     * One or more volume IDs. <p>Default: Describes all your volumes.
      *
-     * @param volumeIds The new value for the VolumeIds property for this object.
+     * @param volumeIds One or more volume IDs. <p>Default: Describes all your volumes.
      */
     public void setVolumeIds(java.util.Collection<String> volumeIds) {
         if (volumeIds == null) {
@@ -67,11 +134,11 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Sets the value of the VolumeIds property for this object.
+     * One or more volume IDs. <p>Default: Describes all your volumes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeIds The new value for the VolumeIds property for this object.
+     * @param volumeIds One or more volume IDs. <p>Default: Describes all your volumes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -85,11 +152,11 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Sets the value of the VolumeIds property for this object.
+     * One or more volume IDs. <p>Default: Describes all your volumes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeIds The new value for the VolumeIds property for this object.
+     * @param volumeIds One or more volume IDs. <p>Default: Describes all your volumes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -107,9 +174,61 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Returns the value of the Filters property for this object.
+     * One or more filters. <ul> <li> <p><code>action.code</code> - The
+     * action code for the event (for example,
+     * <code>enable-volume-io</code>). </li> <li>
+     * <p><code>action.description</code> - A description of the action.
+     * </li> <li> <p><code>action.event-id</code> - The event ID associated
+     * with the action. </li> <li> <p><code>availability-zone</code> - The
+     * Availability Zone of the instance. </li> <li>
+     * <p><code>event.description</code> - A description of the event. </li>
+     * <li> <p><code>event.event-id</code> - The event ID. </li> <li>
+     * <p><code>event.event-type</code> - The event type (for
+     * <code>io-enabled</code>: <code>passed</code> | <code>failed</code>;
+     * for <code>io-performance</code>: <code>io-performance:degraded</code>
+     * | <code>io-performance:severely-degraded</code> |
+     * <code>io-performance:stalled</code>). </li> <li>
+     * <p><code>event.not-after</code> - The latest end time for the event.
+     * </li> <li> <p><code>event.not-before</code> - The earliest start time
+     * for the event. </li> <li> <p><code>volume-status.details-name</code> -
+     * The cause for <code>volume-status.status</code>
+     * (<code>io-enabled</code> | <code>io-performance</code>). </li> <li>
+     * <p><code>volume-status.details-status</code> - The status of
+     * <code>volume-status.details-name</code> (for <code>io-enabled</code>:
+     * <code>passed</code> | <code>failed</code>; for
+     * <code>io-performance</code>: <code>normal</code> |
+     * <code>degraded</code> | <code>severely-degraded</code> |
+     * <code>stalled</code>). </li> <li> <p><code>volume-status.status</code>
+     * - The status of the volume (<code>ok</code> | <code>impaired</code> |
+     * <code>warning</code> | <code>insufficient-data</code>). </li> </ul>
      *
-     * @return The value of the Filters property for this object.
+     * @return One or more filters. <ul> <li> <p><code>action.code</code> - The
+     *         action code for the event (for example,
+     *         <code>enable-volume-io</code>). </li> <li>
+     *         <p><code>action.description</code> - A description of the action.
+     *         </li> <li> <p><code>action.event-id</code> - The event ID associated
+     *         with the action. </li> <li> <p><code>availability-zone</code> - The
+     *         Availability Zone of the instance. </li> <li>
+     *         <p><code>event.description</code> - A description of the event. </li>
+     *         <li> <p><code>event.event-id</code> - The event ID. </li> <li>
+     *         <p><code>event.event-type</code> - The event type (for
+     *         <code>io-enabled</code>: <code>passed</code> | <code>failed</code>;
+     *         for <code>io-performance</code>: <code>io-performance:degraded</code>
+     *         | <code>io-performance:severely-degraded</code> |
+     *         <code>io-performance:stalled</code>). </li> <li>
+     *         <p><code>event.not-after</code> - The latest end time for the event.
+     *         </li> <li> <p><code>event.not-before</code> - The earliest start time
+     *         for the event. </li> <li> <p><code>volume-status.details-name</code> -
+     *         The cause for <code>volume-status.status</code>
+     *         (<code>io-enabled</code> | <code>io-performance</code>). </li> <li>
+     *         <p><code>volume-status.details-status</code> - The status of
+     *         <code>volume-status.details-name</code> (for <code>io-enabled</code>:
+     *         <code>passed</code> | <code>failed</code>; for
+     *         <code>io-performance</code>: <code>normal</code> |
+     *         <code>degraded</code> | <code>severely-degraded</code> |
+     *         <code>stalled</code>). </li> <li> <p><code>volume-status.status</code>
+     *         - The status of the volume (<code>ok</code> | <code>impaired</code> |
+     *         <code>warning</code> | <code>insufficient-data</code>). </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -120,9 +239,61 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Sets the value of the Filters property for this object.
+     * One or more filters. <ul> <li> <p><code>action.code</code> - The
+     * action code for the event (for example,
+     * <code>enable-volume-io</code>). </li> <li>
+     * <p><code>action.description</code> - A description of the action.
+     * </li> <li> <p><code>action.event-id</code> - The event ID associated
+     * with the action. </li> <li> <p><code>availability-zone</code> - The
+     * Availability Zone of the instance. </li> <li>
+     * <p><code>event.description</code> - A description of the event. </li>
+     * <li> <p><code>event.event-id</code> - The event ID. </li> <li>
+     * <p><code>event.event-type</code> - The event type (for
+     * <code>io-enabled</code>: <code>passed</code> | <code>failed</code>;
+     * for <code>io-performance</code>: <code>io-performance:degraded</code>
+     * | <code>io-performance:severely-degraded</code> |
+     * <code>io-performance:stalled</code>). </li> <li>
+     * <p><code>event.not-after</code> - The latest end time for the event.
+     * </li> <li> <p><code>event.not-before</code> - The earliest start time
+     * for the event. </li> <li> <p><code>volume-status.details-name</code> -
+     * The cause for <code>volume-status.status</code>
+     * (<code>io-enabled</code> | <code>io-performance</code>). </li> <li>
+     * <p><code>volume-status.details-status</code> - The status of
+     * <code>volume-status.details-name</code> (for <code>io-enabled</code>:
+     * <code>passed</code> | <code>failed</code>; for
+     * <code>io-performance</code>: <code>normal</code> |
+     * <code>degraded</code> | <code>severely-degraded</code> |
+     * <code>stalled</code>). </li> <li> <p><code>volume-status.status</code>
+     * - The status of the volume (<code>ok</code> | <code>impaired</code> |
+     * <code>warning</code> | <code>insufficient-data</code>). </li> </ul>
      *
-     * @param filters The new value for the Filters property for this object.
+     * @param filters One or more filters. <ul> <li> <p><code>action.code</code> - The
+     *         action code for the event (for example,
+     *         <code>enable-volume-io</code>). </li> <li>
+     *         <p><code>action.description</code> - A description of the action.
+     *         </li> <li> <p><code>action.event-id</code> - The event ID associated
+     *         with the action. </li> <li> <p><code>availability-zone</code> - The
+     *         Availability Zone of the instance. </li> <li>
+     *         <p><code>event.description</code> - A description of the event. </li>
+     *         <li> <p><code>event.event-id</code> - The event ID. </li> <li>
+     *         <p><code>event.event-type</code> - The event type (for
+     *         <code>io-enabled</code>: <code>passed</code> | <code>failed</code>;
+     *         for <code>io-performance</code>: <code>io-performance:degraded</code>
+     *         | <code>io-performance:severely-degraded</code> |
+     *         <code>io-performance:stalled</code>). </li> <li>
+     *         <p><code>event.not-after</code> - The latest end time for the event.
+     *         </li> <li> <p><code>event.not-before</code> - The earliest start time
+     *         for the event. </li> <li> <p><code>volume-status.details-name</code> -
+     *         The cause for <code>volume-status.status</code>
+     *         (<code>io-enabled</code> | <code>io-performance</code>). </li> <li>
+     *         <p><code>volume-status.details-status</code> - The status of
+     *         <code>volume-status.details-name</code> (for <code>io-enabled</code>:
+     *         <code>passed</code> | <code>failed</code>; for
+     *         <code>io-performance</code>: <code>normal</code> |
+     *         <code>degraded</code> | <code>severely-degraded</code> |
+     *         <code>stalled</code>). </li> <li> <p><code>volume-status.status</code>
+     *         - The status of the volume (<code>ok</code> | <code>impaired</code> |
+     *         <code>warning</code> | <code>insufficient-data</code>). </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -135,11 +306,63 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Sets the value of the Filters property for this object.
+     * One or more filters. <ul> <li> <p><code>action.code</code> - The
+     * action code for the event (for example,
+     * <code>enable-volume-io</code>). </li> <li>
+     * <p><code>action.description</code> - A description of the action.
+     * </li> <li> <p><code>action.event-id</code> - The event ID associated
+     * with the action. </li> <li> <p><code>availability-zone</code> - The
+     * Availability Zone of the instance. </li> <li>
+     * <p><code>event.description</code> - A description of the event. </li>
+     * <li> <p><code>event.event-id</code> - The event ID. </li> <li>
+     * <p><code>event.event-type</code> - The event type (for
+     * <code>io-enabled</code>: <code>passed</code> | <code>failed</code>;
+     * for <code>io-performance</code>: <code>io-performance:degraded</code>
+     * | <code>io-performance:severely-degraded</code> |
+     * <code>io-performance:stalled</code>). </li> <li>
+     * <p><code>event.not-after</code> - The latest end time for the event.
+     * </li> <li> <p><code>event.not-before</code> - The earliest start time
+     * for the event. </li> <li> <p><code>volume-status.details-name</code> -
+     * The cause for <code>volume-status.status</code>
+     * (<code>io-enabled</code> | <code>io-performance</code>). </li> <li>
+     * <p><code>volume-status.details-status</code> - The status of
+     * <code>volume-status.details-name</code> (for <code>io-enabled</code>:
+     * <code>passed</code> | <code>failed</code>; for
+     * <code>io-performance</code>: <code>normal</code> |
+     * <code>degraded</code> | <code>severely-degraded</code> |
+     * <code>stalled</code>). </li> <li> <p><code>volume-status.status</code>
+     * - The status of the volume (<code>ok</code> | <code>impaired</code> |
+     * <code>warning</code> | <code>insufficient-data</code>). </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters The new value for the Filters property for this object.
+     * @param filters One or more filters. <ul> <li> <p><code>action.code</code> - The
+     *         action code for the event (for example,
+     *         <code>enable-volume-io</code>). </li> <li>
+     *         <p><code>action.description</code> - A description of the action.
+     *         </li> <li> <p><code>action.event-id</code> - The event ID associated
+     *         with the action. </li> <li> <p><code>availability-zone</code> - The
+     *         Availability Zone of the instance. </li> <li>
+     *         <p><code>event.description</code> - A description of the event. </li>
+     *         <li> <p><code>event.event-id</code> - The event ID. </li> <li>
+     *         <p><code>event.event-type</code> - The event type (for
+     *         <code>io-enabled</code>: <code>passed</code> | <code>failed</code>;
+     *         for <code>io-performance</code>: <code>io-performance:degraded</code>
+     *         | <code>io-performance:severely-degraded</code> |
+     *         <code>io-performance:stalled</code>). </li> <li>
+     *         <p><code>event.not-after</code> - The latest end time for the event.
+     *         </li> <li> <p><code>event.not-before</code> - The earliest start time
+     *         for the event. </li> <li> <p><code>volume-status.details-name</code> -
+     *         The cause for <code>volume-status.status</code>
+     *         (<code>io-enabled</code> | <code>io-performance</code>). </li> <li>
+     *         <p><code>volume-status.details-status</code> - The status of
+     *         <code>volume-status.details-name</code> (for <code>io-enabled</code>:
+     *         <code>passed</code> | <code>failed</code>; for
+     *         <code>io-performance</code>: <code>normal</code> |
+     *         <code>degraded</code> | <code>severely-degraded</code> |
+     *         <code>stalled</code>). </li> <li> <p><code>volume-status.status</code>
+     *         - The status of the volume (<code>ok</code> | <code>impaired</code> |
+     *         <code>warning</code> | <code>insufficient-data</code>). </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -153,11 +376,63 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * Sets the value of the Filters property for this object.
+     * One or more filters. <ul> <li> <p><code>action.code</code> - The
+     * action code for the event (for example,
+     * <code>enable-volume-io</code>). </li> <li>
+     * <p><code>action.description</code> - A description of the action.
+     * </li> <li> <p><code>action.event-id</code> - The event ID associated
+     * with the action. </li> <li> <p><code>availability-zone</code> - The
+     * Availability Zone of the instance. </li> <li>
+     * <p><code>event.description</code> - A description of the event. </li>
+     * <li> <p><code>event.event-id</code> - The event ID. </li> <li>
+     * <p><code>event.event-type</code> - The event type (for
+     * <code>io-enabled</code>: <code>passed</code> | <code>failed</code>;
+     * for <code>io-performance</code>: <code>io-performance:degraded</code>
+     * | <code>io-performance:severely-degraded</code> |
+     * <code>io-performance:stalled</code>). </li> <li>
+     * <p><code>event.not-after</code> - The latest end time for the event.
+     * </li> <li> <p><code>event.not-before</code> - The earliest start time
+     * for the event. </li> <li> <p><code>volume-status.details-name</code> -
+     * The cause for <code>volume-status.status</code>
+     * (<code>io-enabled</code> | <code>io-performance</code>). </li> <li>
+     * <p><code>volume-status.details-status</code> - The status of
+     * <code>volume-status.details-name</code> (for <code>io-enabled</code>:
+     * <code>passed</code> | <code>failed</code>; for
+     * <code>io-performance</code>: <code>normal</code> |
+     * <code>degraded</code> | <code>severely-degraded</code> |
+     * <code>stalled</code>). </li> <li> <p><code>volume-status.status</code>
+     * - The status of the volume (<code>ok</code> | <code>impaired</code> |
+     * <code>warning</code> | <code>insufficient-data</code>). </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters The new value for the Filters property for this object.
+     * @param filters One or more filters. <ul> <li> <p><code>action.code</code> - The
+     *         action code for the event (for example,
+     *         <code>enable-volume-io</code>). </li> <li>
+     *         <p><code>action.description</code> - A description of the action.
+     *         </li> <li> <p><code>action.event-id</code> - The event ID associated
+     *         with the action. </li> <li> <p><code>availability-zone</code> - The
+     *         Availability Zone of the instance. </li> <li>
+     *         <p><code>event.description</code> - A description of the event. </li>
+     *         <li> <p><code>event.event-id</code> - The event ID. </li> <li>
+     *         <p><code>event.event-type</code> - The event type (for
+     *         <code>io-enabled</code>: <code>passed</code> | <code>failed</code>;
+     *         for <code>io-performance</code>: <code>io-performance:degraded</code>
+     *         | <code>io-performance:severely-degraded</code> |
+     *         <code>io-performance:stalled</code>). </li> <li>
+     *         <p><code>event.not-after</code> - The latest end time for the event.
+     *         </li> <li> <p><code>event.not-before</code> - The earliest start time
+     *         for the event. </li> <li> <p><code>volume-status.details-name</code> -
+     *         The cause for <code>volume-status.status</code>
+     *         (<code>io-enabled</code> | <code>io-performance</code>). </li> <li>
+     *         <p><code>volume-status.details-status</code> - The status of
+     *         <code>volume-status.details-name</code> (for <code>io-enabled</code>:
+     *         <code>passed</code> | <code>failed</code>; for
+     *         <code>io-performance</code>: <code>normal</code> |
+     *         <code>degraded</code> | <code>severely-degraded</code> |
+     *         <code>stalled</code>). </li> <li> <p><code>volume-status.status</code>
+     *         - The status of the volume (<code>ok</code> | <code>impaired</code> |
+     *         <code>warning</code> | <code>insufficient-data</code>). </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -175,29 +450,35 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Returns the value of the NextToken property for this object.
+     * The next paginated set of results to return using the pagination token
+     * returned by a previous call.
      *
-     * @return The value of the NextToken property for this object.
+     * @return The next paginated set of results to return using the pagination token
+     *         returned by a previous call.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * The next paginated set of results to return using the pagination token
+     * returned by a previous call.
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken The next paginated set of results to return using the pagination token
+     *         returned by a previous call.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * The next paginated set of results to return using the pagination token
+     * returned by a previous call.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken The next paginated set of results to return using the pagination token
+     *         returned by a previous call.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -208,29 +489,29 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Returns the value of the MaxResults property for this object.
+     * The maximum number of paginated volume items per response.
      *
-     * @return The value of the MaxResults property for this object.
+     * @return The maximum number of paginated volume items per response.
      */
     public Integer getMaxResults() {
         return maxResults;
     }
     
     /**
-     * Sets the value of the MaxResults property for this object.
+     * The maximum number of paginated volume items per response.
      *
-     * @param maxResults The new value for the MaxResults property for this object.
+     * @param maxResults The maximum number of paginated volume items per response.
      */
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
     
     /**
-     * Sets the value of the MaxResults property for this object.
+     * The maximum number of paginated volume items per response.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxResults The new value for the MaxResults property for this object.
+     * @param maxResults The maximum number of paginated volume items per response.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

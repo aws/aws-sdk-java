@@ -23,8 +23,8 @@ import com.amazonaws.services.ec2.model.transform.AttachVpnGatewayRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#attachVpnGateway(AttachVpnGatewayRequest) AttachVpnGateway operation}.
  * <p>
- * Attaches a VPN gateway to a VPC. This is the last step required to get your VPC fully connected to your data center before launching instances in it.
- * For more information, go to Process for Using Amazon VPC in the Amazon Virtual Private Cloud Developer Guide.
+ * Attaches a virtual private gateway to a VPC. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
+ * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#attachVpnGateway(AttachVpnGatewayRequest)
@@ -32,12 +32,12 @@ import com.amazonaws.services.ec2.model.transform.AttachVpnGatewayRequestMarshal
 public class AttachVpnGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AttachVpnGatewayRequest> {
 
     /**
-     * The ID of the VPN gateway to attach to the VPC.
+     * The ID of the virtual private gateway.
      */
     private String vpnGatewayId;
 
     /**
-     * The ID of the VPC to attach to the VPN gateway.
+     * The ID of the VPC.
      */
     private String vpcId;
 
@@ -52,8 +52,8 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest implements 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param vpnGatewayId The ID of the VPN gateway to attach to the VPC.
-     * @param vpcId The ID of the VPC to attach to the VPN gateway.
+     * @param vpnGatewayId The ID of the virtual private gateway.
+     * @param vpcId The ID of the VPC.
      */
     public AttachVpnGatewayRequest(String vpnGatewayId, String vpcId) {
         setVpnGatewayId(vpnGatewayId);
@@ -61,29 +61,29 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The ID of the VPN gateway to attach to the VPC.
+     * The ID of the virtual private gateway.
      *
-     * @return The ID of the VPN gateway to attach to the VPC.
+     * @return The ID of the virtual private gateway.
      */
     public String getVpnGatewayId() {
         return vpnGatewayId;
     }
     
     /**
-     * The ID of the VPN gateway to attach to the VPC.
+     * The ID of the virtual private gateway.
      *
-     * @param vpnGatewayId The ID of the VPN gateway to attach to the VPC.
+     * @param vpnGatewayId The ID of the virtual private gateway.
      */
     public void setVpnGatewayId(String vpnGatewayId) {
         this.vpnGatewayId = vpnGatewayId;
     }
     
     /**
-     * The ID of the VPN gateway to attach to the VPC.
+     * The ID of the virtual private gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGatewayId The ID of the VPN gateway to attach to the VPC.
+     * @param vpnGatewayId The ID of the virtual private gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -94,29 +94,29 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The ID of the VPC to attach to the VPN gateway.
+     * The ID of the VPC.
      *
-     * @return The ID of the VPC to attach to the VPN gateway.
+     * @return The ID of the VPC.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * The ID of the VPC to attach to the VPN gateway.
+     * The ID of the VPC.
      *
-     * @param vpcId The ID of the VPC to attach to the VPN gateway.
+     * @param vpcId The ID of the VPC.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * The ID of the VPC to attach to the VPN gateway.
+     * The ID of the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The ID of the VPC to attach to the VPN gateway.
+     * @param vpcId The ID of the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -17,9 +17,7 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of creating a new EC2 image. Contains the ID of the new image.
- * </p>
+ * 
  */
 public class CreateImageResult implements Serializable {
 

@@ -83,8 +83,10 @@ public class AwsHostNameUtils {
      */
     private static String parseStandardRegionName(final String fragment) {
 
-        if (fragment.endsWith(".s3")) {
-            // host was 'bucket.s3.amazonaws.com', which is us-east-1.
+        if (fragment.endsWith(".s3")
+                || fragment.endsWith(".s3-external-1")) {
+            // host was 'bucket.s3.amazonaws.com' or 'bucket.s3-external-1.amazonaws.com',
+            // which is us-east-1.
             return "us-east-1";
         }
 

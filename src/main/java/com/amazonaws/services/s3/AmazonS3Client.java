@@ -86,6 +86,7 @@ import com.amazonaws.services.s3.internal.RepeatableFileInputStream;
 import com.amazonaws.services.s3.internal.RepeatableInputStream;
 import com.amazonaws.services.s3.internal.ResponseHeaderHandlerChain;
 import com.amazonaws.services.s3.internal.S3ErrorResponseHandler;
+import com.amazonaws.services.s3.internal.S3ExecutionContext;
 import com.amazonaws.services.s3.internal.S3MetadataResponseHandler;
 import com.amazonaws.services.s3.internal.S3ObjectResponseHandler;
 import com.amazonaws.services.s3.internal.S3QueryStringSigner;
@@ -240,9 +241,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
-    private String serviceName;
-    private String regionName;
-    private AWSS3V4Signer v4Signer;
+    /** Whether or not this client has an explicit region configured. */
+    private boolean hasExplicitRegion;
 
     /**
      * Constructs a new client to invoke service methods on Amazon S3. A
@@ -445,16 +445,33 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     @Override
-    public void setEndpoint(final String endpoint,
-                            final String serviceName,
-                            final String regionName) {
+    public void setEndpoint(String endpoint) {
+        /*
+         * When signing requests using a pre-Signature-Version-4 signer, it's
+         * possible to use the endpoint "s3.amazonaws.com" to access buckets in
+         * any region - we send the request to &lt;bucket&gt;.s3.amazonaws.com,
+         * which resolves to an S3 endpoint in the appropriate region.
+         * 
+         * However, when the user opts in to using Signature Version 4, we need
+         * to include the region of the bucket in the signature, and cannot
+         * take advantage of this handy feature of S3.
+         *
+         * If you want to use Signature Version 4 to access a bucket in the
+         * US Classic region (which does not have a region-specific endpoint),
+         * you'll need to call setRegion(Region.getRegion(Regions.US_EAST_1))
+         * to explicitly tell us which region to include in the signature.
+         */
 
-        super.setEndpoint(endpoint, serviceName, regionName);
-
-        this.v4Signer = null;
-        this.serviceName = serviceName;
-        this.regionName = regionName;
+        hasExplicitRegion = !(Constants.S3_HOSTNAME.equals(endpoint));
+        super.setEndpoint(endpoint);
     }
+
+    @Override
+    public void setRegion(com.amazonaws.regions.Region region) {
+        hasExplicitRegion = true;
+        super.setRegion(region);
+    }
+
 
     /**
      * <p>
@@ -483,18 +500,22 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             emptyListing.setVersionIdMarker(previousVersionListing.getNextVersionIdMarker());
             emptyListing.setMaxKeys(previousVersionListing.getMaxKeys());
             emptyListing.setPrefix(previousVersionListing.getPrefix());
+            emptyListing.setEncodingType(previousVersionListing.getEncodingType());
             emptyListing.setTruncated(false);
 
             return emptyListing;
         }
 
-        return listVersions(new ListVersionsRequest(
-                previousVersionListing.getBucketName(),
-                previousVersionListing.getPrefix(),
-                previousVersionListing.getNextKeyMarker(),
-                previousVersionListing.getNextVersionIdMarker(),
-                previousVersionListing.getDelimiter(),
-                new Integer( previousVersionListing.getMaxKeys() ) ));
+        return listVersions(
+                new ListVersionsRequest(
+                        previousVersionListing.getBucketName(),
+                        previousVersionListing.getPrefix(),
+                        previousVersionListing.getNextKeyMarker(),
+                        previousVersionListing.getNextVersionIdMarker(),
+                        previousVersionListing.getDelimiter(),
+                        new Integer( previousVersionListing.getMaxKeys() ))
+                    .withEncodingType(previousVersionListing.getEncodingType())
+               );
     }
 
     /* (non-Javadoc)
@@ -536,6 +557,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (listVersionsRequest.getVersionIdMarker() != null) request.addParameter("version-id-marker", listVersionsRequest.getVersionIdMarker());
         if (listVersionsRequest.getDelimiter() != null) request.addParameter("delimiter", listVersionsRequest.getDelimiter());
         if (listVersionsRequest.getMaxResults() != null && listVersionsRequest.getMaxResults().intValue() >= 0) request.addParameter("max-keys", listVersionsRequest.getMaxResults().toString());
+        if (listVersionsRequest.getEncodingType() != null) request.addParameter("encoding-type", listVersionsRequest.getEncodingType());
 
         return invoke(request, new Unmarshallers.VersionListUnmarshaller(), listVersionsRequest.getBucketName(), null);
     }
@@ -568,6 +590,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (listObjectsRequest.getMarker() != null) request.addParameter("marker", listObjectsRequest.getMarker());
         if (listObjectsRequest.getDelimiter() != null) request.addParameter("delimiter", listObjectsRequest.getDelimiter());
         if (listObjectsRequest.getMaxKeys() != null && listObjectsRequest.getMaxKeys().intValue() >= 0) request.addParameter("max-keys", listObjectsRequest.getMaxKeys().toString());
+        if (listObjectsRequest.getEncodingType() != null) request.addParameter("encoding-type", listObjectsRequest.getEncodingType());
 
         return invoke(request, new Unmarshallers.ListObjectsUnmarshaller(), listObjectsRequest.getBucketName(), null);
     }
@@ -587,17 +610,21 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             emptyListing.setMarker(previousObjectListing.getNextMarker());
             emptyListing.setMaxKeys(previousObjectListing.getMaxKeys());
             emptyListing.setPrefix(previousObjectListing.getPrefix());
+            emptyListing.setEncodingType(previousObjectListing.getEncodingType());
             emptyListing.setTruncated(false);
 
             return emptyListing;
         }
 
-        return listObjects(new ListObjectsRequest(
-                previousObjectListing.getBucketName(),
-                previousObjectListing.getPrefix(),
-                previousObjectListing.getNextMarker(),
-                previousObjectListing.getDelimiter(),
-                new Integer( previousObjectListing.getMaxKeys() ) ));
+        return listObjects(
+                new ListObjectsRequest(
+                        previousObjectListing.getBucketName(),
+                        previousObjectListing.getPrefix(),
+                        previousObjectListing.getNextMarker(),
+                        previousObjectListing.getDelimiter(),
+                        new Integer( previousObjectListing.getMaxKeys() ))
+                    .withEncodingType(previousObjectListing.getEncodingType())
+               );
     }
 
 
@@ -2259,6 +2286,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             request.addHeader(Headers.CONTENT_TYPE, generatePresignedUrlRequest.getContentType());
         }
 
+        if (generatePresignedUrlRequest.getContentMd5() != null) {
+            request.addHeader(Headers.CONTENT_MD5, generatePresignedUrlRequest.getContentMd5());
+        }
+
         addResponseHeaderParameters(request, generatePresignedUrlRequest.getResponseHeaders());
 
         Signer signer = getSigner();
@@ -2421,6 +2452,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (listMultipartUploadsRequest.getUploadIdMarker() != null) request.addParameter("upload-id-marker", listMultipartUploadsRequest.getUploadIdMarker());
         if (listMultipartUploadsRequest.getDelimiter() != null) request.addParameter("delimiter", listMultipartUploadsRequest.getDelimiter());
         if (listMultipartUploadsRequest.getPrefix() != null) request.addParameter("prefix", listMultipartUploadsRequest.getPrefix());
+        if (listMultipartUploadsRequest.getEncodingType() != null) request.addParameter("encoding-type", listMultipartUploadsRequest.getEncodingType());
 
         return invoke(request, new Unmarshallers.ListMultipartUploadsResultUnmarshaller(), listMultipartUploadsRequest.getBucketName(), null);
     }
@@ -2445,6 +2477,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         if (listPartsRequest.getMaxParts() != null) request.addParameter("max-parts", listPartsRequest.getMaxParts().toString());
         if (listPartsRequest.getPartNumberMarker() != null) request.addParameter("part-number-marker", listPartsRequest.getPartNumberMarker().toString());
+        if (listPartsRequest.getEncodingType() != null) request.addParameter("encoding-type", listPartsRequest.getEncodingType());
 
         return invoke(request, new Unmarshallers.ListPartsResultUnmarshaller(), listPartsRequest.getBucketName(), listPartsRequest.getKey());
     }
@@ -2750,20 +2783,48 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         invoke(request, voidResponseHandler, bucketName, key);
     }
 
+    /**
+     * Returns a "complete" S3 specific signer, taking into the S3 bucket, key,
+     * and the current S3 client configuration into account.
+     */
     protected Signer createSigner(final Request<?> request,
                                   final String bucketName,
                                   final String key) {
 
-        if (upgradeToSigV4()){
-            if (v4Signer == null) {
-                v4Signer = new AWSS3V4Signer();
-                v4Signer.setServiceName(serviceName);
-                v4Signer.setRegionName(regionName);
-            }
-            return v4Signer;
-        }
-
         Signer signer = getSigner();
+
+        if (upgradeToSigV4() && !(signer instanceof AWSS3V4Signer)){
+
+            AWSS3V4Signer v4Signer = new AWSS3V4Signer();
+
+            // Always set the service name; if the user has overridden it via
+            // setEndpoint(String, String, String), this will return the right
+            // value. Otherwise it will return "s3", which is an appropriate
+            // default.
+            v4Signer.setServiceName(getServiceNameIntern());
+
+            // If the user has set an authentication region override, pass it
+            // to the signer. Otherwise leave it null - the signer will parse
+            // region from the request endpoint.
+
+            String regionOverride = getSignerRegionOverride();
+            if (regionOverride == null) {
+                if (!hasExplicitRegion) {
+                    throw new AmazonClientException(
+                        "Signature Version 4 requires knowing the region of "
+                        + "the bucket you're trying to access. You can "
+                        + "configure a region by calling AmazonS3Client."
+                        + "setRegion(Region) or AmazonS3Client.setEndpoint("
+                        + "String) with a region-specific endpoint such as "
+                        + "\"s3-us-west-2.amazonaws.com\".");
+                }
+            } else {
+                v4Signer.setRegionName(regionOverride);
+            }
+
+            return v4Signer;
+
+        }
 
         if (signer instanceof S3Signer) {
 
@@ -3272,6 +3333,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                                   String bucketName,
                                   String key) {
         return invoke(request, new S3XmlResponseHandler<X>(unmarshaller), bucketName, key);
+    }
+
+    @Override
+    protected final ExecutionContext createExecutionContext(AmazonWebServiceRequest req) {
+        boolean isMetricsEnabled = isRequestMetricsEnabled(req) || isProfilingEnabled();
+        return new S3ExecutionContext(requestHandler2s, isMetricsEnabled, this);
     }
 
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,

@@ -17,18 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Cancel Spot Instance Requests Result
+ * 
  */
 public class CancelSpotInstanceRequestsResult implements Serializable {
 
+    /**
+     * One or more Spot Instance requests.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests;
 
     /**
-     * Returns the value of the CancelledSpotInstanceRequests property for
-     * this object.
+     * One or more Spot Instance requests.
      *
-     * @return The value of the CancelledSpotInstanceRequests property for this
-     *         object.
+     * @return One or more Spot Instance requests.
      */
     public java.util.List<CancelledSpotInstanceRequest> getCancelledSpotInstanceRequests() {
         if (cancelledSpotInstanceRequests == null) {
@@ -39,11 +40,9 @@ public class CancelSpotInstanceRequestsResult implements Serializable {
     }
     
     /**
-     * Sets the value of the CancelledSpotInstanceRequests property for this
-     * object.
+     * One or more Spot Instance requests.
      *
-     * @param cancelledSpotInstanceRequests The new value for the CancelledSpotInstanceRequests property for this
-     *         object.
+     * @param cancelledSpotInstanceRequests One or more Spot Instance requests.
      */
     public void setCancelledSpotInstanceRequests(java.util.Collection<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests) {
         if (cancelledSpotInstanceRequests == null) {
@@ -56,13 +55,11 @@ public class CancelSpotInstanceRequestsResult implements Serializable {
     }
     
     /**
-     * Sets the value of the CancelledSpotInstanceRequests property for this
-     * object.
+     * One or more Spot Instance requests.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cancelledSpotInstanceRequests The new value for the CancelledSpotInstanceRequests property for this
-     *         object.
+     * @param cancelledSpotInstanceRequests One or more Spot Instance requests.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -76,13 +73,11 @@ public class CancelSpotInstanceRequestsResult implements Serializable {
     }
     
     /**
-     * Sets the value of the CancelledSpotInstanceRequests property for this
-     * object.
+     * One or more Spot Instance requests.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cancelledSpotInstanceRequests The new value for the CancelledSpotInstanceRequests property for this
-     *         object.
+     * @param cancelledSpotInstanceRequests One or more Spot Instance requests.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -17,41 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of purchasing a Reserved Instances offering. Contains the new, unique ID of the Reserved Instances purchased for your account.
- * </p>
+ * 
  */
 public class PurchaseReservedInstancesOfferingResult implements Serializable {
 
     /**
-     * The unique ID of the Reserved Instances purchased for your account.
+     * The IDs of the purchased Reserved Instances.
      */
     private String reservedInstancesId;
 
     /**
-     * The unique ID of the Reserved Instances purchased for your account.
+     * The IDs of the purchased Reserved Instances.
      *
-     * @return The unique ID of the Reserved Instances purchased for your account.
+     * @return The IDs of the purchased Reserved Instances.
      */
     public String getReservedInstancesId() {
         return reservedInstancesId;
     }
     
     /**
-     * The unique ID of the Reserved Instances purchased for your account.
+     * The IDs of the purchased Reserved Instances.
      *
-     * @param reservedInstancesId The unique ID of the Reserved Instances purchased for your account.
+     * @param reservedInstancesId The IDs of the purchased Reserved Instances.
      */
     public void setReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
     }
     
     /**
-     * The unique ID of the Reserved Instances purchased for your account.
+     * The IDs of the purchased Reserved Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesId The unique ID of the Reserved Instances purchased for your account.
+     * @param reservedInstancesId The IDs of the purchased Reserved Instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

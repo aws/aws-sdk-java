@@ -17,18 +17,28 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Create Volume Permission Modifications
+ * 
  */
 public class CreateVolumePermissionModifications implements Serializable {
 
+    /**
+     * Adds a specific AWS account ID or group to a volume's list of create
+     * volume permissions.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission> add;
 
+    /**
+     * Removes a specific AWS account ID or group from a volume's list of
+     * create volume permissions.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission> remove;
 
     /**
-     * Returns the value of the Add property for this object.
+     * Adds a specific AWS account ID or group to a volume's list of create
+     * volume permissions.
      *
-     * @return The value of the Add property for this object.
+     * @return Adds a specific AWS account ID or group to a volume's list of create
+     *         volume permissions.
      */
     public java.util.List<CreateVolumePermission> getAdd() {
         if (add == null) {
@@ -39,9 +49,11 @@ public class CreateVolumePermissionModifications implements Serializable {
     }
     
     /**
-     * Sets the value of the Add property for this object.
+     * Adds a specific AWS account ID or group to a volume's list of create
+     * volume permissions.
      *
-     * @param add The new value for the Add property for this object.
+     * @param add Adds a specific AWS account ID or group to a volume's list of create
+     *         volume permissions.
      */
     public void setAdd(java.util.Collection<CreateVolumePermission> add) {
         if (add == null) {
@@ -54,11 +66,13 @@ public class CreateVolumePermissionModifications implements Serializable {
     }
     
     /**
-     * Sets the value of the Add property for this object.
+     * Adds a specific AWS account ID or group to a volume's list of create
+     * volume permissions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param add The new value for the Add property for this object.
+     * @param add Adds a specific AWS account ID or group to a volume's list of create
+     *         volume permissions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -72,11 +86,13 @@ public class CreateVolumePermissionModifications implements Serializable {
     }
     
     /**
-     * Sets the value of the Add property for this object.
+     * Adds a specific AWS account ID or group to a volume's list of create
+     * volume permissions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param add The new value for the Add property for this object.
+     * @param add Adds a specific AWS account ID or group to a volume's list of create
+     *         volume permissions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -94,9 +110,11 @@ public class CreateVolumePermissionModifications implements Serializable {
     }
 
     /**
-     * Returns the value of the Remove property for this object.
+     * Removes a specific AWS account ID or group from a volume's list of
+     * create volume permissions.
      *
-     * @return The value of the Remove property for this object.
+     * @return Removes a specific AWS account ID or group from a volume's list of
+     *         create volume permissions.
      */
     public java.util.List<CreateVolumePermission> getRemove() {
         if (remove == null) {
@@ -107,9 +125,11 @@ public class CreateVolumePermissionModifications implements Serializable {
     }
     
     /**
-     * Sets the value of the Remove property for this object.
+     * Removes a specific AWS account ID or group from a volume's list of
+     * create volume permissions.
      *
-     * @param remove The new value for the Remove property for this object.
+     * @param remove Removes a specific AWS account ID or group from a volume's list of
+     *         create volume permissions.
      */
     public void setRemove(java.util.Collection<CreateVolumePermission> remove) {
         if (remove == null) {
@@ -122,11 +142,13 @@ public class CreateVolumePermissionModifications implements Serializable {
     }
     
     /**
-     * Sets the value of the Remove property for this object.
+     * Removes a specific AWS account ID or group from a volume's list of
+     * create volume permissions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param remove The new value for the Remove property for this object.
+     * @param remove Removes a specific AWS account ID or group from a volume's list of
+     *         create volume permissions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -140,11 +162,13 @@ public class CreateVolumePermissionModifications implements Serializable {
     }
     
     /**
-     * Sets the value of the Remove property for this object.
+     * Removes a specific AWS account ID or group from a volume's list of
+     * create volume permissions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param remove The new value for the Remove property for this object.
+     * @param remove Removes a specific AWS account ID or group from a volume's list of
+     *         create volume permissions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

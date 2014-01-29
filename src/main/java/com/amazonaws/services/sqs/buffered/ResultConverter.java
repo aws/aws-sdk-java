@@ -26,30 +26,30 @@ import com.amazonaws.services.sqs.model.SendMessageResult;
 
 /** this class converts sqs batch entry results to individual results*/
 class ResultConverter {
-    
+
     static SendMessageResult convert( SendMessageBatchResultEntry br) {
         SendMessageResult toReturn = new SendMessageResult();
         toReturn.setMD5OfMessageBody(br.getMD5OfMessageBody());
         toReturn.setMessageId(br.getMessageId());
         return toReturn;
-    } 
-    
+    }
+
     static Exception convert ( BatchResultErrorEntry be)
     {
         AmazonServiceException toReturn = new AmazonServiceException( be.getMessage());
-        
+
         toReturn.setErrorCode(be.getCode());
         toReturn.setErrorType(be.isSenderFault() ? ErrorType.Client : ErrorType.Service);
         toReturn.setServiceName("AmazonSQS");
 
         return toReturn;
-        
+
     }
-    
+
     public static <X extends AmazonWebServiceRequest> X appendUserAgent(X request, String userAgent ) {
-        request.getRequestClientOptions().addClientMarker( userAgent );
+        request.getRequestClientOptions().appendUserAgent( userAgent );
         return request;
     }
 
-    
+
 }

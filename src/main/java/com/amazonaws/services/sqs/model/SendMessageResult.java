@@ -17,36 +17,41 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The MD5OfMessageBody and MessageId elements.
+ * </p>
  */
 public class SendMessageResult implements Serializable {
 
     /**
      * An MD5 digest of the non-URL-encoded message body string. This can be
-     * used to verify that SQS received the message correctly. SQS first URL
-     * decodes the message before creating the MD5 digest. For information
-     * about MD5, go to <a
-     * href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
+     * used to verify that Amazon SQS received the message correctly. Amazon
+     * SQS first URL decodes the message before creating the MD5 digest. For
+     * information about MD5, go to <a
+     * href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
      */
     private String mD5OfMessageBody;
 
     /**
-     * The message ID of the message added to the queue.
+     * An element containing the message ID of the message sent to the queue.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+     * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      */
     private String messageId;
 
     /**
      * An MD5 digest of the non-URL-encoded message body string. This can be
-     * used to verify that SQS received the message correctly. SQS first URL
-     * decodes the message before creating the MD5 digest. For information
-     * about MD5, go to <a
-     * href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
+     * used to verify that Amazon SQS received the message correctly. Amazon
+     * SQS first URL decodes the message before creating the MD5 digest. For
+     * information about MD5, go to <a
+     * href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
      *
      * @return An MD5 digest of the non-URL-encoded message body string. This can be
-     *         used to verify that SQS received the message correctly. SQS first URL
-     *         decodes the message before creating the MD5 digest. For information
-     *         about MD5, go to <a
-     *         href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
+     *         used to verify that Amazon SQS received the message correctly. Amazon
+     *         SQS first URL decodes the message before creating the MD5 digest. For
+     *         information about MD5, go to <a
+     *         href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
      */
     public String getMD5OfMessageBody() {
         return mD5OfMessageBody;
@@ -54,16 +59,16 @@ public class SendMessageResult implements Serializable {
     
     /**
      * An MD5 digest of the non-URL-encoded message body string. This can be
-     * used to verify that SQS received the message correctly. SQS first URL
-     * decodes the message before creating the MD5 digest. For information
-     * about MD5, go to <a
-     * href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
+     * used to verify that Amazon SQS received the message correctly. Amazon
+     * SQS first URL decodes the message before creating the MD5 digest. For
+     * information about MD5, go to <a
+     * href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
      *
      * @param mD5OfMessageBody An MD5 digest of the non-URL-encoded message body string. This can be
-     *         used to verify that SQS received the message correctly. SQS first URL
-     *         decodes the message before creating the MD5 digest. For information
-     *         about MD5, go to <a
-     *         href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
+     *         used to verify that Amazon SQS received the message correctly. Amazon
+     *         SQS first URL decodes the message before creating the MD5 digest. For
+     *         information about MD5, go to <a
+     *         href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
      */
     public void setMD5OfMessageBody(String mD5OfMessageBody) {
         this.mD5OfMessageBody = mD5OfMessageBody;
@@ -71,18 +76,18 @@ public class SendMessageResult implements Serializable {
     
     /**
      * An MD5 digest of the non-URL-encoded message body string. This can be
-     * used to verify that SQS received the message correctly. SQS first URL
-     * decodes the message before creating the MD5 digest. For information
-     * about MD5, go to <a
-     * href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
+     * used to verify that Amazon SQS received the message correctly. Amazon
+     * SQS first URL decodes the message before creating the MD5 digest. For
+     * information about MD5, go to <a
+     * href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param mD5OfMessageBody An MD5 digest of the non-URL-encoded message body string. This can be
-     *         used to verify that SQS received the message correctly. SQS first URL
-     *         decodes the message before creating the MD5 digest. For information
-     *         about MD5, go to <a
-     *         href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
+     *         used to verify that Amazon SQS received the message correctly. Amazon
+     *         SQS first URL decodes the message before creating the MD5 digest. For
+     *         information about MD5, go to <a
+     *         href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -93,29 +98,47 @@ public class SendMessageResult implements Serializable {
     }
 
     /**
-     * The message ID of the message added to the queue.
+     * An element containing the message ID of the message sent to the queue.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+     * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      *
-     * @return The message ID of the message added to the queue.
+     * @return An element containing the message ID of the message sent to the queue.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+     *         and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      */
     public String getMessageId() {
         return messageId;
     }
     
     /**
-     * The message ID of the message added to the queue.
+     * An element containing the message ID of the message sent to the queue.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+     * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      *
-     * @param messageId The message ID of the message added to the queue.
+     * @param messageId An element containing the message ID of the message sent to the queue.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+     *         and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      */
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
     
     /**
-     * The message ID of the message added to the queue.
+     * An element containing the message ID of the message sent to the queue.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+     * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param messageId The message ID of the message added to the queue.
+     * @param messageId An element containing the message ID of the message sent to the queue.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+     *         and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

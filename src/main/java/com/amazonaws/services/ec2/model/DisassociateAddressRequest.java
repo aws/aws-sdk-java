@@ -23,8 +23,10 @@ import com.amazonaws.services.ec2.model.transform.DisassociateAddressRequestMars
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#disassociateAddress(DisassociateAddressRequest) DisassociateAddress operation}.
  * <p>
- * The DisassociateAddress operation disassociates the specified elastic IP address from the instance to which it is assigned. This is an idempotent
- * operation. If you enter it more than once, Amazon EC2 does not return an error.
+ * Disassociates an Elastic IP address from the instance or network interface it's associated with.
+ * </p>
+ * <p>
+ * This is an idempotent operation. If you perform the operation more than once, Amazon EC2 doesn't return an error.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#disassociateAddress(DisassociateAddressRequest)
@@ -32,13 +34,12 @@ import com.amazonaws.services.ec2.model.transform.DisassociateAddressRequestMars
 public class DisassociateAddressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DisassociateAddressRequest> {
 
     /**
-     * The elastic IP address that you are disassociating from the instance.
+     * [EC2-Classic] The Elastic IP address.
      */
     private String publicIp;
 
     /**
-     * Association ID corresponding to the VPC elastic IP address you want to
-     * disassociate.
+     * [EC2-VPC] The association ID.
      */
     private String associationId;
 
@@ -53,37 +54,36 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param publicIp The elastic IP address that you are disassociating
-     * from the instance.
+     * @param publicIp [EC2-Classic] The Elastic IP address.
      */
     public DisassociateAddressRequest(String publicIp) {
         setPublicIp(publicIp);
     }
 
     /**
-     * The elastic IP address that you are disassociating from the instance.
+     * [EC2-Classic] The Elastic IP address.
      *
-     * @return The elastic IP address that you are disassociating from the instance.
+     * @return [EC2-Classic] The Elastic IP address.
      */
     public String getPublicIp() {
         return publicIp;
     }
     
     /**
-     * The elastic IP address that you are disassociating from the instance.
+     * [EC2-Classic] The Elastic IP address.
      *
-     * @param publicIp The elastic IP address that you are disassociating from the instance.
+     * @param publicIp [EC2-Classic] The Elastic IP address.
      */
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
     
     /**
-     * The elastic IP address that you are disassociating from the instance.
+     * [EC2-Classic] The Elastic IP address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicIp The elastic IP address that you are disassociating from the instance.
+     * @param publicIp [EC2-Classic] The Elastic IP address.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -94,35 +94,29 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * Association ID corresponding to the VPC elastic IP address you want to
-     * disassociate.
+     * [EC2-VPC] The association ID.
      *
-     * @return Association ID corresponding to the VPC elastic IP address you want to
-     *         disassociate.
+     * @return [EC2-VPC] The association ID.
      */
     public String getAssociationId() {
         return associationId;
     }
     
     /**
-     * Association ID corresponding to the VPC elastic IP address you want to
-     * disassociate.
+     * [EC2-VPC] The association ID.
      *
-     * @param associationId Association ID corresponding to the VPC elastic IP address you want to
-     *         disassociate.
+     * @param associationId [EC2-VPC] The association ID.
      */
     public void setAssociationId(String associationId) {
         this.associationId = associationId;
     }
     
     /**
-     * Association ID corresponding to the VPC elastic IP address you want to
-     * disassociate.
+     * [EC2-VPC] The association ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param associationId Association ID corresponding to the VPC elastic IP address you want to
-     *         disassociate.
+     * @param associationId [EC2-VPC] The association ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

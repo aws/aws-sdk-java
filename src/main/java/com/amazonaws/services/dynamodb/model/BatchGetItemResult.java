@@ -17,6 +17,7 @@ import java.io.Serializable;
 
 /**
  * Batch Get Item Result
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.BatchGetItemResult} instead.
  */
 @Deprecated
 public class BatchGetItemResult  implements Serializable  {

@@ -26,6 +26,8 @@ import java.io.Serializable;
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#scan(ScanRequest)
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.ScanRequest} instead.
  */
 @Deprecated
 public class ScanRequest extends AmazonWebServiceRequest  implements Serializable  {

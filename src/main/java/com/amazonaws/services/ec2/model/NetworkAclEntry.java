@@ -17,54 +17,82 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Network Acl Entry
+ * <p>
+ * Describes an entry in a network ACL.
+ * </p>
  */
 public class NetworkAclEntry implements Serializable {
 
+    /**
+     * The rule number for the entry. ACL entries are processed in ascending
+     * order by rule number.
+     */
     private Integer ruleNumber;
 
+    /**
+     * The protocol. A value of <code>-1</code> means all protocols.
+     */
     private String protocol;
 
+    /**
+     * Indicates whether to allow or deny the traffic that matches the rule.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>allow, deny
+     */
     private String ruleAction;
 
+    /**
+     * Indicates whether the rule is an egress rule (applied to traffic
+     * leaving the subnet).
+     */
     private Boolean egress;
 
+    /**
+     * The network range to allow or deny, in CIDR notation.
+     */
     private String cidrBlock;
 
     /**
-     * 
+     * ICMP protocol: The ICMP type and code.
      */
     private IcmpTypeCode icmpTypeCode;
 
     /**
-     * 
+     * TCP or UDP protocols: The range of ports the rule applies to.
      */
     private PortRange portRange;
 
     /**
-     * Returns the value of the RuleNumber property for this object.
+     * The rule number for the entry. ACL entries are processed in ascending
+     * order by rule number.
      *
-     * @return The value of the RuleNumber property for this object.
+     * @return The rule number for the entry. ACL entries are processed in ascending
+     *         order by rule number.
      */
     public Integer getRuleNumber() {
         return ruleNumber;
     }
     
     /**
-     * Sets the value of the RuleNumber property for this object.
+     * The rule number for the entry. ACL entries are processed in ascending
+     * order by rule number.
      *
-     * @param ruleNumber The new value for the RuleNumber property for this object.
+     * @param ruleNumber The rule number for the entry. ACL entries are processed in ascending
+     *         order by rule number.
      */
     public void setRuleNumber(Integer ruleNumber) {
         this.ruleNumber = ruleNumber;
     }
     
     /**
-     * Sets the value of the RuleNumber property for this object.
+     * The rule number for the entry. ACL entries are processed in ascending
+     * order by rule number.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ruleNumber The new value for the RuleNumber property for this object.
+     * @param ruleNumber The rule number for the entry. ACL entries are processed in ascending
+     *         order by rule number.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,29 +103,29 @@ public class NetworkAclEntry implements Serializable {
     }
 
     /**
-     * Returns the value of the Protocol property for this object.
+     * The protocol. A value of <code>-1</code> means all protocols.
      *
-     * @return The value of the Protocol property for this object.
+     * @return The protocol. A value of <code>-1</code> means all protocols.
      */
     public String getProtocol() {
         return protocol;
     }
     
     /**
-     * Sets the value of the Protocol property for this object.
+     * The protocol. A value of <code>-1</code> means all protocols.
      *
-     * @param protocol The new value for the Protocol property for this object.
+     * @param protocol The protocol. A value of <code>-1</code> means all protocols.
      */
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
     
     /**
-     * Sets the value of the Protocol property for this object.
+     * The protocol. A value of <code>-1</code> means all protocols.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param protocol The new value for the Protocol property for this object.
+     * @param protocol The protocol. A value of <code>-1</code> means all protocols.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -108,12 +136,12 @@ public class NetworkAclEntry implements Serializable {
     }
 
     /**
-     * Returns the value of the RuleAction property for this object.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
      *
-     * @return The value of the RuleAction property for this object.
+     * @return Indicates whether to allow or deny the traffic that matches the rule.
      *
      * @see RuleAction
      */
@@ -122,12 +150,12 @@ public class NetworkAclEntry implements Serializable {
     }
     
     /**
-     * Sets the value of the RuleAction property for this object.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
      *
-     * @param ruleAction The new value for the RuleAction property for this object.
+     * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
      * @see RuleAction
      */
@@ -136,14 +164,14 @@ public class NetworkAclEntry implements Serializable {
     }
     
     /**
-     * Sets the value of the RuleAction property for this object.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
      *
-     * @param ruleAction The new value for the RuleAction property for this object.
+     * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -156,12 +184,12 @@ public class NetworkAclEntry implements Serializable {
     }
 
     /**
-     * Sets the value of the RuleAction property for this object.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
      *
-     * @param ruleAction The new value for the RuleAction property for this object.
+     * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
      * @see RuleAction
      */
@@ -170,14 +198,14 @@ public class NetworkAclEntry implements Serializable {
     }
     
     /**
-     * Sets the value of the RuleAction property for this object.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
      *
-     * @param ruleAction The new value for the RuleAction property for this object.
+     * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -190,29 +218,35 @@ public class NetworkAclEntry implements Serializable {
     }
 
     /**
-     * Returns the value of the Egress property for this object.
+     * Indicates whether the rule is an egress rule (applied to traffic
+     * leaving the subnet).
      *
-     * @return The value of the Egress property for this object.
+     * @return Indicates whether the rule is an egress rule (applied to traffic
+     *         leaving the subnet).
      */
     public Boolean isEgress() {
         return egress;
     }
     
     /**
-     * Sets the value of the Egress property for this object.
+     * Indicates whether the rule is an egress rule (applied to traffic
+     * leaving the subnet).
      *
-     * @param egress The new value for the Egress property for this object.
+     * @param egress Indicates whether the rule is an egress rule (applied to traffic
+     *         leaving the subnet).
      */
     public void setEgress(Boolean egress) {
         this.egress = egress;
     }
     
     /**
-     * Sets the value of the Egress property for this object.
+     * Indicates whether the rule is an egress rule (applied to traffic
+     * leaving the subnet).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param egress The new value for the Egress property for this object.
+     * @param egress Indicates whether the rule is an egress rule (applied to traffic
+     *         leaving the subnet).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -223,38 +257,40 @@ public class NetworkAclEntry implements Serializable {
     }
 
     /**
-     * Returns the value of the Egress property for this object.
+     * Indicates whether the rule is an egress rule (applied to traffic
+     * leaving the subnet).
      *
-     * @return The value of the Egress property for this object.
+     * @return Indicates whether the rule is an egress rule (applied to traffic
+     *         leaving the subnet).
      */
     public Boolean getEgress() {
         return egress;
     }
 
     /**
-     * Returns the value of the CidrBlock property for this object.
+     * The network range to allow or deny, in CIDR notation.
      *
-     * @return The value of the CidrBlock property for this object.
+     * @return The network range to allow or deny, in CIDR notation.
      */
     public String getCidrBlock() {
         return cidrBlock;
     }
     
     /**
-     * Sets the value of the CidrBlock property for this object.
+     * The network range to allow or deny, in CIDR notation.
      *
-     * @param cidrBlock The new value for the CidrBlock property for this object.
+     * @param cidrBlock The network range to allow or deny, in CIDR notation.
      */
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
     
     /**
-     * Sets the value of the CidrBlock property for this object.
+     * The network range to allow or deny, in CIDR notation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cidrBlock The new value for the CidrBlock property for this object.
+     * @param cidrBlock The network range to allow or deny, in CIDR notation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -265,29 +301,29 @@ public class NetworkAclEntry implements Serializable {
     }
 
     /**
-     * 
+     * ICMP protocol: The ICMP type and code.
      *
-     * @return 
+     * @return ICMP protocol: The ICMP type and code.
      */
     public IcmpTypeCode getIcmpTypeCode() {
         return icmpTypeCode;
     }
     
     /**
-     * 
+     * ICMP protocol: The ICMP type and code.
      *
-     * @param icmpTypeCode 
+     * @param icmpTypeCode ICMP protocol: The ICMP type and code.
      */
     public void setIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
         this.icmpTypeCode = icmpTypeCode;
     }
     
     /**
-     * 
+     * ICMP protocol: The ICMP type and code.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param icmpTypeCode 
+     * @param icmpTypeCode ICMP protocol: The ICMP type and code.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -298,29 +334,29 @@ public class NetworkAclEntry implements Serializable {
     }
 
     /**
-     * 
+     * TCP or UDP protocols: The range of ports the rule applies to.
      *
-     * @return 
+     * @return TCP or UDP protocols: The range of ports the rule applies to.
      */
     public PortRange getPortRange() {
         return portRange;
     }
     
     /**
-     * 
+     * TCP or UDP protocols: The range of ports the rule applies to.
      *
-     * @param portRange 
+     * @param portRange TCP or UDP protocols: The range of ports the rule applies to.
      */
     public void setPortRange(PortRange portRange) {
         this.portRange = portRange;
     }
     
     /**
-     * 
+     * TCP or UDP protocols: The range of ports the rule applies to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param portRange 
+     * @param portRange TCP or UDP protocols: The range of ports the rule applies to.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -46,6 +46,7 @@ public class DescribeTrustedAdvisorChecksResultJsonUnmarshaller implements Unmar
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("checks", targetDepth)) {
+                    context.nextToken();
                     describeTrustedAdvisorChecksResult.setChecks(new ListUnmarshaller<TrustedAdvisorCheckDescription>(TrustedAdvisorCheckDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

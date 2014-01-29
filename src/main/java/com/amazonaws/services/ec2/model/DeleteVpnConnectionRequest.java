@@ -23,14 +23,11 @@ import com.amazonaws.services.ec2.model.transform.DeleteVpnConnectionRequestMars
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteVpnConnection(DeleteVpnConnectionRequest) DeleteVpnConnection operation}.
  * <p>
- * Deletes a VPN connection. Use this if you want to delete a VPC and all its associated components. Another reason to use this operation is if you
- * believe the tunnel credentials for your VPN connection have been compromised. In that situation, you can delete the VPN connection and create a new
- * one that has new keys, without needing to delete the VPC or VPN gateway. If you create a new VPN connection, you must reconfigure the customer gateway
- * using the new configuration information returned with the new VPN connection ID.
+ * Deletes the specified VPN connection.
  * </p>
  * <p>
- * If you're deleting the VPC and all its associated parts, we recommend you detach the VPN gateway from the VPC and delete the VPC before deleting the
- * VPN connection.
+ * If you're deleting the VPC and its associated components, we recommend that you detach the virtual private gateway from the VPC and delete the VPC
+ * before deleting the VPN connection.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpnConnection(DeleteVpnConnectionRequest)
@@ -38,7 +35,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteVpnConnectionRequestMars
 public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteVpnConnectionRequest> {
 
     /**
-     * The ID of the VPN connection to delete
+     * The ID of the VPN connection.
      */
     private String vpnConnectionId;
 
@@ -53,36 +50,36 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest implemen
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param vpnConnectionId The ID of the VPN connection to delete
+     * @param vpnConnectionId The ID of the VPN connection.
      */
     public DeleteVpnConnectionRequest(String vpnConnectionId) {
         setVpnConnectionId(vpnConnectionId);
     }
 
     /**
-     * The ID of the VPN connection to delete
+     * The ID of the VPN connection.
      *
-     * @return The ID of the VPN connection to delete
+     * @return The ID of the VPN connection.
      */
     public String getVpnConnectionId() {
         return vpnConnectionId;
     }
     
     /**
-     * The ID of the VPN connection to delete
+     * The ID of the VPN connection.
      *
-     * @param vpnConnectionId The ID of the VPN connection to delete
+     * @param vpnConnectionId The ID of the VPN connection.
      */
     public void setVpnConnectionId(String vpnConnectionId) {
         this.vpnConnectionId = vpnConnectionId;
     }
     
     /**
-     * The ID of the VPN connection to delete
+     * The ID of the VPN connection.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnConnectionId The ID of the VPN connection to delete
+     * @param vpnConnectionId The ID of the VPN connection.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

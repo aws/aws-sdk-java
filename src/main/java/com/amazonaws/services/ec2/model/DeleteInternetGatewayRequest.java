@@ -23,8 +23,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteInternetGatewayRequestMa
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteInternetGateway(DeleteInternetGatewayRequest) DeleteInternetGateway operation}.
  * <p>
- * Deletes an Internet gateway from your AWS account. The gateway must not be attached to a VPC. For more information about your VPC and Internet
- * gateway, go to Amazon Virtual Private Cloud User Guide.
+ * Deletes the specified Internet gateway. You must detach the Internet gateway from the VPC before you can delete it.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteInternetGateway(DeleteInternetGatewayRequest)
@@ -32,34 +31,34 @@ import com.amazonaws.services.ec2.model.transform.DeleteInternetGatewayRequestMa
 public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteInternetGatewayRequest> {
 
     /**
-     * The ID of the Internet gateway to be deleted.
+     * The ID of the Internet gateway.
      */
     private String internetGatewayId;
 
     /**
-     * The ID of the Internet gateway to be deleted.
+     * The ID of the Internet gateway.
      *
-     * @return The ID of the Internet gateway to be deleted.
+     * @return The ID of the Internet gateway.
      */
     public String getInternetGatewayId() {
         return internetGatewayId;
     }
     
     /**
-     * The ID of the Internet gateway to be deleted.
+     * The ID of the Internet gateway.
      *
-     * @param internetGatewayId The ID of the Internet gateway to be deleted.
+     * @param internetGatewayId The ID of the Internet gateway.
      */
     public void setInternetGatewayId(String internetGatewayId) {
         this.internetGatewayId = internetGatewayId;
     }
     
     /**
-     * The ID of the Internet gateway to be deleted.
+     * The ID of the Internet gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param internetGatewayId The ID of the Internet gateway to be deleted.
+     * @param internetGatewayId The ID of the Internet gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

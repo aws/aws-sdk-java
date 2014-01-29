@@ -17,6 +17,7 @@ import java.io.Serializable;
 
 /**
  * Query Result
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.QueryResult} instead.
  */
 @Deprecated
 public class QueryResult  implements Serializable  {

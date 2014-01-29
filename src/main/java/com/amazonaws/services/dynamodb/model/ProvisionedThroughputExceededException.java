@@ -20,7 +20,8 @@ import com.amazonaws.AmazonServiceException;
  * <p>
  * This exception is thrown when the level of provisioned throughput defined for the table is exceeded.
  * </p>
- */        
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.ProvisionedThroughputExceededException} instead.
+ */
 @Deprecated
 public class ProvisionedThroughputExceededException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

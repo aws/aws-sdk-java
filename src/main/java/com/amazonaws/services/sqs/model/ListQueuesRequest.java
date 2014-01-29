@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#listQueues(ListQueuesRequest) ListQueues operation}.
  * <p>
- * Returns a list of your queues.
+ * Returns a list of your queues. The maximum number of queues that can be returned is 1000. If you specify a value for the optional
+ * <code>QueueNamePrefix</code> parameter, only queues with a name beginning with the specified value are returned.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#listQueues(ListQueuesRequest)

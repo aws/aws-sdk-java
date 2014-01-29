@@ -23,12 +23,8 @@ import com.amazonaws.services.ec2.model.transform.ConfirmProductInstanceRequestM
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#confirmProductInstance(ConfirmProductInstanceRequest) ConfirmProductInstance operation}.
  * <p>
- * The ConfirmProductInstance operation returns true if the specified product code is attached to the specified instance. The operation returns false if
- * the product code is not attached to the instance.
- * </p>
- * <p>
- * The ConfirmProductInstance operation can only be executed by the owner of the AMI. This feature is useful when an AMI owner is providing support and
- * wants to verify whether a user's instance is eligible.
+ * Determines whether a product code is associated with an instance. This action can only be used by the owner of the product code. It is useful when a
+ * product code owner needs to verify whether another user's instance is eligible for support.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#confirmProductInstance(ConfirmProductInstanceRequest)
@@ -36,12 +32,13 @@ import com.amazonaws.services.ec2.model.transform.ConfirmProductInstanceRequestM
 public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ConfirmProductInstanceRequest> {
 
     /**
-     * The product code to confirm.
+     * The product code. This must be an Amazon DevPay product code that you
+     * own.
      */
     private String productCode;
 
     /**
-     * The ID of the instance to confirm.
+     * The ID of the instance.
      */
     private String instanceId;
 
@@ -56,8 +53,9 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param productCode The product code to confirm.
-     * @param instanceId The ID of the instance to confirm.
+     * @param productCode The product code. This must be an Amazon DevPay
+     * product code that you own.
+     * @param instanceId The ID of the instance.
      */
     public ConfirmProductInstanceRequest(String productCode, String instanceId) {
         setProductCode(productCode);
@@ -65,29 +63,35 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The product code to confirm.
+     * The product code. This must be an Amazon DevPay product code that you
+     * own.
      *
-     * @return The product code to confirm.
+     * @return The product code. This must be an Amazon DevPay product code that you
+     *         own.
      */
     public String getProductCode() {
         return productCode;
     }
     
     /**
-     * The product code to confirm.
+     * The product code. This must be an Amazon DevPay product code that you
+     * own.
      *
-     * @param productCode The product code to confirm.
+     * @param productCode The product code. This must be an Amazon DevPay product code that you
+     *         own.
      */
     public void setProductCode(String productCode) {
         this.productCode = productCode;
     }
     
     /**
-     * The product code to confirm.
+     * The product code. This must be an Amazon DevPay product code that you
+     * own.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param productCode The product code to confirm.
+     * @param productCode The product code. This must be an Amazon DevPay product code that you
+     *         own.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -98,29 +102,29 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The ID of the instance to confirm.
+     * The ID of the instance.
      *
-     * @return The ID of the instance to confirm.
+     * @return The ID of the instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The ID of the instance to confirm.
+     * The ID of the instance.
      *
-     * @param instanceId The ID of the instance to confirm.
+     * @param instanceId The ID of the instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The ID of the instance to confirm.
+     * The ID of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The ID of the instance to confirm.
+     * @param instanceId The ID of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

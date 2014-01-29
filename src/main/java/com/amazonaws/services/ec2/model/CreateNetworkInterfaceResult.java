@@ -17,39 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Create Network Interface Result
+ * 
  */
 public class CreateNetworkInterfaceResult implements Serializable {
 
     /**
-     * Specifies the characteristics of a network interface.
+     * Information about the network interface.
      */
     private NetworkInterface networkInterface;
 
     /**
-     * Specifies the characteristics of a network interface.
+     * Information about the network interface.
      *
-     * @return Specifies the characteristics of a network interface.
+     * @return Information about the network interface.
      */
     public NetworkInterface getNetworkInterface() {
         return networkInterface;
     }
     
     /**
-     * Specifies the characteristics of a network interface.
+     * Information about the network interface.
      *
-     * @param networkInterface Specifies the characteristics of a network interface.
+     * @param networkInterface Information about the network interface.
      */
     public void setNetworkInterface(NetworkInterface networkInterface) {
         this.networkInterface = networkInterface;
     }
     
     /**
-     * Specifies the characteristics of a network interface.
+     * Information about the network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterface Specifies the characteristics of a network interface.
+     * @param networkInterface Information about the network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

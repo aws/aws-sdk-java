@@ -23,7 +23,9 @@ import com.amazonaws.services.ec2.model.transform.MonitorInstancesRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#monitorInstances(MonitorInstancesRequest) MonitorInstances operation}.
  * <p>
- * Enables monitoring for a running instance.
+ * Enables monitoring for a running instance. For more information about monitoring instances, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html"> Monitoring Your Instances and Volumes </a> in the <i>Amazon Elastic
+ * Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#monitorInstances(MonitorInstancesRequest)
@@ -31,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.MonitorInstancesRequestMarshal
 public class MonitorInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<MonitorInstancesRequest> {
 
     /**
-     * The list of Amazon EC2 instances on which to enable monitoring.
+     * One or more instance IDs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
 
@@ -46,17 +48,16 @@ public class MonitorInstancesRequest extends AmazonWebServiceRequest implements 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param instanceIds The list of Amazon EC2 instances on which to enable
-     * monitoring.
+     * @param instanceIds One or more instance IDs.
      */
     public MonitorInstancesRequest(java.util.List<String> instanceIds) {
         setInstanceIds(instanceIds);
     }
 
     /**
-     * The list of Amazon EC2 instances on which to enable monitoring.
+     * One or more instance IDs.
      *
-     * @return The list of Amazon EC2 instances on which to enable monitoring.
+     * @return One or more instance IDs.
      */
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
@@ -67,9 +68,9 @@ public class MonitorInstancesRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The list of Amazon EC2 instances on which to enable monitoring.
+     * One or more instance IDs.
      *
-     * @param instanceIds The list of Amazon EC2 instances on which to enable monitoring.
+     * @param instanceIds One or more instance IDs.
      */
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
@@ -82,11 +83,11 @@ public class MonitorInstancesRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The list of Amazon EC2 instances on which to enable monitoring.
+     * One or more instance IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds The list of Amazon EC2 instances on which to enable monitoring.
+     * @param instanceIds One or more instance IDs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -100,11 +101,11 @@ public class MonitorInstancesRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The list of Amazon EC2 instances on which to enable monitoring.
+     * One or more instance IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds The list of Amazon EC2 instances on which to enable monitoring.
+     * @param instanceIds One or more instance IDs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

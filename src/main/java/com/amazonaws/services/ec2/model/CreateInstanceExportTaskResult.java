@@ -17,36 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Create Instance Export Task Result
+ * 
  */
 public class CreateInstanceExportTaskResult implements Serializable {
 
+    /**
+     * 
+     */
     private ExportTask exportTask;
 
     /**
-     * Returns the value of the ExportTask property for this object.
+     * 
      *
-     * @return The value of the ExportTask property for this object.
+     * @return 
      */
     public ExportTask getExportTask() {
         return exportTask;
     }
     
     /**
-     * Sets the value of the ExportTask property for this object.
+     * 
      *
-     * @param exportTask The new value for the ExportTask property for this object.
+     * @param exportTask 
      */
     public void setExportTask(ExportTask exportTask) {
         this.exportTask = exportTask;
     }
     
     /**
-     * Sets the value of the ExportTask property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exportTask The new value for the ExportTask property for this object.
+     * @param exportTask 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

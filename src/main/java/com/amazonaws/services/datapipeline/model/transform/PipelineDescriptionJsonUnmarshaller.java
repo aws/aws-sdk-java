@@ -54,6 +54,7 @@ public class PipelineDescriptionJsonUnmarshaller implements Unmarshaller<Pipelin
                     pipelineDescription.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fields", targetDepth)) {
+                    context.nextToken();
                     pipelineDescription.setFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {

@@ -46,6 +46,7 @@ public class GetPipelineDefinitionResultJsonUnmarshaller implements Unmarshaller
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pipelineObjects", targetDepth)) {
+                    context.nextToken();
                     getPipelineDefinitionResult.setPipelineObjects(new ListUnmarshaller<PipelineObject>(PipelineObjectJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

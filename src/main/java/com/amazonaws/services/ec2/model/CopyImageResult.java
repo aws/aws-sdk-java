@@ -17,36 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Copy Image Result
+ * 
  */
 public class CopyImageResult implements Serializable {
 
+    /**
+     * The ID of the new AMI.
+     */
     private String imageId;
 
     /**
-     * Returns the value of the ImageId property for this object.
+     * The ID of the new AMI.
      *
-     * @return The value of the ImageId property for this object.
+     * @return The ID of the new AMI.
      */
     public String getImageId() {
         return imageId;
     }
     
     /**
-     * Sets the value of the ImageId property for this object.
+     * The ID of the new AMI.
      *
-     * @param imageId The new value for the ImageId property for this object.
+     * @param imageId The ID of the new AMI.
      */
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
     
     /**
-     * Sets the value of the ImageId property for this object.
+     * The ID of the new AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param imageId The new value for the ImageId property for this object.
+     * @param imageId The ID of the new AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

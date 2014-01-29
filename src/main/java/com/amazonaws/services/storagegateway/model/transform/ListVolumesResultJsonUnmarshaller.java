@@ -54,6 +54,7 @@ public class ListVolumesResultJsonUnmarshaller implements Unmarshaller<ListVolum
                     listVolumesResult.setMarker(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VolumeInfos", targetDepth)) {
+                    context.nextToken();
                     listVolumesResult.setVolumeInfos(new ListUnmarshaller<VolumeInfo>(VolumeInfoJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

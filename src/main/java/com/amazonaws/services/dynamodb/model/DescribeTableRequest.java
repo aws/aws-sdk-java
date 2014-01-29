@@ -26,6 +26,8 @@ import java.io.Serializable;
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#describeTable(DescribeTableRequest)
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.DescribeTableRequest} instead.
  */
 @Deprecated
 public class DescribeTableRequest extends AmazonWebServiceRequest  implements Serializable  {

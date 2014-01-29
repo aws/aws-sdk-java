@@ -50,6 +50,7 @@ public class ProjectionJsonUnmarshaller implements Unmarshaller<Projection, Json
                     projection.setProjectionType(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NonKeyAttributes", targetDepth)) {
+                    context.nextToken();
                     projection.setNonKeyAttributes(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

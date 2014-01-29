@@ -50,6 +50,7 @@ public class VideoParametersJsonUnmarshaller implements Unmarshaller<VideoParame
                     videoParameters.setCodec(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CodecOptions", targetDepth)) {
+                    context.nextToken();
                     videoParameters.setCodecOptions(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("KeyframesMaxDist", targetDepth)) {
@@ -101,6 +102,7 @@ public class VideoParametersJsonUnmarshaller implements Unmarshaller<VideoParame
                     videoParameters.setPaddingPolicy(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Watermarks", targetDepth)) {
+                    context.nextToken();
                     videoParameters.setWatermarks(new ListUnmarshaller<PresetWatermark>(PresetWatermarkJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

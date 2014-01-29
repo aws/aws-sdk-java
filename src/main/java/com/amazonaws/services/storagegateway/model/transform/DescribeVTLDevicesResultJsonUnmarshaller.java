@@ -50,6 +50,7 @@ public class DescribeVTLDevicesResultJsonUnmarshaller implements Unmarshaller<De
                     describeVTLDevicesResult.setGatewayARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VTLDevices", targetDepth)) {
+                    context.nextToken();
                     describeVTLDevicesResult.setVTLDevices(new ListUnmarshaller<VTLDevice>(VTLDeviceJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {

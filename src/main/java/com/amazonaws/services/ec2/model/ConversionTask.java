@@ -17,48 +17,77 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Conversion Task
+ * <p>
+ * Describes a conversion task.
+ * </p>
  */
 public class ConversionTask implements Serializable {
 
+    /**
+     * The ID of the conversion task.
+     */
     private String conversionTaskId;
 
+    /**
+     * The time when the task expires. If the upload isn't complete before
+     * the expiration time, we automatically cancel the task.
+     */
     private String expirationTime;
 
+    /**
+     * If the task is for importing an instance, this contains information
+     * about the import instance task.
+     */
     private ImportInstanceTaskDetails importInstance;
 
+    /**
+     * If the task is for importing a volume, this contains information about
+     * the import volume task.
+     */
     private ImportVolumeTaskDetails importVolume;
 
+    /**
+     * The state of the conversion task.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>active, cancelling, cancelled, completed
+     */
     private String state;
 
+    /**
+     * The status message related to the conversion task.
+     */
     private String statusMessage;
 
+    /**
+     * 
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * Returns the value of the ConversionTaskId property for this object.
+     * The ID of the conversion task.
      *
-     * @return The value of the ConversionTaskId property for this object.
+     * @return The ID of the conversion task.
      */
     public String getConversionTaskId() {
         return conversionTaskId;
     }
     
     /**
-     * Sets the value of the ConversionTaskId property for this object.
+     * The ID of the conversion task.
      *
-     * @param conversionTaskId The new value for the ConversionTaskId property for this object.
+     * @param conversionTaskId The ID of the conversion task.
      */
     public void setConversionTaskId(String conversionTaskId) {
         this.conversionTaskId = conversionTaskId;
     }
     
     /**
-     * Sets the value of the ConversionTaskId property for this object.
+     * The ID of the conversion task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param conversionTaskId The new value for the ConversionTaskId property for this object.
+     * @param conversionTaskId The ID of the conversion task.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -69,29 +98,35 @@ public class ConversionTask implements Serializable {
     }
 
     /**
-     * Returns the value of the ExpirationTime property for this object.
+     * The time when the task expires. If the upload isn't complete before
+     * the expiration time, we automatically cancel the task.
      *
-     * @return The value of the ExpirationTime property for this object.
+     * @return The time when the task expires. If the upload isn't complete before
+     *         the expiration time, we automatically cancel the task.
      */
     public String getExpirationTime() {
         return expirationTime;
     }
     
     /**
-     * Sets the value of the ExpirationTime property for this object.
+     * The time when the task expires. If the upload isn't complete before
+     * the expiration time, we automatically cancel the task.
      *
-     * @param expirationTime The new value for the ExpirationTime property for this object.
+     * @param expirationTime The time when the task expires. If the upload isn't complete before
+     *         the expiration time, we automatically cancel the task.
      */
     public void setExpirationTime(String expirationTime) {
         this.expirationTime = expirationTime;
     }
     
     /**
-     * Sets the value of the ExpirationTime property for this object.
+     * The time when the task expires. If the upload isn't complete before
+     * the expiration time, we automatically cancel the task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param expirationTime The new value for the ExpirationTime property for this object.
+     * @param expirationTime The time when the task expires. If the upload isn't complete before
+     *         the expiration time, we automatically cancel the task.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -102,29 +137,35 @@ public class ConversionTask implements Serializable {
     }
 
     /**
-     * Returns the value of the ImportInstance property for this object.
+     * If the task is for importing an instance, this contains information
+     * about the import instance task.
      *
-     * @return The value of the ImportInstance property for this object.
+     * @return If the task is for importing an instance, this contains information
+     *         about the import instance task.
      */
     public ImportInstanceTaskDetails getImportInstance() {
         return importInstance;
     }
     
     /**
-     * Sets the value of the ImportInstance property for this object.
+     * If the task is for importing an instance, this contains information
+     * about the import instance task.
      *
-     * @param importInstance The new value for the ImportInstance property for this object.
+     * @param importInstance If the task is for importing an instance, this contains information
+     *         about the import instance task.
      */
     public void setImportInstance(ImportInstanceTaskDetails importInstance) {
         this.importInstance = importInstance;
     }
     
     /**
-     * Sets the value of the ImportInstance property for this object.
+     * If the task is for importing an instance, this contains information
+     * about the import instance task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param importInstance The new value for the ImportInstance property for this object.
+     * @param importInstance If the task is for importing an instance, this contains information
+     *         about the import instance task.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -135,29 +176,35 @@ public class ConversionTask implements Serializable {
     }
 
     /**
-     * Returns the value of the ImportVolume property for this object.
+     * If the task is for importing a volume, this contains information about
+     * the import volume task.
      *
-     * @return The value of the ImportVolume property for this object.
+     * @return If the task is for importing a volume, this contains information about
+     *         the import volume task.
      */
     public ImportVolumeTaskDetails getImportVolume() {
         return importVolume;
     }
     
     /**
-     * Sets the value of the ImportVolume property for this object.
+     * If the task is for importing a volume, this contains information about
+     * the import volume task.
      *
-     * @param importVolume The new value for the ImportVolume property for this object.
+     * @param importVolume If the task is for importing a volume, this contains information about
+     *         the import volume task.
      */
     public void setImportVolume(ImportVolumeTaskDetails importVolume) {
         this.importVolume = importVolume;
     }
     
     /**
-     * Sets the value of the ImportVolume property for this object.
+     * If the task is for importing a volume, this contains information about
+     * the import volume task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param importVolume The new value for the ImportVolume property for this object.
+     * @param importVolume If the task is for importing a volume, this contains information about
+     *         the import volume task.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -168,12 +215,12 @@ public class ConversionTask implements Serializable {
     }
 
     /**
-     * Returns the value of the State property for this object.
+     * The state of the conversion task.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, cancelling, cancelled, completed
      *
-     * @return The value of the State property for this object.
+     * @return The state of the conversion task.
      *
      * @see ConversionTaskState
      */
@@ -182,12 +229,12 @@ public class ConversionTask implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the conversion task.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, cancelling, cancelled, completed
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the conversion task.
      *
      * @see ConversionTaskState
      */
@@ -196,14 +243,14 @@ public class ConversionTask implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the conversion task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, cancelling, cancelled, completed
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the conversion task.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -216,12 +263,12 @@ public class ConversionTask implements Serializable {
     }
 
     /**
-     * Sets the value of the State property for this object.
+     * The state of the conversion task.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, cancelling, cancelled, completed
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the conversion task.
      *
      * @see ConversionTaskState
      */
@@ -230,14 +277,14 @@ public class ConversionTask implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the conversion task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, cancelling, cancelled, completed
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the conversion task.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -250,29 +297,29 @@ public class ConversionTask implements Serializable {
     }
 
     /**
-     * Returns the value of the StatusMessage property for this object.
+     * The status message related to the conversion task.
      *
-     * @return The value of the StatusMessage property for this object.
+     * @return The status message related to the conversion task.
      */
     public String getStatusMessage() {
         return statusMessage;
     }
     
     /**
-     * Sets the value of the StatusMessage property for this object.
+     * The status message related to the conversion task.
      *
-     * @param statusMessage The new value for the StatusMessage property for this object.
+     * @param statusMessage The status message related to the conversion task.
      */
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
     
     /**
-     * Sets the value of the StatusMessage property for this object.
+     * The status message related to the conversion task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param statusMessage The new value for the StatusMessage property for this object.
+     * @param statusMessage The status message related to the conversion task.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -283,9 +330,9 @@ public class ConversionTask implements Serializable {
     }
 
     /**
-     * Returns the value of the Tags property for this object.
+     * 
      *
-     * @return The value of the Tags property for this object.
+     * @return 
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
@@ -296,9 +343,9 @@ public class ConversionTask implements Serializable {
     }
     
     /**
-     * Sets the value of the Tags property for this object.
+     * 
      *
-     * @param tags The new value for the Tags property for this object.
+     * @param tags 
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -311,11 +358,11 @@ public class ConversionTask implements Serializable {
     }
     
     /**
-     * Sets the value of the Tags property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags The new value for the Tags property for this object.
+     * @param tags 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -329,11 +376,11 @@ public class ConversionTask implements Serializable {
     }
     
     /**
-     * Sets the value of the Tags property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags The new value for the Tags property for this object.
+     * @param tags 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

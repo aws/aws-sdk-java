@@ -17,41 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of canceling an Amazon EC2 bundle task.
- * </p>
+ * 
  */
 public class CancelBundleTaskResult implements Serializable {
 
     /**
-     * The canceled bundle task.
+     * The bundle task.
      */
     private BundleTask bundleTask;
 
     /**
-     * The canceled bundle task.
+     * The bundle task.
      *
-     * @return The canceled bundle task.
+     * @return The bundle task.
      */
     public BundleTask getBundleTask() {
         return bundleTask;
     }
     
     /**
-     * The canceled bundle task.
+     * The bundle task.
      *
-     * @param bundleTask The canceled bundle task.
+     * @param bundleTask The bundle task.
      */
     public void setBundleTask(BundleTask bundleTask) {
         this.bundleTask = bundleTask;
     }
     
     /**
-     * The canceled bundle task.
+     * The bundle task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bundleTask The canceled bundle task.
+     * @param bundleTask The bundle task.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

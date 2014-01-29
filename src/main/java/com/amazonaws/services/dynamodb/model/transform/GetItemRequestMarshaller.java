@@ -36,6 +36,7 @@ import com.amazonaws.util.json.*;
 
 /**
  * Get Item Request Marshaller
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.GetItemRequestMarshaller} instead.
  */
 @Deprecated
 public class GetItemRequestMarshaller implements Marshaller<Request<GetItemRequest>, GetItemRequest> {

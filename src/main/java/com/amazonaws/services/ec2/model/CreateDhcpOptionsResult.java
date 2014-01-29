@@ -17,41 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
  * 
- * </p>
  */
 public class CreateDhcpOptionsResult implements Serializable {
 
     /**
-     * A set of one or more DHCP options.
+     * A set of DHCP options.
      */
     private DhcpOptions dhcpOptions;
 
     /**
-     * A set of one or more DHCP options.
+     * A set of DHCP options.
      *
-     * @return A set of one or more DHCP options.
+     * @return A set of DHCP options.
      */
     public DhcpOptions getDhcpOptions() {
         return dhcpOptions;
     }
     
     /**
-     * A set of one or more DHCP options.
+     * A set of DHCP options.
      *
-     * @param dhcpOptions A set of one or more DHCP options.
+     * @param dhcpOptions A set of DHCP options.
      */
     public void setDhcpOptions(DhcpOptions dhcpOptions) {
         this.dhcpOptions = dhcpOptions;
     }
     
     /**
-     * A set of one or more DHCP options.
+     * A set of DHCP options.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpOptions A set of one or more DHCP options.
+     * @param dhcpOptions A set of DHCP options.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

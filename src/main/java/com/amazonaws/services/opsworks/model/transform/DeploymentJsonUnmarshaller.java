@@ -90,6 +90,7 @@ public class DeploymentJsonUnmarshaller implements Unmarshaller<Deployment, Json
                     deployment.setCustomJson(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InstanceIds", targetDepth)) {
+                    context.nextToken();
                     deployment.setInstanceIds(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

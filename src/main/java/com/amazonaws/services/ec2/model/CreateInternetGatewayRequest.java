@@ -23,8 +23,11 @@ import com.amazonaws.services.ec2.model.transform.CreateInternetGatewayRequestMa
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createInternetGateway(CreateInternetGatewayRequest) CreateInternetGateway operation}.
  * <p>
- * Creates a new Internet gateway in your AWS account. After creating the Internet gateway, you then attach it to a VPC using
- * <code>AttachInternetGateway</code> . For more information about your VPC and Internet gateway, go to Amazon Virtual Private Cloud User Guide.
+ * Creates an Internet gateway for use with a VPC. After creating the Internet gateway, you attach it to a VPC using AttachInternetGateway.
+ * </p>
+ * <p>
+ * For more information about your VPC and Internet gateway, see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon Virtual
+ * Private Cloud User Guide </a> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createInternetGateway(CreateInternetGatewayRequest)

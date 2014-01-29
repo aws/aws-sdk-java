@@ -23,9 +23,12 @@ import com.amazonaws.services.ec2.model.transform.ReplaceRouteRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#replaceRoute(ReplaceRouteRequest) ReplaceRoute operation}.
  * <p>
- * Replaces an existing route within a route table in a VPC. For more information about route tables, go to <a
- * href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a> in the Amazon Virtual Private Cloud User
- * Guide.
+ * Replaces an existing route within a route table in a VPC. You must provide only one of the following: Internet gateway, NAT instance, or network
+ * interface.
+ * </p>
+ * <p>
+ * For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceRoute(ReplaceRouteRequest)
@@ -33,19 +36,18 @@ import com.amazonaws.services.ec2.model.transform.ReplaceRouteRequestMarshaller;
 public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ReplaceRouteRequest> {
 
     /**
-     * The ID of the route table where the route will be replaced.
+     * The ID of the route table.
      */
     private String routeTableId;
 
     /**
-     * The CIDR address block used for the destination match. For example:
-     * <code>0.0.0.0/0</code>. The value you provide must match the CIDR of
-     * an existing route in the table.
+     * The CIDR address block used for the destination match. The value you
+     * provide must match the CIDR of an existing route in the table.
      */
     private String destinationCidrBlock;
 
     /**
-     * The ID of a VPN or Internet gateway attached to your VPC.
+     * The ID of an Internet gateway attached to your VPC.
      */
     private String gatewayId;
 
@@ -54,32 +56,35 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
      */
     private String instanceId;
 
+    /**
+     * The ID of a network interface.
+     */
     private String networkInterfaceId;
 
     /**
-     * The ID of the route table where the route will be replaced.
+     * The ID of the route table.
      *
-     * @return The ID of the route table where the route will be replaced.
+     * @return The ID of the route table.
      */
     public String getRouteTableId() {
         return routeTableId;
     }
     
     /**
-     * The ID of the route table where the route will be replaced.
+     * The ID of the route table.
      *
-     * @param routeTableId The ID of the route table where the route will be replaced.
+     * @param routeTableId The ID of the route table.
      */
     public void setRouteTableId(String routeTableId) {
         this.routeTableId = routeTableId;
     }
     
     /**
-     * The ID of the route table where the route will be replaced.
+     * The ID of the route table.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param routeTableId The ID of the route table where the route will be replaced.
+     * @param routeTableId The ID of the route table.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -90,41 +95,35 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The CIDR address block used for the destination match. For example:
-     * <code>0.0.0.0/0</code>. The value you provide must match the CIDR of
-     * an existing route in the table.
+     * The CIDR address block used for the destination match. The value you
+     * provide must match the CIDR of an existing route in the table.
      *
-     * @return The CIDR address block used for the destination match. For example:
-     *         <code>0.0.0.0/0</code>. The value you provide must match the CIDR of
-     *         an existing route in the table.
+     * @return The CIDR address block used for the destination match. The value you
+     *         provide must match the CIDR of an existing route in the table.
      */
     public String getDestinationCidrBlock() {
         return destinationCidrBlock;
     }
     
     /**
-     * The CIDR address block used for the destination match. For example:
-     * <code>0.0.0.0/0</code>. The value you provide must match the CIDR of
-     * an existing route in the table.
+     * The CIDR address block used for the destination match. The value you
+     * provide must match the CIDR of an existing route in the table.
      *
-     * @param destinationCidrBlock The CIDR address block used for the destination match. For example:
-     *         <code>0.0.0.0/0</code>. The value you provide must match the CIDR of
-     *         an existing route in the table.
+     * @param destinationCidrBlock The CIDR address block used for the destination match. The value you
+     *         provide must match the CIDR of an existing route in the table.
      */
     public void setDestinationCidrBlock(String destinationCidrBlock) {
         this.destinationCidrBlock = destinationCidrBlock;
     }
     
     /**
-     * The CIDR address block used for the destination match. For example:
-     * <code>0.0.0.0/0</code>. The value you provide must match the CIDR of
-     * an existing route in the table.
+     * The CIDR address block used for the destination match. The value you
+     * provide must match the CIDR of an existing route in the table.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param destinationCidrBlock The CIDR address block used for the destination match. For example:
-     *         <code>0.0.0.0/0</code>. The value you provide must match the CIDR of
-     *         an existing route in the table.
+     * @param destinationCidrBlock The CIDR address block used for the destination match. The value you
+     *         provide must match the CIDR of an existing route in the table.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -135,29 +134,29 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The ID of a VPN or Internet gateway attached to your VPC.
+     * The ID of an Internet gateway attached to your VPC.
      *
-     * @return The ID of a VPN or Internet gateway attached to your VPC.
+     * @return The ID of an Internet gateway attached to your VPC.
      */
     public String getGatewayId() {
         return gatewayId;
     }
     
     /**
-     * The ID of a VPN or Internet gateway attached to your VPC.
+     * The ID of an Internet gateway attached to your VPC.
      *
-     * @param gatewayId The ID of a VPN or Internet gateway attached to your VPC.
+     * @param gatewayId The ID of an Internet gateway attached to your VPC.
      */
     public void setGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
     }
     
     /**
-     * The ID of a VPN or Internet gateway attached to your VPC.
+     * The ID of an Internet gateway attached to your VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param gatewayId The ID of a VPN or Internet gateway attached to your VPC.
+     * @param gatewayId The ID of an Internet gateway attached to your VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -201,29 +200,29 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * Returns the value of the NetworkInterfaceId property for this object.
+     * The ID of a network interface.
      *
-     * @return The value of the NetworkInterfaceId property for this object.
+     * @return The ID of a network interface.
      */
     public String getNetworkInterfaceId() {
         return networkInterfaceId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceId property for this object.
+     * The ID of a network interface.
      *
-     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     * @param networkInterfaceId The ID of a network interface.
      */
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
     
     /**
-     * Sets the value of the NetworkInterfaceId property for this object.
+     * The ID of a network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     * @param networkInterfaceId The ID of a network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

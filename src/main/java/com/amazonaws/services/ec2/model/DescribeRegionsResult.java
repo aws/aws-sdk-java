@@ -17,21 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of describing the available Amazon EC2 regions.
- * </p>
+ * 
  */
 public class DescribeRegionsResult implements Serializable {
 
     /**
-     * The list of described Amazon EC2 regions.
+     * Information about one or more regions.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Region> regions;
 
     /**
-     * The list of described Amazon EC2 regions.
+     * Information about one or more regions.
      *
-     * @return The list of described Amazon EC2 regions.
+     * @return Information about one or more regions.
      */
     public java.util.List<Region> getRegions() {
         if (regions == null) {
@@ -42,9 +40,9 @@ public class DescribeRegionsResult implements Serializable {
     }
     
     /**
-     * The list of described Amazon EC2 regions.
+     * Information about one or more regions.
      *
-     * @param regions The list of described Amazon EC2 regions.
+     * @param regions Information about one or more regions.
      */
     public void setRegions(java.util.Collection<Region> regions) {
         if (regions == null) {
@@ -57,11 +55,11 @@ public class DescribeRegionsResult implements Serializable {
     }
     
     /**
-     * The list of described Amazon EC2 regions.
+     * Information about one or more regions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param regions The list of described Amazon EC2 regions.
+     * @param regions Information about one or more regions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,11 +73,11 @@ public class DescribeRegionsResult implements Serializable {
     }
     
     /**
-     * The list of described Amazon EC2 regions.
+     * Information about one or more regions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param regions The list of described Amazon EC2 regions.
+     * @param regions Information about one or more regions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

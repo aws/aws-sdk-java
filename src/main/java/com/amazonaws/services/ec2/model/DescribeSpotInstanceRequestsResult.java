@@ -17,17 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Describe Spot Instance Requests Result
+ * 
  */
 public class DescribeSpotInstanceRequestsResult implements Serializable {
 
+    /**
+     * One or more Spot Instance requests.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<SpotInstanceRequest> spotInstanceRequests;
 
     /**
-     * Returns the value of the SpotInstanceRequests property for this
-     * object.
+     * One or more Spot Instance requests.
      *
-     * @return The value of the SpotInstanceRequests property for this object.
+     * @return One or more Spot Instance requests.
      */
     public java.util.List<SpotInstanceRequest> getSpotInstanceRequests() {
         if (spotInstanceRequests == null) {
@@ -38,9 +40,9 @@ public class DescribeSpotInstanceRequestsResult implements Serializable {
     }
     
     /**
-     * Sets the value of the SpotInstanceRequests property for this object.
+     * One or more Spot Instance requests.
      *
-     * @param spotInstanceRequests The new value for the SpotInstanceRequests property for this object.
+     * @param spotInstanceRequests One or more Spot Instance requests.
      */
     public void setSpotInstanceRequests(java.util.Collection<SpotInstanceRequest> spotInstanceRequests) {
         if (spotInstanceRequests == null) {
@@ -53,11 +55,11 @@ public class DescribeSpotInstanceRequestsResult implements Serializable {
     }
     
     /**
-     * Sets the value of the SpotInstanceRequests property for this object.
+     * One or more Spot Instance requests.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequests The new value for the SpotInstanceRequests property for this object.
+     * @param spotInstanceRequests One or more Spot Instance requests.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -71,11 +73,11 @@ public class DescribeSpotInstanceRequestsResult implements Serializable {
     }
     
     /**
-     * Sets the value of the SpotInstanceRequests property for this object.
+     * One or more Spot Instance requests.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequests The new value for the SpotInstanceRequests property for this object.
+     * @param spotInstanceRequests One or more Spot Instance requests.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

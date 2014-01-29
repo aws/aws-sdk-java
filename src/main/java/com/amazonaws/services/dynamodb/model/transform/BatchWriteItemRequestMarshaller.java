@@ -36,6 +36,7 @@ import com.amazonaws.util.json.*;
 
 /**
  * Batch Write Item Request Marshaller
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.BatchWriteItemRequestMarshaller} instead.
  */
 @Deprecated
 public class BatchWriteItemRequestMarshaller implements Marshaller<Request<BatchWriteItemRequest>, BatchWriteItemRequest> {

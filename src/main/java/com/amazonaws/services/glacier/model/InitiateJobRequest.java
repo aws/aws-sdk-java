@@ -85,6 +85,36 @@ import com.amazonaws.AmazonWebServiceRequest;
  * information in your database with the actual vault inventory.
  * </p>
  * <p>
+ * <b>Range Inventory Retrieval</b>
+ * </p>
+ * <p>
+ * You can limit the number of inventory items retrieved by filtering on the archive creation date or by setting a limit.
+ * </p>
+ * <p>
+ * <i>Filtering by Archive Creation Date</i>
+ * </p>
+ * <p>
+ * You can retrieve inventory items for archives created between <code>StartDate</code> and <code>EndDate</code> by specifying values for these
+ * parameters in the <b>InitiateJob</b> request. Archives created on or after the <code>StartDate</code> and before the <code>EndDate</code> will be
+ * returned. If you only provide the <code>StartDate</code> without the <code>EndDate</code> , you will retrieve the inventory for all archives created
+ * on or after the <code>StartDate</code> . If you only provide the <code>EndDate</code> without the <code>StartDate</code> , you will get back the
+ * inventory for all archives created before the <code>EndDate</code> .
+ * </p>
+ * <p>
+ * <i>Limiting Inventory Items per Retrieval</i>
+ * </p>
+ * <p>
+ * You can limit the number of inventory items returned by setting the <code>Limit</code> parameter in the <b>InitiateJob</b> request. The inventory job
+ * output will contain inventory items up to the specified <code>Limit</code> . If there are more inventory items available, the result is paginated.
+ * After a job is complete you can use the DescribeJob operation to get a marker that you use in a subsequent <b>InitiateJob</b> request. The marker will
+ * indicate the starting point to retrieve the next set of inventory items. You can page through your entire inventory by repeatedly making
+ * <b>InitiateJob</b> requests with the marker from the previous <b>DescribeJob</b> output, until you get a marker from <b>DescribeJob</b> that returns
+ * null, indicating that there are no more inventory items available.
+ * </p>
+ * <p>
+ * You can use the <code>Limit</code> parameter together with the date range parameters.
+ * </p>
+ * <p>
  * <b>About Ranged Archive Retrieval</b>
  * </p>
  * <p>

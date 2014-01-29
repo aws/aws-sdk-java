@@ -50,6 +50,7 @@ public class DescribeWorkingStorageResultJsonUnmarshaller implements Unmarshalle
                     describeWorkingStorageResult.setGatewayARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DiskIds", targetDepth)) {
+                    context.nextToken();
                     describeWorkingStorageResult.setDiskIds(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("WorkingStorageUsedInBytes", targetDepth)) {

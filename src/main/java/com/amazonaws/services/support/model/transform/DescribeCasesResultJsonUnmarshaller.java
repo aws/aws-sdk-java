@@ -46,6 +46,7 @@ public class DescribeCasesResultJsonUnmarshaller implements Unmarshaller<Describ
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cases", targetDepth)) {
+                    context.nextToken();
                     describeCasesResult.setCases(new ListUnmarshaller<CaseDetails>(CaseDetailsJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {

@@ -17,50 +17,49 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of describing an EBS snapshot attribute.
- * </p>
+ * 
  */
 public class DescribeSnapshotAttributeResult implements Serializable {
 
     /**
-     * The ID of the snapshot whose attribute is being described.
+     * The ID of the Amazon EBS snapshot.
      */
     private String snapshotId;
 
     /**
-     * The list of permissions describing who can create a volume from the
-     * associated EBS snapshot. <p> Only available if the
-     * createVolumePermission attribute is requested.
+     * A list of permissions for creating volumes from the snapshot.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission> createVolumePermissions;
 
+    /**
+     * A list of product codes.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode> productCodes;
 
     /**
-     * The ID of the snapshot whose attribute is being described.
+     * The ID of the Amazon EBS snapshot.
      *
-     * @return The ID of the snapshot whose attribute is being described.
+     * @return The ID of the Amazon EBS snapshot.
      */
     public String getSnapshotId() {
         return snapshotId;
     }
     
     /**
-     * The ID of the snapshot whose attribute is being described.
+     * The ID of the Amazon EBS snapshot.
      *
-     * @param snapshotId The ID of the snapshot whose attribute is being described.
+     * @param snapshotId The ID of the Amazon EBS snapshot.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
     
     /**
-     * The ID of the snapshot whose attribute is being described.
+     * The ID of the Amazon EBS snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotId The ID of the snapshot whose attribute is being described.
+     * @param snapshotId The ID of the Amazon EBS snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -71,13 +70,9 @@ public class DescribeSnapshotAttributeResult implements Serializable {
     }
 
     /**
-     * The list of permissions describing who can create a volume from the
-     * associated EBS snapshot. <p> Only available if the
-     * createVolumePermission attribute is requested.
+     * A list of permissions for creating volumes from the snapshot.
      *
-     * @return The list of permissions describing who can create a volume from the
-     *         associated EBS snapshot. <p> Only available if the
-     *         createVolumePermission attribute is requested.
+     * @return A list of permissions for creating volumes from the snapshot.
      */
     public java.util.List<CreateVolumePermission> getCreateVolumePermissions() {
         if (createVolumePermissions == null) {
@@ -88,13 +83,9 @@ public class DescribeSnapshotAttributeResult implements Serializable {
     }
     
     /**
-     * The list of permissions describing who can create a volume from the
-     * associated EBS snapshot. <p> Only available if the
-     * createVolumePermission attribute is requested.
+     * A list of permissions for creating volumes from the snapshot.
      *
-     * @param createVolumePermissions The list of permissions describing who can create a volume from the
-     *         associated EBS snapshot. <p> Only available if the
-     *         createVolumePermission attribute is requested.
+     * @param createVolumePermissions A list of permissions for creating volumes from the snapshot.
      */
     public void setCreateVolumePermissions(java.util.Collection<CreateVolumePermission> createVolumePermissions) {
         if (createVolumePermissions == null) {
@@ -107,15 +98,11 @@ public class DescribeSnapshotAttributeResult implements Serializable {
     }
     
     /**
-     * The list of permissions describing who can create a volume from the
-     * associated EBS snapshot. <p> Only available if the
-     * createVolumePermission attribute is requested.
+     * A list of permissions for creating volumes from the snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createVolumePermissions The list of permissions describing who can create a volume from the
-     *         associated EBS snapshot. <p> Only available if the
-     *         createVolumePermission attribute is requested.
+     * @param createVolumePermissions A list of permissions for creating volumes from the snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -129,15 +116,11 @@ public class DescribeSnapshotAttributeResult implements Serializable {
     }
     
     /**
-     * The list of permissions describing who can create a volume from the
-     * associated EBS snapshot. <p> Only available if the
-     * createVolumePermission attribute is requested.
+     * A list of permissions for creating volumes from the snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createVolumePermissions The list of permissions describing who can create a volume from the
-     *         associated EBS snapshot. <p> Only available if the
-     *         createVolumePermission attribute is requested.
+     * @param createVolumePermissions A list of permissions for creating volumes from the snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -155,9 +138,9 @@ public class DescribeSnapshotAttributeResult implements Serializable {
     }
 
     /**
-     * Returns the value of the ProductCodes property for this object.
+     * A list of product codes.
      *
-     * @return The value of the ProductCodes property for this object.
+     * @return A list of product codes.
      */
     public java.util.List<ProductCode> getProductCodes() {
         if (productCodes == null) {
@@ -168,9 +151,9 @@ public class DescribeSnapshotAttributeResult implements Serializable {
     }
     
     /**
-     * Sets the value of the ProductCodes property for this object.
+     * A list of product codes.
      *
-     * @param productCodes The new value for the ProductCodes property for this object.
+     * @param productCodes A list of product codes.
      */
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
         if (productCodes == null) {
@@ -183,11 +166,11 @@ public class DescribeSnapshotAttributeResult implements Serializable {
     }
     
     /**
-     * Sets the value of the ProductCodes property for this object.
+     * A list of product codes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param productCodes The new value for the ProductCodes property for this object.
+     * @param productCodes A list of product codes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -201,11 +184,11 @@ public class DescribeSnapshotAttributeResult implements Serializable {
     }
     
     /**
-     * Sets the value of the ProductCodes property for this object.
+     * A list of product codes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param productCodes The new value for the ProductCodes property for this object.
+     * @param productCodes A list of product codes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

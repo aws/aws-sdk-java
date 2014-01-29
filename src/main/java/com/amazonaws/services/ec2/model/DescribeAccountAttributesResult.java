@@ -17,16 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Describe Account Attributes Result
+ * 
  */
 public class DescribeAccountAttributesResult implements Serializable {
 
+    /**
+     * Information about one or more account attributes.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<AccountAttribute> accountAttributes;
 
     /**
-     * Returns the value of the AccountAttributes property for this object.
+     * Information about one or more account attributes.
      *
-     * @return The value of the AccountAttributes property for this object.
+     * @return Information about one or more account attributes.
      */
     public java.util.List<AccountAttribute> getAccountAttributes() {
         if (accountAttributes == null) {
@@ -37,9 +40,9 @@ public class DescribeAccountAttributesResult implements Serializable {
     }
     
     /**
-     * Sets the value of the AccountAttributes property for this object.
+     * Information about one or more account attributes.
      *
-     * @param accountAttributes The new value for the AccountAttributes property for this object.
+     * @param accountAttributes Information about one or more account attributes.
      */
     public void setAccountAttributes(java.util.Collection<AccountAttribute> accountAttributes) {
         if (accountAttributes == null) {
@@ -52,11 +55,11 @@ public class DescribeAccountAttributesResult implements Serializable {
     }
     
     /**
-     * Sets the value of the AccountAttributes property for this object.
+     * Information about one or more account attributes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param accountAttributes The new value for the AccountAttributes property for this object.
+     * @param accountAttributes Information about one or more account attributes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -70,11 +73,11 @@ public class DescribeAccountAttributesResult implements Serializable {
     }
     
     /**
-     * Sets the value of the AccountAttributes property for this object.
+     * Information about one or more account attributes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param accountAttributes The new value for the AccountAttributes property for this object.
+     * @param accountAttributes Information about one or more account attributes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

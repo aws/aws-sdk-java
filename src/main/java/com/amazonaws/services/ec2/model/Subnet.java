@@ -18,19 +18,18 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The Subnet data type.
+ * Describes a subnet.
  * </p>
  */
 public class Subnet implements Serializable {
 
     /**
-     * Specifies the ID of the subnet.
+     * The ID of the subnet.
      */
     private String subnetId;
 
     /**
-     * Describes the current state of the subnet. The state of the subnet may
-     * be either <code>pending</code> or <code>available</code>.
+     * The current state of the subnet.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available
@@ -38,60 +37,67 @@ public class Subnet implements Serializable {
     private String state;
 
     /**
-     * Contains the ID of the VPC the subnet is in.
+     * The ID of the VPC the subnet is in.
      */
     private String vpcId;
 
     /**
-     * Specifies the CIDR block assigned to the subnet.
+     * The CIDR block assigned to the subnet.
      */
     private String cidrBlock;
 
     /**
-     * Specifies the number of unused IP addresses in the subnet. <note> <p>
-     * The IP addresses for any stopped instances are considered unavailable.
-     * </note>
+     * The number of unused IP addresses in the subnet. Note that the IP
+     * addresses for any stopped instances are considered unavailable.
      */
     private Integer availableIpAddressCount;
 
     /**
-     * Specifies the Availability Zone the subnet is in.
+     * The Availability Zone of the subnet.
      */
     private String availabilityZone;
 
+    /**
+     * Indicates whether this is the default subnet for the Availability
+     * Zone.
+     */
     private Boolean defaultForAz;
 
+    /**
+     * Indicates whether instances launched in this subnet receive a public
+     * IP address.
+     */
     private Boolean mapPublicIpOnLaunch;
 
     /**
-     * A list of tags for the Subnet.
+     * Any tags assigned to the subnet.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * Specifies the ID of the subnet.
+     * The ID of the subnet.
      *
-     * @return Specifies the ID of the subnet.
+     * @return The ID of the subnet.
      */
     public String getSubnetId() {
         return subnetId;
     }
     
     /**
-     * Specifies the ID of the subnet.
+     * The ID of the subnet.
      *
-     * @param subnetId Specifies the ID of the subnet.
+     * @param subnetId The ID of the subnet.
      */
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
     
     /**
-     * Specifies the ID of the subnet.
+     * The ID of the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetId Specifies the ID of the subnet.
+     * @param subnetId The ID of the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -102,14 +108,12 @@ public class Subnet implements Serializable {
     }
 
     /**
-     * Describes the current state of the subnet. The state of the subnet may
-     * be either <code>pending</code> or <code>available</code>.
+     * The current state of the subnet.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available
      *
-     * @return Describes the current state of the subnet. The state of the subnet may
-     *         be either <code>pending</code> or <code>available</code>.
+     * @return The current state of the subnet.
      *
      * @see SubnetState
      */
@@ -118,14 +122,12 @@ public class Subnet implements Serializable {
     }
     
     /**
-     * Describes the current state of the subnet. The state of the subnet may
-     * be either <code>pending</code> or <code>available</code>.
+     * The current state of the subnet.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available
      *
-     * @param state Describes the current state of the subnet. The state of the subnet may
-     *         be either <code>pending</code> or <code>available</code>.
+     * @param state The current state of the subnet.
      *
      * @see SubnetState
      */
@@ -134,16 +136,14 @@ public class Subnet implements Serializable {
     }
     
     /**
-     * Describes the current state of the subnet. The state of the subnet may
-     * be either <code>pending</code> or <code>available</code>.
+     * The current state of the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available
      *
-     * @param state Describes the current state of the subnet. The state of the subnet may
-     *         be either <code>pending</code> or <code>available</code>.
+     * @param state The current state of the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -156,14 +156,12 @@ public class Subnet implements Serializable {
     }
 
     /**
-     * Describes the current state of the subnet. The state of the subnet may
-     * be either <code>pending</code> or <code>available</code>.
+     * The current state of the subnet.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available
      *
-     * @param state Describes the current state of the subnet. The state of the subnet may
-     *         be either <code>pending</code> or <code>available</code>.
+     * @param state The current state of the subnet.
      *
      * @see SubnetState
      */
@@ -172,16 +170,14 @@ public class Subnet implements Serializable {
     }
     
     /**
-     * Describes the current state of the subnet. The state of the subnet may
-     * be either <code>pending</code> or <code>available</code>.
+     * The current state of the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available
      *
-     * @param state Describes the current state of the subnet. The state of the subnet may
-     *         be either <code>pending</code> or <code>available</code>.
+     * @param state The current state of the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -194,29 +190,29 @@ public class Subnet implements Serializable {
     }
 
     /**
-     * Contains the ID of the VPC the subnet is in.
+     * The ID of the VPC the subnet is in.
      *
-     * @return Contains the ID of the VPC the subnet is in.
+     * @return The ID of the VPC the subnet is in.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * Contains the ID of the VPC the subnet is in.
+     * The ID of the VPC the subnet is in.
      *
-     * @param vpcId Contains the ID of the VPC the subnet is in.
+     * @param vpcId The ID of the VPC the subnet is in.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * Contains the ID of the VPC the subnet is in.
+     * The ID of the VPC the subnet is in.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId Contains the ID of the VPC the subnet is in.
+     * @param vpcId The ID of the VPC the subnet is in.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -227,29 +223,29 @@ public class Subnet implements Serializable {
     }
 
     /**
-     * Specifies the CIDR block assigned to the subnet.
+     * The CIDR block assigned to the subnet.
      *
-     * @return Specifies the CIDR block assigned to the subnet.
+     * @return The CIDR block assigned to the subnet.
      */
     public String getCidrBlock() {
         return cidrBlock;
     }
     
     /**
-     * Specifies the CIDR block assigned to the subnet.
+     * The CIDR block assigned to the subnet.
      *
-     * @param cidrBlock Specifies the CIDR block assigned to the subnet.
+     * @param cidrBlock The CIDR block assigned to the subnet.
      */
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
     
     /**
-     * Specifies the CIDR block assigned to the subnet.
+     * The CIDR block assigned to the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cidrBlock Specifies the CIDR block assigned to the subnet.
+     * @param cidrBlock The CIDR block assigned to the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -260,41 +256,35 @@ public class Subnet implements Serializable {
     }
 
     /**
-     * Specifies the number of unused IP addresses in the subnet. <note> <p>
-     * The IP addresses for any stopped instances are considered unavailable.
-     * </note>
+     * The number of unused IP addresses in the subnet. Note that the IP
+     * addresses for any stopped instances are considered unavailable.
      *
-     * @return Specifies the number of unused IP addresses in the subnet. <note> <p>
-     *         The IP addresses for any stopped instances are considered unavailable.
-     *         </note>
+     * @return The number of unused IP addresses in the subnet. Note that the IP
+     *         addresses for any stopped instances are considered unavailable.
      */
     public Integer getAvailableIpAddressCount() {
         return availableIpAddressCount;
     }
     
     /**
-     * Specifies the number of unused IP addresses in the subnet. <note> <p>
-     * The IP addresses for any stopped instances are considered unavailable.
-     * </note>
+     * The number of unused IP addresses in the subnet. Note that the IP
+     * addresses for any stopped instances are considered unavailable.
      *
-     * @param availableIpAddressCount Specifies the number of unused IP addresses in the subnet. <note> <p>
-     *         The IP addresses for any stopped instances are considered unavailable.
-     *         </note>
+     * @param availableIpAddressCount The number of unused IP addresses in the subnet. Note that the IP
+     *         addresses for any stopped instances are considered unavailable.
      */
     public void setAvailableIpAddressCount(Integer availableIpAddressCount) {
         this.availableIpAddressCount = availableIpAddressCount;
     }
     
     /**
-     * Specifies the number of unused IP addresses in the subnet. <note> <p>
-     * The IP addresses for any stopped instances are considered unavailable.
-     * </note>
+     * The number of unused IP addresses in the subnet. Note that the IP
+     * addresses for any stopped instances are considered unavailable.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availableIpAddressCount Specifies the number of unused IP addresses in the subnet. <note> <p>
-     *         The IP addresses for any stopped instances are considered unavailable.
-     *         </note>
+     * @param availableIpAddressCount The number of unused IP addresses in the subnet. Note that the IP
+     *         addresses for any stopped instances are considered unavailable.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -305,29 +295,29 @@ public class Subnet implements Serializable {
     }
 
     /**
-     * Specifies the Availability Zone the subnet is in.
+     * The Availability Zone of the subnet.
      *
-     * @return Specifies the Availability Zone the subnet is in.
+     * @return The Availability Zone of the subnet.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * Specifies the Availability Zone the subnet is in.
+     * The Availability Zone of the subnet.
      *
-     * @param availabilityZone Specifies the Availability Zone the subnet is in.
+     * @param availabilityZone The Availability Zone of the subnet.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * Specifies the Availability Zone the subnet is in.
+     * The Availability Zone of the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone Specifies the Availability Zone the subnet is in.
+     * @param availabilityZone The Availability Zone of the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -338,29 +328,35 @@ public class Subnet implements Serializable {
     }
 
     /**
-     * Returns the value of the DefaultForAz property for this object.
+     * Indicates whether this is the default subnet for the Availability
+     * Zone.
      *
-     * @return The value of the DefaultForAz property for this object.
+     * @return Indicates whether this is the default subnet for the Availability
+     *         Zone.
      */
     public Boolean isDefaultForAz() {
         return defaultForAz;
     }
     
     /**
-     * Sets the value of the DefaultForAz property for this object.
+     * Indicates whether this is the default subnet for the Availability
+     * Zone.
      *
-     * @param defaultForAz The new value for the DefaultForAz property for this object.
+     * @param defaultForAz Indicates whether this is the default subnet for the Availability
+     *         Zone.
      */
     public void setDefaultForAz(Boolean defaultForAz) {
         this.defaultForAz = defaultForAz;
     }
     
     /**
-     * Sets the value of the DefaultForAz property for this object.
+     * Indicates whether this is the default subnet for the Availability
+     * Zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultForAz The new value for the DefaultForAz property for this object.
+     * @param defaultForAz Indicates whether this is the default subnet for the Availability
+     *         Zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -371,38 +367,46 @@ public class Subnet implements Serializable {
     }
 
     /**
-     * Returns the value of the DefaultForAz property for this object.
+     * Indicates whether this is the default subnet for the Availability
+     * Zone.
      *
-     * @return The value of the DefaultForAz property for this object.
+     * @return Indicates whether this is the default subnet for the Availability
+     *         Zone.
      */
     public Boolean getDefaultForAz() {
         return defaultForAz;
     }
 
     /**
-     * Returns the value of the MapPublicIpOnLaunch property for this object.
+     * Indicates whether instances launched in this subnet receive a public
+     * IP address.
      *
-     * @return The value of the MapPublicIpOnLaunch property for this object.
+     * @return Indicates whether instances launched in this subnet receive a public
+     *         IP address.
      */
     public Boolean isMapPublicIpOnLaunch() {
         return mapPublicIpOnLaunch;
     }
     
     /**
-     * Sets the value of the MapPublicIpOnLaunch property for this object.
+     * Indicates whether instances launched in this subnet receive a public
+     * IP address.
      *
-     * @param mapPublicIpOnLaunch The new value for the MapPublicIpOnLaunch property for this object.
+     * @param mapPublicIpOnLaunch Indicates whether instances launched in this subnet receive a public
+     *         IP address.
      */
     public void setMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
         this.mapPublicIpOnLaunch = mapPublicIpOnLaunch;
     }
     
     /**
-     * Sets the value of the MapPublicIpOnLaunch property for this object.
+     * Indicates whether instances launched in this subnet receive a public
+     * IP address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param mapPublicIpOnLaunch The new value for the MapPublicIpOnLaunch property for this object.
+     * @param mapPublicIpOnLaunch Indicates whether instances launched in this subnet receive a public
+     *         IP address.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -413,18 +417,20 @@ public class Subnet implements Serializable {
     }
 
     /**
-     * Returns the value of the MapPublicIpOnLaunch property for this object.
+     * Indicates whether instances launched in this subnet receive a public
+     * IP address.
      *
-     * @return The value of the MapPublicIpOnLaunch property for this object.
+     * @return Indicates whether instances launched in this subnet receive a public
+     *         IP address.
      */
     public Boolean getMapPublicIpOnLaunch() {
         return mapPublicIpOnLaunch;
     }
 
     /**
-     * A list of tags for the Subnet.
+     * Any tags assigned to the subnet.
      *
-     * @return A list of tags for the Subnet.
+     * @return Any tags assigned to the subnet.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
@@ -435,9 +441,9 @@ public class Subnet implements Serializable {
     }
     
     /**
-     * A list of tags for the Subnet.
+     * Any tags assigned to the subnet.
      *
-     * @param tags A list of tags for the Subnet.
+     * @param tags Any tags assigned to the subnet.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -450,11 +456,11 @@ public class Subnet implements Serializable {
     }
     
     /**
-     * A list of tags for the Subnet.
+     * Any tags assigned to the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags A list of tags for the Subnet.
+     * @param tags Any tags assigned to the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -468,11 +474,11 @@ public class Subnet implements Serializable {
     }
     
     /**
-     * A list of tags for the Subnet.
+     * Any tags assigned to the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags A list of tags for the Subnet.
+     * @param tags Any tags assigned to the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

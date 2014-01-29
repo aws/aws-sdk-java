@@ -46,6 +46,7 @@ public class ListMultipartUploadsResultJsonUnmarshaller implements Unmarshaller<
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UploadsList", targetDepth)) {
+                    context.nextToken();
                     listMultipartUploadsResult.setUploadsList(new ListUnmarshaller<UploadListElement>(UploadListElementJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {

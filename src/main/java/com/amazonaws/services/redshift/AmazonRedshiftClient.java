@@ -3226,7 +3226,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);

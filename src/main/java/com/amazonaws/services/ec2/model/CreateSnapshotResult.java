@@ -17,41 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of creating a snapshot from an EBS volume.
- * </p>
+ * 
  */
 public class CreateSnapshotResult implements Serializable {
 
     /**
-     * The new snapshot.
+     * 
      */
     private Snapshot snapshot;
 
     /**
-     * The new snapshot.
+     * 
      *
-     * @return The new snapshot.
+     * @return 
      */
     public Snapshot getSnapshot() {
         return snapshot;
     }
     
     /**
-     * The new snapshot.
+     * 
      *
-     * @param snapshot The new snapshot.
+     * @param snapshot 
      */
     public void setSnapshot(Snapshot snapshot) {
         this.snapshot = snapshot;
     }
     
     /**
-     * The new snapshot.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshot The new snapshot.
+     * @param snapshot 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

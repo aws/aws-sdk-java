@@ -23,12 +23,9 @@ import com.amazonaws.services.ec2.model.transform.DeleteSpotDatafeedSubscription
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest) DeleteSpotDatafeedSubscription operation}.
  * <p>
- * Deletes the data feed for Spot Instances.
- * </p>
- * <p>
- * For conceptual information about Spot Instances, refer to the Amazon Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud User Guide
- * .
- * 
+ * Deletes the datafeed for Spot Instances. For more information, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
+ * Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest)

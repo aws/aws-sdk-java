@@ -52,6 +52,12 @@ public class PartListing {
      * specify where in the results to begin listing parts.
      */
     private Integer partNumberMarker;
+    
+    /**
+     * The encodingType parameter originally specified by the caller when this
+     * part listing was returned.
+     */
+    private String encodingType;
 
     /** The user who owns the associated multipart upload. */
     private Owner owner;
@@ -281,6 +287,31 @@ public class PartListing {
      */
     public void setMaxParts(int maxParts) {
         this.maxParts = maxParts;
+    }
+
+    /**
+     * Gets the encoding type used by Amazon S3 to encode object key names in
+     * the XML response. If you specify <code>encodingType</code> request
+     * parameter, Amazon S3 includes this element in the response, and returns
+     * encoded key name values in the <code>Key</code> element.
+     * 
+     * @return <code>Null</code> if <code>encodingType</code> is not specified
+     *         in the request parameter.
+     */
+    public String getEncodingType() {
+        return encodingType;
+    }
+
+    /**
+     * For internal use only. Sets the encoding type used by Amazon S3 to encode
+     * object key names in the XML response.
+     * 
+     * @param encodingType
+     *            <code>Null</code> if <code>encodingType</code> is not
+     *            specified in the request parameter.
+     */
+    public void setEncodingType(String encodingType) {
+        this.encodingType = encodingType;
     }
 
     /**

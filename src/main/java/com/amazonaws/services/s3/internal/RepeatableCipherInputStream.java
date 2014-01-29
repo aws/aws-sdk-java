@@ -23,6 +23,7 @@ import java.io.InputStream;
 import javax.crypto.Cipher;
 import javax.crypto.CipherInputStream;
 
+import com.amazonaws.internal.SdkFilterInputStream;
 import com.amazonaws.services.s3.internal.crypto.CipherFactory;
 
 /**
@@ -30,16 +31,30 @@ import com.amazonaws.services.s3.internal.crypto.CipherFactory;
  * resets by attempting to reset on the original, unencrypted data InputStream,
  * and recreate an identical Cipher and identical CipherInputStream on the
  * original data.
+ * <p>
+ * It's repeatable if and only if the underlying unencryptedDataStream is
+ * repeatable - if the underlying input stream is not repeatable and you're
+ * going to buffer to make it repeatable anyways, it makes more sense to do
+ * so after wrapping in this object, so we buffer the encrypted data and don't
+ * have to bother re-encrypting on retry.
+ * <p>
+ * This stream <em>only</em> supports being marked before the first call to
+ * {@code read} or {@code skip}, since it's not possible to rewind the
+ * encryption state of a {@code CipherInputStream} to an arbitrary point. If
+ * you call {@code mark} after calling {@code read} or {@code skip}, it will
+ * throw an {@code UnsupportedOperationException}.
  */
-public class RepeatableCipherInputStream extends AbstractRepeatableInputStream {
+public class RepeatableCipherInputStream extends SdkFilterInputStream {
+
     private CipherFactory cipherFactory;
     private InputStream unencryptedDataStream;
 
-    
+    private boolean hasBeenAccessed;
+
     /**
      * Constructs a new repeatable cipher input stream using the specified
-     * InputStream as the source data, and the CipherFactory for building Cipher
-     * objects.
+     * InputStream as the source data, and the CipherFactory for building
+     * Cipher objects.
      * 
      * @param input
      *            The original, unencrypted data stream. This stream should be
@@ -48,30 +63,69 @@ public class RepeatableCipherInputStream extends AbstractRepeatableInputStream {
      *            The factory used for creating identical cipher objects when
      *            this stream is reset and a new CipherInputStream is needed.
      */
-    public RepeatableCipherInputStream(InputStream input, CipherFactory cipherFactory) {
+    public RepeatableCipherInputStream(final InputStream input,
+                                       final CipherFactory cipherFactory) {
+
         super(createCipherInputStream(input, cipherFactory));
+
         this.unencryptedDataStream = input;
         this.cipherFactory = cipherFactory;
-
-        // Mark the beginning of the data stream so we can reset back to it
-        unencryptedDataStream.mark(-1);
-    }
-
-    private static CipherInputStream createCipherInputStream(InputStream input, CipherFactory cipherFactory) {
-        Cipher cipher = cipherFactory.createCipher();
-        return new CipherInputStream(input, cipher);
     }
 
     @Override
-    protected void reopenWrappedStream() throws IOException {
-		// We don't need to call in.close() here, since what
-		// CipherInputStream.close() does is merely call close() of the
-		// underlying stream (which is the same object as the
-		// unencryptedDataStream).
-		// So this actually means we SHOULD NOT call in.close(), since we still
-		// need the unencryptedDataStream to be available for reset.
-        unencryptedDataStream.reset();
-        in = createCipherInputStream(unencryptedDataStream, cipherFactory);
+    public boolean markSupported() {
+    	return unencryptedDataStream.markSupported();
+    }
+    
+    @Override
+    public void mark(final int readlimit) {
+        if (hasBeenAccessed) {
+            throw new UnsupportedOperationException(
+                    "Marking is only supported before your first call to "
+                    + "read or skip.");
+        }
+
+    	unencryptedDataStream.mark(readlimit);
     }
 
+    @Override
+    public void reset() throws IOException {
+        unencryptedDataStream.reset();
+        in = createCipherInputStream(unencryptedDataStream, cipherFactory);
+        hasBeenAccessed = false;
+    }
+
+    @Override
+    public int read() throws IOException {
+        hasBeenAccessed = true;
+        return super.read();
+    }
+
+    @Override
+    public int read(final byte[] b) throws IOException {
+        hasBeenAccessed = true;
+        return super.read(b);
+    }
+
+    @Override
+    public int read(final byte[] b, final int off, final int len)
+            throws IOException {
+
+        hasBeenAccessed = true;
+        return super.read(b, off, len);
+    }
+
+    @Override
+    public long skip(final long n) throws IOException {
+        hasBeenAccessed = true;
+        return super.skip(n);
+    }
+
+    private static CipherInputStream createCipherInputStream(
+            final InputStream input,
+            final CipherFactory cipherFactory) {
+
+        Cipher cipher = cipherFactory.createCipher();
+        return new CipherInputStream(input, cipher);
+    }
 }

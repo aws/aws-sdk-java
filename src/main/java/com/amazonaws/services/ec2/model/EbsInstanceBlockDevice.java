@@ -18,18 +18,18 @@ import java.io.Serializable;
 
 /**
  * <p>
- * An EBS volume backed block device which is attached to an instance.
+ * Describes a parameter used to set up an Amazon EBS volume in a block device mapping.
  * </p>
  */
 public class EbsInstanceBlockDevice implements Serializable {
 
     /**
-     * The ID of the EBS volume.
+     * The ID of the Amazon EBS volume.
      */
     private String volumeId;
 
     /**
-     * The status of the EBS volume.
+     * The attachment state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
@@ -37,41 +37,39 @@ public class EbsInstanceBlockDevice implements Serializable {
     private String status;
 
     /**
-     * The time at which the EBS volume was attached to the associated
-     * instance.
+     * The time stamp when the attachment initiated.
      */
     private java.util.Date attachTime;
 
     /**
-     * Specifies whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the volume is deleted on instance termination.
      */
     private Boolean deleteOnTermination;
 
     /**
-     * The ID of the EBS volume.
+     * The ID of the Amazon EBS volume.
      *
-     * @return The ID of the EBS volume.
+     * @return The ID of the Amazon EBS volume.
      */
     public String getVolumeId() {
         return volumeId;
     }
     
     /**
-     * The ID of the EBS volume.
+     * The ID of the Amazon EBS volume.
      *
-     * @param volumeId The ID of the EBS volume.
+     * @param volumeId The ID of the Amazon EBS volume.
      */
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
     
     /**
-     * The ID of the EBS volume.
+     * The ID of the Amazon EBS volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeId The ID of the EBS volume.
+     * @param volumeId The ID of the Amazon EBS volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -82,12 +80,12 @@ public class EbsInstanceBlockDevice implements Serializable {
     }
 
     /**
-     * The status of the EBS volume.
+     * The attachment state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @return The status of the EBS volume.
+     * @return The attachment state.
      *
      * @see AttachmentStatus
      */
@@ -96,12 +94,12 @@ public class EbsInstanceBlockDevice implements Serializable {
     }
     
     /**
-     * The status of the EBS volume.
+     * The attachment state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param status The status of the EBS volume.
+     * @param status The attachment state.
      *
      * @see AttachmentStatus
      */
@@ -110,14 +108,14 @@ public class EbsInstanceBlockDevice implements Serializable {
     }
     
     /**
-     * The status of the EBS volume.
+     * The attachment state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param status The status of the EBS volume.
+     * @param status The attachment state.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -130,12 +128,12 @@ public class EbsInstanceBlockDevice implements Serializable {
     }
 
     /**
-     * The status of the EBS volume.
+     * The attachment state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param status The status of the EBS volume.
+     * @param status The attachment state.
      *
      * @see AttachmentStatus
      */
@@ -144,14 +142,14 @@ public class EbsInstanceBlockDevice implements Serializable {
     }
     
     /**
-     * The status of the EBS volume.
+     * The attachment state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param status The status of the EBS volume.
+     * @param status The attachment state.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -164,35 +162,29 @@ public class EbsInstanceBlockDevice implements Serializable {
     }
 
     /**
-     * The time at which the EBS volume was attached to the associated
-     * instance.
+     * The time stamp when the attachment initiated.
      *
-     * @return The time at which the EBS volume was attached to the associated
-     *         instance.
+     * @return The time stamp when the attachment initiated.
      */
     public java.util.Date getAttachTime() {
         return attachTime;
     }
     
     /**
-     * The time at which the EBS volume was attached to the associated
-     * instance.
+     * The time stamp when the attachment initiated.
      *
-     * @param attachTime The time at which the EBS volume was attached to the associated
-     *         instance.
+     * @param attachTime The time stamp when the attachment initiated.
      */
     public void setAttachTime(java.util.Date attachTime) {
         this.attachTime = attachTime;
     }
     
     /**
-     * The time at which the EBS volume was attached to the associated
-     * instance.
+     * The time stamp when the attachment initiated.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachTime The time at which the EBS volume was attached to the associated
-     *         instance.
+     * @param attachTime The time stamp when the attachment initiated.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -203,35 +195,29 @@ public class EbsInstanceBlockDevice implements Serializable {
     }
 
     /**
-     * Specifies whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the volume is deleted on instance termination.
      *
-     * @return Specifies whether the Amazon EBS volume is deleted on instance
-     *         termination.
+     * @return Indicates whether the volume is deleted on instance termination.
      */
     public Boolean isDeleteOnTermination() {
         return deleteOnTermination;
     }
     
     /**
-     * Specifies whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the volume is deleted on instance termination.
      *
-     * @param deleteOnTermination Specifies whether the Amazon EBS volume is deleted on instance
-     *         termination.
+     * @param deleteOnTermination Indicates whether the volume is deleted on instance termination.
      */
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
     
     /**
-     * Specifies whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the volume is deleted on instance termination.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deleteOnTermination Specifies whether the Amazon EBS volume is deleted on instance
-     *         termination.
+     * @param deleteOnTermination Indicates whether the volume is deleted on instance termination.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -242,11 +228,9 @@ public class EbsInstanceBlockDevice implements Serializable {
     }
 
     /**
-     * Specifies whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the volume is deleted on instance termination.
      *
-     * @return Specifies whether the Amazon EBS volume is deleted on instance
-     *         termination.
+     * @return Indicates whether the volume is deleted on instance termination.
      */
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;

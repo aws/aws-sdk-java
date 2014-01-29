@@ -23,23 +23,24 @@ import com.amazonaws.services.ec2.model.transform.AuthorizeSecurityGroupEgressRe
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#authorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest) AuthorizeSecurityGroupEgress operation}.
  * <p>
- * This action applies only to security groups in a VPC; it's not supported for EC2 security groups. For information about Amazon Virtual Private Cloud
- * and VPC security groups, go to the Amazon Virtual Private Cloud User Guide.
+ * Adds one or more egress rules to a security group for use with a VPC. Specifically, this action permits instances to send traffic to one or more CIDR
+ * IP address ranges, or to one or more security groups for the same VPC.
  * </p>
  * <p>
- * The action adds one or more egress rules to a VPC security group. Specifically, this permits instances in a security group to send traffic to either
- * one or more destination CIDR IP address ranges, or to one or more destination security groups in the same VPC.
+ * <b>IMPORTANT:</b> You can have up to 50 rules per security group (covering both ingress and egress rules).
  * </p>
  * <p>
- * Each rule consists of the protocol (e.g., TCP), plus either a CIDR range, or a source group. For the TCP and UDP protocols, you must also specify the
- * destination port or port range. For the ICMP protocol, you must also specify the ICMP type and code. You can use <code>-1</code> as a wildcard for the
- * ICMP type or code.
+ * A security group is for use with instances either in the EC2-Classic platform or in a specific VPC. This action doesn't apply to security groups for
+ * use in EC2-Classic. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups
+ * for Your VPC </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  * <p>
- * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might occur.
+ * Each rule consists of the protocol (for example, TCP), plus either a CIDR range or a source group. For the TCP and UDP protocols, you must also
+ * specify the destination port or port range. For the ICMP protocol, you must also specify the ICMP type and code. You can use -1 for the type or code
+ * to mean all types or all codes.
  * </p>
  * <p>
- * <b>Important:</b> For VPC security groups: You can have up to 50 rules total per group (covering both ingress and egress).
+ * Rule changes are propagated to affected instances as quickly as possible. However, a small delay might occur.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#authorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest)
@@ -47,71 +48,79 @@ import com.amazonaws.services.ec2.model.transform.AuthorizeSecurityGroupEgressRe
 public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AuthorizeSecurityGroupEgressRequest> {
 
     /**
-     * ID of the VPC security group to modify.
+     * The ID of the security group.
      */
     private String groupId;
 
     /**
-     * Deprecated.
+     * [EC2-Classic, default VPC] The name of the source security group. You
+     * can't specify a source security group and a CIDR IP address range.
      */
     private String sourceSecurityGroupName;
 
     /**
-     * Deprecated.
+     * The ID of the source security group. You can't specify a source
+     * security group and a CIDR IP address range.
      */
     private String sourceSecurityGroupOwnerId;
 
     /**
-     * Deprecated.
+     * The IP protocol name (<code>tcp</code>, <code>udp</code>,
+     * <code>icmp</code>) or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers</a>). Use <code>-1</code> to specify all.
      */
     private String ipProtocol;
 
     /**
-     * Deprecated.
+     * The start of port range for the TCP and UDP protocols, or an ICMP type
+     * number. For the ICMP type number, use <code>-1</code> to specify all
+     * ICMP types.
      */
     private Integer fromPort;
 
     /**
-     * Deprecated.
+     * The end of port range for the TCP and UDP protocols, or an ICMP code
+     * number. For the ICMP code number, use <code>-1</code> to specify all
+     * ICMP codes for the ICMP type.
      */
     private Integer toPort;
 
     /**
-     * Deprecated.
+     * The CIDR IP address range. You can't specify this parameter when
+     * specifying a source security group.
      */
     private String cidrIp;
 
     /**
-     * List of IP permissions to authorize on the specified security group.
-     * Specifying permissions through IP permissions is the preferred way of
-     * authorizing permissions since it offers more flexibility and control.
+     * <p/>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission> ipPermissions;
 
     /**
-     * ID of the VPC security group to modify.
+     * The ID of the security group.
      *
-     * @return ID of the VPC security group to modify.
+     * @return The ID of the security group.
      */
     public String getGroupId() {
         return groupId;
     }
     
     /**
-     * ID of the VPC security group to modify.
+     * The ID of the security group.
      *
-     * @param groupId ID of the VPC security group to modify.
+     * @param groupId The ID of the security group.
      */
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
     
     /**
-     * ID of the VPC security group to modify.
+     * The ID of the security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupId ID of the VPC security group to modify.
+     * @param groupId The ID of the security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -122,29 +131,35 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Deprecated.
+     * [EC2-Classic, default VPC] The name of the source security group. You
+     * can't specify a source security group and a CIDR IP address range.
      *
-     * @return Deprecated.
+     * @return [EC2-Classic, default VPC] The name of the source security group. You
+     *         can't specify a source security group and a CIDR IP address range.
      */
     public String getSourceSecurityGroupName() {
         return sourceSecurityGroupName;
     }
     
     /**
-     * Deprecated.
+     * [EC2-Classic, default VPC] The name of the source security group. You
+     * can't specify a source security group and a CIDR IP address range.
      *
-     * @param sourceSecurityGroupName Deprecated.
+     * @param sourceSecurityGroupName [EC2-Classic, default VPC] The name of the source security group. You
+     *         can't specify a source security group and a CIDR IP address range.
      */
     public void setSourceSecurityGroupName(String sourceSecurityGroupName) {
         this.sourceSecurityGroupName = sourceSecurityGroupName;
     }
     
     /**
-     * Deprecated.
+     * [EC2-Classic, default VPC] The name of the source security group. You
+     * can't specify a source security group and a CIDR IP address range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceSecurityGroupName Deprecated.
+     * @param sourceSecurityGroupName [EC2-Classic, default VPC] The name of the source security group. You
+     *         can't specify a source security group and a CIDR IP address range.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -155,29 +170,35 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Deprecated.
+     * The ID of the source security group. You can't specify a source
+     * security group and a CIDR IP address range.
      *
-     * @return Deprecated.
+     * @return The ID of the source security group. You can't specify a source
+     *         security group and a CIDR IP address range.
      */
     public String getSourceSecurityGroupOwnerId() {
         return sourceSecurityGroupOwnerId;
     }
     
     /**
-     * Deprecated.
+     * The ID of the source security group. You can't specify a source
+     * security group and a CIDR IP address range.
      *
-     * @param sourceSecurityGroupOwnerId Deprecated.
+     * @param sourceSecurityGroupOwnerId The ID of the source security group. You can't specify a source
+     *         security group and a CIDR IP address range.
      */
     public void setSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
         this.sourceSecurityGroupOwnerId = sourceSecurityGroupOwnerId;
     }
     
     /**
-     * Deprecated.
+     * The ID of the source security group. You can't specify a source
+     * security group and a CIDR IP address range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceSecurityGroupOwnerId Deprecated.
+     * @param sourceSecurityGroupOwnerId The ID of the source security group. You can't specify a source
+     *         security group and a CIDR IP address range.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -188,29 +209,47 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Deprecated.
+     * The IP protocol name (<code>tcp</code>, <code>udp</code>,
+     * <code>icmp</code>) or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers</a>). Use <code>-1</code> to specify all.
      *
-     * @return Deprecated.
+     * @return The IP protocol name (<code>tcp</code>, <code>udp</code>,
+     *         <code>icmp</code>) or number (see <a
+     *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     *         Numbers</a>). Use <code>-1</code> to specify all.
      */
     public String getIpProtocol() {
         return ipProtocol;
     }
     
     /**
-     * Deprecated.
+     * The IP protocol name (<code>tcp</code>, <code>udp</code>,
+     * <code>icmp</code>) or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers</a>). Use <code>-1</code> to specify all.
      *
-     * @param ipProtocol Deprecated.
+     * @param ipProtocol The IP protocol name (<code>tcp</code>, <code>udp</code>,
+     *         <code>icmp</code>) or number (see <a
+     *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     *         Numbers</a>). Use <code>-1</code> to specify all.
      */
     public void setIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
     }
     
     /**
-     * Deprecated.
+     * The IP protocol name (<code>tcp</code>, <code>udp</code>,
+     * <code>icmp</code>) or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers</a>). Use <code>-1</code> to specify all.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ipProtocol Deprecated.
+     * @param ipProtocol The IP protocol name (<code>tcp</code>, <code>udp</code>,
+     *         <code>icmp</code>) or number (see <a
+     *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     *         Numbers</a>). Use <code>-1</code> to specify all.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -221,29 +260,41 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Deprecated.
+     * The start of port range for the TCP and UDP protocols, or an ICMP type
+     * number. For the ICMP type number, use <code>-1</code> to specify all
+     * ICMP types.
      *
-     * @return Deprecated.
+     * @return The start of port range for the TCP and UDP protocols, or an ICMP type
+     *         number. For the ICMP type number, use <code>-1</code> to specify all
+     *         ICMP types.
      */
     public Integer getFromPort() {
         return fromPort;
     }
     
     /**
-     * Deprecated.
+     * The start of port range for the TCP and UDP protocols, or an ICMP type
+     * number. For the ICMP type number, use <code>-1</code> to specify all
+     * ICMP types.
      *
-     * @param fromPort Deprecated.
+     * @param fromPort The start of port range for the TCP and UDP protocols, or an ICMP type
+     *         number. For the ICMP type number, use <code>-1</code> to specify all
+     *         ICMP types.
      */
     public void setFromPort(Integer fromPort) {
         this.fromPort = fromPort;
     }
     
     /**
-     * Deprecated.
+     * The start of port range for the TCP and UDP protocols, or an ICMP type
+     * number. For the ICMP type number, use <code>-1</code> to specify all
+     * ICMP types.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param fromPort Deprecated.
+     * @param fromPort The start of port range for the TCP and UDP protocols, or an ICMP type
+     *         number. For the ICMP type number, use <code>-1</code> to specify all
+     *         ICMP types.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -254,29 +305,41 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Deprecated.
+     * The end of port range for the TCP and UDP protocols, or an ICMP code
+     * number. For the ICMP code number, use <code>-1</code> to specify all
+     * ICMP codes for the ICMP type.
      *
-     * @return Deprecated.
+     * @return The end of port range for the TCP and UDP protocols, or an ICMP code
+     *         number. For the ICMP code number, use <code>-1</code> to specify all
+     *         ICMP codes for the ICMP type.
      */
     public Integer getToPort() {
         return toPort;
     }
     
     /**
-     * Deprecated.
+     * The end of port range for the TCP and UDP protocols, or an ICMP code
+     * number. For the ICMP code number, use <code>-1</code> to specify all
+     * ICMP codes for the ICMP type.
      *
-     * @param toPort Deprecated.
+     * @param toPort The end of port range for the TCP and UDP protocols, or an ICMP code
+     *         number. For the ICMP code number, use <code>-1</code> to specify all
+     *         ICMP codes for the ICMP type.
      */
     public void setToPort(Integer toPort) {
         this.toPort = toPort;
     }
     
     /**
-     * Deprecated.
+     * The end of port range for the TCP and UDP protocols, or an ICMP code
+     * number. For the ICMP code number, use <code>-1</code> to specify all
+     * ICMP codes for the ICMP type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param toPort Deprecated.
+     * @param toPort The end of port range for the TCP and UDP protocols, or an ICMP code
+     *         number. For the ICMP code number, use <code>-1</code> to specify all
+     *         ICMP codes for the ICMP type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -287,29 +350,35 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Deprecated.
+     * The CIDR IP address range. You can't specify this parameter when
+     * specifying a source security group.
      *
-     * @return Deprecated.
+     * @return The CIDR IP address range. You can't specify this parameter when
+     *         specifying a source security group.
      */
     public String getCidrIp() {
         return cidrIp;
     }
     
     /**
-     * Deprecated.
+     * The CIDR IP address range. You can't specify this parameter when
+     * specifying a source security group.
      *
-     * @param cidrIp Deprecated.
+     * @param cidrIp The CIDR IP address range. You can't specify this parameter when
+     *         specifying a source security group.
      */
     public void setCidrIp(String cidrIp) {
         this.cidrIp = cidrIp;
     }
     
     /**
-     * Deprecated.
+     * The CIDR IP address range. You can't specify this parameter when
+     * specifying a source security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cidrIp Deprecated.
+     * @param cidrIp The CIDR IP address range. You can't specify this parameter when
+     *         specifying a source security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -320,13 +389,9 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * List of IP permissions to authorize on the specified security group.
-     * Specifying permissions through IP permissions is the preferred way of
-     * authorizing permissions since it offers more flexibility and control.
+     * <p/>
      *
-     * @return List of IP permissions to authorize on the specified security group.
-     *         Specifying permissions through IP permissions is the preferred way of
-     *         authorizing permissions since it offers more flexibility and control.
+     * @return <p/>
      */
     public java.util.List<IpPermission> getIpPermissions() {
         if (ipPermissions == null) {
@@ -337,13 +402,9 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * List of IP permissions to authorize on the specified security group.
-     * Specifying permissions through IP permissions is the preferred way of
-     * authorizing permissions since it offers more flexibility and control.
+     * <p/>
      *
-     * @param ipPermissions List of IP permissions to authorize on the specified security group.
-     *         Specifying permissions through IP permissions is the preferred way of
-     *         authorizing permissions since it offers more flexibility and control.
+     * @param ipPermissions <p/>
      */
     public void setIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
         if (ipPermissions == null) {
@@ -356,15 +417,11 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * List of IP permissions to authorize on the specified security group.
-     * Specifying permissions through IP permissions is the preferred way of
-     * authorizing permissions since it offers more flexibility and control.
+     * <p/>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ipPermissions List of IP permissions to authorize on the specified security group.
-     *         Specifying permissions through IP permissions is the preferred way of
-     *         authorizing permissions since it offers more flexibility and control.
+     * @param ipPermissions <p/>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -378,15 +435,11 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * List of IP permissions to authorize on the specified security group.
-     * Specifying permissions through IP permissions is the preferred way of
-     * authorizing permissions since it offers more flexibility and control.
+     * <p/>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ipPermissions List of IP permissions to authorize on the specified security group.
-     *         Specifying permissions through IP permissions is the preferred way of
-     *         authorizing permissions since it offers more flexibility and control.
+     * @param ipPermissions <p/>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -17,23 +17,24 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of describing Reserved Instance offerings.
- * </p>
+ * 
  */
 public class DescribeReservedInstancesOfferingsResult implements Serializable {
 
     /**
-     * The list of described Reserved Instance offerings.
+     * A list of Reserved Instances offerings.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesOffering> reservedInstancesOfferings;
 
+    /**
+     * The next paginated set of results to return.
+     */
     private String nextToken;
 
     /**
-     * The list of described Reserved Instance offerings.
+     * A list of Reserved Instances offerings.
      *
-     * @return The list of described Reserved Instance offerings.
+     * @return A list of Reserved Instances offerings.
      */
     public java.util.List<ReservedInstancesOffering> getReservedInstancesOfferings() {
         if (reservedInstancesOfferings == null) {
@@ -44,9 +45,9 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable {
     }
     
     /**
-     * The list of described Reserved Instance offerings.
+     * A list of Reserved Instances offerings.
      *
-     * @param reservedInstancesOfferings The list of described Reserved Instance offerings.
+     * @param reservedInstancesOfferings A list of Reserved Instances offerings.
      */
     public void setReservedInstancesOfferings(java.util.Collection<ReservedInstancesOffering> reservedInstancesOfferings) {
         if (reservedInstancesOfferings == null) {
@@ -59,11 +60,11 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable {
     }
     
     /**
-     * The list of described Reserved Instance offerings.
+     * A list of Reserved Instances offerings.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesOfferings The list of described Reserved Instance offerings.
+     * @param reservedInstancesOfferings A list of Reserved Instances offerings.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -77,11 +78,11 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable {
     }
     
     /**
-     * The list of described Reserved Instance offerings.
+     * A list of Reserved Instances offerings.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesOfferings The list of described Reserved Instance offerings.
+     * @param reservedInstancesOfferings A list of Reserved Instances offerings.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -99,29 +100,29 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable {
     }
 
     /**
-     * Returns the value of the NextToken property for this object.
+     * The next paginated set of results to return.
      *
-     * @return The value of the NextToken property for this object.
+     * @return The next paginated set of results to return.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * The next paginated set of results to return.
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken The next paginated set of results to return.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * The next paginated set of results to return.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken The next paginated set of results to return.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

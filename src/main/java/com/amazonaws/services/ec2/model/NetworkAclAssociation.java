@@ -17,45 +17,51 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Network Acl Association
+ * <p>
+ * Describes an association between a network ACL and a subnet.
+ * </p>
  */
 public class NetworkAclAssociation implements Serializable {
 
+    /**
+     * The ID of the association between a network ACL and a subnet.
+     */
     private String networkAclAssociationId;
 
+    /**
+     * The ID of the network ACL.
+     */
     private String networkAclId;
 
+    /**
+     * The ID of the subnet.
+     */
     private String subnetId;
 
     /**
-     * Returns the value of the NetworkAclAssociationId property for this
-     * object.
+     * The ID of the association between a network ACL and a subnet.
      *
-     * @return The value of the NetworkAclAssociationId property for this object.
+     * @return The ID of the association between a network ACL and a subnet.
      */
     public String getNetworkAclAssociationId() {
         return networkAclAssociationId;
     }
     
     /**
-     * Sets the value of the NetworkAclAssociationId property for this
-     * object.
+     * The ID of the association between a network ACL and a subnet.
      *
-     * @param networkAclAssociationId The new value for the NetworkAclAssociationId property for this
-     *         object.
+     * @param networkAclAssociationId The ID of the association between a network ACL and a subnet.
      */
     public void setNetworkAclAssociationId(String networkAclAssociationId) {
         this.networkAclAssociationId = networkAclAssociationId;
     }
     
     /**
-     * Sets the value of the NetworkAclAssociationId property for this
-     * object.
+     * The ID of the association between a network ACL and a subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkAclAssociationId The new value for the NetworkAclAssociationId property for this
-     *         object.
+     * @param networkAclAssociationId The ID of the association between a network ACL and a subnet.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -66,29 +72,29 @@ public class NetworkAclAssociation implements Serializable {
     }
 
     /**
-     * Returns the value of the NetworkAclId property for this object.
+     * The ID of the network ACL.
      *
-     * @return The value of the NetworkAclId property for this object.
+     * @return The ID of the network ACL.
      */
     public String getNetworkAclId() {
         return networkAclId;
     }
     
     /**
-     * Sets the value of the NetworkAclId property for this object.
+     * The ID of the network ACL.
      *
-     * @param networkAclId The new value for the NetworkAclId property for this object.
+     * @param networkAclId The ID of the network ACL.
      */
     public void setNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
     }
     
     /**
-     * Sets the value of the NetworkAclId property for this object.
+     * The ID of the network ACL.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkAclId The new value for the NetworkAclId property for this object.
+     * @param networkAclId The ID of the network ACL.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -99,29 +105,29 @@ public class NetworkAclAssociation implements Serializable {
     }
 
     /**
-     * Returns the value of the SubnetId property for this object.
+     * The ID of the subnet.
      *
-     * @return The value of the SubnetId property for this object.
+     * @return The ID of the subnet.
      */
     public String getSubnetId() {
         return subnetId;
     }
     
     /**
-     * Sets the value of the SubnetId property for this object.
+     * The ID of the subnet.
      *
-     * @param subnetId The new value for the SubnetId property for this object.
+     * @param subnetId The ID of the subnet.
      */
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
     
     /**
-     * Sets the value of the SubnetId property for this object.
+     * The ID of the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetId The new value for the SubnetId property for this object.
+     * @param subnetId The ID of the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

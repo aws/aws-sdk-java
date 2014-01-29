@@ -46,6 +46,7 @@ public class DescribeStorediSCSIVolumesResultJsonUnmarshaller implements Unmarsh
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StorediSCSIVolumes", targetDepth)) {
+                    context.nextToken();
                     describeStorediSCSIVolumesResult.setStorediSCSIVolumes(new ListUnmarshaller<StorediSCSIVolume>(StorediSCSIVolumeJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

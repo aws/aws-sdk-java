@@ -54,6 +54,7 @@ public class PermissionJsonUnmarshaller implements Unmarshaller<Permission, Json
                     permission.setGrantee(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Access", targetDepth)) {
+                    context.nextToken();
                     permission.setAccess(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

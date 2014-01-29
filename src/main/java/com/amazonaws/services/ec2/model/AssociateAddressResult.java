@@ -17,36 +17,46 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Associate Address Result
+ * 
  */
 public class AssociateAddressResult implements Serializable {
 
+    /**
+     * [EC2-VPC] The ID that represents the association of the Elastic IP
+     * address with an instance.
+     */
     private String associationId;
 
     /**
-     * Returns the value of the AssociationId property for this object.
+     * [EC2-VPC] The ID that represents the association of the Elastic IP
+     * address with an instance.
      *
-     * @return The value of the AssociationId property for this object.
+     * @return [EC2-VPC] The ID that represents the association of the Elastic IP
+     *         address with an instance.
      */
     public String getAssociationId() {
         return associationId;
     }
     
     /**
-     * Sets the value of the AssociationId property for this object.
+     * [EC2-VPC] The ID that represents the association of the Elastic IP
+     * address with an instance.
      *
-     * @param associationId The new value for the AssociationId property for this object.
+     * @param associationId [EC2-VPC] The ID that represents the association of the Elastic IP
+     *         address with an instance.
      */
     public void setAssociationId(String associationId) {
         this.associationId = associationId;
     }
     
     /**
-     * Sets the value of the AssociationId property for this object.
+     * [EC2-VPC] The ID that represents the association of the Elastic IP
+     * address with an instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param associationId The new value for the AssociationId property for this object.
+     * @param associationId [EC2-VPC] The ID that represents the association of the Elastic IP
+     *         address with an instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

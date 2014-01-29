@@ -46,6 +46,7 @@ public class ListInstanceGroupsResultJsonUnmarshaller implements Unmarshaller<Li
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceGroups", targetDepth)) {
+                    context.nextToken();
                     listInstanceGroupsResult.setInstanceGroups(new ListUnmarshaller<InstanceGroup>(InstanceGroupJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {

@@ -17,16 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Describe Route Tables Result
+ * 
  */
 public class DescribeRouteTablesResult implements Serializable {
 
+    /**
+     * Information about one or more route tables.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<RouteTable> routeTables;
 
     /**
-     * Returns the value of the RouteTables property for this object.
+     * Information about one or more route tables.
      *
-     * @return The value of the RouteTables property for this object.
+     * @return Information about one or more route tables.
      */
     public java.util.List<RouteTable> getRouteTables() {
         if (routeTables == null) {
@@ -37,9 +40,9 @@ public class DescribeRouteTablesResult implements Serializable {
     }
     
     /**
-     * Sets the value of the RouteTables property for this object.
+     * Information about one or more route tables.
      *
-     * @param routeTables The new value for the RouteTables property for this object.
+     * @param routeTables Information about one or more route tables.
      */
     public void setRouteTables(java.util.Collection<RouteTable> routeTables) {
         if (routeTables == null) {
@@ -52,11 +55,11 @@ public class DescribeRouteTablesResult implements Serializable {
     }
     
     /**
-     * Sets the value of the RouteTables property for this object.
+     * Information about one or more route tables.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param routeTables The new value for the RouteTables property for this object.
+     * @param routeTables Information about one or more route tables.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -70,11 +73,11 @@ public class DescribeRouteTablesResult implements Serializable {
     }
     
     /**
-     * Sets the value of the RouteTables property for this object.
+     * Information about one or more route tables.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param routeTables The new value for the RouteTables property for this object.
+     * @param routeTables Information about one or more route tables.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

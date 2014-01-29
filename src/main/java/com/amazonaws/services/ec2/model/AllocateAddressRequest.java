@@ -23,7 +23,12 @@ import com.amazonaws.services.ec2.model.transform.AllocateAddressRequestMarshall
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#allocateAddress(AllocateAddressRequest) AllocateAddress operation}.
  * <p>
- * The AllocateAddress operation acquires an elastic IP address for use with your account.
+ * Acquires an Elastic IP address.
+ * </p>
+ * <p>
+ * An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. For more information, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a> in the <i>Amazon Elastic Compute
+ * Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#allocateAddress(AllocateAddressRequest)
@@ -31,8 +36,9 @@ import com.amazonaws.services.ec2.model.transform.AllocateAddressRequestMarshall
 public class AllocateAddressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AllocateAddressRequest> {
 
     /**
-     * Set to <code>vpc</code> to allocate the address to your VPC. By
-     * default, will allocate to EC2.
+     * Set to <code>vpc</code> to allocate the address for use with instances
+     * in a VPC. <p>Default: The address is for use with instances in
+     * EC2-Classic.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>vpc, standard
@@ -40,14 +46,16 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
     private String domain;
 
     /**
-     * Set to <code>vpc</code> to allocate the address to your VPC. By
-     * default, will allocate to EC2.
+     * Set to <code>vpc</code> to allocate the address for use with instances
+     * in a VPC. <p>Default: The address is for use with instances in
+     * EC2-Classic.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>vpc, standard
      *
-     * @return Set to <code>vpc</code> to allocate the address to your VPC. By
-     *         default, will allocate to EC2.
+     * @return Set to <code>vpc</code> to allocate the address for use with instances
+     *         in a VPC. <p>Default: The address is for use with instances in
+     *         EC2-Classic.
      *
      * @see DomainType
      */
@@ -56,14 +64,16 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * Set to <code>vpc</code> to allocate the address to your VPC. By
-     * default, will allocate to EC2.
+     * Set to <code>vpc</code> to allocate the address for use with instances
+     * in a VPC. <p>Default: The address is for use with instances in
+     * EC2-Classic.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>vpc, standard
      *
-     * @param domain Set to <code>vpc</code> to allocate the address to your VPC. By
-     *         default, will allocate to EC2.
+     * @param domain Set to <code>vpc</code> to allocate the address for use with instances
+     *         in a VPC. <p>Default: The address is for use with instances in
+     *         EC2-Classic.
      *
      * @see DomainType
      */
@@ -72,16 +82,18 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * Set to <code>vpc</code> to allocate the address to your VPC. By
-     * default, will allocate to EC2.
+     * Set to <code>vpc</code> to allocate the address for use with instances
+     * in a VPC. <p>Default: The address is for use with instances in
+     * EC2-Classic.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>vpc, standard
      *
-     * @param domain Set to <code>vpc</code> to allocate the address to your VPC. By
-     *         default, will allocate to EC2.
+     * @param domain Set to <code>vpc</code> to allocate the address for use with instances
+     *         in a VPC. <p>Default: The address is for use with instances in
+     *         EC2-Classic.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -94,14 +106,16 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * Set to <code>vpc</code> to allocate the address to your VPC. By
-     * default, will allocate to EC2.
+     * Set to <code>vpc</code> to allocate the address for use with instances
+     * in a VPC. <p>Default: The address is for use with instances in
+     * EC2-Classic.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>vpc, standard
      *
-     * @param domain Set to <code>vpc</code> to allocate the address to your VPC. By
-     *         default, will allocate to EC2.
+     * @param domain Set to <code>vpc</code> to allocate the address for use with instances
+     *         in a VPC. <p>Default: The address is for use with instances in
+     *         EC2-Classic.
      *
      * @see DomainType
      */
@@ -110,16 +124,18 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * Set to <code>vpc</code> to allocate the address to your VPC. By
-     * default, will allocate to EC2.
+     * Set to <code>vpc</code> to allocate the address for use with instances
+     * in a VPC. <p>Default: The address is for use with instances in
+     * EC2-Classic.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>vpc, standard
      *
-     * @param domain Set to <code>vpc</code> to allocate the address to your VPC. By
-     *         default, will allocate to EC2.
+     * @param domain Set to <code>vpc</code> to allocate the address for use with instances
+     *         in a VPC. <p>Default: The address is for use with instances in
+     *         EC2-Classic.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -860,7 +860,6 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);

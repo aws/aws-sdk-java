@@ -17,21 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of describing an account's available Elastic IPs.
- * </p>
+ * 
  */
 public class DescribeAddressesResult implements Serializable {
 
     /**
-     * The list of Elastic IPs.
+     * Information about one or more Elastic IP addresses.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Address> addresses;
 
     /**
-     * The list of Elastic IPs.
+     * Information about one or more Elastic IP addresses.
      *
-     * @return The list of Elastic IPs.
+     * @return Information about one or more Elastic IP addresses.
      */
     public java.util.List<Address> getAddresses() {
         if (addresses == null) {
@@ -42,9 +40,9 @@ public class DescribeAddressesResult implements Serializable {
     }
     
     /**
-     * The list of Elastic IPs.
+     * Information about one or more Elastic IP addresses.
      *
-     * @param addresses The list of Elastic IPs.
+     * @param addresses Information about one or more Elastic IP addresses.
      */
     public void setAddresses(java.util.Collection<Address> addresses) {
         if (addresses == null) {
@@ -57,11 +55,11 @@ public class DescribeAddressesResult implements Serializable {
     }
     
     /**
-     * The list of Elastic IPs.
+     * Information about one or more Elastic IP addresses.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param addresses The list of Elastic IPs.
+     * @param addresses Information about one or more Elastic IP addresses.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,11 +73,11 @@ public class DescribeAddressesResult implements Serializable {
     }
     
     /**
-     * The list of Elastic IPs.
+     * Information about one or more Elastic IP addresses.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param addresses The list of Elastic IPs.
+     * @param addresses Information about one or more Elastic IP addresses.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

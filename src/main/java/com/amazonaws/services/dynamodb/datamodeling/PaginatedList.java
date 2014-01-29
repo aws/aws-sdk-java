@@ -35,6 +35,8 @@ import com.amazonaws.services.dynamodb.AmazonDynamoDB;
  * 
  * @param <T>
  *            The domain object type stored in this list.
+ *            
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.PaginatedList} instead.
  */
 @Deprecated
 public abstract class PaginatedList<T> implements List<T> {

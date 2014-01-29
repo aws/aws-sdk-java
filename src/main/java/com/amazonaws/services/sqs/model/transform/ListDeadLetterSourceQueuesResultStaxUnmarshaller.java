@@ -13,51 +13,51 @@
  * permissions and limitations under the License.
  */
 
-package com.amazonaws.services.ec2.model.transform;
+package com.amazonaws.services.sqs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
 
-import com.amazonaws.services.ec2.model.*;
+import com.amazonaws.services.sqs.model.*;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Describe Licenses Result StAX Unmarshaller
+ * List Dead Letter Source Queues Result StAX Unmarshaller
  */
-public class DescribeLicensesResultStaxUnmarshaller implements Unmarshaller<DescribeLicensesResult, StaxUnmarshallerContext> {
+public class ListDeadLetterSourceQueuesResultStaxUnmarshaller implements Unmarshaller<ListDeadLetterSourceQueuesResult, StaxUnmarshallerContext> {
 
-    public DescribeLicensesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
-        DescribeLicensesResult describeLicensesResult = new DescribeLicensesResult();
+    public ListDeadLetterSourceQueuesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+        ListDeadLetterSourceQueuesResult listDeadLetterSourceQueuesResult = new ListDeadLetterSourceQueuesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 1;
+        if (context.isStartOfDocument()) targetDepth += 2;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return describeLicensesResult;
+            if (xmlEvent.isEndDocument()) return listDeadLetterSourceQueuesResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("licenseSet/item", targetDepth)) {
-                    describeLicensesResult.getLicenses().add(LicenseStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("QueueUrl", targetDepth)) {
+                    listDeadLetterSourceQueuesResult.getQueueUrls().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return describeLicensesResult;
+                    return listDeadLetterSourceQueuesResult;
                 }
             }
         }
     }
 
-    private static DescribeLicensesResultStaxUnmarshaller instance;
-    public static DescribeLicensesResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new DescribeLicensesResultStaxUnmarshaller();
+    private static ListDeadLetterSourceQueuesResultStaxUnmarshaller instance;
+    public static ListDeadLetterSourceQueuesResultStaxUnmarshaller getInstance() {
+        if (instance == null) instance = new ListDeadLetterSourceQueuesResultStaxUnmarshaller();
         return instance;
     }
 }

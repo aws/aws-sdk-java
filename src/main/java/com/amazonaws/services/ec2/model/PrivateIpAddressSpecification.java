@@ -17,38 +17,47 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Private Ip Address Specification
+ * <p>
+ * Describes a secondary private IP address for a network interface.
+ * </p>
  */
 public class PrivateIpAddressSpecification implements Serializable {
 
+    /**
+     * The private IP addresses.
+     */
     private String privateIpAddress;
 
+    /**
+     * Indicates whether the private IP address is the primary private IP
+     * address.
+     */
     private Boolean primary;
 
     /**
-     * Returns the value of the PrivateIpAddress property for this object.
+     * The private IP addresses.
      *
-     * @return The value of the PrivateIpAddress property for this object.
+     * @return The private IP addresses.
      */
     public String getPrivateIpAddress() {
         return privateIpAddress;
     }
     
     /**
-     * Sets the value of the PrivateIpAddress property for this object.
+     * The private IP addresses.
      *
-     * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     * @param privateIpAddress The private IP addresses.
      */
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
     
     /**
-     * Sets the value of the PrivateIpAddress property for this object.
+     * The private IP addresses.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     * @param privateIpAddress The private IP addresses.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -59,29 +68,35 @@ public class PrivateIpAddressSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the Primary property for this object.
+     * Indicates whether the private IP address is the primary private IP
+     * address.
      *
-     * @return The value of the Primary property for this object.
+     * @return Indicates whether the private IP address is the primary private IP
+     *         address.
      */
     public Boolean isPrimary() {
         return primary;
     }
     
     /**
-     * Sets the value of the Primary property for this object.
+     * Indicates whether the private IP address is the primary private IP
+     * address.
      *
-     * @param primary The new value for the Primary property for this object.
+     * @param primary Indicates whether the private IP address is the primary private IP
+     *         address.
      */
     public void setPrimary(Boolean primary) {
         this.primary = primary;
     }
     
     /**
-     * Sets the value of the Primary property for this object.
+     * Indicates whether the private IP address is the primary private IP
+     * address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param primary The new value for the Primary property for this object.
+     * @param primary Indicates whether the private IP address is the primary private IP
+     *         address.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -92,9 +107,11 @@ public class PrivateIpAddressSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the Primary property for this object.
+     * Indicates whether the private IP address is the primary private IP
+     * address.
      *
-     * @return The value of the Primary property for this object.
+     * @return Indicates whether the private IP address is the primary private IP
+     *         address.
      */
     public Boolean getPrimary() {
         return primary;

@@ -20,7 +20,8 @@ import com.amazonaws.AmazonServiceException;
  * <p>
  * This exception is thrown when the service has a problem when trying to process the request.
  * </p>
- */        
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.InternalServerErrorException} instead.
+ */
 @Deprecated
 public class InternalServerErrorException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

@@ -23,11 +23,13 @@ import com.amazonaws.services.ec2.model.transform.DetachVpnGatewayRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#detachVpnGateway(DetachVpnGatewayRequest) DetachVpnGateway operation}.
  * <p>
- * Detaches a VPN gateway from a VPC. You do this if you're planning to turn off the VPC and not use it anymore. You can confirm a VPN gateway has been
- * completely detached from a VPC by describing the VPN gateway (any attachments to the VPN gateway are also described).
+ * Detaches a virtual private gateway from a VPC. You do this if you're planning to turn off the VPC and not use it anymore. You can confirm a virtual
+ * private gateway has been completely detached from a VPC by describing the virtual private gateway (any attachments to the virtual private gateway are
+ * also described).
  * </p>
  * <p>
- * You must wait for the attachment's state to switch to detached before you can delete the VPC or attach a different VPC to the VPN gateway.
+ * You must wait for the attachment's state to switch to <code>detached</code> before you can delete the VPC or attach a different VPC to the virtual
+ * private gateway.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#detachVpnGateway(DetachVpnGatewayRequest)
@@ -35,12 +37,12 @@ import com.amazonaws.services.ec2.model.transform.DetachVpnGatewayRequestMarshal
 public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DetachVpnGatewayRequest> {
 
     /**
-     * The ID of the VPN gateway to detach from the VPC.
+     * The ID of the virtual private gateway.
      */
     private String vpnGatewayId;
 
     /**
-     * The ID of the VPC to detach the VPN gateway from.
+     * The ID of the VPC.
      */
     private String vpcId;
 
@@ -55,8 +57,8 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param vpnGatewayId The ID of the VPN gateway to detach from the VPC.
-     * @param vpcId The ID of the VPC to detach the VPN gateway from.
+     * @param vpnGatewayId The ID of the virtual private gateway.
+     * @param vpcId The ID of the VPC.
      */
     public DetachVpnGatewayRequest(String vpnGatewayId, String vpcId) {
         setVpnGatewayId(vpnGatewayId);
@@ -64,29 +66,29 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The ID of the VPN gateway to detach from the VPC.
+     * The ID of the virtual private gateway.
      *
-     * @return The ID of the VPN gateway to detach from the VPC.
+     * @return The ID of the virtual private gateway.
      */
     public String getVpnGatewayId() {
         return vpnGatewayId;
     }
     
     /**
-     * The ID of the VPN gateway to detach from the VPC.
+     * The ID of the virtual private gateway.
      *
-     * @param vpnGatewayId The ID of the VPN gateway to detach from the VPC.
+     * @param vpnGatewayId The ID of the virtual private gateway.
      */
     public void setVpnGatewayId(String vpnGatewayId) {
         this.vpnGatewayId = vpnGatewayId;
     }
     
     /**
-     * The ID of the VPN gateway to detach from the VPC.
+     * The ID of the virtual private gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGatewayId The ID of the VPN gateway to detach from the VPC.
+     * @param vpnGatewayId The ID of the virtual private gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -97,29 +99,29 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The ID of the VPC to detach the VPN gateway from.
+     * The ID of the VPC.
      *
-     * @return The ID of the VPC to detach the VPN gateway from.
+     * @return The ID of the VPC.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * The ID of the VPC to detach the VPN gateway from.
+     * The ID of the VPC.
      *
-     * @param vpcId The ID of the VPC to detach the VPN gateway from.
+     * @param vpcId The ID of the VPC.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * The ID of the VPC to detach the VPN gateway from.
+     * The ID of the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The ID of the VPC to detach the VPN gateway from.
+     * @param vpcId The ID of the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

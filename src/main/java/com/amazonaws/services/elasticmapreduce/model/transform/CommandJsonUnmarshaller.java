@@ -54,6 +54,7 @@ public class CommandJsonUnmarshaller implements Unmarshaller<Command, JsonUnmars
                     command.setScriptPath(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Args", targetDepth)) {
+                    context.nextToken();
                     command.setArgs(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

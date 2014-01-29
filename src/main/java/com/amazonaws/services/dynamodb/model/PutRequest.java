@@ -19,6 +19,7 @@ import java.io.Serializable;
  * <p>
  * A container for a Put BatchWrite request
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.PutRequest} instead.
  */
 @Deprecated
 public class PutRequest  implements Serializable  {

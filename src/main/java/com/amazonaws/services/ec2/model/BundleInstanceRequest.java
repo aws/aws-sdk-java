@@ -23,8 +23,17 @@ import com.amazonaws.services.ec2.model.transform.BundleInstanceRequestMarshalle
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#bundleInstance(BundleInstanceRequest) BundleInstance operation}.
  * <p>
- * The BundleInstance operation request that an instance is bundled the next time it boots. The bundling process creates a new image from a running
- * instance and stores the AMI data in S3. Once bundled, the image must be registered in the normal way using the RegisterImage API.
+ * Bundles an Amazon instance store-backed Windows instance.
+ * </p>
+ * <p>
+ * During bundling, only the root device volume (C:\) is bundled. Data on other instance store volumes is not preserved.
+ * </p>
+ * <p>
+ * <b>NOTE:</b> This procedure is not applicable for Linux/Unix instances or Windows instances that are backed by Amazon EBS.
+ * </p>
+ * <p>
+ * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html"> Creating an
+ * Instance Store-Backed Windows AMI </a> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#bundleInstance(BundleInstanceRequest)
@@ -37,7 +46,10 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest implements Se
     private String instanceId;
 
     /**
-     * 
+     * The bucket in which to store the AMI. You can specify a bucket that
+     * you already own or a new bucket that Amazon EC2 creates on your
+     * behalf. If you specify a bucket that belongs to someone else, Amazon
+     * EC2 returns an error.
      */
     private Storage storage;
 
@@ -53,7 +65,10 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest implements Se
      * initialize any additional object members.
      * 
      * @param instanceId The ID of the instance to bundle.
-     * @param storage
+     * @param storage The bucket in which to store the AMI. You can specify a
+     * bucket that you already own or a new bucket that Amazon EC2 creates on
+     * your behalf. If you specify a bucket that belongs to someone else,
+     * Amazon EC2 returns an error.
      */
     public BundleInstanceRequest(String instanceId, Storage storage) {
         setInstanceId(instanceId);
@@ -94,29 +109,47 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * 
+     * The bucket in which to store the AMI. You can specify a bucket that
+     * you already own or a new bucket that Amazon EC2 creates on your
+     * behalf. If you specify a bucket that belongs to someone else, Amazon
+     * EC2 returns an error.
      *
-     * @return 
+     * @return The bucket in which to store the AMI. You can specify a bucket that
+     *         you already own or a new bucket that Amazon EC2 creates on your
+     *         behalf. If you specify a bucket that belongs to someone else, Amazon
+     *         EC2 returns an error.
      */
     public Storage getStorage() {
         return storage;
     }
     
     /**
-     * 
+     * The bucket in which to store the AMI. You can specify a bucket that
+     * you already own or a new bucket that Amazon EC2 creates on your
+     * behalf. If you specify a bucket that belongs to someone else, Amazon
+     * EC2 returns an error.
      *
-     * @param storage 
+     * @param storage The bucket in which to store the AMI. You can specify a bucket that
+     *         you already own or a new bucket that Amazon EC2 creates on your
+     *         behalf. If you specify a bucket that belongs to someone else, Amazon
+     *         EC2 returns an error.
      */
     public void setStorage(Storage storage) {
         this.storage = storage;
     }
     
     /**
-     * 
+     * The bucket in which to store the AMI. You can specify a bucket that
+     * you already own or a new bucket that Amazon EC2 creates on your
+     * behalf. If you specify a bucket that belongs to someone else, Amazon
+     * EC2 returns an error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param storage 
+     * @param storage The bucket in which to store the AMI. You can specify a bucket that
+     *         you already own or a new bucket that Amazon EC2 creates on your
+     *         behalf. If you specify a bucket that belongs to someone else, Amazon
+     *         EC2 returns an error.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

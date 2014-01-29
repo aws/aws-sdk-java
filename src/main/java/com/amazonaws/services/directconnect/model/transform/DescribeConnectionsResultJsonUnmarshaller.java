@@ -46,6 +46,7 @@ public class DescribeConnectionsResultJsonUnmarshaller implements Unmarshaller<D
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("connections", targetDepth)) {
+                    context.nextToken();
                     describeConnectionsResult.setConnections(new ListUnmarshaller<Connection>(ConnectionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -40,12 +40,11 @@ import com.amazonaws.services.simpleemail.model.transform.*;
  * completes.
  * <p>
  * Amazon Simple Email Service <p>
- * This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to be used in conjunction with the Amazon SES
- * Developer Guide.
+ * This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to be used in conjunction with the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html"> Amazon SES Developer Guide </a> .
  * </p>
  * <p>
- * For specific details on how to construct a service request, please consult the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide"> Amazon
- * SES Developer Guide </a> .
+ * <b>NOTE:</b>For a list of Amazon SES endpoints to use in service requests, see Regions and Amazon SES in the Amazon SES Developer Guide.
  * </p>
  */
 public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient implements AmazonSimpleEmailService {
@@ -1248,7 +1247,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);

@@ -21,14 +21,12 @@ import com.amazonaws.AmazonClientException;
 import java.io.UnsupportedEncodingException;
 
 /**
- * <p>
- * The result of the GetConsoleOutput operation.
- * </p>
+ * 
  */
 public class GetConsoleOutputResult implements Serializable {
 
     /**
-     * The ID of the instance whose console output was requested.
+     * The ID of the instance.
      */
     private String instanceId;
 
@@ -43,29 +41,29 @@ public class GetConsoleOutputResult implements Serializable {
     private String output;
 
     /**
-     * The ID of the instance whose console output was requested.
+     * The ID of the instance.
      *
-     * @return The ID of the instance whose console output was requested.
+     * @return The ID of the instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The ID of the instance whose console output was requested.
+     * The ID of the instance.
      *
-     * @param instanceId The ID of the instance whose console output was requested.
+     * @param instanceId The ID of the instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The ID of the instance whose console output was requested.
+     * The ID of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The ID of the instance whose console output was requested.
+     * @param instanceId The ID of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

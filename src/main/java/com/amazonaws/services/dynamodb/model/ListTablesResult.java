@@ -17,6 +17,7 @@ import java.io.Serializable;
 
 /**
  * List Tables Result
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.ListTablesResult} instead.
  */
 @Deprecated
 public class ListTablesResult  implements Serializable  {

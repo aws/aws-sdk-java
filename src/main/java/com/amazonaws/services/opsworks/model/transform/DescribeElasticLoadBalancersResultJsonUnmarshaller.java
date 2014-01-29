@@ -46,6 +46,7 @@ public class DescribeElasticLoadBalancersResultJsonUnmarshaller implements Unmar
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ElasticLoadBalancers", targetDepth)) {
+                    context.nextToken();
                     describeElasticLoadBalancersResult.setElasticLoadBalancers(new ListUnmarshaller<ElasticLoadBalancer>(ElasticLoadBalancerJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

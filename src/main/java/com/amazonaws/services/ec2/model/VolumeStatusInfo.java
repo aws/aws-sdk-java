@@ -17,21 +17,32 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Volume Status Info
+ * <p>
+ * Describes the status of a volume.
+ * </p>
  */
 public class VolumeStatusInfo implements Serializable {
 
+    /**
+     * The status of the volume.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ok, impaired, insufficient-data
+     */
     private String status;
 
+    /**
+     * The details of the volume status.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeStatusDetails> details;
 
     /**
-     * Returns the value of the Status property for this object.
+     * The status of the volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ok, impaired, insufficient-data
      *
-     * @return The value of the Status property for this object.
+     * @return The status of the volume.
      *
      * @see VolumeStatusInfoStatus
      */
@@ -40,12 +51,12 @@ public class VolumeStatusInfo implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status of the volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ok, impaired, insufficient-data
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of the volume.
      *
      * @see VolumeStatusInfoStatus
      */
@@ -54,14 +65,14 @@ public class VolumeStatusInfo implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status of the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ok, impaired, insufficient-data
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -74,12 +85,12 @@ public class VolumeStatusInfo implements Serializable {
     }
 
     /**
-     * Sets the value of the Status property for this object.
+     * The status of the volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ok, impaired, insufficient-data
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of the volume.
      *
      * @see VolumeStatusInfoStatus
      */
@@ -88,14 +99,14 @@ public class VolumeStatusInfo implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status of the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ok, impaired, insufficient-data
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -108,9 +119,9 @@ public class VolumeStatusInfo implements Serializable {
     }
 
     /**
-     * Returns the value of the Details property for this object.
+     * The details of the volume status.
      *
-     * @return The value of the Details property for this object.
+     * @return The details of the volume status.
      */
     public java.util.List<VolumeStatusDetails> getDetails() {
         if (details == null) {
@@ -121,9 +132,9 @@ public class VolumeStatusInfo implements Serializable {
     }
     
     /**
-     * Sets the value of the Details property for this object.
+     * The details of the volume status.
      *
-     * @param details The new value for the Details property for this object.
+     * @param details The details of the volume status.
      */
     public void setDetails(java.util.Collection<VolumeStatusDetails> details) {
         if (details == null) {
@@ -136,11 +147,11 @@ public class VolumeStatusInfo implements Serializable {
     }
     
     /**
-     * Sets the value of the Details property for this object.
+     * The details of the volume status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param details The new value for the Details property for this object.
+     * @param details The details of the volume status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -154,11 +165,11 @@ public class VolumeStatusInfo implements Serializable {
     }
     
     /**
-     * Sets the value of the Details property for this object.
+     * The details of the volume status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param details The new value for the Details property for this object.
+     * @param details The details of the volume status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

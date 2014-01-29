@@ -23,7 +23,11 @@ import com.amazonaws.services.ec2.model.transform.DescribeTagsRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeTags(DescribeTagsRequest) DescribeTags operation}.
  * <p>
- * Describes the tags for the specified resources.
+ * Describes one or more of the tags for your EC2 resources.
+ * </p>
+ * <p>
+ * For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a> in the
+ * <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeTags(DescribeTagsRequest)
@@ -31,12 +35,33 @@ import com.amazonaws.services.ec2.model.transform.DescribeTagsRequestMarshaller;
 public class DescribeTagsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeTagsRequest> {
 
     /**
-     * A list of filters used to match properties for tags.
+     * One or more filters. <ul> <li> <p><code>key</code> - The tag key.
+     * </li> <li> <p><code>resource-id</code> - The resource ID. </li> <li>
+     * <p><code>resource-type</code> - The resource type
+     * (<code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>image</code> | <code>instance</code> |
+     * <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> |
+     * <code>route-table</code> | <code>security-group</code> |
+     * <code>snapshot</code> | <code>spot-instances-request</code> |
+     * <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li>
+     * <p><code>value</code> - The tag value. </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
+    /**
+     * The maximum number of items to return for this call. The call also
+     * returns a token that you can specify in a subsequent call to get the
+     * next set of results. If the value is greater than 1000, we return only
+     * 1000 items.
+     */
     private Integer maxResults;
 
+    /**
+     * The token for the next set of items to return. (You received this
+     * token from a prior call.)
+     */
     private String nextToken;
 
     /**
@@ -50,16 +75,49 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param filters A list of filters used to match properties for tags.
+     * @param filters One or more filters. <ul> <li> <p><code>key</code> -
+     * The tag key. </li> <li> <p><code>resource-id</code> - The resource ID.
+     * </li> <li> <p><code>resource-type</code> - The resource type
+     * (<code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>image</code> | <code>instance</code> |
+     * <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> |
+     * <code>route-table</code> | <code>security-group</code> |
+     * <code>snapshot</code> | <code>spot-instances-request</code> |
+     * <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li>
+     * <p><code>value</code> - The tag value. </li> </ul>
      */
     public DescribeTagsRequest(java.util.List<Filter> filters) {
         setFilters(filters);
     }
 
     /**
-     * A list of filters used to match properties for tags.
+     * One or more filters. <ul> <li> <p><code>key</code> - The tag key.
+     * </li> <li> <p><code>resource-id</code> - The resource ID. </li> <li>
+     * <p><code>resource-type</code> - The resource type
+     * (<code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>image</code> | <code>instance</code> |
+     * <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> |
+     * <code>route-table</code> | <code>security-group</code> |
+     * <code>snapshot</code> | <code>spot-instances-request</code> |
+     * <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li>
+     * <p><code>value</code> - The tag value. </li> </ul>
      *
-     * @return A list of filters used to match properties for tags.
+     * @return One or more filters. <ul> <li> <p><code>key</code> - The tag key.
+     *         </li> <li> <p><code>resource-id</code> - The resource ID. </li> <li>
+     *         <p><code>resource-type</code> - The resource type
+     *         (<code>customer-gateway</code> | <code>dhcp-options</code> |
+     *         <code>image</code> | <code>instance</code> |
+     *         <code>internet-gateway</code> | <code>network-acl</code> |
+     *         <code>network-interface</code> | <code>reserved-instances</code> |
+     *         <code>route-table</code> | <code>security-group</code> |
+     *         <code>snapshot</code> | <code>spot-instances-request</code> |
+     *         <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
+     *         <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li>
+     *         <p><code>value</code> - The tag value. </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -70,9 +128,31 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * A list of filters used to match properties for tags.
+     * One or more filters. <ul> <li> <p><code>key</code> - The tag key.
+     * </li> <li> <p><code>resource-id</code> - The resource ID. </li> <li>
+     * <p><code>resource-type</code> - The resource type
+     * (<code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>image</code> | <code>instance</code> |
+     * <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> |
+     * <code>route-table</code> | <code>security-group</code> |
+     * <code>snapshot</code> | <code>spot-instances-request</code> |
+     * <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li>
+     * <p><code>value</code> - The tag value. </li> </ul>
      *
-     * @param filters A list of filters used to match properties for tags.
+     * @param filters One or more filters. <ul> <li> <p><code>key</code> - The tag key.
+     *         </li> <li> <p><code>resource-id</code> - The resource ID. </li> <li>
+     *         <p><code>resource-type</code> - The resource type
+     *         (<code>customer-gateway</code> | <code>dhcp-options</code> |
+     *         <code>image</code> | <code>instance</code> |
+     *         <code>internet-gateway</code> | <code>network-acl</code> |
+     *         <code>network-interface</code> | <code>reserved-instances</code> |
+     *         <code>route-table</code> | <code>security-group</code> |
+     *         <code>snapshot</code> | <code>spot-instances-request</code> |
+     *         <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
+     *         <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li>
+     *         <p><code>value</code> - The tag value. </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -85,11 +165,33 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * A list of filters used to match properties for tags.
+     * One or more filters. <ul> <li> <p><code>key</code> - The tag key.
+     * </li> <li> <p><code>resource-id</code> - The resource ID. </li> <li>
+     * <p><code>resource-type</code> - The resource type
+     * (<code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>image</code> | <code>instance</code> |
+     * <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> |
+     * <code>route-table</code> | <code>security-group</code> |
+     * <code>snapshot</code> | <code>spot-instances-request</code> |
+     * <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li>
+     * <p><code>value</code> - The tag value. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for tags.
+     * @param filters One or more filters. <ul> <li> <p><code>key</code> - The tag key.
+     *         </li> <li> <p><code>resource-id</code> - The resource ID. </li> <li>
+     *         <p><code>resource-type</code> - The resource type
+     *         (<code>customer-gateway</code> | <code>dhcp-options</code> |
+     *         <code>image</code> | <code>instance</code> |
+     *         <code>internet-gateway</code> | <code>network-acl</code> |
+     *         <code>network-interface</code> | <code>reserved-instances</code> |
+     *         <code>route-table</code> | <code>security-group</code> |
+     *         <code>snapshot</code> | <code>spot-instances-request</code> |
+     *         <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
+     *         <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li>
+     *         <p><code>value</code> - The tag value. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -103,11 +205,33 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * A list of filters used to match properties for tags.
+     * One or more filters. <ul> <li> <p><code>key</code> - The tag key.
+     * </li> <li> <p><code>resource-id</code> - The resource ID. </li> <li>
+     * <p><code>resource-type</code> - The resource type
+     * (<code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>image</code> | <code>instance</code> |
+     * <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> |
+     * <code>route-table</code> | <code>security-group</code> |
+     * <code>snapshot</code> | <code>spot-instances-request</code> |
+     * <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li>
+     * <p><code>value</code> - The tag value. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for tags.
+     * @param filters One or more filters. <ul> <li> <p><code>key</code> - The tag key.
+     *         </li> <li> <p><code>resource-id</code> - The resource ID. </li> <li>
+     *         <p><code>resource-type</code> - The resource type
+     *         (<code>customer-gateway</code> | <code>dhcp-options</code> |
+     *         <code>image</code> | <code>instance</code> |
+     *         <code>internet-gateway</code> | <code>network-acl</code> |
+     *         <code>network-interface</code> | <code>reserved-instances</code> |
+     *         <code>route-table</code> | <code>security-group</code> |
+     *         <code>snapshot</code> | <code>spot-instances-request</code> |
+     *         <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
+     *         <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li>
+     *         <p><code>value</code> - The tag value. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -125,29 +249,47 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * Returns the value of the MaxResults property for this object.
+     * The maximum number of items to return for this call. The call also
+     * returns a token that you can specify in a subsequent call to get the
+     * next set of results. If the value is greater than 1000, we return only
+     * 1000 items.
      *
-     * @return The value of the MaxResults property for this object.
+     * @return The maximum number of items to return for this call. The call also
+     *         returns a token that you can specify in a subsequent call to get the
+     *         next set of results. If the value is greater than 1000, we return only
+     *         1000 items.
      */
     public Integer getMaxResults() {
         return maxResults;
     }
     
     /**
-     * Sets the value of the MaxResults property for this object.
+     * The maximum number of items to return for this call. The call also
+     * returns a token that you can specify in a subsequent call to get the
+     * next set of results. If the value is greater than 1000, we return only
+     * 1000 items.
      *
-     * @param maxResults The new value for the MaxResults property for this object.
+     * @param maxResults The maximum number of items to return for this call. The call also
+     *         returns a token that you can specify in a subsequent call to get the
+     *         next set of results. If the value is greater than 1000, we return only
+     *         1000 items.
      */
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
     
     /**
-     * Sets the value of the MaxResults property for this object.
+     * The maximum number of items to return for this call. The call also
+     * returns a token that you can specify in a subsequent call to get the
+     * next set of results. If the value is greater than 1000, we return only
+     * 1000 items.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxResults The new value for the MaxResults property for this object.
+     * @param maxResults The maximum number of items to return for this call. The call also
+     *         returns a token that you can specify in a subsequent call to get the
+     *         next set of results. If the value is greater than 1000, we return only
+     *         1000 items.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -158,29 +300,35 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * Returns the value of the NextToken property for this object.
+     * The token for the next set of items to return. (You received this
+     * token from a prior call.)
      *
-     * @return The value of the NextToken property for this object.
+     * @return The token for the next set of items to return. (You received this
+     *         token from a prior call.)
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * The token for the next set of items to return. (You received this
+     * token from a prior call.)
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken The token for the next set of items to return. (You received this
+     *         token from a prior call.)
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * The token for the next set of items to return. (You received this
+     * token from a prior call.)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken The token for the next set of items to return. (You received this
+     *         token from a prior call.)
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

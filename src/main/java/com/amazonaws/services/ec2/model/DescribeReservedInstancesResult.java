@@ -17,21 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of describing the purchased Reserved Instances for your account.
- * </p>
+ * 
  */
 public class DescribeReservedInstancesResult implements Serializable {
 
     /**
-     * The list of described Reserved Instances.
+     * A list of Reserved Instances.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstances> reservedInstances;
 
     /**
-     * The list of described Reserved Instances.
+     * A list of Reserved Instances.
      *
-     * @return The list of described Reserved Instances.
+     * @return A list of Reserved Instances.
      */
     public java.util.List<ReservedInstances> getReservedInstances() {
         if (reservedInstances == null) {
@@ -42,9 +40,9 @@ public class DescribeReservedInstancesResult implements Serializable {
     }
     
     /**
-     * The list of described Reserved Instances.
+     * A list of Reserved Instances.
      *
-     * @param reservedInstances The list of described Reserved Instances.
+     * @param reservedInstances A list of Reserved Instances.
      */
     public void setReservedInstances(java.util.Collection<ReservedInstances> reservedInstances) {
         if (reservedInstances == null) {
@@ -57,11 +55,11 @@ public class DescribeReservedInstancesResult implements Serializable {
     }
     
     /**
-     * The list of described Reserved Instances.
+     * A list of Reserved Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstances The list of described Reserved Instances.
+     * @param reservedInstances A list of Reserved Instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,11 +73,11 @@ public class DescribeReservedInstancesResult implements Serializable {
     }
     
     /**
-     * The list of described Reserved Instances.
+     * A list of Reserved Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstances The list of described Reserved Instances.
+     * @param reservedInstances A list of Reserved Instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

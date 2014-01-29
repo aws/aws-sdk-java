@@ -50,6 +50,7 @@ public class DescribeTapeRecoveryPointsResultJsonUnmarshaller implements Unmarsh
                     describeTapeRecoveryPointsResult.setGatewayARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TapeRecoveryPointInfos", targetDepth)) {
+                    context.nextToken();
                     describeTapeRecoveryPointsResult.setTapeRecoveryPointInfos(new ListUnmarshaller<TapeRecoveryPointInfo>(TapeRecoveryPointInfoJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {

@@ -46,24 +46,31 @@ public class WeeklyAutoScalingScheduleJsonUnmarshaller implements Unmarshaller<W
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Monday", targetDepth)) {
+                    context.nextToken();
                     weeklyAutoScalingSchedule.setMonday(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Tuesday", targetDepth)) {
+                    context.nextToken();
                     weeklyAutoScalingSchedule.setTuesday(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Wednesday", targetDepth)) {
+                    context.nextToken();
                     weeklyAutoScalingSchedule.setWednesday(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Thursday", targetDepth)) {
+                    context.nextToken();
                     weeklyAutoScalingSchedule.setThursday(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Friday", targetDepth)) {
+                    context.nextToken();
                     weeklyAutoScalingSchedule.setFriday(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Saturday", targetDepth)) {
+                    context.nextToken();
                     weeklyAutoScalingSchedule.setSaturday(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Sunday", targetDepth)) {
+                    context.nextToken();
                     weeklyAutoScalingSchedule.setSunday(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

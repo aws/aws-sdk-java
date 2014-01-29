@@ -20,44 +20,71 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createReservedInstancesListing(CreateReservedInstancesListingRequest) CreateReservedInstancesListing operation}.
- * 
+ * <p>
+ * Creates a listing for Amazon EC2 Reserved Instances to be sold in the Reserved Instance Marketplace. You can submit one Reserved Instance listing at a
+ * time.
+ * </p>
+ * <p>
+ * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a> in
+ * the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createReservedInstancesListing(CreateReservedInstancesListingRequest)
  */
 public class CreateReservedInstancesListingRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * The ID of the active Reserved Instance.
+     */
     private String reservedInstancesId;
 
+    /**
+     * The number of instances that are a part of a Reserved Instance account
+     * to be listed in the Reserved Instance Marketplace. This number should
+     * be less than or equal to the instance count associated with the
+     * Reserved Instance ID specified in this call.
+     */
     private Integer instanceCount;
 
+    /**
+     * A list specifying the price of the Reserved Instance for each month
+     * remaining in the Reserved Instance term.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<PriceScheduleSpecification> priceSchedules;
 
+    /**
+     * Unique, case-sensitive identifier you provide to ensure idempotency of
+     * your listings. This helps avoid duplicate listings. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
     private String clientToken;
 
     /**
-     * Returns the value of the ReservedInstancesId property for this object.
+     * The ID of the active Reserved Instance.
      *
-     * @return The value of the ReservedInstancesId property for this object.
+     * @return The ID of the active Reserved Instance.
      */
     public String getReservedInstancesId() {
         return reservedInstancesId;
     }
     
     /**
-     * Sets the value of the ReservedInstancesId property for this object.
+     * The ID of the active Reserved Instance.
      *
-     * @param reservedInstancesId The new value for the ReservedInstancesId property for this object.
+     * @param reservedInstancesId The ID of the active Reserved Instance.
      */
     public void setReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
     }
     
     /**
-     * Sets the value of the ReservedInstancesId property for this object.
+     * The ID of the active Reserved Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesId The new value for the ReservedInstancesId property for this object.
+     * @param reservedInstancesId The ID of the active Reserved Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -68,29 +95,47 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
     }
 
     /**
-     * Returns the value of the InstanceCount property for this object.
+     * The number of instances that are a part of a Reserved Instance account
+     * to be listed in the Reserved Instance Marketplace. This number should
+     * be less than or equal to the instance count associated with the
+     * Reserved Instance ID specified in this call.
      *
-     * @return The value of the InstanceCount property for this object.
+     * @return The number of instances that are a part of a Reserved Instance account
+     *         to be listed in the Reserved Instance Marketplace. This number should
+     *         be less than or equal to the instance count associated with the
+     *         Reserved Instance ID specified in this call.
      */
     public Integer getInstanceCount() {
         return instanceCount;
     }
     
     /**
-     * Sets the value of the InstanceCount property for this object.
+     * The number of instances that are a part of a Reserved Instance account
+     * to be listed in the Reserved Instance Marketplace. This number should
+     * be less than or equal to the instance count associated with the
+     * Reserved Instance ID specified in this call.
      *
-     * @param instanceCount The new value for the InstanceCount property for this object.
+     * @param instanceCount The number of instances that are a part of a Reserved Instance account
+     *         to be listed in the Reserved Instance Marketplace. This number should
+     *         be less than or equal to the instance count associated with the
+     *         Reserved Instance ID specified in this call.
      */
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
     
     /**
-     * Sets the value of the InstanceCount property for this object.
+     * The number of instances that are a part of a Reserved Instance account
+     * to be listed in the Reserved Instance Marketplace. This number should
+     * be less than or equal to the instance count associated with the
+     * Reserved Instance ID specified in this call.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceCount The new value for the InstanceCount property for this object.
+     * @param instanceCount The number of instances that are a part of a Reserved Instance account
+     *         to be listed in the Reserved Instance Marketplace. This number should
+     *         be less than or equal to the instance count associated with the
+     *         Reserved Instance ID specified in this call.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -101,9 +146,11 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
     }
 
     /**
-     * Returns the value of the PriceSchedules property for this object.
+     * A list specifying the price of the Reserved Instance for each month
+     * remaining in the Reserved Instance term.
      *
-     * @return The value of the PriceSchedules property for this object.
+     * @return A list specifying the price of the Reserved Instance for each month
+     *         remaining in the Reserved Instance term.
      */
     public java.util.List<PriceScheduleSpecification> getPriceSchedules() {
         if (priceSchedules == null) {
@@ -114,9 +161,11 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
     }
     
     /**
-     * Sets the value of the PriceSchedules property for this object.
+     * A list specifying the price of the Reserved Instance for each month
+     * remaining in the Reserved Instance term.
      *
-     * @param priceSchedules The new value for the PriceSchedules property for this object.
+     * @param priceSchedules A list specifying the price of the Reserved Instance for each month
+     *         remaining in the Reserved Instance term.
      */
     public void setPriceSchedules(java.util.Collection<PriceScheduleSpecification> priceSchedules) {
         if (priceSchedules == null) {
@@ -129,11 +178,13 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
     }
     
     /**
-     * Sets the value of the PriceSchedules property for this object.
+     * A list specifying the price of the Reserved Instance for each month
+     * remaining in the Reserved Instance term.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param priceSchedules The new value for the PriceSchedules property for this object.
+     * @param priceSchedules A list specifying the price of the Reserved Instance for each month
+     *         remaining in the Reserved Instance term.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -147,11 +198,13 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
     }
     
     /**
-     * Sets the value of the PriceSchedules property for this object.
+     * A list specifying the price of the Reserved Instance for each month
+     * remaining in the Reserved Instance term.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param priceSchedules The new value for the PriceSchedules property for this object.
+     * @param priceSchedules A list specifying the price of the Reserved Instance for each month
+     *         remaining in the Reserved Instance term.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -169,29 +222,53 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
     }
 
     /**
-     * Returns the value of the ClientToken property for this object.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of
+     * your listings. This helps avoid duplicate listings. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
-     * @return The value of the ClientToken property for this object.
+     * @return Unique, case-sensitive identifier you provide to ensure idempotency of
+     *         your listings. This helps avoid duplicate listings. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
     public String getClientToken() {
         return clientToken;
     }
     
     /**
-     * Sets the value of the ClientToken property for this object.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of
+     * your listings. This helps avoid duplicate listings. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
-     * @param clientToken The new value for the ClientToken property for this object.
+     * @param clientToken Unique, case-sensitive identifier you provide to ensure idempotency of
+     *         your listings. This helps avoid duplicate listings. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
     
     /**
-     * Sets the value of the ClientToken property for this object.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of
+     * your listings. This helps avoid duplicate listings. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param clientToken The new value for the ClientToken property for this object.
+     * @param clientToken Unique, case-sensitive identifier you provide to ensure idempotency of
+     *         your listings. This helps avoid duplicate listings. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

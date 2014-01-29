@@ -52,7 +52,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      * <p>For a Memcached cluster, valid values are between 1 and 20. If you
      * need to exceed this limit, please fill out the ElastiCache Limit
      * Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"></a>
+     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/>
      * . <p>For Redis, only single-node cache clusters are supported at this
      * time, so the value for this parameter must be 1.
      */
@@ -72,7 +72,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      * <code>cache.m2.xlarge</code> | <code>cache.m2.2xlarge</code> |
      * <code>cache.m2.4xlarge</code> | <code>cache.c1.xlarge</code> <p>For a
      * complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/"></a>.
+     * href="http://aws.amazon.com/elasticache/"/>.
      */
     private String cacheNodeType;
 
@@ -186,7 +186,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      * cluster will have. <p>For a Memcached cluster, valid values are
      * between 1 and 20. If you need to exceed this limit, please fill out
      * the ElastiCache Limit Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"></a>
+     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/>
      * . <p>For Redis, only single-node cache clusters are supported at this
      * time, so the value for this parameter must be 1.
      * @param cacheNodeType The compute and memory capacity of the nodes in
@@ -203,7 +203,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      * <code>cache.m2.2xlarge</code> | <code>cache.m2.4xlarge</code> |
      * <code>cache.c1.xlarge</code> <p>For a complete listing of cache node
      * types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/"></a>.
+     * href="http://aws.amazon.com/elasticache/"/>.
      * @param engine The name of the cache engine to be used for this cache
      * cluster. <p>Valid values for this parameter are:
      * <p><code>memcached</code> | <code>redis</code>
@@ -339,7 +339,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      * <p>For a Memcached cluster, valid values are between 1 and 20. If you
      * need to exceed this limit, please fill out the ElastiCache Limit
      * Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"></a>
+     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/>
      * . <p>For Redis, only single-node cache clusters are supported at this
      * time, so the value for this parameter must be 1.
      *
@@ -347,7 +347,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <p>For a Memcached cluster, valid values are between 1 and 20. If you
      *         need to exceed this limit, please fill out the ElastiCache Limit
      *         Increase Request form at <a
-     *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"></a>
+     *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/>
      *         . <p>For Redis, only single-node cache clusters are supported at this
      *         time, so the value for this parameter must be 1.
      */
@@ -360,7 +360,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      * <p>For a Memcached cluster, valid values are between 1 and 20. If you
      * need to exceed this limit, please fill out the ElastiCache Limit
      * Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"></a>
+     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/>
      * . <p>For Redis, only single-node cache clusters are supported at this
      * time, so the value for this parameter must be 1.
      *
@@ -368,7 +368,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <p>For a Memcached cluster, valid values are between 1 and 20. If you
      *         need to exceed this limit, please fill out the ElastiCache Limit
      *         Increase Request form at <a
-     *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"></a>
+     *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/>
      *         . <p>For Redis, only single-node cache clusters are supported at this
      *         time, so the value for this parameter must be 1.
      */
@@ -381,7 +381,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      * <p>For a Memcached cluster, valid values are between 1 and 20. If you
      * need to exceed this limit, please fill out the ElastiCache Limit
      * Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"></a>
+     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/>
      * . <p>For Redis, only single-node cache clusters are supported at this
      * time, so the value for this parameter must be 1.
      * <p>
@@ -391,7 +391,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <p>For a Memcached cluster, valid values are between 1 and 20. If you
      *         need to exceed this limit, please fill out the ElastiCache Limit
      *         Increase Request form at <a
-     *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"></a>
+     *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/>
      *         . <p>For Redis, only single-node cache clusters are supported at this
      *         time, so the value for this parameter must be 1.
      *
@@ -417,7 +417,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      * <code>cache.m2.xlarge</code> | <code>cache.m2.2xlarge</code> |
      * <code>cache.m2.4xlarge</code> | <code>cache.c1.xlarge</code> <p>For a
      * complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/"></a>.
+     * href="http://aws.amazon.com/elasticache/"/>.
      *
      * @return The compute and memory capacity of the nodes in the cache cluster.
      *         <p>Valid values for Memcached: <p> <code>cache.t1.micro</code> |
@@ -432,7 +432,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <code>cache.m2.xlarge</code> | <code>cache.m2.2xlarge</code> |
      *         <code>cache.m2.4xlarge</code> | <code>cache.c1.xlarge</code> <p>For a
      *         complete listing of cache node types and specifications, see <a
-     *         href="http://aws.amazon.com/elasticache/"></a>.
+     *         href="http://aws.amazon.com/elasticache/"/>.
      */
     public String getCacheNodeType() {
         return cacheNodeType;
@@ -452,7 +452,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      * <code>cache.m2.xlarge</code> | <code>cache.m2.2xlarge</code> |
      * <code>cache.m2.4xlarge</code> | <code>cache.c1.xlarge</code> <p>For a
      * complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/"></a>.
+     * href="http://aws.amazon.com/elasticache/"/>.
      *
      * @param cacheNodeType The compute and memory capacity of the nodes in the cache cluster.
      *         <p>Valid values for Memcached: <p> <code>cache.t1.micro</code> |
@@ -467,7 +467,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <code>cache.m2.xlarge</code> | <code>cache.m2.2xlarge</code> |
      *         <code>cache.m2.4xlarge</code> | <code>cache.c1.xlarge</code> <p>For a
      *         complete listing of cache node types and specifications, see <a
-     *         href="http://aws.amazon.com/elasticache/"></a>.
+     *         href="http://aws.amazon.com/elasticache/"/>.
      */
     public void setCacheNodeType(String cacheNodeType) {
         this.cacheNodeType = cacheNodeType;
@@ -487,7 +487,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      * <code>cache.m2.xlarge</code> | <code>cache.m2.2xlarge</code> |
      * <code>cache.m2.4xlarge</code> | <code>cache.c1.xlarge</code> <p>For a
      * complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/"></a>.
+     * href="http://aws.amazon.com/elasticache/"/>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -504,7 +504,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <code>cache.m2.xlarge</code> | <code>cache.m2.2xlarge</code> |
      *         <code>cache.m2.4xlarge</code> | <code>cache.c1.xlarge</code> <p>For a
      *         complete listing of cache node types and specifications, see <a
-     *         href="http://aws.amazon.com/elasticache/"></a>.
+     *         href="http://aws.amazon.com/elasticache/"/>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -23,7 +23,34 @@ import com.amazonaws.services.ec2.model.transform.AttachVolumeRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#attachVolume(AttachVolumeRequest) AttachVolume operation}.
  * <p>
- * Attach a previously created volume to a running instance.
+ * Attaches an Amazon EBS volume to a running or stopped instance and exposes it to the instance with the specified device name.
+ * </p>
+ * <p>
+ * For a list of supported device names, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching an Amazon
+ * EBS Volume to an Instance </a> . Any device names that aren't reserved for instance store volumes can be used for Amazon EBS volumes. For more
+ * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"> Amazon EC2 Instance Store </a> in the <i>Amazon
+ * Elastic Compute Cloud User Guide</i> .
+ * </p>
+ * <p>
+ * If a volume has an AWS Marketplace product code:
+ * </p>
+ * 
+ * <ul>
+ * <li>The volume can only be attached as the root device of a stopped instance.</li>
+ * <li>You must be subscribed to the AWS Marketplace code that is on the volume.</li>
+ * <li>The configuration (instance type, operating system) of the instance must support that specific AWS Marketplace code. For example, you cannot take
+ * a volume from a Windows instance and attach it to a Linux instance.</li>
+ * <li>AWS Marketplace product codes are copied from the volume to the instance.</li>
+ * 
+ * </ul>
+ * <p>
+ * For an overview of the AWS Marketplace, see <a href="https://aws.amazon.com/marketplace/help/200900000">
+ * https://aws.amazon.com/marketplace/help/200900000 </a> . For more information about how to use the AWS Marketplace, see <a
+ * href="https://aws.amazon.com/marketplace"> AWS Marketplace </a> .
+ * </p>
+ * <p>
+ * For more information about Amazon EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching
+ * Amazon EBS Volumes </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#attachVolume(AttachVolumeRequest)
@@ -32,20 +59,18 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The ID of the Amazon EBS volume. The volume and instance must be
-     * within the same Availability Zone and the instance must be running.
+     * within the same Availability Zone.
      */
     private String volumeId;
 
     /**
-     * The ID of the instance to which the volume attaches. The volume and
-     * instance must be within the same Availability Zone and the instance
-     * must be running.
+     * The ID of the instance.
      */
     private String instanceId;
 
     /**
-     * Specifies how the device is exposed to the instance (e.g.,
-     * <code>/dev/sdh</code>).
+     * The device name to expose to the instance (for example,
+     * <code>/dev/sdh</code> or <code>xvdh</code>).
      */
     private String device;
 
@@ -61,13 +86,10 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
      * initialize any additional object members.
      * 
      * @param volumeId The ID of the Amazon EBS volume. The volume and
-     * instance must be within the same Availability Zone and the instance
-     * must be running.
-     * @param instanceId The ID of the instance to which the volume attaches.
-     * The volume and instance must be within the same Availability Zone and
-     * the instance must be running.
-     * @param device Specifies how the device is exposed to the instance
-     * (e.g., <code>/dev/sdh</code>).
+     * instance must be within the same Availability Zone.
+     * @param instanceId The ID of the instance.
+     * @param device The device name to expose to the instance (for example,
+     * <code>/dev/sdh</code> or <code>xvdh</code>).
      */
     public AttachVolumeRequest(String volumeId, String instanceId, String device) {
         setVolumeId(volumeId);
@@ -77,10 +99,10 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The ID of the Amazon EBS volume. The volume and instance must be
-     * within the same Availability Zone and the instance must be running.
+     * within the same Availability Zone.
      *
      * @return The ID of the Amazon EBS volume. The volume and instance must be
-     *         within the same Availability Zone and the instance must be running.
+     *         within the same Availability Zone.
      */
     public String getVolumeId() {
         return volumeId;
@@ -88,10 +110,10 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The ID of the Amazon EBS volume. The volume and instance must be
-     * within the same Availability Zone and the instance must be running.
+     * within the same Availability Zone.
      *
      * @param volumeId The ID of the Amazon EBS volume. The volume and instance must be
-     *         within the same Availability Zone and the instance must be running.
+     *         within the same Availability Zone.
      */
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -99,12 +121,12 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The ID of the Amazon EBS volume. The volume and instance must be
-     * within the same Availability Zone and the instance must be running.
+     * within the same Availability Zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeId The ID of the Amazon EBS volume. The volume and instance must be
-     *         within the same Availability Zone and the instance must be running.
+     *         within the same Availability Zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -115,41 +137,29 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The ID of the instance to which the volume attaches. The volume and
-     * instance must be within the same Availability Zone and the instance
-     * must be running.
+     * The ID of the instance.
      *
-     * @return The ID of the instance to which the volume attaches. The volume and
-     *         instance must be within the same Availability Zone and the instance
-     *         must be running.
+     * @return The ID of the instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The ID of the instance to which the volume attaches. The volume and
-     * instance must be within the same Availability Zone and the instance
-     * must be running.
+     * The ID of the instance.
      *
-     * @param instanceId The ID of the instance to which the volume attaches. The volume and
-     *         instance must be within the same Availability Zone and the instance
-     *         must be running.
+     * @param instanceId The ID of the instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The ID of the instance to which the volume attaches. The volume and
-     * instance must be within the same Availability Zone and the instance
-     * must be running.
+     * The ID of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The ID of the instance to which the volume attaches. The volume and
-     *         instance must be within the same Availability Zone and the instance
-     *         must be running.
+     * @param instanceId The ID of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -160,35 +170,35 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * Specifies how the device is exposed to the instance (e.g.,
-     * <code>/dev/sdh</code>).
+     * The device name to expose to the instance (for example,
+     * <code>/dev/sdh</code> or <code>xvdh</code>).
      *
-     * @return Specifies how the device is exposed to the instance (e.g.,
-     *         <code>/dev/sdh</code>).
+     * @return The device name to expose to the instance (for example,
+     *         <code>/dev/sdh</code> or <code>xvdh</code>).
      */
     public String getDevice() {
         return device;
     }
     
     /**
-     * Specifies how the device is exposed to the instance (e.g.,
-     * <code>/dev/sdh</code>).
+     * The device name to expose to the instance (for example,
+     * <code>/dev/sdh</code> or <code>xvdh</code>).
      *
-     * @param device Specifies how the device is exposed to the instance (e.g.,
-     *         <code>/dev/sdh</code>).
+     * @param device The device name to expose to the instance (for example,
+     *         <code>/dev/sdh</code> or <code>xvdh</code>).
      */
     public void setDevice(String device) {
         this.device = device;
     }
     
     /**
-     * Specifies how the device is exposed to the instance (e.g.,
-     * <code>/dev/sdh</code>).
+     * The device name to expose to the instance (for example,
+     * <code>/dev/sdh</code> or <code>xvdh</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param device Specifies how the device is exposed to the instance (e.g.,
-     *         <code>/dev/sdh</code>).
+     * @param device The device name to expose to the instance (for example,
+     *         <code>/dev/sdh</code> or <code>xvdh</code>).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

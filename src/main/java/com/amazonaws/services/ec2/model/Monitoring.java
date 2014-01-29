@@ -18,14 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the monitoring status of an Amazon EC2 instance.
+ * Describes the monitoring for the instance.
  * </p>
  */
 public class Monitoring implements Serializable {
 
     /**
-     * The state of monitoring on an Amazon EC2 instance (ex: enabled,
-     * disabled).
+     * Indicates whether monitoring is enabled for the instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>disabled, enabled, pending
@@ -33,14 +32,12 @@ public class Monitoring implements Serializable {
     private String state;
 
     /**
-     * The state of monitoring on an Amazon EC2 instance (ex: enabled,
-     * disabled).
+     * Indicates whether monitoring is enabled for the instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>disabled, enabled, pending
      *
-     * @return The state of monitoring on an Amazon EC2 instance (ex: enabled,
-     *         disabled).
+     * @return Indicates whether monitoring is enabled for the instance.
      *
      * @see MonitoringState
      */
@@ -49,14 +46,12 @@ public class Monitoring implements Serializable {
     }
     
     /**
-     * The state of monitoring on an Amazon EC2 instance (ex: enabled,
-     * disabled).
+     * Indicates whether monitoring is enabled for the instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>disabled, enabled, pending
      *
-     * @param state The state of monitoring on an Amazon EC2 instance (ex: enabled,
-     *         disabled).
+     * @param state Indicates whether monitoring is enabled for the instance.
      *
      * @see MonitoringState
      */
@@ -65,16 +60,14 @@ public class Monitoring implements Serializable {
     }
     
     /**
-     * The state of monitoring on an Amazon EC2 instance (ex: enabled,
-     * disabled).
+     * Indicates whether monitoring is enabled for the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>disabled, enabled, pending
      *
-     * @param state The state of monitoring on an Amazon EC2 instance (ex: enabled,
-     *         disabled).
+     * @param state Indicates whether monitoring is enabled for the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -87,14 +80,12 @@ public class Monitoring implements Serializable {
     }
 
     /**
-     * The state of monitoring on an Amazon EC2 instance (ex: enabled,
-     * disabled).
+     * Indicates whether monitoring is enabled for the instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>disabled, enabled, pending
      *
-     * @param state The state of monitoring on an Amazon EC2 instance (ex: enabled,
-     *         disabled).
+     * @param state Indicates whether monitoring is enabled for the instance.
      *
      * @see MonitoringState
      */
@@ -103,16 +94,14 @@ public class Monitoring implements Serializable {
     }
     
     /**
-     * The state of monitoring on an Amazon EC2 instance (ex: enabled,
-     * disabled).
+     * Indicates whether monitoring is enabled for the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>disabled, enabled, pending
      *
-     * @param state The state of monitoring on an Amazon EC2 instance (ex: enabled,
-     *         disabled).
+     * @param state Indicates whether monitoring is enabled for the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -18,6 +18,10 @@ import java.lang.reflect.Method;
 
 import com.amazonaws.services.dynamodb.model.AttributeValue;
 
+/**
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.NUnmarshaller} instead.
+ */
+@Deprecated
 abstract class NUnmarshaller implements ArgumentUnmarshaller {
 
     @Override

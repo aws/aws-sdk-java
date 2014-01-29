@@ -17,52 +17,46 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes a range of ports.
+ * </p>
  */
 public class PortRange implements Serializable {
 
     /**
-     * The first port in the range. Required if specifying <code>tcp</code>
-     * or <code>udp</code> for the protocol.
+     * The first port in the range.
      */
     private Integer from;
 
     /**
-     * The last port in the range. Required if specifying <code>tcp</code> or
-     * <code>udp</code> for the protocol.
+     * The last port in the range.
      */
     private Integer to;
 
     /**
-     * The first port in the range. Required if specifying <code>tcp</code>
-     * or <code>udp</code> for the protocol.
+     * The first port in the range.
      *
-     * @return The first port in the range. Required if specifying <code>tcp</code>
-     *         or <code>udp</code> for the protocol.
+     * @return The first port in the range.
      */
     public Integer getFrom() {
         return from;
     }
     
     /**
-     * The first port in the range. Required if specifying <code>tcp</code>
-     * or <code>udp</code> for the protocol.
+     * The first port in the range.
      *
-     * @param from The first port in the range. Required if specifying <code>tcp</code>
-     *         or <code>udp</code> for the protocol.
+     * @param from The first port in the range.
      */
     public void setFrom(Integer from) {
         this.from = from;
     }
     
     /**
-     * The first port in the range. Required if specifying <code>tcp</code>
-     * or <code>udp</code> for the protocol.
+     * The first port in the range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param from The first port in the range. Required if specifying <code>tcp</code>
-     *         or <code>udp</code> for the protocol.
+     * @param from The first port in the range.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -73,35 +67,29 @@ public class PortRange implements Serializable {
     }
 
     /**
-     * The last port in the range. Required if specifying <code>tcp</code> or
-     * <code>udp</code> for the protocol.
+     * The last port in the range.
      *
-     * @return The last port in the range. Required if specifying <code>tcp</code> or
-     *         <code>udp</code> for the protocol.
+     * @return The last port in the range.
      */
     public Integer getTo() {
         return to;
     }
     
     /**
-     * The last port in the range. Required if specifying <code>tcp</code> or
-     * <code>udp</code> for the protocol.
+     * The last port in the range.
      *
-     * @param to The last port in the range. Required if specifying <code>tcp</code> or
-     *         <code>udp</code> for the protocol.
+     * @param to The last port in the range.
      */
     public void setTo(Integer to) {
         this.to = to;
     }
     
     /**
-     * The last port in the range. Required if specifying <code>tcp</code> or
-     * <code>udp</code> for the protocol.
+     * The last port in the range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param to The last port in the range. Required if specifying <code>tcp</code> or
-     *         <code>udp</code> for the protocol.
+     * @param to The last port in the range.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

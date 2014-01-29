@@ -17,41 +17,82 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Import Instance Launch Specification
+ * 
  */
 public class ImportInstanceLaunchSpecification implements Serializable {
 
+    /**
+     * The architecture of the instance.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
+     */
     private String architecture;
 
+    /**
+     * One or more security group names.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNames;
 
+    /**
+     * 
+     */
     private String additionalInfo;
 
+    /**
+     * User data to be made available to the instance.
+     */
     private String userData;
 
+    /**
+     * The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     */
     private String instanceType;
 
     /**
-     * Describes where an Amazon EC2 instance is running within an Amazon EC2
-     * region.
+     * 
      */
     private Placement placement;
 
+    /**
+     * 
+     */
     private Boolean monitoring;
 
+    /**
+     * [EC2-VPC] The ID of the subnet to launch the instance into.
+     */
     private String subnetId;
 
+    /**
+     * Indicates whether an instance stops or terminates when you initiate
+     * shutdown from the instance (using the operating system command for
+     * system shutdown).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>stop, terminate
+     */
     private String instanceInitiatedShutdownBehavior;
 
+    /**
+     * [EC2-VPC] Optionally, you can use this parameter to assign the
+     * instance a specific available IP address from the IP address range of
+     * the subnet.
+     */
     private String privateIpAddress;
 
     /**
-     * Returns the value of the Architecture property for this object.
+     * The architecture of the instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>i386, x86_64
      *
-     * @return The value of the Architecture property for this object.
+     * @return The architecture of the instance.
      *
      * @see ArchitectureValues
      */
@@ -60,12 +101,12 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the Architecture property for this object.
+     * The architecture of the instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>i386, x86_64
      *
-     * @param architecture The new value for the Architecture property for this object.
+     * @param architecture The architecture of the instance.
      *
      * @see ArchitectureValues
      */
@@ -74,14 +115,14 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the Architecture property for this object.
+     * The architecture of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>i386, x86_64
      *
-     * @param architecture The new value for the Architecture property for this object.
+     * @param architecture The architecture of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -94,12 +135,12 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
 
     /**
-     * Sets the value of the Architecture property for this object.
+     * The architecture of the instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>i386, x86_64
      *
-     * @param architecture The new value for the Architecture property for this object.
+     * @param architecture The architecture of the instance.
      *
      * @see ArchitectureValues
      */
@@ -108,14 +149,14 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the Architecture property for this object.
+     * The architecture of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>i386, x86_64
      *
-     * @param architecture The new value for the Architecture property for this object.
+     * @param architecture The architecture of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -128,9 +169,9 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the GroupNames property for this object.
+     * One or more security group names.
      *
-     * @return The value of the GroupNames property for this object.
+     * @return One or more security group names.
      */
     public java.util.List<String> getGroupNames() {
         if (groupNames == null) {
@@ -141,9 +182,9 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the GroupNames property for this object.
+     * One or more security group names.
      *
-     * @param groupNames The new value for the GroupNames property for this object.
+     * @param groupNames One or more security group names.
      */
     public void setGroupNames(java.util.Collection<String> groupNames) {
         if (groupNames == null) {
@@ -156,11 +197,11 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the GroupNames property for this object.
+     * One or more security group names.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupNames The new value for the GroupNames property for this object.
+     * @param groupNames One or more security group names.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -174,11 +215,11 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the GroupNames property for this object.
+     * One or more security group names.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupNames The new value for the GroupNames property for this object.
+     * @param groupNames One or more security group names.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -196,29 +237,29 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the AdditionalInfo property for this object.
+     * 
      *
-     * @return The value of the AdditionalInfo property for this object.
+     * @return 
      */
     public String getAdditionalInfo() {
         return additionalInfo;
     }
     
     /**
-     * Sets the value of the AdditionalInfo property for this object.
+     * 
      *
-     * @param additionalInfo The new value for the AdditionalInfo property for this object.
+     * @param additionalInfo 
      */
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
     }
     
     /**
-     * Sets the value of the AdditionalInfo property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param additionalInfo The new value for the AdditionalInfo property for this object.
+     * @param additionalInfo 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -229,29 +270,29 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the UserData property for this object.
+     * User data to be made available to the instance.
      *
-     * @return The value of the UserData property for this object.
+     * @return User data to be made available to the instance.
      */
     public String getUserData() {
         return userData;
     }
     
     /**
-     * Sets the value of the UserData property for this object.
+     * User data to be made available to the instance.
      *
-     * @param userData The new value for the UserData property for this object.
+     * @param userData User data to be made available to the instance.
      */
     public void setUserData(String userData) {
         this.userData = userData;
     }
     
     /**
-     * Sets the value of the UserData property for this object.
+     * User data to be made available to the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param userData The new value for the UserData property for this object.
+     * @param userData User data to be made available to the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -262,12 +303,16 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the InstanceType property for this object.
+     * The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @return The value of the InstanceType property for this object.
+     * @return The instance type. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
      * @see InstanceType
      */
@@ -276,12 +321,16 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the InstanceType property for this object.
+     * The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @param instanceType The new value for the InstanceType property for this object.
+     * @param instanceType The instance type. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
      * @see InstanceType
      */
@@ -290,14 +339,18 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the InstanceType property for this object.
+     * The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @param instanceType The new value for the InstanceType property for this object.
+     * @param instanceType The instance type. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -310,12 +363,16 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
 
     /**
-     * Sets the value of the InstanceType property for this object.
+     * The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @param instanceType The new value for the InstanceType property for this object.
+     * @param instanceType The instance type. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
      * @see InstanceType
      */
@@ -324,14 +381,18 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the InstanceType property for this object.
+     * The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @param instanceType The new value for the InstanceType property for this object.
+     * @param instanceType The instance type. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -344,35 +405,29 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
 
     /**
-     * Describes where an Amazon EC2 instance is running within an Amazon EC2
-     * region.
+     * 
      *
-     * @return Describes where an Amazon EC2 instance is running within an Amazon EC2
-     *         region.
+     * @return 
      */
     public Placement getPlacement() {
         return placement;
     }
     
     /**
-     * Describes where an Amazon EC2 instance is running within an Amazon EC2
-     * region.
+     * 
      *
-     * @param placement Describes where an Amazon EC2 instance is running within an Amazon EC2
-     *         region.
+     * @param placement 
      */
     public void setPlacement(Placement placement) {
         this.placement = placement;
     }
     
     /**
-     * Describes where an Amazon EC2 instance is running within an Amazon EC2
-     * region.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param placement Describes where an Amazon EC2 instance is running within an Amazon EC2
-     *         region.
+     * @param placement 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -383,29 +438,29 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the Monitoring property for this object.
+     * 
      *
-     * @return The value of the Monitoring property for this object.
+     * @return 
      */
     public Boolean isMonitoring() {
         return monitoring;
     }
     
     /**
-     * Sets the value of the Monitoring property for this object.
+     * 
      *
-     * @param monitoring The new value for the Monitoring property for this object.
+     * @param monitoring 
      */
     public void setMonitoring(Boolean monitoring) {
         this.monitoring = monitoring;
     }
     
     /**
-     * Sets the value of the Monitoring property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param monitoring The new value for the Monitoring property for this object.
+     * @param monitoring 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -416,38 +471,38 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the Monitoring property for this object.
+     * 
      *
-     * @return The value of the Monitoring property for this object.
+     * @return 
      */
     public Boolean getMonitoring() {
         return monitoring;
     }
 
     /**
-     * Returns the value of the SubnetId property for this object.
+     * [EC2-VPC] The ID of the subnet to launch the instance into.
      *
-     * @return The value of the SubnetId property for this object.
+     * @return [EC2-VPC] The ID of the subnet to launch the instance into.
      */
     public String getSubnetId() {
         return subnetId;
     }
     
     /**
-     * Sets the value of the SubnetId property for this object.
+     * [EC2-VPC] The ID of the subnet to launch the instance into.
      *
-     * @param subnetId The new value for the SubnetId property for this object.
+     * @param subnetId [EC2-VPC] The ID of the subnet to launch the instance into.
      */
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
     
     /**
-     * Sets the value of the SubnetId property for this object.
+     * [EC2-VPC] The ID of the subnet to launch the instance into.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetId The new value for the SubnetId property for this object.
+     * @param subnetId [EC2-VPC] The ID of the subnet to launch the instance into.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -458,14 +513,16 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the InstanceInitiatedShutdownBehavior property
-     * for this object.
+     * Indicates whether an instance stops or terminates when you initiate
+     * shutdown from the instance (using the operating system command for
+     * system shutdown).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>stop, terminate
      *
-     * @return The value of the InstanceInitiatedShutdownBehavior property for this
-     *         object.
+     * @return Indicates whether an instance stops or terminates when you initiate
+     *         shutdown from the instance (using the operating system command for
+     *         system shutdown).
      *
      * @see ShutdownBehavior
      */
@@ -474,14 +531,16 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the InstanceInitiatedShutdownBehavior property for
-     * this object.
+     * Indicates whether an instance stops or terminates when you initiate
+     * shutdown from the instance (using the operating system command for
+     * system shutdown).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>stop, terminate
      *
-     * @param instanceInitiatedShutdownBehavior The new value for the InstanceInitiatedShutdownBehavior property for
-     *         this object.
+     * @param instanceInitiatedShutdownBehavior Indicates whether an instance stops or terminates when you initiate
+     *         shutdown from the instance (using the operating system command for
+     *         system shutdown).
      *
      * @see ShutdownBehavior
      */
@@ -490,16 +549,18 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the InstanceInitiatedShutdownBehavior property for
-     * this object.
+     * Indicates whether an instance stops or terminates when you initiate
+     * shutdown from the instance (using the operating system command for
+     * system shutdown).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>stop, terminate
      *
-     * @param instanceInitiatedShutdownBehavior The new value for the InstanceInitiatedShutdownBehavior property for
-     *         this object.
+     * @param instanceInitiatedShutdownBehavior Indicates whether an instance stops or terminates when you initiate
+     *         shutdown from the instance (using the operating system command for
+     *         system shutdown).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -512,14 +573,16 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
 
     /**
-     * Sets the value of the InstanceInitiatedShutdownBehavior property for
-     * this object.
+     * Indicates whether an instance stops or terminates when you initiate
+     * shutdown from the instance (using the operating system command for
+     * system shutdown).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>stop, terminate
      *
-     * @param instanceInitiatedShutdownBehavior The new value for the InstanceInitiatedShutdownBehavior property for
-     *         this object.
+     * @param instanceInitiatedShutdownBehavior Indicates whether an instance stops or terminates when you initiate
+     *         shutdown from the instance (using the operating system command for
+     *         system shutdown).
      *
      * @see ShutdownBehavior
      */
@@ -528,16 +591,18 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the InstanceInitiatedShutdownBehavior property for
-     * this object.
+     * Indicates whether an instance stops or terminates when you initiate
+     * shutdown from the instance (using the operating system command for
+     * system shutdown).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>stop, terminate
      *
-     * @param instanceInitiatedShutdownBehavior The new value for the InstanceInitiatedShutdownBehavior property for
-     *         this object.
+     * @param instanceInitiatedShutdownBehavior Indicates whether an instance stops or terminates when you initiate
+     *         shutdown from the instance (using the operating system command for
+     *         system shutdown).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -550,29 +615,41 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the PrivateIpAddress property for this object.
+     * [EC2-VPC] Optionally, you can use this parameter to assign the
+     * instance a specific available IP address from the IP address range of
+     * the subnet.
      *
-     * @return The value of the PrivateIpAddress property for this object.
+     * @return [EC2-VPC] Optionally, you can use this parameter to assign the
+     *         instance a specific available IP address from the IP address range of
+     *         the subnet.
      */
     public String getPrivateIpAddress() {
         return privateIpAddress;
     }
     
     /**
-     * Sets the value of the PrivateIpAddress property for this object.
+     * [EC2-VPC] Optionally, you can use this parameter to assign the
+     * instance a specific available IP address from the IP address range of
+     * the subnet.
      *
-     * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     * @param privateIpAddress [EC2-VPC] Optionally, you can use this parameter to assign the
+     *         instance a specific available IP address from the IP address range of
+     *         the subnet.
      */
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
     
     /**
-     * Sets the value of the PrivateIpAddress property for this object.
+     * [EC2-VPC] Optionally, you can use this parameter to assign the
+     * instance a specific available IP address from the IP address range of
+     * the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     * @param privateIpAddress [EC2-VPC] Optionally, you can use this parameter to assign the
+     *         instance a specific available IP address from the IP address range of
+     *         the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

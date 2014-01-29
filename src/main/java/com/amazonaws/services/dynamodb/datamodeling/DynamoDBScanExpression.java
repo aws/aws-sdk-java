@@ -28,6 +28,8 @@ import com.amazonaws.services.dynamodb.model.Key;
  * information on the available comparison types).
  * 
  * @see DynamoDBMapper#scan(Class, DynamoDBScanExpression)
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression} instead.
  */
 @Deprecated
 public class DynamoDBScanExpression {

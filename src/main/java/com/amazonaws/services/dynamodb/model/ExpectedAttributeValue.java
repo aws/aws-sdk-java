@@ -20,6 +20,7 @@ import java.io.Serializable;
  * Allows you to provide an attribute name, and whether or not Amazon DynamoDB should check to see if the attribute value already exists; or if the
  * attribute value exists and has a particular value before changing it.
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue} instead.
  */
 @Deprecated
 public class ExpectedAttributeValue  implements Serializable  {

@@ -18,42 +18,45 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
+ * Describes a security group.
  * </p>
  */
 public class GroupIdentifier implements Serializable {
 
     /**
-     * 
+     * The name of the security group.
      */
     private String groupName;
 
+    /**
+     * The ID of the security group.
+     */
     private String groupId;
 
     /**
-     * 
+     * The name of the security group.
      *
-     * @return 
+     * @return The name of the security group.
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * 
+     * The name of the security group.
      *
-     * @param groupName 
+     * @param groupName The name of the security group.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * 
+     * The name of the security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupName 
+     * @param groupName The name of the security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -64,29 +67,29 @@ public class GroupIdentifier implements Serializable {
     }
 
     /**
-     * Returns the value of the GroupId property for this object.
+     * The ID of the security group.
      *
-     * @return The value of the GroupId property for this object.
+     * @return The ID of the security group.
      */
     public String getGroupId() {
         return groupId;
     }
     
     /**
-     * Sets the value of the GroupId property for this object.
+     * The ID of the security group.
      *
-     * @param groupId The new value for the GroupId property for this object.
+     * @param groupId The ID of the security group.
      */
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
     
     /**
-     * Sets the value of the GroupId property for this object.
+     * The ID of the security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupId The new value for the GroupId property for this object.
+     * @param groupId The ID of the security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

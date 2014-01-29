@@ -1667,7 +1667,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);

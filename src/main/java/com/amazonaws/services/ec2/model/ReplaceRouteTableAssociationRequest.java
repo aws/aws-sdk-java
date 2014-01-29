@@ -23,14 +23,13 @@ import com.amazonaws.services.ec2.model.transform.ReplaceRouteTableAssociationRe
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#replaceRouteTableAssociation(ReplaceRouteTableAssociationRequest) ReplaceRouteTableAssociation operation}.
  * <p>
- * Changes the route table associated with a given subnet in a VPC. After you execute this action, the subnet uses the routes in the new route table
- * it's associated with. For more information about route tables, go to <a
- * href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a> in the Amazon Virtual Private Cloud User
- * Guide.
+ * Changes the route table associated with a given subnet in a VPC. After the operation completes, the subnet uses the routes in the new route table it's
+ * associated with. For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
+ * Route Tables </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  * <p>
- * You can also use this to change which table is the main route table in the VPC. You just specify the main route table's association ID and the route
- * table that you want to be the new main route table.
+ * You can also use ReplaceRouteTableAssociation to change which table is the main route table in the VPC. You just specify the main route table's
+ * association ID and the route table to be the new main route table.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceRouteTableAssociation(ReplaceRouteTableAssociationRequest)
@@ -38,8 +37,7 @@ import com.amazonaws.services.ec2.model.transform.ReplaceRouteTableAssociationRe
 public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ReplaceRouteTableAssociationRequest> {
 
     /**
-     * The ID representing the current association between the original route
-     * table and the subnet.
+     * The association ID.
      */
     private String associationId;
 
@@ -49,35 +47,29 @@ public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest
     private String routeTableId;
 
     /**
-     * The ID representing the current association between the original route
-     * table and the subnet.
+     * The association ID.
      *
-     * @return The ID representing the current association between the original route
-     *         table and the subnet.
+     * @return The association ID.
      */
     public String getAssociationId() {
         return associationId;
     }
     
     /**
-     * The ID representing the current association between the original route
-     * table and the subnet.
+     * The association ID.
      *
-     * @param associationId The ID representing the current association between the original route
-     *         table and the subnet.
+     * @param associationId The association ID.
      */
     public void setAssociationId(String associationId) {
         this.associationId = associationId;
     }
     
     /**
-     * The ID representing the current association between the original route
-     * table and the subnet.
+     * The association ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param associationId The ID representing the current association between the original route
-     *         table and the subnet.
+     * @param associationId The association ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

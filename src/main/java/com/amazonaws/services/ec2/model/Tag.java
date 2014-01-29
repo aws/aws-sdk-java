@@ -18,19 +18,21 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents metadata to associate with Amazon EC2 resources. Each tag consists of a user-defined key and value. Use tags to categorize EC2 resources,
- * such as by purpose, owner, or environment.
+ * Describes a tag.
  * </p>
  */
 public class Tag implements Serializable {
 
     /**
-     * The tag's key.
+     * The key of the tag. <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with
+     * <code>aws:</code>
      */
     private String key;
 
     /**
-     * The tag's value.
+     * The value of the tag. <p>Constraints: Tag values are case-sensitive
+     * and accept a maximum of 255 Unicode characters.
      */
     private String value;
 
@@ -45,8 +47,11 @@ public class Tag implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param key The tag's key.
-     * @param value The tag's value.
+     * @param key The key of the tag. <p>Constraints: Tag keys are
+     * case-sensitive and accept a maximum of 127 Unicode characters. May not
+     * begin with <code>aws:</code>
+     * @param value The value of the tag. <p>Constraints: Tag values are
+     * case-sensitive and accept a maximum of 255 Unicode characters.
      */
     public Tag(String key, String value) {
         setKey(key);
@@ -58,36 +63,50 @@ public class Tag implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param key The tag's key.
+     * @param key The key of the tag. <p>Constraints: Tag keys are
+     * case-sensitive and accept a maximum of 127 Unicode characters. May not
+     * begin with <code>aws:</code>
      */
     public Tag(String key) {
         setKey(key);
     }
 
     /**
-     * The tag's key.
+     * The key of the tag. <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with
+     * <code>aws:</code>
      *
-     * @return The tag's key.
+     * @return The key of the tag. <p>Constraints: Tag keys are case-sensitive and
+     *         accept a maximum of 127 Unicode characters. May not begin with
+     *         <code>aws:</code>
      */
     public String getKey() {
         return key;
     }
     
     /**
-     * The tag's key.
+     * The key of the tag. <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with
+     * <code>aws:</code>
      *
-     * @param key The tag's key.
+     * @param key The key of the tag. <p>Constraints: Tag keys are case-sensitive and
+     *         accept a maximum of 127 Unicode characters. May not begin with
+     *         <code>aws:</code>
      */
     public void setKey(String key) {
         this.key = key;
     }
     
     /**
-     * The tag's key.
+     * The key of the tag. <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with
+     * <code>aws:</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param key The tag's key.
+     * @param key The key of the tag. <p>Constraints: Tag keys are case-sensitive and
+     *         accept a maximum of 127 Unicode characters. May not begin with
+     *         <code>aws:</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -98,29 +117,35 @@ public class Tag implements Serializable {
     }
 
     /**
-     * The tag's value.
+     * The value of the tag. <p>Constraints: Tag values are case-sensitive
+     * and accept a maximum of 255 Unicode characters.
      *
-     * @return The tag's value.
+     * @return The value of the tag. <p>Constraints: Tag values are case-sensitive
+     *         and accept a maximum of 255 Unicode characters.
      */
     public String getValue() {
         return value;
     }
     
     /**
-     * The tag's value.
+     * The value of the tag. <p>Constraints: Tag values are case-sensitive
+     * and accept a maximum of 255 Unicode characters.
      *
-     * @param value The tag's value.
+     * @param value The value of the tag. <p>Constraints: Tag values are case-sensitive
+     *         and accept a maximum of 255 Unicode characters.
      */
     public void setValue(String value) {
         this.value = value;
     }
     
     /**
-     * The tag's value.
+     * The value of the tag. <p>Constraints: Tag values are case-sensitive
+     * and accept a maximum of 255 Unicode characters.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param value The tag's value.
+     * @param value The value of the tag. <p>Constraints: Tag values are case-sensitive
+     *         and accept a maximum of 255 Unicode characters.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -135,6 +135,9 @@ public class GlacierJobDescription implements Serializable {
      */
     private String retrievalByteRange;
 
+    /**
+     * Parameters used for range inventory retrieval.
+     */
     private InventoryRetrievalJobDescription inventoryRetrievalParameters;
 
     /**
@@ -933,35 +936,29 @@ public class GlacierJobDescription implements Serializable {
     }
 
     /**
-     * Returns the value of the InventoryRetrievalParameters property for
-     * this object.
+     * Parameters used for range inventory retrieval.
      *
-     * @return The value of the InventoryRetrievalParameters property for this
-     *         object.
+     * @return Parameters used for range inventory retrieval.
      */
     public InventoryRetrievalJobDescription getInventoryRetrievalParameters() {
         return inventoryRetrievalParameters;
     }
     
     /**
-     * Sets the value of the InventoryRetrievalParameters property for this
-     * object.
+     * Parameters used for range inventory retrieval.
      *
-     * @param inventoryRetrievalParameters The new value for the InventoryRetrievalParameters property for this
-     *         object.
+     * @param inventoryRetrievalParameters Parameters used for range inventory retrieval.
      */
     public void setInventoryRetrievalParameters(InventoryRetrievalJobDescription inventoryRetrievalParameters) {
         this.inventoryRetrievalParameters = inventoryRetrievalParameters;
     }
     
     /**
-     * Sets the value of the InventoryRetrievalParameters property for this
-     * object.
+     * Parameters used for range inventory retrieval.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param inventoryRetrievalParameters The new value for the InventoryRetrievalParameters property for this
-     *         object.
+     * @param inventoryRetrievalParameters Parameters used for range inventory retrieval.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

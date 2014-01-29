@@ -20,44 +20,73 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createInstanceExportTask(CreateInstanceExportTaskRequest) CreateInstanceExportTask operation}.
- * 
+ * <p>
+ * Exports a running or stopped instance to an Amazon S3 bucket.
+ * </p>
+ * <p>
+ * For information about the supported operating systems, image formats, and known limitations for the types of instances you can export, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html"> Exporting EC2 Instances </a> in the <i>Amazon Elastic Compute
+ * Cloud User Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createInstanceExportTask(CreateInstanceExportTaskRequest)
  */
 public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * A description for the conversion task or the resource being exported.
+     * The maximum length is 255 bytes.
+     */
     private String description;
 
+    /**
+     * The ID of the instance.
+     */
     private String instanceId;
 
+    /**
+     * The target virtualization environment.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>citrix, vmware, microsoft
+     */
     private String targetEnvironment;
 
+    /**
+     * 
+     */
     private ExportToS3TaskSpecification exportToS3Task;
 
     /**
-     * Returns the value of the Description property for this object.
+     * A description for the conversion task or the resource being exported.
+     * The maximum length is 255 bytes.
      *
-     * @return The value of the Description property for this object.
+     * @return A description for the conversion task or the resource being exported.
+     *         The maximum length is 255 bytes.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * A description for the conversion task or the resource being exported.
+     * The maximum length is 255 bytes.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description A description for the conversion task or the resource being exported.
+     *         The maximum length is 255 bytes.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * A description for the conversion task or the resource being exported.
+     * The maximum length is 255 bytes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description A description for the conversion task or the resource being exported.
+     *         The maximum length is 255 bytes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -68,29 +97,29 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns the value of the InstanceId property for this object.
+     * The ID of the instance.
      *
-     * @return The value of the InstanceId property for this object.
+     * @return The ID of the instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * Sets the value of the InstanceId property for this object.
+     * The ID of the instance.
      *
-     * @param instanceId The new value for the InstanceId property for this object.
+     * @param instanceId The ID of the instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * Sets the value of the InstanceId property for this object.
+     * The ID of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The new value for the InstanceId property for this object.
+     * @param instanceId The ID of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -101,12 +130,12 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns the value of the TargetEnvironment property for this object.
+     * The target virtualization environment.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>citrix, vmware, microsoft
      *
-     * @return The value of the TargetEnvironment property for this object.
+     * @return The target virtualization environment.
      *
      * @see ExportEnvironment
      */
@@ -115,12 +144,12 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * Sets the value of the TargetEnvironment property for this object.
+     * The target virtualization environment.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>citrix, vmware, microsoft
      *
-     * @param targetEnvironment The new value for the TargetEnvironment property for this object.
+     * @param targetEnvironment The target virtualization environment.
      *
      * @see ExportEnvironment
      */
@@ -129,14 +158,14 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * Sets the value of the TargetEnvironment property for this object.
+     * The target virtualization environment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>citrix, vmware, microsoft
      *
-     * @param targetEnvironment The new value for the TargetEnvironment property for this object.
+     * @param targetEnvironment The target virtualization environment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -149,12 +178,12 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * Sets the value of the TargetEnvironment property for this object.
+     * The target virtualization environment.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>citrix, vmware, microsoft
      *
-     * @param targetEnvironment The new value for the TargetEnvironment property for this object.
+     * @param targetEnvironment The target virtualization environment.
      *
      * @see ExportEnvironment
      */
@@ -163,14 +192,14 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * Sets the value of the TargetEnvironment property for this object.
+     * The target virtualization environment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>citrix, vmware, microsoft
      *
-     * @param targetEnvironment The new value for the TargetEnvironment property for this object.
+     * @param targetEnvironment The target virtualization environment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -183,29 +212,29 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns the value of the ExportToS3Task property for this object.
+     * 
      *
-     * @return The value of the ExportToS3Task property for this object.
+     * @return 
      */
     public ExportToS3TaskSpecification getExportToS3Task() {
         return exportToS3Task;
     }
     
     /**
-     * Sets the value of the ExportToS3Task property for this object.
+     * 
      *
-     * @param exportToS3Task The new value for the ExportToS3Task property for this object.
+     * @param exportToS3Task 
      */
     public void setExportToS3Task(ExportToS3TaskSpecification exportToS3Task) {
         this.exportToS3Task = exportToS3Task;
     }
     
     /**
-     * Sets the value of the ExportToS3Task property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exportToS3Task The new value for the ExportToS3Task property for this object.
+     * @param exportToS3Task 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

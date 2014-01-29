@@ -18,96 +18,98 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents an attribute of an Amazon EC2 instance.
+ * Describes an instance attribute.
  * </p>
  */
 public class InstanceAttribute implements Serializable {
 
     /**
-     * The ID of the associated instance.
+     * The ID of the instance.
      */
     private String instanceId;
 
     /**
-     * The instance type (e.g., <code>m1.small</code>,
-     * <code>c1.medium</code>, <code>m2.2xlarge</code>, and so on).
+     * The instance type.
      */
     private String instanceType;
 
     /**
-     * The kernel ID of the associated instance.
+     * The kernel ID.
      */
     private String kernelId;
 
     /**
-     * The ramdisk ID of the associated instance.
+     * The RAM disk ID.
      */
     private String ramdiskId;
 
     /**
-     * MIME, Base64-encoded user data.
+     * The Base64-encoded MIME user data.
      */
     private String userData;
 
     /**
-     * Whether this instance can be terminated. You must modify this
-     * attribute before you can terminate any "locked" instances.
+     * If the value is <code>true</code>, you can't terminate the instance
+     * through the Amazon EC2 console, CLI, or API; otherwise, you can.
      */
     private Boolean disableApiTermination;
 
     /**
-     * Whether this instance's Amazon EBS volumes are deleted when the
-     * instance is shut down.
+     * Indicates whether an instance stops or terminates when you initiate
+     * shutdown from the instance (using the operating system command for
+     * system shutdown).
      */
     private String instanceInitiatedShutdownBehavior;
 
     /**
-     * The root device name (e.g., <code>/dev/sda1</code>).
+     * The name of the root device (for example, <code>/dev/sda1</code>).
      */
     private String rootDeviceName;
 
     /**
-     * How block devices are exposed to this instance. Each mapping is made
-     * up of a virtualName and a deviceName.
+     * The block device mapping of the instance.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceBlockDeviceMapping> blockDeviceMappings;
 
+    /**
+     * A list of product codes.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode> productCodes;
 
     /**
-     * Boolean value
+     * Indicates whether the instance is optimized for EBS I/O.
      */
     private Boolean ebsOptimized;
 
     /**
-     * String value
+     * 
      */
     private String sriovNetSupport;
 
     /**
-     * The ID of the associated instance.
+     * The ID of the instance.
      *
-     * @return The ID of the associated instance.
+     * @return The ID of the instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The ID of the associated instance.
+     * The ID of the instance.
      *
-     * @param instanceId The ID of the associated instance.
+     * @param instanceId The ID of the instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The ID of the associated instance.
+     * The ID of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The ID of the associated instance.
+     * @param instanceId The ID of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -118,35 +120,29 @@ public class InstanceAttribute implements Serializable {
     }
 
     /**
-     * The instance type (e.g., <code>m1.small</code>,
-     * <code>c1.medium</code>, <code>m2.2xlarge</code>, and so on).
+     * The instance type.
      *
-     * @return The instance type (e.g., <code>m1.small</code>,
-     *         <code>c1.medium</code>, <code>m2.2xlarge</code>, and so on).
+     * @return The instance type.
      */
     public String getInstanceType() {
         return instanceType;
     }
     
     /**
-     * The instance type (e.g., <code>m1.small</code>,
-     * <code>c1.medium</code>, <code>m2.2xlarge</code>, and so on).
+     * The instance type.
      *
-     * @param instanceType The instance type (e.g., <code>m1.small</code>,
-     *         <code>c1.medium</code>, <code>m2.2xlarge</code>, and so on).
+     * @param instanceType The instance type.
      */
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
     
     /**
-     * The instance type (e.g., <code>m1.small</code>,
-     * <code>c1.medium</code>, <code>m2.2xlarge</code>, and so on).
+     * The instance type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceType The instance type (e.g., <code>m1.small</code>,
-     *         <code>c1.medium</code>, <code>m2.2xlarge</code>, and so on).
+     * @param instanceType The instance type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -157,29 +153,29 @@ public class InstanceAttribute implements Serializable {
     }
 
     /**
-     * The kernel ID of the associated instance.
+     * The kernel ID.
      *
-     * @return The kernel ID of the associated instance.
+     * @return The kernel ID.
      */
     public String getKernelId() {
         return kernelId;
     }
     
     /**
-     * The kernel ID of the associated instance.
+     * The kernel ID.
      *
-     * @param kernelId The kernel ID of the associated instance.
+     * @param kernelId The kernel ID.
      */
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
     
     /**
-     * The kernel ID of the associated instance.
+     * The kernel ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param kernelId The kernel ID of the associated instance.
+     * @param kernelId The kernel ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -190,29 +186,29 @@ public class InstanceAttribute implements Serializable {
     }
 
     /**
-     * The ramdisk ID of the associated instance.
+     * The RAM disk ID.
      *
-     * @return The ramdisk ID of the associated instance.
+     * @return The RAM disk ID.
      */
     public String getRamdiskId() {
         return ramdiskId;
     }
     
     /**
-     * The ramdisk ID of the associated instance.
+     * The RAM disk ID.
      *
-     * @param ramdiskId The ramdisk ID of the associated instance.
+     * @param ramdiskId The RAM disk ID.
      */
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
     
     /**
-     * The ramdisk ID of the associated instance.
+     * The RAM disk ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ramdiskId The ramdisk ID of the associated instance.
+     * @param ramdiskId The RAM disk ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -223,29 +219,29 @@ public class InstanceAttribute implements Serializable {
     }
 
     /**
-     * MIME, Base64-encoded user data.
+     * The Base64-encoded MIME user data.
      *
-     * @return MIME, Base64-encoded user data.
+     * @return The Base64-encoded MIME user data.
      */
     public String getUserData() {
         return userData;
     }
     
     /**
-     * MIME, Base64-encoded user data.
+     * The Base64-encoded MIME user data.
      *
-     * @param userData MIME, Base64-encoded user data.
+     * @param userData The Base64-encoded MIME user data.
      */
     public void setUserData(String userData) {
         this.userData = userData;
     }
     
     /**
-     * MIME, Base64-encoded user data.
+     * The Base64-encoded MIME user data.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param userData MIME, Base64-encoded user data.
+     * @param userData The Base64-encoded MIME user data.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -256,35 +252,35 @@ public class InstanceAttribute implements Serializable {
     }
 
     /**
-     * Whether this instance can be terminated. You must modify this
-     * attribute before you can terminate any "locked" instances.
+     * If the value is <code>true</code>, you can't terminate the instance
+     * through the Amazon EC2 console, CLI, or API; otherwise, you can.
      *
-     * @return Whether this instance can be terminated. You must modify this
-     *         attribute before you can terminate any "locked" instances.
+     * @return If the value is <code>true</code>, you can't terminate the instance
+     *         through the Amazon EC2 console, CLI, or API; otherwise, you can.
      */
     public Boolean isDisableApiTermination() {
         return disableApiTermination;
     }
     
     /**
-     * Whether this instance can be terminated. You must modify this
-     * attribute before you can terminate any "locked" instances.
+     * If the value is <code>true</code>, you can't terminate the instance
+     * through the Amazon EC2 console, CLI, or API; otherwise, you can.
      *
-     * @param disableApiTermination Whether this instance can be terminated. You must modify this
-     *         attribute before you can terminate any "locked" instances.
+     * @param disableApiTermination If the value is <code>true</code>, you can't terminate the instance
+     *         through the Amazon EC2 console, CLI, or API; otherwise, you can.
      */
     public void setDisableApiTermination(Boolean disableApiTermination) {
         this.disableApiTermination = disableApiTermination;
     }
     
     /**
-     * Whether this instance can be terminated. You must modify this
-     * attribute before you can terminate any "locked" instances.
+     * If the value is <code>true</code>, you can't terminate the instance
+     * through the Amazon EC2 console, CLI, or API; otherwise, you can.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param disableApiTermination Whether this instance can be terminated. You must modify this
-     *         attribute before you can terminate any "locked" instances.
+     * @param disableApiTermination If the value is <code>true</code>, you can't terminate the instance
+     *         through the Amazon EC2 console, CLI, or API; otherwise, you can.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -295,46 +291,52 @@ public class InstanceAttribute implements Serializable {
     }
 
     /**
-     * Whether this instance can be terminated. You must modify this
-     * attribute before you can terminate any "locked" instances.
+     * If the value is <code>true</code>, you can't terminate the instance
+     * through the Amazon EC2 console, CLI, or API; otherwise, you can.
      *
-     * @return Whether this instance can be terminated. You must modify this
-     *         attribute before you can terminate any "locked" instances.
+     * @return If the value is <code>true</code>, you can't terminate the instance
+     *         through the Amazon EC2 console, CLI, or API; otherwise, you can.
      */
     public Boolean getDisableApiTermination() {
         return disableApiTermination;
     }
 
     /**
-     * Whether this instance's Amazon EBS volumes are deleted when the
-     * instance is shut down.
+     * Indicates whether an instance stops or terminates when you initiate
+     * shutdown from the instance (using the operating system command for
+     * system shutdown).
      *
-     * @return Whether this instance's Amazon EBS volumes are deleted when the
-     *         instance is shut down.
+     * @return Indicates whether an instance stops or terminates when you initiate
+     *         shutdown from the instance (using the operating system command for
+     *         system shutdown).
      */
     public String getInstanceInitiatedShutdownBehavior() {
         return instanceInitiatedShutdownBehavior;
     }
     
     /**
-     * Whether this instance's Amazon EBS volumes are deleted when the
-     * instance is shut down.
+     * Indicates whether an instance stops or terminates when you initiate
+     * shutdown from the instance (using the operating system command for
+     * system shutdown).
      *
-     * @param instanceInitiatedShutdownBehavior Whether this instance's Amazon EBS volumes are deleted when the
-     *         instance is shut down.
+     * @param instanceInitiatedShutdownBehavior Indicates whether an instance stops or terminates when you initiate
+     *         shutdown from the instance (using the operating system command for
+     *         system shutdown).
      */
     public void setInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
     }
     
     /**
-     * Whether this instance's Amazon EBS volumes are deleted when the
-     * instance is shut down.
+     * Indicates whether an instance stops or terminates when you initiate
+     * shutdown from the instance (using the operating system command for
+     * system shutdown).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceInitiatedShutdownBehavior Whether this instance's Amazon EBS volumes are deleted when the
-     *         instance is shut down.
+     * @param instanceInitiatedShutdownBehavior Indicates whether an instance stops or terminates when you initiate
+     *         shutdown from the instance (using the operating system command for
+     *         system shutdown).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -345,29 +347,29 @@ public class InstanceAttribute implements Serializable {
     }
 
     /**
-     * The root device name (e.g., <code>/dev/sda1</code>).
+     * The name of the root device (for example, <code>/dev/sda1</code>).
      *
-     * @return The root device name (e.g., <code>/dev/sda1</code>).
+     * @return The name of the root device (for example, <code>/dev/sda1</code>).
      */
     public String getRootDeviceName() {
         return rootDeviceName;
     }
     
     /**
-     * The root device name (e.g., <code>/dev/sda1</code>).
+     * The name of the root device (for example, <code>/dev/sda1</code>).
      *
-     * @param rootDeviceName The root device name (e.g., <code>/dev/sda1</code>).
+     * @param rootDeviceName The name of the root device (for example, <code>/dev/sda1</code>).
      */
     public void setRootDeviceName(String rootDeviceName) {
         this.rootDeviceName = rootDeviceName;
     }
     
     /**
-     * The root device name (e.g., <code>/dev/sda1</code>).
+     * The name of the root device (for example, <code>/dev/sda1</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param rootDeviceName The root device name (e.g., <code>/dev/sda1</code>).
+     * @param rootDeviceName The name of the root device (for example, <code>/dev/sda1</code>).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -378,11 +380,9 @@ public class InstanceAttribute implements Serializable {
     }
 
     /**
-     * How block devices are exposed to this instance. Each mapping is made
-     * up of a virtualName and a deviceName.
+     * The block device mapping of the instance.
      *
-     * @return How block devices are exposed to this instance. Each mapping is made
-     *         up of a virtualName and a deviceName.
+     * @return The block device mapping of the instance.
      */
     public java.util.List<InstanceBlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
@@ -393,11 +393,9 @@ public class InstanceAttribute implements Serializable {
     }
     
     /**
-     * How block devices are exposed to this instance. Each mapping is made
-     * up of a virtualName and a deviceName.
+     * The block device mapping of the instance.
      *
-     * @param blockDeviceMappings How block devices are exposed to this instance. Each mapping is made
-     *         up of a virtualName and a deviceName.
+     * @param blockDeviceMappings The block device mapping of the instance.
      */
     public void setBlockDeviceMappings(java.util.Collection<InstanceBlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -410,13 +408,11 @@ public class InstanceAttribute implements Serializable {
     }
     
     /**
-     * How block devices are exposed to this instance. Each mapping is made
-     * up of a virtualName and a deviceName.
+     * The block device mapping of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param blockDeviceMappings How block devices are exposed to this instance. Each mapping is made
-     *         up of a virtualName and a deviceName.
+     * @param blockDeviceMappings The block device mapping of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -430,13 +426,11 @@ public class InstanceAttribute implements Serializable {
     }
     
     /**
-     * How block devices are exposed to this instance. Each mapping is made
-     * up of a virtualName and a deviceName.
+     * The block device mapping of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param blockDeviceMappings How block devices are exposed to this instance. Each mapping is made
-     *         up of a virtualName and a deviceName.
+     * @param blockDeviceMappings The block device mapping of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -454,9 +448,9 @@ public class InstanceAttribute implements Serializable {
     }
 
     /**
-     * Returns the value of the ProductCodes property for this object.
+     * A list of product codes.
      *
-     * @return The value of the ProductCodes property for this object.
+     * @return A list of product codes.
      */
     public java.util.List<ProductCode> getProductCodes() {
         if (productCodes == null) {
@@ -467,9 +461,9 @@ public class InstanceAttribute implements Serializable {
     }
     
     /**
-     * Sets the value of the ProductCodes property for this object.
+     * A list of product codes.
      *
-     * @param productCodes The new value for the ProductCodes property for this object.
+     * @param productCodes A list of product codes.
      */
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
         if (productCodes == null) {
@@ -482,11 +476,11 @@ public class InstanceAttribute implements Serializable {
     }
     
     /**
-     * Sets the value of the ProductCodes property for this object.
+     * A list of product codes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param productCodes The new value for the ProductCodes property for this object.
+     * @param productCodes A list of product codes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -500,11 +494,11 @@ public class InstanceAttribute implements Serializable {
     }
     
     /**
-     * Sets the value of the ProductCodes property for this object.
+     * A list of product codes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param productCodes The new value for the ProductCodes property for this object.
+     * @param productCodes A list of product codes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -522,29 +516,29 @@ public class InstanceAttribute implements Serializable {
     }
 
     /**
-     * Boolean value
+     * Indicates whether the instance is optimized for EBS I/O.
      *
-     * @return Boolean value
+     * @return Indicates whether the instance is optimized for EBS I/O.
      */
     public Boolean isEbsOptimized() {
         return ebsOptimized;
     }
     
     /**
-     * Boolean value
+     * Indicates whether the instance is optimized for EBS I/O.
      *
-     * @param ebsOptimized Boolean value
+     * @param ebsOptimized Indicates whether the instance is optimized for EBS I/O.
      */
     public void setEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;
     }
     
     /**
-     * Boolean value
+     * Indicates whether the instance is optimized for EBS I/O.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ebsOptimized Boolean value
+     * @param ebsOptimized Indicates whether the instance is optimized for EBS I/O.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -555,38 +549,38 @@ public class InstanceAttribute implements Serializable {
     }
 
     /**
-     * Boolean value
+     * Indicates whether the instance is optimized for EBS I/O.
      *
-     * @return Boolean value
+     * @return Indicates whether the instance is optimized for EBS I/O.
      */
     public Boolean getEbsOptimized() {
         return ebsOptimized;
     }
 
     /**
-     * String value
+     * 
      *
-     * @return String value
+     * @return 
      */
     public String getSriovNetSupport() {
         return sriovNetSupport;
     }
     
     /**
-     * String value
+     * 
      *
-     * @param sriovNetSupport String value
+     * @param sriovNetSupport 
      */
     public void setSriovNetSupport(String sriovNetSupport) {
         this.sriovNetSupport = sriovNetSupport;
     }
     
     /**
-     * String value
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sriovNetSupport String value
+     * @param sriovNetSupport 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

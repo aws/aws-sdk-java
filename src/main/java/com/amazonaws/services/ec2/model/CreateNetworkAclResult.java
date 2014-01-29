@@ -17,36 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Create Network Acl Result
+ * 
  */
 public class CreateNetworkAclResult implements Serializable {
 
+    /**
+     * Information about the network ACL.
+     */
     private NetworkAcl networkAcl;
 
     /**
-     * Returns the value of the NetworkAcl property for this object.
+     * Information about the network ACL.
      *
-     * @return The value of the NetworkAcl property for this object.
+     * @return Information about the network ACL.
      */
     public NetworkAcl getNetworkAcl() {
         return networkAcl;
     }
     
     /**
-     * Sets the value of the NetworkAcl property for this object.
+     * Information about the network ACL.
      *
-     * @param networkAcl The new value for the NetworkAcl property for this object.
+     * @param networkAcl Information about the network ACL.
      */
     public void setNetworkAcl(NetworkAcl networkAcl) {
         this.networkAcl = networkAcl;
     }
     
     /**
-     * Sets the value of the NetworkAcl property for this object.
+     * Information about the network ACL.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkAcl The new value for the NetworkAcl property for this object.
+     * @param networkAcl Information about the network ACL.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

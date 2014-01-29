@@ -23,8 +23,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteNetworkAclEntryRequestMa
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteNetworkAclEntry(DeleteNetworkAclEntryRequest) DeleteNetworkAclEntry operation}.
  * <p>
- * Deletes an ingress or egress entry (i.e., rule) from a network ACL. For more information about network ACLs, go to Network ACLs in the Amazon Virtual
- * Private Cloud User Guide.
+ * Deletes the specified ingress or egress entry (rule) from the specified network ACL.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteNetworkAclEntry(DeleteNetworkAclEntryRequest)
@@ -32,45 +31,44 @@ import com.amazonaws.services.ec2.model.transform.DeleteNetworkAclEntryRequestMa
 public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteNetworkAclEntryRequest> {
 
     /**
-     * ID of the network ACL.
+     * The ID of the network ACL.
      */
     private String networkAclId;
 
     /**
-     * Rule number for the entry to delete.
+     * The rule number of the entry to delete.
      */
     private Integer ruleNumber;
 
     /**
-     * Whether the rule to delete is an egress rule (<code>true</code>) or
-     * ingress rule (<code>false</code>).
+     * Indicates whether the rule is an egress rule.
      */
     private Boolean egress;
 
     /**
-     * ID of the network ACL.
+     * The ID of the network ACL.
      *
-     * @return ID of the network ACL.
+     * @return The ID of the network ACL.
      */
     public String getNetworkAclId() {
         return networkAclId;
     }
     
     /**
-     * ID of the network ACL.
+     * The ID of the network ACL.
      *
-     * @param networkAclId ID of the network ACL.
+     * @param networkAclId The ID of the network ACL.
      */
     public void setNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
     }
     
     /**
-     * ID of the network ACL.
+     * The ID of the network ACL.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkAclId ID of the network ACL.
+     * @param networkAclId The ID of the network ACL.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -81,29 +79,29 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * Rule number for the entry to delete.
+     * The rule number of the entry to delete.
      *
-     * @return Rule number for the entry to delete.
+     * @return The rule number of the entry to delete.
      */
     public Integer getRuleNumber() {
         return ruleNumber;
     }
     
     /**
-     * Rule number for the entry to delete.
+     * The rule number of the entry to delete.
      *
-     * @param ruleNumber Rule number for the entry to delete.
+     * @param ruleNumber The rule number of the entry to delete.
      */
     public void setRuleNumber(Integer ruleNumber) {
         this.ruleNumber = ruleNumber;
     }
     
     /**
-     * Rule number for the entry to delete.
+     * The rule number of the entry to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ruleNumber Rule number for the entry to delete.
+     * @param ruleNumber The rule number of the entry to delete.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -114,35 +112,29 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * Whether the rule to delete is an egress rule (<code>true</code>) or
-     * ingress rule (<code>false</code>).
+     * Indicates whether the rule is an egress rule.
      *
-     * @return Whether the rule to delete is an egress rule (<code>true</code>) or
-     *         ingress rule (<code>false</code>).
+     * @return Indicates whether the rule is an egress rule.
      */
     public Boolean isEgress() {
         return egress;
     }
     
     /**
-     * Whether the rule to delete is an egress rule (<code>true</code>) or
-     * ingress rule (<code>false</code>).
+     * Indicates whether the rule is an egress rule.
      *
-     * @param egress Whether the rule to delete is an egress rule (<code>true</code>) or
-     *         ingress rule (<code>false</code>).
+     * @param egress Indicates whether the rule is an egress rule.
      */
     public void setEgress(Boolean egress) {
         this.egress = egress;
     }
     
     /**
-     * Whether the rule to delete is an egress rule (<code>true</code>) or
-     * ingress rule (<code>false</code>).
+     * Indicates whether the rule is an egress rule.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param egress Whether the rule to delete is an egress rule (<code>true</code>) or
-     *         ingress rule (<code>false</code>).
+     * @param egress Indicates whether the rule is an egress rule.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -153,11 +145,9 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * Whether the rule to delete is an egress rule (<code>true</code>) or
-     * ingress rule (<code>false</code>).
+     * Indicates whether the rule is an egress rule.
      *
-     * @return Whether the rule to delete is an egress rule (<code>true</code>) or
-     *         ingress rule (<code>false</code>).
+     * @return Indicates whether the rule is an egress rule.
      */
     public Boolean getEgress() {
         return egress;

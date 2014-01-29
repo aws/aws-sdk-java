@@ -36,6 +36,7 @@ import com.amazonaws.util.json.*;
 
 /**
  * Put Item Request Marshaller
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.PutItemRequestMarshaller} instead.
  */
 @Deprecated
 public class PutItemRequestMarshaller implements Marshaller<Request<PutItemRequest>, PutItemRequest> {

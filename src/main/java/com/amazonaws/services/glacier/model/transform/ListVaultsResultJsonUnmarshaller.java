@@ -46,6 +46,7 @@ public class ListVaultsResultJsonUnmarshaller implements Unmarshaller<ListVaults
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VaultList", targetDepth)) {
+                    context.nextToken();
                     listVaultsResult.setVaultList(new ListUnmarshaller<DescribeVaultOutput>(DescribeVaultOutputJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {

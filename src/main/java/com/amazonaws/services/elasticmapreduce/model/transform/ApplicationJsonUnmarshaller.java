@@ -54,9 +54,11 @@ public class ApplicationJsonUnmarshaller implements Unmarshaller<Application, Js
                     application.setVersion(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Args", targetDepth)) {
+                    context.nextToken();
                     application.setArgs(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalInfo", targetDepth)) {
+                    context.nextToken();
                     application.setAdditionalInfo(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

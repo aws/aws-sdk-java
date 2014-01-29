@@ -46,6 +46,7 @@ public class ListJobsByPipelineResultJsonUnmarshaller implements Unmarshaller<Li
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Jobs", targetDepth)) {
+                    context.nextToken();
                     listJobsByPipelineResult.setJobs(new ListUnmarshaller<Job>(JobJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {

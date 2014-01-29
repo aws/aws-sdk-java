@@ -46,6 +46,7 @@ public class DescribeRaidArraysResultJsonUnmarshaller implements Unmarshaller<De
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RaidArrays", targetDepth)) {
+                    context.nextToken();
                     describeRaidArraysResult.setRaidArrays(new ListUnmarshaller<RaidArray>(RaidArrayJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

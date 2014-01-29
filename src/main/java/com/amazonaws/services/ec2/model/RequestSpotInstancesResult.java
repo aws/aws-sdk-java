@@ -17,21 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The RequestSpotInstancesResult data type.
- * </p>
+ * 
  */
 public class RequestSpotInstancesResult implements Serializable {
 
     /**
-     * Contains a list of Spot Instance requests.
+     * Information about the Spot Instance request.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<SpotInstanceRequest> spotInstanceRequests;
 
     /**
-     * Contains a list of Spot Instance requests.
+     * Information about the Spot Instance request.
      *
-     * @return Contains a list of Spot Instance requests.
+     * @return Information about the Spot Instance request.
      */
     public java.util.List<SpotInstanceRequest> getSpotInstanceRequests() {
         if (spotInstanceRequests == null) {
@@ -42,9 +40,9 @@ public class RequestSpotInstancesResult implements Serializable {
     }
     
     /**
-     * Contains a list of Spot Instance requests.
+     * Information about the Spot Instance request.
      *
-     * @param spotInstanceRequests Contains a list of Spot Instance requests.
+     * @param spotInstanceRequests Information about the Spot Instance request.
      */
     public void setSpotInstanceRequests(java.util.Collection<SpotInstanceRequest> spotInstanceRequests) {
         if (spotInstanceRequests == null) {
@@ -57,11 +55,11 @@ public class RequestSpotInstancesResult implements Serializable {
     }
     
     /**
-     * Contains a list of Spot Instance requests.
+     * Information about the Spot Instance request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequests Contains a list of Spot Instance requests.
+     * @param spotInstanceRequests Information about the Spot Instance request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,11 +73,11 @@ public class RequestSpotInstancesResult implements Serializable {
     }
     
     /**
-     * Contains a list of Spot Instance requests.
+     * Information about the Spot Instance request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequests Contains a list of Spot Instance requests.
+     * @param spotInstanceRequests Information about the Spot Instance request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

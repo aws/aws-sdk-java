@@ -14,6 +14,9 @@
  */
 package com.amazonaws.services.dynamodb.datamodeling;
 
+/**
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.KeyPair} instead.
+ */
 @Deprecated
 public class KeyPair {
 	private Object hashKey;

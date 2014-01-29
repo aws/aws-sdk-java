@@ -46,6 +46,7 @@ public class ListPresetsResultJsonUnmarshaller implements Unmarshaller<ListPrese
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Presets", targetDepth)) {
+                    context.nextToken();
                     listPresetsResult.setPresets(new ListUnmarshaller<Preset>(PresetJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {

@@ -17,42 +17,56 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Network Interface Association
+ * <p>
+ * Describes association information for an Elastic IP address.
+ * </p>
  */
 public class NetworkInterfaceAssociation implements Serializable {
 
+    /**
+     * The address of the Elastic IP address bound to the network interface.
+     */
     private String publicIp;
 
+    /**
+     * The ID of the Elastic IP address owner.
+     */
     private String ipOwnerId;
 
+    /**
+     * The allocation ID.
+     */
     private String allocationId;
 
+    /**
+     * The association ID.
+     */
     private String associationId;
 
     /**
-     * Returns the value of the PublicIp property for this object.
+     * The address of the Elastic IP address bound to the network interface.
      *
-     * @return The value of the PublicIp property for this object.
+     * @return The address of the Elastic IP address bound to the network interface.
      */
     public String getPublicIp() {
         return publicIp;
     }
     
     /**
-     * Sets the value of the PublicIp property for this object.
+     * The address of the Elastic IP address bound to the network interface.
      *
-     * @param publicIp The new value for the PublicIp property for this object.
+     * @param publicIp The address of the Elastic IP address bound to the network interface.
      */
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
     
     /**
-     * Sets the value of the PublicIp property for this object.
+     * The address of the Elastic IP address bound to the network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicIp The new value for the PublicIp property for this object.
+     * @param publicIp The address of the Elastic IP address bound to the network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -63,29 +77,29 @@ public class NetworkInterfaceAssociation implements Serializable {
     }
 
     /**
-     * Returns the value of the IpOwnerId property for this object.
+     * The ID of the Elastic IP address owner.
      *
-     * @return The value of the IpOwnerId property for this object.
+     * @return The ID of the Elastic IP address owner.
      */
     public String getIpOwnerId() {
         return ipOwnerId;
     }
     
     /**
-     * Sets the value of the IpOwnerId property for this object.
+     * The ID of the Elastic IP address owner.
      *
-     * @param ipOwnerId The new value for the IpOwnerId property for this object.
+     * @param ipOwnerId The ID of the Elastic IP address owner.
      */
     public void setIpOwnerId(String ipOwnerId) {
         this.ipOwnerId = ipOwnerId;
     }
     
     /**
-     * Sets the value of the IpOwnerId property for this object.
+     * The ID of the Elastic IP address owner.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ipOwnerId The new value for the IpOwnerId property for this object.
+     * @param ipOwnerId The ID of the Elastic IP address owner.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -96,29 +110,29 @@ public class NetworkInterfaceAssociation implements Serializable {
     }
 
     /**
-     * Returns the value of the AllocationId property for this object.
+     * The allocation ID.
      *
-     * @return The value of the AllocationId property for this object.
+     * @return The allocation ID.
      */
     public String getAllocationId() {
         return allocationId;
     }
     
     /**
-     * Sets the value of the AllocationId property for this object.
+     * The allocation ID.
      *
-     * @param allocationId The new value for the AllocationId property for this object.
+     * @param allocationId The allocation ID.
      */
     public void setAllocationId(String allocationId) {
         this.allocationId = allocationId;
     }
     
     /**
-     * Sets the value of the AllocationId property for this object.
+     * The allocation ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allocationId The new value for the AllocationId property for this object.
+     * @param allocationId The allocation ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -129,29 +143,29 @@ public class NetworkInterfaceAssociation implements Serializable {
     }
 
     /**
-     * Returns the value of the AssociationId property for this object.
+     * The association ID.
      *
-     * @return The value of the AssociationId property for this object.
+     * @return The association ID.
      */
     public String getAssociationId() {
         return associationId;
     }
     
     /**
-     * Sets the value of the AssociationId property for this object.
+     * The association ID.
      *
-     * @param associationId The new value for the AssociationId property for this object.
+     * @param associationId The association ID.
      */
     public void setAssociationId(String associationId) {
         this.associationId = associationId;
     }
     
     /**
-     * Sets the value of the AssociationId property for this object.
+     * The association ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param associationId The new value for the AssociationId property for this object.
+     * @param associationId The association ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

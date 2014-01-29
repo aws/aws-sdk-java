@@ -17,26 +17,17 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * A filter used to limit results when describing tags. Multiple values can be specified per filter. A tag must match at least one of the specified
- * values for it to be returned from an operation.
- * </p>
- * <p>
- * Wildcards can be included in filter values; <code>*</code> specifies that zero or more characters must match, and <code>?</code> specifies that
- * exactly one character must match. Use a backslash to escape special characters. For example, a filter value of <code>\*amazon\?\\</code> specifies
- * the literal string <code>*amazon?\</code> .
  * 
- * </p>
  */
 public class Filter implements Serializable {
 
     /**
-     * Specifies the name of the filter.
+     * The name of the filter.
      */
     private String name;
 
     /**
-     * Contains one or more values for the filter.
+     * One or more filter values.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> values;
 
@@ -51,8 +42,8 @@ public class Filter implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param name Specifies the name of the filter.
-     * @param values Contains one or more values for the filter.
+     * @param name The name of the filter.
+     * @param values One or more filter values.
      */
     public Filter(String name, java.util.List<String> values) {
         setName(name);
@@ -64,36 +55,36 @@ public class Filter implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param name Specifies the name of the filter.
+     * @param name The name of the filter.
      */
     public Filter(String name) {
         setName(name);
     }
 
     /**
-     * Specifies the name of the filter.
+     * The name of the filter.
      *
-     * @return Specifies the name of the filter.
+     * @return The name of the filter.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Specifies the name of the filter.
+     * The name of the filter.
      *
-     * @param name Specifies the name of the filter.
+     * @param name The name of the filter.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Specifies the name of the filter.
+     * The name of the filter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name Specifies the name of the filter.
+     * @param name The name of the filter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -104,9 +95,9 @@ public class Filter implements Serializable {
     }
 
     /**
-     * Contains one or more values for the filter.
+     * One or more filter values.
      *
-     * @return Contains one or more values for the filter.
+     * @return One or more filter values.
      */
     public java.util.List<String> getValues() {
         if (values == null) {
@@ -117,9 +108,9 @@ public class Filter implements Serializable {
     }
     
     /**
-     * Contains one or more values for the filter.
+     * One or more filter values.
      *
-     * @param values Contains one or more values for the filter.
+     * @param values One or more filter values.
      */
     public void setValues(java.util.Collection<String> values) {
         if (values == null) {
@@ -132,11 +123,11 @@ public class Filter implements Serializable {
     }
     
     /**
-     * Contains one or more values for the filter.
+     * One or more filter values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param values Contains one or more values for the filter.
+     * @param values One or more filter values.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -150,11 +141,11 @@ public class Filter implements Serializable {
     }
     
     /**
-     * Contains one or more values for the filter.
+     * One or more filter values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param values Contains one or more values for the filter.
+     * @param values One or more filter values.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

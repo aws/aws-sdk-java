@@ -17,53 +17,59 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The resulting information about the modified Reserved Instances.
- * </p>
+ * 
  */
 public class ReservedInstancesModificationResult implements Serializable {
 
     /**
-     * The ID for the Reserved Instances created as part of the modification
-     * request.
+     * The ID for the Reserved Instances that were created as part of the
+     * modification request. This field is only available when the
+     * modification is fulfilled.
      */
     private String reservedInstancesId;
 
     /**
-     * The configuration settings for the modified Reserved Instances.
+     * The target Reserved Instances configurations supplied as part of the
+     * modification request.
      */
     private ReservedInstancesConfiguration targetConfiguration;
 
     /**
-     * The ID for the Reserved Instances created as part of the modification
-     * request.
+     * The ID for the Reserved Instances that were created as part of the
+     * modification request. This field is only available when the
+     * modification is fulfilled.
      *
-     * @return The ID for the Reserved Instances created as part of the modification
-     *         request.
+     * @return The ID for the Reserved Instances that were created as part of the
+     *         modification request. This field is only available when the
+     *         modification is fulfilled.
      */
     public String getReservedInstancesId() {
         return reservedInstancesId;
     }
     
     /**
-     * The ID for the Reserved Instances created as part of the modification
-     * request.
+     * The ID for the Reserved Instances that were created as part of the
+     * modification request. This field is only available when the
+     * modification is fulfilled.
      *
-     * @param reservedInstancesId The ID for the Reserved Instances created as part of the modification
-     *         request.
+     * @param reservedInstancesId The ID for the Reserved Instances that were created as part of the
+     *         modification request. This field is only available when the
+     *         modification is fulfilled.
      */
     public void setReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
     }
     
     /**
-     * The ID for the Reserved Instances created as part of the modification
-     * request.
+     * The ID for the Reserved Instances that were created as part of the
+     * modification request. This field is only available when the
+     * modification is fulfilled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesId The ID for the Reserved Instances created as part of the modification
-     *         request.
+     * @param reservedInstancesId The ID for the Reserved Instances that were created as part of the
+     *         modification request. This field is only available when the
+     *         modification is fulfilled.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -74,29 +80,35 @@ public class ReservedInstancesModificationResult implements Serializable {
     }
 
     /**
-     * The configuration settings for the modified Reserved Instances.
+     * The target Reserved Instances configurations supplied as part of the
+     * modification request.
      *
-     * @return The configuration settings for the modified Reserved Instances.
+     * @return The target Reserved Instances configurations supplied as part of the
+     *         modification request.
      */
     public ReservedInstancesConfiguration getTargetConfiguration() {
         return targetConfiguration;
     }
     
     /**
-     * The configuration settings for the modified Reserved Instances.
+     * The target Reserved Instances configurations supplied as part of the
+     * modification request.
      *
-     * @param targetConfiguration The configuration settings for the modified Reserved Instances.
+     * @param targetConfiguration The target Reserved Instances configurations supplied as part of the
+     *         modification request.
      */
     public void setTargetConfiguration(ReservedInstancesConfiguration targetConfiguration) {
         this.targetConfiguration = targetConfiguration;
     }
     
     /**
-     * The configuration settings for the modified Reserved Instances.
+     * The target Reserved Instances configurations supplied as part of the
+     * modification request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param targetConfiguration The configuration settings for the modified Reserved Instances.
+     * @param targetConfiguration The target Reserved Instances configurations supplied as part of the
+     *         modification request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

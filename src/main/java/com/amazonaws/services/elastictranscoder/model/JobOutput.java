@@ -181,7 +181,7 @@ public class JobOutput implements Serializable {
      * watermarks for each output. Settings for each watermark must be
      * defined in the preset that you specify in <code>Preset</code> for the
      * current output. <p>Watermarks are added to the output video in the
-     * sequence in which you list them in the job output?????????the first
+     * sequence in which you list them in the job output???the first
      * watermark in the list is added to the output video first, the second
      * watermark in the list is added next, and so on. As a result, if the
      * settings in a preset cause Elastic Transcoder to place all watermarks
@@ -1070,7 +1070,7 @@ public class JobOutput implements Serializable {
      * watermarks for each output. Settings for each watermark must be
      * defined in the preset that you specify in <code>Preset</code> for the
      * current output. <p>Watermarks are added to the output video in the
-     * sequence in which you list them in the job output?????????the first
+     * sequence in which you list them in the job output???the first
      * watermark in the list is added to the output video first, the second
      * watermark in the list is added next, and so on. As a result, if the
      * settings in a preset cause Elastic Transcoder to place all watermarks
@@ -1083,7 +1083,7 @@ public class JobOutput implements Serializable {
      *         watermarks for each output. Settings for each watermark must be
      *         defined in the preset that you specify in <code>Preset</code> for the
      *         current output. <p>Watermarks are added to the output video in the
-     *         sequence in which you list them in the job output?????????the first
+     *         sequence in which you list them in the job output???the first
      *         watermark in the list is added to the output video first, the second
      *         watermark in the list is added next, and so on. As a result, if the
      *         settings in a preset cause Elastic Transcoder to place all watermarks
@@ -1105,7 +1105,7 @@ public class JobOutput implements Serializable {
      * watermarks for each output. Settings for each watermark must be
      * defined in the preset that you specify in <code>Preset</code> for the
      * current output. <p>Watermarks are added to the output video in the
-     * sequence in which you list them in the job output?????????the first
+     * sequence in which you list them in the job output???the first
      * watermark in the list is added to the output video first, the second
      * watermark in the list is added next, and so on. As a result, if the
      * settings in a preset cause Elastic Transcoder to place all watermarks
@@ -1118,7 +1118,7 @@ public class JobOutput implements Serializable {
      *         watermarks for each output. Settings for each watermark must be
      *         defined in the preset that you specify in <code>Preset</code> for the
      *         current output. <p>Watermarks are added to the output video in the
-     *         sequence in which you list them in the job output?????????the first
+     *         sequence in which you list them in the job output???the first
      *         watermark in the list is added to the output video first, the second
      *         watermark in the list is added next, and so on. As a result, if the
      *         settings in a preset cause Elastic Transcoder to place all watermarks
@@ -1142,7 +1142,7 @@ public class JobOutput implements Serializable {
      * watermarks for each output. Settings for each watermark must be
      * defined in the preset that you specify in <code>Preset</code> for the
      * current output. <p>Watermarks are added to the output video in the
-     * sequence in which you list them in the job output?????????the first
+     * sequence in which you list them in the job output???the first
      * watermark in the list is added to the output video first, the second
      * watermark in the list is added next, and so on. As a result, if the
      * settings in a preset cause Elastic Transcoder to place all watermarks
@@ -1157,7 +1157,7 @@ public class JobOutput implements Serializable {
      *         watermarks for each output. Settings for each watermark must be
      *         defined in the preset that you specify in <code>Preset</code> for the
      *         current output. <p>Watermarks are added to the output video in the
-     *         sequence in which you list them in the job output?????????the first
+     *         sequence in which you list them in the job output???the first
      *         watermark in the list is added to the output video first, the second
      *         watermark in the list is added next, and so on. As a result, if the
      *         settings in a preset cause Elastic Transcoder to place all watermarks
@@ -1182,7 +1182,7 @@ public class JobOutput implements Serializable {
      * watermarks for each output. Settings for each watermark must be
      * defined in the preset that you specify in <code>Preset</code> for the
      * current output. <p>Watermarks are added to the output video in the
-     * sequence in which you list them in the job output?????????the first
+     * sequence in which you list them in the job output???the first
      * watermark in the list is added to the output video first, the second
      * watermark in the list is added next, and so on. As a result, if the
      * settings in a preset cause Elastic Transcoder to place all watermarks
@@ -1197,7 +1197,7 @@ public class JobOutput implements Serializable {
      *         watermarks for each output. Settings for each watermark must be
      *         defined in the preset that you specify in <code>Preset</code> for the
      *         current output. <p>Watermarks are added to the output video in the
-     *         sequence in which you list them in the job output?????????the first
+     *         sequence in which you list them in the job output???the first
      *         watermark in the list is added to the output video first, the second
      *         watermark in the list is added next, and so on. As a result, if the
      *         settings in a preset cause Elastic Transcoder to place all watermarks

@@ -23,10 +23,7 @@ import com.amazonaws.services.ec2.model.transform.ResetImageAttributeRequestMars
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#resetImageAttribute(ResetImageAttributeRequest) ResetImageAttribute operation}.
  * <p>
- * The ResetImageAttribute operation resets an attribute of an AMI to its default value.
- * </p>
- * <p>
- * <b>NOTE:</b> The productCodes attribute cannot be reset.
+ * Resets an attribute of an AMI to its default value.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#resetImageAttribute(ResetImageAttributeRequest)
@@ -34,13 +31,13 @@ import com.amazonaws.services.ec2.model.transform.ResetImageAttributeRequestMars
 public class ResetImageAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ResetImageAttributeRequest> {
 
     /**
-     * The ID of the AMI whose attribute is being reset.
+     * The ID of the AMI.
      */
     private String imageId;
 
     /**
-     * The name of the attribute being reset. <p> Available attribute names:
-     * <code>launchPermission</code>
+     * The attribute to reset (currently you can only reset the launch
+     * permission attribute).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>launchPermission
@@ -58,9 +55,9 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param imageId The ID of the AMI whose attribute is being reset.
-     * @param attribute The name of the attribute being reset. <p> Available
-     * attribute names: <code>launchPermission</code>
+     * @param imageId The ID of the AMI.
+     * @param attribute The attribute to reset (currently you can only reset
+     * the launch permission attribute).
      */
     public ResetImageAttributeRequest(String imageId, String attribute) {
         setImageId(imageId);
@@ -72,9 +69,9 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param imageId The ID of the AMI whose attribute is being reset.
-     * @param attribute The name of the attribute being reset. <p> Available
-     * attribute names: <code>launchPermission</code>
+     * @param imageId The ID of the AMI.
+     * @param attribute The attribute to reset (currently you can only reset
+     * the launch permission attribute).
      */
     public ResetImageAttributeRequest(String imageId, ResetImageAttributeName attribute) {
         this.imageId = imageId;
@@ -82,29 +79,29 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * The ID of the AMI whose attribute is being reset.
+     * The ID of the AMI.
      *
-     * @return The ID of the AMI whose attribute is being reset.
+     * @return The ID of the AMI.
      */
     public String getImageId() {
         return imageId;
     }
     
     /**
-     * The ID of the AMI whose attribute is being reset.
+     * The ID of the AMI.
      *
-     * @param imageId The ID of the AMI whose attribute is being reset.
+     * @param imageId The ID of the AMI.
      */
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
     
     /**
-     * The ID of the AMI whose attribute is being reset.
+     * The ID of the AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param imageId The ID of the AMI whose attribute is being reset.
+     * @param imageId The ID of the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -115,14 +112,14 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * The name of the attribute being reset. <p> Available attribute names:
-     * <code>launchPermission</code>
+     * The attribute to reset (currently you can only reset the launch
+     * permission attribute).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>launchPermission
      *
-     * @return The name of the attribute being reset. <p> Available attribute names:
-     *         <code>launchPermission</code>
+     * @return The attribute to reset (currently you can only reset the launch
+     *         permission attribute).
      *
      * @see ResetImageAttributeName
      */
@@ -131,14 +128,14 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * The name of the attribute being reset. <p> Available attribute names:
-     * <code>launchPermission</code>
+     * The attribute to reset (currently you can only reset the launch
+     * permission attribute).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>launchPermission
      *
-     * @param attribute The name of the attribute being reset. <p> Available attribute names:
-     *         <code>launchPermission</code>
+     * @param attribute The attribute to reset (currently you can only reset the launch
+     *         permission attribute).
      *
      * @see ResetImageAttributeName
      */
@@ -147,16 +144,16 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * The name of the attribute being reset. <p> Available attribute names:
-     * <code>launchPermission</code>
+     * The attribute to reset (currently you can only reset the launch
+     * permission attribute).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>launchPermission
      *
-     * @param attribute The name of the attribute being reset. <p> Available attribute names:
-     *         <code>launchPermission</code>
+     * @param attribute The attribute to reset (currently you can only reset the launch
+     *         permission attribute).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -169,14 +166,14 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * The name of the attribute being reset. <p> Available attribute names:
-     * <code>launchPermission</code>
+     * The attribute to reset (currently you can only reset the launch
+     * permission attribute).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>launchPermission
      *
-     * @param attribute The name of the attribute being reset. <p> Available attribute names:
-     *         <code>launchPermission</code>
+     * @param attribute The attribute to reset (currently you can only reset the launch
+     *         permission attribute).
      *
      * @see ResetImageAttributeName
      */
@@ -185,16 +182,16 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * The name of the attribute being reset. <p> Available attribute names:
-     * <code>launchPermission</code>
+     * The attribute to reset (currently you can only reset the launch
+     * permission attribute).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>launchPermission
      *
-     * @param attribute The name of the attribute being reset. <p> Available attribute names:
-     *         <code>launchPermission</code>
+     * @param attribute The attribute to reset (currently you can only reset the launch
+     *         permission attribute).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

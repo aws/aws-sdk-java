@@ -16,6 +16,7 @@ package com.amazonaws.services.dynamodb.model;
 
 /**
  * Attribute Action
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.AttributeAction} instead.
  */
 @Deprecated
 public enum AttributeAction {

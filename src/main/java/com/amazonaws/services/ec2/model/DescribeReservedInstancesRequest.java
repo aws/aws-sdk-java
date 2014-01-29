@@ -23,7 +23,12 @@ import com.amazonaws.services.ec2.model.transform.DescribeReservedInstancesReque
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeReservedInstances(DescribeReservedInstancesRequest) DescribeReservedInstances operation}.
  * <p>
- * The DescribeReservedInstances operation describes Reserved Instances that were purchased for use with your account.
+ * Describes one or more of the Reserved Instances that you purchased.
+ * </p>
+ * <p>
+ * For more information about Reserved Instances, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html"> Reserved Instances </a> in the <i>Amazon
+ * Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeReservedInstances(DescribeReservedInstancesRequest)
@@ -31,16 +36,44 @@ import com.amazonaws.services.ec2.model.transform.DescribeReservedInstancesReque
 public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeReservedInstancesRequest> {
 
     /**
-     * The optional list of Reserved Instance IDs to describe.
+     * One or more Reserved Instance IDs. <p>Default: Describes all your
+     * Reserved Instances, or only those otherwise specified.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> reservedInstancesIds;
 
     /**
-     * A list of filters used to match properties for ReservedInstances. For
-     * a complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     * Availability Zone where the Reserved Instance can be used. </li> <li>
+     * <p><code>duration</code> - The duration of the Reserved Instance (one
+     * year or three years), in seconds (<code>31536000</code> |
+     * <code>94608000</code>). </li> <li> <p><code>end</code> - The time when
+     * the Reserved Instance expires. </li> <li> <p><code>fixed-price</code>
+     * - The purchase price of the Reserved Instance (for example, 9800.0).
+     * </li> <li> <p><code>instance-type</code> - The instance type on which
+     * the Reserved Instance can be used. </li> <li>
+     * <p><code>product-description</code> - The product description of the
+     * Reserved Instance (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     * VPC)</code>). </li> <li> <p><code>reserved-instances-id</code> - The
+     * ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
+     * time at which the Reserved Instance purchase request was placed. </li>
+     * <li> <p><code>state</code> - The state of the Reserved Instance
+     * (<code>pending-payment</code> | <code>active</code> |
+     * <code>payment-failed</code> | <code>retired</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>usage-price</code> - The usage price of
+     * the Reserved Instance, per hour (for example, 0.84). </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
@@ -53,9 +86,11 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
     private String offeringType;
 
     /**
-     * The optional list of Reserved Instance IDs to describe.
+     * One or more Reserved Instance IDs. <p>Default: Describes all your
+     * Reserved Instances, or only those otherwise specified.
      *
-     * @return The optional list of Reserved Instance IDs to describe.
+     * @return One or more Reserved Instance IDs. <p>Default: Describes all your
+     *         Reserved Instances, or only those otherwise specified.
      */
     public java.util.List<String> getReservedInstancesIds() {
         if (reservedInstancesIds == null) {
@@ -66,9 +101,11 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The optional list of Reserved Instance IDs to describe.
+     * One or more Reserved Instance IDs. <p>Default: Describes all your
+     * Reserved Instances, or only those otherwise specified.
      *
-     * @param reservedInstancesIds The optional list of Reserved Instance IDs to describe.
+     * @param reservedInstancesIds One or more Reserved Instance IDs. <p>Default: Describes all your
+     *         Reserved Instances, or only those otherwise specified.
      */
     public void setReservedInstancesIds(java.util.Collection<String> reservedInstancesIds) {
         if (reservedInstancesIds == null) {
@@ -81,11 +118,13 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The optional list of Reserved Instance IDs to describe.
+     * One or more Reserved Instance IDs. <p>Default: Describes all your
+     * Reserved Instances, or only those otherwise specified.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesIds The optional list of Reserved Instance IDs to describe.
+     * @param reservedInstancesIds One or more Reserved Instance IDs. <p>Default: Describes all your
+     *         Reserved Instances, or only those otherwise specified.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -99,11 +138,13 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The optional list of Reserved Instance IDs to describe.
+     * One or more Reserved Instance IDs. <p>Default: Describes all your
+     * Reserved Instances, or only those otherwise specified.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesIds The optional list of Reserved Instance IDs to describe.
+     * @param reservedInstancesIds One or more Reserved Instance IDs. <p>Default: Describes all your
+     *         Reserved Instances, or only those otherwise specified.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -121,17 +162,71 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * A list of filters used to match properties for ReservedInstances. For
-     * a complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     * Availability Zone where the Reserved Instance can be used. </li> <li>
+     * <p><code>duration</code> - The duration of the Reserved Instance (one
+     * year or three years), in seconds (<code>31536000</code> |
+     * <code>94608000</code>). </li> <li> <p><code>end</code> - The time when
+     * the Reserved Instance expires. </li> <li> <p><code>fixed-price</code>
+     * - The purchase price of the Reserved Instance (for example, 9800.0).
+     * </li> <li> <p><code>instance-type</code> - The instance type on which
+     * the Reserved Instance can be used. </li> <li>
+     * <p><code>product-description</code> - The product description of the
+     * Reserved Instance (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     * VPC)</code>). </li> <li> <p><code>reserved-instances-id</code> - The
+     * ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
+     * time at which the Reserved Instance purchase request was placed. </li>
+     * <li> <p><code>state</code> - The state of the Reserved Instance
+     * (<code>pending-payment</code> | <code>active</code> |
+     * <code>payment-failed</code> | <code>retired</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>usage-price</code> - The usage price of
+     * the Reserved Instance, per hour (for example, 0.84). </li> </ul>
      *
-     * @return A list of filters used to match properties for ReservedInstances. For
-     *         a complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @return One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     *         Availability Zone where the Reserved Instance can be used. </li> <li>
+     *         <p><code>duration</code> - The duration of the Reserved Instance (one
+     *         year or three years), in seconds (<code>31536000</code> |
+     *         <code>94608000</code>). </li> <li> <p><code>end</code> - The time when
+     *         the Reserved Instance expires. </li> <li> <p><code>fixed-price</code>
+     *         - The purchase price of the Reserved Instance (for example, 9800.0).
+     *         </li> <li> <p><code>instance-type</code> - The instance type on which
+     *         the Reserved Instance can be used. </li> <li>
+     *         <p><code>product-description</code> - The product description of the
+     *         Reserved Instance (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     *         VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     *         VPC)</code>). </li> <li> <p><code>reserved-instances-id</code> - The
+     *         ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
+     *         time at which the Reserved Instance purchase request was placed. </li>
+     *         <li> <p><code>state</code> - The state of the Reserved Instance
+     *         (<code>pending-payment</code> | <code>active</code> |
+     *         <code>payment-failed</code> | <code>retired</code>). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>usage-price</code> - The usage price of
+     *         the Reserved Instance, per hour (for example, 0.84). </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -142,17 +237,71 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * A list of filters used to match properties for ReservedInstances. For
-     * a complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     * Availability Zone where the Reserved Instance can be used. </li> <li>
+     * <p><code>duration</code> - The duration of the Reserved Instance (one
+     * year or three years), in seconds (<code>31536000</code> |
+     * <code>94608000</code>). </li> <li> <p><code>end</code> - The time when
+     * the Reserved Instance expires. </li> <li> <p><code>fixed-price</code>
+     * - The purchase price of the Reserved Instance (for example, 9800.0).
+     * </li> <li> <p><code>instance-type</code> - The instance type on which
+     * the Reserved Instance can be used. </li> <li>
+     * <p><code>product-description</code> - The product description of the
+     * Reserved Instance (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     * VPC)</code>). </li> <li> <p><code>reserved-instances-id</code> - The
+     * ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
+     * time at which the Reserved Instance purchase request was placed. </li>
+     * <li> <p><code>state</code> - The state of the Reserved Instance
+     * (<code>pending-payment</code> | <code>active</code> |
+     * <code>payment-failed</code> | <code>retired</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>usage-price</code> - The usage price of
+     * the Reserved Instance, per hour (for example, 0.84). </li> </ul>
      *
-     * @param filters A list of filters used to match properties for ReservedInstances. For
-     *         a complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     *         Availability Zone where the Reserved Instance can be used. </li> <li>
+     *         <p><code>duration</code> - The duration of the Reserved Instance (one
+     *         year or three years), in seconds (<code>31536000</code> |
+     *         <code>94608000</code>). </li> <li> <p><code>end</code> - The time when
+     *         the Reserved Instance expires. </li> <li> <p><code>fixed-price</code>
+     *         - The purchase price of the Reserved Instance (for example, 9800.0).
+     *         </li> <li> <p><code>instance-type</code> - The instance type on which
+     *         the Reserved Instance can be used. </li> <li>
+     *         <p><code>product-description</code> - The product description of the
+     *         Reserved Instance (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     *         VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     *         VPC)</code>). </li> <li> <p><code>reserved-instances-id</code> - The
+     *         ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
+     *         time at which the Reserved Instance purchase request was placed. </li>
+     *         <li> <p><code>state</code> - The state of the Reserved Instance
+     *         (<code>pending-payment</code> | <code>active</code> |
+     *         <code>payment-failed</code> | <code>retired</code>). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>usage-price</code> - The usage price of
+     *         the Reserved Instance, per hour (for example, 0.84). </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -165,19 +314,73 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * A list of filters used to match properties for ReservedInstances. For
-     * a complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     * Availability Zone where the Reserved Instance can be used. </li> <li>
+     * <p><code>duration</code> - The duration of the Reserved Instance (one
+     * year or three years), in seconds (<code>31536000</code> |
+     * <code>94608000</code>). </li> <li> <p><code>end</code> - The time when
+     * the Reserved Instance expires. </li> <li> <p><code>fixed-price</code>
+     * - The purchase price of the Reserved Instance (for example, 9800.0).
+     * </li> <li> <p><code>instance-type</code> - The instance type on which
+     * the Reserved Instance can be used. </li> <li>
+     * <p><code>product-description</code> - The product description of the
+     * Reserved Instance (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     * VPC)</code>). </li> <li> <p><code>reserved-instances-id</code> - The
+     * ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
+     * time at which the Reserved Instance purchase request was placed. </li>
+     * <li> <p><code>state</code> - The state of the Reserved Instance
+     * (<code>pending-payment</code> | <code>active</code> |
+     * <code>payment-failed</code> | <code>retired</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>usage-price</code> - The usage price of
+     * the Reserved Instance, per hour (for example, 0.84). </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for ReservedInstances. For
-     *         a complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     *         Availability Zone where the Reserved Instance can be used. </li> <li>
+     *         <p><code>duration</code> - The duration of the Reserved Instance (one
+     *         year or three years), in seconds (<code>31536000</code> |
+     *         <code>94608000</code>). </li> <li> <p><code>end</code> - The time when
+     *         the Reserved Instance expires. </li> <li> <p><code>fixed-price</code>
+     *         - The purchase price of the Reserved Instance (for example, 9800.0).
+     *         </li> <li> <p><code>instance-type</code> - The instance type on which
+     *         the Reserved Instance can be used. </li> <li>
+     *         <p><code>product-description</code> - The product description of the
+     *         Reserved Instance (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     *         VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     *         VPC)</code>). </li> <li> <p><code>reserved-instances-id</code> - The
+     *         ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
+     *         time at which the Reserved Instance purchase request was placed. </li>
+     *         <li> <p><code>state</code> - The state of the Reserved Instance
+     *         (<code>pending-payment</code> | <code>active</code> |
+     *         <code>payment-failed</code> | <code>retired</code>). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>usage-price</code> - The usage price of
+     *         the Reserved Instance, per hour (for example, 0.84). </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -191,19 +394,73 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * A list of filters used to match properties for ReservedInstances. For
-     * a complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     * Availability Zone where the Reserved Instance can be used. </li> <li>
+     * <p><code>duration</code> - The duration of the Reserved Instance (one
+     * year or three years), in seconds (<code>31536000</code> |
+     * <code>94608000</code>). </li> <li> <p><code>end</code> - The time when
+     * the Reserved Instance expires. </li> <li> <p><code>fixed-price</code>
+     * - The purchase price of the Reserved Instance (for example, 9800.0).
+     * </li> <li> <p><code>instance-type</code> - The instance type on which
+     * the Reserved Instance can be used. </li> <li>
+     * <p><code>product-description</code> - The product description of the
+     * Reserved Instance (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     * VPC)</code>). </li> <li> <p><code>reserved-instances-id</code> - The
+     * ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
+     * time at which the Reserved Instance purchase request was placed. </li>
+     * <li> <p><code>state</code> - The state of the Reserved Instance
+     * (<code>pending-payment</code> | <code>active</code> |
+     * <code>payment-failed</code> | <code>retired</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>usage-price</code> - The usage price of
+     * the Reserved Instance, per hour (for example, 0.84). </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for ReservedInstances. For
-     *         a complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     *         Availability Zone where the Reserved Instance can be used. </li> <li>
+     *         <p><code>duration</code> - The duration of the Reserved Instance (one
+     *         year or three years), in seconds (<code>31536000</code> |
+     *         <code>94608000</code>). </li> <li> <p><code>end</code> - The time when
+     *         the Reserved Instance expires. </li> <li> <p><code>fixed-price</code>
+     *         - The purchase price of the Reserved Instance (for example, 9800.0).
+     *         </li> <li> <p><code>instance-type</code> - The instance type on which
+     *         the Reserved Instance can be used. </li> <li>
+     *         <p><code>product-description</code> - The product description of the
+     *         Reserved Instance (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     *         VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     *         VPC)</code>). </li> <li> <p><code>reserved-instances-id</code> - The
+     *         ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
+     *         time at which the Reserved Instance purchase request was placed. </li>
+     *         <li> <p><code>state</code> - The state of the Reserved Instance
+     *         (<code>pending-payment</code> | <code>active</code> |
+     *         <code>payment-failed</code> | <code>retired</code>). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>usage-price</code> - The usage price of
+     *         the Reserved Instance, per hour (for example, 0.84). </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

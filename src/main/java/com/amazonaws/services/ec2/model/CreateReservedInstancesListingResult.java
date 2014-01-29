@@ -17,17 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Create Reserved Instances Listing Result
+ * 
  */
 public class CreateReservedInstancesListingResult implements Serializable {
 
+    /**
+     * Information about the Reserved Instances listing.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesListing> reservedInstancesListings;
 
     /**
-     * Returns the value of the ReservedInstancesListings property for this
-     * object.
+     * Information about the Reserved Instances listing.
      *
-     * @return The value of the ReservedInstancesListings property for this object.
+     * @return Information about the Reserved Instances listing.
      */
     public java.util.List<ReservedInstancesListing> getReservedInstancesListings() {
         if (reservedInstancesListings == null) {
@@ -38,11 +40,9 @@ public class CreateReservedInstancesListingResult implements Serializable {
     }
     
     /**
-     * Sets the value of the ReservedInstancesListings property for this
-     * object.
+     * Information about the Reserved Instances listing.
      *
-     * @param reservedInstancesListings The new value for the ReservedInstancesListings property for this
-     *         object.
+     * @param reservedInstancesListings Information about the Reserved Instances listing.
      */
     public void setReservedInstancesListings(java.util.Collection<ReservedInstancesListing> reservedInstancesListings) {
         if (reservedInstancesListings == null) {
@@ -55,13 +55,11 @@ public class CreateReservedInstancesListingResult implements Serializable {
     }
     
     /**
-     * Sets the value of the ReservedInstancesListings property for this
-     * object.
+     * Information about the Reserved Instances listing.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesListings The new value for the ReservedInstancesListings property for this
-     *         object.
+     * @param reservedInstancesListings Information about the Reserved Instances listing.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,13 +73,11 @@ public class CreateReservedInstancesListingResult implements Serializable {
     }
     
     /**
-     * Sets the value of the ReservedInstancesListings property for this
-     * object.
+     * Information about the Reserved Instances listing.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesListings The new value for the ReservedInstancesListings property for this
-     *         object.
+     * @param reservedInstancesListings Information about the Reserved Instances listing.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

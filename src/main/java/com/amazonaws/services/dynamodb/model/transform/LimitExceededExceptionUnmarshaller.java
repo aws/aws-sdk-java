@@ -20,6 +20,9 @@ import com.amazonaws.util.json.JSONObject;
 
 import com.amazonaws.services.dynamodb.model.LimitExceededException;
 
+/**
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.LimitExceededExceptionUnmarshaller} instead.
+ */
 @Deprecated
 public class LimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller {
 

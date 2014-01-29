@@ -17,18 +17,30 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Launch Permission Modifications
+ * <p>
+ * Describes a launch permission modification.
+ * </p>
  */
 public class LaunchPermissionModifications implements Serializable {
 
+    /**
+     * The AWS account ID to add to the list of launch permissions for the
+     * AMI.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission> add;
 
+    /**
+     * The AWS account ID to remove from the list of launch permissions for
+     * the AMI.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission> remove;
 
     /**
-     * Returns the value of the Add property for this object.
+     * The AWS account ID to add to the list of launch permissions for the
+     * AMI.
      *
-     * @return The value of the Add property for this object.
+     * @return The AWS account ID to add to the list of launch permissions for the
+     *         AMI.
      */
     public java.util.List<LaunchPermission> getAdd() {
         if (add == null) {
@@ -39,9 +51,11 @@ public class LaunchPermissionModifications implements Serializable {
     }
     
     /**
-     * Sets the value of the Add property for this object.
+     * The AWS account ID to add to the list of launch permissions for the
+     * AMI.
      *
-     * @param add The new value for the Add property for this object.
+     * @param add The AWS account ID to add to the list of launch permissions for the
+     *         AMI.
      */
     public void setAdd(java.util.Collection<LaunchPermission> add) {
         if (add == null) {
@@ -54,11 +68,13 @@ public class LaunchPermissionModifications implements Serializable {
     }
     
     /**
-     * Sets the value of the Add property for this object.
+     * The AWS account ID to add to the list of launch permissions for the
+     * AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param add The new value for the Add property for this object.
+     * @param add The AWS account ID to add to the list of launch permissions for the
+     *         AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -72,11 +88,13 @@ public class LaunchPermissionModifications implements Serializable {
     }
     
     /**
-     * Sets the value of the Add property for this object.
+     * The AWS account ID to add to the list of launch permissions for the
+     * AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param add The new value for the Add property for this object.
+     * @param add The AWS account ID to add to the list of launch permissions for the
+     *         AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -94,9 +112,11 @@ public class LaunchPermissionModifications implements Serializable {
     }
 
     /**
-     * Returns the value of the Remove property for this object.
+     * The AWS account ID to remove from the list of launch permissions for
+     * the AMI.
      *
-     * @return The value of the Remove property for this object.
+     * @return The AWS account ID to remove from the list of launch permissions for
+     *         the AMI.
      */
     public java.util.List<LaunchPermission> getRemove() {
         if (remove == null) {
@@ -107,9 +127,11 @@ public class LaunchPermissionModifications implements Serializable {
     }
     
     /**
-     * Sets the value of the Remove property for this object.
+     * The AWS account ID to remove from the list of launch permissions for
+     * the AMI.
      *
-     * @param remove The new value for the Remove property for this object.
+     * @param remove The AWS account ID to remove from the list of launch permissions for
+     *         the AMI.
      */
     public void setRemove(java.util.Collection<LaunchPermission> remove) {
         if (remove == null) {
@@ -122,11 +144,13 @@ public class LaunchPermissionModifications implements Serializable {
     }
     
     /**
-     * Sets the value of the Remove property for this object.
+     * The AWS account ID to remove from the list of launch permissions for
+     * the AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param remove The new value for the Remove property for this object.
+     * @param remove The AWS account ID to remove from the list of launch permissions for
+     *         the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -140,11 +164,13 @@ public class LaunchPermissionModifications implements Serializable {
     }
     
     /**
-     * Sets the value of the Remove property for this object.
+     * The AWS account ID to remove from the list of launch permissions for
+     * the AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param remove The new value for the Remove property for this object.
+     * @param remove The AWS account ID to remove from the list of launch permissions for
+     *         the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

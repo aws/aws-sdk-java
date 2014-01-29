@@ -17,20 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * </p>
+ * 
  */
 public class DescribePlacementGroupsResult implements Serializable {
 
     /**
-     * Contains information about the specified <code>PlacementGroups</code>.
+     * One or more placement groups.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<PlacementGroup> placementGroups;
 
     /**
-     * Contains information about the specified <code>PlacementGroups</code>.
+     * One or more placement groups.
      *
-     * @return Contains information about the specified <code>PlacementGroups</code>.
+     * @return One or more placement groups.
      */
     public java.util.List<PlacementGroup> getPlacementGroups() {
         if (placementGroups == null) {
@@ -41,9 +40,9 @@ public class DescribePlacementGroupsResult implements Serializable {
     }
     
     /**
-     * Contains information about the specified <code>PlacementGroups</code>.
+     * One or more placement groups.
      *
-     * @param placementGroups Contains information about the specified <code>PlacementGroups</code>.
+     * @param placementGroups One or more placement groups.
      */
     public void setPlacementGroups(java.util.Collection<PlacementGroup> placementGroups) {
         if (placementGroups == null) {
@@ -56,11 +55,11 @@ public class DescribePlacementGroupsResult implements Serializable {
     }
     
     /**
-     * Contains information about the specified <code>PlacementGroups</code>.
+     * One or more placement groups.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param placementGroups Contains information about the specified <code>PlacementGroups</code>.
+     * @param placementGroups One or more placement groups.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -74,11 +73,11 @@ public class DescribePlacementGroupsResult implements Serializable {
     }
     
     /**
-     * Contains information about the specified <code>PlacementGroups</code>.
+     * One or more placement groups.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param placementGroups Contains information about the specified <code>PlacementGroups</code>.
+     * @param placementGroups One or more placement groups.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

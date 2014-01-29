@@ -17,6 +17,7 @@ import java.io.Serializable;
 
 /**
  * Keys And Attributes
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.KeysAndAttributes} instead.
  */
 @Deprecated
 public class KeysAndAttributes  implements Serializable  {

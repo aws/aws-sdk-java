@@ -17,41 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
  * 
- * </p>
  */
 public class BundleInstanceResult implements Serializable {
 
     /**
-     * 
+     * Information about the bundle task.
      */
     private BundleTask bundleTask;
 
     /**
-     * 
+     * Information about the bundle task.
      *
-     * @return 
+     * @return Information about the bundle task.
      */
     public BundleTask getBundleTask() {
         return bundleTask;
     }
     
     /**
-     * 
+     * Information about the bundle task.
      *
-     * @param bundleTask 
+     * @param bundleTask Information about the bundle task.
      */
     public void setBundleTask(BundleTask bundleTask) {
         this.bundleTask = bundleTask;
     }
     
     /**
-     * 
+     * Information about the bundle task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bundleTask 
+     * @param bundleTask Information about the bundle task.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

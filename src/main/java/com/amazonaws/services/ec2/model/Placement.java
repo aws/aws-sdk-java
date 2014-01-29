@@ -18,30 +18,26 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes where an Amazon EC2 instance is running within an Amazon EC2 region.
+ * Describes the placement for the instance.
  * </p>
  */
 public class Placement implements Serializable {
 
     /**
-     * The availability zone in which an Amazon EC2 instance runs.
+     * The Availability Zone of the instance.
      */
     private String availabilityZone;
 
     /**
-     * The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
-     * runs. Placement groups are primarily used for launching High
-     * Performance Computing instances in the same group to ensure fast
-     * connection speeds.
+     * The name of the placement group the instance is in (for cluster
+     * compute instances).
      */
     private String groupName;
 
     /**
-     * The allowed tenancy of instances launched into the VPC. A value of
-     * default means instances can be launched with any tenancy; a value of
-     * dedicated means all instances launched into the VPC will be launched
-     * as dedicated tenancy regardless of the tenancy assigned to the
-     * instance at launch.
+     * The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on
+     * single-tenant hardware.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated
@@ -59,37 +55,36 @@ public class Placement implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param availabilityZone The availability zone in which an Amazon EC2
-     * instance runs.
+     * @param availabilityZone The Availability Zone of the instance.
      */
     public Placement(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
     }
 
     /**
-     * The availability zone in which an Amazon EC2 instance runs.
+     * The Availability Zone of the instance.
      *
-     * @return The availability zone in which an Amazon EC2 instance runs.
+     * @return The Availability Zone of the instance.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * The availability zone in which an Amazon EC2 instance runs.
+     * The Availability Zone of the instance.
      *
-     * @param availabilityZone The availability zone in which an Amazon EC2 instance runs.
+     * @param availabilityZone The Availability Zone of the instance.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * The availability zone in which an Amazon EC2 instance runs.
+     * The Availability Zone of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The availability zone in which an Amazon EC2 instance runs.
+     * @param availabilityZone The Availability Zone of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -100,47 +95,35 @@ public class Placement implements Serializable {
     }
 
     /**
-     * The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
-     * runs. Placement groups are primarily used for launching High
-     * Performance Computing instances in the same group to ensure fast
-     * connection speeds.
+     * The name of the placement group the instance is in (for cluster
+     * compute instances).
      *
-     * @return The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
-     *         runs. Placement groups are primarily used for launching High
-     *         Performance Computing instances in the same group to ensure fast
-     *         connection speeds.
+     * @return The name of the placement group the instance is in (for cluster
+     *         compute instances).
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
-     * runs. Placement groups are primarily used for launching High
-     * Performance Computing instances in the same group to ensure fast
-     * connection speeds.
+     * The name of the placement group the instance is in (for cluster
+     * compute instances).
      *
-     * @param groupName The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
-     *         runs. Placement groups are primarily used for launching High
-     *         Performance Computing instances in the same group to ensure fast
-     *         connection speeds.
+     * @param groupName The name of the placement group the instance is in (for cluster
+     *         compute instances).
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
-     * runs. Placement groups are primarily used for launching High
-     * Performance Computing instances in the same group to ensure fast
-     * connection speeds.
+     * The name of the placement group the instance is in (for cluster
+     * compute instances).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupName The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
-     *         runs. Placement groups are primarily used for launching High
-     *         Performance Computing instances in the same group to ensure fast
-     *         connection speeds.
+     * @param groupName The name of the placement group the instance is in (for cluster
+     *         compute instances).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -151,20 +134,16 @@ public class Placement implements Serializable {
     }
 
     /**
-     * The allowed tenancy of instances launched into the VPC. A value of
-     * default means instances can be launched with any tenancy; a value of
-     * dedicated means all instances launched into the VPC will be launched
-     * as dedicated tenancy regardless of the tenancy assigned to the
-     * instance at launch.
+     * The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on
+     * single-tenant hardware.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated
      *
-     * @return The allowed tenancy of instances launched into the VPC. A value of
-     *         default means instances can be launched with any tenancy; a value of
-     *         dedicated means all instances launched into the VPC will be launched
-     *         as dedicated tenancy regardless of the tenancy assigned to the
-     *         instance at launch.
+     * @return The tenancy of the instance (if the instance is running in a VPC). An
+     *         instance with a tenancy of <code>dedicated</code> runs on
+     *         single-tenant hardware.
      *
      * @see Tenancy
      */
@@ -173,20 +152,16 @@ public class Placement implements Serializable {
     }
     
     /**
-     * The allowed tenancy of instances launched into the VPC. A value of
-     * default means instances can be launched with any tenancy; a value of
-     * dedicated means all instances launched into the VPC will be launched
-     * as dedicated tenancy regardless of the tenancy assigned to the
-     * instance at launch.
+     * The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on
+     * single-tenant hardware.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated
      *
-     * @param tenancy The allowed tenancy of instances launched into the VPC. A value of
-     *         default means instances can be launched with any tenancy; a value of
-     *         dedicated means all instances launched into the VPC will be launched
-     *         as dedicated tenancy regardless of the tenancy assigned to the
-     *         instance at launch.
+     * @param tenancy The tenancy of the instance (if the instance is running in a VPC). An
+     *         instance with a tenancy of <code>dedicated</code> runs on
+     *         single-tenant hardware.
      *
      * @see Tenancy
      */
@@ -195,22 +170,18 @@ public class Placement implements Serializable {
     }
     
     /**
-     * The allowed tenancy of instances launched into the VPC. A value of
-     * default means instances can be launched with any tenancy; a value of
-     * dedicated means all instances launched into the VPC will be launched
-     * as dedicated tenancy regardless of the tenancy assigned to the
-     * instance at launch.
+     * The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on
+     * single-tenant hardware.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated
      *
-     * @param tenancy The allowed tenancy of instances launched into the VPC. A value of
-     *         default means instances can be launched with any tenancy; a value of
-     *         dedicated means all instances launched into the VPC will be launched
-     *         as dedicated tenancy regardless of the tenancy assigned to the
-     *         instance at launch.
+     * @param tenancy The tenancy of the instance (if the instance is running in a VPC). An
+     *         instance with a tenancy of <code>dedicated</code> runs on
+     *         single-tenant hardware.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -223,20 +194,16 @@ public class Placement implements Serializable {
     }
 
     /**
-     * The allowed tenancy of instances launched into the VPC. A value of
-     * default means instances can be launched with any tenancy; a value of
-     * dedicated means all instances launched into the VPC will be launched
-     * as dedicated tenancy regardless of the tenancy assigned to the
-     * instance at launch.
+     * The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on
+     * single-tenant hardware.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated
      *
-     * @param tenancy The allowed tenancy of instances launched into the VPC. A value of
-     *         default means instances can be launched with any tenancy; a value of
-     *         dedicated means all instances launched into the VPC will be launched
-     *         as dedicated tenancy regardless of the tenancy assigned to the
-     *         instance at launch.
+     * @param tenancy The tenancy of the instance (if the instance is running in a VPC). An
+     *         instance with a tenancy of <code>dedicated</code> runs on
+     *         single-tenant hardware.
      *
      * @see Tenancy
      */
@@ -245,22 +212,18 @@ public class Placement implements Serializable {
     }
     
     /**
-     * The allowed tenancy of instances launched into the VPC. A value of
-     * default means instances can be launched with any tenancy; a value of
-     * dedicated means all instances launched into the VPC will be launched
-     * as dedicated tenancy regardless of the tenancy assigned to the
-     * instance at launch.
+     * The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on
+     * single-tenant hardware.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated
      *
-     * @param tenancy The allowed tenancy of instances launched into the VPC. A value of
-     *         default means instances can be launched with any tenancy; a value of
-     *         dedicated means all instances launched into the VPC will be launched
-     *         as dedicated tenancy regardless of the tenancy assigned to the
-     *         instance at launch.
+     * @param tenancy The tenancy of the instance (if the instance is running in a VPC). An
+     *         instance with a tenancy of <code>dedicated</code> runs on
+     *         single-tenant hardware.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

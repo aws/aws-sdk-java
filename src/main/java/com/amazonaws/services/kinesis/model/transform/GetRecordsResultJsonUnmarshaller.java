@@ -46,6 +46,7 @@ public class GetRecordsResultJsonUnmarshaller implements Unmarshaller<GetRecords
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Records", targetDepth)) {
+                    context.nextToken();
                     getRecordsResult.setRecords(new ListUnmarshaller<Record>(RecordJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("NextShardIterator", targetDepth)) {

@@ -29,6 +29,8 @@ import java.util.Set;
  * 
  * @see DynamoDBMarshaller
  * @see JsonMarshaller
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMarshalling} instead.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)

@@ -44,7 +44,7 @@ import com.amazonaws.services.glacier.model.transform.*;
  * Amazon Glacier is a storage solution for "cold data."
  * </p>
  * <p>
- * Amazon Glacier is an extremely low-cost storage service that provides secure, durable and easy-to-use storage for data backup and archival. With
+ * Amazon Glacier is an extremely low-cost storage service that provides secure, durable, and easy-to-use storage for data backup and archival. With
  * Amazon Glacier, customers can store their data cost effectively for months, years, or decades. Amazon Glacier also enables customers to offload the
  * administrative burdens of operating and scaling storage to AWS, so they don't have to worry about capacity planning, hardware provisioning, data
  * replication, hardware failure and recovery, or time-consuming hardware migrations.
@@ -1039,7 +1039,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * <li> <p>
      * After downloading all the parts of the job output, you have a list of
      * eight checksum values. Compute the tree hash of these values to find
-     * the checksum of the entire output. Using the Describe Job API, obtain
+     * the checksum of the entire output. Using the DescribeJob API, obtain
      * job information of the job that provided you the output. The response
      * includes the checksum of the entire archive stored in Amazon Glacier.
      * You compare this value with the checksum you computed to ensure you
@@ -1197,6 +1197,49 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * might find the vault inventory useful in the event you need to
      * reconcile information in your database with the actual vault
      * inventory.
+     * </p>
+     * <p>
+     * <b>Range Inventory Retrieval</b>
+     * </p>
+     * <p>
+     * You can limit the number of inventory items retrieved by filtering on
+     * the archive creation date or by setting a limit.
+     * </p>
+     * <p>
+     * <i>Filtering by Archive Creation Date</i>
+     * </p>
+     * <p>
+     * You can retrieve inventory items for archives created between
+     * <code>StartDate</code> and <code>EndDate</code> by specifying values
+     * for these parameters in the <b>InitiateJob</b> request. Archives
+     * created on or after the <code>StartDate</code> and before the
+     * <code>EndDate</code> will be returned. If you only provide the
+     * <code>StartDate</code> without the <code>EndDate</code> , you will
+     * retrieve the inventory for all archives created on or after the
+     * <code>StartDate</code> . If you only provide the <code>EndDate</code>
+     * without the <code>StartDate</code> , you will get back the inventory
+     * for all archives created before the <code>EndDate</code> .
+     * </p>
+     * <p>
+     * <i>Limiting Inventory Items per Retrieval</i>
+     * </p>
+     * <p>
+     * You can limit the number of inventory items returned by setting the
+     * <code>Limit</code> parameter in the <b>InitiateJob</b> request. The
+     * inventory job output will contain inventory items up to the specified
+     * <code>Limit</code> . If there are more inventory items available, the
+     * result is paginated. After a job is complete you can use the
+     * DescribeJob operation to get a marker that you use in a subsequent
+     * <b>InitiateJob</b> request. The marker will indicate the starting
+     * point to retrieve the next set of inventory items. You can page
+     * through your entire inventory by repeatedly making <b>InitiateJob</b>
+     * requests with the marker from the previous <b>DescribeJob</b> output,
+     * until you get a marker from <b>DescribeJob</b> that returns null,
+     * indicating that there are no more inventory items available.
+     * </p>
+     * <p>
+     * You can use the <code>Limit</code> parameter together with the date
+     * range parameters.
      * </p>
      * <p>
      * <b>About Ranged Archive Retrieval</b>
@@ -2017,9 +2060,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
-
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
         Response<X> result = client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);

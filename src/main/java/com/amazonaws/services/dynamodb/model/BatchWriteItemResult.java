@@ -19,6 +19,7 @@ import java.io.Serializable;
  * <p>
  * A container for <code>BatchWriteItem</code> response
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.BatchWriteItemResult} instead.
  */
 @Deprecated
 public class BatchWriteItemResult  implements Serializable  {

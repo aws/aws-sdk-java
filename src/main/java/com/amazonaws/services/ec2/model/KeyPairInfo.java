@@ -18,10 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes an Amazon EC2 key pair. This is a summary of the key pair data, and will not contain the actual private key material.
- * </p>
- * <p>
- * The private key material is only available when initially creating the key pair.
+ * Describes a key pair.
  * </p>
  */
 public class KeyPairInfo implements Serializable {
@@ -32,7 +29,10 @@ public class KeyPairInfo implements Serializable {
     private String keyName;
 
     /**
-     * The SHA-1 digest of the DER encoded private key.
+     * If you used <a>CreateKeyPair</a> to create the key pair, this is the
+     * SHA-1 digest of the DER encoded private key. If you used
+     * <a>ImportKeyPair</a> to provide AWS the public key, this is the MD5
+     * public key fingerprint as specified in section 4 of RFC4716.
      */
     private String keyFingerprint;
 
@@ -70,29 +70,47 @@ public class KeyPairInfo implements Serializable {
     }
 
     /**
-     * The SHA-1 digest of the DER encoded private key.
+     * If you used <a>CreateKeyPair</a> to create the key pair, this is the
+     * SHA-1 digest of the DER encoded private key. If you used
+     * <a>ImportKeyPair</a> to provide AWS the public key, this is the MD5
+     * public key fingerprint as specified in section 4 of RFC4716.
      *
-     * @return The SHA-1 digest of the DER encoded private key.
+     * @return If you used <a>CreateKeyPair</a> to create the key pair, this is the
+     *         SHA-1 digest of the DER encoded private key. If you used
+     *         <a>ImportKeyPair</a> to provide AWS the public key, this is the MD5
+     *         public key fingerprint as specified in section 4 of RFC4716.
      */
     public String getKeyFingerprint() {
         return keyFingerprint;
     }
     
     /**
-     * The SHA-1 digest of the DER encoded private key.
+     * If you used <a>CreateKeyPair</a> to create the key pair, this is the
+     * SHA-1 digest of the DER encoded private key. If you used
+     * <a>ImportKeyPair</a> to provide AWS the public key, this is the MD5
+     * public key fingerprint as specified in section 4 of RFC4716.
      *
-     * @param keyFingerprint The SHA-1 digest of the DER encoded private key.
+     * @param keyFingerprint If you used <a>CreateKeyPair</a> to create the key pair, this is the
+     *         SHA-1 digest of the DER encoded private key. If you used
+     *         <a>ImportKeyPair</a> to provide AWS the public key, this is the MD5
+     *         public key fingerprint as specified in section 4 of RFC4716.
      */
     public void setKeyFingerprint(String keyFingerprint) {
         this.keyFingerprint = keyFingerprint;
     }
     
     /**
-     * The SHA-1 digest of the DER encoded private key.
+     * If you used <a>CreateKeyPair</a> to create the key pair, this is the
+     * SHA-1 digest of the DER encoded private key. If you used
+     * <a>ImportKeyPair</a> to provide AWS the public key, this is the MD5
+     * public key fingerprint as specified in section 4 of RFC4716.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param keyFingerprint The SHA-1 digest of the DER encoded private key.
+     * @param keyFingerprint If you used <a>CreateKeyPair</a> to create the key pair, this is the
+     *         SHA-1 digest of the DER encoded private key. If you used
+     *         <a>ImportKeyPair</a> to provide AWS the public key, this is the MD5
+     *         public key fingerprint as specified in section 4 of RFC4716.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

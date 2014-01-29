@@ -20,6 +20,9 @@ import com.amazonaws.util.json.JSONObject;
 
 import com.amazonaws.services.dynamodb.model.InternalServerErrorException;
 
+/**
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.InternalServerErrorExceptionUnmarshaller} instead.
+ */
 @Deprecated
 public class InternalServerErrorExceptionUnmarshaller extends JsonErrorUnmarshaller {
 

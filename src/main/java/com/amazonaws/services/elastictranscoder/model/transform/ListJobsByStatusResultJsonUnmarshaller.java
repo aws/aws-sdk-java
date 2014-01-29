@@ -46,6 +46,7 @@ public class ListJobsByStatusResultJsonUnmarshaller implements Unmarshaller<List
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Jobs", targetDepth)) {
+                    context.nextToken();
                     listJobsByStatusResult.setJobs(new ListUnmarshaller<Job>(JobJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {

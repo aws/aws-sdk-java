@@ -12,7 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package com.amazonaws.services.ec2.model.transform;
+package com.amazonaws.services.sqs.model.transform;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,30 +21,27 @@ import java.util.Map;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
-import com.amazonaws.services.ec2.model.*;
+import com.amazonaws.services.sqs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
 
 /**
- * Activate License Request Marshaller
+ * List Dead Letter Source Queues Request Marshaller
  */
-public class ActivateLicenseRequestMarshaller implements Marshaller<Request<ActivateLicenseRequest>, ActivateLicenseRequest> {
+public class ListDeadLetterSourceQueuesRequestMarshaller implements Marshaller<Request<ListDeadLetterSourceQueuesRequest>, ListDeadLetterSourceQueuesRequest> {
 
-    public Request<ActivateLicenseRequest> marshall(ActivateLicenseRequest activateLicenseRequest) {
+    public Request<ListDeadLetterSourceQueuesRequest> marshall(ListDeadLetterSourceQueuesRequest listDeadLetterSourceQueuesRequest) {
 
-        if (activateLicenseRequest == null) {
+        if (listDeadLetterSourceQueuesRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ActivateLicenseRequest> request = new DefaultRequest<ActivateLicenseRequest>(activateLicenseRequest, "AmazonEC2");
-        request.addParameter("Action", "ActivateLicense");
-        request.addParameter("Version", "2013-10-15");
+        Request<ListDeadLetterSourceQueuesRequest> request = new DefaultRequest<ListDeadLetterSourceQueuesRequest>(listDeadLetterSourceQueuesRequest, "AmazonSQS");
+        request.addParameter("Action", "ListDeadLetterSourceQueues");
+        request.addParameter("Version", "2012-11-05");
 
-        if (activateLicenseRequest.getLicenseId() != null) {
-            request.addParameter("LicenseId", StringUtils.fromString(activateLicenseRequest.getLicenseId()));
-        }
-        if (activateLicenseRequest.getCapacity() != null) {
-            request.addParameter("Capacity", StringUtils.fromInteger(activateLicenseRequest.getCapacity()));
+        if (listDeadLetterSourceQueuesRequest.getQueueUrl() != null) {
+            request.addParameter("QueueUrl", StringUtils.fromString(listDeadLetterSourceQueuesRequest.getQueueUrl()));
         }
 
         return request;

@@ -17,6 +17,7 @@ import java.io.Serializable;
 
 /**
  * Condition
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.Condition} instead.
  */
 @Deprecated
 public class Condition  implements Serializable  {

@@ -17,6 +17,7 @@ import java.io.Serializable;
 
 /**
  * Table Description
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.TableDescription} instead.
  */
 @Deprecated
 public class TableDescription  implements Serializable  {

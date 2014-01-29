@@ -23,11 +23,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteCustomerGatewayRequestMa
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteCustomerGateway(DeleteCustomerGatewayRequest) DeleteCustomerGateway operation}.
  * <p>
- * Deletes a customer gateway. You must delete the VPN connection before deleting the customer gateway.
- * </p>
- * <p>
- * You can have a single active customer gateway per AWS account (active means that you've created a VPN connection with that customer gateway). AWS
- * might delete any customer gateway you leave inactive for an extended period of time.
+ * Deletes the specified customer gateway. You must delete the VPN connection before you can delete the customer gateway.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteCustomerGateway(DeleteCustomerGatewayRequest)
@@ -35,7 +31,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteCustomerGatewayRequestMa
 public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteCustomerGatewayRequest> {
 
     /**
-     * The ID of the customer gateway to delete.
+     * The ID of the customer gateway.
      */
     private String customerGatewayId;
 
@@ -50,36 +46,36 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest implem
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param customerGatewayId The ID of the customer gateway to delete.
+     * @param customerGatewayId The ID of the customer gateway.
      */
     public DeleteCustomerGatewayRequest(String customerGatewayId) {
         setCustomerGatewayId(customerGatewayId);
     }
 
     /**
-     * The ID of the customer gateway to delete.
+     * The ID of the customer gateway.
      *
-     * @return The ID of the customer gateway to delete.
+     * @return The ID of the customer gateway.
      */
     public String getCustomerGatewayId() {
         return customerGatewayId;
     }
     
     /**
-     * The ID of the customer gateway to delete.
+     * The ID of the customer gateway.
      *
-     * @param customerGatewayId The ID of the customer gateway to delete.
+     * @param customerGatewayId The ID of the customer gateway.
      */
     public void setCustomerGatewayId(String customerGatewayId) {
         this.customerGatewayId = customerGatewayId;
     }
     
     /**
-     * The ID of the customer gateway to delete.
+     * The ID of the customer gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customerGatewayId The ID of the customer gateway to delete.
+     * @param customerGatewayId The ID of the customer gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

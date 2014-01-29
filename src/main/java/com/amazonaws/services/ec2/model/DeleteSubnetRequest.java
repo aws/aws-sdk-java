@@ -23,7 +23,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteSubnetRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteSubnet(DeleteSubnetRequest) DeleteSubnet operation}.
  * <p>
- * Deletes a subnet from a VPC. You must terminate all running instances in the subnet before deleting it, otherwise Amazon VPC returns an error.
+ * Deletes the specified subnet. You must terminate all running instances in the subnet before you can delete the subnet.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteSubnet(DeleteSubnetRequest)
@@ -31,7 +31,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteSubnetRequestMarshaller;
 public class DeleteSubnetRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteSubnetRequest> {
 
     /**
-     * The ID of the subnet you want to delete.
+     * The ID of the subnet.
      */
     private String subnetId;
 
@@ -46,36 +46,36 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest implements Seri
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param subnetId The ID of the subnet you want to delete.
+     * @param subnetId The ID of the subnet.
      */
     public DeleteSubnetRequest(String subnetId) {
         setSubnetId(subnetId);
     }
 
     /**
-     * The ID of the subnet you want to delete.
+     * The ID of the subnet.
      *
-     * @return The ID of the subnet you want to delete.
+     * @return The ID of the subnet.
      */
     public String getSubnetId() {
         return subnetId;
     }
     
     /**
-     * The ID of the subnet you want to delete.
+     * The ID of the subnet.
      *
-     * @param subnetId The ID of the subnet you want to delete.
+     * @param subnetId The ID of the subnet.
      */
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
     
     /**
-     * The ID of the subnet you want to delete.
+     * The ID of the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetId The ID of the subnet you want to delete.
+     * @param subnetId The ID of the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

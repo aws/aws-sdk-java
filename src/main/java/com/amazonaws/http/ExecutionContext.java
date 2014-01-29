@@ -14,10 +14,12 @@
  */
 package com.amazonaws.http;
 
+import java.net.URI;
 import java.util.List;
 
 import org.apache.http.annotation.NotThreadSafe;
 
+import com.amazonaws.AmazonWebServiceClient;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.handlers.RequestHandler2;
@@ -27,25 +29,27 @@ import com.amazonaws.util.AWSRequestMetricsFullSupport;
 @NotThreadSafe
 public class ExecutionContext {
     private final AWSRequestMetrics awsRequestMetrics;
-    private List<RequestHandler2> requestHandler2s;
+    private final List<RequestHandler2> requestHandler2s;
     private String contextUserAgent;
-
-    /** Optional signer to enable the runtime layer to handle signing requests (and resigning on retries). */
-    private Signer signer;
+    private final AmazonWebServiceClient awsClient;
 
     /** Optional credentials to enable the runtime layer to handle signing requests (and resigning on retries). */
     private AWSCredentials credentials;
 
     /** For testing purposes. */
-    public ExecutionContext() {
-        this(null, false);
+    public ExecutionContext(boolean isMetricEnabled) {
+        this(null, isMetricEnabled, null);
     }
+    /** For testing purposes. */
+    public ExecutionContext() { this(null, false, null); }
 
-    public ExecutionContext(List<RequestHandler2> requestHandler2s, boolean isMetricEnabled) {
+    public ExecutionContext(List<RequestHandler2> requestHandler2s,
+            boolean isMetricEnabled, AmazonWebServiceClient awsClient) {
         this.requestHandler2s = requestHandler2s;
         awsRequestMetrics = isMetricEnabled 
                           ? new AWSRequestMetricsFullSupport()
                           : new AWSRequestMetrics();
+        this.awsClient = awsClient;
     }
 
     public String getContextUserAgent() {
@@ -65,24 +69,22 @@ public class ExecutionContext {
     }
 
     /**
-     * Returns the optional signer used to sign the associated request.
-     *
-     * @return The optional signer used to sign the associated request.
+     * There is in general no need to set the signer in the execution context,
+     * since the signer for each request may differ depending on the URI of
+     * the request.
+     * The exception is S3 where the signer is currently determined only when
+     * the S3 client is constructed.  Hence the need for this method.
+     * We may consider supporting a per request level signer determination 
+     * for S3 later on.
      */
-    public Signer getSigner() {
-        return signer;
-    }
+    public void setSigner(Signer signer) {}
 
     /**
-     * Sets the optional signer used to sign the associated request. If no
-     * signer is specified as part of a request's ExecutionContext, then the
-     * runtime layer will not attempt to sign (or resign on retries) requests.
-     *
-     * @param signer
-     *            The optional signer used to sign the associated request.
+     * Returns the signer for the given uri.
+     * Note S3 in particular overrides this method.
      */
-    public void setSigner(Signer signer) {
-        this.signer = signer;
+    public Signer getSignerByURI(URI uri) {
+        return awsClient == null ? null : awsClient.getSignerByURI(uri);
     }
 
     /**

@@ -17,41 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of creating a new EBS volume.
- * </p>
+ * 
  */
 public class CreateVolumeResult implements Serializable {
 
     /**
-     * The newly created EBS volume.
+     * 
      */
     private Volume volume;
 
     /**
-     * The newly created EBS volume.
+     * 
      *
-     * @return The newly created EBS volume.
+     * @return 
      */
     public Volume getVolume() {
         return volume;
     }
     
     /**
-     * The newly created EBS volume.
+     * 
      *
-     * @param volume The newly created EBS volume.
+     * @param volume 
      */
     public void setVolume(Volume volume) {
         this.volume = volume;
     }
     
     /**
-     * The newly created EBS volume.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volume The newly created EBS volume.
+     * @param volume 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

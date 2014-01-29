@@ -23,7 +23,11 @@ import com.amazonaws.services.ec2.model.transform.DescribeRegionsRequestMarshall
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeRegions(DescribeRegionsRequest) DescribeRegions operation}.
  * <p>
- * The DescribeRegions operation describes regions zones that are currently available to the account.
+ * Describes one or more regions that are currently available to you.
+ * </p>
+ * <p>
+ * For a list of the regions supported by Amazon EC2, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region"> Regions and
+ * Endpoints </a> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeRegions(DescribeRegionsRequest)
@@ -31,22 +35,22 @@ import com.amazonaws.services.ec2.model.transform.DescribeRegionsRequestMarshall
 public class DescribeRegionsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeRegionsRequest> {
 
     /**
-     * The optional list of regions to describe.
+     * The names of one or more regions.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> regionNames;
 
     /**
-     * A list of filters used to match properties for Regions. For a complete
-     * reference to the available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>endpoint</code> - The endpoint
+     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+     * </li> <li> <p><code>region-name</code> - The name of the region (for
+     * example, <code>us-east-1</code>). </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * The optional list of regions to describe.
+     * The names of one or more regions.
      *
-     * @return The optional list of regions to describe.
+     * @return The names of one or more regions.
      */
     public java.util.List<String> getRegionNames() {
         if (regionNames == null) {
@@ -57,9 +61,9 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The optional list of regions to describe.
+     * The names of one or more regions.
      *
-     * @param regionNames The optional list of regions to describe.
+     * @param regionNames The names of one or more regions.
      */
     public void setRegionNames(java.util.Collection<String> regionNames) {
         if (regionNames == null) {
@@ -72,11 +76,11 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The optional list of regions to describe.
+     * The names of one or more regions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param regionNames The optional list of regions to describe.
+     * @param regionNames The names of one or more regions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -90,11 +94,11 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The optional list of regions to describe.
+     * The names of one or more regions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param regionNames The optional list of regions to describe.
+     * @param regionNames The names of one or more regions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -112,15 +116,15 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * A list of filters used to match properties for Regions. For a complete
-     * reference to the available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>endpoint</code> - The endpoint
+     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+     * </li> <li> <p><code>region-name</code> - The name of the region (for
+     * example, <code>us-east-1</code>). </li> </ul>
      *
-     * @return A list of filters used to match properties for Regions. For a complete
-     *         reference to the available filter keys for this operation, see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @return One or more filters. <ul> <li> <p><code>endpoint</code> - The endpoint
+     *         of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+     *         </li> <li> <p><code>region-name</code> - The name of the region (for
+     *         example, <code>us-east-1</code>). </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -131,15 +135,15 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * A list of filters used to match properties for Regions. For a complete
-     * reference to the available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>endpoint</code> - The endpoint
+     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+     * </li> <li> <p><code>region-name</code> - The name of the region (for
+     * example, <code>us-east-1</code>). </li> </ul>
      *
-     * @param filters A list of filters used to match properties for Regions. For a complete
-     *         reference to the available filter keys for this operation, see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>endpoint</code> - The endpoint
+     *         of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+     *         </li> <li> <p><code>region-name</code> - The name of the region (for
+     *         example, <code>us-east-1</code>). </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -152,17 +156,17 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * A list of filters used to match properties for Regions. For a complete
-     * reference to the available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>endpoint</code> - The endpoint
+     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+     * </li> <li> <p><code>region-name</code> - The name of the region (for
+     * example, <code>us-east-1</code>). </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for Regions. For a complete
-     *         reference to the available filter keys for this operation, see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>endpoint</code> - The endpoint
+     *         of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+     *         </li> <li> <p><code>region-name</code> - The name of the region (for
+     *         example, <code>us-east-1</code>). </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -176,17 +180,17 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * A list of filters used to match properties for Regions. For a complete
-     * reference to the available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>endpoint</code> - The endpoint
+     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+     * </li> <li> <p><code>region-name</code> - The name of the region (for
+     * example, <code>us-east-1</code>). </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for Regions. For a complete
-     *         reference to the available filter keys for this operation, see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>endpoint</code> - The endpoint
+     *         of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+     *         </li> <li> <p><code>region-name</code> - The name of the region (for
+     *         example, <code>us-east-1</code>). </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

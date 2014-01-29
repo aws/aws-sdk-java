@@ -23,12 +23,11 @@ import com.amazonaws.services.ec2.model.transform.DeleteSecurityGroupRequestMars
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteSecurityGroup(DeleteSecurityGroupRequest) DeleteSecurityGroup operation}.
  * <p>
- * The DeleteSecurityGroup operation deletes a security group.
+ * Deletes a security group.
  * </p>
  * <p>
- * <b>NOTE:</b> If you attempt to delete a security group that contains instances, a fault is returned. If you attempt to delete a security group that is
- * referenced by another security group, a fault is returned. For example, if security group B has a rule that allows access from security group A,
- * security group A cannot be deleted until the allow rule is removed.
+ * If you attempt to delete a security group that is associated with an instance, or is referenced by another security group, the operation fails with
+ * <code>InvalidGroup.InUse</code> in EC2-Classic or <code>DependencyViolation</code> in EC2-VPC.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteSecurityGroup(DeleteSecurityGroupRequest)
@@ -36,12 +35,12 @@ import com.amazonaws.services.ec2.model.transform.DeleteSecurityGroupRequestMars
 public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteSecurityGroupRequest> {
 
     /**
-     * The name of the Amazon EC2 security group to delete.
+     * [EC2-Classic, default VPC] The name of the security group.
      */
     private String groupName;
 
     /**
-     * The ID of the Amazon EC2 security group to delete.
+     * The ID of the security group.
      */
     private String groupId;
 
@@ -56,36 +55,37 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param groupName The name of the Amazon EC2 security group to delete.
+     * @param groupName [EC2-Classic, default VPC] The name of the security
+     * group.
      */
     public DeleteSecurityGroupRequest(String groupName) {
         setGroupName(groupName);
     }
 
     /**
-     * The name of the Amazon EC2 security group to delete.
+     * [EC2-Classic, default VPC] The name of the security group.
      *
-     * @return The name of the Amazon EC2 security group to delete.
+     * @return [EC2-Classic, default VPC] The name of the security group.
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * The name of the Amazon EC2 security group to delete.
+     * [EC2-Classic, default VPC] The name of the security group.
      *
-     * @param groupName The name of the Amazon EC2 security group to delete.
+     * @param groupName [EC2-Classic, default VPC] The name of the security group.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * The name of the Amazon EC2 security group to delete.
+     * [EC2-Classic, default VPC] The name of the security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupName The name of the Amazon EC2 security group to delete.
+     * @param groupName [EC2-Classic, default VPC] The name of the security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -96,29 +96,29 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * The ID of the Amazon EC2 security group to delete.
+     * The ID of the security group.
      *
-     * @return The ID of the Amazon EC2 security group to delete.
+     * @return The ID of the security group.
      */
     public String getGroupId() {
         return groupId;
     }
     
     /**
-     * The ID of the Amazon EC2 security group to delete.
+     * The ID of the security group.
      *
-     * @param groupId The ID of the Amazon EC2 security group to delete.
+     * @param groupId The ID of the security group.
      */
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
     
     /**
-     * The ID of the Amazon EC2 security group to delete.
+     * The ID of the security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupId The ID of the Amazon EC2 security group to delete.
+     * @param groupId The ID of the security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

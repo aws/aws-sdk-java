@@ -17,44 +17,71 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Vgw Telemetry
+ * <p>
+ * Describes telemetry for a VPN tunnel.
+ * </p>
  */
 public class VgwTelemetry implements Serializable {
 
+    /**
+     * The Internet-routable IP address of the virtual private gateway's
+     * outside interface.
+     */
     private String outsideIpAddress;
 
+    /**
+     * The status of the VPN tunnel.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>UP, DOWN
+     */
     private String status;
 
+    /**
+     * The date and time of the last change in status.
+     */
     private java.util.Date lastStatusChange;
 
+    /**
+     * If an error occurs, a description of the error.
+     */
     private String statusMessage;
 
+    /**
+     * The number of accepted routes.
+     */
     private Integer acceptedRouteCount;
 
     /**
-     * Returns the value of the OutsideIpAddress property for this object.
+     * The Internet-routable IP address of the virtual private gateway's
+     * outside interface.
      *
-     * @return The value of the OutsideIpAddress property for this object.
+     * @return The Internet-routable IP address of the virtual private gateway's
+     *         outside interface.
      */
     public String getOutsideIpAddress() {
         return outsideIpAddress;
     }
     
     /**
-     * Sets the value of the OutsideIpAddress property for this object.
+     * The Internet-routable IP address of the virtual private gateway's
+     * outside interface.
      *
-     * @param outsideIpAddress The new value for the OutsideIpAddress property for this object.
+     * @param outsideIpAddress The Internet-routable IP address of the virtual private gateway's
+     *         outside interface.
      */
     public void setOutsideIpAddress(String outsideIpAddress) {
         this.outsideIpAddress = outsideIpAddress;
     }
     
     /**
-     * Sets the value of the OutsideIpAddress property for this object.
+     * The Internet-routable IP address of the virtual private gateway's
+     * outside interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param outsideIpAddress The new value for the OutsideIpAddress property for this object.
+     * @param outsideIpAddress The Internet-routable IP address of the virtual private gateway's
+     *         outside interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -65,12 +92,12 @@ public class VgwTelemetry implements Serializable {
     }
 
     /**
-     * Returns the value of the Status property for this object.
+     * The status of the VPN tunnel.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>UP, DOWN
      *
-     * @return The value of the Status property for this object.
+     * @return The status of the VPN tunnel.
      *
      * @see TelemetryStatus
      */
@@ -79,12 +106,12 @@ public class VgwTelemetry implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status of the VPN tunnel.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>UP, DOWN
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of the VPN tunnel.
      *
      * @see TelemetryStatus
      */
@@ -93,14 +120,14 @@ public class VgwTelemetry implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status of the VPN tunnel.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>UP, DOWN
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of the VPN tunnel.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -113,12 +140,12 @@ public class VgwTelemetry implements Serializable {
     }
 
     /**
-     * Sets the value of the Status property for this object.
+     * The status of the VPN tunnel.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>UP, DOWN
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of the VPN tunnel.
      *
      * @see TelemetryStatus
      */
@@ -127,14 +154,14 @@ public class VgwTelemetry implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status of the VPN tunnel.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>UP, DOWN
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of the VPN tunnel.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -147,29 +174,29 @@ public class VgwTelemetry implements Serializable {
     }
 
     /**
-     * Returns the value of the LastStatusChange property for this object.
+     * The date and time of the last change in status.
      *
-     * @return The value of the LastStatusChange property for this object.
+     * @return The date and time of the last change in status.
      */
     public java.util.Date getLastStatusChange() {
         return lastStatusChange;
     }
     
     /**
-     * Sets the value of the LastStatusChange property for this object.
+     * The date and time of the last change in status.
      *
-     * @param lastStatusChange The new value for the LastStatusChange property for this object.
+     * @param lastStatusChange The date and time of the last change in status.
      */
     public void setLastStatusChange(java.util.Date lastStatusChange) {
         this.lastStatusChange = lastStatusChange;
     }
     
     /**
-     * Sets the value of the LastStatusChange property for this object.
+     * The date and time of the last change in status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lastStatusChange The new value for the LastStatusChange property for this object.
+     * @param lastStatusChange The date and time of the last change in status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -180,29 +207,29 @@ public class VgwTelemetry implements Serializable {
     }
 
     /**
-     * Returns the value of the StatusMessage property for this object.
+     * If an error occurs, a description of the error.
      *
-     * @return The value of the StatusMessage property for this object.
+     * @return If an error occurs, a description of the error.
      */
     public String getStatusMessage() {
         return statusMessage;
     }
     
     /**
-     * Sets the value of the StatusMessage property for this object.
+     * If an error occurs, a description of the error.
      *
-     * @param statusMessage The new value for the StatusMessage property for this object.
+     * @param statusMessage If an error occurs, a description of the error.
      */
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
     
     /**
-     * Sets the value of the StatusMessage property for this object.
+     * If an error occurs, a description of the error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param statusMessage The new value for the StatusMessage property for this object.
+     * @param statusMessage If an error occurs, a description of the error.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -213,29 +240,29 @@ public class VgwTelemetry implements Serializable {
     }
 
     /**
-     * Returns the value of the AcceptedRouteCount property for this object.
+     * The number of accepted routes.
      *
-     * @return The value of the AcceptedRouteCount property for this object.
+     * @return The number of accepted routes.
      */
     public Integer getAcceptedRouteCount() {
         return acceptedRouteCount;
     }
     
     /**
-     * Sets the value of the AcceptedRouteCount property for this object.
+     * The number of accepted routes.
      *
-     * @param acceptedRouteCount The new value for the AcceptedRouteCount property for this object.
+     * @param acceptedRouteCount The number of accepted routes.
      */
     public void setAcceptedRouteCount(Integer acceptedRouteCount) {
         this.acceptedRouteCount = acceptedRouteCount;
     }
     
     /**
-     * Sets the value of the AcceptedRouteCount property for this object.
+     * The number of accepted routes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param acceptedRouteCount The new value for the AcceptedRouteCount property for this object.
+     * @param acceptedRouteCount The number of accepted routes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

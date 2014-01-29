@@ -23,8 +23,8 @@ import com.amazonaws.services.ec2.model.transform.ReplaceNetworkAclEntryRequestM
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#replaceNetworkAclEntry(ReplaceNetworkAclEntryRequest) ReplaceNetworkAclEntry operation}.
  * <p>
- * Replaces an entry (i.e., rule) in a network ACL. For more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User
- * Guide.
+ * Replaces an entry (rule) in a network ACL. For more information about network ACLs, see <a
+ * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceNetworkAclEntry(ReplaceNetworkAclEntryRequest)
@@ -32,23 +32,23 @@ import com.amazonaws.services.ec2.model.transform.ReplaceNetworkAclEntryRequestM
 public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ReplaceNetworkAclEntryRequest> {
 
     /**
-     * ID of the ACL where the entry will be replaced.
+     * The ID of the ACL.
      */
     private String networkAclId;
 
     /**
-     * Rule number of the entry to replace.
+     * The rule number of the entry to replace.
      */
     private Integer ruleNumber;
 
     /**
-     * IP protocol the rule applies to. Valid Values: <code>tcp</code>,
-     * <code>udp</code>, <code>icmp</code> or an IP protocol number.
+     * The IP protocol. You can specify <code>all</code> or <code>-1</code>
+     * to mean all protocols.
      */
     private String protocol;
 
     /**
-     * Whether to allow or deny traffic that matches the rule.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
@@ -56,51 +56,50 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     private String ruleAction;
 
     /**
-     * Whether this rule applies to egress traffic from the subnet
-     * (<code>true</code>) or ingress traffic (<code>false</code>).
+     * Indicates whether to replace the egress rule. <p>Default: If no value
+     * is specified, we replace the ingress rule.
      */
     private Boolean egress;
 
     /**
-     * The CIDR range to allow or deny, in CIDR notation (e.g.,
-     * <code>172.16.0.0/24</code>).
+     * The network range to allow or deny, in CIDR notation.
      */
     private String cidrBlock;
 
     /**
-     * ICMP values.
+     * ICMP protocol: The ICMP type and code.
      */
     private IcmpTypeCode icmpTypeCode;
 
     /**
-     * Port ranges.
+     * TCP or UDP protocols: The range of ports the rule applies to.
      */
     private PortRange portRange;
 
     /**
-     * ID of the ACL where the entry will be replaced.
+     * The ID of the ACL.
      *
-     * @return ID of the ACL where the entry will be replaced.
+     * @return The ID of the ACL.
      */
     public String getNetworkAclId() {
         return networkAclId;
     }
     
     /**
-     * ID of the ACL where the entry will be replaced.
+     * The ID of the ACL.
      *
-     * @param networkAclId ID of the ACL where the entry will be replaced.
+     * @param networkAclId The ID of the ACL.
      */
     public void setNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
     }
     
     /**
-     * ID of the ACL where the entry will be replaced.
+     * The ID of the ACL.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkAclId ID of the ACL where the entry will be replaced.
+     * @param networkAclId The ID of the ACL.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -111,29 +110,29 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Rule number of the entry to replace.
+     * The rule number of the entry to replace.
      *
-     * @return Rule number of the entry to replace.
+     * @return The rule number of the entry to replace.
      */
     public Integer getRuleNumber() {
         return ruleNumber;
     }
     
     /**
-     * Rule number of the entry to replace.
+     * The rule number of the entry to replace.
      *
-     * @param ruleNumber Rule number of the entry to replace.
+     * @param ruleNumber The rule number of the entry to replace.
      */
     public void setRuleNumber(Integer ruleNumber) {
         this.ruleNumber = ruleNumber;
     }
     
     /**
-     * Rule number of the entry to replace.
+     * The rule number of the entry to replace.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ruleNumber Rule number of the entry to replace.
+     * @param ruleNumber The rule number of the entry to replace.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -144,35 +143,35 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * IP protocol the rule applies to. Valid Values: <code>tcp</code>,
-     * <code>udp</code>, <code>icmp</code> or an IP protocol number.
+     * The IP protocol. You can specify <code>all</code> or <code>-1</code>
+     * to mean all protocols.
      *
-     * @return IP protocol the rule applies to. Valid Values: <code>tcp</code>,
-     *         <code>udp</code>, <code>icmp</code> or an IP protocol number.
+     * @return The IP protocol. You can specify <code>all</code> or <code>-1</code>
+     *         to mean all protocols.
      */
     public String getProtocol() {
         return protocol;
     }
     
     /**
-     * IP protocol the rule applies to. Valid Values: <code>tcp</code>,
-     * <code>udp</code>, <code>icmp</code> or an IP protocol number.
+     * The IP protocol. You can specify <code>all</code> or <code>-1</code>
+     * to mean all protocols.
      *
-     * @param protocol IP protocol the rule applies to. Valid Values: <code>tcp</code>,
-     *         <code>udp</code>, <code>icmp</code> or an IP protocol number.
+     * @param protocol The IP protocol. You can specify <code>all</code> or <code>-1</code>
+     *         to mean all protocols.
      */
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
     
     /**
-     * IP protocol the rule applies to. Valid Values: <code>tcp</code>,
-     * <code>udp</code>, <code>icmp</code> or an IP protocol number.
+     * The IP protocol. You can specify <code>all</code> or <code>-1</code>
+     * to mean all protocols.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param protocol IP protocol the rule applies to. Valid Values: <code>tcp</code>,
-     *         <code>udp</code>, <code>icmp</code> or an IP protocol number.
+     * @param protocol The IP protocol. You can specify <code>all</code> or <code>-1</code>
+     *         to mean all protocols.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -183,12 +182,12 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Whether to allow or deny traffic that matches the rule.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
      *
-     * @return Whether to allow or deny traffic that matches the rule.
+     * @return Indicates whether to allow or deny the traffic that matches the rule.
      *
      * @see RuleAction
      */
@@ -197,12 +196,12 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * Whether to allow or deny traffic that matches the rule.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
      *
-     * @param ruleAction Whether to allow or deny traffic that matches the rule.
+     * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
      * @see RuleAction
      */
@@ -211,14 +210,14 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * Whether to allow or deny traffic that matches the rule.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
      *
-     * @param ruleAction Whether to allow or deny traffic that matches the rule.
+     * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -231,12 +230,12 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Whether to allow or deny traffic that matches the rule.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
      *
-     * @param ruleAction Whether to allow or deny traffic that matches the rule.
+     * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
      * @see RuleAction
      */
@@ -245,14 +244,14 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * Whether to allow or deny traffic that matches the rule.
+     * Indicates whether to allow or deny the traffic that matches the rule.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>allow, deny
      *
-     * @param ruleAction Whether to allow or deny traffic that matches the rule.
+     * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -265,35 +264,35 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Whether this rule applies to egress traffic from the subnet
-     * (<code>true</code>) or ingress traffic (<code>false</code>).
+     * Indicates whether to replace the egress rule. <p>Default: If no value
+     * is specified, we replace the ingress rule.
      *
-     * @return Whether this rule applies to egress traffic from the subnet
-     *         (<code>true</code>) or ingress traffic (<code>false</code>).
+     * @return Indicates whether to replace the egress rule. <p>Default: If no value
+     *         is specified, we replace the ingress rule.
      */
     public Boolean isEgress() {
         return egress;
     }
     
     /**
-     * Whether this rule applies to egress traffic from the subnet
-     * (<code>true</code>) or ingress traffic (<code>false</code>).
+     * Indicates whether to replace the egress rule. <p>Default: If no value
+     * is specified, we replace the ingress rule.
      *
-     * @param egress Whether this rule applies to egress traffic from the subnet
-     *         (<code>true</code>) or ingress traffic (<code>false</code>).
+     * @param egress Indicates whether to replace the egress rule. <p>Default: If no value
+     *         is specified, we replace the ingress rule.
      */
     public void setEgress(Boolean egress) {
         this.egress = egress;
     }
     
     /**
-     * Whether this rule applies to egress traffic from the subnet
-     * (<code>true</code>) or ingress traffic (<code>false</code>).
+     * Indicates whether to replace the egress rule. <p>Default: If no value
+     * is specified, we replace the ingress rule.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param egress Whether this rule applies to egress traffic from the subnet
-     *         (<code>true</code>) or ingress traffic (<code>false</code>).
+     * @param egress Indicates whether to replace the egress rule. <p>Default: If no value
+     *         is specified, we replace the ingress rule.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -304,46 +303,40 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Whether this rule applies to egress traffic from the subnet
-     * (<code>true</code>) or ingress traffic (<code>false</code>).
+     * Indicates whether to replace the egress rule. <p>Default: If no value
+     * is specified, we replace the ingress rule.
      *
-     * @return Whether this rule applies to egress traffic from the subnet
-     *         (<code>true</code>) or ingress traffic (<code>false</code>).
+     * @return Indicates whether to replace the egress rule. <p>Default: If no value
+     *         is specified, we replace the ingress rule.
      */
     public Boolean getEgress() {
         return egress;
     }
 
     /**
-     * The CIDR range to allow or deny, in CIDR notation (e.g.,
-     * <code>172.16.0.0/24</code>).
+     * The network range to allow or deny, in CIDR notation.
      *
-     * @return The CIDR range to allow or deny, in CIDR notation (e.g.,
-     *         <code>172.16.0.0/24</code>).
+     * @return The network range to allow or deny, in CIDR notation.
      */
     public String getCidrBlock() {
         return cidrBlock;
     }
     
     /**
-     * The CIDR range to allow or deny, in CIDR notation (e.g.,
-     * <code>172.16.0.0/24</code>).
+     * The network range to allow or deny, in CIDR notation.
      *
-     * @param cidrBlock The CIDR range to allow or deny, in CIDR notation (e.g.,
-     *         <code>172.16.0.0/24</code>).
+     * @param cidrBlock The network range to allow or deny, in CIDR notation.
      */
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
     
     /**
-     * The CIDR range to allow or deny, in CIDR notation (e.g.,
-     * <code>172.16.0.0/24</code>).
+     * The network range to allow or deny, in CIDR notation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cidrBlock The CIDR range to allow or deny, in CIDR notation (e.g.,
-     *         <code>172.16.0.0/24</code>).
+     * @param cidrBlock The network range to allow or deny, in CIDR notation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -354,29 +347,29 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * ICMP values.
+     * ICMP protocol: The ICMP type and code.
      *
-     * @return ICMP values.
+     * @return ICMP protocol: The ICMP type and code.
      */
     public IcmpTypeCode getIcmpTypeCode() {
         return icmpTypeCode;
     }
     
     /**
-     * ICMP values.
+     * ICMP protocol: The ICMP type and code.
      *
-     * @param icmpTypeCode ICMP values.
+     * @param icmpTypeCode ICMP protocol: The ICMP type and code.
      */
     public void setIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
         this.icmpTypeCode = icmpTypeCode;
     }
     
     /**
-     * ICMP values.
+     * ICMP protocol: The ICMP type and code.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param icmpTypeCode ICMP values.
+     * @param icmpTypeCode ICMP protocol: The ICMP type and code.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -387,29 +380,29 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Port ranges.
+     * TCP or UDP protocols: The range of ports the rule applies to.
      *
-     * @return Port ranges.
+     * @return TCP or UDP protocols: The range of ports the rule applies to.
      */
     public PortRange getPortRange() {
         return portRange;
     }
     
     /**
-     * Port ranges.
+     * TCP or UDP protocols: The range of ports the rule applies to.
      *
-     * @param portRange Port ranges.
+     * @param portRange TCP or UDP protocols: The range of ports the rule applies to.
      */
     public void setPortRange(PortRange portRange) {
         this.portRange = portRange;
     }
     
     /**
-     * Port ranges.
+     * TCP or UDP protocols: The range of ports the rule applies to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param portRange Port ranges.
+     * @param portRange TCP or UDP protocols: The range of ports the rule applies to.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

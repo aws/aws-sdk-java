@@ -16,6 +16,7 @@ package com.amazonaws.services.dynamodb.model;
 
 /**
  * Return Value
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.ReturnValue} instead.
  */
 @Deprecated
 public enum ReturnValue {

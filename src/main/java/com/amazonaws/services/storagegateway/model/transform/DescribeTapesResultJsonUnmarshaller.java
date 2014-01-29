@@ -46,6 +46,7 @@ public class DescribeTapesResultJsonUnmarshaller implements Unmarshaller<Describ
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Tapes", targetDepth)) {
+                    context.nextToken();
                     describeTapesResult.setTapes(new ListUnmarshaller<Tape>(TapeJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {

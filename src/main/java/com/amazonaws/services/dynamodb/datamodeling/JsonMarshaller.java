@@ -26,6 +26,8 @@ import com.fasterxml.jackson.databind.MappingJsonFactory;
  * Simple JSON marshaller that uses Jackson mapper. It has all the limitations
  * of that library, the documentation of which is available here:
  * http://docs.codehaus.org/display/JACKSON/Home
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.JsonMarshaller} instead.
  */
 @Deprecated
 public class JsonMarshaller<T extends Object> implements DynamoDBMarshaller<T> {

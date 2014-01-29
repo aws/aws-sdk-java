@@ -17,6 +17,7 @@ import java.io.Serializable;
 
 /**
  * Scan Result
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.ScanResult} instead.
  */
 @Deprecated
 public class ScanResult  implements Serializable  {

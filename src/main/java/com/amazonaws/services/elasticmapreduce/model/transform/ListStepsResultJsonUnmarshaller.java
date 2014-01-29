@@ -46,6 +46,7 @@ public class ListStepsResultJsonUnmarshaller implements Unmarshaller<ListStepsRe
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Steps", targetDepth)) {
+                    context.nextToken();
                     listStepsResult.setSteps(new ListUnmarshaller<StepSummary>(StepSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {

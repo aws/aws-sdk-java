@@ -23,8 +23,11 @@ import com.amazonaws.services.ec2.model.transform.DescribeKeyPairsRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeKeyPairs(DescribeKeyPairsRequest) DescribeKeyPairs operation}.
  * <p>
- * The DescribeKeyPairs operation returns information about key pairs available to you. If you specify key pairs, information about those key pairs is
- * returned. Otherwise, information for all registered key pairs is returned.
+ * Describes one or more of your key pairs.
+ * </p>
+ * <p>
+ * For more information about key pairs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a> in the
+ * <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeKeyPairs(DescribeKeyPairsRequest)
@@ -32,23 +35,21 @@ import com.amazonaws.services.ec2.model.transform.DescribeKeyPairsRequestMarshal
 public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeKeyPairsRequest> {
 
     /**
-     * The optional list of key pair names to describe.
+     * One or more key pair names. <p>Default: Describes all your key pairs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> keyNames;
 
     /**
-     * A list of filters used to match properties for KeyPairs. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>fingerprint</code> - The
+     * fingerprint of the key pair. </li> <li> <p><code>key-name</code> - The
+     * name of the key pair. </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * The optional list of key pair names to describe.
+     * One or more key pair names. <p>Default: Describes all your key pairs.
      *
-     * @return The optional list of key pair names to describe.
+     * @return One or more key pair names. <p>Default: Describes all your key pairs.
      */
     public java.util.List<String> getKeyNames() {
         if (keyNames == null) {
@@ -59,9 +60,9 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The optional list of key pair names to describe.
+     * One or more key pair names. <p>Default: Describes all your key pairs.
      *
-     * @param keyNames The optional list of key pair names to describe.
+     * @param keyNames One or more key pair names. <p>Default: Describes all your key pairs.
      */
     public void setKeyNames(java.util.Collection<String> keyNames) {
         if (keyNames == null) {
@@ -74,11 +75,11 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The optional list of key pair names to describe.
+     * One or more key pair names. <p>Default: Describes all your key pairs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param keyNames The optional list of key pair names to describe.
+     * @param keyNames One or more key pair names. <p>Default: Describes all your key pairs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -92,11 +93,11 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * The optional list of key pair names to describe.
+     * One or more key pair names. <p>Default: Describes all your key pairs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param keyNames The optional list of key pair names to describe.
+     * @param keyNames One or more key pair names. <p>Default: Describes all your key pairs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -114,17 +115,13 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * A list of filters used to match properties for KeyPairs. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>fingerprint</code> - The
+     * fingerprint of the key pair. </li> <li> <p><code>key-name</code> - The
+     * name of the key pair. </li> </ul>
      *
-     * @return A list of filters used to match properties for KeyPairs. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @return One or more filters. <ul> <li> <p><code>fingerprint</code> - The
+     *         fingerprint of the key pair. </li> <li> <p><code>key-name</code> - The
+     *         name of the key pair. </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -135,17 +132,13 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * A list of filters used to match properties for KeyPairs. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>fingerprint</code> - The
+     * fingerprint of the key pair. </li> <li> <p><code>key-name</code> - The
+     * name of the key pair. </li> </ul>
      *
-     * @param filters A list of filters used to match properties for KeyPairs. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>fingerprint</code> - The
+     *         fingerprint of the key pair. </li> <li> <p><code>key-name</code> - The
+     *         name of the key pair. </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -158,19 +151,15 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * A list of filters used to match properties for KeyPairs. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>fingerprint</code> - The
+     * fingerprint of the key pair. </li> <li> <p><code>key-name</code> - The
+     * name of the key pair. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for KeyPairs. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>fingerprint</code> - The
+     *         fingerprint of the key pair. </li> <li> <p><code>key-name</code> - The
+     *         name of the key pair. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -184,19 +173,15 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * A list of filters used to match properties for KeyPairs. For a
-     * complete reference to the available filter keys for this operation,
-     * see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>fingerprint</code> - The
+     * fingerprint of the key pair. </li> <li> <p><code>key-name</code> - The
+     * name of the key pair. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for KeyPairs. For a
-     *         complete reference to the available filter keys for this operation,
-     *         see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>fingerprint</code> - The
+     *         fingerprint of the key pair. </li> <li> <p><code>key-name</code> - The
+     *         name of the key pair. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -46,6 +46,7 @@ public class DescribeLocationsResultJsonUnmarshaller implements Unmarshaller<Des
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("locations", targetDepth)) {
+                    context.nextToken();
                     describeLocationsResult.setLocations(new ListUnmarshaller<Location>(LocationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

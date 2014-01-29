@@ -17,41 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of creating a new EC2 key pair.
- * </p>
+ * 
  */
 public class CreateKeyPairResult implements Serializable {
 
     /**
-     * The newly created EC2 key pair.
+     * Information about the key pair.
      */
     private KeyPair keyPair;
 
     /**
-     * The newly created EC2 key pair.
+     * Information about the key pair.
      *
-     * @return The newly created EC2 key pair.
+     * @return Information about the key pair.
      */
     public KeyPair getKeyPair() {
         return keyPair;
     }
     
     /**
-     * The newly created EC2 key pair.
+     * Information about the key pair.
      *
-     * @param keyPair The newly created EC2 key pair.
+     * @param keyPair Information about the key pair.
      */
     public void setKeyPair(KeyPair keyPair) {
         this.keyPair = keyPair;
     }
     
     /**
-     * The newly created EC2 key pair.
+     * Information about the key pair.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param keyPair The newly created EC2 key pair.
+     * @param keyPair Information about the key pair.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

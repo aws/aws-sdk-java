@@ -24,7 +24,8 @@ import com.amazonaws.services.ec2.model.transform.ReplaceNetworkAclAssociationRe
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#replaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest) ReplaceNetworkAclAssociation operation}.
  * <p>
  * Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically associated with the default network
- * ACL. For more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide.
+ * ACL. For more information about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a> in
+ * the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest)
@@ -32,8 +33,8 @@ import com.amazonaws.services.ec2.model.transform.ReplaceNetworkAclAssociationRe
 public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ReplaceNetworkAclAssociationRequest> {
 
     /**
-     * The ID representing the current association between the original
-     * network ACL and the subnet.
+     * The ID of the current association between the original network ACL and
+     * the subnet.
      */
     private String associationId;
 
@@ -43,35 +44,35 @@ public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest
     private String networkAclId;
 
     /**
-     * The ID representing the current association between the original
-     * network ACL and the subnet.
+     * The ID of the current association between the original network ACL and
+     * the subnet.
      *
-     * @return The ID representing the current association between the original
-     *         network ACL and the subnet.
+     * @return The ID of the current association between the original network ACL and
+     *         the subnet.
      */
     public String getAssociationId() {
         return associationId;
     }
     
     /**
-     * The ID representing the current association between the original
-     * network ACL and the subnet.
+     * The ID of the current association between the original network ACL and
+     * the subnet.
      *
-     * @param associationId The ID representing the current association between the original
-     *         network ACL and the subnet.
+     * @param associationId The ID of the current association between the original network ACL and
+     *         the subnet.
      */
     public void setAssociationId(String associationId) {
         this.associationId = associationId;
     }
     
     /**
-     * The ID representing the current association between the original
-     * network ACL and the subnet.
+     * The ID of the current association between the original network ACL and
+     * the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param associationId The ID representing the current association between the original
-     *         network ACL and the subnet.
+     * @param associationId The ID of the current association between the original network ACL and
+     *         the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

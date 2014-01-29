@@ -18,14 +18,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the details of a single SQS message along with a <code>Id</code> .
+ * Contains the details of a single Amazon SQS message along with a <code>Id</code> .
  * </p>
  */
 public class SendMessageBatchRequestEntry implements Serializable {
 
     /**
      * An identifier for the message in this batch. This is used to
-     * communicate the result. Note that the the <code>Id</code>s of a batch
+     * communicate the result. Note that the <code>Id</code>s of a batch
      * request need to be unique within the request.
      */
     private String id;
@@ -52,7 +52,7 @@ public class SendMessageBatchRequestEntry implements Serializable {
      * initialize any additional object members.
      * 
      * @param id An identifier for the message in this batch. This is used to
-     * communicate the result. Note that the the <code>Id</code>s of a batch
+     * communicate the result. Note that the <code>Id</code>s of a batch
      * request need to be unique within the request.
      * @param messageBody Body of the message.
      */
@@ -63,11 +63,11 @@ public class SendMessageBatchRequestEntry implements Serializable {
 
     /**
      * An identifier for the message in this batch. This is used to
-     * communicate the result. Note that the the <code>Id</code>s of a batch
+     * communicate the result. Note that the <code>Id</code>s of a batch
      * request need to be unique within the request.
      *
      * @return An identifier for the message in this batch. This is used to
-     *         communicate the result. Note that the the <code>Id</code>s of a batch
+     *         communicate the result. Note that the <code>Id</code>s of a batch
      *         request need to be unique within the request.
      */
     public String getId() {
@@ -76,11 +76,11 @@ public class SendMessageBatchRequestEntry implements Serializable {
     
     /**
      * An identifier for the message in this batch. This is used to
-     * communicate the result. Note that the the <code>Id</code>s of a batch
+     * communicate the result. Note that the <code>Id</code>s of a batch
      * request need to be unique within the request.
      *
      * @param id An identifier for the message in this batch. This is used to
-     *         communicate the result. Note that the the <code>Id</code>s of a batch
+     *         communicate the result. Note that the <code>Id</code>s of a batch
      *         request need to be unique within the request.
      */
     public void setId(String id) {
@@ -89,13 +89,13 @@ public class SendMessageBatchRequestEntry implements Serializable {
     
     /**
      * An identifier for the message in this batch. This is used to
-     * communicate the result. Note that the the <code>Id</code>s of a batch
+     * communicate the result. Note that the <code>Id</code>s of a batch
      * request need to be unique within the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id An identifier for the message in this batch. This is used to
-     *         communicate the result. Note that the the <code>Id</code>s of a batch
+     *         communicate the result. Note that the <code>Id</code>s of a batch
      *         request need to be unique within the request.
      *
      * @return A reference to this updated object so that method calls can be chained 

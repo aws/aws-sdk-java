@@ -36,6 +36,7 @@ import com.amazonaws.util.json.*;
 
 /**
  * Query Request Marshaller
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.QueryRequestMarshaller} instead.
  */
 @Deprecated
 public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>, QueryRequest> {

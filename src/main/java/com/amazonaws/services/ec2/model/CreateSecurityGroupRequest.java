@@ -23,13 +23,30 @@ import com.amazonaws.services.ec2.model.transform.CreateSecurityGroupRequestMars
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createSecurityGroup(CreateSecurityGroupRequest) CreateSecurityGroup operation}.
  * <p>
- * The CreateSecurityGroup operation creates a new security group.
+ * Creates a security group.
  * </p>
  * <p>
- * Every instance is launched in a security group. If no security group is specified during launch, the instances are launched in the default security
- * group. Instances within the same security group have unrestricted network access to each other. Instances will reject network access attempts from
- * other instances in a different security group. As the owner of instances you can grant or revoke specific permissions using the
- * AuthorizeSecurityGroupIngress and RevokeSecurityGroupIngress operations.
+ * A security group is for use with instances either in the EC2-Classic platform or in a specific VPC. For more information, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic
+ * Compute Cloud User Guide</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC
+ * </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
+ * </p>
+ * <p>
+ * <b>IMPORTANT:</b> EC2-Classic: You can have up to 500 security groups. EC2-VPC: You can create up to 100 security groups per VPC.
+ * </p>
+ * <p>
+ * When you create a security group, you specify a friendly name of your choice. You can have a security group for use in EC2-Classic with the same name
+ * as a security group for use in a VPC. However, you can't have two security groups for use in EC2-Classic with the same name or two security groups for
+ * use in a VPC with the same name.
+ * </p>
+ * <p>
+ * You have a default security group for use in EC2-Classic and a default security group for use in your VPC. If you don't specify a security group when
+ * you launch an instance, the instance is launched into the appropriate default security group. A default security group includes a default rule that
+ * grants instances unrestricted network access to each other.
+ * </p>
+ * <p>
+ * You can add or remove rules from your security groups using AuthorizeSecurityGroupIngress, AuthorizeSecurityGroupEgress, RevokeSecurityGroupIngress,
+ * and RevokeSecurityGroupEgress.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSecurityGroup(CreateSecurityGroupRequest)
@@ -37,17 +54,20 @@ import com.amazonaws.services.ec2.model.transform.CreateSecurityGroupRequestMars
 public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateSecurityGroupRequest> {
 
     /**
-     * Name of the security group.
+     * The name of the security group. <p>Constraints: Up to 255 characters
+     * in length <p>Constraints for EC2-Classic: ASCII characters
+     * <p>Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=&;{}!$*
      */
     private String groupName;
 
     /**
-     * Description of the group. This is informational only.
+     * A description for the security group. This is informational only.
      */
     private String description;
 
     /**
-     * ID of the VPC.
+     * [EC2-VPC] The ID of the VPC.
      */
     private String vpcId;
 
@@ -62,9 +82,12 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param groupName Name of the security group.
-     * @param description Description of the group. This is informational
-     * only.
+     * @param groupName The name of the security group. <p>Constraints: Up to
+     * 255 characters in length <p>Constraints for EC2-Classic: ASCII
+     * characters <p>Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=&;{}!$*
+     * @param description A description for the security group. This is
+     * informational only.
      */
     public CreateSecurityGroupRequest(String groupName, String description) {
         setGroupName(groupName);
@@ -72,29 +95,47 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * Name of the security group.
+     * The name of the security group. <p>Constraints: Up to 255 characters
+     * in length <p>Constraints for EC2-Classic: ASCII characters
+     * <p>Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=&;{}!$*
      *
-     * @return Name of the security group.
+     * @return The name of the security group. <p>Constraints: Up to 255 characters
+     *         in length <p>Constraints for EC2-Classic: ASCII characters
+     *         <p>Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
+     *         ._-:/()#,@[]+=&;{}!$*
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * Name of the security group.
+     * The name of the security group. <p>Constraints: Up to 255 characters
+     * in length <p>Constraints for EC2-Classic: ASCII characters
+     * <p>Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=&;{}!$*
      *
-     * @param groupName Name of the security group.
+     * @param groupName The name of the security group. <p>Constraints: Up to 255 characters
+     *         in length <p>Constraints for EC2-Classic: ASCII characters
+     *         <p>Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
+     *         ._-:/()#,@[]+=&;{}!$*
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * Name of the security group.
+     * The name of the security group. <p>Constraints: Up to 255 characters
+     * in length <p>Constraints for EC2-Classic: ASCII characters
+     * <p>Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=&;{}!$*
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupName Name of the security group.
+     * @param groupName The name of the security group. <p>Constraints: Up to 255 characters
+     *         in length <p>Constraints for EC2-Classic: ASCII characters
+     *         <p>Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
+     *         ._-:/()#,@[]+=&;{}!$*
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -105,29 +146,29 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * Description of the group. This is informational only.
+     * A description for the security group. This is informational only.
      *
-     * @return Description of the group. This is informational only.
+     * @return A description for the security group. This is informational only.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Description of the group. This is informational only.
+     * A description for the security group. This is informational only.
      *
-     * @param description Description of the group. This is informational only.
+     * @param description A description for the security group. This is informational only.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Description of the group. This is informational only.
+     * A description for the security group. This is informational only.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description Description of the group. This is informational only.
+     * @param description A description for the security group. This is informational only.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -138,29 +179,29 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * ID of the VPC.
+     * [EC2-VPC] The ID of the VPC.
      *
-     * @return ID of the VPC.
+     * @return [EC2-VPC] The ID of the VPC.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * ID of the VPC.
+     * [EC2-VPC] The ID of the VPC.
      *
-     * @param vpcId ID of the VPC.
+     * @param vpcId [EC2-VPC] The ID of the VPC.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * ID of the VPC.
+     * [EC2-VPC] The ID of the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId ID of the VPC.
+     * @param vpcId [EC2-VPC] The ID of the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

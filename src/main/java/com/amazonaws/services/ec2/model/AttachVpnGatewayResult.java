@@ -17,41 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
  * 
- * </p>
  */
 public class AttachVpnGatewayResult implements Serializable {
 
     /**
-     * 
+     * Information about the attachment.
      */
     private VpcAttachment vpcAttachment;
 
     /**
-     * 
+     * Information about the attachment.
      *
-     * @return 
+     * @return Information about the attachment.
      */
     public VpcAttachment getVpcAttachment() {
         return vpcAttachment;
     }
     
     /**
-     * 
+     * Information about the attachment.
      *
-     * @param vpcAttachment 
+     * @param vpcAttachment Information about the attachment.
      */
     public void setVpcAttachment(VpcAttachment vpcAttachment) {
         this.vpcAttachment = vpcAttachment;
     }
     
     /**
-     * 
+     * Information about the attachment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcAttachment 
+     * @param vpcAttachment Information about the attachment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

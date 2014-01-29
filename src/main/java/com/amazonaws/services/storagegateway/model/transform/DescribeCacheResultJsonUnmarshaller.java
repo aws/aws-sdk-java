@@ -50,6 +50,7 @@ public class DescribeCacheResultJsonUnmarshaller implements Unmarshaller<Describ
                     describeCacheResult.setGatewayARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DiskIds", targetDepth)) {
+                    context.nextToken();
                     describeCacheResult.setDiskIds(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("CacheAllocatedInBytes", targetDepth)) {

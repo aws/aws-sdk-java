@@ -22,40 +22,54 @@ import com.amazonaws.services.ec2.model.transform.CancelConversionTaskRequestMar
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#cancelConversionTask(CancelConversionTaskRequest) CancelConversionTask operation}.
- * 
+ * <p>
+ * Cancels an active conversion task. The task can be the import of an instance or volume. The action removes all artifacts of the conversion, including
+ * a partially uploaded volume or instance. If the conversion is complete or is in the process of transferring the final disk image, the command fails
+ * and returns an exception.
+ * </p>
+ * <p>
+ * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line
+ * Tools to Import Your Virtual Machine to Amazon EC2 </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelConversionTask(CancelConversionTaskRequest)
  */
 public class CancelConversionTaskRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CancelConversionTaskRequest> {
 
+    /**
+     * The ID of the conversion task.
+     */
     private String conversionTaskId;
 
+    /**
+     * 
+     */
     private String reasonMessage;
 
     /**
-     * Returns the value of the ConversionTaskId property for this object.
+     * The ID of the conversion task.
      *
-     * @return The value of the ConversionTaskId property for this object.
+     * @return The ID of the conversion task.
      */
     public String getConversionTaskId() {
         return conversionTaskId;
     }
     
     /**
-     * Sets the value of the ConversionTaskId property for this object.
+     * The ID of the conversion task.
      *
-     * @param conversionTaskId The new value for the ConversionTaskId property for this object.
+     * @param conversionTaskId The ID of the conversion task.
      */
     public void setConversionTaskId(String conversionTaskId) {
         this.conversionTaskId = conversionTaskId;
     }
     
     /**
-     * Sets the value of the ConversionTaskId property for this object.
+     * The ID of the conversion task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param conversionTaskId The new value for the ConversionTaskId property for this object.
+     * @param conversionTaskId The ID of the conversion task.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -66,29 +80,29 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Returns the value of the ReasonMessage property for this object.
+     * 
      *
-     * @return The value of the ReasonMessage property for this object.
+     * @return 
      */
     public String getReasonMessage() {
         return reasonMessage;
     }
     
     /**
-     * Sets the value of the ReasonMessage property for this object.
+     * 
      *
-     * @param reasonMessage The new value for the ReasonMessage property for this object.
+     * @param reasonMessage 
      */
     public void setReasonMessage(String reasonMessage) {
         this.reasonMessage = reasonMessage;
     }
     
     /**
-     * Sets the value of the ReasonMessage property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reasonMessage The new value for the ReasonMessage property for this object.
+     * @param reasonMessage 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

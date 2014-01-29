@@ -17,6 +17,7 @@ import java.io.Serializable;
 
 /**
  * Put Item Result
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.PutItemResult} instead.
  */
 @Deprecated
 public class PutItemResult  implements Serializable  {

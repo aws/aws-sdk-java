@@ -22,18 +22,23 @@ import com.amazonaws.services.ec2.model.transform.DescribeAccountAttributesReque
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeAccountAttributes(DescribeAccountAttributesRequest) DescribeAccountAttributes operation}.
- * 
+ * <p>
+ * Describes the specified attribute of your AWS account.
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeAccountAttributes(DescribeAccountAttributesRequest)
  */
 public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeAccountAttributesRequest> {
 
+    /**
+     * One or more account attribute names.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> attributeNames;
 
     /**
-     * Returns the value of the AttributeNames property for this object.
+     * One or more account attribute names.
      *
-     * @return The value of the AttributeNames property for this object.
+     * @return One or more account attribute names.
      */
     public java.util.List<String> getAttributeNames() {
         if (attributeNames == null) {
@@ -44,9 +49,9 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * Sets the value of the AttributeNames property for this object.
+     * One or more account attribute names.
      *
-     * @param attributeNames The new value for the AttributeNames property for this object.
+     * @param attributeNames One or more account attribute names.
      */
     public void setAttributeNames(java.util.Collection<String> attributeNames) {
         if (attributeNames == null) {
@@ -59,11 +64,11 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * Sets the value of the AttributeNames property for this object.
+     * One or more account attribute names.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeNames The new value for the AttributeNames property for this object.
+     * @param attributeNames One or more account attribute names.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -77,11 +82,11 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * Sets the value of the AttributeNames property for this object.
+     * One or more account attribute names.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeNames The new value for the AttributeNames property for this object.
+     * @param attributeNames One or more account attribute names.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -99,11 +104,11 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * Sets the value of the AttributeNames property for this object.
+     * One or more account attribute names.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeNames The new value for the AttributeNames property for this object.
+     * @param attributeNames One or more account attribute names.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

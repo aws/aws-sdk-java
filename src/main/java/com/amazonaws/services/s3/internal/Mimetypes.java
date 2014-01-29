@@ -75,22 +75,24 @@ public class Mimetypes {
         if (mimetypes != null) return mimetypes;
         
         mimetypes = new Mimetypes();
-        InputStream mimetypesFile = mimetypes.getClass().getResourceAsStream("/mime.types");
-        if (mimetypesFile != null) {
-        	if (log.isDebugEnabled()) {
-        		log.debug("Loading mime types from file in the classpath: mime.types");
-        	}
+        InputStream is = mimetypes.getClass().getResourceAsStream("/mime.types");
+        if (is != null) {
+            if (log.isDebugEnabled()) {
+                log.debug("Loading mime types from file in the classpath: mime.types");
+            }
             try {
-                mimetypes.loadAndReplaceMimetypes(mimetypesFile);
+                mimetypes.loadAndReplaceMimetypes(is);
             } catch (IOException e) {
-            	if (log.isErrorEnabled()) {
-            		log.error("Failed to load mime types from file in the classpath: mime.types", e);
-            	}
+                if (log.isErrorEnabled()) {
+                    log.error("Failed to load mime types from file in the classpath: mime.types", e);
+                }
+            } finally {
+                try { is.close(); } catch (IOException ex) { log.debug("", ex); }
             }
         } else {
-        	if (log.isWarnEnabled()) {
-        		log.warn("Unable to find 'mime.types' file in classpath");
-        	}
+            if (log.isWarnEnabled()) {
+                log.warn("Unable to find 'mime.types' file in classpath");
+            }
         }
         return mimetypes;
     }

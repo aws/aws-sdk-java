@@ -20,6 +20,8 @@ import java.io.Serializable;
  * Specifies the attribute to update and how to perform the update. Possible values: <code>PUT</code> (default), <code>ADD</code> or <code>DELETE</code>
  * .
  * </p>
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.AttributeValueUpdate} instead.
  */
 @Deprecated
 public class AttributeValueUpdate  implements Serializable  {

@@ -17,38 +17,44 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Disk Image Volume Description
+ * 
  */
 public class DiskImageVolumeDescription implements Serializable {
 
+    /**
+     * The size of the volume.
+     */
     private Long size;
 
+    /**
+     * The volume identifier.
+     */
     private String id;
 
     /**
-     * Returns the value of the Size property for this object.
+     * The size of the volume.
      *
-     * @return The value of the Size property for this object.
+     * @return The size of the volume.
      */
     public Long getSize() {
         return size;
     }
     
     /**
-     * Sets the value of the Size property for this object.
+     * The size of the volume.
      *
-     * @param size The new value for the Size property for this object.
+     * @param size The size of the volume.
      */
     public void setSize(Long size) {
         this.size = size;
     }
     
     /**
-     * Sets the value of the Size property for this object.
+     * The size of the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param size The new value for the Size property for this object.
+     * @param size The size of the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -59,29 +65,29 @@ public class DiskImageVolumeDescription implements Serializable {
     }
 
     /**
-     * Returns the value of the Id property for this object.
+     * The volume identifier.
      *
-     * @return The value of the Id property for this object.
+     * @return The volume identifier.
      */
     public String getId() {
         return id;
     }
     
     /**
-     * Sets the value of the Id property for this object.
+     * The volume identifier.
      *
-     * @param id The new value for the Id property for this object.
+     * @param id The volume identifier.
      */
     public void setId(String id) {
         this.id = id;
     }
     
     /**
-     * Sets the value of the Id property for this object.
+     * The volume identifier.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param id The new value for the Id property for this object.
+     * @param id The volume identifier.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

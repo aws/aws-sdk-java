@@ -23,8 +23,8 @@ import com.amazonaws.services.ec2.model.transform.DeleteDhcpOptionsRequestMarsha
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteDhcpOptions(DeleteDhcpOptionsRequest) DeleteDhcpOptions operation}.
  * <p>
- * Deletes a set of DHCP options that you specify. Amazon VPC returns an error if the set of options you specify is currently associated with a VPC. You
- * can disassociate the set of options by associating either a new set of options or the default options with the VPC.
+ * Deletes the specified set of DHCP options. You must disassociate the set of DHCP options before you can delete it. You can disassociate the set of
+ * DHCP options by associating either a new set of options or the default set of options with the VPC.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteDhcpOptions(DeleteDhcpOptionsRequest)
@@ -32,7 +32,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteDhcpOptionsRequestMarsha
 public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteDhcpOptionsRequest> {
 
     /**
-     * The ID of the DHCP options set to delete.
+     * The ID of the DHCP options set.
      */
     private String dhcpOptionsId;
 
@@ -47,36 +47,36 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest implements
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dhcpOptionsId The ID of the DHCP options set to delete.
+     * @param dhcpOptionsId The ID of the DHCP options set.
      */
     public DeleteDhcpOptionsRequest(String dhcpOptionsId) {
         setDhcpOptionsId(dhcpOptionsId);
     }
 
     /**
-     * The ID of the DHCP options set to delete.
+     * The ID of the DHCP options set.
      *
-     * @return The ID of the DHCP options set to delete.
+     * @return The ID of the DHCP options set.
      */
     public String getDhcpOptionsId() {
         return dhcpOptionsId;
     }
     
     /**
-     * The ID of the DHCP options set to delete.
+     * The ID of the DHCP options set.
      *
-     * @param dhcpOptionsId The ID of the DHCP options set to delete.
+     * @param dhcpOptionsId The ID of the DHCP options set.
      */
     public void setDhcpOptionsId(String dhcpOptionsId) {
         this.dhcpOptionsId = dhcpOptionsId;
     }
     
     /**
-     * The ID of the DHCP options set to delete.
+     * The ID of the DHCP options set.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpOptionsId The ID of the DHCP options set to delete.
+     * @param dhcpOptionsId The ID of the DHCP options set.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

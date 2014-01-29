@@ -18,45 +18,45 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The DhcpConfiguration data type
+ * Describes a DHCP configuration option.
  * </p>
  */
 public class DhcpConfiguration implements Serializable {
 
     /**
-     * Contains the name of a DHCP option.
+     * The name of a DHCP option.
      */
     private String key;
 
     /**
-     * Contains a set of values for a DHCP option.
+     * One or more values for the DHCP option.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> values;
 
     /**
-     * Contains the name of a DHCP option.
+     * The name of a DHCP option.
      *
-     * @return Contains the name of a DHCP option.
+     * @return The name of a DHCP option.
      */
     public String getKey() {
         return key;
     }
     
     /**
-     * Contains the name of a DHCP option.
+     * The name of a DHCP option.
      *
-     * @param key Contains the name of a DHCP option.
+     * @param key The name of a DHCP option.
      */
     public void setKey(String key) {
         this.key = key;
     }
     
     /**
-     * Contains the name of a DHCP option.
+     * The name of a DHCP option.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param key Contains the name of a DHCP option.
+     * @param key The name of a DHCP option.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -67,9 +67,9 @@ public class DhcpConfiguration implements Serializable {
     }
 
     /**
-     * Contains a set of values for a DHCP option.
+     * One or more values for the DHCP option.
      *
-     * @return Contains a set of values for a DHCP option.
+     * @return One or more values for the DHCP option.
      */
     public java.util.List<String> getValues() {
         if (values == null) {
@@ -80,9 +80,9 @@ public class DhcpConfiguration implements Serializable {
     }
     
     /**
-     * Contains a set of values for a DHCP option.
+     * One or more values for the DHCP option.
      *
-     * @param values Contains a set of values for a DHCP option.
+     * @param values One or more values for the DHCP option.
      */
     public void setValues(java.util.Collection<String> values) {
         if (values == null) {
@@ -95,11 +95,11 @@ public class DhcpConfiguration implements Serializable {
     }
     
     /**
-     * Contains a set of values for a DHCP option.
+     * One or more values for the DHCP option.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param values Contains a set of values for a DHCP option.
+     * @param values One or more values for the DHCP option.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -113,11 +113,11 @@ public class DhcpConfiguration implements Serializable {
     }
     
     /**
-     * Contains a set of values for a DHCP option.
+     * One or more values for the DHCP option.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param values Contains a set of values for a DHCP option.
+     * @param values One or more values for the DHCP option.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

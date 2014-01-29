@@ -17,27 +17,50 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Spot Price
+ * <p>
+ * Describes the Spot Price.
+ * </p>
  */
 public class SpotPrice implements Serializable {
 
+    /**
+     * The instance type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     */
     private String instanceType;
 
+    /**
+     * A general description of the AMI.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
+     */
     private String productDescription;
 
+    /**
+     * The maximum price you will pay to launch one or more Spot Instances.
+     */
     private String spotPrice;
 
+    /**
+     * The date and time the request was created.
+     */
     private java.util.Date timestamp;
 
+    /**
+     * The Availability Zone.
+     */
     private String availabilityZone;
 
     /**
-     * Returns the value of the InstanceType property for this object.
+     * The instance type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @return The value of the InstanceType property for this object.
+     * @return The instance type.
      *
      * @see InstanceType
      */
@@ -46,12 +69,12 @@ public class SpotPrice implements Serializable {
     }
     
     /**
-     * Sets the value of the InstanceType property for this object.
+     * The instance type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @param instanceType The new value for the InstanceType property for this object.
+     * @param instanceType The instance type.
      *
      * @see InstanceType
      */
@@ -60,14 +83,14 @@ public class SpotPrice implements Serializable {
     }
     
     /**
-     * Sets the value of the InstanceType property for this object.
+     * The instance type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @param instanceType The new value for the InstanceType property for this object.
+     * @param instanceType The instance type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -80,12 +103,12 @@ public class SpotPrice implements Serializable {
     }
 
     /**
-     * Sets the value of the InstanceType property for this object.
+     * The instance type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @param instanceType The new value for the InstanceType property for this object.
+     * @param instanceType The instance type.
      *
      * @see InstanceType
      */
@@ -94,14 +117,14 @@ public class SpotPrice implements Serializable {
     }
     
     /**
-     * Sets the value of the InstanceType property for this object.
+     * The instance type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge
      *
-     * @param instanceType The new value for the InstanceType property for this object.
+     * @param instanceType The instance type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -114,12 +137,12 @@ public class SpotPrice implements Serializable {
     }
 
     /**
-     * Returns the value of the ProductDescription property for this object.
+     * A general description of the AMI.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @return The value of the ProductDescription property for this object.
+     * @return A general description of the AMI.
      *
      * @see RIProductDescription
      */
@@ -128,12 +151,12 @@ public class SpotPrice implements Serializable {
     }
     
     /**
-     * Sets the value of the ProductDescription property for this object.
+     * A general description of the AMI.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @param productDescription The new value for the ProductDescription property for this object.
+     * @param productDescription A general description of the AMI.
      *
      * @see RIProductDescription
      */
@@ -142,14 +165,14 @@ public class SpotPrice implements Serializable {
     }
     
     /**
-     * Sets the value of the ProductDescription property for this object.
+     * A general description of the AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @param productDescription The new value for the ProductDescription property for this object.
+     * @param productDescription A general description of the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -162,12 +185,12 @@ public class SpotPrice implements Serializable {
     }
 
     /**
-     * Sets the value of the ProductDescription property for this object.
+     * A general description of the AMI.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @param productDescription The new value for the ProductDescription property for this object.
+     * @param productDescription A general description of the AMI.
      *
      * @see RIProductDescription
      */
@@ -176,14 +199,14 @@ public class SpotPrice implements Serializable {
     }
     
     /**
-     * Sets the value of the ProductDescription property for this object.
+     * A general description of the AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @param productDescription The new value for the ProductDescription property for this object.
+     * @param productDescription A general description of the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -196,29 +219,29 @@ public class SpotPrice implements Serializable {
     }
 
     /**
-     * Returns the value of the SpotPrice property for this object.
+     * The maximum price you will pay to launch one or more Spot Instances.
      *
-     * @return The value of the SpotPrice property for this object.
+     * @return The maximum price you will pay to launch one or more Spot Instances.
      */
     public String getSpotPrice() {
         return spotPrice;
     }
     
     /**
-     * Sets the value of the SpotPrice property for this object.
+     * The maximum price you will pay to launch one or more Spot Instances.
      *
-     * @param spotPrice The new value for the SpotPrice property for this object.
+     * @param spotPrice The maximum price you will pay to launch one or more Spot Instances.
      */
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
     }
     
     /**
-     * Sets the value of the SpotPrice property for this object.
+     * The maximum price you will pay to launch one or more Spot Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotPrice The new value for the SpotPrice property for this object.
+     * @param spotPrice The maximum price you will pay to launch one or more Spot Instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -229,29 +252,29 @@ public class SpotPrice implements Serializable {
     }
 
     /**
-     * Returns the value of the Timestamp property for this object.
+     * The date and time the request was created.
      *
-     * @return The value of the Timestamp property for this object.
+     * @return The date and time the request was created.
      */
     public java.util.Date getTimestamp() {
         return timestamp;
     }
     
     /**
-     * Sets the value of the Timestamp property for this object.
+     * The date and time the request was created.
      *
-     * @param timestamp The new value for the Timestamp property for this object.
+     * @param timestamp The date and time the request was created.
      */
     public void setTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
     }
     
     /**
-     * Sets the value of the Timestamp property for this object.
+     * The date and time the request was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param timestamp The new value for the Timestamp property for this object.
+     * @param timestamp The date and time the request was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -262,29 +285,29 @@ public class SpotPrice implements Serializable {
     }
 
     /**
-     * Returns the value of the AvailabilityZone property for this object.
+     * The Availability Zone.
      *
-     * @return The value of the AvailabilityZone property for this object.
+     * @return The Availability Zone.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * Sets the value of the AvailabilityZone property for this object.
+     * The Availability Zone.
      *
-     * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     * @param availabilityZone The Availability Zone.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * Sets the value of the AvailabilityZone property for this object.
+     * The Availability Zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     * @param availabilityZone The Availability Zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

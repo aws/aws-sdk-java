@@ -23,39 +23,42 @@ import com.amazonaws.services.ec2.model.transform.EnableVolumeIORequestMarshalle
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#enableVolumeIO(EnableVolumeIORequest) EnableVolumeIO operation}.
  * <p>
- * Enable IO on the volume after an event has occured.
+ * Enables I/O operations for a volume that had I/O operations disabled because the data on the volume was potentially inconsistent.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#enableVolumeIO(EnableVolumeIORequest)
  */
 public class EnableVolumeIORequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<EnableVolumeIORequest> {
 
+    /**
+     * The ID of the volume.
+     */
     private String volumeId;
 
     /**
-     * Returns the value of the VolumeId property for this object.
+     * The ID of the volume.
      *
-     * @return The value of the VolumeId property for this object.
+     * @return The ID of the volume.
      */
     public String getVolumeId() {
         return volumeId;
     }
     
     /**
-     * Sets the value of the VolumeId property for this object.
+     * The ID of the volume.
      *
-     * @param volumeId The new value for the VolumeId property for this object.
+     * @param volumeId The ID of the volume.
      */
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
     
     /**
-     * Sets the value of the VolumeId property for this object.
+     * The ID of the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeId The new value for the VolumeId property for this object.
+     * @param volumeId The ID of the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

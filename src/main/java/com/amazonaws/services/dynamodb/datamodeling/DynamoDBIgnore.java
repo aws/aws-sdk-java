@@ -26,6 +26,8 @@ import java.lang.annotation.Target;
  * <p>
  * All getter methods not marked with this annotation are assumed to be modeled
  * properties and included in any save() requests.
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBIgnore} instead.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)

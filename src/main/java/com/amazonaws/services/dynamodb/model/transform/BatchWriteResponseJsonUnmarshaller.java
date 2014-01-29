@@ -27,6 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * Batch Write Response JSON Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.BatchWriteResponseJsonUnmarshaller} instead.
  */
 @Deprecated
 public class BatchWriteResponseJsonUnmarshaller implements Unmarshaller<BatchWriteResponse, JsonUnmarshallerContext> {

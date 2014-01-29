@@ -17,23 +17,41 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Disk Image Detail
+ * 
  */
 public class DiskImageDetail implements Serializable {
 
+    /**
+     * The disk image format.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>VMDK, RAW, VHD
+     */
     private String format;
 
+    /**
+     * 
+     */
     private Long bytes;
 
+    /**
+     * A presigned URL for the import manifest stored in Amazon S3. For
+     * information about creating a presigned URL for an Amazon S3 object,
+     * read the "Query String Request Authentication Alternative" section of
+     * the <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
+     * REST Requests</a> topic in the <i>Amazon Simple Storage Service
+     * Developer Guide</i>.
+     */
     private String importManifestUrl;
 
     /**
-     * Returns the value of the Format property for this object.
+     * The disk image format.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
-     * @return The value of the Format property for this object.
+     * @return The disk image format.
      *
      * @see DiskImageFormat
      */
@@ -42,12 +60,12 @@ public class DiskImageDetail implements Serializable {
     }
     
     /**
-     * Sets the value of the Format property for this object.
+     * The disk image format.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
-     * @param format The new value for the Format property for this object.
+     * @param format The disk image format.
      *
      * @see DiskImageFormat
      */
@@ -56,14 +74,14 @@ public class DiskImageDetail implements Serializable {
     }
     
     /**
-     * Sets the value of the Format property for this object.
+     * The disk image format.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
-     * @param format The new value for the Format property for this object.
+     * @param format The disk image format.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -76,12 +94,12 @@ public class DiskImageDetail implements Serializable {
     }
 
     /**
-     * Sets the value of the Format property for this object.
+     * The disk image format.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
-     * @param format The new value for the Format property for this object.
+     * @param format The disk image format.
      *
      * @see DiskImageFormat
      */
@@ -90,14 +108,14 @@ public class DiskImageDetail implements Serializable {
     }
     
     /**
-     * Sets the value of the Format property for this object.
+     * The disk image format.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
-     * @param format The new value for the Format property for this object.
+     * @param format The disk image format.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -110,29 +128,29 @@ public class DiskImageDetail implements Serializable {
     }
 
     /**
-     * Returns the value of the Bytes property for this object.
+     * 
      *
-     * @return The value of the Bytes property for this object.
+     * @return 
      */
     public Long getBytes() {
         return bytes;
     }
     
     /**
-     * Sets the value of the Bytes property for this object.
+     * 
      *
-     * @param bytes The new value for the Bytes property for this object.
+     * @param bytes 
      */
     public void setBytes(Long bytes) {
         this.bytes = bytes;
     }
     
     /**
-     * Sets the value of the Bytes property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bytes The new value for the Bytes property for this object.
+     * @param bytes 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -143,29 +161,65 @@ public class DiskImageDetail implements Serializable {
     }
 
     /**
-     * Returns the value of the ImportManifestUrl property for this object.
+     * A presigned URL for the import manifest stored in Amazon S3. For
+     * information about creating a presigned URL for an Amazon S3 object,
+     * read the "Query String Request Authentication Alternative" section of
+     * the <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
+     * REST Requests</a> topic in the <i>Amazon Simple Storage Service
+     * Developer Guide</i>.
      *
-     * @return The value of the ImportManifestUrl property for this object.
+     * @return A presigned URL for the import manifest stored in Amazon S3. For
+     *         information about creating a presigned URL for an Amazon S3 object,
+     *         read the "Query String Request Authentication Alternative" section of
+     *         the <a
+     *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
+     *         REST Requests</a> topic in the <i>Amazon Simple Storage Service
+     *         Developer Guide</i>.
      */
     public String getImportManifestUrl() {
         return importManifestUrl;
     }
     
     /**
-     * Sets the value of the ImportManifestUrl property for this object.
+     * A presigned URL for the import manifest stored in Amazon S3. For
+     * information about creating a presigned URL for an Amazon S3 object,
+     * read the "Query String Request Authentication Alternative" section of
+     * the <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
+     * REST Requests</a> topic in the <i>Amazon Simple Storage Service
+     * Developer Guide</i>.
      *
-     * @param importManifestUrl The new value for the ImportManifestUrl property for this object.
+     * @param importManifestUrl A presigned URL for the import manifest stored in Amazon S3. For
+     *         information about creating a presigned URL for an Amazon S3 object,
+     *         read the "Query String Request Authentication Alternative" section of
+     *         the <a
+     *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
+     *         REST Requests</a> topic in the <i>Amazon Simple Storage Service
+     *         Developer Guide</i>.
      */
     public void setImportManifestUrl(String importManifestUrl) {
         this.importManifestUrl = importManifestUrl;
     }
     
     /**
-     * Sets the value of the ImportManifestUrl property for this object.
+     * A presigned URL for the import manifest stored in Amazon S3. For
+     * information about creating a presigned URL for an Amazon S3 object,
+     * read the "Query String Request Authentication Alternative" section of
+     * the <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
+     * REST Requests</a> topic in the <i>Amazon Simple Storage Service
+     * Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param importManifestUrl The new value for the ImportManifestUrl property for this object.
+     * @param importManifestUrl A presigned URL for the import manifest stored in Amazon S3. For
+     *         information about creating a presigned URL for an Amazon S3 object,
+     *         read the "Query String Request Authentication Alternative" section of
+     *         the <a
+     *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
+     *         REST Requests</a> topic in the <i>Amazon Simple Storage Service
+     *         Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

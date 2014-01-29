@@ -62,9 +62,11 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                     instance.setStackId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LayerIds", targetDepth)) {
+                    context.nextToken();
                     instance.setLayerIds(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
+                    context.nextToken();
                     instance.setSecurityGroupIds(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {

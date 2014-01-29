@@ -24,6 +24,8 @@ import java.io.Serializable;
  * <code>NumberSet</code> ,
  * <code>BinarySet</code> .
  * </p>
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.AttributeValue} instead.
  */
 @Deprecated
 public class AttributeValue  implements Serializable  {

@@ -46,6 +46,7 @@ public class DescribeObjectsResultJsonUnmarshaller implements Unmarshaller<Descr
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pipelineObjects", targetDepth)) {
+                    context.nextToken();
                     describeObjectsResult.setPipelineObjects(new ListUnmarshaller<PipelineObject>(PipelineObjectJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("marker", targetDepth)) {

@@ -16,6 +16,7 @@ package com.amazonaws.services.dynamodb.model;
 
 /**
  * Table Status
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.TableStatus} instead.
  */
 @Deprecated
 public enum TableStatus {

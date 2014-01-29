@@ -23,8 +23,12 @@ import com.amazonaws.services.ec2.model.transform.CreateTagsRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createTags(CreateTagsRequest) CreateTags operation}.
  * <p>
- * Adds or overwrites tags for the specified resources. Each resource can have a maximum of 10 tags. Each tag consists of a key-value pair. Tag keys
- * must be unique per resource.
+ * Adds or overwrites one or more tags for the specified EC2 resource or resources. Each resource can have a maximum of 10 tags. Each tag consists of a
+ * key and optional value. Tag keys must be unique per resource.
+ * </p>
+ * <p>
+ * For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a> in the
+ * <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createTags(CreateTagsRequest)
@@ -32,14 +36,14 @@ import com.amazonaws.services.ec2.model.transform.CreateTagsRequestMarshaller;
 public class CreateTagsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateTagsRequest> {
 
     /**
-     * One or more IDs of resources to tag. This could be the ID of an AMI,
-     * an instance, an EBS volume, or snapshot, etc.
+     * The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> resources;
 
     /**
-     * The tags to add or overwrite for the specified resources. Each tag
-     * item consists of a key-value pair.
+     * One or more tags. The <code>value</code> parameter is required, but if
+     * you don't want the tag to have a value, specify the parameter with no
+     * value, and we set the value to an empty string.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
@@ -54,10 +58,11 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param resources One or more IDs of resources to tag. This could be
-     * the ID of an AMI, an instance, an EBS volume, or snapshot, etc.
-     * @param tags The tags to add or overwrite for the specified resources.
-     * Each tag item consists of a key-value pair.
+     * @param resources The IDs of one or more resources to tag. For example,
+     * ami-1a2b3c4d.
+     * @param tags One or more tags. The <code>value</code> parameter is
+     * required, but if you don't want the tag to have a value, specify the
+     * parameter with no value, and we set the value to an empty string.
      */
     public CreateTagsRequest(java.util.List<String> resources, java.util.List<Tag> tags) {
         setResources(resources);
@@ -65,11 +70,9 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * One or more IDs of resources to tag. This could be the ID of an AMI,
-     * an instance, an EBS volume, or snapshot, etc.
+     * The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      *
-     * @return One or more IDs of resources to tag. This could be the ID of an AMI,
-     *         an instance, an EBS volume, or snapshot, etc.
+     * @return The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      */
     public java.util.List<String> getResources() {
         if (resources == null) {
@@ -80,11 +83,9 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * One or more IDs of resources to tag. This could be the ID of an AMI,
-     * an instance, an EBS volume, or snapshot, etc.
+     * The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      *
-     * @param resources One or more IDs of resources to tag. This could be the ID of an AMI,
-     *         an instance, an EBS volume, or snapshot, etc.
+     * @param resources The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      */
     public void setResources(java.util.Collection<String> resources) {
         if (resources == null) {
@@ -97,13 +98,11 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * One or more IDs of resources to tag. This could be the ID of an AMI,
-     * an instance, an EBS volume, or snapshot, etc.
+     * The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resources One or more IDs of resources to tag. This could be the ID of an AMI,
-     *         an instance, an EBS volume, or snapshot, etc.
+     * @param resources The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -117,13 +116,11 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * One or more IDs of resources to tag. This could be the ID of an AMI,
-     * an instance, an EBS volume, or snapshot, etc.
+     * The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resources One or more IDs of resources to tag. This could be the ID of an AMI,
-     *         an instance, an EBS volume, or snapshot, etc.
+     * @param resources The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -141,11 +138,13 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * The tags to add or overwrite for the specified resources. Each tag
-     * item consists of a key-value pair.
+     * One or more tags. The <code>value</code> parameter is required, but if
+     * you don't want the tag to have a value, specify the parameter with no
+     * value, and we set the value to an empty string.
      *
-     * @return The tags to add or overwrite for the specified resources. Each tag
-     *         item consists of a key-value pair.
+     * @return One or more tags. The <code>value</code> parameter is required, but if
+     *         you don't want the tag to have a value, specify the parameter with no
+     *         value, and we set the value to an empty string.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
@@ -156,11 +155,13 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * The tags to add or overwrite for the specified resources. Each tag
-     * item consists of a key-value pair.
+     * One or more tags. The <code>value</code> parameter is required, but if
+     * you don't want the tag to have a value, specify the parameter with no
+     * value, and we set the value to an empty string.
      *
-     * @param tags The tags to add or overwrite for the specified resources. Each tag
-     *         item consists of a key-value pair.
+     * @param tags One or more tags. The <code>value</code> parameter is required, but if
+     *         you don't want the tag to have a value, specify the parameter with no
+     *         value, and we set the value to an empty string.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -173,13 +174,15 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * The tags to add or overwrite for the specified resources. Each tag
-     * item consists of a key-value pair.
+     * One or more tags. The <code>value</code> parameter is required, but if
+     * you don't want the tag to have a value, specify the parameter with no
+     * value, and we set the value to an empty string.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags The tags to add or overwrite for the specified resources. Each tag
-     *         item consists of a key-value pair.
+     * @param tags One or more tags. The <code>value</code> parameter is required, but if
+     *         you don't want the tag to have a value, specify the parameter with no
+     *         value, and we set the value to an empty string.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -193,13 +196,15 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * The tags to add or overwrite for the specified resources. Each tag
-     * item consists of a key-value pair.
+     * One or more tags. The <code>value</code> parameter is required, but if
+     * you don't want the tag to have a value, specify the parameter with no
+     * value, and we set the value to an empty string.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags The tags to add or overwrite for the specified resources. Each tag
-     *         item consists of a key-value pair.
+     * @param tags One or more tags. The <code>value</code> parameter is required, but if
+     *         you don't want the tag to have a value, specify the parameter with no
+     *         value, and we set the value to an empty string.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

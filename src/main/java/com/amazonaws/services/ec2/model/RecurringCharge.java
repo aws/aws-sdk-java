@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a usage charge for Amazon EC2 resources that repeats on a schedule.
+ * Describes a recurring charge.
  * </p>
  */
 public class RecurringCharge implements Serializable {

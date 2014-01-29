@@ -129,8 +129,13 @@ public class JsonPolicyReader {
                     statement.getPrincipals().add(
                             new Principal(Services.fromString(serviceId)));
                 } else if (field.equalsIgnoreCase("Federated")) {
-                    statement.getPrincipals().add(
-                            new Principal(WebIdentityProviders.fromString(serviceId)));
+                    if (WebIdentityProviders.fromString(serviceId) != null) {
+                        statement.getPrincipals().add(
+                                new Principal(WebIdentityProviders.fromString(serviceId)));
+                    } else {
+                        statement.getPrincipals().add(
+                                new Principal("Federated", serviceId));
+                    }
                 }
             } else {
                 JSONArray jPrincipal = jPrincipals.getJSONArray(field);

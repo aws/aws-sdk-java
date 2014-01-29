@@ -17,38 +17,49 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Internet Gateway Attachment
+ * <p>
+ * Describes the attachment of a VPC to an Internet gateway.
+ * </p>
  */
 public class InternetGatewayAttachment implements Serializable {
 
+    /**
+     * The ID of the VPC.
+     */
     private String vpcId;
 
+    /**
+     * The current state of the attachment.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
+     */
     private String state;
 
     /**
-     * Returns the value of the VpcId property for this object.
+     * The ID of the VPC.
      *
-     * @return The value of the VpcId property for this object.
+     * @return The ID of the VPC.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * The ID of the VPC.
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId The ID of the VPC.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * The ID of the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId The ID of the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -59,12 +70,12 @@ public class InternetGatewayAttachment implements Serializable {
     }
 
     /**
-     * Returns the value of the State property for this object.
+     * The current state of the attachment.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @return The value of the State property for this object.
+     * @return The current state of the attachment.
      *
      * @see AttachmentStatus
      */
@@ -73,12 +84,12 @@ public class InternetGatewayAttachment implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The current state of the attachment.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param state The new value for the State property for this object.
+     * @param state The current state of the attachment.
      *
      * @see AttachmentStatus
      */
@@ -87,14 +98,14 @@ public class InternetGatewayAttachment implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The current state of the attachment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param state The new value for the State property for this object.
+     * @param state The current state of the attachment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -107,12 +118,12 @@ public class InternetGatewayAttachment implements Serializable {
     }
 
     /**
-     * Sets the value of the State property for this object.
+     * The current state of the attachment.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param state The new value for the State property for this object.
+     * @param state The current state of the attachment.
      *
      * @see AttachmentStatus
      */
@@ -121,14 +132,14 @@ public class InternetGatewayAttachment implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The current state of the attachment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param state The new value for the State property for this object.
+     * @param state The current state of the attachment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

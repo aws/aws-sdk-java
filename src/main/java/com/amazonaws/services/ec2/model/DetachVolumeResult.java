@@ -17,48 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of detaching an EBS volume from an instance.
- * </p>
+ * 
  */
 public class DetachVolumeResult implements Serializable {
 
     /**
-     * The updated EBS volume attachment information after trying to detach
-     * the volume from the specified instance.
+     * 
      */
     private VolumeAttachment attachment;
 
     /**
-     * The updated EBS volume attachment information after trying to detach
-     * the volume from the specified instance.
+     * 
      *
-     * @return The updated EBS volume attachment information after trying to detach
-     *         the volume from the specified instance.
+     * @return 
      */
     public VolumeAttachment getAttachment() {
         return attachment;
     }
     
     /**
-     * The updated EBS volume attachment information after trying to detach
-     * the volume from the specified instance.
+     * 
      *
-     * @param attachment The updated EBS volume attachment information after trying to detach
-     *         the volume from the specified instance.
+     * @param attachment 
      */
     public void setAttachment(VolumeAttachment attachment) {
         this.attachment = attachment;
     }
     
     /**
-     * The updated EBS volume attachment information after trying to detach
-     * the volume from the specified instance.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachment The updated EBS volume attachment information after trying to detach
-     *         the volume from the specified instance.
+     * @param attachment 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

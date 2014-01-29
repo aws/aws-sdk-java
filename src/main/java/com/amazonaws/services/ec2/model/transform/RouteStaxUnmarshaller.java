@@ -67,6 +67,10 @@ public class RouteStaxUnmarshaller implements Unmarshaller<Route, StaxUnmarshall
                     route.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("origin", targetDepth)) {
+                    route.setOrigin(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return route;

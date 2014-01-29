@@ -20,7 +20,8 @@ import com.amazonaws.AmazonServiceException;
  * <p>
  * This exception is thrown when the resource which is being attempted to be changed is in use.
  * </p>
- */        
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException} instead.
+ */
 @Deprecated
 public class ResourceNotFoundException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

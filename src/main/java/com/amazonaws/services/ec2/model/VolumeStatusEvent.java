@@ -17,44 +17,61 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Volume Status Event
+ * <p>
+ * Describes a volume status event.
+ * </p>
  */
 public class VolumeStatusEvent implements Serializable {
 
+    /**
+     * The type of this event.
+     */
     private String eventType;
 
+    /**
+     * A description of the event.
+     */
     private String description;
 
+    /**
+     * The earliest start time of the event.
+     */
     private java.util.Date notBefore;
 
+    /**
+     * The latest end time of the event.
+     */
     private java.util.Date notAfter;
 
+    /**
+     * The ID of this event.
+     */
     private String eventId;
 
     /**
-     * Returns the value of the EventType property for this object.
+     * The type of this event.
      *
-     * @return The value of the EventType property for this object.
+     * @return The type of this event.
      */
     public String getEventType() {
         return eventType;
     }
     
     /**
-     * Sets the value of the EventType property for this object.
+     * The type of this event.
      *
-     * @param eventType The new value for the EventType property for this object.
+     * @param eventType The type of this event.
      */
     public void setEventType(String eventType) {
         this.eventType = eventType;
     }
     
     /**
-     * Sets the value of the EventType property for this object.
+     * The type of this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eventType The new value for the EventType property for this object.
+     * @param eventType The type of this event.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -65,29 +82,29 @@ public class VolumeStatusEvent implements Serializable {
     }
 
     /**
-     * Returns the value of the Description property for this object.
+     * A description of the event.
      *
-     * @return The value of the Description property for this object.
+     * @return A description of the event.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * A description of the event.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description A description of the event.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * A description of the event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description A description of the event.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -98,29 +115,29 @@ public class VolumeStatusEvent implements Serializable {
     }
 
     /**
-     * Returns the value of the NotBefore property for this object.
+     * The earliest start time of the event.
      *
-     * @return The value of the NotBefore property for this object.
+     * @return The earliest start time of the event.
      */
     public java.util.Date getNotBefore() {
         return notBefore;
     }
     
     /**
-     * Sets the value of the NotBefore property for this object.
+     * The earliest start time of the event.
      *
-     * @param notBefore The new value for the NotBefore property for this object.
+     * @param notBefore The earliest start time of the event.
      */
     public void setNotBefore(java.util.Date notBefore) {
         this.notBefore = notBefore;
     }
     
     /**
-     * Sets the value of the NotBefore property for this object.
+     * The earliest start time of the event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param notBefore The new value for the NotBefore property for this object.
+     * @param notBefore The earliest start time of the event.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -131,29 +148,29 @@ public class VolumeStatusEvent implements Serializable {
     }
 
     /**
-     * Returns the value of the NotAfter property for this object.
+     * The latest end time of the event.
      *
-     * @return The value of the NotAfter property for this object.
+     * @return The latest end time of the event.
      */
     public java.util.Date getNotAfter() {
         return notAfter;
     }
     
     /**
-     * Sets the value of the NotAfter property for this object.
+     * The latest end time of the event.
      *
-     * @param notAfter The new value for the NotAfter property for this object.
+     * @param notAfter The latest end time of the event.
      */
     public void setNotAfter(java.util.Date notAfter) {
         this.notAfter = notAfter;
     }
     
     /**
-     * Sets the value of the NotAfter property for this object.
+     * The latest end time of the event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param notAfter The new value for the NotAfter property for this object.
+     * @param notAfter The latest end time of the event.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -164,29 +181,29 @@ public class VolumeStatusEvent implements Serializable {
     }
 
     /**
-     * Returns the value of the EventId property for this object.
+     * The ID of this event.
      *
-     * @return The value of the EventId property for this object.
+     * @return The ID of this event.
      */
     public String getEventId() {
         return eventId;
     }
     
     /**
-     * Sets the value of the EventId property for this object.
+     * The ID of this event.
      *
-     * @param eventId The new value for the EventId property for this object.
+     * @param eventId The ID of this event.
      */
     public void setEventId(String eventId) {
         this.eventId = eventId;
     }
     
     /**
-     * Sets the value of the EventId property for this object.
+     * The ID of this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eventId The new value for the EventId property for this object.
+     * @param eventId The ID of this event.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

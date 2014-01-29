@@ -23,11 +23,23 @@ import com.amazonaws.services.ec2.model.transform.GetConsoleOutputRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#getConsoleOutput(GetConsoleOutputRequest) GetConsoleOutput operation}.
  * <p>
- * The GetConsoleOutput operation retrieves console output for the specified instance.
+ * Gets the console output for the specified instance.
  * </p>
  * <p>
- * Instance console output is buffered and posted shortly after instance boot, reboot, and termination. Amazon EC2 preserves the most recent 64 KB
- * output which will be available for at least one hour after the most recent post.
+ * Instances do not have a physical monitor through which you can view their console output. They also lack physical controls that allow you to power up,
+ * reboot, or shut them down. To allow these actions, we provide them through the Amazon EC2 API and command line interface.
+ * </p>
+ * <p>
+ * Instance console output is buffered and posted shortly after instance boot, reboot, and termination. Amazon EC2 preserves the most recent 64 KB output
+ * which is available for at least one hour after the most recent post.
+ * </p>
+ * <p>
+ * For Linux/Unix instances, the instance console output displays the exact console output that would normally be displayed on a physical monitor
+ * attached to a machine. This output is buffered because the instance produces it and then posts it to a store where the instance's owner can retrieve
+ * it.
+ * </p>
+ * <p>
+ * For Windows instances, the instance console output displays the last three system event log errors.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#getConsoleOutput(GetConsoleOutputRequest)
@@ -35,7 +47,7 @@ import com.amazonaws.services.ec2.model.transform.GetConsoleOutputRequestMarshal
 public class GetConsoleOutputRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<GetConsoleOutputRequest> {
 
     /**
-     * The ID of the instance for which you want console output.
+     * The ID of the instance.
      */
     private String instanceId;
 
@@ -50,37 +62,36 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest implements 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param instanceId The ID of the instance for which you want console
-     * output.
+     * @param instanceId The ID of the instance.
      */
     public GetConsoleOutputRequest(String instanceId) {
         setInstanceId(instanceId);
     }
 
     /**
-     * The ID of the instance for which you want console output.
+     * The ID of the instance.
      *
-     * @return The ID of the instance for which you want console output.
+     * @return The ID of the instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The ID of the instance for which you want console output.
+     * The ID of the instance.
      *
-     * @param instanceId The ID of the instance for which you want console output.
+     * @param instanceId The ID of the instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The ID of the instance for which you want console output.
+     * The ID of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The ID of the instance for which you want console output.
+     * @param instanceId The ID of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

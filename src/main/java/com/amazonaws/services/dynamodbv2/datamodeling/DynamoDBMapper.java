@@ -2273,7 +2273,7 @@ public class DynamoDBMapper {
      *            throws error if more than one conditions are applicable for the query.
      * @param rangeKeyConditions
      *            The range conditions specified by the user. We currently only
-     *            allows at most one range key condition.
+     *            allow at most one range key condition.
      */
     private void processKeyConditions(Class<?> clazz,
                                       QueryRequest queryRequest,
@@ -2338,17 +2338,25 @@ public class DynamoDBMapper {
             }
         }
 
-        final boolean userProvidedLSI = (userProvidedIndexName != null)
+        final boolean userProvidedLSIWithRangeKeyCondition = (userProvidedIndexName != null)
                                         && (annotatedLSIsOnRangeKey.contains(userProvidedIndexName));
-        final boolean userProvidedGSI = (userProvidedIndexName != null)
-                                        && ( !hasRangeKeyCondition   // it must be a GSI if no range condition is specified.
-                                                || (annotatedGSIsOnRangeKey.contains(userProvidedIndexName)) );
-        if (userProvidedLSI && userProvidedGSI) {
+        final boolean hashOnlyLSIQuery = (userProvidedIndexName != null)
+                                        && ( !hasRangeKeyCondition )
+                                        && reflector.getAllLocalSecondaryIndexNames(clazz).contains(userProvidedIndexName);
+        final boolean userProvidedLSI = userProvidedLSIWithRangeKeyCondition || hashOnlyLSIQuery;
+
+        final boolean userProvidedGSIWithRangeKeyCondition = (userProvidedIndexName != null)
+                                        && (annotatedGSIsOnRangeKey.contains(userProvidedIndexName));
+        final boolean hashOnlyGSIQuery = (userProvidedIndexName != null)
+                                        && ( !hasRangeKeyCondition )
+                                        && reflector.getAllGlobalSecondaryIndexNames(clazz).contains(userProvidedIndexName);
+        final boolean userProvidedGSI = userProvidedGSIWithRangeKeyCondition || hashOnlyGSIQuery;
+
+        if (userProvidedLSI && userProvidedGSI ) {
             throw new DynamoDBMappingException(
-                    "Invalid @DynamoDBIndexRangeKey annotation: " +
+                    "Invalid query: " +
                     "Index \"" + userProvidedIndexName + "\" " +
-                    "is annotateded as both the LSI and GSI for attribute " +
-                    "\"" + rangeKeyNameForThisQuery + "\".");
+                    "is annotateded as both a LSI and a GSI for attribute.");
         }
 
         // Hash key conditions

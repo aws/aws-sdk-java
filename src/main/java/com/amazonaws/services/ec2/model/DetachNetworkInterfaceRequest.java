@@ -22,40 +22,48 @@ import com.amazonaws.services.ec2.model.transform.DetachNetworkInterfaceRequestM
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#detachNetworkInterface(DetachNetworkInterfaceRequest) DetachNetworkInterface operation}.
- * 
+ * <p>
+ * Detaches a network interface from an instance.
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#detachNetworkInterface(DetachNetworkInterfaceRequest)
  */
 public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DetachNetworkInterfaceRequest> {
 
+    /**
+     * The ID of the attachment.
+     */
     private String attachmentId;
 
+    /**
+     * Specifies whether to force a detachment.
+     */
     private Boolean force;
 
     /**
-     * Returns the value of the AttachmentId property for this object.
+     * The ID of the attachment.
      *
-     * @return The value of the AttachmentId property for this object.
+     * @return The ID of the attachment.
      */
     public String getAttachmentId() {
         return attachmentId;
     }
     
     /**
-     * Sets the value of the AttachmentId property for this object.
+     * The ID of the attachment.
      *
-     * @param attachmentId The new value for the AttachmentId property for this object.
+     * @param attachmentId The ID of the attachment.
      */
     public void setAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
     }
     
     /**
-     * Sets the value of the AttachmentId property for this object.
+     * The ID of the attachment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachmentId The new value for the AttachmentId property for this object.
+     * @param attachmentId The ID of the attachment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -66,29 +74,29 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Returns the value of the Force property for this object.
+     * Specifies whether to force a detachment.
      *
-     * @return The value of the Force property for this object.
+     * @return Specifies whether to force a detachment.
      */
     public Boolean isForce() {
         return force;
     }
     
     /**
-     * Sets the value of the Force property for this object.
+     * Specifies whether to force a detachment.
      *
-     * @param force The new value for the Force property for this object.
+     * @param force Specifies whether to force a detachment.
      */
     public void setForce(Boolean force) {
         this.force = force;
     }
     
     /**
-     * Sets the value of the Force property for this object.
+     * Specifies whether to force a detachment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param force The new value for the Force property for this object.
+     * @param force Specifies whether to force a detachment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -99,9 +107,9 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Returns the value of the Force property for this object.
+     * Specifies whether to force a detachment.
      *
-     * @return The value of the Force property for this object.
+     * @return Specifies whether to force a detachment.
      */
     public Boolean getForce() {
         return force;

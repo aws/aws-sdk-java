@@ -50,6 +50,9 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest {
     /** The optional Content-Type header that will be sent when the presigned URL is accessed */
     private String contentType;
 
+    /** The optional Content-MD5 header that will be sent when the presigned URL is accessed */
+    private String contentMd5;
+
     /**
      * An optional expiration date at which point the generated pre-signed URL
      * will no longer be accepted by Amazon S3. If not specified, a default
@@ -360,6 +363,43 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest {
      */
     public GeneratePresignedUrlRequest withContentType(String contentType) {
         setContentType(contentType);
+        return this;
+    }
+
+    /**
+     * Gets the expected content-md5 header of the request. This header value
+     * will be included when calculating the signature, and future requests must
+     * include the same content-md5 header value to access the presigned URL.
+     * 
+     * @return The expected content-md5 header value.
+     */
+    public String getContentMd5() {
+        return contentMd5;
+    }
+
+    /**
+     * Sets the expected content-md5 header of the request. This header value
+     * will be included when calculating the signature, and future requests must
+     * include the same content-md5 header value to access the presigned URL.
+     
+     * @param contentMd5
+     *            The expected content-md5 header value.
+     */
+    public void setContentMd5(String contentMd5) {
+        this.contentMd5 = contentMd5;
+    }
+
+    /**
+     * Sets the expected content-md5 header of the request and returns this
+     * object, for method chaining.
+     * 
+     * @param contentMd5
+     *            The expected content-md5 header value.
+     * 
+     * @return This {@link GeneratePresignedUrlRequest} for method chaining.
+     */
+    public GeneratePresignedUrlRequest withContentMd5(String contentMd5) {
+        this.contentMd5 = contentMd5;
         return this;
     }
 }

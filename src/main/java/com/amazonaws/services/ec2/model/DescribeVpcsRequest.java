@@ -23,15 +23,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeVpcsRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVpcs(DescribeVpcsRequest) DescribeVpcs operation}.
  * <p>
- * Gives you information about your VPCs. You can filter the results to return information only about VPCs that match criteria you specify.
- * </p>
- * <p>
- * For example, you could ask to get information about a particular VPC or VPCs (or all your VPCs) only if the VPC's state is available. You can specify
- * multiple filters (e.g., the VPC uses one of several sets of DHCP options, and the VPC's state is available). The result includes information for a
- * particular VPC only if the VPC matches all your filters.
- * </p>
- * <p>
- * If there's no match, no special message is returned; the response is simply empty. The following table shows the available filters.
+ * Describes one or more of your VPCs.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpcs(DescribeVpcsRequest)
@@ -39,22 +31,39 @@ import com.amazonaws.services.ec2.model.transform.DescribeVpcsRequestMarshaller;
 public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVpcsRequest> {
 
     /**
-     * The ID of a VPC you want information about.
+     * One or more VPC IDs. <p>Default: Describes all your VPCs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcIds;
 
     /**
-     * A list of filters used to match properties for VPCs. For a complete
-     * reference to the available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
+     * of the VPC. The CIDR block you specify must exactly match the VPC's
+     * CIDR block for information to be returned for the VPC. </li> <li>
+     * <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     * </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
+     * the default VPC. </li> <li> <p><code>state</code> - The state of the
+     * VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC. </li>
+     * </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * The ID of a VPC you want information about.
+     * One or more VPC IDs. <p>Default: Describes all your VPCs.
      *
-     * @return The ID of a VPC you want information about.
+     * @return One or more VPC IDs. <p>Default: Describes all your VPCs.
      */
     public java.util.List<String> getVpcIds() {
         if (vpcIds == null) {
@@ -65,9 +74,9 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * The ID of a VPC you want information about.
+     * One or more VPC IDs. <p>Default: Describes all your VPCs.
      *
-     * @param vpcIds The ID of a VPC you want information about.
+     * @param vpcIds One or more VPC IDs. <p>Default: Describes all your VPCs.
      */
     public void setVpcIds(java.util.Collection<String> vpcIds) {
         if (vpcIds == null) {
@@ -80,11 +89,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * The ID of a VPC you want information about.
+     * One or more VPC IDs. <p>Default: Describes all your VPCs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcIds The ID of a VPC you want information about.
+     * @param vpcIds One or more VPC IDs. <p>Default: Describes all your VPCs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -98,11 +107,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * The ID of a VPC you want information about.
+     * One or more VPC IDs. <p>Default: Describes all your VPCs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcIds The ID of a VPC you want information about.
+     * @param vpcIds One or more VPC IDs. <p>Default: Describes all your VPCs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -120,15 +129,49 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * A list of filters used to match properties for VPCs. For a complete
-     * reference to the available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
+     * of the VPC. The CIDR block you specify must exactly match the VPC's
+     * CIDR block for information to be returned for the VPC. </li> <li>
+     * <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     * </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
+     * the default VPC. </li> <li> <p><code>state</code> - The state of the
+     * VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC. </li>
+     * </ul>
      *
-     * @return A list of filters used to match properties for VPCs. For a complete
-     *         reference to the available filter keys for this operation, see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @return One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
+     *         of the VPC. The CIDR block you specify must exactly match the VPC's
+     *         CIDR block for information to be returned for the VPC. </li> <li>
+     *         <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     *         </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
+     *         the default VPC. </li> <li> <p><code>state</code> - The state of the
+     *         VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC. </li>
+     *         </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -139,15 +182,49 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * A list of filters used to match properties for VPCs. For a complete
-     * reference to the available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
+     * of the VPC. The CIDR block you specify must exactly match the VPC's
+     * CIDR block for information to be returned for the VPC. </li> <li>
+     * <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     * </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
+     * the default VPC. </li> <li> <p><code>state</code> - The state of the
+     * VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC. </li>
+     * </ul>
      *
-     * @param filters A list of filters used to match properties for VPCs. For a complete
-     *         reference to the available filter keys for this operation, see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
+     *         of the VPC. The CIDR block you specify must exactly match the VPC's
+     *         CIDR block for information to be returned for the VPC. </li> <li>
+     *         <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     *         </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
+     *         the default VPC. </li> <li> <p><code>state</code> - The state of the
+     *         VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC. </li>
+     *         </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -160,17 +237,51 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * A list of filters used to match properties for VPCs. For a complete
-     * reference to the available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
+     * of the VPC. The CIDR block you specify must exactly match the VPC's
+     * CIDR block for information to be returned for the VPC. </li> <li>
+     * <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     * </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
+     * the default VPC. </li> <li> <p><code>state</code> - The state of the
+     * VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC. </li>
+     * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for VPCs. For a complete
-     *         reference to the available filter keys for this operation, see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
+     *         of the VPC. The CIDR block you specify must exactly match the VPC's
+     *         CIDR block for information to be returned for the VPC. </li> <li>
+     *         <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     *         </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
+     *         the default VPC. </li> <li> <p><code>state</code> - The state of the
+     *         VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC. </li>
+     *         </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -184,17 +295,51 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * A list of filters used to match properties for VPCs. For a complete
-     * reference to the available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
+     * of the VPC. The CIDR block you specify must exactly match the VPC's
+     * CIDR block for information to be returned for the VPC. </li> <li>
+     * <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     * </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
+     * the default VPC. </li> <li> <p><code>state</code> - The state of the
+     * VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC. </li>
+     * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for VPCs. For a complete
-     *         reference to the available filter keys for this operation, see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
+     *         of the VPC. The CIDR block you specify must exactly match the VPC's
+     *         CIDR block for information to be returned for the VPC. </li> <li>
+     *         <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     *         </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
+     *         the default VPC. </li> <li> <p><code>state</code> - The state of the
+     *         VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC. </li>
+     *         </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

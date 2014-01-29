@@ -46,9 +46,11 @@ public class ItemCollectionMetricsJsonUnmarshaller implements Unmarshaller<ItemC
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ItemCollectionKey", targetDepth)) {
+                    context.nextToken();
                     itemCollectionMetrics.setItemCollectionKey(new MapUnmarshaller<String,AttributeValue>(StringJsonUnmarshaller.getInstance(), AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("SizeEstimateRangeGB", targetDepth)) {
+                    context.nextToken();
                     itemCollectionMetrics.setSizeEstimateRangeGB(new ListUnmarshaller<Double>(DoubleJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

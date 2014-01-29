@@ -18,45 +18,45 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents an Amazon EC2 region. EC2 regions are completely isolated from each other.
+ * Describes a region.
  * </p>
  */
 public class Region implements Serializable {
 
     /**
-     * Name of the region.
+     * The name of the region.
      */
     private String regionName;
 
     /**
-     * Region service endpoint.
+     * The region service endpoint.
      */
     private String endpoint;
 
     /**
-     * Name of the region.
+     * The name of the region.
      *
-     * @return Name of the region.
+     * @return The name of the region.
      */
     public String getRegionName() {
         return regionName;
     }
     
     /**
-     * Name of the region.
+     * The name of the region.
      *
-     * @param regionName Name of the region.
+     * @param regionName The name of the region.
      */
     public void setRegionName(String regionName) {
         this.regionName = regionName;
     }
     
     /**
-     * Name of the region.
+     * The name of the region.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param regionName Name of the region.
+     * @param regionName The name of the region.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -67,29 +67,29 @@ public class Region implements Serializable {
     }
 
     /**
-     * Region service endpoint.
+     * The region service endpoint.
      *
-     * @return Region service endpoint.
+     * @return The region service endpoint.
      */
     public String getEndpoint() {
         return endpoint;
     }
     
     /**
-     * Region service endpoint.
+     * The region service endpoint.
      *
-     * @param endpoint Region service endpoint.
+     * @param endpoint The region service endpoint.
      */
     public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
     }
     
     /**
-     * Region service endpoint.
+     * The region service endpoint.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param endpoint Region service endpoint.
+     * @param endpoint The region service endpoint.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

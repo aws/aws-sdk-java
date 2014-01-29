@@ -17,44 +17,88 @@ package com.amazonaws.services.glacier.model;
 import java.io.Serializable;
 
 /**
- * Inventory Retrieval Job Description
+ * <p>
+ * Describes the options for a range inventory retrieval job.
+ * </p>
  */
 public class InventoryRetrievalJobDescription implements Serializable {
 
+    /**
+     * The output format for the vault inventory list, which is set by the
+     * <b>InitiateJob</b> request when initiating a job to retrieve a vault
+     * inventory. Valid values are "CSV" and "JSON".
+     */
     private String format;
 
+    /**
+     * The start of the date range in UTC for vault inventory retrieval that
+     * includes archives created on or after this date. A string
+     * representation of ISO 8601 date format, for example,
+     * 2013-03-20T17:03:43Z.
+     */
     private String startDate;
 
+    /**
+     * The end of the date range in UTC for vault inventory retrieval that
+     * includes archives created before this date. A string representation of
+     * ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
+     */
     private String endDate;
 
+    /**
+     * Specifies the maximum number of inventory items returned per vault
+     * inventory retrieval request. This limit is set when initiating the job
+     * with the a <b>InitiateJob</b> request.
+     */
     private String limit;
 
+    /**
+     * An opaque string that represents where to continue pagination of the
+     * vault inventory retrieval results. You use the marker in a new
+     * <b>InitiateJob</b> request to obtain additional inventory items. If
+     * there are no more inventory items, this value is <code>null</code>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+     * Range Inventory Retrieval</a>.
+     */
     private String marker;
 
     /**
-     * Returns the value of the Format property for this object.
+     * The output format for the vault inventory list, which is set by the
+     * <b>InitiateJob</b> request when initiating a job to retrieve a vault
+     * inventory. Valid values are "CSV" and "JSON".
      *
-     * @return The value of the Format property for this object.
+     * @return The output format for the vault inventory list, which is set by the
+     *         <b>InitiateJob</b> request when initiating a job to retrieve a vault
+     *         inventory. Valid values are "CSV" and "JSON".
      */
     public String getFormat() {
         return format;
     }
     
     /**
-     * Sets the value of the Format property for this object.
+     * The output format for the vault inventory list, which is set by the
+     * <b>InitiateJob</b> request when initiating a job to retrieve a vault
+     * inventory. Valid values are "CSV" and "JSON".
      *
-     * @param format The new value for the Format property for this object.
+     * @param format The output format for the vault inventory list, which is set by the
+     *         <b>InitiateJob</b> request when initiating a job to retrieve a vault
+     *         inventory. Valid values are "CSV" and "JSON".
      */
     public void setFormat(String format) {
         this.format = format;
     }
     
     /**
-     * Sets the value of the Format property for this object.
+     * The output format for the vault inventory list, which is set by the
+     * <b>InitiateJob</b> request when initiating a job to retrieve a vault
+     * inventory. Valid values are "CSV" and "JSON".
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param format The new value for the Format property for this object.
+     * @param format The output format for the vault inventory list, which is set by the
+     *         <b>InitiateJob</b> request when initiating a job to retrieve a vault
+     *         inventory. Valid values are "CSV" and "JSON".
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -65,29 +109,47 @@ public class InventoryRetrievalJobDescription implements Serializable {
     }
 
     /**
-     * Returns the value of the StartDate property for this object.
+     * The start of the date range in UTC for vault inventory retrieval that
+     * includes archives created on or after this date. A string
+     * representation of ISO 8601 date format, for example,
+     * 2013-03-20T17:03:43Z.
      *
-     * @return The value of the StartDate property for this object.
+     * @return The start of the date range in UTC for vault inventory retrieval that
+     *         includes archives created on or after this date. A string
+     *         representation of ISO 8601 date format, for example,
+     *         2013-03-20T17:03:43Z.
      */
     public String getStartDate() {
         return startDate;
     }
     
     /**
-     * Sets the value of the StartDate property for this object.
+     * The start of the date range in UTC for vault inventory retrieval that
+     * includes archives created on or after this date. A string
+     * representation of ISO 8601 date format, for example,
+     * 2013-03-20T17:03:43Z.
      *
-     * @param startDate The new value for the StartDate property for this object.
+     * @param startDate The start of the date range in UTC for vault inventory retrieval that
+     *         includes archives created on or after this date. A string
+     *         representation of ISO 8601 date format, for example,
+     *         2013-03-20T17:03:43Z.
      */
     public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
     
     /**
-     * Sets the value of the StartDate property for this object.
+     * The start of the date range in UTC for vault inventory retrieval that
+     * includes archives created on or after this date. A string
+     * representation of ISO 8601 date format, for example,
+     * 2013-03-20T17:03:43Z.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startDate The new value for the StartDate property for this object.
+     * @param startDate The start of the date range in UTC for vault inventory retrieval that
+     *         includes archives created on or after this date. A string
+     *         representation of ISO 8601 date format, for example,
+     *         2013-03-20T17:03:43Z.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -98,29 +160,41 @@ public class InventoryRetrievalJobDescription implements Serializable {
     }
 
     /**
-     * Returns the value of the EndDate property for this object.
+     * The end of the date range in UTC for vault inventory retrieval that
+     * includes archives created before this date. A string representation of
+     * ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
      *
-     * @return The value of the EndDate property for this object.
+     * @return The end of the date range in UTC for vault inventory retrieval that
+     *         includes archives created before this date. A string representation of
+     *         ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
      */
     public String getEndDate() {
         return endDate;
     }
     
     /**
-     * Sets the value of the EndDate property for this object.
+     * The end of the date range in UTC for vault inventory retrieval that
+     * includes archives created before this date. A string representation of
+     * ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
      *
-     * @param endDate The new value for the EndDate property for this object.
+     * @param endDate The end of the date range in UTC for vault inventory retrieval that
+     *         includes archives created before this date. A string representation of
+     *         ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
      */
     public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
     
     /**
-     * Sets the value of the EndDate property for this object.
+     * The end of the date range in UTC for vault inventory retrieval that
+     * includes archives created before this date. A string representation of
+     * ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param endDate The new value for the EndDate property for this object.
+     * @param endDate The end of the date range in UTC for vault inventory retrieval that
+     *         includes archives created before this date. A string representation of
+     *         ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -131,29 +205,41 @@ public class InventoryRetrievalJobDescription implements Serializable {
     }
 
     /**
-     * Returns the value of the Limit property for this object.
+     * Specifies the maximum number of inventory items returned per vault
+     * inventory retrieval request. This limit is set when initiating the job
+     * with the a <b>InitiateJob</b> request.
      *
-     * @return The value of the Limit property for this object.
+     * @return Specifies the maximum number of inventory items returned per vault
+     *         inventory retrieval request. This limit is set when initiating the job
+     *         with the a <b>InitiateJob</b> request.
      */
     public String getLimit() {
         return limit;
     }
     
     /**
-     * Sets the value of the Limit property for this object.
+     * Specifies the maximum number of inventory items returned per vault
+     * inventory retrieval request. This limit is set when initiating the job
+     * with the a <b>InitiateJob</b> request.
      *
-     * @param limit The new value for the Limit property for this object.
+     * @param limit Specifies the maximum number of inventory items returned per vault
+     *         inventory retrieval request. This limit is set when initiating the job
+     *         with the a <b>InitiateJob</b> request.
      */
     public void setLimit(String limit) {
         this.limit = limit;
     }
     
     /**
-     * Sets the value of the Limit property for this object.
+     * Specifies the maximum number of inventory items returned per vault
+     * inventory retrieval request. This limit is set when initiating the job
+     * with the a <b>InitiateJob</b> request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param limit The new value for the Limit property for this object.
+     * @param limit Specifies the maximum number of inventory items returned per vault
+     *         inventory retrieval request. This limit is set when initiating the job
+     *         with the a <b>InitiateJob</b> request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -164,29 +250,65 @@ public class InventoryRetrievalJobDescription implements Serializable {
     }
 
     /**
-     * Returns the value of the Marker property for this object.
+     * An opaque string that represents where to continue pagination of the
+     * vault inventory retrieval results. You use the marker in a new
+     * <b>InitiateJob</b> request to obtain additional inventory items. If
+     * there are no more inventory items, this value is <code>null</code>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+     * Range Inventory Retrieval</a>.
      *
-     * @return The value of the Marker property for this object.
+     * @return An opaque string that represents where to continue pagination of the
+     *         vault inventory retrieval results. You use the marker in a new
+     *         <b>InitiateJob</b> request to obtain additional inventory items. If
+     *         there are no more inventory items, this value is <code>null</code>.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+     *         Range Inventory Retrieval</a>.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * Sets the value of the Marker property for this object.
+     * An opaque string that represents where to continue pagination of the
+     * vault inventory retrieval results. You use the marker in a new
+     * <b>InitiateJob</b> request to obtain additional inventory items. If
+     * there are no more inventory items, this value is <code>null</code>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+     * Range Inventory Retrieval</a>.
      *
-     * @param marker The new value for the Marker property for this object.
+     * @param marker An opaque string that represents where to continue pagination of the
+     *         vault inventory retrieval results. You use the marker in a new
+     *         <b>InitiateJob</b> request to obtain additional inventory items. If
+     *         there are no more inventory items, this value is <code>null</code>.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+     *         Range Inventory Retrieval</a>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * Sets the value of the Marker property for this object.
+     * An opaque string that represents where to continue pagination of the
+     * vault inventory retrieval results. You use the marker in a new
+     * <b>InitiateJob</b> request to obtain additional inventory items. If
+     * there are no more inventory items, this value is <code>null</code>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+     * Range Inventory Retrieval</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The new value for the Marker property for this object.
+     * @param marker An opaque string that represents where to continue pagination of the
+     *         vault inventory retrieval results. You use the marker in a new
+     *         <b>InitiateJob</b> request to obtain additional inventory items. If
+     *         there are no more inventory items, this value is <code>null</code>.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+     *         Range Inventory Retrieval</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

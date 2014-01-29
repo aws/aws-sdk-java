@@ -46,6 +46,7 @@ public class DescribeUserProfilesResultJsonUnmarshaller implements Unmarshaller<
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UserProfiles", targetDepth)) {
+                    context.nextToken();
                     describeUserProfilesResult.setUserProfiles(new ListUnmarshaller<UserProfile>(UserProfileJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

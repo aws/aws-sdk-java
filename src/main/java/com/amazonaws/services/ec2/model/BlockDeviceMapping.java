@@ -18,56 +18,58 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The BlockDeviceMappingItemType data type.
+ * Describes a block device mapping.
  * </p>
  */
 public class BlockDeviceMapping implements Serializable {
 
     /**
-     * Specifies the virtual device name.
+     * The virtual device name.
      */
     private String virtualName;
 
     /**
-     * Specifies the device name (e.g., <code>/dev/sdh</code>).
+     * The device name exposed to the instance (for example,
+     * <code>/dev/sdh</code>).
      */
     private String deviceName;
 
     /**
-     * Specifies parameters used to automatically setup Amazon EBS volumes
-     * when the instance is launched.
+     * Parameters used to automatically set up Amazon EBS volumes when the
+     * instance is launched.
      */
     private EbsBlockDevice ebs;
 
     /**
-     * Specifies the device name to suppress during instance launch.
+     * Suppresses the specified device included in the block device mapping
+     * of the AMI.
      */
     private String noDevice;
 
     /**
-     * Specifies the virtual device name.
+     * The virtual device name.
      *
-     * @return Specifies the virtual device name.
+     * @return The virtual device name.
      */
     public String getVirtualName() {
         return virtualName;
     }
     
     /**
-     * Specifies the virtual device name.
+     * The virtual device name.
      *
-     * @param virtualName Specifies the virtual device name.
+     * @param virtualName The virtual device name.
      */
     public void setVirtualName(String virtualName) {
         this.virtualName = virtualName;
     }
     
     /**
-     * Specifies the virtual device name.
+     * The virtual device name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param virtualName Specifies the virtual device name.
+     * @param virtualName The virtual device name.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -78,29 +80,35 @@ public class BlockDeviceMapping implements Serializable {
     }
 
     /**
-     * Specifies the device name (e.g., <code>/dev/sdh</code>).
+     * The device name exposed to the instance (for example,
+     * <code>/dev/sdh</code>).
      *
-     * @return Specifies the device name (e.g., <code>/dev/sdh</code>).
+     * @return The device name exposed to the instance (for example,
+     *         <code>/dev/sdh</code>).
      */
     public String getDeviceName() {
         return deviceName;
     }
     
     /**
-     * Specifies the device name (e.g., <code>/dev/sdh</code>).
+     * The device name exposed to the instance (for example,
+     * <code>/dev/sdh</code>).
      *
-     * @param deviceName Specifies the device name (e.g., <code>/dev/sdh</code>).
+     * @param deviceName The device name exposed to the instance (for example,
+     *         <code>/dev/sdh</code>).
      */
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
     
     /**
-     * Specifies the device name (e.g., <code>/dev/sdh</code>).
+     * The device name exposed to the instance (for example,
+     * <code>/dev/sdh</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deviceName Specifies the device name (e.g., <code>/dev/sdh</code>).
+     * @param deviceName The device name exposed to the instance (for example,
+     *         <code>/dev/sdh</code>).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -111,35 +119,35 @@ public class BlockDeviceMapping implements Serializable {
     }
 
     /**
-     * Specifies parameters used to automatically setup Amazon EBS volumes
-     * when the instance is launched.
+     * Parameters used to automatically set up Amazon EBS volumes when the
+     * instance is launched.
      *
-     * @return Specifies parameters used to automatically setup Amazon EBS volumes
-     *         when the instance is launched.
+     * @return Parameters used to automatically set up Amazon EBS volumes when the
+     *         instance is launched.
      */
     public EbsBlockDevice getEbs() {
         return ebs;
     }
     
     /**
-     * Specifies parameters used to automatically setup Amazon EBS volumes
-     * when the instance is launched.
+     * Parameters used to automatically set up Amazon EBS volumes when the
+     * instance is launched.
      *
-     * @param ebs Specifies parameters used to automatically setup Amazon EBS volumes
-     *         when the instance is launched.
+     * @param ebs Parameters used to automatically set up Amazon EBS volumes when the
+     *         instance is launched.
      */
     public void setEbs(EbsBlockDevice ebs) {
         this.ebs = ebs;
     }
     
     /**
-     * Specifies parameters used to automatically setup Amazon EBS volumes
-     * when the instance is launched.
+     * Parameters used to automatically set up Amazon EBS volumes when the
+     * instance is launched.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ebs Specifies parameters used to automatically setup Amazon EBS volumes
-     *         when the instance is launched.
+     * @param ebs Parameters used to automatically set up Amazon EBS volumes when the
+     *         instance is launched.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -150,29 +158,35 @@ public class BlockDeviceMapping implements Serializable {
     }
 
     /**
-     * Specifies the device name to suppress during instance launch.
+     * Suppresses the specified device included in the block device mapping
+     * of the AMI.
      *
-     * @return Specifies the device name to suppress during instance launch.
+     * @return Suppresses the specified device included in the block device mapping
+     *         of the AMI.
      */
     public String getNoDevice() {
         return noDevice;
     }
     
     /**
-     * Specifies the device name to suppress during instance launch.
+     * Suppresses the specified device included in the block device mapping
+     * of the AMI.
      *
-     * @param noDevice Specifies the device name to suppress during instance launch.
+     * @param noDevice Suppresses the specified device included in the block device mapping
+     *         of the AMI.
      */
     public void setNoDevice(String noDevice) {
         this.noDevice = noDevice;
     }
     
     /**
-     * Specifies the device name to suppress during instance launch.
+     * Suppresses the specified device included in the block device mapping
+     * of the AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param noDevice Specifies the device name to suppress during instance launch.
+     * @param noDevice Suppresses the specified device included in the block device mapping
+     *         of the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

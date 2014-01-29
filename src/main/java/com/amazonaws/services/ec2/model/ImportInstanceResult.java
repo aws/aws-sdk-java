@@ -17,36 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Import Instance Result
+ * 
  */
 public class ImportInstanceResult implements Serializable {
 
+    /**
+     * 
+     */
     private ConversionTask conversionTask;
 
     /**
-     * Returns the value of the ConversionTask property for this object.
+     * 
      *
-     * @return The value of the ConversionTask property for this object.
+     * @return 
      */
     public ConversionTask getConversionTask() {
         return conversionTask;
     }
     
     /**
-     * Sets the value of the ConversionTask property for this object.
+     * 
      *
-     * @param conversionTask The new value for the ConversionTask property for this object.
+     * @param conversionTask 
      */
     public void setConversionTask(ConversionTask conversionTask) {
         this.conversionTask = conversionTask;
     }
     
     /**
-     * Sets the value of the ConversionTask property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param conversionTask The new value for the ConversionTask property for this object.
+     * @param conversionTask 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -17,36 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Copy Snapshot Result
+ * 
  */
 public class CopySnapshotResult implements Serializable {
 
+    /**
+     * The ID of the new snapshot.
+     */
     private String snapshotId;
 
     /**
-     * Returns the value of the SnapshotId property for this object.
+     * The ID of the new snapshot.
      *
-     * @return The value of the SnapshotId property for this object.
+     * @return The ID of the new snapshot.
      */
     public String getSnapshotId() {
         return snapshotId;
     }
     
     /**
-     * Sets the value of the SnapshotId property for this object.
+     * The ID of the new snapshot.
      *
-     * @param snapshotId The new value for the SnapshotId property for this object.
+     * @param snapshotId The ID of the new snapshot.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
     
     /**
-     * Sets the value of the SnapshotId property for this object.
+     * The ID of the new snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotId The new value for the SnapshotId property for this object.
+     * @param snapshotId The ID of the new snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

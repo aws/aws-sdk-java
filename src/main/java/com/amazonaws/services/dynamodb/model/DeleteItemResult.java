@@ -17,6 +17,7 @@ import java.io.Serializable;
 
 /**
  * Delete Item Result
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.DeleteItemResult} instead.
  */
 @Deprecated
 public class DeleteItemResult  implements Serializable  {

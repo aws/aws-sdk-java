@@ -17,21 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of describing the bundle tasks for the user's account.
- * </p>
+ * 
  */
 public class DescribeBundleTasksResult implements Serializable {
 
     /**
-     * The list of described bundle tasks.
+     * Information about one or more bundle tasks.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<BundleTask> bundleTasks;
 
     /**
-     * The list of described bundle tasks.
+     * Information about one or more bundle tasks.
      *
-     * @return The list of described bundle tasks.
+     * @return Information about one or more bundle tasks.
      */
     public java.util.List<BundleTask> getBundleTasks() {
         if (bundleTasks == null) {
@@ -42,9 +40,9 @@ public class DescribeBundleTasksResult implements Serializable {
     }
     
     /**
-     * The list of described bundle tasks.
+     * Information about one or more bundle tasks.
      *
-     * @param bundleTasks The list of described bundle tasks.
+     * @param bundleTasks Information about one or more bundle tasks.
      */
     public void setBundleTasks(java.util.Collection<BundleTask> bundleTasks) {
         if (bundleTasks == null) {
@@ -57,11 +55,11 @@ public class DescribeBundleTasksResult implements Serializable {
     }
     
     /**
-     * The list of described bundle tasks.
+     * Information about one or more bundle tasks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bundleTasks The list of described bundle tasks.
+     * @param bundleTasks Information about one or more bundle tasks.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,11 +73,11 @@ public class DescribeBundleTasksResult implements Serializable {
     }
     
     /**
-     * The list of described bundle tasks.
+     * Information about one or more bundle tasks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bundleTasks The list of described bundle tasks.
+     * @param bundleTasks Information about one or more bundle tasks.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

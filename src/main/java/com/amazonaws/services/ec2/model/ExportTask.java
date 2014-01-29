@@ -17,46 +17,69 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Export Task
+ * <p>
+ * Describes an export task.
+ * </p>
  */
 public class ExportTask implements Serializable {
 
+    /**
+     * The ID of the export task.
+     */
     private String exportTaskId;
 
+    /**
+     * A description of the resource being exported.
+     */
     private String description;
 
+    /**
+     * The state of the conversion task.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>active, cancelling, cancelled, completed
+     */
     private String state;
 
+    /**
+     * The status message related to the export task.
+     */
     private String statusMessage;
 
+    /**
+     * The instance being exported.
+     */
     private InstanceExportDetails instanceExportDetails;
 
+    /**
+     * 
+     */
     private ExportToS3Task exportToS3Task;
 
     /**
-     * Returns the value of the ExportTaskId property for this object.
+     * The ID of the export task.
      *
-     * @return The value of the ExportTaskId property for this object.
+     * @return The ID of the export task.
      */
     public String getExportTaskId() {
         return exportTaskId;
     }
     
     /**
-     * Sets the value of the ExportTaskId property for this object.
+     * The ID of the export task.
      *
-     * @param exportTaskId The new value for the ExportTaskId property for this object.
+     * @param exportTaskId The ID of the export task.
      */
     public void setExportTaskId(String exportTaskId) {
         this.exportTaskId = exportTaskId;
     }
     
     /**
-     * Sets the value of the ExportTaskId property for this object.
+     * The ID of the export task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exportTaskId The new value for the ExportTaskId property for this object.
+     * @param exportTaskId The ID of the export task.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -67,29 +90,29 @@ public class ExportTask implements Serializable {
     }
 
     /**
-     * Returns the value of the Description property for this object.
+     * A description of the resource being exported.
      *
-     * @return The value of the Description property for this object.
+     * @return A description of the resource being exported.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * A description of the resource being exported.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description A description of the resource being exported.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * A description of the resource being exported.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description A description of the resource being exported.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -100,12 +123,12 @@ public class ExportTask implements Serializable {
     }
 
     /**
-     * Returns the value of the State property for this object.
+     * The state of the conversion task.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, cancelling, cancelled, completed
      *
-     * @return The value of the State property for this object.
+     * @return The state of the conversion task.
      *
      * @see ExportTaskState
      */
@@ -114,12 +137,12 @@ public class ExportTask implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the conversion task.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, cancelling, cancelled, completed
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the conversion task.
      *
      * @see ExportTaskState
      */
@@ -128,14 +151,14 @@ public class ExportTask implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the conversion task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, cancelling, cancelled, completed
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the conversion task.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -148,12 +171,12 @@ public class ExportTask implements Serializable {
     }
 
     /**
-     * Sets the value of the State property for this object.
+     * The state of the conversion task.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, cancelling, cancelled, completed
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the conversion task.
      *
      * @see ExportTaskState
      */
@@ -162,14 +185,14 @@ public class ExportTask implements Serializable {
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the conversion task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, cancelling, cancelled, completed
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the conversion task.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -182,29 +205,29 @@ public class ExportTask implements Serializable {
     }
 
     /**
-     * Returns the value of the StatusMessage property for this object.
+     * The status message related to the export task.
      *
-     * @return The value of the StatusMessage property for this object.
+     * @return The status message related to the export task.
      */
     public String getStatusMessage() {
         return statusMessage;
     }
     
     /**
-     * Sets the value of the StatusMessage property for this object.
+     * The status message related to the export task.
      *
-     * @param statusMessage The new value for the StatusMessage property for this object.
+     * @param statusMessage The status message related to the export task.
      */
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
     
     /**
-     * Sets the value of the StatusMessage property for this object.
+     * The status message related to the export task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param statusMessage The new value for the StatusMessage property for this object.
+     * @param statusMessage The status message related to the export task.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -215,30 +238,29 @@ public class ExportTask implements Serializable {
     }
 
     /**
-     * Returns the value of the InstanceExportDetails property for this
-     * object.
+     * The instance being exported.
      *
-     * @return The value of the InstanceExportDetails property for this object.
+     * @return The instance being exported.
      */
     public InstanceExportDetails getInstanceExportDetails() {
         return instanceExportDetails;
     }
     
     /**
-     * Sets the value of the InstanceExportDetails property for this object.
+     * The instance being exported.
      *
-     * @param instanceExportDetails The new value for the InstanceExportDetails property for this object.
+     * @param instanceExportDetails The instance being exported.
      */
     public void setInstanceExportDetails(InstanceExportDetails instanceExportDetails) {
         this.instanceExportDetails = instanceExportDetails;
     }
     
     /**
-     * Sets the value of the InstanceExportDetails property for this object.
+     * The instance being exported.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceExportDetails The new value for the InstanceExportDetails property for this object.
+     * @param instanceExportDetails The instance being exported.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -249,29 +271,29 @@ public class ExportTask implements Serializable {
     }
 
     /**
-     * Returns the value of the ExportToS3Task property for this object.
+     * 
      *
-     * @return The value of the ExportToS3Task property for this object.
+     * @return 
      */
     public ExportToS3Task getExportToS3Task() {
         return exportToS3Task;
     }
     
     /**
-     * Sets the value of the ExportToS3Task property for this object.
+     * 
      *
-     * @param exportToS3Task The new value for the ExportToS3Task property for this object.
+     * @param exportToS3Task 
      */
     public void setExportToS3Task(ExportToS3Task exportToS3Task) {
         this.exportToS3Task = exportToS3Task;
     }
     
     /**
-     * Sets the value of the ExportToS3Task property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exportToS3Task The new value for the ExportToS3Task property for this object.
+     * @param exportToS3Task 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

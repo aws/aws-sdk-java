@@ -46,6 +46,7 @@ public class RecentCaseCommunicationsJsonUnmarshaller implements Unmarshaller<Re
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("communications", targetDepth)) {
+                    context.nextToken();
                     recentCaseCommunications.setCommunications(new ListUnmarshaller<Communication>(CommunicationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {

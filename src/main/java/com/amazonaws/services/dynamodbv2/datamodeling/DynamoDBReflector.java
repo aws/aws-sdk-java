@@ -51,9 +51,9 @@ public class DynamoDBReflector {
     private final Map<Class<?>, Collection<Method>> getterCache = new HashMap<Class<?>, Collection<Method>>();
     private final Map<Class<?>, Method> primaryHashKeyGetterCache = new HashMap<Class<?>, Method>();
     private final Map<Class<?>, Method> primaryRangeKeyGetterCache = new HashMap<Class<?>, Method>();
-    private final IndexKeyNameToIndexNamesCache indexRangeKeyNameToLocalSecondaryIndexNamesCache = new IndexKeyNameToIndexNamesCache();
-    private final IndexKeyNameToIndexNamesCache indexRangeKeyNameToGlobalSecondaryIndexNamesCache = new IndexKeyNameToIndexNamesCache();
-    private final IndexKeyNameToIndexNamesCache indexHashKeyNameToGlobalSecondaryIndexNamesCache = new IndexKeyNameToIndexNamesCache();
+    private final TableIndexInfoCache indexRangeKeyNameToLocalSecondaryIndexNamesCache = new TableIndexInfoCache();
+    private final TableIndexInfoCache indexRangeKeyNameToGlobalSecondaryIndexNamesCache = new TableIndexInfoCache();
+    private final TableIndexInfoCache indexHashKeyNameToGlobalSecondaryIndexNamesCache = new TableIndexInfoCache();
 
     /*
      * All caches keyed by a Method use the getter for a particular mapped
@@ -1212,7 +1212,7 @@ public class DynamoDBReflector {
                 }
                 indexRangeKeyNameToLocalSecondaryIndexNamesCache.cache(clazz, indexRangeKeyNameToLocalSecondaryIndexNamesMap);
             }
-            return indexRangeKeyNameToLocalSecondaryIndexNamesCache.getIndexNames(clazz, indexRangeKeyName);
+            return indexRangeKeyNameToLocalSecondaryIndexNamesCache.getIndexNamesByIndexKeyAttributeName(clazz, indexRangeKeyName);
         }
     }
 
@@ -1222,7 +1222,7 @@ public class DynamoDBReflector {
      */
     List<String> getGlobalSecondaryIndexNamesByIndexKeyName(Class<?> clazz, String indexKeyName, boolean isIndexHashKey) {
         final Class<? extends Annotation> annotationInterface = isIndexHashKey ? DynamoDBIndexHashKey.class : DynamoDBIndexRangeKey.class;
-        IndexKeyNameToIndexNamesCache indexKeyNameToGlobalSecondaryIndexNamesCache = isIndexHashKey ?
+        TableIndexInfoCache indexKeyNameToGlobalSecondaryIndexNamesCache = isIndexHashKey ?
                 indexHashKeyNameToGlobalSecondaryIndexNamesCache : indexRangeKeyNameToGlobalSecondaryIndexNamesCache;
         synchronized (indexKeyNameToGlobalSecondaryIndexNamesCache) {
             if ( !indexKeyNameToGlobalSecondaryIndexNamesCache.isCached(clazz) ) {
@@ -1278,24 +1278,69 @@ public class DynamoDBReflector {
                 }
                 indexKeyNameToGlobalSecondaryIndexNamesCache.cache(clazz, indexKeyNameToGlobalSecondaryIndexNamesMap);
             }
-            return indexKeyNameToGlobalSecondaryIndexNamesCache.getIndexNames(clazz, indexKeyName);
+            return indexKeyNameToGlobalSecondaryIndexNamesCache.getIndexNamesByIndexKeyAttributeName(clazz, indexKeyName);
         }
     }
 
-    private static class IndexKeyNameToIndexNamesCache {
-    	private Map<Class<?>, Map<String, List<String>>> cacheMap = new HashMap<Class<?>, Map<String, List<String>>>();
+    /**
+     * Returns the names of all the local secondary indexes associated with the given domain class
+     * by searching for all the index range key annotations.
+     */
+    Set<String> getAllLocalSecondaryIndexNames(Class<?> clazz) {
+        synchronized (indexRangeKeyNameToLocalSecondaryIndexNamesCache) {
+            if ( !indexRangeKeyNameToLocalSecondaryIndexNamesCache.isCached(clazz) ) {
+                // This simply triggers the reflector to collect all the LSI informations
+                getLocalSecondaryIndexNamesByIndexKeyName(clazz, null);
+            }
+        }
+        return indexRangeKeyNameToLocalSecondaryIndexNamesCache.getAllIndexNames(clazz);
+    }
 
-    	public boolean isCached(Class<?> clazz) {
-    		return cacheMap.containsKey(clazz);
-    	}
+    /**
+     * Returns the names of all the global secondary indexes associated with the given domain class
+     * by searching for all the index hash key annotations.
+     */
+    Set<String> getAllGlobalSecondaryIndexNames(Class<?> clazz) {
+        synchronized (indexHashKeyNameToGlobalSecondaryIndexNamesCache) {
+            if ( !indexHashKeyNameToGlobalSecondaryIndexNamesCache.isCached(clazz) ) {
+                // This simply triggers the reflector to collect all the GSI informations
+                // by searching for all the index hash key annotations.
+                getGlobalSecondaryIndexNamesByIndexKeyName(clazz, null, true);
+            }
+        }
+        return indexHashKeyNameToGlobalSecondaryIndexNamesCache.getAllIndexNames(clazz);
+    }
 
-    	public List<String> getIndexNames(Class<?> clazz, String indexKeyName) {
-    		return cacheMap.get(clazz).get(indexKeyName);
-    	}
+    private static class TableIndexInfoCache {
 
-    	public Map<String, List<String>> cache(Class<?> clazz, Map<String, List<String>> indexKeyNameToIndexNamesMap) {
-    		return cacheMap.put(clazz, indexKeyNameToIndexNamesMap);
-    	}
+        private Map<Class<?>, Map<String, List<String>>> indexKeyNameToIndexNameCache = 
+                new HashMap<Class<?>, Map<String, List<String>>>();
+
+        private Map<Class<?>, Set<String>> allIndexNamesCache = new HashMap<Class<?>, Set<String>>();
+        
+        public boolean isCached(Class<?> clazz) {
+            return indexKeyNameToIndexNameCache.containsKey(clazz);
+        }
+
+        public List<String> getIndexNamesByIndexKeyAttributeName(Class<?> clazz, String indexKeyName) {
+            return indexKeyNameToIndexNameCache.get(clazz).get(indexKeyName);
+        }
+
+        public Set<String> getAllIndexNames(Class<?> clazz) {
+            return allIndexNamesCache.get(clazz);
+        }
+
+        public void cache(Class<?> clazz, Map<String, List<String>> indexKeyNameToIndexNamesMap) {
+            indexKeyNameToIndexNameCache.put(clazz, indexKeyNameToIndexNamesMap);
+
+            Set<String> allIndexNames = new HashSet<String>();
+            for (List<String> indexNames : indexKeyNameToIndexNamesMap.values()) {
+                if (indexNames != null) {
+                    allIndexNames.addAll(indexNames);
+                }
+            }
+            allIndexNamesCache.put(clazz, allIndexNames);
+        }
     }
 
 }

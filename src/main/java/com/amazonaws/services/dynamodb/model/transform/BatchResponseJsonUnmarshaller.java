@@ -27,6 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * Batch Response JSON Unmarshaller
+ * @deprecated {@link BatchResponse} is no longer supported in the latest service API.
  */
 @Deprecated
 public class BatchResponseJsonUnmarshaller implements Unmarshaller<BatchResponse, JsonUnmarshallerContext> {

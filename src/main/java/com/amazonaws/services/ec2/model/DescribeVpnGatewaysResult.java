@@ -17,21 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
  * 
- * </p>
  */
 public class DescribeVpnGatewaysResult implements Serializable {
 
     /**
-     * 
+     * Information about one or more virtual private gateways.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<VpnGateway> vpnGateways;
 
     /**
-     * 
+     * Information about one or more virtual private gateways.
      *
-     * @return 
+     * @return Information about one or more virtual private gateways.
      */
     public java.util.List<VpnGateway> getVpnGateways() {
         if (vpnGateways == null) {
@@ -42,9 +40,9 @@ public class DescribeVpnGatewaysResult implements Serializable {
     }
     
     /**
-     * 
+     * Information about one or more virtual private gateways.
      *
-     * @param vpnGateways 
+     * @param vpnGateways Information about one or more virtual private gateways.
      */
     public void setVpnGateways(java.util.Collection<VpnGateway> vpnGateways) {
         if (vpnGateways == null) {
@@ -57,11 +55,11 @@ public class DescribeVpnGatewaysResult implements Serializable {
     }
     
     /**
-     * 
+     * Information about one or more virtual private gateways.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGateways 
+     * @param vpnGateways Information about one or more virtual private gateways.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,11 +73,11 @@ public class DescribeVpnGatewaysResult implements Serializable {
     }
     
     /**
-     * 
+     * Information about one or more virtual private gateways.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGateways 
+     * @param vpnGateways Information about one or more virtual private gateways.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -17,41 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of modifying Reserved Instances. Contains the ID of the modification request.
- * </p>
+ * 
  */
 public class ModifyReservedInstancesResult implements Serializable {
 
     /**
-     * The unique ID for the submitted modification request.
+     * The ID for the modification.
      */
     private String reservedInstancesModificationId;
 
     /**
-     * The unique ID for the submitted modification request.
+     * The ID for the modification.
      *
-     * @return The unique ID for the submitted modification request.
+     * @return The ID for the modification.
      */
     public String getReservedInstancesModificationId() {
         return reservedInstancesModificationId;
     }
     
     /**
-     * The unique ID for the submitted modification request.
+     * The ID for the modification.
      *
-     * @param reservedInstancesModificationId The unique ID for the submitted modification request.
+     * @param reservedInstancesModificationId The ID for the modification.
      */
     public void setReservedInstancesModificationId(String reservedInstancesModificationId) {
         this.reservedInstancesModificationId = reservedInstancesModificationId;
     }
     
     /**
-     * The unique ID for the submitted modification request.
+     * The ID for the modification.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesModificationId The unique ID for the submitted modification request.
+     * @param reservedInstancesModificationId The ID for the modification.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

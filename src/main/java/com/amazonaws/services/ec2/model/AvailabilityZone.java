@@ -18,18 +18,18 @@ import java.io.Serializable;
 
 /**
  * <p>
- * An EC2 availability zone, separate and fault tolerant from other availability zones.
+ * Describes an Availability Zone.
  * </p>
  */
 public class AvailabilityZone implements Serializable {
 
     /**
-     * Name of the Availability Zone.
+     * The name of the Availability Zone.
      */
     private String zoneName;
 
     /**
-     * State of the Availability Zone.
+     * The state of the Availability Zone.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available
@@ -37,39 +37,39 @@ public class AvailabilityZone implements Serializable {
     private String state;
 
     /**
-     * Name of the region in which this zone resides.
+     * The name of the region.
      */
     private String regionName;
 
     /**
-     * A list of messages about the Availability Zone.
+     * Any messages about the Availability Zone.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZoneMessage> messages;
 
     /**
-     * Name of the Availability Zone.
+     * The name of the Availability Zone.
      *
-     * @return Name of the Availability Zone.
+     * @return The name of the Availability Zone.
      */
     public String getZoneName() {
         return zoneName;
     }
     
     /**
-     * Name of the Availability Zone.
+     * The name of the Availability Zone.
      *
-     * @param zoneName Name of the Availability Zone.
+     * @param zoneName The name of the Availability Zone.
      */
     public void setZoneName(String zoneName) {
         this.zoneName = zoneName;
     }
     
     /**
-     * Name of the Availability Zone.
+     * The name of the Availability Zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param zoneName Name of the Availability Zone.
+     * @param zoneName The name of the Availability Zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -80,12 +80,12 @@ public class AvailabilityZone implements Serializable {
     }
 
     /**
-     * State of the Availability Zone.
+     * The state of the Availability Zone.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available
      *
-     * @return State of the Availability Zone.
+     * @return The state of the Availability Zone.
      *
      * @see AvailabilityZoneState
      */
@@ -94,12 +94,12 @@ public class AvailabilityZone implements Serializable {
     }
     
     /**
-     * State of the Availability Zone.
+     * The state of the Availability Zone.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available
      *
-     * @param state State of the Availability Zone.
+     * @param state The state of the Availability Zone.
      *
      * @see AvailabilityZoneState
      */
@@ -108,14 +108,14 @@ public class AvailabilityZone implements Serializable {
     }
     
     /**
-     * State of the Availability Zone.
+     * The state of the Availability Zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available
      *
-     * @param state State of the Availability Zone.
+     * @param state The state of the Availability Zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -128,12 +128,12 @@ public class AvailabilityZone implements Serializable {
     }
 
     /**
-     * State of the Availability Zone.
+     * The state of the Availability Zone.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available
      *
-     * @param state State of the Availability Zone.
+     * @param state The state of the Availability Zone.
      *
      * @see AvailabilityZoneState
      */
@@ -142,14 +142,14 @@ public class AvailabilityZone implements Serializable {
     }
     
     /**
-     * State of the Availability Zone.
+     * The state of the Availability Zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available
      *
-     * @param state State of the Availability Zone.
+     * @param state The state of the Availability Zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -162,29 +162,29 @@ public class AvailabilityZone implements Serializable {
     }
 
     /**
-     * Name of the region in which this zone resides.
+     * The name of the region.
      *
-     * @return Name of the region in which this zone resides.
+     * @return The name of the region.
      */
     public String getRegionName() {
         return regionName;
     }
     
     /**
-     * Name of the region in which this zone resides.
+     * The name of the region.
      *
-     * @param regionName Name of the region in which this zone resides.
+     * @param regionName The name of the region.
      */
     public void setRegionName(String regionName) {
         this.regionName = regionName;
     }
     
     /**
-     * Name of the region in which this zone resides.
+     * The name of the region.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param regionName Name of the region in which this zone resides.
+     * @param regionName The name of the region.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -195,9 +195,9 @@ public class AvailabilityZone implements Serializable {
     }
 
     /**
-     * A list of messages about the Availability Zone.
+     * Any messages about the Availability Zone.
      *
-     * @return A list of messages about the Availability Zone.
+     * @return Any messages about the Availability Zone.
      */
     public java.util.List<AvailabilityZoneMessage> getMessages() {
         if (messages == null) {
@@ -208,9 +208,9 @@ public class AvailabilityZone implements Serializable {
     }
     
     /**
-     * A list of messages about the Availability Zone.
+     * Any messages about the Availability Zone.
      *
-     * @param messages A list of messages about the Availability Zone.
+     * @param messages Any messages about the Availability Zone.
      */
     public void setMessages(java.util.Collection<AvailabilityZoneMessage> messages) {
         if (messages == null) {
@@ -223,11 +223,11 @@ public class AvailabilityZone implements Serializable {
     }
     
     /**
-     * A list of messages about the Availability Zone.
+     * Any messages about the Availability Zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param messages A list of messages about the Availability Zone.
+     * @param messages Any messages about the Availability Zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -241,11 +241,11 @@ public class AvailabilityZone implements Serializable {
     }
     
     /**
-     * A list of messages about the Availability Zone.
+     * Any messages about the Availability Zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param messages A list of messages about the Availability Zone.
+     * @param messages Any messages about the Availability Zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

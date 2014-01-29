@@ -17,44 +17,66 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Instance Network Interface Attachment
+ * <p>
+ * Describes a network interface attachment.
+ * </p>
  */
 public class InstanceNetworkInterfaceAttachment implements Serializable {
 
+    /**
+     * The ID of the network interface attachment.
+     */
     private String attachmentId;
 
+    /**
+     * The index of the device on the instance for the network interface
+     * attachment.
+     */
     private Integer deviceIndex;
 
+    /**
+     * The attachment state.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
+     */
     private String status;
 
+    /**
+     * The time stamp when the attachment initiated.
+     */
     private java.util.Date attachTime;
 
+    /**
+     * Indicates whether the network interface is deleted when the instance
+     * is terminated.
+     */
     private Boolean deleteOnTermination;
 
     /**
-     * Returns the value of the AttachmentId property for this object.
+     * The ID of the network interface attachment.
      *
-     * @return The value of the AttachmentId property for this object.
+     * @return The ID of the network interface attachment.
      */
     public String getAttachmentId() {
         return attachmentId;
     }
     
     /**
-     * Sets the value of the AttachmentId property for this object.
+     * The ID of the network interface attachment.
      *
-     * @param attachmentId The new value for the AttachmentId property for this object.
+     * @param attachmentId The ID of the network interface attachment.
      */
     public void setAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
     }
     
     /**
-     * Sets the value of the AttachmentId property for this object.
+     * The ID of the network interface attachment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachmentId The new value for the AttachmentId property for this object.
+     * @param attachmentId The ID of the network interface attachment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -65,29 +87,35 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
     }
 
     /**
-     * Returns the value of the DeviceIndex property for this object.
+     * The index of the device on the instance for the network interface
+     * attachment.
      *
-     * @return The value of the DeviceIndex property for this object.
+     * @return The index of the device on the instance for the network interface
+     *         attachment.
      */
     public Integer getDeviceIndex() {
         return deviceIndex;
     }
     
     /**
-     * Sets the value of the DeviceIndex property for this object.
+     * The index of the device on the instance for the network interface
+     * attachment.
      *
-     * @param deviceIndex The new value for the DeviceIndex property for this object.
+     * @param deviceIndex The index of the device on the instance for the network interface
+     *         attachment.
      */
     public void setDeviceIndex(Integer deviceIndex) {
         this.deviceIndex = deviceIndex;
     }
     
     /**
-     * Sets the value of the DeviceIndex property for this object.
+     * The index of the device on the instance for the network interface
+     * attachment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deviceIndex The new value for the DeviceIndex property for this object.
+     * @param deviceIndex The index of the device on the instance for the network interface
+     *         attachment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -98,12 +126,12 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
     }
 
     /**
-     * Returns the value of the Status property for this object.
+     * The attachment state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @return The value of the Status property for this object.
+     * @return The attachment state.
      *
      * @see AttachmentStatus
      */
@@ -112,12 +140,12 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The attachment state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The attachment state.
      *
      * @see AttachmentStatus
      */
@@ -126,14 +154,14 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The attachment state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The attachment state.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -146,12 +174,12 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
     }
 
     /**
-     * Sets the value of the Status property for this object.
+     * The attachment state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The attachment state.
      *
      * @see AttachmentStatus
      */
@@ -160,14 +188,14 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The attachment state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The attachment state.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -180,29 +208,29 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
     }
 
     /**
-     * Returns the value of the AttachTime property for this object.
+     * The time stamp when the attachment initiated.
      *
-     * @return The value of the AttachTime property for this object.
+     * @return The time stamp when the attachment initiated.
      */
     public java.util.Date getAttachTime() {
         return attachTime;
     }
     
     /**
-     * Sets the value of the AttachTime property for this object.
+     * The time stamp when the attachment initiated.
      *
-     * @param attachTime The new value for the AttachTime property for this object.
+     * @param attachTime The time stamp when the attachment initiated.
      */
     public void setAttachTime(java.util.Date attachTime) {
         this.attachTime = attachTime;
     }
     
     /**
-     * Sets the value of the AttachTime property for this object.
+     * The time stamp when the attachment initiated.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachTime The new value for the AttachTime property for this object.
+     * @param attachTime The time stamp when the attachment initiated.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -213,29 +241,35 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
     }
 
     /**
-     * Returns the value of the DeleteOnTermination property for this object.
+     * Indicates whether the network interface is deleted when the instance
+     * is terminated.
      *
-     * @return The value of the DeleteOnTermination property for this object.
+     * @return Indicates whether the network interface is deleted when the instance
+     *         is terminated.
      */
     public Boolean isDeleteOnTermination() {
         return deleteOnTermination;
     }
     
     /**
-     * Sets the value of the DeleteOnTermination property for this object.
+     * Indicates whether the network interface is deleted when the instance
+     * is terminated.
      *
-     * @param deleteOnTermination The new value for the DeleteOnTermination property for this object.
+     * @param deleteOnTermination Indicates whether the network interface is deleted when the instance
+     *         is terminated.
      */
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
     
     /**
-     * Sets the value of the DeleteOnTermination property for this object.
+     * Indicates whether the network interface is deleted when the instance
+     * is terminated.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deleteOnTermination The new value for the DeleteOnTermination property for this object.
+     * @param deleteOnTermination Indicates whether the network interface is deleted when the instance
+     *         is terminated.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -246,9 +280,11 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
     }
 
     /**
-     * Returns the value of the DeleteOnTermination property for this object.
+     * Indicates whether the network interface is deleted when the instance
+     * is terminated.
      *
-     * @return The value of the DeleteOnTermination property for this object.
+     * @return Indicates whether the network interface is deleted when the instance
+     *         is terminated.
      */
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;

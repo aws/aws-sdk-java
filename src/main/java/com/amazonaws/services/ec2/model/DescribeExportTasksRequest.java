@@ -20,18 +20,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeExportTasks(DescribeExportTasksRequest) DescribeExportTasks operation}.
- * 
+ * <p>
+ * Describes one or more of your export tasks.
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeExportTasks(DescribeExportTasksRequest)
  */
 public class DescribeExportTasksRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * One or more export task IDs.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> exportTaskIds;
 
     /**
-     * Returns the value of the ExportTaskIds property for this object.
+     * One or more export task IDs.
      *
-     * @return The value of the ExportTaskIds property for this object.
+     * @return One or more export task IDs.
      */
     public java.util.List<String> getExportTaskIds() {
         if (exportTaskIds == null) {
@@ -42,9 +47,9 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * Sets the value of the ExportTaskIds property for this object.
+     * One or more export task IDs.
      *
-     * @param exportTaskIds The new value for the ExportTaskIds property for this object.
+     * @param exportTaskIds One or more export task IDs.
      */
     public void setExportTaskIds(java.util.Collection<String> exportTaskIds) {
         if (exportTaskIds == null) {
@@ -57,11 +62,11 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * Sets the value of the ExportTaskIds property for this object.
+     * One or more export task IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exportTaskIds The new value for the ExportTaskIds property for this object.
+     * @param exportTaskIds One or more export task IDs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,11 +80,11 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * Sets the value of the ExportTaskIds property for this object.
+     * One or more export task IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exportTaskIds The new value for the ExportTaskIds property for this object.
+     * @param exportTaskIds One or more export task IDs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

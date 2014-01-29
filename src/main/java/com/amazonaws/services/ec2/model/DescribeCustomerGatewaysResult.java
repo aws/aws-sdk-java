@@ -17,21 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
  * 
- * </p>
  */
 public class DescribeCustomerGatewaysResult implements Serializable {
 
     /**
-     * 
+     * Information about one or more customer gateways.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<CustomerGateway> customerGateways;
 
     /**
-     * 
+     * Information about one or more customer gateways.
      *
-     * @return 
+     * @return Information about one or more customer gateways.
      */
     public java.util.List<CustomerGateway> getCustomerGateways() {
         if (customerGateways == null) {
@@ -42,9 +40,9 @@ public class DescribeCustomerGatewaysResult implements Serializable {
     }
     
     /**
-     * 
+     * Information about one or more customer gateways.
      *
-     * @param customerGateways 
+     * @param customerGateways Information about one or more customer gateways.
      */
     public void setCustomerGateways(java.util.Collection<CustomerGateway> customerGateways) {
         if (customerGateways == null) {
@@ -57,11 +55,11 @@ public class DescribeCustomerGatewaysResult implements Serializable {
     }
     
     /**
-     * 
+     * Information about one or more customer gateways.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customerGateways 
+     * @param customerGateways Information about one or more customer gateways.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,11 +73,11 @@ public class DescribeCustomerGatewaysResult implements Serializable {
     }
     
     /**
-     * 
+     * Information about one or more customer gateways.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customerGateways 
+     * @param customerGateways Information about one or more customer gateways.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

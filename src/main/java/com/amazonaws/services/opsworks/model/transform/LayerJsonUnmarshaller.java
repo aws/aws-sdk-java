@@ -66,6 +66,7 @@ public class LayerJsonUnmarshaller implements Unmarshaller<Layer, JsonUnmarshall
                     layer.setShortname(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
+                    context.nextToken();
                     layer.setAttributes(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("CustomInstanceProfileArn", targetDepth)) {
@@ -73,15 +74,19 @@ public class LayerJsonUnmarshaller implements Unmarshaller<Layer, JsonUnmarshall
                     layer.setCustomInstanceProfileArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CustomSecurityGroupIds", targetDepth)) {
+                    context.nextToken();
                     layer.setCustomSecurityGroupIds(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("DefaultSecurityGroupNames", targetDepth)) {
+                    context.nextToken();
                     layer.setDefaultSecurityGroupNames(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Packages", targetDepth)) {
+                    context.nextToken();
                     layer.setPackages(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("VolumeConfigurations", targetDepth)) {
+                    context.nextToken();
                     layer.setVolumeConfigurations(new ListUnmarshaller<VolumeConfiguration>(VolumeConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("EnableAutoHealing", targetDepth)) {

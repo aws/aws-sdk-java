@@ -46,6 +46,7 @@ public class DescribeTrustedAdvisorCheckSummariesResultJsonUnmarshaller implemen
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("summaries", targetDepth)) {
+                    context.nextToken();
                     describeTrustedAdvisorCheckSummariesResult.setSummaries(new ListUnmarshaller<TrustedAdvisorCheckSummary>(TrustedAdvisorCheckSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -17,54 +17,44 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Specifies how an EBS volume should be mapped as part of a block device mapping specification when launching a new instance.
- * </p>
+ * 
  */
 public class EbsInstanceBlockDeviceSpecification implements Serializable {
 
     /**
-     * The ID of the EBS volume that should be mounted as a block device on
-     * an Amazon EC2 instance.
+     * The ID of the Amazon EBS volume.
      */
     private String volumeId;
 
     /**
-     * Specifies whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the volume is deleted on instance termination.
      */
     private Boolean deleteOnTermination;
 
     /**
-     * The ID of the EBS volume that should be mounted as a block device on
-     * an Amazon EC2 instance.
+     * The ID of the Amazon EBS volume.
      *
-     * @return The ID of the EBS volume that should be mounted as a block device on
-     *         an Amazon EC2 instance.
+     * @return The ID of the Amazon EBS volume.
      */
     public String getVolumeId() {
         return volumeId;
     }
     
     /**
-     * The ID of the EBS volume that should be mounted as a block device on
-     * an Amazon EC2 instance.
+     * The ID of the Amazon EBS volume.
      *
-     * @param volumeId The ID of the EBS volume that should be mounted as a block device on
-     *         an Amazon EC2 instance.
+     * @param volumeId The ID of the Amazon EBS volume.
      */
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
     
     /**
-     * The ID of the EBS volume that should be mounted as a block device on
-     * an Amazon EC2 instance.
+     * The ID of the Amazon EBS volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeId The ID of the EBS volume that should be mounted as a block device on
-     *         an Amazon EC2 instance.
+     * @param volumeId The ID of the Amazon EBS volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,35 +65,29 @@ public class EbsInstanceBlockDeviceSpecification implements Serializable {
     }
 
     /**
-     * Specifies whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the volume is deleted on instance termination.
      *
-     * @return Specifies whether the Amazon EBS volume is deleted on instance
-     *         termination.
+     * @return Indicates whether the volume is deleted on instance termination.
      */
     public Boolean isDeleteOnTermination() {
         return deleteOnTermination;
     }
     
     /**
-     * Specifies whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the volume is deleted on instance termination.
      *
-     * @param deleteOnTermination Specifies whether the Amazon EBS volume is deleted on instance
-     *         termination.
+     * @param deleteOnTermination Indicates whether the volume is deleted on instance termination.
      */
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
     
     /**
-     * Specifies whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the volume is deleted on instance termination.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deleteOnTermination Specifies whether the Amazon EBS volume is deleted on instance
-     *         termination.
+     * @param deleteOnTermination Indicates whether the volume is deleted on instance termination.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -114,11 +98,9 @@ public class EbsInstanceBlockDeviceSpecification implements Serializable {
     }
 
     /**
-     * Specifies whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the volume is deleted on instance termination.
      *
-     * @return Specifies whether the Amazon EBS volume is deleted on instance
-     *         termination.
+     * @return Indicates whether the volume is deleted on instance termination.
      */
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;

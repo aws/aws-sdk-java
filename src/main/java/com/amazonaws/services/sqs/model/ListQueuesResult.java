@@ -17,7 +17,9 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A list of your queues.
+ * </p>
  */
 public class ListQueuesResult implements Serializable {
 

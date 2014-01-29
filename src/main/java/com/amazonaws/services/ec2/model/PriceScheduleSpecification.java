@@ -17,40 +17,62 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Price Schedule Specification
+ * <p>
+ * Describes the price for a Reserved Instance.
+ * </p>
  */
 public class PriceScheduleSpecification implements Serializable {
 
+    /**
+     * The number of months remaining in the reservation. For example, 2 is
+     * the second to the last month before the capacity reservation expires.
+     */
     private Long term;
 
+    /**
+     * The fixed price for the term.
+     */
     private Double price;
 
+    /**
+     * The currency for transacting the Reserved Instance resale. At this
+     * time, the only supported currency is <code>USD</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>USD
+     */
     private String currencyCode;
 
     /**
-     * Returns the value of the Term property for this object.
+     * The number of months remaining in the reservation. For example, 2 is
+     * the second to the last month before the capacity reservation expires.
      *
-     * @return The value of the Term property for this object.
+     * @return The number of months remaining in the reservation. For example, 2 is
+     *         the second to the last month before the capacity reservation expires.
      */
     public Long getTerm() {
         return term;
     }
     
     /**
-     * Sets the value of the Term property for this object.
+     * The number of months remaining in the reservation. For example, 2 is
+     * the second to the last month before the capacity reservation expires.
      *
-     * @param term The new value for the Term property for this object.
+     * @param term The number of months remaining in the reservation. For example, 2 is
+     *         the second to the last month before the capacity reservation expires.
      */
     public void setTerm(Long term) {
         this.term = term;
     }
     
     /**
-     * Sets the value of the Term property for this object.
+     * The number of months remaining in the reservation. For example, 2 is
+     * the second to the last month before the capacity reservation expires.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param term The new value for the Term property for this object.
+     * @param term The number of months remaining in the reservation. For example, 2 is
+     *         the second to the last month before the capacity reservation expires.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -61,29 +83,29 @@ public class PriceScheduleSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the Price property for this object.
+     * The fixed price for the term.
      *
-     * @return The value of the Price property for this object.
+     * @return The fixed price for the term.
      */
     public Double getPrice() {
         return price;
     }
     
     /**
-     * Sets the value of the Price property for this object.
+     * The fixed price for the term.
      *
-     * @param price The new value for the Price property for this object.
+     * @param price The fixed price for the term.
      */
     public void setPrice(Double price) {
         this.price = price;
     }
     
     /**
-     * Sets the value of the Price property for this object.
+     * The fixed price for the term.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param price The new value for the Price property for this object.
+     * @param price The fixed price for the term.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -94,12 +116,14 @@ public class PriceScheduleSpecification implements Serializable {
     }
 
     /**
-     * Returns the value of the CurrencyCode property for this object.
+     * The currency for transacting the Reserved Instance resale. At this
+     * time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @return The value of the CurrencyCode property for this object.
+     * @return The currency for transacting the Reserved Instance resale. At this
+     *         time, the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
      */
@@ -108,12 +132,14 @@ public class PriceScheduleSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the CurrencyCode property for this object.
+     * The currency for transacting the Reserved Instance resale. At this
+     * time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The new value for the CurrencyCode property for this object.
+     * @param currencyCode The currency for transacting the Reserved Instance resale. At this
+     *         time, the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
      */
@@ -122,14 +148,16 @@ public class PriceScheduleSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the CurrencyCode property for this object.
+     * The currency for transacting the Reserved Instance resale. At this
+     * time, the only supported currency is <code>USD</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The new value for the CurrencyCode property for this object.
+     * @param currencyCode The currency for transacting the Reserved Instance resale. At this
+     *         time, the only supported currency is <code>USD</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -142,12 +170,14 @@ public class PriceScheduleSpecification implements Serializable {
     }
 
     /**
-     * Sets the value of the CurrencyCode property for this object.
+     * The currency for transacting the Reserved Instance resale. At this
+     * time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The new value for the CurrencyCode property for this object.
+     * @param currencyCode The currency for transacting the Reserved Instance resale. At this
+     *         time, the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
      */
@@ -156,14 +186,16 @@ public class PriceScheduleSpecification implements Serializable {
     }
     
     /**
-     * Sets the value of the CurrencyCode property for this object.
+     * The currency for transacting the Reserved Instance resale. At this
+     * time, the only supported currency is <code>USD</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The new value for the CurrencyCode property for this object.
+     * @param currencyCode The currency for transacting the Reserved Instance resale. At this
+     *         time, the only supported currency is <code>USD</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -17,24 +17,27 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * For each message in the batch, the response contains a DeleteMessageBatchResultEntry tag if the message is deleted or a BatchResultErrorEntry tag if
+ * the message cannot be deleted.
+ * </p>
  */
 public class DeleteMessageBatchResult implements Serializable {
 
     /**
-     * A list of <a>DeleteMessageBatchResultEntry</a>s.
+     * A list of <a>DeleteMessageBatchResultEntry</a> items.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<DeleteMessageBatchResultEntry> successful;
 
     /**
-     * A list of <a>BatchResultErrorEntry</a>s.
+     * A list of <a>BatchResultErrorEntry</a> items.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<BatchResultErrorEntry> failed;
 
     /**
-     * A list of <a>DeleteMessageBatchResultEntry</a>s.
+     * A list of <a>DeleteMessageBatchResultEntry</a> items.
      *
-     * @return A list of <a>DeleteMessageBatchResultEntry</a>s.
+     * @return A list of <a>DeleteMessageBatchResultEntry</a> items.
      */
     public java.util.List<DeleteMessageBatchResultEntry> getSuccessful() {
         if (successful == null) {
@@ -45,9 +48,9 @@ public class DeleteMessageBatchResult implements Serializable {
     }
     
     /**
-     * A list of <a>DeleteMessageBatchResultEntry</a>s.
+     * A list of <a>DeleteMessageBatchResultEntry</a> items.
      *
-     * @param successful A list of <a>DeleteMessageBatchResultEntry</a>s.
+     * @param successful A list of <a>DeleteMessageBatchResultEntry</a> items.
      */
     public void setSuccessful(java.util.Collection<DeleteMessageBatchResultEntry> successful) {
         if (successful == null) {
@@ -60,11 +63,11 @@ public class DeleteMessageBatchResult implements Serializable {
     }
     
     /**
-     * A list of <a>DeleteMessageBatchResultEntry</a>s.
+     * A list of <a>DeleteMessageBatchResultEntry</a> items.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param successful A list of <a>DeleteMessageBatchResultEntry</a>s.
+     * @param successful A list of <a>DeleteMessageBatchResultEntry</a> items.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -78,11 +81,11 @@ public class DeleteMessageBatchResult implements Serializable {
     }
     
     /**
-     * A list of <a>DeleteMessageBatchResultEntry</a>s.
+     * A list of <a>DeleteMessageBatchResultEntry</a> items.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param successful A list of <a>DeleteMessageBatchResultEntry</a>s.
+     * @param successful A list of <a>DeleteMessageBatchResultEntry</a> items.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -100,9 +103,9 @@ public class DeleteMessageBatchResult implements Serializable {
     }
 
     /**
-     * A list of <a>BatchResultErrorEntry</a>s.
+     * A list of <a>BatchResultErrorEntry</a> items.
      *
-     * @return A list of <a>BatchResultErrorEntry</a>s.
+     * @return A list of <a>BatchResultErrorEntry</a> items.
      */
     public java.util.List<BatchResultErrorEntry> getFailed() {
         if (failed == null) {
@@ -113,9 +116,9 @@ public class DeleteMessageBatchResult implements Serializable {
     }
     
     /**
-     * A list of <a>BatchResultErrorEntry</a>s.
+     * A list of <a>BatchResultErrorEntry</a> items.
      *
-     * @param failed A list of <a>BatchResultErrorEntry</a>s.
+     * @param failed A list of <a>BatchResultErrorEntry</a> items.
      */
     public void setFailed(java.util.Collection<BatchResultErrorEntry> failed) {
         if (failed == null) {
@@ -128,11 +131,11 @@ public class DeleteMessageBatchResult implements Serializable {
     }
     
     /**
-     * A list of <a>BatchResultErrorEntry</a>s.
+     * A list of <a>BatchResultErrorEntry</a> items.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param failed A list of <a>BatchResultErrorEntry</a>s.
+     * @param failed A list of <a>BatchResultErrorEntry</a> items.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -146,11 +149,11 @@ public class DeleteMessageBatchResult implements Serializable {
     }
     
     /**
-     * A list of <a>BatchResultErrorEntry</a>s.
+     * A list of <a>BatchResultErrorEntry</a> items.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param failed A list of <a>BatchResultErrorEntry</a>s.
+     * @param failed A list of <a>BatchResultErrorEntry</a> items.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

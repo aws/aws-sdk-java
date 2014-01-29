@@ -96,6 +96,13 @@ public class VersionListing {
      * version listing was returned
      */
     private String delimiter;
+    
+    /**
+     * The encodingType parameter originally specified by the caller when this
+     * version listing was returned.
+     */
+    private String encodingType;
+
 
     /**
      * Gets the list of version summaries describing the versions stored in
@@ -416,6 +423,32 @@ public class VersionListing {
      */
     public void setTruncated(boolean isTruncated) { 
         this.isTruncated = isTruncated; 
+    }
+
+    /**
+     * Gets the encoding type used by Amazon S3 to encode object key names in
+     * the XML response. If you specify <code>encodingType</code> request
+     * parameter, Amazon S3 includes this element in the response, and returns
+     * encoded key name values in the following response elements:
+     * <code>KeyMarker, NextKeyMarker, Prefix, Key, Delimiter</code>.
+     * 
+     * @return <code>Null</code> if <code>encodingType</code> is not specified
+     *         in the request parameter.
+     */
+    public String getEncodingType() {
+        return encodingType;
+    }
+
+    /**
+     * For internal use only. Sets the encoding type used by Amazon S3 to encode
+     * object key names in the XML response.
+     * 
+     * @param encodingType
+     *            <code>Null</code> if <code>encodingType</code> is not
+     *            specified in the request parameter.
+     */
+    public void setEncodingType(String encodingType) {
+        this.encodingType = encodingType;
     }
 
 }

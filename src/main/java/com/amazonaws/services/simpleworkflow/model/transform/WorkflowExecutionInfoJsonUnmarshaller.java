@@ -74,6 +74,7 @@ public class WorkflowExecutionInfoJsonUnmarshaller implements Unmarshaller<Workf
                     workflowExecutionInfo.setParent(WorkflowExecutionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tagList", targetDepth)) {
+                    context.nextToken();
                     workflowExecutionInfo.setTagList(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("cancelRequested", targetDepth)) {

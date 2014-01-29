@@ -420,7 +420,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AmazonSimpleWorkflowClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        super(adjustClientConfiguration(clientConfiguration));
         
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
         
@@ -483,7 +483,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public AmazonSimpleWorkflowClient(AWSCredentialsProvider awsCredentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(clientConfiguration, requestMetricCollector);
+        super(adjustClientConfiguration(clientConfiguration), requestMetricCollector);
         
         this.awsCredentialsProvider = awsCredentialsProvider;
         
@@ -510,17 +510,21 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 "/com/amazonaws/services/simpleworkflow/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
                 "/com/amazonaws/services/simpleworkflow/request.handler2s"));
+    }
 
-        clientConfiguration = new ClientConfiguration(clientConfiguration);
-        if (clientConfiguration.getMaxConnections() == ClientConfiguration.DEFAULT_MAX_CONNECTIONS) {
+    private static ClientConfiguration adjustClientConfiguration(ClientConfiguration orig) {
+        ClientConfiguration config = orig;
+        
+        config = new ClientConfiguration(orig);
+        if (config.getMaxConnections() == ClientConfiguration.DEFAULT_MAX_CONNECTIONS) {
             log.debug("Overriding default max connection value to: " + 1000);
-            clientConfiguration.setMaxConnections(1000);
+            config.setMaxConnections(1000);
         }
-        if (clientConfiguration.getSocketTimeout() == ClientConfiguration.DEFAULT_SOCKET_TIMEOUT) {
+        if (config.getSocketTimeout() == ClientConfiguration.DEFAULT_SOCKET_TIMEOUT) {
             log.debug("Overriding default socket timeout value to: " + 90000);
-            clientConfiguration.setSocketTimeout(90000);
+            config.setSocketTimeout(90000);
         }
-        setConfiguration(clientConfiguration);
+        return config;
     }
 
     /**
@@ -3135,9 +3139,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
-
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
         Response<X> result = client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);

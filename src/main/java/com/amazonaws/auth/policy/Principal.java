@@ -145,6 +145,7 @@ public class Principal {
         AmazonElasticTranscoder("elastictranscoder.amazonaws.com"),
         AmazonEC2("ec2.amazonaws.com"),
         AWSOpsWorks("opsworks.amazonaws.com"),
+        AWSCloudHSM("cloudhsm.amazonaws.com"),
         AllServices("*");
         private String serviceId;
 

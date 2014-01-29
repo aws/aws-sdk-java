@@ -20,6 +20,7 @@ import com.amazonaws.services.dynamodb.model.Key;
 
 /**
  * A query expression
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression} instead.
  */
 @Deprecated
 public class DynamoDBQueryExpression {

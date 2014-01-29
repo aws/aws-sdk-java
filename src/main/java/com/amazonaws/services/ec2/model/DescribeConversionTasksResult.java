@@ -17,16 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Describe Conversion Tasks Result
+ * 
  */
 public class DescribeConversionTasksResult implements Serializable {
 
+    /**
+     * 
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ConversionTask> conversionTasks;
 
     /**
-     * Returns the value of the ConversionTasks property for this object.
+     * 
      *
-     * @return The value of the ConversionTasks property for this object.
+     * @return 
      */
     public java.util.List<ConversionTask> getConversionTasks() {
         if (conversionTasks == null) {
@@ -37,9 +40,9 @@ public class DescribeConversionTasksResult implements Serializable {
     }
     
     /**
-     * Sets the value of the ConversionTasks property for this object.
+     * 
      *
-     * @param conversionTasks The new value for the ConversionTasks property for this object.
+     * @param conversionTasks 
      */
     public void setConversionTasks(java.util.Collection<ConversionTask> conversionTasks) {
         if (conversionTasks == null) {
@@ -52,11 +55,11 @@ public class DescribeConversionTasksResult implements Serializable {
     }
     
     /**
-     * Sets the value of the ConversionTasks property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param conversionTasks The new value for the ConversionTasks property for this object.
+     * @param conversionTasks 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -70,11 +73,11 @@ public class DescribeConversionTasksResult implements Serializable {
     }
     
     /**
-     * Sets the value of the ConversionTasks property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param conversionTasks The new value for the ConversionTasks property for this object.
+     * @param conversionTasks 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

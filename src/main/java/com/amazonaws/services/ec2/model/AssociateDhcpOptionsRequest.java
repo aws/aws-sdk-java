@@ -23,10 +23,16 @@ import com.amazonaws.services.ec2.model.transform.AssociateDhcpOptionsRequestMar
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#associateDhcpOptions(AssociateDhcpOptionsRequest) AssociateDhcpOptions operation}.
  * <p>
- * Associates a set of DHCP options (that you've previously created) with the specified VPC. Or, associates the default DHCP options with the VPC. The
- * default set consists of the standard EC2 host name, no domain name, no DNS server, no NTP server, and no NetBIOS server or node type. After you
- * associate the options with the VPC, any existing instances and all new instances that you launch in that VPC use the options. For more information
- * about the supported DHCP options and using them with Amazon VPC, go to Using DHCP Options in the Amazon Virtual Private Cloud Developer Guide.
+ * Associates a set of DHCP options (that you've previously created) with the specified VPC, or associates no DHCP options with the VPC.
+ * </p>
+ * <p>
+ * After you associate the options with the VPC, any existing instances and all new instances that you launch in that VPC use the options. You don't need
+ * to restart or relaunch the instances. They automatically pick up the changes within a few hours, depending on how frequently the instance renews its
+ * DHCP lease. You can explicitly renew the lease using the operating system on the instance.
+ * </p>
+ * <p>
+ * For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a> in the
+ * <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#associateDhcpOptions(AssociateDhcpOptionsRequest)
@@ -34,13 +40,13 @@ import com.amazonaws.services.ec2.model.transform.AssociateDhcpOptionsRequestMar
 public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AssociateDhcpOptionsRequest> {
 
     /**
-     * The ID of the DHCP options to associate with the VPC. Specify
-     * "default" to associate the default DHCP options with the VPC.
+     * The ID of the DHCP options set, or <code>default</code> to associate
+     * no DHCP options with the VPC.
      */
     private String dhcpOptionsId;
 
     /**
-     * The ID of the VPC to associate the DHCP options with.
+     * The ID of the VPC.
      */
     private String vpcId;
 
@@ -55,42 +61,42 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest impleme
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param vpcId The ID of the VPC to associate the DHCP options with.
+     * @param vpcId The ID of the VPC.
      */
     public AssociateDhcpOptionsRequest(String vpcId) {
         setVpcId(vpcId);
     }
 
     /**
-     * The ID of the DHCP options to associate with the VPC. Specify
-     * "default" to associate the default DHCP options with the VPC.
+     * The ID of the DHCP options set, or <code>default</code> to associate
+     * no DHCP options with the VPC.
      *
-     * @return The ID of the DHCP options to associate with the VPC. Specify
-     *         "default" to associate the default DHCP options with the VPC.
+     * @return The ID of the DHCP options set, or <code>default</code> to associate
+     *         no DHCP options with the VPC.
      */
     public String getDhcpOptionsId() {
         return dhcpOptionsId;
     }
     
     /**
-     * The ID of the DHCP options to associate with the VPC. Specify
-     * "default" to associate the default DHCP options with the VPC.
+     * The ID of the DHCP options set, or <code>default</code> to associate
+     * no DHCP options with the VPC.
      *
-     * @param dhcpOptionsId The ID of the DHCP options to associate with the VPC. Specify
-     *         "default" to associate the default DHCP options with the VPC.
+     * @param dhcpOptionsId The ID of the DHCP options set, or <code>default</code> to associate
+     *         no DHCP options with the VPC.
      */
     public void setDhcpOptionsId(String dhcpOptionsId) {
         this.dhcpOptionsId = dhcpOptionsId;
     }
     
     /**
-     * The ID of the DHCP options to associate with the VPC. Specify
-     * "default" to associate the default DHCP options with the VPC.
+     * The ID of the DHCP options set, or <code>default</code> to associate
+     * no DHCP options with the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpOptionsId The ID of the DHCP options to associate with the VPC. Specify
-     *         "default" to associate the default DHCP options with the VPC.
+     * @param dhcpOptionsId The ID of the DHCP options set, or <code>default</code> to associate
+     *         no DHCP options with the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -101,29 +107,29 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The ID of the VPC to associate the DHCP options with.
+     * The ID of the VPC.
      *
-     * @return The ID of the VPC to associate the DHCP options with.
+     * @return The ID of the VPC.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * The ID of the VPC to associate the DHCP options with.
+     * The ID of the VPC.
      *
-     * @param vpcId The ID of the VPC to associate the DHCP options with.
+     * @param vpcId The ID of the VPC.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * The ID of the VPC to associate the DHCP options with.
+     * The ID of the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The ID of the VPC to associate the DHCP options with.
+     * @param vpcId The ID of the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

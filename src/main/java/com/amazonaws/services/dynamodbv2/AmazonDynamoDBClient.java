@@ -136,7 +136,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *                       (ex: proxy settings, retry counts, etc.).
      */
     public AmazonDynamoDBClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
-        super(clientConfiguration);
+        super(adjustClientConfiguration(clientConfiguration));
         
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
         
@@ -199,7 +199,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public AmazonDynamoDBClient(AWSCredentialsProvider awsCredentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(clientConfiguration, requestMetricCollector);
+        super(adjustClientConfiguration(clientConfiguration), requestMetricCollector);
         
         this.awsCredentialsProvider = awsCredentialsProvider;
         
@@ -224,12 +224,16 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 "/com/amazonaws/services/dynamodbv2/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
                 "/com/amazonaws/services/dynamodbv2/request.handler2s"));
+    }
 
-        clientConfiguration = new ClientConfiguration(clientConfiguration);
-        if (clientConfiguration.getRetryPolicy() == com.amazonaws.retry.PredefinedRetryPolicies.DEFAULT) {
-            clientConfiguration.setRetryPolicy(com.amazonaws.retry.PredefinedRetryPolicies.DYNAMODB_DEFAULT);
+    private static ClientConfiguration adjustClientConfiguration(ClientConfiguration orig) {
+        ClientConfiguration config = orig;
+        
+        config = new ClientConfiguration(orig);
+        if (config.getRetryPolicy() == com.amazonaws.retry.PredefinedRetryPolicies.DEFAULT) {
+            config.setRetryPolicy(com.amazonaws.retry.PredefinedRetryPolicies.DYNAMODB_DEFAULT);
         }
-        setConfiguration(clientConfiguration);
+        return config;
     }
 
     /**
@@ -1306,42 +1310,43 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * type than the one specified in the request, the value does not match.
      * For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p> </li> <li> <p><code>NE</code>
-     * : Not equal. <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>NE</code> : Not equal. <p><i>AttributeValueList</i> can
+     * contain only one <i>AttributeValue</i> of type String, Number, or
+     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
+     * different type than the one specified in the request, the value does
+     * not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
+     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> of type String, Number, or
+     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
+     * different type than the one specified in the request, the value does
+     * not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
+     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
+     * contain only one <i>AttributeValue</i> of type String, Number, or
+     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
+     * different type than the one specified in the request, the value does
+     * not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
+     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
      * If an item contains an <i>AttributeValue</i> of a different type than
      * the one specified in the request, the value does not match. For
      * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
      * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p> </li> <li> <p><code>LT</code> : Less than.
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
      * If an item contains an <i>AttributeValue</i> of a different type than
      * the one specified in the request, the value does not match. For
      * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
      * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p> </li> <li> <p><code>GE</code> : Greater than or
-     * equal. <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p> </li> <li> <p><code>GT</code> : Greater than.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p> </li> <li> <p><code>NOT_NULL</code> : The
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
      * attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
      * not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
      * subsequence, or value in a set. <p><i>AttributeValueList</i> can
@@ -1366,7 +1371,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * prefix. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String or Binary (not a Number or a
      * set). The target attribute of the comparison must be a String or
-     * Binary (not a Number or a set). <p> </li> <li> <p><code>IN</code> :
+     * Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
      * checks for exact matches. <p><i>AttributeValueList</i> can contain
      * more than one <i>AttributeValue</i> of type String, Number, or Binary
      * (not a set). The target attribute of the comparison must be of the
@@ -1468,42 +1473,43 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * type than the one specified in the request, the value does not match.
      * For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p> </li> <li> <p><code>NE</code>
-     * : Not equal. <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
-     * "1"]}</code>. <p> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>NE</code> : Not equal. <p><i>AttributeValueList</i> can
+     * contain only one <i>AttributeValue</i> of type String, Number, or
+     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
+     * different type than the one specified in the request, the value does
+     * not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
+     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
+     * can contain only one <i>AttributeValue</i> of type String, Number, or
+     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
+     * different type than the one specified in the request, the value does
+     * not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
+     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
+     * contain only one <i>AttributeValue</i> of type String, Number, or
+     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
+     * different type than the one specified in the request, the value does
+     * not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
+     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
+     * <p><code>GE</code> : Greater than or equal.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
      * If an item contains an <i>AttributeValue</i> of a different type than
      * the one specified in the request, the value does not match. For
      * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
      * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p> </li> <li> <p><code>LT</code> : Less than.
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
      * <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
      * If an item contains an <i>AttributeValue</i> of a different type than
      * the one specified in the request, the value does not match. For
      * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
      * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p> </li> <li> <p><code>GE</code> : Greater than or
-     * equal. <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p> </li> <li> <p><code>GT</code> : Greater than.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p> </li> <li> <p><code>NOT_NULL</code> : The
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
      * attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
      * not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
      * subsequence, or value in a set. <p><i>AttributeValueList</i> can
@@ -1528,7 +1534,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * prefix. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String or Binary (not a Number or a
      * set). The target attribute of the comparison must be a String or
-     * Binary (not a Number or a set). <p> </li> <li> <p><code>IN</code> :
+     * Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
      * checks for exact matches. <p><i>AttributeValueList</i> can contain
      * more than one <i>AttributeValue</i> of type String, Number, or Binary
      * (not a set). The target attribute of the comparison must be of the
@@ -2842,9 +2848,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
-
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
         Response<X> result = client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);

@@ -20,7 +20,8 @@ import com.amazonaws.AmazonServiceException;
  * <p>
  * This exception is thrown when the subscriber exceeded the limits on the number of objects or operations.
  * </p>
- */        
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.LimitExceededException} instead.
+ */
 @Deprecated
 public class LimitExceededException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

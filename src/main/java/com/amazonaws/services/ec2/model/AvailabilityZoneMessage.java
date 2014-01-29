@@ -17,36 +17,41 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Availability Zone Message
+ * <p>
+ * Describes a message about an Availability Zone.
+ * </p>
  */
 public class AvailabilityZoneMessage implements Serializable {
 
+    /**
+     * The message about the Availability Zone.
+     */
     private String message;
 
     /**
-     * Returns the value of the Message property for this object.
+     * The message about the Availability Zone.
      *
-     * @return The value of the Message property for this object.
+     * @return The message about the Availability Zone.
      */
     public String getMessage() {
         return message;
     }
     
     /**
-     * Sets the value of the Message property for this object.
+     * The message about the Availability Zone.
      *
-     * @param message The new value for the Message property for this object.
+     * @param message The message about the Availability Zone.
      */
     public void setMessage(String message) {
         this.message = message;
     }
     
     /**
-     * Sets the value of the Message property for this object.
+     * The message about the Availability Zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param message The new value for the Message property for this object.
+     * @param message The message about the Availability Zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

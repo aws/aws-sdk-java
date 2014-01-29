@@ -17,21 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of describing <i>Amazon Machine Images</i> (AMIs).
- * </p>
+ * 
  */
 public class DescribeImagesResult implements Serializable {
 
     /**
-     * The list of the described AMIs.
+     * Information about one or more images.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Image> images;
 
     /**
-     * The list of the described AMIs.
+     * Information about one or more images.
      *
-     * @return The list of the described AMIs.
+     * @return Information about one or more images.
      */
     public java.util.List<Image> getImages() {
         if (images == null) {
@@ -42,9 +40,9 @@ public class DescribeImagesResult implements Serializable {
     }
     
     /**
-     * The list of the described AMIs.
+     * Information about one or more images.
      *
-     * @param images The list of the described AMIs.
+     * @param images Information about one or more images.
      */
     public void setImages(java.util.Collection<Image> images) {
         if (images == null) {
@@ -57,11 +55,11 @@ public class DescribeImagesResult implements Serializable {
     }
     
     /**
-     * The list of the described AMIs.
+     * Information about one or more images.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param images The list of the described AMIs.
+     * @param images Information about one or more images.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -75,11 +73,11 @@ public class DescribeImagesResult implements Serializable {
     }
     
     /**
-     * The list of the described AMIs.
+     * Information about one or more images.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param images The list of the described AMIs.
+     * @param images Information about one or more images.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

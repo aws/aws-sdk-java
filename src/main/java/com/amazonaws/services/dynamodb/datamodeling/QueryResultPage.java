@@ -21,6 +21,7 @@ import com.amazonaws.services.dynamodb.model.Key;
 
 /**
  * Container for a page of query results
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.QueryResultPage} instead.
  */
 @Deprecated
 public class QueryResultPage<T> {

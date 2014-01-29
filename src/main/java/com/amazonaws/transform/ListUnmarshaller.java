@@ -39,8 +39,7 @@ public class ListUnmarshaller<T>
         List<T> list = new ArrayList<T>();
         int originalDepth = context.getCurrentDepth();
         
-        JsonToken firstToken = context.peek();
-        if (firstToken == JsonToken.VALUE_NULL) {
+        if (context.currentToken == JsonToken.VALUE_NULL) {
             return null;
         }
         

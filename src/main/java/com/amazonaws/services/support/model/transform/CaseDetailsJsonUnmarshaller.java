@@ -86,6 +86,7 @@ public class CaseDetailsJsonUnmarshaller implements Unmarshaller<CaseDetails, Js
                     caseDetails.setRecentCommunications(RecentCaseCommunicationsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ccEmailAddresses", targetDepth)) {
+                    context.nextToken();
                     caseDetails.setCcEmailAddresses(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("language", targetDepth)) {

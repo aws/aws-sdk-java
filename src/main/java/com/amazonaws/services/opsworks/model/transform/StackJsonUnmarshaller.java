@@ -62,6 +62,7 @@ public class StackJsonUnmarshaller implements Unmarshaller<Stack, JsonUnmarshall
                     stack.setVpcId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
+                    context.nextToken();
                     stack.setAttributes(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("ServiceRoleArn", targetDepth)) {

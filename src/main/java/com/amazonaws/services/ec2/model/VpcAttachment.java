@@ -18,18 +18,18 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
+ * Describes an attachment between a virtual private gateway and a VPC.
  * </p>
  */
 public class VpcAttachment implements Serializable {
 
     /**
-     * 
+     * The ID of the VPC.
      */
     private String vpcId;
 
     /**
-     * 
+     * The current state of the attachment.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
@@ -37,29 +37,29 @@ public class VpcAttachment implements Serializable {
     private String state;
 
     /**
-     * 
+     * The ID of the VPC.
      *
-     * @return 
+     * @return The ID of the VPC.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * 
+     * The ID of the VPC.
      *
-     * @param vpcId 
+     * @param vpcId The ID of the VPC.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * 
+     * The ID of the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId 
+     * @param vpcId The ID of the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -70,12 +70,12 @@ public class VpcAttachment implements Serializable {
     }
 
     /**
-     * 
+     * The current state of the attachment.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @return 
+     * @return The current state of the attachment.
      *
      * @see AttachmentStatus
      */
@@ -84,12 +84,12 @@ public class VpcAttachment implements Serializable {
     }
     
     /**
-     * 
+     * The current state of the attachment.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param state 
+     * @param state The current state of the attachment.
      *
      * @see AttachmentStatus
      */
@@ -98,14 +98,14 @@ public class VpcAttachment implements Serializable {
     }
     
     /**
-     * 
+     * The current state of the attachment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param state 
+     * @param state The current state of the attachment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -118,12 +118,12 @@ public class VpcAttachment implements Serializable {
     }
 
     /**
-     * 
+     * The current state of the attachment.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param state 
+     * @param state The current state of the attachment.
      *
      * @see AttachmentStatus
      */
@@ -132,14 +132,14 @@ public class VpcAttachment implements Serializable {
     }
     
     /**
-     * 
+     * The current state of the attachment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
-     * @param state 
+     * @param state The current state of the attachment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

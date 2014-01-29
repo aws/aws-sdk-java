@@ -50,6 +50,7 @@ public class ValidationWarningJsonUnmarshaller implements Unmarshaller<Validatio
                     validationWarning.setId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("warnings", targetDepth)) {
+                    context.nextToken();
                     validationWarning.setWarnings(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

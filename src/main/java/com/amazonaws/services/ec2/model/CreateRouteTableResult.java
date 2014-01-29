@@ -17,36 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Create Route Table Result
+ * 
  */
 public class CreateRouteTableResult implements Serializable {
 
+    /**
+     * Information about the route table.
+     */
     private RouteTable routeTable;
 
     /**
-     * Returns the value of the RouteTable property for this object.
+     * Information about the route table.
      *
-     * @return The value of the RouteTable property for this object.
+     * @return Information about the route table.
      */
     public RouteTable getRouteTable() {
         return routeTable;
     }
     
     /**
-     * Sets the value of the RouteTable property for this object.
+     * Information about the route table.
      *
-     * @param routeTable The new value for the RouteTable property for this object.
+     * @param routeTable Information about the route table.
      */
     public void setRouteTable(RouteTable routeTable) {
         this.routeTable = routeTable;
     }
     
     /**
-     * Sets the value of the RouteTable property for this object.
+     * Information about the route table.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param routeTable The new value for the RouteTable property for this object.
+     * @param routeTable Information about the route table.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

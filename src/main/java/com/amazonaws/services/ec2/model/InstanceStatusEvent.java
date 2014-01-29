@@ -18,14 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents an event that affects the status of an Amazon EC2 instance.
+ * Describes an instance event.
  * </p>
  */
 public class InstanceStatusEvent implements Serializable {
 
     /**
-     * The associated code of the event. Valid values: instance-reboot,
-     * system-reboot, instance-retirement
+     * The associated code of the event.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>instance-reboot, system-reboot, system-maintenance, instance-retirement, instance-stop
@@ -48,14 +47,12 @@ public class InstanceStatusEvent implements Serializable {
     private java.util.Date notAfter;
 
     /**
-     * The associated code of the event. Valid values: instance-reboot,
-     * system-reboot, instance-retirement
+     * The associated code of the event.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>instance-reboot, system-reboot, system-maintenance, instance-retirement, instance-stop
      *
-     * @return The associated code of the event. Valid values: instance-reboot,
-     *         system-reboot, instance-retirement
+     * @return The associated code of the event.
      *
      * @see EventCode
      */
@@ -64,14 +61,12 @@ public class InstanceStatusEvent implements Serializable {
     }
     
     /**
-     * The associated code of the event. Valid values: instance-reboot,
-     * system-reboot, instance-retirement
+     * The associated code of the event.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>instance-reboot, system-reboot, system-maintenance, instance-retirement, instance-stop
      *
-     * @param code The associated code of the event. Valid values: instance-reboot,
-     *         system-reboot, instance-retirement
+     * @param code The associated code of the event.
      *
      * @see EventCode
      */
@@ -80,16 +75,14 @@ public class InstanceStatusEvent implements Serializable {
     }
     
     /**
-     * The associated code of the event. Valid values: instance-reboot,
-     * system-reboot, instance-retirement
+     * The associated code of the event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>instance-reboot, system-reboot, system-maintenance, instance-retirement, instance-stop
      *
-     * @param code The associated code of the event. Valid values: instance-reboot,
-     *         system-reboot, instance-retirement
+     * @param code The associated code of the event.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -102,14 +95,12 @@ public class InstanceStatusEvent implements Serializable {
     }
 
     /**
-     * The associated code of the event. Valid values: instance-reboot,
-     * system-reboot, instance-retirement
+     * The associated code of the event.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>instance-reboot, system-reboot, system-maintenance, instance-retirement, instance-stop
      *
-     * @param code The associated code of the event. Valid values: instance-reboot,
-     *         system-reboot, instance-retirement
+     * @param code The associated code of the event.
      *
      * @see EventCode
      */
@@ -118,16 +109,14 @@ public class InstanceStatusEvent implements Serializable {
     }
     
     /**
-     * The associated code of the event. Valid values: instance-reboot,
-     * system-reboot, instance-retirement
+     * The associated code of the event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>instance-reboot, system-reboot, system-maintenance, instance-retirement, instance-stop
      *
-     * @param code The associated code of the event. Valid values: instance-reboot,
-     *         system-reboot, instance-retirement
+     * @param code The associated code of the event.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

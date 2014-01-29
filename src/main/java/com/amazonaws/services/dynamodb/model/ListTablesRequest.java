@@ -23,6 +23,8 @@ import java.io.Serializable;
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#listTables(ListTablesRequest)
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.ListTablesRequest} instead.
  */
 @Deprecated
 public class ListTablesRequest extends AmazonWebServiceRequest  implements Serializable  {

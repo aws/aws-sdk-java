@@ -46,6 +46,7 @@ public class DescribeCommunicationsResultJsonUnmarshaller implements Unmarshalle
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("communications", targetDepth)) {
+                    context.nextToken();
                     describeCommunicationsResult.setCommunications(new ListUnmarshaller<Communication>(CommunicationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {

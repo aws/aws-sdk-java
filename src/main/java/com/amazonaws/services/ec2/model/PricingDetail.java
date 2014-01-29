@@ -17,38 +17,46 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Pricing Detail
+ * <p>
+ * Describes a Reserved Instance offering.
+ * </p>
  */
 public class PricingDetail implements Serializable {
 
+    /**
+     * The price per instance.
+     */
     private Double price;
 
+    /**
+     * The number of instances available for the price.
+     */
     private Integer count;
 
     /**
-     * Returns the value of the Price property for this object.
+     * The price per instance.
      *
-     * @return The value of the Price property for this object.
+     * @return The price per instance.
      */
     public Double getPrice() {
         return price;
     }
     
     /**
-     * Sets the value of the Price property for this object.
+     * The price per instance.
      *
-     * @param price The new value for the Price property for this object.
+     * @param price The price per instance.
      */
     public void setPrice(Double price) {
         this.price = price;
     }
     
     /**
-     * Sets the value of the Price property for this object.
+     * The price per instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param price The new value for the Price property for this object.
+     * @param price The price per instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -59,29 +67,29 @@ public class PricingDetail implements Serializable {
     }
 
     /**
-     * Returns the value of the Count property for this object.
+     * The number of instances available for the price.
      *
-     * @return The value of the Count property for this object.
+     * @return The number of instances available for the price.
      */
     public Integer getCount() {
         return count;
     }
     
     /**
-     * Sets the value of the Count property for this object.
+     * The number of instances available for the price.
      *
-     * @param count The new value for the Count property for this object.
+     * @param count The number of instances available for the price.
      */
     public void setCount(Integer count) {
         this.count = count;
     }
     
     /**
-     * Sets the value of the Count property for this object.
+     * The number of instances available for the price.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param count The new value for the Count property for this object.
+     * @param count The number of instances available for the price.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

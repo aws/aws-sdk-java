@@ -148,12 +148,6 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
         if (runInstancesRequest.getInstanceInitiatedShutdownBehavior() != null) {
             request.addParameter("InstanceInitiatedShutdownBehavior", StringUtils.fromString(runInstancesRequest.getInstanceInitiatedShutdownBehavior()));
         }
-        InstanceLicenseSpecification instanceLicenseSpecificationLicense = runInstancesRequest.getLicense();
-        if (instanceLicenseSpecificationLicense != null) {
-            if (instanceLicenseSpecificationLicense.getPool() != null) {
-                request.addParameter("License.Pool", StringUtils.fromString(instanceLicenseSpecificationLicense.getPool()));
-            }
-        }
         if (runInstancesRequest.getPrivateIpAddress() != null) {
             request.addParameter("PrivateIpAddress", StringUtils.fromString(runInstancesRequest.getPrivateIpAddress()));
         }

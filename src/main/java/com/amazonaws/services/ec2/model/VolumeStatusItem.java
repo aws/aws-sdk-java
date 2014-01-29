@@ -17,44 +17,61 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Volume Status Item
+ * <p>
+ * Describes the volume status.
+ * </p>
  */
 public class VolumeStatusItem implements Serializable {
 
+    /**
+     * The volume ID.
+     */
     private String volumeId;
 
+    /**
+     * The Availability Zone of the volume.
+     */
     private String availabilityZone;
 
+    /**
+     * The volume status.
+     */
     private VolumeStatusInfo volumeStatus;
 
+    /**
+     * A list of events associated with the volume.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeStatusEvent> events;
 
+    /**
+     * The details of the operation.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeStatusAction> actions;
 
     /**
-     * Returns the value of the VolumeId property for this object.
+     * The volume ID.
      *
-     * @return The value of the VolumeId property for this object.
+     * @return The volume ID.
      */
     public String getVolumeId() {
         return volumeId;
     }
     
     /**
-     * Sets the value of the VolumeId property for this object.
+     * The volume ID.
      *
-     * @param volumeId The new value for the VolumeId property for this object.
+     * @param volumeId The volume ID.
      */
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
     
     /**
-     * Sets the value of the VolumeId property for this object.
+     * The volume ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeId The new value for the VolumeId property for this object.
+     * @param volumeId The volume ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -65,29 +82,29 @@ public class VolumeStatusItem implements Serializable {
     }
 
     /**
-     * Returns the value of the AvailabilityZone property for this object.
+     * The Availability Zone of the volume.
      *
-     * @return The value of the AvailabilityZone property for this object.
+     * @return The Availability Zone of the volume.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * Sets the value of the AvailabilityZone property for this object.
+     * The Availability Zone of the volume.
      *
-     * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     * @param availabilityZone The Availability Zone of the volume.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * Sets the value of the AvailabilityZone property for this object.
+     * The Availability Zone of the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     * @param availabilityZone The Availability Zone of the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -98,29 +115,29 @@ public class VolumeStatusItem implements Serializable {
     }
 
     /**
-     * Returns the value of the VolumeStatus property for this object.
+     * The volume status.
      *
-     * @return The value of the VolumeStatus property for this object.
+     * @return The volume status.
      */
     public VolumeStatusInfo getVolumeStatus() {
         return volumeStatus;
     }
     
     /**
-     * Sets the value of the VolumeStatus property for this object.
+     * The volume status.
      *
-     * @param volumeStatus The new value for the VolumeStatus property for this object.
+     * @param volumeStatus The volume status.
      */
     public void setVolumeStatus(VolumeStatusInfo volumeStatus) {
         this.volumeStatus = volumeStatus;
     }
     
     /**
-     * Sets the value of the VolumeStatus property for this object.
+     * The volume status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeStatus The new value for the VolumeStatus property for this object.
+     * @param volumeStatus The volume status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -131,9 +148,9 @@ public class VolumeStatusItem implements Serializable {
     }
 
     /**
-     * Returns the value of the Events property for this object.
+     * A list of events associated with the volume.
      *
-     * @return The value of the Events property for this object.
+     * @return A list of events associated with the volume.
      */
     public java.util.List<VolumeStatusEvent> getEvents() {
         if (events == null) {
@@ -144,9 +161,9 @@ public class VolumeStatusItem implements Serializable {
     }
     
     /**
-     * Sets the value of the Events property for this object.
+     * A list of events associated with the volume.
      *
-     * @param events The new value for the Events property for this object.
+     * @param events A list of events associated with the volume.
      */
     public void setEvents(java.util.Collection<VolumeStatusEvent> events) {
         if (events == null) {
@@ -159,11 +176,11 @@ public class VolumeStatusItem implements Serializable {
     }
     
     /**
-     * Sets the value of the Events property for this object.
+     * A list of events associated with the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param events The new value for the Events property for this object.
+     * @param events A list of events associated with the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -177,11 +194,11 @@ public class VolumeStatusItem implements Serializable {
     }
     
     /**
-     * Sets the value of the Events property for this object.
+     * A list of events associated with the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param events The new value for the Events property for this object.
+     * @param events A list of events associated with the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -199,9 +216,9 @@ public class VolumeStatusItem implements Serializable {
     }
 
     /**
-     * Returns the value of the Actions property for this object.
+     * The details of the operation.
      *
-     * @return The value of the Actions property for this object.
+     * @return The details of the operation.
      */
     public java.util.List<VolumeStatusAction> getActions() {
         if (actions == null) {
@@ -212,9 +229,9 @@ public class VolumeStatusItem implements Serializable {
     }
     
     /**
-     * Sets the value of the Actions property for this object.
+     * The details of the operation.
      *
-     * @param actions The new value for the Actions property for this object.
+     * @param actions The details of the operation.
      */
     public void setActions(java.util.Collection<VolumeStatusAction> actions) {
         if (actions == null) {
@@ -227,11 +244,11 @@ public class VolumeStatusItem implements Serializable {
     }
     
     /**
-     * Sets the value of the Actions property for this object.
+     * The details of the operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param actions The new value for the Actions property for this object.
+     * @param actions The details of the operation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -245,11 +262,11 @@ public class VolumeStatusItem implements Serializable {
     }
     
     /**
-     * Sets the value of the Actions property for this object.
+     * The details of the operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param actions The new value for the Actions property for this object.
+     * @param actions The details of the operation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -36,6 +36,7 @@ import com.amazonaws.util.json.*;
 
 /**
  * Describe Table Request Marshaller
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.transform.DescribeTableRequestMarshaller} instead.
  */
 @Deprecated
 public class DescribeTableRequestMarshaller implements Marshaller<Request<DescribeTableRequest>, DescribeTableRequest> {

@@ -23,8 +23,11 @@ import com.amazonaws.services.ec2.model.transform.DescribeVolumesRequestMarshall
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVolumes(DescribeVolumesRequest) DescribeVolumes operation}.
  * <p>
- * Describes the status of the indicated volume or, in lieu of any specified, all volumes belonging to the caller. Volumes that have been deleted are
- * not described.
+ * Describes the specified Amazon EBS volumes.
+ * </p>
+ * <p>
+ * For more information about Amazon EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes
+ * </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVolumes(DescribeVolumesRequest)
@@ -32,15 +35,44 @@ import com.amazonaws.services.ec2.model.transform.DescribeVolumesRequestMarshall
 public class DescribeVolumesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVolumesRequest> {
 
     /**
-     * The optional list of EBS volumes to describe.
+     * One or more volume IDs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> volumeIds;
 
     /**
-     * A list of filters used to match properties for Volumes. For a complete
-     * reference to the available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>attachment.attach-time</code>
+     * - The time stamp when the attachment initiated. </li> <li>
+     * <p><code>attachment.delete-on-termination</code> - Whether the volume
+     * is deleted on instance termination. </li> <li>
+     * <p><code>attachment.device</code> - The device name that is exposed to
+     * the instance (for example, <code>/dev/sda1</code>). </li> <li>
+     * <p><code>attachment.instance-id</code> - The ID of the instance the
+     * volume is attached to. </li> <li> <p><code>attachment.status</code> -
+     * The attachment state (<code>attaching</code> | <code>attached</code> |
+     * <code>detaching</code> | <code>detached</code>). </li> <li>
+     * <p><code>availability-zone</code> - The Availability Zone in which the
+     * volume was created. </li> <li> <p><code>create-time</code> - The time
+     * stamp when the volume was created. </li> <li> <p><code>size</code> -
+     * The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
+     * - The snapshot from which the volume was created. </li> <li>
+     * <p><code>status</code> - The status of the volume
+     * (<code>creating</code> | <code>available</code> | <code>in-use</code>
+     * | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
+     * </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
+     * <li> <p><code>volume-type</code> - The Amazon EBS volume type
+     * (<code>standard</code> | <code>io1</code>). </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
@@ -55,16 +87,16 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param volumeIds The optional list of EBS volumes to describe.
+     * @param volumeIds One or more volume IDs.
      */
     public DescribeVolumesRequest(java.util.List<String> volumeIds) {
         setVolumeIds(volumeIds);
     }
 
     /**
-     * The optional list of EBS volumes to describe.
+     * One or more volume IDs.
      *
-     * @return The optional list of EBS volumes to describe.
+     * @return One or more volume IDs.
      */
     public java.util.List<String> getVolumeIds() {
         if (volumeIds == null) {
@@ -75,9 +107,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The optional list of EBS volumes to describe.
+     * One or more volume IDs.
      *
-     * @param volumeIds The optional list of EBS volumes to describe.
+     * @param volumeIds One or more volume IDs.
      */
     public void setVolumeIds(java.util.Collection<String> volumeIds) {
         if (volumeIds == null) {
@@ -90,11 +122,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The optional list of EBS volumes to describe.
+     * One or more volume IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeIds The optional list of EBS volumes to describe.
+     * @param volumeIds One or more volume IDs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -108,11 +140,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The optional list of EBS volumes to describe.
+     * One or more volume IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeIds The optional list of EBS volumes to describe.
+     * @param volumeIds One or more volume IDs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -130,15 +162,73 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * A list of filters used to match properties for Volumes. For a complete
-     * reference to the available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>attachment.attach-time</code>
+     * - The time stamp when the attachment initiated. </li> <li>
+     * <p><code>attachment.delete-on-termination</code> - Whether the volume
+     * is deleted on instance termination. </li> <li>
+     * <p><code>attachment.device</code> - The device name that is exposed to
+     * the instance (for example, <code>/dev/sda1</code>). </li> <li>
+     * <p><code>attachment.instance-id</code> - The ID of the instance the
+     * volume is attached to. </li> <li> <p><code>attachment.status</code> -
+     * The attachment state (<code>attaching</code> | <code>attached</code> |
+     * <code>detaching</code> | <code>detached</code>). </li> <li>
+     * <p><code>availability-zone</code> - The Availability Zone in which the
+     * volume was created. </li> <li> <p><code>create-time</code> - The time
+     * stamp when the volume was created. </li> <li> <p><code>size</code> -
+     * The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
+     * - The snapshot from which the volume was created. </li> <li>
+     * <p><code>status</code> - The status of the volume
+     * (<code>creating</code> | <code>available</code> | <code>in-use</code>
+     * | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
+     * </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
+     * <li> <p><code>volume-type</code> - The Amazon EBS volume type
+     * (<code>standard</code> | <code>io1</code>). </li> </ul>
      *
-     * @return A list of filters used to match properties for Volumes. For a complete
-     *         reference to the available filter keys for this operation, see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @return One or more filters. <ul> <li> <p><code>attachment.attach-time</code>
+     *         - The time stamp when the attachment initiated. </li> <li>
+     *         <p><code>attachment.delete-on-termination</code> - Whether the volume
+     *         is deleted on instance termination. </li> <li>
+     *         <p><code>attachment.device</code> - The device name that is exposed to
+     *         the instance (for example, <code>/dev/sda1</code>). </li> <li>
+     *         <p><code>attachment.instance-id</code> - The ID of the instance the
+     *         volume is attached to. </li> <li> <p><code>attachment.status</code> -
+     *         The attachment state (<code>attaching</code> | <code>attached</code> |
+     *         <code>detaching</code> | <code>detached</code>). </li> <li>
+     *         <p><code>availability-zone</code> - The Availability Zone in which the
+     *         volume was created. </li> <li> <p><code>create-time</code> - The time
+     *         stamp when the volume was created. </li> <li> <p><code>size</code> -
+     *         The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
+     *         - The snapshot from which the volume was created. </li> <li>
+     *         <p><code>status</code> - The status of the volume
+     *         (<code>creating</code> | <code>available</code> | <code>in-use</code>
+     *         | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
+     *         </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
+     *         <li> <p><code>volume-type</code> - The Amazon EBS volume type
+     *         (<code>standard</code> | <code>io1</code>). </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -149,15 +239,73 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * A list of filters used to match properties for Volumes. For a complete
-     * reference to the available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>attachment.attach-time</code>
+     * - The time stamp when the attachment initiated. </li> <li>
+     * <p><code>attachment.delete-on-termination</code> - Whether the volume
+     * is deleted on instance termination. </li> <li>
+     * <p><code>attachment.device</code> - The device name that is exposed to
+     * the instance (for example, <code>/dev/sda1</code>). </li> <li>
+     * <p><code>attachment.instance-id</code> - The ID of the instance the
+     * volume is attached to. </li> <li> <p><code>attachment.status</code> -
+     * The attachment state (<code>attaching</code> | <code>attached</code> |
+     * <code>detaching</code> | <code>detached</code>). </li> <li>
+     * <p><code>availability-zone</code> - The Availability Zone in which the
+     * volume was created. </li> <li> <p><code>create-time</code> - The time
+     * stamp when the volume was created. </li> <li> <p><code>size</code> -
+     * The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
+     * - The snapshot from which the volume was created. </li> <li>
+     * <p><code>status</code> - The status of the volume
+     * (<code>creating</code> | <code>available</code> | <code>in-use</code>
+     * | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
+     * </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
+     * <li> <p><code>volume-type</code> - The Amazon EBS volume type
+     * (<code>standard</code> | <code>io1</code>). </li> </ul>
      *
-     * @param filters A list of filters used to match properties for Volumes. For a complete
-     *         reference to the available filter keys for this operation, see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>attachment.attach-time</code>
+     *         - The time stamp when the attachment initiated. </li> <li>
+     *         <p><code>attachment.delete-on-termination</code> - Whether the volume
+     *         is deleted on instance termination. </li> <li>
+     *         <p><code>attachment.device</code> - The device name that is exposed to
+     *         the instance (for example, <code>/dev/sda1</code>). </li> <li>
+     *         <p><code>attachment.instance-id</code> - The ID of the instance the
+     *         volume is attached to. </li> <li> <p><code>attachment.status</code> -
+     *         The attachment state (<code>attaching</code> | <code>attached</code> |
+     *         <code>detaching</code> | <code>detached</code>). </li> <li>
+     *         <p><code>availability-zone</code> - The Availability Zone in which the
+     *         volume was created. </li> <li> <p><code>create-time</code> - The time
+     *         stamp when the volume was created. </li> <li> <p><code>size</code> -
+     *         The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
+     *         - The snapshot from which the volume was created. </li> <li>
+     *         <p><code>status</code> - The status of the volume
+     *         (<code>creating</code> | <code>available</code> | <code>in-use</code>
+     *         | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
+     *         </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
+     *         <li> <p><code>volume-type</code> - The Amazon EBS volume type
+     *         (<code>standard</code> | <code>io1</code>). </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -170,17 +318,75 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * A list of filters used to match properties for Volumes. For a complete
-     * reference to the available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>attachment.attach-time</code>
+     * - The time stamp when the attachment initiated. </li> <li>
+     * <p><code>attachment.delete-on-termination</code> - Whether the volume
+     * is deleted on instance termination. </li> <li>
+     * <p><code>attachment.device</code> - The device name that is exposed to
+     * the instance (for example, <code>/dev/sda1</code>). </li> <li>
+     * <p><code>attachment.instance-id</code> - The ID of the instance the
+     * volume is attached to. </li> <li> <p><code>attachment.status</code> -
+     * The attachment state (<code>attaching</code> | <code>attached</code> |
+     * <code>detaching</code> | <code>detached</code>). </li> <li>
+     * <p><code>availability-zone</code> - The Availability Zone in which the
+     * volume was created. </li> <li> <p><code>create-time</code> - The time
+     * stamp when the volume was created. </li> <li> <p><code>size</code> -
+     * The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
+     * - The snapshot from which the volume was created. </li> <li>
+     * <p><code>status</code> - The status of the volume
+     * (<code>creating</code> | <code>available</code> | <code>in-use</code>
+     * | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
+     * </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
+     * <li> <p><code>volume-type</code> - The Amazon EBS volume type
+     * (<code>standard</code> | <code>io1</code>). </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for Volumes. For a complete
-     *         reference to the available filter keys for this operation, see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>attachment.attach-time</code>
+     *         - The time stamp when the attachment initiated. </li> <li>
+     *         <p><code>attachment.delete-on-termination</code> - Whether the volume
+     *         is deleted on instance termination. </li> <li>
+     *         <p><code>attachment.device</code> - The device name that is exposed to
+     *         the instance (for example, <code>/dev/sda1</code>). </li> <li>
+     *         <p><code>attachment.instance-id</code> - The ID of the instance the
+     *         volume is attached to. </li> <li> <p><code>attachment.status</code> -
+     *         The attachment state (<code>attaching</code> | <code>attached</code> |
+     *         <code>detaching</code> | <code>detached</code>). </li> <li>
+     *         <p><code>availability-zone</code> - The Availability Zone in which the
+     *         volume was created. </li> <li> <p><code>create-time</code> - The time
+     *         stamp when the volume was created. </li> <li> <p><code>size</code> -
+     *         The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
+     *         - The snapshot from which the volume was created. </li> <li>
+     *         <p><code>status</code> - The status of the volume
+     *         (<code>creating</code> | <code>available</code> | <code>in-use</code>
+     *         | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
+     *         </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
+     *         <li> <p><code>volume-type</code> - The Amazon EBS volume type
+     *         (<code>standard</code> | <code>io1</code>). </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -194,17 +400,75 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * A list of filters used to match properties for Volumes. For a complete
-     * reference to the available filter keys for this operation, see the <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     * EC2 API reference</a>.
+     * One or more filters. <ul> <li> <p><code>attachment.attach-time</code>
+     * - The time stamp when the attachment initiated. </li> <li>
+     * <p><code>attachment.delete-on-termination</code> - Whether the volume
+     * is deleted on instance termination. </li> <li>
+     * <p><code>attachment.device</code> - The device name that is exposed to
+     * the instance (for example, <code>/dev/sda1</code>). </li> <li>
+     * <p><code>attachment.instance-id</code> - The ID of the instance the
+     * volume is attached to. </li> <li> <p><code>attachment.status</code> -
+     * The attachment state (<code>attaching</code> | <code>attached</code> |
+     * <code>detaching</code> | <code>detached</code>). </li> <li>
+     * <p><code>availability-zone</code> - The Availability Zone in which the
+     * volume was created. </li> <li> <p><code>create-time</code> - The time
+     * stamp when the volume was created. </li> <li> <p><code>size</code> -
+     * The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
+     * - The snapshot from which the volume was created. </li> <li>
+     * <p><code>status</code> - The status of the volume
+     * (<code>creating</code> | <code>available</code> | <code>in-use</code>
+     * | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
+     * </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
+     * <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     * This filter is independent of the <code>tag-value</code> filter. For
+     * example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose
+     * (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only
+     * resources where Purpose is X, see the
+     * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     * <p><code>tag-value</code> - The value of a tag assigned to the
+     * resource. This filter is independent of the <code>tag-key</code>
+     * filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
+     * <li> <p><code>volume-type</code> - The Amazon EBS volume type
+     * (<code>standard</code> | <code>io1</code>). </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match properties for Volumes. For a complete
-     *         reference to the available filter keys for this operation, see the <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
-     *         EC2 API reference</a>.
+     * @param filters One or more filters. <ul> <li> <p><code>attachment.attach-time</code>
+     *         - The time stamp when the attachment initiated. </li> <li>
+     *         <p><code>attachment.delete-on-termination</code> - Whether the volume
+     *         is deleted on instance termination. </li> <li>
+     *         <p><code>attachment.device</code> - The device name that is exposed to
+     *         the instance (for example, <code>/dev/sda1</code>). </li> <li>
+     *         <p><code>attachment.instance-id</code> - The ID of the instance the
+     *         volume is attached to. </li> <li> <p><code>attachment.status</code> -
+     *         The attachment state (<code>attaching</code> | <code>attached</code> |
+     *         <code>detaching</code> | <code>detached</code>). </li> <li>
+     *         <p><code>availability-zone</code> - The Availability Zone in which the
+     *         volume was created. </li> <li> <p><code>create-time</code> - The time
+     *         stamp when the volume was created. </li> <li> <p><code>size</code> -
+     *         The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
+     *         - The snapshot from which the volume was created. </li> <li>
+     *         <p><code>status</code> - The status of the volume
+     *         (<code>creating</code> | <code>available</code> | <code>in-use</code>
+     *         | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
+     *         </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
+     *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
+     *         This filter is independent of the <code>tag-value</code> filter. For
+     *         example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose
+     *         (regardless of what the tag's value is), and the tag value X
+     *         (regardless of what the tag's key is). If you want to list only
+     *         resources where Purpose is X, see the
+     *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
+     *         <p><code>tag-value</code> - The value of a tag assigned to the
+     *         resource. This filter is independent of the <code>tag-key</code>
+     *         filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
+     *         <li> <p><code>volume-type</code> - The Amazon EBS volume type
+     *         (<code>standard</code> | <code>io1</code>). </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -17,60 +17,53 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes the ICMP type and code.
+ * </p>
  */
 public class IcmpTypeCode implements Serializable {
 
     /**
-     * For the ICMP protocol, the ICMP type. A value of <code>-1</code> is a
-     * wildcard meaning all types. Required if specifying <code>icmp</code>
-     * for the protocol.
+     * The ICMP code. A value of -1 means all codes for the specified ICMP
+     * type.
      */
     private Integer type;
 
     /**
-     * For the ICMP protocol, the ICMP code. A value of <code>-1</code> is a
-     * wildcard meaning all codes. Required if specifying <code>icmp</code>
-     * for the protocol.
+     * The ICMP type. A value of -1 means all types.
      */
     private Integer code;
 
     /**
-     * For the ICMP protocol, the ICMP type. A value of <code>-1</code> is a
-     * wildcard meaning all types. Required if specifying <code>icmp</code>
-     * for the protocol.
+     * The ICMP code. A value of -1 means all codes for the specified ICMP
+     * type.
      *
-     * @return For the ICMP protocol, the ICMP type. A value of <code>-1</code> is a
-     *         wildcard meaning all types. Required if specifying <code>icmp</code>
-     *         for the protocol.
+     * @return The ICMP code. A value of -1 means all codes for the specified ICMP
+     *         type.
      */
     public Integer getType() {
         return type;
     }
     
     /**
-     * For the ICMP protocol, the ICMP type. A value of <code>-1</code> is a
-     * wildcard meaning all types. Required if specifying <code>icmp</code>
-     * for the protocol.
+     * The ICMP code. A value of -1 means all codes for the specified ICMP
+     * type.
      *
-     * @param type For the ICMP protocol, the ICMP type. A value of <code>-1</code> is a
-     *         wildcard meaning all types. Required if specifying <code>icmp</code>
-     *         for the protocol.
+     * @param type The ICMP code. A value of -1 means all codes for the specified ICMP
+     *         type.
      */
     public void setType(Integer type) {
         this.type = type;
     }
     
     /**
-     * For the ICMP protocol, the ICMP type. A value of <code>-1</code> is a
-     * wildcard meaning all types. Required if specifying <code>icmp</code>
-     * for the protocol.
+     * The ICMP code. A value of -1 means all codes for the specified ICMP
+     * type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param type For the ICMP protocol, the ICMP type. A value of <code>-1</code> is a
-     *         wildcard meaning all types. Required if specifying <code>icmp</code>
-     *         for the protocol.
+     * @param type The ICMP code. A value of -1 means all codes for the specified ICMP
+     *         type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -81,41 +74,29 @@ public class IcmpTypeCode implements Serializable {
     }
 
     /**
-     * For the ICMP protocol, the ICMP code. A value of <code>-1</code> is a
-     * wildcard meaning all codes. Required if specifying <code>icmp</code>
-     * for the protocol.
+     * The ICMP type. A value of -1 means all types.
      *
-     * @return For the ICMP protocol, the ICMP code. A value of <code>-1</code> is a
-     *         wildcard meaning all codes. Required if specifying <code>icmp</code>
-     *         for the protocol.
+     * @return The ICMP type. A value of -1 means all types.
      */
     public Integer getCode() {
         return code;
     }
     
     /**
-     * For the ICMP protocol, the ICMP code. A value of <code>-1</code> is a
-     * wildcard meaning all codes. Required if specifying <code>icmp</code>
-     * for the protocol.
+     * The ICMP type. A value of -1 means all types.
      *
-     * @param code For the ICMP protocol, the ICMP code. A value of <code>-1</code> is a
-     *         wildcard meaning all codes. Required if specifying <code>icmp</code>
-     *         for the protocol.
+     * @param code The ICMP type. A value of -1 means all types.
      */
     public void setCode(Integer code) {
         this.code = code;
     }
     
     /**
-     * For the ICMP protocol, the ICMP code. A value of <code>-1</code> is a
-     * wildcard meaning all codes. Required if specifying <code>icmp</code>
-     * for the protocol.
+     * The ICMP type. A value of -1 means all types.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param code For the ICMP protocol, the ICMP code. A value of <code>-1</code> is a
-     *         wildcard meaning all codes. Required if specifying <code>icmp</code>
-     *         for the protocol.
+     * @param code The ICMP type. A value of -1 means all types.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

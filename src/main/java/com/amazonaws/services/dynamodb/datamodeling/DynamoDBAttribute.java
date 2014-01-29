@@ -35,6 +35,8 @@ import java.lang.annotation.Target;
  * <p>
  * Even getter method not marked with this annotation are assumed to be modeled
  * properties, unless marked with {@link DynamoDBIgnore}.
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute} instead.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)

@@ -17,24 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of calling the StartInstances operation. Contains details on how the specified instances are changing state.
- * </p>
+ * 
  */
 public class StartInstancesResult implements Serializable {
 
     /**
-     * The list of the starting instances and details on how their state has
-     * changed.
+     * Information about one or more started instances.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStateChange> startingInstances;
 
     /**
-     * The list of the starting instances and details on how their state has
-     * changed.
+     * Information about one or more started instances.
      *
-     * @return The list of the starting instances and details on how their state has
-     *         changed.
+     * @return Information about one or more started instances.
      */
     public java.util.List<InstanceStateChange> getStartingInstances() {
         if (startingInstances == null) {
@@ -45,11 +40,9 @@ public class StartInstancesResult implements Serializable {
     }
     
     /**
-     * The list of the starting instances and details on how their state has
-     * changed.
+     * Information about one or more started instances.
      *
-     * @param startingInstances The list of the starting instances and details on how their state has
-     *         changed.
+     * @param startingInstances Information about one or more started instances.
      */
     public void setStartingInstances(java.util.Collection<InstanceStateChange> startingInstances) {
         if (startingInstances == null) {
@@ -62,13 +55,11 @@ public class StartInstancesResult implements Serializable {
     }
     
     /**
-     * The list of the starting instances and details on how their state has
-     * changed.
+     * Information about one or more started instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startingInstances The list of the starting instances and details on how their state has
-     *         changed.
+     * @param startingInstances Information about one or more started instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -82,13 +73,11 @@ public class StartInstancesResult implements Serializable {
     }
     
     /**
-     * The list of the starting instances and details on how their state has
-     * changed.
+     * Information about one or more started instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startingInstances The list of the starting instances and details on how their state has
-     *         changed.
+     * @param startingInstances Information about one or more started instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

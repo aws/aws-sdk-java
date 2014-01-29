@@ -46,6 +46,7 @@ public class PutRequestJsonUnmarshaller implements Unmarshaller<PutRequest, Json
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Item", targetDepth)) {
+                    context.nextToken();
                     putRequest.setItem(new MapUnmarshaller<String,AttributeValue>(StringJsonUnmarshaller.getInstance(), AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

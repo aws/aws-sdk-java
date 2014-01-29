@@ -23,87 +23,140 @@ import com.amazonaws.services.ec2.model.transform.DescribeInstanceStatusRequestM
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeInstanceStatus(DescribeInstanceStatusRequest) DescribeInstanceStatus operation}.
  * <p>
- * Describes the status of an Amazon Elastic Compute Cloud (Amazon EC2) instance. Instance status provides information about two types of scheduled
- * events for an instance that may require your attention:
+ * Describes the status of one or more instances, including any scheduled events.
+ * </p>
+ * <p>
+ * Instance status has two main components:
  * </p>
  * 
  * <ul>
- * <li> Scheduled Reboot: When Amazon EC2 determines that an instance must be rebooted, the instance's status will return one of two event codes:
+ * <li> <p>
+ * System Status reports impaired functionality that stems from issues related to the systems that support an instance, such as such as hardware failures
+ * and network connectivity problems. This call reports such problems as impaired reachability.
+ * </p>
+ * </li>
+ * <li> <p>
+ * Instance Status reports impaired functionality that arises from problems internal to the instance. This call reports such problems as impaired
+ * reachability.
+ * </p>
+ * </li>
+ * 
+ * </ul>
+ * <p>
+ * Instance status provides information about four types of scheduled events for an instance that may require your attention:
+ * </p>
+ * 
+ * <ul>
+ * <li> <p>
+ * Scheduled Reboot: When Amazon EC2 determines that an instance must be rebooted, the instances status returns one of two event codes:
  * <code>system-reboot</code> or <code>instance-reboot</code> . System reboot commonly occurs if certain maintenance or upgrade operations require a
  * reboot of the underlying host that supports an instance. Instance reboot commonly occurs if the instance must be rebooted, rather than the underlying
- * host. Rebooting events include a scheduled start and end time. </li>
- * <li> Scheduled Retirement: When Amazon EC2 determines that an instance must be shut down, the instance's status will return an event code called
+ * host. Rebooting events include a scheduled start and end time.
+ * </p>
+ * </li>
+ * <li> <p>
+ * System Maintenance: When Amazon EC2 determines that an instance requires maintenance that requires power or network impact, the instance status is the
+ * event code <code>system-maintenance</code> . System maintenance is either power maintenance or network maintenance. For power maintenance, your
+ * instance will be unavailable for a brief period of time and then rebooted. For network maintenance, your instance will experience a brief loss of
+ * network connectivity. System maintenance events include a scheduled start and end time. You will also be notified by email if one of your instances is
+ * set for system maintenance. The email message indicates when your instance is scheduled for maintenance.
+ * </p>
+ * </li>
+ * <li> <p>
+ * Scheduled Retirement: When Amazon EC2 determines that an instance must be shut down, the instance status is the event code
  * <code>instance-retirement</code> . Retirement commonly occurs when the underlying host is degraded and must be replaced. Retirement events include a
- * scheduled start and end time. You're also notified by email if one of your instances is set to retiring. The email message indicates when your
- * instance will be permanently retired. </li>
+ * scheduled start and end time. You will also be notified by email if one of your instances is set to retiring. The email message indicates when your
+ * instance will be permanently retired.
+ * </p>
+ * </li>
+ * <li> <p>
+ * Scheduled Stop: When Amazon EC2 determines that an instance must be shut down, the instances status returns an event code called
+ * <code>instance-stop</code> .
+ * Stop events include a scheduled start and end time. You will also be notified by email if one of your instances is set to stop. The email
+ * message indicates when your instance will be stopped.
+ * </p>
+ * </li>
  * 
  * </ul>
  * <p>
- * If your instance is permanently retired, it will not be restarted. You can avoid retirement by manually restarting your instance when its event code
- * is <code>instance-retirement</code> . This ensures that your instance is started on a healthy host.
+ * When your instance is retired, it will either be terminated (if its root device type is the instance-store) or stopped (if its root device type is an
+ * EBS volume). Instances stopped due to retirement will not be restarted, but you can do so manually. You can also avoid retirement of EBS-backed
+ * instances by manually restarting your instance when its event code is <code>instance-retirement</code> . This ensures that your instance is started on
+ * a different underlying host.
  * </p>
- * <p>
- * <code>DescribeInstanceStatus</code> returns information only for instances in the running state.
- * </p>
- * <p>
- * You can filter the results to return information only about instances that match criteria you specify. For example, you could get information about
- * instances in a specific Availability Zone. You can specify multiple values for a filter (e.g., more than one Availability Zone). An instance must
- * match at least one of the specified values for it to be included in the results.
- * </p>
- * <p>
- * You can specify multiple filters. An instance must match all the filters for it to be included in the results. If there's no match, no special
- * message is returned; the response is simply empty.
- * </p>
- * <p>
- * You can use wildcards with the filter values: <code>*</code> matches zero or more characters, and <code>?</code> matches exactly one character. You
- * can escape special characters using a backslash before the character. For example, a value of <code>\*amazon\?\\</code> searches for the literal
- * string <code>*amazon?\</code> .
- * 
- * </p>
- * <p>
- * The following filters are available:
- * </p>
- * 
- * <ul>
- * <li> <code>availability-zone</code> - Filter on an instance's availability zone. </li>
- * <li> <code>instance-state-name</code> - Filter on the intended state of the instance, e.g., running. </li>
- * <li> <code>instance-state-code</code> - Filter on the intended state code of the instance, e.g., 16. </li>
- * 
- * </ul>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeInstanceStatus(DescribeInstanceStatusRequest)
  */
 public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeInstanceStatusRequest> {
 
     /**
-     * The list of instance IDs. If not specified, all instances are
-     * described.
+     * One or more instance IDs. <p>Default: Describes all your instances.
+     * <p>Constraints: Maximum 100 explicitly specified instance IDs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
 
     /**
-     * The list of filters to limit returned results.
+     * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     * Availability Zone of the instance. </li> <li>
+     * <p><code>event.code</code> - The code identifying the type of event
+     * (<code>instance-reboot</code> | <code>system-reboot</code> |
+     * <code>system-maintenance</code> | <code>instance-retirement</code> |
+     * <code>instance-stop</code>). </li> <li>
+     * <p><code>event.description</code> - A description of the event. </li>
+     * <li> <p><code>event.not-after</code> - The latest end time for the
+     * scheduled event. </li> <li> <p><code>event.not-before</code> - The
+     * earliest start time for the scheduled event. </li> <li>
+     * <p><code>instance-state-code</code> - A code representing the state of
+     * the instance, as a 16-bit unsigned integer. The high byte is an opaque
+     * internal value and should be ignored. The low byte is set based on the
+     * state represented. The valid values are 0 (pending), 16 (running), 32
+     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * </li> <li> <p><code>instance-state-name</code> - The state of the
+     * instance (<code>pending</code> | <code>running</code> |
+     * <code>shutting-down</code> | <code>terminated</code> |
+     * <code>stopping</code> | <code>stopped</code>). </li> <li>
+     * <p><code>instance-status.reachability</code> - Filters on instance
+     * status where the name is <code>reachability</code>
+     * (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     * | <code>insufficient-data</code>). </li> <li>
+     * <p><code>instance-status.status</code> - The status of the instance
+     * (<code>ok</code> | <code>impaired</code> | <code>initializing</code> |
+     * <code>insufficient-data</code> | <code>not-applicable</code>). </li>
+     * <li> <p><code>system-status.reachability</code> - Filters on system
+     * status where the name is <code>reachability</code>
+     * (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     * | <code>insufficient-data</code>). </li> <li>
+     * <p><code>system-status.status</code> - The system status of the
+     * instance (<code>ok</code> | <code>impaired</code> |
+     * <code>initializing</code> | <code>insufficient-data</code> |
+     * <code>not-applicable</code>). </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * A string specifying the next paginated set of results to return.
+     * The next paginated set of results to return.
      */
     private String nextToken;
 
     /**
      * The maximum number of paginated instance items per response.
+     * <p>Default: 1000
      */
     private Integer maxResults;
 
+    /**
+     * When <code>true</code>, includes the health status for all instances.
+     * When <code>false</code>, includes the health status for running
+     * instances only. <p>Default: <code>false</code>
+     */
     private Boolean includeAllInstances;
 
     /**
-     * The list of instance IDs. If not specified, all instances are
-     * described.
+     * One or more instance IDs. <p>Default: Describes all your instances.
+     * <p>Constraints: Maximum 100 explicitly specified instance IDs.
      *
-     * @return The list of instance IDs. If not specified, all instances are
-     *         described.
+     * @return One or more instance IDs. <p>Default: Describes all your instances.
+     *         <p>Constraints: Maximum 100 explicitly specified instance IDs.
      */
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
@@ -114,11 +167,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The list of instance IDs. If not specified, all instances are
-     * described.
+     * One or more instance IDs. <p>Default: Describes all your instances.
+     * <p>Constraints: Maximum 100 explicitly specified instance IDs.
      *
-     * @param instanceIds The list of instance IDs. If not specified, all instances are
-     *         described.
+     * @param instanceIds One or more instance IDs. <p>Default: Describes all your instances.
+     *         <p>Constraints: Maximum 100 explicitly specified instance IDs.
      */
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
@@ -131,13 +184,13 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The list of instance IDs. If not specified, all instances are
-     * described.
+     * One or more instance IDs. <p>Default: Describes all your instances.
+     * <p>Constraints: Maximum 100 explicitly specified instance IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds The list of instance IDs. If not specified, all instances are
-     *         described.
+     * @param instanceIds One or more instance IDs. <p>Default: Describes all your instances.
+     *         <p>Constraints: Maximum 100 explicitly specified instance IDs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -151,13 +204,13 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The list of instance IDs. If not specified, all instances are
-     * described.
+     * One or more instance IDs. <p>Default: Describes all your instances.
+     * <p>Constraints: Maximum 100 explicitly specified instance IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds The list of instance IDs. If not specified, all instances are
-     *         described.
+     * @param instanceIds One or more instance IDs. <p>Default: Describes all your instances.
+     *         <p>Constraints: Maximum 100 explicitly specified instance IDs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -175,9 +228,75 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The list of filters to limit returned results.
+     * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     * Availability Zone of the instance. </li> <li>
+     * <p><code>event.code</code> - The code identifying the type of event
+     * (<code>instance-reboot</code> | <code>system-reboot</code> |
+     * <code>system-maintenance</code> | <code>instance-retirement</code> |
+     * <code>instance-stop</code>). </li> <li>
+     * <p><code>event.description</code> - A description of the event. </li>
+     * <li> <p><code>event.not-after</code> - The latest end time for the
+     * scheduled event. </li> <li> <p><code>event.not-before</code> - The
+     * earliest start time for the scheduled event. </li> <li>
+     * <p><code>instance-state-code</code> - A code representing the state of
+     * the instance, as a 16-bit unsigned integer. The high byte is an opaque
+     * internal value and should be ignored. The low byte is set based on the
+     * state represented. The valid values are 0 (pending), 16 (running), 32
+     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * </li> <li> <p><code>instance-state-name</code> - The state of the
+     * instance (<code>pending</code> | <code>running</code> |
+     * <code>shutting-down</code> | <code>terminated</code> |
+     * <code>stopping</code> | <code>stopped</code>). </li> <li>
+     * <p><code>instance-status.reachability</code> - Filters on instance
+     * status where the name is <code>reachability</code>
+     * (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     * | <code>insufficient-data</code>). </li> <li>
+     * <p><code>instance-status.status</code> - The status of the instance
+     * (<code>ok</code> | <code>impaired</code> | <code>initializing</code> |
+     * <code>insufficient-data</code> | <code>not-applicable</code>). </li>
+     * <li> <p><code>system-status.reachability</code> - Filters on system
+     * status where the name is <code>reachability</code>
+     * (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     * | <code>insufficient-data</code>). </li> <li>
+     * <p><code>system-status.status</code> - The system status of the
+     * instance (<code>ok</code> | <code>impaired</code> |
+     * <code>initializing</code> | <code>insufficient-data</code> |
+     * <code>not-applicable</code>). </li> </ul>
      *
-     * @return The list of filters to limit returned results.
+     * @return One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     *         Availability Zone of the instance. </li> <li>
+     *         <p><code>event.code</code> - The code identifying the type of event
+     *         (<code>instance-reboot</code> | <code>system-reboot</code> |
+     *         <code>system-maintenance</code> | <code>instance-retirement</code> |
+     *         <code>instance-stop</code>). </li> <li>
+     *         <p><code>event.description</code> - A description of the event. </li>
+     *         <li> <p><code>event.not-after</code> - The latest end time for the
+     *         scheduled event. </li> <li> <p><code>event.not-before</code> - The
+     *         earliest start time for the scheduled event. </li> <li>
+     *         <p><code>instance-state-code</code> - A code representing the state of
+     *         the instance, as a 16-bit unsigned integer. The high byte is an opaque
+     *         internal value and should be ignored. The low byte is set based on the
+     *         state represented. The valid values are 0 (pending), 16 (running), 32
+     *         (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     *         </li> <li> <p><code>instance-state-name</code> - The state of the
+     *         instance (<code>pending</code> | <code>running</code> |
+     *         <code>shutting-down</code> | <code>terminated</code> |
+     *         <code>stopping</code> | <code>stopped</code>). </li> <li>
+     *         <p><code>instance-status.reachability</code> - Filters on instance
+     *         status where the name is <code>reachability</code>
+     *         (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     *         | <code>insufficient-data</code>). </li> <li>
+     *         <p><code>instance-status.status</code> - The status of the instance
+     *         (<code>ok</code> | <code>impaired</code> | <code>initializing</code> |
+     *         <code>insufficient-data</code> | <code>not-applicable</code>). </li>
+     *         <li> <p><code>system-status.reachability</code> - Filters on system
+     *         status where the name is <code>reachability</code>
+     *         (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     *         | <code>insufficient-data</code>). </li> <li>
+     *         <p><code>system-status.status</code> - The system status of the
+     *         instance (<code>ok</code> | <code>impaired</code> |
+     *         <code>initializing</code> | <code>insufficient-data</code> |
+     *         <code>not-applicable</code>). </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -188,9 +307,75 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The list of filters to limit returned results.
+     * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     * Availability Zone of the instance. </li> <li>
+     * <p><code>event.code</code> - The code identifying the type of event
+     * (<code>instance-reboot</code> | <code>system-reboot</code> |
+     * <code>system-maintenance</code> | <code>instance-retirement</code> |
+     * <code>instance-stop</code>). </li> <li>
+     * <p><code>event.description</code> - A description of the event. </li>
+     * <li> <p><code>event.not-after</code> - The latest end time for the
+     * scheduled event. </li> <li> <p><code>event.not-before</code> - The
+     * earliest start time for the scheduled event. </li> <li>
+     * <p><code>instance-state-code</code> - A code representing the state of
+     * the instance, as a 16-bit unsigned integer. The high byte is an opaque
+     * internal value and should be ignored. The low byte is set based on the
+     * state represented. The valid values are 0 (pending), 16 (running), 32
+     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * </li> <li> <p><code>instance-state-name</code> - The state of the
+     * instance (<code>pending</code> | <code>running</code> |
+     * <code>shutting-down</code> | <code>terminated</code> |
+     * <code>stopping</code> | <code>stopped</code>). </li> <li>
+     * <p><code>instance-status.reachability</code> - Filters on instance
+     * status where the name is <code>reachability</code>
+     * (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     * | <code>insufficient-data</code>). </li> <li>
+     * <p><code>instance-status.status</code> - The status of the instance
+     * (<code>ok</code> | <code>impaired</code> | <code>initializing</code> |
+     * <code>insufficient-data</code> | <code>not-applicable</code>). </li>
+     * <li> <p><code>system-status.reachability</code> - Filters on system
+     * status where the name is <code>reachability</code>
+     * (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     * | <code>insufficient-data</code>). </li> <li>
+     * <p><code>system-status.status</code> - The system status of the
+     * instance (<code>ok</code> | <code>impaired</code> |
+     * <code>initializing</code> | <code>insufficient-data</code> |
+     * <code>not-applicable</code>). </li> </ul>
      *
-     * @param filters The list of filters to limit returned results.
+     * @param filters One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     *         Availability Zone of the instance. </li> <li>
+     *         <p><code>event.code</code> - The code identifying the type of event
+     *         (<code>instance-reboot</code> | <code>system-reboot</code> |
+     *         <code>system-maintenance</code> | <code>instance-retirement</code> |
+     *         <code>instance-stop</code>). </li> <li>
+     *         <p><code>event.description</code> - A description of the event. </li>
+     *         <li> <p><code>event.not-after</code> - The latest end time for the
+     *         scheduled event. </li> <li> <p><code>event.not-before</code> - The
+     *         earliest start time for the scheduled event. </li> <li>
+     *         <p><code>instance-state-code</code> - A code representing the state of
+     *         the instance, as a 16-bit unsigned integer. The high byte is an opaque
+     *         internal value and should be ignored. The low byte is set based on the
+     *         state represented. The valid values are 0 (pending), 16 (running), 32
+     *         (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     *         </li> <li> <p><code>instance-state-name</code> - The state of the
+     *         instance (<code>pending</code> | <code>running</code> |
+     *         <code>shutting-down</code> | <code>terminated</code> |
+     *         <code>stopping</code> | <code>stopped</code>). </li> <li>
+     *         <p><code>instance-status.reachability</code> - Filters on instance
+     *         status where the name is <code>reachability</code>
+     *         (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     *         | <code>insufficient-data</code>). </li> <li>
+     *         <p><code>instance-status.status</code> - The status of the instance
+     *         (<code>ok</code> | <code>impaired</code> | <code>initializing</code> |
+     *         <code>insufficient-data</code> | <code>not-applicable</code>). </li>
+     *         <li> <p><code>system-status.reachability</code> - Filters on system
+     *         status where the name is <code>reachability</code>
+     *         (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     *         | <code>insufficient-data</code>). </li> <li>
+     *         <p><code>system-status.status</code> - The system status of the
+     *         instance (<code>ok</code> | <code>impaired</code> |
+     *         <code>initializing</code> | <code>insufficient-data</code> |
+     *         <code>not-applicable</code>). </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -203,11 +388,77 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The list of filters to limit returned results.
+     * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     * Availability Zone of the instance. </li> <li>
+     * <p><code>event.code</code> - The code identifying the type of event
+     * (<code>instance-reboot</code> | <code>system-reboot</code> |
+     * <code>system-maintenance</code> | <code>instance-retirement</code> |
+     * <code>instance-stop</code>). </li> <li>
+     * <p><code>event.description</code> - A description of the event. </li>
+     * <li> <p><code>event.not-after</code> - The latest end time for the
+     * scheduled event. </li> <li> <p><code>event.not-before</code> - The
+     * earliest start time for the scheduled event. </li> <li>
+     * <p><code>instance-state-code</code> - A code representing the state of
+     * the instance, as a 16-bit unsigned integer. The high byte is an opaque
+     * internal value and should be ignored. The low byte is set based on the
+     * state represented. The valid values are 0 (pending), 16 (running), 32
+     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * </li> <li> <p><code>instance-state-name</code> - The state of the
+     * instance (<code>pending</code> | <code>running</code> |
+     * <code>shutting-down</code> | <code>terminated</code> |
+     * <code>stopping</code> | <code>stopped</code>). </li> <li>
+     * <p><code>instance-status.reachability</code> - Filters on instance
+     * status where the name is <code>reachability</code>
+     * (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     * | <code>insufficient-data</code>). </li> <li>
+     * <p><code>instance-status.status</code> - The status of the instance
+     * (<code>ok</code> | <code>impaired</code> | <code>initializing</code> |
+     * <code>insufficient-data</code> | <code>not-applicable</code>). </li>
+     * <li> <p><code>system-status.reachability</code> - Filters on system
+     * status where the name is <code>reachability</code>
+     * (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     * | <code>insufficient-data</code>). </li> <li>
+     * <p><code>system-status.status</code> - The system status of the
+     * instance (<code>ok</code> | <code>impaired</code> |
+     * <code>initializing</code> | <code>insufficient-data</code> |
+     * <code>not-applicable</code>). </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters The list of filters to limit returned results.
+     * @param filters One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     *         Availability Zone of the instance. </li> <li>
+     *         <p><code>event.code</code> - The code identifying the type of event
+     *         (<code>instance-reboot</code> | <code>system-reboot</code> |
+     *         <code>system-maintenance</code> | <code>instance-retirement</code> |
+     *         <code>instance-stop</code>). </li> <li>
+     *         <p><code>event.description</code> - A description of the event. </li>
+     *         <li> <p><code>event.not-after</code> - The latest end time for the
+     *         scheduled event. </li> <li> <p><code>event.not-before</code> - The
+     *         earliest start time for the scheduled event. </li> <li>
+     *         <p><code>instance-state-code</code> - A code representing the state of
+     *         the instance, as a 16-bit unsigned integer. The high byte is an opaque
+     *         internal value and should be ignored. The low byte is set based on the
+     *         state represented. The valid values are 0 (pending), 16 (running), 32
+     *         (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     *         </li> <li> <p><code>instance-state-name</code> - The state of the
+     *         instance (<code>pending</code> | <code>running</code> |
+     *         <code>shutting-down</code> | <code>terminated</code> |
+     *         <code>stopping</code> | <code>stopped</code>). </li> <li>
+     *         <p><code>instance-status.reachability</code> - Filters on instance
+     *         status where the name is <code>reachability</code>
+     *         (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     *         | <code>insufficient-data</code>). </li> <li>
+     *         <p><code>instance-status.status</code> - The status of the instance
+     *         (<code>ok</code> | <code>impaired</code> | <code>initializing</code> |
+     *         <code>insufficient-data</code> | <code>not-applicable</code>). </li>
+     *         <li> <p><code>system-status.reachability</code> - Filters on system
+     *         status where the name is <code>reachability</code>
+     *         (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     *         | <code>insufficient-data</code>). </li> <li>
+     *         <p><code>system-status.status</code> - The system status of the
+     *         instance (<code>ok</code> | <code>impaired</code> |
+     *         <code>initializing</code> | <code>insufficient-data</code> |
+     *         <code>not-applicable</code>). </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -221,11 +472,77 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The list of filters to limit returned results.
+     * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     * Availability Zone of the instance. </li> <li>
+     * <p><code>event.code</code> - The code identifying the type of event
+     * (<code>instance-reboot</code> | <code>system-reboot</code> |
+     * <code>system-maintenance</code> | <code>instance-retirement</code> |
+     * <code>instance-stop</code>). </li> <li>
+     * <p><code>event.description</code> - A description of the event. </li>
+     * <li> <p><code>event.not-after</code> - The latest end time for the
+     * scheduled event. </li> <li> <p><code>event.not-before</code> - The
+     * earliest start time for the scheduled event. </li> <li>
+     * <p><code>instance-state-code</code> - A code representing the state of
+     * the instance, as a 16-bit unsigned integer. The high byte is an opaque
+     * internal value and should be ignored. The low byte is set based on the
+     * state represented. The valid values are 0 (pending), 16 (running), 32
+     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * </li> <li> <p><code>instance-state-name</code> - The state of the
+     * instance (<code>pending</code> | <code>running</code> |
+     * <code>shutting-down</code> | <code>terminated</code> |
+     * <code>stopping</code> | <code>stopped</code>). </li> <li>
+     * <p><code>instance-status.reachability</code> - Filters on instance
+     * status where the name is <code>reachability</code>
+     * (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     * | <code>insufficient-data</code>). </li> <li>
+     * <p><code>instance-status.status</code> - The status of the instance
+     * (<code>ok</code> | <code>impaired</code> | <code>initializing</code> |
+     * <code>insufficient-data</code> | <code>not-applicable</code>). </li>
+     * <li> <p><code>system-status.reachability</code> - Filters on system
+     * status where the name is <code>reachability</code>
+     * (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     * | <code>insufficient-data</code>). </li> <li>
+     * <p><code>system-status.status</code> - The system status of the
+     * instance (<code>ok</code> | <code>impaired</code> |
+     * <code>initializing</code> | <code>insufficient-data</code> |
+     * <code>not-applicable</code>). </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters The list of filters to limit returned results.
+     * @param filters One or more filters. <ul> <li> <p><code>availability-zone</code> - The
+     *         Availability Zone of the instance. </li> <li>
+     *         <p><code>event.code</code> - The code identifying the type of event
+     *         (<code>instance-reboot</code> | <code>system-reboot</code> |
+     *         <code>system-maintenance</code> | <code>instance-retirement</code> |
+     *         <code>instance-stop</code>). </li> <li>
+     *         <p><code>event.description</code> - A description of the event. </li>
+     *         <li> <p><code>event.not-after</code> - The latest end time for the
+     *         scheduled event. </li> <li> <p><code>event.not-before</code> - The
+     *         earliest start time for the scheduled event. </li> <li>
+     *         <p><code>instance-state-code</code> - A code representing the state of
+     *         the instance, as a 16-bit unsigned integer. The high byte is an opaque
+     *         internal value and should be ignored. The low byte is set based on the
+     *         state represented. The valid values are 0 (pending), 16 (running), 32
+     *         (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     *         </li> <li> <p><code>instance-state-name</code> - The state of the
+     *         instance (<code>pending</code> | <code>running</code> |
+     *         <code>shutting-down</code> | <code>terminated</code> |
+     *         <code>stopping</code> | <code>stopped</code>). </li> <li>
+     *         <p><code>instance-status.reachability</code> - Filters on instance
+     *         status where the name is <code>reachability</code>
+     *         (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     *         | <code>insufficient-data</code>). </li> <li>
+     *         <p><code>instance-status.status</code> - The status of the instance
+     *         (<code>ok</code> | <code>impaired</code> | <code>initializing</code> |
+     *         <code>insufficient-data</code> | <code>not-applicable</code>). </li>
+     *         <li> <p><code>system-status.reachability</code> - Filters on system
+     *         status where the name is <code>reachability</code>
+     *         (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+     *         | <code>insufficient-data</code>). </li> <li>
+     *         <p><code>system-status.status</code> - The system status of the
+     *         instance (<code>ok</code> | <code>impaired</code> |
+     *         <code>initializing</code> | <code>insufficient-data</code> |
+     *         <code>not-applicable</code>). </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -243,29 +560,29 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * A string specifying the next paginated set of results to return.
+     * The next paginated set of results to return.
      *
-     * @return A string specifying the next paginated set of results to return.
+     * @return The next paginated set of results to return.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * A string specifying the next paginated set of results to return.
+     * The next paginated set of results to return.
      *
-     * @param nextToken A string specifying the next paginated set of results to return.
+     * @param nextToken The next paginated set of results to return.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * A string specifying the next paginated set of results to return.
+     * The next paginated set of results to return.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken A string specifying the next paginated set of results to return.
+     * @param nextToken The next paginated set of results to return.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -277,8 +594,10 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * The maximum number of paginated instance items per response.
+     * <p>Default: 1000
      *
      * @return The maximum number of paginated instance items per response.
+     *         <p>Default: 1000
      */
     public Integer getMaxResults() {
         return maxResults;
@@ -286,8 +605,10 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     
     /**
      * The maximum number of paginated instance items per response.
+     * <p>Default: 1000
      *
      * @param maxResults The maximum number of paginated instance items per response.
+     *         <p>Default: 1000
      */
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
@@ -295,10 +616,12 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     
     /**
      * The maximum number of paginated instance items per response.
+     * <p>Default: 1000
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxResults The maximum number of paginated instance items per response.
+     *         <p>Default: 1000
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -309,29 +632,41 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Returns the value of the IncludeAllInstances property for this object.
+     * When <code>true</code>, includes the health status for all instances.
+     * When <code>false</code>, includes the health status for running
+     * instances only. <p>Default: <code>false</code>
      *
-     * @return The value of the IncludeAllInstances property for this object.
+     * @return When <code>true</code>, includes the health status for all instances.
+     *         When <code>false</code>, includes the health status for running
+     *         instances only. <p>Default: <code>false</code>
      */
     public Boolean isIncludeAllInstances() {
         return includeAllInstances;
     }
     
     /**
-     * Sets the value of the IncludeAllInstances property for this object.
+     * When <code>true</code>, includes the health status for all instances.
+     * When <code>false</code>, includes the health status for running
+     * instances only. <p>Default: <code>false</code>
      *
-     * @param includeAllInstances The new value for the IncludeAllInstances property for this object.
+     * @param includeAllInstances When <code>true</code>, includes the health status for all instances.
+     *         When <code>false</code>, includes the health status for running
+     *         instances only. <p>Default: <code>false</code>
      */
     public void setIncludeAllInstances(Boolean includeAllInstances) {
         this.includeAllInstances = includeAllInstances;
     }
     
     /**
-     * Sets the value of the IncludeAllInstances property for this object.
+     * When <code>true</code>, includes the health status for all instances.
+     * When <code>false</code>, includes the health status for running
+     * instances only. <p>Default: <code>false</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param includeAllInstances The new value for the IncludeAllInstances property for this object.
+     * @param includeAllInstances When <code>true</code>, includes the health status for all instances.
+     *         When <code>false</code>, includes the health status for running
+     *         instances only. <p>Default: <code>false</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -342,9 +677,13 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Returns the value of the IncludeAllInstances property for this object.
+     * When <code>true</code>, includes the health status for all instances.
+     * When <code>false</code>, includes the health status for running
+     * instances only. <p>Default: <code>false</code>
      *
-     * @return The value of the IncludeAllInstances property for this object.
+     * @return When <code>true</code>, includes the health status for all instances.
+     *         When <code>false</code>, includes the health status for running
+     *         instances only. <p>Default: <code>false</code>
      */
     public Boolean getIncludeAllInstances() {
         return includeAllInstances;

@@ -17,16 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Describe Dhcp Options Result
+ * 
  */
 public class DescribeDhcpOptionsResult implements Serializable {
 
+    /**
+     * Information about one or more DHCP options sets.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<DhcpOptions> dhcpOptions;
 
     /**
-     * Returns the value of the DhcpOptions property for this object.
+     * Information about one or more DHCP options sets.
      *
-     * @return The value of the DhcpOptions property for this object.
+     * @return Information about one or more DHCP options sets.
      */
     public java.util.List<DhcpOptions> getDhcpOptions() {
         if (dhcpOptions == null) {
@@ -37,9 +40,9 @@ public class DescribeDhcpOptionsResult implements Serializable {
     }
     
     /**
-     * Sets the value of the DhcpOptions property for this object.
+     * Information about one or more DHCP options sets.
      *
-     * @param dhcpOptions The new value for the DhcpOptions property for this object.
+     * @param dhcpOptions Information about one or more DHCP options sets.
      */
     public void setDhcpOptions(java.util.Collection<DhcpOptions> dhcpOptions) {
         if (dhcpOptions == null) {
@@ -52,11 +55,11 @@ public class DescribeDhcpOptionsResult implements Serializable {
     }
     
     /**
-     * Sets the value of the DhcpOptions property for this object.
+     * Information about one or more DHCP options sets.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpOptions The new value for the DhcpOptions property for this object.
+     * @param dhcpOptions Information about one or more DHCP options sets.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -70,11 +73,11 @@ public class DescribeDhcpOptionsResult implements Serializable {
     }
     
     /**
-     * Sets the value of the DhcpOptions property for this object.
+     * Information about one or more DHCP options sets.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpOptions The new value for the DhcpOptions property for this object.
+     * @param dhcpOptions Information about one or more DHCP options sets.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

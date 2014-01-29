@@ -60,6 +60,12 @@ public class MultipartUploadListing {
     private int maxUploads;
 
     /**
+     * The encodingType parameter originally specified by the caller when this
+     * multipart upload listing was returned.
+     */
+    private String encodingType;
+
+    /**
      * Indicates if the listing is truncated, and additional requests need to be
      * made to get more results.
      */
@@ -231,6 +237,32 @@ public class MultipartUploadListing {
      */
     public void setMaxUploads(int maxUploads) {
         this.maxUploads = maxUploads;
+    }
+
+    /**
+     * Gets the encoding type used by Amazon S3 to encode object key names in
+     * the XML response. If you specify <code>encodingType</code> request
+     * parameter, Amazon S3 includes this element in the response, and returns
+     * encoded key name values in the following response elements:
+     * <code>Delimiter, KeyMarker, Prefix, NextKeyMarker, Key</code>.
+     * 
+     * @return <code>Null</code> if <code>encodingType</code> is not specified
+     *         in the request parameter.
+     */
+    public String getEncodingType() {
+        return encodingType;
+    }
+
+    /**
+     * For internal use only. Sets the encoding type used by Amazon S3 to encode
+     * object key names in the XML response.
+     * 
+     * @param encodingType
+     *            <code>Null</code> if <code>encodingType</code> is not
+     *            specified in the request parameter.
+     */
+    public void setEncodingType(String encodingType) {
+        this.encodingType = encodingType;
     }
 
     /**

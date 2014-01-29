@@ -50,7 +50,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
     /**
      * Whether users can specify their own SSH public key through the My
      * Settings page. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"></a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"/>.
      */
     private Boolean allowSelfManagement;
 
@@ -156,11 +156,11 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
     /**
      * Whether users can specify their own SSH public key through the My
      * Settings page. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"></a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"/>.
      *
      * @return Whether users can specify their own SSH public key through the My
      *         Settings page. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"></a>.
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"/>.
      */
     public Boolean isAllowSelfManagement() {
         return allowSelfManagement;
@@ -169,11 +169,11 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
     /**
      * Whether users can specify their own SSH public key through the My
      * Settings page. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"></a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"/>.
      *
      * @param allowSelfManagement Whether users can specify their own SSH public key through the My
      *         Settings page. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"></a>.
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"/>.
      */
     public void setAllowSelfManagement(Boolean allowSelfManagement) {
         this.allowSelfManagement = allowSelfManagement;
@@ -182,13 +182,13 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
     /**
      * Whether users can specify their own SSH public key through the My
      * Settings page. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"></a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"/>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allowSelfManagement Whether users can specify their own SSH public key through the My
      *         Settings page. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"></a>.
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"/>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -201,11 +201,11 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
     /**
      * Whether users can specify their own SSH public key through the My
      * Settings page. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"></a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"/>.
      *
      * @return Whether users can specify their own SSH public key through the My
      *         Settings page. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"></a>.
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"/>.
      */
     public Boolean getAllowSelfManagement() {
         return allowSelfManagement;

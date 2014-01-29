@@ -143,6 +143,8 @@ import com.amazonaws.util.VersionInfoUtils;
  * @see DynamoDBIgnore
  * @see DynamoDBMarshalling
  * @see DynamoDBMapperConfig
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper} instead.
  */
 @Deprecated
 public class DynamoDBMapper {

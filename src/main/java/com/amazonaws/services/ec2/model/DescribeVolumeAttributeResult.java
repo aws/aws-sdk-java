@@ -17,43 +17,49 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Describe Volume Attribute Result
+ * 
  */
 public class DescribeVolumeAttributeResult implements Serializable {
 
+    /**
+     * The ID of the volume.
+     */
     private String volumeId;
 
     /**
-     * Boolean value
+     * The state of <code>autoEnableIO</code> attribute.
      */
     private Boolean autoEnableIO;
 
+    /**
+     * A list of product codes.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode> productCodes;
 
     /**
-     * Returns the value of the VolumeId property for this object.
+     * The ID of the volume.
      *
-     * @return The value of the VolumeId property for this object.
+     * @return The ID of the volume.
      */
     public String getVolumeId() {
         return volumeId;
     }
     
     /**
-     * Sets the value of the VolumeId property for this object.
+     * The ID of the volume.
      *
-     * @param volumeId The new value for the VolumeId property for this object.
+     * @param volumeId The ID of the volume.
      */
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
     
     /**
-     * Sets the value of the VolumeId property for this object.
+     * The ID of the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeId The new value for the VolumeId property for this object.
+     * @param volumeId The ID of the volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -64,29 +70,29 @@ public class DescribeVolumeAttributeResult implements Serializable {
     }
 
     /**
-     * Boolean value
+     * The state of <code>autoEnableIO</code> attribute.
      *
-     * @return Boolean value
+     * @return The state of <code>autoEnableIO</code> attribute.
      */
     public Boolean isAutoEnableIO() {
         return autoEnableIO;
     }
     
     /**
-     * Boolean value
+     * The state of <code>autoEnableIO</code> attribute.
      *
-     * @param autoEnableIO Boolean value
+     * @param autoEnableIO The state of <code>autoEnableIO</code> attribute.
      */
     public void setAutoEnableIO(Boolean autoEnableIO) {
         this.autoEnableIO = autoEnableIO;
     }
     
     /**
-     * Boolean value
+     * The state of <code>autoEnableIO</code> attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoEnableIO Boolean value
+     * @param autoEnableIO The state of <code>autoEnableIO</code> attribute.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -97,18 +103,18 @@ public class DescribeVolumeAttributeResult implements Serializable {
     }
 
     /**
-     * Boolean value
+     * The state of <code>autoEnableIO</code> attribute.
      *
-     * @return Boolean value
+     * @return The state of <code>autoEnableIO</code> attribute.
      */
     public Boolean getAutoEnableIO() {
         return autoEnableIO;
     }
 
     /**
-     * Returns the value of the ProductCodes property for this object.
+     * A list of product codes.
      *
-     * @return The value of the ProductCodes property for this object.
+     * @return A list of product codes.
      */
     public java.util.List<ProductCode> getProductCodes() {
         if (productCodes == null) {
@@ -119,9 +125,9 @@ public class DescribeVolumeAttributeResult implements Serializable {
     }
     
     /**
-     * Sets the value of the ProductCodes property for this object.
+     * A list of product codes.
      *
-     * @param productCodes The new value for the ProductCodes property for this object.
+     * @param productCodes A list of product codes.
      */
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
         if (productCodes == null) {
@@ -134,11 +140,11 @@ public class DescribeVolumeAttributeResult implements Serializable {
     }
     
     /**
-     * Sets the value of the ProductCodes property for this object.
+     * A list of product codes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param productCodes The new value for the ProductCodes property for this object.
+     * @param productCodes A list of product codes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -152,11 +158,11 @@ public class DescribeVolumeAttributeResult implements Serializable {
     }
     
     /**
-     * Sets the value of the ProductCodes property for this object.
+     * A list of product codes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param productCodes The new value for the ProductCodes property for this object.
+     * @param productCodes A list of product codes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

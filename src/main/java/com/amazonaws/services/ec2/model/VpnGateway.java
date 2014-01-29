@@ -18,20 +18,18 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The VpnGateway data type.
+ * Describes a virtual private gateway.
  * </p>
  */
 public class VpnGateway implements Serializable {
 
     /**
-     * Specifies the ID of the VPN gateway.
+     * The ID of the virtual private gateway.
      */
     private String vpnGatewayId;
 
     /**
-     * Describes the current state of the VPN gateway. Valid values are
-     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
-     * and <code>deleted</code>.
+     * The current state of the virtual private gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available, deleting, deleted
@@ -39,7 +37,7 @@ public class VpnGateway implements Serializable {
     private String state;
 
     /**
-     * Specifies the type of VPN connection the VPN gateway supports.
+     * The type of VPN connection the virtual private gateway supports.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
@@ -47,44 +45,44 @@ public class VpnGateway implements Serializable {
     private String type;
 
     /**
-     * Specifies the Availability Zone where the VPN gateway was created.
+     * The Availability Zone where the virtual private gateway was created.
      */
     private String availabilityZone;
 
     /**
-     * Contains information about the VPCs attached to the VPN gateway.
+     * Any VPCs attached to the virtual private gateway.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<VpcAttachment> vpcAttachments;
 
     /**
-     * A list of tags for the VpnGateway.
+     * Any tags assigned to the virtual private gateway.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * Specifies the ID of the VPN gateway.
+     * The ID of the virtual private gateway.
      *
-     * @return Specifies the ID of the VPN gateway.
+     * @return The ID of the virtual private gateway.
      */
     public String getVpnGatewayId() {
         return vpnGatewayId;
     }
     
     /**
-     * Specifies the ID of the VPN gateway.
+     * The ID of the virtual private gateway.
      *
-     * @param vpnGatewayId Specifies the ID of the VPN gateway.
+     * @param vpnGatewayId The ID of the virtual private gateway.
      */
     public void setVpnGatewayId(String vpnGatewayId) {
         this.vpnGatewayId = vpnGatewayId;
     }
     
     /**
-     * Specifies the ID of the VPN gateway.
+     * The ID of the virtual private gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGatewayId Specifies the ID of the VPN gateway.
+     * @param vpnGatewayId The ID of the virtual private gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -95,16 +93,12 @@ public class VpnGateway implements Serializable {
     }
 
     /**
-     * Describes the current state of the VPN gateway. Valid values are
-     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
-     * and <code>deleted</code>.
+     * The current state of the virtual private gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available, deleting, deleted
      *
-     * @return Describes the current state of the VPN gateway. Valid values are
-     *         <code>pending</code>, <code>available</code>, <code>deleting</code>,
-     *         and <code>deleted</code>.
+     * @return The current state of the virtual private gateway.
      *
      * @see VpnState
      */
@@ -113,16 +107,12 @@ public class VpnGateway implements Serializable {
     }
     
     /**
-     * Describes the current state of the VPN gateway. Valid values are
-     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
-     * and <code>deleted</code>.
+     * The current state of the virtual private gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available, deleting, deleted
      *
-     * @param state Describes the current state of the VPN gateway. Valid values are
-     *         <code>pending</code>, <code>available</code>, <code>deleting</code>,
-     *         and <code>deleted</code>.
+     * @param state The current state of the virtual private gateway.
      *
      * @see VpnState
      */
@@ -131,18 +121,14 @@ public class VpnGateway implements Serializable {
     }
     
     /**
-     * Describes the current state of the VPN gateway. Valid values are
-     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
-     * and <code>deleted</code>.
+     * The current state of the virtual private gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available, deleting, deleted
      *
-     * @param state Describes the current state of the VPN gateway. Valid values are
-     *         <code>pending</code>, <code>available</code>, <code>deleting</code>,
-     *         and <code>deleted</code>.
+     * @param state The current state of the virtual private gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -155,16 +141,12 @@ public class VpnGateway implements Serializable {
     }
 
     /**
-     * Describes the current state of the VPN gateway. Valid values are
-     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
-     * and <code>deleted</code>.
+     * The current state of the virtual private gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available, deleting, deleted
      *
-     * @param state Describes the current state of the VPN gateway. Valid values are
-     *         <code>pending</code>, <code>available</code>, <code>deleting</code>,
-     *         and <code>deleted</code>.
+     * @param state The current state of the virtual private gateway.
      *
      * @see VpnState
      */
@@ -173,18 +155,14 @@ public class VpnGateway implements Serializable {
     }
     
     /**
-     * Describes the current state of the VPN gateway. Valid values are
-     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
-     * and <code>deleted</code>.
+     * The current state of the virtual private gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>pending, available, deleting, deleted
      *
-     * @param state Describes the current state of the VPN gateway. Valid values are
-     *         <code>pending</code>, <code>available</code>, <code>deleting</code>,
-     *         and <code>deleted</code>.
+     * @param state The current state of the virtual private gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -197,12 +175,12 @@ public class VpnGateway implements Serializable {
     }
 
     /**
-     * Specifies the type of VPN connection the VPN gateway supports.
+     * The type of VPN connection the virtual private gateway supports.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
      *
-     * @return Specifies the type of VPN connection the VPN gateway supports.
+     * @return The type of VPN connection the virtual private gateway supports.
      *
      * @see GatewayType
      */
@@ -211,12 +189,12 @@ public class VpnGateway implements Serializable {
     }
     
     /**
-     * Specifies the type of VPN connection the VPN gateway supports.
+     * The type of VPN connection the virtual private gateway supports.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
      *
-     * @param type Specifies the type of VPN connection the VPN gateway supports.
+     * @param type The type of VPN connection the virtual private gateway supports.
      *
      * @see GatewayType
      */
@@ -225,14 +203,14 @@ public class VpnGateway implements Serializable {
     }
     
     /**
-     * Specifies the type of VPN connection the VPN gateway supports.
+     * The type of VPN connection the virtual private gateway supports.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
      *
-     * @param type Specifies the type of VPN connection the VPN gateway supports.
+     * @param type The type of VPN connection the virtual private gateway supports.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -245,12 +223,12 @@ public class VpnGateway implements Serializable {
     }
 
     /**
-     * Specifies the type of VPN connection the VPN gateway supports.
+     * The type of VPN connection the virtual private gateway supports.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
      *
-     * @param type Specifies the type of VPN connection the VPN gateway supports.
+     * @param type The type of VPN connection the virtual private gateway supports.
      *
      * @see GatewayType
      */
@@ -259,14 +237,14 @@ public class VpnGateway implements Serializable {
     }
     
     /**
-     * Specifies the type of VPN connection the VPN gateway supports.
+     * The type of VPN connection the virtual private gateway supports.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
      *
-     * @param type Specifies the type of VPN connection the VPN gateway supports.
+     * @param type The type of VPN connection the virtual private gateway supports.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -279,29 +257,29 @@ public class VpnGateway implements Serializable {
     }
 
     /**
-     * Specifies the Availability Zone where the VPN gateway was created.
+     * The Availability Zone where the virtual private gateway was created.
      *
-     * @return Specifies the Availability Zone where the VPN gateway was created.
+     * @return The Availability Zone where the virtual private gateway was created.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * Specifies the Availability Zone where the VPN gateway was created.
+     * The Availability Zone where the virtual private gateway was created.
      *
-     * @param availabilityZone Specifies the Availability Zone where the VPN gateway was created.
+     * @param availabilityZone The Availability Zone where the virtual private gateway was created.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * Specifies the Availability Zone where the VPN gateway was created.
+     * The Availability Zone where the virtual private gateway was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone Specifies the Availability Zone where the VPN gateway was created.
+     * @param availabilityZone The Availability Zone where the virtual private gateway was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -312,9 +290,9 @@ public class VpnGateway implements Serializable {
     }
 
     /**
-     * Contains information about the VPCs attached to the VPN gateway.
+     * Any VPCs attached to the virtual private gateway.
      *
-     * @return Contains information about the VPCs attached to the VPN gateway.
+     * @return Any VPCs attached to the virtual private gateway.
      */
     public java.util.List<VpcAttachment> getVpcAttachments() {
         if (vpcAttachments == null) {
@@ -325,9 +303,9 @@ public class VpnGateway implements Serializable {
     }
     
     /**
-     * Contains information about the VPCs attached to the VPN gateway.
+     * Any VPCs attached to the virtual private gateway.
      *
-     * @param vpcAttachments Contains information about the VPCs attached to the VPN gateway.
+     * @param vpcAttachments Any VPCs attached to the virtual private gateway.
      */
     public void setVpcAttachments(java.util.Collection<VpcAttachment> vpcAttachments) {
         if (vpcAttachments == null) {
@@ -340,11 +318,11 @@ public class VpnGateway implements Serializable {
     }
     
     /**
-     * Contains information about the VPCs attached to the VPN gateway.
+     * Any VPCs attached to the virtual private gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcAttachments Contains information about the VPCs attached to the VPN gateway.
+     * @param vpcAttachments Any VPCs attached to the virtual private gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -358,11 +336,11 @@ public class VpnGateway implements Serializable {
     }
     
     /**
-     * Contains information about the VPCs attached to the VPN gateway.
+     * Any VPCs attached to the virtual private gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcAttachments Contains information about the VPCs attached to the VPN gateway.
+     * @param vpcAttachments Any VPCs attached to the virtual private gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -380,9 +358,9 @@ public class VpnGateway implements Serializable {
     }
 
     /**
-     * A list of tags for the VpnGateway.
+     * Any tags assigned to the virtual private gateway.
      *
-     * @return A list of tags for the VpnGateway.
+     * @return Any tags assigned to the virtual private gateway.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
@@ -393,9 +371,9 @@ public class VpnGateway implements Serializable {
     }
     
     /**
-     * A list of tags for the VpnGateway.
+     * Any tags assigned to the virtual private gateway.
      *
-     * @param tags A list of tags for the VpnGateway.
+     * @param tags Any tags assigned to the virtual private gateway.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -408,11 +386,11 @@ public class VpnGateway implements Serializable {
     }
     
     /**
-     * A list of tags for the VpnGateway.
+     * Any tags assigned to the virtual private gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags A list of tags for the VpnGateway.
+     * @param tags Any tags assigned to the virtual private gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -426,11 +404,11 @@ public class VpnGateway implements Serializable {
     }
     
     /**
-     * A list of tags for the VpnGateway.
+     * Any tags assigned to the virtual private gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags A list of tags for the VpnGateway.
+     * @param tags Any tags assigned to the virtual private gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

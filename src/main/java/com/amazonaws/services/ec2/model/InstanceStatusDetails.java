@@ -17,23 +17,41 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Instance Status Details
+ * <p>
+ * Describes the instance status.
+ * </p>
  */
 public class InstanceStatusDetails implements Serializable {
 
+    /**
+     * The type of instance status.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>reachability
+     */
     private String name;
 
+    /**
+     * The status.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>passed, failed, insufficient-data
+     */
     private String status;
 
+    /**
+     * The time when a status check failed. For an instance that was launched
+     * and impaired, this is the time when the instance was launched.
+     */
     private java.util.Date impairedSince;
 
     /**
-     * Returns the value of the Name property for this object.
+     * The type of instance status.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>reachability
      *
-     * @return The value of the Name property for this object.
+     * @return The type of instance status.
      *
      * @see StatusName
      */
@@ -42,12 +60,12 @@ public class InstanceStatusDetails implements Serializable {
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * The type of instance status.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>reachability
      *
-     * @param name The new value for the Name property for this object.
+     * @param name The type of instance status.
      *
      * @see StatusName
      */
@@ -56,14 +74,14 @@ public class InstanceStatusDetails implements Serializable {
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * The type of instance status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>reachability
      *
-     * @param name The new value for the Name property for this object.
+     * @param name The type of instance status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -76,12 +94,12 @@ public class InstanceStatusDetails implements Serializable {
     }
 
     /**
-     * Sets the value of the Name property for this object.
+     * The type of instance status.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>reachability
      *
-     * @param name The new value for the Name property for this object.
+     * @param name The type of instance status.
      *
      * @see StatusName
      */
@@ -90,14 +108,14 @@ public class InstanceStatusDetails implements Serializable {
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * The type of instance status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>reachability
      *
-     * @param name The new value for the Name property for this object.
+     * @param name The type of instance status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -110,12 +128,12 @@ public class InstanceStatusDetails implements Serializable {
     }
 
     /**
-     * Returns the value of the Status property for this object.
+     * The status.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>passed, failed, insufficient-data
      *
-     * @return The value of the Status property for this object.
+     * @return The status.
      *
      * @see StatusType
      */
@@ -124,12 +142,12 @@ public class InstanceStatusDetails implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>passed, failed, insufficient-data
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status.
      *
      * @see StatusType
      */
@@ -138,14 +156,14 @@ public class InstanceStatusDetails implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>passed, failed, insufficient-data
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -158,12 +176,12 @@ public class InstanceStatusDetails implements Serializable {
     }
 
     /**
-     * Sets the value of the Status property for this object.
+     * The status.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>passed, failed, insufficient-data
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status.
      *
      * @see StatusType
      */
@@ -172,14 +190,14 @@ public class InstanceStatusDetails implements Serializable {
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>passed, failed, insufficient-data
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -192,29 +210,35 @@ public class InstanceStatusDetails implements Serializable {
     }
 
     /**
-     * Returns the value of the ImpairedSince property for this object.
+     * The time when a status check failed. For an instance that was launched
+     * and impaired, this is the time when the instance was launched.
      *
-     * @return The value of the ImpairedSince property for this object.
+     * @return The time when a status check failed. For an instance that was launched
+     *         and impaired, this is the time when the instance was launched.
      */
     public java.util.Date getImpairedSince() {
         return impairedSince;
     }
     
     /**
-     * Sets the value of the ImpairedSince property for this object.
+     * The time when a status check failed. For an instance that was launched
+     * and impaired, this is the time when the instance was launched.
      *
-     * @param impairedSince The new value for the ImpairedSince property for this object.
+     * @param impairedSince The time when a status check failed. For an instance that was launched
+     *         and impaired, this is the time when the instance was launched.
      */
     public void setImpairedSince(java.util.Date impairedSince) {
         this.impairedSince = impairedSince;
     }
     
     /**
-     * Sets the value of the ImpairedSince property for this object.
+     * The time when a status check failed. For an instance that was launched
+     * and impaired, this is the time when the instance was launched.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param impairedSince The new value for the ImpairedSince property for this object.
+     * @param impairedSince The time when a status check failed. For an instance that was launched
+     *         and impaired, this is the time when the instance was launched.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

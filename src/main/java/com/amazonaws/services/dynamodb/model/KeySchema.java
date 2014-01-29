@@ -21,6 +21,7 @@ import java.io.Serializable;
  * attribute primary keys have one index value: a <code>HashKeyElement</code> .
  * A composite hash-and-range primary key contains two attribute values: a <code>HashKeyElement</code> and a <code>RangeKeyElement</code> .
  * </p>
+ * @deprecated This class is no longer supported by the latest service API.
  */
 @Deprecated
 public class KeySchema  implements Serializable  {

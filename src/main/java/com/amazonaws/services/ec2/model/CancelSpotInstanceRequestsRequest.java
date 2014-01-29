@@ -23,16 +23,13 @@ import com.amazonaws.services.ec2.model.transform.CancelSpotInstanceRequestsRequ
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#cancelSpotInstanceRequests(CancelSpotInstanceRequestsRequest) CancelSpotInstanceRequests operation}.
  * <p>
- * Cancels one or more Spot Instance requests.
+ * Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you specify
+ * exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity and current Spot Instance
+ * requests. For more information about Spot Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot
+ * Instances </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  * <p>
- * Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you specify exceeds the current Spot Price. Amazon EC2
- * periodically sets the Spot Price based on available Spot Instance capacity and current spot instance requests.
- * </p>
- * <p>
- * For conceptual information about Spot Instances, refer to the Amazon Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud User Guide
- * .
- * 
+ * <b>IMPORTANT:</b> Canceling a Spot Instance request does not terminate running Spot Instances associated with the request.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelSpotInstanceRequests(CancelSpotInstanceRequestsRequest)
@@ -40,7 +37,7 @@ import com.amazonaws.services.ec2.model.transform.CancelSpotInstanceRequestsRequ
 public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CancelSpotInstanceRequestsRequest> {
 
     /**
-     * Specifies the ID of the Spot Instance request.
+     * One or more Spot Instance request IDs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> spotInstanceRequestIds;
 
@@ -55,17 +52,16 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest i
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param spotInstanceRequestIds Specifies the ID of the Spot Instance
-     * request.
+     * @param spotInstanceRequestIds One or more Spot Instance request IDs.
      */
     public CancelSpotInstanceRequestsRequest(java.util.List<String> spotInstanceRequestIds) {
         setSpotInstanceRequestIds(spotInstanceRequestIds);
     }
 
     /**
-     * Specifies the ID of the Spot Instance request.
+     * One or more Spot Instance request IDs.
      *
-     * @return Specifies the ID of the Spot Instance request.
+     * @return One or more Spot Instance request IDs.
      */
     public java.util.List<String> getSpotInstanceRequestIds() {
         if (spotInstanceRequestIds == null) {
@@ -76,9 +72,9 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * Specifies the ID of the Spot Instance request.
+     * One or more Spot Instance request IDs.
      *
-     * @param spotInstanceRequestIds Specifies the ID of the Spot Instance request.
+     * @param spotInstanceRequestIds One or more Spot Instance request IDs.
      */
     public void setSpotInstanceRequestIds(java.util.Collection<String> spotInstanceRequestIds) {
         if (spotInstanceRequestIds == null) {
@@ -91,11 +87,11 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * Specifies the ID of the Spot Instance request.
+     * One or more Spot Instance request IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequestIds Specifies the ID of the Spot Instance request.
+     * @param spotInstanceRequestIds One or more Spot Instance request IDs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -109,11 +105,11 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * Specifies the ID of the Spot Instance request.
+     * One or more Spot Instance request IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequestIds Specifies the ID of the Spot Instance request.
+     * @param spotInstanceRequestIds One or more Spot Instance request IDs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

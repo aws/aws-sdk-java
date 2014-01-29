@@ -1675,7 +1675,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);

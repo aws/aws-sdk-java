@@ -17,40 +17,51 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Disk Image
+ * <p>
+ * Describes a disk image.
+ * </p>
  */
 public class DiskImage implements Serializable {
 
+    /**
+     * 
+     */
     private DiskImageDetail image;
 
+    /**
+     * 
+     */
     private String description;
 
+    /**
+     * 
+     */
     private VolumeDetail volume;
 
     /**
-     * Returns the value of the Image property for this object.
+     * 
      *
-     * @return The value of the Image property for this object.
+     * @return 
      */
     public DiskImageDetail getImage() {
         return image;
     }
     
     /**
-     * Sets the value of the Image property for this object.
+     * 
      *
-     * @param image The new value for the Image property for this object.
+     * @param image 
      */
     public void setImage(DiskImageDetail image) {
         this.image = image;
     }
     
     /**
-     * Sets the value of the Image property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param image The new value for the Image property for this object.
+     * @param image 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -61,29 +72,29 @@ public class DiskImage implements Serializable {
     }
 
     /**
-     * Returns the value of the Description property for this object.
+     * 
      *
-     * @return The value of the Description property for this object.
+     * @return 
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * 
      *
-     * @param description The new value for the Description property for this object.
+     * @param description 
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -94,29 +105,29 @@ public class DiskImage implements Serializable {
     }
 
     /**
-     * Returns the value of the Volume property for this object.
+     * 
      *
-     * @return The value of the Volume property for this object.
+     * @return 
      */
     public VolumeDetail getVolume() {
         return volume;
     }
     
     /**
-     * Sets the value of the Volume property for this object.
+     * 
      *
-     * @param volume The new value for the Volume property for this object.
+     * @param volume 
      */
     public void setVolume(VolumeDetail volume) {
         this.volume = volume;
     }
     
     /**
-     * Sets the value of the Volume property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volume The new value for the Volume property for this object.
+     * @param volume 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

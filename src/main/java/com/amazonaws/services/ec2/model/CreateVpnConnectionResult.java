@@ -17,41 +17,39 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * <p>
  * 
- * </p>
  */
 public class CreateVpnConnectionResult implements Serializable {
 
     /**
-     * 
+     * Information about the VPN connection.
      */
     private VpnConnection vpnConnection;
 
     /**
-     * 
+     * Information about the VPN connection.
      *
-     * @return 
+     * @return Information about the VPN connection.
      */
     public VpnConnection getVpnConnection() {
         return vpnConnection;
     }
     
     /**
-     * 
+     * Information about the VPN connection.
      *
-     * @param vpnConnection 
+     * @param vpnConnection Information about the VPN connection.
      */
     public void setVpnConnection(VpnConnection vpnConnection) {
         this.vpnConnection = vpnConnection;
     }
     
     /**
-     * 
+     * Information about the VPN connection.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnConnection 
+     * @param vpnConnection Information about the VPN connection.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

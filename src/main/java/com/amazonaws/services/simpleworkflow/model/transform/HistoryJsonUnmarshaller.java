@@ -46,6 +46,7 @@ public class HistoryJsonUnmarshaller implements Unmarshaller<History, JsonUnmars
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("events", targetDepth)) {
+                    context.nextToken();
                     history.setEvents(new ListUnmarshaller<HistoryEvent>(HistoryEventJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {

@@ -23,9 +23,9 @@ import com.amazonaws.services.ec2.model.transform.DeleteVpnGatewayRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteVpnGateway(DeleteVpnGatewayRequest) DeleteVpnGateway operation}.
  * <p>
- * Deletes a VPN gateway. Use this when you want to delete a VPC and all its associated components because you no longer need them. We recommend that
- * before you delete a VPN gateway, you detach it from the VPC and delete the VPN connection. Note that you don't need to delete the VPN gateway if you
- * just want to delete and re-create the VPN connection between your VPC and data center.
+ * Deletes the specified virtual private gateway. We recommend that before you delete a virtual private gateway, you detach it from the VPC and delete
+ * the VPN connection. Note that you don't need to delete the virtual private gateway if you plan to delete and recreate the VPN connection between your
+ * VPC and your network.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpnGateway(DeleteVpnGatewayRequest)
@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteVpnGatewayRequestMarshal
 public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteVpnGatewayRequest> {
 
     /**
-     * The ID of the VPN gateway to delete.
+     * The ID of the virtual private gateway.
      */
     private String vpnGatewayId;
 
@@ -48,36 +48,36 @@ public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest implements 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param vpnGatewayId The ID of the VPN gateway to delete.
+     * @param vpnGatewayId The ID of the virtual private gateway.
      */
     public DeleteVpnGatewayRequest(String vpnGatewayId) {
         setVpnGatewayId(vpnGatewayId);
     }
 
     /**
-     * The ID of the VPN gateway to delete.
+     * The ID of the virtual private gateway.
      *
-     * @return The ID of the VPN gateway to delete.
+     * @return The ID of the virtual private gateway.
      */
     public String getVpnGatewayId() {
         return vpnGatewayId;
     }
     
     /**
-     * The ID of the VPN gateway to delete.
+     * The ID of the virtual private gateway.
      *
-     * @param vpnGatewayId The ID of the VPN gateway to delete.
+     * @param vpnGatewayId The ID of the virtual private gateway.
      */
     public void setVpnGatewayId(String vpnGatewayId) {
         this.vpnGatewayId = vpnGatewayId;
     }
     
     /**
-     * The ID of the VPN gateway to delete.
+     * The ID of the virtual private gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGatewayId The ID of the VPN gateway to delete.
+     * @param vpnGatewayId The ID of the virtual private gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

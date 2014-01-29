@@ -21,8 +21,33 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#sendMessageBatch(SendMessageBatchRequest) SendMessageBatch operation}.
  * <p>
- * This is a batch version of SendMessage. It takes multiple messages and adds each of them to the queue. The result of each add operation is reported
- * individually in the response.
+ * Delivers up to ten messages to the specified queue. This is a batch version of SendMessage. The result of the send action on each message is reported
+ * individually in the response. The maximum allowed individual message size is 256 KB (262,144 bytes).
+ * </p>
+ * <p>
+ * The maximum total payload size (i.e., the sum of all a batch's individual message lengths) is also 256 KB (262,144 bytes).
+ * </p>
+ * <p>
+ * If the <code>DelaySeconds</code> parameter is not specified for an entry, the default for the queue is used.
+ * </p>
+ * <p>
+ * <b>IMPORTANT:</b>The following list shows the characters (in Unicode) that are allowed in your message, according to the W3C XML specification. For
+ * more information, go to http://www.faqs.org/rfcs/rfc1321.html. If you send any characters that are not included in the list, your request will be
+ * rejected. #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF]
+ * </p>
+ * <p>
+ * <b>IMPORTANT:</b> Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even
+ * when the call returns an HTTP status code of 200.
+ * </p>
+ * <p>
+ * <b>NOTE:</b>Some API actions take lists of parameters. These lists are specified using the param.n notation. Values of n are integers starting from 1.
+ * For example, a parameter list with two elements looks like this:
+ * </p>
+ * <p>
+ * <code>&Attribute.1=this</code>
+ * </p>
+ * <p>
+ * <code>&Attribute.2=that</code>
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#sendMessageBatch(SendMessageBatchRequest)
@@ -30,12 +55,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class SendMessageBatchRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The URL of the SQS queue to take action on.
+     * The URL of the Amazon SQS queue to take action on.
      */
     private String queueUrl;
 
     /**
-     * A list of <a>SendMessageBatchRequestEntry</a>s.
+     * A list of <a>SendMessageBatchRequestEntry</a> items.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<SendMessageBatchRequestEntry> entries;
 
@@ -50,7 +75,7 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The URL of the Amazon SQS queue to take action on.
      */
     public SendMessageBatchRequest(String queueUrl) {
         setQueueUrl(queueUrl);
@@ -61,8 +86,8 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl The URL of the SQS queue to take action on.
-     * @param entries A list of <a>SendMessageBatchRequestEntry</a>s.
+     * @param queueUrl The URL of the Amazon SQS queue to take action on.
+     * @param entries A list of <a>SendMessageBatchRequestEntry</a> items.
      */
     public SendMessageBatchRequest(String queueUrl, java.util.List<SendMessageBatchRequestEntry> entries) {
         setQueueUrl(queueUrl);
@@ -70,29 +95,29 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The URL of the SQS queue to take action on.
+     * The URL of the Amazon SQS queue to take action on.
      *
-     * @return The URL of the SQS queue to take action on.
+     * @return The URL of the Amazon SQS queue to take action on.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * The URL of the SQS queue to take action on.
+     * The URL of the Amazon SQS queue to take action on.
      *
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The URL of the Amazon SQS queue to take action on.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * The URL of the SQS queue to take action on.
+     * The URL of the Amazon SQS queue to take action on.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The URL of the Amazon SQS queue to take action on.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -103,9 +128,9 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * A list of <a>SendMessageBatchRequestEntry</a>s.
+     * A list of <a>SendMessageBatchRequestEntry</a> items.
      *
-     * @return A list of <a>SendMessageBatchRequestEntry</a>s.
+     * @return A list of <a>SendMessageBatchRequestEntry</a> items.
      */
     public java.util.List<SendMessageBatchRequestEntry> getEntries() {
         if (entries == null) {
@@ -116,9 +141,9 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * A list of <a>SendMessageBatchRequestEntry</a>s.
+     * A list of <a>SendMessageBatchRequestEntry</a> items.
      *
-     * @param entries A list of <a>SendMessageBatchRequestEntry</a>s.
+     * @param entries A list of <a>SendMessageBatchRequestEntry</a> items.
      */
     public void setEntries(java.util.Collection<SendMessageBatchRequestEntry> entries) {
         if (entries == null) {
@@ -131,11 +156,11 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * A list of <a>SendMessageBatchRequestEntry</a>s.
+     * A list of <a>SendMessageBatchRequestEntry</a> items.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param entries A list of <a>SendMessageBatchRequestEntry</a>s.
+     * @param entries A list of <a>SendMessageBatchRequestEntry</a> items.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -149,11 +174,11 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * A list of <a>SendMessageBatchRequestEntry</a>s.
+     * A list of <a>SendMessageBatchRequestEntry</a> items.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param entries A list of <a>SendMessageBatchRequestEntry</a>s.
+     * @param entries A list of <a>SendMessageBatchRequestEntry</a> items.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

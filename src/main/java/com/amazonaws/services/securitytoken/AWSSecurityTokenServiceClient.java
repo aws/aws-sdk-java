@@ -917,7 +917,6 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
             credentials = originalRequest.getRequestCredentials();
         }
 
-        executionContext.setSigner(getSigner());
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);

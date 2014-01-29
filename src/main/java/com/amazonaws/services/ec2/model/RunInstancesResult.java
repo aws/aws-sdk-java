@@ -18,40 +18,40 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The result of calling the RunInstancesResult, contains the new reservation created by Amazon EC2.
+ * The result of the RunInstances call.
  * </p>
  */
 public class RunInstancesResult implements Serializable {
 
     /**
-     * The newly created reservation, containing the new instances.
+     * One or more reservations.
      */
     private Reservation reservation;
 
     /**
-     * The newly created reservation, containing the new instances.
+     * One or more reservations.
      *
-     * @return The newly created reservation, containing the new instances.
+     * @return One or more reservations.
      */
     public Reservation getReservation() {
         return reservation;
     }
     
     /**
-     * The newly created reservation, containing the new instances.
+     * One or more reservations.
      *
-     * @param reservation The newly created reservation, containing the new instances.
+     * @param reservation One or more reservations.
      */
     public void setReservation(Reservation reservation) {
         this.reservation = reservation;
     }
     
     /**
-     * The newly created reservation, containing the new instances.
+     * One or more reservations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservation The newly created reservation, containing the new instances.
+     * @param reservation One or more reservations.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -25,6 +25,8 @@ import java.lang.annotation.Target;
  * table. Applied to the getter for the range key property.
  * <p>
  * This annotation is required for tables that use a range key.
+ * 
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey} instead.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)

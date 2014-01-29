@@ -16,6 +16,7 @@ package com.amazonaws.services.dynamodb.model;
 
 /**
  * Comparison Operator
+ * @deprecated Use {@link com.amazonaws.services.dynamodbv2.model.ComparisonOperator} instead.
  */
 @Deprecated
 public enum ComparisonOperator {

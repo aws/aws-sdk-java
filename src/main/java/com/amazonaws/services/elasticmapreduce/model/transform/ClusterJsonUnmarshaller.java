@@ -86,9 +86,11 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     cluster.setVisibleToAllUsers(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Applications", targetDepth)) {
+                    context.nextToken();
                     cluster.setApplications(new ListUnmarshaller<Application>(ApplicationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    context.nextToken();
                     cluster.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

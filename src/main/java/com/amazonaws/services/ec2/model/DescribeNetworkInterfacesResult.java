@@ -17,16 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Describe Network Interfaces Result
+ * 
  */
 public class DescribeNetworkInterfacesResult implements Serializable {
 
+    /**
+     * Information about one or more network interfaces.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface> networkInterfaces;
 
     /**
-     * Returns the value of the NetworkInterfaces property for this object.
+     * Information about one or more network interfaces.
      *
-     * @return The value of the NetworkInterfaces property for this object.
+     * @return Information about one or more network interfaces.
      */
     public java.util.List<NetworkInterface> getNetworkInterfaces() {
         if (networkInterfaces == null) {
@@ -37,9 +40,9 @@ public class DescribeNetworkInterfacesResult implements Serializable {
     }
     
     /**
-     * Sets the value of the NetworkInterfaces property for this object.
+     * Information about one or more network interfaces.
      *
-     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     * @param networkInterfaces Information about one or more network interfaces.
      */
     public void setNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
         if (networkInterfaces == null) {
@@ -52,11 +55,11 @@ public class DescribeNetworkInterfacesResult implements Serializable {
     }
     
     /**
-     * Sets the value of the NetworkInterfaces property for this object.
+     * Information about one or more network interfaces.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     * @param networkInterfaces Information about one or more network interfaces.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -70,11 +73,11 @@ public class DescribeNetworkInterfacesResult implements Serializable {
     }
     
     /**
-     * Sets the value of the NetworkInterfaces property for this object.
+     * Information about one or more network interfaces.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     * @param networkInterfaces Information about one or more network interfaces.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
