@@ -28,7 +28,7 @@ import java.lang.annotation.Target;
  * properties and included in any save() requests.
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
+@Target(value={ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBIgnore {
 
 }

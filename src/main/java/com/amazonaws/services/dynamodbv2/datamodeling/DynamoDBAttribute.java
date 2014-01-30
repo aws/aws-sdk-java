@@ -37,7 +37,7 @@ import java.lang.annotation.Target;
  * properties, unless marked with {@link DynamoDBIgnore}.
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
+@Target(value={ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBAttribute {
 
     /**
