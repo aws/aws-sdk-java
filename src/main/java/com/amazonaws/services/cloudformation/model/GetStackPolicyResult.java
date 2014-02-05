@@ -25,9 +25,10 @@ public class GetStackPolicyResult implements Serializable {
 
     /**
      * Structure containing the stack policy body. (For more information, go
-     * to the <a
+     * to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * AWS CloudFormation User Guide</a>.)
+     * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
+     * Guide.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
@@ -36,17 +37,19 @@ public class GetStackPolicyResult implements Serializable {
 
     /**
      * Structure containing the stack policy body. (For more information, go
-     * to the <a
+     * to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * AWS CloudFormation User Guide</a>.)
+     * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
+     * Guide.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
      *
      * @return Structure containing the stack policy body. (For more information, go
-     *         to the <a
+     *         to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     *         AWS CloudFormation User Guide</a>.)
+     *         Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
+     *         Guide.)
      */
     public String getStackPolicyBody() {
         return stackPolicyBody;
@@ -54,17 +57,19 @@ public class GetStackPolicyResult implements Serializable {
     
     /**
      * Structure containing the stack policy body. (For more information, go
-     * to the <a
+     * to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * AWS CloudFormation User Guide</a>.)
+     * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
+     * Guide.)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
      *
      * @param stackPolicyBody Structure containing the stack policy body. (For more information, go
-     *         to the <a
+     *         to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     *         AWS CloudFormation User Guide</a>.)
+     *         Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
+     *         Guide.)
      */
     public void setStackPolicyBody(String stackPolicyBody) {
         this.stackPolicyBody = stackPolicyBody;
@@ -72,9 +77,10 @@ public class GetStackPolicyResult implements Serializable {
     
     /**
      * Structure containing the stack policy body. (For more information, go
-     * to the <a
+     * to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * AWS CloudFormation User Guide</a>.)
+     * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
+     * Guide.)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -82,9 +88,10 @@ public class GetStackPolicyResult implements Serializable {
      * <b>Length: </b>1 - 16384<br/>
      *
      * @param stackPolicyBody Structure containing the stack policy body. (For more information, go
-     *         to the <a
+     *         to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     *         AWS CloudFormation User Guide</a>.)
+     *         Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
+     *         Guide.)
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

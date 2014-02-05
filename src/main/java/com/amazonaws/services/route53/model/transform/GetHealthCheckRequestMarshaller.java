@@ -43,7 +43,7 @@ public class GetHealthCheckRequestMarshaller implements Marshaller<Request<GetHe
         Request<GetHealthCheckRequest> request = new DefaultRequest<GetHealthCheckRequest>(getHealthCheckRequest, "AmazonRoute53");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2012-12-12/healthcheck/{HealthCheckId}"; 
+        String uriResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}"; 
         uriResourcePath = uriResourcePath.replace("{HealthCheckId}", getString(getHealthCheckRequest.getHealthCheckId())); 
 
         if (uriResourcePath.contains("?")) {

@@ -34,8 +34,23 @@ public class DynamoDBScanExpression {
     /** Optional filter to limit the results of the scan. */
     private Map<String, Condition> scanFilter;
 
+    /** The exclusive start key for this scan. */
     private Map<String, AttributeValue> exclusiveStartKey;
+
+    /** The limit of items to scan during this scan. */
     private Integer limit;
+
+    /** 
+     * The total number of segments into which the scan will be divided.
+     * Only required for parallel scan operation.
+     */
+    private Integer totalSegments;
+
+    /** 
+     * The ID (zero-based) of the segment to be scanned.
+     * Only required for parallel scan operation.
+     */
+    private Integer segment;
 
     /**
      * Sets the scan filter to the map of attribute names to conditions given.
@@ -143,4 +158,49 @@ public class DynamoDBScanExpression {
         return this;
     }
 
+    /**
+     * Returns the total number of segments into which the scan will be divided.
+     */
+    public Integer getTotalSegments() {
+        return totalSegments;
+    }
+
+    /**
+     * Sets the total number of segments into which the scan will be divided.
+     */
+    public void setTotalSegments(Integer totalSegments) {
+        this.totalSegments = totalSegments;
+    }
+
+    /**
+     * Sets the total number of segments into which the scan will be divided and
+     * returns a pointer to this object for method-chaining.
+     */
+    public DynamoDBScanExpression withTotalSegments(Integer totalSegments) {
+        setTotalSegments(totalSegments);
+        return this;
+    }
+
+    /**
+     * Returns the ID of the segment to be scanned.
+     */
+    public Integer getSegment() {
+        return segment;
+    }
+
+    /**
+     * Sets the ID of the segment to be scanned.
+     */
+    public void setSegment(Integer segment) {
+        this.segment = segment;
+    }
+
+    /**
+     * Sets the ID of the segment to be scanned and returns a pointer to this
+     * object for method-chaining.
+     */
+    public DynamoDBScanExpression withSegment(Integer segment) {
+        setSegment(segment);
+        return this;
+    }
 }

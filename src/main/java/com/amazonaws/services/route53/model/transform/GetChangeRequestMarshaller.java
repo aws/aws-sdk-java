@@ -43,7 +43,7 @@ public class GetChangeRequestMarshaller implements Marshaller<Request<GetChangeR
         Request<GetChangeRequest> request = new DefaultRequest<GetChangeRequest>(getChangeRequest, "AmazonRoute53");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2012-12-12/change/{Id}"; 
+        String uriResourcePath = "/2013-04-01/change/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(getChangeRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {

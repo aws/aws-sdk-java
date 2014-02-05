@@ -27,6 +27,10 @@ import com.amazonaws.services.route53.model.HostedZone;
 import com.amazonaws.services.route53.model.ListHostedZonesResult;
 import com.amazonaws.services.route53.model.ListResourceRecordSetsResult;
 import com.amazonaws.services.route53.model.ResourceRecordSet;
+import com.amazonaws.services.route53.model.CreateHealthCheckResult;
+import com.amazonaws.services.route53.model.GetHealthCheckResult;
+import com.amazonaws.services.route53.model.ListHealthChecksResult;
+import com.amazonaws.services.route53.model.HealthCheck;
 import com.amazonaws.util.TimingInfo;
 
 /**
@@ -61,6 +65,15 @@ public class Route53IdRequestHandler extends AbstractRequestHandler {
         } else if (obj instanceof ListResourceRecordSetsResult) {
             ListResourceRecordSetsResult result = (ListResourceRecordSetsResult)obj;
             for (ResourceRecordSet rrset : result.getResourceRecordSets()) removePrefix(rrset);
+        } else if (obj instanceof CreateHealthCheckResult) {
+            CreateHealthCheckResult result = (CreateHealthCheckResult)obj;
+            removePrefix(result.getHealthCheck());
+        } else if (obj instanceof GetHealthCheckResult) {
+            GetHealthCheckResult result = (GetHealthCheckResult)obj;
+            removePrefix(result.getHealthCheck());
+        } else if (obj instanceof ListHealthChecksResult) {
+            ListHealthChecksResult result = (ListHealthChecksResult)obj;
+            for (HealthCheck check : result.getHealthChecks()) removePrefix(check);
         }
     }
 
@@ -68,6 +81,7 @@ public class Route53IdRequestHandler extends AbstractRequestHandler {
         if (rrset == null) return;
 
         removePrefix(rrset.getAliasTarget());
+        rrset.setHealthCheckId(removePrefix(rrset.getHealthCheckId()));
         rrset.setSetIdentifier(removePrefix(rrset.getSetIdentifier()));
     }
 
@@ -90,6 +104,14 @@ public class Route53IdRequestHandler extends AbstractRequestHandler {
 
         if (hostedZone.getId() != null) {
             hostedZone.setId(removePrefix(hostedZone.getId()));
+        }
+    }
+
+    private void removePrefix(HealthCheck healthCheck) {
+        if (healthCheck == null) return;
+        
+        if (healthCheck.getId() != null) {
+            healthCheck.setId(removePrefix(healthCheck.getId()));
         }
     }
 

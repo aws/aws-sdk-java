@@ -30,12 +30,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class EstimateTemplateCostRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Structure containing the template body. (For more information, go to
-     * the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
-     * CloudFormation User Guide</a>.) <p>Conditional: You must pass
-     * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.
+     * Structure containing the template body with a minimum length of 1 byte
+     * and a maximum length of 51,200 bytes. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
+     * must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
+     * both are passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -45,11 +45,11 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
     /**
      * Location of file containing the template body. The URL must point to a
      * template located in an S3 bucket in the same region as the stack. For
-     * more information, go to the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
-     * CloudFormation User Guide</a>. <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.
+     * more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
+     * both are passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -63,68 +63,68 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
     private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
 
     /**
-     * Structure containing the template body. (For more information, go to
-     * the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
-     * CloudFormation User Guide</a>.) <p>Conditional: You must pass
-     * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.
+     * Structure containing the template body with a minimum length of 1 byte
+     * and a maximum length of 51,200 bytes. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
+     * must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
+     * both are passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @return Structure containing the template body. (For more information, go to
-     *         the <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
-     *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
-     *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
-     *         passed, only <code>TemplateBody</code> is used.
+     * @return Structure containing the template body with a minimum length of 1 byte
+     *         and a maximum length of 51,200 bytes. (For more information, go to <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *         Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
+     *         must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
+     *         both are passed, only <code>TemplateBody</code> is used.
      */
     public String getTemplateBody() {
         return templateBody;
     }
     
     /**
-     * Structure containing the template body. (For more information, go to
-     * the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
-     * CloudFormation User Guide</a>.) <p>Conditional: You must pass
-     * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.
+     * Structure containing the template body with a minimum length of 1 byte
+     * and a maximum length of 51,200 bytes. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
+     * must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
+     * both are passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param templateBody Structure containing the template body. (For more information, go to
-     *         the <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
-     *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
-     *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
-     *         passed, only <code>TemplateBody</code> is used.
+     * @param templateBody Structure containing the template body with a minimum length of 1 byte
+     *         and a maximum length of 51,200 bytes. (For more information, go to <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *         Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
+     *         must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
+     *         both are passed, only <code>TemplateBody</code> is used.
      */
     public void setTemplateBody(String templateBody) {
         this.templateBody = templateBody;
     }
     
     /**
-     * Structure containing the template body. (For more information, go to
-     * the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
-     * CloudFormation User Guide</a>.) <p>Conditional: You must pass
-     * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.
+     * Structure containing the template body with a minimum length of 1 byte
+     * and a maximum length of 51,200 bytes. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
+     * must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
+     * both are passed, only <code>TemplateBody</code> is used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param templateBody Structure containing the template body. (For more information, go to
-     *         the <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
-     *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
-     *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
-     *         passed, only <code>TemplateBody</code> is used.
+     * @param templateBody Structure containing the template body with a minimum length of 1 byte
+     *         and a maximum length of 51,200 bytes. (For more information, go to <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *         Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
+     *         must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
+     *         both are passed, only <code>TemplateBody</code> is used.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -137,22 +137,22 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
     /**
      * Location of file containing the template body. The URL must point to a
      * template located in an S3 bucket in the same region as the stack. For
-     * more information, go to the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
-     * CloudFormation User Guide</a>. <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.
+     * more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
+     * both are passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      *
      * @return Location of file containing the template body. The URL must point to a
      *         template located in an S3 bucket in the same region as the stack. For
-     *         more information, go to the <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
-     *         CloudFormation User Guide</a>. <p>Conditional: You must pass
-     *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
-     *         passed, only <code>TemplateBody</code> is used.
+     *         more information, go to <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
+     *         must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
+     *         both are passed, only <code>TemplateBody</code> is used.
      */
     public String getTemplateURL() {
         return templateURL;
@@ -161,22 +161,22 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
     /**
      * Location of file containing the template body. The URL must point to a
      * template located in an S3 bucket in the same region as the stack. For
-     * more information, go to the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
-     * CloudFormation User Guide</a>. <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.
+     * more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
+     * both are passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param templateURL Location of file containing the template body. The URL must point to a
      *         template located in an S3 bucket in the same region as the stack. For
-     *         more information, go to the <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
-     *         CloudFormation User Guide</a>. <p>Conditional: You must pass
-     *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
-     *         passed, only <code>TemplateBody</code> is used.
+     *         more information, go to <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
+     *         must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
+     *         both are passed, only <code>TemplateBody</code> is used.
      */
     public void setTemplateURL(String templateURL) {
         this.templateURL = templateURL;
@@ -185,11 +185,11 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
     /**
      * Location of file containing the template body. The URL must point to a
      * template located in an S3 bucket in the same region as the stack. For
-     * more information, go to the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
-     * CloudFormation User Guide</a>. <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.
+     * more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
+     * both are passed, only <code>TemplateBody</code> is used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -198,11 +198,11 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
      *
      * @param templateURL Location of file containing the template body. The URL must point to a
      *         template located in an S3 bucket in the same region as the stack. For
-     *         more information, go to the <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
-     *         CloudFormation User Guide</a>. <p>Conditional: You must pass
-     *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
-     *         passed, only <code>TemplateBody</code> is used.
+     *         more information, go to <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
+     *         must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
+     *         both are passed, only <code>TemplateBody</code> is used.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

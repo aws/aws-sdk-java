@@ -32,6 +32,9 @@ import java.util.Map.Entry;
 import java.util.Random;
 import java.util.Set;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
@@ -174,6 +177,8 @@ public class DynamoDBMapper {
     private static final String USER_AGENT = DynamoDBMapper.class.getName() + "/" + VersionInfoUtils.getVersion();
 
     private static final String NO_RANGE_KEY = new String();
+
+    private static final Log log = LogFactory.getLog(DynamoDBMapper.class);
 
     /**
      * Constructs a new mapper with the service object given, using the default
@@ -2218,6 +2223,9 @@ public class DynamoDBMapper {
         scanRequest.setScanFilter(scanExpression.getScanFilter());
         scanRequest.setLimit(scanExpression.getLimit());
         scanRequest.setExclusiveStartKey(scanExpression.getExclusiveStartKey());
+        scanRequest.setTotalSegments(scanExpression.getTotalSegments());
+        scanRequest.setSegment(scanExpression.getSegment());
+
         scanRequest.setRequestMetricCollector(config.getRequestMetricCollector());
 
         return scanRequest;
@@ -2227,12 +2235,23 @@ public class DynamoDBMapper {
      * @param config never null
      */
     private List<ScanRequest> createParallelScanRequestsFromExpression(Class<?> clazz, DynamoDBScanExpression scanExpression, int totalSegments, DynamoDBMapperConfig config) {
-        if (totalSegments < 1)
+        if (totalSegments < 1) {
             throw new IllegalArgumentException("Parallel scan should have at least one scan segment.");
+        }
+        if (scanExpression.getExclusiveStartKey() != null) {
+            log.info("The ExclusiveStartKey parameter specified in the DynamoDBScanExpression is ignored,"
+                    + " since the individual parallel scan request on each segment is applied on a separate key scope.");
+        }
+        if (scanExpression.getSegment() != null || scanExpression.getTotalSegments() != null) {
+            log.info("The Segment and TotalSegments parameters specified in the DynamoDBScanExpression are ignored.");
+        }
+
         List<ScanRequest> parallelScanRequests= new LinkedList<ScanRequest>();
         for (int segment = 0; segment < totalSegments; segment++) {
             ScanRequest scanRequest = createScanRequestFromExpression(clazz, scanExpression, config);
-            parallelScanRequests.add(scanRequest.withSegment(segment).withTotalSegments(totalSegments));
+            parallelScanRequests.add(scanRequest
+                    .withSegment(segment).withTotalSegments(totalSegments)
+                    .withExclusiveStartKey(null));
         }
         return parallelScanRequests;
     }

@@ -43,7 +43,7 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
         Request<ChangeResourceRecordSetsRequest> request = new DefaultRequest<ChangeResourceRecordSetsRequest>(changeResourceRecordSetsRequest, "AmazonRoute53");
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2012-12-12/hostedzone/{Id}/rrset/"; 
+        String uriResourcePath = "/2013-04-01/hostedzone/{Id}/rrset/"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(changeResourceRecordSetsRequest.getHostedZoneId())); 
 
         if (uriResourcePath.contains("?")) {
@@ -63,7 +63,7 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
         request.setResourcePath(uriResourcePath);
 
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "https://route53.amazonaws.com/doc/2012-12-12/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "https://route53.amazonaws.com/doc/2013-04-01/");
 
             xmlWriter.startElement("ChangeResourceRecordSetsRequest");
                     if (changeResourceRecordSetsRequest != null) {

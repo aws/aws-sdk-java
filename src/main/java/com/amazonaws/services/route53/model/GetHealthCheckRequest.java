@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#getHealthCheck(GetHealthCheckRequest) GetHealthCheck operation}.
  * <p>
- * To retrieve the health check, send a <code>GET</code> request to the <code>2012-12-12/healthcheck/health check ID </code> resource.
+ * To retrieve the health check, send a <code>GET</code> request to the <code>2013-04-01/healthcheck/health check ID </code> resource.
  * </p>
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#getHealthCheck(GetHealthCheckRequest)

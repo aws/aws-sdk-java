@@ -70,6 +70,10 @@ public class AWSS3V4Signer extends AWS4Signer implements Presigner {
         AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
         if (sanitizedCredentials instanceof AWSSessionCredentials) {
             addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
+            // For SigV4 presigning URL, we need to add "x-amz-security-token"
+            // as a query string parameter, before constructing the canonical
+            // request.
+            request.addParameter(Headers.SECURITY_TOKEN, ((AWSSessionCredentials) sanitizedCredentials).getSessionToken());
         }
 
         long dateMilli = getDateFromRequest(request);
@@ -90,7 +94,7 @@ public class AWSS3V4Signer extends AWS4Signer implements Presigner {
         final String timeStamp = getTimeStamp(now);
         request.addParameter("X-Amz-Algorithm", "AWS4-HMAC-SHA256");
         request.addParameter("X-Amz-Date", timeStamp);
-        request.addParameter("X-Amz-SignedHeaders", "Host");
+        request.addParameter("X-Amz-SignedHeaders", getSignedHeadersString(request));
         request.addParameter("X-Amz-Expires", Long.toString(expirationInSeconds));
         request.addParameter("X-Amz-Credential", signingCredentials);
 

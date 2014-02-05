@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This action creates a new hosted zone.
  * </p>
  * <p>
- * To create a new hosted zone, send a <code>POST</code> request to the <code>2012-12-12/hostedzone</code> resource. The request body must include an XML
+ * To create a new hosted zone, send a <code>POST</code> request to the <code>2013-04-01/hostedzone</code> resource. The request body must include an XML
  * document with a <code>CreateHostedZoneRequest</code> element. The response returns the <code>CreateHostedZoneResponse</code> element that contains
  * metadata about the hosted zone.
  * </p>

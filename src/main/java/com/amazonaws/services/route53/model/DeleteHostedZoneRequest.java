@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#deleteHostedZone(DeleteHostedZoneRequest) DeleteHostedZone operation}.
  * <p>
- * This action deletes a hosted zone. To delete a hosted zone, send a <code>DELETE</code> request to the <code>2012-12-12/hostedzone/hosted zone ID
+ * This action deletes a hosted zone. To delete a hosted zone, send a <code>DELETE</code> request to the <code>2013-04-01/hostedzone/hosted zone ID
  * </code> resource.
  * </p>
  * <p>

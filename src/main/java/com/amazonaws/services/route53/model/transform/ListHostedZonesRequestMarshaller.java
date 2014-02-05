@@ -43,7 +43,7 @@ public class ListHostedZonesRequestMarshaller implements Marshaller<Request<List
         Request<ListHostedZonesRequest> request = new DefaultRequest<ListHostedZonesRequest>(listHostedZonesRequest, "AmazonRoute53");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2012-12-12/hostedzone?marker={Marker}&maxitems={MaxItems}"; 
+        String uriResourcePath = "/2013-04-01/hostedzone?marker={Marker}&maxitems={MaxItems}"; 
         uriResourcePath = uriResourcePath.replace("{Marker}", getString(listHostedZonesRequest.getMarker())); 
         uriResourcePath = uriResourcePath.replace("{MaxItems}", getString(listHostedZonesRequest.getMaxItems())); 
 

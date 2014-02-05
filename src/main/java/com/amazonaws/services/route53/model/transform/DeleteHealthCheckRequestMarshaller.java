@@ -43,7 +43,7 @@ public class DeleteHealthCheckRequestMarshaller implements Marshaller<Request<De
         Request<DeleteHealthCheckRequest> request = new DefaultRequest<DeleteHealthCheckRequest>(deleteHealthCheckRequest, "AmazonRoute53");
         request.setHttpMethod(HttpMethodName.DELETE);
 
-        String uriResourcePath = "/2012-12-12/healthcheck/{HealthCheckId}"; 
+        String uriResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}"; 
         uriResourcePath = uriResourcePath.replace("{HealthCheckId}", getString(deleteHealthCheckRequest.getHealthCheckId())); 
 
         if (uriResourcePath.contains("?")) {

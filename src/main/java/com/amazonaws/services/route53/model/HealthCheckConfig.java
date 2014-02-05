@@ -34,7 +34,9 @@ public class HealthCheckConfig implements Serializable {
 
     /**
      * Port on which connection will be opened to the instance to health
-     * check. For HTTP this defaults to 80 if the port is not specified.
+     * check. For HTTP and HTTP_STR_MATCH this defaults to 80 if the port is
+     * not specified. For HTTPS and HTTPS_STR_MATCH this defaults to 443 if
+     * the port is not specified.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
@@ -42,18 +44,18 @@ public class HealthCheckConfig implements Serializable {
     private Integer port;
 
     /**
-     * The type of health check to be performed. Currently supported
-     * protocols are TCP and HTTP.
+     * The type of health check to be performed. Currently supported types
+     * are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>HTTP, TCP
+     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP
      */
     private String type;
 
     /**
-     * Path to ping on the instance to check the health. Required only for
-     * HTTP health checks, HTTP request is issued to the instance on the
-     * given port and path.
+     * Path to ping on the instance to check the health. Required for HTTP,
+     * HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
+     * is issued to the instance on the given port and path.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 255<br/>
@@ -67,6 +69,15 @@ public class HealthCheckConfig implements Serializable {
      * <b>Length: </b>0 - 255<br/>
      */
     private String fullyQualifiedDomainName;
+
+    /**
+     * A string to search for in the body of a health check response.
+     * Required for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 255<br/>
+     */
+    private String searchString;
 
     /**
      * IP Address of the instance being checked.
@@ -115,13 +126,17 @@ public class HealthCheckConfig implements Serializable {
 
     /**
      * Port on which connection will be opened to the instance to health
-     * check. For HTTP this defaults to 80 if the port is not specified.
+     * check. For HTTP and HTTP_STR_MATCH this defaults to 80 if the port is
+     * not specified. For HTTPS and HTTPS_STR_MATCH this defaults to 443 if
+     * the port is not specified.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
      * @return Port on which connection will be opened to the instance to health
-     *         check. For HTTP this defaults to 80 if the port is not specified.
+     *         check. For HTTP and HTTP_STR_MATCH this defaults to 80 if the port is
+     *         not specified. For HTTPS and HTTPS_STR_MATCH this defaults to 443 if
+     *         the port is not specified.
      */
     public Integer getPort() {
         return port;
@@ -129,13 +144,17 @@ public class HealthCheckConfig implements Serializable {
     
     /**
      * Port on which connection will be opened to the instance to health
-     * check. For HTTP this defaults to 80 if the port is not specified.
+     * check. For HTTP and HTTP_STR_MATCH this defaults to 80 if the port is
+     * not specified. For HTTPS and HTTPS_STR_MATCH this defaults to 443 if
+     * the port is not specified.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
      * @param port Port on which connection will be opened to the instance to health
-     *         check. For HTTP this defaults to 80 if the port is not specified.
+     *         check. For HTTP and HTTP_STR_MATCH this defaults to 80 if the port is
+     *         not specified. For HTTPS and HTTPS_STR_MATCH this defaults to 443 if
+     *         the port is not specified.
      */
     public void setPort(Integer port) {
         this.port = port;
@@ -143,7 +162,9 @@ public class HealthCheckConfig implements Serializable {
     
     /**
      * Port on which connection will be opened to the instance to health
-     * check. For HTTP this defaults to 80 if the port is not specified.
+     * check. For HTTP and HTTP_STR_MATCH this defaults to 80 if the port is
+     * not specified. For HTTPS and HTTPS_STR_MATCH this defaults to 443 if
+     * the port is not specified.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -151,7 +172,9 @@ public class HealthCheckConfig implements Serializable {
      * <b>Range: </b>1 - 65535<br/>
      *
      * @param port Port on which connection will be opened to the instance to health
-     *         check. For HTTP this defaults to 80 if the port is not specified.
+     *         check. For HTTP and HTTP_STR_MATCH this defaults to 80 if the port is
+     *         not specified. For HTTPS and HTTPS_STR_MATCH this defaults to 443 if
+     *         the port is not specified.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -162,14 +185,14 @@ public class HealthCheckConfig implements Serializable {
     }
 
     /**
-     * The type of health check to be performed. Currently supported
-     * protocols are TCP and HTTP.
+     * The type of health check to be performed. Currently supported types
+     * are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>HTTP, TCP
+     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP
      *
-     * @return The type of health check to be performed. Currently supported
-     *         protocols are TCP and HTTP.
+     * @return The type of health check to be performed. Currently supported types
+     *         are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      *
      * @see HealthCheckType
      */
@@ -178,14 +201,14 @@ public class HealthCheckConfig implements Serializable {
     }
     
     /**
-     * The type of health check to be performed. Currently supported
-     * protocols are TCP and HTTP.
+     * The type of health check to be performed. Currently supported types
+     * are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>HTTP, TCP
+     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP
      *
-     * @param type The type of health check to be performed. Currently supported
-     *         protocols are TCP and HTTP.
+     * @param type The type of health check to be performed. Currently supported types
+     *         are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      *
      * @see HealthCheckType
      */
@@ -194,16 +217,16 @@ public class HealthCheckConfig implements Serializable {
     }
     
     /**
-     * The type of health check to be performed. Currently supported
-     * protocols are TCP and HTTP.
+     * The type of health check to be performed. Currently supported types
+     * are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>HTTP, TCP
+     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP
      *
-     * @param type The type of health check to be performed. Currently supported
-     *         protocols are TCP and HTTP.
+     * @param type The type of health check to be performed. Currently supported types
+     *         are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -216,14 +239,14 @@ public class HealthCheckConfig implements Serializable {
     }
 
     /**
-     * The type of health check to be performed. Currently supported
-     * protocols are TCP and HTTP.
+     * The type of health check to be performed. Currently supported types
+     * are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>HTTP, TCP
+     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP
      *
-     * @param type The type of health check to be performed. Currently supported
-     *         protocols are TCP and HTTP.
+     * @param type The type of health check to be performed. Currently supported types
+     *         are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      *
      * @see HealthCheckType
      */
@@ -232,16 +255,16 @@ public class HealthCheckConfig implements Serializable {
     }
     
     /**
-     * The type of health check to be performed. Currently supported
-     * protocols are TCP and HTTP.
+     * The type of health check to be performed. Currently supported types
+     * are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>HTTP, TCP
+     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP
      *
-     * @param type The type of health check to be performed. Currently supported
-     *         protocols are TCP and HTTP.
+     * @param type The type of health check to be performed. Currently supported types
+     *         are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -254,50 +277,50 @@ public class HealthCheckConfig implements Serializable {
     }
 
     /**
-     * Path to ping on the instance to check the health. Required only for
-     * HTTP health checks, HTTP request is issued to the instance on the
-     * given port and path.
+     * Path to ping on the instance to check the health. Required for HTTP,
+     * HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
+     * is issued to the instance on the given port and path.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 255<br/>
      *
-     * @return Path to ping on the instance to check the health. Required only for
-     *         HTTP health checks, HTTP request is issued to the instance on the
-     *         given port and path.
+     * @return Path to ping on the instance to check the health. Required for HTTP,
+     *         HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
+     *         is issued to the instance on the given port and path.
      */
     public String getResourcePath() {
         return resourcePath;
     }
     
     /**
-     * Path to ping on the instance to check the health. Required only for
-     * HTTP health checks, HTTP request is issued to the instance on the
-     * given port and path.
+     * Path to ping on the instance to check the health. Required for HTTP,
+     * HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
+     * is issued to the instance on the given port and path.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 255<br/>
      *
-     * @param resourcePath Path to ping on the instance to check the health. Required only for
-     *         HTTP health checks, HTTP request is issued to the instance on the
-     *         given port and path.
+     * @param resourcePath Path to ping on the instance to check the health. Required for HTTP,
+     *         HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
+     *         is issued to the instance on the given port and path.
      */
     public void setResourcePath(String resourcePath) {
         this.resourcePath = resourcePath;
     }
     
     /**
-     * Path to ping on the instance to check the health. Required only for
-     * HTTP health checks, HTTP request is issued to the instance on the
-     * given port and path.
+     * Path to ping on the instance to check the health. Required for HTTP,
+     * HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
+     * is issued to the instance on the given port and path.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 255<br/>
      *
-     * @param resourcePath Path to ping on the instance to check the health. Required only for
-     *         HTTP health checks, HTTP request is issued to the instance on the
-     *         given port and path.
+     * @param resourcePath Path to ping on the instance to check the health. Required for HTTP,
+     *         HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
+     *         is issued to the instance on the given port and path.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -350,6 +373,54 @@ public class HealthCheckConfig implements Serializable {
     }
 
     /**
+     * A string to search for in the body of a health check response.
+     * Required for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 255<br/>
+     *
+     * @return A string to search for in the body of a health check response.
+     *         Required for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
+     */
+    public String getSearchString() {
+        return searchString;
+    }
+    
+    /**
+     * A string to search for in the body of a health check response.
+     * Required for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 255<br/>
+     *
+     * @param searchString A string to search for in the body of a health check response.
+     *         Required for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
+     */
+    public void setSearchString(String searchString) {
+        this.searchString = searchString;
+    }
+    
+    /**
+     * A string to search for in the body of a health check response.
+     * Required for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 255<br/>
+     *
+     * @param searchString A string to search for in the body of a health check response.
+     *         Required for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public HealthCheckConfig withSearchString(String searchString) {
+        this.searchString = searchString;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -365,7 +436,8 @@ public class HealthCheckConfig implements Serializable {
         if (getPort() != null) sb.append("Port: " + getPort() + ",");
         if (getType() != null) sb.append("Type: " + getType() + ",");
         if (getResourcePath() != null) sb.append("ResourcePath: " + getResourcePath() + ",");
-        if (getFullyQualifiedDomainName() != null) sb.append("FullyQualifiedDomainName: " + getFullyQualifiedDomainName() );
+        if (getFullyQualifiedDomainName() != null) sb.append("FullyQualifiedDomainName: " + getFullyQualifiedDomainName() + ",");
+        if (getSearchString() != null) sb.append("SearchString: " + getSearchString() );
         sb.append("}");
         return sb.toString();
     }
@@ -380,6 +452,7 @@ public class HealthCheckConfig implements Serializable {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode()); 
         hashCode = prime * hashCode + ((getResourcePath() == null) ? 0 : getResourcePath().hashCode()); 
         hashCode = prime * hashCode + ((getFullyQualifiedDomainName() == null) ? 0 : getFullyQualifiedDomainName().hashCode()); 
+        hashCode = prime * hashCode + ((getSearchString() == null) ? 0 : getSearchString().hashCode()); 
         return hashCode;
     }
     
@@ -401,6 +474,8 @@ public class HealthCheckConfig implements Serializable {
         if (other.getResourcePath() != null && other.getResourcePath().equals(this.getResourcePath()) == false) return false; 
         if (other.getFullyQualifiedDomainName() == null ^ this.getFullyQualifiedDomainName() == null) return false;
         if (other.getFullyQualifiedDomainName() != null && other.getFullyQualifiedDomainName().equals(this.getFullyQualifiedDomainName()) == false) return false; 
+        if (other.getSearchString() == null ^ this.getSearchString() == null) return false;
+        if (other.getSearchString() != null && other.getSearchString().equals(this.getSearchString()) == false) return false; 
         return true;
     }
     

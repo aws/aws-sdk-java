@@ -35,11 +35,12 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * Structure containing the stack policy body. (For more information, go
-     * to the <a
+     * to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * AWS CloudFormation User Guide</a>.) <p>You must pass
-     * <code>StackPolicyBody</code> or <code>StackPolicyURL</code>. If both
-     * are passed, only <code>StackPolicyBody</code> is used.
+     * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
+     * Guide.) <p>You must pass <code>StackPolicyBody</code> or
+     * <code>StackPolicyURL</code>. If both are passed, only
+     * <code>StackPolicyBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
@@ -93,21 +94,23 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * Structure containing the stack policy body. (For more information, go
-     * to the <a
+     * to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * AWS CloudFormation User Guide</a>.) <p>You must pass
-     * <code>StackPolicyBody</code> or <code>StackPolicyURL</code>. If both
-     * are passed, only <code>StackPolicyBody</code> is used.
+     * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
+     * Guide.) <p>You must pass <code>StackPolicyBody</code> or
+     * <code>StackPolicyURL</code>. If both are passed, only
+     * <code>StackPolicyBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
      *
      * @return Structure containing the stack policy body. (For more information, go
-     *         to the <a
+     *         to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     *         AWS CloudFormation User Guide</a>.) <p>You must pass
-     *         <code>StackPolicyBody</code> or <code>StackPolicyURL</code>. If both
-     *         are passed, only <code>StackPolicyBody</code> is used.
+     *         Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
+     *         Guide.) <p>You must pass <code>StackPolicyBody</code> or
+     *         <code>StackPolicyURL</code>. If both are passed, only
+     *         <code>StackPolicyBody</code> is used.
      */
     public String getStackPolicyBody() {
         return stackPolicyBody;
@@ -115,21 +118,23 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * Structure containing the stack policy body. (For more information, go
-     * to the <a
+     * to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * AWS CloudFormation User Guide</a>.) <p>You must pass
-     * <code>StackPolicyBody</code> or <code>StackPolicyURL</code>. If both
-     * are passed, only <code>StackPolicyBody</code> is used.
+     * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
+     * Guide.) <p>You must pass <code>StackPolicyBody</code> or
+     * <code>StackPolicyURL</code>. If both are passed, only
+     * <code>StackPolicyBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
      *
      * @param stackPolicyBody Structure containing the stack policy body. (For more information, go
-     *         to the <a
+     *         to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     *         AWS CloudFormation User Guide</a>.) <p>You must pass
-     *         <code>StackPolicyBody</code> or <code>StackPolicyURL</code>. If both
-     *         are passed, only <code>StackPolicyBody</code> is used.
+     *         Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
+     *         Guide.) <p>You must pass <code>StackPolicyBody</code> or
+     *         <code>StackPolicyURL</code>. If both are passed, only
+     *         <code>StackPolicyBody</code> is used.
      */
     public void setStackPolicyBody(String stackPolicyBody) {
         this.stackPolicyBody = stackPolicyBody;
@@ -137,11 +142,12 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * Structure containing the stack policy body. (For more information, go
-     * to the <a
+     * to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * AWS CloudFormation User Guide</a>.) <p>You must pass
-     * <code>StackPolicyBody</code> or <code>StackPolicyURL</code>. If both
-     * are passed, only <code>StackPolicyBody</code> is used.
+     * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
+     * Guide.) <p>You must pass <code>StackPolicyBody</code> or
+     * <code>StackPolicyURL</code>. If both are passed, only
+     * <code>StackPolicyBody</code> is used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -149,11 +155,12 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 16384<br/>
      *
      * @param stackPolicyBody Structure containing the stack policy body. (For more information, go
-     *         to the <a
+     *         to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     *         AWS CloudFormation User Guide</a>.) <p>You must pass
-     *         <code>StackPolicyBody</code> or <code>StackPolicyURL</code>. If both
-     *         are passed, only <code>StackPolicyBody</code> is used.
+     *         Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
+     *         Guide.) <p>You must pass <code>StackPolicyBody</code> or
+     *         <code>StackPolicyURL</code>. If both are passed, only
+     *         <code>StackPolicyBody</code> is used.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

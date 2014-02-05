@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#listHostedZones(ListHostedZonesRequest) ListHostedZones operation}.
  * <p>
- * To retrieve a list of your hosted zones, send a <code>GET</code> request to the <code>2012-12-12/hostedzone</code> resource. The response to this
+ * To retrieve a list of your hosted zones, send a <code>GET</code> request to the <code>2013-04-01/hostedzone</code> resource. The response to this
  * request includes a <code>HostedZones</code> element with zero, one, or multiple <code>HostedZone</code> child elements. By default, the list of hosted
  * zones is displayed on a single page. You can control the length of the page that is displayed by using the <code>MaxItems</code> parameter. You can
  * use the <code>Marker</code> parameter to control the hosted zone that the list begins with.

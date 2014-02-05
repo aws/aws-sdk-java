@@ -43,7 +43,7 @@ public class CreateHealthCheckRequestMarshaller implements Marshaller<Request<Cr
         Request<CreateHealthCheckRequest> request = new DefaultRequest<CreateHealthCheckRequest>(createHealthCheckRequest, "AmazonRoute53");
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2012-12-12/healthcheck"; 
+        String uriResourcePath = "/2013-04-01/healthcheck"; 
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -62,7 +62,7 @@ public class CreateHealthCheckRequestMarshaller implements Marshaller<Request<Cr
         request.setResourcePath(uriResourcePath);
 
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "https://route53.amazonaws.com/doc/2012-12-12/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "https://route53.amazonaws.com/doc/2013-04-01/");
 
             xmlWriter.startElement("CreateHealthCheckRequest");
                     if (createHealthCheckRequest.getCallerReference() != null) {
@@ -86,6 +86,9 @@ public class CreateHealthCheckRequestMarshaller implements Marshaller<Request<Cr
                 }
                 if (healthCheckConfigHealthCheckConfig.getFullyQualifiedDomainName() != null) {
                     xmlWriter.startElement("FullyQualifiedDomainName").value(healthCheckConfigHealthCheckConfig.getFullyQualifiedDomainName()).endElement();
+                }
+                if (healthCheckConfigHealthCheckConfig.getSearchString() != null) {
+                    xmlWriter.startElement("SearchString").value(healthCheckConfigHealthCheckConfig.getSearchString()).endElement();
                 }
                 xmlWriter.endElement();
             }

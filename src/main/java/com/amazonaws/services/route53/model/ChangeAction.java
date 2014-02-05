@@ -20,7 +20,8 @@ package com.amazonaws.services.route53.model;
 public enum ChangeAction {
     
     CREATE("CREATE"),
-    DELETE("DELETE");
+    DELETE("DELETE"),
+    UPSERT("UPSERT");
 
     private String value;
 
@@ -48,6 +49,8 @@ public enum ChangeAction {
             return ChangeAction.CREATE;
         } else if ("DELETE".equals(value)) {
             return ChangeAction.DELETE;
+        } else if ("UPSERT".equals(value)) {
+            return ChangeAction.UPSERT;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This action creates a new health check.
  * </p>
  * <p>
- * To create a new health check, send a <code>POST</code> request to the <code>2012-12-12/healthcheck</code> resource. The request body must include an
+ * To create a new health check, send a <code>POST</code> request to the <code>2013-04-01/healthcheck</code> resource. The request body must include an
  * XML document with a <code>CreateHealthCheckRequest</code> element. The response returns the <code>CreateHealthCheckResponse</code> element that
  * contains metadata about the health check.
  * </p>

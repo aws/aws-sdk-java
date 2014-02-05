@@ -25,6 +25,7 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.regions.Region;
 
 /**
  * Utilities for working with the AWS Storage Gateway service, such as
@@ -36,23 +37,73 @@ public class StorageGatewayUtils {
     /**
      * Sends a request to the AWS Storage Gateway server running at the
      * specified address, and returns the activation key for that server.
-     *
+     * 
      * @param gatewayAddress
      *            The DNS name or IP address of a running AWS Storage Gateway
-     *
-     * @return The activation key required for some API calls to AWS Storage Gateway.
-     *
+     * 
+     * @return The activation key required for some API calls to AWS Storage
+     *         Gateway.
+     * 
      * @throws AmazonClientException
      *             If any problems are encountered while trying to contact the
      *             remote AWS Storage Gateway server.
      */
     public static String getActivationKey(String gatewayAddress) throws AmazonClientException {
+        return getActivationKey(gatewayAddress, (String)null);
+    }
+
+    /**
+     * Sends a request to the AWS Storage Gateway server running at the
+     * specified address, and returns the activation key for that server.
+     * 
+     * @param gatewayAddress
+     *            The DNS name or IP address of a running AWS Storage Gateway
+     * 
+     * @param activationRegionName
+     *            The region in which the gateway will be activated.
+     * 
+     * @return The activation key required for some API calls to AWS Storage
+     *         Gateway.
+     * 
+     * @throws AmazonClientException
+     *             If any problems are encountered while trying to contact the
+     *             remote AWS Storage Gateway server.
+     */
+    public static String getActivationKey(String gatewayAddress, Region activationRegion) throws AmazonClientException {
+        return getActivationKey(gatewayAddress, 
+                activationRegion == null ?
+                        null : activationRegion.getName());
+    }
+
+    /**
+     * Sends a request to the AWS Storage Gateway server running at the
+     * specified address and activation region, and returns the activation key
+     * for that server.
+     * 
+     * @param gatewayAddress
+     *            The DNS name or IP address of a running AWS Storage Gateway
+     * 
+     * @param activationRegionName
+     *            The name of the region in which the gateway will be activated.
+     * 
+     * @return The activation key required for some API calls to AWS Storage
+     *         Gateway.
+     * 
+     * @throws AmazonClientException
+     *             If any problems are encountered while trying to contact the
+     *             remote AWS Storage Gateway server.
+     */
+    public static String getActivationKey(String gatewayAddress, String activationRegionName) throws AmazonClientException {
         try {
             HttpParams httpClientParams = new BasicHttpParams();
             httpClientParams.setBooleanParameter(ClientPNames.HANDLE_REDIRECTS, false);
             DefaultHttpClient client = new DefaultHttpClient(httpClientParams);
 
-            HttpGet method = new HttpGet("http://" + gatewayAddress);
+            String url = "http://" + gatewayAddress;
+            if (activationRegionName != null) {
+                url += "/?activationRegion=" + activationRegionName;
+            }
+            HttpGet method = new HttpGet(url);
             HttpResponse response = client.execute(method);
             int statusCode = response.getStatusLine().getStatusCode();
 

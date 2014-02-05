@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#listHealthChecks(ListHealthChecksRequest) ListHealthChecks operation}.
  * <p>
- * To retrieve a list of your health checks, send a <code>GET</code> request to the <code>2012-12-12/healthcheck</code> resource. The response to this
+ * To retrieve a list of your health checks, send a <code>GET</code> request to the <code>2013-04-01/healthcheck</code> resource. The response to this
  * request includes a <code>HealthChecks</code> element with zero, one, or multiple <code>HealthCheck</code> child elements. By default, the list of
  * health checks is displayed on a single page. You can control the length of the page that is displayed by using the <code>MaxItems</code> parameter.
  * You can use the <code>Marker</code> parameter to control the health check that the list begins with.

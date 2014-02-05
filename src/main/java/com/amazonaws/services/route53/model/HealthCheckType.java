@@ -20,6 +20,9 @@ package com.amazonaws.services.route53.model;
 public enum HealthCheckType {
     
     HTTP("HTTP"),
+    HTTPS("HTTPS"),
+    HTTP_STR_MATCH("HTTP_STR_MATCH"),
+    HTTPS_STR_MATCH("HTTPS_STR_MATCH"),
     TCP("TCP");
 
     private String value;
@@ -46,6 +49,12 @@ public enum HealthCheckType {
         
         } else if ("HTTP".equals(value)) {
             return HealthCheckType.HTTP;
+        } else if ("HTTPS".equals(value)) {
+            return HealthCheckType.HTTPS;
+        } else if ("HTTP_STR_MATCH".equals(value)) {
+            return HealthCheckType.HTTP_STR_MATCH;
+        } else if ("HTTPS_STR_MATCH".equals(value)) {
+            return HealthCheckType.HTTPS_STR_MATCH;
         } else if ("TCP".equals(value)) {
             return HealthCheckType.TCP;
         } else {

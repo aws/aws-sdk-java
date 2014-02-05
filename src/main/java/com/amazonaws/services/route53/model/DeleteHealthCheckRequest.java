@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#deleteHealthCheck(DeleteHealthCheckRequest) DeleteHealthCheck operation}.
  * <p>
- * This action deletes a health check. To delete a health check, send a <code>DELETE</code> request to the <code>2012-12-12/healthcheck/health check ID
+ * This action deletes a health check. To delete a health check, send a <code>DELETE</code> request to the <code>2013-04-01/healthcheck/health check ID
  * </code> resource.
  * </p>
  * <p>

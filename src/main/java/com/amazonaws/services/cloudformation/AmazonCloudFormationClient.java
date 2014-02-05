@@ -42,7 +42,7 @@ import com.amazonaws.services.cloudformation.model.transform.*;
  * AWS CloudFormation <p>
  * AWS CloudFormation enables you to create and manage AWS infrastructure deployments predictably and repeatedly. AWS CloudFormation helps you leverage
  * AWS products such as Amazon EC2, EBS, Amazon SNS, ELB, and Auto Scaling to build highly-reliable, highly scalable, cost effective applications without
- * worrying about creating and configuring the underlying the AWS infrastructure.
+ * worrying about creating and configuring the underlying AWS infrastructure.
  * </p>
  * <p>
  * With AWS CloudFormation, you declare all of your resources and dependencies in a template file. The template defines a collection of resources as a
@@ -55,9 +55,6 @@ import com.amazonaws.services.cloudformation.model.transform.*;
  * <p>
  * Amazon CloudFormation makes use of other AWS products. If you need additional technical information about a specific AWS product, you can find the
  * product's technical documentation at <a href="http://aws.amazon.com/documentation/"> http://aws.amazon.com/documentation/ </a> .
- * </p>
- * <p>
- * <b>NOTE:</b>You must call the AWS CloudFormation API as a regular IAM user. AWS CloudFormation does not support calling the API with an IAM role
  * </p>
  */
 public class AmazonCloudFormationClient extends AmazonWebServiceClient implements AmazonCloudFormation {
@@ -551,9 +548,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     /**
      * <p>
      * Returns all stack related events for a specified stack. For more
-     * information about a stack's event history, go to the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">
-     * AWS CloudFormation User Guide </a> .
+     * information about a stack's event history, go to <a
+     * aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">
+     * Stacks </a> in the AWS CloudFormation User Guide.
      * </p>
      * <p>
      * <b>NOTE:</b>Events are returned, even if the stack never existed or

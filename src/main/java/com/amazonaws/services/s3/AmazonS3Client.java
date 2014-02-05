@@ -2292,7 +2292,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         addResponseHeaderParameters(request, generatePresignedUrlRequest.getResponseHeaders());
 
-        Signer signer = getSigner();
+        Signer signer = createSigner(request, bucketName, key);
+
         if (signer instanceof Presigner) {
             // If we have a signer which knows how to presign requests,
             // delegate directly to it.

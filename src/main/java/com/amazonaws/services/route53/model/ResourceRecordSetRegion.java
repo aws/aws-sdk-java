@@ -26,7 +26,8 @@ public enum ResourceRecordSetRegion {
     ApSoutheast1("ap-southeast-1"),
     ApSoutheast2("ap-southeast-2"),
     ApNortheast1("ap-northeast-1"),
-    SaEast1("sa-east-1");
+    SaEast1("sa-east-1"),
+    CnNorth1("cn-north-1");
 
     private String value;
 
@@ -66,6 +67,8 @@ public enum ResourceRecordSetRegion {
             return ResourceRecordSetRegion.ApNortheast1;
         } else if ("sa-east-1".equals(value)) {
             return ResourceRecordSetRegion.SaEast1;
+        } else if ("cn-north-1".equals(value)) {
+            return ResourceRecordSetRegion.CnNorth1;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }
