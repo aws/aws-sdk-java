@@ -33,9 +33,11 @@ import com.amazonaws.services.dynamodbv2.model.TableStatus;
  * </pre>
  */
 public class Tables {
-
+    private static final int DEFAULT_WAIT_TIMEOUT = 10 * 60 * 1000;
+    private static final int DEFAULT_WAIT_INTERVAL = 20 * 1000;
+    
     /**
-     * Checks if a specified table exists.
+     * Checks if a specified table exists and is in <code>ACTIVE</code> state.
      *
      * @param dynamo
      *            The AWS DynamoDB client to use to make requests.
@@ -71,8 +73,36 @@ public class Tables {
      *             stops polling.
      */
     public static void waitForTableToBecomeActive(AmazonDynamoDB dynamo, String tableName) {
+        waitForTableToBecomeActive(dynamo, tableName, DEFAULT_WAIT_TIMEOUT, DEFAULT_WAIT_INTERVAL);        	
+    }
+ 
+    /**
+     * Waits up to a specified amount of time for a specified AWS DynamoDB
+     * table to move into the <code>ACTIVE</code> state. If the table doesn't
+     * transition to the <code>ACTIVE</code> state, then an
+     * AmazonClientException is thrown.
+     *
+     * @param dynamo
+     *            The AWS DynamoDB client to use to make requests.
+     * @param tableName
+     *            The name of the table whose status is being checked.
+     * @param timeout
+     *            The maximum number of milliseconds to wait.
+     * @param interval
+     *            The poll interval in milliseconds.
+     *
+     * @throws AmazonClientException
+     *             If the specified table does not transition into the
+     *             <code>ACTIVE</code> state before this method times out and
+     *             stops polling.
+     */
+    public static void waitForTableToBecomeActive(AmazonDynamoDB dynamo, String tableName, int timeout, int interval) {
+    	if (timeout < 0)
+    		throw new AmazonClientException("Timeout must be >= 0");
+    	if (interval <= 0 || interval >= timeout)
+    		throw new AmazonClientException("Interval must be > 0 and < timeout");
         long startTime = System.currentTimeMillis();
-        long endTime = startTime + (10 * 60 * 1000);
+        long endTime = startTime + timeout;
         while (System.currentTimeMillis() < endTime) {
             try {
                 TableDescription table = dynamo.describeTable(new DescribeTableRequest(tableName)).getTable();
@@ -84,7 +114,7 @@ public class Tables {
             }
 
             try {
-                Thread.sleep(1000 * 20);
+                Thread.sleep(interval);
             } catch (InterruptedException e) {
                 Thread.interrupted();
                 throw new AmazonClientException("Interrupted while waiting for table to become active", e);
