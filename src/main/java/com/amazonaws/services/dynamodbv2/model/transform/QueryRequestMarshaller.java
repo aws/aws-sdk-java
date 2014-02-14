@@ -21,6 +21,7 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.util.Map;
 import java.util.List;
+import java.nio.charset.Charset;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -37,6 +38,8 @@ import com.amazonaws.util.json.*;
  * Query Request Marshaller
  */
 public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>, QueryRequest> {
+
+	private static Charset UTF8 = Charset.forName("UTF-8");
 
     public Request<QueryRequest> marshall(QueryRequest queryRequest) {
     if (queryRequest == null) {
@@ -261,7 +264,7 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
           jsonWriter.endObject();
 
           String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes("UTF-8");
+          byte[] content = snippet.getBytes(UTF8);
           request.setContent(new StringInputStream(snippet));
           request.addHeader("Content-Length", Integer.toString(content.length));
         } catch(Throwable t) {
