@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.simpleworkflow.flow;
 
+import java.lang.reflect.Method;
+
 /**
  * Used by the framework to serialize/deserialize method parameters that need to
  * be sent over the wire. 
@@ -44,6 +46,16 @@ public abstract class DataConverter {
      *             if conversion of the data passed as parameter failed for any
      *             reason.
      */
-    public abstract <T> T fromData(String content, Class<T> valueType) throws DataConverterException;
+    public abstract <T> T fromData(String data, Class<T> valueType) throws DataConverterException;
+
+    /**
+     * Parses the method arguments for {@code Method} from  Simple Workflow Data value.
+     * @param data  Simple Workflow Data value to convert to a Java object.
+     * @param method {@code Method} whose arguments needs to be parsed..
+     * @return {@code Object[]} Parsed method arguments.
+     * @throws DataConverterException  if conversion of the data passed as parameter failed for any
+     *             reason.
+     */
+    public abstract Object[] parseMethodArguments (String data, Method method) throws DataConverterException;
 
 }

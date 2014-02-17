@@ -17,6 +17,8 @@ package com.amazonaws.services.simpleworkflow.flow.annotations;
 import com.amazonaws.services.simpleworkflow.flow.DataConverter;
 import com.amazonaws.services.simpleworkflow.flow.DataConverterException;
 
+import java.lang.reflect.Method;
+
 /**
  * To be used only by annotations as they do not support <code>null</code> parameters.
  * 
@@ -38,4 +40,8 @@ public final class NullDataConverter extends DataConverter {
         throw new UnsupportedOperationException("not implemented");
     }
 
+    @Override
+    public Object[] parseMethodArguments(String data, Method method) throws DataConverterException {
+        throw new UnsupportedOperationException("not implemented");
+    }
 }
