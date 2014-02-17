@@ -18,6 +18,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.util.Date;
+import java.nio.charset.Charset;
 
 import org.apache.commons.codec.binary.Base64;
 
@@ -28,6 +29,13 @@ public class StringUtils {
 
     /** Shared date utils for converting dates to strings */
     private static final DateUtils dateUtils = new DateUtils();
+    
+    /* Shared Charset for UTF conversions */
+    private static Charset UTF8 = Charset.forName("UTF-8");
+    
+    public static Charset getUTF8Charset() {
+    	return UTF8;
+    }    
 
     public static Integer toInteger(StringBuilder value) {
         return Integer.parseInt(value.toString());
