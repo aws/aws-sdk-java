@@ -108,7 +108,7 @@ public class POJOWorkflowDefinition extends WorkflowDefinition {
                 c = converter;
             }
             Method method = signalMethod.getMethod();
-            Object[] parameters = c.fromData(details, Object[].class);
+            Object[] parameters = c.parseMethodArguments(details, method);
             try {
                 invokeMethod(method, parameters);
             }
