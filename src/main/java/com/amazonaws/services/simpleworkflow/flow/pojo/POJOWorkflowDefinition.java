@@ -71,8 +71,8 @@ public class POJOWorkflowDefinition extends WorkflowDefinition {
                 // after new parameters were added to @Execute method
                 // It requires creation of parameters array of the correct size and
                 // populating the new parameter values with default values for each type
-                Object[] parameters = c.fromData(input, Object[].class);
                 Method method = workflowMethod.getMethod();
+                Object[] parameters = c.parseMethodArguments(input, method);
                 Object r = invokeMethod(method, parameters);
                 if (!method.getReturnType().equals(Void.TYPE)) {
                     methodResult.set((Promise) r);
