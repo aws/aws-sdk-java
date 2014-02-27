@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.DeregisterImageRequestMarshall
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deregisterImage(DeregisterImageRequest) DeregisterImage operation}.
  * <p>
- * Deregisters the specified AMI. After you deregister an AMI, it can't be used to launch new instances.
+ * Deregisters the specified AMI. After you deregister an AMI, it can't
+ * be used to launch new instances.
  * </p>
  * <p>
  * This command does not delete the AMI.

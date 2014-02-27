@@ -26,17 +26,23 @@ import com.amazonaws.services.ec2.model.transform.DeleteSnapshotRequestMarshalle
  * Deletes the specified snapshot.
  * </p>
  * <p>
- * When you make periodic snapshots of a volume, the snapshots are incremental, and only the blocks on the device that have changed since your last
- * snapshot are saved in the new snapshot. When you delete a snapshot, only the data not needed for any other snapshot is removed. So regardless of which
- * prior snapshots have been deleted, all active snapshots will have access to all the information needed to restore the volume.
+ * When you make periodic snapshots of a volume, the snapshots are
+ * incremental, and only the blocks on the device that have changed since
+ * your last snapshot are saved in the new snapshot. When you delete a
+ * snapshot, only the data not needed for any other snapshot is removed.
+ * So regardless of which prior snapshots have been deleted, all active
+ * snapshots will have access to all the information needed to restore
+ * the volume.
  * </p>
  * <p>
- * You cannot delete a snapshot of the root device of an Amazon EBS volume used by a registered AMI. You must first de-register the AMI before you can
- * delete the snapshot.
+ * You cannot delete a snapshot of the root device of an Amazon EBS
+ * volume used by a registered AMI. You must first de-register the AMI
+ * before you can delete the snapshot.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html"> Deleting an Amazon EBS Snapshot
- * </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html"> Deleting an Amazon EBS Snapshot </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteSnapshot(DeleteSnapshotRequest)

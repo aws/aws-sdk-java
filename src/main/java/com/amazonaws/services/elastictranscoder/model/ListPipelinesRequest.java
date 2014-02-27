@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listPipelines(ListPipelinesRequest) ListPipelines operation}.
  * <p>
- * The ListPipelines operation gets a list of the pipelines associated with the current AWS account.
+ * The ListPipelines operation gets a list of the pipelines associated
+ * with the current AWS account.
  * </p>
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listPipelines(ListPipelinesRequest)

@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Returned if the specified resource, such as a vault, upload ID, or job ID, does not exist.
+ * Returned if the specified resource, such as a vault, upload ID, or job
+ * ID, does not exist.
  * </p>
  */        
 public class ResourceNotFoundException extends AmazonServiceException {

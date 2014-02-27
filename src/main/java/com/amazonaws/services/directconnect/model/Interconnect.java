@@ -21,13 +21,18 @@ import java.io.Serializable;
  * An interconnect is a connection that can host other connections.
  * </p>
  * <p>
- * Like a standard AWS Direct Connect connection, an interconnect represents the physical connection between an AWS Direct Connect partner's network and
- * a specific Direct Connect location. An AWS Direct Connect partner who owns an interconnect can provision hosted connections on the interconnect for
- * their end customers, thereby providing the end customers with connectivity to AWS services.
+ * Like a standard AWS Direct Connect connection, an interconnect
+ * represents the physical connection between an AWS Direct Connect
+ * partner's network and a specific Direct Connect location. An AWS
+ * Direct Connect partner who owns an interconnect can provision hosted
+ * connections on the interconnect for their end customers, thereby
+ * providing the end customers with connectivity to AWS services.
  * </p>
  * <p>
- * The resources of the interconnect, including bandwidth and VLAN numbers, are shared by all of the hosted connections on the interconnect, and the
- * owner of the interconnect determines how these resources are assigned.
+ * The resources of the interconnect, including bandwidth and VLAN
+ * numbers, are shared by all of the hosted connections on the
+ * interconnect, and the owner of the interconnect determines how these
+ * resources are assigned.
  * </p>
  */
 public class Interconnect implements Serializable {

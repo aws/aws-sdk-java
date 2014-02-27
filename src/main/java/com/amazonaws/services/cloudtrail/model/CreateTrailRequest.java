@@ -24,17 +24,22 @@ import com.amazonaws.AmazonWebServiceRequest;
  * From the command line, use create-subscription.
  * </p>
  * <p>
- * Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. The request includes a Trail structure that specifies the
- * following:
+ * Creates a trail that specifies the settings for delivery of log data
+ * to an Amazon S3 bucket. The request includes a Trail structure that
+ * specifies the following:
  * </p>
  * 
  * <ul>
  * <li>Trail name.</li>
- * <li>The name of an existing Amazon S3 bucket to which CloudTrail delivers your log files.</li>
- * <li>The name of the Amazon S3 key prefix that precedes each log file.</li>
- * <li>The name of an existing Amazon SNS topic that notifies you that a new file is available in your bucket.</li>
- * <li>Whether the log file should include AWS API calls from global services. Currently, the only global AWS API calls included in CloudTrail log files
- * are from IAM and AWS STS.</li>
+ * <li>The name of an existing Amazon S3 bucket to which CloudTrail
+ * delivers your log files.</li>
+ * <li>The name of the Amazon S3 key prefix that precedes each log
+ * file.</li>
+ * <li>The name of an existing Amazon SNS topic that notifies you that a
+ * new file is available in your bucket.</li>
+ * <li>Whether the log file should include AWS API calls from global
+ * services. Currently, the only global AWS API calls included in
+ * CloudTrail log files are from IAM and AWS STS.</li>
  * 
  * </ul>
  *

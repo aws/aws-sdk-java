@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a unique message ID returned from a successful <code>SendEmail</code> request.
+ * Represents a unique message ID returned from a successful
+ * <code>SendEmail</code> request.
  * </p>
  */
 public class SendEmailResult implements Serializable {

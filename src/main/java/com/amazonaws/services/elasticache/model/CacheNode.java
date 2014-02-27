@@ -18,8 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents an individual cache node within a cache cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software
- * - either Memcached or Redis.
+ * Represents an individual cache node within a cache cluster. Each cache
+ * node runs its own instance of the cluster's protocol-compliant caching
+ * software - either Memcached or Redis.
  * </p>
  */
 public class CacheNode implements Serializable {

@@ -21,12 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeDefaultClusterParameters(DescribeDefaultClusterParametersRequest) DescribeDefaultClusterParameters operation}.
  * <p>
- * Returns a list of parameter settings for the specified parameter group family.
+ * Returns a list of parameter settings for the specified parameter
+ * group family.
  * </p>
  * <p>
- * For more information about managing parameter groups, go to <a
- * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a> in the <i>Amazon
- * Redshift Management Guide</i> .
+ * For more information about managing parameter groups, go to
+ * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
+ * in the <i>Amazon Redshift Management Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeDefaultClusterParameters(DescribeDefaultClusterParametersRequest)

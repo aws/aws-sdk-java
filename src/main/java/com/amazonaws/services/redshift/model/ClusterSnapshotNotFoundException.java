@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The snapshot identifier does not refer to an existing cluster snapshot.
+ * The snapshot identifier does not refer to an existing cluster
+ * snapshot.
  * </p>
  */        
 public class ClusterSnapshotNotFoundException extends AmazonServiceException {

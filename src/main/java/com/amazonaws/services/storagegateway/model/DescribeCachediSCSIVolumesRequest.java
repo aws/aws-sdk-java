@@ -21,12 +21,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#describeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest) DescribeCachediSCSIVolumes operation}.
  * <p>
- * This operation returns a description of the gateway volumes specified in the request. This operation is supported only for the gateway-cached volume
- * architecture.
+ * This operation returns a description of the gateway volumes specified
+ * in the request. This operation is supported only for the
+ * gateway-cached volume architecture.
  * </p>
  * <p>
- * The list of gateway volumes in the request must be from one gateway. In the response Amazon Storage Gateway returns volume information sorted by
- * volume Amazon Resource Name (ARN).
+ * The list of gateway volumes in the request must be from one gateway.
+ * In the response Amazon Storage Gateway returns volume information
+ * sorted by volume Amazon Resource Name (ARN).
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest)

@@ -23,9 +23,11 @@ import com.amazonaws.services.ec2.model.transform.DeleteVpnGatewayRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteVpnGateway(DeleteVpnGatewayRequest) DeleteVpnGateway operation}.
  * <p>
- * Deletes the specified virtual private gateway. We recommend that before you delete a virtual private gateway, you detach it from the VPC and delete
- * the VPN connection. Note that you don't need to delete the virtual private gateway if you plan to delete and recreate the VPN connection between your
- * VPC and your network.
+ * Deletes the specified virtual private gateway. We recommend that
+ * before you delete a virtual private gateway, you detach it from the
+ * VPC and delete the VPN connection. Note that you don't need to delete
+ * the virtual private gateway if you plan to delete and recreate the VPN
+ * connection between your VPC and your network.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpnGateway(DeleteVpnGatewayRequest)

@@ -21,38 +21,54 @@ import com.amazonaws.services.elasticloadbalancing.model.*;
 /**
  * Interface for accessing AmazonElasticLoadBalancing.
  * Elastic Load Balancing <p>
- * Elastic Load Balancing is a cost-effective and easy to use web service to help you improve the availability and scalability of your application
- * running on Amazon Elastic Cloud Compute (Amazon EC2). It makes it easy for you to distribute application loads between two or more EC2 instances.
- * Elastic Load Balancing supports the growth in traffic of your application by enabling availability through redundancy.
+ * Elastic Load Balancing is a cost-effective and easy to use web
+ * service to help you improve the availability and scalability of your
+ * application running on Amazon Elastic Cloud Compute (Amazon EC2). It
+ * makes it easy for you to distribute application loads between two or
+ * more EC2 instances. Elastic Load Balancing supports the growth in
+ * traffic of your application by enabling availability through
+ * redundancy.
  * </p>
  * <p>
- * This guide provides detailed information about Elastic Load Balancing actions, data types, and parameters that can be used for sending a query
- * request. Query requests are HTTP or HTTPS requests that use the HTTP verb GET or POST and a query parameter named Action or Operation. Action is used
- * throughout this documentation, although Operation is supported for backward compatibility with other AWS Query APIs.
+ * This guide provides detailed information about Elastic Load Balancing
+ * actions, data types, and parameters that can be used for sending a
+ * query request. Query requests are HTTP or HTTPS requests that use the
+ * HTTP verb GET or POST and a query parameter named Action or Operation.
+ * Action is used throughout this documentation, although Operation is
+ * supported for backward compatibility with other AWS Query APIs.
  * </p>
  * <p>
- * For detailed information on constructing a query request using the actions, data types, and parameters mentioned in this guide, go to <a
- * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-query-api.html"> Using the Query API </a> in the <i>Elastic Load
- * Balancing Developer Guide</i> .
+ * For detailed information on constructing a query request using the
+ * actions, data types, and parameters mentioned in this guide, go to
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-query-api.html"> Using the Query API </a>
+ * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  * <p>
- * For detailed information about Elastic Load Balancing features and their associated actions, go to <a
- * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html"> Using Elastic Load Balancing </a> in the <i>Elastic
- * Load Balancing Developer Guide</i> .
+ * For detailed information about Elastic Load Balancing features and
+ * their associated actions, go to
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html"> Using Elastic Load Balancing </a>
+ * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  * <p>
- * This reference guide is based on the current WSDL, which is available at: <a
- * href="http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/ElasticLoadBalancing.wsdl"> </a>
+ * This reference guide is based on the current WSDL, which is available
+ * at:
+ * <a href="http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/ElasticLoadBalancing.wsdl"> </a>
+ * 
  * </p>
  * <p>
  * <b>Endpoints</b>
  * </p>
  * <p>
- * The examples in this guide assume that your load balancers are created in the US East (Northern Virginia) region and use us-east-1 as the endpoint.
+ * The examples in this guide assume that your load balancers are created
+ * in the US East (Northern Virginia) region and use us-east-1 as the
+ * endpoint.
  * </p>
  * <p>
- * You can create your load balancers in other AWS regions. For information about regions and endpoints supported by Elastic Load Balancing, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"> Regions and Endpoints </a> in the Amazon Web Services General Reference.
+ * You can create your load balancers in other AWS regions. For
+ * information about regions and endpoints supported by Elastic Load
+ * Balancing, see
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"> Regions and Endpoints </a>
+ * in the Amazon Web Services General Reference.
  * </p>
  */
 public interface AmazonElasticLoadBalancing {
@@ -149,10 +165,9 @@ public interface AmazonElasticLoadBalancing {
      * state of your back-end instances.
      * </p>
      * <p>
-     * For more information, see <a
-     * ing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck">
-     * Health Check </a> in the <i>Elastic Load Balancing Developer
-     * Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck"> Health Check </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param configureHealthCheckRequest Container for the necessary
@@ -244,10 +259,9 @@ public interface AmazonElasticLoadBalancing {
      * match the properties of the existing listener.
      * </p>
      * <p>
-     * For more information, see <a
-     * .com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html">
-     * Add a Listener to Your Load Balancer </a> in the <i>Elastic Load
-     * Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html"> Add a Listener to Your Load Balancer </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param createLoadBalancerListenersRequest Container for the necessary
@@ -319,10 +333,9 @@ public interface AmazonElasticLoadBalancing {
      * common web browsers.
      * </p>
      * <p>
-     * For more information, see <a
-     * eloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies">
-     * Enabling Application-Controlled Session Stickiness </a> in the
-     * <i>Elastic Load Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies"> Enabling Application-Controlled Session Stickiness </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param createAppCookieStickinessPolicyRequest Container for the
@@ -355,10 +368,9 @@ public interface AmazonElasticLoadBalancing {
      * IDs will override any currently applied security groups.
      * </p>
      * <p>
-     * For more information, see <a
-     * on.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html">
-     * Manage Security Groups in Amazon VPC </a> in the <i>Elastic Load
-     * Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html"> Manage Security Groups in Amazon VPC </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param applySecurityGroupsToLoadBalancerRequest Container for the
@@ -461,10 +473,9 @@ public interface AmazonElasticLoadBalancing {
      * load balancer does nothing.
      * </p>
      * <p>
-     * For more information, see <a
-     * com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html">
-     * Disable an Availability Zone from a Load-Balanced Application </a> in
-     * the <i>Elastic Load Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html"> Disable an Availability Zone from a Load-Balanced Application </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param disableAvailabilityZonesForLoadBalancerRequest Container for
@@ -594,10 +605,9 @@ public interface AmazonElasticLoadBalancing {
      * was created.
      * </p>
      * <p>
-     * For more information, see <a
-     * ticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html">
-     * Expand a Load Balanced Application to an Additional Availability Zone
-     * </a> in the <i>Elastic Load Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html"> Expand a Load Balanced Application to an Additional Availability Zone </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param enableAvailabilityZonesForLoadBalancerRequest Container for the
@@ -680,9 +690,9 @@ public interface AmazonElasticLoadBalancing {
      * </ul>
      * <p>
      * For information about the AWS regions supported by Elastic Load
-     * Balancing, see <a
-     * ="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">
-     * Regions and Endpoints </a> .
+     * Balancing, see
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region"> Regions and Endpoints </a>
+     * .
      * </p>
      * <p>
      * You can create up to 10 load balancers per region per account.
@@ -695,16 +705,16 @@ public interface AmazonElasticLoadBalancing {
      * <ul>
      * <li> <i>EC2-Classic</i> <p>
      * For information on creating and managing your load balancers in
-     * EC2-Classic, see <a
-     * /ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html">
-     * Deploy Elastic Load Balancing in Amazon EC2-Classic </a> .
+     * EC2-Classic, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html"> Deploy Elastic Load Balancing in Amazon EC2-Classic </a>
+     * .
      * </p>
      * </li>
      * <li> <i>EC2-VPC</i> <p>
      * For information on creating and managing your load balancers in
-     * EC2-VPC, see <a
-     * /ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">
-     * Deploy Elastic Load Balancing in Amazon VPC </a> .
+     * EC2-VPC, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC </a>
+     * .
      * </p>
      * </li>
      * 
@@ -791,10 +801,9 @@ public interface AmazonElasticLoadBalancing {
      * as those used to create the load balancer must be provided.
      * </p>
      * <p>
-     * For more information, see <a
-     * asticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">
-     * De-register and Register Amazon EC2 Instances </a> in the <i>Elastic
-     * Load Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> De-register and Register Amazon EC2 Instances </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      * <p>
      * You can use DescribeLoadBalancers to verify if the instance is
@@ -830,10 +839,9 @@ public interface AmazonElasticLoadBalancing {
      * that was used on the same load balancer and port.
      * </p>
      * <p>
-     * For more information on updating your SSL certificate, see <a
-     * cLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html">
-     * Updating an SSL Certificate for a Load Balancer </a> in the <i>Elastic
-     * Load Balancing Developer Guide</i> .
+     * For more information on updating your SSL certificate, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html"> Updating an SSL Certificate for a Load Balancer </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param setLoadBalancerListenerSSLCertificateRequest Container for the
@@ -908,10 +916,9 @@ public interface AmazonElasticLoadBalancing {
      * policy configuration.
      * </p>
      * <p>
-     * For more information, see <a
-     * veloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies">
-     * Enabling Duration-Based Session Stickiness </a> in the <i>Elastic Load
-     * Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies"> Enabling Duration-Based Session Stickiness </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param createLBCookieStickinessPolicyRequest Container for the
@@ -944,10 +951,9 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * <p>
      * The load balancers evenly distribute requests across all of the
-     * registered subnets. For more information, see <a
-     * /ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">
-     * Deploy Elastic Load Balancing in Amazon VPC </a> in the <i>Elastic
-     * Load Balancing Developer Guide</i> .
+     * registered subnets. For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * 
      * </p>
      *
@@ -996,10 +1002,9 @@ public interface AmazonElasticLoadBalancing {
      * from load balancer, use DeregisterInstancesFromLoadBalancer action.
      * </p>
      * <p>
-     * For more information, see <a
-     * asticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">
-     * De-register and Register Amazon EC2 Instances </a> in the <i>Elastic
-     * Load Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> De-register and Register Amazon EC2 Instances </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> In order for this call to be successful, you must provide

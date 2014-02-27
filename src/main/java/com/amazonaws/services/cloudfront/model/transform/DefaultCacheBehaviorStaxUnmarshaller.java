@@ -66,6 +66,10 @@ public class DefaultCacheBehaviorStaxUnmarshaller implements Unmarshaller<Defaul
                     defaultCacheBehavior.setAllowedMethods(AllowedMethodsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("SmoothStreaming", targetDepth)) {
+                    defaultCacheBehavior.setSmoothStreaming(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return defaultCacheBehavior;

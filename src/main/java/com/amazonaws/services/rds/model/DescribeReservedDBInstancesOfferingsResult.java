@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the DescribeReservedDBInstancesOfferings action.
+ * Contains the result of a successful invocation of the
+ * DescribeReservedDBInstancesOfferings action.
  * </p>
  */
 public class DescribeReservedDBInstancesOfferingsResult implements Serializable {

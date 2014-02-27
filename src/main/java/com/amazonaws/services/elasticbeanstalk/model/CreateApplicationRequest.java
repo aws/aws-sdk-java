@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createApplication(CreateApplicationRequest) CreateApplication operation}.
  * <p>
- * Creates an application that has one configuration template named <code>default</code> and no application versions.
+ * Creates an application that has one configuration template named
+ * <code>default</code> and no application versions.
  * </p>
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createApplication(CreateApplicationRequest)

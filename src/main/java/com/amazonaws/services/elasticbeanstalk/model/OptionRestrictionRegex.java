@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A regular expression representing a restriction on a string configuration option value.
+ * A regular expression representing a restriction on a string
+ * configuration option value.
  * </p>
  */
 public class OptionRestrictionRegex implements Serializable {

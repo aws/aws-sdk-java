@@ -26,8 +26,9 @@ import com.amazonaws.services.ec2.model.transform.DescribeVpnGatewaysRequestMars
  * Describes one or more of your virtual private gateways.
  * </p>
  * <p>
- * For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding an IPsec
- * Hardware VPN to Your VPC </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
+ * For more information about virtual private gateways, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding an IPsec Hardware VPN to Your VPC </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpnGateways(DescribeVpnGatewaysRequest)

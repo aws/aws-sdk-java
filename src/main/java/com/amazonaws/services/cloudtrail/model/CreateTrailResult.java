@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A JSON-formatted Trail object that represents the settings for the requested trail.
+ * A JSON-formatted Trail object that represents the settings for the
+ * requested trail.
  * </p>
  */
 public class CreateTrailResult implements Serializable {

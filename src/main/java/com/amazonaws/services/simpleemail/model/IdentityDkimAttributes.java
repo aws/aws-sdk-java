@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the DKIM attributes of a verified email address or a domain.
+ * Represents the DKIM attributes of a verified email address or a
+ * domain.
  * </p>
  */
 public class IdentityDkimAttributes implements Serializable {

@@ -21,16 +21,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#addWorkingStorage(AddWorkingStorageRequest) AddWorkingStorage operation}.
  * <p>
- * This operation configures one or more gateway local disks as working storage for a gateway. This operation is supported only for the gateway-stored
- * volume architecture.
+ * This operation configures one or more gateway local disks as working
+ * storage for a gateway. This operation is supported only for the
+ * gateway-stored volume architecture.
  * </p>
  * <p>
- * <b>NOTE:</b> Working storage is also referred to as upload buffer. You can also use the AddUploadBuffer operation to add upload buffer to a
+ * <b>NOTE:</b> Working storage is also referred to as upload buffer. You
+ * can also use the AddUploadBuffer operation to add upload buffer to a
  * stored-volume gateway.
  * </p>
  * <p>
- * In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add working storage, and one or more disk IDs that you want to
- * configure as working storage.
+ * In the request, you specify the gateway Amazon Resource Name (ARN) to
+ * which you want to add working storage, and one or more disk IDs that
+ * you want to configure as working storage.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#addWorkingStorage(AddWorkingStorageRequest)

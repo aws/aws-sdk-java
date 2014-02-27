@@ -50,15 +50,15 @@ public class LocalSecondaryIndexDescription implements Serializable {
     private Projection projection;
 
     /**
-     * The total size of the specified index, in bytes. Amazon DynamoDB
-     * updates this value approximately every six hours. Recent changes might
-     * not be reflected in this value.
+     * The total size of the specified index, in bytes. DynamoDB updates this
+     * value approximately every six hours. Recent changes might not be
+     * reflected in this value.
      */
     private Long indexSizeBytes;
 
     /**
-     * The number of items in the specified index. Amazon DynamoDB updates
-     * this value approximately every six hours. Recent changes might not be
+     * The number of items in the specified index. DynamoDB updates this
+     * value approximately every six hours. Recent changes might not be
      * reflected in this value.
      */
     private Long itemCount;
@@ -246,41 +246,41 @@ public class LocalSecondaryIndexDescription implements Serializable {
     }
 
     /**
-     * The total size of the specified index, in bytes. Amazon DynamoDB
-     * updates this value approximately every six hours. Recent changes might
-     * not be reflected in this value.
+     * The total size of the specified index, in bytes. DynamoDB updates this
+     * value approximately every six hours. Recent changes might not be
+     * reflected in this value.
      *
-     * @return The total size of the specified index, in bytes. Amazon DynamoDB
-     *         updates this value approximately every six hours. Recent changes might
-     *         not be reflected in this value.
+     * @return The total size of the specified index, in bytes. DynamoDB updates this
+     *         value approximately every six hours. Recent changes might not be
+     *         reflected in this value.
      */
     public Long getIndexSizeBytes() {
         return indexSizeBytes;
     }
     
     /**
-     * The total size of the specified index, in bytes. Amazon DynamoDB
-     * updates this value approximately every six hours. Recent changes might
-     * not be reflected in this value.
+     * The total size of the specified index, in bytes. DynamoDB updates this
+     * value approximately every six hours. Recent changes might not be
+     * reflected in this value.
      *
-     * @param indexSizeBytes The total size of the specified index, in bytes. Amazon DynamoDB
-     *         updates this value approximately every six hours. Recent changes might
-     *         not be reflected in this value.
+     * @param indexSizeBytes The total size of the specified index, in bytes. DynamoDB updates this
+     *         value approximately every six hours. Recent changes might not be
+     *         reflected in this value.
      */
     public void setIndexSizeBytes(Long indexSizeBytes) {
         this.indexSizeBytes = indexSizeBytes;
     }
     
     /**
-     * The total size of the specified index, in bytes. Amazon DynamoDB
-     * updates this value approximately every six hours. Recent changes might
-     * not be reflected in this value.
+     * The total size of the specified index, in bytes. DynamoDB updates this
+     * value approximately every six hours. Recent changes might not be
+     * reflected in this value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param indexSizeBytes The total size of the specified index, in bytes. Amazon DynamoDB
-     *         updates this value approximately every six hours. Recent changes might
-     *         not be reflected in this value.
+     * @param indexSizeBytes The total size of the specified index, in bytes. DynamoDB updates this
+     *         value approximately every six hours. Recent changes might not be
+     *         reflected in this value.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -291,12 +291,12 @@ public class LocalSecondaryIndexDescription implements Serializable {
     }
 
     /**
-     * The number of items in the specified index. Amazon DynamoDB updates
-     * this value approximately every six hours. Recent changes might not be
+     * The number of items in the specified index. DynamoDB updates this
+     * value approximately every six hours. Recent changes might not be
      * reflected in this value.
      *
-     * @return The number of items in the specified index. Amazon DynamoDB updates
-     *         this value approximately every six hours. Recent changes might not be
+     * @return The number of items in the specified index. DynamoDB updates this
+     *         value approximately every six hours. Recent changes might not be
      *         reflected in this value.
      */
     public Long getItemCount() {
@@ -304,12 +304,12 @@ public class LocalSecondaryIndexDescription implements Serializable {
     }
     
     /**
-     * The number of items in the specified index. Amazon DynamoDB updates
-     * this value approximately every six hours. Recent changes might not be
+     * The number of items in the specified index. DynamoDB updates this
+     * value approximately every six hours. Recent changes might not be
      * reflected in this value.
      *
-     * @param itemCount The number of items in the specified index. Amazon DynamoDB updates
-     *         this value approximately every six hours. Recent changes might not be
+     * @param itemCount The number of items in the specified index. DynamoDB updates this
+     *         value approximately every six hours. Recent changes might not be
      *         reflected in this value.
      */
     public void setItemCount(Long itemCount) {
@@ -317,14 +317,14 @@ public class LocalSecondaryIndexDescription implements Serializable {
     }
     
     /**
-     * The number of items in the specified index. Amazon DynamoDB updates
-     * this value approximately every six hours. Recent changes might not be
+     * The number of items in the specified index. DynamoDB updates this
+     * value approximately every six hours. Recent changes might not be
      * reflected in this value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param itemCount The number of items in the specified index. Amazon DynamoDB updates
-     *         this value approximately every six hours. Recent changes might not be
+     * @param itemCount The number of items in the specified index. DynamoDB updates this
+     *         value approximately every six hours. Recent changes might not be
      *         reflected in this value.
      *
      * @return A reference to this updated object so that method calls can be chained 

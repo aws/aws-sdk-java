@@ -26,14 +26,21 @@ public class InvalidS3PrefixExceptionUnmarshaller extends JsonErrorUnmarshaller 
         super(InvalidS3PrefixException.class);
     }
 
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands.
-        String errorCode = parseErrorCode(json);
-        if (errorCode == null || !errorCode.equals("InvalidS3PrefixException"))
-            return null;
+    @Override
+    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
+        if (errorTypeFromHeader == null) {
+            // Parse error type from the JSON content if it's not available in the response headers
+            String errorCodeFromContent = parseErrorCode(json);
+            return (errorCodeFromContent != null && errorCodeFromContent.equals("InvalidS3PrefixException"));
+        } else {
+            return errorTypeFromHeader.equals("InvalidS3PrefixException");
+        }
+    }
 
+    @Override
+    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         InvalidS3PrefixException e = (InvalidS3PrefixException)super.unmarshall(json);
+        e.setErrorCode("InvalidS3PrefixException");
 
         return e;
     }

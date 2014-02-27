@@ -20,18 +20,21 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.Set;
 
-
 /**
  * Annotation to mark a property as using a custom marshaller. This is required
  * when storing anything other than {@link String}s, {@link Number}s, and
  * {@link Set}s of the same to DynamoDB. Any object that can be converted into a
- * String representation and vice versa can be saved in this manner.
+ * String representation and vice versa can be saved in this manner. This
+ * annotation can be applied to either the getter method or the class field for
+ * the specific property. If the annotation is applied directly to the class
+ * field, the corresponding getter and setter must be declared in the same
+ * class.
  * 
  * @see DynamoDBMarshaller
  * @see JsonMarshaller
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
+@Target({ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBMarshalling {
 
     /**

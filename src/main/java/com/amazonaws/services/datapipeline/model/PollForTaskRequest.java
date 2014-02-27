@@ -21,15 +21,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#pollForTask(PollForTaskRequest) PollForTask operation}.
  * <p>
- * Task runners call this action to receive a task to perform from AWS Data Pipeline. The task runner specifies which tasks it can perform by setting a
- * value for the workerGroup parameter of the PollForTask call. The task returned by PollForTask may come from any of the pipelines that match the
- * workerGroup value passed in by the task runner and that was launched using the IAM user credentials specified by the task runner.
+ * Task runners call this action to receive a task to perform from AWS
+ * Data Pipeline. The task runner specifies which tasks it can perform by
+ * setting a value for the workerGroup parameter of the PollForTask call.
+ * The task returned by PollForTask may come from any of the pipelines
+ * that match the workerGroup value passed in by the task runner and that
+ * was launched using the IAM user credentials specified by the task
+ * runner.
  * </p>
  * <p>
- * If tasks are ready in the work queue, PollForTask returns a response immediately. If no tasks are available in the queue, PollForTask uses
- * long-polling and holds on to a poll connection for up to a 90 seconds during which time the first newly scheduled task is handed to the task runner.
- * To accomodate this, set the socket timeout in your task runner to 90 seconds. The task runner should not call PollForTask again on the same
- * <code>workerGroup</code> until it receives a response, and this may take up to 90 seconds.
+ * If tasks are ready in the work queue, PollForTask returns a response
+ * immediately. If no tasks are available in the queue, PollForTask uses
+ * long-polling and holds on to a poll connection for up to a 90 seconds
+ * during which time the first newly scheduled task is handed to the task
+ * runner. To accomodate this, set the socket timeout in your task runner
+ * to 90 seconds. The task runner should not call PollForTask again on
+ * the same <code>workerGroup</code> until it receives a response, and
+ * this may take up to 90 seconds.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#pollForTask(PollForTaskRequest)

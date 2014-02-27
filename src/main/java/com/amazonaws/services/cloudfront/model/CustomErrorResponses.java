@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains zero or more CustomErrorResponse elements.
+ * A complex type that contains zero or more CustomErrorResponse
+ * elements.
  * </p>
  */
 public class CustomErrorResponses implements Serializable {

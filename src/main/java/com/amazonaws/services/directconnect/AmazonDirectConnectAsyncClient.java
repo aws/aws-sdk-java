@@ -35,24 +35,34 @@ import com.amazonaws.services.directconnect.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * <p>
- * AWS Direct Connect makes it easy to establish a dedicated network connection from your premises to Amazon Web Services (AWS). Using AWS Direct
- * Connect, you can establish private connectivity between AWS and your data center, office, or colocation environment, which in many cases can reduce
- * your network costs, increase bandwidth throughput, and provide a more consistent network experience than Internet-based connections.
+ * AWS Direct Connect makes it easy to establish a dedicated network
+ * connection from your premises to Amazon Web Services (AWS). Using AWS
+ * Direct Connect, you can establish private connectivity between AWS and
+ * your data center, office, or colocation environment, which in many
+ * cases can reduce your network costs, increase bandwidth throughput,
+ * and provide a more consistent network experience than Internet-based
+ * connections.
  * </p>
  * <p>
- * The AWS Direct Connect API Reference provides descriptions, syntax, and usage examples for each of the actions and data types for AWS Direct Connect.
- * Use the following links to get started using the <i>AWS Direct Connect API Reference</i> :
+ * The AWS Direct Connect API Reference provides descriptions, syntax,
+ * and usage examples for each of the actions and data types for AWS
+ * Direct Connect. Use the following links to get started using the
+ * <i>AWS Direct Connect API Reference</i> :
  * </p>
  * 
  * <ul>
- * <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Operations.html"> Actions </a> : An alphabetical list of all AWS
- * Direct Connect actions.</li>
- * <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Types.html"> Data Types </a> : An alphabetical list of all AWS Direct
- * Connect data types.</li>
- * <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonParameters.html"> Common Query Parameters </a> : Parameters that all
- * Query actions can use.</li>
- * <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonErrors.html"> Common Errors </a> : Client and server errors that all
- * actions can return.</li>
+ * <li>
+ * <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Operations.html"> Actions </a>
+ * : An alphabetical list of all AWS Direct Connect actions.</li>
+ * <li>
+ * <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Types.html"> Data Types </a>
+ * : An alphabetical list of all AWS Direct Connect data types.</li>
+ * <li>
+ * <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonParameters.html"> Common Query Parameters </a>
+ * : Parameters that all Query actions can use.</li>
+ * <li>
+ * <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonErrors.html"> Common Errors </a>
+ * : Client and server errors that all actions can return.</li>
  * 
  * </ul>
  */
@@ -63,6 +73,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
+
+    private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -105,13 +117,13 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonDirectConnectAsyncClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonDirectConnect using the specified AWS account credentials.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -123,7 +135,7 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
      *                       when authenticating with AWS services.
      */
     public AmazonDirectConnectAsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newCachedThreadPool());
+        this(awsCredentials, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -177,7 +189,7 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonDirectConnect using the specified AWS account credentials provider.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -190,7 +202,7 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
      *            to authenticate requests with AWS services.
      */
     public AmazonDirectConnectAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -233,7 +245,7 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
      */
     public AmazonDirectConnectAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
                 ClientConfiguration clientConfiguration) {
-        this(awsCredentialsProvider, clientConfiguration, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -277,7 +289,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who
      * wish to give pending asynchronous service calls time to complete should
-     * call getExecutorService().shutdown() prior to calling this method.
+     * call getExecutorService().shutdown() followed by
+     * getExecutorService().awaitTermination() prior to calling this method.
      */
     @Override
     public void shutdown() {
@@ -312,8 +325,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<DescribeLocationsResult>() {
             public DescribeLocationsResult call() throws Exception {
                 return describeLocations(describeLocationsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -348,17 +361,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeLocationsResult>() {
             public DescribeLocationsResult call() throws Exception {
-                DescribeLocationsResult result;
+              DescribeLocationsResult result;
                 try {
-                    result = describeLocations(describeLocationsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeLocationsRequest, result);
-                   return result;
-            }
-        });
+                result = describeLocations(describeLocationsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeLocationsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -394,8 +407,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<ConfirmPublicVirtualInterfaceResult>() {
             public ConfirmPublicVirtualInterfaceResult call() throws Exception {
                 return confirmPublicVirtualInterface(confirmPublicVirtualInterfaceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -436,17 +449,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ConfirmPublicVirtualInterfaceResult>() {
             public ConfirmPublicVirtualInterfaceResult call() throws Exception {
-                ConfirmPublicVirtualInterfaceResult result;
+              ConfirmPublicVirtualInterfaceResult result;
                 try {
-                    result = confirmPublicVirtualInterface(confirmPublicVirtualInterfaceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(confirmPublicVirtualInterfaceRequest, result);
-                   return result;
-            }
-        });
+                result = confirmPublicVirtualInterface(confirmPublicVirtualInterfaceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(confirmPublicVirtualInterfaceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -479,8 +492,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<CreatePrivateVirtualInterfaceResult>() {
             public CreatePrivateVirtualInterfaceResult call() throws Exception {
                 return createPrivateVirtualInterface(createPrivateVirtualInterfaceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -518,17 +531,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreatePrivateVirtualInterfaceResult>() {
             public CreatePrivateVirtualInterfaceResult call() throws Exception {
-                CreatePrivateVirtualInterfaceResult result;
+              CreatePrivateVirtualInterfaceResult result;
                 try {
-                    result = createPrivateVirtualInterface(createPrivateVirtualInterfaceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createPrivateVirtualInterfaceRequest, result);
-                   return result;
-            }
-        });
+                result = createPrivateVirtualInterface(createPrivateVirtualInterfaceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createPrivateVirtualInterfaceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -558,8 +571,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<DeleteVirtualInterfaceResult>() {
             public DeleteVirtualInterfaceResult call() throws Exception {
                 return deleteVirtualInterface(deleteVirtualInterfaceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -594,17 +607,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteVirtualInterfaceResult>() {
             public DeleteVirtualInterfaceResult call() throws Exception {
-                DeleteVirtualInterfaceResult result;
+              DeleteVirtualInterfaceResult result;
                 try {
-                    result = deleteVirtualInterface(deleteVirtualInterfaceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteVirtualInterfaceRequest, result);
-                   return result;
-            }
-        });
+                result = deleteVirtualInterface(deleteVirtualInterfaceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteVirtualInterfaceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -637,8 +650,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<CreatePublicVirtualInterfaceResult>() {
             public CreatePublicVirtualInterfaceResult call() throws Exception {
                 return createPublicVirtualInterface(createPublicVirtualInterfaceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -676,17 +689,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreatePublicVirtualInterfaceResult>() {
             public CreatePublicVirtualInterfaceResult call() throws Exception {
-                CreatePublicVirtualInterfaceResult result;
+              CreatePublicVirtualInterfaceResult result;
                 try {
-                    result = createPublicVirtualInterface(createPublicVirtualInterfaceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createPublicVirtualInterfaceRequest, result);
-                   return result;
-            }
-        });
+                result = createPublicVirtualInterface(createPublicVirtualInterfaceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createPublicVirtualInterfaceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -733,8 +746,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<CreateInterconnectResult>() {
             public CreateInterconnectResult call() throws Exception {
                 return createInterconnect(createInterconnectRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -786,17 +799,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateInterconnectResult>() {
             public CreateInterconnectResult call() throws Exception {
-                CreateInterconnectResult result;
+              CreateInterconnectResult result;
                 try {
-                    result = createInterconnect(createInterconnectRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createInterconnectRequest, result);
-                   return result;
-            }
-        });
+                result = createInterconnect(createInterconnectRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createInterconnectRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -840,8 +853,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<DescribeVirtualInterfacesResult>() {
             public DescribeVirtualInterfacesResult call() throws Exception {
                 return describeVirtualInterfaces(describeVirtualInterfacesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -890,17 +903,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVirtualInterfacesResult>() {
             public DescribeVirtualInterfacesResult call() throws Exception {
-                DescribeVirtualInterfacesResult result;
+              DescribeVirtualInterfacesResult result;
                 try {
-                    result = describeVirtualInterfaces(describeVirtualInterfacesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeVirtualInterfacesRequest, result);
-                   return result;
-            }
-        });
+                result = describeVirtualInterfaces(describeVirtualInterfacesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeVirtualInterfacesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -933,8 +946,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<ConfirmConnectionResult>() {
             public ConfirmConnectionResult call() throws Exception {
                 return confirmConnection(confirmConnectionRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -972,17 +985,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ConfirmConnectionResult>() {
             public ConfirmConnectionResult call() throws Exception {
-                ConfirmConnectionResult result;
+              ConfirmConnectionResult result;
                 try {
-                    result = confirmConnection(confirmConnectionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(confirmConnectionRequest, result);
-                   return result;
-            }
-        });
+                result = confirmConnection(confirmConnectionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(confirmConnectionRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1016,8 +1029,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<DescribeInterconnectsResult>() {
             public DescribeInterconnectsResult call() throws Exception {
                 return describeInterconnects(describeInterconnectsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1056,17 +1069,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeInterconnectsResult>() {
             public DescribeInterconnectsResult call() throws Exception {
-                DescribeInterconnectsResult result;
+              DescribeInterconnectsResult result;
                 try {
-                    result = describeInterconnects(describeInterconnectsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeInterconnectsRequest, result);
-                   return result;
-            }
-        });
+                result = describeInterconnects(describeInterconnectsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeInterconnectsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1077,9 +1090,9 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
      * You can create one or more AWS Direct Connect private virtual
      * interfaces linking to a virtual private gateway. A virtual private
      * gateway can be managed via Amazon Virtual Private Cloud (VPC) console
-     * or the <a
-     * /AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">
-     * EC2 CreateVpnGateway </a> action.
+     * or the
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html"> EC2 CreateVpnGateway </a>
+     * action.
      * </p>
      *
      * @param describeVirtualGatewaysRequest Container for the necessary
@@ -1104,8 +1117,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<DescribeVirtualGatewaysResult>() {
             public DescribeVirtualGatewaysResult call() throws Exception {
                 return describeVirtualGateways(describeVirtualGatewaysRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1116,9 +1129,9 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
      * You can create one or more AWS Direct Connect private virtual
      * interfaces linking to a virtual private gateway. A virtual private
      * gateway can be managed via Amazon Virtual Private Cloud (VPC) console
-     * or the <a
-     * /AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">
-     * EC2 CreateVpnGateway </a> action.
+     * or the
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html"> EC2 CreateVpnGateway </a>
+     * action.
      * </p>
      *
      * @param describeVirtualGatewaysRequest Container for the necessary
@@ -1148,17 +1161,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVirtualGatewaysResult>() {
             public DescribeVirtualGatewaysResult call() throws Exception {
-                DescribeVirtualGatewaysResult result;
+              DescribeVirtualGatewaysResult result;
                 try {
-                    result = describeVirtualGateways(describeVirtualGatewaysRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeVirtualGatewaysRequest, result);
-                   return result;
-            }
-        });
+                result = describeVirtualGateways(describeVirtualGatewaysRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeVirtualGatewaysRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1194,8 +1207,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<ConfirmPrivateVirtualInterfaceResult>() {
             public ConfirmPrivateVirtualInterfaceResult call() throws Exception {
                 return confirmPrivateVirtualInterface(confirmPrivateVirtualInterfaceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1236,17 +1249,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ConfirmPrivateVirtualInterfaceResult>() {
             public ConfirmPrivateVirtualInterfaceResult call() throws Exception {
-                ConfirmPrivateVirtualInterfaceResult result;
+              ConfirmPrivateVirtualInterfaceResult result;
                 try {
-                    result = confirmPrivateVirtualInterface(confirmPrivateVirtualInterfaceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(confirmPrivateVirtualInterfaceRequest, result);
-                   return result;
-            }
-        });
+                result = confirmPrivateVirtualInterface(confirmPrivateVirtualInterfaceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(confirmPrivateVirtualInterfaceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1280,8 +1293,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<DescribeConnectionsResult>() {
             public DescribeConnectionsResult call() throws Exception {
                 return describeConnections(describeConnectionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1320,17 +1333,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeConnectionsResult>() {
             public DescribeConnectionsResult call() throws Exception {
-                DescribeConnectionsResult result;
+              DescribeConnectionsResult result;
                 try {
-                    result = describeConnections(describeConnectionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeConnectionsRequest, result);
-                   return result;
-            }
-        });
+                result = describeConnections(describeConnectionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeConnectionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1371,8 +1384,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<AllocatePublicVirtualInterfaceResult>() {
             public AllocatePublicVirtualInterfaceResult call() throws Exception {
                 return allocatePublicVirtualInterface(allocatePublicVirtualInterfaceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1418,17 +1431,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AllocatePublicVirtualInterfaceResult>() {
             public AllocatePublicVirtualInterfaceResult call() throws Exception {
-                AllocatePublicVirtualInterfaceResult result;
+              AllocatePublicVirtualInterfaceResult result;
                 try {
-                    result = allocatePublicVirtualInterface(allocatePublicVirtualInterfaceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(allocatePublicVirtualInterfaceRequest, result);
-                   return result;
-            }
-        });
+                result = allocatePublicVirtualInterface(allocatePublicVirtualInterfaceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(allocatePublicVirtualInterfaceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1469,8 +1482,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<AllocatePrivateVirtualInterfaceResult>() {
             public AllocatePrivateVirtualInterfaceResult call() throws Exception {
                 return allocatePrivateVirtualInterface(allocatePrivateVirtualInterfaceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1516,17 +1529,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AllocatePrivateVirtualInterfaceResult>() {
             public AllocatePrivateVirtualInterfaceResult call() throws Exception {
-                AllocatePrivateVirtualInterfaceResult result;
+              AllocatePrivateVirtualInterfaceResult result;
                 try {
-                    result = allocatePrivateVirtualInterface(allocatePrivateVirtualInterfaceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(allocatePrivateVirtualInterfaceRequest, result);
-                   return result;
-            }
-        });
+                result = allocatePrivateVirtualInterface(allocatePrivateVirtualInterfaceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(allocatePrivateVirtualInterfaceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1560,8 +1573,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<DeleteConnectionResult>() {
             public DeleteConnectionResult call() throws Exception {
                 return deleteConnection(deleteConnectionRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1600,17 +1613,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteConnectionResult>() {
             public DeleteConnectionResult call() throws Exception {
-                DeleteConnectionResult result;
+              DeleteConnectionResult result;
                 try {
-                    result = deleteConnection(deleteConnectionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteConnectionRequest, result);
-                   return result;
-            }
-        });
+                result = deleteConnection(deleteConnectionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteConnectionRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1641,8 +1654,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<DescribeConnectionsOnInterconnectResult>() {
             public DescribeConnectionsOnInterconnectResult call() throws Exception {
                 return describeConnectionsOnInterconnect(describeConnectionsOnInterconnectRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1678,17 +1691,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeConnectionsOnInterconnectResult>() {
             public DescribeConnectionsOnInterconnectResult call() throws Exception {
-                DescribeConnectionsOnInterconnectResult result;
+              DescribeConnectionsOnInterconnectResult result;
                 try {
-                    result = describeConnectionsOnInterconnect(describeConnectionsOnInterconnectRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeConnectionsOnInterconnectRequest, result);
-                   return result;
-            }
-        });
+                result = describeConnectionsOnInterconnect(describeConnectionsOnInterconnectRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeConnectionsOnInterconnectRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1722,8 +1735,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<AllocateConnectionOnInterconnectResult>() {
             public AllocateConnectionOnInterconnectResult call() throws Exception {
                 return allocateConnectionOnInterconnect(allocateConnectionOnInterconnectRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1762,17 +1775,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AllocateConnectionOnInterconnectResult>() {
             public AllocateConnectionOnInterconnectResult call() throws Exception {
-                AllocateConnectionOnInterconnectResult result;
+              AllocateConnectionOnInterconnectResult result;
                 try {
-                    result = allocateConnectionOnInterconnect(allocateConnectionOnInterconnectRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(allocateConnectionOnInterconnectRequest, result);
-                   return result;
-            }
-        });
+                result = allocateConnectionOnInterconnect(allocateConnectionOnInterconnectRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(allocateConnectionOnInterconnectRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1811,8 +1824,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<CreateConnectionResult>() {
             public CreateConnectionResult call() throws Exception {
                 return createConnection(createConnectionRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1856,17 +1869,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateConnectionResult>() {
             public CreateConnectionResult call() throws Exception {
-                CreateConnectionResult result;
+              CreateConnectionResult result;
                 try {
-                    result = createConnection(createConnectionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createConnectionRequest, result);
-                   return result;
-            }
-        });
+                result = createConnection(createConnectionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createConnectionRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1895,8 +1908,8 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         return executorService.submit(new Callable<DeleteInterconnectResult>() {
             public DeleteInterconnectResult call() throws Exception {
                 return deleteInterconnect(deleteInterconnectRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1930,17 +1943,17 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteInterconnectResult>() {
             public DeleteInterconnectResult call() throws Exception {
-                DeleteInterconnectResult result;
+              DeleteInterconnectResult result;
                 try {
-                    result = deleteInterconnect(deleteInterconnectRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteInterconnectRequest, result);
-                   return result;
-            }
-        });
+                result = deleteInterconnect(deleteInterconnectRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteInterconnectRequest, result);
+                 return result;
+        }
+    });
     }
     
 }

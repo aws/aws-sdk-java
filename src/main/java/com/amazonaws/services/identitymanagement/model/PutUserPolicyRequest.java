@@ -21,19 +21,24 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putUserPolicy(PutUserPolicyRequest) PutUserPolicy operation}.
  * <p>
- * Adds (or updates) a policy document associated with the specified user. For information about policies, refer to <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html"> Overview of Policies </a> in <i>Using AWS Identity and
- * Access Management</i> .
+ * Adds (or updates) a policy document associated with the specified
+ * user. For information about policies, refer to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html"> Overview of Policies </a>
+ * in <i>Using AWS Identity and Access Management</i> .
  * </p>
  * <p>
- * For information about limits on the number of policies you can associate with a user, see <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a> in <i>Using AWS
- * Identity and Access Management</i> .
+ * For information about limits on the number of policies you can
+ * associate with a user, see
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+ * in <i>Using AWS Identity and Access Management</i> .
  * </p>
  * <p>
- * <b>NOTE:</b>Because policy documents can be large, you should use POST rather than GET when calling PutUserPolicy. For information about setting up
- * signatures and authorization through the API, go to Signing AWS API Requests in the AWS General Reference. For general information about using the
- * Query API with IAM, go to Making Query Requests in Using IAM.
+ * <b>NOTE:</b>Because policy documents can be large, you should use POST
+ * rather than GET when calling PutUserPolicy. For information about
+ * setting up signatures and authorization through the API, go to Signing
+ * AWS API Requests in the AWS General Reference. For general information
+ * about using the Query API with IAM, go to Making Query Requests in
+ * Using IAM.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putUserPolicy(PutUserPolicyRequest)

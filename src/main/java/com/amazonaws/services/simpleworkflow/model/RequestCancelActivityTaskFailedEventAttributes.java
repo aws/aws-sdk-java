@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Provides details of the <code>RequestCancelActivityTaskFailed</code> event.
+ * Provides details of the <code>RequestCancelActivityTaskFailed</code>
+ * event.
  * </p>
  */
 public class RequestCancelActivityTaskFailedEventAttributes implements Serializable {

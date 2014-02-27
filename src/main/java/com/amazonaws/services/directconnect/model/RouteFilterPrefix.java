@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A route filter prefix that the customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface.
+ * A route filter prefix that the customer can advertise through Border
+ * Gateway Protocol (BGP) over a public virtual interface.
  * </p>
  */
 public class RouteFilterPrefix implements Serializable {

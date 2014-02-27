@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified HSM client certificate is not in the <i>available</i> state, or it is still in use by one or more Amazon Redshift clusters.
+ * The specified HSM client certificate is not in the <i>available</i>
+ * state, or it is still in use by one or more Amazon Redshift clusters.
  * </p>
  */        
 public class InvalidHsmClientCertificateStateException extends AmazonServiceException {

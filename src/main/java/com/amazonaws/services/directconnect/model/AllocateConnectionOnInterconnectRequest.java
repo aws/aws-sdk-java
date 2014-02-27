@@ -24,7 +24,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Creates a hosted connection on an interconnect.
  * </p>
  * <p>
- * Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection on the given interconnect.
+ * Allocates a VLAN number and a specified amount of bandwidth for use by
+ * a hosted connection on the given interconnect.
  * </p>
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#allocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest)

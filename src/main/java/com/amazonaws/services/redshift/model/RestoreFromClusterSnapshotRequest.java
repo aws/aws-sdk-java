@@ -21,17 +21,24 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#restoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest) RestoreFromClusterSnapshot operation}.
  * <p>
- * Creates a new cluster from a snapshot. Amazon Redshift creates the resulting cluster with the same configuration as the original cluster from which
- * the snapshot was created, except that the new cluster is created with the default cluster security and parameter group. After Amazon Redshift creates
- * the cluster you can use the ModifyCluster API to associate a different security group and different parameter group with the restored cluster.
+ * Creates a new cluster from a snapshot. Amazon Redshift creates the
+ * resulting cluster with the same configuration as the original cluster
+ * from which the snapshot was created, except that the new cluster is
+ * created with the default cluster security and parameter group. After
+ * Amazon Redshift creates the cluster you can use the ModifyCluster API
+ * to associate a different security group and different parameter group
+ * with the restored cluster.
  * </p>
  * <p>
- * If a snapshot is taken of a cluster in VPC, you can restore it only in VPC. In this case, you must provide a cluster subnet group where you want the
- * cluster restored. If snapshot is taken of a cluster outside VPC, then you can restore it only outside VPC.
+ * If a snapshot is taken of a cluster in VPC, you can restore it only
+ * in VPC. In this case, you must provide a cluster subnet group where
+ * you want the cluster restored. If snapshot is taken of a cluster
+ * outside VPC, then you can restore it only outside VPC.
  * </p>
  * <p>
- * For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">
- * Amazon Redshift Snapshots </a> in the <i>Amazon Redshift Management Guide</i> .
+ * For more information about working with snapshots, go to
+ * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
+ * in the <i>Amazon Redshift Management Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#restoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest)

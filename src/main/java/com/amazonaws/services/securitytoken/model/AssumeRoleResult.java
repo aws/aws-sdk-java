@@ -18,14 +18,16 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful call to the AssumeRole action, including temporary AWS credentials that can be used to make AWS requests.
+ * Contains the result of a successful call to the AssumeRole action,
+ * including temporary AWS credentials that can be used to make AWS
+ * requests.
  * </p>
  */
 public class AssumeRoleResult implements Serializable {
 
     /**
      * The temporary security credentials, which include an access key ID, a
-     * secret access key, and a security token.
+     * secret access key, and a security (or session) token.
      */
     private Credentials credentials;
 
@@ -51,10 +53,10 @@ public class AssumeRoleResult implements Serializable {
 
     /**
      * The temporary security credentials, which include an access key ID, a
-     * secret access key, and a security token.
+     * secret access key, and a security (or session) token.
      *
      * @return The temporary security credentials, which include an access key ID, a
-     *         secret access key, and a security token.
+     *         secret access key, and a security (or session) token.
      */
     public Credentials getCredentials() {
         return credentials;
@@ -62,10 +64,10 @@ public class AssumeRoleResult implements Serializable {
     
     /**
      * The temporary security credentials, which include an access key ID, a
-     * secret access key, and a security token.
+     * secret access key, and a security (or session) token.
      *
      * @param credentials The temporary security credentials, which include an access key ID, a
-     *         secret access key, and a security token.
+     *         secret access key, and a security (or session) token.
      */
     public void setCredentials(Credentials credentials) {
         this.credentials = credentials;
@@ -73,12 +75,12 @@ public class AssumeRoleResult implements Serializable {
     
     /**
      * The temporary security credentials, which include an access key ID, a
-     * secret access key, and a security token.
+     * secret access key, and a security (or session) token.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param credentials The temporary security credentials, which include an access key ID, a
-     *         secret access key, and a security token.
+     *         secret access key, and a security (or session) token.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

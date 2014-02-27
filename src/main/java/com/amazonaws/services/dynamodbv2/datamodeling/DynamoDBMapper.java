@@ -17,7 +17,6 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.text.ParseException;
-import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -39,12 +38,12 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.retry.RetryUtils;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.ConsistentReads;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.PaginationLoadingStrategy;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.SaveBehavior;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTableSchemaParser.TableIndexesInfo;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.AttributeValueUpdate;
 import com.amazonaws.services.dynamodbv2.model.BatchGetItemRequest;
@@ -54,6 +53,7 @@ import com.amazonaws.services.dynamodbv2.model.BatchWriteItemResult;
 import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
 import com.amazonaws.services.dynamodbv2.model.Condition;
 import com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException;
+import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteItemRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteRequest;
 import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
@@ -75,8 +75,13 @@ import com.amazonaws.util.VersionInfoUtils;
 /**
  * Object mapper for domain-object interaction with DynamoDB.
  * <p>
- * To use, annotate domain classes with the annotations found in the
- * com.amazonaws.services.dynamodbv2.datamodeling package. A minimal example:
+ * To use, define a domain class that represents an item in a DynamoDB table and
+ * annotate it with the annotations found in the
+ * com.amazonaws.services.dynamodbv2.datamodeling package. In order to allow the
+ * mapper to correctly persist the data, each modeled property in the domain
+ * class should be accessible via getter and setter methods, and each property
+ * annotation should be either applied to the getter method or the class field.
+ * A minimal example using getter annotations:
  *
  * <pre>
  * &#064;DynamoDBTable(tableName = &quot;TestTable&quot;)
@@ -165,11 +170,19 @@ public class DynamoDBMapper {
     private final AmazonDynamoDB db;
     private final DynamoDBMapperConfig config;
     private final DynamoDBReflector reflector = new DynamoDBReflector();
+    private final DynamoDBTableSchemaParser schemaParser = new DynamoDBTableSchemaParser();
 
     private final AttributeTransformer transformer;
 
     /** The max back off time for batch write */
-    private static final long MAX_BACKOFF_IN_MILLISECONDS = 1000 * 3;
+    static final long MAX_BACKOFF_IN_MILLISECONDS = 1000 * 3;
+
+	/**
+	 * This retry count is applicable only when every batch get item request
+	 * results in no data retrieved from server and the un processed keys is
+	 * same as request items
+	 */
+	static final int BATCH_GET_MAX_RETRY_COUNT_ALL_KEYS = 5;
 
     /**
      * User agent for requests made using the {@link DynamoDBMapper}.
@@ -460,7 +473,7 @@ public class DynamoDBMapper {
         boolean seenHashKey = false;
         boolean seenRangeKey = false;
         for ( Method getter : reflector.getPrimaryKeyGetters(clazz) ) {
-            if ( getter.isAnnotationPresent(DynamoDBHashKey.class) ) {
+            if ( ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBHashKey.class) ) {
                 if ( seenHashKey ) {
                     throw new DynamoDBMappingException("Found more than one method annotated with "
                             + DynamoDBHashKey.class + " for class " + clazz
@@ -468,7 +481,7 @@ public class DynamoDBMapper {
                 }
                 seenHashKey = true;
                 safeInvoke(reflector.getSetter(getter), keyObject, hashKey);
-            } else if ( getter.isAnnotationPresent(DynamoDBRangeKey.class) ) {
+            } else if ( ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBRangeKey.class) ) {
                 if ( seenRangeKey ) {
                     throw new DynamoDBMappingException("Found more than one method annotated with "
                             + DynamoDBRangeKey.class + " for class " + clazz
@@ -496,8 +509,8 @@ public class DynamoDBMapper {
     private Map<String, Condition> getHashKeyEqualsConditions(Object obj) {
         Map<String, Condition> conditions = new HashMap<String, Condition>();
         for ( Method getter : reflector.getRelevantGetters(obj.getClass()) ) {
-            if ( getter.isAnnotationPresent(DynamoDBHashKey.class)
-                    || getter.isAnnotationPresent(DynamoDBIndexHashKey.class) ) {
+            if ( ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBHashKey.class)
+                    || ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBIndexHashKey.class) ) {
                 Object getterReturnResult = safeInvoke(getter, obj, (Object[])null);
                 if (getterReturnResult != null) {
                     conditions.put(
@@ -519,9 +532,9 @@ public class DynamoDBMapper {
         return getTableName(clazz, config, reflector);
     }
 
-    private static String getTableName(final Class<?> clazz,
-                                       final DynamoDBMapperConfig config,
-                                       final DynamoDBReflector reflector) {
+    static String getTableName(final Class<?> clazz,
+                               final DynamoDBMapperConfig config,
+                               final DynamoDBReflector reflector) {
 
         DynamoDBTable table = reflector.getTable(clazz);
         String tableName = table.tableName();
@@ -559,12 +572,28 @@ public class DynamoDBMapper {
      * This is accomplished by looking for getter methods annotated with an
      * appropriate annotation, then looking for matching attribute names in the
      * item attribute map.
+     * <p>
+     * This method has been marked deprecated because it does not allow
+     * load/query/scan to pass through their DynamoDBMapperConfig parameter,
+     * which is needed by some implementations of {@code AttributeTransformer}.
+     * In a future version of the SDK, load/query/scan will be changed to
+     * directly call privateMarshalIntoObject, and will no longer call this
+     * method.
+     * <p>
+     * If you are extending DynamoDBMapper and overriding this method to
+     * customize how the mapper unmarshals POJOs from a raw DynamoDB item,
+     * please switch to using an AttributeTransformer (or open a GitHub
+     * issue if you need to fully control the unmarshalling process, and we'll
+     * figure out a better way to expose such a hook).
+     * <p>
+     * If you're simply calling this method, it will continue to be available
+     * for the forseeable future - feel free to ignore the @Deprecated tag.
      *
      * @param clazz
      *            The class to instantiate and hydrate
      * @param itemAttributes
      *            The set of item attributes, keyed by attribute name.
-     * @deprecated in favor of {@link #marshalIntoObject(AttributeTransformer.Parameters)}
+     * @deprecated as an extension point for adding custom unmarshalling
      */
     @Deprecated
     public <T> T marshallIntoObject(Class<T> clazz, Map<String, AttributeValue> itemAttributes) {
@@ -620,9 +649,24 @@ public class DynamoDBMapper {
 
     /**
      * Unmarshalls the list of item attributes into objects of type clazz.
+     * <p>
+     * This method has been marked deprecated because it does not allow
+     * query/scan to pass through their DynamoDBMapperConfig parameter,
+     * which is needed by some implementations of {@code AttributeTransformer}.
+     * In a future version of the SDK, query/scan will be changed to directly
+     * call privateMarshalIntoObjects, and will no longer call this method.
+     * <p>
+     * If you are extending DynamoDBMapper and overriding this method to
+     * customize how the mapper unmarshals POJOs from raw DynamoDB items,
+     * please switch to using an AttributeTransformer (or open a GitHub
+     * issue if you need to fully control the unmarshalling process, and we'll
+     * figure out a better way to expose such a hook).
+     * <p>
+     * If you're simply calling this method, it will continue to be available
+     * for the forseeable future - feel free to ignore the @Deprecated tag.
      *
      * @see DynamoDBMapper#marshallIntoObject(Class, Map)
-     * @deprecated in favor of {@link #marshalIntoObjects(List)}
+     * @deprecated as an extension point for adding custom unmarshalling
      */
     @Deprecated
     public <T> List<T> marshallIntoObjects(Class<T> clazz, List<Map<String, AttributeValue>> itemAttributes) {
@@ -727,7 +771,7 @@ public class DynamoDBMapper {
             if ( getterResult == null && reflector.isAssignableKey(method) ) {
                 forcePut = true;
             }
-            if ( method.isAnnotationPresent(DynamoDBHashKey.class) ) {
+            if ( ReflectionUtils.getterOrFieldHasAnnotation(method, DynamoDBHashKey.class) ) {
                 hashKeyGetterFound = true;
             }
         }
@@ -1755,8 +1799,21 @@ public class DynamoDBMapper {
         BatchGetItemRequest batchGetItemRequest = new BatchGetItemRequest()
             .withRequestMetricCollector(config.getRequestMetricCollector());
         batchGetItemRequest.setRequestItems(requestItems);
+        int retries = 0;
+        int noOfItemsInOriginalRequest = requestItems.size();
         do {
             if ( batchGetItemResult != null ) {
+            	retries++;
+
+				if (noOfItemsInOriginalRequest == batchGetItemResult
+						.getUnprocessedKeys().size()){
+					pauseExponentially(retries);
+					if (retries > BATCH_GET_MAX_RETRY_COUNT_ALL_KEYS) {
+						throw new AmazonClientException(
+								"Batch Get Item request to server hasn't received any data. Please try again later.");
+					}
+				}
+
                 batchGetItemRequest.setRequestItems(batchGetItemResult.getUnprocessedKeys());
             }
 
@@ -2313,6 +2370,7 @@ public class DynamoDBMapper {
                                             && (!rangeKeyConditions.isEmpty());
         final String userProvidedIndexName = queryRequest.getIndexName();
         final String primaryHashKeyName = reflector.getPrimaryHashKeyName(clazz);
+        final TableIndexesInfo parsedIndexesInfo = schemaParser.parseTableIndexes(clazz, reflector);
 
         // First collect the names of all the global/local secondary indexes that could be applied to this query.
         // If the user explicitly specified an index name, we also need to
@@ -2332,16 +2390,16 @@ public class DynamoDBMapper {
             for (String rangeKeyName : rangeKeyConditions.keySet()) {
                 rangeKeyNameForThisQuery = rangeKeyName;
 
-                if (reflector.hasPrimaryRangeKey(clazz) 
+                if (reflector.hasPrimaryRangeKey(clazz)
 	                && rangeKeyName.equals(reflector.getPrimaryRangeKeyName(clazz))) {
                     hasPrimaryRangeKeyCondition = true;
                 }
 
-                List<String> annotatedLSI = reflector.getLocalSecondaryIndexNamesByIndexKeyName(clazz, rangeKeyName);
+                Collection<String> annotatedLSI = parsedIndexesInfo.getLsiNamesByIndexRangeKey(rangeKeyName);
                 if (annotatedLSI != null) {
                     annotatedLSIsOnRangeKey.addAll(annotatedLSI);
                 }
-                List<String> annotatedGSI = reflector.getGlobalSecondaryIndexNamesByIndexKeyName(clazz, rangeKeyName, false);
+                Collection<String> annotatedGSI = parsedIndexesInfo.getGsiNamesByIndexRangeKey(rangeKeyName);
                 if (annotatedGSI != null) {
                     annotatedGSIsOnRangeKey.addAll(annotatedGSI);
                 }
@@ -2361,14 +2419,14 @@ public class DynamoDBMapper {
                                         && (annotatedLSIsOnRangeKey.contains(userProvidedIndexName));
         final boolean hashOnlyLSIQuery = (userProvidedIndexName != null)
                                         && ( !hasRangeKeyCondition )
-                                        && reflector.getAllLocalSecondaryIndexNames(clazz).contains(userProvidedIndexName);
+                                        && parsedIndexesInfo.getAllLsiNames().contains(userProvidedIndexName);
         final boolean userProvidedLSI = userProvidedLSIWithRangeKeyCondition || hashOnlyLSIQuery;
 
         final boolean userProvidedGSIWithRangeKeyCondition = (userProvidedIndexName != null)
                                         && (annotatedGSIsOnRangeKey.contains(userProvidedIndexName));
         final boolean hashOnlyGSIQuery = (userProvidedIndexName != null)
                                         && ( !hasRangeKeyCondition )
-                                        && reflector.getAllGlobalSecondaryIndexNames(clazz).contains(userProvidedIndexName);
+                                        && parsedIndexesInfo.getAllGsiNames().contains(userProvidedIndexName);
         final boolean userProvidedGSI = userProvidedGSIWithRangeKeyCondition || hashOnlyGSIQuery;
 
         if (userProvidedLSI && userProvidedGSI ) {
@@ -2384,7 +2442,7 @@ public class DynamoDBMapper {
                 hasPrimaryHashKeyCondition = true;
             }
 
-            List<String> annotatedGSINames = reflector.getGlobalSecondaryIndexNamesByIndexKeyName(clazz, hashKeyName, true);
+            Collection<String> annotatedGSINames = parsedIndexesInfo.getGsiNamesByIndexHashKey(hashKeyName);
             annotatedGSIsOnHashKeys.put(hashKeyName,
                     annotatedGSINames == null ? new HashSet<String>() : new HashSet<String>(annotatedGSINames));
 
@@ -2891,5 +2949,16 @@ public class DynamoDBMapper {
             throw new IllegalStateException("Mapper must be constructed with S3 AWS Credentials to create S3Link");
         }
         return new S3Link(s3cc, s3region, bucketName , key);
+    }
+
+    /**
+     * Parse the given POJO class and return the CreateTableRequest for the
+     * DynamoDB table it represents. Note that the returned request does not
+     * include the required ProvisionedThroughput parameters for the primary
+     * table and the GSIs, and that all secondary indexes are initialized with
+     * the default projection type - KEY_ONLY.
+     */
+    public CreateTableRequest generateCreateTableRequest(Class<?> clazz) {
+        return schemaParser.parseTablePojoToCreateTableRequest(clazz, config, reflector);
     }
 }

@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Provides details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event.
+ * Provides details of the
+ * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event.
  * </p>
  */
 public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes implements Serializable {

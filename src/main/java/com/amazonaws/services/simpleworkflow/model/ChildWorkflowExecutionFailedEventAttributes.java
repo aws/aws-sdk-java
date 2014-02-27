@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Provides details of the <code>ChildWorkflowExecutionFailed</code> event.
+ * Provides details of the <code>ChildWorkflowExecutionFailed</code>
+ * event.
  * </p>
  */
 public class ChildWorkflowExecutionFailedEventAttributes implements Serializable {

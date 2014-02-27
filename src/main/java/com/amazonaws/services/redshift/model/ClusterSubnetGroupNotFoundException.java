@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The cluster subnet group name does not refer to an existing cluster subnet group.
+ * The cluster subnet group name does not refer to an existing cluster
+ * subnet group.
  * </p>
  */        
 public class ClusterSubnetGroupNotFoundException extends AmazonServiceException {

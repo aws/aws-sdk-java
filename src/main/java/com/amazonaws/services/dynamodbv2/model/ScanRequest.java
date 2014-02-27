@@ -21,22 +21,27 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#scan(ScanRequest) Scan operation}.
  * <p>
- * The <i>Scan</i> operation returns one or more items and item attributes by accessing every item in the table. To have Amazon DynamoDB return fewer
- * items, you can provide a <i>ScanFilter</i> .
+ * The <i>Scan</i> operation returns one or more items and item
+ * attributes by accessing every item in the table. To have DynamoDB
+ * return fewer items, you can provide a <i>ScanFilter</i> .
  * </p>
  * <p>
- * If the total number of scanned items exceeds the maximum data set size limit of 1 MB, the scan stops and results are returned to the user with a
- * <i>LastEvaluatedKey</i> to continue the scan in a subsequent operation. The results also include the number of items exceeding the limit. A scan can
- * result in no table data meeting the filter criteria.
+ * If the total number of scanned items exceeds the maximum data set size
+ * limit of 1 MB, the scan stops and results are returned to the user
+ * with a <i>LastEvaluatedKey</i> to continue the scan in a subsequent
+ * operation. The results also include the number of items exceeding the
+ * limit. A scan can result in no table data meeting the filter criteria.
  * </p>
  * <p>
  * The result set is eventually consistent.
  * </p>
  * <p>
- * By default, <i>Scan</i> operations proceed sequentially; however, for faster performance on large tables, applications can request a parallel
- * <i>Scan</i> by specifying the <i>Segment</i> and <i>TotalSegments</i> parameters. For more information, see <a
- * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan"> Parallel Scan </a> in the Amazon
- * DynamoDB Developer Guide.
+ * By default, <i>Scan</i> operations proceed sequentially; however, for
+ * faster performance on large tables, applications can request a
+ * parallel <i>Scan</i> by specifying the <i>Segment</i> and
+ * <i>TotalSegments</i> parameters. For more information, see
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan"> Parallel Scan </a>
+ * in the Amazon DynamoDB Developer Guide.
  * </p>
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#scan(ScanRequest)
@@ -65,15 +70,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
 
     /**
      * The maximum number of items to evaluate (not necessarily the number of
-     * matching items). If Amazon DynamoDB processes the number of items up
-     * to the limit while processing the results, it stops the operation and
-     * returns the matching values up to that point, and a
-     * <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that
-     * you can pick up where you left off. Also, if the processed data set
-     * size exceeds 1 MB before Amazon DynamoDB reaches this limit, it stops
-     * the operation and returns the matching values up to the limit, and a
-     * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
-     * the operation. For more information see <a
+     * matching items). If DynamoDB processes the number of items up to the
+     * limit while processing the results, it stops the operation and returns
+     * the matching values up to that point, and a <i>LastEvaluatedKey</i> to
+     * apply in a subsequent operation, so that you can pick up where you
+     * left off. Also, if the processed data set size exceeds 1 MB before
+     * DynamoDB reaches this limit, it stops the operation and returns the
+     * matching values up to the limit, and a <i>LastEvaluatedKey</i> to
+     * apply in a subsequent operation to continue the operation. For more
+     * information see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
@@ -92,9 +97,9 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * listed in <i>AttributesToGet</i>. This is equivalent to specifying
      * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
      * </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
-     * specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
-     * You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
-     * in a single request, <i>unless</i> the value for <i>Select</i> is
+     * specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You
+     * cannot use both <i>Select</i> and <i>AttributesToGet</i> together in a
+     * single request, <i>unless</i> the value for <i>Select</i> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      * specifying <i>AttributesToGet</i> without any value for
      * <i>Select</i>.)
@@ -120,7 +125,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <code>aa</code> is greater than <code>B</code>. For a list of code
      * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
      * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
      * comparator for evaluating attributes. For example, equals, greater
@@ -218,7 +223,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     private java.util.Map<String,Condition> scanFilter;
 
     /**
-     * The primary key of the first item that this operation will evalute.
+     * The primary key of the first item that this operation will evaluate.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed. <p>In a
@@ -232,7 +237,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -441,15 +446,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
 
     /**
      * The maximum number of items to evaluate (not necessarily the number of
-     * matching items). If Amazon DynamoDB processes the number of items up
-     * to the limit while processing the results, it stops the operation and
-     * returns the matching values up to that point, and a
-     * <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that
-     * you can pick up where you left off. Also, if the processed data set
-     * size exceeds 1 MB before Amazon DynamoDB reaches this limit, it stops
-     * the operation and returns the matching values up to the limit, and a
-     * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
-     * the operation. For more information see <a
+     * matching items). If DynamoDB processes the number of items up to the
+     * limit while processing the results, it stops the operation and returns
+     * the matching values up to that point, and a <i>LastEvaluatedKey</i> to
+     * apply in a subsequent operation, so that you can pick up where you
+     * left off. Also, if the processed data set size exceeds 1 MB before
+     * DynamoDB reaches this limit, it stops the operation and returns the
+     * matching values up to the limit, and a <i>LastEvaluatedKey</i> to
+     * apply in a subsequent operation to continue the operation. For more
+     * information see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
@@ -457,15 +462,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <b>Range: </b>1 - <br/>
      *
      * @return The maximum number of items to evaluate (not necessarily the number of
-     *         matching items). If Amazon DynamoDB processes the number of items up
-     *         to the limit while processing the results, it stops the operation and
-     *         returns the matching values up to that point, and a
-     *         <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that
-     *         you can pick up where you left off. Also, if the processed data set
-     *         size exceeds 1 MB before Amazon DynamoDB reaches this limit, it stops
-     *         the operation and returns the matching values up to the limit, and a
-     *         <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
-     *         the operation. For more information see <a
+     *         matching items). If DynamoDB processes the number of items up to the
+     *         limit while processing the results, it stops the operation and returns
+     *         the matching values up to that point, and a <i>LastEvaluatedKey</i> to
+     *         apply in a subsequent operation, so that you can pick up where you
+     *         left off. Also, if the processed data set size exceeds 1 MB before
+     *         DynamoDB reaches this limit, it stops the operation and returns the
+     *         matching values up to the limit, and a <i>LastEvaluatedKey</i> to
+     *         apply in a subsequent operation to continue the operation. For more
+     *         information see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      */
@@ -475,15 +480,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     
     /**
      * The maximum number of items to evaluate (not necessarily the number of
-     * matching items). If Amazon DynamoDB processes the number of items up
-     * to the limit while processing the results, it stops the operation and
-     * returns the matching values up to that point, and a
-     * <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that
-     * you can pick up where you left off. Also, if the processed data set
-     * size exceeds 1 MB before Amazon DynamoDB reaches this limit, it stops
-     * the operation and returns the matching values up to the limit, and a
-     * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
-     * the operation. For more information see <a
+     * matching items). If DynamoDB processes the number of items up to the
+     * limit while processing the results, it stops the operation and returns
+     * the matching values up to that point, and a <i>LastEvaluatedKey</i> to
+     * apply in a subsequent operation, so that you can pick up where you
+     * left off. Also, if the processed data set size exceeds 1 MB before
+     * DynamoDB reaches this limit, it stops the operation and returns the
+     * matching values up to the limit, and a <i>LastEvaluatedKey</i> to
+     * apply in a subsequent operation to continue the operation. For more
+     * information see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
@@ -491,15 +496,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <b>Range: </b>1 - <br/>
      *
      * @param limit The maximum number of items to evaluate (not necessarily the number of
-     *         matching items). If Amazon DynamoDB processes the number of items up
-     *         to the limit while processing the results, it stops the operation and
-     *         returns the matching values up to that point, and a
-     *         <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that
-     *         you can pick up where you left off. Also, if the processed data set
-     *         size exceeds 1 MB before Amazon DynamoDB reaches this limit, it stops
-     *         the operation and returns the matching values up to the limit, and a
-     *         <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
-     *         the operation. For more information see <a
+     *         matching items). If DynamoDB processes the number of items up to the
+     *         limit while processing the results, it stops the operation and returns
+     *         the matching values up to that point, and a <i>LastEvaluatedKey</i> to
+     *         apply in a subsequent operation, so that you can pick up where you
+     *         left off. Also, if the processed data set size exceeds 1 MB before
+     *         DynamoDB reaches this limit, it stops the operation and returns the
+     *         matching values up to the limit, and a <i>LastEvaluatedKey</i> to
+     *         apply in a subsequent operation to continue the operation. For more
+     *         information see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      */
@@ -509,15 +514,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     
     /**
      * The maximum number of items to evaluate (not necessarily the number of
-     * matching items). If Amazon DynamoDB processes the number of items up
-     * to the limit while processing the results, it stops the operation and
-     * returns the matching values up to that point, and a
-     * <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that
-     * you can pick up where you left off. Also, if the processed data set
-     * size exceeds 1 MB before Amazon DynamoDB reaches this limit, it stops
-     * the operation and returns the matching values up to the limit, and a
-     * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
-     * the operation. For more information see <a
+     * matching items). If DynamoDB processes the number of items up to the
+     * limit while processing the results, it stops the operation and returns
+     * the matching values up to that point, and a <i>LastEvaluatedKey</i> to
+     * apply in a subsequent operation, so that you can pick up where you
+     * left off. Also, if the processed data set size exceeds 1 MB before
+     * DynamoDB reaches this limit, it stops the operation and returns the
+     * matching values up to the limit, and a <i>LastEvaluatedKey</i> to
+     * apply in a subsequent operation to continue the operation. For more
+     * information see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
@@ -527,15 +532,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <b>Range: </b>1 - <br/>
      *
      * @param limit The maximum number of items to evaluate (not necessarily the number of
-     *         matching items). If Amazon DynamoDB processes the number of items up
-     *         to the limit while processing the results, it stops the operation and
-     *         returns the matching values up to that point, and a
-     *         <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that
-     *         you can pick up where you left off. Also, if the processed data set
-     *         size exceeds 1 MB before Amazon DynamoDB reaches this limit, it stops
-     *         the operation and returns the matching values up to the limit, and a
-     *         <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
-     *         the operation. For more information see <a
+     *         matching items). If DynamoDB processes the number of items up to the
+     *         limit while processing the results, it stops the operation and returns
+     *         the matching values up to that point, and a <i>LastEvaluatedKey</i> to
+     *         apply in a subsequent operation, so that you can pick up where you
+     *         left off. Also, if the processed data set size exceeds 1 MB before
+     *         DynamoDB reaches this limit, it stops the operation and returns the
+     *         matching values up to the limit, and a <i>LastEvaluatedKey</i> to
+     *         apply in a subsequent operation to continue the operation. For more
+     *         information see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      *
@@ -557,9 +562,9 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * listed in <i>AttributesToGet</i>. This is equivalent to specifying
      * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
      * </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
-     * specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
-     * You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
-     * in a single request, <i>unless</i> the value for <i>Select</i> is
+     * specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You
+     * cannot use both <i>Select</i> and <i>AttributesToGet</i> together in a
+     * single request, <i>unless</i> the value for <i>Select</i> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      * specifying <i>AttributesToGet</i> without any value for
      * <i>Select</i>.)
@@ -576,9 +581,9 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         listed in <i>AttributesToGet</i>. This is equivalent to specifying
      *         <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
      *         </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
-     *         specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
-     *         You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
-     *         in a single request, <i>unless</i> the value for <i>Select</i> is
+     *         specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You
+     *         cannot use both <i>Select</i> and <i>AttributesToGet</i> together in a
+     *         single request, <i>unless</i> the value for <i>Select</i> is
      *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
@@ -599,9 +604,9 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * listed in <i>AttributesToGet</i>. This is equivalent to specifying
      * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
      * </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
-     * specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
-     * You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
-     * in a single request, <i>unless</i> the value for <i>Select</i> is
+     * specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You
+     * cannot use both <i>Select</i> and <i>AttributesToGet</i> together in a
+     * single request, <i>unless</i> the value for <i>Select</i> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      * specifying <i>AttributesToGet</i> without any value for
      * <i>Select</i>.)
@@ -618,9 +623,9 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         listed in <i>AttributesToGet</i>. This is equivalent to specifying
      *         <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
      *         </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
-     *         specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
-     *         You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
-     *         in a single request, <i>unless</i> the value for <i>Select</i> is
+     *         specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You
+     *         cannot use both <i>Select</i> and <i>AttributesToGet</i> together in a
+     *         single request, <i>unless</i> the value for <i>Select</i> is
      *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
@@ -641,9 +646,9 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * listed in <i>AttributesToGet</i>. This is equivalent to specifying
      * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
      * </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
-     * specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
-     * You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
-     * in a single request, <i>unless</i> the value for <i>Select</i> is
+     * specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You
+     * cannot use both <i>Select</i> and <i>AttributesToGet</i> together in a
+     * single request, <i>unless</i> the value for <i>Select</i> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      * specifying <i>AttributesToGet</i> without any value for
      * <i>Select</i>.)
@@ -662,9 +667,9 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         listed in <i>AttributesToGet</i>. This is equivalent to specifying
      *         <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
      *         </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
-     *         specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
-     *         You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
-     *         in a single request, <i>unless</i> the value for <i>Select</i> is
+     *         specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You
+     *         cannot use both <i>Select</i> and <i>AttributesToGet</i> together in a
+     *         single request, <i>unless</i> the value for <i>Select</i> is
      *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
@@ -689,9 +694,9 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * listed in <i>AttributesToGet</i>. This is equivalent to specifying
      * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
      * </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
-     * specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
-     * You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
-     * in a single request, <i>unless</i> the value for <i>Select</i> is
+     * specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You
+     * cannot use both <i>Select</i> and <i>AttributesToGet</i> together in a
+     * single request, <i>unless</i> the value for <i>Select</i> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      * specifying <i>AttributesToGet</i> without any value for
      * <i>Select</i>.)
@@ -708,9 +713,9 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         listed in <i>AttributesToGet</i>. This is equivalent to specifying
      *         <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
      *         </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
-     *         specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
-     *         You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
-     *         in a single request, <i>unless</i> the value for <i>Select</i> is
+     *         specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You
+     *         cannot use both <i>Select</i> and <i>AttributesToGet</i> together in a
+     *         single request, <i>unless</i> the value for <i>Select</i> is
      *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
@@ -731,9 +736,9 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * listed in <i>AttributesToGet</i>. This is equivalent to specifying
      * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
      * </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
-     * specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
-     * You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
-     * in a single request, <i>unless</i> the value for <i>Select</i> is
+     * specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You
+     * cannot use both <i>Select</i> and <i>AttributesToGet</i> together in a
+     * single request, <i>unless</i> the value for <i>Select</i> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      * specifying <i>AttributesToGet</i> without any value for
      * <i>Select</i>.)
@@ -752,9 +757,9 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         listed in <i>AttributesToGet</i>. This is equivalent to specifying
      *         <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
      *         </li> </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are
-     *         specified, Amazon DynamoDB defaults to <code>ALL_ATTRIBUTES</code>.
-     *         You cannot use both <i>Select</i> and <i>AttributesToGet</i> together
-     *         in a single request, <i>unless</i> the value for <i>Select</i> is
+     *         specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You
+     *         cannot use both <i>Select</i> and <i>AttributesToGet</i> together in a
+     *         single request, <i>unless</i> the value for <i>Select</i> is
      *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
@@ -785,7 +790,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <code>aa</code> is greater than <code>B</code>. For a list of code
      * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
      * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
      * comparator for evaluating attributes. For example, equals, greater
@@ -895,7 +900,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         <code>aa</code> is greater than <code>B</code>. For a list of code
      *         values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     *         <p>For Binary, DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
      *         query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
      *         comparator for evaluating attributes. For example, equals, greater
@@ -1011,7 +1016,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <code>aa</code> is greater than <code>B</code>. For a list of code
      * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
      * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
      * comparator for evaluating attributes. For example, equals, greater
@@ -1121,7 +1126,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         <code>aa</code> is greater than <code>B</code>. For a list of code
      *         values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     *         <p>For Binary, DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
      *         query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
      *         comparator for evaluating attributes. For example, equals, greater
@@ -1236,7 +1241,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <code>aa</code> is greater than <code>B</code>. For a list of code
      * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
      * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
      * comparator for evaluating attributes. For example, equals, greater
@@ -1348,7 +1353,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         <code>aa</code> is greater than <code>B</code>. For a list of code
      *         values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     *         <p>For Binary, DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
      *         query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
      *         comparator for evaluating attributes. For example, equals, greater
@@ -1467,7 +1472,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <code>aa</code> is greater than <code>B</code>. For a list of code
      * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
      * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
      * comparator for evaluating attributes. For example, equals, greater
@@ -1590,7 +1595,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * The primary key of the first item that this operation will evalute.
+     * The primary key of the first item that this operation will evaluate.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1599,7 +1604,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <i>Scan</i> returned the corresponding value of
      * <i>LastEvaluatedKey</i>.
      *
-     * @return The primary key of the first item that this operation will evalute.
+     * @return The primary key of the first item that this operation will evaluate.
      *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
      *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      *         be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1614,7 +1619,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * The primary key of the first item that this operation will evalute.
+     * The primary key of the first item that this operation will evaluate.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1623,7 +1628,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <i>Scan</i> returned the corresponding value of
      * <i>LastEvaluatedKey</i>.
      *
-     * @param exclusiveStartKey The primary key of the first item that this operation will evalute.
+     * @param exclusiveStartKey The primary key of the first item that this operation will evaluate.
      *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
      *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      *         be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1637,7 +1642,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * The primary key of the first item that this operation will evalute.
+     * The primary key of the first item that this operation will evaluate.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1648,7 +1653,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exclusiveStartKey The primary key of the first item that this operation will evalute.
+     * @param exclusiveStartKey The primary key of the first item that this operation will evaluate.
      *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
      *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      *         be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1666,7 +1671,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
 
     /**
-     * The primary key of the first item that this operation will evalute.
+     * The primary key of the first item that this operation will evaluate.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1695,7 +1700,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * The primary key of the first item that this operation will evalute.
+     * The primary key of the first item that this operation will evaluate.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1718,7 +1723,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
 
     /**
-     * The primary key of the first item that this operation will evalute.
+     * The primary key of the first item that this operation will evaluate.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
      * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      * be String, Number or Binary. No set data types are allowed. <p>In a
@@ -1757,7 +1762,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -1766,7 +1771,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *
      * @return If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
@@ -1779,7 +1784,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -1788,7 +1793,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
@@ -1801,7 +1806,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -1812,7 +1817,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
@@ -1829,7 +1834,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -1838,7 +1843,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
@@ -1851,7 +1856,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -1862,7 +1867,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *

@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <i>DescribeEngineDefaultParameters</i> operation.
+ * Represents the output of a <i>DescribeEngineDefaultParameters</i>
+ * operation.
  * </p>
  */
 public class EngineDefaults implements Serializable {

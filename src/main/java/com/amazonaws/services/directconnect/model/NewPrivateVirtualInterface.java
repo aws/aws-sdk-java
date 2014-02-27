@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A structure containing information about a new private virtual interface.
+ * A structure containing information about a new private virtual
+ * interface.
  * </p>
  */
 public class NewPrivateVirtualInterface implements Serializable {

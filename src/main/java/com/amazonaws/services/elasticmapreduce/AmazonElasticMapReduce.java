@@ -21,12 +21,16 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 /**
  * Interface for accessing AmazonElasticMapReduce.
  * <p>
- * This is the <i>Amazon Elastic MapReduce API Reference</i> . This guide provides descriptions and samples of the Amazon Elastic MapReduce APIs.
+ * This is the <i>Amazon Elastic MapReduce API Reference</i> . This
+ * guide provides descriptions and samples of the Amazon Elastic
+ * MapReduce APIs.
  * </p>
  * <p>
- * Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process large amounts of data efficiently. Amazon EMR uses Hadoop
- * processing combined with several AWS products to do tasks such as web indexing, data mining, log file analysis, machine learning, scientific
- * simulation, and data warehousing.
+ * Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it
+ * easy to process large amounts of data efficiently. Amazon EMR uses
+ * Hadoop processing combined with several AWS products to do tasks such
+ * as web indexing, data mining, log file analysis, machine learning,
+ * scientific simulation, and data warehousing.
  * </p>
  */
 public interface AmazonElasticMapReduce {
@@ -119,9 +123,9 @@ public interface AmazonElasticMapReduce {
      * <p>
      * Adds tags to an Amazon EMR resource. Tags make it easier to associate
      * clusters in various ways, such as grouping clusters to track your
-     * Amazon EMR resource allocation costs. For more information, see <a
-     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
-     * Tagging Amazon EMR Resources </a> .
+     * Amazon EMR resource allocation costs. For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
+     * .
      * </p>
      *
      * @param addTagsRequest Container for the necessary parameters to
@@ -209,10 +213,9 @@ public interface AmazonElasticMapReduce {
      * can bypass the 256-step limitation in various ways, including using
      * the SSH shell to connect to the master node and submitting queries
      * directly to the software running on the master node, such as Hive and
-     * Hadoop. For more information on how to do this, go to <a
-     * .com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">
-     * Add More than 256 Steps to a Job Flow </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide</i> .
+     * Hadoop. For more information on how to do this, go to
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html"> Add More than 256 Steps to a Job Flow </a>
+     * in the <i>Amazon Elastic MapReduce Developer's Guide</i> .
      * </p>
      * <p>
      * A step specifies the location of a JAR file stored either on the
@@ -312,9 +315,8 @@ public interface AmazonElasticMapReduce {
      * Removes tags from an Amazon EMR resource. Tags make it easier to
      * associate clusters in various ways, such as grouping clusters to track
      * your Amazon EMR resource allocation costs. For more information, see
-     * <a
-     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
-     * Tagging Amazon EMR Resources </a> .
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
+     * .
      * </p>
      *
      * @param removeTagsRequest Container for the necessary parameters to
@@ -500,10 +502,9 @@ public interface AmazonElasticMapReduce {
      * <code>false</code> .
      * </p>
      * <p>
-     * For more information, go to <a
-     * cMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">
-     * Protecting a Job Flow from Termination </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide.</i>
+     * For more information, go to
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html"> Protecting a Job Flow from Termination </a>
+     * in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
      * </p>
      *
      * @param setTerminationProtectionRequest Container for the necessary
@@ -602,10 +603,9 @@ public interface AmazonElasticMapReduce {
      * can bypass the 256-step limitation in various ways, including using
      * the SSH shell to connect to the master node and submitting queries
      * directly to the software running on the master node, such as Hive and
-     * Hadoop. For more information on how to do this, go to <a
-     * .com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">
-     * Add More than 256 Steps to a Job Flow </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide</i> .
+     * Hadoop. For more information on how to do this, go to
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html"> Add More than 256 Steps to a Job Flow </a>
+     * in the <i>Amazon Elastic MapReduce Developer's Guide</i> .
      * </p>
      * <p>
      * For long running job flows, we recommend that you periodically store
@@ -685,9 +685,9 @@ public interface AmazonElasticMapReduce {
      * <p>
      * Adds tags to an Amazon EMR resource. Tags make it easier to associate
      * clusters in various ways, such as grouping clusters to track your
-     * Amazon EMR resource allocation costs. For more information, see <a
-     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
-     * Tagging Amazon EMR Resources </a> .
+     * Amazon EMR resource allocation costs. For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
+     * .
      * </p>
      * 
      * @return The response from the AddTags service method, as returned by
@@ -779,9 +779,8 @@ public interface AmazonElasticMapReduce {
      * Removes tags from an Amazon EMR resource. Tags make it easier to
      * associate clusters in various ways, such as grouping clusters to track
      * your Amazon EMR resource allocation costs. For more information, see
-     * <a
-     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
-     * Tagging Amazon EMR Resources </a> .
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
+     * .
      * </p>
      * 
      * @return The response from the RemoveTags service method, as returned

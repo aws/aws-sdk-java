@@ -23,29 +23,38 @@ import com.amazonaws.services.ec2.model.transform.RunInstancesRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#runInstances(RunInstancesRequest) RunInstances operation}.
  * <p>
- * Launches the specified number of instances using an AMI for which you have permissions.
+ * Launches the specified number of instances using an AMI for which you
+ * have permissions.
  * </p>
  * <p>
- * When you launch an instance, it enters the <code>pending</code> state. After the instance is ready for you, it enters the <code>running</code> state.
- * To check the state of your instance, call DescribeInstances.
+ * When you launch an instance, it enters the <code>pending</code> state.
+ * After the instance is ready for you, it enters the
+ * <code>running</code> state. To check the state of your instance, call
+ * DescribeInstances.
  * </p>
  * <p>
- * If you don't specify a security group when launching an instance, Amazon EC2 uses the default security group. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Security Groups </a> in the <i>Amazon Elastic Compute Cloud
- * User Guide</i> .
+ * If you don't specify a security group when launching an instance,
+ * Amazon EC2 uses the default security group. For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Security Groups </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  * <p>
- * Linux instances have access to the public key of the key pair at boot. You can use this key to provide secure access to the instance. Amazon EC2
- * public images use this feature to provide secure access without passwords. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * Linux instances have access to the public key of the key pair at boot.
+ * You can use this key to provide secure access to the instance. Amazon
+ * EC2 public images use this feature to provide secure access without
+ * passwords. For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  * <p>
- * You can provide optional user data when launching an instance. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html"> Instance Metadata </a> in the <i>Amazon Elastic Compute
- * Cloud User Guide</i> .
+ * You can provide optional user data when launching an instance. For
+ * more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html"> Instance Metadata </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  * <p>
- * If any of the AMIs have a product code attached for which the user has not subscribed, <code>RunInstances</code> fails.
+ * If any of the AMIs have a product code attached for which the user has
+ * not subscribed, <code>RunInstances</code> fails.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#runInstances(RunInstancesRequest)

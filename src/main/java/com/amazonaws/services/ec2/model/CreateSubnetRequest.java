@@ -26,20 +26,27 @@ import com.amazonaws.services.ec2.model.transform.CreateSubnetRequestMarshaller;
  * Creates a subnet in an existing VPC.
  * </p>
  * <p>
- * When you create each subnet, you provide the VPC ID and the CIDR block you want for the subnet. After you create a subnet, you can't change its CIDR
- * block. The subnet's CIDR block can be the same as the VPC's CIDR block (assuming you want only a single subnet in the VPC), or a subset of the VPC's
- * CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest subnet (and VPC) you can create uses
- * a /28 netmask (16 IP addresses), and the largest uses a /16 netmask (65,536 IP addresses).
+ * When you create each subnet, you provide the VPC ID and the CIDR block
+ * you want for the subnet. After you create a subnet, you can't change
+ * its CIDR block. The subnet's CIDR block can be the same as the VPC's
+ * CIDR block (assuming you want only a single subnet in the VPC), or a
+ * subset of the VPC's CIDR block. If you create more than one subnet in
+ * a VPC, the subnets' CIDR blocks must not overlap. The smallest subnet
+ * (and VPC) you can create uses a /28 netmask (16 IP addresses), and the
+ * largest uses a /16 netmask (65,536 IP addresses).
  * </p>
  * <p>
- * <b>IMPORTANT:</b> AWS reserves both the first four and the last IP address in each subnet's CIDR block. They're not available for use.
+ * <b>IMPORTANT:</b> AWS reserves both the first four and the last IP
+ * address in each subnet's CIDR block. They're not available for use.
  * </p>
  * <p>
- * If you add more than one subnet to a VPC, they're set up in a star topology with a logical router in the middle.
+ * If you add more than one subnet to a VPC, they're set up in a star
+ * topology with a logical router in the middle.
  * </p>
  * <p>
- * For more information about subnets, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a> in
- * the <i>Amazon Virtual Private Cloud User Guide</i> .
+ * For more information about subnets, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSubnet(CreateSubnetRequest)

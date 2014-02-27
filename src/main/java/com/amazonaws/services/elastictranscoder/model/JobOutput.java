@@ -21,8 +21,11 @@ import java.io.Serializable;
  * <p>
  * <b>IMPORTANT:</b>Outputs recommended instead.
  * </p>
- * If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object
- * lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.
+ * If you specified one output for a job, information about that output.
+ * If you specified multiple outputs for a job, the <code>Output</code>
+ * object lists information about the first output. This duplicates the
+ * information that is listed for the first output in the
+ * <code>Outputs</code> object.
  * </p>
  */
 public class JobOutput implements Serializable {

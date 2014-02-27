@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This contains a ClusterSummaryList with the cluster details; for example, the cluster IDs, names, and status.
+ * This contains a ClusterSummaryList with the cluster details; for
+ * example, the cluster IDs, names, and status.
  * </p>
  */
 public class ListClustersResult implements Serializable {

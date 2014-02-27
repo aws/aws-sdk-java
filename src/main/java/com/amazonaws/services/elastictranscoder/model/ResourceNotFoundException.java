@@ -18,8 +18,9 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still
- * being created.
+ * The requested resource does not exist or is not available. For
+ * example, the pipeline to which you're trying to add a job doesn't
+ * exist or is still being created.
  * </p>
  */        
 public class ResourceNotFoundException extends AmazonServiceException {

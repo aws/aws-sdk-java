@@ -21,8 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#cancelExportTask(CancelExportTaskRequest) CancelExportTask operation}.
  * <p>
- * Cancels an active export task. The request removes all artifacts of the export, including any partially-created Amazon S3 objects. If the export task
- * is complete or is in the process of transferring the final disk image, the command fails and returns an error.
+ * Cancels an active export task. The request removes all artifacts of
+ * the export, including any partially-created Amazon S3 objects. If the
+ * export task is complete or is in the process of transferring the final
+ * disk image, the command fails and returns an error.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelExportTask(CancelExportTaskRequest)

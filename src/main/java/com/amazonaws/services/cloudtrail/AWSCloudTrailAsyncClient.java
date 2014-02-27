@@ -35,21 +35,30 @@ import com.amazonaws.services.cloudtrail.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * AWS Cloud Trail <p>
- * This is the CloudTrail API Reference. It provides descriptions of actions, data types, common parameters, and common errors for CloudTrail.
+ * This is the CloudTrail API Reference. It provides descriptions of
+ * actions, data types, common parameters, and common errors for
+ * CloudTrail.
  * </p>
  * <p>
- * CloudTrail is a web service that records AWS API calls for your AWS account and delivers log files to an Amazon S3 bucket. The recorded information
- * includes the identity of the user, the start time of the AWS API call, the source IP address, the request parameters, and the response elements
- * returned by the service.
+ * CloudTrail is a web service that records AWS API calls for your AWS
+ * account and delivers log files to an Amazon S3 bucket. The recorded
+ * information includes the identity of the user, the start time of the
+ * AWS API call, the source IP address, the request parameters, and the
+ * response elements returned by the service.
  * </p>
  * <p>
- * <b>NOTE:</b> As an alternative to using the API, you can use one of the AWS SDKs, which consist of libraries and sample code for various programming
- * languages and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to AWSCloudTrail. For
- * example, the SDKs take care of cryptographically signing requests, managing errors, and retrying requests automatically. For information about the AWS
- * SDKs, including how to download and install them, see the Tools for Amazon Web Services page.
+ * <b>NOTE:</b> As an alternative to using the API, you can use one of
+ * the AWS SDKs, which consist of libraries and sample code for various
+ * programming languages and platforms (Java, Ruby, .NET, iOS, Android,
+ * etc.). The SDKs provide a convenient way to create programmatic access
+ * to AWSCloudTrail. For example, the SDKs take care of cryptographically
+ * signing requests, managing errors, and retrying requests
+ * automatically. For information about the AWS SDKs, including how to
+ * download and install them, see the Tools for Amazon Web Services page.
  * </p>
  * <p>
- * See the CloudTrail User Guide for information about the data that is included with each AWS API call listed in the log files.
+ * See the CloudTrail User Guide for information about the data that is
+ * included with each AWS API call listed in the log files.
  * </p>
  */
 public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
@@ -59,6 +68,8 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
+
+    private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -101,13 +112,13 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCloudTrailAsyncClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AWSCloudTrail using the specified AWS account credentials.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -119,7 +130,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
      *                       when authenticating with AWS services.
      */
     public AWSCloudTrailAsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newCachedThreadPool());
+        this(awsCredentials, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -173,7 +184,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AWSCloudTrail using the specified AWS account credentials provider.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -186,7 +197,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
      *            to authenticate requests with AWS services.
      */
     public AWSCloudTrailAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -229,7 +240,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
      */
     public AWSCloudTrailAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
                 ClientConfiguration clientConfiguration) {
-        this(awsCredentialsProvider, clientConfiguration, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -273,7 +284,8 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who
      * wish to give pending asynchronous service calls time to complete should
-     * call getExecutorService().shutdown() prior to calling this method.
+     * call getExecutorService().shutdown() followed by
+     * getExecutorService().awaitTermination() prior to calling this method.
      */
     @Override
     public void shutdown() {
@@ -309,8 +321,8 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
         return executorService.submit(new Callable<GetTrailStatusResult>() {
             public GetTrailStatusResult call() throws Exception {
                 return getTrailStatus(getTrailStatusRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -346,17 +358,17 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetTrailStatusResult>() {
             public GetTrailStatusResult call() throws Exception {
-                GetTrailStatusResult result;
+              GetTrailStatusResult result;
                 try {
-                    result = getTrailStatus(getTrailStatusRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(getTrailStatusRequest, result);
-                   return result;
-            }
-        });
+                result = getTrailStatus(getTrailStatusRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getTrailStatusRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -384,8 +396,8 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
         return executorService.submit(new Callable<DeleteTrailResult>() {
             public DeleteTrailResult call() throws Exception {
                 return deleteTrail(deleteTrailRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -418,17 +430,17 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteTrailResult>() {
             public DeleteTrailResult call() throws Exception {
-                DeleteTrailResult result;
+              DeleteTrailResult result;
                 try {
-                    result = deleteTrail(deleteTrailRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteTrailRequest, result);
-                   return result;
-            }
-        });
+                result = deleteTrail(deleteTrailRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteTrailRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -475,8 +487,8 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
         return executorService.submit(new Callable<CreateTrailResult>() {
             public CreateTrailResult call() throws Exception {
                 return createTrail(createTrailRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -528,17 +540,17 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateTrailResult>() {
             public CreateTrailResult call() throws Exception {
-                CreateTrailResult result;
+              CreateTrailResult result;
                 try {
-                    result = createTrail(createTrailRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createTrailRequest, result);
-                   return result;
-            }
-        });
+                result = createTrail(createTrailRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createTrailRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -574,8 +586,8 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
         return executorService.submit(new Callable<UpdateTrailResult>() {
             public UpdateTrailResult call() throws Exception {
                 return updateTrail(updateTrailRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -616,17 +628,17 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateTrailResult>() {
             public UpdateTrailResult call() throws Exception {
-                UpdateTrailResult result;
+              UpdateTrailResult result;
                 try {
-                    result = updateTrail(updateTrailRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(updateTrailRequest, result);
-                   return result;
-            }
-        });
+                result = updateTrail(updateTrailRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateTrailRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -655,8 +667,8 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
         return executorService.submit(new Callable<DescribeTrailsResult>() {
             public DescribeTrailsResult call() throws Exception {
                 return describeTrails(describeTrailsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -690,17 +702,17 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeTrailsResult>() {
             public DescribeTrailsResult call() throws Exception {
-                DescribeTrailsResult result;
+              DescribeTrailsResult result;
                 try {
-                    result = describeTrails(describeTrailsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeTrailsRequest, result);
-                   return result;
-            }
-        });
+                result = describeTrails(describeTrailsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeTrailsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -731,8 +743,8 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
         return executorService.submit(new Callable<StopLoggingResult>() {
             public StopLoggingResult call() throws Exception {
                 return stopLogging(stopLoggingRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -768,17 +780,17 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<StopLoggingResult>() {
             public StopLoggingResult call() throws Exception {
-                StopLoggingResult result;
+              StopLoggingResult result;
                 try {
-                    result = stopLogging(stopLoggingRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(stopLoggingRequest, result);
-                   return result;
-            }
-        });
+                result = stopLogging(stopLoggingRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(stopLoggingRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -807,8 +819,8 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
         return executorService.submit(new Callable<StartLoggingResult>() {
             public StartLoggingResult call() throws Exception {
                 return startLogging(startLoggingRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -842,17 +854,17 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<StartLoggingResult>() {
             public StartLoggingResult call() throws Exception {
-                StartLoggingResult result;
+              StartLoggingResult result;
                 try {
-                    result = startLogging(startLoggingRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(startLoggingRequest, result);
-                   return result;
-            }
-        });
+                result = startLogging(startLoggingRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(startLoggingRequest, result);
+                 return result;
+        }
+    });
     }
     
 }

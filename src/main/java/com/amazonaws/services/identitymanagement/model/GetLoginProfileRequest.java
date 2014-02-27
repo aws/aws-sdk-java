@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getLoginProfile(GetLoginProfileRequest) GetLoginProfile operation}.
  * <p>
- * Retrieves the user name and password-creation date for the specified user. If the user has not been assigned a password, the action returns a 404 (
- * <code>NoSuchEntity</code> ) error.
+ * Retrieves the user name and password-creation date for the specified
+ * user. If the user has not been assigned a password, the action returns
+ * a 404 ( <code>NoSuchEntity</code> ) error.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getLoginProfile(GetLoginProfileRequest)

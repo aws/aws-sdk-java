@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a device object associated with a Gateway-Virtual Tape Library.
+ * Represents a device object associated with a Gateway-Virtual Tape
+ * Library.
  * </p>
  */
 public class VTLDevice implements Serializable {

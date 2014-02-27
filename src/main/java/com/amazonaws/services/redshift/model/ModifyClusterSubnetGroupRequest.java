@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#modifyClusterSubnetGroup(ModifyClusterSubnetGroupRequest) ModifyClusterSubnetGroup operation}.
  * <p>
- * Modifies a cluster subnet group to include the specified list of VPC subnets. The operation replaces the existing list of subnets with the new list
- * of subnets.
+ * Modifies a cluster subnet group to include the specified list of VPC
+ * subnets. The operation replaces the existing list of subnets with the
+ * new list of subnets.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#modifyClusterSubnetGroup(ModifyClusterSubnetGroupRequest)

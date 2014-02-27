@@ -44,6 +44,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      */
     private ExecutorService executorService;
 
+    private static final int DEFAULT_THREAD_POOL_SIZE = 50;
+
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonRoute53.  A credentials provider chain will be used
@@ -85,13 +87,13 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRoute53AsyncClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonRoute53 using the specified AWS account credentials.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -103,7 +105,7 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      *                       when authenticating with AWS services.
      */
     public AmazonRoute53AsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newCachedThreadPool());
+        this(awsCredentials, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -157,7 +159,7 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonRoute53 using the specified AWS account credentials provider.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -170,7 +172,7 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      *            to authenticate requests with AWS services.
      */
     public AmazonRoute53AsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -213,7 +215,7 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      */
     public AmazonRoute53AsyncClient(AWSCredentialsProvider awsCredentialsProvider,
                 ClientConfiguration clientConfiguration) {
-        this(awsCredentialsProvider, clientConfiguration, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -257,7 +259,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who
      * wish to give pending asynchronous service calls time to complete should
-     * call getExecutorService().shutdown() prior to calling this method.
+     * call getExecutorService().shutdown() followed by
+     * getExecutorService().awaitTermination() prior to calling this method.
      */
     @Override
     public void shutdown() {
@@ -291,8 +294,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
         return executorService.submit(new Callable<GetHealthCheckResult>() {
             public GetHealthCheckResult call() throws Exception {
                 return getHealthCheck(getHealthCheckRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -326,17 +329,17 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetHealthCheckResult>() {
             public GetHealthCheckResult call() throws Exception {
-                GetHealthCheckResult result;
+              GetHealthCheckResult result;
                 try {
-                    result = getHealthCheck(getHealthCheckRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(getHealthCheckRequest, result);
-                   return result;
-            }
-        });
+                result = getHealthCheck(getHealthCheckRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getHealthCheckRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -367,8 +370,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
         return executorService.submit(new Callable<GetHostedZoneResult>() {
             public GetHostedZoneResult call() throws Exception {
                 return getHostedZone(getHostedZoneRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -404,17 +407,17 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetHostedZoneResult>() {
             public GetHostedZoneResult call() throws Exception {
-                GetHostedZoneResult result;
+              GetHostedZoneResult result;
                 try {
-                    result = getHostedZone(getHostedZoneRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(getHostedZoneRequest, result);
-                   return result;
-            }
-        });
+                result = getHostedZone(getHostedZoneRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getHostedZoneRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -424,10 +427,9 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * zone ID </code> resource.
      * </p>
      * <p>
-     * For more information about deleting a hosted zone, see <a
-     * s.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html">
-     * Deleting a Hosted Zone </a> in the <i>Amazon Route 53 Developer
-     * Guide</i> .
+     * For more information about deleting a hosted zone, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html"> Deleting a Hosted Zone </a>
+     * in the <i>Amazon Route 53 Developer Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b> You can delete a hosted zone only if there are no
@@ -460,8 +462,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
         return executorService.submit(new Callable<DeleteHostedZoneResult>() {
             public DeleteHostedZoneResult call() throws Exception {
                 return deleteHostedZone(deleteHostedZoneRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -471,10 +473,9 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * zone ID </code> resource.
      * </p>
      * <p>
-     * For more information about deleting a hosted zone, see <a
-     * s.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html">
-     * Deleting a Hosted Zone </a> in the <i>Amazon Route 53 Developer
-     * Guide</i> .
+     * For more information about deleting a hosted zone, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html"> Deleting a Hosted Zone </a>
+     * in the <i>Amazon Route 53 Developer Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b> You can delete a hosted zone only if there are no
@@ -512,17 +513,17 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteHostedZoneResult>() {
             public DeleteHostedZoneResult call() throws Exception {
-                DeleteHostedZoneResult result;
+              DeleteHostedZoneResult result;
                 try {
-                    result = deleteHostedZone(deleteHostedZoneRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteHostedZoneRequest, result);
-                   return result;
-            }
-        });
+                result = deleteHostedZone(deleteHostedZoneRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteHostedZoneRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -560,8 +561,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
         return executorService.submit(new Callable<GetChangeResult>() {
             public GetChangeResult call() throws Exception {
                 return getChange(getChangeRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -604,17 +605,17 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetChangeResult>() {
             public GetChangeResult call() throws Exception {
-                GetChangeResult result;
+              GetChangeResult result;
                 try {
-                    result = getChange(getChangeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(getChangeRequest, result);
-                   return result;
-            }
-        });
+                result = getChange(getChangeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getChangeRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -654,8 +655,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
         return executorService.submit(new Callable<ListHostedZonesResult>() {
             public ListHostedZonesResult call() throws Exception {
                 return listHostedZones(listHostedZonesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -700,17 +701,17 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListHostedZonesResult>() {
             public ListHostedZonesResult call() throws Exception {
-                ListHostedZonesResult result;
+              ListHostedZonesResult result;
                 try {
-                    result = listHostedZones(listHostedZonesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(listHostedZonesRequest, result);
-                   return result;
-            }
-        });
+                result = listHostedZones(listHostedZonesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listHostedZonesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -729,10 +730,9 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * Route 53 automatically creates a default SOA record and four NS
      * records for the zone. The NS records in the hosted zone are the name
      * servers you give your registrar to delegate your domain to. For more
-     * information about SOA and NS records, see <a
-     * docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">
-     * NS and SOA Records that Route 53 Creates for a Hosted Zone </a> in
-     * the <i>Amazon Route 53 Developer Guide</i> .
+     * information about SOA and NS records, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html"> NS and SOA Records that Route 53 Creates for a Hosted Zone </a>
+     * in the <i>Amazon Route 53 Developer Guide</i> .
      * </p>
      * <p>
      * When you create a zone, its initial status is <code>PENDING</code> .
@@ -761,8 +761,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
         return executorService.submit(new Callable<CreateHostedZoneResult>() {
             public CreateHostedZoneResult call() throws Exception {
                 return createHostedZone(createHostedZoneRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -781,10 +781,9 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * Route 53 automatically creates a default SOA record and four NS
      * records for the zone. The NS records in the hosted zone are the name
      * servers you give your registrar to delegate your domain to. For more
-     * information about SOA and NS records, see <a
-     * docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">
-     * NS and SOA Records that Route 53 Creates for a Hosted Zone </a> in
-     * the <i>Amazon Route 53 Developer Guide</i> .
+     * information about SOA and NS records, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html"> NS and SOA Records that Route 53 Creates for a Hosted Zone </a>
+     * in the <i>Amazon Route 53 Developer Guide</i> .
      * </p>
      * <p>
      * When you create a zone, its initial status is <code>PENDING</code> .
@@ -818,17 +817,17 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateHostedZoneResult>() {
             public CreateHostedZoneResult call() throws Exception {
-                CreateHostedZoneResult result;
+              CreateHostedZoneResult result;
                 try {
-                    result = createHostedZone(createHostedZoneRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createHostedZoneRequest, result);
-                   return result;
-            }
-        });
+                result = createHostedZone(createHostedZoneRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createHostedZoneRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -842,10 +841,9 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * <p>
      * Changes are a list of change items and are considered transactional.
      * For more information on transactional changes, also known as change
-     * batches, see <a
-     * zon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API">
-     * Creating, Changing, and Deleting Resource Record Sets Using the Route
-     * 53 API </a> in the <i>Amazon Route 53 Developer Guide</i> .
+     * batches, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API"> Creating, Changing, and Deleting Resource Record Sets Using the Route 53 API </a>
+     * in the <i>Amazon Route 53 Developer Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b>Due to the nature of transactional changes, you
@@ -898,8 +896,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
         return executorService.submit(new Callable<ChangeResourceRecordSetsResult>() {
             public ChangeResourceRecordSetsResult call() throws Exception {
                 return changeResourceRecordSets(changeResourceRecordSetsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -913,10 +911,9 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * <p>
      * Changes are a list of change items and are considered transactional.
      * For more information on transactional changes, also known as change
-     * batches, see <a
-     * zon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API">
-     * Creating, Changing, and Deleting Resource Record Sets Using the Route
-     * 53 API </a> in the <i>Amazon Route 53 Developer Guide</i> .
+     * batches, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API"> Creating, Changing, and Deleting Resource Record Sets Using the Route 53 API </a>
+     * in the <i>Amazon Route 53 Developer Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b>Due to the nature of transactional changes, you
@@ -974,17 +971,17 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ChangeResourceRecordSetsResult>() {
             public ChangeResourceRecordSetsResult call() throws Exception {
-                ChangeResourceRecordSetsResult result;
+              ChangeResourceRecordSetsResult result;
                 try {
-                    result = changeResourceRecordSets(changeResourceRecordSetsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(changeResourceRecordSetsRequest, result);
-                   return result;
-            }
-        });
+                result = changeResourceRecordSets(changeResourceRecordSetsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(changeResourceRecordSetsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1020,8 +1017,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
         return executorService.submit(new Callable<CreateHealthCheckResult>() {
             public CreateHealthCheckResult call() throws Exception {
                 return createHealthCheck(createHealthCheckRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1062,17 +1059,17 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateHealthCheckResult>() {
             public CreateHealthCheckResult call() throws Exception {
-                CreateHealthCheckResult result;
+              CreateHealthCheckResult result;
                 try {
-                    result = createHealthCheck(createHealthCheckRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createHealthCheckRequest, result);
-                   return result;
-            }
-        });
+                result = createHealthCheck(createHealthCheckRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createHealthCheckRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1112,8 +1109,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
         return executorService.submit(new Callable<ListHealthChecksResult>() {
             public ListHealthChecksResult call() throws Exception {
                 return listHealthChecks(listHealthChecksRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1158,17 +1155,17 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListHealthChecksResult>() {
             public ListHealthChecksResult call() throws Exception {
-                ListHealthChecksResult result;
+              ListHealthChecksResult result;
                 try {
-                    result = listHealthChecks(listHealthChecksRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(listHealthChecksRequest, result);
-                   return result;
-            }
-        });
+                result = listHealthChecks(listHealthChecksRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listHealthChecksRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1208,8 +1205,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
         return executorService.submit(new Callable<DeleteHealthCheckResult>() {
             public DeleteHealthCheckResult call() throws Exception {
                 return deleteHealthCheck(deleteHealthCheckRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1254,17 +1251,17 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteHealthCheckResult>() {
             public DeleteHealthCheckResult call() throws Exception {
-                DeleteHealthCheckResult result;
+              DeleteHealthCheckResult result;
                 try {
-                    result = deleteHealthCheck(deleteHealthCheckRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteHealthCheckRequest, result);
-                   return result;
-            }
-        });
+                result = deleteHealthCheck(deleteHealthCheckRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteHealthCheckRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1343,8 +1340,8 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
         return executorService.submit(new Callable<ListResourceRecordSetsResult>() {
             public ListResourceRecordSetsResult call() throws Exception {
                 return listResourceRecordSets(listResourceRecordSetsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1428,17 +1425,17 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListResourceRecordSetsResult>() {
             public ListResourceRecordSetsResult call() throws Exception {
-                ListResourceRecordSetsResult result;
+              ListResourceRecordSetsResult result;
                 try {
-                    result = listResourceRecordSets(listResourceRecordSetsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(listResourceRecordSetsRequest, result);
-                   return result;
-            }
-        });
+                result = listResourceRecordSets(listResourceRecordSetsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listResourceRecordSetsRequest, result);
+                 return result;
+        }
+    });
     }
     
 }

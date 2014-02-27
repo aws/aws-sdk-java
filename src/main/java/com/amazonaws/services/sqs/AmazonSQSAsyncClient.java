@@ -35,28 +35,41 @@ import com.amazonaws.services.sqs.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * Amazon Simple Queue Service <p>
- * Welcome to the <i>Amazon Simple Queue Service API Reference</i> . This section describes who should read this guide, how the guide is organized, and
- * other resources related to the Amazon Simple Queue Service (Amazon SQS).
+ * Welcome to the <i>Amazon Simple Queue Service API Reference</i> . This
+ * section describes who should read this guide, how the guide is
+ * organized, and other resources related to the Amazon Simple Queue
+ * Service (Amazon SQS).
  * </p>
  * <p>
- * Amazon SQS offers reliable and scalable hosted queues for storing messages as they travel between computers. By using Amazon SQS, you can move data
- * between distributed components of your applications that perform different tasks without losing messages or requiring each component to be always
- * available.
+ * Amazon SQS offers reliable and scalable hosted queues for storing
+ * messages as they travel between computers. By using Amazon SQS, you
+ * can move data between distributed components of your applications that
+ * perform different tasks without losing messages or requiring each
+ * component to be always available.
  * </p>
  * <p>
  * Helpful Links:
  * <ul>
- * <li> <a href="http://queue.amazonaws.com/doc/2012-11-05/QueueService.wsdl"> Current WSDL (2012-11-05) </a> </li>
- * <li> <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html"> Making API Requests </a> </li>
- * <li> <a href="http://aws.amazon.com/sqs/"> Amazon SQS product page </a> </li>
- * <li> <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region"> Regions and Endpoints </a> </li>
+ * <li>
+ * <a href="http://queue.amazonaws.com/doc/2012-11-05/QueueService.wsdl"> Current WSDL (2012-11-05) </a>
+ * </li>
+ * <li>
+ * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html"> Making API Requests </a>
+ * </li>
+ * <li>
+ * <a href="http://aws.amazon.com/sqs/"> Amazon SQS product page </a>
+ * </li>
+ * <li>
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region"> Regions and Endpoints </a>
+ * </li>
  * 
  * </ul>
  * 
  * </p>
  * <p>
- * We also provide SDKs that enable you to access Amazon SQS from your preferred programming language. The SDKs contain functionality that automatically
- * takes care of tasks such as:
+ * We also provide SDKs that enable you to access Amazon SQS from your
+ * preferred programming language. The SDKs contain functionality that
+ * automatically takes care of tasks such as:
  * </p>
  * <p>
  * 
@@ -69,7 +82,9 @@ import com.amazonaws.services.sqs.model.*;
  * 
  * </p>
  * <p>
- * For a list of available SDKs, go to <a href="http://aws.amazon.com/tools/"> Tools for Amazon Web Services </a> .
+ * For a list of available SDKs, go to
+ * <a href="http://aws.amazon.com/tools/"> Tools for Amazon Web Services </a>
+ * .
  * </p>
  */
 public class AmazonSQSAsyncClient extends AmazonSQSClient
@@ -79,6 +94,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
+
+    private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -121,13 +138,13 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSQSAsyncClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonSQS using the specified AWS account credentials.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -139,7 +156,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      *                       when authenticating with AWS services.
      */
     public AmazonSQSAsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newCachedThreadPool());
+        this(awsCredentials, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -193,7 +210,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonSQS using the specified AWS account credentials provider.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -206,7 +223,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      *            to authenticate requests with AWS services.
      */
     public AmazonSQSAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -249,7 +266,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      */
     public AmazonSQSAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
                 ClientConfiguration clientConfiguration) {
-        this(awsCredentialsProvider, clientConfiguration, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -293,7 +310,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who
      * wish to give pending asynchronous service calls time to complete should
-     * call getExecutorService().shutdown() prior to calling this method.
+     * call getExecutorService().shutdown() followed by
+     * getExecutorService().awaitTermination() prior to calling this method.
      */
     @Override
     public void shutdown() {
@@ -332,8 +350,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
             public Void call() throws Exception {
                 setQueueAttributes(setQueueAttributesRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -371,16 +389,16 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    setQueueAttributes(setQueueAttributesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(setQueueAttributesRequest, null);
-                   return null;
-            }
-        });
+              try {
+                setQueueAttributes(setQueueAttributesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(setQueueAttributesRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -430,8 +448,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<ChangeMessageVisibilityBatchResult>() {
             public ChangeMessageVisibilityBatchResult call() throws Exception {
                 return changeMessageVisibilityBatch(changeMessageVisibilityBatchRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -486,17 +504,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ChangeMessageVisibilityBatchResult>() {
             public ChangeMessageVisibilityBatchResult call() throws Exception {
-                ChangeMessageVisibilityBatchResult result;
+              ChangeMessageVisibilityBatchResult result;
                 try {
-                    result = changeMessageVisibilityBatch(changeMessageVisibilityBatchRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(changeMessageVisibilityBatchRequest, result);
-                   return result;
-            }
-        });
+                result = changeMessageVisibilityBatch(changeMessageVisibilityBatchRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(changeMessageVisibilityBatchRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -505,9 +523,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * new value. The maximum allowed timeout value you can set the value to
      * is 12 hours. This means you can't extend the timeout of a message in
      * an existing queue to more than a total visibility timeout of 12 hours.
-     * (For more information visibility timeout, see <a
-     * azon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">
-     * Visibility Timeout </a> in the <i>Amazon SQS Developer Guide</i> .)
+     * (For more information visibility timeout, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a>
+     * in the <i>Amazon SQS Developer Guide</i> .)
      * </p>
      * <p>
      * For example, let's say you have a message and its default message
@@ -555,8 +573,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
             public Void call() throws Exception {
                 changeMessageVisibility(changeMessageVisibilityRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -565,9 +583,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * new value. The maximum allowed timeout value you can set the value to
      * is 12 hours. This means you can't extend the timeout of a message in
      * an existing queue to more than a total visibility timeout of 12 hours.
-     * (For more information visibility timeout, see <a
-     * azon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">
-     * Visibility Timeout </a> in the <i>Amazon SQS Developer Guide</i> .)
+     * (For more information visibility timeout, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a>
+     * in the <i>Amazon SQS Developer Guide</i> .)
      * </p>
      * <p>
      * For example, let's say you have a message and its default message
@@ -619,16 +637,16 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    changeMessageVisibility(changeMessageVisibilityRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(changeMessageVisibilityRequest, null);
-                   return null;
-            }
-        });
+              try {
+                changeMessageVisibility(changeMessageVisibilityRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(changeMessageVisibilityRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -641,9 +659,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * <code>QueueOwnerAWSAccountId</code> parameter to specify the account
      * ID of the queue's owner. The queue's owner must grant you permission
      * to access the queue. For more information about shared queue access,
-     * see AddPermission or go to <a
-     * com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">
-     * Shared Queues </a> in the <i>Amazon SQS Developer Guide</i> .
+     * see AddPermission or go to
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html"> Shared Queues </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      *
@@ -667,8 +685,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<GetQueueUrlResult>() {
             public GetQueueUrlResult call() throws Exception {
                 return getQueueUrl(getQueueUrlRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -681,9 +699,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * <code>QueueOwnerAWSAccountId</code> parameter to specify the account
      * ID of the queue's owner. The queue's owner must grant you permission
      * to access the queue. For more information about shared queue access,
-     * see AddPermission or go to <a
-     * com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">
-     * Shared Queues </a> in the <i>Amazon SQS Developer Guide</i> .
+     * see AddPermission or go to
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html"> Shared Queues </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      *
@@ -712,17 +730,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetQueueUrlResult>() {
             public GetQueueUrlResult call() throws Exception {
-                GetQueueUrlResult result;
+              GetQueueUrlResult result;
                 try {
-                    result = getQueueUrl(getQueueUrlRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(getQueueUrlRequest, result);
-                   return result;
-            }
-        });
+                result = getQueueUrl(getQueueUrlRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getQueueUrlRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -753,8 +771,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
             public Void call() throws Exception {
                 removePermission(removePermissionRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -789,16 +807,16 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    removePermission(removePermissionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(removePermissionRequest, null);
-                   return null;
-            }
-        });
+              try {
+                removePermission(removePermissionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(removePermissionRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -809,21 +827,18 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * <li> <code>All</code> - returns all values.</li>
      * <li> <code>ApproximateNumberOfMessages</code> - returns the
      * approximate number of visible messages in a queue. For more
-     * information, see <a
-     * WSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">
-     * Resources Required to Process Messages </a> in the <i>Amazon SQS
-     * Developer Guide</i> .</li>
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"> Resources Required to Process Messages </a>
+     * in the <i>Amazon SQS Developer Guide</i> .</li>
      * <li> <code>ApproximateNumberOfMessagesNotVisible</code> - returns the
      * approximate number of messages that are not timed-out and not deleted.
-     * For more information, see <a
-     * WSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">
-     * Resources Required to Process Messages </a> in the <i>Amazon SQS
-     * Developer Guide</i> .</li>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"> Resources Required to Process Messages </a>
+     * in the <i>Amazon SQS Developer Guide</i> .</li>
      * <li> <code>VisibilityTimeout</code> - returns the visibility timeout
-     * for the queue. For more information about visibility timeout, see <a
-     * azon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">
-     * Visibility Timeout </a> in the <i>Amazon SQS Developer Guide</i>
-     * .</li>
+     * for the queue. For more information about visibility timeout, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a>
+     * in the <i>Amazon SQS Developer Guide</i> .</li>
      * <li> <code>CreatedTimestamp</code> - returns the time when the queue
      * was created (epoch time in seconds).</li>
      * <li> <code>LastModifiedTimestamp</code> - returns the time when the
@@ -845,10 +860,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * arrive.</li>
      * <li> <code>RedrivePolicy</code> - returns the parameters for dead
      * letter queue functionality of the source queue. For more information
-     * about RedrivePolicy and dead letter queues, see <a
-     * SSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">
-     * Using Amazon SQS Dead Letter Queues </a> in the <i>Amazon SQS
-     * Developer Guide</i> .</li>
+     * about RedrivePolicy and dead letter queues, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"> Using Amazon SQS Dead Letter Queues </a>
+     * in the <i>Amazon SQS Developer Guide</i> .</li>
      * 
      * </ul>
      * 
@@ -891,8 +905,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<GetQueueAttributesResult>() {
             public GetQueueAttributesResult call() throws Exception {
                 return getQueueAttributes(getQueueAttributesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -903,21 +917,18 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * <li> <code>All</code> - returns all values.</li>
      * <li> <code>ApproximateNumberOfMessages</code> - returns the
      * approximate number of visible messages in a queue. For more
-     * information, see <a
-     * WSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">
-     * Resources Required to Process Messages </a> in the <i>Amazon SQS
-     * Developer Guide</i> .</li>
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"> Resources Required to Process Messages </a>
+     * in the <i>Amazon SQS Developer Guide</i> .</li>
      * <li> <code>ApproximateNumberOfMessagesNotVisible</code> - returns the
      * approximate number of messages that are not timed-out and not deleted.
-     * For more information, see <a
-     * WSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">
-     * Resources Required to Process Messages </a> in the <i>Amazon SQS
-     * Developer Guide</i> .</li>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"> Resources Required to Process Messages </a>
+     * in the <i>Amazon SQS Developer Guide</i> .</li>
      * <li> <code>VisibilityTimeout</code> - returns the visibility timeout
-     * for the queue. For more information about visibility timeout, see <a
-     * azon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">
-     * Visibility Timeout </a> in the <i>Amazon SQS Developer Guide</i>
-     * .</li>
+     * for the queue. For more information about visibility timeout, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a>
+     * in the <i>Amazon SQS Developer Guide</i> .</li>
      * <li> <code>CreatedTimestamp</code> - returns the time when the queue
      * was created (epoch time in seconds).</li>
      * <li> <code>LastModifiedTimestamp</code> - returns the time when the
@@ -939,10 +950,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * arrive.</li>
      * <li> <code>RedrivePolicy</code> - returns the parameters for dead
      * letter queue functionality of the source queue. For more information
-     * about RedrivePolicy and dead letter queues, see <a
-     * SSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">
-     * Using Amazon SQS Dead Letter Queues </a> in the <i>Amazon SQS
-     * Developer Guide</i> .</li>
+     * about RedrivePolicy and dead letter queues, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"> Using Amazon SQS Dead Letter Queues </a>
+     * in the <i>Amazon SQS Developer Guide</i> .</li>
      * 
      * </ul>
      * 
@@ -990,17 +1000,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetQueueAttributesResult>() {
             public GetQueueAttributesResult call() throws Exception {
-                GetQueueAttributesResult result;
+              GetQueueAttributesResult result;
                 try {
-                    result = getQueueAttributes(getQueueAttributesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(getQueueAttributesRequest, result);
-                   return result;
-            }
-        });
+                result = getQueueAttributes(getQueueAttributesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getQueueAttributesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1065,8 +1075,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<SendMessageBatchResult>() {
             public SendMessageBatchResult call() throws Exception {
                 return sendMessageBatch(sendMessageBatchRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1136,17 +1146,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<SendMessageBatchResult>() {
             public SendMessageBatchResult call() throws Exception {
-                SendMessageBatchResult result;
+              SendMessageBatchResult result;
                 try {
-                    result = sendMessageBatch(sendMessageBatchRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(sendMessageBatchRequest, result);
-                   return result;
-            }
-        });
+                result = sendMessageBatch(sendMessageBatchRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(sendMessageBatchRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1176,8 +1186,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<ListDeadLetterSourceQueuesResult>() {
             public ListDeadLetterSourceQueuesResult call() throws Exception {
                 return listDeadLetterSourceQueues(listDeadLetterSourceQueuesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1212,17 +1222,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListDeadLetterSourceQueuesResult>() {
             public ListDeadLetterSourceQueuesResult call() throws Exception {
-                ListDeadLetterSourceQueuesResult result;
+              ListDeadLetterSourceQueuesResult result;
                 try {
-                    result = listDeadLetterSourceQueues(listDeadLetterSourceQueuesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(listDeadLetterSourceQueuesRequest, result);
-                   return result;
-            }
-        });
+                result = listDeadLetterSourceQueues(listDeadLetterSourceQueuesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listDeadLetterSourceQueuesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1245,10 +1255,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * </p>
      * <p>
      * We reserve the right to delete queues that have had no activity for
-     * more than 30 days. For more information, see <a
-     * .com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">
-     * How Amazon SQS Queues Work </a> in the <i>Amazon SQS Developer
-     * Guide</i> .
+     * more than 30 days. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html"> How Amazon SQS Queues Work </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      *
@@ -1273,8 +1282,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
             public Void call() throws Exception {
                 deleteQueue(deleteQueueRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1297,10 +1306,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * </p>
      * <p>
      * We reserve the right to delete queues that have had no activity for
-     * more than 30 days. For more information, see <a
-     * .com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">
-     * How Amazon SQS Queues Work </a> in the <i>Amazon SQS Developer
-     * Guide</i> .
+     * more than 30 days. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html"> How Amazon SQS Queues Work </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      *
@@ -1329,16 +1337,16 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteQueue(deleteQueueRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteQueueRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteQueue(deleteQueueRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteQueueRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1378,8 +1386,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<SendMessageResult>() {
             public SendMessageResult call() throws Exception {
                 return sendMessage(sendMessageRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1424,26 +1432,26 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<SendMessageResult>() {
             public SendMessageResult call() throws Exception {
-                SendMessageResult result;
+              SendMessageResult result;
                 try {
-                    result = sendMessage(sendMessageRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(sendMessageRequest, result);
-                   return result;
-            }
-        });
+                result = sendMessage(sendMessageRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(sendMessageRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
      * <p>
      * Retrieves one or more messages from the specified queue. Long poll
      * support is enabled by using the <code>WaitTimeSeconds</code>
-     * parameter. For more information, see <a
-     * AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">
-     * Amazon SQS Long Poll </a> in the <i>Amazon SQS Developer Guide</i> .
+     * parameter. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html"> Amazon SQS Long Poll </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      * <p>
@@ -1467,9 +1475,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * </p>
      * </li>
      * <li> <p>
-     * MD5 digest of the message body. For information about MD5, go to <a
-     * href="http://www.faqs.org/rfcs/rfc1321.html">
-     * http://www.faqs.org/rfcs/rfc1321.html </a> .
+     * MD5 digest of the message body. For information about MD5, go to
+     * <a href="http://www.faqs.org/rfcs/rfc1321.html"> http://www.faqs.org/rfcs/rfc1321.html </a>
+     * .
      * </p>
      * </li>
      * <li> <p>
@@ -1484,10 +1492,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * </ul>
      * <p>
      * The receipt handle is the identifier you must provide when deleting
-     * the message. For more information, see <a
-     * impleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">
-     * Queue and Message Identifiers </a> in the <i>Amazon SQS Developer
-     * Guide</i> .
+     * the message. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html"> Queue and Message Identifiers </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      * <p>
@@ -1495,10 +1502,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * request, which will be applied to the messages that Amazon SQS returns
      * in the response. If you do not include the parameter, the overall
      * visibility timeout for the queue is used for the returned messages.
-     * For more information, see <a
-     * azon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">
-     * Visibility Timeout </a> in the <i>Amazon SQS Developer Guide</i> .
-     * 
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      * <p>
@@ -1527,17 +1533,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<ReceiveMessageResult>() {
             public ReceiveMessageResult call() throws Exception {
                 return receiveMessage(receiveMessageRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
      * <p>
      * Retrieves one or more messages from the specified queue. Long poll
      * support is enabled by using the <code>WaitTimeSeconds</code>
-     * parameter. For more information, see <a
-     * AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">
-     * Amazon SQS Long Poll </a> in the <i>Amazon SQS Developer Guide</i> .
+     * parameter. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html"> Amazon SQS Long Poll </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      * <p>
@@ -1561,9 +1567,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * </p>
      * </li>
      * <li> <p>
-     * MD5 digest of the message body. For information about MD5, go to <a
-     * href="http://www.faqs.org/rfcs/rfc1321.html">
-     * http://www.faqs.org/rfcs/rfc1321.html </a> .
+     * MD5 digest of the message body. For information about MD5, go to
+     * <a href="http://www.faqs.org/rfcs/rfc1321.html"> http://www.faqs.org/rfcs/rfc1321.html </a>
+     * .
      * </p>
      * </li>
      * <li> <p>
@@ -1578,10 +1584,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * </ul>
      * <p>
      * The receipt handle is the identifier you must provide when deleting
-     * the message. For more information, see <a
-     * impleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">
-     * Queue and Message Identifiers </a> in the <i>Amazon SQS Developer
-     * Guide</i> .
+     * the message. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html"> Queue and Message Identifiers </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      * <p>
@@ -1589,10 +1594,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * request, which will be applied to the messages that Amazon SQS returns
      * in the response. If you do not include the parameter, the overall
      * visibility timeout for the queue is used for the returned messages.
-     * For more information, see <a
-     * azon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">
-     * Visibility Timeout </a> in the <i>Amazon SQS Developer Guide</i> .
-     * 
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      * <p>
@@ -1626,17 +1630,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ReceiveMessageResult>() {
             public ReceiveMessageResult call() throws Exception {
-                ReceiveMessageResult result;
+              ReceiveMessageResult result;
                 try {
-                    result = receiveMessage(receiveMessageRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(receiveMessageRequest, result);
-                   return result;
-            }
-        });
+                result = receiveMessage(receiveMessageRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(receiveMessageRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1667,8 +1671,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<ListQueuesResult>() {
             public ListQueuesResult call() throws Exception {
                 return listQueues(listQueuesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1704,17 +1708,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListQueuesResult>() {
             public ListQueuesResult call() throws Exception {
-                ListQueuesResult result;
+              ListQueuesResult result;
                 try {
-                    result = listQueues(listQueuesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(listQueuesRequest, result);
-                   return result;
-            }
-        });
+                result = listQueues(listQueuesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listQueuesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1762,8 +1766,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<DeleteMessageBatchResult>() {
             public DeleteMessageBatchResult call() throws Exception {
                 return deleteMessageBatch(deleteMessageBatchRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1816,17 +1820,17 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteMessageBatchResult>() {
             public DeleteMessageBatchResult call() throws Exception {
-                DeleteMessageBatchResult result;
+              DeleteMessageBatchResult result;
                 try {
-                    result = deleteMessageBatch(deleteMessageBatchRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteMessageBatchRequest, result);
-                   return result;
-            }
-        });
+                result = deleteMessageBatch(deleteMessageBatchRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteMessageBatchRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1890,8 +1894,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<CreateQueueResult>() {
             public CreateQueueResult call() throws Exception {
                 return createQueue(createQueueRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1960,31 +1964,31 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateQueueResult>() {
             public CreateQueueResult call() throws Exception {
-                CreateQueueResult result;
+              CreateQueueResult result;
                 try {
-                    result = createQueue(createQueueRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createQueueRequest, result);
-                   return result;
-            }
-        });
+                result = createQueue(createQueueRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createQueueRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
      * <p>
-     * Adds a permission to a queue for a specific <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">
-     * principal </a> . This allows for sharing access to the queue.
+     * Adds a permission to a queue for a specific
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P"> principal </a>
+     * . This allows for sharing access to the queue.
      * </p>
      * <p>
      * When you create a queue, you have full control access rights for the
      * queue. Only you (as owner of the queue) can grant or deny permissions
-     * to the queue. For more information about these permissions, see <a
-     * com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">
-     * Shared Queues </a> in the <i>Amazon SQS Developer Guide</i> .
+     * to the queue. For more information about these permissions, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html"> Shared Queues </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> AddPermission writes an Amazon SQS-generated policy. If
@@ -2026,22 +2030,22 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
             public Void call() throws Exception {
                 addPermission(addPermissionRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
      * <p>
-     * Adds a permission to a queue for a specific <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">
-     * principal </a> . This allows for sharing access to the queue.
+     * Adds a permission to a queue for a specific
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P"> principal </a>
+     * . This allows for sharing access to the queue.
      * </p>
      * <p>
      * When you create a queue, you have full control access rights for the
      * queue. Only you (as owner of the queue) can grant or deny permissions
-     * to the queue. For more information about these permissions, see <a
-     * com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">
-     * Shared Queues </a> in the <i>Amazon SQS Developer Guide</i> .
+     * to the queue. For more information about these permissions, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html"> Shared Queues </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> AddPermission writes an Amazon SQS-generated policy. If
@@ -2087,16 +2091,16 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    addPermission(addPermissionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(addPermissionRequest, null);
-                   return null;
-            }
-        });
+              try {
+                addPermission(addPermissionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(addPermissionRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -2148,8 +2152,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
             public Void call() throws Exception {
                 deleteMessage(deleteMessageRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2205,16 +2209,16 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteMessage(deleteMessageRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteMessageRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteMessage(deleteMessageRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteMessageRequest, null);
+                 return null;
+        }
+    });
     }
     
 }

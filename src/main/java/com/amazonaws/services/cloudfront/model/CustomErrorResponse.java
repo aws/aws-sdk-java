@@ -18,12 +18,18 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that describes how you'd prefer CloudFront to respond to requests that result in either a 4xx or 5xx response. You can control whether
- * a custom error page should be displayed, what the desired response code should be for this error page and how long should the error response be cached
- * by CloudFront. If you don't want to specify any custom error responses, include only an empty CustomErrorResponses element. To delete all custom error
- * responses in an existing distribution, update the distribution configuration and include only an empty CustomErrorResponses element. To add, change,
- * or remove one or more custom error responses, update the distribution configuration and specify all of the custom error responses that you want to
- * include in the updated distribution.
+ * A complex type that describes how you'd prefer CloudFront to respond
+ * to requests that result in either a 4xx or 5xx response. You can
+ * control whether a custom error page should be displayed, what the
+ * desired response code should be for this error page and how long
+ * should the error response be cached by CloudFront. If you don't want
+ * to specify any custom error responses, include only an empty
+ * CustomErrorResponses element. To delete all custom error responses in
+ * an existing distribution, update the distribution configuration and
+ * include only an empty CustomErrorResponses element. To add, change, or
+ * remove one or more custom error responses, update the distribution
+ * configuration and specify all of the custom error responses that you
+ * want to include in the updated distribution.
  * </p>
  */
 public class CustomErrorResponse implements Serializable {

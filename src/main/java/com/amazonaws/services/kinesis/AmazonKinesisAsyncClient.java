@@ -35,7 +35,8 @@ import com.amazonaws.services.kinesis.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * Amazon Kinesis Service API Reference <p>
- * Amazon Kinesis is a managed service that scales elastically for real time processing of streaming big data.
+ * Amazon Kinesis is a managed service that scales elastically for real
+ * time processing of streaming big data.
  * </p>
  */
 public class AmazonKinesisAsyncClient extends AmazonKinesisClient
@@ -45,6 +46,8 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
+
+    private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -87,13 +90,13 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonKinesisAsyncClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonKinesis using the specified AWS account credentials.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -105,7 +108,7 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      *                       when authenticating with AWS services.
      */
     public AmazonKinesisAsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newCachedThreadPool());
+        this(awsCredentials, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -159,7 +162,7 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonKinesis using the specified AWS account credentials provider.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -172,7 +175,7 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      *            to authenticate requests with AWS services.
      */
     public AmazonKinesisAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -215,7 +218,7 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      */
     public AmazonKinesisAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
                 ClientConfiguration clientConfiguration) {
-        this(awsCredentialsProvider, clientConfiguration, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -259,7 +262,8 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who
      * wish to give pending asynchronous service calls time to complete should
-     * call getExecutorService().shutdown() prior to calling this method.
+     * call getExecutorService().shutdown() followed by
+     * getExecutorService().awaitTermination() prior to calling this method.
      */
     @Override
     public void shutdown() {
@@ -325,8 +329,8 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
         return executorService.submit(new Callable<DescribeStreamResult>() {
             public DescribeStreamResult call() throws Exception {
                 return describeStream(describeStreamRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -392,17 +396,17 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeStreamResult>() {
             public DescribeStreamResult call() throws Exception {
-                DescribeStreamResult result;
+              DescribeStreamResult result;
                 try {
-                    result = describeStream(describeStreamRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeStreamRequest, result);
-                   return result;
-            }
-        });
+                result = describeStream(describeStreamRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeStreamRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -449,9 +453,9 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * <p>
      * If a <code>GetShardIterator</code> request is made too often, you will
      * receive a <code>ProvisionedThroughputExceededException</code> .
-     * For more information about throughput limits, see the <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis
-     * Developer Guide </a> .
+     * For more information about throughput limits, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * <code>GetShardIterator</code> can return <code>null</code> for its
@@ -484,8 +488,8 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
         return executorService.submit(new Callable<GetShardIteratorResult>() {
             public GetShardIteratorResult call() throws Exception {
                 return getShardIterator(getShardIteratorRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -532,9 +536,9 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * <p>
      * If a <code>GetShardIterator</code> request is made too often, you will
      * receive a <code>ProvisionedThroughputExceededException</code> .
-     * For more information about throughput limits, see the <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis
-     * Developer Guide </a> .
+     * For more information about throughput limits, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * <code>GetShardIterator</code> can return <code>null</code> for its
@@ -572,17 +576,17 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetShardIteratorResult>() {
             public GetShardIteratorResult call() throws Exception {
-                GetShardIteratorResult result;
+              GetShardIteratorResult result;
                 try {
-                    result = getShardIterator(getShardIteratorRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(getShardIteratorRequest, result);
-                   return result;
-            }
-        });
+                result = getShardIterator(getShardIteratorRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getShardIteratorRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -609,8 +613,9 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * hash key ranges of the shards. You can override hashing the partition
      * key to determine the shard by explicitly specifying a hash value using
      * the <code>ExplicitHashKey</code> parameter. For more information, see
-     * the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon
-     * Kinesis Developer Guide </a> .
+     * the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * <code>PutRecord</code> returns the shard ID of where the data record
@@ -618,11 +623,11 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * record.
      * </p>
      * <p>
-     * The <code>SequenceNumberForOrdering</code> sets the initial sequence
-     * number for the partition key. Later <code>PutRecord</code> requests to
-     * the same partition key (from the same client) will automatically
-     * increase from <code>SequenceNumberForOrdering</code> , ensuring strict
-     * sequential ordering.
+     * Sequence numbers generally increase over time. To guarantee strictly
+     * increasing ordering, use the <code>SequenceNumberForOrdering</code>
+     * parameter. For more information, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * If a <code>PutRecord</code> request cannot be processed because of
@@ -655,8 +660,8 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
         return executorService.submit(new Callable<PutRecordResult>() {
             public PutRecordResult call() throws Exception {
                 return putRecord(putRecordRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -683,8 +688,9 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * hash key ranges of the shards. You can override hashing the partition
      * key to determine the shard by explicitly specifying a hash value using
      * the <code>ExplicitHashKey</code> parameter. For more information, see
-     * the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon
-     * Kinesis Developer Guide </a> .
+     * the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * <code>PutRecord</code> returns the shard ID of where the data record
@@ -692,11 +698,11 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * record.
      * </p>
      * <p>
-     * The <code>SequenceNumberForOrdering</code> sets the initial sequence
-     * number for the partition key. Later <code>PutRecord</code> requests to
-     * the same partition key (from the same client) will automatically
-     * increase from <code>SequenceNumberForOrdering</code> , ensuring strict
-     * sequential ordering.
+     * Sequence numbers generally increase over time. To guarantee strictly
+     * increasing ordering, use the <code>SequenceNumberForOrdering</code>
+     * parameter. For more information, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * If a <code>PutRecord</code> request cannot be processed because of
@@ -734,17 +740,17 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<PutRecordResult>() {
             public PutRecordResult call() throws Exception {
-                PutRecordResult result;
+              PutRecordResult result;
                 try {
-                    result = putRecord(putRecordRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(putRecordRequest, result);
-                   return result;
-            }
-        });
+                result = putRecord(putRecordRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(putRecordRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -815,8 +821,8 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
         return executorService.submit(new Callable<GetRecordsResult>() {
             public GetRecordsResult call() throws Exception {
                 return getRecords(getRecordsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -892,17 +898,17 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetRecordsResult>() {
             public GetRecordsResult call() throws Exception {
-                GetRecordsResult result;
+              GetRecordsResult result;
                 try {
-                    result = getRecords(getRecordsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(getRecordsRequest, result);
-                   return result;
-            }
-        });
+                result = getRecords(getRecordsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getRecordsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -928,9 +934,9 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * shard where the shard gets split in two. In many cases, the new hash
      * key might simply be the average of the beginning and ending hash key,
      * but it can be any hash key value in the range being mapped into the
-     * shard. For more information about splitting shards, see the <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis
-     * Developer Guide </a> .
+     * shard. For more information about splitting shards, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * You can use the DescribeStream operation to determine the shard ID and
@@ -962,9 +968,10 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * for your account, you receive a <code>LimitExceededException</code> .
      * </p>
      * <p>
-     * <b>Note:</b> The default limit for an AWS account is two shards per
-     * stream. If you need to create a stream with more than two shards,
-     * contact AWS Support to increase the limit on your account.
+     * <b>Note:</b> The default limit for an AWS account is five shards per
+     * stream. If you need to create a stream with more than five shards,
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
+     * to increase the limit on your account.
      * </p>
      * <p>
      * If you try to operate on too many streams in parallel using
@@ -997,8 +1004,8 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
             public Void call() throws Exception {
                 splitShard(splitShardRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1024,9 +1031,9 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * shard where the shard gets split in two. In many cases, the new hash
      * key might simply be the average of the beginning and ending hash key,
      * but it can be any hash key value in the range being mapped into the
-     * shard. For more information about splitting shards, see the <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis
-     * Developer Guide </a> .
+     * shard. For more information about splitting shards, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * You can use the DescribeStream operation to determine the shard ID and
@@ -1058,9 +1065,10 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * for your account, you receive a <code>LimitExceededException</code> .
      * </p>
      * <p>
-     * <b>Note:</b> The default limit for an AWS account is two shards per
-     * stream. If you need to create a stream with more than two shards,
-     * contact AWS Support to increase the limit on your account.
+     * <b>Note:</b> The default limit for an AWS account is five shards per
+     * stream. If you need to create a stream with more than five shards,
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
+     * to increase the limit on your account.
      * </p>
      * <p>
      * If you try to operate on too many streams in parallel using
@@ -1097,16 +1105,16 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    splitShard(splitShardRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(splitShardRequest, null);
-                   return null;
-            }
-        });
+              try {
+                splitShard(splitShardRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(splitShardRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1154,9 +1162,10 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * 
      * </ul>
      * <p>
-     * <b>Note:</b> The default limit for an AWS account is two shards per
-     * stream. If you need to create a stream with more than two shards,
-     * contact AWS Support to increase the limit on your account.
+     * <b>Note:</b> The default limit for an AWS account is five shards per
+     * stream. If you need to create a stream with more than five shards,
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
+     * to increase the limit on your account.
      * </p>
      * <p>
      * You can use the <code>DescribeStream</code> operation to check the
@@ -1188,8 +1197,8 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
             public Void call() throws Exception {
                 createStream(createStreamRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1237,9 +1246,10 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * 
      * </ul>
      * <p>
-     * <b>Note:</b> The default limit for an AWS account is two shards per
-     * stream. If you need to create a stream with more than two shards,
-     * contact AWS Support to increase the limit on your account.
+     * <b>Note:</b> The default limit for an AWS account is five shards per
+     * stream. If you need to create a stream with more than five shards,
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
+     * to increase the limit on your account.
      * </p>
      * <p>
      * You can use the <code>DescribeStream</code> operation to check the
@@ -1275,16 +1285,16 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    createStream(createStreamRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createStreamRequest, null);
-                   return null;
-            }
-        });
+              try {
+                createStream(createStreamRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createStreamRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1338,8 +1348,8 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
             public Void call() throws Exception {
                 deleteStream(deleteStreamRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1397,16 +1407,16 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteStream(deleteStreamRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteStreamRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteStream(deleteStreamRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteStreamRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1461,8 +1471,8 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
         return executorService.submit(new Callable<ListStreamsResult>() {
             public ListStreamsResult call() throws Exception {
                 return listStreams(listStreamsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1522,17 +1532,17 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListStreamsResult>() {
             public ListStreamsResult call() throws Exception {
-                ListStreamsResult result;
+              ListStreamsResult result;
                 try {
-                    result = listStreams(listStreamsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(listStreamsRequest, result);
-                   return result;
-            }
-        });
+                result = listStreams(listStreamsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listStreamsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1553,9 +1563,9 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * overall capacity of a stream because of excess capacity that is not
      * being used. The operation requires that you specify the shard to be
      * merged and the adjacent shard for a given stream. For more information
-     * about merging shards, see the <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis
-     * Developer Guide </a> .
+     * about merging shards, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * If the stream is in the ACTIVE state, you can call
@@ -1612,8 +1622,8 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
             public Void call() throws Exception {
                 mergeShards(mergeShardsRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1634,9 +1644,9 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * overall capacity of a stream because of excess capacity that is not
      * being used. The operation requires that you specify the shard to be
      * merged and the adjacent shard for a given stream. For more information
-     * about merging shards, see the <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis
-     * Developer Guide </a> .
+     * about merging shards, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * If the stream is in the ACTIVE state, you can call
@@ -1697,16 +1707,16 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    mergeShards(mergeShardsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(mergeShardsRequest, null);
-                   return null;
-            }
-        });
+              try {
+                mergeShards(mergeShardsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(mergeShardsRequest, null);
+                 return null;
+        }
+    });
     }
     
 }

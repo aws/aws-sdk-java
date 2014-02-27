@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a set of primary keys and, for each key, the attributes to retrieve from the table.
+ * Represents a set of primary keys and, for each key, the attributes to
+ * retrieve from the table.
  * </p>
  */
 public class KeysAndAttributes implements Serializable {
@@ -36,12 +37,7 @@ public class KeysAndAttributes implements Serializable {
      * One or more attributes to retrieve from the table or index. If no
      * attribute names are specified then all attributes will be returned. If
      * any of the specified attributes are not found, they will not appear in
-     * the result. <p>If you are querying an index and request only
-     * attributes that are projected into that index, the operation will read
-     * only the index and not the table. If any of the requested attributes
-     * are not projected into the index, Amazon DynamoDB will need to fetch
-     * each matching item from the table. This extra fetching incurs
-     * additional throughput cost and latency.
+     * the result.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -143,12 +139,7 @@ public class KeysAndAttributes implements Serializable {
      * One or more attributes to retrieve from the table or index. If no
      * attribute names are specified then all attributes will be returned. If
      * any of the specified attributes are not found, they will not appear in
-     * the result. <p>If you are querying an index and request only
-     * attributes that are projected into that index, the operation will read
-     * only the index and not the table. If any of the requested attributes
-     * are not projected into the index, Amazon DynamoDB will need to fetch
-     * each matching item from the table. This extra fetching incurs
-     * additional throughput cost and latency.
+     * the result.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -156,12 +147,7 @@ public class KeysAndAttributes implements Serializable {
      * @return One or more attributes to retrieve from the table or index. If no
      *         attribute names are specified then all attributes will be returned. If
      *         any of the specified attributes are not found, they will not appear in
-     *         the result. <p>If you are querying an index and request only
-     *         attributes that are projected into that index, the operation will read
-     *         only the index and not the table. If any of the requested attributes
-     *         are not projected into the index, Amazon DynamoDB will need to fetch
-     *         each matching item from the table. This extra fetching incurs
-     *         additional throughput cost and latency.
+     *         the result.
      */
     public java.util.List<String> getAttributesToGet() {
         return attributesToGet;
@@ -171,12 +157,7 @@ public class KeysAndAttributes implements Serializable {
      * One or more attributes to retrieve from the table or index. If no
      * attribute names are specified then all attributes will be returned. If
      * any of the specified attributes are not found, they will not appear in
-     * the result. <p>If you are querying an index and request only
-     * attributes that are projected into that index, the operation will read
-     * only the index and not the table. If any of the requested attributes
-     * are not projected into the index, Amazon DynamoDB will need to fetch
-     * each matching item from the table. This extra fetching incurs
-     * additional throughput cost and latency.
+     * the result.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -184,12 +165,7 @@ public class KeysAndAttributes implements Serializable {
      * @param attributesToGet One or more attributes to retrieve from the table or index. If no
      *         attribute names are specified then all attributes will be returned. If
      *         any of the specified attributes are not found, they will not appear in
-     *         the result. <p>If you are querying an index and request only
-     *         attributes that are projected into that index, the operation will read
-     *         only the index and not the table. If any of the requested attributes
-     *         are not projected into the index, Amazon DynamoDB will need to fetch
-     *         each matching item from the table. This extra fetching incurs
-     *         additional throughput cost and latency.
+     *         the result.
      */
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
@@ -205,12 +181,7 @@ public class KeysAndAttributes implements Serializable {
      * One or more attributes to retrieve from the table or index. If no
      * attribute names are specified then all attributes will be returned. If
      * any of the specified attributes are not found, they will not appear in
-     * the result. <p>If you are querying an index and request only
-     * attributes that are projected into that index, the operation will read
-     * only the index and not the table. If any of the requested attributes
-     * are not projected into the index, Amazon DynamoDB will need to fetch
-     * each matching item from the table. This extra fetching incurs
-     * additional throughput cost and latency.
+     * the result.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -220,12 +191,7 @@ public class KeysAndAttributes implements Serializable {
      * @param attributesToGet One or more attributes to retrieve from the table or index. If no
      *         attribute names are specified then all attributes will be returned. If
      *         any of the specified attributes are not found, they will not appear in
-     *         the result. <p>If you are querying an index and request only
-     *         attributes that are projected into that index, the operation will read
-     *         only the index and not the table. If any of the requested attributes
-     *         are not projected into the index, Amazon DynamoDB will need to fetch
-     *         each matching item from the table. This extra fetching incurs
-     *         additional throughput cost and latency.
+     *         the result.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -242,12 +208,7 @@ public class KeysAndAttributes implements Serializable {
      * One or more attributes to retrieve from the table or index. If no
      * attribute names are specified then all attributes will be returned. If
      * any of the specified attributes are not found, they will not appear in
-     * the result. <p>If you are querying an index and request only
-     * attributes that are projected into that index, the operation will read
-     * only the index and not the table. If any of the requested attributes
-     * are not projected into the index, Amazon DynamoDB will need to fetch
-     * each matching item from the table. This extra fetching incurs
-     * additional throughput cost and latency.
+     * the result.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -257,12 +218,7 @@ public class KeysAndAttributes implements Serializable {
      * @param attributesToGet One or more attributes to retrieve from the table or index. If no
      *         attribute names are specified then all attributes will be returned. If
      *         any of the specified attributes are not found, they will not appear in
-     *         the result. <p>If you are querying an index and request only
-     *         attributes that are projected into that index, the operation will read
-     *         only the index and not the table. If any of the requested attributes
-     *         are not projected into the index, Amazon DynamoDB will need to fetch
-     *         each matching item from the table. This extra fetching incurs
-     *         additional throughput cost and latency.
+     *         the result.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A uniquely identified group of data records in an Amazon Kinesis stream.
+ * A uniquely identified group of data records in an Amazon Kinesis
+ * stream.
  * </p>
  */
 public class Shard implements Serializable {

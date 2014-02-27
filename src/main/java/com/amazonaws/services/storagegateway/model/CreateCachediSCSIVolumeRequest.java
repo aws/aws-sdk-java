@@ -21,16 +21,22 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#createCachediSCSIVolume(CreateCachediSCSIVolumeRequest) CreateCachediSCSIVolume operation}.
  * <p>
- * This operation creates a cached volume on a specified cached gateway. This operation is supported only for the gateway-cached volume architecture.
+ * This operation creates a cached volume on a specified cached gateway.
+ * This operation is supported only for the gateway-cached volume
+ * architecture.
  * </p>
  * <p>
- * <b>NOTE:</b>Cache storage must be allocated to the gateway before you can create a cached volume. Use the AddCache operation to add cache storage to a
- * gateway.
+ * <b>NOTE:</b>Cache storage must be allocated to the gateway before you
+ * can create a cached volume. Use the AddCache operation to add cache
+ * storage to a gateway.
  * </p>
  * <p>
- * In the request, you must specify the gateway, size of the volume in bytes, the iSCSI target name, an IP address on which to expose the target, and a
- * unique client token. In response, AWS Storage Gateway creates the volume and returns information about it such as the volume Amazon Resource Name
- * (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.
+ * In the request, you must specify the gateway, size of the volume in
+ * bytes, the iSCSI target name, an IP address on which to expose the
+ * target, and a unique client token. In response, AWS Storage Gateway
+ * creates the volume and returns information about it such as the volume
+ * Amazon Resource Name (ARN), its size, and the iSCSI target ARN that
+ * initiators can use to connect to the volume target.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createCachediSCSIVolume(CreateCachediSCSIVolumeRequest)

@@ -21,10 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBSnapshot(DeleteDBSnapshotRequest) DeleteDBSnapshot operation}.
  * <p>
- * Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated.
+ * Deletes a DBSnapshot. If the snapshot is being copied, the copy
+ * operation is terminated.
  * </p>
  * <p>
- * <b>NOTE:</b>The DBSnapshot must be in the available state to be deleted.
+ * <b>NOTE:</b>The DBSnapshot must be in the available state to be
+ * deleted.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBSnapshot(DeleteDBSnapshotRequest)

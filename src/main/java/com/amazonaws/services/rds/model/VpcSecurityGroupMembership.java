@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element for queries on VPC security group membership.
+ * This data type is used as a response element for queries on VPC
+ * security group membership.
  * </p>
  */
 public class VpcSecurityGroupMembership implements Serializable {

@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * A server-side error occurred during the API call. The error message will contain additional details about the cause.
+ * A server-side error occurred during the API call. The error message
+ * will contain additional details about the cause.
  * </p>
  */        
 public class DirectConnectServerException extends AmazonServiceException {

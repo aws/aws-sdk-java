@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains information about the objects that you want to invalidate.
+ * A complex type that contains information about the objects that you
+ * want to invalidate.
  * </p>
  */
 public class Paths implements Serializable {

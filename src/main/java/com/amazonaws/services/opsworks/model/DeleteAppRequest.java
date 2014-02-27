@@ -24,9 +24,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes a specified app.
  * </p>
  * <p>
- * <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that
- * explicitly grants permissions. For more information on user permissions, see <a
- * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a> .
+ * <b>Required Permissions</b> : To use this action, an IAM user must
+ * have a Manage permissions level for the stack, or an attached policy
+ * that explicitly grants permissions. For more information on user
+ * permissions, see
+ * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deleteApp(DeleteAppRequest)

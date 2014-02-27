@@ -23,13 +23,18 @@ import com.amazonaws.services.ec2.model.transform.ReplaceRouteTableAssociationRe
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#replaceRouteTableAssociation(ReplaceRouteTableAssociationRequest) ReplaceRouteTableAssociation operation}.
  * <p>
- * Changes the route table associated with a given subnet in a VPC. After the operation completes, the subnet uses the routes in the new route table it's
- * associated with. For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
- * Route Tables </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
+ * Changes the route table associated with a given subnet in a VPC. After
+ * the operation completes, the subnet uses the routes in the new route
+ * table it's associated with. For more information about route tables,
+ * see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  * <p>
- * You can also use ReplaceRouteTableAssociation to change which table is the main route table in the VPC. You just specify the main route table's
- * association ID and the route table to be the new main route table.
+ * You can also use ReplaceRouteTableAssociation to change which table is
+ * the main route table in the VPC. You just specify the main route
+ * table's association ID and the route table to be the new main route
+ * table.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceRouteTableAssociation(ReplaceRouteTableAssociationRequest)

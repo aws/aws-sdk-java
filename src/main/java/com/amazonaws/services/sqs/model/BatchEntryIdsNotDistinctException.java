@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Two or more batch entries have the same <code>Id</code> in the request.
+ * Two or more batch entries have the same <code>Id</code> in the
+ * request.
  * </p>
  */        
 public class BatchEntryIdsNotDistinctException extends AmazonServiceException {

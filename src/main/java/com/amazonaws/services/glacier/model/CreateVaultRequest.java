@@ -21,8 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.glacier.AmazonGlacier#createVault(CreateVaultRequest) CreateVault operation}.
  * <p>
- * This operation creates a new vault with the specified name. The name of the vault must be unique within a region for an AWS account. You can create up
- * to 1,000 vaults per account. If you need to create more vaults, contact Amazon Glacier.
+ * This operation creates a new vault with the specified name. The name
+ * of the vault must be unique within a region for an AWS account. You
+ * can create up to 1,000 vaults per account. If you need to create more
+ * vaults, contact Amazon Glacier.
  * </p>
  * <p>
  * You must use the following guidelines when naming a vault.
@@ -35,7 +37,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * </li>
  * <li> <p>
- * Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), and '.' (period).
+ * Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen),
+ * and '.' (period).
  * </p>
  * </li>
  * 
@@ -46,15 +49,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This operation is idempotent.
  * </p>
  * <p>
- * An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any
- * permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
- * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management
- * (IAM) </a> .
+ * An AWS account has full permission to perform all operations
+ * (actions). However, AWS Identity and Access Management (IAM) users
+ * don't have any permissions by default. You must grant them explicit
+ * permission to perform specific actions. For more information, see
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+ * .
  * </p>
  * <p>
- * For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html">
- * Creating a Vault in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html"> Create Vault </a> in
- * the <i>Amazon Glacier Developer Guide</i> .
+ * For conceptual information and underlying REST API, go to
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html"> Creating a Vault in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html"> Create Vault </a>
+ * in the <i>Amazon Glacier Developer Guide</i> .
  * 
  * </p>
  *

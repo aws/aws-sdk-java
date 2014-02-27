@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.DescribeImageAttributeRequestM
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeImageAttribute(DescribeImageAttributeRequest) DescribeImageAttribute operation}.
  * <p>
- * Describes an attributes of an AMI. You can specify only one attribute at a time.
+ * Describes an attributes of an AMI. You can specify only one attribute
+ * at a time.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeImageAttribute(DescribeImageAttributeRequest)

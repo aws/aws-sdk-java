@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a cache cluster's status within a particular cache security group.
+ * Represents a cache cluster's status within a particular cache security
+ * group.
  * </p>
  */
 public class CacheSecurityGroupMembership implements Serializable {

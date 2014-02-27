@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Identifiers for the federated user that is associated with the credentials.
+ * Identifiers for the federated user that is associated with the
+ * credentials.
  * </p>
  */
 public class FederatedUser implements Serializable {

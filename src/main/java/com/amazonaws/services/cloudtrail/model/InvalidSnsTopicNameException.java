@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This exception is thrown when the provided SNS topic name is not valid.
+ * This exception is thrown when the provided SNS topic name is not
+ * valid.
  * </p>
  */        
 public class InvalidSnsTopicNameException extends AmazonServiceException {

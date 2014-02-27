@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a cluster version, including the parameter group family and description of the version.
+ * Describes a cluster version, including the parameter group family and
+ * description of the version.
  * </p>
  */
 public class ClusterVersion implements Serializable {

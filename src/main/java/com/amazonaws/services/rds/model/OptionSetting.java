@@ -18,8 +18,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Option settings are the actual settings being applied or configured for that option. It is used when you modify an option group or describe option
- * groups. For example, the NATIVE_NETWORK_ENCRYPTION option has a setting called SQLNET.ENCRYPTION_SERVER that can have several different values.
+ * Option settings are the actual settings being applied or configured
+ * for that option. It is used when you modify an option group or
+ * describe option groups. For example, the NATIVE_NETWORK_ENCRYPTION
+ * option has a setting called SQLNET.ENCRYPTION_SERVER that can have
+ * several different values.
  * </p>
  */
 public class OptionSetting implements Serializable {

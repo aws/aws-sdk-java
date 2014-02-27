@@ -21,7 +21,8 @@ import java.io.Serializable;
  * The Group data type contains information about a group.
  * </p>
  * <p>
- * This data type is used as a response element in the following actions:
+ * This data type is used as a response element in the following
+ * actions:
  * </p>
  * 
  * <ul>

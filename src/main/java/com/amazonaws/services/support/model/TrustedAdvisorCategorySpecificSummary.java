@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The container for summary information that relates to the category of the Trusted Advisor check.
+ * The container for summary information that relates to the category of
+ * the Trusted Advisor check.
  * </p>
  */
 public class TrustedAdvisorCategorySpecificSummary implements Serializable {

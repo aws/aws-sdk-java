@@ -21,8 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#modifyReservedInstances(ModifyReservedInstancesRequest) ModifyReservedInstances operation}.
  * <p>
- * Modifies the Availability Zone, instance count, instance type, or network platform (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved
- * Instances to be modified must be identical, except for Availability Zone, network platform, and instance type.
+ * Modifies the Availability Zone, instance count, instance type, or
+ * network platform (EC2-Classic or EC2-VPC) of your Reserved Instances.
+ * The Reserved Instances to be modified must be identical, except for
+ * Availability Zone, network platform, and instance type.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifyReservedInstances(ModifyReservedInstancesRequest)

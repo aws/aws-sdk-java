@@ -23,23 +23,29 @@ import com.amazonaws.services.ec2.model.transform.AssociateAddressRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#associateAddress(AssociateAddressRequest) AssociateAddress operation}.
  * <p>
- * Associates an Elastic IP address with an instance or a network interface.
+ * Associates an Elastic IP address with an instance or a network
+ * interface.
  * </p>
  * <p>
- * An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a> in the <i>Amazon Elastic Compute
- * Cloud User Guide</i> .
+ * An Elastic IP address is for use in either the EC2-Classic platform or
+ * in a VPC. For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  * <p>
- * [EC2-Classic, default VPC] If the Elastic IP address is already associated with a different instance, it is disassociated from that instance and
- * associated with the specified instance.
+ * [EC2-Classic, default VPC] If the Elastic IP address is already
+ * associated with a different instance, it is disassociated from that
+ * instance and associated with the specified instance.
  * </p>
  * <p>
- * [EC2-VPC] If you don't specify a private IP address, the Elastic IP address is associated with the primary IP address. If the Elastic IP address is
- * already associated with a different instance or a network interface, you get an error unless you allow reassociation.
+ * [EC2-VPC] If you don't specify a private IP address, the Elastic IP
+ * address is associated with the primary IP address. If the Elastic IP
+ * address is already associated with a different instance or a network
+ * interface, you get an error unless you allow reassociation.
  * </p>
  * <p>
- * This is an idempotent operation. If you perform the operation more than once, Amazon EC2 doesn't return an error.
+ * This is an idempotent operation. If you perform the operation more
+ * than once, Amazon EC2 doesn't return an error.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#associateAddress(AssociateAddressRequest)

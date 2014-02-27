@@ -21,13 +21,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.directconnect.AmazonDirectConnect#createConnection(CreateConnectionRequest) CreateConnection operation}.
  * <p>
- * Creates a new connection between the customer network and a specific AWS Direct Connect location.
+ * Creates a new connection between the customer network and a specific
+ * AWS Direct Connect location.
  * </p>
  * <p>
- * A connection links your internal network to an AWS Direct Connect location over a standard 1 gigabit or 10 gigabit Ethernet fiber-optic cable. One end
- * of the cable is connected to your router, the other to an AWS Direct Connect router. An AWS Direct Connect location provides access to Amazon Web
- * Services in the region it is associated with. You can establish connections with AWS Direct Connect locations in multiple regions, but a connection in
- * one region does not provide connectivity to other regions.
+ * A connection links your internal network to an AWS Direct Connect
+ * location over a standard 1 gigabit or 10 gigabit Ethernet fiber-optic
+ * cable. One end of the cable is connected to your router, the other to
+ * an AWS Direct Connect router. An AWS Direct Connect location provides
+ * access to Amazon Web Services in the region it is associated with. You
+ * can establish connections with AWS Direct Connect locations in
+ * multiple regions, but a connection in one region does not provide
+ * connectivity to other regions.
  * </p>
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#createConnection(CreateConnectionRequest)

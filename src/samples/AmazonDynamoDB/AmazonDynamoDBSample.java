@@ -98,7 +98,7 @@ public class AmazonDynamoDBSample {
                 System.out.println("Waiting for " + tableName + " to become ACTIVE...");
                 Tables.waitForTableToBecomeActive(dynamoDB, tableName);
             }
-            
+
             // Describe our new table
             DescribeTableRequest describeTableRequest = new DescribeTableRequest().withTableName(tableName);
             TableDescription tableDescription = dynamoDB.describeTable(describeTableRequest).getTable();

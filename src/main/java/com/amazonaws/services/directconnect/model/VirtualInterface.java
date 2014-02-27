@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location and the customer.
+ * A virtual interface (VLAN) transmits the traffic between the AWS
+ * Direct Connect location and the customer.
  * </p>
  */
 public class VirtualInterface implements Serializable {

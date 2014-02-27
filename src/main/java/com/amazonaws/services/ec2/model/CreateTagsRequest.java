@@ -23,12 +23,15 @@ import com.amazonaws.services.ec2.model.transform.CreateTagsRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createTags(CreateTagsRequest) CreateTags operation}.
  * <p>
- * Adds or overwrites one or more tags for the specified EC2 resource or resources. Each resource can have a maximum of 10 tags. Each tag consists of a
- * key and optional value. Tag keys must be unique per resource.
+ * Adds or overwrites one or more tags for the specified EC2 resource or
+ * resources. Each resource can have a maximum of 10 tags. Each tag
+ * consists of a key and optional value. Tag keys must be unique per
+ * resource.
  * </p>
  * <p>
- * For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a> in the
- * <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information about tags, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createTags(CreateTagsRequest)

@@ -21,27 +21,37 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#createQueue(CreateQueueRequest) CreateQueue operation}.
  * <p>
- * Creates a new queue, or returns the URL of an existing one. When you request <code>CreateQueue</code> , you provide a name for the queue. To
- * successfully create a new queue, you must provide a name that is unique within the scope of your own queues.
+ * Creates a new queue, or returns the URL of an existing one. When you
+ * request <code>CreateQueue</code> , you provide a name for the queue.
+ * To successfully create a new queue, you must provide a name that is
+ * unique within the scope of your own queues.
  * </p>
  * <p>
- * <b>NOTE:</b> If you delete a queue, you must wait at least 60 seconds before creating a queue with the same name.
+ * <b>NOTE:</b> If you delete a queue, you must wait at least 60 seconds
+ * before creating a queue with the same name.
  * </p>
  * <p>
- * You may pass one or more attributes in the request. If you do not provide a value for any attribute, the queue will have the default value for that
- * attribute. Permitted attributes are the same that can be set using SetQueueAttributes.
+ * You may pass one or more attributes in the request. If you do not
+ * provide a value for any attribute, the queue will have the default
+ * value for that attribute. Permitted attributes are the same that can
+ * be set using SetQueueAttributes.
  * </p>
  * <p>
- * <b>NOTE:</b> Use GetQueueUrl to get a queue's URL. GetQueueUrl requires only the QueueName parameter.
+ * <b>NOTE:</b> Use GetQueueUrl to get a queue's URL. GetQueueUrl
+ * requires only the QueueName parameter.
  * </p>
  * <p>
- * If you provide the name of an existing queue, along with the exact names and values of all the queue's attributes, <code>CreateQueue</code> returns
- * the queue URL for the existing queue. If the queue name, attribute names, or attribute values do not match an existing queue, <code>CreateQueue</code>
- * returns an error.
+ * If you provide the name of an existing queue, along with the exact
+ * names and values of all the queue's attributes,
+ * <code>CreateQueue</code> returns the queue URL for the existing queue.
+ * If the queue name, attribute names, or attribute values do not match
+ * an existing queue, <code>CreateQueue</code> returns an error.
  * </p>
  * <p>
- * <b>NOTE:</b>Some API actions take lists of parameters. These lists are specified using the param.n notation. Values of n are integers starting from 1.
- * For example, a parameter list with two elements looks like this:
+ * <b>NOTE:</b>Some API actions take lists of parameters. These lists are
+ * specified using the param.n notation. Values of n are integers
+ * starting from 1. For example, a parameter list with two elements looks
+ * like this:
  * </p>
  * <p>
  * <code>&Attribute.1=this</code>

@@ -21,11 +21,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listInstanceProfiles(ListInstanceProfilesRequest) ListInstanceProfiles operation}.
  * <p>
- * Lists the instance profiles that have the specified path prefix. If there are none, the action returns an empty list. For more information about
- * instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a> .
+ * Lists the instance profiles that have the specified path prefix. If
+ * there are none, the action returns an empty list. For more information
+ * about instance profiles, go to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a>
+ * .
  * </p>
  * <p>
- * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+ * You can paginate the results using the <code>MaxItems</code> and
+ * <code>Marker</code> parameters.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listInstanceProfiles(ListInstanceProfilesRequest)

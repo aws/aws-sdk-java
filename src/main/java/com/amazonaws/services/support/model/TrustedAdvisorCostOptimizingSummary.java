@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The estimated cost savings that might be realized if the recommended actions are taken.
+ * The estimated cost savings that might be realized if the recommended
+ * actions are taken.
  * </p>
  */
 public class TrustedAdvisorCostOptimizingSummary implements Serializable {

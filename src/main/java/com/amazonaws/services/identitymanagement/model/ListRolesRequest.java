@@ -21,15 +21,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listRoles(ListRolesRequest) ListRoles operation}.
  * <p>
- * Lists the roles that have the specified path prefix. If there are none, the action returns an empty list. For more information about roles, go to <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> .
+ * Lists the roles that have the specified path prefix. If there are
+ * none, the action returns an empty list. For more information about
+ * roles, go to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a>
+ * .
  * </p>
  * <p>
- * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+ * You can paginate the results using the <code>MaxItems</code> and
+ * <code>Marker</code> parameters.
  * </p>
  * <p>
- * The returned policy is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">
- * http://www.faqs.org/rfcs/rfc3986.html </a> .
+ * The returned policy is URL-encoded according to RFC 3986. For more
+ * information about RFC 3986, go to
+ * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listRoles(ListRolesRequest)

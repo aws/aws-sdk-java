@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the ListGroupPolicies action.
+ * Contains the result of a successful invocation of the
+ * ListGroupPolicies action.
  * </p>
  */
 public class ListGroupPoliciesResult implements Serializable {

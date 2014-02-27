@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The parameter group name does not refer to an existing parameter group.
+ * The parameter group name does not refer to an existing parameter
+ * group.
  * </p>
  */        
 public class ClusterParameterGroupNotFoundException extends AmazonServiceException {

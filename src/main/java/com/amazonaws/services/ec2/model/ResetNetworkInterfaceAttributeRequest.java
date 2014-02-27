@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.ResetNetworkInterfaceAttribute
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#resetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest) ResetNetworkInterfaceAttribute operation}.
  * <p>
- * Resets a network interface attribute. You can specify only one attribute at a time.
+ * Resets a network interface attribute. You can specify only one
+ * attribute at a time.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#resetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest)

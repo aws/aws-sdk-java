@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes an individual setting that controls some aspect of ElastiCache behavior.
+ * Describes an individual setting that controls some aspect of
+ * ElastiCache behavior.
  * </p>
  */
 public class Parameter implements Serializable {

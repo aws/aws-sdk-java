@@ -23,18 +23,23 @@ import com.amazonaws.services.ec2.model.transform.GetPasswordDataRequestMarshall
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#getPasswordData(GetPasswordDataRequest) GetPasswordData operation}.
  * <p>
- * Retrieves the encrypted administrator password for an instance running Windows.
+ * Retrieves the encrypted administrator password for an instance running
+ * Windows.
  * </p>
  * <p>
- * The Windows password is only generated the first time an AMI is launched. It is not generated for rebundled AMIs or after the password is changed on
- * an instance.
+ * The Windows password is only generated the first time an AMI is
+ * launched. It is not generated for rebundled AMIs or after the password
+ * is changed on an instance.
  * </p>
  * <p>
- * The password is encrypted using the key pair that you specified when you launched the instance. You must provide the corresponding key pair file.
+ * The password is encrypted using the key pair that you specified when
+ * you launched the instance. You must provide the corresponding key pair
+ * file.
  * </p>
  * <p>
- * Password generation and encryption takes a few moments. We recommend that you wait up to 15 minutes after launching an instance before trying to
- * retrieve the generated password.
+ * Password generation and encryption takes a few moments. We recommend
+ * that you wait up to 15 minutes after launching an instance before
+ * trying to retrieve the generated password.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#getPasswordData(GetPasswordDataRequest)

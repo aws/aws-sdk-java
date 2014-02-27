@@ -21,11 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeInstanceHealth(DescribeInstanceHealthRequest) DescribeInstanceHealth operation}.
  * <p>
- * Returns the current state of the specified instances registered with the specified load balancer. If no instances are specified, the state of all the
- * instances registered with the load balancer is returned.
+ * Returns the current state of the specified instances registered with
+ * the specified load balancer. If no instances are specified, the state
+ * of all the instances registered with the load balancer is returned.
  * </p>
  * <p>
- * <b>NOTE:</b> You must provide the same account credentials as those that were used to create the load balancer.
+ * <b>NOTE:</b> You must provide the same account credentials as those
+ * that were used to create the load balancer.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeInstanceHealth(DescribeInstanceHealthRequest)

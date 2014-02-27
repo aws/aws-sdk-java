@@ -35,23 +35,36 @@ import com.amazonaws.services.rds.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * Amazon Relational Database Service <p>
- * Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up, operate, and scale a relational database in the
- * cloud. It provides cost-efficient, resizable capacity for an industry-standard relational database and manages common database administration tasks,
- * freeing up developers to focus on what makes their applications and businesses unique.
+ * Amazon Relational Database Service (Amazon RDS) is a web service that
+ * makes it easier to set up, operate, and scale a relational database in
+ * the cloud. It provides cost-efficient, resizable capacity for an
+ * industry-standard relational database and manages common database
+ * administration tasks, freeing up developers to focus on what makes
+ * their applications and businesses unique.
  * </p>
  * <p>
- * Amazon RDS gives you access to the capabilities of a familiar MySQL or Oracle database server. This means the code, applications, and tools you
- * already use today with your existing MySQL or Oracle databases work with Amazon RDS without modification. Amazon RDS automatically backs up your
- * database and maintains the database software that powers your DB instance. Amazon RDS is flexible: you can scale your database instance's compute
- * resources and storage capacity to meet your application's demand. As with all Amazon Web Services, there are no up-front investments, and you pay only
- * for the resources you use.
+ * Amazon RDS gives you access to the capabilities of a familiar MySQL
+ * or Oracle database server. This means the code, applications, and
+ * tools you already use today with your existing MySQL or Oracle
+ * databases work with Amazon RDS without modification. Amazon RDS
+ * automatically backs up your database and maintains the database
+ * software that powers your DB instance. Amazon RDS is flexible: you can
+ * scale your database instance's compute resources and storage capacity
+ * to meet your application's demand. As with all Amazon Web Services,
+ * there are no up-front investments, and you pay only for the resources
+ * you use.
  * </p>
  * <p>
- * This is an interface reference for Amazon RDS. It contains documentation for a programming or command line interface you can use to manage Amazon
- * RDS. Note that Amazon RDS is asynchronous, which means that some interfaces may require techniques such as polling or callback functions to determine
- * when a command has been applied. In this reference, the parameter descriptions indicate whether a command is applied immediately, on the next instance
- * reboot, or during the maintenance window. For a summary of the Amazon RDS interfaces, go to <a
- * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces"> Available RDS Interfaces </a> .
+ * This is an interface reference for Amazon RDS. It contains
+ * documentation for a programming or command line interface you can use
+ * to manage Amazon RDS. Note that Amazon RDS is asynchronous, which
+ * means that some interfaces may require techniques such as polling or
+ * callback functions to determine when a command has been applied. In
+ * this reference, the parameter descriptions indicate whether a command
+ * is applied immediately, on the next instance reboot, or during the
+ * maintenance window. For a summary of the Amazon RDS interfaces, go to
+ * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces"> Available RDS Interfaces </a>
+ * .
  * </p>
  */
 public class AmazonRDSAsyncClient extends AmazonRDSClient
@@ -61,6 +74,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
+
+    private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -103,13 +118,13 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRDSAsyncClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonRDS using the specified AWS account credentials.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -121,7 +136,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *                       when authenticating with AWS services.
      */
     public AmazonRDSAsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newCachedThreadPool());
+        this(awsCredentials, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -175,7 +190,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonRDS using the specified AWS account credentials provider.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -188,7 +203,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *            to authenticate requests with AWS services.
      */
     public AmazonRDSAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -231,7 +246,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      */
     public AmazonRDSAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
                 ClientConfiguration clientConfiguration) {
-        this(awsCredentialsProvider, clientConfiguration, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -275,7 +290,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who
      * wish to give pending asynchronous service calls time to complete should
-     * call getExecutorService().shutdown() prior to calling this method.
+     * call getExecutorService().shutdown() followed by
+     * getExecutorService().awaitTermination() prior to calling this method.
      */
     @Override
     public void shutdown() {
@@ -315,8 +331,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DescribeEventSubscriptionsResult>() {
             public DescribeEventSubscriptionsResult call() throws Exception {
                 return describeEventSubscriptions(describeEventSubscriptionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -356,17 +372,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeEventSubscriptionsResult>() {
             public DescribeEventSubscriptionsResult call() throws Exception {
-                DescribeEventSubscriptionsResult result;
+              DescribeEventSubscriptionsResult result;
                 try {
-                    result = describeEventSubscriptions(describeEventSubscriptionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeEventSubscriptionsRequest, result);
-                   return result;
-            }
-        });
+                result = describeEventSubscriptions(describeEventSubscriptionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeEventSubscriptionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -405,8 +421,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
                 return deleteDBInstance(deleteDBInstanceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -450,17 +466,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
-                DBInstance result;
+              DBInstance result;
                 try {
-                    result = deleteDBInstance(deleteDBInstanceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteDBInstanceRequest, result);
-                   return result;
-            }
-        });
+                result = deleteDBInstance(deleteDBInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteDBInstanceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -488,8 +504,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
                 return createDBInstance(createDBInstanceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -522,17 +538,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
-                DBInstance result;
+              DBInstance result;
                 try {
-                    result = createDBInstance(createDBInstanceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createDBInstanceRequest, result);
-                   return result;
-            }
-        });
+                result = createDBInstance(createDBInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createDBInstanceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -564,8 +580,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DescribeEventsResult>() {
             public DescribeEventsResult call() throws Exception {
                 return describeEvents(describeEventsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -602,17 +618,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeEventsResult>() {
             public DescribeEventsResult call() throws Exception {
-                DescribeEventsResult result;
+              DescribeEventsResult result;
                 try {
-                    result = describeEvents(describeEventsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeEventsRequest, result);
-                   return result;
-            }
-        });
+                result = describeEvents(describeEventsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeEventsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -647,8 +663,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
             public Void call() throws Exception {
                 deleteDBParameterGroup(deleteDBParameterGroupRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -687,16 +703,16 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteDBParameterGroup(deleteDBParameterGroupRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteDBParameterGroupRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteDBParameterGroup(deleteDBParameterGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteDBParameterGroupRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -724,8 +740,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DescribeDBSnapshotsResult>() {
             public DescribeDBSnapshotsResult call() throws Exception {
                 return describeDBSnapshots(describeDBSnapshotsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -758,17 +774,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeDBSnapshotsResult>() {
             public DescribeDBSnapshotsResult call() throws Exception {
-                DescribeDBSnapshotsResult result;
+              DescribeDBSnapshotsResult result;
                 try {
-                    result = describeDBSnapshots(describeDBSnapshotsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeDBSnapshotsRequest, result);
-                   return result;
-            }
-        });
+                result = describeDBSnapshots(describeDBSnapshotsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDBSnapshotsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -799,8 +815,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DescribeDBSecurityGroupsResult>() {
             public DescribeDBSecurityGroupsResult call() throws Exception {
                 return describeDBSecurityGroups(describeDBSecurityGroupsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -836,17 +852,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeDBSecurityGroupsResult>() {
             public DescribeDBSecurityGroupsResult call() throws Exception {
-                DescribeDBSecurityGroupsResult result;
+              DescribeDBSecurityGroupsResult result;
                 try {
-                    result = describeDBSecurityGroups(describeDBSecurityGroupsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeDBSecurityGroupsRequest, result);
-                   return result;
-            }
-        });
+                result = describeDBSecurityGroups(describeDBSecurityGroupsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDBSecurityGroupsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -876,8 +892,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBSecurityGroup>() {
             public DBSecurityGroup call() throws Exception {
                 return createDBSecurityGroup(createDBSecurityGroupRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -912,17 +928,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBSecurityGroup>() {
             public DBSecurityGroup call() throws Exception {
-                DBSecurityGroup result;
+              DBSecurityGroup result;
                 try {
-                    result = createDBSecurityGroup(createDBSecurityGroupRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createDBSecurityGroupRequest, result);
-                   return result;
-            }
-        });
+                result = createDBSecurityGroup(createDBSecurityGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createDBSecurityGroupRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -957,8 +973,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
                 return restoreDBInstanceToPointInTime(restoreDBInstanceToPointInTimeRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -998,17 +1014,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
-                DBInstance result;
+              DBInstance result;
                 try {
-                    result = restoreDBInstanceToPointInTime(restoreDBInstanceToPointInTimeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(restoreDBInstanceToPointInTimeRequest, result);
-                   return result;
-            }
-        });
+                result = restoreDBInstanceToPointInTime(restoreDBInstanceToPointInTimeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(restoreDBInstanceToPointInTimeRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1037,8 +1053,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DescribeOptionGroupOptionsResult>() {
             public DescribeOptionGroupOptionsResult call() throws Exception {
                 return describeOptionGroupOptions(describeOptionGroupOptionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1072,17 +1088,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeOptionGroupOptionsResult>() {
             public DescribeOptionGroupOptionsResult call() throws Exception {
-                DescribeOptionGroupOptionsResult result;
+              DescribeOptionGroupOptionsResult result;
                 try {
-                    result = describeOptionGroupOptions(describeOptionGroupOptionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeOptionGroupOptionsRequest, result);
-                   return result;
-            }
-        });
+                result = describeOptionGroupOptions(describeOptionGroupOptionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeOptionGroupOptionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1111,8 +1127,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
             public Void call() throws Exception {
                 deleteOptionGroup(deleteOptionGroupRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1145,16 +1161,16 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteOptionGroup(deleteOptionGroupRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteOptionGroupRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteOptionGroup(deleteOptionGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteOptionGroupRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1164,9 +1180,9 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * specified DBSubnetGroup.
      * </p>
      * <p>
-     * For an overview of CIDR ranges, go to the <a
-     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
-     * Wikipedia Tutorial </a> .
+     * For an overview of CIDR ranges, go to the
+     * <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing"> Wikipedia Tutorial </a>
+     * .
      * </p>
      *
      * @param describeDBSubnetGroupsRequest Container for the necessary
@@ -1190,8 +1206,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DescribeDBSubnetGroupsResult>() {
             public DescribeDBSubnetGroupsResult call() throws Exception {
                 return describeDBSubnetGroups(describeDBSubnetGroupsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1201,9 +1217,9 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * specified DBSubnetGroup.
      * </p>
      * <p>
-     * For an overview of CIDR ranges, go to the <a
-     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
-     * Wikipedia Tutorial </a> .
+     * For an overview of CIDR ranges, go to the
+     * <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing"> Wikipedia Tutorial </a>
+     * .
      * </p>
      *
      * @param describeDBSubnetGroupsRequest Container for the necessary
@@ -1232,17 +1248,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeDBSubnetGroupsResult>() {
             public DescribeDBSubnetGroupsResult call() throws Exception {
-                DescribeDBSubnetGroupsResult result;
+              DescribeDBSubnetGroupsResult result;
                 try {
-                    result = describeDBSubnetGroups(describeDBSubnetGroupsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeDBSubnetGroupsRequest, result);
-                   return result;
-            }
-        });
+                result = describeDBSubnetGroups(describeDBSubnetGroupsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDBSubnetGroupsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1250,9 +1266,9 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * Removes metadata tags from an Amazon RDS resource.
      * </p>
      * <p>
-     * For an overview on tagging an Amazon RDS resource, see <a
-     * docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">
-     * Tagging Amazon RDS Resources </a> .
+     * For an overview on tagging an Amazon RDS resource, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html"> Tagging Amazon RDS Resources </a>
+     * .
      * </p>
      *
      * @param removeTagsFromResourceRequest Container for the necessary
@@ -1277,8 +1293,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
             public Void call() throws Exception {
                 removeTagsFromResource(removeTagsFromResourceRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1286,9 +1302,9 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * Removes metadata tags from an Amazon RDS resource.
      * </p>
      * <p>
-     * For an overview on tagging an Amazon RDS resource, see <a
-     * docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">
-     * Tagging Amazon RDS Resources </a> .
+     * For an overview on tagging an Amazon RDS resource, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html"> Tagging Amazon RDS Resources </a>
+     * .
      * </p>
      *
      * @param removeTagsFromResourceRequest Container for the necessary
@@ -1317,16 +1333,16 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    removeTagsFromResource(removeTagsFromResourceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(removeTagsFromResourceRequest, null);
-                   return null;
-            }
-        });
+              try {
+                removeTagsFromResource(removeTagsFromResourceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(removeTagsFromResourceRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1355,8 +1371,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DescribeDBParametersResult>() {
             public DescribeDBParametersResult call() throws Exception {
                 return describeDBParameters(describeDBParametersRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1390,17 +1406,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeDBParametersResult>() {
             public DescribeDBParametersResult call() throws Exception {
-                DescribeDBParametersResult result;
+              DescribeDBParametersResult result;
                 try {
-                    result = describeDBParameters(describeDBParametersRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeDBParametersRequest, result);
-                   return result;
-            }
-        });
+                result = describeDBParameters(describeDBParametersRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDBParametersRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1434,8 +1450,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
             public Void call() throws Exception {
                 deleteDBSecurityGroup(deleteDBSecurityGroupRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1473,16 +1489,16 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteDBSecurityGroup(deleteDBSecurityGroupRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteDBSecurityGroupRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteDBSecurityGroup(deleteDBSecurityGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteDBSecurityGroupRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1513,8 +1529,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DescribeOrderableDBInstanceOptionsResult>() {
             public DescribeOrderableDBInstanceOptionsResult call() throws Exception {
                 return describeOrderableDBInstanceOptions(describeOrderableDBInstanceOptionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1550,17 +1566,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeOrderableDBInstanceOptionsResult>() {
             public DescribeOrderableDBInstanceOptionsResult call() throws Exception {
-                DescribeOrderableDBInstanceOptionsResult result;
+              DescribeOrderableDBInstanceOptionsResult result;
                 try {
-                    result = describeOrderableDBInstanceOptions(describeOrderableDBInstanceOptionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeOrderableDBInstanceOptionsRequest, result);
-                   return result;
-            }
-        });
+                result = describeOrderableDBInstanceOptions(describeOrderableDBInstanceOptionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeOrderableDBInstanceOptionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1599,8 +1615,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBParameterGroup>() {
             public DBParameterGroup call() throws Exception {
                 return createDBParameterGroup(createDBParameterGroupRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1644,17 +1660,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBParameterGroup>() {
             public DBParameterGroup call() throws Exception {
-                DBParameterGroup result;
+              DBParameterGroup result;
                 try {
-                    result = createDBParameterGroup(createDBParameterGroupRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createDBParameterGroupRequest, result);
-                   return result;
-            }
-        });
+                result = createDBParameterGroup(createDBParameterGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createDBParameterGroupRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1665,9 +1681,9 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * Amazon RDS.
      * </p>
      * <p>
-     * For an overview on tagging Amazon RDS resources, see <a
-     * docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">
-     * Tagging Amazon RDS Resources </a> .
+     * For an overview on tagging Amazon RDS resources, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html"> Tagging Amazon RDS Resources </a>
+     * .
      * </p>
      *
      * @param addTagsToResourceRequest Container for the necessary parameters
@@ -1691,8 +1707,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
             public Void call() throws Exception {
                 addTagsToResource(addTagsToResourceRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1703,9 +1719,9 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * Amazon RDS.
      * </p>
      * <p>
-     * For an overview on tagging Amazon RDS resources, see <a
-     * docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">
-     * Tagging Amazon RDS Resources </a> .
+     * For an overview on tagging Amazon RDS resources, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html"> Tagging Amazon RDS Resources </a>
+     * .
      * </p>
      *
      * @param addTagsToResourceRequest Container for the necessary parameters
@@ -1733,16 +1749,16 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    addTagsToResource(addTagsToResourceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(addTagsToResourceRequest, null);
-                   return null;
-            }
-        });
+              try {
+                addTagsToResource(addTagsToResourceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(addTagsToResourceRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1750,9 +1766,9 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * Lists all tags on an Amazon RDS resource.
      * </p>
      * <p>
-     * For an overview on tagging an Amazon RDS resource, see <a
-     * docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">
-     * Tagging Amazon RDS Resources </a> .
+     * For an overview on tagging an Amazon RDS resource, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html"> Tagging Amazon RDS Resources </a>
+     * .
      * </p>
      *
      * @param listTagsForResourceRequest Container for the necessary
@@ -1775,8 +1791,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<ListTagsForResourceResult>() {
             public ListTagsForResourceResult call() throws Exception {
                 return listTagsForResource(listTagsForResourceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1784,9 +1800,9 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * Lists all tags on an Amazon RDS resource.
      * </p>
      * <p>
-     * For an overview on tagging an Amazon RDS resource, see <a
-     * docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">
-     * Tagging Amazon RDS Resources </a> .
+     * For an overview on tagging an Amazon RDS resource, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html"> Tagging Amazon RDS Resources </a>
+     * .
      * </p>
      *
      * @param listTagsForResourceRequest Container for the necessary
@@ -1814,17 +1830,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListTagsForResourceResult>() {
             public ListTagsForResourceResult call() throws Exception {
-                ListTagsForResourceResult result;
+              ListTagsForResourceResult result;
                 try {
-                    result = listTagsForResource(listTagsForResourceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(listTagsForResourceRequest, result);
-                   return result;
-            }
-        });
+                result = listTagsForResource(listTagsForResourceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listTagsForResourceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1857,8 +1873,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBSnapshot>() {
             public DBSnapshot call() throws Exception {
                 return deleteDBSnapshot(deleteDBSnapshotRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1896,17 +1912,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBSnapshot>() {
             public DBSnapshot call() throws Exception {
-                DBSnapshot result;
+              DBSnapshot result;
                 try {
-                    result = deleteDBSnapshot(deleteDBSnapshotRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteDBSnapshotRequest, result);
-                   return result;
-            }
-        });
+                result = deleteDBSnapshot(deleteDBSnapshotRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteDBSnapshotRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1935,8 +1951,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBSubnetGroup>() {
             public DBSubnetGroup call() throws Exception {
                 return modifyDBSubnetGroup(modifyDBSubnetGroupRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1970,17 +1986,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBSubnetGroup>() {
             public DBSubnetGroup call() throws Exception {
-                DBSubnetGroup result;
+              DBSubnetGroup result;
                 try {
-                    result = modifyDBSubnetGroup(modifyDBSubnetGroupRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(modifyDBSubnetGroupRequest, result);
-                   return result;
-            }
-        });
+                result = modifyDBSubnetGroup(modifyDBSubnetGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifyDBSubnetGroupRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2008,8 +2024,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<OptionGroup>() {
             public OptionGroup call() throws Exception {
                 return createOptionGroup(createOptionGroupRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2042,17 +2058,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<OptionGroup>() {
             public OptionGroup call() throws Exception {
-                OptionGroup result;
+              OptionGroup result;
                 try {
-                    result = createOptionGroup(createOptionGroupRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createOptionGroupRequest, result);
-                   return result;
-            }
-        });
+                result = createOptionGroup(createOptionGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createOptionGroupRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2083,8 +2099,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DescribeDBParameterGroupsResult>() {
             public DescribeDBParameterGroupsResult call() throws Exception {
                 return describeDBParameterGroups(describeDBParameterGroupsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2120,17 +2136,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeDBParameterGroupsResult>() {
             public DescribeDBParameterGroupsResult call() throws Exception {
-                DescribeDBParameterGroupsResult result;
+              DescribeDBParameterGroupsResult result;
                 try {
-                    result = describeDBParameterGroups(describeDBParameterGroupsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeDBParameterGroupsRequest, result);
-                   return result;
-            }
-        });
+                result = describeDBParameterGroups(describeDBParameterGroupsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDBParameterGroupsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2163,8 +2179,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBSecurityGroup>() {
             public DBSecurityGroup call() throws Exception {
                 return revokeDBSecurityGroupIngress(revokeDBSecurityGroupIngressRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2202,17 +2218,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBSecurityGroup>() {
             public DBSecurityGroup call() throws Exception {
-                DBSecurityGroup result;
+              DBSecurityGroup result;
                 try {
-                    result = revokeDBSecurityGroupIngress(revokeDBSecurityGroupIngressRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(revokeDBSecurityGroupIngressRequest, result);
-                   return result;
-            }
-        });
+                result = revokeDBSecurityGroupIngress(revokeDBSecurityGroupIngressRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(revokeDBSecurityGroupIngressRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2242,8 +2258,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DescribeReservedDBInstancesOfferingsResult>() {
             public DescribeReservedDBInstancesOfferingsResult call() throws Exception {
                 return describeReservedDBInstancesOfferings(describeReservedDBInstancesOfferingsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2278,17 +2294,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeReservedDBInstancesOfferingsResult>() {
             public DescribeReservedDBInstancesOfferingsResult call() throws Exception {
-                DescribeReservedDBInstancesOfferingsResult result;
+              DescribeReservedDBInstancesOfferingsResult result;
                 try {
-                    result = describeReservedDBInstancesOfferings(describeReservedDBInstancesOfferingsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeReservedDBInstancesOfferingsRequest, result);
-                   return result;
-            }
-        });
+                result = describeReservedDBInstancesOfferings(describeReservedDBInstancesOfferingsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeReservedDBInstancesOfferingsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2328,8 +2344,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
                 return createDBInstanceReadReplica(createDBInstanceReadReplicaRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2374,17 +2390,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
-                DBInstance result;
+              DBInstance result;
                 try {
-                    result = createDBInstanceReadReplica(createDBInstanceReadReplicaRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createDBInstanceReadReplicaRequest, result);
-                   return result;
-            }
-        });
+                result = createDBInstanceReadReplica(createDBInstanceReadReplicaRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createDBInstanceReadReplicaRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2413,8 +2429,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DescribeDBInstancesResult>() {
             public DescribeDBInstancesResult call() throws Exception {
                 return describeDBInstances(describeDBInstancesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2448,17 +2464,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeDBInstancesResult>() {
             public DescribeDBInstancesResult call() throws Exception {
-                DescribeDBInstancesResult result;
+              DescribeDBInstancesResult result;
                 try {
-                    result = describeDBInstances(describeDBInstancesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeDBInstancesRequest, result);
-                   return result;
-            }
-        });
+                result = describeDBInstances(describeDBInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDBInstancesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2488,8 +2504,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<ReservedDBInstance>() {
             public ReservedDBInstance call() throws Exception {
                 return purchaseReservedDBInstancesOffering(purchaseReservedDBInstancesOfferingRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2524,17 +2540,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ReservedDBInstance>() {
             public ReservedDBInstance call() throws Exception {
-                ReservedDBInstance result;
+              ReservedDBInstance result;
                 try {
-                    result = purchaseReservedDBInstancesOffering(purchaseReservedDBInstancesOfferingRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(purchaseReservedDBInstancesOfferingRequest, result);
-                   return result;
-            }
-        });
+                result = purchaseReservedDBInstancesOffering(purchaseReservedDBInstancesOfferingRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(purchaseReservedDBInstancesOfferingRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2565,8 +2581,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<EventSubscription>() {
             public EventSubscription call() throws Exception {
                 return removeSourceIdentifierFromSubscription(removeSourceIdentifierFromSubscriptionRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2602,17 +2618,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<EventSubscription>() {
             public EventSubscription call() throws Exception {
-                EventSubscription result;
+              EventSubscription result;
                 try {
-                    result = removeSourceIdentifierFromSubscription(removeSourceIdentifierFromSubscriptionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(removeSourceIdentifierFromSubscriptionRequest, result);
-                   return result;
-            }
-        });
+                result = removeSourceIdentifierFromSubscription(removeSourceIdentifierFromSubscriptionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(removeSourceIdentifierFromSubscriptionRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2643,8 +2659,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<EngineDefaults>() {
             public EngineDefaults call() throws Exception {
                 return describeEngineDefaultParameters(describeEngineDefaultParametersRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2680,17 +2696,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<EngineDefaults>() {
             public EngineDefaults call() throws Exception {
-                EngineDefaults result;
+              EngineDefaults result;
                 try {
-                    result = describeEngineDefaultParameters(describeEngineDefaultParametersRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeEngineDefaultParametersRequest, result);
-                   return result;
-            }
-        });
+                result = describeEngineDefaultParameters(describeEngineDefaultParametersRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeEngineDefaultParametersRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2720,8 +2736,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
                 return modifyDBInstance(modifyDBInstanceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2756,17 +2772,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
-                DBInstance result;
+              DBInstance result;
                 try {
-                    result = modifyDBInstance(modifyDBInstanceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(modifyDBInstanceRequest, result);
-                   return result;
-            }
-        });
+                result = modifyDBInstance(modifyDBInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifyDBInstanceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2794,8 +2810,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<OptionGroup>() {
             public OptionGroup call() throws Exception {
                 return modifyOptionGroup(modifyOptionGroupRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2828,17 +2844,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<OptionGroup>() {
             public OptionGroup call() throws Exception {
-                OptionGroup result;
+              OptionGroup result;
                 try {
-                    result = modifyOptionGroup(modifyOptionGroupRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(modifyOptionGroupRequest, result);
-                   return result;
-            }
-        });
+                result = modifyOptionGroup(modifyOptionGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifyOptionGroupRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2859,9 +2875,9 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * RDS DB instance in another.
      * </p>
      * <p>
-     * For an overview of CIDR ranges, go to the <a
-     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
-     * Wikipedia Tutorial </a> .
+     * For an overview of CIDR ranges, go to the
+     * <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing"> Wikipedia Tutorial </a>
+     * .
      * </p>
      *
      * @param authorizeDBSecurityGroupIngressRequest Container for the
@@ -2886,8 +2902,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBSecurityGroup>() {
             public DBSecurityGroup call() throws Exception {
                 return authorizeDBSecurityGroupIngress(authorizeDBSecurityGroupIngressRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2908,9 +2924,9 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * RDS DB instance in another.
      * </p>
      * <p>
-     * For an overview of CIDR ranges, go to the <a
-     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
-     * Wikipedia Tutorial </a> .
+     * For an overview of CIDR ranges, go to the
+     * <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing"> Wikipedia Tutorial </a>
+     * .
      * </p>
      *
      * @param authorizeDBSecurityGroupIngressRequest Container for the
@@ -2940,17 +2956,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBSecurityGroup>() {
             public DBSecurityGroup call() throws Exception {
-                DBSecurityGroup result;
+              DBSecurityGroup result;
                 try {
-                    result = authorizeDBSecurityGroupIngress(authorizeDBSecurityGroupIngressRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(authorizeDBSecurityGroupIngressRequest, result);
-                   return result;
-            }
-        });
+                result = authorizeDBSecurityGroupIngress(authorizeDBSecurityGroupIngressRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(authorizeDBSecurityGroupIngressRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2981,8 +2997,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<EventSubscription>() {
             public EventSubscription call() throws Exception {
                 return addSourceIdentifierToSubscription(addSourceIdentifierToSubscriptionRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3018,17 +3034,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<EventSubscription>() {
             public EventSubscription call() throws Exception {
-                EventSubscription result;
+              EventSubscription result;
                 try {
-                    result = addSourceIdentifierToSubscription(addSourceIdentifierToSubscriptionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(addSourceIdentifierToSubscriptionRequest, result);
-                   return result;
-            }
-        });
+                result = addSourceIdentifierToSubscription(addSourceIdentifierToSubscriptionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(addSourceIdentifierToSubscriptionRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -3069,8 +3085,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<ModifyDBParameterGroupResult>() {
             public ModifyDBParameterGroupResult call() throws Exception {
                 return modifyDBParameterGroup(modifyDBParameterGroupRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3116,26 +3132,26 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ModifyDBParameterGroupResult>() {
             public ModifyDBParameterGroupResult call() throws Exception {
-                ModifyDBParameterGroupResult result;
+              ModifyDBParameterGroupResult result;
                 try {
-                    result = modifyDBParameterGroup(modifyDBParameterGroupRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(modifyDBParameterGroupRequest, result);
-                   return result;
-            }
-        });
+                result = modifyDBParameterGroup(modifyDBParameterGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifyDBParameterGroupRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
      * <p>
      * Displays a list of categories for all event source types, or, if
      * specified, for a specified source type. You can see a list of the
-     * event categories and source types in the <a
-     * tp://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-     * Events </a> topic in the Amazon RDS User Guide.
+     * event categories and source types in the
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events </a>
+     * topic in the Amazon RDS User Guide.
      * </p>
      *
      * @param describeEventCategoriesRequest Container for the necessary
@@ -3159,17 +3175,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DescribeEventCategoriesResult>() {
             public DescribeEventCategoriesResult call() throws Exception {
                 return describeEventCategories(describeEventCategoriesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
      * <p>
      * Displays a list of categories for all event source types, or, if
      * specified, for a specified source type. You can see a list of the
-     * event categories and source types in the <a
-     * tp://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-     * Events </a> topic in the Amazon RDS User Guide.
+     * event categories and source types in the
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events </a>
+     * topic in the Amazon RDS User Guide.
      * </p>
      *
      * @param describeEventCategoriesRequest Container for the necessary
@@ -3198,17 +3214,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeEventCategoriesResult>() {
             public DescribeEventCategoriesResult call() throws Exception {
-                DescribeEventCategoriesResult result;
+              DescribeEventCategoriesResult result;
                 try {
-                    result = describeEventCategories(describeEventCategoriesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeEventCategoriesRequest, result);
-                   return result;
-            }
-        });
+                result = describeEventCategories(describeEventCategoriesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeEventCategoriesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -3245,8 +3261,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<ResetDBParameterGroupResult>() {
             public ResetDBParameterGroupResult call() throws Exception {
                 return resetDBParameterGroup(resetDBParameterGroupRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3288,17 +3304,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ResetDBParameterGroupResult>() {
             public ResetDBParameterGroupResult call() throws Exception {
-                ResetDBParameterGroupResult result;
+              ResetDBParameterGroupResult result;
                 try {
-                    result = resetDBParameterGroup(resetDBParameterGroupRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(resetDBParameterGroupRequest, result);
-                   return result;
-            }
-        });
+                result = resetDBParameterGroup(resetDBParameterGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(resetDBParameterGroupRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -3327,8 +3343,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBSubnetGroup>() {
             public DBSubnetGroup call() throws Exception {
                 return createDBSubnetGroup(createDBSubnetGroupRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3362,17 +3378,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBSubnetGroup>() {
             public DBSubnetGroup call() throws Exception {
-                DBSubnetGroup result;
+              DBSubnetGroup result;
                 try {
-                    result = createDBSubnetGroup(createDBSubnetGroupRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createDBSubnetGroupRequest, result);
-                   return result;
-            }
-        });
+                result = createDBSubnetGroup(createDBSubnetGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createDBSubnetGroupRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -3400,8 +3416,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DescribeDBLogFilesResult>() {
             public DescribeDBLogFilesResult call() throws Exception {
                 return describeDBLogFiles(describeDBLogFilesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3434,17 +3450,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeDBLogFilesResult>() {
             public DescribeDBLogFilesResult call() throws Exception {
-                DescribeDBLogFilesResult result;
+              DescribeDBLogFilesResult result;
                 try {
-                    result = describeDBLogFiles(describeDBLogFilesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeDBLogFilesRequest, result);
-                   return result;
-            }
-        });
+                result = describeDBLogFiles(describeDBLogFilesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDBLogFilesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -3495,8 +3511,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<EventSubscription>() {
             public EventSubscription call() throws Exception {
                 return createEventSubscription(createEventSubscriptionRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3552,17 +3568,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<EventSubscription>() {
             public EventSubscription call() throws Exception {
-                EventSubscription result;
+              EventSubscription result;
                 try {
-                    result = createEventSubscription(createEventSubscriptionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createEventSubscriptionRequest, result);
-                   return result;
-            }
-        });
+                result = createEventSubscription(createEventSubscriptionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createEventSubscriptionRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -3591,8 +3607,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBSnapshot>() {
             public DBSnapshot call() throws Exception {
                 return copyDBSnapshot(copyDBSnapshotRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3626,17 +3642,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBSnapshot>() {
             public DBSnapshot call() throws Exception {
-                DBSnapshot result;
+              DBSnapshot result;
                 try {
-                    result = copyDBSnapshot(copyDBSnapshotRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(copyDBSnapshotRequest, result);
-                   return result;
-            }
-        });
+                result = copyDBSnapshot(copyDBSnapshotRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(copyDBSnapshotRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -3666,8 +3682,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DescribeReservedDBInstancesResult>() {
             public DescribeReservedDBInstancesResult call() throws Exception {
                 return describeReservedDBInstances(describeReservedDBInstancesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3702,17 +3718,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeReservedDBInstancesResult>() {
             public DescribeReservedDBInstancesResult call() throws Exception {
-                DescribeReservedDBInstancesResult result;
+              DescribeReservedDBInstancesResult result;
                 try {
-                    result = describeReservedDBInstances(describeReservedDBInstancesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeReservedDBInstancesRequest, result);
-                   return result;
-            }
-        });
+                result = describeReservedDBInstances(describeReservedDBInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeReservedDBInstancesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -3761,8 +3777,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
                 return rebootDBInstance(rebootDBInstanceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3816,17 +3832,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
-                DBInstance result;
+              DBInstance result;
                 try {
-                    result = rebootDBInstance(rebootDBInstanceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(rebootDBInstanceRequest, result);
-                   return result;
-            }
-        });
+                result = rebootDBInstance(rebootDBInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(rebootDBInstanceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -3855,8 +3871,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<EventSubscription>() {
             public EventSubscription call() throws Exception {
                 return deleteEventSubscription(deleteEventSubscriptionRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3890,17 +3906,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<EventSubscription>() {
             public EventSubscription call() throws Exception {
-                EventSubscription result;
+              EventSubscription result;
                 try {
-                    result = deleteEventSubscription(deleteEventSubscriptionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteEventSubscriptionRequest, result);
-                   return result;
-            }
-        });
+                result = deleteEventSubscription(deleteEventSubscriptionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteEventSubscriptionRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -3928,8 +3944,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
                 return promoteReadReplica(promoteReadReplicaRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3962,17 +3978,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
-                DBInstance result;
+              DBInstance result;
                 try {
-                    result = promoteReadReplica(promoteReadReplicaRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(promoteReadReplicaRequest, result);
-                   return result;
-            }
-        });
+                result = promoteReadReplica(promoteReadReplicaRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(promoteReadReplicaRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -4001,8 +4017,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DescribeDBEngineVersionsResult>() {
             public DescribeDBEngineVersionsResult call() throws Exception {
                 return describeDBEngineVersions(describeDBEngineVersionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4036,17 +4052,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeDBEngineVersionsResult>() {
             public DescribeDBEngineVersionsResult call() throws Exception {
-                DescribeDBEngineVersionsResult result;
+              DescribeDBEngineVersionsResult result;
                 try {
-                    result = describeDBEngineVersions(describeDBEngineVersionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeDBEngineVersionsRequest, result);
-                   return result;
-            }
-        });
+                result = describeDBEngineVersions(describeDBEngineVersionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDBEngineVersionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -4074,8 +4090,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DescribeOptionGroupsResult>() {
             public DescribeOptionGroupsResult call() throws Exception {
                 return describeOptionGroups(describeOptionGroupsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4108,17 +4124,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeOptionGroupsResult>() {
             public DescribeOptionGroupsResult call() throws Exception {
-                DescribeOptionGroupsResult result;
+              DescribeOptionGroupsResult result;
                 try {
-                    result = describeOptionGroups(describeOptionGroupsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeOptionGroupsRequest, result);
-                   return result;
-            }
-        });
+                result = describeOptionGroups(describeOptionGroupsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeOptionGroupsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -4147,8 +4163,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DownloadDBLogFilePortionResult>() {
             public DownloadDBLogFilePortionResult call() throws Exception {
                 return downloadDBLogFilePortion(downloadDBLogFilePortionRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4182,17 +4198,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DownloadDBLogFilePortionResult>() {
             public DownloadDBLogFilePortionResult call() throws Exception {
-                DownloadDBLogFilePortionResult result;
+              DownloadDBLogFilePortionResult result;
                 try {
-                    result = downloadDBLogFilePortion(downloadDBLogFilePortionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(downloadDBLogFilePortionRequest, result);
-                   return result;
-            }
-        });
+                result = downloadDBLogFilePortion(downloadDBLogFilePortionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(downloadDBLogFilePortionRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -4205,9 +4221,9 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * </p>
      * <p>
      * You can see a list of the event categories for a given SourceType in
-     * the <a
-     * tp://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-     * Events </a> topic in the Amazon RDS User Guide or by using the
+     * the
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events </a>
+     * topic in the Amazon RDS User Guide or by using the
      * <b>DescribeEventCategories</b> action.
      * </p>
      *
@@ -4232,8 +4248,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<EventSubscription>() {
             public EventSubscription call() throws Exception {
                 return modifyEventSubscription(modifyEventSubscriptionRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4246,9 +4262,9 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * </p>
      * <p>
      * You can see a list of the event categories for a given SourceType in
-     * the <a
-     * tp://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-     * Events </a> topic in the Amazon RDS User Guide or by using the
+     * the
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events </a>
+     * topic in the Amazon RDS User Guide or by using the
      * <b>DescribeEventCategories</b> action.
      * </p>
      *
@@ -4278,17 +4294,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<EventSubscription>() {
             public EventSubscription call() throws Exception {
-                EventSubscription result;
+              EventSubscription result;
                 try {
-                    result = modifyEventSubscription(modifyEventSubscriptionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(modifyEventSubscriptionRequest, result);
-                   return result;
-            }
-        });
+                result = modifyEventSubscription(modifyEventSubscriptionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifyEventSubscriptionRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -4321,8 +4337,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
                 return restoreDBInstanceFromDBSnapshot(restoreDBInstanceFromDBSnapshotRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4360,17 +4376,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
-                DBInstance result;
+              DBInstance result;
                 try {
-                    result = restoreDBInstanceFromDBSnapshot(restoreDBInstanceFromDBSnapshotRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(restoreDBInstanceFromDBSnapshotRequest, result);
-                   return result;
-            }
-        });
+                result = restoreDBInstanceFromDBSnapshot(restoreDBInstanceFromDBSnapshotRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(restoreDBInstanceFromDBSnapshotRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -4403,8 +4419,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
             public Void call() throws Exception {
                 deleteDBSubnetGroup(deleteDBSubnetGroupRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4441,16 +4457,16 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteDBSubnetGroup(deleteDBSubnetGroupRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteDBSubnetGroupRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteDBSubnetGroup(deleteDBSubnetGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteDBSubnetGroupRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -4479,8 +4495,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<DBSnapshot>() {
             public DBSnapshot call() throws Exception {
                 return createDBSnapshot(createDBSnapshotRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4514,17 +4530,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBSnapshot>() {
             public DBSnapshot call() throws Exception {
-                DBSnapshot result;
+              DBSnapshot result;
                 try {
-                    result = createDBSnapshot(createDBSnapshotRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createDBSnapshotRequest, result);
-                   return result;
-            }
-        });
+                result = createDBSnapshot(createDBSnapshotRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createDBSnapshotRequest, result);
+                 return result;
+        }
+    });
     }
     
 }

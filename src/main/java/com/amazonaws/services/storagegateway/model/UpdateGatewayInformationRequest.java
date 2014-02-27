@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#updateGatewayInformation(UpdateGatewayInformationRequest) UpdateGatewayInformation operation}.
  * <p>
- * This operation updates a gateway's metadata, which includes the gateway's name and time zone. To specify which gateway to update, use the Amazon
- * Resource Name (ARN) of the gateway in your request.
+ * This operation updates a gateway's metadata, which includes the
+ * gateway's name and time zone. To specify which gateway to update, use
+ * the Amazon Resource Name (ARN) of the gateway in your request.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#updateGatewayInformation(UpdateGatewayInformationRequest)

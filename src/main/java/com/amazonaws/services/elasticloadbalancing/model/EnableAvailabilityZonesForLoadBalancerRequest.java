@@ -24,15 +24,18 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Adds one or more EC2 Availability Zones to the load balancer.
  * </p>
  * <p>
- * The load balancer evenly distributes requests across all its registered Availability Zones that contain instances.
+ * The load balancer evenly distributes requests across all its
+ * registered Availability Zones that contain instances.
  * </p>
  * <p>
- * <b>NOTE:</b> The new EC2 Availability Zones to be added must be in the same EC2 Region as the Availability Zones for which the load balancer was
- * created.
+ * <b>NOTE:</b> The new EC2 Availability Zones to be added must be in the
+ * same EC2 Region as the Availability Zones for which the load balancer
+ * was created.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html"> Expand a Load
- * Balanced Application to an Additional Availability Zone </a> in the <i>Elastic Load Balancing Developer Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html"> Expand a Load Balanced Application to an Additional Availability Zone </a>
+ * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#enableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest)

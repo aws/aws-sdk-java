@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The owner of the specified snapshot has not authorized your account to access the snapshot.
+ * The owner of the specified snapshot has not authorized your account
+ * to access the snapshot.
  * </p>
  */        
 public class AccessToSnapshotDeniedException extends AmazonServiceException {

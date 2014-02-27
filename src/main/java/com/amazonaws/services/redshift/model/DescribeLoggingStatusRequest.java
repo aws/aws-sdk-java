@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeLoggingStatus(DescribeLoggingStatusRequest) DescribeLoggingStatus operation}.
  * <p>
- * Describes whether information, such as queries and connection attempts, is being logged for the specified Amazon Redshift cluster.
+ * Describes whether information, such as queries and connection
+ * attempts, is being logged for the specified Amazon Redshift cluster.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeLoggingStatus(DescribeLoggingStatusRequest)

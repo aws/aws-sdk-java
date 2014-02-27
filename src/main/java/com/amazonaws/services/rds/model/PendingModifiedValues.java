@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element in the ModifyDBInstance action.
+ * This data type is used as a response element in the ModifyDBInstance
+ * action.
  * </p>
  */
 public class PendingModifiedValues implements Serializable {

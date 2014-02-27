@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Provides information on the option groups the DB instance is a member of.
+ * Provides information on the option groups the DB instance is a member
+ * of.
  * </p>
  */
 public class OptionGroupMembership implements Serializable {

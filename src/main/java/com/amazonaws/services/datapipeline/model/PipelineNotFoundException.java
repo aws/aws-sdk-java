@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified pipeline was not found. Verify that you used the correct user and account identifiers.
+ * The specified pipeline was not found. Verify that you used the correct
+ * user and account identifiers.
  * </p>
  */        
 public class PipelineNotFoundException extends AmazonServiceException {

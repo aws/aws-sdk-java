@@ -18,8 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the DescribeServices response for
- * each AWS service.
+ * A JSON-formatted name/value pair that represents the category name and
+ * category code of the problem, selected from the DescribeServices
+ * response for each AWS service.
  * </p>
  */
 public class Category implements Serializable {

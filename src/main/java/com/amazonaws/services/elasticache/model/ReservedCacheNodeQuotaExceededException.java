@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request cannot be processed because it would exceed the user's cache node quota.
+ * The request cannot be processed because it would exceed the user's
+ * cache node quota.
  * </p>
  */        
 public class ReservedCacheNodeQuotaExceededException extends AmazonServiceException {

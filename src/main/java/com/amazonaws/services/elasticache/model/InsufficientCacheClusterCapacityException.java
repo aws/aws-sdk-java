@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The requested cache node type is not available in the specified Availability Zone.
+ * The requested cache node type is not available in the specified
+ * Availability Zone.
  * </p>
  */        
 public class InsufficientCacheClusterCapacityException extends AmazonServiceException {

@@ -21,8 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#setStatus(SetStatusRequest) SetStatus operation}.
  * <p>
- * Requests that the status of an array of physical or logical pipeline objects be updated in the pipeline. This update may not occur immediately, but is
- * eventually consistent. The status that can be set depends on the type of object.
+ * Requests that the status of an array of physical or logical pipeline
+ * objects be updated in the pipeline. This update may not occur
+ * immediately, but is eventually consistent. The status that can be set
+ * depends on the type of object.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#setStatus(SetStatusRequest)

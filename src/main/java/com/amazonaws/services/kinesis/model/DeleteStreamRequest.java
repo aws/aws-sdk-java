@@ -21,25 +21,32 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kinesis.AmazonKinesis#deleteStream(DeleteStreamRequest) DeleteStream operation}.
  * <p>
- * This operation deletes a stream and all of its shards and data. You must shut down any applications that are operating on the stream before you delete
- * the stream. If an application attempts to operate on a deleted stream, it will receive the exception <code>ResourceNotFoundException</code> .
+ * This operation deletes a stream and all of its shards and data. You
+ * must shut down any applications that are operating on the stream
+ * before you delete the stream. If an application attempts to operate on
+ * a deleted stream, it will receive the exception
+ * <code>ResourceNotFoundException</code> .
  * </p>
  * <p>
- * If the stream is in the ACTIVE state, you can delete it. After a <code>DeleteStream</code> request, the specified stream is in the DELETING state
- * until Amazon Kinesis completes the deletion.
+ * If the stream is in the ACTIVE state, you can delete it. After a
+ * <code>DeleteStream</code> request, the specified stream is in the
+ * DELETING state until Amazon Kinesis completes the deletion.
  * </p>
  * <p>
- * <b>Note:</b> Amazon Kinesis might continue to accept data read and write operations, such as PutRecord and GetRecords, on a stream in the DELETING
- * state until the stream deletion is complete.
+ * <b>Note:</b> Amazon Kinesis might continue to accept data read and
+ * write operations, such as PutRecord and GetRecords, on a stream in the
+ * DELETING state until the stream deletion is complete.
  * </p>
  * <p>
  * When you delete a stream, any shards in that stream are also deleted.
  * </p>
  * <p>
- * You can use the DescribeStream operation to check the state of the stream, which is returned in <code>StreamStatus</code> .
+ * You can use the DescribeStream operation to check the state of the
+ * stream, which is returned in <code>StreamStatus</code> .
  * </p>
  * <p>
- * <code>DeleteStream</code> has a limit of 5 transactions per second per account.
+ * <code>DeleteStream</code> has a limit of 5 transactions per second
+ * per account.
  * </p>
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#deleteStream(DeleteStreamRequest)

@@ -18,14 +18,23 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that describes how CloudFront processes requests. You can create up to 10 cache behaviors.You must create at least as many cache
- * behaviors (including the default cache behavior) as you have origins if you want CloudFront to distribute objects from all of the origins. Each cache
- * behavior specifies the one origin from which you want CloudFront to get objects. If you have two origins and only the default cache behavior, the
- * default cache behavior will cause CloudFront to get objects from one of the origins, but the other origin will never be used. If you don't want to
- * specify any cache behaviors, include only an empty CacheBehaviors element. Don't include an empty CacheBehavior element, or CloudFront returns a
- * MalformedXML error. To delete all cache behaviors in an existing distribution, update the distribution configuration and include only an empty
- * CacheBehaviors element. To add, change, or remove one or more cache behaviors, update the distribution configuration and specify all of the cache
- * behaviors that you want to include in the updated distribution.
+ * A complex type that describes how CloudFront processes requests. You
+ * can create up to 10 cache behaviors.You must create at least as many
+ * cache behaviors (including the default cache behavior) as you have
+ * origins if you want CloudFront to distribute objects from all of the
+ * origins. Each cache behavior specifies the one origin from which you
+ * want CloudFront to get objects. If you have two origins and only the
+ * default cache behavior, the default cache behavior will cause
+ * CloudFront to get objects from one of the origins, but the other
+ * origin will never be used. If you don't want to specify any cache
+ * behaviors, include only an empty CacheBehaviors element. Don't include
+ * an empty CacheBehavior element, or CloudFront returns a MalformedXML
+ * error. To delete all cache behaviors in an existing distribution,
+ * update the distribution configuration and include only an empty
+ * CacheBehaviors element. To add, change, or remove one or more cache
+ * behaviors, update the distribution configuration and specify all of
+ * the cache behaviors that you want to include in the updated
+ * distribution.
  * </p>
  */
 public class CacheBehavior implements Serializable {
@@ -104,6 +113,13 @@ public class CacheBehavior implements Serializable {
      * origin.
      */
     private AllowedMethods allowedMethods;
+
+    /**
+     * Indicates whether you want to distribute media files in Microsoft
+     * Smooth Streaming format using the origin that is associated with this
+     * cache behavior. If so, specify true; if not, specify false.
+     */
+    private Boolean smoothStreaming;
 
     /**
      * The pattern (for example, images/*.jpg) that specifies which requests
@@ -624,6 +640,64 @@ public class CacheBehavior implements Serializable {
     }
 
     /**
+     * Indicates whether you want to distribute media files in Microsoft
+     * Smooth Streaming format using the origin that is associated with this
+     * cache behavior. If so, specify true; if not, specify false.
+     *
+     * @return Indicates whether you want to distribute media files in Microsoft
+     *         Smooth Streaming format using the origin that is associated with this
+     *         cache behavior. If so, specify true; if not, specify false.
+     */
+    public Boolean isSmoothStreaming() {
+        return smoothStreaming;
+    }
+    
+    /**
+     * Indicates whether you want to distribute media files in Microsoft
+     * Smooth Streaming format using the origin that is associated with this
+     * cache behavior. If so, specify true; if not, specify false.
+     *
+     * @param smoothStreaming Indicates whether you want to distribute media files in Microsoft
+     *         Smooth Streaming format using the origin that is associated with this
+     *         cache behavior. If so, specify true; if not, specify false.
+     */
+    public void setSmoothStreaming(Boolean smoothStreaming) {
+        this.smoothStreaming = smoothStreaming;
+    }
+    
+    /**
+     * Indicates whether you want to distribute media files in Microsoft
+     * Smooth Streaming format using the origin that is associated with this
+     * cache behavior. If so, specify true; if not, specify false.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param smoothStreaming Indicates whether you want to distribute media files in Microsoft
+     *         Smooth Streaming format using the origin that is associated with this
+     *         cache behavior. If so, specify true; if not, specify false.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CacheBehavior withSmoothStreaming(Boolean smoothStreaming) {
+        this.smoothStreaming = smoothStreaming;
+        return this;
+    }
+
+    /**
+     * Indicates whether you want to distribute media files in Microsoft
+     * Smooth Streaming format using the origin that is associated with this
+     * cache behavior. If so, specify true; if not, specify false.
+     *
+     * @return Indicates whether you want to distribute media files in Microsoft
+     *         Smooth Streaming format using the origin that is associated with this
+     *         cache behavior. If so, specify true; if not, specify false.
+     */
+    public Boolean getSmoothStreaming() {
+        return smoothStreaming;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -641,7 +715,8 @@ public class CacheBehavior implements Serializable {
         if (getTrustedSigners() != null) sb.append("TrustedSigners: " + getTrustedSigners() + ",");
         if (getViewerProtocolPolicy() != null) sb.append("ViewerProtocolPolicy: " + getViewerProtocolPolicy() + ",");
         if (getMinTTL() != null) sb.append("MinTTL: " + getMinTTL() + ",");
-        if (getAllowedMethods() != null) sb.append("AllowedMethods: " + getAllowedMethods() );
+        if (getAllowedMethods() != null) sb.append("AllowedMethods: " + getAllowedMethods() + ",");
+        if (isSmoothStreaming() != null) sb.append("SmoothStreaming: " + isSmoothStreaming() );
         sb.append("}");
         return sb.toString();
     }
@@ -658,6 +733,7 @@ public class CacheBehavior implements Serializable {
         hashCode = prime * hashCode + ((getViewerProtocolPolicy() == null) ? 0 : getViewerProtocolPolicy().hashCode()); 
         hashCode = prime * hashCode + ((getMinTTL() == null) ? 0 : getMinTTL().hashCode()); 
         hashCode = prime * hashCode + ((getAllowedMethods() == null) ? 0 : getAllowedMethods().hashCode()); 
+        hashCode = prime * hashCode + ((isSmoothStreaming() == null) ? 0 : isSmoothStreaming().hashCode()); 
         return hashCode;
     }
     
@@ -683,6 +759,8 @@ public class CacheBehavior implements Serializable {
         if (other.getMinTTL() != null && other.getMinTTL().equals(this.getMinTTL()) == false) return false; 
         if (other.getAllowedMethods() == null ^ this.getAllowedMethods() == null) return false;
         if (other.getAllowedMethods() != null && other.getAllowedMethods().equals(this.getAllowedMethods()) == false) return false; 
+        if (other.isSmoothStreaming() == null ^ this.isSmoothStreaming() == null) return false;
+        if (other.isSmoothStreaming() != null && other.isSmoothStreaming().equals(this.isSmoothStreaming()) == false) return false; 
         return true;
     }
     

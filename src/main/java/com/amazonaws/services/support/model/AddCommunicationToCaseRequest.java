@@ -21,15 +21,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#addCommunicationToCase(AddCommunicationToCaseRequest) AddCommunicationToCase operation}.
  * <p>
- * Adds additional customer communication to an AWS Support case. You use the <code>CaseId</code> value to identify the case to add communication to. You
- * can list a set of email addresses to copy on the communication using the <code>CcEmailAddresses</code> value. The <code>CommunicationBody</code> value
- * contains the text of the communication.
+ * Adds additional customer communication to an AWS Support case. You use
+ * the <code>CaseId</code> value to identify the case to add
+ * communication to. You can list a set of email addresses to copy on the
+ * communication using the <code>CcEmailAddresses</code> value. The
+ * <code>CommunicationBody</code> value contains the text of the
+ * communication.
  * </p>
  * <p>
  * The response indicates the success or failure of the request.
  * </p>
  * <p>
- * This operation implements a subset of the behavior on the AWS Support <a href="https://aws.amazon.com/support"> Your Support Cases </a> web form.
+ * This operation implements a subset of the behavior on the AWS Support
+ * <a href="https://aws.amazon.com/support"> Your Support Cases </a>
+ * web form.
  * </p>
  *
  * @see com.amazonaws.services.support.AWSSupport#addCommunicationToCase(AddCommunicationToCaseRequest)

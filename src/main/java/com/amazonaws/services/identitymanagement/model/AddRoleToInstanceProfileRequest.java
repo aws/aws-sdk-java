@@ -21,9 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#addRoleToInstanceProfile(AddRoleToInstanceProfileRequest) AddRoleToInstanceProfile operation}.
  * <p>
- * Adds the specified role to the specified instance profile. For more information about roles, go to <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For more information about instance profiles,
- * go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a> .
+ * Adds the specified role to the specified instance profile. For more
+ * information about roles, go to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#addRoleToInstanceProfile(AddRoleToInstanceProfileRequest)

@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A connection represents the physical network connection between the AWS Direct Connect location and the customer.
+ * A connection represents the physical network connection between the
+ * AWS Direct Connect location and the customer.
  * </p>
  */
 public class CreateConnectionResult implements Serializable {

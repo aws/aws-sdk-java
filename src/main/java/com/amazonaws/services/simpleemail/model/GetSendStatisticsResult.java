@@ -18,8 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a list of <code>SendDataPoint</code> items returned from a successful <code>GetSendStatistics</code> request. This list contains aggregated
- * data from the previous two weeks of sending activity.
+ * Represents a list of <code>SendDataPoint</code> items returned from a
+ * successful <code>GetSendStatistics</code> request. This list contains
+ * aggregated data from the previous two weeks of sending activity.
  * </p>
  */
 public class GetSendStatisticsResult implements Serializable {

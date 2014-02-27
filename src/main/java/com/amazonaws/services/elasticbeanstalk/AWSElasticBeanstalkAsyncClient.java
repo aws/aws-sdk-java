@@ -35,25 +35,28 @@ import com.amazonaws.services.elasticbeanstalk.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * AWS Elastic Beanstalk <p>
- * This is the AWS Elastic Beanstalk API Reference. This guide provides detailed information about AWS Elastic Beanstalk actions, data types,
+ * This is the AWS Elastic Beanstalk API Reference. This guide provides
+ * detailed information about AWS Elastic Beanstalk actions, data types,
  * parameters, and errors.
  * </p>
  * <p>
- * AWS Elastic Beanstalk is a tool that makes it easy for you to create, deploy, and manage scalable, fault-tolerant applications running on Amazon Web
- * Services cloud resources.
+ * AWS Elastic Beanstalk is a tool that makes it easy for you to create,
+ * deploy, and manage scalable, fault-tolerant applications running on
+ * Amazon Web Services cloud resources.
  * </p>
  * <p>
- * For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/"> AWS Elastic Beanstalk </a> details page. The
- * location of the latest AWS Elastic Beanstalk WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">
- * http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl </a> .
+ * For more information about this product, go to the
+ * <a href="http://aws.amazon.com/elasticbeanstalk/"> AWS Elastic Beanstalk </a> details page. The location of the latest AWS Elastic Beanstalk WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl"> http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl </a>
+ * .
  * </p>
  * <p>
  * <b>Endpoints</b>
  * </p>
  * <p>
- * For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a
- * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region"> Regions and Endpoints </a> in the <i>Amazon Web Services
- * Glossary</i> .
+ * For a list of region-specific endpoints that AWS Elastic Beanstalk
+ * supports, go to
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region"> Regions and Endpoints </a>
+ * in the <i>Amazon Web Services Glossary</i> .
  * </p>
  */
 public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
@@ -63,6 +66,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
+
+    private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -105,13 +110,13 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSElasticBeanstalkAsyncClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AWSElasticBeanstalk using the specified AWS account credentials.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -123,7 +128,7 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      *                       when authenticating with AWS services.
      */
     public AWSElasticBeanstalkAsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newCachedThreadPool());
+        this(awsCredentials, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -177,7 +182,7 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AWSElasticBeanstalk using the specified AWS account credentials provider.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -190,7 +195,7 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      *            to authenticate requests with AWS services.
      */
     public AWSElasticBeanstalkAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -233,7 +238,7 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      */
     public AWSElasticBeanstalkAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
                 ClientConfiguration clientConfiguration) {
-        this(awsCredentialsProvider, clientConfiguration, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -277,7 +282,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who
      * wish to give pending asynchronous service calls time to complete should
-     * call getExecutorService().shutdown() prior to calling this method.
+     * call getExecutorService().shutdown() followed by
+     * getExecutorService().awaitTermination() prior to calling this method.
      */
     @Override
     public void shutdown() {
@@ -312,8 +318,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<CheckDNSAvailabilityResult>() {
             public CheckDNSAvailabilityResult call() throws Exception {
                 return checkDNSAvailability(checkDNSAvailabilityRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -348,17 +354,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CheckDNSAvailabilityResult>() {
             public CheckDNSAvailabilityResult call() throws Exception {
-                CheckDNSAvailabilityResult result;
+              CheckDNSAvailabilityResult result;
                 try {
-                    result = checkDNSAvailability(checkDNSAvailabilityRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(checkDNSAvailabilityRequest, result);
-                   return result;
-            }
-        });
+                result = checkDNSAvailability(checkDNSAvailabilityRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(checkDNSAvailabilityRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -392,8 +398,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<DescribeConfigurationOptionsResult>() {
             public DescribeConfigurationOptionsResult call() throws Exception {
                 return describeConfigurationOptions(describeConfigurationOptionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -432,17 +438,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeConfigurationOptionsResult>() {
             public DescribeConfigurationOptionsResult call() throws Exception {
-                DescribeConfigurationOptionsResult result;
+              DescribeConfigurationOptionsResult result;
                 try {
-                    result = describeConfigurationOptions(describeConfigurationOptionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeConfigurationOptionsRequest, result);
-                   return result;
-            }
-        });
+                result = describeConfigurationOptions(describeConfigurationOptionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeConfigurationOptionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -479,8 +485,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
             public Void call() throws Exception {
                 deleteConfigurationTemplate(deleteConfigurationTemplateRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -521,16 +527,16 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteConfigurationTemplate(deleteConfigurationTemplateRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteConfigurationTemplateRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteConfigurationTemplate(deleteConfigurationTemplateRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteConfigurationTemplateRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -559,8 +565,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<CreateEnvironmentResult>() {
             public CreateEnvironmentResult call() throws Exception {
                 return createEnvironment(createEnvironmentRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -594,17 +600,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateEnvironmentResult>() {
             public CreateEnvironmentResult call() throws Exception {
-                CreateEnvironmentResult result;
+              CreateEnvironmentResult result;
                 try {
-                    result = createEnvironment(createEnvironmentRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createEnvironmentRequest, result);
-                   return result;
-            }
-        });
+                result = createEnvironment(createEnvironmentRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createEnvironmentRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -637,8 +643,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<CreateStorageLocationResult>() {
             public CreateStorageLocationResult call() throws Exception {
                 return createStorageLocation(createStorageLocationRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -676,17 +682,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateStorageLocationResult>() {
             public CreateStorageLocationResult call() throws Exception {
-                CreateStorageLocationResult result;
+              CreateStorageLocationResult result;
                 try {
-                    result = createStorageLocation(createStorageLocationRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createStorageLocationRequest, result);
-                   return result;
-            }
-        });
+                result = createStorageLocation(createStorageLocationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createStorageLocationRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -732,8 +738,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
             public Void call() throws Exception {
                 requestEnvironmentInfo(requestEnvironmentInfoRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -783,16 +789,16 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    requestEnvironmentInfo(requestEnvironmentInfoRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(requestEnvironmentInfoRequest, null);
-                   return null;
-            }
-        });
+              try {
+                requestEnvironmentInfo(requestEnvironmentInfoRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(requestEnvironmentInfoRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -829,8 +835,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<CreateApplicationVersionResult>() {
             public CreateApplicationVersionResult call() throws Exception {
                 return createApplicationVersion(createApplicationVersionRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -872,17 +878,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateApplicationVersionResult>() {
             public CreateApplicationVersionResult call() throws Exception {
-                CreateApplicationVersionResult result;
+              CreateApplicationVersionResult result;
                 try {
-                    result = createApplicationVersion(createApplicationVersionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createApplicationVersionRequest, result);
-                   return result;
-            }
-        });
+                result = createApplicationVersion(createApplicationVersionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createApplicationVersionRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -917,8 +923,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
             public Void call() throws Exception {
                 deleteApplicationVersion(deleteApplicationVersionRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -957,16 +963,16 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteApplicationVersion(deleteApplicationVersionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteApplicationVersionRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteApplicationVersion(deleteApplicationVersionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteApplicationVersionRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -996,8 +1002,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<DescribeApplicationVersionsResult>() {
             public DescribeApplicationVersionsResult call() throws Exception {
                 return describeApplicationVersions(describeApplicationVersionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1032,17 +1038,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeApplicationVersionsResult>() {
             public DescribeApplicationVersionsResult call() throws Exception {
-                DescribeApplicationVersionsResult result;
+              DescribeApplicationVersionsResult result;
                 try {
-                    result = describeApplicationVersions(describeApplicationVersionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeApplicationVersionsRequest, result);
-                   return result;
-            }
-        });
+                result = describeApplicationVersions(describeApplicationVersionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeApplicationVersionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1077,8 +1083,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
             public Void call() throws Exception {
                 deleteApplication(deleteApplicationRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1117,16 +1123,16 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteApplication(deleteApplicationRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteApplicationRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteApplication(deleteApplicationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteApplicationRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1162,8 +1168,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<UpdateApplicationVersionResult>() {
             public UpdateApplicationVersionResult call() throws Exception {
                 return updateApplicationVersion(updateApplicationVersionRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1204,17 +1210,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateApplicationVersionResult>() {
             public UpdateApplicationVersionResult call() throws Exception {
-                UpdateApplicationVersionResult result;
+              UpdateApplicationVersionResult result;
                 try {
-                    result = updateApplicationVersion(updateApplicationVersionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(updateApplicationVersionRequest, result);
-                   return result;
-            }
-        });
+                result = updateApplicationVersion(updateApplicationVersionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateApplicationVersionRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1243,8 +1249,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<CreateApplicationResult>() {
             public CreateApplicationResult call() throws Exception {
                 return createApplication(createApplicationRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1278,17 +1284,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateApplicationResult>() {
             public CreateApplicationResult call() throws Exception {
-                CreateApplicationResult result;
+              CreateApplicationResult result;
                 try {
-                    result = createApplication(createApplicationRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createApplicationRequest, result);
-                   return result;
-            }
-        });
+                result = createApplication(createApplicationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createApplicationRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1319,8 +1325,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
             public Void call() throws Exception {
                 swapEnvironmentCNAMEs(swapEnvironmentCNAMEsRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1355,16 +1361,16 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    swapEnvironmentCNAMEs(swapEnvironmentCNAMEsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(swapEnvironmentCNAMEsRequest, null);
-                   return null;
-            }
-        });
+              try {
+                swapEnvironmentCNAMEs(swapEnvironmentCNAMEsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(swapEnvironmentCNAMEsRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1408,8 +1414,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<UpdateConfigurationTemplateResult>() {
             public UpdateConfigurationTemplateResult call() throws Exception {
                 return updateConfigurationTemplate(updateConfigurationTemplateRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1458,17 +1464,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateConfigurationTemplateResult>() {
             public UpdateConfigurationTemplateResult call() throws Exception {
-                UpdateConfigurationTemplateResult result;
+              UpdateConfigurationTemplateResult result;
                 try {
-                    result = updateConfigurationTemplate(updateConfigurationTemplateRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(updateConfigurationTemplateRequest, result);
-                   return result;
-            }
-        });
+                result = updateConfigurationTemplate(updateConfigurationTemplateRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateConfigurationTemplateRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1507,8 +1513,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<RetrieveEnvironmentInfoResult>() {
             public RetrieveEnvironmentInfoResult call() throws Exception {
                 return retrieveEnvironmentInfo(retrieveEnvironmentInfoRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1552,17 +1558,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RetrieveEnvironmentInfoResult>() {
             public RetrieveEnvironmentInfoResult call() throws Exception {
-                RetrieveEnvironmentInfoResult result;
+              RetrieveEnvironmentInfoResult result;
                 try {
-                    result = retrieveEnvironmentInfo(retrieveEnvironmentInfoRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(retrieveEnvironmentInfoRequest, result);
-                   return result;
-            }
-        });
+                result = retrieveEnvironmentInfo(retrieveEnvironmentInfoRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(retrieveEnvironmentInfoRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1592,8 +1598,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<ListAvailableSolutionStacksResult>() {
             public ListAvailableSolutionStacksResult call() throws Exception {
                 return listAvailableSolutionStacks(listAvailableSolutionStacksRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1628,17 +1634,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListAvailableSolutionStacksResult>() {
             public ListAvailableSolutionStacksResult call() throws Exception {
-                ListAvailableSolutionStacksResult result;
+              ListAvailableSolutionStacksResult result;
                 try {
-                    result = listAvailableSolutionStacks(listAvailableSolutionStacksRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(listAvailableSolutionStacksRequest, result);
-                   return result;
-            }
-        });
+                result = listAvailableSolutionStacks(listAvailableSolutionStacksRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listAvailableSolutionStacksRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1671,8 +1677,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<UpdateApplicationResult>() {
             public UpdateApplicationResult call() throws Exception {
                 return updateApplication(updateApplicationRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1710,17 +1716,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateApplicationResult>() {
             public UpdateApplicationResult call() throws Exception {
-                UpdateApplicationResult result;
+              UpdateApplicationResult result;
                 try {
-                    result = updateApplication(updateApplicationRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(updateApplicationRequest, result);
-                   return result;
-            }
-        });
+                result = updateApplication(updateApplicationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateApplicationRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1750,8 +1756,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<DescribeEnvironmentsResult>() {
             public DescribeEnvironmentsResult call() throws Exception {
                 return describeEnvironments(describeEnvironmentsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1786,17 +1792,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeEnvironmentsResult>() {
             public DescribeEnvironmentsResult call() throws Exception {
-                DescribeEnvironmentsResult result;
+              DescribeEnvironmentsResult result;
                 try {
-                    result = describeEnvironments(describeEnvironmentsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeEnvironmentsRequest, result);
-                   return result;
-            }
-        });
+                result = describeEnvironments(describeEnvironmentsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeEnvironmentsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1826,8 +1832,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<DescribeEnvironmentResourcesResult>() {
             public DescribeEnvironmentResourcesResult call() throws Exception {
                 return describeEnvironmentResources(describeEnvironmentResourcesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1862,17 +1868,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeEnvironmentResourcesResult>() {
             public DescribeEnvironmentResourcesResult call() throws Exception {
-                DescribeEnvironmentResourcesResult result;
+              DescribeEnvironmentResourcesResult result;
                 try {
-                    result = describeEnvironmentResources(describeEnvironmentResourcesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeEnvironmentResourcesRequest, result);
-                   return result;
-            }
-        });
+                result = describeEnvironmentResources(describeEnvironmentResourcesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeEnvironmentResourcesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1902,8 +1908,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<TerminateEnvironmentResult>() {
             public TerminateEnvironmentResult call() throws Exception {
                 return terminateEnvironment(terminateEnvironmentRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1938,17 +1944,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<TerminateEnvironmentResult>() {
             public TerminateEnvironmentResult call() throws Exception {
-                TerminateEnvironmentResult result;
+              TerminateEnvironmentResult result;
                 try {
-                    result = terminateEnvironment(terminateEnvironmentRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(terminateEnvironmentRequest, result);
-                   return result;
-            }
-        });
+                result = terminateEnvironment(terminateEnvironmentRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(terminateEnvironmentRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1984,8 +1990,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<ValidateConfigurationSettingsResult>() {
             public ValidateConfigurationSettingsResult call() throws Exception {
                 return validateConfigurationSettings(validateConfigurationSettingsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2026,17 +2032,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ValidateConfigurationSettingsResult>() {
             public ValidateConfigurationSettingsResult call() throws Exception {
-                ValidateConfigurationSettingsResult result;
+              ValidateConfigurationSettingsResult result;
                 try {
-                    result = validateConfigurationSettings(validateConfigurationSettingsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(validateConfigurationSettingsRequest, result);
-                   return result;
-            }
-        });
+                result = validateConfigurationSettings(validateConfigurationSettingsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(validateConfigurationSettingsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2066,8 +2072,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
             public Void call() throws Exception {
                 restartAppServer(restartAppServerRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2101,16 +2107,16 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    restartAppServer(restartAppServerRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(restartAppServerRequest, null);
-                   return null;
-            }
-        });
+              try {
+                restartAppServer(restartAppServerRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(restartAppServerRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -2151,8 +2157,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
             public Void call() throws Exception {
                 deleteEnvironmentConfiguration(deleteEnvironmentConfigurationRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2197,16 +2203,16 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteEnvironmentConfiguration(deleteEnvironmentConfigurationRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteEnvironmentConfigurationRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteEnvironmentConfiguration(deleteEnvironmentConfigurationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteEnvironmentConfigurationRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -2248,8 +2254,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<UpdateEnvironmentResult>() {
             public UpdateEnvironmentResult call() throws Exception {
                 return updateEnvironment(updateEnvironmentRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2296,17 +2302,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateEnvironmentResult>() {
             public UpdateEnvironmentResult call() throws Exception {
-                UpdateEnvironmentResult result;
+              UpdateEnvironmentResult result;
                 try {
-                    result = updateEnvironment(updateEnvironmentRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(updateEnvironmentRequest, result);
-                   return result;
-            }
-        });
+                result = updateEnvironment(updateEnvironmentRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateEnvironmentRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2348,8 +2354,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<CreateConfigurationTemplateResult>() {
             public CreateConfigurationTemplateResult call() throws Exception {
                 return createConfigurationTemplate(createConfigurationTemplateRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2396,17 +2402,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateConfigurationTemplateResult>() {
             public CreateConfigurationTemplateResult call() throws Exception {
-                CreateConfigurationTemplateResult result;
+              CreateConfigurationTemplateResult result;
                 try {
-                    result = createConfigurationTemplate(createConfigurationTemplateRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createConfigurationTemplateRequest, result);
-                   return result;
-            }
-        });
+                result = createConfigurationTemplate(createConfigurationTemplateRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createConfigurationTemplateRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2453,8 +2459,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<DescribeConfigurationSettingsResult>() {
             public DescribeConfigurationSettingsResult call() throws Exception {
                 return describeConfigurationSettings(describeConfigurationSettingsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2506,17 +2512,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeConfigurationSettingsResult>() {
             public DescribeConfigurationSettingsResult call() throws Exception {
-                DescribeConfigurationSettingsResult result;
+              DescribeConfigurationSettingsResult result;
                 try {
-                    result = describeConfigurationSettings(describeConfigurationSettingsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeConfigurationSettingsRequest, result);
-                   return result;
-            }
-        });
+                result = describeConfigurationSettings(describeConfigurationSettingsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeConfigurationSettingsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2546,8 +2552,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<DescribeApplicationsResult>() {
             public DescribeApplicationsResult call() throws Exception {
                 return describeApplications(describeApplicationsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2582,17 +2588,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeApplicationsResult>() {
             public DescribeApplicationsResult call() throws Exception {
-                DescribeApplicationsResult result;
+              DescribeApplicationsResult result;
                 try {
-                    result = describeApplications(describeApplicationsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeApplicationsRequest, result);
-                   return result;
-            }
-        });
+                result = describeApplications(describeApplicationsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeApplicationsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2624,8 +2630,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
             public Void call() throws Exception {
                 rebuildEnvironment(rebuildEnvironmentRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2661,16 +2667,16 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    rebuildEnvironment(rebuildEnvironmentRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(rebuildEnvironmentRequest, null);
-                   return null;
-            }
-        });
+              try {
+                rebuildEnvironment(rebuildEnvironmentRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(rebuildEnvironmentRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -2703,8 +2709,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         return executorService.submit(new Callable<DescribeEventsResult>() {
             public DescribeEventsResult call() throws Exception {
                 return describeEvents(describeEventsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2742,17 +2748,17 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeEventsResult>() {
             public DescribeEventsResult call() throws Exception {
-                DescribeEventsResult result;
+              DescribeEventsResult result;
                 try {
-                    result = describeEvents(describeEventsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeEventsRequest, result);
-                   return result;
-            }
-        });
+                result = describeEvents(describeEventsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeEventsRequest, result);
+                 return result;
+        }
+    });
     }
     
 }

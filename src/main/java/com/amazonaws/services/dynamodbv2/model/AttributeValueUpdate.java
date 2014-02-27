@@ -18,15 +18,19 @@ import java.io.Serializable;
 
 /**
  * <p>
- * For the <i>UpdateItem</i> operation, represents the attributes to be modified,the action to perform on each, and the new value for each.
+ * For the <i>UpdateItem</i> operation, represents the attributes to be
+ * modified, the action to perform on each, and the new value for each.
  * </p>
  * <p>
- * <b>NOTE:</b> You cannot use UpdateItem to update any primary key attributes. Instead, you will need to delete the item, and then use PutItem to create
- * a new item with new attributes.
+ * <b>NOTE:</b> You cannot use UpdateItem to update any primary key
+ * attributes. Instead, you will need to delete the item, and then use
+ * PutItem to create a new item with new attributes.
  * </p>
  * <p>
- * Attribute values cannot be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty.
- * Requests with empty values will be rejected with a <i>ValidationException</i> .
+ * Attribute values cannot be null; string and binary type attributes
+ * must have lengths greater than zero; and set type attributes must not
+ * be empty. Requests with empty values will be rejected with a
+ * <i>ValidationException</i> .
  * </p>
  */
 public class AttributeValueUpdate implements Serializable {
@@ -60,24 +64,23 @@ public class AttributeValueUpdate implements Serializable {
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
-     * number value for an item that doesn't exist before the update, Amazon
+     * number value for an item that doesn't exist before the update,
      * DynamoDB uses 0 as the initial value. <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment
-     * or decrement an attribute value which does not yet exist, Amazon
-     * DynamoDB uses <code>0</code> as the initial value. For example,
-     * suppose that the item you want to update does not yet have an
-     * attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     * the number <code>3</code> to this attribute anyway, even though it
-     * currently does not exist. Amazon DynamoDB will create the
-     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     * and finally add <code>3</code> to it. The result will be a new
-     * <i>itemcount</i> attribute in the item, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     * added to the existing set. (This is a <i>set</i> operation, not
-     * mathematical addition.) For example, if the attribute value was the
-     * set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value would be
+     * or decrement an attribute value which does not yet exist, DynamoDB
+     * uses <code>0</code> as the initial value. For example, suppose that
+     * the item you want to update does not yet have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway, even though it currently does
+     * not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     * its initial value to <code>0</code>, and finally add <code>3</code> to
+     * it. The result will be a new <i>itemcount</i> attribute in the item,
+     * with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     * data type is a set, and if the <i>Value</i> is also a set, then the
+     * <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     * operation, not mathematical addition.) For example, if the attribute
+     * value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     * specified <code>[3]</code>, then the final attribute value would be
      * <code>[1,2,3]</code>. An error occurs if an Add action is specified
      * for a set attribute and the attribute type specified does not match
      * the existing set type. <p>Both sets must have the same primitive data
@@ -87,12 +90,12 @@ public class AttributeValueUpdate implements Serializable {
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
+     * <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     * primary key, and then adds the attribute. </li> <li>
      * <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     * item with the supplied primary key and number (or set of numbers) for
-     * the attribute value. The only data types allowed are number and number
+     * delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     * the supplied primary key and number (or set of numbers) for the
+     * attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
@@ -135,24 +138,23 @@ public class AttributeValueUpdate implements Serializable {
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
-     * number value for an item that doesn't exist before the update, Amazon
+     * number value for an item that doesn't exist before the update,
      * DynamoDB uses 0 as the initial value. <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment
-     * or decrement an attribute value which does not yet exist, Amazon
-     * DynamoDB uses <code>0</code> as the initial value. For example,
-     * suppose that the item you want to update does not yet have an
-     * attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     * the number <code>3</code> to this attribute anyway, even though it
-     * currently does not exist. Amazon DynamoDB will create the
-     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     * and finally add <code>3</code> to it. The result will be a new
-     * <i>itemcount</i> attribute in the item, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     * added to the existing set. (This is a <i>set</i> operation, not
-     * mathematical addition.) For example, if the attribute value was the
-     * set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value would be
+     * or decrement an attribute value which does not yet exist, DynamoDB
+     * uses <code>0</code> as the initial value. For example, suppose that
+     * the item you want to update does not yet have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway, even though it currently does
+     * not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     * its initial value to <code>0</code>, and finally add <code>3</code> to
+     * it. The result will be a new <i>itemcount</i> attribute in the item,
+     * with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     * data type is a set, and if the <i>Value</i> is also a set, then the
+     * <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     * operation, not mathematical addition.) For example, if the attribute
+     * value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     * specified <code>[3]</code>, then the final attribute value would be
      * <code>[1,2,3]</code>. An error occurs if an Add action is specified
      * for a set attribute and the attribute type specified does not match
      * the existing set type. <p>Both sets must have the same primitive data
@@ -162,12 +164,12 @@ public class AttributeValueUpdate implements Serializable {
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
+     * <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     * primary key, and then adds the attribute. </li> <li>
      * <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     * item with the supplied primary key and number (or set of numbers) for
-     * the attribute value. The only data types allowed are number and number
+     * delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     * the supplied primary key and number (or set of numbers) for the
+     * attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul>
      */
     public AttributeValueUpdate(AttributeValue value, String action) {
@@ -204,24 +206,23 @@ public class AttributeValueUpdate implements Serializable {
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
-     * number value for an item that doesn't exist before the update, Amazon
+     * number value for an item that doesn't exist before the update,
      * DynamoDB uses 0 as the initial value. <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment
-     * or decrement an attribute value which does not yet exist, Amazon
-     * DynamoDB uses <code>0</code> as the initial value. For example,
-     * suppose that the item you want to update does not yet have an
-     * attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     * the number <code>3</code> to this attribute anyway, even though it
-     * currently does not exist. Amazon DynamoDB will create the
-     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     * and finally add <code>3</code> to it. The result will be a new
-     * <i>itemcount</i> attribute in the item, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     * added to the existing set. (This is a <i>set</i> operation, not
-     * mathematical addition.) For example, if the attribute value was the
-     * set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value would be
+     * or decrement an attribute value which does not yet exist, DynamoDB
+     * uses <code>0</code> as the initial value. For example, suppose that
+     * the item you want to update does not yet have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway, even though it currently does
+     * not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     * its initial value to <code>0</code>, and finally add <code>3</code> to
+     * it. The result will be a new <i>itemcount</i> attribute in the item,
+     * with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     * data type is a set, and if the <i>Value</i> is also a set, then the
+     * <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     * operation, not mathematical addition.) For example, if the attribute
+     * value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     * specified <code>[3]</code>, then the final attribute value would be
      * <code>[1,2,3]</code>. An error occurs if an Add action is specified
      * for a set attribute and the attribute type specified does not match
      * the existing set type. <p>Both sets must have the same primitive data
@@ -231,12 +232,12 @@ public class AttributeValueUpdate implements Serializable {
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
+     * <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     * primary key, and then adds the attribute. </li> <li>
      * <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     * item with the supplied primary key and number (or set of numbers) for
-     * the attribute value. The only data types allowed are number and number
+     * delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     * the supplied primary key and number (or set of numbers) for the
+     * attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul>
      */
     public AttributeValueUpdate(AttributeValue value, AttributeAction action) {
@@ -306,24 +307,23 @@ public class AttributeValueUpdate implements Serializable {
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
-     * number value for an item that doesn't exist before the update, Amazon
+     * number value for an item that doesn't exist before the update,
      * DynamoDB uses 0 as the initial value. <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment
-     * or decrement an attribute value which does not yet exist, Amazon
-     * DynamoDB uses <code>0</code> as the initial value. For example,
-     * suppose that the item you want to update does not yet have an
-     * attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     * the number <code>3</code> to this attribute anyway, even though it
-     * currently does not exist. Amazon DynamoDB will create the
-     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     * and finally add <code>3</code> to it. The result will be a new
-     * <i>itemcount</i> attribute in the item, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     * added to the existing set. (This is a <i>set</i> operation, not
-     * mathematical addition.) For example, if the attribute value was the
-     * set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value would be
+     * or decrement an attribute value which does not yet exist, DynamoDB
+     * uses <code>0</code> as the initial value. For example, suppose that
+     * the item you want to update does not yet have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway, even though it currently does
+     * not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     * its initial value to <code>0</code>, and finally add <code>3</code> to
+     * it. The result will be a new <i>itemcount</i> attribute in the item,
+     * with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     * data type is a set, and if the <i>Value</i> is also a set, then the
+     * <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     * operation, not mathematical addition.) For example, if the attribute
+     * value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     * specified <code>[3]</code>, then the final attribute value would be
      * <code>[1,2,3]</code>. An error occurs if an Add action is specified
      * for a set attribute and the attribute type specified does not match
      * the existing set type. <p>Both sets must have the same primitive data
@@ -333,12 +333,12 @@ public class AttributeValueUpdate implements Serializable {
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
+     * <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     * primary key, and then adds the attribute. </li> <li>
      * <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     * item with the supplied primary key and number (or set of numbers) for
-     * the attribute value. The only data types allowed are number and number
+     * delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     * the supplied primary key and number (or set of numbers) for the
+     * attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
@@ -366,24 +366,23 @@ public class AttributeValueUpdate implements Serializable {
      *         mathematically added to the existing attribute. If <i>Value</i> is a
      *         negative number, then it is subtracted from the existing attribute.
      *         <note> <p> If you use <code>ADD</code> to increment or decrement a
-     *         number value for an item that doesn't exist before the update, Amazon
+     *         number value for an item that doesn't exist before the update,
      *         DynamoDB uses 0 as the initial value. <p>In addition, if you use
      *         <code>ADD</code> to update an existing item, and intend to increment
-     *         or decrement an attribute value which does not yet exist, Amazon
-     *         DynamoDB uses <code>0</code> as the initial value. For example,
-     *         suppose that the item you want to update does not yet have an
-     *         attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     *         the number <code>3</code> to this attribute anyway, even though it
-     *         currently does not exist. Amazon DynamoDB will create the
-     *         <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     *         and finally add <code>3</code> to it. The result will be a new
-     *         <i>itemcount</i> attribute in the item, with a value of
-     *         <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     *         set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     *         added to the existing set. (This is a <i>set</i> operation, not
-     *         mathematical addition.) For example, if the attribute value was the
-     *         set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     *         <code>[3]</code>, then the final attribute value would be
+     *         or decrement an attribute value which does not yet exist, DynamoDB
+     *         uses <code>0</code> as the initial value. For example, suppose that
+     *         the item you want to update does not yet have an attribute named
+     *         <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     *         <code>3</code> to this attribute anyway, even though it currently does
+     *         not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     *         its initial value to <code>0</code>, and finally add <code>3</code> to
+     *         it. The result will be a new <i>itemcount</i> attribute in the item,
+     *         with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     *         data type is a set, and if the <i>Value</i> is also a set, then the
+     *         <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     *         operation, not mathematical addition.) For example, if the attribute
+     *         value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     *         specified <code>[3]</code>, then the final attribute value would be
      *         <code>[1,2,3]</code>. An error occurs if an Add action is specified
      *         for a set attribute and the attribute type specified does not match
      *         the existing set type. <p>Both sets must have the same primitive data
@@ -393,12 +392,12 @@ public class AttributeValueUpdate implements Serializable {
      *         for an existing attribute whose data type is number or is a set. Do
      *         not use <code>ADD</code> for any other data types. </li> </ul> <p>
      *         <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     *         <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     *         specified primary key, and then adds the attribute. </li> <li>
+     *         <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     *         primary key, and then adds the attribute. </li> <li>
      *         <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     *         delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     *         item with the supplied primary key and number (or set of numbers) for
-     *         the attribute value. The only data types allowed are number and number
+     *         delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     *         the supplied primary key and number (or set of numbers) for the
+     *         attribute value. The only data types allowed are number and number
      *         set; no other data types can be specified. </li> </ul>
      *
      * @see AttributeAction
@@ -430,24 +429,23 @@ public class AttributeValueUpdate implements Serializable {
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
-     * number value for an item that doesn't exist before the update, Amazon
+     * number value for an item that doesn't exist before the update,
      * DynamoDB uses 0 as the initial value. <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment
-     * or decrement an attribute value which does not yet exist, Amazon
-     * DynamoDB uses <code>0</code> as the initial value. For example,
-     * suppose that the item you want to update does not yet have an
-     * attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     * the number <code>3</code> to this attribute anyway, even though it
-     * currently does not exist. Amazon DynamoDB will create the
-     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     * and finally add <code>3</code> to it. The result will be a new
-     * <i>itemcount</i> attribute in the item, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     * added to the existing set. (This is a <i>set</i> operation, not
-     * mathematical addition.) For example, if the attribute value was the
-     * set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value would be
+     * or decrement an attribute value which does not yet exist, DynamoDB
+     * uses <code>0</code> as the initial value. For example, suppose that
+     * the item you want to update does not yet have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway, even though it currently does
+     * not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     * its initial value to <code>0</code>, and finally add <code>3</code> to
+     * it. The result will be a new <i>itemcount</i> attribute in the item,
+     * with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     * data type is a set, and if the <i>Value</i> is also a set, then the
+     * <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     * operation, not mathematical addition.) For example, if the attribute
+     * value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     * specified <code>[3]</code>, then the final attribute value would be
      * <code>[1,2,3]</code>. An error occurs if an Add action is specified
      * for a set attribute and the attribute type specified does not match
      * the existing set type. <p>Both sets must have the same primitive data
@@ -457,12 +455,12 @@ public class AttributeValueUpdate implements Serializable {
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
+     * <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     * primary key, and then adds the attribute. </li> <li>
      * <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     * item with the supplied primary key and number (or set of numbers) for
-     * the attribute value. The only data types allowed are number and number
+     * delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     * the supplied primary key and number (or set of numbers) for the
+     * attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
@@ -490,24 +488,23 @@ public class AttributeValueUpdate implements Serializable {
      *         mathematically added to the existing attribute. If <i>Value</i> is a
      *         negative number, then it is subtracted from the existing attribute.
      *         <note> <p> If you use <code>ADD</code> to increment or decrement a
-     *         number value for an item that doesn't exist before the update, Amazon
+     *         number value for an item that doesn't exist before the update,
      *         DynamoDB uses 0 as the initial value. <p>In addition, if you use
      *         <code>ADD</code> to update an existing item, and intend to increment
-     *         or decrement an attribute value which does not yet exist, Amazon
-     *         DynamoDB uses <code>0</code> as the initial value. For example,
-     *         suppose that the item you want to update does not yet have an
-     *         attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     *         the number <code>3</code> to this attribute anyway, even though it
-     *         currently does not exist. Amazon DynamoDB will create the
-     *         <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     *         and finally add <code>3</code> to it. The result will be a new
-     *         <i>itemcount</i> attribute in the item, with a value of
-     *         <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     *         set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     *         added to the existing set. (This is a <i>set</i> operation, not
-     *         mathematical addition.) For example, if the attribute value was the
-     *         set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     *         <code>[3]</code>, then the final attribute value would be
+     *         or decrement an attribute value which does not yet exist, DynamoDB
+     *         uses <code>0</code> as the initial value. For example, suppose that
+     *         the item you want to update does not yet have an attribute named
+     *         <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     *         <code>3</code> to this attribute anyway, even though it currently does
+     *         not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     *         its initial value to <code>0</code>, and finally add <code>3</code> to
+     *         it. The result will be a new <i>itemcount</i> attribute in the item,
+     *         with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     *         data type is a set, and if the <i>Value</i> is also a set, then the
+     *         <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     *         operation, not mathematical addition.) For example, if the attribute
+     *         value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     *         specified <code>[3]</code>, then the final attribute value would be
      *         <code>[1,2,3]</code>. An error occurs if an Add action is specified
      *         for a set attribute and the attribute type specified does not match
      *         the existing set type. <p>Both sets must have the same primitive data
@@ -517,12 +514,12 @@ public class AttributeValueUpdate implements Serializable {
      *         for an existing attribute whose data type is number or is a set. Do
      *         not use <code>ADD</code> for any other data types. </li> </ul> <p>
      *         <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     *         <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     *         specified primary key, and then adds the attribute. </li> <li>
+     *         <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     *         primary key, and then adds the attribute. </li> <li>
      *         <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     *         delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     *         item with the supplied primary key and number (or set of numbers) for
-     *         the attribute value. The only data types allowed are number and number
+     *         delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     *         the supplied primary key and number (or set of numbers) for the
+     *         attribute value. The only data types allowed are number and number
      *         set; no other data types can be specified. </li> </ul>
      *
      * @see AttributeAction
@@ -554,24 +551,23 @@ public class AttributeValueUpdate implements Serializable {
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
-     * number value for an item that doesn't exist before the update, Amazon
+     * number value for an item that doesn't exist before the update,
      * DynamoDB uses 0 as the initial value. <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment
-     * or decrement an attribute value which does not yet exist, Amazon
-     * DynamoDB uses <code>0</code> as the initial value. For example,
-     * suppose that the item you want to update does not yet have an
-     * attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     * the number <code>3</code> to this attribute anyway, even though it
-     * currently does not exist. Amazon DynamoDB will create the
-     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     * and finally add <code>3</code> to it. The result will be a new
-     * <i>itemcount</i> attribute in the item, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     * added to the existing set. (This is a <i>set</i> operation, not
-     * mathematical addition.) For example, if the attribute value was the
-     * set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value would be
+     * or decrement an attribute value which does not yet exist, DynamoDB
+     * uses <code>0</code> as the initial value. For example, suppose that
+     * the item you want to update does not yet have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway, even though it currently does
+     * not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     * its initial value to <code>0</code>, and finally add <code>3</code> to
+     * it. The result will be a new <i>itemcount</i> attribute in the item,
+     * with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     * data type is a set, and if the <i>Value</i> is also a set, then the
+     * <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     * operation, not mathematical addition.) For example, if the attribute
+     * value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     * specified <code>[3]</code>, then the final attribute value would be
      * <code>[1,2,3]</code>. An error occurs if an Add action is specified
      * for a set attribute and the attribute type specified does not match
      * the existing set type. <p>Both sets must have the same primitive data
@@ -581,12 +577,12 @@ public class AttributeValueUpdate implements Serializable {
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
+     * <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     * primary key, and then adds the attribute. </li> <li>
      * <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     * item with the supplied primary key and number (or set of numbers) for
-     * the attribute value. The only data types allowed are number and number
+     * delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     * the supplied primary key and number (or set of numbers) for the
+     * attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -616,24 +612,23 @@ public class AttributeValueUpdate implements Serializable {
      *         mathematically added to the existing attribute. If <i>Value</i> is a
      *         negative number, then it is subtracted from the existing attribute.
      *         <note> <p> If you use <code>ADD</code> to increment or decrement a
-     *         number value for an item that doesn't exist before the update, Amazon
+     *         number value for an item that doesn't exist before the update,
      *         DynamoDB uses 0 as the initial value. <p>In addition, if you use
      *         <code>ADD</code> to update an existing item, and intend to increment
-     *         or decrement an attribute value which does not yet exist, Amazon
-     *         DynamoDB uses <code>0</code> as the initial value. For example,
-     *         suppose that the item you want to update does not yet have an
-     *         attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     *         the number <code>3</code> to this attribute anyway, even though it
-     *         currently does not exist. Amazon DynamoDB will create the
-     *         <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     *         and finally add <code>3</code> to it. The result will be a new
-     *         <i>itemcount</i> attribute in the item, with a value of
-     *         <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     *         set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     *         added to the existing set. (This is a <i>set</i> operation, not
-     *         mathematical addition.) For example, if the attribute value was the
-     *         set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     *         <code>[3]</code>, then the final attribute value would be
+     *         or decrement an attribute value which does not yet exist, DynamoDB
+     *         uses <code>0</code> as the initial value. For example, suppose that
+     *         the item you want to update does not yet have an attribute named
+     *         <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     *         <code>3</code> to this attribute anyway, even though it currently does
+     *         not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     *         its initial value to <code>0</code>, and finally add <code>3</code> to
+     *         it. The result will be a new <i>itemcount</i> attribute in the item,
+     *         with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     *         data type is a set, and if the <i>Value</i> is also a set, then the
+     *         <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     *         operation, not mathematical addition.) For example, if the attribute
+     *         value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     *         specified <code>[3]</code>, then the final attribute value would be
      *         <code>[1,2,3]</code>. An error occurs if an Add action is specified
      *         for a set attribute and the attribute type specified does not match
      *         the existing set type. <p>Both sets must have the same primitive data
@@ -643,12 +638,12 @@ public class AttributeValueUpdate implements Serializable {
      *         for an existing attribute whose data type is number or is a set. Do
      *         not use <code>ADD</code> for any other data types. </li> </ul> <p>
      *         <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     *         <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     *         specified primary key, and then adds the attribute. </li> <li>
+     *         <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     *         primary key, and then adds the attribute. </li> <li>
      *         <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     *         delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     *         item with the supplied primary key and number (or set of numbers) for
-     *         the attribute value. The only data types allowed are number and number
+     *         delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     *         the supplied primary key and number (or set of numbers) for the
+     *         attribute value. The only data types allowed are number and number
      *         set; no other data types can be specified. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -684,24 +679,23 @@ public class AttributeValueUpdate implements Serializable {
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
-     * number value for an item that doesn't exist before the update, Amazon
+     * number value for an item that doesn't exist before the update,
      * DynamoDB uses 0 as the initial value. <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment
-     * or decrement an attribute value which does not yet exist, Amazon
-     * DynamoDB uses <code>0</code> as the initial value. For example,
-     * suppose that the item you want to update does not yet have an
-     * attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     * the number <code>3</code> to this attribute anyway, even though it
-     * currently does not exist. Amazon DynamoDB will create the
-     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     * and finally add <code>3</code> to it. The result will be a new
-     * <i>itemcount</i> attribute in the item, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     * added to the existing set. (This is a <i>set</i> operation, not
-     * mathematical addition.) For example, if the attribute value was the
-     * set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value would be
+     * or decrement an attribute value which does not yet exist, DynamoDB
+     * uses <code>0</code> as the initial value. For example, suppose that
+     * the item you want to update does not yet have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway, even though it currently does
+     * not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     * its initial value to <code>0</code>, and finally add <code>3</code> to
+     * it. The result will be a new <i>itemcount</i> attribute in the item,
+     * with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     * data type is a set, and if the <i>Value</i> is also a set, then the
+     * <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     * operation, not mathematical addition.) For example, if the attribute
+     * value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     * specified <code>[3]</code>, then the final attribute value would be
      * <code>[1,2,3]</code>. An error occurs if an Add action is specified
      * for a set attribute and the attribute type specified does not match
      * the existing set type. <p>Both sets must have the same primitive data
@@ -711,12 +705,12 @@ public class AttributeValueUpdate implements Serializable {
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
+     * <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     * primary key, and then adds the attribute. </li> <li>
      * <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     * item with the supplied primary key and number (or set of numbers) for
-     * the attribute value. The only data types allowed are number and number
+     * delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     * the supplied primary key and number (or set of numbers) for the
+     * attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
@@ -744,24 +738,23 @@ public class AttributeValueUpdate implements Serializable {
      *         mathematically added to the existing attribute. If <i>Value</i> is a
      *         negative number, then it is subtracted from the existing attribute.
      *         <note> <p> If you use <code>ADD</code> to increment or decrement a
-     *         number value for an item that doesn't exist before the update, Amazon
+     *         number value for an item that doesn't exist before the update,
      *         DynamoDB uses 0 as the initial value. <p>In addition, if you use
      *         <code>ADD</code> to update an existing item, and intend to increment
-     *         or decrement an attribute value which does not yet exist, Amazon
-     *         DynamoDB uses <code>0</code> as the initial value. For example,
-     *         suppose that the item you want to update does not yet have an
-     *         attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     *         the number <code>3</code> to this attribute anyway, even though it
-     *         currently does not exist. Amazon DynamoDB will create the
-     *         <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     *         and finally add <code>3</code> to it. The result will be a new
-     *         <i>itemcount</i> attribute in the item, with a value of
-     *         <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     *         set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     *         added to the existing set. (This is a <i>set</i> operation, not
-     *         mathematical addition.) For example, if the attribute value was the
-     *         set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     *         <code>[3]</code>, then the final attribute value would be
+     *         or decrement an attribute value which does not yet exist, DynamoDB
+     *         uses <code>0</code> as the initial value. For example, suppose that
+     *         the item you want to update does not yet have an attribute named
+     *         <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     *         <code>3</code> to this attribute anyway, even though it currently does
+     *         not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     *         its initial value to <code>0</code>, and finally add <code>3</code> to
+     *         it. The result will be a new <i>itemcount</i> attribute in the item,
+     *         with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     *         data type is a set, and if the <i>Value</i> is also a set, then the
+     *         <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     *         operation, not mathematical addition.) For example, if the attribute
+     *         value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     *         specified <code>[3]</code>, then the final attribute value would be
      *         <code>[1,2,3]</code>. An error occurs if an Add action is specified
      *         for a set attribute and the attribute type specified does not match
      *         the existing set type. <p>Both sets must have the same primitive data
@@ -771,12 +764,12 @@ public class AttributeValueUpdate implements Serializable {
      *         for an existing attribute whose data type is number or is a set. Do
      *         not use <code>ADD</code> for any other data types. </li> </ul> <p>
      *         <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     *         <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     *         specified primary key, and then adds the attribute. </li> <li>
+     *         <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     *         primary key, and then adds the attribute. </li> <li>
      *         <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     *         delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     *         item with the supplied primary key and number (or set of numbers) for
-     *         the attribute value. The only data types allowed are number and number
+     *         delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     *         the supplied primary key and number (or set of numbers) for the
+     *         attribute value. The only data types allowed are number and number
      *         set; no other data types can be specified. </li> </ul>
      *
      * @see AttributeAction
@@ -808,24 +801,23 @@ public class AttributeValueUpdate implements Serializable {
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
-     * number value for an item that doesn't exist before the update, Amazon
+     * number value for an item that doesn't exist before the update,
      * DynamoDB uses 0 as the initial value. <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment
-     * or decrement an attribute value which does not yet exist, Amazon
-     * DynamoDB uses <code>0</code> as the initial value. For example,
-     * suppose that the item you want to update does not yet have an
-     * attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     * the number <code>3</code> to this attribute anyway, even though it
-     * currently does not exist. Amazon DynamoDB will create the
-     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     * and finally add <code>3</code> to it. The result will be a new
-     * <i>itemcount</i> attribute in the item, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     * added to the existing set. (This is a <i>set</i> operation, not
-     * mathematical addition.) For example, if the attribute value was the
-     * set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value would be
+     * or decrement an attribute value which does not yet exist, DynamoDB
+     * uses <code>0</code> as the initial value. For example, suppose that
+     * the item you want to update does not yet have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway, even though it currently does
+     * not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     * its initial value to <code>0</code>, and finally add <code>3</code> to
+     * it. The result will be a new <i>itemcount</i> attribute in the item,
+     * with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     * data type is a set, and if the <i>Value</i> is also a set, then the
+     * <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     * operation, not mathematical addition.) For example, if the attribute
+     * value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     * specified <code>[3]</code>, then the final attribute value would be
      * <code>[1,2,3]</code>. An error occurs if an Add action is specified
      * for a set attribute and the attribute type specified does not match
      * the existing set type. <p>Both sets must have the same primitive data
@@ -835,12 +827,12 @@ public class AttributeValueUpdate implements Serializable {
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
+     * <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     * primary key, and then adds the attribute. </li> <li>
      * <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     * item with the supplied primary key and number (or set of numbers) for
-     * the attribute value. The only data types allowed are number and number
+     * delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     * the supplied primary key and number (or set of numbers) for the
+     * attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -870,24 +862,23 @@ public class AttributeValueUpdate implements Serializable {
      *         mathematically added to the existing attribute. If <i>Value</i> is a
      *         negative number, then it is subtracted from the existing attribute.
      *         <note> <p> If you use <code>ADD</code> to increment or decrement a
-     *         number value for an item that doesn't exist before the update, Amazon
+     *         number value for an item that doesn't exist before the update,
      *         DynamoDB uses 0 as the initial value. <p>In addition, if you use
      *         <code>ADD</code> to update an existing item, and intend to increment
-     *         or decrement an attribute value which does not yet exist, Amazon
-     *         DynamoDB uses <code>0</code> as the initial value. For example,
-     *         suppose that the item you want to update does not yet have an
-     *         attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     *         the number <code>3</code> to this attribute anyway, even though it
-     *         currently does not exist. Amazon DynamoDB will create the
-     *         <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     *         and finally add <code>3</code> to it. The result will be a new
-     *         <i>itemcount</i> attribute in the item, with a value of
-     *         <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     *         set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     *         added to the existing set. (This is a <i>set</i> operation, not
-     *         mathematical addition.) For example, if the attribute value was the
-     *         set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     *         <code>[3]</code>, then the final attribute value would be
+     *         or decrement an attribute value which does not yet exist, DynamoDB
+     *         uses <code>0</code> as the initial value. For example, suppose that
+     *         the item you want to update does not yet have an attribute named
+     *         <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     *         <code>3</code> to this attribute anyway, even though it currently does
+     *         not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     *         its initial value to <code>0</code>, and finally add <code>3</code> to
+     *         it. The result will be a new <i>itemcount</i> attribute in the item,
+     *         with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     *         data type is a set, and if the <i>Value</i> is also a set, then the
+     *         <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     *         operation, not mathematical addition.) For example, if the attribute
+     *         value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     *         specified <code>[3]</code>, then the final attribute value would be
      *         <code>[1,2,3]</code>. An error occurs if an Add action is specified
      *         for a set attribute and the attribute type specified does not match
      *         the existing set type. <p>Both sets must have the same primitive data
@@ -897,12 +888,12 @@ public class AttributeValueUpdate implements Serializable {
      *         for an existing attribute whose data type is number or is a set. Do
      *         not use <code>ADD</code> for any other data types. </li> </ul> <p>
      *         <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     *         <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     *         specified primary key, and then adds the attribute. </li> <li>
+     *         <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     *         primary key, and then adds the attribute. </li> <li>
      *         <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     *         delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     *         item with the supplied primary key and number (or set of numbers) for
-     *         the attribute value. The only data types allowed are number and number
+     *         delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     *         the supplied primary key and number (or set of numbers) for the
+     *         attribute value. The only data types allowed are number and number
      *         set; no other data types can be specified. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 

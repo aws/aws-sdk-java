@@ -18,8 +18,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway
- * name, and region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.
+ * AWS Storage Gateway returns the Amazon Resource Name (ARN) of the
+ * activated gateway. It is a string made of information such as your
+ * account, gateway name, and region. This ARN is used to reference the
+ * gateway in other API operations as well as resource-based
+ * authorization.
  * </p>
  */
 public class ActivateGatewayResult implements Serializable {

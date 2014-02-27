@@ -26,14 +26,21 @@ public class CaseCreationLimitExceededExceptionUnmarshaller extends JsonErrorUnm
         super(CaseCreationLimitExceededException.class);
     }
 
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands.
-        String errorCode = parseErrorCode(json);
-        if (errorCode == null || !errorCode.equals("CaseCreationLimitExceeded"))
-            return null;
+    @Override
+    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
+        if (errorTypeFromHeader == null) {
+            // Parse error type from the JSON content if it's not available in the response headers
+            String errorCodeFromContent = parseErrorCode(json);
+            return (errorCodeFromContent != null && errorCodeFromContent.equals("CaseCreationLimitExceeded"));
+        } else {
+            return errorTypeFromHeader.equals("CaseCreationLimitExceeded");
+        }
+    }
 
+    @Override
+    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         CaseCreationLimitExceededException e = (CaseCreationLimitExceededException)super.unmarshall(json);
+        e.setErrorCode("CaseCreationLimitExceeded");
 
         return e;
     }

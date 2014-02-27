@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element in the DescribeReservedDBInstancesOfferings action.
+ * This data type is used as a response element in the
+ * DescribeReservedDBInstancesOfferings action.
  * </p>
  */
 public class ReservedDBInstancesOffering implements Serializable {

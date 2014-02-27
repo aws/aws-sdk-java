@@ -21,14 +21,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#publish(PublishRequest) Publish operation}.
  * <p>
- * The <code>Publish</code> action sends a message to all of a topic's subscribed endpoints. When a <code>messageId</code> is returned, the message has
- * been saved and Amazon SNS will attempt to deliver it to the topic's subscribers shortly. The format of the outgoing message to each subscribed
- * endpoint depends on the notification protocol selected.
+ * The <code>Publish</code> action sends a message to all of a topic's
+ * subscribed endpoints. When a <code>messageId</code> is returned, the
+ * message has been saved and Amazon SNS will attempt to deliver it to
+ * the topic's subscribers shortly. The format of the outgoing message to
+ * each subscribed endpoint depends on the notification protocol
+ * selected.
  * </p>
  * <p>
- * To use the <code>Publish</code> action for sending a message to a mobile endpoint, such as an app on a Kindle device or mobile phone, you must specify
- * the EndpointArn. The EndpointArn is returned when making a call with the <code>CreatePlatformEndpoint</code> action. The second example below shows a
- * request and response for publishing to a mobile endpoint.
+ * To use the <code>Publish</code> action for sending a message to a
+ * mobile endpoint, such as an app on a Kindle device or mobile phone,
+ * you must specify the EndpointArn. The EndpointArn is returned when
+ * making a call with the <code>CreatePlatformEndpoint</code> action. The
+ * second example below shows a request and response for publishing to a
+ * mobile endpoint.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#publish(PublishRequest)

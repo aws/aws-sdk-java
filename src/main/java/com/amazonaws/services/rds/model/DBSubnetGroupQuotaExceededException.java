@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Request would result in user exceeding the allowed number of DB subnet groups.
+ * Request would result in user exceeding the allowed number of DB
+ * subnet groups.
  * </p>
  */        
 public class DBSubnetGroupQuotaExceededException extends AmazonServiceException {

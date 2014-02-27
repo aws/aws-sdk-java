@@ -24,9 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Creates a new group.
  * </p>
  * <p>
- * For information about the number of groups you can create, see <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a> in <i>Using AWS
- * Identity and Access Management</i> .
+ * For information about the number of groups you can create, see
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+ * in <i>Using AWS Identity and Access Management</i> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createGroup(CreateGroupRequest)

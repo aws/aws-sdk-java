@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns the destination region and retention period that are configured for cross-region snapshot copy.
+ * Returns the destination region and retention period that are
+ * configured for cross-region snapshot copy.
  * </p>
  */
 public class ClusterSnapshotCopyStatus implements Serializable {

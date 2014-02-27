@@ -23,9 +23,11 @@ import com.amazonaws.services.ec2.model.transform.ImportInstanceRequestMarshalle
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#importInstance(ImportInstanceRequest) ImportInstance operation}.
  * <p>
- * Creates an import instance task using metadata from the specified disk image. After importing the image, you then upload it using the
- * ec2-upload-disk-image command in the EC2 command line tools. For more information, see Using the Command Line Tools to Import Your Virtual Machine to
- * Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
+ * Creates an import instance task using metadata from the specified disk
+ * image. After importing the image, you then upload it using the
+ * ec2-upload-disk-image command in the EC2 command line tools. For more
+ * information, see Using the Command Line Tools to Import Your Virtual
+ * Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#importInstance(ImportInstanceRequest)

@@ -21,11 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#describeTapeArchives(DescribeTapeArchivesRequest) DescribeTapeArchives operation}.
  * <p>
- * Returns a description of specified virtual tapes in the Virtual Tape Shelf (VTS).
+ * Returns a description of specified virtual tapes in the Virtual Tape
+ * Shelf (VTS).
  * </p>
  * <p>
- * If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a description all virtual tapes found in the Virtual Tape Shelf (VTS)
- * associated with your account.
+ * If a specific <code>TapeARN</code> is not specified, AWS Storage
+ * Gateway returns a description all virtual tapes found in the Virtual
+ * Tape Shelf (VTS) associated with your account.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeTapeArchives(DescribeTapeArchivesRequest)

@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.DescribeInstanceAttributeReque
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeInstanceAttribute(DescribeInstanceAttributeRequest) DescribeInstanceAttribute operation}.
  * <p>
- * Describes an attribute of the specified instance. You can specify only one attribute at a time.
+ * Describes an attribute of the specified instance. You can specify only
+ * one attribute at a time.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeInstanceAttribute(DescribeInstanceAttributeRequest)

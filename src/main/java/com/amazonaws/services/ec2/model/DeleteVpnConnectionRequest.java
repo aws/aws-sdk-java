@@ -26,8 +26,9 @@ import com.amazonaws.services.ec2.model.transform.DeleteVpnConnectionRequestMars
  * Deletes the specified VPN connection.
  * </p>
  * <p>
- * If you're deleting the VPC and its associated components, we recommend that you detach the virtual private gateway from the VPC and delete the VPC
- * before deleting the VPN connection.
+ * If you're deleting the VPC and its associated components, we recommend
+ * that you detach the virtual private gateway from the VPC and delete
+ * the VPC before deleting the VPN connection.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpnConnection(DeleteVpnConnectionRequest)

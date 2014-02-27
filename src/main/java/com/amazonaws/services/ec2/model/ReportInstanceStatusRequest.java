@@ -23,9 +23,12 @@ import com.amazonaws.services.ec2.model.transform.ReportInstanceStatusRequestMar
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#reportInstanceStatus(ReportInstanceStatusRequest) ReportInstanceStatus operation}.
  * <p>
- * Submits feedback about the status of an instance. The instance must be in the <code>running</code> state. If your experience with the instance differs
- * from the instance status returned by DescribeInstanceStatus, use ReportInstanceStatus to report your experience with the instance. Amazon EC2 collects
- * this information to improve the accuracy of status checks.
+ * Submits feedback about the status of an instance. The instance must be
+ * in the <code>running</code> state. If your experience with the
+ * instance differs from the instance status returned by
+ * DescribeInstanceStatus, use ReportInstanceStatus to report your
+ * experience with the instance. Amazon EC2 collects this information to
+ * improve the accuracy of status checks.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#reportInstanceStatus(ReportInstanceStatusRequest)

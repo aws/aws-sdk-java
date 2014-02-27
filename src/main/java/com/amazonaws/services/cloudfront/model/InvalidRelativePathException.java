@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+ * The relative path is too big, is not URL-encoded, or does not begin
+ * with a slash (/).
  * </p>
  */        
 public class InvalidRelativePathException extends AmazonServiceException {

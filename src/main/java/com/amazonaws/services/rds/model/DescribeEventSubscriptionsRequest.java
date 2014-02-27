@@ -21,11 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeEventSubscriptions(DescribeEventSubscriptionsRequest) DescribeEventSubscriptions operation}.
  * <p>
- * Lists all the subscription descriptions for a customer account. The description for a subscription includes SubscriptionName, SNSTopicARN, CustomerID,
- * SourceType, SourceID, CreationTime, and Status.
+ * Lists all the subscription descriptions for a customer account. The
+ * description for a subscription includes SubscriptionName, SNSTopicARN,
+ * CustomerID, SourceType, SourceID, CreationTime, and Status.
  * </p>
  * <p>
- * If you specify a SubscriptionName, lists the description for that subscription.
+ * If you specify a SubscriptionName, lists the description for that
+ * subscription.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeEventSubscriptions(DescribeEventSubscriptionsRequest)

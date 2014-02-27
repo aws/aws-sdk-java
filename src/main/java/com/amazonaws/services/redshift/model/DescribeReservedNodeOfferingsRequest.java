@@ -21,15 +21,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest) DescribeReservedNodeOfferings operation}.
  * <p>
- * Returns a list of the available reserved node offerings by Amazon Redshift with their descriptions including the node type, the fixed and recurring
- * costs of reserving the node and duration the node will be reserved for you. These descriptions help you determine which reserve node offering you want
- * to purchase. You then use the unique offering ID in you call to PurchaseReservedNodeOffering to reserve one or more nodes for your Amazon Redshift
- * cluster.
+ * Returns a list of the available reserved node offerings by Amazon
+ * Redshift with their descriptions including the node type, the fixed
+ * and recurring costs of reserving the node and duration the node will
+ * be reserved for you. These descriptions help you determine which
+ * reserve node offering you want to purchase. You then use the unique
+ * offering ID in you call to PurchaseReservedNodeOffering to reserve one
+ * or more nodes for your Amazon Redshift cluster.
  * </p>
  * <p>
- * For more information about managing parameter groups, go to <a
- * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a> in the <i>Amazon Redshift
- * Management Guide</i> .
+ * For more information about managing parameter groups, go to
+ * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
+ * in the <i>Amazon Redshift Management Guide</i> .
  * 
  * 
  * </p>

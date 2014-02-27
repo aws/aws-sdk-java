@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.DeleteNetworkAclEntryRequestMa
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteNetworkAclEntry(DeleteNetworkAclEntryRequest) DeleteNetworkAclEntry operation}.
  * <p>
- * Deletes the specified ingress or egress entry (rule) from the specified network ACL.
+ * Deletes the specified ingress or egress entry (rule) from the
+ * specified network ACL.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteNetworkAclEntry(DeleteNetworkAclEntryRequest)

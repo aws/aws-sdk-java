@@ -26,8 +26,9 @@ import com.amazonaws.services.ec2.model.transform.DescribeDhcpOptionsRequestMars
  * Describes one or more of your DHCP options sets.
  * </p>
  * <p>
- * For more information about DHCP options sets, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options
- * Sets </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
+ * For more information about DHCP options sets, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeDhcpOptions(DescribeDhcpOptionsRequest)

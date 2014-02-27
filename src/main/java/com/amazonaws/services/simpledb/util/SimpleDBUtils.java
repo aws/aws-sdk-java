@@ -209,12 +209,24 @@ public class SimpleDBUtils {
     public static String encodeRealNumberRange(float number, int maxDigitsLeft,
             int maxDigitsRight, int offsetValue) {
         int shiftMultiplier = (int) Math.pow(10, maxDigitsRight);
-        long shiftedNumber = (long) Math.round(number * shiftMultiplier);
+        long shiftedNumber = (long) Math.round((double)number * shiftMultiplier);
         long shiftedOffset = offsetValue * shiftMultiplier;
         long offsetNumber = shiftedNumber + shiftedOffset;
+
+        if (offsetNumber < 0)
+        {
+            throw new IllegalArgumentException("OffsetNumber[" + offsetNumber + "] is negative - Number[" + number + "], maxDigitsLeft[" + maxDigitsLeft + "], maxDigitsRight[" + maxDigitsRight + "], offsetValue[" + offsetValue + "]");
+        }
+
         String longString = Long.toString(offsetNumber);
         int numBeforeDecimal = longString.length();
         int numZeroes = maxDigitsLeft + maxDigitsRight - numBeforeDecimal;
+
+        if (numZeroes < 0)
+        {
+            throw new IllegalArgumentException("Number[" + number + "] has too many digits - maxDigitsLeft[" + maxDigitsLeft + "], maxDigitsRight[" + maxDigitsRight + "], offsetValue[" + offsetValue + "]");
+        }
+
         StringBuffer strBuffer = new StringBuffer(numZeroes + longString.length());
         for (int i = 0; i < numZeroes; i++) {
             strBuffer.insert(i, '0');

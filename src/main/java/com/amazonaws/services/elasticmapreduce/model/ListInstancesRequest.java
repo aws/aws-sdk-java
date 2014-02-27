@@ -21,9 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#listInstances(ListInstancesRequest) ListInstances operation}.
  * <p>
- * Provides information about the cluster instances that Amazon EMR provisions on behalf of a user when it creates the cluster. For example, this
- * operation indicates when the EC2 instances reach the Ready state, when instances become available to Amazon EMR to use for jobs, and the IP addresses
- * for cluster instances, etc.
+ * Provides information about the cluster instances that Amazon EMR
+ * provisions on behalf of a user when it creates the cluster. For
+ * example, this operation indicates when the EC2 instances reach the
+ * Ready state, when instances become available to Amazon EMR to use for
+ * jobs, and the IP addresses for cluster instances, etc.
  * </p>
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#listInstances(ListInstancesRequest)

@@ -24,7 +24,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes a DB subnet group.
  * </p>
  * <p>
- * <b>NOTE:</b>The specified database subnet group must not be associated with any DB instances.
+ * <b>NOTE:</b>The specified database subnet group must not be associated
+ * with any DB instances.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBSubnetGroup(DeleteDBSubnetGroupRequest)

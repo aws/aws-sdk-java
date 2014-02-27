@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeDBParameters(DescribeDBParametersRequest) DescribeDBParameters operation}.
  * <p>
- * Returns the detailed parameter list for a particular DB parameter group.
+ * Returns the detailed parameter list for a particular DB parameter
+ * group.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBParameters(DescribeDBParametersRequest)

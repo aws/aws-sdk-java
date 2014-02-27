@@ -21,14 +21,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#activateGateway(ActivateGatewayRequest) ActivateGateway operation}.
  * <p>
- * This operation activates the gateway you previously deployed on your host. For more information, see <a
- * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/DownloadAndDeploy.html"> Downloading and Deploying AWS Storage Gateway VM </a> . In
- * the activation process you specify information such as the region you want to use for storing snapshots, the time zone for scheduled snapshots and the
- * gateway schedule window, an activation key, and a name for your gateway. The activation process also associates your gateway with your account (see
+ * This operation activates the gateway you previously deployed on your
+ * host. For more information, see
+ * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/DownloadAndDeploy.html"> Downloading and Deploying AWS Storage Gateway VM </a>
+ * . In the activation process you specify information such as the
+ * region you want to use for storing snapshots, the time zone for
+ * scheduled snapshots and the gateway schedule window, an activation
+ * key, and a name for your gateway. The activation process also
+ * associates your gateway with your account (see
  * UpdateGatewayInformation).
  * </p>
  * <p>
- * <b>NOTE:</b>You must power on the gateway VM before you can activate your gateway.
+ * <b>NOTE:</b>You must power on the gateway VM before you can activate
+ * your gateway.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#activateGateway(ActivateGatewayRequest)

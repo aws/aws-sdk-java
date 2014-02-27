@@ -21,15 +21,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#putScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest) PutScheduledUpdateGroupAction operation}.
  * <p>
- * Creates or updates a scheduled scaling action for an Auto Scaling group. When updating a scheduled scaling action, if you leave a parameter
- * unspecified, the corresponding value remains unchanged in the affected Auto Scaling group.
+ * Creates or updates a scheduled scaling action for an Auto Scaling
+ * group. When updating a scheduled scaling action, if you leave a
+ * parameter unspecified, the corresponding value remains unchanged in
+ * the affected Auto Scaling group.
  * </p>
  * <p>
- * For information on creating or updating a scheduled action for your Auto Scaling group, see <a
- * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html"> Scale Based on a Schedule </a> .
+ * For information on creating or updating a scheduled action for your
+ * Auto Scaling group, see
+ * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html"> Scale Based on a Schedule </a>
+ * .
  * </p>
  * <p>
- * <b>NOTE:</b> Auto Scaling supports the date and time expressed in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only.
+ * <b>NOTE:</b> Auto Scaling supports the date and time expressed in
+ * "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#putScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest)

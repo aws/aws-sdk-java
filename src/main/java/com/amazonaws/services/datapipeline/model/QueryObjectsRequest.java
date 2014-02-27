@@ -21,12 +21,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#queryObjects(QueryObjectsRequest) QueryObjects operation}.
  * <p>
- * Queries a pipeline for the names of objects that match a specified set of conditions.
+ * Queries a pipeline for the names of objects that match a specified set
+ * of conditions.
  * </p>
  * <p>
- * The objects returned by QueryObjects are paginated and then filtered by the value you set for query. This means the action may return an empty result
- * set with a value set for marker. If <code>HasMoreResults</code> is set to <code>True</code> , you should continue to call QueryObjects, passing in the
- * returned value for marker, until <code>HasMoreResults</code> returns <code>False</code> .
+ * The objects returned by QueryObjects are paginated and then filtered
+ * by the value you set for query. This means the action may return an
+ * empty result set with a value set for marker. If
+ * <code>HasMoreResults</code> is set to <code>True</code> , you should
+ * continue to call QueryObjects, passing in the returned value for
+ * marker, until <code>HasMoreResults</code> returns <code>False</code> .
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#queryObjects(QueryObjectsRequest)

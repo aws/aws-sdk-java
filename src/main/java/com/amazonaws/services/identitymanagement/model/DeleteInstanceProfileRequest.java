@@ -21,15 +21,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteInstanceProfile(DeleteInstanceProfileRequest) DeleteInstanceProfile operation}.
  * <p>
- * Deletes the specified instance profile. The instance profile must not have an associated role.
+ * Deletes the specified instance profile. The instance profile must not
+ * have an associated role.
  * </p>
  * <p>
- * <b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances running with the instance profile you are about to delete. Deleting a role or
- * instance profile that is associated with a running instance will break any applications running on the instance.
+ * <b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances
+ * running with the instance profile you are about to delete. Deleting a
+ * role or instance profile that is associated with a running instance
+ * will break any applications running on the instance.
  * </p>
  * <p>
- * For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About
- * Instance Profiles </a> .
+ * For more information about instance profiles, go to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteInstanceProfile(DeleteInstanceProfileRequest)

@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The cluster does not have read bucket or put object permissions on the S3 bucket specified when enabling logging.
+ * The cluster does not have read bucket or put object permissions on
+ * the S3 bucket specified when enabling logging.
  * </p>
  */        
 public class InsufficientS3BucketPolicyException extends AmazonServiceException {

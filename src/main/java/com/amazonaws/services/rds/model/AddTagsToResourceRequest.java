@@ -21,12 +21,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#addTagsToResource(AddTagsToResourceRequest) AddTagsToResource operation}.
  * <p>
- * Adds metadata tags to an Amazon RDS resource. These tags can also be used with cost allocation reporting to track cost associated with Amazon RDS
- * resources, or used in Condition statement in IAM policy for Amazon RDS.
+ * Adds metadata tags to an Amazon RDS resource. These tags can also be
+ * used with cost allocation reporting to track cost associated with
+ * Amazon RDS resources, or used in Condition statement in IAM policy for
+ * Amazon RDS.
  * </p>
  * <p>
- * For an overview on tagging Amazon RDS resources, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html"> Tagging
- * Amazon RDS Resources </a> .
+ * For an overview on tagging Amazon RDS resources, see
+ * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html"> Tagging Amazon RDS Resources </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#addTagsToResource(AddTagsToResourceRequest)

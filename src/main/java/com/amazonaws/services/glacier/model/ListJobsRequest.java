@@ -21,40 +21,62 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.glacier.AmazonGlacier#listJobs(ListJobsRequest) ListJobs operation}.
  * <p>
- * This operation lists jobs for a vault, including jobs that are in-progress and jobs that have recently finished.
+ * This operation lists jobs for a vault, including jobs that are
+ * in-progress and jobs that have recently finished.
  * </p>
  * <p>
- * <b>NOTE:</b> Amazon Glacier retains recently completed jobs for a period before deleting them; however, it eventually removes completed jobs. The
- * output of completed jobs can be retrieved. Retaining completed jobs for a period of time after they have completed enables you to get a job output in
- * the event you miss the job completion notification or your first attempt to download it fails. For example, suppose you start an archive retrieval job
- * to download an archive. After the job completes, you start to download the archive but encounter a network error. In this scenario, you can retry and
+ * <b>NOTE:</b> Amazon Glacier retains recently completed jobs for a
+ * period before deleting them; however, it eventually removes completed
+ * jobs. The output of completed jobs can be retrieved. Retaining
+ * completed jobs for a period of time after they have completed enables
+ * you to get a job output in the event you miss the job completion
+ * notification or your first attempt to download it fails. For example,
+ * suppose you start an archive retrieval job to download an archive.
+ * After the job completes, you start to download the archive but
+ * encounter a network error. In this scenario, you can retry and
  * download the archive while the job exists.
  * </p>
  * <p>
- * To retrieve an archive or retrieve a vault inventory from Amazon Glacier, you first initiate a job, and after the job completes, you download the
- * data. For an archive retrieval, the output is the archive data, and for an inventory retrieval, it is the inventory list. The List Job operation
- * returns a list of these jobs sorted by job initiation time.
+ * To retrieve an archive or retrieve a vault inventory from Amazon
+ * Glacier, you first initiate a job, and after the job completes, you
+ * download the data. For an archive retrieval, the output is the archive
+ * data, and for an inventory retrieval, it is the inventory list. The
+ * List Job operation returns a list of these jobs sorted by job
+ * initiation time.
  * </p>
  * <p>
- * This List Jobs operation supports pagination. By default, this operation returns up to 1,000 jobs in the response. You should always check the
- * response for a <code>marker</code> at which to continue the list; if there are no more items the <code>marker</code> is <code>null</code> .
- * To return a list of jobs that begins at a specific job, set the <code>marker</code> request parameter to the value you obtained from a
- * previous List Jobs request. You can also limit the number of jobs returned in the response by specifying the <code>limit</code> parameter in the
- * request.
+ * This List Jobs operation supports pagination. By default, this
+ * operation returns up to 1,000 jobs in the response. You should always
+ * check the response for a <code>marker</code> at which to continue the
+ * list; if there are no more items the <code>marker</code> is
+ * <code>null</code> .
+ * To return a list of jobs that begins at a specific job, set
+ * the <code>marker</code> request parameter to the value you obtained
+ * from a previous List Jobs request. You can also limit the number of
+ * jobs returned in the response by specifying the <code>limit</code>
+ * parameter in the request.
  * </p>
  * <p>
- * Additionally, you can filter the jobs list returned by specifying an optional <code>statuscode</code> (InProgress, Succeeded, or Failed) and
- * <code>completed</code> (true, false) parameter. The <code>statuscode</code> allows you to specify that only jobs that match a specified status are
- * returned. The <code>completed</code> parameter allows you to specify that only jobs in a specific completion state are returned.
+ * Additionally, you can filter the jobs list returned by specifying an
+ * optional <code>statuscode</code> (InProgress, Succeeded, or Failed)
+ * and <code>completed</code> (true, false) parameter. The
+ * <code>statuscode</code> allows you to specify that only jobs that
+ * match a specified status are returned. The <code>completed</code>
+ * parameter allows you to specify that only jobs in a specific
+ * completion state are returned.
  * </p>
  * <p>
- * An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any
- * permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
- * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management
- * (IAM) </a> .
+ * An AWS account has full permission to perform all operations
+ * (actions). However, AWS Identity and Access Management (IAM) users
+ * don't have any permissions by default. You must grant them explicit
+ * permission to perform specific actions. For more information, see
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+ * .
  * </p>
  * <p>
- * For the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html"> List Jobs </a>
+ * For the underlying REST API, go to
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html"> List Jobs </a>
+ * 
  * </p>
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#listJobs(ListJobsRequest)

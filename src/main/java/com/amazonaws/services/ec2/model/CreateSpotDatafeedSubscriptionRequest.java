@@ -23,9 +23,11 @@ import com.amazonaws.services.ec2.model.transform.CreateSpotDatafeedSubscription
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest) CreateSpotDatafeedSubscription operation}.
  * <p>
- * Creates a datafeed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data feed per AWS account. For more
- * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a> in the <i>Amazon Elastic
- * Compute Cloud User Guide</i> .
+ * Creates a datafeed for Spot Instances, enabling you to view Spot
+ * Instance usage logs. You can create one data feed per AWS account. For
+ * more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest)

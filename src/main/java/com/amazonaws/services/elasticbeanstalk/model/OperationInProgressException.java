@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Unable to perform the specified operation because another operation is already in progress affecting an an element in this activity.
+ * Unable to perform the specified operation because another operation is
+ * already in progress affecting an an element in this activity.
  * </p>
  */        
 public class OperationInProgressException extends AmazonServiceException {

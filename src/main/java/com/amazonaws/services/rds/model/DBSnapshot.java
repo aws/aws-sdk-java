@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the following actions:
+ * Contains the result of a successful invocation of the following
+ * actions:
  * </p>
  * 
  * <ul>
@@ -27,7 +28,8 @@ import java.io.Serializable;
  * 
  * </ul>
  * <p>
- * This data type is used as a response element in the DescribeDBSnapshots action.
+ * This data type is used as a response element in the
+ * DescribeDBSnapshots action.
  * </p>
  */
 public class DBSnapshot implements Serializable {

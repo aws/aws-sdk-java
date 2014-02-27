@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a virtual tape that is archived in the Virtual Tape Shelf (VTS).
+ * Represents a virtual tape that is archived in the Virtual Tape Shelf
+ * (VTS).
  * </p>
  */
 public class TapeArchive implements Serializable {

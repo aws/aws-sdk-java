@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the information required for client programs to connect to a cache node.
+ * Represents the information required for client programs to connect to
+ * a cache node.
  * </p>
  */
 public class Endpoint implements Serializable {

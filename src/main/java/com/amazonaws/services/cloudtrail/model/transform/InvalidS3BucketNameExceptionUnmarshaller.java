@@ -26,14 +26,21 @@ public class InvalidS3BucketNameExceptionUnmarshaller extends JsonErrorUnmarshal
         super(InvalidS3BucketNameException.class);
     }
 
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands.
-        String errorCode = parseErrorCode(json);
-        if (errorCode == null || !errorCode.equals("InvalidS3BucketNameException"))
-            return null;
+    @Override
+    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
+        if (errorTypeFromHeader == null) {
+            // Parse error type from the JSON content if it's not available in the response headers
+            String errorCodeFromContent = parseErrorCode(json);
+            return (errorCodeFromContent != null && errorCodeFromContent.equals("InvalidS3BucketNameException"));
+        } else {
+            return errorTypeFromHeader.equals("InvalidS3BucketNameException");
+        }
+    }
 
+    @Override
+    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         InvalidS3BucketNameException e = (InvalidS3BucketNameException)super.unmarshall(json);
+        e.setErrorCode("InvalidS3BucketNameException");
 
         return e;
     }

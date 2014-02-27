@@ -21,9 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#resetClusterParameterGroup(ResetClusterParameterGroupRequest) ResetClusterParameterGroup operation}.
  * <p>
- * Sets one or more parameters of the specified parameter group to their default values and sets the source values of the parameters to
- * "engine-default". To reset the entire parameter group specify the <i>ResetAllParameters</i> parameter. For parameter changes to take effect you must
- * reboot any associated clusters.
+ * Sets one or more parameters of the specified parameter group to their
+ * default values and sets the source values of the parameters to
+ * "engine-default". To reset the entire parameter group specify the
+ * <i>ResetAllParameters</i> parameter. For parameter changes to take
+ * effect you must reboot any associated clusters.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#resetClusterParameterGroup(ResetClusterParameterGroupRequest)

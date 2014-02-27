@@ -21,16 +21,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#setIdentityNotificationTopic(SetIdentityNotificationTopicRequest) SetIdentityNotificationTopic operation}.
  * <p>
- * Given an identity (email address or domain), sets the Amazon SNS topic to which Amazon SES will publish bounce and complaint notifications for emails
- * sent with that identity as the <code>Source</code> .
- * Publishing to topics may only be disabled when feedback forwarding is enabled.
+ * Given an identity (email address or domain), sets the Amazon SNS topic
+ * to which Amazon SES will publish bounce and complaint notifications
+ * for emails sent with that identity as the <code>Source</code> .
+ * Publishing to topics may only be disabled when feedback
+ * forwarding is enabled.
  * </p>
  * <p>
  * This action is throttled at one request per second.
  * </p>
  * <p>
- * For more information about feedback notification, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a> .
+ * For more information about feedback notification, see the
+ * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#setIdentityNotificationTopic(SetIdentityNotificationTopicRequest)

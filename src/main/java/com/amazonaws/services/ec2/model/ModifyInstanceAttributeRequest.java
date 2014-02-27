@@ -23,12 +23,14 @@ import com.amazonaws.services.ec2.model.transform.ModifyInstanceAttributeRequest
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#modifyInstanceAttribute(ModifyInstanceAttributeRequest) ModifyInstanceAttribute operation}.
  * <p>
- * Modifies the specified attribute of the specified instance. You can specify only one attribute at a time.
+ * Modifies the specified attribute of the specified instance. You can
+ * specify only one attribute at a time.
  * </p>
  * <p>
- * To modify some attributes, the instance must be stopped. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html"> Modifying Attributes of a Stopped
- * Instance </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * To modify some attributes, the instance must be stopped. For more
+ * information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html"> Modifying Attributes of a Stopped Instance </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifyInstanceAttribute(ModifyInstanceAttributeRequest)

@@ -18,22 +18,26 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a selection criteria for a <i>Query</i> or <i>Scan</i> operation.
+ * Represents a selection criteria for a <i>Query</i> or <i>Scan</i>
+ * operation.
  * </p>
  * 
  * <ul>
  * <li> <p>
- * For a <i>Query</i> operation, the condition specifies the key attributes to use when querying a table or an index.
+ * For a <i>Query</i> operation, the condition specifies the key
+ * attributes to use when querying a table or an index.
  * </p>
  * </li>
  * <li> <p>
- * For a <i>Scan</i> operation, the condition is used to evaluate the scan results and return only the desired values.
+ * For a <i>Scan</i> operation, the condition is used to evaluate the
+ * scan results and return only the desired values.
  * </p>
  * </li>
  * 
  * </ul>
  * <p>
- * Multiple conditions are "ANDed" together. In other words, all of the conditions must be met to be included in the output.
+ * Multiple conditions are "ANDed" together. In other words, all of the
+ * conditions must be met to be included in the output.
  * </p>
  */
 public class Condition implements Serializable {
@@ -48,7 +52,7 @@ public class Condition implements Serializable {
      * greater than <code>A</code>, and <code>aa</code> is greater than
      * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
      * query expressions. </note>
      */
@@ -170,7 +174,7 @@ public class Condition implements Serializable {
      * greater than <code>A</code>, and <code>aa</code> is greater than
      * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
      * query expressions. </note>
      *
@@ -183,7 +187,7 @@ public class Condition implements Serializable {
      *         greater than <code>A</code>, and <code>aa</code> is greater than
      *         <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     *         <p>For Binary, DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
      *         query expressions. </note>
      */
@@ -201,7 +205,7 @@ public class Condition implements Serializable {
      * greater than <code>A</code>, and <code>aa</code> is greater than
      * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
      * query expressions. </note>
      *
@@ -214,7 +218,7 @@ public class Condition implements Serializable {
      *         greater than <code>A</code>, and <code>aa</code> is greater than
      *         <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     *         <p>For Binary, DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
      *         query expressions. </note>
      */
@@ -238,7 +242,7 @@ public class Condition implements Serializable {
      * greater than <code>A</code>, and <code>aa</code> is greater than
      * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
      * query expressions. </note>
      * <p>
@@ -253,7 +257,7 @@ public class Condition implements Serializable {
      *         greater than <code>A</code>, and <code>aa</code> is greater than
      *         <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     *         <p>For Binary, DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
      *         query expressions. </note>
      *
@@ -278,7 +282,7 @@ public class Condition implements Serializable {
      * greater than <code>A</code>, and <code>aa</code> is greater than
      * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
      * query expressions. </note>
      * <p>
@@ -293,7 +297,7 @@ public class Condition implements Serializable {
      *         greater than <code>A</code>, and <code>aa</code> is greater than
      *         <code>B</code>. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     *         <p>For Binary, DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
      *         query expressions. </note>
      *

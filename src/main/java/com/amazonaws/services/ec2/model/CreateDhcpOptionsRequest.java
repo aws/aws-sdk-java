@@ -23,13 +23,18 @@ import com.amazonaws.services.ec2.model.transform.CreateDhcpOptionsRequestMarsha
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createDhcpOptions(CreateDhcpOptionsRequest) CreateDhcpOptions operation}.
  * <p>
- * Creates a set of DHCP options for your VPC. After creating the set, you must associate it with the VPC, causing all existing and new instances that
- * you launch in the VPC to use this set of DHCP options. The following are the individual DHCP options you can specify. For more information about the
- * options, see <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a> .
+ * Creates a set of DHCP options for your VPC. After creating the set,
+ * you must associate it with the VPC, causing all existing and new
+ * instances that you launch in the VPC to use this set of DHCP options.
+ * The following are the individual DHCP options you can specify. For
+ * more information about the options, see
+ * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
+ * .
  * </p>
  * <p>
- * For more information about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets
- * </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
+ * For more information about DHCP options, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createDhcpOptions(CreateDhcpOptionsRequest)

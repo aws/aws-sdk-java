@@ -18,8 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the subnet associated with a cache cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used
- * with ElastiCache.
+ * Represents the subnet associated with a cache cluster. This parameter
+ * refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC)
+ * and used with ElastiCache.
  * </p>
  */
 public class Subnet implements Serializable {

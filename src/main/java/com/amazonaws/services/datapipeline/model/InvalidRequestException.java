@@ -18,8 +18,10 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that
- * you haven't exceeded any of the service limits for your account.
+ * The request was not valid. Verify that your request was properly
+ * formatted, that the signature was generated with the correct
+ * credentials, and that you haven't exceeded any of the service limits
+ * for your account.
  * </p>
  */        
 public class InvalidRequestException extends AmazonServiceException {

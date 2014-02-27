@@ -21,9 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#deleteReplicationGroup(DeleteReplicationGroupRequest) DeleteReplicationGroup operation}.
  * <p>
- * The <i>DeleteReplicationGroup</i> operation deletes an existing replication group. <i>DeleteReplicationGroup</i> deletes the primary cache cluster and
- * all of the read replicas in the replication group. When you receive a successful response from this operation, Amazon ElastiCache immediately begins
- * deleting the entire replication group; you cannot cancel or revert this operation.
+ * The <i>DeleteReplicationGroup</i> operation deletes an existing
+ * replication group. <i>DeleteReplicationGroup</i> deletes the primary
+ * cache cluster and all of the read replicas in the replication group.
+ * When you receive a successful response from this operation, Amazon
+ * ElastiCache immediately begins deleting the entire replication group;
+ * you cannot cancel or revert this operation.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteReplicationGroup(DeleteReplicationGroupRequest)

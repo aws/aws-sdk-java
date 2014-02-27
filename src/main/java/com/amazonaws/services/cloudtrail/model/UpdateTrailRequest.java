@@ -24,9 +24,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * From the command line, use update-subscription.
  * </p>
  * <p>
- * Updates the settings that specify delivery of log files. Changes to a trail do not require stopping the CloudTrail service. You use this action to
- * designate an existing bucket for log delivery. If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for
- * the bucket. Use a Trail data type to pass updated bucket or topic names.
+ * Updates the settings that specify delivery of log files. Changes to a
+ * trail do not require stopping the CloudTrail service. You use this
+ * action to designate an existing bucket for log delivery. If the
+ * existing bucket has previously been a target for CloudTrail log files,
+ * an IAM policy exists for the bucket. Use a Trail data type to pass
+ * updated bucket or topic names.
  * </p>
  *
  * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#updateTrail(UpdateTrailRequest)

@@ -26,8 +26,10 @@ import com.amazonaws.services.ec2.model.*;
  * Each asynchronous method will return a Java Future object, and users are also allowed
  * to provide a callback handler.
  * Amazon Elastic Compute Cloud <p>
- * Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in the Amazon Web Services (AWS) cloud. Using Amazon EC2 eliminates
- * your need to invest in hardware up front, so you can develop and deploy applications faster.
+ * Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing
+ * capacity in the Amazon Web Services (AWS) cloud. Using Amazon EC2
+ * eliminates your need to invest in hardware up front, so you can
+ * develop and deploy applications faster.
  * </p>
  */
 public interface AmazonEC2Async extends AmazonEC2 {
@@ -101,10 +103,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of the Reserved Instances that you purchased.
      * </p>
      * <p>
-     * For more information about Reserved Instances, see <a
-     * m/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">
-     * Reserved Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Reserved Instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html"> Reserved Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeReservedInstancesRequest Container for the necessary
@@ -131,10 +132,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of the Reserved Instances that you purchased.
      * </p>
      * <p>
-     * For more information about Reserved Instances, see <a
-     * m/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">
-     * Reserved Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Reserved Instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html"> Reserved Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeReservedInstancesRequest Container for the necessary
@@ -170,10 +170,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Availability Zone.
      * </p>
      * <p>
-     * For more information, see <a
-     * on.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">
-     * Regions and Availability Zones </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"> Regions and Availability Zones </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeAvailabilityZonesRequest Container for the necessary
@@ -204,10 +203,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Availability Zone.
      * </p>
      * <p>
-     * For more information, see <a
-     * on.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">
-     * Regions and Availability Zones </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"> Regions and Availability Zones </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeAvailabilityZonesRequest Container for the necessary
@@ -252,10 +250,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * that volume are no longer associated with the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">
-     * Detaching an Amazon EBS Volume </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html"> Detaching an Amazon EBS Volume </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param detachVolumeRequest Container for the necessary parameters to
@@ -294,10 +291,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * that volume are no longer associated with the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">
-     * Detaching an Amazon EBS Volume </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html"> Detaching an Amazon EBS Volume </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param detachVolumeRequest Container for the necessary parameters to
@@ -379,10 +375,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Disables monitoring for a running instance. For more information about
-     * monitoring instances, see <a
-     * ://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">
-     * Monitoring Your Instances and Volumes </a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i> .
+     * monitoring instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html"> Monitoring Your Instances and Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param unmonitorInstancesRequest Container for the necessary
@@ -406,10 +401,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Disables monitoring for a running instance. For more information about
-     * monitoring instances, see <a
-     * ://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">
-     * Monitoring Your Instances and Volumes </a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i> .
+     * monitoring instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html"> Monitoring Your Instances and Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param unmonitorInstancesRequest Container for the necessary
@@ -438,10 +432,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Attaches a virtual private gateway to a VPC. For more information, see
-     * <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param attachVpnGatewayRequest Container for the necessary parameters
@@ -465,10 +457,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Attaches a virtual private gateway to a VPC. For more information, see
-     * <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param attachVpnGatewayRequest Container for the necessary parameters
@@ -507,10 +497,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * those additional volumes.
      * </p>
      * <p>
-     * For more information, see <a
-     * docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">
-     * Creating Amazon EBS-Backed Linux AMIs </a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html"> Creating Amazon EBS-Backed Linux AMIs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createImageRequest Container for the necessary parameters to
@@ -544,10 +533,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * those additional volumes.
      * </p>
      * <p>
-     * For more information, see <a
-     * docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">
-     * Creating Amazon EBS-Backed Linux AMIs </a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html"> Creating Amazon EBS-Backed Linux AMIs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createImageRequest Container for the necessary parameters to
@@ -643,10 +631,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For information about the supported operating systems, image formats,
      * and known limitations for the types of instances you can export, see
-     * <a
-     * cs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html">
-     * Exporting EC2 Instances </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html"> Exporting EC2 Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createInstanceExportTaskRequest Container for the necessary
@@ -675,10 +661,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For information about the supported operating systems, image formats,
      * and known limitations for the types of instances you can export, see
-     * <a
-     * cs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html">
-     * Exporting EC2 Instances </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html"> Exporting EC2 Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createInstanceExportTaskRequest Container for the necessary
@@ -802,10 +786,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * using the operating system on the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">
-     * DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param associateDhcpOptionsRequest Container for the necessary
@@ -840,10 +823,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * using the operating system on the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">
-     * DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param associateDhcpOptionsRequest Container for the necessary
@@ -883,10 +865,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * A security group is for use with instances either in the EC2-Classic
      * platform or in a specific VPC. This action doesn't apply to security
-     * groups for use in EC2-Classic. For more information, see <a
-     * cs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">
-     * Security Groups for Your VPC </a> in the <i>Amazon Virtual Private
-     * Cloud User Guide</i> .
+     * groups for use in EC2-Classic. For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * Each rule consists of the protocol (for example, TCP), plus either a
@@ -933,10 +914,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * A security group is for use with instances either in the EC2-Classic
      * platform or in a specific VPC. This action doesn't apply to security
-     * groups for use in EC2-Classic. For more information, see <a
-     * cs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">
-     * Security Groups for Your VPC </a> in the <i>Amazon Virtual Private
-     * Cloud User Guide</i> .
+     * groups for use in EC2-Classic. For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * Each rule consists of the protocol (for example, TCP), plus either a
@@ -1008,10 +988,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * instance persist. When you terminate an instance, the root device and
      * any other devices attached during the instance launch are
      * automatically deleted. For more information about the differences
-     * between stopping and terminating instances, see <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">
-     * Instance Lifecycle </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * between stopping and terminating instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param stopInstancesRequest Container for the necessary parameters to
@@ -1066,10 +1045,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * instance persist. When you terminate an instance, the root device and
      * any other devices attached during the instance launch are
      * automatically deleted. For more information about the differences
-     * between stopping and terminating instances, see <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">
-     * Instance Lifecycle </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * between stopping and terminating instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param stopInstancesRequest Container for the necessary parameters to
@@ -1105,9 +1083,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * you and AWS.
      * </p>
      * <p>
-     * For more information about key pairs, see <a
-     * ttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">
-     * Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * For more information about key pairs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param importKeyPairRequest Container for the necessary parameters to
@@ -1138,9 +1116,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * you and AWS.
      * </p>
      * <p>
-     * For more information about key pairs, see <a
-     * ttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">
-     * Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * For more information about key pairs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param importKeyPairRequest Container for the necessary parameters to
@@ -1278,13 +1256,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * A security group is for use with instances either in the EC2-Classic
-     * platform or in a specific VPC. For more information, see <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">
-     * Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> and <a
-     * cs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">
-     * Security Groups for Your VPC </a> in the <i>Amazon Virtual Private
-     * Cloud User Guide</i> .
+     * platform or in a specific VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b> EC2-Classic: You can have up to 500 security groups.
@@ -1335,13 +1309,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * A security group is for use with instances either in the EC2-Classic
-     * platform or in a specific VPC. For more information, see <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">
-     * Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> and <a
-     * cs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">
-     * Security Groups for Your VPC </a> in the <i>Amazon Virtual Private
-     * Cloud User Guide</i> .
+     * platform or in a specific VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b> EC2-Classic: You can have up to 500 security groups.
@@ -1398,10 +1368,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * specify exceeds the current Spot Price. Amazon EC2 periodically sets
      * the Spot Price based on available Spot Instance capacity and current
      * Spot Instance requests. For more information about Spot Instances, see
-     * <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * When you specify an Availability Zone, this operation describes the
@@ -1440,10 +1408,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * specify exceeds the current Spot Price. Amazon EC2 periodically sets
      * the Spot Price based on available Spot Instance capacity and current
      * Spot Instance requests. For more information about Spot Instances, see
-     * <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * When you specify an Availability Zone, this operation describes the
@@ -1538,9 +1504,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more regions that are currently available to you.
      * </p>
      * <p>
-     * For a list of the regions supported by Amazon EC2, see <a
-     * ="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">
-     * Regions and Endpoints </a> .
+     * For a list of the regions supported by Amazon EC2, see
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region"> Regions and Endpoints </a>
+     * .
      * </p>
      *
      * @param describeRegionsRequest Container for the necessary parameters
@@ -1566,9 +1532,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more regions that are currently available to you.
      * </p>
      * <p>
-     * For a list of the regions supported by Amazon EC2, see <a
-     * ="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">
-     * Regions and Endpoints </a> .
+     * For a list of the regions supported by Amazon EC2, see
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region"> Regions and Endpoints </a>
+     * .
      * </p>
      *
      * @param describeRegionsRequest Container for the necessary parameters
@@ -1601,10 +1567,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * listing at a time.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createReservedInstancesListingRequest Container for the
@@ -1634,10 +1599,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * listing at a time.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createReservedInstancesListingRequest Container for the
@@ -1671,14 +1635,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * you must associate it with the VPC, causing all existing and new
      * instances that you launch in the VPC to use this set of DHCP options.
      * The following are the individual DHCP options you can specify. For
-     * more information about the options, see <a
-     * href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a> .
+     * more information about the options, see
+     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
+     * .
      * </p>
      * <p>
-     * For more information about DHCP options, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">
-     * DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about DHCP options, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createDhcpOptionsRequest Container for the necessary parameters
@@ -1705,14 +1669,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * you must associate it with the VPC, causing all existing and new
      * instances that you launch in the VPC to use this set of DHCP options.
      * The following are the individual DHCP options you can specify. For
-     * more information about the options, see <a
-     * href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a> .
+     * more information about the options, see
+     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
+     * .
      * </p>
      * <p>
-     * For more information about DHCP options, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">
-     * DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about DHCP options, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createDhcpOptionsRequest Container for the necessary parameters
@@ -1743,10 +1707,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Resets permission settings for the specified snapshot.
      * </p>
      * <p>
-     * For more information on modifying snapshot permissions, see <a
-     * .com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">
-     * Sharing Snapshots </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information on modifying snapshot permissions, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param resetSnapshotAttributeRequest Container for the necessary
@@ -1773,10 +1736,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Resets permission settings for the specified snapshot.
      * </p>
      * <p>
-     * For more information on modifying snapshot permissions, see <a
-     * .com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">
-     * Sharing Snapshots </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information on modifying snapshot permissions, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param resetSnapshotAttributeRequest Container for the necessary
@@ -1912,10 +1874,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Creates an import volume task using metadata from the specified disk
      * image. After importing the image, you then upload it using the
      * ec2-upload-disk-image command in the Amazon EC2 command-line interface
-     * (CLI) tools. For more information, see <a
-     * on.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">
-     * Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2 </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * (CLI) tools. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param importVolumeRequest Container for the necessary parameters to
@@ -1941,10 +1902,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Creates an import volume task using metadata from the specified disk
      * image. After importing the image, you then upload it using the
      * ec2-upload-disk-image command in the Amazon EC2 command-line interface
-     * (CLI) tools. For more information, see <a
-     * on.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">
-     * Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2 </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * (CLI) tools. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param importVolumeRequest Container for the necessary parameters to
@@ -1976,13 +1936,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * A security group is for use with instances either in the EC2-Classic
-     * platform or in a specific VPC. For more information, see <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">
-     * Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> and <a
-     * cs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">
-     * Security Groups for Your VPC </a> in the <i>Amazon Virtual Private
-     * Cloud User Guide</i> .
+     * platform or in a specific VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeSecurityGroupsRequest Container for the necessary
@@ -2010,13 +1966,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * A security group is for use with instances either in the EC2-Classic
-     * platform or in a specific VPC. For more information, see <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">
-     * Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> and <a
-     * cs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">
-     * Security Groups for Your VPC </a> in the <i>Amazon Virtual Private
-     * Cloud User Guide</i> .
+     * platform or in a specific VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeSecurityGroupsRequest Container for the necessary
@@ -2174,10 +2126,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes the datafeed for Spot Instances. For more information, see
-     * <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeSpotDatafeedSubscriptionRequest Container for the
@@ -2203,10 +2153,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes the datafeed for Spot Instances. For more information, see
-     * <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeSpotDatafeedSubscriptionRequest Container for the
@@ -2240,10 +2188,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * This call is designed to follow a <code>DescribeTags</code> request.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">
-     * Tagging Your Resources </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For more information about tags, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deleteTagsRequest Container for the necessary parameters to
@@ -2270,10 +2217,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * This call is designed to follow a <code>DescribeTags</code> request.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">
-     * Tagging Your Resources </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For more information about tags, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deleteTagsRequest Container for the necessary parameters to
@@ -2412,10 +2358,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * virtual private gateway before creating the VPC itself.
      * </p>
      * <p>
-     * For more information about virtual private gateways, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about virtual private gateways, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createVpnGatewayRequest Container for the necessary parameters
@@ -2443,10 +2388,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * virtual private gateway before creating the VPC itself.
      * </p>
      * <p>
-     * For more information about virtual private gateways, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about virtual private gateways, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createVpnGatewayRequest Container for the necessary parameters
@@ -2590,14 +2534,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * exposes it to the instance with the specified device name.
      * </p>
      * <p>
-     * For a list of supported device names, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">
-     * Attaching an Amazon EBS Volume to an Instance </a> . Any device names
-     * that aren't reserved for instance store volumes can be used for Amazon
-     * EBS volumes. For more information, see <a
-     * p://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">
-     * Amazon EC2 Instance Store </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For a list of supported device names, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching an Amazon EBS Volume to an Instance </a> . Any device names that aren't reserved for instance store volumes can be used for Amazon EBS volumes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"> Amazon EC2 Instance Store </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * If a volume has an AWS Marketplace product code:
@@ -2617,17 +2556,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * </ul>
      * <p>
-     * For an overview of the AWS Marketplace, see <a
-     * href="https://aws.amazon.com/marketplace/help/200900000">
-     * https://aws.amazon.com/marketplace/help/200900000 </a> . For more
-     * information about how to use the AWS Marketplace, see <a
-     * href="https://aws.amazon.com/marketplace"> AWS Marketplace </a> .
+     * For an overview of the AWS Marketplace, see
+     * <a href="https://aws.amazon.com/marketplace/help/200900000"> https://aws.amazon.com/marketplace/help/200900000 </a> . For more information about how to use the AWS Marketplace, see <a href="https://aws.amazon.com/marketplace"> AWS Marketplace </a>
+     * .
      * </p>
      * <p>
-     * For more information about Amazon EBS volumes, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">
-     * Attaching Amazon EBS Volumes </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information about Amazon EBS volumes, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching Amazon EBS Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param attachVolumeRequest Container for the necessary parameters to
@@ -2654,14 +2590,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * exposes it to the instance with the specified device name.
      * </p>
      * <p>
-     * For a list of supported device names, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">
-     * Attaching an Amazon EBS Volume to an Instance </a> . Any device names
-     * that aren't reserved for instance store volumes can be used for Amazon
-     * EBS volumes. For more information, see <a
-     * p://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">
-     * Amazon EC2 Instance Store </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For a list of supported device names, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching an Amazon EBS Volume to an Instance </a> . Any device names that aren't reserved for instance store volumes can be used for Amazon EBS volumes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"> Amazon EC2 Instance Store </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * If a volume has an AWS Marketplace product code:
@@ -2681,17 +2612,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * </ul>
      * <p>
-     * For an overview of the AWS Marketplace, see <a
-     * href="https://aws.amazon.com/marketplace/help/200900000">
-     * https://aws.amazon.com/marketplace/help/200900000 </a> . For more
-     * information about how to use the AWS Marketplace, see <a
-     * href="https://aws.amazon.com/marketplace"> AWS Marketplace </a> .
+     * For an overview of the AWS Marketplace, see
+     * <a href="https://aws.amazon.com/marketplace/help/200900000"> https://aws.amazon.com/marketplace/help/200900000 </a> . For more information about how to use the AWS Marketplace, see <a href="https://aws.amazon.com/marketplace"> AWS Marketplace </a>
+     * .
      * </p>
      * <p>
-     * For more information about Amazon EBS volumes, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">
-     * Attaching Amazon EBS Volumes </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information about Amazon EBS volumes, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching Amazon EBS Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param attachVolumeRequest Container for the necessary parameters to
@@ -2743,9 +2671,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * overall status is <code>impaired</code> . If the status is
      * <code>insufficient-data</code> , then the checks may still be taking
      * place on your volume at the time. We recommend that you retry the
-     * request. For more information on volume status, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">
-     * Monitoring the Status of Your Volumes </a> .
+     * request. For more information on volume status, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html"> Monitoring the Status of Your Volumes </a>
+     * .
      * </p>
      * <p>
      * <i>Events</i> : Reflect the cause of a volume status and may require
@@ -2815,9 +2743,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * overall status is <code>impaired</code> . If the status is
      * <code>insufficient-data</code> , then the checks may still be taking
      * place on your volume at the time. We recommend that you retry the
-     * request. For more information on volume status, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">
-     * Monitoring the Status of Your Volumes </a> .
+     * request. For more information on volume status, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html"> Monitoring the Status of Your Volumes </a>
+     * .
      * </p>
      * <p>
      * <i>Events</i> : Reflect the cause of a volume status and may require
@@ -2922,10 +2850,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your VPN connections.
      * </p>
      * <p>
-     * For more information about VPN connections, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN connections, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeVpnConnectionsRequest Container for the necessary
@@ -2952,10 +2879,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your VPN connections.
      * </p>
      * <p>
-     * For more information about VPN connections, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN connections, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeVpnConnectionsRequest Container for the necessary
@@ -3065,10 +2991,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * devices, you should stop the instance before taking the snapshot.
      * </p>
      * <p>
-     * For more information, see <a
-     * cs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html">
-     * Creating an Amazon EBS Snapshot </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html"> Creating an Amazon EBS Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createSnapshotRequest Container for the necessary parameters to
@@ -3117,10 +3042,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * devices, you should stop the instance before taking the snapshot.
      * </p>
      * <p>
-     * For more information, see <a
-     * cs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html">
-     * Creating an Amazon EBS Snapshot </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html"> Creating an Amazon EBS Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createSnapshotRequest Container for the necessary parameters to
@@ -3156,10 +3080,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * minutes.
      * </p>
      * <p>
-     * For more information, see <a
-     * docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">
-     * Deleting an Amazon EBS Volume </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html"> Deleting an Amazon EBS Volume </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deleteVolumeRequest Container for the necessary parameters to
@@ -3190,10 +3113,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * minutes.
      * </p>
      * <p>
-     * For more information, see <a
-     * docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">
-     * Deleting an Amazon EBS Volume </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html"> Deleting an Amazon EBS Volume </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deleteVolumeRequest Container for the necessary parameters to
@@ -3224,10 +3146,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Creates a network interface in the specified subnet.
      * </p>
      * <p>
-     * For more information about network interfaces, see <a
-     * f="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">
-     * Elastic Network Interfaces </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For more information about network interfaces, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html"> Elastic Network Interfaces </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createNetworkInterfaceRequest Container for the necessary
@@ -3254,10 +3175,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Creates a network interface in the specified subnet.
      * </p>
      * <p>
-     * For more information about network interfaces, see <a
-     * f="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">
-     * Elastic Network Interfaces </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For more information about network interfaces, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html"> Elastic Network Interfaces </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createNetworkInterfaceRequest Container for the necessary
@@ -3458,10 +3378,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * disk image, the command fails and returns an exception.
      * </p>
      * <p>
-     * For more information, see <a
-     * on.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">
-     * Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2 </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param cancelConversionTaskRequest Container for the necessary
@@ -3491,10 +3410,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * disk image, the command fails and returns an exception.
      * </p>
      * <p>
-     * For more information, see <a
-     * on.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">
-     * Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2 </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param cancelConversionTaskRequest Container for the necessary
@@ -3527,10 +3445,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * An Elastic IP address is for use in either the EC2-Classic platform or
-     * in a VPC. For more information, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
-     * Elastic IP Addresses </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * in a VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * [EC2-Classic, default VPC] If the Elastic IP address is already
@@ -3573,10 +3490,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * An Elastic IP address is for use in either the EC2-Classic platform or
-     * in a VPC. For more information, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
-     * Elastic IP Addresses </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * in a VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * [EC2-Classic, default VPC] If the Elastic IP address is already
@@ -3693,10 +3609,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * it, or create an entry and delete the old one.
      * </p>
      * <p>
-     * For more information about network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createNetworkAclEntryRequest Container for the necessary
@@ -3739,10 +3654,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * it, or create an entry and delete the old one.
      * </p>
      * <p>
-     * For more information about network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createNetworkAclEntryRequest Container for the necessary
@@ -3883,10 +3797,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * table, you can add routes and associate the table with a subnet.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createRouteTableRequest Container for the necessary parameters
@@ -3913,10 +3826,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * table, you can add routes and associate the table with a subnet.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createRouteTableRequest Container for the necessary parameters
@@ -3947,10 +3859,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes the specified Amazon EBS volumes.
      * </p>
      * <p>
-     * For more information about Amazon EBS volumes, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">
-     * Amazon EBS Volumes </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Amazon EBS volumes, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeVolumesRequest Container for the necessary parameters
@@ -3976,10 +3887,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes the specified Amazon EBS volumes.
      * </p>
      * <p>
-     * For more information about Amazon EBS volumes, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">
-     * Amazon EBS Volumes </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Amazon EBS volumes, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeVolumesRequest Container for the necessary parameters
@@ -4011,10 +3921,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Instance Marketplace.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeReservedInstancesListingsRequest Container for the
@@ -4043,10 +3952,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Instance Marketplace.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeReservedInstancesListingsRequest Container for the
@@ -4140,10 +4048,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your route tables.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeRouteTablesRequest Container for the necessary
@@ -4169,10 +4076,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your route tables.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeRouteTablesRequest Container for the necessary
@@ -4203,10 +4109,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your DHCP options sets.
      * </p>
      * <p>
-     * For more information about DHCP options sets, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">
-     * DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about DHCP options sets, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeDhcpOptionsRequest Container for the necessary
@@ -4232,10 +4137,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your DHCP options sets.
      * </p>
      * <p>
-     * For more information about DHCP options sets, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">
-     * DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about DHCP options sets, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeDhcpOptionsRequest Container for the necessary
@@ -4264,10 +4168,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Enables monitoring for a running instance. For more information about
-     * monitoring instances, see <a
-     * ://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">
-     * Monitoring Your Instances and Volumes </a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i> .
+     * monitoring instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html"> Monitoring Your Instances and Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param monitorInstancesRequest Container for the necessary parameters
@@ -4291,10 +4194,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Enables monitoring for a running instance. For more information about
-     * monitoring instances, see <a
-     * ://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">
-     * Monitoring Your Instances and Volumes </a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i> .
+     * monitoring instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html"> Monitoring Your Instances and Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param monitorInstancesRequest Container for the necessary parameters
@@ -4325,10 +4227,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your network ACLs.
      * </p>
      * <p>
-     * For more information about network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeNetworkAclsRequest Container for the necessary
@@ -4354,10 +4255,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your network ACLs.
      * </p>
      * <p>
-     * For more information about network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeNetworkAclsRequest Container for the necessary
@@ -4685,9 +4585,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Internet gateway, you attach it to a VPC using AttachInternetGateway.
      * </p>
      * <p>
-     * For more information about your VPC and Internet gateway, see the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon
-     * Virtual Private Cloud User Guide </a> .
+     * For more information about your VPC and Internet gateway, see the
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon Virtual Private Cloud User Guide </a>
+     * .
      * </p>
      *
      * @param createInternetGatewayRequest Container for the necessary
@@ -4715,9 +4615,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Internet gateway, you attach it to a VPC using AttachInternetGateway.
      * </p>
      * <p>
-     * For more information about your VPC and Internet gateway, see the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon
-     * Virtual Private Cloud User Guide </a> .
+     * For more information about your VPC and Internet gateway, see the
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon Virtual Private Cloud User Guide </a>
+     * .
      * </p>
      *
      * @param createInternetGatewayRequest Container for the necessary
@@ -4939,10 +4839,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * us-east-1 region, and 9059, which is reserved in the eu-west-1 region.
      * </p>
      * <p>
-     * For more information about VPN customer gateways, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN customer gateways, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createCustomerGatewayRequest Container for the necessary
@@ -4986,10 +4885,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * us-east-1 region, and 9059, which is reserved in the eu-west-1 region.
      * </p>
      * <p>
-     * For more information about VPN customer gateways, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN customer gateways, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createCustomerGatewayRequest Container for the necessary
@@ -5020,10 +4918,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates a datafeed for Spot Instances, enabling you to view Spot
      * Instance usage logs. You can create one data feed per AWS account. For
-     * more information, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createSpotDatafeedSubscriptionRequest Container for the
@@ -5050,10 +4947,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates a datafeed for Spot Instances, enabling you to view Spot
      * Instance usage logs. You can create one data feed per AWS account. For
-     * more information, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createSpotDatafeedSubscriptionRequest Container for the
@@ -5085,9 +4981,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Attaches an Internet gateway to a VPC, enabling connectivity between
      * the Internet and the VPC. For more information about your VPC and
-     * Internet gateway, see the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon
-     * Virtual Private Cloud User Guide </a> .
+     * Internet gateway, see the
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon Virtual Private Cloud User Guide </a>
+     * .
      * </p>
      *
      * @param attachInternetGatewayRequest Container for the necessary
@@ -5113,9 +5009,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Attaches an Internet gateway to a VPC, enabling connectivity between
      * the Internet and the VPC. For more information about your VPC and
-     * Internet gateway, see the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon
-     * Virtual Private Cloud User Guide </a> .
+     * Internet gateway, see the
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon Virtual Private Cloud User Guide </a>
+     * .
      * </p>
      *
      * @param attachInternetGatewayRequest Container for the necessary
@@ -5206,10 +5102,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes one or more of your conversion tasks. For more information,
-     * see <a
-     * on.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">
-     * Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2 </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeConversionTasksRequest Container for the necessary
@@ -5234,10 +5129,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes one or more of your conversion tasks. For more information,
-     * see <a
-     * on.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">
-     * Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2 </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeConversionTasksRequest Container for the necessary
@@ -5285,10 +5179,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * gateway with the new information returned from this call.
      * </p>
      * <p>
-     * For more information about VPN connections, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN connections, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createVpnConnectionRequest Container for the necessary
@@ -5330,10 +5223,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * gateway with the new information returned from this call.
      * </p>
      * <p>
-     * For more information about VPN connections, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN connections, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createVpnConnectionRequest Container for the necessary
@@ -5419,10 +5311,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your subnets.
      * </p>
      * <p>
-     * For more information about subnets, see <a
-     * tp://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">
-     * Your VPC and Subnets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about subnets, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeSubnetsRequest Container for the necessary parameters
@@ -5448,10 +5339,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your subnets.
      * </p>
      * <p>
-     * For more information about subnets, see <a
-     * tp://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">
-     * Your VPC and Subnets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about subnets, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeSubnetsRequest Container for the necessary parameters
@@ -5491,25 +5381,22 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * If you don't specify a security group when launching an instance,
      * Amazon EC2 uses the default security group. For more information, see
-     * <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">
-     * Security Groups </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Security Groups </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * Linux instances have access to the public key of the key pair at boot.
      * You can use this key to provide secure access to the instance. Amazon
      * EC2 public images use this feature to provide secure access without
-     * passwords. For more information, see <a
-     * ttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">
-     * Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * passwords. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * You can provide optional user data when launching an instance. For
-     * more information, see <a
-     * s.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">
-     * Instance Metadata </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html"> Instance Metadata </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * If any of the AMIs have a product code attached for which the user has
@@ -5548,25 +5435,22 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * If you don't specify a security group when launching an instance,
      * Amazon EC2 uses the default security group. For more information, see
-     * <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">
-     * Security Groups </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Security Groups </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * Linux instances have access to the public key of the key pair at boot.
      * You can use this key to provide secure access to the instance. Amazon
      * EC2 public images use this feature to provide secure access without
-     * passwords. For more information, see <a
-     * ttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">
-     * Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * passwords. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * You can provide optional user data when launching an instance. For
-     * more information, see <a
-     * s.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">
-     * Instance Metadata </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html"> Instance Metadata </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * If any of the AMIs have a product code attached for which the user has
@@ -5599,10 +5483,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes one or more of your placement groups. For more information
-     * about placement groups and cluster instances, see <a
-     * .aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
-     * Cluster Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * about placement groups and cluster instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describePlacementGroupsRequest Container for the necessary
@@ -5627,10 +5510,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes one or more of your placement groups. For more information
-     * about placement groups and cluster instances, see <a
-     * .aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
-     * Cluster Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * about placement groups and cluster instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describePlacementGroupsRequest Container for the necessary
@@ -5667,10 +5549,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * can be associated with multiple subnets.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param associateRouteTableRequest Container for the necessary
@@ -5701,10 +5582,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * can be associated with multiple subnets.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param associateRouteTableRequest Container for the necessary
@@ -6025,10 +5905,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * as its root device returns an error.
      * </p>
      * <p>
-     * For more information, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">
-     * Stopping Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html"> Stopping Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param startInstancesRequest Container for the necessary parameters to
@@ -6074,10 +5953,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * as its root device returns an error.
      * </p>
      * <p>
-     * For more information, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">
-     * Stopping Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html"> Stopping Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param startInstancesRequest Container for the necessary parameters to
@@ -6109,10 +5987,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Instance Marketplace.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param cancelReservedInstancesListingRequest Container for the
@@ -6141,10 +6018,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Instance Marketplace.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param cancelReservedInstancesListingRequest Container for the
@@ -6179,10 +6055,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * To modify some attributes, the instance must be stopped. For more
-     * information, see <a
-     * 2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">
-     * Modifying Attributes of a Stopped Instance </a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i> .
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html"> Modifying Attributes of a Stopped Instance </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param modifyInstanceAttributeRequest Container for the necessary
@@ -6211,10 +6086,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * To modify some attributes, the instance must be stopped. For more
-     * information, see <a
-     * 2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">
-     * Modifying Attributes of a Stopped Instance </a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i> .
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html"> Modifying Attributes of a Stopped Instance </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param modifyInstanceAttributeRequest Container for the necessary
@@ -6406,10 +6280,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * maximum price that you specify exceeds the current Spot Price. Amazon
      * EC2 periodically sets the Spot Price based on available Spot Instance
      * capacity and current Spot Instance requests. For more information
-     * about Spot Instances, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * about Spot Instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * You can use <code>DescribeSpotInstanceRequests</code> to find a
@@ -6446,10 +6319,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * maximum price that you specify exceeds the current Spot Price. Amazon
      * EC2 periodically sets the Spot Price based on available Spot Instance
      * capacity and current Spot Instance requests. For more information
-     * about Spot Instances, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * about Spot Instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * You can use <code>DescribeSpotInstanceRequests</code> to find a
@@ -6491,18 +6363,16 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * The smallest VPC you can create uses a /28 netmask (16 IP addresses),
      * and the largest uses a /16 netmask (65,536 IP addresses). To help you
-     * decide how big to make your VPC, see <a
-     * tp://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">
-     * Your VPC and Subnets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * decide how big to make your VPC, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * By default, each instance you launch in the VPC has the default DHCP
      * options, which includes only a default DNS server that we provide
-     * (AmazonProvidedDNS). For more information about DHCP options, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">
-     * DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * (AmazonProvidedDNS). For more information about DHCP options, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createVpcRequest Container for the necessary parameters to
@@ -6530,18 +6400,16 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * The smallest VPC you can create uses a /28 netmask (16 IP addresses),
      * and the largest uses a /16 netmask (65,536 IP addresses). To help you
-     * decide how big to make your VPC, see <a
-     * tp://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">
-     * Your VPC and Subnets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * decide how big to make your VPC, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * By default, each instance you launch in the VPC has the default DHCP
      * options, which includes only a default DNS server that we provide
-     * (AmazonProvidedDNS). For more information about DHCP options, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">
-     * DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * (AmazonProvidedDNS). For more information about DHCP options, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createVpcRequest Container for the necessary parameters to
@@ -6572,10 +6440,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your VPN customer gateways.
      * </p>
      * <p>
-     * For more information about VPN customer gateways, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN customer gateways, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeCustomerGatewaysRequest Container for the necessary
@@ -6602,10 +6469,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your VPN customer gateways.
      * </p>
      * <p>
-     * For more information about VPN customer gateways, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN customer gateways, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeCustomerGatewaysRequest Container for the necessary
@@ -6722,10 +6588,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * determine where to target the traffic.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createRouteRequest Container for the necessary parameters to
@@ -6779,10 +6644,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * determine where to target the traffic.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createRouteRequest Container for the necessary parameters to
@@ -6814,10 +6678,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * region in which the request was made.
      * </p>
      * <p>
-     * For more information, see <a
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">
-     * Copying AMIs </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html"> Copying AMIs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param copyImageRequest Container for the necessary parameters to
@@ -6844,10 +6707,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * region in which the request was made.
      * </p>
      * <p>
-     * For more information, see <a
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">
-     * Copying AMIs </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html"> Copying AMIs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param copyImageRequest Container for the necessary parameters to
@@ -7049,10 +6911,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * specify exceeds the current Spot Price. Amazon EC2 periodically sets
      * the Spot Price based on available Spot Instance capacity and current
      * Spot Instance requests. For more information about Spot Instances, see
-     * <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param requestSpotInstancesRequest Container for the necessary
@@ -7080,10 +6940,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * specify exceeds the current Spot Price. Amazon EC2 periodically sets
      * the Spot Price based on available Spot Instance capacity and current
      * Spot Instance requests. For more information about Spot Instances, see
-     * <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param requestSpotInstancesRequest Container for the necessary
@@ -7117,10 +6975,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * resource.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">
-     * Tagging Your Resources </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For more information about tags, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createTagsRequest Container for the necessary parameters to
@@ -7149,10 +7006,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * resource.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">
-     * Tagging Your Resources </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For more information about tags, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createTagsRequest Container for the necessary parameters to
@@ -7184,10 +7040,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * specify only one attribute at a time.
      * </p>
      * <p>
-     * For more information about Amazon EBS volumes, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">
-     * Amazon EBS Volumes </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Amazon EBS volumes, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeVolumeAttributeRequest Container for the necessary
@@ -7215,10 +7070,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * specify only one attribute at a time.
      * </p>
      * <p>
-     * For more information about Amazon EBS volumes, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">
-     * Amazon EBS Volumes </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Amazon EBS volumes, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeVolumeAttributeRequest Container for the necessary
@@ -7305,10 +7159,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * network interface.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param replaceRouteRequest Container for the necessary parameters to
@@ -7336,10 +7189,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * network interface.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param replaceRouteRequest Container for the necessary parameters to
@@ -7370,10 +7222,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of the tags for your EC2 resources.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">
-     * Tagging Your Resources </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For more information about tags, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeTagsRequest Container for the necessary parameters to
@@ -7399,10 +7250,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of the tags for your EC2 resources.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">
-     * Tagging Your Resources </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For more information about tags, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeTagsRequest Container for the necessary parameters to
@@ -7543,10 +7393,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * that you specify exceeds the current Spot Price. Amazon EC2
      * periodically sets the Spot Price based on available Spot Instance
      * capacity and current Spot Instance requests. For more information
-     * about Spot Instances, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * about Spot Instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b> Canceling a Spot Instance request does not terminate
@@ -7579,10 +7428,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * that you specify exceeds the current Spot Price. Amazon EC2
      * periodically sets the Spot Price based on available Spot Instance
      * capacity and current Spot Instance requests. For more information
-     * about Spot Instances, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * about Spot Instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b> Canceling a Spot Instance request does not terminate
@@ -7622,10 +7470,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * you actually use the capacity reservation.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param purchaseReservedInstancesOfferingRequest Container for the
@@ -7657,10 +7504,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * you actually use the capacity reservation.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param purchaseReservedInstancesOfferingRequest Container for the
@@ -7693,10 +7539,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Adds or removes permission settings for the specified snapshot.
      * </p>
      * <p>
-     * For more information on modifying snapshot permissions, see <a
-     * .com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">
-     * Sharing Snapshots </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information on modifying snapshot permissions, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> Snapshots with AWS Marketplace product codes cannot be
@@ -7727,10 +7572,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Adds or removes permission settings for the specified snapshot.
      * </p>
      * <p>
-     * For more information on modifying snapshot permissions, see <a
-     * .com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">
-     * Sharing Snapshots </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information on modifying snapshot permissions, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> Snapshots with AWS Marketplace product codes cannot be
@@ -7844,10 +7688,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * instance persist. When you terminate an instance, the root device and
      * any other devices attached during the instance launch are
      * automatically deleted. For more information about the differences
-     * between stopping and terminating instances, see <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">
-     * Instance Lifecycle </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * between stopping and terminating instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param terminateInstancesRequest Container for the necessary
@@ -7890,10 +7733,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * instance persist. When you terminate an instance, the root device and
      * any other devices attached during the instance launch are
      * automatically deleted. For more information about the differences
-     * between stopping and terminating instances, see <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">
-     * Instance Lifecycle </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * between stopping and terminating instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param terminateInstancesRequest Container for the necessary
@@ -7921,10 +7763,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes the datafeed for Spot Instances. For more information, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * Deletes the datafeed for Spot Instances. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deleteSpotDatafeedSubscriptionRequest Container for the
@@ -7949,10 +7790,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes the datafeed for Spot Instances. For more information, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * Deletes the datafeed for Spot Instances. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deleteSpotDatafeedSubscriptionRequest Container for the
@@ -8041,10 +7881,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * one attribute at a time.
      * </p>
      * <p>
-     * For more information about Amazon EBS snapshots, see <a
-     * http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">
-     * Amazon EBS Snapshots </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Amazon EBS snapshots, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeSnapshotAttributeRequest Container for the necessary
@@ -8072,10 +7911,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * one attribute at a time.
      * </p>
      * <p>
-     * For more information about Amazon EBS snapshots, see <a
-     * http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">
-     * Amazon EBS Snapshots </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Amazon EBS snapshots, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeSnapshotAttributeRequest Container for the necessary
@@ -8107,10 +7945,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Changes the route table associated with a given subnet in a VPC. After
      * the operation completes, the subnet uses the routes in the new route
      * table it's associated with. For more information about route tables,
-     * see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * You can also use ReplaceRouteTableAssociation to change which table is
@@ -8143,10 +7980,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Changes the route table associated with a given subnet in a VPC. After
      * the operation completes, the subnet uses the routes in the new route
      * table it's associated with. For more information about route tables,
-     * see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * You can also use ReplaceRouteTableAssociation to change which table is
@@ -8185,10 +8021,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * An Elastic IP address is for use in either the EC2-Classic platform or
-     * in a VPC. For more information, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
-     * Elastic IP Addresses </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * in a VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeAddressesRequest Container for the necessary parameters
@@ -8215,10 +8050,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * An Elastic IP address is for use in either the EC2-Classic platform or
-     * in a VPC. For more information, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
-     * Elastic IP Addresses </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * in a VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeAddressesRequest Container for the necessary parameters
@@ -8304,9 +8138,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your key pairs.
      * </p>
      * <p>
-     * For more information about key pairs, see <a
-     * ttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">
-     * Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * For more information about key pairs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeKeyPairsRequest Container for the necessary parameters
@@ -8332,9 +8166,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your key pairs.
      * </p>
      * <p>
-     * For more information about key pairs, see <a
-     * ttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">
-     * Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * For more information about key pairs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeKeyPairsRequest Container for the necessary parameters
@@ -8426,10 +8260,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * After you perform this action, the subnet no longer uses the routes in
      * the route table. Instead, it uses the routes in the VPC's main route
-     * table. For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * table. For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param disassociateRouteTableRequest Container for the necessary
@@ -8458,10 +8291,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * After you perform this action, the subnet no longer uses the routes in
      * the route table. Instead, it uses the routes in the VPC's main route
-     * table. For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * table. For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param disassociateRouteTableRequest Container for the necessary
@@ -8683,10 +8515,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * the volume.
      * </p>
      * <p>
-     * For more information, see <a
-     * docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">
-     * Creating or Restoring an Amazon EBS Volume </a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html"> Creating or Restoring an Amazon EBS Volume </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createVolumeRequest Container for the necessary parameters to
@@ -8717,10 +8548,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * the volume.
      * </p>
      * <p>
-     * For more information, see <a
-     * docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">
-     * Creating or Restoring an Amazon EBS Volume </a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html"> Creating or Restoring an Amazon EBS Volume </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createVolumeRequest Container for the necessary parameters to
@@ -8970,10 +8800,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your virtual private gateways.
      * </p>
      * <p>
-     * For more information about virtual private gateways, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding an IPsec Hardware VPN to Your VPC </a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i> .
+     * For more information about virtual private gateways, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding an IPsec Hardware VPN to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeVpnGatewaysRequest Container for the necessary
@@ -8999,10 +8828,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your virtual private gateways.
      * </p>
      * <p>
-     * For more information about virtual private gateways, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding an IPsec Hardware VPN to Your VPC </a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i> .
+     * For more information about virtual private gateways, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding an IPsec Hardware VPN to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeVpnGatewaysRequest Container for the necessary
@@ -9051,10 +8879,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * topology with a logical router in the middle.
      * </p>
      * <p>
-     * For more information about subnets, see <a
-     * tp://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">
-     * Your VPC and Subnets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about subnets, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createSubnetRequest Container for the necessary parameters to
@@ -9098,10 +8925,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * topology with a logical router in the middle.
      * </p>
      * <p>
-     * For more information about subnets, see <a
-     * tp://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">
-     * Your VPC and Subnets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about subnets, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createSubnetRequest Container for the necessary parameters to
@@ -9136,10 +8962,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * rate charged for On-Demand instances for the actual time used.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeReservedInstancesOfferingsRequest Container for the
@@ -9171,10 +8996,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * rate charged for On-Demand instances for the actual time used.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeReservedInstancesOfferingsRequest Container for the
@@ -9209,13 +9033,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * addresses, or you can specify the number of secondary IP addresses to
      * be automatically assigned within the subnet's CIDR block range. The
      * number of secondary IP addresses that you can assign to an instance
-     * varies by instance type. For information about instance types, see <a
-     * tp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">
-     * Instance Types </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> . For more information about Elastic IP addresses, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
-     * Elastic IP Addresses </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * varies by instance type. For information about instance types, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"> Instance Types </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> . For more information about Elastic IP addresses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * AssignPrivateIpAddresses is available only in EC2-VPC.
@@ -9247,13 +9067,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * addresses, or you can specify the number of secondary IP addresses to
      * be automatically assigned within the subnet's CIDR block range. The
      * number of secondary IP addresses that you can assign to an instance
-     * varies by instance type. For information about instance types, see <a
-     * tp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">
-     * Instance Types </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> . For more information about Elastic IP addresses, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
-     * Elastic IP Addresses </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * varies by instance type. For information about instance types, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"> Instance Types </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> . For more information about Elastic IP addresses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * AssignPrivateIpAddresses is available only in EC2-VPC.
@@ -9302,10 +9118,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * before you can delete the snapshot.
      * </p>
      * <p>
-     * For more information, see <a
-     * cs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">
-     * Deleting an Amazon EBS Snapshot </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html"> Deleting an Amazon EBS Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deleteSnapshotRequest Container for the necessary parameters to
@@ -9345,10 +9160,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * before you can delete the snapshot.
      * </p>
      * <p>
-     * For more information, see <a
-     * cs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">
-     * Deleting an Amazon EBS Snapshot </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html"> Deleting an Amazon EBS Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deleteSnapshotRequest Container for the necessary parameters to
@@ -9378,10 +9192,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Changes which network ACL a subnet is associated with. By default when
      * you create a subnet, it's automatically associated with the default
-     * network ACL. For more information about network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * network ACL. For more information about network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param replaceNetworkAclAssociationRequest Container for the necessary
@@ -9407,10 +9220,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Changes which network ACL a subnet is associated with. By default when
      * you create a subnet, it's automatically associated with the default
-     * network ACL. For more information about network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * network ACL. For more information about network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param replaceNetworkAclAssociationRequest Container for the necessary
@@ -9506,10 +9318,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about placement groups and cluster instances, see
-     * <a
-     * .aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
-     * Cluster Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createPlacementGroupRequest Container for the necessary
@@ -9538,10 +9348,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about placement groups and cluster instances, see
-     * <a
-     * .aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
-     * Cluster Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createPlacementGroupRequest Container for the necessary
@@ -9580,9 +9388,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * or Windows instances that are backed by Amazon EBS.
      * </p>
      * <p>
-     * For more information, see <a
-     * /AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html">
-     * Creating an Instance Store-Backed Windows AMI </a> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html"> Creating an Instance Store-Backed Windows AMI </a>
+     * .
      * </p>
      *
      * @param bundleInstanceRequest Container for the necessary parameters to
@@ -9616,9 +9424,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * or Windows instances that are backed by Amazon EBS.
      * </p>
      * <p>
-     * For more information, see <a
-     * /AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html">
-     * Creating an Instance Store-Backed Windows AMI </a> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html"> Creating an Instance Store-Backed Windows AMI </a>
+     * .
      * </p>
      *
      * @param bundleInstanceRequest Container for the necessary parameters to
@@ -9649,10 +9457,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Deletes the specified placement group. You must terminate all
      * instances in the placement group before you can delete the placement
      * group. For more information about placement groups and cluster
-     * instances, see <a
-     * .aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
-     * Cluster Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deletePlacementGroupRequest Container for the necessary
@@ -9678,10 +9485,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Deletes the specified placement group. You must terminate all
      * instances in the placement group before you can delete the placement
      * group. For more information about placement groups and cluster
-     * instances, see <a
-     * .aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
-     * Cluster Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deletePlacementGroupRequest Container for the necessary
@@ -9776,10 +9582,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * volumes or Amazon Machine Images (AMIs).
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">
-     * Copying an Amazon EBS Snapshot </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html"> Copying an Amazon EBS Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param copySnapshotRequest Container for the necessary parameters to
@@ -9808,10 +9613,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * volumes or Amazon Machine Images (AMIs).
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">
-     * Copying an Amazon EBS Snapshot </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html"> Copying an Amazon EBS Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param copySnapshotRequest Container for the necessary parameters to
@@ -9843,10 +9647,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * An Elastic IP address is for use either in the EC2-Classic platform or
-     * in a VPC. For more information, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
-     * Elastic IP Addresses </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * in a VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param allocateAddressRequest Container for the necessary parameters
@@ -9873,10 +9676,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * An Elastic IP address is for use either in the EC2-Classic platform or
-     * in a VPC. For more information, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
-     * Elastic IP Addresses </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * in a VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param allocateAddressRequest Container for the necessary parameters
@@ -10003,10 +9805,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * source/destination checking is enabled. The default value is
      * <code>true</code> , which means checking is enabled. This value must
      * be <code>false</code> for a NAT instance to perform NAT. For more
-     * information, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">
-     * NAT Instances </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html"> NAT Instances </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param resetInstanceAttributeRequest Container for the necessary
@@ -10040,10 +9841,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * source/destination checking is enabled. The default value is
      * <code>true</code> , which means checking is enabled. This value must
      * be <code>false</code> for a NAT instance to perform NAT. For more
-     * information, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">
-     * NAT Instances </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html"> NAT Instances </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param resetInstanceAttributeRequest Container for the necessary
@@ -10082,9 +9882,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * You can have up to five thousand key pairs per region.
      * </p>
      * <p>
-     * For more information about key pairs, see <a
-     * ttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">
-     * Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * For more information about key pairs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createKeyPairRequest Container for the necessary parameters to
@@ -10117,9 +9917,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * You can have up to five thousand key pairs per region.
      * </p>
      * <p>
-     * For more information about key pairs, see <a
-     * ttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">
-     * Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * For more information about key pairs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createKeyPairRequest Container for the necessary parameters to
@@ -10148,10 +9948,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Replaces an entry (rule) in a network ACL. For more information about
-     * network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param replaceNetworkAclEntryRequest Container for the necessary
@@ -10176,10 +9975,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Replaces an entry (rule) in a network ACL. For more information about
-     * network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param replaceNetworkAclEntryRequest Container for the necessary
@@ -10255,10 +10053,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <code>all</code> for public snapshots.
      * </p>
      * <p>
-     * For more information about Amazon EBS snapshots, see <a
-     * http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">
-     * Amazon EBS Snapshots </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Amazon EBS snapshots, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeSnapshotsRequest Container for the necessary parameters
@@ -10328,10 +10125,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <code>all</code> for public snapshots.
      * </p>
      * <p>
-     * For more information about Amazon EBS snapshots, see <a
-     * http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">
-     * Amazon EBS Snapshots </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Amazon EBS snapshots, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeSnapshotsRequest Container for the necessary parameters
@@ -10364,10 +10160,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * VPC.
      * </p>
      * <p>
-     * For more information about network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createNetworkAclRequest Container for the necessary parameters
@@ -10395,10 +10190,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * VPC.
      * </p>
      * <p>
-     * For more information about network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createNetworkAclRequest Container for the necessary parameters
@@ -10428,10 +10222,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Registers an AMI. When you're creating an AMI, this is the final step
      * you must complete before you can launch an instance from the AMI. For
-     * more information about creating AMIs, see <a
-     * p://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">
-     * Creating Your Own AMIs </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * more information about creating AMIs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html"> Creating Your Own AMIs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> For Amazon EBS-backed instances, CreateImage creates and
@@ -10441,10 +10234,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * You can also use <code>RegisterImage</code> to create an Amazon
      * EBS-backed AMI from a snapshot of a root device volume. For more
-     * information, see <a
-     * com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">
-     * Launching an Instance from a Snapshot </a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i> .
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html"> Launching an Instance from a Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * If needed, you can deregister an AMI at any time. Any modifications
@@ -10479,10 +10271,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Registers an AMI. When you're creating an AMI, this is the final step
      * you must complete before you can launch an instance from the AMI. For
-     * more information about creating AMIs, see <a
-     * p://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">
-     * Creating Your Own AMIs </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * more information about creating AMIs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html"> Creating Your Own AMIs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> For Amazon EBS-backed instances, CreateImage creates and
@@ -10492,10 +10283,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * You can also use <code>RegisterImage</code> to create an Amazon
      * EBS-backed AMI from a snapshot of a root device volume. For more
-     * information, see <a
-     * com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">
-     * Launching an Instance from a Snapshot </a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i> .
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html"> Launching an Instance from a Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * If needed, you can deregister an AMI at any time. Any modifications
@@ -10596,10 +10386,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * gateway to the VPN customer gateway.
      * </p>
      * <p>
-     * For more information about VPN connections, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN connections, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createVpnConnectionRouteRequest Container for the necessary
@@ -10629,10 +10418,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * gateway to the VPN customer gateway.
      * </p>
      * <p>
-     * For more information about VPN connections, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN connections, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createVpnConnectionRouteRequest Container for the necessary

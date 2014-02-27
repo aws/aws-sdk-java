@@ -21,27 +21,37 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.glacier.AmazonGlacier#listParts(ListPartsRequest) ListParts operation}.
  * <p>
- * This operation lists the parts of an archive that have been uploaded in a specific multipart upload. You can make this request at any time during an
- * in-progress multipart upload before you complete the upload (see CompleteMultipartUpload. List Parts returns an error for completed uploads. The list
- * returned in the List Parts response is sorted by part range.
+ * This operation lists the parts of an archive that have been uploaded
+ * in a specific multipart upload. You can make this request at any time
+ * during an in-progress multipart upload before you complete the upload
+ * (see CompleteMultipartUpload. List Parts returns an error for
+ * completed uploads. The list returned in the List Parts response is
+ * sorted by part range.
  * </p>
  * <p>
- * The List Parts operation supports pagination. By default, this operation returns up to 1,000 uploaded parts in the response. You should always check
- * the response for a <code>marker</code> at which to continue the list; if there are no more items the <code>marker</code> is <code>null</code> .
- * To return a list of parts that begins at a specific part, set the <code>marker</code> request parameter to the value you obtained from a previous
- * List Parts request. You can also limit the number of parts returned in the response by specifying the <code>limit</code> parameter in the request.
+ * The List Parts operation supports pagination. By default, this
+ * operation returns up to 1,000 uploaded parts in the response. You
+ * should always check the response for a <code>marker</code> at which to
+ * continue the list; if there are no more items the <code>marker</code>
+ * is <code>null</code> .
+ * To return a list of parts that begins at a specific part, set the
+ * <code>marker</code> request parameter to the value you obtained from a
+ * previous List Parts request. You can also limit the number of parts
+ * returned in the response by specifying the <code>limit</code>
+ * parameter in the request.
  * </p>
  * <p>
- * An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any
- * permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
- * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management
- * (IAM) </a> .
+ * An AWS account has full permission to perform all operations
+ * (actions). However, AWS Identity and Access Management (IAM) users
+ * don't have any permissions by default. You must grant them explicit
+ * permission to perform specific actions. For more information, see
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+ * .
  * </p>
  * <p>
- * For conceptual information and the underlying REST API, go to <a
- * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html"> Working with Archives in Amazon Glacier </a> and <a
- * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html"> List Parts </a> in the <i>Amazon Glacier Developer
- * Guide</i> .
+ * For conceptual information and the underlying REST API, go to
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html"> Working with Archives in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html"> List Parts </a>
+ * in the <i>Amazon Glacier Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#listParts(ListPartsRequest)

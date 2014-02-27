@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeEventSubscriptions(DescribeEventSubscriptionsRequest) DescribeEventSubscriptions operation}.
  * <p>
- * Lists descriptions of all the Amazon Redshift event notifications subscription for a customer account. If you specify a subscription name, lists the
- * description for that subscription.
+ * Lists descriptions of all the Amazon Redshift event notifications
+ * subscription for a customer account. If you specify a subscription
+ * name, lists the description for that subscription.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeEventSubscriptions(DescribeEventSubscriptionsRequest)

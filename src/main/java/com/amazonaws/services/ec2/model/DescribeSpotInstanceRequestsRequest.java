@@ -23,16 +23,22 @@ import com.amazonaws.services.ec2.model.transform.DescribeSpotInstanceRequestsRe
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest) DescribeSpotInstanceRequests operation}.
  * <p>
- * Describes the Spot Instance requests that belong to your account. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum
- * price that you specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity and
- * current Spot Instance requests. For more information about Spot Instances, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
- * Guide</i> .
+ * Describes the Spot Instance requests that belong to your account. Spot
+ * Instances are instances that Amazon EC2 starts on your behalf when the
+ * maximum price that you specify exceeds the current Spot Price. Amazon
+ * EC2 periodically sets the Spot Price based on available Spot Instance
+ * capacity and current Spot Instance requests. For more information
+ * about Spot Instances, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  * <p>
- * You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by examining the response. If the status of the Spot Instance is
- * <code>fulfilled</code> , the instance ID appears in the response and contains the identifier of the instance. Alternatively, you can use
- * DescribeInstances with a filter to look for instances where the instance lifecycle is <code>spot</code> .
+ * You can use <code>DescribeSpotInstanceRequests</code> to find a
+ * running Spot Instance by examining the response. If the status of the
+ * Spot Instance is <code>fulfilled</code> , the instance ID appears in
+ * the response and contains the identifier of the instance.
+ * Alternatively, you can use DescribeInstances with a filter to look for
+ * instances where the instance lifecycle is <code>spot</code> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest)

@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about a resource identified by a Trusted Advisor check.
+ * Contains information about a resource identified by a Trusted Advisor
+ * check.
  * </p>
  */
 public class TrustedAdvisorResourceDetail implements Serializable {

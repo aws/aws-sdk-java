@@ -18,7 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.
+ * Describes cluster attributes that are in a pending state. A change to
+ * one or more the attributes was requested and is in progress or will be
+ * applied.
  * </p>
  */
 public class PendingModifiedValues implements Serializable {

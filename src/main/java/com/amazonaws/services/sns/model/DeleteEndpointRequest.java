@@ -21,8 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#deleteEndpoint(DeleteEndpointRequest) DeleteEndpoint operation}.
  * <p>
- * The <code>DeleteEndpoint</code> action, which is idempotent, deletes the endpoint from SNS. For more information, see <a
- * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a> .
+ * The <code>DeleteEndpoint</code> action, which is idempotent, deletes
+ * the endpoint from SNS. For more information, see
+ * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#deleteEndpoint(DeleteEndpointRequest)

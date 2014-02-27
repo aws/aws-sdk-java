@@ -26,9 +26,10 @@ import com.amazonaws.services.ec2.model.transform.DescribeAddressesRequestMarsha
  * Describes one or more of your Elastic IP addresses.
  * </p>
  * <p>
- * An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a> in the <i>Amazon Elastic Compute
- * Cloud User Guide</i> .
+ * An Elastic IP address is for use in either the EC2-Classic platform or
+ * in a VPC. For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeAddresses(DescribeAddressesRequest)

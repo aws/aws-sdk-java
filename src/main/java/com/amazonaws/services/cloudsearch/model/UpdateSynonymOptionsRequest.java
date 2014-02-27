@@ -21,8 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateSynonymOptions(UpdateSynonymOptionsRequest) UpdateSynonymOptions operation}.
  * <p>
- * Configures a synonym dictionary for the search domain. The synonym dictionary is used during indexing to configure mappings for terms that occur in
- * text fields. The maximum size of the synonym dictionary is 100 KB.
+ * Configures a synonym dictionary for the search domain. The synonym
+ * dictionary is used during indexing to configure mappings for terms
+ * that occur in text fields. The maximum size of the synonym dictionary
+ * is 100 KB.
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateSynonymOptions(UpdateSynonymOptionsRequest)

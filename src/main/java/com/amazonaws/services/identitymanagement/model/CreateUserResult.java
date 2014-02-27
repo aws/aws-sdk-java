@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the CreateUser action.
+ * Contains the result of a successful invocation of the CreateUser
+ * action.
  * </p>
  */
 public class CreateUserResult implements Serializable {

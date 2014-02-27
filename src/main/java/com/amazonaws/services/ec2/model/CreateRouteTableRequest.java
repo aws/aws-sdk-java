@@ -23,10 +23,12 @@ import com.amazonaws.services.ec2.model.transform.CreateRouteTableRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createRouteTable(CreateRouteTableRequest) CreateRouteTable operation}.
  * <p>
- * Creates a route table for the specified VPC. After you create a route table, you can add routes and associate the table with a subnet.
+ * Creates a route table for the specified VPC. After you create a route
+ * table, you can add routes and associate the table with a subnet.
  * </p>
  * <p>
- * For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+ * For more information about route tables, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
  * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *

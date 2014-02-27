@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The stemming options configured for this search domain and the current status of those options.
+ * The stemming options configured for this search domain and the current
+ * status of those options.
  * </p>
  */
 public class StemmingOptionsStatus implements Serializable {

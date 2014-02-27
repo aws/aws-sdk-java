@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element in the DescribeDBSubnetGroups action.
+ * This data type is used as a response element in the
+ * DescribeDBSubnetGroups action.
  * </p>
  */
 public class Subnet implements Serializable {

@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.
+ * Elastic Transcoder encountered an unexpected exception while trying to
+ * fulfill the request.
  * </p>
  */        
 public class InternalServiceException extends AmazonServiceException {

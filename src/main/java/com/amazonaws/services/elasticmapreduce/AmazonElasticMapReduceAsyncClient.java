@@ -35,12 +35,16 @@ import com.amazonaws.services.elasticmapreduce.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * <p>
- * This is the <i>Amazon Elastic MapReduce API Reference</i> . This guide provides descriptions and samples of the Amazon Elastic MapReduce APIs.
+ * This is the <i>Amazon Elastic MapReduce API Reference</i> . This
+ * guide provides descriptions and samples of the Amazon Elastic
+ * MapReduce APIs.
  * </p>
  * <p>
- * Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process large amounts of data efficiently. Amazon EMR uses Hadoop
- * processing combined with several AWS products to do tasks such as web indexing, data mining, log file analysis, machine learning, scientific
- * simulation, and data warehousing.
+ * Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it
+ * easy to process large amounts of data efficiently. Amazon EMR uses
+ * Hadoop processing combined with several AWS products to do tasks such
+ * as web indexing, data mining, log file analysis, machine learning,
+ * scientific simulation, and data warehousing.
  * </p>
  */
 public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceClient
@@ -50,6 +54,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
+
+    private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -92,13 +98,13 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticMapReduceAsyncClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonElasticMapReduce using the specified AWS account credentials.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -110,7 +116,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      *                       when authenticating with AWS services.
      */
     public AmazonElasticMapReduceAsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newCachedThreadPool());
+        this(awsCredentials, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -164,7 +170,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonElasticMapReduce using the specified AWS account credentials provider.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -177,7 +183,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      *            to authenticate requests with AWS services.
      */
     public AmazonElasticMapReduceAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -220,7 +226,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      */
     public AmazonElasticMapReduceAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
                 ClientConfiguration clientConfiguration) {
-        this(awsCredentialsProvider, clientConfiguration, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -264,7 +270,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who
      * wish to give pending asynchronous service calls time to complete should
-     * call getExecutorService().shutdown() prior to calling this method.
+     * call getExecutorService().shutdown() followed by
+     * getExecutorService().awaitTermination() prior to calling this method.
      */
     @Override
     public void shutdown() {
@@ -300,8 +307,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<ListBootstrapActionsResult>() {
             public ListBootstrapActionsResult call() throws Exception {
                 return listBootstrapActions(listBootstrapActionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -337,26 +344,26 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListBootstrapActionsResult>() {
             public ListBootstrapActionsResult call() throws Exception {
-                ListBootstrapActionsResult result;
+              ListBootstrapActionsResult result;
                 try {
-                    result = listBootstrapActions(listBootstrapActionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(listBootstrapActionsRequest, result);
-                   return result;
-            }
-        });
+                result = listBootstrapActions(listBootstrapActionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listBootstrapActionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
      * <p>
      * Adds tags to an Amazon EMR resource. Tags make it easier to associate
      * clusters in various ways, such as grouping clusters to track your
-     * Amazon EMR resource allocation costs. For more information, see <a
-     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
-     * Tagging Amazon EMR Resources </a> .
+     * Amazon EMR resource allocation costs. For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
+     * .
      * </p>
      *
      * @param addTagsRequest Container for the necessary parameters to
@@ -379,17 +386,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<AddTagsResult>() {
             public AddTagsResult call() throws Exception {
                 return addTags(addTagsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
      * <p>
      * Adds tags to an Amazon EMR resource. Tags make it easier to associate
      * clusters in various ways, such as grouping clusters to track your
-     * Amazon EMR resource allocation costs. For more information, see <a
-     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
-     * Tagging Amazon EMR Resources </a> .
+     * Amazon EMR resource allocation costs. For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
+     * .
      * </p>
      *
      * @param addTagsRequest Container for the necessary parameters to
@@ -417,17 +424,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AddTagsResult>() {
             public AddTagsResult call() throws Exception {
-                AddTagsResult result;
+              AddTagsResult result;
                 try {
-                    result = addTags(addTagsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(addTagsRequest, result);
-                   return result;
-            }
-        });
+                result = addTags(addTagsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(addTagsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -464,8 +471,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
             public Void call() throws Exception {
                 setVisibleToAllUsers(setVisibleToAllUsersRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -506,16 +513,16 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    setVisibleToAllUsers(setVisibleToAllUsersRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(setVisibleToAllUsersRequest, null);
-                   return null;
-            }
-        });
+              try {
+                setVisibleToAllUsers(setVisibleToAllUsersRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(setVisibleToAllUsersRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -543,8 +550,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<ListStepsResult>() {
             public ListStepsResult call() throws Exception {
                 return listSteps(listStepsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -577,17 +584,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListStepsResult>() {
             public ListStepsResult call() throws Exception {
-                ListStepsResult result;
+              ListStepsResult result;
                 try {
-                    result = listSteps(listStepsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(listStepsRequest, result);
-                   return result;
-            }
-        });
+                result = listSteps(listStepsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listStepsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -601,10 +608,9 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * can bypass the 256-step limitation in various ways, including using
      * the SSH shell to connect to the master node and submitting queries
      * directly to the software running on the master node, such as Hive and
-     * Hadoop. For more information on how to do this, go to <a
-     * .com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">
-     * Add More than 256 Steps to a Job Flow </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide</i> .
+     * Hadoop. For more information on how to do this, go to
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html"> Add More than 256 Steps to a Job Flow </a>
+     * in the <i>Amazon Elastic MapReduce Developer's Guide</i> .
      * </p>
      * <p>
      * A step specifies the location of a JAR file stored either on the
@@ -644,8 +650,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<AddJobFlowStepsResult>() {
             public AddJobFlowStepsResult call() throws Exception {
                 return addJobFlowSteps(addJobFlowStepsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -659,10 +665,9 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * can bypass the 256-step limitation in various ways, including using
      * the SSH shell to connect to the master node and submitting queries
      * directly to the software running on the master node, such as Hive and
-     * Hadoop. For more information on how to do this, go to <a
-     * .com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">
-     * Add More than 256 Steps to a Job Flow </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide</i> .
+     * Hadoop. For more information on how to do this, go to
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html"> Add More than 256 Steps to a Job Flow </a>
+     * in the <i>Amazon Elastic MapReduce Developer's Guide</i> .
      * </p>
      * <p>
      * A step specifies the location of a JAR file stored either on the
@@ -707,17 +712,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AddJobFlowStepsResult>() {
             public AddJobFlowStepsResult call() throws Exception {
-                AddJobFlowStepsResult result;
+              AddJobFlowStepsResult result;
                 try {
-                    result = addJobFlowSteps(addJobFlowStepsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(addJobFlowStepsRequest, result);
-                   return result;
-            }
-        });
+                result = addJobFlowSteps(addJobFlowStepsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(addJobFlowStepsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -745,8 +750,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<DescribeStepResult>() {
             public DescribeStepResult call() throws Exception {
                 return describeStep(describeStepRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -779,17 +784,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeStepResult>() {
             public DescribeStepResult call() throws Exception {
-                DescribeStepResult result;
+              DescribeStepResult result;
                 try {
-                    result = describeStep(describeStepRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeStepRequest, result);
-                   return result;
-            }
-        });
+                result = describeStep(describeStepRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeStepRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -822,8 +827,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<ListClustersResult>() {
             public ListClustersResult call() throws Exception {
                 return listClusters(listClustersRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -861,17 +866,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListClustersResult>() {
             public ListClustersResult call() throws Exception {
-                ListClustersResult result;
+              ListClustersResult result;
                 try {
-                    result = listClusters(listClustersRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(listClustersRequest, result);
-                   return result;
-            }
-        });
+                result = listClusters(listClustersRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listClustersRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -879,9 +884,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * Removes tags from an Amazon EMR resource. Tags make it easier to
      * associate clusters in various ways, such as grouping clusters to track
      * your Amazon EMR resource allocation costs. For more information, see
-     * <a
-     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
-     * Tagging Amazon EMR Resources </a> .
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
+     * .
      * </p>
      *
      * @param removeTagsRequest Container for the necessary parameters to
@@ -904,8 +908,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<RemoveTagsResult>() {
             public RemoveTagsResult call() throws Exception {
                 return removeTags(removeTagsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -913,9 +917,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * Removes tags from an Amazon EMR resource. Tags make it easier to
      * associate clusters in various ways, such as grouping clusters to track
      * your Amazon EMR resource allocation costs. For more information, see
-     * <a
-     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
-     * Tagging Amazon EMR Resources </a> .
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
+     * .
      * </p>
      *
      * @param removeTagsRequest Container for the necessary parameters to
@@ -943,17 +946,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RemoveTagsResult>() {
             public RemoveTagsResult call() throws Exception {
-                RemoveTagsResult result;
+              RemoveTagsResult result;
                 try {
-                    result = removeTags(removeTagsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(removeTagsRequest, result);
-                   return result;
-            }
-        });
+                result = removeTags(removeTagsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(removeTagsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -983,8 +986,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<ListInstanceGroupsResult>() {
             public ListInstanceGroupsResult call() throws Exception {
                 return listInstanceGroups(listInstanceGroupsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1019,17 +1022,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListInstanceGroupsResult>() {
             public ListInstanceGroupsResult call() throws Exception {
-                ListInstanceGroupsResult result;
+              ListInstanceGroupsResult result;
                 try {
-                    result = listInstanceGroups(listInstanceGroupsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(listInstanceGroupsRequest, result);
-                   return result;
-            }
-        });
+                result = listInstanceGroups(listInstanceGroupsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listInstanceGroupsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1063,8 +1066,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
             public Void call() throws Exception {
                 modifyInstanceGroups(modifyInstanceGroupsRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1102,16 +1105,16 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    modifyInstanceGroups(modifyInstanceGroupsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(modifyInstanceGroupsRequest, null);
-                   return null;
-            }
-        });
+              try {
+                modifyInstanceGroups(modifyInstanceGroupsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifyInstanceGroupsRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1143,8 +1146,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<ListInstancesResult>() {
             public ListInstancesResult call() throws Exception {
                 return listInstances(listInstancesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1181,17 +1184,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListInstancesResult>() {
             public ListInstancesResult call() throws Exception {
-                ListInstancesResult result;
+              ListInstancesResult result;
                 try {
-                    result = listInstances(listInstancesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(listInstancesRequest, result);
-                   return result;
-            }
-        });
+                result = listInstances(listInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listInstancesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1220,8 +1223,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<AddInstanceGroupsResult>() {
             public AddInstanceGroupsResult call() throws Exception {
                 return addInstanceGroups(addInstanceGroupsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1255,17 +1258,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AddInstanceGroupsResult>() {
             public AddInstanceGroupsResult call() throws Exception {
-                AddInstanceGroupsResult result;
+              AddInstanceGroupsResult result;
                 try {
-                    result = addInstanceGroups(addInstanceGroupsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(addInstanceGroupsRequest, result);
-                   return result;
-            }
-        });
+                result = addInstanceGroups(addInstanceGroupsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(addInstanceGroupsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1305,8 +1308,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
             public Void call() throws Exception {
                 terminateJobFlows(terminateJobFlowsRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1350,16 +1353,16 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    terminateJobFlows(terminateJobFlowsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(terminateJobFlowsRequest, null);
-                   return null;
-            }
-        });
+              try {
+                terminateJobFlows(terminateJobFlowsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(terminateJobFlowsRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1386,10 +1389,9 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * <code>false</code> .
      * </p>
      * <p>
-     * For more information, go to <a
-     * cMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">
-     * Protecting a Job Flow from Termination </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide.</i>
+     * For more information, go to
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html"> Protecting a Job Flow from Termination </a>
+     * in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
      * </p>
      *
      * @param setTerminationProtectionRequest Container for the necessary
@@ -1415,8 +1417,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
             public Void call() throws Exception {
                 setTerminationProtection(setTerminationProtectionRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1443,10 +1445,9 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * <code>false</code> .
      * </p>
      * <p>
-     * For more information, go to <a
-     * cMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">
-     * Protecting a Job Flow from Termination </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide.</i>
+     * For more information, go to
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html"> Protecting a Job Flow from Termination </a>
+     * in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
      * </p>
      *
      * @param setTerminationProtectionRequest Container for the necessary
@@ -1476,16 +1477,16 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    setTerminationProtection(setTerminationProtectionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(setTerminationProtectionRequest, null);
-                   return null;
-            }
-        });
+              try {
+                setTerminationProtection(setTerminationProtectionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(setTerminationProtectionRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1541,8 +1542,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<DescribeJobFlowsResult>() {
             public DescribeJobFlowsResult call() throws Exception {
                 return describeJobFlows(describeJobFlowsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1602,17 +1603,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeJobFlowsResult>() {
             public DescribeJobFlowsResult call() throws Exception {
-                DescribeJobFlowsResult result;
+              DescribeJobFlowsResult result;
                 try {
-                    result = describeJobFlows(describeJobFlowsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeJobFlowsRequest, result);
-                   return result;
-            }
-        });
+                result = describeJobFlows(describeJobFlowsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeJobFlowsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1641,10 +1642,9 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * can bypass the 256-step limitation in various ways, including using
      * the SSH shell to connect to the master node and submitting queries
      * directly to the software running on the master node, such as Hive and
-     * Hadoop. For more information on how to do this, go to <a
-     * .com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">
-     * Add More than 256 Steps to a Job Flow </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide</i> .
+     * Hadoop. For more information on how to do this, go to
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html"> Add More than 256 Steps to a Job Flow </a>
+     * in the <i>Amazon Elastic MapReduce Developer's Guide</i> .
      * </p>
      * <p>
      * For long running job flows, we recommend that you periodically store
@@ -1671,8 +1671,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<RunJobFlowResult>() {
             public RunJobFlowResult call() throws Exception {
                 return runJobFlow(runJobFlowRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1701,10 +1701,9 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * can bypass the 256-step limitation in various ways, including using
      * the SSH shell to connect to the master node and submitting queries
      * directly to the software running on the master node, such as Hive and
-     * Hadoop. For more information on how to do this, go to <a
-     * .com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">
-     * Add More than 256 Steps to a Job Flow </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide</i> .
+     * Hadoop. For more information on how to do this, go to
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html"> Add More than 256 Steps to a Job Flow </a>
+     * in the <i>Amazon Elastic MapReduce Developer's Guide</i> .
      * </p>
      * <p>
      * For long running job flows, we recommend that you periodically store
@@ -1736,17 +1735,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RunJobFlowResult>() {
             public RunJobFlowResult call() throws Exception {
-                RunJobFlowResult result;
+              RunJobFlowResult result;
                 try {
-                    result = runJobFlow(runJobFlowRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(runJobFlowRequest, result);
-                   return result;
-            }
-        });
+                result = runJobFlow(runJobFlowRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(runJobFlowRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1776,8 +1775,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         return executorService.submit(new Callable<DescribeClusterResult>() {
             public DescribeClusterResult call() throws Exception {
                 return describeCluster(describeClusterRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1812,17 +1811,17 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeClusterResult>() {
             public DescribeClusterResult call() throws Exception {
-                DescribeClusterResult result;
+              DescribeClusterResult result;
                 try {
-                    result = describeCluster(describeClusterRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeClusterRequest, result);
-                   return result;
-            }
-        });
+                result = describeCluster(describeClusterRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeClusterRequest, result);
+                 return result;
+        }
+    });
     }
     
 }

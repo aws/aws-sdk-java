@@ -21,13 +21,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#assignPrivateIpAddresses(AssignPrivateIpAddressesRequest) AssignPrivateIpAddresses operation}.
  * <p>
- * Assigns one or more secondary private IP addresses to the specified network interface. You can specify one or more specific secondary IP addresses, or
- * you can specify the number of secondary IP addresses to be automatically assigned within the subnet's CIDR block range. The number of secondary IP
- * addresses that you can assign to an instance varies by instance type. For information about instance types, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"> Instance Types </a> in the <i>Amazon Elastic Compute Cloud User
- * Guide</i> . For more information about Elastic IP addresses, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a> in the <i>Amazon Elastic Compute
- * Cloud User Guide</i> .
+ * Assigns one or more secondary private IP addresses to the specified
+ * network interface. You can specify one or more specific secondary IP
+ * addresses, or you can specify the number of secondary IP addresses to
+ * be automatically assigned within the subnet's CIDR block range. The
+ * number of secondary IP addresses that you can assign to an instance
+ * varies by instance type. For information about instance types, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"> Instance Types </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> . For more information about Elastic IP addresses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  * <p>
  * AssignPrivateIpAddresses is available only in EC2-VPC.

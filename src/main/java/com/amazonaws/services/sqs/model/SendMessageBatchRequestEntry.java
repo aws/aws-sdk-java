@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the details of a single Amazon SQS message along with a <code>Id</code> .
+ * Contains the details of a single Amazon SQS message along with a
+ * <code>Id</code> .
  * </p>
  */
 public class SendMessageBatchRequestEntry implements Serializable {

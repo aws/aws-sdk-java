@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * An AWS Direct Connect location where connections and interconnects can be requested.
+ * An AWS Direct Connect location where connections and interconnects can
+ * be requested.
  * </p>
  */
 public class Location implements Serializable {

@@ -27,20 +27,28 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <b>Access Control</b>
  * </p>
  * <p>
- * You can use IAM policies to control this action's access to Amazon SWF resources as follows:
+ * You can use IAM policies to control this action's access to Amazon SWF
+ * resources as follows:
  * </p>
  * 
  * <ul>
- * <li>You cannot use an IAM policy to control domain access for this action. The name of the domain being registered is available as the resource of
- * this action.</li>
- * <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li>
- * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+ * <li>You cannot use an IAM policy to control domain access for this
+ * action. The name of the domain being registered is available as the
+ * resource of this action.</li>
+ * <li>Use an <code>Action</code> element to allow or deny permission to
+ * call this action.</li>
+ * <li>You cannot use an IAM policy to constrain this action's
+ * parameters.</li>
  * 
  * </ul>
  * <p>
- * If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action
- * fails by throwing <code>OperationNotPermitted</code> . For details and example IAM policies, see <a
- * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a> .
+ * If the caller does not have sufficient permissions to invoke the
+ * action, or the parameter values fall outside the specified
+ * constraints, the action fails by throwing
+ * <code>OperationNotPermitted</code> . For details and example IAM
+ * policies, see
+ * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
+ * .
  * </p>
  * <p>
  * </p>

@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.directconnect.AmazonDirectConnect#describeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest) DescribeConnectionsOnInterconnect operation}.
  * <p>
- * Return a list of connections that have been provisioned on the given interconnect.
+ * Return a list of connections that have been provisioned on the given
+ * interconnect.
  * </p>
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#describeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest)

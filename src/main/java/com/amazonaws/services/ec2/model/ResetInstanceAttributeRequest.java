@@ -23,14 +23,19 @@ import com.amazonaws.services.ec2.model.transform.ResetInstanceAttributeRequestM
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#resetInstanceAttribute(ResetInstanceAttributeRequest) ResetInstanceAttribute operation}.
  * <p>
- * Resets an attribute of an instance to its default value. To reset the kernel or RAM disk, the instance must be in a stopped state. To reset the
- * <code>SourceDestCheck</code> , the instance can be either running or stopped.
+ * Resets an attribute of an instance to its default value. To reset the
+ * kernel or RAM disk, the instance must be in a stopped state. To reset
+ * the <code>SourceDestCheck</code> , the instance can be either running
+ * or stopped.
  * </p>
  * <p>
- * The <code>SourceDestCheck</code> attribute controls whether source/destination checking is enabled. The default value is <code>true</code> , which
- * means checking is enabled. This value must be <code>false</code> for a NAT instance to perform NAT. For more information, see <a
- * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html"> NAT Instances </a> in the <i>Amazon Virtual Private Cloud User
- * Guide</i> .
+ * The <code>SourceDestCheck</code> attribute controls whether
+ * source/destination checking is enabled. The default value is
+ * <code>true</code> , which means checking is enabled. This value must
+ * be <code>false</code> for a NAT instance to perform NAT. For more
+ * information, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html"> NAT Instances </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#resetInstanceAttribute(ResetInstanceAttributeRequest)

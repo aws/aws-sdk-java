@@ -23,15 +23,19 @@ import com.amazonaws.services.ec2.model.transform.RevokeSecurityGroupEgressReque
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#revokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest) RevokeSecurityGroupEgress operation}.
  * <p>
- * Removes one or more egress rules from a security group for EC2-VPC. The values that you specify in the revoke request (for example, ports) must match
- * the existing rule's values for the rule to be revoked.
+ * Removes one or more egress rules from a security group for EC2-VPC.
+ * The values that you specify in the revoke request (for example, ports)
+ * must match the existing rule's values for the rule to be revoked.
  * </p>
  * <p>
- * Each rule consists of the protocol and the CIDR range or source security group. For the TCP and UDP protocols, you must also specify the destination
- * port or range of ports. For the ICMP protocol, you must also specify the ICMP type and code.
+ * Each rule consists of the protocol and the CIDR range or source
+ * security group. For the TCP and UDP protocols, you must also specify
+ * the destination port or range of ports. For the ICMP protocol, you
+ * must also specify the ICMP type and code.
  * </p>
  * <p>
- * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might occur.
+ * Rule changes are propagated to instances within the security group as
+ * quickly as possible. However, a small delay might occur.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#revokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest)

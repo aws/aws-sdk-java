@@ -21,13 +21,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#terminateJobFlows(TerminateJobFlowsRequest) TerminateJobFlows operation}.
  * <p>
- * TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any step not yet completed is canceled and the EC2 instances on which
- * the job flow is running are stopped. Any log files not already saved are uploaded to Amazon S3 if a LogUri was specified when the job flow was
- * created.
+ * TerminateJobFlows shuts a list of job flows down. When a job flow is
+ * shut down, any step not yet completed is canceled and the EC2
+ * instances on which the job flow is running are stopped. Any log files
+ * not already saved are uploaded to Amazon S3 if a LogUri was specified
+ * when the job flow was created.
  * </p>
  * <p>
- * The call to TerminateJobFlows is asynchronous. Depending on the configuration of the job flow, it may take up to 5-20 minutes for the job flow to
- * completely terminate and release allocated resources, such as Amazon EC2 instances.
+ * The call to TerminateJobFlows is asynchronous. Depending on the
+ * configuration of the job flow, it may take up to 5-20 minutes for the
+ * job flow to completely terminate and release allocated resources, such
+ * as Amazon EC2 instances.
  * </p>
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#terminateJobFlows(TerminateJobFlowsRequest)

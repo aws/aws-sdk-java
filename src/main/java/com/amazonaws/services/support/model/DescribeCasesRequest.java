@@ -21,15 +21,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#describeCases(DescribeCasesRequest) DescribeCases operation}.
  * <p>
- * Returns a list of cases that you specify by passing one or more case IDs. In addition, you can filter the cases by date by setting values for the
- * <code>AfterTime</code> and <code>BeforeTime</code> request parameters.
+ * Returns a list of cases that you specify by passing one or more case
+ * IDs. In addition, you can filter the cases by date by setting values
+ * for the <code>AfterTime</code> and <code>BeforeTime</code> request
+ * parameters.
  * </p>
  * <p>
  * The response returns the following in JSON format:
  * </p>
  * <ol> <li>One or more CaseDetails data types. </li>
- * <li>One or more <code>NextToken</code> values, which specify where to paginate the returned records represented by the <code>CaseDetails</code>
- * objects.</li>
+ * <li>One or more <code>NextToken</code> values, which specify where to
+ * paginate the returned records represented by the
+ * <code>CaseDetails</code> objects.</li>
  * </ol>
  *
  * @see com.amazonaws.services.support.AWSSupport#describeCases(DescribeCasesRequest)

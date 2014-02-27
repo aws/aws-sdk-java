@@ -18,7 +18,9 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The resource you are trying to access is unsupported on this Route 53 endpoint. Please consider using a newer endpoint or a tool that does so.
+ * The resource you are trying to access is unsupported on this Route 53
+ * endpoint. Please consider using a newer endpoint or a tool that does
+ * so.
  * </p>
  */        
 public class IncompatibleVersionException extends AmazonServiceException {

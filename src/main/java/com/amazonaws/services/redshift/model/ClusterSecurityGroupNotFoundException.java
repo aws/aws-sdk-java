@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The cluster security group name does not refer to an existing cluster security group.
+ * The cluster security group name does not refer to an existing cluster
+ * security group.
  * </p>
  */        
 public class ClusterSecurityGroupNotFoundException extends AmazonServiceException {

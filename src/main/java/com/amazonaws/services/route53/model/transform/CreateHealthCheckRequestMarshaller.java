@@ -90,6 +90,12 @@ public class CreateHealthCheckRequestMarshaller implements Marshaller<Request<Cr
                 if (healthCheckConfigHealthCheckConfig.getSearchString() != null) {
                     xmlWriter.startElement("SearchString").value(healthCheckConfigHealthCheckConfig.getSearchString()).endElement();
                 }
+                if (healthCheckConfigHealthCheckConfig.getRequestInterval() != null) {
+                    xmlWriter.startElement("RequestInterval").value(healthCheckConfigHealthCheckConfig.getRequestInterval()).endElement();
+                }
+                if (healthCheckConfigHealthCheckConfig.getFailureThreshold() != null) {
+                    xmlWriter.startElement("FailureThreshold").value(healthCheckConfigHealthCheckConfig.getFailureThreshold()).endElement();
+                }
                 xmlWriter.endElement();
             }
         }

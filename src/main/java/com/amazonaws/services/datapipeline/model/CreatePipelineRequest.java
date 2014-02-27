@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#createPipeline(CreatePipelineRequest) CreatePipeline operation}.
  * <p>
- * Creates a new empty pipeline. When this action succeeds, you can then use the PutPipelineDefinition action to populate the pipeline.
+ * Creates a new empty pipeline. When this action succeeds, you can then
+ * use the PutPipelineDefinition action to populate the pipeline.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#createPipeline(CreatePipelineRequest)

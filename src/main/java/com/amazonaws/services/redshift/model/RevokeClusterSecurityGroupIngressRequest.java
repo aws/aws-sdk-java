@@ -21,10 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#revokeClusterSecurityGroupIngress(RevokeClusterSecurityGroupIngressRequest) RevokeClusterSecurityGroupIngress operation}.
  * <p>
- * Revokes an ingress rule in an Amazon Redshift security group for a previously authorized IP range or Amazon EC2 security group. To add an ingress
- * rule, see AuthorizeClusterSecurityGroupIngress. For information about managing security groups, go to <a
- * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a> in the
- * <i>Amazon Redshift Management Guide</i> .
+ * Revokes an ingress rule in an Amazon Redshift security group for a
+ * previously authorized IP range or Amazon EC2 security group. To add an
+ * ingress rule, see AuthorizeClusterSecurityGroupIngress. For
+ * information about managing security groups, go to
+ * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
+ * in the <i>Amazon Redshift Management Guide</i> .
  * 
  * </p>
  *

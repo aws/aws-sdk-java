@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest) ModifyCacheSubnetGroup operation}.
  * <p>
- * The <i>ModifyCacheSubnetGroup</i> operation modifies an existing cache subnet group.
+ * The <i>ModifyCacheSubnetGroup</i> operation modifies an existing cache
+ * subnet group.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest)

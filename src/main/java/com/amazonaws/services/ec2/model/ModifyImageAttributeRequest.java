@@ -23,10 +23,12 @@ import com.amazonaws.services.ec2.model.transform.ModifyImageAttributeRequestMar
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#modifyImageAttribute(ModifyImageAttributeRequest) ModifyImageAttribute operation}.
  * <p>
- * Modifies the specified attribute of the specified AMI. You can specify only one attribute at a time.
+ * Modifies the specified attribute of the specified AMI. You can specify
+ * only one attribute at a time.
  * </p>
  * <p>
- * <b>NOTE:</b> AWS Marketplace product codes cannot be modified. Images with an AWS Marketplace product code cannot be made public.
+ * <b>NOTE:</b> AWS Marketplace product codes cannot be modified. Images
+ * with an AWS Marketplace product code cannot be made public.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifyImageAttribute(ModifyImageAttributeRequest)

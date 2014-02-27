@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use <code>GetTopicAttributes</code> .
+ * A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve
+ * a topic's attributes, use <code>GetTopicAttributes</code> .
  * </p>
  */
 public class Topic implements Serializable {

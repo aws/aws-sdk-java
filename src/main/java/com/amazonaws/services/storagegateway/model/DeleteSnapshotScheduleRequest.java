@@ -24,12 +24,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This operation deletes a snapshot of a volume.
  * </p>
  * <p>
- * You can take snapshots of your gateway volumes on a scheduled or ad-hoc basis. This API enables you to delete a snapshot schedule for a volume. For
- * more information, see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html"> Working with Snapshots </a> . In
- * the <code>DeleteSnapshotSchedule</code> request, you identify the volume by providing its Amazon Resource Name (ARN).
+ * You can take snapshots of your gateway volumes on a scheduled or
+ * ad-hoc basis. This API enables you to delete a snapshot schedule for a
+ * volume. For more information, see
+ * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html"> Working with Snapshots </a>
+ * . In the <code>DeleteSnapshotSchedule</code> request, you identify
+ * the volume by providing its Amazon Resource Name (ARN).
  * </p>
  * <p>
- * <b>NOTE:</b> To list or delete a snapshot, you must use the Amazon EC2 API. in Amazon Elastic Compute Cloud API Reference.
+ * <b>NOTE:</b> To list or delete a snapshot, you must use the Amazon EC2
+ * API. in Amazon Elastic Compute Cloud API Reference.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#deleteSnapshotSchedule(DeleteSnapshotScheduleRequest)

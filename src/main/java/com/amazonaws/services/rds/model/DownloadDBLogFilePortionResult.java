@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element to DownloadDBLogFilePortion.
+ * This data type is used as a response element to
+ * DownloadDBLogFilePortion.
  * </p>
  */
 public class DownloadDBLogFilePortionResult implements Serializable {

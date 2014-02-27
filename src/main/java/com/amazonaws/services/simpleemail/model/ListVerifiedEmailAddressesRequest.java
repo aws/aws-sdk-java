@@ -21,11 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#listVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest) ListVerifiedEmailAddresses operation}.
  * <p>
- * Returns a list containing all of the email addresses that have been verified.
+ * Returns a list containing all of the email addresses that have been
+ * verified.
  * </p>
  * <p>
- * <b>IMPORTANT:</b>The ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012 release of Domain Verification. The ListIdentities action
- * is now preferred.
+ * <b>IMPORTANT:</b>The ListVerifiedEmailAddresses action is deprecated
+ * as of the May 15, 2012 release of Domain Verification. The
+ * ListIdentities action is now preferred.
  * </p>
  * <p>
  * This action is throttled at one request per second.

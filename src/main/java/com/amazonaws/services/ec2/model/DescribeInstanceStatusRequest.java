@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.DescribeInstanceStatusRequestM
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeInstanceStatus(DescribeInstanceStatusRequest) DescribeInstanceStatus operation}.
  * <p>
- * Describes the status of one or more instances, including any scheduled events.
+ * Describes the status of one or more instances, including any scheduled
+ * events.
  * </p>
  * <p>
  * Instance status has two main components:
@@ -31,58 +32,81 @@ import com.amazonaws.services.ec2.model.transform.DescribeInstanceStatusRequestM
  * 
  * <ul>
  * <li> <p>
- * System Status reports impaired functionality that stems from issues related to the systems that support an instance, such as such as hardware failures
- * and network connectivity problems. This call reports such problems as impaired reachability.
+ * System Status reports impaired functionality that stems from issues
+ * related to the systems that support an instance, such as such as
+ * hardware failures and network connectivity problems. This call reports
+ * such problems as impaired reachability.
  * </p>
  * </li>
  * <li> <p>
- * Instance Status reports impaired functionality that arises from problems internal to the instance. This call reports such problems as impaired
- * reachability.
+ * Instance Status reports impaired functionality that arises from
+ * problems internal to the instance. This call reports such problems as
+ * impaired reachability.
  * </p>
  * </li>
  * 
  * </ul>
  * <p>
- * Instance status provides information about four types of scheduled events for an instance that may require your attention:
+ * Instance status provides information about four types of scheduled
+ * events for an instance that may require your attention:
  * </p>
  * 
  * <ul>
  * <li> <p>
- * Scheduled Reboot: When Amazon EC2 determines that an instance must be rebooted, the instances status returns one of two event codes:
- * <code>system-reboot</code> or <code>instance-reboot</code> . System reboot commonly occurs if certain maintenance or upgrade operations require a
- * reboot of the underlying host that supports an instance. Instance reboot commonly occurs if the instance must be rebooted, rather than the underlying
- * host. Rebooting events include a scheduled start and end time.
+ * Scheduled Reboot: When Amazon EC2 determines that an instance must be
+ * rebooted, the instances status returns one of two event codes:
+ * <code>system-reboot</code> or <code>instance-reboot</code> . System
+ * reboot commonly occurs if certain maintenance or upgrade operations
+ * require a reboot of the underlying host that supports an instance.
+ * Instance reboot commonly occurs if the instance must be rebooted,
+ * rather than the underlying host. Rebooting events include a scheduled
+ * start and end time.
  * </p>
  * </li>
  * <li> <p>
- * System Maintenance: When Amazon EC2 determines that an instance requires maintenance that requires power or network impact, the instance status is the
- * event code <code>system-maintenance</code> . System maintenance is either power maintenance or network maintenance. For power maintenance, your
- * instance will be unavailable for a brief period of time and then rebooted. For network maintenance, your instance will experience a brief loss of
- * network connectivity. System maintenance events include a scheduled start and end time. You will also be notified by email if one of your instances is
- * set for system maintenance. The email message indicates when your instance is scheduled for maintenance.
+ * System Maintenance: When Amazon EC2 determines that an instance
+ * requires maintenance that requires power or network impact, the
+ * instance status is the event code <code>system-maintenance</code> .
+ * System maintenance is either power maintenance or network maintenance.
+ * For power maintenance, your instance will be unavailable for a brief
+ * period of time and then rebooted. For network maintenance, your
+ * instance will experience a brief loss of network connectivity. System
+ * maintenance events include a scheduled start and end time. You will
+ * also be notified by email if one of your instances is set for system
+ * maintenance. The email message indicates when your instance is
+ * scheduled for maintenance.
  * </p>
  * </li>
  * <li> <p>
- * Scheduled Retirement: When Amazon EC2 determines that an instance must be shut down, the instance status is the event code
- * <code>instance-retirement</code> . Retirement commonly occurs when the underlying host is degraded and must be replaced. Retirement events include a
- * scheduled start and end time. You will also be notified by email if one of your instances is set to retiring. The email message indicates when your
- * instance will be permanently retired.
+ * Scheduled Retirement: When Amazon EC2 determines that an instance must
+ * be shut down, the instance status is the event code
+ * <code>instance-retirement</code> . Retirement commonly occurs when the
+ * underlying host is degraded and must be replaced. Retirement events
+ * include a scheduled start and end time. You will also be notified by
+ * email if one of your instances is set to retiring. The email message
+ * indicates when your instance will be permanently retired.
  * </p>
  * </li>
  * <li> <p>
- * Scheduled Stop: When Amazon EC2 determines that an instance must be shut down, the instances status returns an event code called
+ * Scheduled Stop: When Amazon EC2 determines that an instance must be
+ * shut down, the instances status returns an event code called
  * <code>instance-stop</code> .
- * Stop events include a scheduled start and end time. You will also be notified by email if one of your instances is set to stop. The email
- * message indicates when your instance will be stopped.
+ * Stop events include a scheduled start and end time. You will
+ * also be notified by email if one of your instances is set to stop. The
+ * email message indicates when your instance will be stopped.
  * </p>
  * </li>
  * 
  * </ul>
  * <p>
- * When your instance is retired, it will either be terminated (if its root device type is the instance-store) or stopped (if its root device type is an
- * EBS volume). Instances stopped due to retirement will not be restarted, but you can do so manually. You can also avoid retirement of EBS-backed
- * instances by manually restarting your instance when its event code is <code>instance-retirement</code> . This ensures that your instance is started on
- * a different underlying host.
+ * When your instance is retired, it will either be terminated (if its
+ * root device type is the instance-store) or stopped (if its root device
+ * type is an EBS volume). Instances stopped due to retirement will not
+ * be restarted, but you can do so manually. You can also avoid
+ * retirement of EBS-backed instances by manually restarting your
+ * instance when its event code is <code>instance-retirement</code> .
+ * This ensures that your instance is started on a different underlying
+ * host.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeInstanceStatus(DescribeInstanceStatusRequest)

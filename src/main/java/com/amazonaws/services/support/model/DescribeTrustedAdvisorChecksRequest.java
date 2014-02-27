@@ -21,8 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest) DescribeTrustedAdvisorChecks operation}.
  * <p>
- * Returns information about all available Trusted Advisor checks, including name, ID, category, description, and metadata. You must specify a language
- * code; English ("en") and Japanese ("ja") are currently supported. The response contains a TrustedAdvisorCheckDescription for each check.
+ * Returns information about all available Trusted Advisor checks,
+ * including name, ID, category, description, and metadata. You must
+ * specify a language code; English ("en") and Japanese ("ja") are
+ * currently supported. The response contains a
+ * TrustedAdvisorCheckDescription for each check.
  * </p>
  *
  * @see com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest)

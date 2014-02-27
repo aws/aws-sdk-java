@@ -21,7 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest) DescribeEngineDefaultParameters operation}.
  * <p>
- * The <i>DescribeEngineDefaultParameters</i> operation returns the default engine and system parameter information for the specified cache engine.
+ * The <i>DescribeEngineDefaultParameters</i> operation returns the
+ * default engine and system parameter information for the specified
+ * cache engine.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest)

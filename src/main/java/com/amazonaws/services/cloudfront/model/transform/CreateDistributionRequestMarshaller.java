@@ -43,7 +43,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
         Request<CreateDistributionRequest> request = new DefaultRequest<CreateDistributionRequest>(createDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "2013-11-11/distribution"; 
+        String uriResourcePath = "2013-11-22/distribution"; 
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -62,7 +62,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
         request.setResourcePath(uriResourcePath);
 
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-11-11/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-11-22/");
 
                     if (createDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = createDistributionRequest.getDistributionConfig();
@@ -276,6 +276,9 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                 xmlWriter.endElement();
                             }
                         }
+                        if (defaultCacheBehaviorDefaultCacheBehavior.isSmoothStreaming() != null) {
+                            xmlWriter.startElement("SmoothStreaming").value(defaultCacheBehaviorDefaultCacheBehavior.isSmoothStreaming()).endElement();
+                        }
                         xmlWriter.endElement();
                     }
                 }
@@ -410,6 +413,9 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                             }
                                             xmlWriter.endElement();
                                         }
+                                    }
+                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.isSmoothStreaming() != null) {
+                                        xmlWriter.startElement("SmoothStreaming").value(cacheBehaviorsCacheBehaviorsitemsListValue.isSmoothStreaming()).endElement();
                                     }
                                 xmlWriter.endElement();
 

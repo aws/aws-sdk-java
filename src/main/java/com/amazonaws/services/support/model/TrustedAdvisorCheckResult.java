@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The results of a Trusted Advisor check returned by DescribeTrustedAdvisorCheckResult.
+ * The results of a Trusted Advisor check returned by
+ * DescribeTrustedAdvisorCheckResult.
  * </p>
  */
 public class TrustedAdvisorCheckResult implements Serializable {

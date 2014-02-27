@@ -21,17 +21,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeClusterParameters(DescribeClusterParametersRequest) DescribeClusterParameters operation}.
  * <p>
- * Returns a detailed list of parameters contained within the specified Amazon Redshift parameter group. For each parameter the response includes
- * information such as parameter name, description, data type, value, whether the parameter value is modifiable, and so on.
+ * Returns a detailed list of parameters contained within the specified
+ * Amazon Redshift parameter group. For each parameter the response
+ * includes information such as parameter name, description, data type,
+ * value, whether the parameter value is modifiable, and so on.
  * </p>
  * <p>
- * You can specify <i>source</i> filter to retrieve parameters of only specific type. For example, to retrieve parameters that were modified by a user
- * action such as from ModifyClusterParameterGroup, you can specify <i>source</i> equal to <i>user</i> .
+ * You can specify <i>source</i> filter to retrieve parameters of only
+ * specific type. For example, to retrieve parameters that were modified
+ * by a user action such as from ModifyClusterParameterGroup, you can
+ * specify <i>source</i> equal to <i>user</i> .
  * </p>
  * <p>
- * For more information about managing parameter groups, go to <a
- * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a> in the <i>Amazon
- * Redshift Management Guide</i> .
+ * For more information about managing parameter groups, go to
+ * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
+ * in the <i>Amazon Redshift Management Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusterParameters(DescribeClusterParametersRequest)

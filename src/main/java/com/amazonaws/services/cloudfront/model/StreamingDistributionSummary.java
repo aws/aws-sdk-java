@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A summary of the information for an Amazon CloudFront streaming distribution.
+ * A summary of the information for an Amazon CloudFront streaming
+ * distribution.
  * </p>
  */
 public class StreamingDistributionSummary implements Serializable {

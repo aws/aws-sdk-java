@@ -21,39 +21,58 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kinesis.AmazonKinesis#mergeShards(MergeShardsRequest) MergeShards operation}.
  * <p>
- * This operation merges two adjacent shards in a stream and combines them into a single shard to reduce the stream's capacity to ingest and transport
- * data. Two shards are considered adjacent if the union of the hash key ranges for the two shards form a contiguous set with no gaps. For example, if
- * you have two shards, one with a hash key range of 276...381 and the other with a hash key range of 382...454, then you could merge these two shards
- * into a single shard that would have a hash key range of 276...454. After the merge, the single child shard receives data for all hash key values
- * covered by the two parent shards.
+ * This operation merges two adjacent shards in a stream and combines
+ * them into a single shard to reduce the stream's capacity to ingest and
+ * transport data. Two shards are considered adjacent if the union of the
+ * hash key ranges for the two shards form a contiguous set with no gaps.
+ * For example, if you have two shards, one with a hash key range of
+ * 276...381 and the other with a hash key range of 382...454, then you
+ * could merge these two shards into a single shard that would have a
+ * hash key range of 276...454. After the merge, the single child shard
+ * receives data for all hash key values covered by the two parent
+ * shards.
  * </p>
  * <p>
- * <code>MergeShards</code> is called when there is a need to reduce the overall capacity of a stream because of excess capacity that is not being used.
- * The operation requires that you specify the shard to be merged and the adjacent shard for a given stream. For more information about merging shards,
- * see the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a> .
+ * <code>MergeShards</code> is called when there is a need to reduce the
+ * overall capacity of a stream because of excess capacity that is not
+ * being used. The operation requires that you specify the shard to be
+ * merged and the adjacent shard for a given stream. For more information
+ * about merging shards, see the
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+ * .
  * </p>
  * <p>
- * If the stream is in the ACTIVE state, you can call <code>MergeShards</code> . If a stream is in CREATING or UPDATING or DELETING states, then Amazon
- * Kinesis returns a <code>ResourceInUseException</code> .
- * If the specified stream does not exist, Amazon Kinesis returns a <code>ResourceNotFoundException</code> .
+ * If the stream is in the ACTIVE state, you can call
+ * <code>MergeShards</code> . If a stream is in CREATING or UPDATING or
+ * DELETING states, then Amazon Kinesis returns a
+ * <code>ResourceInUseException</code> .
+ * If the specified stream does not exist, Amazon Kinesis
+ * returns a <code>ResourceNotFoundException</code> .
  * </p>
  * <p>
- * You can use the DescribeStream operation to check the state of the stream, which is returned in <code>StreamStatus</code> .
+ * You can use the DescribeStream operation to check the state of the
+ * stream, which is returned in <code>StreamStatus</code> .
  * </p>
  * <p>
- * <code>MergeShards</code> is an asynchronous operation. Upon receiving a <code>MergeShards</code> request, Amazon Kinesis immediately returns a
- * response and sets the <code>StreamStatus</code> to UPDATING. After the operation is completed, Amazon Kinesis sets the <code>StreamStatus</code> to
- * ACTIVE. Read and write operations continue to work while the stream is in the UPDATING state.
+ * <code>MergeShards</code> is an asynchronous operation. Upon receiving
+ * a <code>MergeShards</code> request, Amazon Kinesis immediately returns
+ * a response and sets the <code>StreamStatus</code> to UPDATING. After
+ * the operation is completed, Amazon Kinesis sets the
+ * <code>StreamStatus</code> to ACTIVE. Read and write operations
+ * continue to work while the stream is in the UPDATING state.
  * </p>
  * <p>
- * You use the DescribeStream operation to determine the shard IDs that are specified in the <code>MergeShards</code> request.
+ * You use the DescribeStream operation to determine the shard IDs that
+ * are specified in the <code>MergeShards</code> request.
  * </p>
  * <p>
- * If you try to operate on too many streams in parallel using CreateStream, DeleteStream, <code>MergeShards</code> or SplitShard, you will receive a
- * <code>LimitExceededException</code> .
+ * If you try to operate on too many streams in parallel using
+ * CreateStream, DeleteStream, <code>MergeShards</code> or SplitShard,
+ * you will receive a <code>LimitExceededException</code> .
  * </p>
  * <p>
- * <code>MergeShards</code> has limit of 5 transactions per second per account.
+ * <code>MergeShards</code> has limit of 5 transactions per second per
+ * account.
  * </p>
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#mergeShards(MergeShardsRequest)

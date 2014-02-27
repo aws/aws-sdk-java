@@ -20,20 +20,25 @@ import static com.amazonaws.services.s3.internal.Constants.*;
  * Configuration options for how {@link TransferManager} processes requests.
  * <p>
  * The best configuration settings depend on network
- * configuration, latency and bandwidth. 
+ * configuration, latency and bandwidth.
  * The default configuration settings are suitable
  * for most applications, but this class enables developers to experiment with
  * different configurations and tune transfer manager performance.
  */
 public class TransferManagerConfiguration {
-    
+
     /** Default minimum part size for upload parts. */
     private static final int DEFAULT_MINIMUM_UPLOAD_PART_SIZE = 5 * MB;
-    
+
     /** Default size threshold for when to use multipart uploads.  */
     private static final int DEFAULT_MULTIPART_UPLOAD_THRESHOLD = 16 * MB;
 
-    
+    /** Default size threshold for Amazon S3 object after which multi-part copy is initiated. */
+    private static final long DEFAULT_MULTIPART_COPY_THRESHOLD = 5 * GB;
+
+    /** Default minimum size of each part for multi-part copy. */
+    private static final long DEFAULT_MINIMUM_COPY_PART_SIZE = 100 * MB;
+
     /**
      * The minimum part size for upload parts. Decreasing the minimum part size
      * will cause multipart uploads to be split into a larger number of smaller
@@ -57,15 +62,21 @@ public class TransferManagerConfiguration {
      */
     private int multipartUploadThreshold = DEFAULT_MULTIPART_UPLOAD_THRESHOLD;
 
-    
     /**
-     * Returns the minimum part size for upload parts. 
-     * Decreasing the minimum part size causes 
+     * The minimum size in bytes of each part when a multi-part copy operation
+     * is carried out. Decreasing the minimum part size will cause a large
+     * number of copy part requests being initiated.
+     */
+    private long multipartCopyPartSize = DEFAULT_MINIMUM_COPY_PART_SIZE;
+
+    /**
+     * Returns the minimum part size for upload parts.
+     * Decreasing the minimum part size causes
      * multipart uploads to be split into a larger number
      * of smaller parts. Setting this value too low has a negative effect
      * on transfer speeds, causing extra latency and network
      * communication for each part.
-     * 
+     *
      * @return The minimum part size for upload parts.
      */
     public long getMinimumUploadPartSize() {
@@ -73,13 +84,13 @@ public class TransferManagerConfiguration {
     }
 
     /**
-     * Sets the minimum part size for upload parts. 
-     * Decreasing the minimum part size causes 
+     * Sets the minimum part size for upload parts.
+     * Decreasing the minimum part size causes
      * multipart uploads to be split into a larger number
      * of smaller parts. Setting this value too low has a negative effect
      * on transfer speeds, causing extra latency and network
      * communication for each part.
-     * 
+     *
      * @param minimumUploadPartSize
      *            The minimum part size for upload parts.
      */
@@ -98,7 +109,7 @@ public class TransferManagerConfiguration {
      * uploaded in parallel as with files. Due to additional network
      * communication, small uploads should use a single
      * connection for the upload.
-     * 
+     *
      * @return The size threshold in bytes for when to use multipart uploads.
      */
     public long getMultipartUploadThreshold() {
@@ -116,12 +127,48 @@ public class TransferManagerConfiguration {
      * uploaded in parallel as with files. Due to additional network
      * communication, small uploads should use a single
      * connection for the upload.
-     * 
+     *
      * @param multipartUploadThreshold
      *            The size threshold in bytes for when to use multipart
      *            uploads.
      */
     public void setMultipartUploadThreshold(int multipartUploadThreshold) {
         this.multipartUploadThreshold = multipartUploadThreshold;
+    }
+
+    /**
+     * Returns the minimum size in bytes of each part in a multi-part copy
+     * request. Decreasing this size will result in increase in the number of
+     * copy part requests to the server.
+     *
+     * @return The minimum size in bytes for each part in a multi-part copy
+     *         request.
+     */
+    public long getMultipartCopyPartSize() {
+        return multipartCopyPartSize;
+    }
+
+    /**
+     * Sets the minimum part size in bytes for each part in a multi-part copy
+     * request. Decreasing this size will result in increase in the number of
+     * copy part requests to the server.
+     *
+     * @param multipartCopyPartSize
+     *            The minimum size in bytes for each part in a multi part copy
+     *            request.
+     */
+    public void setMultipartCopyPartSize(long multipartCopyPartSize) {
+        this.multipartCopyPartSize = multipartCopyPartSize;
+    }
+
+    /**
+     * Returns the maximum threshold size of an Amazon S3 object after which the
+     * copy operation is carried out using multi-part request.
+     *
+     * @return The size threshold of an Amazon S3 object for when to use a
+     *         multi-part copy
+     */
+    public long getDefaultMultipartCopyThreshold() {
+        return DEFAULT_MULTIPART_COPY_THRESHOLD;
     }
 }

@@ -23,8 +23,10 @@ import com.amazonaws.services.ec2.model.transform.ConfirmProductInstanceRequestM
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#confirmProductInstance(ConfirmProductInstanceRequest) ConfirmProductInstance operation}.
  * <p>
- * Determines whether a product code is associated with an instance. This action can only be used by the owner of the product code. It is useful when a
- * product code owner needs to verify whether another user's instance is eligible for support.
+ * Determines whether a product code is associated with an instance. This
+ * action can only be used by the owner of the product code. It is useful
+ * when a product code owner needs to verify whether another user's
+ * instance is eligible for support.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#confirmProductInstance(ConfirmProductInstanceRequest)

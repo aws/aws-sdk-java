@@ -21,8 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#describeTapes(DescribeTapesRequest) DescribeTapes operation}.
  * <p>
- * Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes. If a <code>TapeARN</code> is not specified, returns a description
- * of all virtual tapes associated with the specified gateway.
+ * Returns a description of the specified Amazon Resource Name (ARN) of
+ * virtual tapes. If a <code>TapeARN</code> is not specified, returns a
+ * description of all virtual tapes associated with the specified
+ * gateway.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeTapes(DescribeTapesRequest)

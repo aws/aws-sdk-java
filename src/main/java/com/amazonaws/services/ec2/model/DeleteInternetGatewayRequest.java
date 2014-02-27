@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.DeleteInternetGatewayRequestMa
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteInternetGateway(DeleteInternetGatewayRequest) DeleteInternetGateway operation}.
  * <p>
- * Deletes the specified Internet gateway. You must detach the Internet gateway from the VPC before you can delete it.
+ * Deletes the specified Internet gateway. You must detach the Internet
+ * gateway from the VPC before you can delete it.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteInternetGateway(DeleteInternetGatewayRequest)

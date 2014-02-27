@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Returned if, when uploading an archive, Amazon Glacier times out while receiving the upload.
+ * Returned if, when uploading an archive, Amazon Glacier times out while
+ * receiving the upload.
  * </p>
  */        
 public class RequestTimeoutException extends AmazonServiceException {

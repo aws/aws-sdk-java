@@ -21,12 +21,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#createCacheSecurityGroup(CreateCacheSecurityGroupRequest) CreateCacheSecurityGroup operation}.
  * <p>
- * The <i>CreateCacheSecurityGroup</i> operation creates a new cache security group. Use a cache security group to control access to one or more cache
- * clusters.
+ * The <i>CreateCacheSecurityGroup</i> operation creates a new cache
+ * security group. Use a cache security group to control access to one or
+ * more cache clusters.
  * </p>
  * <p>
- * Cache security groups are only used when you are creating a cluster outside of an Amazon Virtual Private Cloud (VPC). If you are creating a cluster
- * inside of a VPC, use a cache subnet group instead. For more information, see <i>CreateCacheSubnetGroup</i> .
+ * Cache security groups are only used when you are creating a cluster
+ * outside of an Amazon Virtual Private Cloud (VPC). If you are creating
+ * a cluster inside of a VPC, use a cache subnet group instead. For more
+ * information, see <i>CreateCacheSubnetGroup</i> .
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#createCacheSecurityGroup(CreateCacheSecurityGroupRequest)

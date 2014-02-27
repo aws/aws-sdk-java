@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#cancelRetrieval(CancelRetrievalRequest) CancelRetrieval operation}.
  * <p>
- * Cancels retrieval of a virtual tape from the Virtual Tape Shelf (VTS) to a gateway after the retrieval process is initiated. The virtual tape is
- * returned to the Virtual Tape Shelf.
+ * Cancels retrieval of a virtual tape from the Virtual Tape Shelf (VTS)
+ * to a gateway after the retrieval process is initiated. The virtual
+ * tape is returned to the Virtual Tape Shelf.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#cancelRetrieval(CancelRetrievalRequest)

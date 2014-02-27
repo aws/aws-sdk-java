@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#enableVgwRoutePropagation(EnableVgwRoutePropagationRequest) EnableVgwRoutePropagation operation}.
  * <p>
- * Enables a virtual private gateway (VGW) to propagate routes to the routing tables of a VPC.
+ * Enables a virtual private gateway (VGW) to propagate routes to the
+ * routing tables of a VPC.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#enableVgwRoutePropagation(EnableVgwRoutePropagationRequest)

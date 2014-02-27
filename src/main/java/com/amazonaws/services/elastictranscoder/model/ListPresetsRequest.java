@@ -21,7 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listPresets(ListPresetsRequest) ListPresets operation}.
  * <p>
- * The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an AWS region.
+ * The ListPresets operation gets a list of the default presets included
+ * with Elastic Transcoder and the presets that you've added in an AWS
+ * region.
  * </p>
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listPresets(ListPresetsRequest)

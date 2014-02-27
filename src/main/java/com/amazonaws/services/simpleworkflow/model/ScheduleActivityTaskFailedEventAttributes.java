@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Provides details of the <code>ScheduleActivityTaskFailed</code> event.
+ * Provides details of the <code>ScheduleActivityTaskFailed</code>
+ * event.
  * </p>
  */
 public class ScheduleActivityTaskFailedEventAttributes implements Serializable {

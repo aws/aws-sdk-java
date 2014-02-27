@@ -23,11 +23,13 @@ import com.amazonaws.services.ec2.model.transform.DescribeVolumeAttributeRequest
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVolumeAttribute(DescribeVolumeAttributeRequest) DescribeVolumeAttribute operation}.
  * <p>
- * Describes the specified attribute of the specified volume. You can specify only one attribute at a time.
+ * Describes the specified attribute of the specified volume. You can
+ * specify only one attribute at a time.
  * </p>
  * <p>
- * For more information about Amazon EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes
- * </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information about Amazon EBS volumes, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVolumeAttribute(DescribeVolumeAttributeRequest)

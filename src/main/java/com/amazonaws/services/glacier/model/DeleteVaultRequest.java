@@ -21,25 +21,30 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.glacier.AmazonGlacier#deleteVault(DeleteVaultRequest) DeleteVault operation}.
  * <p>
- * This operation deletes a vault. Amazon Glacier will delete a vault only if there are no archives in the vault as of the last inventory and there have
- * been no writes to the vault since the last inventory. If either of these conditions is not satisfied, the vault deletion fails (that is, the vault is
- * not removed) and Amazon Glacier returns an error. You can use DescribeVault to return the number of archives in a vault, and you can use <a
- * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html"> Initiate a Job (POST jobs) </a> to initiate a new inventory
- * retrieval for a vault. The inventory contains the archive IDs you use to delete archives using <a
- * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html"> Delete Archive (DELETE archive) </a> .
+ * This operation deletes a vault. Amazon Glacier will delete a vault
+ * only if there are no archives in the vault as of the last inventory
+ * and there have been no writes to the vault since the last inventory.
+ * If either of these conditions is not satisfied, the vault deletion
+ * fails (that is, the vault is not removed) and Amazon Glacier returns
+ * an error. You can use DescribeVault to return the number of archives
+ * in a vault, and you can use
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html"> Initiate a Job (POST jobs) </a> to initiate a new inventory retrieval for a vault. The inventory contains the archive IDs you use to delete archives using <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html"> Delete Archive (DELETE archive) </a>
+ * .
  * </p>
  * <p>
  * This operation is idempotent.
  * </p>
  * <p>
- * An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any
- * permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
- * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management
- * (IAM) </a> .
+ * An AWS account has full permission to perform all operations
+ * (actions). However, AWS Identity and Access Management (IAM) users
+ * don't have any permissions by default. You must grant them explicit
+ * permission to perform specific actions. For more information, see
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+ * .
  * </p>
  * <p>
- * For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html">
- * Deleting a Vault in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html"> Delete Vault </a>
+ * For conceptual information and underlying REST API, go to
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html"> Deleting a Vault in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html"> Delete Vault </a>
  * in the <i>Amazon Glacier Developer Guide</i> .
  * 
  * </p>

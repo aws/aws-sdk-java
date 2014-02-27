@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#unassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest) UnassignPrivateIpAddresses operation}.
  * <p>
- * Unassigns one or more secondary private IP addresses from a network interface.
+ * Unassigns one or more secondary private IP addresses from a network
+ * interface.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#unassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest)

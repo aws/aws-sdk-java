@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.
+ * The range of possible hash key values for the shard, which is a set of
+ * ordered contiguous positive integers.
  * </p>
  */
 public class HashKeyRange implements Serializable {

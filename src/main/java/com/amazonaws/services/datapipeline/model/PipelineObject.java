@@ -18,8 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of
- * a pipeline defines the pipeline.
+ * Contains information about a pipeline object. This can be a logical,
+ * physical, or physical attempt pipeline object. The complete set of
+ * components of a pipeline defines the pipeline.
  * </p>
  */
 public class PipelineObject implements Serializable {

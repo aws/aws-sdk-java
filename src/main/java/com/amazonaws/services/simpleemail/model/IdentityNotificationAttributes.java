@@ -18,8 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the notification attributes of an identity, including whether a bounce or complaint topic are set, and whether feedback forwarding is
- * enabled.
+ * Represents the notification attributes of an identity, including
+ * whether a bounce or complaint topic are set, and whether feedback
+ * forwarding is enabled.
  * </p>
  */
 public class IdentityNotificationAttributes implements Serializable {

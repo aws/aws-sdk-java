@@ -26,9 +26,10 @@ import com.amazonaws.services.ec2.model.transform.AllocateAddressRequestMarshall
  * Acquires an Elastic IP address.
  * </p>
  * <p>
- * An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a> in the <i>Amazon Elastic Compute
- * Cloud User Guide</i> .
+ * An Elastic IP address is for use either in the EC2-Classic platform or
+ * in a VPC. For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#allocateAddress(AllocateAddressRequest)

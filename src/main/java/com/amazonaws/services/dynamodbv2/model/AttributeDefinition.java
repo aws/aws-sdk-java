@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents an attribute for describing the key schema for the table and indexes.
+ * Represents an attribute for describing the key schema for the table
+ * and indexes.
  * </p>
  */
 public class AttributeDefinition implements Serializable {

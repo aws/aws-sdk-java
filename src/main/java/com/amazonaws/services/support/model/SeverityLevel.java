@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A code and name pair that represent a severity level that can be applied to a support case.
+ * A code and name pair that represent a severity level that can be
+ * applied to a support case.
  * </p>
  */
 public class SeverityLevel implements Serializable {

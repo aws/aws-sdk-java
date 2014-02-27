@@ -23,9 +23,11 @@ import com.amazonaws.services.ec2.model.transform.ReplaceNetworkAclAssociationRe
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#replaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest) ReplaceNetworkAclAssociation operation}.
  * <p>
- * Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically associated with the default network
- * ACL. For more information about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a> in
- * the <i>Amazon Virtual Private Cloud User Guide</i> .
+ * Changes which network ACL a subnet is associated with. By default when
+ * you create a subnet, it's automatically associated with the default
+ * network ACL. For more information about network ACLs, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest)

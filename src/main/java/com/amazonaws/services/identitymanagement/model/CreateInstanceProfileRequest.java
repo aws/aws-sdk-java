@@ -21,13 +21,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createInstanceProfile(CreateInstanceProfileRequest) CreateInstanceProfile operation}.
  * <p>
- * Creates a new instance profile. For information about instance profiles, go to <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a> .
+ * Creates a new instance profile. For information about instance
+ * profiles, go to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a>
+ * .
  * </p>
  * <p>
- * For information about the number of instance profiles you can create, see <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a> in <i>Using AWS
- * Identity and Access Management</i> .
+ * For information about the number of instance profiles you can create,
+ * see
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+ * in <i>Using AWS Identity and Access Management</i> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createInstanceProfile(CreateInstanceProfileRequest)

@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#removeSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest) RemoveSourceIdentifierFromSubscription operation}.
  * <p>
- * Removes a source identifier from an existing RDS event notification subscription.
+ * Removes a source identifier from an existing RDS event notification
+ * subscription.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#removeSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest)

@@ -18,8 +18,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cache cluster, a <i>cache.m1.large</i> cache
- * node type would have a larger <i>maxmemory</i> value than a <i>cache.m1.small</i> type.
+ * A parameter that has a different value for each cache node type it is
+ * applied to. For example, in a Redis cache cluster, a
+ * <i>cache.m1.large</i> cache node type would have a larger
+ * <i>maxmemory</i> value than a <i>cache.m1.small</i> type.
  * </p>
  */
 public class CacheNodeTypeSpecificParameter implements Serializable {

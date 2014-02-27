@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache node offering.
+ * Contains the specific price and frequency of a recurring charges for a
+ * reserved cache node, or for a reserved cache node offering.
  * </p>
  */
 public class RecurringCharge implements Serializable {

@@ -21,12 +21,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#deletePipeline(DeletePipelineRequest) DeletePipeline operation}.
  * <p>
- * Permanently deletes a pipeline, its pipeline definition and its run history. You cannot query or restore a deleted pipeline. AWS Data Pipeline will
- * attempt to cancel instances associated with the pipeline that are currently being processed by task runners. Deleting a pipeline cannot be undone.
+ * Permanently deletes a pipeline, its pipeline definition and its run
+ * history. You cannot query or restore a deleted pipeline. AWS Data
+ * Pipeline will attempt to cancel instances associated with the pipeline
+ * that are currently being processed by task runners. Deleting a
+ * pipeline cannot be undone.
  * </p>
  * <p>
- * To temporarily pause a pipeline instead of deleting it, call SetStatus with the status set to Pause on individual components. Components that are
- * paused by SetStatus can be resumed.
+ * To temporarily pause a pipeline instead of deleting it, call
+ * SetStatus with the status set to Pause on individual components.
+ * Components that are paused by SetStatus can be resumed.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#deletePipeline(DeletePipelineRequest)

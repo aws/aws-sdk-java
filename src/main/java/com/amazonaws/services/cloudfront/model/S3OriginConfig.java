@@ -18,7 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the CustomOriginConfig element instead.
+ * A complex type that contains information about the Amazon S3 origin.
+ * If the origin is a custom origin, use the CustomOriginConfig element
+ * instead.
  * </p>
  */
 public class S3OriginConfig implements Serializable {

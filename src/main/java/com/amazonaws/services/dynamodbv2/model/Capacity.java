@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the amount of provisioned throughput capacity consumed on a table or an index.
+ * Represents the amount of provisioned throughput capacity consumed on a
+ * table or an index.
  * </p>
  */
 public class Capacity implements Serializable {

@@ -30,6 +30,11 @@ public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JSONObject>
         super(exceptionClass);
     }
 
+    /**
+     * Subclass should override the match(String, JSONObject) method to indicate
+     * whether it represents the given error type, and unmarshall(JSONObject)
+     * should never return null.
+     */
     public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         String message = parseMessage(json);
         String errorCode = parseErrorCode(json);
@@ -74,7 +79,6 @@ public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JSONObject>
          return value;
     }
 
-
     public String parseErrorCode(JSONObject json) throws Exception {
         if (json.has("__type")) {
             String type = json.getString("__type");
@@ -83,5 +87,23 @@ public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JSONObject>
         }
 
         return null;
+    }
+
+    /**
+     * Any subclass that is specific to a error type should only return true
+     * when the response matches, either by matching the error type parsed from
+     * header or from the JSON content.
+     * 
+     * @param errorTypeFromHeader
+     *            The error type parsed from the response headers, or null if
+     *            such information is not available in the headers.
+     * 
+     * @param json
+     *            The JSON content of the response. Subclass should check for
+     *            the error type information from this JSONObject if
+     *            errorTypeFromHeader is null.
+     */
+    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
+        return true;
     }
 }

@@ -23,11 +23,13 @@ import com.amazonaws.services.ec2.model.transform.DeleteTagsRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteTags(DeleteTagsRequest) DeleteTags operation}.
  * <p>
- * Deletes the specified set of tags from the specified set of resources. This call is designed to follow a <code>DescribeTags</code> request.
+ * Deletes the specified set of tags from the specified set of resources.
+ * This call is designed to follow a <code>DescribeTags</code> request.
  * </p>
  * <p>
- * For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a> in the
- * <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information about tags, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteTags(DeleteTagsRequest)

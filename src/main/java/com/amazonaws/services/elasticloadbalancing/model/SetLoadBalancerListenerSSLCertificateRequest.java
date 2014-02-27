@@ -21,13 +21,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest) SetLoadBalancerListenerSSLCertificate operation}.
  * <p>
- * Sets the certificate that terminates the specified listener's SSL connections. The specified certificate replaces any prior certificate that was used
- * on the same load balancer and port.
+ * Sets the certificate that terminates the specified listener's SSL
+ * connections. The specified certificate replaces any prior certificate
+ * that was used on the same load balancer and port.
  * </p>
  * <p>
- * For more information on updating your SSL certificate, see <a
- * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html"> Updating an SSL Certificate for a Load
- * Balancer </a> in the <i>Elastic Load Balancing Developer Guide</i> .
+ * For more information on updating your SSL certificate, see
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html"> Updating an SSL Certificate for a Load Balancer </a>
+ * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest)

@@ -18,8 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin that is associated with this cache
- * behavior.
+ * A complex type that specifies the whitelisted cookies, if any, that
+ * you want CloudFront to forward to your origin that is associated with
+ * this cache behavior.
  * </p>
  */
 public class CookieNames implements Serializable {

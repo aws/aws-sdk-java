@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contain information about the specified hosted zone.
+ * A complex type that contain information about the specified hosted
+ * zone.
  * </p>
  */
 public class HostedZone implements Serializable {

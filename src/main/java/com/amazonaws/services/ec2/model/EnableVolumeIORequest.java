@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.EnableVolumeIORequestMarshalle
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#enableVolumeIO(EnableVolumeIORequest) EnableVolumeIO operation}.
  * <p>
- * Enables I/O operations for a volume that had I/O operations disabled because the data on the volume was potentially inconsistent.
+ * Enables I/O operations for a volume that had I/O operations disabled
+ * because the data on the volume was potentially inconsistent.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#enableVolumeIO(EnableVolumeIORequest)

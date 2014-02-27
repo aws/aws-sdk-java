@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Settings for one clip in a composition. All jobs in a playlist must have the same clip settings.
+ * Settings for one clip in a composition. All jobs in a playlist must
+ * have the same clip settings.
  * </p>
  */
 public class Clip implements Serializable {

@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheParameterGroup(ModifyCacheParameterGroupRequest) ModifyCacheParameterGroup operation}.
  * <p>
- * The <i>ModifyCacheParameterGroup</i> operation modifies the parameters of a cache parameter group. You can modify up to 20 parameters in a single
- * request by submitting a list parameter name and value pairs.
+ * The <i>ModifyCacheParameterGroup</i> operation modifies the parameters
+ * of a cache parameter group. You can modify up to 20 parameters in a
+ * single request by submitting a list parameter name and value pairs.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheParameterGroup(ModifyCacheParameterGroupRequest)

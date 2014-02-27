@@ -21,11 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#configureHealthCheck(ConfigureHealthCheckRequest) ConfigureHealthCheck operation}.
  * <p>
- * Specifies the health check settings to use for evaluating the health state of your back-end instances.
+ * Specifies the health check settings to use for evaluating the health
+ * state of your back-end instances.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck">
- * Health Check </a> in the <i>Elastic Load Balancing Developer Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck"> Health Check </a>
+ * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#configureHealthCheck(ConfigureHealthCheckRequest)

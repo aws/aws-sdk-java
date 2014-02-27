@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Invalid value for scheme. Scheme can only be specified for load balancers in VPC.
+ * Invalid value for scheme. Scheme can only be specified for load
+ * balancers in VPC.
  * </p>
  */        
 public class InvalidSchemeException extends AmazonServiceException {

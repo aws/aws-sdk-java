@@ -18,8 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output from the ModifyClusterParameterGroup and ResetClusterParameterGroup actions and indicate the parameter group involved and the
- * status of the operation on the parameter group.
+ * Contains the output from the ModifyClusterParameterGroup and
+ * ResetClusterParameterGroup actions and indicate the parameter group
+ * involved and the status of the operation on the parameter group.
  * </p>
  */
 public class ModifyClusterParameterGroupResult implements Serializable {

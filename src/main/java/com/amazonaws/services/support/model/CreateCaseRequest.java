@@ -21,32 +21,48 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#createCase(CreateCaseRequest) CreateCase operation}.
  * <p>
- * Creates a new case in the AWS Support Center. This operation is modeled on the behavior of the AWS Support Center <a
- * href="https://aws.amazon.com/support/createCase"> Open a new case </a> page. Its parameters require you to specify the following information:
+ * Creates a new case in the AWS Support Center. This operation is
+ * modeled on the behavior of the AWS Support Center
+ * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
+ * page. Its parameters require you to specify the following
+ * information:
  * </p>
- * <ol> <li> <b>ServiceCode.</b> The code for an AWS service. You obtain the <code>ServiceCode</code> by calling DescribeServices. </li>
- * <li> <b>CategoryCode.</b> The category for the service defined for the <code>ServiceCode</code> value. You also obtain the category code for a
- * service by calling DescribeServices. Each AWS service defines its own set of category codes. </li>
- * <li> <b>SeverityCode.</b> A value that indicates the urgency of the case, which in turn determines the response time according to your service level
- * agreement with AWS Support. You obtain the SeverityCode by calling DescribeSeverityLevels.</li>
- * <li> <b>Subject.</b> The <b>Subject</b> field on the AWS Support Center <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
+ * <ol> <li> <b>ServiceCode.</b> The code for an AWS service. You obtain
+ * the <code>ServiceCode</code> by calling DescribeServices. </li>
+ * <li> <b>CategoryCode.</b> The category for the service defined for
+ * the <code>ServiceCode</code> value. You also obtain the category code
+ * for a service by calling DescribeServices. Each AWS service defines
+ * its own set of category codes. </li>
+ * <li> <b>SeverityCode.</b> A value that indicates the urgency of the
+ * case, which in turn determines the response time according to your
+ * service level agreement with AWS Support. You obtain the SeverityCode
+ * by calling DescribeSeverityLevels.</li>
+ * <li> <b>Subject.</b> The <b>Subject</b> field on the AWS Support
+ * Center
+ * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
  * page.</li>
- * <li> <b>CommunicationBody.</b> The <b>Description</b> field on the AWS Support Center <a href="https://aws.amazon.com/support/createCase"> Open a new
- * case </a> page.</li>
- * <li> <b>Language.</b> The human language in which AWS Support handles the case. English and Japanese are currently supported.</li>
- * <li> <b>CcEmailAddresses.</b> The AWS Support Center <b>CC</b> field on the <a href="https://aws.amazon.com/support/createCase"> Open a new case
- * </a> page. You can list email addresses to be copied on any correspondence about the case. The account that opens the case is already identified by
- * passing the AWS Credentials in the HTTP POST method or in a method or function call from one of the programming languages supported by an <a
- * href="http://aws.amazon.com/tools/"> AWS SDK </a> . </li>
- * <li> <b>IssueType.</b> The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate a value, the
- * default is "technical." </li>
+ * <li> <b>CommunicationBody.</b> The <b>Description</b> field on the
+ * AWS Support Center
+ * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
+ * page.</li>
+ * <li> <b>Language.</b> The human language in which AWS Support handles
+ * the case. English and Japanese are currently supported.</li>
+ * <li> <b>CcEmailAddresses.</b> The AWS Support Center <b>CC</b> field
+ * on the
+ * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a> page. You can list email addresses to be copied on any correspondence about the case. The account that opens the case is already identified by passing the AWS Credentials in the HTTP POST method or in a method or function call from one of the programming languages supported by an <a href="http://aws.amazon.com/tools/"> AWS SDK </a>
+ * . </li>
+ * <li> <b>IssueType.</b> The type of issue for the case. You can
+ * specify either "customer-service" or "technical." If you do not
+ * indicate a value, the default is "technical." </li>
  * </ol> <p>
- * <b>NOTE:</b> The AWS Support API does not currently support the ability to add attachments to cases. You can, however, call AddCommunicationToCase to
- * add information to an open case.
+ * <b>NOTE:</b> The AWS Support API does not currently support the
+ * ability to add attachments to cases. You can, however, call
+ * AddCommunicationToCase to add information to an open case.
  * </p>
  * <p>
- * A successful CreateCase request returns an AWS Support case number. Case numbers are used by the DescribeCases action to retrieve existing AWS Support
- * cases.
+ * A successful CreateCase request returns an AWS Support case number.
+ * Case numbers are used by the DescribeCases action to retrieve existing
+ * AWS Support cases.
  * </p>
  *
  * @see com.amazonaws.services.support.AWSSupport#createCase(CreateCaseRequest)

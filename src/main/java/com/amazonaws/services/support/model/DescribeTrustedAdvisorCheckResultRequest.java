@@ -21,10 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest) DescribeTrustedAdvisorCheckResult operation}.
  * <p>
- * Returns the results of the Trusted Advisor check that has the specified check ID. Check IDs can be obtained by calling DescribeTrustedAdvisorChecks.
+ * Returns the results of the Trusted Advisor check that has the
+ * specified check ID. Check IDs can be obtained by calling
+ * DescribeTrustedAdvisorChecks.
  * </p>
  * <p>
- * The response contains a TrustedAdvisorCheckResult object, which contains these three objects:
+ * The response contains a TrustedAdvisorCheckResult object, which
+ * contains these three objects:
  * </p>
  * 
  * <ul>
@@ -38,8 +41,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * 
  * <ul>
- * <li> <b>Status.</b> The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</li>
- * <li> <b>Timestamp.</b> The time of the last refresh of the check.</li>
+ * <li> <b>Status.</b> The alert status of the check: "ok" (green),
+ * "warning" (yellow), "error" (red), or "not_available".</li>
+ * <li> <b>Timestamp.</b> The time of the last refresh of the
+ * check.</li>
  * <li> <b>CheckId.</b> The unique identifier for the check.</li>
  * 
  * </ul>

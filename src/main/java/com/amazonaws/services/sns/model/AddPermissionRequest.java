@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#addPermission(AddPermissionRequest) AddPermission operation}.
  * <p>
- * The <code>AddPermission</code> action adds a statement to a topic's access control policy, granting access for the specified AWS accounts to the
- * specified actions.
+ * The <code>AddPermission</code> action adds a statement to a topic's
+ * access control policy, granting access for the specified AWS accounts
+ * to the specified actions.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#addPermission(AddPermissionRequest)

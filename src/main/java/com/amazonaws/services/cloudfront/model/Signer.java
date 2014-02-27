@@ -18,8 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that lists the AWS accounts that were included in the TrustedSigners complex type, as well as their active CloudFront key pair IDs, if
- * any.
+ * A complex type that lists the AWS accounts that were included in the
+ * TrustedSigners complex type, as well as their active CloudFront key
+ * pair IDs, if any.
  * </p>
  */
 public class Signer implements Serializable {

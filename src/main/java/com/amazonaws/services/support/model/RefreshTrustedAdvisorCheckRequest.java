@@ -21,15 +21,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#refreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest) RefreshTrustedAdvisorCheck operation}.
  * <p>
- * Requests a refresh of the Trusted Advisor check that has the specified check ID. Check IDs can be obtained by calling DescribeTrustedAdvisorChecks.
+ * Requests a refresh of the Trusted Advisor check that has the specified
+ * check ID. Check IDs can be obtained by calling
+ * DescribeTrustedAdvisorChecks.
  * </p>
  * <p>
- * The response contains a RefreshTrustedAdvisorCheckResult object, which contains these fields:
+ * The response contains a RefreshTrustedAdvisorCheckResult object, which
+ * contains these fields:
  * </p>
  * 
  * <ul>
- * <li> <b>Status.</b> The refresh status of the check: "none", "enqueued", "processing", "success", or "abandoned".</li>
- * <li> <b>MillisUntilNextRefreshable.</b> The amount of time, in milliseconds, until the check is eligible for refresh.</li>
+ * <li> <b>Status.</b> The refresh status of the check: "none",
+ * "enqueued", "processing", "success", or "abandoned".</li>
+ * <li> <b>MillisUntilNextRefreshable.</b> The amount of time, in
+ * milliseconds, until the check is eligible for refresh.</li>
  * <li> <b>CheckId.</b> The unique identifier for the check.</li>
  * 
  * </ul>

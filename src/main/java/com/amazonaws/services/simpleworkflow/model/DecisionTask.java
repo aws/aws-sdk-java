@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A structure that represents a decision task. Decision tasks are sent to deciders in order for them to make decisions.
+ * A structure that represents a decision task. Decision tasks are sent
+ * to deciders in order for them to make decisions.
  * </p>
  */
 public class DecisionTask implements Serializable {

@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The following element is returned in a structure named <code>DescribeLoadBalancerAttributesResult</code> .
+ * The following element is returned in a structure named
+ * <code>DescribeLoadBalancerAttributesResult</code> .
  * </p>
  */
 public class DescribeLoadBalancerAttributesResult implements Serializable {

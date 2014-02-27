@@ -21,27 +21,40 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.securitytoken.AWSSecurityTokenService#getSessionToken(GetSessionTokenRequest) GetSessionToken operation}.
  * <p>
- * Returns a set of temporary credentials for an AWS account or IAM user. The credentials consist of an access key ID, a secret access key, and a
- * security token. Typically, you use <code>GetSessionToken</code> if you want use MFA to protect programmatic calls to specific AWS APIs like Amazon EC2
- * <code>StopInstances</code> . MFA-enabled IAM users would need to call <code>GetSessionToken</code> and submit an MFA code that is associated with
- * their MFA device. Using the temporary security credentials that are returned from the call, IAM users can then make programmatic calls to APIs that
- * require MFA authentication.
+ * Returns a set of temporary credentials for an AWS account or IAM
+ * user. The credentials consist of an access key ID, a secret access
+ * key, and a security token. Typically, you use
+ * <code>GetSessionToken</code> if you want use MFA to protect
+ * programmatic calls to specific AWS APIs like Amazon EC2
+ * <code>StopInstances</code> . MFA-enabled IAM users would need to call
+ * <code>GetSessionToken</code> and submit an MFA code that is associated
+ * with their MFA device. Using the temporary security credentials that
+ * are returned from the call, IAM users can then make programmatic calls
+ * to APIs that require MFA authentication.
  * </p>
  * <p>
- * The <code>GetSessionToken</code> action must be called by using the long-term AWS security credentials of the AWS account or an IAM user. Credentials
- * that are created by IAM users are valid for the duration that you specify, between 900 seconds (15 minutes) and 129600 seconds (36 hours); credentials
- * that are created by using account credentials have a maximum duration of 3600 seconds (1 hour).
+ * The <code>GetSessionToken</code> action must be called by using the
+ * long-term AWS security credentials of the AWS account or an IAM user.
+ * Credentials that are created by IAM users are valid for the duration
+ * that you specify, between 900 seconds (15 minutes) and 129600 seconds
+ * (36 hours); credentials that are created by using account credentials
+ * have a maximum duration of 3600 seconds (1 hour).
  * </p>
  * <p>
- * Optionally, you can pass an AWS IAM access policy to this operation. The temporary security credentials that are returned by the operation have the
- * permissions that are associated with the entity that is making the <code>GetSessionToken</code> call, except for any permissions explicitly denied by
- * the policy you pass. This gives you a way to further restrict the permissions for the federated user. These policies and any applicable resource-based
- * policies are evaluated when calls to AWS are made using the temporary security credentials.
+ * The permissions associated with the temporary security credentials
+ * returned by <code>GetSessionToken</code> are based on the permissions
+ * associated with account or IAM user whose credentials are used to call
+ * the action. If <code>GetSessionToken</code> is called using root
+ * account credentials, the temporary credentials have root account
+ * permissions. Similarly, if <code>GetSessionToken</code> is called
+ * using the credentials of an IAM user, the temporary credentials have
+ * the same permissions as the IAM user.
  * </p>
  * <p>
- * For more information about using <code>GetSessionToken</code> to create temporary credentials, go to <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingSessionTokens.html"> Creating Temporary Credentials to Enable Access for IAM Users
- * </a> in <i>Using IAM</i> .
+ * For more information about using <code>GetSessionToken</code> to
+ * create temporary credentials, go to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingSessionTokens.html"> Creating Temporary Credentials to Enable Access for IAM Users </a>
+ * in <i>Using IAM</i> .
  * 
  * </p>
  *

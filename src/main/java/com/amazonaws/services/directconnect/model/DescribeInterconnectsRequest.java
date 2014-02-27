@@ -24,7 +24,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Returns a list of interconnects owned by the AWS account.
  * </p>
  * <p>
- * If an interconnect ID is provided, it will only return this particular interconnect.
+ * If an interconnect ID is provided, it will only return this particular
+ * interconnect.
  * </p>
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#describeInterconnects(DescribeInterconnectsRequest)

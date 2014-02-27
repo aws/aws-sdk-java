@@ -18,8 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a single element of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of
- * an index.
+ * Represents a single element of a key schema. A key schema specifies
+ * the attributes that make up the primary key of a table, or the key
+ * attributes of an index.
  * </p>
  */
 public class KeySchemaElement implements Serializable {

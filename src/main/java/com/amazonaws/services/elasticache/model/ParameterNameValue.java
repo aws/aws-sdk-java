@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a name-value pair that is used to update the value of a parameter.
+ * Describes a name-value pair that is used to update the value of a
+ * parameter.
  * </p>
  */
 public class ParameterNameValue implements Serializable {

@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services
+ * Unable to perform the specified operation because the user does not
+ * have enough privileges for one of more downstream aws services
  * </p>
  */        
 public class InsufficientPrivilegesException extends AmazonServiceException {

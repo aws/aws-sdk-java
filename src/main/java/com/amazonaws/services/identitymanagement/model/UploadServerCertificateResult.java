@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the UploadServerCertificate action.
+ * Contains the result of a successful invocation of the
+ * UploadServerCertificate action.
  * </p>
  */
 public class UploadServerCertificateResult implements Serializable {

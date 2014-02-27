@@ -80,6 +80,30 @@ public class HealthCheckConfig implements Serializable {
     private String searchString;
 
     /**
+     * The number of seconds between the time that Route 53 gets a response
+     * from your endpoint and the time that it sends the next health-check
+     * request. <p>Each Route 53 health checker makes requests at this
+     * interval. Valid values are 10 and 30. The default value is 30.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>10 - 30<br/>
+     */
+    private Integer requestInterval;
+
+    /**
+     * The number of consecutive health checks that an endpoint must pass or
+     * fail for Route 53 to change the current status of the endpoint from
+     * unhealthy to healthy or vice versa. <p>Valid values are integers
+     * between 1 and 10. For more information, see "How Amazon Route 53
+     * Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
+     * Developer Guide.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 10<br/>
+     */
+    private Integer failureThreshold;
+
+    /**
      * IP Address of the instance being checked.
      * <p>
      * <b>Constraints:</b><br/>
@@ -421,6 +445,138 @@ public class HealthCheckConfig implements Serializable {
     }
 
     /**
+     * The number of seconds between the time that Route 53 gets a response
+     * from your endpoint and the time that it sends the next health-check
+     * request. <p>Each Route 53 health checker makes requests at this
+     * interval. Valid values are 10 and 30. The default value is 30.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>10 - 30<br/>
+     *
+     * @return The number of seconds between the time that Route 53 gets a response
+     *         from your endpoint and the time that it sends the next health-check
+     *         request. <p>Each Route 53 health checker makes requests at this
+     *         interval. Valid values are 10 and 30. The default value is 30.
+     */
+    public Integer getRequestInterval() {
+        return requestInterval;
+    }
+    
+    /**
+     * The number of seconds between the time that Route 53 gets a response
+     * from your endpoint and the time that it sends the next health-check
+     * request. <p>Each Route 53 health checker makes requests at this
+     * interval. Valid values are 10 and 30. The default value is 30.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>10 - 30<br/>
+     *
+     * @param requestInterval The number of seconds between the time that Route 53 gets a response
+     *         from your endpoint and the time that it sends the next health-check
+     *         request. <p>Each Route 53 health checker makes requests at this
+     *         interval. Valid values are 10 and 30. The default value is 30.
+     */
+    public void setRequestInterval(Integer requestInterval) {
+        this.requestInterval = requestInterval;
+    }
+    
+    /**
+     * The number of seconds between the time that Route 53 gets a response
+     * from your endpoint and the time that it sends the next health-check
+     * request. <p>Each Route 53 health checker makes requests at this
+     * interval. Valid values are 10 and 30. The default value is 30.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>10 - 30<br/>
+     *
+     * @param requestInterval The number of seconds between the time that Route 53 gets a response
+     *         from your endpoint and the time that it sends the next health-check
+     *         request. <p>Each Route 53 health checker makes requests at this
+     *         interval. Valid values are 10 and 30. The default value is 30.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public HealthCheckConfig withRequestInterval(Integer requestInterval) {
+        this.requestInterval = requestInterval;
+        return this;
+    }
+
+    /**
+     * The number of consecutive health checks that an endpoint must pass or
+     * fail for Route 53 to change the current status of the endpoint from
+     * unhealthy to healthy or vice versa. <p>Valid values are integers
+     * between 1 and 10. For more information, see "How Amazon Route 53
+     * Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
+     * Developer Guide.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 10<br/>
+     *
+     * @return The number of consecutive health checks that an endpoint must pass or
+     *         fail for Route 53 to change the current status of the endpoint from
+     *         unhealthy to healthy or vice versa. <p>Valid values are integers
+     *         between 1 and 10. For more information, see "How Amazon Route 53
+     *         Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
+     *         Developer Guide.
+     */
+    public Integer getFailureThreshold() {
+        return failureThreshold;
+    }
+    
+    /**
+     * The number of consecutive health checks that an endpoint must pass or
+     * fail for Route 53 to change the current status of the endpoint from
+     * unhealthy to healthy or vice versa. <p>Valid values are integers
+     * between 1 and 10. For more information, see "How Amazon Route 53
+     * Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
+     * Developer Guide.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 10<br/>
+     *
+     * @param failureThreshold The number of consecutive health checks that an endpoint must pass or
+     *         fail for Route 53 to change the current status of the endpoint from
+     *         unhealthy to healthy or vice versa. <p>Valid values are integers
+     *         between 1 and 10. For more information, see "How Amazon Route 53
+     *         Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
+     *         Developer Guide.
+     */
+    public void setFailureThreshold(Integer failureThreshold) {
+        this.failureThreshold = failureThreshold;
+    }
+    
+    /**
+     * The number of consecutive health checks that an endpoint must pass or
+     * fail for Route 53 to change the current status of the endpoint from
+     * unhealthy to healthy or vice versa. <p>Valid values are integers
+     * between 1 and 10. For more information, see "How Amazon Route 53
+     * Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
+     * Developer Guide.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 10<br/>
+     *
+     * @param failureThreshold The number of consecutive health checks that an endpoint must pass or
+     *         fail for Route 53 to change the current status of the endpoint from
+     *         unhealthy to healthy or vice versa. <p>Valid values are integers
+     *         between 1 and 10. For more information, see "How Amazon Route 53
+     *         Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
+     *         Developer Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public HealthCheckConfig withFailureThreshold(Integer failureThreshold) {
+        this.failureThreshold = failureThreshold;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -437,7 +593,9 @@ public class HealthCheckConfig implements Serializable {
         if (getType() != null) sb.append("Type: " + getType() + ",");
         if (getResourcePath() != null) sb.append("ResourcePath: " + getResourcePath() + ",");
         if (getFullyQualifiedDomainName() != null) sb.append("FullyQualifiedDomainName: " + getFullyQualifiedDomainName() + ",");
-        if (getSearchString() != null) sb.append("SearchString: " + getSearchString() );
+        if (getSearchString() != null) sb.append("SearchString: " + getSearchString() + ",");
+        if (getRequestInterval() != null) sb.append("RequestInterval: " + getRequestInterval() + ",");
+        if (getFailureThreshold() != null) sb.append("FailureThreshold: " + getFailureThreshold() );
         sb.append("}");
         return sb.toString();
     }
@@ -453,6 +611,8 @@ public class HealthCheckConfig implements Serializable {
         hashCode = prime * hashCode + ((getResourcePath() == null) ? 0 : getResourcePath().hashCode()); 
         hashCode = prime * hashCode + ((getFullyQualifiedDomainName() == null) ? 0 : getFullyQualifiedDomainName().hashCode()); 
         hashCode = prime * hashCode + ((getSearchString() == null) ? 0 : getSearchString().hashCode()); 
+        hashCode = prime * hashCode + ((getRequestInterval() == null) ? 0 : getRequestInterval().hashCode()); 
+        hashCode = prime * hashCode + ((getFailureThreshold() == null) ? 0 : getFailureThreshold().hashCode()); 
         return hashCode;
     }
     
@@ -476,6 +636,10 @@ public class HealthCheckConfig implements Serializable {
         if (other.getFullyQualifiedDomainName() != null && other.getFullyQualifiedDomainName().equals(this.getFullyQualifiedDomainName()) == false) return false; 
         if (other.getSearchString() == null ^ this.getSearchString() == null) return false;
         if (other.getSearchString() != null && other.getSearchString().equals(this.getSearchString()) == false) return false; 
+        if (other.getRequestInterval() == null ^ this.getRequestInterval() == null) return false;
+        if (other.getRequestInterval() != null && other.getRequestInterval().equals(this.getRequestInterval()) == false) return false; 
+        if (other.getFailureThreshold() == null ^ this.getFailureThreshold() == null) return false;
+        if (other.getFailureThreshold() != null && other.getFailureThreshold().equals(this.getFailureThreshold()) == false) return false; 
         return true;
     }
     

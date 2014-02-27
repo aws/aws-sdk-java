@@ -26,6 +26,11 @@ public class GlacierErrorUnmarshaller extends JsonErrorUnmarshaller {
         super(exceptionClass);
     }
 
+    /**
+     * Different from other JSON services that return error code in the response content,
+     * Glacier uses "code" as the JSON field key, instead of the commonly-used "__type".
+     */
+    @Override
     public String parseErrorCode(JSONObject json) throws Exception {
         if (json.has("code")) {
             String type = json.getString("code");

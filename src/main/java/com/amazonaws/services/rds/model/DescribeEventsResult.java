@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the DescribeEvents action.
+ * Contains the result of a successful invocation of the DescribeEvents
+ * action.
  * </p>
  */
 public class DescribeEventsResult implements Serializable {

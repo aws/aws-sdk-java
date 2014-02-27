@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the ListAccountAliases action.
+ * Contains the result of a successful invocation of the
+ * ListAccountAliases action.
  * </p>
  */
 public class ListAccountAliasesResult implements Serializable {

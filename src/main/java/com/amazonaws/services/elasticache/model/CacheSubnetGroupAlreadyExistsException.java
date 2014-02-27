@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The requested cache subnet group name is already in use by an existing cache subnet group.
+ * The requested cache subnet group name is already in use by an
+ * existing cache subnet group.
  * </p>
  */        
 public class CacheSubnetGroupAlreadyExistsException extends AmazonServiceException {

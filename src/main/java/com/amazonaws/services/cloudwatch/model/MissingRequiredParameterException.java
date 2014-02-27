@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * An input parameter that is mandatory for processing the request is not supplied.
+ * An input parameter that is mandatory for processing the request is
+ * not supplied.
  * </p>
  */        
 public class MissingRequiredParameterException extends AmazonServiceException {

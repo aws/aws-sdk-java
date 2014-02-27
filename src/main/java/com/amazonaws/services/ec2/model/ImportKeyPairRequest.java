@@ -23,13 +23,17 @@ import com.amazonaws.services.ec2.model.transform.ImportKeyPairRequestMarshaller
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#importKeyPair(ImportKeyPairRequest) ImportKeyPair operation}.
  * <p>
- * Imports the public key from an RSA key pair that you created with a third-party tool. Compare this with CreateKeyPair, in which AWS creates the key
- * pair and gives the keys to you (AWS keeps a copy of the public key). With ImportKeyPair, you create the key pair and give AWS just the public key. The
- * private key is never transferred between you and AWS.
+ * Imports the public key from an RSA key pair that you created with a
+ * third-party tool. Compare this with CreateKeyPair, in which AWS
+ * creates the key pair and gives the keys to you (AWS keeps a copy of
+ * the public key). With ImportKeyPair, you create the key pair and give
+ * AWS just the public key. The private key is never transferred between
+ * you and AWS.
  * </p>
  * <p>
- * For more information about key pairs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a> in the
- * <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information about key pairs, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#importKeyPair(ImportKeyPairRequest)

@@ -19,17 +19,18 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-
 /**
- * Annotation for marking a property in a class as the attribute to be used as 
+ * Annotation for marking a property in a class as the attribute to be used as
  * range key for one or more local secondary indexes on a DynamoDB table.
- * Applied to the getter for the indexed range key property.
+ * Applied to the getter method or the class field for the indexed range key
+ * property. If the annotation is applied directly to the class field, the
+ * corresponding getter and setter must be declared in the same class.
  * <p>
- * This annotation is required if this attribute will be used as index key for 
+ * This annotation is required if this attribute will be used as index key for
  * item queries.
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
+@Target({ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBIndexRangeKey {
 
     /**

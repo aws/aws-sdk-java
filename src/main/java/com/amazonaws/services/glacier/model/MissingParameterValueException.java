@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Returned if a required header or parameter is missing from the request.
+ * Returned if a required header or parameter is missing from the
+ * request.
  * </p>
  */        
 public class MissingParameterValueException extends AmazonServiceException {

@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * SNS has responded that there is a problem with the SND topic specified.
+ * SNS has responded that there is a problem with the SND topic
+ * specified.
  * </p>
  */        
 public class SNSInvalidTopicException extends AmazonServiceException {

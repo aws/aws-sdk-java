@@ -22,7 +22,14 @@ import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 interface ArgumentMarshaller {
     
     /**
-     * Marhsalls the object given into an AttributeValue.
+     * Marshalls the object given into an AttributeValue.
      */
     public AttributeValue marshall(Object obj);
+    
+    static interface StringAttributeMarshaller extends ArgumentMarshaller {}
+    static interface NumberAttributeMarshaller extends ArgumentMarshaller {}
+    static interface BinaryAttributeMarshaller extends ArgumentMarshaller {}
+    static interface StringSetAttributeMarshaller extends ArgumentMarshaller {}
+    static interface NumberSetAttributeMarshaller extends ArgumentMarshaller {}
+    static interface BinarySetAttributeMarshaller extends ArgumentMarshaller {}
 }

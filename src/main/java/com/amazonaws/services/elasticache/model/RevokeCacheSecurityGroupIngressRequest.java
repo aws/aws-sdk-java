@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest) RevokeCacheSecurityGroupIngress operation}.
  * <p>
- * The <i>RevokeCacheSecurityGroupIngress</i> operation revokes ingress from a cache security group. Use this operation to disallow access from an Amazon
- * EC2 security group that had been previously authorized.
+ * The <i>RevokeCacheSecurityGroupIngress</i> operation revokes ingress
+ * from a cache security group. Use this operation to disallow access
+ * from an Amazon EC2 security group that had been previously authorized.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest)

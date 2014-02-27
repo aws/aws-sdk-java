@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the DescribeDBEngineVersions action.
+ * Contains the result of a successful invocation of the
+ * DescribeDBEngineVersions action.
  * </p>
  */
 public class DescribeDBEngineVersionsResult implements Serializable {

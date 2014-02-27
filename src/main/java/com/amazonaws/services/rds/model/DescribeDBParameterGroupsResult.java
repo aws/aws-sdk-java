@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the DescribeDBParameterGroups action.
+ * Contains the result of a successful invocation of the
+ * DescribeDBParameterGroups action.
  * </p>
  */
 public class DescribeDBParameterGroupsResult implements Serializable {

@@ -79,15 +79,15 @@ public class RegionMetadata {
      * @see ServiceAbbreviations
      */
     public List<Region> getRegionsForService(final String service) {
-        List<Region> regions = new LinkedList<Region>();
+        List<Region> results = new LinkedList<Region>();
 
         for (Region region : regions) {
             if (region.isServiceSupported(service)) {
-                regions.add(region);
+                results.add(region);
             }
         }
 
-        return regions;
+        return results;
     }
 
     /**

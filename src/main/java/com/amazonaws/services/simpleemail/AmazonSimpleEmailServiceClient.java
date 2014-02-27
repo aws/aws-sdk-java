@@ -40,11 +40,16 @@ import com.amazonaws.services.simpleemail.model.transform.*;
  * completes.
  * <p>
  * Amazon Simple Email Service <p>
- * This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to be used in conjunction with the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html"> Amazon SES Developer Guide </a> .
+ * This is the API Reference for Amazon Simple Email Service (Amazon
+ * SES). This documentation is intended to be used in conjunction with
+ * the
+ * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html"> Amazon SES Developer Guide </a>
+ * .
  * </p>
  * <p>
- * <b>NOTE:</b>For a list of Amazon SES endpoints to use in service requests, see Regions and Amazon SES in the Amazon SES Developer Guide.
+ * <b>NOTE:</b>For a list of Amazon SES endpoints to use in service
+ * requests, see Regions and Amazon SES in the Amazon SES Developer
+ * Guide.
  * </p>
  */
 public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient implements AmazonSimpleEmailService {
@@ -397,9 +402,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * This action is throttled at one request per second.
      * </p>
      * <p>
-     * For more information about feedback notification, see the <a
-     * on.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html">
-     * Amazon SES Developer Guide </a> .
+     * For more information about feedback notification, see the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param getIdentityNotificationAttributesRequest Container for the
@@ -454,9 +459,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about creating DNS records using DKIM tokens, go
-     * to the <a
-     * .aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">
-     * Amazon SES Developer Guide </a> .
+     * to the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param verifyDomainDkimRequest Container for the necessary parameters
@@ -519,9 +524,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about creating DNS records using DKIM tokens, go
-     * to the <a
-     * .aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">
-     * Amazon SES Developer Guide </a> .
+     * to the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param getIdentityDkimAttributesRequest Container for the necessary
@@ -629,9 +634,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * For every message that you send, the total number of recipients (To:,
      * CC: and BCC:) is counted against your <i>sending quota</i> - the
      * maximum number of emails you can send in a 24-hour period. For
-     * information about your sending quota, go to the <a
-     * .aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">
-     * Amazon SES Developer Guide </a> .
+     * information about your sending quota, go to the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param sendRawEmailRequest Container for the necessary parameters to
@@ -776,9 +781,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * This action is throttled at one request per second.
      * </p>
      * <p>
-     * For more information about Easy DKIM signing, go to the <a
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">
-     * Amazon SES Developer Guide </a> .
+     * For more information about Easy DKIM signing, go to the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param setIdentityDkimEnabledRequest Container for the necessary
@@ -865,9 +870,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * This action is throttled at one request per second.
      * </p>
      * <p>
-     * For more information about feedback notification, see the <a
-     * on.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html">
-     * Amazon SES Developer Guide </a> .
+     * For more information about feedback notification, see the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param setIdentityFeedbackForwardingEnabledRequest Container for the
@@ -971,9 +976,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * For every message that you send, the total number of recipients (To:,
      * CC: and BCC:) is counted against your <i>sending quota</i> - the
      * maximum number of emails you can send in a 24-hour period. For
-     * information about your sending quota, go to the <a
-     * .aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">
-     * Amazon SES Developer Guide </a> .
+     * information about your sending quota, go to the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param sendEmailRequest Container for the necessary parameters to
@@ -1064,9 +1069,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * This action is throttled at one request per second.
      * </p>
      * <p>
-     * For more information about feedback notification, see the <a
-     * on.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html">
-     * Amazon SES Developer Guide </a> .
+     * For more information about feedback notification, see the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param setIdentityNotificationTopicRequest Container for the necessary

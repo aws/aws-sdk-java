@@ -21,11 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#listLocalDisks(ListLocalDisksRequest) ListLocalDisks operation}.
  * <p>
- * This operation returns a list of the local disks of a gateway. To specify which gateway to describe you use the Amazon Resource Name (ARN) of the
- * gateway in the body of the request.
+ * This operation returns a list of the local disks of a gateway. To
+ * specify which gateway to describe you use the Amazon Resource Name
+ * (ARN) of the gateway in the body of the request.
  * </p>
  * <p>
- * The request returns all disks, specifying which are configured as working storage, stored volume or not configured at all.
+ * The request returns all disks, specifying which are configured as
+ * working storage, stored volume or not configured at all.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#listLocalDisks(ListLocalDisksRequest)

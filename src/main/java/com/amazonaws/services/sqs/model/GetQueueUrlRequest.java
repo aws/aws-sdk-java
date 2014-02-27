@@ -21,13 +21,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#getQueueUrl(GetQueueUrlRequest) GetQueueUrl operation}.
  * <p>
- * Returns the URL of an existing queue. This action provides a simple way to retrieve the URL of an Amazon SQS queue.
+ * Returns the URL of an existing queue. This action provides a simple
+ * way to retrieve the URL of an Amazon SQS queue.
  * </p>
  * <p>
- * To access a queue that belongs to another AWS account, use the <code>QueueOwnerAWSAccountId</code> parameter to specify the account ID of the queue's
- * owner. The queue's owner must grant you permission to access the queue. For more information about shared queue access, see AddPermission or go to <a
- * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html"> Shared Queues </a> in the <i>Amazon SQS Developer
- * Guide</i> .
+ * To access a queue that belongs to another AWS account, use the
+ * <code>QueueOwnerAWSAccountId</code> parameter to specify the account
+ * ID of the queue's owner. The queue's owner must grant you permission
+ * to access the queue. For more information about shared queue access,
+ * see AddPermission or go to
+ * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html"> Shared Queues </a>
+ * in the <i>Amazon SQS Developer Guide</i> .
  * 
  * </p>
  *

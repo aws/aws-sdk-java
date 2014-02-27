@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Specifies how to map source attribute values to custom values when populating an <code>IndexField</code> .
+ * Specifies how to map source attribute values to custom values when
+ * populating an <code>IndexField</code> .
  * </p>
  */
 public class SourceDataMap implements Serializable {

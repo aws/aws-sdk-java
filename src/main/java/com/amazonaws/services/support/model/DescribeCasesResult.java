@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns an array of CaseDetails objects and a <code>NextToken</code> that defines a point for pagination in the result set.
+ * Returns an array of CaseDetails objects and a <code>NextToken</code>
+ * that defines a point for pagination in the result set.
  * </p>
  */
 public class DescribeCasesResult implements Serializable {

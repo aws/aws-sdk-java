@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#deleteIdentity(DeleteIdentityRequest) DeleteIdentity operation}.
  * <p>
- * Deletes the specified identity (email address or domain) from the list of verified identities.
+ * Deletes the specified identity (email address or domain) from the list
+ * of verified identities.
  * </p>
  * <p>
  * This action is throttled at one request per second.

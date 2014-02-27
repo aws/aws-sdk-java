@@ -26,14 +26,21 @@ public class InvalidParameterValueExceptionUnmarshaller extends GlacierErrorUnma
         super(InvalidParameterValueException.class);
     }
 
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands.
-        String errorCode = parseErrorCode(json);
-        if (errorCode == null || !errorCode.equals("InvalidParameterValueException"))
-            return null;
+    @Override
+    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
+        if (errorTypeFromHeader == null) {
+            // Parse error type from the JSON content if it's not available in the response headers
+            String errorCodeFromContent = parseErrorCode(json);
+            return (errorCodeFromContent != null && errorCodeFromContent.equals("InvalidParameterValueException"));
+        } else {
+            return errorTypeFromHeader.equals("InvalidParameterValueException");
+        }
+    }
 
+    @Override
+    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         InvalidParameterValueException e = (InvalidParameterValueException)super.unmarshall(json);
+        e.setErrorCode("InvalidParameterValueException");
 
         e.setType(parseMember("Type", json));
         

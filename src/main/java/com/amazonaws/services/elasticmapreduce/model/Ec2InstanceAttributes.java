@@ -18,7 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Provides information about the EC2 instances in a cluster grouped by category. For example, EC2 Key Name, Subnet Id, Instance Profile, and so on.
+ * Provides information about the EC2 instances in a cluster grouped by
+ * category. For example, EC2 Key Name, Subnet Id, Instance Profile, and
+ * so on.
  * </p>
  */
 public class Ec2InstanceAttributes implements Serializable {

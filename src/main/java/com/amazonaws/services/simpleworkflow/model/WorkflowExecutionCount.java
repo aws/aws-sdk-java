@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the count of workflow executions returned from CountOpenWorkflowExecutions or CountClosedWorkflowExecutions
+ * Contains the count of workflow executions returned from
+ * CountOpenWorkflowExecutions or CountClosedWorkflowExecutions
  * </p>
  */
 public class WorkflowExecutionCount implements Serializable {

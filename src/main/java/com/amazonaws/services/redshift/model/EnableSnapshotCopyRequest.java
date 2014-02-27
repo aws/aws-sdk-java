@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#enableSnapshotCopy(EnableSnapshotCopyRequest) EnableSnapshotCopy operation}.
  * <p>
- * Enables the automatic copy of snapshots from one region to another region for a specified cluster.
+ * Enables the automatic copy of snapshots from one region to another
+ * region for a specified cluster.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#enableSnapshotCopy(EnableSnapshotCopyRequest)

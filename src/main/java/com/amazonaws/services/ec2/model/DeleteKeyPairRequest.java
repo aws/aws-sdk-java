@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.DeleteKeyPairRequestMarshaller
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteKeyPair(DeleteKeyPairRequest) DeleteKeyPair operation}.
  * <p>
- * Deletes the specified key pair, by removing the public key from Amazon EC2.
+ * Deletes the specified key pair, by removing the public key from Amazon
+ * EC2.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteKeyPair(DeleteKeyPairRequest)

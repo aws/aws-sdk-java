@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Details about AWS resources that were analyzed in a call to Trusted Advisor DescribeTrustedAdvisorCheckSummaries.
+ * Details about AWS resources that were analyzed in a call to Trusted
+ * Advisor DescribeTrustedAdvisorCheckSummaries.
  * </p>
  */
 public class TrustedAdvisorResourcesSummary implements Serializable {

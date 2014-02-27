@@ -21,25 +21,31 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createSAMLProvider(CreateSAMLProviderRequest) CreateSAMLProvider operation}.
  * <p>
- * Creates an IAM entity to describe an identity provider (IdP) that supports SAML 2.0.
+ * Creates an IAM entity to describe an identity provider (IdP) that
+ * supports SAML 2.0.
  * </p>
  * <p>
- * The SAML provider that you create with this operation can be used as a principal in a role's trust policy to establish a trust relationship between
- * AWS and a SAML identity provider. You can create an IAM role that supports Web-based single sign-on (SSO) to the AWS Management Console or one that
- * supports API access to AWS.
+ * The SAML provider that you create with this operation can be used as a
+ * principal in a role's trust policy to establish a trust relationship
+ * between AWS and a SAML identity provider. You can create an IAM role
+ * that supports Web-based single sign-on (SSO) to the AWS Management
+ * Console or one that supports API access to AWS.
  * </p>
  * <p>
- * When you create the SAML provider, you upload an a SAML metadata document that you get from your IdP and that includes the issuer's name, expiration
- * information, and keys that can be used to validate the SAML authentication response (assertions) that are received from the IdP. You must generate the
- * metadata document using the identity management software that is used as your organization's IdP.
+ * When you create the SAML provider, you upload an a SAML metadata
+ * document that you get from your IdP and that includes the issuer's
+ * name, expiration information, and keys that can be used to validate
+ * the SAML authentication response (assertions) that are received from
+ * the IdP. You must generate the metadata document using the identity
+ * management software that is used as your organization's IdP.
  * </p>
  * <p>
  * <b>NOTE:</b>This operation requires Signature Version 4.
  * </p>
  * <p>
- * For more information, see <a href="http://aws-docs-alpha.integ.amazon.com/STS/latest/UsingSTS/STSMgmtConsole-SAML.html"> Giving Console Access Using
- * SAML </a> and <a href="http://aws-docs-alpha.integ.amazon.com/STS/latest/UsingSTS/CreatingSAML.html"> Creating Temporary Security Credentials for
- * SAML Federation </a> in the <i>Using Temporary Credentials</i> guide.
+ * For more information, see
+ * <a href="http://aws-docs-alpha.integ.amazon.com/STS/latest/UsingSTS/STSMgmtConsole-SAML.html"> Giving Console Access Using SAML </a> and <a href="http://aws-docs-alpha.integ.amazon.com/STS/latest/UsingSTS/CreatingSAML.html"> Creating Temporary Security Credentials for SAML Federation </a>
+ * in the <i>Using Temporary Credentials</i> guide.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createSAMLProvider(CreateSAMLProviderRequest)

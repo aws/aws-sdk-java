@@ -21,57 +21,80 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest) BatchWriteItem operation}.
  * <p>
- * The <i>BatchWriteItem</i> operation puts or deletes multiple items in one or more tables. A single call to <i>BatchWriteItem</i> can write up to 1 MB
- * of data, which can comprise as many as 25 put or delete requests. Individual items to be written can be as large as 64 KB.
+ * The <i>BatchWriteItem</i> operation puts or deletes multiple items in
+ * one or more tables. A single call to <i>BatchWriteItem</i> can write
+ * up to 1 MB of data, which can comprise as many as 25 put or delete
+ * requests. Individual items to be written can be as large as 64 KB.
  * </p>
  * <p>
- * <b>NOTE:</b> BatchWriteItem cannot update items. To update items, use the UpdateItem API.
+ * <b>NOTE:</b> BatchWriteItem cannot update items. To update items, use
+ * the UpdateItem API.
  * </p>
  * <p>
- * The individual <i>PutItem</i> and <i>DeleteItem</i> operations specified in <i>BatchWriteItem</i> are atomic; however <i>BatchWriteItem</i> as a whole
- * is not. If any requested operations fail because the table's provisioned throughput is exceeded or an internal processing failure occurs, the failed
- * operations are returned in the <i>UnprocessedItems</i> response parameter. You can investigate and optionally resend the requests. Typically, you
- * would call <i>BatchWriteItem</i> in a loop. Each iteration would check for unprocessed items and submit a new <i>BatchWriteItem</i> request with those
- * unprocessed items until all items have been processed.
+ * The individual <i>PutItem</i> and <i>DeleteItem</i> operations
+ * specified in <i>BatchWriteItem</i> are atomic; however
+ * <i>BatchWriteItem</i> as a whole is not. If any requested operations
+ * fail because the table's provisioned throughput is exceeded or an
+ * internal processing failure occurs, the failed operations are returned
+ * in the <i>UnprocessedItems</i> response parameter. You can investigate
+ * and optionally resend the requests. Typically, you would call
+ * <i>BatchWriteItem</i> in a loop. Each iteration would check for
+ * unprocessed items and submit a new <i>BatchWriteItem</i> request with
+ * those unprocessed items until all items have been processed.
  * </p>
  * <p>
- * To write one item, you can use the <i>PutItem</i> operation; to delete one item, you can use the <i>DeleteItem</i> operation.
+ * To write one item, you can use the <i>PutItem</i> operation; to delete
+ * one item, you can use the <i>DeleteItem</i> operation.
  * </p>
  * <p>
- * With <i>BatchWriteItem</i> , you can efficiently write or delete large amounts of data, such as from Amazon Elastic MapReduce (EMR), or copy data from
- * another database into Amazon DynamoDB. In order to improve performance with these large-scale operations, <i>BatchWriteItem</i> does not behave in the
- * same way as individual <i>PutItem</i> and <i>DeleteItem</i> calls would For example, you cannot specify conditions on individual put and delete
- * requests, and <i>BatchWriteItem</i> does not return deleted items in the response.
+ * With <i>BatchWriteItem</i> , you can efficiently write or delete large
+ * amounts of data, such as from Amazon Elastic MapReduce (EMR), or copy
+ * data from another database into DynamoDB. In order to improve
+ * performance with these large-scale operations, <i>BatchWriteItem</i>
+ * does not behave in the same way as individual <i>PutItem</i> and
+ * <i>DeleteItem</i> calls would For example, you cannot specify
+ * conditions on individual put and delete requests, and
+ * <i>BatchWriteItem</i> does not return deleted items in the response.
  * </p>
  * <p>
- * If you use a programming language that supports concurrency, such as Java, you can use threads to write items in parallel. Your application must
- * include the necessary logic to manage the threads.
+ * If you use a programming language that supports concurrency, such as
+ * Java, you can use threads to write items in parallel. Your application
+ * must include the necessary logic to manage the threads.
  * </p>
  * <p>
- * With languages that don't support threading, such as PHP, <i>BatchWriteItem</i> will write or delete the specified items one at a time. In both
- * situations, <i>BatchWriteItem</i> provides an alternative where the API performs the specified put and delete operations in parallel, giving you the
- * power of the thread pool approach without having to introduce complexity into your application.
+ * With languages that don't support threading, such as PHP,
+ * <i>BatchWriteItem</i> will write or delete the specified items one at
+ * a time. In both situations, <i>BatchWriteItem</i> provides an
+ * alternative where the API performs the specified put and delete
+ * operations in parallel, giving you the power of the thread pool
+ * approach without having to introduce complexity into your application.
  * </p>
  * <p>
- * Parallel processing reduces latency, but each specified put and delete request consumes the same number of write capacity units whether it is
- * processed in parallel or not. Delete operations on nonexistent items consume one write capacity unit.
+ * Parallel processing reduces latency, but each specified put and delete
+ * request consumes the same number of write capacity units whether it is
+ * processed in parallel or not. Delete operations on nonexistent items
+ * consume one write capacity unit.
  * </p>
  * <p>
- * If one or more of the following is true, Amazon DynamoDB rejects the entire batch write operation:
+ * If one or more of the following is true, DynamoDB rejects the entire
+ * batch write operation:
  * </p>
  * 
  * <ul>
  * <li> <p>
- * One or more tables specified in the <i>BatchWriteItem</i> request does not exist.
+ * One or more tables specified in the <i>BatchWriteItem</i> request does
+ * not exist.
  * </p>
  * </li>
  * <li> <p>
- * Primary key attributes specified on an item in the request do not match those in the corresponding table's primary key schema.
+ * Primary key attributes specified on an item in the request do not
+ * match those in the corresponding table's primary key schema.
  * </p>
  * </li>
  * <li> <p>
- * You try to perform multiple operations on the same item in the same <i>BatchWriteItem</i> request. For example, you cannot put and delete the same
- * item in the same <i>BatchWriteItem</i> request.
+ * You try to perform multiple operations on the same item in the same
+ * <i>BatchWriteItem</i> request. For example, you cannot put and delete
+ * the same item in the same <i>BatchWriteItem</i> request.
  * </p>
  * </li>
  * <li> <p>
@@ -118,7 +141,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -378,7 +401,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -387,7 +410,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      *
      * @return If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
@@ -400,7 +423,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -409,7 +432,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      *
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
@@ -422,7 +445,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -433,7 +456,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      *
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
@@ -450,7 +473,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -459,7 +482,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      *
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
@@ -472,7 +495,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -483,7 +506,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      *
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *

@@ -21,13 +21,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#getItem(GetItemRequest) GetItem operation}.
  * <p>
- * The <i>GetItem</i> operation returns a set of attributes for the item with the given primary key. If there is no matching item, <i>GetItem</i> does
- * not return any data.
+ * The <i>GetItem</i> operation returns a set of attributes for the item
+ * with the given primary key. If there is no matching item,
+ * <i>GetItem</i> does not return any data.
  * </p>
  * <p>
- * <i>GetItem</i> provides an eventually consistent read by default. If your application requires a strongly consistent read, set <i>ConsistentRead</i>
- * to <code>true</code> . Although a strongly consistent read might take more time than an eventually consistent read, it always returns the last updated
- * value.
+ * <i>GetItem</i> provides an eventually consistent read by default. If
+ * your application requires a strongly consistent read, set
+ * <i>ConsistentRead</i> to <code>true</code> . Although a strongly
+ * consistent read might take more time than an eventually consistent
+ * read, it always returns the last updated value.
  * </p>
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#getItem(GetItemRequest)
@@ -69,7 +72,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -424,7 +427,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -433,7 +436,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *
      * @return If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
@@ -446,7 +449,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -455,7 +458,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
@@ -468,7 +471,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -479,7 +482,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
@@ -496,7 +499,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -505,7 +508,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
@@ -518,7 +521,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -529,7 +532,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *

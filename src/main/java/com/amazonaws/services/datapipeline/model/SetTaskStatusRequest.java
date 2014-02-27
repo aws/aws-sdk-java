@@ -21,9 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#setTaskStatus(SetTaskStatusRequest) SetTaskStatus operation}.
  * <p>
- * Notifies AWS Data Pipeline that a task is completed and provides information about the final status. The task runner calls this action regardless of
- * whether the task was sucessful. The task runner does not need to call SetTaskStatus for tasks that are canceled by the web service during a call to
- * ReportTaskProgress.
+ * Notifies AWS Data Pipeline that a task is completed and provides
+ * information about the final status. The task runner calls this action
+ * regardless of whether the task was sucessful. The task runner does not
+ * need to call SetTaskStatus for tasks that are canceled by the web
+ * service during a call to ReportTaskProgress.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#setTaskStatus(SetTaskStatusRequest)

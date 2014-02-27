@@ -23,16 +23,21 @@ import com.amazonaws.services.ec2.model.transform.AssociateDhcpOptionsRequestMar
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#associateDhcpOptions(AssociateDhcpOptionsRequest) AssociateDhcpOptions operation}.
  * <p>
- * Associates a set of DHCP options (that you've previously created) with the specified VPC, or associates no DHCP options with the VPC.
+ * Associates a set of DHCP options (that you've previously created) with
+ * the specified VPC, or associates no DHCP options with the VPC.
  * </p>
  * <p>
- * After you associate the options with the VPC, any existing instances and all new instances that you launch in that VPC use the options. You don't need
- * to restart or relaunch the instances. They automatically pick up the changes within a few hours, depending on how frequently the instance renews its
- * DHCP lease. You can explicitly renew the lease using the operating system on the instance.
+ * After you associate the options with the VPC, any existing instances
+ * and all new instances that you launch in that VPC use the options. You
+ * don't need to restart or relaunch the instances. They automatically
+ * pick up the changes within a few hours, depending on how frequently
+ * the instance renews its DHCP lease. You can explicitly renew the lease
+ * using the operating system on the instance.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a> in the
- * <i>Amazon Virtual Private Cloud User Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#associateDhcpOptions(AssociateDhcpOptionsRequest)

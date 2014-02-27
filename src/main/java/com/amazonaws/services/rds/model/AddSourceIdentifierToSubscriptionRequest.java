@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest) AddSourceIdentifierToSubscription operation}.
  * <p>
- * Adds a source identifier to an existing RDS event notification subscription.
+ * Adds a source identifier to an existing RDS event notification
+ * subscription.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest)

@@ -18,8 +18,9 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The value specified for the event severity was not one of the allowed values, or it specified a severity that does not apply to the specified source
- * type. The allowed values are ERROR and INFO.
+ * The value specified for the event severity was not one of the allowed
+ * values, or it specified a severity that does not apply to the
+ * specified source type. The allowed values are ERROR and INFO.
  * </p>
  */        
 public class SubscriptionSeverityNotFoundException extends AmazonServiceException {

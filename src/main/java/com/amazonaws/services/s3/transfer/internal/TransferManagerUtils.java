@@ -14,13 +14,14 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
-import static com.amazonaws.services.s3.internal.Constants.*;
+import static com.amazonaws.services.s3.internal.Constants.MAXIMUM_UPLOAD_PARTS;
 
 import java.io.File;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 
+import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.transfer.TransferManagerConfiguration;
 
@@ -47,24 +48,24 @@ public class TransferManagerUtils {
         return (ThreadPoolExecutor)Executors.newFixedThreadPool(10, threadFactory);
     }
 
-	/**
-	 * Returns true if the specified upload request can use parallel part
-	 * uploads for increased performance.
-	 * 
-	 * @param putObjectRequest
-	 *            The request to check.
-	 * @param isUsingEncryption
-	 *            True if the upload is an encrypted upload, otherwise false.
-	 * 
-	 * @return True if this request can use parallel part uploads for faster
-	 *         uploads.
-	 */
+    /**
+     * Returns true if the specified upload request can use parallel part
+     * uploads for increased performance.
+     *
+     * @param putObjectRequest
+     *            The request to check.
+     * @param isUsingEncryption
+     *            True if the upload is an encrypted upload, otherwise false.
+     *
+     * @return True if this request can use parallel part uploads for faster
+     *         uploads.
+     */
     public static boolean isUploadParallelizable(final PutObjectRequest putObjectRequest, final boolean isUsingEncryption) {
-    	// Each uploaded part in an encrypted upload depends on the encryption context
-    	// from the previous upload, so we cannot parallelize encrypted upload parts.
-    	if (isUsingEncryption) return false;
+        // Each uploaded part in an encrypted upload depends on the encryption context
+        // from the previous upload, so we cannot parallelize encrypted upload parts.
+        if (isUsingEncryption) return false;
 
-    	// Otherwise, if there's a file, we can process the uploads concurrently.
+        // Otherwise, if there's a file, we can process the uploads concurrently.
         return (getRequestFile(putObjectRequest) != null);
     }
 
@@ -135,6 +136,30 @@ public class TransferManagerUtils {
     public static File getRequestFile(final PutObjectRequest putObjectRequest) {
         if (putObjectRequest.getFile() != null) return putObjectRequest.getFile();
         return null;
+    }
+
+    /**
+     * Calculates the optimal part size of each part request if the copy
+     * operation is carried out as multi-part copy.
+     *
+     * @param copyObjectRequest
+     *            the original request.
+     * @param configuration
+     *            configuration containing the default part size.
+     * @param contentLengthOfSource
+     *            content length of the Amazon S3 object.
+     * @return the optimal part size for a copy part request.
+     */
+    public static long calculateOptimalPartSizeForCopy(
+            CopyObjectRequest copyObjectRequest,
+            TransferManagerConfiguration configuration,
+            long contentLengthOfSource) {
+        double optimalPartSize = (double) contentLengthOfSource
+                / (double) MAXIMUM_UPLOAD_PARTS;
+        // round up so we don't push the copy over the maximum number of parts
+        optimalPartSize = Math.ceil(optimalPartSize);
+        return (long) Math.max(optimalPartSize,
+                configuration.getMultipartCopyPartSize());
     }
 
 }

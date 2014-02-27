@@ -26,15 +26,18 @@ import com.amazonaws.services.ec2.model.transform.CreateVpcRequestMarshaller;
  * Creates a VPC with the specified CIDR block.
  * </p>
  * <p>
- * The smallest VPC you can create uses a /28 netmask (16 IP addresses), and the largest uses a /16 netmask (65,536 IP addresses). To help you decide how
- * big to make your VPC, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a> in the
- * <i>Amazon Virtual Private Cloud User Guide</i> .
+ * The smallest VPC you can create uses a /28 netmask (16 IP addresses),
+ * and the largest uses a /16 netmask (65,536 IP addresses). To help you
+ * decide how big to make your VPC, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  * <p>
- * By default, each instance you launch in the VPC has the default DHCP options, which includes only a default DNS server that we provide
- * (AmazonProvidedDNS). For more information about DHCP options, see <a
- * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
- * Guide</i> .
+ * By default, each instance you launch in the VPC has the default DHCP
+ * options, which includes only a default DNS server that we provide
+ * (AmazonProvidedDNS). For more information about DHCP options, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpc(CreateVpcRequest)

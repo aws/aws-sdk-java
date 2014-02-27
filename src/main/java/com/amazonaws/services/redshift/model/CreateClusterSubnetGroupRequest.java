@@ -21,12 +21,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#createClusterSubnetGroup(CreateClusterSubnetGroupRequest) CreateClusterSubnetGroup operation}.
  * <p>
- * Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC)
- * when creating Amazon Redshift subnet group.
+ * Creates a new Amazon Redshift subnet group. You must provide a list
+ * of one or more subnets in your existing Amazon Virtual Private Cloud
+ * (Amazon VPC) when creating Amazon Redshift subnet group.
  * </p>
  * <p>
- * For information about subnet groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html"> Amazon
- * Redshift Cluster Subnet Groups </a> in the <i>Amazon Redshift Management Guide</i> .
+ * For information about subnet groups, go to
+ * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html"> Amazon Redshift Cluster Subnet Groups </a>
+ * in the <i>Amazon Redshift Management Guide</i> .
  * 
  * </p>
  *

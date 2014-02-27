@@ -21,10 +21,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#resetDBParameterGroup(ResetDBParameterGroupRequest) ResetDBParameterGroup operation}.
  * <p>
- * Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters submit a list of the following:
- * <code>ParameterName</code> and <code>ApplyMethod</code> . To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
- * <code>ResetAllParameters</code> parameters. When resetting the entire group, dynamic parameters are updated immediately and static parameters are set
- * to <code>pending-reboot</code> to take effect on the next DB instance restart or <code>RebootDBInstance</code> request.
+ * Modifies the parameters of a DB parameter group to the engine/system
+ * default value. To reset specific parameters submit a list of the
+ * following: <code>ParameterName</code> and <code>ApplyMethod</code> .
+ * To reset the entire DB parameter group, specify the
+ * <code>DBParameterGroup</code> name and <code>ResetAllParameters</code>
+ * parameters. When resetting the entire group, dynamic parameters are
+ * updated immediately and static parameters are set to
+ * <code>pending-reboot</code> to take effect on the next DB instance
+ * restart or <code>RebootDBInstance</code> request.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#resetDBParameterGroup(ResetDBParameterGroupRequest)

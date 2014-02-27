@@ -21,12 +21,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#applySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest) ApplySecurityGroupsToLoadBalancer operation}.
  * <p>
- * Associates one or more security groups with your load balancer in Amazon Virtual Private Cloud (Amazon VPC). The provided security group IDs will
- * override any currently applied security groups.
+ * Associates one or more security groups with your load balancer in
+ * Amazon Virtual Private Cloud (Amazon VPC). The provided security group
+ * IDs will override any currently applied security groups.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html"> Manage Security Groups
- * in Amazon VPC </a> in the <i>Elastic Load Balancing Developer Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html"> Manage Security Groups in Amazon VPC </a>
+ * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#applySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest)

@@ -21,12 +21,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVpnConnectionRoute(CreateVpnConnectionRouteRequest) CreateVpnConnectionRoute operation}.
  * <p>
- * Creates a static route associated with a VPN connection between an existing virtual private gateway and a VPN customer gateway. The static route
- * allows traffic to be routed from the virtual private gateway to the VPN customer gateway.
+ * Creates a static route associated with a VPN connection between an
+ * existing virtual private gateway and a VPN customer gateway. The
+ * static route allows traffic to be routed from the virtual private
+ * gateway to the VPN customer gateway.
  * </p>
  * <p>
- * For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware
- * Virtual Private Gateway to Your VPC </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
+ * For more information about VPN connections, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpnConnectionRoute(CreateVpnConnectionRouteRequest)

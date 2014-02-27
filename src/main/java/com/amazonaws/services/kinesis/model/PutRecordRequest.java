@@ -21,34 +21,53 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kinesis.AmazonKinesis#putRecord(PutRecordRequest) PutRecord operation}.
  * <p>
- * This operation puts a data record into an Amazon Kinesis stream from a producer. This operation must be called to send data from the producer into the
- * Amazon Kinesis stream for real-time ingestion and subsequent processing. The <code>PutRecord</code> operation requires the name of the stream that
- * captures, stores, and transports the data; a partition key; and the data blob itself. The data blob could be a segment from a log file,
- * geographic/location data, website clickstream data, or any other data type.
+ * This operation puts a data record into an Amazon Kinesis stream from a
+ * producer. This operation must be called to send data from the producer
+ * into the Amazon Kinesis stream for real-time ingestion and subsequent
+ * processing. The <code>PutRecord</code> operation requires the name of
+ * the stream that captures, stores, and transports the data; a partition
+ * key; and the data blob itself. The data blob could be a segment from a
+ * log file, geographic/location data, website clickstream data, or any
+ * other data type.
  * </p>
  * <p>
- * The partition key is used to distribute data across shards. Amazon Kinesis segregates the data records that belong to a data stream into multiple
- * shards, using the partition key associated with each data record to determine which shard a given data record belongs to.
+ * The partition key is used to distribute data across shards. Amazon
+ * Kinesis segregates the data records that belong to a data stream into
+ * multiple shards, using the partition key associated with each data
+ * record to determine which shard a given data record belongs to.
  * </p>
  * <p>
- * Partition keys are Unicode strings, with a maximum length limit of 256 bytes. An MD5 hash function is used to map partition keys to 128-bit integer
- * values and to map associated data records to shards using the hash key ranges of the shards. You can override hashing the partition key to determine
- * the shard by explicitly specifying a hash value using the <code>ExplicitHashKey</code> parameter. For more information, see the <a
- * href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a> .
+ * Partition keys are Unicode strings, with a maximum length limit of 256
+ * bytes. An MD5 hash function is used to map partition keys to 128-bit
+ * integer values and to map associated data records to shards using the
+ * hash key ranges of the shards. You can override hashing the partition
+ * key to determine the shard by explicitly specifying a hash value using
+ * the <code>ExplicitHashKey</code> parameter. For more information, see
+ * the
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+ * .
  * </p>
  * <p>
- * <code>PutRecord</code> returns the shard ID of where the data record was placed and the sequence number that was assigned to the data record.
+ * <code>PutRecord</code> returns the shard ID of where the data record
+ * was placed and the sequence number that was assigned to the data
+ * record.
  * </p>
  * <p>
- * The <code>SequenceNumberForOrdering</code> sets the initial sequence number for the partition key. Later <code>PutRecord</code> requests to the same
- * partition key (from the same client) will automatically increase from <code>SequenceNumberForOrdering</code> , ensuring strict sequential ordering.
+ * Sequence numbers generally increase over time. To guarantee strictly
+ * increasing ordering, use the <code>SequenceNumberForOrdering</code>
+ * parameter. For more information, see the
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+ * .
  * </p>
  * <p>
- * If a <code>PutRecord</code> request cannot be processed because of insufficient provisioned throughput on the shard involved in the request,
- * <code>PutRecord</code> throws <code>ProvisionedThroughputExceededException</code> .
+ * If a <code>PutRecord</code> request cannot be processed because of
+ * insufficient provisioned throughput on the shard involved in the
+ * request, <code>PutRecord</code> throws
+ * <code>ProvisionedThroughputExceededException</code> .
  * </p>
  * <p>
- * Data records are accessible for only 24 hours from the time that they are added to an Amazon Kinesis stream.
+ * Data records are accessible for only 24 hours from the time that they
+ * are added to an Amazon Kinesis stream.
  * </p>
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#putRecord(PutRecordRequest)
@@ -99,10 +118,13 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
     private String explicitHashKey;
 
     /**
-     * The sequence number to use as the initial number for the partition
-     * key. Subsequent calls to <code>PutRecord</code> from the same client
-     * and for the same partition key will increase from the
-     * <code>SequenceNumberForOrdering</code> value.
+     * Guarantees strictly increasing sequence numbers, for puts from the
+     * same client and to the same partition key. Usage: set the
+     * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the
+     * sequence number of record <i>n-1</i> (as returned in the
+     * <a>PutRecordResult</a> when putting record <i>n-1</i>). If this
+     * parameter is not set, records will be coarsely ordered based on
+     * arrival time.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>0|([1-9]\d{0,128})<br/>
@@ -341,56 +363,74 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * The sequence number to use as the initial number for the partition
-     * key. Subsequent calls to <code>PutRecord</code> from the same client
-     * and for the same partition key will increase from the
-     * <code>SequenceNumberForOrdering</code> value.
+     * Guarantees strictly increasing sequence numbers, for puts from the
+     * same client and to the same partition key. Usage: set the
+     * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the
+     * sequence number of record <i>n-1</i> (as returned in the
+     * <a>PutRecordResult</a> when putting record <i>n-1</i>). If this
+     * parameter is not set, records will be coarsely ordered based on
+     * arrival time.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>0|([1-9]\d{0,128})<br/>
      *
-     * @return The sequence number to use as the initial number for the partition
-     *         key. Subsequent calls to <code>PutRecord</code> from the same client
-     *         and for the same partition key will increase from the
-     *         <code>SequenceNumberForOrdering</code> value.
+     * @return Guarantees strictly increasing sequence numbers, for puts from the
+     *         same client and to the same partition key. Usage: set the
+     *         <code>SequenceNumberForOrdering</code> of record <i>n</i> to the
+     *         sequence number of record <i>n-1</i> (as returned in the
+     *         <a>PutRecordResult</a> when putting record <i>n-1</i>). If this
+     *         parameter is not set, records will be coarsely ordered based on
+     *         arrival time.
      */
     public String getSequenceNumberForOrdering() {
         return sequenceNumberForOrdering;
     }
     
     /**
-     * The sequence number to use as the initial number for the partition
-     * key. Subsequent calls to <code>PutRecord</code> from the same client
-     * and for the same partition key will increase from the
-     * <code>SequenceNumberForOrdering</code> value.
+     * Guarantees strictly increasing sequence numbers, for puts from the
+     * same client and to the same partition key. Usage: set the
+     * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the
+     * sequence number of record <i>n-1</i> (as returned in the
+     * <a>PutRecordResult</a> when putting record <i>n-1</i>). If this
+     * parameter is not set, records will be coarsely ordered based on
+     * arrival time.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>0|([1-9]\d{0,128})<br/>
      *
-     * @param sequenceNumberForOrdering The sequence number to use as the initial number for the partition
-     *         key. Subsequent calls to <code>PutRecord</code> from the same client
-     *         and for the same partition key will increase from the
-     *         <code>SequenceNumberForOrdering</code> value.
+     * @param sequenceNumberForOrdering Guarantees strictly increasing sequence numbers, for puts from the
+     *         same client and to the same partition key. Usage: set the
+     *         <code>SequenceNumberForOrdering</code> of record <i>n</i> to the
+     *         sequence number of record <i>n-1</i> (as returned in the
+     *         <a>PutRecordResult</a> when putting record <i>n-1</i>). If this
+     *         parameter is not set, records will be coarsely ordered based on
+     *         arrival time.
      */
     public void setSequenceNumberForOrdering(String sequenceNumberForOrdering) {
         this.sequenceNumberForOrdering = sequenceNumberForOrdering;
     }
     
     /**
-     * The sequence number to use as the initial number for the partition
-     * key. Subsequent calls to <code>PutRecord</code> from the same client
-     * and for the same partition key will increase from the
-     * <code>SequenceNumberForOrdering</code> value.
+     * Guarantees strictly increasing sequence numbers, for puts from the
+     * same client and to the same partition key. Usage: set the
+     * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the
+     * sequence number of record <i>n-1</i> (as returned in the
+     * <a>PutRecordResult</a> when putting record <i>n-1</i>). If this
+     * parameter is not set, records will be coarsely ordered based on
+     * arrival time.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>0|([1-9]\d{0,128})<br/>
      *
-     * @param sequenceNumberForOrdering The sequence number to use as the initial number for the partition
-     *         key. Subsequent calls to <code>PutRecord</code> from the same client
-     *         and for the same partition key will increase from the
-     *         <code>SequenceNumberForOrdering</code> value.
+     * @param sequenceNumberForOrdering Guarantees strictly increasing sequence numbers, for puts from the
+     *         same client and to the same partition key. Usage: set the
+     *         <code>SequenceNumberForOrdering</code> of record <i>n</i> to the
+     *         sequence number of record <i>n-1</i> (as returned in the
+     *         <a>PutRecordResult</a> when putting record <i>n-1</i>). If this
+     *         parameter is not set, records will be coarsely ordered based on
+     *         arrival time.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

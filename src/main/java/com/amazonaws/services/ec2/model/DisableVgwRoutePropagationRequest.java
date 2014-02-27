@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#disableVgwRoutePropagation(DisableVgwRoutePropagationRequest) DisableVgwRoutePropagation operation}.
  * <p>
- * Disables a virtual private gateway (VGW) from propagating routes to the routing tables of a VPC.
+ * Disables a virtual private gateway (VGW) from propagating routes to
+ * the routing tables of a VPC.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#disableVgwRoutePropagation(DisableVgwRoutePropagationRequest)

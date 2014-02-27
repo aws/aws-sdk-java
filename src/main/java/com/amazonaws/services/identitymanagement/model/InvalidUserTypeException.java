@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because the type of user for the transaction was incorrect.
+ * The request was rejected because the type of user for the transaction
+ * was incorrect.
  * </p>
  */        
 public class InvalidUserTypeException extends AmazonServiceException {

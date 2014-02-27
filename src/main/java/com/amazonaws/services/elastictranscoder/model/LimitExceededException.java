@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Too many operations for a given AWS account. For example, the number of pipelines exceeds the maximum allowed.
+ * Too many operations for a given AWS account. For example, the number
+ * of pipelines exceeds the maximum allowed.
  * </p>
  */        
 public class LimitExceededException extends AmazonServiceException {

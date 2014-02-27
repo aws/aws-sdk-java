@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.
+ * When you create a pipeline, Elastic Transcoder returns the values that
+ * you specified in the request.
  * </p>
  */
 public class CreatePipelineResult implements Serializable {

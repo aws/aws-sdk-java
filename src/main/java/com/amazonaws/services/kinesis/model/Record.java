@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The unit of data of the Amazon Kinesis stream, which is composed of a sequence number, a partition key, and a data blob.
+ * The unit of data of the Amazon Kinesis stream, which is composed of a
+ * sequence number, a partition key, and a data blob.
  * </p>
  */
 public class Record implements Serializable {

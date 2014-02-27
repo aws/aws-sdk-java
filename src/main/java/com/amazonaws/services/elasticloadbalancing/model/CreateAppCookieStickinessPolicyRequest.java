@@ -21,25 +21,32 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest) CreateAppCookieStickinessPolicy operation}.
  * <p>
- * Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie. This policy can be associated only
- * with HTTP/HTTPS listeners.
+ * Generates a stickiness policy with sticky session lifetimes that
+ * follow that of an application-generated cookie. This policy can be
+ * associated only with HTTP/HTTPS listeners.
  * </p>
  * <p>
- * This policy is similar to the policy created by CreateLBCookieStickinessPolicy, except that the lifetime of the special Elastic Load Balancing cookie
- * follows the lifetime of the application-generated cookie specified in the policy configuration. The load balancer only inserts a new stickiness cookie
- * when the application response includes a new application cookie.
+ * This policy is similar to the policy created by
+ * CreateLBCookieStickinessPolicy, except that the lifetime of the
+ * special Elastic Load Balancing cookie follows the lifetime of the
+ * application-generated cookie specified in the policy configuration.
+ * The load balancer only inserts a new stickiness cookie when the
+ * application response includes a new application cookie.
  * </p>
  * <p>
- * If the application cookie is explicitly removed or expires, the session stops being sticky until a new application cookie is issued.
+ * If the application cookie is explicitly removed or expires, the
+ * session stops being sticky until a new application cookie is issued.
  * </p>
  * <p>
- * <b>NOTE:</b> An application client must receive and send two cookies: the application-generated cookie and the special Elastic Load Balancing cookie
- * named AWSELB. This is the default behavior for many common web browsers.
+ * <b>NOTE:</b> An application client must receive and send two cookies:
+ * the application-generated cookie and the special Elastic Load
+ * Balancing cookie named AWSELB. This is the default behavior for many
+ * common web browsers.
  * </p>
  * <p>
- * For more information, see <a
- * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies"> Enabling
- * Application-Controlled Session Stickiness </a> in the <i>Elastic Load Balancing Developer Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies"> Enabling Application-Controlled Session Stickiness </a>
+ * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest)

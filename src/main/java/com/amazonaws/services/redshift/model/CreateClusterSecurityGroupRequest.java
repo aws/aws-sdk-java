@@ -21,11 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#createClusterSecurityGroup(CreateClusterSecurityGroupRequest) CreateClusterSecurityGroup operation}.
  * <p>
- * Creates a new Amazon Redshift security group. You use security groups to control access to non-VPC clusters.
+ * Creates a new Amazon Redshift security group. You use security groups
+ * to control access to non-VPC clusters.
  * </p>
  * <p>
- * For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">
- * Amazon Redshift Cluster Security Groups </a> in the <i>Amazon Redshift Management Guide</i> .
+ * For information about managing security groups, go to
+ * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
+ * in the <i>Amazon Redshift Management Guide</i> .
  * 
  * </p>
  *

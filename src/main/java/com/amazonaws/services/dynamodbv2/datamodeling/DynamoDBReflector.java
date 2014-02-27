@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -23,7 +22,6 @@ import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
@@ -41,6 +39,12 @@ import java.util.concurrent.locks.ReentrantReadWriteLock.WriteLock;
 
 import org.apache.http.annotation.GuardedBy;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.BinaryAttributeMarshaller;
+import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.BinarySetAttributeMarshaller;
+import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.NumberAttributeMarshaller;
+import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.NumberSetAttributeMarshaller;
+import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.StringAttributeMarshaller;
+import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.StringSetAttributeMarshaller;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.util.DateUtils;
 
@@ -56,9 +60,6 @@ public class DynamoDBReflector {
     private final Map<Class<?>, Collection<Method>> getterCache = new HashMap<Class<?>, Collection<Method>>();
     private final Map<Class<?>, Method> primaryHashKeyGetterCache = new HashMap<Class<?>, Method>();
     private final Map<Class<?>, Method> primaryRangeKeyGetterCache = new HashMap<Class<?>, Method>();
-    private final TableIndexInfoCache indexRangeKeyNameToLocalSecondaryIndexNamesCache = new TableIndexInfoCache();
-    private final TableIndexInfoCache indexRangeKeyNameToGlobalSecondaryIndexNamesCache = new TableIndexInfoCache();
-    private final TableIndexInfoCache indexHashKeyNameToGlobalSecondaryIndexNamesCache = new TableIndexInfoCache();
 
     /*
      * All caches keyed by a Method use the getter for a particular mapped
@@ -109,7 +110,7 @@ public class DynamoDBReflector {
         return (m.getName().startsWith("get") || m.getName().startsWith("is"))
                 && m.getParameterTypes().length == 0
                 && m.getDeclaringClass().getAnnotation(DynamoDBTable.class) != null
-                && !m.isAnnotationPresent(DynamoDBIgnore.class);
+                && !ReflectionUtils.getterOrFieldHasAnnotation(m, DynamoDBIgnore.class);
     }
 
     /**
@@ -121,7 +122,8 @@ public class DynamoDBReflector {
             if ( !primaryRangeKeyGetterCache.containsKey(clazz) ) {
                 Method rangeKeyMethod = null;
                 for ( Method method : getRelevantGetters(clazz) ) {
-                    if ( method.getParameterTypes().length == 0 && method.isAnnotationPresent(DynamoDBRangeKey.class)) {
+                    if ( method.getParameterTypes().length == 0
+                            && ReflectionUtils.getterOrFieldHasAnnotation(method, DynamoDBRangeKey.class)) {
                         rangeKeyMethod = method;
                         break;
                     }
@@ -142,8 +144,8 @@ public class DynamoDBReflector {
     <T> Collection<Method> getPrimaryKeyGetters(Class<T> clazz) {
         List<Method> keyGetters = new LinkedList<Method>();
         for (Method getter : getRelevantGetters(clazz)) {
-            if (getter.isAnnotationPresent(DynamoDBHashKey.class)
-                    || getter.isAnnotationPresent(DynamoDBRangeKey.class)) {
+            if (ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBHashKey.class)
+                    || ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBRangeKey.class)) {
                 keyGetters.add(getter);
             }
         }
@@ -161,7 +163,8 @@ public class DynamoDBReflector {
         synchronized (primaryHashKeyGetterCache) {
             if ( !primaryHashKeyGetterCache.containsKey(clazz) ) {
                 for ( Method method : getRelevantGetters(clazz) ) {
-                    if ( method.getParameterTypes().length == 0 && method.isAnnotationPresent(DynamoDBHashKey.class)) {
+                    if ( method.getParameterTypes().length == 0
+                            && ReflectionUtils.getterOrFieldHasAnnotation(method, DynamoDBHashKey.class)) {
                         primaryHashKeyGetterCache.put(clazz, method);
                         break;
                     }
@@ -192,7 +195,7 @@ public class DynamoDBReflector {
      * Returns whether or not this getter has a custom marshaller
      */
     private boolean isCustomMarshaller(Method getter) {
-        return getter.isAnnotationPresent(DynamoDBMarshalling.class);
+        return ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBMarshalling.class);
     }
 
     /**
@@ -635,7 +638,7 @@ public class DynamoDBReflector {
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
     private <T> T getCustomMarshalledValue(T toReturn, Method getter, AttributeValue value) {
-        DynamoDBMarshalling annotation = getter.getAnnotation(DynamoDBMarshalling.class);
+        DynamoDBMarshalling annotation = ReflectionUtils.getAnnotationFromGetterOrField(getter, DynamoDBMarshalling.class);
         Class<? extends DynamoDBMarshaller<? extends Object>> marshallerClass = annotation.marshallerClass();
 
         DynamoDBMarshaller marshaller;
@@ -656,7 +659,7 @@ public class DynamoDBReflector {
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
     private AttributeValue getCustomerMarshallerAttributeValue(Method getter, Object getterReturnResult) {
-        DynamoDBMarshalling annotation = getter.getAnnotation(DynamoDBMarshalling.class);
+        DynamoDBMarshalling annotation = ReflectionUtils.getAnnotationFromGetterOrField(getter, DynamoDBMarshalling.class);
         Class<? extends DynamoDBMarshaller<? extends Object>> marshallerClass = annotation.marshallerClass();
 
         DynamoDBMarshaller marshaller;
@@ -689,7 +692,8 @@ public class DynamoDBReflector {
                 return marshaller;
             }
             if ( isCustomMarshaller(getter) ) {
-                marshaller = new ArgumentMarshaller() {
+                // Custom marshaller always returns String attribute value.
+                marshaller = new StringAttributeMarshaller() {
                     @Override public AttributeValue marshall(Object obj) {
                         return getCustomerMarshallerAttributeValue(getter, obj);
                     }
@@ -719,7 +723,7 @@ public class DynamoDBReflector {
             }
 
             if ( Date.class.isAssignableFrom(returnType) ) {
-                marshaller = new ArgumentMarshaller() {
+                marshaller = new StringSetAttributeMarshaller() {
 
                     @Override
                     public AttributeValue marshall(Object obj) {
@@ -731,7 +735,7 @@ public class DynamoDBReflector {
                     }
                 };
             } else if ( Calendar.class.isAssignableFrom(returnType) ) {
-                marshaller = new ArgumentMarshaller() {
+                marshaller = new StringSetAttributeMarshaller() {
 
                     @Override
                     public AttributeValue marshall(Object obj) {
@@ -744,7 +748,7 @@ public class DynamoDBReflector {
                 };
             } else if ( boolean.class.isAssignableFrom(returnType)
                     || Boolean.class.isAssignableFrom(returnType) ) {
-                marshaller = new ArgumentMarshaller() {
+                marshaller = new NumberSetAttributeMarshaller() {
 
                     @Override
                     public AttributeValue marshall(Object obj) {
@@ -760,7 +764,7 @@ public class DynamoDBReflector {
                     }
                 };
             } else if ( returnType.isPrimitive() || Number.class.isAssignableFrom(returnType) ) {
-                marshaller = new ArgumentMarshaller() {
+                marshaller = new NumberSetAttributeMarshaller() {
 
                     @Override
                     public AttributeValue marshall(Object obj) {
@@ -772,7 +776,7 @@ public class DynamoDBReflector {
                     }
                 };
             } else if (ByteBuffer.class.isAssignableFrom(returnType)) {
-                 marshaller = new ArgumentMarshaller() {
+                 marshaller = new BinarySetAttributeMarshaller() {
 
                      @Override
                      public AttributeValue marshall(Object obj) {
@@ -784,7 +788,7 @@ public class DynamoDBReflector {
                      }
                  };
             } else if (byte[].class.isAssignableFrom(returnType)) {
-                 marshaller = new ArgumentMarshaller() {
+                 marshaller = new BinarySetAttributeMarshaller() {
 
                      @Override
                      public AttributeValue marshall(Object obj) {
@@ -805,7 +809,7 @@ public class DynamoDBReflector {
                     + (getter.getDeclaringClass() + "." + getter.getName()));
         } else { // Non-set return type
             if ( Date.class.isAssignableFrom(returnType) ) {
-                marshaller = new ArgumentMarshaller() {
+                marshaller = new StringAttributeMarshaller() {
 
                     @Override
                     public AttributeValue marshall(Object obj) {
@@ -813,7 +817,7 @@ public class DynamoDBReflector {
                     }
                 };
             } else if ( Calendar.class.isAssignableFrom(returnType) ) {
-                marshaller = new ArgumentMarshaller() {
+                marshaller = new StringAttributeMarshaller() {
 
                     @Override
                     public AttributeValue marshall(Object obj) {
@@ -823,7 +827,7 @@ public class DynamoDBReflector {
                 };
             } else if ( boolean.class.isAssignableFrom(returnType)
                     || Boolean.class.isAssignableFrom(returnType) ) {
-                marshaller = new ArgumentMarshaller() {
+                marshaller = new NumberAttributeMarshaller() {
 
                     @Override
                     public AttributeValue marshall(Object obj) {
@@ -835,7 +839,7 @@ public class DynamoDBReflector {
                     }
                 };
             } else if ( returnType.isPrimitive() || Number.class.isAssignableFrom(returnType) ) {
-                marshaller = new ArgumentMarshaller() {
+                marshaller = new NumberAttributeMarshaller() {
 
                     @Override
                     public AttributeValue marshall(Object obj) {
@@ -843,7 +847,7 @@ public class DynamoDBReflector {
                     }
                 };
             } else if ( returnType == String.class ) {
-                marshaller = new ArgumentMarshaller() {
+                marshaller = new StringAttributeMarshaller() {
 
                     @Override
                     public AttributeValue marshall(Object obj) {
@@ -853,7 +857,7 @@ public class DynamoDBReflector {
                     }
                 };
             } else if ( returnType == ByteBuffer.class ) {
-                marshaller = new ArgumentMarshaller() {
+                marshaller = new BinaryAttributeMarshaller() {
 
                     @Override
                     public AttributeValue marshall(Object obj) {
@@ -861,7 +865,7 @@ public class DynamoDBReflector {
                     }
                 };
             } else if ( returnType == byte[].class) {
-                 marshaller = new ArgumentMarshaller() {
+                 marshaller = new BinaryAttributeMarshaller() {
 
                      @Override
                      public AttributeValue marshall(Object obj) {
@@ -884,7 +888,7 @@ public class DynamoDBReflector {
         if ( S3Link.class.isAssignableFrom(returnElementType) ) {
             throw new DynamoDBMappingException("Collection types not permitted for " + S3Link.class);
         } else {
-            return new ArgumentMarshaller() {
+            return new StringSetAttributeMarshaller() {
                 @Override
                 public AttributeValue marshall(Object obj) {
                     List<String> attributes = new ArrayList<String>();
@@ -904,7 +908,7 @@ public class DynamoDBReflector {
      */
     private ArgumentMarshaller defaultArgumentMarshaller(final Class<?> returnType, final Method getter) {
         if ( returnType == S3Link.class ) {
-            return new ArgumentMarshaller() {
+            return new StringAttributeMarshaller() {
                 @Override
                 public AttributeValue marshall(Object obj) {
                     S3Link s3link = (S3Link) obj;
@@ -948,53 +952,45 @@ public class DynamoDBReflector {
         }
         if ( attributeName != null )
             return attributeName;
-        DynamoDBHashKey hashKeyAnnotation = getter.getAnnotation(DynamoDBHashKey.class);
+        DynamoDBHashKey hashKeyAnnotation = ReflectionUtils.getAnnotationFromGetterOrField(getter, DynamoDBHashKey.class);
         if ( hashKeyAnnotation != null ) {
             attributeName = hashKeyAnnotation.attributeName();
             if ( attributeName != null && attributeName.length() > 0 )
                 return cacheAttributeName(getter, attributeName); 
         }
-        DynamoDBIndexHashKey indexHashKey = getter.getAnnotation(DynamoDBIndexHashKey.class);
+        DynamoDBIndexHashKey indexHashKey = ReflectionUtils.getAnnotationFromGetterOrField(getter, DynamoDBIndexHashKey.class);
         if ( indexHashKey != null ) {
             attributeName = indexHashKey.attributeName();
             if ( attributeName != null && attributeName.length() > 0 )
                 return cacheAttributeName(getter, attributeName); 
         }
-        DynamoDBRangeKey rangeKey = getter.getAnnotation(DynamoDBRangeKey.class);
+        DynamoDBRangeKey rangeKey = ReflectionUtils.getAnnotationFromGetterOrField(getter, DynamoDBRangeKey.class);
         if ( rangeKey != null ) {
             attributeName = rangeKey.attributeName();
             if ( attributeName != null && attributeName.length() > 0 )
                 return cacheAttributeName(getter, attributeName); 
         }
-        DynamoDBIndexRangeKey indexRangeKey = getter.getAnnotation(DynamoDBIndexRangeKey.class);
+        DynamoDBIndexRangeKey indexRangeKey = ReflectionUtils.getAnnotationFromGetterOrField(getter, DynamoDBIndexRangeKey.class);
         if ( indexRangeKey != null ) {
             attributeName = indexRangeKey.attributeName();
             if ( attributeName != null && attributeName.length() > 0 )
                 return cacheAttributeName(getter, attributeName); 
         }
-        DynamoDBAttribute attribute = getter.getAnnotation(DynamoDBAttribute.class);
+        DynamoDBAttribute attribute = ReflectionUtils.getAnnotationFromGetterOrField(getter, DynamoDBAttribute.class);
         if ( attribute != null ) {
             attributeName = attribute.attributeName();
             if ( attributeName != null && attributeName.length() > 0 )
                 return cacheAttributeName(getter, attributeName); 
         }
-        DynamoDBVersionAttribute version = getter.getAnnotation(DynamoDBVersionAttribute.class);
+        DynamoDBVersionAttribute version = ReflectionUtils.getAnnotationFromGetterOrField(getter, DynamoDBVersionAttribute.class);
         if ( version != null ) {
             attributeName = version.attributeName();
             if ( attributeName != null && attributeName.length() > 0 )
                 return cacheAttributeName(getter, attributeName); 
         }
-        // Default to method name
-        String getterName = getter.getName();
-        if ( getterName.startsWith("get") ) {
-            attributeName = getterName.substring("get".length());
-        } else if ( getterName.startsWith("is") ) {
-            attributeName = getterName.substring("is".length());
-        } else {
-            throw new DynamoDBMappingException("Getter must begin with 'get' or 'is'");
-        }
-        // Lowercase the first letter of the name
-        attributeName = attributeName.substring(0, 1).toLowerCase() + attributeName.substring(1);
+        // Default to the camel-cased field name of the getter method, inferred
+        // according to the Java naming convention.
+        attributeName = ReflectionUtils.getFieldNameByGetter(getter, true);
         return cacheAttributeName(getter, attributeName); 
     }
 
@@ -1015,16 +1011,8 @@ public class DynamoDBReflector {
     Method getSetter(Method getter) {
         synchronized (setterCache) {
             if ( !setterCache.containsKey(getter) ) {
-                String attributeName = null;
-                if ( getter.getName().startsWith("get") ) {
-                    attributeName = getter.getName().substring("get".length());
-                } else if ( getter.getName().startsWith("is") ) {
-                    attributeName = getter.getName().substring("is".length());
-                } else {
-                    // should be impossible to reach this exception
-                    throw new RuntimeException("Getter method must start with 'is' or 'get'");
-                }
-                String setterName = "set" + attributeName;
+                String fieldName = ReflectionUtils.getFieldNameByGetter(getter, false);
+                String setterName = "set" + fieldName;
                 Method setter = null;
                 try {
                     setter = getter.getDeclaringClass().getMethod(setterName, getter.getReturnType());
@@ -1151,7 +1139,7 @@ public class DynamoDBReflector {
                 versionAttributeGetterCache.put(
                         getter,
                         getter.getName().startsWith("get") && getter.getParameterTypes().length == 0
-                                && getter.isAnnotationPresent(DynamoDBVersionAttribute.class));
+                                && ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBVersionAttribute.class));
             }
             return versionAttributeGetterCache.get(getter);
         }
@@ -1165,9 +1153,9 @@ public class DynamoDBReflector {
             if ( !autoGeneratedKeyGetterCache.containsKey(getter) ) {
                 autoGeneratedKeyGetterCache.put(
                         getter,
-                        getter.isAnnotationPresent(DynamoDBAutoGeneratedKey.class)
-                                && (getter.isAnnotationPresent(DynamoDBHashKey.class) || getter
-                                        .isAnnotationPresent(DynamoDBRangeKey.class)));
+                        ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBAutoGeneratedKey.class)
+                                && ( ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBHashKey.class) || 
+                                     ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBRangeKey.class)));
             }
             return autoGeneratedKeyGetterCache.get(getter);
         }
@@ -1181,10 +1169,15 @@ public class DynamoDBReflector {
     }
 
     /**
-     * Returns the name of the primary range key.
+     * Returns the name of the primary range key, or null if the table does not
+     * one.
      */
     String getPrimaryRangeKeyName(Class<?> clazz) {
-    	return getAttributeName(getPrimaryRangeKeyGetter(clazz));
+        Method primaryRangeKeyGetter = getPrimaryHashKeyGetter(clazz);
+        return primaryRangeKeyGetter == null ?
+                null
+                :
+                getAttributeName(getPrimaryRangeKeyGetter(clazz));
     }
 
     /**
@@ -1194,182 +1187,4 @@ public class DynamoDBReflector {
     boolean hasPrimaryRangeKey(Class<?> clazz) {
     	return getPrimaryRangeKeyGetter(clazz) != null;
     }
-
-    /**
-     * Returns the names of all the local secondary indexes that use the given
-     * index range key, or null if the attribute is not annotated with any LSI.
-     */
-    List<String> getLocalSecondaryIndexNamesByIndexKeyName(Class<?> clazz, String indexRangeKeyName) {
-        synchronized (indexRangeKeyNameToLocalSecondaryIndexNamesCache) {
-            if ( !indexRangeKeyNameToLocalSecondaryIndexNamesCache.isCached(clazz) ) {
-                Map<String, List<String>> indexRangeKeyNameToLocalSecondaryIndexNamesMap = new HashMap<String, List<String>>();
-                for ( Method method : getRelevantGetters(clazz) ) {
-                    String attributeName = getAttributeName(method);
-                    List<String> indexNames = new LinkedList<String>();
-
-                    // If it's annotated as a range key for one or more LSI
-                    if ( method.getParameterTypes().length == 0
-                            && method.isAnnotationPresent(DynamoDBIndexRangeKey.class)) {
-                        DynamoDBIndexRangeKey indexRangeKeyAnnotation = method.getAnnotation(DynamoDBIndexRangeKey.class);
-                        String localSecondaryIndexName = indexRangeKeyAnnotation.localSecondaryIndexName();
-                        String[] localSecondaryIndexNames = indexRangeKeyAnnotation.localSecondaryIndexNames();
-                        boolean singleLSIName = localSecondaryIndexName != null
-                                && localSecondaryIndexName.length() != 0;
-                        boolean multipleLSINames = localSecondaryIndexNames != null
-                                && localSecondaryIndexNames.length != 0;
-
-                        if (singleLSIName && multipleLSINames) {
-                            throw new DynamoDBMappingException(
-                                    "@DynamoDBIndexRangeKey annotation on getter "
-                                            + method
-                                            + " contains both localSecondaryIndexName and localSecondaryIndexNames.");
-                        }
-
-                        if (singleLSIName) {
-                            indexNames.add(localSecondaryIndexName);
-                        } else if (multipleLSINames){
-                            indexNames.addAll(Arrays.asList(localSecondaryIndexNames));
-                        }
-                    }
-
-                    if ( !indexNames.isEmpty() ) {
-                        indexRangeKeyNameToLocalSecondaryIndexNamesMap.put(attributeName, indexNames);
-                    } else {
-                        // Save as null instead of empty list
-                        indexRangeKeyNameToLocalSecondaryIndexNamesMap.put(attributeName, null);
-                    }
-                }
-                indexRangeKeyNameToLocalSecondaryIndexNamesCache.cache(clazz, indexRangeKeyNameToLocalSecondaryIndexNamesMap);
-            }
-            return indexRangeKeyNameToLocalSecondaryIndexNamesCache.getIndexNamesByIndexKeyAttributeName(clazz, indexRangeKeyName);
-        }
-    }
-
-    /**
-     * Returns the names of all the global secondary indexes that use the given
-     * index key (either hash or range), or null if the attribute is not annotated with any GSI.
-     */
-    List<String> getGlobalSecondaryIndexNamesByIndexKeyName(Class<?> clazz, String indexKeyName, boolean isIndexHashKey) {
-        final Class<? extends Annotation> annotationInterface = isIndexHashKey ? DynamoDBIndexHashKey.class : DynamoDBIndexRangeKey.class;
-        TableIndexInfoCache indexKeyNameToGlobalSecondaryIndexNamesCache = isIndexHashKey ?
-                indexHashKeyNameToGlobalSecondaryIndexNamesCache : indexRangeKeyNameToGlobalSecondaryIndexNamesCache;
-        synchronized (indexKeyNameToGlobalSecondaryIndexNamesCache) {
-            if ( !indexKeyNameToGlobalSecondaryIndexNamesCache.isCached(clazz) ) {
-                Map<String, List<String>> indexKeyNameToGlobalSecondaryIndexNamesMap = new HashMap<String, List<String>>();
-                for ( Method method : getRelevantGetters(clazz) ) {
-                    String attributeName = getAttributeName(method);
-                    List<String> indexNames = new LinkedList<String>();
-
-                    if ( method.getParameterTypes().length == 0
-                            && ( method.isAnnotationPresent(annotationInterface) )) {
-                        String globalSecondaryIndexName;
-                        String[] globalSecondaryIndexNames;
-                        Annotation indexHashKeyAnnotation = method.getAnnotation(annotationInterface);
-                        if (isIndexHashKey) {
-                            globalSecondaryIndexName = ((DynamoDBIndexHashKey)indexHashKeyAnnotation).globalSecondaryIndexName();
-                            globalSecondaryIndexNames = ((DynamoDBIndexHashKey)indexHashKeyAnnotation).globalSecondaryIndexNames();
-                        } else {
-                            globalSecondaryIndexName = ((DynamoDBIndexRangeKey)indexHashKeyAnnotation).globalSecondaryIndexName();
-                            globalSecondaryIndexNames = ((DynamoDBIndexRangeKey)indexHashKeyAnnotation).globalSecondaryIndexNames();
-                        }
-
-                        boolean singleGSIName = globalSecondaryIndexName != null
-                                && globalSecondaryIndexName.length() != 0;
-                        boolean multipleGSINames = globalSecondaryIndexNames != null
-                                && globalSecondaryIndexNames.length != 0;
-
-                        if ( singleGSIName && multipleGSINames) {
-                            throw new DynamoDBMappingException(
-                                    annotationInterface.getSimpleName() + " annotation on getter "
-                                            + method
-                                            + " contains both globalSecondaryIndexName and globalSecondaryIndexNames.");
-                        } else if ( (!singleGSIName) && (!multipleGSINames)
-                                && isIndexHashKey ) {
-                            throw new DynamoDBMappingException(
-                                    "@DynamoDBIndexHashKey annotation on getter "
-                                            + method
-                                            + " doesn't contain any index name.");
-                        }
-
-                        if (singleGSIName) {
-                            indexNames.add(globalSecondaryIndexName);
-                        } else if (multipleGSINames) {
-                            indexNames.addAll(Arrays.asList(globalSecondaryIndexNames));
-                        }
-                    }
-
-                    if ( !indexNames.isEmpty() ) {
-                        indexKeyNameToGlobalSecondaryIndexNamesMap.put(attributeName, indexNames);
-                    } else {
-                        // null instead of an empty list
-                        indexKeyNameToGlobalSecondaryIndexNamesMap.put(attributeName, null);
-                    }
-                }
-                indexKeyNameToGlobalSecondaryIndexNamesCache.cache(clazz, indexKeyNameToGlobalSecondaryIndexNamesMap);
-            }
-            return indexKeyNameToGlobalSecondaryIndexNamesCache.getIndexNamesByIndexKeyAttributeName(clazz, indexKeyName);
-        }
-    }
-
-    /**
-     * Returns the names of all the local secondary indexes associated with the given domain class
-     * by searching for all the index range key annotations.
-     */
-    Set<String> getAllLocalSecondaryIndexNames(Class<?> clazz) {
-        synchronized (indexRangeKeyNameToLocalSecondaryIndexNamesCache) {
-            if ( !indexRangeKeyNameToLocalSecondaryIndexNamesCache.isCached(clazz) ) {
-                // This simply triggers the reflector to collect all the LSI informations
-                getLocalSecondaryIndexNamesByIndexKeyName(clazz, null);
-            }
-        }
-        return indexRangeKeyNameToLocalSecondaryIndexNamesCache.getAllIndexNames(clazz);
-    }
-
-    /**
-     * Returns the names of all the global secondary indexes associated with the given domain class
-     * by searching for all the index hash key annotations.
-     */
-    Set<String> getAllGlobalSecondaryIndexNames(Class<?> clazz) {
-        synchronized (indexHashKeyNameToGlobalSecondaryIndexNamesCache) {
-            if ( !indexHashKeyNameToGlobalSecondaryIndexNamesCache.isCached(clazz) ) {
-                // This simply triggers the reflector to collect all the GSI informations
-                // by searching for all the index hash key annotations.
-                getGlobalSecondaryIndexNamesByIndexKeyName(clazz, null, true);
-            }
-        }
-        return indexHashKeyNameToGlobalSecondaryIndexNamesCache.getAllIndexNames(clazz);
-    }
-
-    private static class TableIndexInfoCache {
-
-        private Map<Class<?>, Map<String, List<String>>> indexKeyNameToIndexNameCache = 
-                new HashMap<Class<?>, Map<String, List<String>>>();
-
-        private Map<Class<?>, Set<String>> allIndexNamesCache = new HashMap<Class<?>, Set<String>>();
-        
-        public boolean isCached(Class<?> clazz) {
-            return indexKeyNameToIndexNameCache.containsKey(clazz);
-        }
-
-        public List<String> getIndexNamesByIndexKeyAttributeName(Class<?> clazz, String indexKeyName) {
-            return indexKeyNameToIndexNameCache.get(clazz).get(indexKeyName);
-        }
-
-        public Set<String> getAllIndexNames(Class<?> clazz) {
-            return allIndexNamesCache.get(clazz);
-        }
-
-        public void cache(Class<?> clazz, Map<String, List<String>> indexKeyNameToIndexNamesMap) {
-            indexKeyNameToIndexNameCache.put(clazz, indexKeyNameToIndexNamesMap);
-
-            Set<String> allIndexNames = new HashSet<String>();
-            for (List<String> indexNames : indexKeyNameToIndexNamesMap.values()) {
-                if (indexNames != null) {
-                    allIndexNames.addAll(indexNames);
-                }
-            }
-            allIndexNamesCache.put(clazz, allIndexNames);
-        }
-    }
-
 }

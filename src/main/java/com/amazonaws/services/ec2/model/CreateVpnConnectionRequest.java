@@ -23,23 +23,28 @@ import com.amazonaws.services.ec2.model.transform.CreateVpnConnectionRequestMars
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVpnConnection(CreateVpnConnectionRequest) CreateVpnConnection operation}.
  * <p>
- * Creates a VPN connection between an existing virtual private gateway and a VPN customer gateway. The only supported connection type is
+ * Creates a VPN connection between an existing virtual private gateway
+ * and a VPN customer gateway. The only supported connection type is
  * <code>ipsec.1</code> .
  * </p>
  * <p>
- * The response includes information that you need to give to your network administrator to configure your customer gateway.
+ * The response includes information that you need to give to your
+ * network administrator to configure your customer gateway.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> We strongly recommend that you use HTTPS when calling this operation because the response contains sensitive cryptographic
- * information for configuring your customer gateway.
+ * <b>IMPORTANT:</b> We strongly recommend that you use HTTPS when
+ * calling this operation because the response contains sensitive
+ * cryptographic information for configuring your customer gateway.
  * </p>
  * <p>
- * If you decide to shut down your VPN connection for any reason and later create a new VPN connection, you must reconfigure your customer gateway with
- * the new information returned from this call.
+ * If you decide to shut down your VPN connection for any reason and
+ * later create a new VPN connection, you must reconfigure your customer
+ * gateway with the new information returned from this call.
  * </p>
  * <p>
- * For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware
- * Virtual Private Gateway to Your VPC </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
+ * For more information about VPN connections, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpnConnection(CreateVpnConnectionRequest)

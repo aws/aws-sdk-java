@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Provides details of the <code>ChildWorkflowExecutionTimedOut</code> event.
+ * Provides details of the <code>ChildWorkflowExecutionTimedOut</code>
+ * event.
  * </p>
  */
 public class ChildWorkflowExecutionTimedOutEventAttributes implements Serializable {

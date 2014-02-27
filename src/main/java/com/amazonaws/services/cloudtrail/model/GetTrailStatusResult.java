@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns the objects or data listed below if successful. Otherwise, returns an error.
+ * Returns the objects or data listed below if successful. Otherwise,
+ * returns an error.
  * </p>
  */
 public class GetTrailStatusResult implements Serializable {

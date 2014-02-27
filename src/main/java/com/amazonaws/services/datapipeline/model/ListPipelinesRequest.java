@@ -21,7 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#listPipelines(ListPipelinesRequest) ListPipelines operation}.
  * <p>
- * Returns a list of pipeline identifiers for all active pipelines. Identifiers are returned only for pipelines you have permission to access.
+ * Returns a list of pipeline identifiers for all active pipelines.
+ * Identifiers are returned only for pipelines you have permission to
+ * access.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#listPipelines(ListPipelinesRequest)

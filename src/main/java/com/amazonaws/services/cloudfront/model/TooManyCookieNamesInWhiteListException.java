@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Your request contains more cookie names in the whitelist than are allowed per cache behavior.
+ * Your request contains more cookie names in the whitelist than are
+ * allowed per cache behavior.
  * </p>
  */        
 public class TooManyCookieNamesInWhiteListException extends AmazonServiceException {

@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The number of nodes specified exceeds the allotted capacity of the cluster.
+ * The number of nodes specified exceeds the allotted capacity of the
+ * cluster.
  * </p>
  */        
 public class InsufficientClusterCapacityException extends AmazonServiceException {

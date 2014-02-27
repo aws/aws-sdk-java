@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * One or more required parameter values were not provided in the request.
+ * One or more required parameter values were not provided in the
+ * request.
  * </p>
  */        
 public class ValidationException extends AmazonServiceException {

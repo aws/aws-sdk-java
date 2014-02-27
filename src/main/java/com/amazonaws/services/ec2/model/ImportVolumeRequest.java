@@ -23,10 +23,12 @@ import com.amazonaws.services.ec2.model.transform.ImportVolumeRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#importVolume(ImportVolumeRequest) ImportVolume operation}.
  * <p>
- * Creates an import volume task using metadata from the specified disk image. After importing the image, you then upload it using the
- * ec2-upload-disk-image command in the Amazon EC2 command-line interface (CLI) tools. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual
- * Machine to Amazon EC2 </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * Creates an import volume task using metadata from the specified disk
+ * image. After importing the image, you then upload it using the
+ * ec2-upload-disk-image command in the Amazon EC2 command-line interface
+ * (CLI) tools. For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#importVolume(ImportVolumeRequest)

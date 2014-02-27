@@ -21,38 +21,51 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#terminateWorkflowExecution(TerminateWorkflowExecutionRequest) TerminateWorkflowExecution operation}.
  * <p>
- * Records a <code>WorkflowExecutionTerminated</code> event and forces closure of the workflow execution identified by the given domain, runId, and
- * workflowId. The child policy, registered with the workflow type or specified when starting this execution, is applied to any open child workflow
- * executions of this workflow execution.
+ * Records a <code>WorkflowExecutionTerminated</code> event and forces
+ * closure of the workflow execution identified by the given domain,
+ * runId, and workflowId. The child policy, registered with the workflow
+ * type or specified when starting this execution, is applied to any open
+ * child workflow executions of this workflow execution.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> If the identified workflow execution was in progress, it is terminated immediately.
+ * <b>IMPORTANT:</b> If the identified workflow execution was in
+ * progress, it is terminated immediately.
  * </p>
  * <p>
- * <b>NOTE:</b> If a runId is not specified, then the WorkflowExecutionTerminated event is recorded in the history of the current open workflow with the
- * matching workflowId in the domain.
+ * <b>NOTE:</b> If a runId is not specified, then the
+ * WorkflowExecutionTerminated event is recorded in the history of the
+ * current open workflow with the matching workflowId in the domain.
  * </p>
  * <p>
- * <b>NOTE:</b> You should consider using RequestCancelWorkflowExecution action instead because it allows the workflow to gracefully close while
- * TerminateWorkflowExecution does not.
+ * <b>NOTE:</b> You should consider using RequestCancelWorkflowExecution
+ * action instead because it allows the workflow to gracefully close
+ * while TerminateWorkflowExecution does not.
  * </p>
  * <p>
  * <b>Access Control</b>
  * </p>
  * <p>
- * You can use IAM policies to control this action's access to Amazon SWF resources as follows:
+ * You can use IAM policies to control this action's access to Amazon SWF
+ * resources as follows:
  * </p>
  * 
  * <ul>
- * <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li>
- * <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li>
- * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+ * <li>Use a <code>Resource</code> element with the domain name to limit
+ * the action to only specified domains.</li>
+ * <li>Use an <code>Action</code> element to allow or deny permission to
+ * call this action.</li>
+ * <li>You cannot use an IAM policy to constrain this action's
+ * parameters.</li>
  * 
  * </ul>
  * <p>
- * If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action
- * fails by throwing <code>OperationNotPermitted</code> . For details and example IAM policies, see <a
- * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a> .
+ * If the caller does not have sufficient permissions to invoke the
+ * action, or the parameter values fall outside the specified
+ * constraints, the action fails by throwing
+ * <code>OperationNotPermitted</code> . For details and example IAM
+ * policies, see
+ * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#terminateWorkflowExecution(TerminateWorkflowExecutionRequest)

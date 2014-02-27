@@ -26,9 +26,11 @@ import com.amazonaws.services.ec2.model.transform.DisassociateRouteTableRequestM
  * Disassociates a subnet from a route table.
  * </p>
  * <p>
- * After you perform this action, the subnet no longer uses the routes in the route table. Instead, it uses the routes in the VPC's main route table. For
- * more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a> in
- * the <i>Amazon Virtual Private Cloud User Guide</i> .
+ * After you perform this action, the subnet no longer uses the routes in
+ * the route table. Instead, it uses the routes in the VPC's main route
+ * table. For more information about route tables, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#disassociateRouteTable(DisassociateRouteTableRequest)

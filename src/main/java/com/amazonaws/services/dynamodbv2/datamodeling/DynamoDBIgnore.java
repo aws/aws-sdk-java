@@ -19,16 +19,17 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-
 /**
- * Interface for marking a class property as non-modeled. Applied to the getter
- * method of a non-modeled property.
+ * Annotation for marking a class property as non-modeled. Applied to the getter
+ * method or the class field for a non-modeled property. If the annotation is
+ * applied directly to the class field, the corresponding getter and setter must
+ * be declared in the same class.
  * <p>
  * All getter methods not marked with this annotation are assumed to be modeled
  * properties and included in any save() requests.
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
+@Target({ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBIgnore {
 
 }

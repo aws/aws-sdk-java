@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the CreateGroup action.
+ * Contains the result of a successful invocation of the CreateGroup
+ * action.
  * </p>
  */
 public class CreateGroupResult implements Serializable {

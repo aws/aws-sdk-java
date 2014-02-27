@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains information about origins for this distribution.
+ * A complex type that contains information about origins for this
+ * distribution.
  * </p>
  */
 public class Origins implements Serializable {

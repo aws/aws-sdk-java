@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Request would result in user exceeding the allowed number of DB instances.
+ * Request would result in user exceeding the allowed number of DB
+ * instances.
  * </p>
  */        
 public class InstanceQuotaExceededException extends AmazonServiceException {

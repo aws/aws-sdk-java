@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.
+ * An item collection is too large. This exception is only returned for
+ * tables that have one or more local secondary indexes.
  * </p>
  */        
 public class ItemCollectionSizeLimitExceededException extends AmazonServiceException {

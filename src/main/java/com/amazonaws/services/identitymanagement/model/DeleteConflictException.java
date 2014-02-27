@@ -18,7 +18,9 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because it attempted to delete a resource that has attached subordinate entities. The error message describes these entities.
+ * The request was rejected because it attempted to delete a resource
+ * that has attached subordinate entities. The error message describes
+ * these entities.
  * </p>
  */        
 public class DeleteConflictException extends AmazonServiceException {

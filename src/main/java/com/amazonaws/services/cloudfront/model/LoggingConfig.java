@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that controls whether access logs are written for the distribution.
+ * A complex type that controls whether access logs are written for the
+ * distribution.
  * </p>
  */
 public class LoggingConfig implements Serializable {

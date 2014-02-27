@@ -21,22 +21,28 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#addPermission(AddPermissionRequest) AddPermission operation}.
  * <p>
- * Adds a permission to a queue for a specific <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P"> principal </a> . This allows for
- * sharing access to the queue.
+ * Adds a permission to a queue for a specific
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P"> principal </a>
+ * . This allows for sharing access to the queue.
  * </p>
  * <p>
- * When you create a queue, you have full control access rights for the queue. Only you (as owner of the queue) can grant or deny permissions to the
- * queue. For more information about these permissions, see <a
- * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html"> Shared Queues </a> in the <i>Amazon SQS Developer
- * Guide</i> .
+ * When you create a queue, you have full control access rights for the
+ * queue. Only you (as owner of the queue) can grant or deny permissions
+ * to the queue. For more information about these permissions, see
+ * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html"> Shared Queues </a>
+ * in the <i>Amazon SQS Developer Guide</i> .
  * </p>
  * <p>
- * <b>NOTE:</b> AddPermission writes an Amazon SQS-generated policy. If you want to write your own policy, use SetQueueAttributes to upload your policy.
- * For more information about writing your own policy, see Using The Access Policy Language in the Amazon SQS Developer Guide.
+ * <b>NOTE:</b> AddPermission writes an Amazon SQS-generated policy. If
+ * you want to write your own policy, use SetQueueAttributes to upload
+ * your policy. For more information about writing your own policy, see
+ * Using The Access Policy Language in the Amazon SQS Developer Guide.
  * </p>
  * <p>
- * <b>NOTE:</b>Some API actions take lists of parameters. These lists are specified using the param.n notation. Values of n are integers starting from 1.
- * For example, a parameter list with two elements looks like this:
+ * <b>NOTE:</b>Some API actions take lists of parameters. These lists are
+ * specified using the param.n notation. Values of n are integers
+ * starting from 1. For example, a parameter list with two elements looks
+ * like this:
  * </p>
  * <p>
  * <code>&Attribute.1=this</code>

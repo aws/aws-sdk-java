@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudtrail.AWSCloudTrail#describeTrails(DescribeTrailsRequest) DescribeTrails operation}.
  * <p>
- * Retrieves the settings for some or all trails associated with an account. Returns a list of Trail structures in JSON format.
+ * Retrieves the settings for some or all trails associated with an
+ * account. Returns a list of Trail structures in JSON format.
  * </p>
  *
  * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#describeTrails(DescribeTrailsRequest)

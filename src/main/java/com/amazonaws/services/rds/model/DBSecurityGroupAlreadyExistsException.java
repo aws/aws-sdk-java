@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * A DB security group with the name specified in <i>DBSecurityGroupName</i> already exists.
+ * A DB security group with the name specified in
+ * <i>DBSecurityGroupName</i> already exists.
  * </p>
  */        
 public class DBSecurityGroupAlreadyExistsException extends AmazonServiceException {

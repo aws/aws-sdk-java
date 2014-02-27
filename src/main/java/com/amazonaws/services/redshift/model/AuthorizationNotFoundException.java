@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified CIDR IP range or EC2 security group is not authorized for the specified cluster security group.
+ * The specified CIDR IP range or EC2 security group is not authorized
+ * for the specified cluster security group.
  * </p>
  */        
 public class AuthorizationNotFoundException extends AmazonServiceException {

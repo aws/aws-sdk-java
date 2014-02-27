@@ -21,10 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest) DeleteCacheSubnetGroup operation}.
  * <p>
- * The <i>DeleteCacheSubnetGroup</i> operation deletes a cache subnet group.
+ * The <i>DeleteCacheSubnetGroup</i> operation deletes a cache subnet
+ * group.
  * </p>
  * <p>
- * <b>NOTE:</b>You cannot delete a cache subnet group if it is associated with any cache clusters.
+ * <b>NOTE:</b>You cannot delete a cache subnet group if it is associated
+ * with any cache clusters.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest)

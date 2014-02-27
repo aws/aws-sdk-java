@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the response to a <code>DescribeElasticLoadBalancers</code> request.
+ * Contains the response to a <code>DescribeElasticLoadBalancers</code>
+ * request.
  * </p>
  */
 public class DescribeElasticLoadBalancersResult implements Serializable {

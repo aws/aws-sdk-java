@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Provides details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.
+ * Provides details of the
+ * <code>SignalExternalWorkflowExecutionInitiated</code> event.
  * </p>
  */
 public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements Serializable {

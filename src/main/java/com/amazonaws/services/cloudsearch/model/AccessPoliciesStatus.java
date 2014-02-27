@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A <code>PolicyDocument</code> that specifies access policies for the search domain's services, and the current status of those policies.
+ * A <code>PolicyDocument</code> that specifies access policies for the
+ * search domain's services, and the current status of those policies.
  * </p>
  */
 public class AccessPoliciesStatus implements Serializable {

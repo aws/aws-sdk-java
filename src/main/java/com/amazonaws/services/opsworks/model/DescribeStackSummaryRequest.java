@@ -21,13 +21,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#describeStackSummary(DescribeStackSummaryRequest) DescribeStackSummary operation}.
  * <p>
- * Describes the number of layers and apps in a specified stack, and the number of instances in each state, such as <code>running_setup</code> or
- * <code>online</code> .
+ * Describes the number of layers and apps in a specified stack, and the
+ * number of instances in each state, such as <code>running_setup</code>
+ * or <code>online</code> .
  * </p>
  * <p>
- * <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached
- * policy that explicitly grants permissions. For more information on user permissions, see <a
- * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a> .
+ * <b>Required Permissions</b> : To use this action, an IAM user must
+ * have a Show, Deploy, or Manage permissions level for the stack, or an
+ * attached policy that explicitly grants permissions. For more
+ * information on user permissions, see
+ * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeStackSummary(DescribeStackSummaryRequest)

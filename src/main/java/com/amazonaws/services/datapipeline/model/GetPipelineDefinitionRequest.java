@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#getPipelineDefinition(GetPipelineDefinitionRequest) GetPipelineDefinition operation}.
  * <p>
- * Returns the definition of the specified pipeline. You can call GetPipelineDefinition to retrieve the pipeline definition you provided using
- * PutPipelineDefinition.
+ * Returns the definition of the specified pipeline. You can call
+ * GetPipelineDefinition to retrieve the pipeline definition you provided
+ * using PutPipelineDefinition.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#getPipelineDefinition(GetPipelineDefinitionRequest)

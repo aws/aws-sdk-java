@@ -26,14 +26,21 @@ public class DomainDeprecatedExceptionUnmarshaller extends JsonErrorUnmarshaller
         super(DomainDeprecatedException.class);
     }
 
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands.
-        String errorCode = parseErrorCode(json);
-        if (errorCode == null || !errorCode.equals("DomainDeprecatedFault"))
-            return null;
+    @Override
+    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
+        if (errorTypeFromHeader == null) {
+            // Parse error type from the JSON content if it's not available in the response headers
+            String errorCodeFromContent = parseErrorCode(json);
+            return (errorCodeFromContent != null && errorCodeFromContent.equals("DomainDeprecatedFault"));
+        } else {
+            return errorTypeFromHeader.equals("DomainDeprecatedFault");
+        }
+    }
 
+    @Override
+    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         DomainDeprecatedException e = (DomainDeprecatedException)super.unmarshall(json);
+        e.setErrorCode("DomainDeprecatedFault");
 
         return e;
     }

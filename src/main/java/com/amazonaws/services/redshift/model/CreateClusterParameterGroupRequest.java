@@ -24,13 +24,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Creates an Amazon Redshift parameter group.
  * </p>
  * <p>
- * Creating parameter groups is independent of creating clusters. You can associate a cluster with a parameter group when you create the cluster. You can
- * also associate an existing cluster with a parameter group after the cluster is created by using ModifyCluster.
+ * Creating parameter groups is independent of creating clusters. You can
+ * associate a cluster with a parameter group when you create the
+ * cluster. You can also associate an existing cluster with a parameter
+ * group after the cluster is created by using ModifyCluster.
  * </p>
  * <p>
- * Parameters in the parameter group define specific behavior that applies to the databases you create on the cluster. For more information about
- * managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift
- * Parameter Groups </a> in the <i>Amazon Redshift Management Guide</i> .
+ * Parameters in the parameter group define specific behavior that
+ * applies to the databases you create on the cluster. For more
+ * information about managing parameter groups, go to
+ * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
+ * in the <i>Amazon Redshift Management Guide</i> .
  * 
  * </p>
  *

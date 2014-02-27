@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest) DescribeCacheSubnetGroups operation}.
  * <p>
- * The <i>DescribeCacheSubnetGroups</i> operation returns a list of cache subnet group descriptions. If a subnet group name is specified, the list will
- * contain only the description of that group.
+ * The <i>DescribeCacheSubnetGroups</i> operation returns a list of cache
+ * subnet group descriptions. If a subnet group name is specified, the
+ * list will contain only the description of that group.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest)

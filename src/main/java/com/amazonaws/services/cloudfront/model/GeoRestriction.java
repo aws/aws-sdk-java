@@ -18,9 +18,12 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that controls the countries in which your content is distributed. For more information about geo restriction, go to Customizing Error
- * Responses in the Amazon CloudFront Developer Guide. CloudFront determines the location of your users using MaxMind GeoIP databases. For information
- * about the accuracy of these databases, see How accurate are your GeoIP databases? on the MaxMind website.
+ * A complex type that controls the countries in which your content is
+ * distributed. For more information about geo restriction, go to
+ * Customizing Error Responses in the Amazon CloudFront Developer Guide.
+ * CloudFront determines the location of your users using MaxMind GeoIP
+ * databases. For information about the accuracy of these databases, see
+ * How accurate are your GeoIP databases? on the MaxMind website.
  * </p>
  */
 public class GeoRestriction implements Serializable {

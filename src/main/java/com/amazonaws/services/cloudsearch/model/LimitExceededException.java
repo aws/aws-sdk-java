@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because a resource limit has already been met.
+ * The request was rejected because a resource limit has already been
+ * met.
  * </p>
  */        
 public class LimitExceededException extends AmazonServiceException {

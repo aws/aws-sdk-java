@@ -21,11 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#createClusterSnapshot(CreateClusterSnapshotRequest) CreateClusterSnapshot operation}.
  * <p>
- * Creates a manual snapshot of the specified cluster. The cluster must be in the "available" state.
+ * Creates a manual snapshot of the specified cluster. The cluster must
+ * be in the "available" state.
  * </p>
  * <p>
- * For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">
- * Amazon Redshift Snapshots </a> in the <i>Amazon Redshift Management Guide</i> .
+ * For more information about working with snapshots, go to
+ * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
+ * in the <i>Amazon Redshift Management Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createClusterSnapshot(CreateClusterSnapshotRequest)

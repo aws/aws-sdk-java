@@ -21,9 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeClusterSnapshots(DescribeClusterSnapshotsRequest) DescribeClusterSnapshots operation}.
  * <p>
- * Returns one or more snapshot objects, which contain metadata about your cluster snapshots. By default, this operation returns information about all
- * snapshots of all clusters that are owned by you AWS customer account. No information is returned for snapshots owned by inactive AWS customer
- * accounts.
+ * Returns one or more snapshot objects, which contain metadata about
+ * your cluster snapshots. By default, this operation returns information
+ * about all snapshots of all clusters that are owned by you AWS customer
+ * account. No information is returned for snapshots owned by inactive
+ * AWS customer accounts.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusterSnapshots(DescribeClusterSnapshotsRequest)

@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Indicates that an error occurred while processing the request and that the request was not completed.
+ * Indicates that an error occurred while processing the request and that
+ * the request was not completed.
  * </p>
  */        
 public class InternalServerErrorException extends AmazonServiceException {

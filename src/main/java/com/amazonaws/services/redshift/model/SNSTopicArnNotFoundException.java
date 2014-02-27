@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * An Amazon SNS topic with the specified Amazon Resource Name (ARN) does not exist.
+ * An Amazon SNS topic with the specified Amazon Resource Name (ARN) does
+ * not exist.
  * </p>
  */        
 public class SNSTopicArnNotFoundException extends AmazonServiceException {

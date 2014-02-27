@@ -24,30 +24,40 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Adds new instances to the load balancer.
  * </p>
  * <p>
- * Once the instance is registered, it starts receiving traffic and requests from the load balancer. Any instance that is not in any of the Availability
- * Zones registered for the load balancer will be moved to the <i>OutOfService</i> state. It will move to the <i>InService</i> state when the
- * Availability Zone is added to the load balancer.
+ * Once the instance is registered, it starts receiving traffic and
+ * requests from the load balancer. Any instance that is not in any of
+ * the Availability Zones registered for the load balancer will be moved
+ * to the <i>OutOfService</i> state. It will move to the <i>InService</i>
+ * state when the Availability Zone is added to the load balancer.
  * </p>
  * <p>
- * When an instance registered with a load balancer is stopped and then restarted, the IP addresses associated with the instance changes. Elastic Load
- * Balancing cannot recognize the new IP address, which prevents it from routing traffic to the instances. We recommend that you de-register your Amazon
- * EC2 instances from your load balancer after you stop your instance, and then register the load balancer with your instance after you've restarted. To
- * de-register your instances from load balancer, use DeregisterInstancesFromLoadBalancer action.
+ * When an instance registered with a load balancer is stopped and then
+ * restarted, the IP addresses associated with the instance changes.
+ * Elastic Load Balancing cannot recognize the new IP address, which
+ * prevents it from routing traffic to the instances. We recommend that
+ * you de-register your Amazon EC2 instances from your load balancer
+ * after you stop your instance, and then register the load balancer with
+ * your instance after you've restarted. To de-register your instances
+ * from load balancer, use DeregisterInstancesFromLoadBalancer action.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> De-register and
- * Register Amazon EC2 Instances </a> in the <i>Elastic Load Balancing Developer Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> De-register and Register Amazon EC2 Instances </a>
+ * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  * <p>
- * <b>NOTE:</b> In order for this call to be successful, you must provide the same account credentials as those that were used to create the load
- * balancer.
+ * <b>NOTE:</b> In order for this call to be successful, you must provide
+ * the same account credentials as those that were used to create the
+ * load balancer.
  * </p>
  * <p>
- * <b>NOTE:</b> Completion of this API does not guarantee that operation has completed. Rather, it means that the request has been registered and the
- * changes will happen shortly.
+ * <b>NOTE:</b> Completion of this API does not guarantee that operation
+ * has completed. Rather, it means that the request has been registered
+ * and the changes will happen shortly.
  * </p>
  * <p>
- * You can use DescribeLoadBalancers or DescribeInstanceHealth action to check the state of the newly registered instances.
+ * You can use DescribeLoadBalancers or DescribeInstanceHealth action to
+ * check the state of the newly registered instances.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#registerInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest)

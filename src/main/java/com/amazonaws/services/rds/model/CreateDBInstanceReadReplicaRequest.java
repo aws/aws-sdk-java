@@ -21,14 +21,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest) CreateDBInstanceReadReplica operation}.
  * <p>
- * Creates a DB instance that acts as a read replica of a source DB instance.
+ * Creates a DB instance that acts as a read replica of a source DB
+ * instance.
  * </p>
  * <p>
- * All read replica DB instances are created as Single-AZ deployments with backups disabled. All other DB instance attributes (including DB security
- * groups and DB parameter groups) are inherited from the source DB instance, except as specified below.
+ * All read replica DB instances are created as Single-AZ deployments
+ * with backups disabled. All other DB instance attributes (including DB
+ * security groups and DB parameter groups) are inherited from the source
+ * DB instance, except as specified below.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> The source DB instance must have backup retention enabled.
+ * <b>IMPORTANT:</b> The source DB instance must have backup retention
+ * enabled.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest)

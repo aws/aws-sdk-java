@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.DescribeNetworkInterfaceAttrib
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest) DescribeNetworkInterfaceAttribute operation}.
  * <p>
- * Describes a network interface attribute. You can specify only one attribute at a time.
+ * Describes a network interface attribute. You can specify only one
+ * attribute at a time.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest)

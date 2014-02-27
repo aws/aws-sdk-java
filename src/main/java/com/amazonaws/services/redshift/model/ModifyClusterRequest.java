@@ -21,16 +21,22 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#modifyCluster(ModifyClusterRequest) ModifyCluster operation}.
  * <p>
- * Modifies the settings for a cluster. For example, you can add another security or parameter group, update the preferred maintenance window, or change
- * the master user password. Resetting a cluster password or modifying the security groups associated with a cluster do not need a reboot. However,
- * modifying parameter group requires a reboot for parameters to take effect. For more information about managing clusters, go to <a
- * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a> in the <i>Amazon Redshift Management
- * Guide</i>
+ * Modifies the settings for a cluster. For example, you can add another
+ * security or parameter group, update the preferred maintenance window,
+ * or change the master user password. Resetting a cluster password or
+ * modifying the security groups associated with a cluster do not need a
+ * reboot. However, modifying parameter group requires a reboot for
+ * parameters to take effect. For more information about managing
+ * clusters, go to
+ * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
+ * in the <i>Amazon Redshift Management Guide</i>
  * </p>
  * <p>
- * You can also change node type and the number of nodes to scale up or down the cluster. When resizing a cluster, you must specify both the number of
- * nodes and the node type even if one of the parameters does not change. If you specify the same number of nodes and node type that are already
- * configured for the cluster, an error is returned.
+ * You can also change node type and the number of nodes to scale up or
+ * down the cluster. When resizing a cluster, you must specify both the
+ * number of nodes and the node type even if one of the parameters does
+ * not change. If you specify the same number of nodes and node type that
+ * are already configured for the cluster, an error is returned.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#modifyCluster(ModifyClusterRequest)

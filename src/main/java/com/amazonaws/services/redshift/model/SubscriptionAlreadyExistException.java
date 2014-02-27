@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * There is already an existing event notification subscription with the specified name.
+ * There is already an existing event notification subscription with the
+ * specified name.
  * </p>
  */        
 public class SubscriptionAlreadyExistException extends AmazonServiceException {

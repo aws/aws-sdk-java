@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element in the action DescribeDBEngineVersions.
+ * This data type is used as a response element in the action
+ * DescribeDBEngineVersions.
  * </p>
  */
 public class DBEngineVersion implements Serializable {

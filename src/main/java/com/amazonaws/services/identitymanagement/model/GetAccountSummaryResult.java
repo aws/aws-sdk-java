@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the GetAccountSummary action.
+ * Contains the result of a successful invocation of the
+ * GetAccountSummary action.
  * </p>
  */
 public class GetAccountSummaryResult implements Serializable {

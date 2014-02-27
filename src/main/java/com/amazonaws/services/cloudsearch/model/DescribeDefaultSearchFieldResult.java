@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A response message that contains the default search field for a search domain.
+ * A response message that contains the default search field for a search
+ * domain.
  * </p>
  */
 public class DescribeDefaultSearchFieldResult implements Serializable {

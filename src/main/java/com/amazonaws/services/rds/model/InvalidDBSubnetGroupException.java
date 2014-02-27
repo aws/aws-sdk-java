@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Indicates the DBSubnetGroup does not belong to the same VPC as that of an existing cross region read replica of the same source instance.
+ * Indicates the DBSubnetGroup does not belong to the same VPC as that
+ * of an existing cross region read replica of the same source instance.
  * </p>
  */        
 public class InvalidDBSubnetGroupException extends AmazonServiceException {

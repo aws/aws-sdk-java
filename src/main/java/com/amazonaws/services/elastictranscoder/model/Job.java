@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A section of the response body that provides information about the job that is created.
+ * A section of the response body that provides information about the job
+ * that is created.
  * </p>
  */
 public class Job implements Serializable {

@@ -26,8 +26,10 @@ import com.amazonaws.services.ec2.model.transform.DeleteSecurityGroupRequestMars
  * Deletes a security group.
  * </p>
  * <p>
- * If you attempt to delete a security group that is associated with an instance, or is referenced by another security group, the operation fails with
- * <code>InvalidGroup.InUse</code> in EC2-Classic or <code>DependencyViolation</code> in EC2-VPC.
+ * If you attempt to delete a security group that is associated with an
+ * instance, or is referenced by another security group, the operation
+ * fails with <code>InvalidGroup.InUse</code> in EC2-Classic or
+ * <code>DependencyViolation</code> in EC2-VPC.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteSecurityGroup(DeleteSecurityGroupRequest)

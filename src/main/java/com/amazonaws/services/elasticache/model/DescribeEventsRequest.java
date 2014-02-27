@@ -21,11 +21,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeEvents(DescribeEventsRequest) DescribeEvents operation}.
  * <p>
- * The <i>DescribeEvents</i> operation returns events related to cache clusters, cache security groups, and cache parameter groups. You can obtain events
- * specific to a particular cache cluster, cache security group, or cache parameter group by providing the name as a parameter.
+ * The <i>DescribeEvents</i> operation returns events related to cache
+ * clusters, cache security groups, and cache parameter groups. You can
+ * obtain events specific to a particular cache cluster, cache security
+ * group, or cache parameter group by providing the name as a parameter.
  * </p>
  * <p>
- * By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.
+ * By default, only the events occurring within the last hour are
+ * returned; however, you can retrieve up to 14 days' worth of events if
+ * necessary.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeEvents(DescribeEventsRequest)

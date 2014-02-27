@@ -26,12 +26,16 @@ import com.amazonaws.services.ec2.model.transform.DescribeInstancesRequestMarsha
  * Describes one or more of your instances.
  * </p>
  * <p>
- * If you specify one or more instance IDs, Amazon EC2 returns information for those instances. If you do not specify instance IDs, Amazon EC2 returns
- * information for all relevant instances. If you specify an instance ID that is not valid, an error is returned. If you specify an instance that you do
- * not own, it is not included in the returned results.
+ * If you specify one or more instance IDs, Amazon EC2 returns
+ * information for those instances. If you do not specify instance IDs,
+ * Amazon EC2 returns information for all relevant instances. If you
+ * specify an instance ID that is not valid, an error is returned. If you
+ * specify an instance that you do not own, it is not included in the
+ * returned results.
  * </p>
  * <p>
- * Recently terminated instances might appear in the returned results. This interval is usually less than one hour.
+ * Recently terminated instances might appear in the returned results.
+ * This interval is usually less than one hour.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeInstances(DescribeInstancesRequest)

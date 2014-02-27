@@ -21,16 +21,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.directconnect.AmazonDirectConnect#describeVirtualInterfaces(DescribeVirtualInterfacesRequest) DescribeVirtualInterfaces operation}.
  * <p>
- * Displays all virtual interfaces for an AWS account. Virtual interfaces deleted fewer than 15 minutes before DescribeVirtualInterfaces is called are
- * also returned. If a connection ID is included then only virtual interfaces associated with this connection will be returned. If a virtual interface
- * ID is included then only a single virtual interface will be returned.
+ * Displays all virtual interfaces for an AWS account. Virtual interfaces
+ * deleted fewer than 15 minutes before DescribeVirtualInterfaces is
+ * called are also returned. If a connection ID is included then only
+ * virtual interfaces associated with this connection will be returned.
+ * If a virtual interface ID is included then only a single virtual
+ * interface will be returned.
  * </p>
  * <p>
- * A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location and the customer.
+ * A virtual interface (VLAN) transmits the traffic between the AWS
+ * Direct Connect location and the customer.
  * </p>
  * <p>
- * If a connection ID is provided, only virtual interfaces provisioned on the specified connection will be returned. If a virtual interface ID is
- * provided, only this particular virtual interface will be returned.
+ * If a connection ID is provided, only virtual interfaces provisioned on
+ * the specified connection will be returned. If a virtual interface ID
+ * is provided, only this particular virtual interface will be returned.
  * </p>
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#describeVirtualInterfaces(DescribeVirtualInterfacesRequest)

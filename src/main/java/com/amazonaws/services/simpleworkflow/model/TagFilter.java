@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Used to filter the workflow executions in visibility APIs based on a tag.
+ * Used to filter the workflow executions in visibility APIs based on a
+ * tag.
  * </p>
  */
 public class TagFilter implements Serializable {

@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A summary of a Trusted Advisor check result, including the alert status, last refresh, and number of resources examined.
+ * A summary of a Trusted Advisor check result, including the alert
+ * status, last refresh, and number of resources examined.
  * </p>
  */
 public class TrustedAdvisorCheckSummary implements Serializable {

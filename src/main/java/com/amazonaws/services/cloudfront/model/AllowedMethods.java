@@ -18,10 +18,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are two
- * options: - CloudFront forwards only GET and HEAD requests. - CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT requests. If you
- * choose the second option, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you
- * don't want them to. For example, you may not want users to have permission to delete objects from your origin.
+ * A complex type that controls which HTTP methods CloudFront processes
+ * and forwards to your Amazon S3 bucket or your custom origin. There are
+ * two options: - CloudFront forwards only GET and HEAD requests. -
+ * CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
+ * requests. If you choose the second option, you may need to restrict
+ * access to your Amazon S3 bucket or to your custom origin so users
+ * can't perform operations that you don't want them to. For example, you
+ * may not want users to have permission to delete objects from your
+ * origin.
  * </p>
  */
 public class AllowedMethods implements Serializable {

@@ -26,14 +26,21 @@ public class S3BucketDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarsha
         super(S3BucketDoesNotExistException.class);
     }
 
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands.
-        String errorCode = parseErrorCode(json);
-        if (errorCode == null || !errorCode.equals("S3BucketDoesNotExistException"))
-            return null;
+    @Override
+    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
+        if (errorTypeFromHeader == null) {
+            // Parse error type from the JSON content if it's not available in the response headers
+            String errorCodeFromContent = parseErrorCode(json);
+            return (errorCodeFromContent != null && errorCodeFromContent.equals("S3BucketDoesNotExistException"));
+        } else {
+            return errorTypeFromHeader.equals("S3BucketDoesNotExistException");
+        }
+    }
 
+    @Override
+    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         S3BucketDoesNotExistException e = (S3BucketDoesNotExistException)super.unmarshall(json);
+        e.setErrorCode("S3BucketDoesNotExistException");
 
         return e;
     }

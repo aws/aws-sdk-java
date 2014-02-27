@@ -21,12 +21,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#attachInstances(AttachInstancesRequest) AttachInstances operation}.
  * <p>
- * Attaches one or more Amazon EC2 instances to an existing Auto Scaling group. After the instance(s) is attached, it becomes a part of the Auto Scaling
- * group.
+ * Attaches one or more Amazon EC2 instances to an existing Auto Scaling
+ * group. After the instance(s) is attached, it becomes a part of the
+ * Auto Scaling group.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html"> Attach Amazon EC2
- * Instance(s) to Your Existing Auto Scaling Group </a> in the <i>Auto Scaling Developer Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html"> Attach Amazon EC2 Instance(s) to Your Existing Auto Scaling Group </a>
+ * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#attachInstances(AttachInstancesRequest)

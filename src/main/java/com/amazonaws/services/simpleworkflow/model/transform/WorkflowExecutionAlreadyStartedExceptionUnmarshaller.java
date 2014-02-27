@@ -26,14 +26,21 @@ public class WorkflowExecutionAlreadyStartedExceptionUnmarshaller extends JsonEr
         super(WorkflowExecutionAlreadyStartedException.class);
     }
 
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands.
-        String errorCode = parseErrorCode(json);
-        if (errorCode == null || !errorCode.equals("WorkflowExecutionAlreadyStartedFault"))
-            return null;
+    @Override
+    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
+        if (errorTypeFromHeader == null) {
+            // Parse error type from the JSON content if it's not available in the response headers
+            String errorCodeFromContent = parseErrorCode(json);
+            return (errorCodeFromContent != null && errorCodeFromContent.equals("WorkflowExecutionAlreadyStartedFault"));
+        } else {
+            return errorTypeFromHeader.equals("WorkflowExecutionAlreadyStartedFault");
+        }
+    }
 
+    @Override
+    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         WorkflowExecutionAlreadyStartedException e = (WorkflowExecutionAlreadyStartedException)super.unmarshall(json);
+        e.setErrorCode("WorkflowExecutionAlreadyStartedFault");
 
         return e;
     }

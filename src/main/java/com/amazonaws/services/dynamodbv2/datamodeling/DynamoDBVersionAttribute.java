@@ -19,10 +19,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-
 /**
  * Annotation for marking a property as an optimistic locking version attribute.
- * Applied to the getter method for the class's version property.
+ * Applied to the getter method or the class field for the class's version
+ * property. If the annotation is applied directly to the class field, the
+ * corresponding getter and setter must be declared in the same class.
  * <p>
  * Only nullable, integral numeric types (e.g. Integer, Long) can be used as
  * version properties. On a save() operation, the {@link DynamoDBMapper} will
@@ -35,7 +36,7 @@ import java.lang.annotation.Target;
  * API.
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
+@Target({ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBVersionAttribute {
     /**
      * Optional parameter when the name of the attribute as stored in DynamoDB

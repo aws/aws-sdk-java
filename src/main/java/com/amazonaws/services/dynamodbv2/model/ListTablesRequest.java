@@ -21,7 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#listTables(ListTablesRequest) ListTables operation}.
  * <p>
- * Returns an array of all the tables associated with the current account and endpoint.
+ * Returns an array of table names associated with the current account
+ * and endpoint. The output from <i>ListTables</i> is paginated, with
+ * each page returning a maximum of 100 table names.
  * </p>
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#listTables(ListTablesRequest)
@@ -29,10 +31,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListTablesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the table that starts the list. If you already ran a
-     * <i>ListTables</i> operation and received a
-     * <i>LastEvaluatedTableName</i> value in the response, use that value
-     * here to continue the list.
+     * The first table name that this operation will evaluate. Use the value
+     * that was returned for <i>LastEvaluatedTableName</i> in a previous
+     * operation, so that you can obtain the next page of results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
@@ -41,7 +42,8 @@ public class ListTablesRequest extends AmazonWebServiceRequest implements Serial
     private String exclusiveStartTableName;
 
     /**
-     * A maximum number of table names to return.
+     * A maximum number of table names to return. If this parameter is not
+     * specified, the limit is 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 100<br/>
@@ -59,10 +61,10 @@ public class ListTablesRequest extends AmazonWebServiceRequest implements Serial
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param exclusiveStartTableName The name of the table that starts the
-     * list. If you already ran a <i>ListTables</i> operation and received a
-     * <i>LastEvaluatedTableName</i> value in the response, use that value
-     * here to continue the list.
+     * @param exclusiveStartTableName The first table name that this
+     * operation will evaluate. Use the value that was returned for
+     * <i>LastEvaluatedTableName</i> in a previous operation, so that you can
+     * obtain the next page of results.
      */
     public ListTablesRequest(String exclusiveStartTableName) {
         setExclusiveStartTableName(exclusiveStartTableName);
@@ -73,11 +75,12 @@ public class ListTablesRequest extends AmazonWebServiceRequest implements Serial
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param exclusiveStartTableName The name of the table that starts the
-     * list. If you already ran a <i>ListTables</i> operation and received a
-     * <i>LastEvaluatedTableName</i> value in the response, use that value
-     * here to continue the list.
-     * @param limit A maximum number of table names to return.
+     * @param exclusiveStartTableName The first table name that this
+     * operation will evaluate. Use the value that was returned for
+     * <i>LastEvaluatedTableName</i> in a previous operation, so that you can
+     * obtain the next page of results.
+     * @param limit A maximum number of table names to return. If this
+     * parameter is not specified, the limit is 100.
      */
     public ListTablesRequest(String exclusiveStartTableName, Integer limit) {
         setExclusiveStartTableName(exclusiveStartTableName);
@@ -85,48 +88,43 @@ public class ListTablesRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * The name of the table that starts the list. If you already ran a
-     * <i>ListTables</i> operation and received a
-     * <i>LastEvaluatedTableName</i> value in the response, use that value
-     * here to continue the list.
+     * The first table name that this operation will evaluate. Use the value
+     * that was returned for <i>LastEvaluatedTableName</i> in a previous
+     * operation, so that you can obtain the next page of results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @return The name of the table that starts the list. If you already ran a
-     *         <i>ListTables</i> operation and received a
-     *         <i>LastEvaluatedTableName</i> value in the response, use that value
-     *         here to continue the list.
+     * @return The first table name that this operation will evaluate. Use the value
+     *         that was returned for <i>LastEvaluatedTableName</i> in a previous
+     *         operation, so that you can obtain the next page of results.
      */
     public String getExclusiveStartTableName() {
         return exclusiveStartTableName;
     }
     
     /**
-     * The name of the table that starts the list. If you already ran a
-     * <i>ListTables</i> operation and received a
-     * <i>LastEvaluatedTableName</i> value in the response, use that value
-     * here to continue the list.
+     * The first table name that this operation will evaluate. Use the value
+     * that was returned for <i>LastEvaluatedTableName</i> in a previous
+     * operation, so that you can obtain the next page of results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param exclusiveStartTableName The name of the table that starts the list. If you already ran a
-     *         <i>ListTables</i> operation and received a
-     *         <i>LastEvaluatedTableName</i> value in the response, use that value
-     *         here to continue the list.
+     * @param exclusiveStartTableName The first table name that this operation will evaluate. Use the value
+     *         that was returned for <i>LastEvaluatedTableName</i> in a previous
+     *         operation, so that you can obtain the next page of results.
      */
     public void setExclusiveStartTableName(String exclusiveStartTableName) {
         this.exclusiveStartTableName = exclusiveStartTableName;
     }
     
     /**
-     * The name of the table that starts the list. If you already ran a
-     * <i>ListTables</i> operation and received a
-     * <i>LastEvaluatedTableName</i> value in the response, use that value
-     * here to continue the list.
+     * The first table name that this operation will evaluate. Use the value
+     * that was returned for <i>LastEvaluatedTableName</i> in a previous
+     * operation, so that you can obtain the next page of results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -134,10 +132,9 @@ public class ListTablesRequest extends AmazonWebServiceRequest implements Serial
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param exclusiveStartTableName The name of the table that starts the list. If you already ran a
-     *         <i>ListTables</i> operation and received a
-     *         <i>LastEvaluatedTableName</i> value in the response, use that value
-     *         here to continue the list.
+     * @param exclusiveStartTableName The first table name that this operation will evaluate. Use the value
+     *         that was returned for <i>LastEvaluatedTableName</i> in a previous
+     *         operation, so that you can obtain the next page of results.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -148,38 +145,44 @@ public class ListTablesRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * A maximum number of table names to return.
+     * A maximum number of table names to return. If this parameter is not
+     * specified, the limit is 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 100<br/>
      *
-     * @return A maximum number of table names to return.
+     * @return A maximum number of table names to return. If this parameter is not
+     *         specified, the limit is 100.
      */
     public Integer getLimit() {
         return limit;
     }
     
     /**
-     * A maximum number of table names to return.
+     * A maximum number of table names to return. If this parameter is not
+     * specified, the limit is 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 100<br/>
      *
-     * @param limit A maximum number of table names to return.
+     * @param limit A maximum number of table names to return. If this parameter is not
+     *         specified, the limit is 100.
      */
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
     
     /**
-     * A maximum number of table names to return.
+     * A maximum number of table names to return. If this parameter is not
+     * specified, the limit is 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 100<br/>
      *
-     * @param limit A maximum number of table names to return.
+     * @param limit A maximum number of table names to return. If this parameter is not
+     *         specified, the limit is 100.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

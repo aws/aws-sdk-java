@@ -18,7 +18,9 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Unable to delete the Amazon S3 source bundle associated with the application version, although the application version deleted successfully.
+ * Unable to delete the Amazon S3 source bundle associated with the
+ * application version, although the application version deleted
+ * successfully.
  * </p>
  */        
 public class SourceBundleDeletionException extends AmazonServiceException {

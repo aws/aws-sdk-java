@@ -21,9 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listTopics(ListTopicsRequest) ListTopics operation}.
  * <p>
- * The <code>ListTopics</code> action returns a list of the requester's topics. Each call returns a limited list of topics, up to 100. If there are more
- * topics, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get further
- * results.
+ * The <code>ListTopics</code> action returns a list of the requester's
+ * topics. Each call returns a limited list of topics, up to 100. If
+ * there are more topics, a <code>NextToken</code> is also returned. Use
+ * the <code>NextToken</code> parameter in a new <code>ListTopics</code>
+ * call to get further results.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#listTopics(ListTopicsRequest)

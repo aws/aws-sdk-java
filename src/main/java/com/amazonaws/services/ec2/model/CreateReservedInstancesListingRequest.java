@@ -21,12 +21,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createReservedInstancesListing(CreateReservedInstancesListingRequest) CreateReservedInstancesListing operation}.
  * <p>
- * Creates a listing for Amazon EC2 Reserved Instances to be sold in the Reserved Instance Marketplace. You can submit one Reserved Instance listing at a
- * time.
+ * Creates a listing for Amazon EC2 Reserved Instances to be sold in the
+ * Reserved Instance Marketplace. You can submit one Reserved Instance
+ * listing at a time.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a> in
- * the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createReservedInstancesListing(CreateReservedInstancesListingRequest)

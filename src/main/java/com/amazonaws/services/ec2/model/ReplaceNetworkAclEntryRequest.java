@@ -23,8 +23,10 @@ import com.amazonaws.services.ec2.model.transform.ReplaceNetworkAclEntryRequestM
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#replaceNetworkAclEntry(ReplaceNetworkAclEntryRequest) ReplaceNetworkAclEntry operation}.
  * <p>
- * Replaces an entry (rule) in a network ACL. For more information about network ACLs, see <a
- * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
+ * Replaces an entry (rule) in a network ACL. For more information about
+ * network ACLs, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceNetworkAclEntry(ReplaceNetworkAclEntryRequest)

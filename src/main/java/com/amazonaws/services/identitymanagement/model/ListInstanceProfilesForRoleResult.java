@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the ListInstanceProfilesForRole action.
+ * Contains the result of a successful invocation of the
+ * ListInstanceProfilesForRole action.
  * </p>
  */
 public class ListInstanceProfilesForRoleResult implements Serializable {

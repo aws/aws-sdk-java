@@ -21,12 +21,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createJob(CreateJobRequest) CreateJob operation}.
  * <p>
- * When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the job that is
- * created.
+ * When you create a job, Elastic Transcoder returns JSON data that
+ * includes the values that you specified plus information about the job
+ * that is created.
  * </p>
  * <p>
- * If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you
- * currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).
+ * If you have specified more than one output for your jobs (for example,
+ * one output for the Kindle Fire and another output for the Apple iPhone
+ * 4s), you currently must use the Elastic Transcoder API to list the
+ * jobs (as opposed to the AWS Console).
  * </p>
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createJob(CreateJobRequest)

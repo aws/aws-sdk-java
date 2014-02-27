@@ -23,12 +23,15 @@ import com.amazonaws.services.ec2.model.transform.CopySnapshotRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#copySnapshot(CopySnapshotRequest) CopySnapshot operation}.
  * <p>
- * Copies a point-in-time snapshot of an Amazon EBS volume and stores it in Amazon S3. You can copy the snapshot within the same region or from one
- * region to another. You can use the snapshot to create Amazon EBS volumes or Amazon Machine Images (AMIs).
+ * Copies a point-in-time snapshot of an Amazon EBS volume and stores it
+ * in Amazon S3. You can copy the snapshot within the same region or from
+ * one region to another. You can use the snapshot to create Amazon EBS
+ * volumes or Amazon Machine Images (AMIs).
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html"> Copying an Amazon EBS Snapshot </a> in
- * the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html"> Copying an Amazon EBS Snapshot </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#copySnapshot(CopySnapshotRequest)

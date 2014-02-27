@@ -114,11 +114,14 @@ public class RestUtils {
         for (Iterator<Map.Entry<String, String>> i = interestingHeaders.entrySet().iterator(); i.hasNext(); ) {
             Map.Entry<String, String> entry = (Map.Entry<String, String>) i.next();
             String key = (String) entry.getKey();
-            Object value = entry.getValue();
+            String value = entry.getValue();
 
             if (key.startsWith(Headers.AMAZON_PREFIX)) {
-                buf.append(key).append(':').append(value);
-            } else {
+                buf.append(key).append(':');
+                if (value != null) {
+                    buf.append(value);
+                }
+            } else if (value != null) {
                 buf.append(value);
             }
             buf.append("\n");

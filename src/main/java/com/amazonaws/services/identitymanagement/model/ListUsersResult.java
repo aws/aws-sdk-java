@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the ListUsers action.
+ * Contains the result of a successful invocation of the ListUsers
+ * action.
  * </p>
  */
 public class ListUsersResult implements Serializable {

@@ -21,9 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#reportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest) ReportTaskRunnerHeartbeat operation}.
  * <p>
- * Task runners call ReportTaskRunnerHeartbeat every 15 minutes to indicate that they are operational. In the case of AWS Data Pipeline Task Runner
- * launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner application has failed and
- * restart a new instance.
+ * Task runners call ReportTaskRunnerHeartbeat every 15 minutes to
+ * indicate that they are operational. In the case of AWS Data Pipeline
+ * Task Runner launched on a resource managed by AWS Data Pipeline, the
+ * web service can use this call to detect when the task runner
+ * application has failed and restart a new instance.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#reportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest)

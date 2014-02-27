@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest) DescribeCacheSecurityGroups operation}.
  * <p>
- * The <i>DescribeCacheSecurityGroups</i> operation returns a list of cache security group descriptions. If a cache security group name is specified, the
- * list will contain only the description of that group.
+ * The <i>DescribeCacheSecurityGroups</i> operation returns a list of
+ * cache security group descriptions. If a cache security group name is
+ * specified, the list will contain only the description of that group.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest)

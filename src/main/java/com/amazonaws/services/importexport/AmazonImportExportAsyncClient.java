@@ -35,9 +35,13 @@ import com.amazonaws.services.importexport.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * AWS Import/Export Service <p>
- * AWS Import/Export accelerates transferring large amounts of data between the AWS cloud and portable storage devices that you mail to us. AWS
- * Import/Export transfers data directly onto and off of your storage devices using Amazon's high-speed internal network and bypassing the Internet. For
- * large data sets, AWS Import/Export is often faster than Internet transfer and more cost effective than upgrading your connectivity.
+ * AWS Import/Export accelerates transferring large amounts of data
+ * between the AWS cloud and portable storage devices that you mail to
+ * us. AWS Import/Export transfers data directly onto and off of your
+ * storage devices using Amazon's high-speed internal network and
+ * bypassing the Internet. For large data sets, AWS Import/Export is
+ * often faster than Internet transfer and more cost effective than
+ * upgrading your connectivity.
  * </p>
  */
 public class AmazonImportExportAsyncClient extends AmazonImportExportClient
@@ -47,6 +51,8 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
+
+    private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -89,13 +95,13 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonImportExportAsyncClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonImportExport using the specified AWS account credentials.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -107,7 +113,7 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
      *                       when authenticating with AWS services.
      */
     public AmazonImportExportAsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newCachedThreadPool());
+        this(awsCredentials, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -161,7 +167,7 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonImportExport using the specified AWS account credentials provider.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -174,7 +180,7 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
      *            to authenticate requests with AWS services.
      */
     public AmazonImportExportAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -217,7 +223,7 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
      */
     public AmazonImportExportAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
                 ClientConfiguration clientConfiguration) {
-        this(awsCredentialsProvider, clientConfiguration, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -261,7 +267,8 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who
      * wish to give pending asynchronous service calls time to complete should
-     * call getExecutorService().shutdown() prior to calling this method.
+     * call getExecutorService().shutdown() followed by
+     * getExecutorService().awaitTermination() prior to calling this method.
      */
     @Override
     public void shutdown() {
@@ -299,8 +306,8 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
         return executorService.submit(new Callable<CreateJobResult>() {
             public CreateJobResult call() throws Exception {
                 return createJob(createJobRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -338,17 +345,17 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateJobResult>() {
             public CreateJobResult call() throws Exception {
-                CreateJobResult result;
+              CreateJobResult result;
                 try {
-                    result = createJob(createJobRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createJobRequest, result);
-                   return result;
-            }
-        });
+                result = createJob(createJobRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createJobRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -377,8 +384,8 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
         return executorService.submit(new Callable<CancelJobResult>() {
             public CancelJobResult call() throws Exception {
                 return cancelJob(cancelJobRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -412,17 +419,17 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CancelJobResult>() {
             public CancelJobResult call() throws Exception {
-                CancelJobResult result;
+              CancelJobResult result;
                 try {
-                    result = cancelJob(cancelJobRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(cancelJobRequest, result);
-                   return result;
-            }
-        });
+                result = cancelJob(cancelJobRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(cancelJobRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -453,8 +460,8 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
         return executorService.submit(new Callable<GetStatusResult>() {
             public GetStatusResult call() throws Exception {
                 return getStatus(getStatusRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -490,17 +497,17 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetStatusResult>() {
             public GetStatusResult call() throws Exception {
-                GetStatusResult result;
+              GetStatusResult result;
                 try {
-                    result = getStatus(getStatusRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(getStatusRequest, result);
-                   return result;
-            }
-        });
+                result = getStatus(getStatusRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getStatusRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -532,8 +539,8 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
         return executorService.submit(new Callable<ListJobsResult>() {
             public ListJobsResult call() throws Exception {
                 return listJobs(listJobsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -570,17 +577,17 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListJobsResult>() {
             public ListJobsResult call() throws Exception {
-                ListJobsResult result;
+              ListJobsResult result;
                 try {
-                    result = listJobs(listJobsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(listJobsRequest, result);
-                   return result;
-            }
-        });
+                result = listJobs(listJobsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listJobsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -612,8 +619,8 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
         return executorService.submit(new Callable<UpdateJobResult>() {
             public UpdateJobResult call() throws Exception {
                 return updateJob(updateJobRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -650,17 +657,17 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateJobResult>() {
             public UpdateJobResult call() throws Exception {
-                UpdateJobResult result;
+              UpdateJobResult result;
                 try {
-                    result = updateJob(updateJobRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(updateJobRequest, result);
-                   return result;
-            }
-        });
+                result = updateJob(updateJobRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateJobRequest, result);
+                 return result;
+        }
+    });
     }
     
 }

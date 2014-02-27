@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeDBSecurityGroups(DescribeDBSecurityGroupsRequest) DescribeDBSecurityGroups operation}.
  * <p>
- * Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code> is specified, the list will contain only the
- * descriptions of the specified DB security group.
+ * Returns a list of <code>DBSecurityGroup</code> descriptions. If a
+ * <code>DBSecurityGroupName</code> is specified, the list will contain
+ * only the descriptions of the specified DB security group.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBSecurityGroups(DescribeDBSecurityGroupsRequest)

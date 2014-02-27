@@ -21,12 +21,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#createReplicationGroup(CreateReplicationGroupRequest) CreateReplicationGroup operation}.
  * <p>
- * The <i>CreateReplicationGroup</i> operation creates a replication group. A replication group is a collection of cache clusters, where one of the
- * clusters is a read/write primary and the other clusters are read-only replicas. Writes to the primary are automatically propagated to the replicas.
+ * The <i>CreateReplicationGroup</i> operation creates a replication
+ * group. A replication group is a collection of cache clusters, where
+ * one of the clusters is a read/write primary and the other clusters are
+ * read-only replicas. Writes to the primary are automatically propagated
+ * to the replicas.
  * </p>
  * <p>
- * When you create a replication group, you must specify an existing cache cluster that is in the primary role. When the replication group has been
- * successfully created, you can add one or more read replica replicas to it, up to a total of five read replicas.
+ * When you create a replication group, you must specify an existing
+ * cache cluster that is in the primary role. When the replication group
+ * has been successfully created, you can add one or more read replica
+ * replicas to it, up to a total of five read replicas.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#createReplicationGroup(CreateReplicationGroupRequest)

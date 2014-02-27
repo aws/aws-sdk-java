@@ -21,12 +21,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#revokeSnapshotAccess(RevokeSnapshotAccessRequest) RevokeSnapshotAccess operation}.
  * <p>
- * Removes the ability of the specified AWS customer account to restore the specified snapshot. If the account is currently restoring the snapshot, the
- * restore will run to completion.
+ * Removes the ability of the specified AWS customer account to restore
+ * the specified snapshot. If the account is currently restoring the
+ * snapshot, the restore will run to completion.
  * </p>
  * <p>
- * For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">
- * Amazon Redshift Snapshots </a> in the <i>Amazon Redshift Management Guide</i> .
+ * For more information about working with snapshots, go to
+ * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
+ * in the <i>Amazon Redshift Management Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#revokeSnapshotAccess(RevokeSnapshotAccessRequest)

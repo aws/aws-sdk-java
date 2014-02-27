@@ -21,36 +21,48 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.glacier.AmazonGlacier#setVaultNotifications(SetVaultNotificationsRequest) SetVaultNotifications operation}.
  * <p>
- * This operation configures notifications that will be sent when specific events happen to a vault. By default, you don't get any notifications.
+ * This operation configures notifications that will be sent when
+ * specific events happen to a vault. By default, you don't get any
+ * notifications.
  * </p>
  * <p>
- * To configure vault notifications, send a PUT request to the <code>notification-configuration</code> subresource of the vault. The request should
- * include a JSON document that provides an Amazon SNS topic and specific events for which you want Amazon Glacier to send notifications to the topic.
+ * To configure vault notifications, send a PUT request to the
+ * <code>notification-configuration</code> subresource of the vault. The
+ * request should include a JSON document that provides an Amazon SNS
+ * topic and specific events for which you want Amazon Glacier to send
+ * notifications to the topic.
  * </p>
  * <p>
- * Amazon SNS topics must grant permission to the vault to be allowed to publish notifications to the topic. You can configure a vault to publish a
- * notification for the following vault events:
+ * Amazon SNS topics must grant permission to the vault to be allowed to
+ * publish notifications to the topic. You can configure a vault to
+ * publish a notification for the following vault events:
  * </p>
  * 
  * <ul>
- * <li> <b>ArchiveRetrievalCompleted</b> This event occurs when a job that was initiated for an archive retrieval is completed (InitiateJob). The status
- * of the completed job can be "Succeeded" or "Failed". The notification sent to the SNS topic is the same output as returned from DescribeJob. </li>
- * <li> <b>InventoryRetrievalCompleted</b> This event occurs when a job that was initiated for an inventory retrieval is completed (InitiateJob). The
- * status of the completed job can be "Succeeded" or "Failed". The notification sent to the SNS topic is the same output as returned from DescribeJob.
- * </li>
+ * <li> <b>ArchiveRetrievalCompleted</b> This event occurs when a job
+ * that was initiated for an archive retrieval is completed
+ * (InitiateJob). The status of the completed job can be "Succeeded" or
+ * "Failed". The notification sent to the SNS topic is the same output as
+ * returned from DescribeJob. </li>
+ * <li> <b>InventoryRetrievalCompleted</b> This event occurs when a job
+ * that was initiated for an inventory retrieval is completed
+ * (InitiateJob). The status of the completed job can be "Succeeded" or
+ * "Failed". The notification sent to the SNS topic is the same output as
+ * returned from DescribeJob. </li>
  * 
  * </ul>
  * <p>
- * An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any
- * permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
- * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management
- * (IAM) </a> .
+ * An AWS account has full permission to perform all operations
+ * (actions). However, AWS Identity and Access Management (IAM) users
+ * don't have any permissions by default. You must grant them explicit
+ * permission to perform specific actions. For more information, see
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+ * .
  * </p>
  * <p>
- * For conceptual information and underlying REST API, go to <a
- * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a> and
- * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html"> Set Vault Notification Configuration </a> in the
- * <i>Amazon Glacier Developer Guide</i> .
+ * For conceptual information and underlying REST API, go to
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html"> Set Vault Notification Configuration </a>
+ * in the <i>Amazon Glacier Developer Guide</i> .
  * 
  * </p>
  *

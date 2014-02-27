@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use.
+ * The resource you are attempting to change is in use. For example, you
+ * are attempting to delete a pipeline that is currently in use.
  * </p>
  */        
 public class ResourceInUseException extends AmazonServiceException {

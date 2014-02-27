@@ -21,13 +21,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#createHsmClientCertificate(CreateHsmClientCertificateRequest) CreateHsmClientCertificate operation}.
  * <p>
- * Creates an HSM client certificate that an Amazon Redshift cluster will use to connect to the client's HSM in order to store and retrieve the keys used
- * to encrypt the cluster databases.
+ * Creates an HSM client certificate that an Amazon Redshift cluster will
+ * use to connect to the client's HSM in order to store and retrieve the
+ * keys used to encrypt the cluster databases.
  * </p>
  * <p>
- * The command returns a public key, which you must store in the HSM. After creating the HSM certificate, you must create an Amazon Redshift HSM
- * configuration that provides a cluster the information needed to store and retrieve database encryption keys in the HSM. For more information, go to
- * aLinkToHSMTopic in the Amazon Redshift Management Guide.
+ * The command returns a public key, which you must store in the HSM.
+ * After creating the HSM certificate, you must create an Amazon Redshift
+ * HSM configuration that provides a cluster the information needed to
+ * store and retrieve database encryption keys in the HSM. For more
+ * information, go to aLinkToHSMTopic in the Amazon Redshift Management
+ * Guide.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createHsmClientCertificate(CreateHsmClientCertificateRequest)

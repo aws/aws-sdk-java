@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#describeObjects(DescribeObjectsRequest) DescribeObjects operation}.
  * <p>
- * Returns the object definitions for a set of objects associated with the pipeline. Object definitions are composed of a set of fields that define the
- * properties of the object.
+ * Returns the object definitions for a set of objects associated with
+ * the pipeline. Object definitions are composed of a set of fields that
+ * define the properties of the object.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#describeObjects(DescribeObjectsRequest)

@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A response message that contains the synonym options for a search domain.
+ * A response message that contains the synonym options for a search
+ * domain.
  * </p>
  */
 public class DescribeSynonymOptionsResult implements Serializable {

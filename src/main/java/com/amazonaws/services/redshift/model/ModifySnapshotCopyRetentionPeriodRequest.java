@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#modifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest) ModifySnapshotCopyRetentionPeriod operation}.
  * <p>
- * Modifies the number of days to retain automated snapshots in the destination region after they are copied from the source region.
+ * Modifies the number of days to retain automated snapshots in the
+ * destination region after they are copied from the source region.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#modifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest)

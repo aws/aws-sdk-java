@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This is used in the responses of batch API to give a detailed description of the result of an action on each entry in the request.
+ * This is used in the responses of batch API to give a detailed
+ * description of the result of an action on each entry in the request.
  * </p>
  */
 public class BatchResultErrorEntry implements Serializable {

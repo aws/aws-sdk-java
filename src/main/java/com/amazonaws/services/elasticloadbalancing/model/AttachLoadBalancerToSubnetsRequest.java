@@ -21,12 +21,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#attachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest) AttachLoadBalancerToSubnets operation}.
  * <p>
- * Adds one or more subnets to the set of configured subnets in the Amazon Virtual Private Cloud (Amazon VPC) for the load balancer.
+ * Adds one or more subnets to the set of configured subnets in the
+ * Amazon Virtual Private Cloud (Amazon VPC) for the load balancer.
  * </p>
  * <p>
- * The load balancers evenly distribute requests across all of the registered subnets. For more information, see <a
- * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC
- * </a> in the <i>Elastic Load Balancing Developer Guide</i> .
+ * The load balancers evenly distribute requests across all of the
+ * registered subnets. For more information, see
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC </a>
+ * in the <i>Elastic Load Balancing Developer Guide</i> .
  * 
  * </p>
  *

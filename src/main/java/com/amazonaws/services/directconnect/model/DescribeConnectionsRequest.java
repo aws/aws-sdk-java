@@ -24,7 +24,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Displays all connections in this region.
  * </p>
  * <p>
- * If a connection ID is provided, the call returns only that particular connection.
+ * If a connection ID is provided, the call returns only that particular
+ * connection.
  * </p>
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#describeConnections(DescribeConnectionsRequest)

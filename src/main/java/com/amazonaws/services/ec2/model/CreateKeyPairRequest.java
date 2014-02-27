@@ -23,16 +23,19 @@ import com.amazonaws.services.ec2.model.transform.CreateKeyPairRequestMarshaller
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createKeyPair(CreateKeyPairRequest) CreateKeyPair operation}.
  * <p>
- * Creates a 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public key and displays the private key for you to save to a file. The
- * private key is returned as an unencrypted PEM encoded PKCS#8 private key. If a key with the specified name already exists, Amazon EC2 returns an
- * error.
+ * Creates a 2048-bit RSA key pair with the specified name. Amazon EC2
+ * stores the public key and displays the private key for you to save to
+ * a file. The private key is returned as an unencrypted PEM encoded
+ * PKCS#8 private key. If a key with the specified name already exists,
+ * Amazon EC2 returns an error.
  * </p>
  * <p>
  * You can have up to five thousand key pairs per region.
  * </p>
  * <p>
- * For more information about key pairs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a> in the
- * <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information about key pairs, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createKeyPair(CreateKeyPairRequest)

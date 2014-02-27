@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents sending statistics data. Each <code>SendDataPoint</code> contains statistics for a 15-minute period of sending activity.
+ * Represents sending statistics data. Each <code>SendDataPoint</code>
+ * contains statistics for a 15-minute period of sending activity.
  * </p>
  */
 public class SendDataPoint implements Serializable {

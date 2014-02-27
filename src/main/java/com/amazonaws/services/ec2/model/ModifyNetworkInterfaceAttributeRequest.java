@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.ModifyNetworkInterfaceAttribut
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#modifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest) ModifyNetworkInterfaceAttribute operation}.
  * <p>
- * Modifies the specified network interface attribute. You can specify only one attribute at a time.
+ * Modifies the specified network interface attribute. You can specify
+ * only one attribute at a time.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest)

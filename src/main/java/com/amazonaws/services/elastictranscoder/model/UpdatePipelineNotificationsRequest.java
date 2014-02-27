@@ -21,10 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#updatePipelineNotifications(UpdatePipelineNotificationsRequest) UpdatePipelineNotifications operation}.
  * <p>
- * With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline.
+ * With the UpdatePipelineNotifications operation, you can update Amazon
+ * Simple Notification Service (Amazon SNS) notifications for a pipeline.
  * </p>
  * <p>
- * When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the request.
+ * When you update notifications for a pipeline, Elastic Transcoder
+ * returns the values that you specified in the request.
  * </p>
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#updatePipelineNotifications(UpdatePipelineNotificationsRequest)

@@ -21,15 +21,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#describeElasticIps(DescribeElasticIpsRequest) DescribeElasticIps operation}.
  * <p>
- * Describes <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP addresses </a> .
+ * Describes
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP addresses </a>
+ * .
  * </p>
  * <p>
  * <b>NOTE:</b>You must specify at least one of the parameters.
  * </p>
  * <p>
- * <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached
- * policy that explicitly grants permissions. For more information on user permissions, see <a
- * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a> .
+ * <b>Required Permissions</b> : To use this action, an IAM user must
+ * have a Show, Deploy, or Manage permissions level for the stack, or an
+ * attached policy that explicitly grants permissions. For more
+ * information on user permissions, see
+ * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeElasticIps(DescribeElasticIpsRequest)

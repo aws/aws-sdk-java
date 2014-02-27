@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The value specified as a snapshot identifier is already used by an existing snapshot.
+ * The value specified as a snapshot identifier is already used by an
+ * existing snapshot.
  * </p>
  */        
 public class ClusterSnapshotAlreadyExistsException extends AmazonServiceException {

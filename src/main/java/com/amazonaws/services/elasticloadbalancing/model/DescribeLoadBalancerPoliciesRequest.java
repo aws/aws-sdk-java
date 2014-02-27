@@ -21,10 +21,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest) DescribeLoadBalancerPolicies operation}.
  * <p>
- * Returns detailed descriptions of the policies. If you specify a load balancer name, the action returns the descriptions of all the policies created
- * for the load balancer. If you specify a policy name associated with your load balancer, the action returns the description of that policy. If you
- * don't specify a load balancer name, the action returns descriptions of the specified sample policies, or descriptions of all the sample policies. The
- * names of the sample policies have the <code>ELBSample-</code> prefix.
+ * Returns detailed descriptions of the policies. If you specify a load
+ * balancer name, the action returns the descriptions of all the policies
+ * created for the load balancer. If you specify a policy name associated
+ * with your load balancer, the action returns the description of that
+ * policy. If you don't specify a load balancer name, the action returns
+ * descriptions of the specified sample policies, or descriptions of all
+ * the sample policies. The names of the sample policies have the
+ * <code>ELBSample-</code> prefix.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest)

@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the ListRoles action.
+ * Contains the result of a successful invocation of the ListRoles
+ * action.
  * </p>
  */
 public class ListRolesResult implements Serializable {

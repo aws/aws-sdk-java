@@ -21,8 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.directconnect.AmazonDirectConnect#createPublicVirtualInterface(CreatePublicVirtualInterfaceRequest) CreatePublicVirtualInterface operation}.
  * <p>
- * Creates a new public virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A public virtual interface
- * supports sending traffic to public services of AWS such as Amazon Simple Storage Service (Amazon S3).
+ * Creates a new public virtual interface. A virtual interface is the
+ * VLAN that transports AWS Direct Connect traffic. A public virtual
+ * interface supports sending traffic to public services of AWS such as
+ * Amazon Simple Storage Service (Amazon S3).
  * </p>
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#createPublicVirtualInterface(CreatePublicVirtualInterfaceRequest)

@@ -21,26 +21,33 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#updateStack(UpdateStackRequest) UpdateStack operation}.
  * <p>
- * Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the status of the stack
- * via the DescribeStacks action.
+ * Updates a stack as specified in the template. After the call completes
+ * successfully, the stack update starts. You can check the status of the
+ * stack via the DescribeStacks action.
  * </p>
  * <p>
  * </p>
  * <p>
- * <b>Note: </b> You cannot update <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html">
- * AWS::S3::Bucket </a> resources, for example, to add or modify tags.
+ * <b>Note: </b> You cannot update
+ * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html"> AWS::S3::Bucket </a>
+ * resources, for example, to add or modify tags.
  * </p>
  * <p>
  * </p>
  * <p>
- * To get a copy of the template for an existing stack, you can use the GetTemplate action.
+ * To get a copy of the template for an existing stack, you can use the
+ * GetTemplate action.
  * </p>
  * <p>
- * Tags that were associated with this stack during creation time will still be associated with the stack after an <code>UpdateStack</code> operation.
+ * Tags that were associated with this stack during creation time will
+ * still be associated with the stack after an <code>UpdateStack</code>
+ * operation.
  * </p>
  * <p>
- * For more information about creating an update template, updating a stack, and monitoring the progress of the update, see <a
- * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html"> Updating a Stack </a> .
+ * For more information about creating an update template, updating a
+ * stack, and monitoring the progress of the update, see
+ * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html"> Updating a Stack </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#updateStack(UpdateStackRequest)

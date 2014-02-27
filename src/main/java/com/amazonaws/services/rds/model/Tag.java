@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Metadata assigned to an Amazon RDS resource consisting of a key-value pair.
+ * Metadata assigned to an Amazon RDS resource consisting of a key-value
+ * pair.
  * </p>
  */
 public class Tag implements Serializable {

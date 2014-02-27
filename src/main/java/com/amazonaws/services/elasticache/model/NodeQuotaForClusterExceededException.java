@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request cannot be processed because it would exceed the allowed number of cache nodes in a single cache cluster.
+ * The request cannot be processed because it would exceed the allowed
+ * number of cache nodes in a single cache cluster.
  * </p>
  */        
 public class NodeQuotaForClusterExceededException extends AmazonServiceException {

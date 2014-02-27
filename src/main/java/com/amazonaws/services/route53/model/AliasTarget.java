@@ -18,11 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * <i>Alias resource record sets only:</i> Information about the domain to which you are redirecting traffic.
+ * <i>Alias resource record sets only:</i> Information about the domain
+ * to which you are redirecting traffic.
  * </p>
  * <p>
- * For more information and an example, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html"> Creating Alias
- * Resource Record Sets </a> in the <i>Amazon Route 53 Developer Guide</i>
+ * For more information and an example, see
+ * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html"> Creating Alias Resource Record Sets </a>
+ * in the <i>Amazon Route 53 Developer Guide</i>
  * </p>
  * <p>
  * .

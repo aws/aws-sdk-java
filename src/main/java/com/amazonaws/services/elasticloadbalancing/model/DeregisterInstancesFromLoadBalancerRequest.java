@@ -21,17 +21,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest) DeregisterInstancesFromLoadBalancer operation}.
  * <p>
- * Deregisters instances from the load balancer. Once the instance is deregistered, it will stop receiving traffic from the load balancer.
+ * Deregisters instances from the load balancer. Once the instance is
+ * deregistered, it will stop receiving traffic from the load balancer.
  * </p>
  * <p>
- * In order to successfully call this API, the same account credentials as those used to create the load balancer must be provided.
+ * In order to successfully call this API, the same account credentials
+ * as those used to create the load balancer must be provided.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> De-register and
- * Register Amazon EC2 Instances </a> in the <i>Elastic Load Balancing Developer Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> De-register and Register Amazon EC2 Instances </a>
+ * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  * <p>
- * You can use DescribeLoadBalancers to verify if the instance is deregistered from the load balancer.
+ * You can use DescribeLoadBalancers to verify if the instance is
+ * deregistered from the load balancer.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest)

@@ -21,7 +21,8 @@ import java.io.Serializable;
  * Contains a list of available options for a DB instance
  * </p>
  * <p>
- * This data type is used as a response element in the DescribeOrderableDBInstanceOptions action.
+ * This data type is used as a response element in the
+ * DescribeOrderableDBInstanceOptions action.
  * </p>
  */
 public class OrderableDBInstanceOption implements Serializable {

@@ -24,8 +24,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The CancelJob operation cancels an unfinished job.
  * </p>
  * <p>
- * <b>NOTE:</b>You can only cancel a job that has a status of Submitted. To prevent a pipeline from starting to process a job while you're getting the
- * job identifier, use UpdatePipelineStatus to temporarily pause the pipeline.
+ * <b>NOTE:</b>You can only cancel a job that has a status of Submitted.
+ * To prevent a pipeline from starting to process a job while you're
+ * getting the job identifier, use UpdatePipelineStatus to temporarily
+ * pause the pipeline.
  * </p>
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#cancelJob(CancelJobRequest)

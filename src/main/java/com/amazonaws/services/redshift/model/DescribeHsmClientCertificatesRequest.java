@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeHsmClientCertificates(DescribeHsmClientCertificatesRequest) DescribeHsmClientCertificates operation}.
  * <p>
- * Returns information about the specified HSM client certificate. If no certificate ID is specified, returns information about all the HSM certificates
- * owned by your AWS customer account.
+ * Returns information about the specified HSM client certificate. If no
+ * certificate ID is specified, returns information about all the HSM
+ * certificates owned by your AWS customer account.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeHsmClientCertificates(DescribeHsmClientCertificatesRequest)

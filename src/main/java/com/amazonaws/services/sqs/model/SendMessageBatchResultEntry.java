@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Encloses a message ID for successfully enqueued message of a SendMessageBatch.
+ * Encloses a message ID for successfully enqueued message of a
+ * SendMessageBatch.
  * </p>
  */
 public class SendMessageBatchResultEntry implements Serializable {

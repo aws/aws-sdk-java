@@ -26,26 +26,40 @@ import com.amazonaws.services.storagegateway.model.*;
  * Each asynchronous method will return a Java Future object, and users are also allowed
  * to provide a callback handler.
  * AWS Storage Gateway Service <p>
- * AWS Storage Gateway is the service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration
- * between an organization's on-premises IT environment and AWS's storage infrastructure. The service enables you to securely upload data to the AWS
- * cloud for cost effective backup and rapid disaster recovery.
+ * AWS Storage Gateway is the service that connects an on-premises
+ * software appliance with cloud-based storage to provide seamless and
+ * secure integration between an organization's on-premises IT
+ * environment and AWS's storage infrastructure. The service enables you
+ * to securely upload data to the AWS cloud for cost effective backup and
+ * rapid disaster recovery.
  * </p>
  * <p>
- * Use the following links to get started using the <i>AWS Storage Gateway Service API Reference</i> :
+ * Use the following links to get started using the <i>AWS Storage
+ * Gateway Service API Reference</i> :
  * </p>
  * 
  * <ul>
- * <li> <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html"> AWS Storage Gateway Required
- * Request Headers </a> : Describes the required headers that you must send with every POST request to AWS Storage Gateway.</li>
- * <li> <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html"> Signing Requests </a> : AWS Storage
- * Gateway requires that you authenticate every request you send; this topic describes how sign such a request.</li>
- * <li> <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html"> Error Responses </a> : Provides reference
- * information about AWS Storage Gateway errors.</li>
- * <li> <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html"> Operations in AWS Storage Gateway </a>
- * : Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters, response elements, possible errors, and examples of
- * requests and responses.</li>
- * <li> <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"> AWS Storage Gateway Regions and Endpoints </a> : Provides a list
- * of each of the regions and endpoints available for use with AWS Storage Gateway. </li>
+ * <li>
+ * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html"> AWS Storage Gateway Required Request Headers </a>
+ * : Describes the required headers that you must send with every POST
+ * request to AWS Storage Gateway.</li>
+ * <li>
+ * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html"> Signing Requests </a>
+ * : AWS Storage Gateway requires that you authenticate every request
+ * you send; this topic describes how sign such a request.</li>
+ * <li>
+ * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html"> Error Responses </a>
+ * : Provides reference information about AWS Storage Gateway
+ * errors.</li>
+ * <li>
+ * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html"> Operations in AWS Storage Gateway </a>
+ * : Contains detailed descriptions of all AWS Storage Gateway
+ * operations, their request parameters, response elements, possible
+ * errors, and examples of requests and responses.</li>
+ * <li>
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"> AWS Storage Gateway Regions and Endpoints </a>
+ * : Provides a list of each of the regions and endpoints available for
+ * use with AWS Storage Gateway. </li>
  * 
  * </ul>
  */
@@ -57,11 +71,10 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * You can take snapshots of your gateway volumes on a scheduled or
      * ad-hoc basis. This API enables you to delete a snapshot schedule for a
-     * volume. For more information, see <a
-     * amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">
-     * Working with Snapshots </a> . In the
-     * <code>DeleteSnapshotSchedule</code> request, you identify the volume
-     * by providing its Amazon Resource Name (ARN).
+     * volume. For more information, see
+     * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html"> Working with Snapshots </a>
+     * . In the <code>DeleteSnapshotSchedule</code> request, you identify
+     * the volume by providing its Amazon Resource Name (ARN).
      * </p>
      * <p>
      * <b>NOTE:</b> To list or delete a snapshot, you must use the Amazon EC2
@@ -95,11 +108,10 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * You can take snapshots of your gateway volumes on a scheduled or
      * ad-hoc basis. This API enables you to delete a snapshot schedule for a
-     * volume. For more information, see <a
-     * amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">
-     * Working with Snapshots </a> . In the
-     * <code>DeleteSnapshotSchedule</code> request, you identify the volume
-     * by providing its Amazon Resource Name (ARN).
+     * volume. For more information, see
+     * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html"> Working with Snapshots </a>
+     * . In the <code>DeleteSnapshotSchedule</code> request, you identify
+     * the volume by providing its Amazon Resource Name (ARN).
      * </p>
      * <p>
      * <b>NOTE:</b> To list or delete a snapshot, you must use the Amazon EC2
@@ -1060,9 +1072,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * This operation configures one or more gateway local disks as cache for
      * a cached-volume gateway. This operation is supported only for the
-     * gateway-cached volume architecture (see <a
-     * azon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">
-     * Storage Gateway Concepts </a> ).
+     * gateway-cached volume architecture (see
+     * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html"> Storage Gateway Concepts </a>
+     * ).
      * </p>
      * <p>
      * In the request, you specify the gateway Amazon Resource Name (ARN) to
@@ -1092,9 +1104,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * This operation configures one or more gateway local disks as cache for
      * a cached-volume gateway. This operation is supported only for the
-     * gateway-cached volume architecture (see <a
-     * azon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">
-     * Storage Gateway Concepts </a> ).
+     * gateway-cached volume architecture (see
+     * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html"> Storage Gateway Concepts </a>
+     * ).
      * </p>
      * <p>
      * In the request, you specify the gateway Amazon Resource Name (ARN) to
@@ -1189,14 +1201,14 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * This operation activates the gateway you previously deployed on your
-     * host. For more information, see <a
-     * ws.amazon.com/storagegateway/latest/userguide/DownloadAndDeploy.html">
-     * Downloading and Deploying AWS Storage Gateway VM </a> . In the
-     * activation process you specify information such as the region you want
-     * to use for storing snapshots, the time zone for scheduled snapshots
-     * and the gateway schedule window, an activation key, and a name for
-     * your gateway. The activation process also associates your gateway with
-     * your account (see UpdateGatewayInformation).
+     * host. For more information, see
+     * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/DownloadAndDeploy.html"> Downloading and Deploying AWS Storage Gateway VM </a>
+     * . In the activation process you specify information such as the
+     * region you want to use for storing snapshots, the time zone for
+     * scheduled snapshots and the gateway schedule window, an activation
+     * key, and a name for your gateway. The activation process also
+     * associates your gateway with your account (see
+     * UpdateGatewayInformation).
      * </p>
      * <p>
      * <b>NOTE:</b>You must power on the gateway VM before you can activate
@@ -1224,14 +1236,14 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * This operation activates the gateway you previously deployed on your
-     * host. For more information, see <a
-     * ws.amazon.com/storagegateway/latest/userguide/DownloadAndDeploy.html">
-     * Downloading and Deploying AWS Storage Gateway VM </a> . In the
-     * activation process you specify information such as the region you want
-     * to use for storing snapshots, the time zone for scheduled snapshots
-     * and the gateway schedule window, an activation key, and a name for
-     * your gateway. The activation process also associates your gateway with
-     * your account (see UpdateGatewayInformation).
+     * host. For more information, see
+     * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/DownloadAndDeploy.html"> Downloading and Deploying AWS Storage Gateway VM </a>
+     * . In the activation process you specify information such as the
+     * region you want to use for storing snapshots, the time zone for
+     * scheduled snapshots and the gateway schedule window, an activation
+     * key, and a name for your gateway. The activation process also
+     * associates your gateway with your account (see
+     * UpdateGatewayInformation).
      * </p>
      * <p>
      * <b>NOTE:</b>You must power on the gateway VM before you can activate
@@ -2110,10 +2122,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * there is no snapshot in progress. You can use the Amazon Elastic
      * Compute Cloud (Amazon EC2) API to query snapshots on the volume you
      * are deleting and check the snapshot status. For more information, go
-     * to <a
-     * AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">
-     * DescribeSnapshots </a> in the <i>Amazon Elastic Compute Cloud API
-     * Reference</i> .
+     * to
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"> DescribeSnapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud API Reference</i> .
      * </p>
      * <p>
      * In the request, you must provide the Amazon Resource Name (ARN) of the
@@ -2152,10 +2163,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * there is no snapshot in progress. You can use the Amazon Elastic
      * Compute Cloud (Amazon EC2) API to query snapshots on the volume you
      * are deleting and check the snapshot status. For more information, go
-     * to <a
-     * AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">
-     * DescribeSnapshots </a> in the <i>Amazon Elastic Compute Cloud API
-     * Reference</i> .
+     * to
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"> DescribeSnapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud API Reference</i> .
      * </p>
      * <p>
      * In the request, you must provide the Amazon Resource Name (ARN) of the

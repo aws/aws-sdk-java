@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheParameterGroup(DeleteCacheParameterGroupRequest) DeleteCacheParameterGroup operation}.
  * <p>
- * The <i>DeleteCacheParameterGroup</i> operation deletes the specified cache parameter group. You cannot delete a cache parameter group if it is
- * associated with any cache clusters.
+ * The <i>DeleteCacheParameterGroup</i> operation deletes the specified
+ * cache parameter group. You cannot delete a cache parameter group if it
+ * is associated with any cache clusters.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheParameterGroup(DeleteCacheParameterGroupRequest)

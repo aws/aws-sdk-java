@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The string specified for the logging S3 key prefix does not comply with the documented constraints.
+ * The string specified for the logging S3 key prefix does not comply
+ * with the documented constraints.
  * </p>
  */        
 public class InvalidS3KeyPrefixException extends AmazonServiceException {

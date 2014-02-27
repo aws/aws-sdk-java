@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that identifies ways in which you want to restrict distribution of your content.
+ * A complex type that identifies ways in which you want to restrict
+ * distribution of your content.
  * </p>
  */
 public class Restrictions implements Serializable {

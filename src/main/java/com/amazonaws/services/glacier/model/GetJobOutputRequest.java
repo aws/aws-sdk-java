@@ -21,48 +21,64 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.glacier.AmazonGlacier#getJobOutput(GetJobOutputRequest) GetJobOutput operation}.
  * <p>
- * This operation downloads the output of the job you initiated using InitiateJob. Depending on the job type you specified when you initiated the job,
- * the output will be either the content of an archive or a vault inventory.
+ * This operation downloads the output of the job you initiated using
+ * InitiateJob. Depending on the job type you specified when you
+ * initiated the job, the output will be either the content of an archive
+ * or a vault inventory.
  * </p>
  * <p>
- * A job ID will not expire for at least 24 hours after Amazon Glacier completes the job. That is, you can download the job output within the 24 hours
- * period after Amazon Glacier completes the job.
+ * A job ID will not expire for at least 24 hours after Amazon Glacier
+ * completes the job. That is, you can download the job output within the
+ * 24 hours period after Amazon Glacier completes the job.
  * </p>
  * <p>
- * If the job output is large, then you can use the <code>Range</code> request header to retrieve a portion of the output. This allows you to download
- * the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want to download and you decide to download 128 MB
- * chunks of data at a time, which is a total of eight Get Job Output requests. You use the following process to download the job output:
+ * If the job output is large, then you can use the <code>Range</code>
+ * request header to retrieve a portion of the output. This allows you to
+ * download the entire output in smaller chunks of bytes. For example,
+ * suppose you have 1 GB of job output you want to download and you
+ * decide to download 128 MB chunks of data at a time, which is a total
+ * of eight Get Job Output requests. You use the following process to
+ * download the job output:
  * </p>
  * <ol> <li> <p>
- * Download a 128 MB chunk of output by specifying the appropriate byte range using the <code>Range</code> header.
+ * Download a 128 MB chunk of output by specifying the appropriate byte
+ * range using the <code>Range</code> header.
  * </p>
  * </li>
  * <li> <p>
- * Along with the data, the response includes a checksum of the payload. You compute the checksum of the payload on the client and compare it with the
- * checksum you received in the response to ensure you received all the expected data.
+ * Along with the data, the response includes a checksum of the payload.
+ * You compute the checksum of the payload on the client and compare it
+ * with the checksum you received in the response to ensure you received
+ * all the expected data.
  * </p>
  * </li>
  * <li> <p>
- * Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte range.
+ * Repeat steps 1 and 2 for all the eight 128 MB chunks of output data,
+ * each time specifying the appropriate byte range.
  * </p>
  * </li>
  * <li> <p>
- * After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these values to find the
- * checksum of the entire output. Using the DescribeJob API, obtain job information of the job that provided you the output. The response includes the
- * checksum of the entire archive stored in Amazon Glacier. You compare this value with the checksum you computed to ensure you have downloaded the
- * entire archive content with no errors.
+ * After downloading all the parts of the job output, you have a list of
+ * eight checksum values. Compute the tree hash of these values to find
+ * the checksum of the entire output. Using the DescribeJob API, obtain
+ * job information of the job that provided you the output. The response
+ * includes the checksum of the entire archive stored in Amazon Glacier.
+ * You compare this value with the checksum you computed to ensure you
+ * have downloaded the entire archive content with no errors.
  * </p>
  * </li>
  * </ol> <p>
- * An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any
- * permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
- * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management
- * (IAM) </a> .
+ * An AWS account has full permission to perform all operations
+ * (actions). However, AWS Identity and Access Management (IAM) users
+ * don't have any permissions by default. You must grant them explicit
+ * permission to perform specific actions. For more information, see
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+ * .
  * </p>
  * <p>
- * For conceptual information and the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">
- * Downloading a Vault Inventory </a> , <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive.html"> Downloading an Archive
- * </a> , and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html"> Get Job Output </a>
+ * For conceptual information and the underlying REST API, go to
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html"> Downloading a Vault Inventory </a> , <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive.html"> Downloading an Archive </a> , and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html"> Get Job Output </a>
+ * 
  * </p>
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#getJobOutput(GetJobOutputRequest)

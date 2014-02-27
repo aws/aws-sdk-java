@@ -26,8 +26,9 @@ import com.amazonaws.services.ec2.model.transform.DescribeNetworkAclsRequestMars
  * Describes one or more of your network ACLs.
  * </p>
  * <p>
- * For more information about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a> in the
- * <i>Amazon Virtual Private Cloud User Guide</i> .
+ * For more information about network ACLs, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeNetworkAcls(DescribeNetworkAclsRequest)

@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A response message that contains the rank expressions for a search domain.
+ * A response message that contains the rank expressions for a search
+ * domain.
  * </p>
  */
 public class DescribeRankExpressionsResult implements Serializable {

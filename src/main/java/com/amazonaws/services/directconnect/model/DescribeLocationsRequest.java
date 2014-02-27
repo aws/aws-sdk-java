@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.directconnect.AmazonDirectConnect#describeLocations(DescribeLocationsRequest) DescribeLocations operation}.
  * <p>
- * Returns the list of AWS Direct Connect locations in the current AWS region. These are the locations that may be selected when calling
+ * Returns the list of AWS Direct Connect locations in the current AWS
+ * region. These are the locations that may be selected when calling
  * CreateConnection or CreateInterconnect.
  * </p>
  *

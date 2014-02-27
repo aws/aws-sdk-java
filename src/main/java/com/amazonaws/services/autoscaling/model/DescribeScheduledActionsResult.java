@@ -18,10 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A scaling action that is scheduled for a future time and date. An action can be scheduled up to thirty days in advance.
+ * A scaling action that is scheduled for a future time and date. An
+ * action can be scheduled up to thirty days in advance.
  * </p>
  * <p>
- * Starting with API version 2011-01-01, you can use <code>recurrence</code> to specify that a scaling action occurs regularly on a schedule.
+ * Starting with API version 2011-01-01, you can use
+ * <code>recurrence</code> to specify that a scaling action occurs
+ * regularly on a schedule.
  * </p>
  */
 public class DescribeScheduledActionsResult implements Serializable {

@@ -70,6 +70,10 @@ public class CacheBehaviorStaxUnmarshaller implements Unmarshaller<CacheBehavior
                     cacheBehavior.setAllowedMethods(AllowedMethodsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("SmoothStreaming", targetDepth)) {
+                    cacheBehavior.setSmoothStreaming(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cacheBehavior;

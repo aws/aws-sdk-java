@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Returned when the caller does not have sufficient permissions to invoke the action.
+ * Returned when the caller does not have sufficient permissions to
+ * invoke the action.
  * </p>
  */        
 public class OperationNotPermittedException extends AmazonServiceException {

@@ -21,9 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#setPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest) SetPlatformApplicationAttributes operation}.
  * <p>
- * The <code>SetPlatformApplicationAttributes</code> action sets the attributes of the platform application object for the supported push notification
- * services, such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS
- * Mobile Push Notifications </a> .
+ * The <code>SetPlatformApplicationAttributes</code> action sets the
+ * attributes of the platform application object for the supported push
+ * notification services, such as APNS and GCM. For more information, see
+ * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#setPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest)

@@ -51,6 +51,7 @@ import com.amazonaws.util.Classes;
 public abstract class AmazonWebServiceClient {
     private static final String AMAZON = "Amazon";
     private static final String AWS = "AWS";
+    public static final boolean LOGGING_AWS_REQUEST_METRIC = true;
 
     private static final Log log =
         LogFactory.getLog(AmazonWebServiceClient.class);
@@ -218,7 +219,6 @@ public abstract class AmazonWebServiceClient {
      * 
      * @throws IllegalArgumentException
      *             If any problems are detected with the specified endpoint.
-     * @see AmazonDynamoDB#setRegion(Region)
      */
     public void setEndpoint(String endpoint, String serviceName, String regionId) {
         URI uri = toURI(endpoint);
@@ -614,19 +614,35 @@ public abstract class AmazonWebServiceClient {
     }
 
     /**
+     * Convenient method to end the client execution without logging the
+     * awsRequestMetrics.
+     */
+    protected final void endClientExecution(
+            AWSRequestMetrics awsRequestMetrics, Request<?> request,
+            Response<?> response) {
+        this.endClientExecution(awsRequestMetrics, request, response,
+                !LOGGING_AWS_REQUEST_METRIC);
+    }
+
+    /**
      * Common routine to end a client AWS request/response execution and collect
      * the request metrics.  Caller of this routine is responsible for starting
      * the event for {@link Field#ClientExecuteTime} and call this method
-     * in a try-finally block. 
+     * in a try-finally block.
+     *
+     * @param loggingAwsRequestMetrics true to log the awsRequestMetrics; false otherwise.
      */
-    protected final void endClientExecution(AWSRequestMetrics awsRequestMetrics,
-            Request<?> request, Response<?> response) {
+    protected final void endClientExecution(
+            AWSRequestMetrics awsRequestMetrics, Request<?> request,
+            Response<?> response, boolean loggingAwsRequestMetrics) {
         if (request != null) {
             awsRequestMetrics.endEvent(Field.ClientExecuteTime);
             awsRequestMetrics.getTimingInfo().endTiming();
             RequestMetricCollector c = findRequestMetricCollector(request);
             c.collectMetrics(request, response);
         }
+        if (loggingAwsRequestMetrics)
+            awsRequestMetrics.log();
     }
 
     /**

@@ -25,8 +25,8 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.commons.logging.Log;
@@ -48,6 +48,8 @@ import com.amazonaws.services.s3.AmazonS3EncryptionClient;
 import com.amazonaws.services.s3.internal.Mimetypes;
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
+import com.amazonaws.services.s3.model.CopyObjectRequest;
+import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ListMultipartUploadsRequest;
 import com.amazonaws.services.s3.model.ListObjectsRequest;
@@ -59,6 +61,9 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
+import com.amazonaws.services.s3.transfer.internal.CopyCallable;
+import com.amazonaws.services.s3.transfer.internal.CopyImpl;
+import com.amazonaws.services.s3.transfer.internal.CopyMonitor;
 import com.amazonaws.services.s3.transfer.internal.DownloadImpl;
 import com.amazonaws.services.s3.transfer.internal.DownloadMonitor;
 import com.amazonaws.services.s3.transfer.internal.MultipleFileDownloadImpl;
@@ -378,9 +383,36 @@ public class TransferManager {
     }
 
     /**
-     * Same as public version of upload, but attaches a
-     * {@link TransferStateChangeListener} to the upload object so that it can be
-     * monitored.
+     * <p>
+     * Schedules a new transfer to upload data to Amazon S3. This method is
+     * non-blocking and returns immediately (i.e. before the upload has
+     * finished).
+     * </p>
+     * <p>
+     * Use the returned <code>Upload</code> object to query the progress of the
+     * transfer, add listeners for progress events, and wait for the upload to
+     * complete.
+     * </p>
+     * <p>
+     * If resources are available, the upload will begin immediately. Otherwise,
+     * the upload is scheduled and started as soon as resources become
+     * available.
+     * </p>
+     *
+     * @param putObjectRequest
+     *            The request containing all the parameters for the upload.
+     * @param stateListener
+     *            The transfer state change listener to monitor the upload.
+     * @return A new <code>Upload</code> object to use to check the state of the
+     *         upload, listen for progress notifications, and otherwise manage
+     *         the upload.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
      */
     private Upload upload(final PutObjectRequest putObjectRequest, final TransferStateChangeListener stateListener)
             throws AmazonServiceException, AmazonClientException {
@@ -809,7 +841,7 @@ public class TransferManager {
      *            appropriate concatenation to the key prefix.
      */
     public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirectoryKeyPrefix, File directory, boolean includeSubdirectories) {
-    	return uploadDirectory(bucketName, virtualDirectoryKeyPrefix, directory, includeSubdirectories, null);
+        return uploadDirectory(bucketName, virtualDirectoryKeyPrefix, directory, includeSubdirectories, null);
     }
 
     /**
@@ -836,7 +868,7 @@ public class TransferManager {
      *            is used to provide metadata for each file being uploaded.
      */
     public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirectoryKeyPrefix, File directory, boolean includeSubdirectories, ObjectMetadataProvider metadataProvider) {
-    	if ( directory == null || !directory.exists() || !directory.isDirectory() ) {
+        if ( directory == null || !directory.exists() || !directory.isDirectory() ) {
             throw new IllegalArgumentException("Must provide a directory to upload");
         }
 
@@ -869,7 +901,7 @@ public class TransferManager {
      *            virtualDirectoryKeyPrefix.
      */
     public MultipleFileUpload uploadFileList(String bucketName, String virtualDirectoryKeyPrefix, File directory, List<File> files) {
-    	return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files, null);
+        return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files, null);
     }
 
     /**
@@ -1040,6 +1072,17 @@ public class TransferManager {
 
     /**
      * Forcefully shuts down this TransferManager instance - currently executing
+     * transfers will not be allowed to finish. It also by default shuts down
+     * the underlying Amazon S3 client.
+     *
+     * @see shutdownNow(boolean)
+     */
+    public void shutdownNow() {
+        shutdownNow(true);
+    }
+
+    /**
+     * Forcefully shuts down this TransferManager instance - currently executing
      * transfers will not be allowed to finish. Callers should use this method
      * when they either:
      * <ul>
@@ -1053,13 +1096,18 @@ public class TransferManager {
      * upload may not always be automatically cleaned up, but callers can use
      * {@link #abortMultipartUploads(String, Date)} to clean up any upload
      * parts.
+     *
+     * @param shutDownS3Client
+     *            Whether to shut down the underlying Amazon S3 client.
      */
-    public void shutdownNow() {
+    public void shutdownNow(boolean shutDownS3Client) {
         threadPool.shutdownNow();
         timedThreadPool.shutdownNow();
 
-        if (s3 instanceof AmazonS3Client) {
-            ((AmazonS3Client)s3).shutdown();
+        if (shutDownS3Client) {
+            if (s3 instanceof AmazonS3Client) {
+                ((AmazonS3Client)s3).shutdown();
+            }
         }
     }
 
@@ -1086,4 +1134,190 @@ public class TransferManager {
             return thread;
         }
     };
+
+    /**
+     * <p>
+     * Schedules a new transfer to copy data from one Amazon S3 location to
+     * another Amazon S3 location. The copy is carried out in a single chunk if
+     * the Amazon S3 object size is less than 5 GB. The copy is carried out in
+     * multiple parts if the S3 object is greater than 5 GB.
+     * </p>
+     * <p>
+     * <code>TransferManager</code> doesn't support copying of encrypted objects whose
+     * encryption materials is stored in instruction file.
+     * </p>
+     * <p>
+     * Use the returned <code>Copy</code> object to check if the copy is
+     * complete.
+     * </p>
+     * <p>
+     * If resources are available, the copy request will begin immediately.
+     * Otherwise, the copy is scheduled and started as soon as resources become
+     * available.
+     * </p>
+     *
+     * @param sourceBucketName
+     *             The name of the bucket from where the object is to be
+     *            copied.
+     * @param sourceKey
+     *             The name of the Amazon S3 object.
+     * @param destinationBucketName
+     *             The name of the bucket to where the Amazon S3 object has to
+     *            be copied.
+     * @param destinationKey
+     *             The name of the object in the destination bucket.
+     *
+     * @return A new <code>Copy</code> object to use to check the state of the
+     *         copy request being processed.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+
+    public Copy copy(String sourceBucketName, String sourceKey,
+            String destinationBucketName, String destinationKey)
+            throws AmazonServiceException, AmazonClientException {
+        return copy(new CopyObjectRequest(sourceBucketName, sourceKey,
+                destinationBucketName, destinationKey));
+    }
+
+    /**
+     * <p>
+     * Schedules a new transfer to copy data from one Amazon S3 location to
+     * another Amazon S3 location. The copy is carried out in a single chunk if
+     * the Amazon S3 object size is less than 5 GB. The copy is carried out in
+     * multiple parts if the S3 object is greater than 5 GB.
+     * </p>
+     * <p>
+     * <code>TransferManager</code> doesn't support copying of encrypted objects whose
+     * encryption materials is stored i instruction file.
+     * </p>
+     * <p>
+     * Use the returned <code>Copy</code> object to check if the copy is
+     * complete.
+     * </p>
+     * <p>
+     * If resources are available, the copy request will begin immediately.
+     * Otherwise, the copy is scheduled and started as soon as resources become
+     * available.
+     * </p>
+     *
+     * @param copyObjectRequest
+     *            The request containing all the parameters for the copy.
+     *
+     * @return A new <code>Copy</code> object to use to check the state of the
+     *         copy request being processed.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public Copy copy(final CopyObjectRequest copyObjectRequest){
+        return copy(copyObjectRequest,null);
+    }
+
+    /**
+     * <p>
+     * Schedules a new transfer to copy data from one Amazon S3 location to
+     * another Amazon S3 location. The copy is carried out in a single chunk if
+     * the Amazon S3 object size is less than 5 GB. The copy is carried out in
+     * multiple parts if the S3 object is greater than 5 GB.
+     * </p>
+     * <p>
+     * <code>TransferManager</code> doesn't support copying of encrypted objects whose
+     * encryption materials is stored in instruction file.
+     * </p>
+     * <p>
+     * Use the returned <code>Copy</code> object to check if the copy is
+     * complete.
+     * </p>
+     * <p>
+     * If resources are available, the copy request will begin immediately.
+     * Otherwise, the copy is scheduled and started as soon as resources become
+     * available.
+     * </p>
+     *
+     * @param copyObjectRequest
+     *            The request containing all the parameters for the copy.
+     * @param stateChangeListener
+     *            The transfer state change listener to monitor the copy request
+     * @return A new <code>Copy</code> object to use to check the state of the
+     *         copy request being processed.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+
+    public Copy copy(final CopyObjectRequest copyObjectRequest,
+            final TransferStateChangeListener stateChangeListener)
+            throws AmazonServiceException, AmazonClientException {
+
+        appendUserAgent(copyObjectRequest, USER_AGENT);
+
+        assertParameterNotNull(copyObjectRequest.getSourceBucketName(),
+                "The source bucket name must be specified when a copy request is initiated.");
+        assertParameterNotNull(copyObjectRequest.getSourceKey(),
+                "The source object key must be specified when a copy request is initiated.");
+        assertParameterNotNull(
+                copyObjectRequest.getDestinationBucketName(),
+                "The destination bucket name must be specified when a copy request is initiated.");
+        assertParameterNotNull(
+                copyObjectRequest.getDestinationKey(),
+                "The destination object key must be specified when a copy request is initiated.");
+
+        String description = "Copying object from "
+                + copyObjectRequest.getSourceBucketName() + "/"
+                + copyObjectRequest.getSourceKey() + " to "
+                + copyObjectRequest.getDestinationBucketName() + "/"
+                + copyObjectRequest.getDestinationKey();
+
+        ObjectMetadata metadata = s3
+                .getObjectMetadata(new GetObjectMetadataRequest(
+                        copyObjectRequest.getSourceBucketName(),
+                        copyObjectRequest.getSourceKey()));
+
+        TransferProgressImpl transferProgress = new TransferProgressImpl();
+        transferProgress.setTotalBytesToTransfer(metadata.getContentLength());
+
+        ProgressListenerChain listenerChain = new ProgressListenerChain(
+                new TransferProgressUpdatingListener(transferProgress));
+        CopyImpl copy = new CopyImpl(description, transferProgress,
+                listenerChain, stateChangeListener);
+        CopyCallable copyCallable = new CopyCallable(this, threadPool, copy,
+                copyObjectRequest, metadata.getContentLength(), listenerChain);
+        CopyMonitor watcher = new CopyMonitor(this, copy, threadPool,
+                copyCallable, copyObjectRequest, listenerChain);
+        watcher.setTimedThreadPool(timedThreadPool);
+        copy.setMonitor(watcher);
+        return copy;
+    }
+
+    /**
+     * <p>
+     * Asserts that the specified parameter value is not <code>null</code> and if it is,
+     * throws an <code>IllegalArgumentException</code> with the specified error message.
+     * </p>
+     *
+     * @param parameterValue
+     *            The parameter value being checked.
+     * @param errorMessage
+     *            The error message to include in the IllegalArgumentException
+     *            if the specified parameter is null.
+     */
+    private void assertParameterNotNull(Object parameterValue, String errorMessage) {
+        if (parameterValue == null) throw new IllegalArgumentException(errorMessage);
+    }
+
+
 }

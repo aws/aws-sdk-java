@@ -18,20 +18,24 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Encloses a receipt handle and an entry id for each message in ChangeMessageVisibilityBatch.
+ * Encloses a receipt handle and an entry id for each message in
+ * ChangeMessageVisibilityBatch.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> All of the following parameters are list parameters that must be prefixed with ChangeMessageVisibilityBatchRequestEntry.n, where n
- * is an integer value starting with 1. For example, a parameter list for this action might look like this:
+ * <b>IMPORTANT:</b> All of the following parameters are list parameters
+ * that must be prefixed with ChangeMessageVisibilityBatchRequestEntry.n,
+ * where n is an integer value starting with 1. For example, a parameter
+ * list for this action might look like this:
  * </p>
  * <p>
- * <code>&ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code>
+ * MessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code>
  * </p>
  * <p>
- * <code>&ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=Your_Receipt_Handle </code>
+ * MessageVisibilityBatchRequestEntry.1.ReceiptHandle=Your_Receipt_Handle
+ * </code>
  * </p>
  * <p>
- * <code>&ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code>
+ * ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code>
  * </p>
  */
 public class ChangeMessageVisibilityBatchRequestEntry implements Serializable {

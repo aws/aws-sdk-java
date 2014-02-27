@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This exception occurs when there is an internal failure in the EMR service.
+ * This exception occurs when there is an internal failure in the EMR
+ * service.
  * </p>
  */        
 public class InternalServerException extends AmazonServiceException {

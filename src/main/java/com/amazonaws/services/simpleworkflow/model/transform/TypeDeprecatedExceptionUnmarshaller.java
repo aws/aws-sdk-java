@@ -26,14 +26,21 @@ public class TypeDeprecatedExceptionUnmarshaller extends JsonErrorUnmarshaller {
         super(TypeDeprecatedException.class);
     }
 
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands.
-        String errorCode = parseErrorCode(json);
-        if (errorCode == null || !errorCode.equals("TypeDeprecatedFault"))
-            return null;
+    @Override
+    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
+        if (errorTypeFromHeader == null) {
+            // Parse error type from the JSON content if it's not available in the response headers
+            String errorCodeFromContent = parseErrorCode(json);
+            return (errorCodeFromContent != null && errorCodeFromContent.equals("TypeDeprecatedFault"));
+        } else {
+            return errorTypeFromHeader.equals("TypeDeprecatedFault");
+        }
+    }
 
+    @Override
+    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         TypeDeprecatedException e = (TypeDeprecatedException)super.unmarshall(json);
+        e.setErrorCode("TypeDeprecatedFault");
 
         return e;
     }

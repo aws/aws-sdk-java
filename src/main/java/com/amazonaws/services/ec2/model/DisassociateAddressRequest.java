@@ -23,10 +23,12 @@ import com.amazonaws.services.ec2.model.transform.DisassociateAddressRequestMars
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#disassociateAddress(DisassociateAddressRequest) DisassociateAddress operation}.
  * <p>
- * Disassociates an Elastic IP address from the instance or network interface it's associated with.
+ * Disassociates an Elastic IP address from the instance or network
+ * interface it's associated with.
  * </p>
  * <p>
- * This is an idempotent operation. If you perform the operation more than once, Amazon EC2 doesn't return an error.
+ * This is an idempotent operation. If you perform the operation more
+ * than once, Amazon EC2 doesn't return an error.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#disassociateAddress(DisassociateAddressRequest)

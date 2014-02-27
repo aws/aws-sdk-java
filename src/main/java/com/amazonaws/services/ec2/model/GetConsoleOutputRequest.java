@@ -26,20 +26,27 @@ import com.amazonaws.services.ec2.model.transform.GetConsoleOutputRequestMarshal
  * Gets the console output for the specified instance.
  * </p>
  * <p>
- * Instances do not have a physical monitor through which you can view their console output. They also lack physical controls that allow you to power up,
- * reboot, or shut them down. To allow these actions, we provide them through the Amazon EC2 API and command line interface.
+ * Instances do not have a physical monitor through which you can view
+ * their console output. They also lack physical controls that allow you
+ * to power up, reboot, or shut them down. To allow these actions, we
+ * provide them through the Amazon EC2 API and command line interface.
  * </p>
  * <p>
- * Instance console output is buffered and posted shortly after instance boot, reboot, and termination. Amazon EC2 preserves the most recent 64 KB output
- * which is available for at least one hour after the most recent post.
+ * Instance console output is buffered and posted shortly after instance
+ * boot, reboot, and termination. Amazon EC2 preserves the most recent 64
+ * KB output which is available for at least one hour after the most
+ * recent post.
  * </p>
  * <p>
- * For Linux/Unix instances, the instance console output displays the exact console output that would normally be displayed on a physical monitor
- * attached to a machine. This output is buffered because the instance produces it and then posts it to a store where the instance's owner can retrieve
- * it.
+ * For Linux/Unix instances, the instance console output displays the
+ * exact console output that would normally be displayed on a physical
+ * monitor attached to a machine. This output is buffered because the
+ * instance produces it and then posts it to a store where the instance's
+ * owner can retrieve it.
  * </p>
  * <p>
- * For Windows instances, the instance console output displays the last three system event log errors.
+ * For Windows instances, the instance console output displays the last
+ * three system event log errors.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#getConsoleOutput(GetConsoleOutputRequest)

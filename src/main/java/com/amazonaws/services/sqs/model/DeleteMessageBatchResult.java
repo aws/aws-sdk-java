@@ -18,8 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * For each message in the batch, the response contains a DeleteMessageBatchResultEntry tag if the message is deleted or a BatchResultErrorEntry tag if
- * the message cannot be deleted.
+ * For each message in the batch, the response contains a
+ * DeleteMessageBatchResultEntry tag if the message is deleted or a
+ * BatchResultErrorEntry tag if the message cannot be deleted.
  * </p>
  */
 public class DeleteMessageBatchResult implements Serializable {

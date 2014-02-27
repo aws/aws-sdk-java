@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a parameter used to set up an Amazon EBS volume in a block device mapping.
+ * Describes a parameter used to set up an Amazon EBS volume in a block
+ * device mapping.
  * </p>
  */
 public class EbsInstanceBlockDevice implements Serializable {

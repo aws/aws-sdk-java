@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the results of a successful invocation of the DescribeEventSubscriptions action.
+ * Contains the results of a successful invocation of the
+ * DescribeEventSubscriptions action.
  * </p>
  */
 public class EventSubscription implements Serializable {

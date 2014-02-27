@@ -26,14 +26,21 @@ public class InsufficientS3BucketPolicyExceptionUnmarshaller extends JsonErrorUn
         super(InsufficientS3BucketPolicyException.class);
     }
 
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands.
-        String errorCode = parseErrorCode(json);
-        if (errorCode == null || !errorCode.equals("InsufficientS3BucketPolicyException"))
-            return null;
+    @Override
+    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
+        if (errorTypeFromHeader == null) {
+            // Parse error type from the JSON content if it's not available in the response headers
+            String errorCodeFromContent = parseErrorCode(json);
+            return (errorCodeFromContent != null && errorCodeFromContent.equals("InsufficientS3BucketPolicyException"));
+        } else {
+            return errorTypeFromHeader.equals("InsufficientS3BucketPolicyException");
+        }
+    }
 
+    @Override
+    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         InsufficientS3BucketPolicyException e = (InsufficientS3BucketPolicyException)super.unmarshall(json);
+        e.setErrorCode("InsufficientS3BucketPolicyException");
 
         return e;
     }

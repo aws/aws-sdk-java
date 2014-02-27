@@ -40,15 +40,22 @@ import com.amazonaws.services.sns.model.transform.*;
  * completes.
  * <p>
  * Amazon Simple Notification Service <p>
- * Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build distributed web-enabled applications. Applications can use
- * Amazon SNS to easily push real-time notification messages to interested subscribers over multiple delivery protocols. For more information about this
- * product see <a href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns </a> . For detailed information about Amazon SNS features and their
- * associated API calls, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/"> Amazon SNS Developer Guide </a> .
+ * Amazon Simple Notification Service (Amazon SNS) is a web service that
+ * enables you to build distributed web-enabled applications.
+ * Applications can use Amazon SNS to easily push real-time notification
+ * messages to interested subscribers over multiple delivery protocols.
+ * For more information about this product see
+ * <a href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns </a> . For detailed information about Amazon SNS features and their associated API calls, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/"> Amazon SNS Developer Guide </a>
+ * .
  * </p>
  * <p>
- * We also provide SDKs that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that automatically
- * takes care of tasks such as: cryptographically signing your service requests, retrying requests, and handling error responses. For a list of available
- * SDKs, go to <a href="http://aws.amazon.com/tools/"> Tools for Amazon Web Services </a> .
+ * We also provide SDKs that enable you to access Amazon SNS from your
+ * preferred programming language. The SDKs contain functionality that
+ * automatically takes care of tasks such as: cryptographically signing
+ * your service requests, retrying requests, and handling error
+ * responses. For a list of available SDKs, go to
+ * <a href="http://aws.amazon.com/tools/"> Tools for Amazon Web Services </a>
+ * .
  * </p>
  */
 public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS {
@@ -288,9 +295,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * PlatformApplicationArn that is returned when using
      * <code>CreatePlatformApplication</code> is then used as an attribute
      * for the <code>CreatePlatformEndpoint</code> action. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
-     * Using Amazon SNS Mobile Push Notifications </a> .
+     * information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+     * .
      * </p>
      *
      * @param createPlatformApplicationRequest Container for the necessary
@@ -422,9 +429,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     /**
      * <p>
      * The <code>DeleteEndpoint</code> action, which is idempotent, deletes
-     * the endpoint from SNS. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
-     * Using Amazon SNS Mobile Push Notifications </a> .
+     * the endpoint from SNS. For more information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+     * .
      * </p>
      *
      * @param deleteEndpointRequest Container for the necessary parameters to
@@ -539,9 +546,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * <p>
      * The <code>GetEndpointAttributes</code> retrieves the endpoint
      * attributes for a device on one of the supported push notification
-     * services, such as GCM and APNS. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
-     * Using Amazon SNS Mobile Push Notifications </a> .
+     * services, such as GCM and APNS. For more information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+     * .
      * </p>
      *
      * @param getEndpointAttributesRequest Container for the necessary
@@ -639,9 +646,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * topic. The <code>CreatePlatformEndpoint</code> action is idempotent,
      * so if the requester already owns an endpoint with the same device
      * token and attributes, that endpoint's ARN is returned without creating
-     * a new endpoint. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
-     * Using Amazon SNS Mobile Push Notifications </a> .
+     * a new endpoint. For more information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+     * .
      * </p>
      *
      * @param createPlatformEndpointRequest Container for the necessary
@@ -724,10 +731,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * <p>
      * The <code>CreateTopic</code> action creates a topic to which
      * notifications can be published. Users can create at most 3000 topics.
-     * For more information, see <a href="http://aws.amazon.com/sns/">
-     * http://aws.amazon.com/sns </a> . This action is idempotent, so if the
-     * requester already owns a topic with the specified name, that topic's
-     * ARN is returned without creating a new topic.
+     * For more information, see
+     * <a href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns </a>
+     * . This action is idempotent, so if the requester already owns a topic
+     * with the specified name, that topic's ARN is returned without creating
+     * a new topic.
      * </p>
      *
      * @param createTopicRequest Container for the necessary parameters to
@@ -857,9 +865,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * <p>
      * The <code>DeletePlatformApplication</code> action deletes a platform
      * application object for one of the supported push notification
-     * services, such as APNS and GCM. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
-     * Using Amazon SNS Mobile Push Notifications </a> .
+     * services, such as APNS and GCM. For more information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+     * .
      * </p>
      *
      * @param deletePlatformApplicationRequest Container for the necessary
@@ -904,9 +912,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * NextToken string will be returned. To receive the next page, you call
      * <code>ListPlatformApplications</code> using the NextToken string
      * received from the previous call. When there are no more records to
-     * return, NextToken will be null. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
-     * Using Amazon SNS Mobile Push Notifications </a> .
+     * return, NextToken will be null. For more information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+     * .
      * </p>
      *
      * @param listPlatformApplicationsRequest Container for the necessary
@@ -949,9 +957,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * <p>
      * The <code>SetEndpointAttributes</code> action sets the attributes for
      * an endpoint for a device on one of the supported push notification
-     * services, such as GCM and APNS. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
-     * Using Amazon SNS Mobile Push Notifications </a> .
+     * services, such as GCM and APNS. For more information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+     * .
      * </p>
      *
      * @param setEndpointAttributesRequest Container for the necessary
@@ -1077,8 +1085,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * The <code>GetPlatformApplicationAttributes</code> action retrieves the
      * attributes of the platform application object for the supported push
      * notification services, such as APNS and GCM. For more information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
-     * Using Amazon SNS Mobile Push Notifications </a> .
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+     * .
      * </p>
      *
      * @param getPlatformApplicationAttributesRequest Container for the
@@ -1123,8 +1131,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * The <code>SetPlatformApplicationAttributes</code> action sets the
      * attributes of the platform application object for the supported push
      * notification services, such as APNS and GCM. For more information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
-     * Using Amazon SNS Mobile Push Notifications </a> .
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+     * .
      * </p>
      *
      * @param setPlatformApplicationAttributesRequest Container for the
@@ -1211,9 +1219,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * <code>ListEndpointsByPlatformApplication</code> again using the
      * NextToken string received from the previous call. When there are no
      * more records to return, NextToken will be null. For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
-     * Using Amazon SNS Mobile Push Notifications </a> .
+     * see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+     * .
      * </p>
      *
      * @param listEndpointsByPlatformApplicationRequest Container for the
@@ -1423,9 +1431,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * NextToken string will be returned. To receive the next page, you call
      * <code>ListPlatformApplications</code> using the NextToken string
      * received from the previous call. When there are no more records to
-     * return, NextToken will be null. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
-     * Using Amazon SNS Mobile Push Notifications </a> .
+     * return, NextToken will be null. For more information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+     * .
      * </p>
      * 
      * @return The response from the ListPlatformApplications service method,
@@ -1763,10 +1771,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * <p>
      * The <code>CreateTopic</code> action creates a topic to which
      * notifications can be published. Users can create at most 3000 topics.
-     * For more information, see <a href="http://aws.amazon.com/sns/">
-     * http://aws.amazon.com/sns </a> . This action is idempotent, so if the
-     * requester already owns a topic with the specified name, that topic's
-     * ARN is returned without creating a new topic.
+     * For more information, see
+     * <a href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns </a>
+     * . This action is idempotent, so if the requester already owns a topic
+     * with the specified name, that topic's ARN is returned without creating
+     * a new topic.
      * </p>
      * 
      * @param name The name of the topic you want to create. <p>Constraints:

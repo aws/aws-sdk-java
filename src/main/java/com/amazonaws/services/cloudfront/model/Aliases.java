@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
+ * A complex type that contains information about CNAMEs (alternate
+ * domain names), if any, for this distribution.
  * </p>
  */
 public class Aliases implements Serializable {

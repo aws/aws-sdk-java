@@ -21,9 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#createLaunchConfiguration(CreateLaunchConfigurationRequest) CreateLaunchConfiguration operation}.
  * <p>
- * Creates a new launch configuration. The launch configuration name must be unique within the scope of the client's AWS account. The maximum limit of
- * launch configurations, which by default is 100, must not yet have been met; otherwise, the call will fail. When created, the new launch configuration
- * is available for immediate use.
+ * Creates a new launch configuration. The launch configuration name
+ * must be unique within the scope of the client's AWS account. The
+ * maximum limit of launch configurations, which by default is 100, must
+ * not yet have been met; otherwise, the call will fail. When created,
+ * the new launch configuration is available for immediate use.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createLaunchConfiguration(CreateLaunchConfigurationRequest)

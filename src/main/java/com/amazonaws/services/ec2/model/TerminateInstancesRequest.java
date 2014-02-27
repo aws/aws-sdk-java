@@ -23,22 +23,29 @@ import com.amazonaws.services.ec2.model.transform.TerminateInstancesRequestMarsh
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#terminateInstances(TerminateInstancesRequest) TerminateInstances operation}.
  * <p>
- * Shuts down one or more instances. This operation is idempotent; if you terminate an instance more than once, each call succeeds.
+ * Shuts down one or more instances. This operation is idempotent; if you
+ * terminate an instance more than once, each call succeeds.
  * </p>
  * <p>
- * Terminated instances remain visible after termination (for approximately one hour).
+ * Terminated instances remain visible after termination (for
+ * approximately one hour).
  * </p>
  * <p>
- * By default, Amazon EC2 deletes all Amazon EBS volumes that were attached when the instance launched. Volumes attached after instance launch continue
- * running.
+ * By default, Amazon EC2 deletes all Amazon EBS volumes that were
+ * attached when the instance launched. Volumes attached after instance
+ * launch continue running.
  * </p>
  * <p>
- * You can stop, start, and terminate EBS-backed instances. You can only terminate instance store-backed instances. What happens to an instance differs
- * if you stop it or terminate it. For example, when you stop an instance, the root device and any other devices attached to the instance persist. When
- * you terminate an instance, the root device and any other devices attached during the instance launch are automatically deleted. For more information
- * about the differences between stopping and terminating instances, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a> in the <i>Amazon Elastic Compute Cloud
- * User Guide</i> .
+ * You can stop, start, and terminate EBS-backed instances. You can only
+ * terminate instance store-backed instances. What happens to an instance
+ * differs if you stop it or terminate it. For example, when you stop an
+ * instance, the root device and any other devices attached to the
+ * instance persist. When you terminate an instance, the root device and
+ * any other devices attached during the instance launch are
+ * automatically deleted. For more information about the differences
+ * between stopping and terminating instances, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#terminateInstances(TerminateInstancesRequest)

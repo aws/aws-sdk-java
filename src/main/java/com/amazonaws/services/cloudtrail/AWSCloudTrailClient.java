@@ -41,21 +41,30 @@ import com.amazonaws.services.cloudtrail.model.transform.*;
  * completes.
  * <p>
  * AWS Cloud Trail <p>
- * This is the CloudTrail API Reference. It provides descriptions of actions, data types, common parameters, and common errors for CloudTrail.
+ * This is the CloudTrail API Reference. It provides descriptions of
+ * actions, data types, common parameters, and common errors for
+ * CloudTrail.
  * </p>
  * <p>
- * CloudTrail is a web service that records AWS API calls for your AWS account and delivers log files to an Amazon S3 bucket. The recorded information
- * includes the identity of the user, the start time of the AWS API call, the source IP address, the request parameters, and the response elements
- * returned by the service.
+ * CloudTrail is a web service that records AWS API calls for your AWS
+ * account and delivers log files to an Amazon S3 bucket. The recorded
+ * information includes the identity of the user, the start time of the
+ * AWS API call, the source IP address, the request parameters, and the
+ * response elements returned by the service.
  * </p>
  * <p>
- * <b>NOTE:</b> As an alternative to using the API, you can use one of the AWS SDKs, which consist of libraries and sample code for various programming
- * languages and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to AWSCloudTrail. For
- * example, the SDKs take care of cryptographically signing requests, managing errors, and retrying requests automatically. For information about the AWS
- * SDKs, including how to download and install them, see the Tools for Amazon Web Services page.
+ * <b>NOTE:</b> As an alternative to using the API, you can use one of
+ * the AWS SDKs, which consist of libraries and sample code for various
+ * programming languages and platforms (Java, Ruby, .NET, iOS, Android,
+ * etc.). The SDKs provide a convenient way to create programmatic access
+ * to AWSCloudTrail. For example, the SDKs take care of cryptographically
+ * signing requests, managing errors, and retrying requests
+ * automatically. For information about the AWS SDKs, including how to
+ * download and install them, see the Tools for Amazon Web Services page.
  * </p>
  * <p>
- * See the CloudTrail User Guide for information about the data that is included with each AWS API call listed in the log files.
+ * See the CloudTrail User Guide for information about the data that is
+ * included with each AWS API call listed in the log files.
  * </p>
  */
 public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCloudTrail {
@@ -68,7 +77,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
     /**
      * List of exception unmarshallers for all AWSCloudTrail exceptions.
      */
-    protected List<Unmarshaller<AmazonServiceException, JSONObject>> exceptionUnmarshallers;
+    protected List<JsonErrorUnmarshaller> jsonErrorUnmarshallers;
 
     /**
      * Constructs a new client to invoke service methods on
@@ -216,20 +225,20 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
     }
 
     private void init() {
-        exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, JSONObject>>();
-        exceptionUnmarshallers.add(new TrailAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidS3BucketNameExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TrailNotProvidedExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidSnsTopicNameExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidS3PrefixExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new MaximumNumberOfTrailsExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InsufficientSnsTopicPolicyExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TrailNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidTrailNameExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new S3BucketDoesNotExistExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InsufficientS3BucketPolicyExceptionUnmarshaller());
+        jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
+        jsonErrorUnmarshallers.add(new TrailAlreadyExistsExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidS3BucketNameExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new TrailNotProvidedExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidSnsTopicNameExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidS3PrefixExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new MaximumNumberOfTrailsExceededExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InsufficientSnsTopicPolicyExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new TrailNotFoundExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidTrailNameExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new S3BucketDoesNotExistExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InsufficientS3BucketPolicyExceptionUnmarshaller());
         
-        exceptionUnmarshallers.add(new JsonErrorUnmarshaller());
+        jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("cloudtrail.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
@@ -287,11 +296,12 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             }
             Unmarshaller<GetTrailStatusResult, JsonUnmarshallerContext> unmarshaller = new GetTrailStatusResultJsonUnmarshaller();
             JsonResponseHandler<GetTrailStatusResult> responseHandler = new JsonResponseHandler<GetTrailStatusResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -334,11 +344,12 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             }
             Unmarshaller<DeleteTrailResult, JsonUnmarshallerContext> unmarshaller = new DeleteTrailResultJsonUnmarshaller();
             JsonResponseHandler<DeleteTrailResult> responseHandler = new JsonResponseHandler<DeleteTrailResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -408,11 +419,12 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             }
             Unmarshaller<CreateTrailResult, JsonUnmarshallerContext> unmarshaller = new CreateTrailResultJsonUnmarshaller();
             JsonResponseHandler<CreateTrailResult> responseHandler = new JsonResponseHandler<CreateTrailResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -470,11 +482,12 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             }
             Unmarshaller<UpdateTrailResult, JsonUnmarshallerContext> unmarshaller = new UpdateTrailResultJsonUnmarshaller();
             JsonResponseHandler<UpdateTrailResult> responseHandler = new JsonResponseHandler<UpdateTrailResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -516,11 +529,12 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             }
             Unmarshaller<DescribeTrailsResult, JsonUnmarshallerContext> unmarshaller = new DescribeTrailsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeTrailsResult> responseHandler = new JsonResponseHandler<DescribeTrailsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -566,11 +580,12 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             }
             Unmarshaller<StopLoggingResult, JsonUnmarshallerContext> unmarshaller = new StopLoggingResultJsonUnmarshaller();
             JsonResponseHandler<StopLoggingResult> responseHandler = new JsonResponseHandler<StopLoggingResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -614,11 +629,12 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             }
             Unmarshaller<StartLoggingResult, JsonUnmarshallerContext> unmarshaller = new StartLoggingResultJsonUnmarshaller();
             JsonResponseHandler<StartLoggingResult> responseHandler = new JsonResponseHandler<StartLoggingResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -695,10 +711,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         }
 
         executionContext.setCredentials(credentials);
-        JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
+        JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(jsonErrorUnmarshallers);
         Response<X> result = client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);
-        awsRequestMetrics.log();
         return result;
     }
 }

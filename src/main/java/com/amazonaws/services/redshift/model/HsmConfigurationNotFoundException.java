@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * There is no Amazon Redshift HSM configuration with the specified identifier.
+ * There is no Amazon Redshift HSM configuration with the specified
+ * identifier.
  * </p>
  */        
 public class HsmConfigurationNotFoundException extends AmazonServiceException {

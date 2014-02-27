@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.DeleteNetworkAclRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteNetworkAcl(DeleteNetworkAclRequest) DeleteNetworkAcl operation}.
  * <p>
- * Deletes the specified network ACL. You can't delete the ACL if it's associated with any subnets. You can't delete the default network ACL.
+ * Deletes the specified network ACL. You can't delete the ACL if it's
+ * associated with any subnets. You can't delete the default network ACL.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteNetworkAcl(DeleteNetworkAclRequest)

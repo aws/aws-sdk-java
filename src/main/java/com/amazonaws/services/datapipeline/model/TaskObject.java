@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about a pipeline task that is assigned to a task runner.
+ * Contains information about a pipeline task that is assigned to a task
+ * runner.
  * </p>
  */
 public class TaskObject implements Serializable {

@@ -21,26 +21,34 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.glacier.AmazonGlacier#describeJob(DescribeJobRequest) DescribeJob operation}.
  * <p>
- * This operation returns information about a job you previously initiated, including the job initiation date, the user who initiated the job, the job
- * status code/message and the Amazon SNS topic to notify after Amazon Glacier completes the job. For more information about initiating a job, see
- * InitiateJob.
+ * This operation returns information about a job you previously
+ * initiated, including the job initiation date, the user who initiated
+ * the job, the job status code/message and the Amazon SNS topic to
+ * notify after Amazon Glacier completes the job. For more information
+ * about initiating a job, see InitiateJob.
  * </p>
  * <p>
- * <b>NOTE:</b> This operation enables you to check the status of your job. However, it is strongly recommended that you set up an Amazon SNS topic and
- * specify it in your initiate job request so that Amazon Glacier can notify the topic after it completes the job.
+ * <b>NOTE:</b> This operation enables you to check the status of your
+ * job. However, it is strongly recommended that you set up an Amazon SNS
+ * topic and specify it in your initiate job request so that Amazon
+ * Glacier can notify the topic after it completes the job.
  * </p>
  * <p>
- * A job ID will not expire for at least 24 hours after Amazon Glacier completes the job.
+ * A job ID will not expire for at least 24 hours after Amazon Glacier
+ * completes the job.
  * </p>
  * <p>
- * An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any
- * permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
- * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management
- * (IAM) </a> .
+ * An AWS account has full permission to perform all operations
+ * (actions). However, AWS Identity and Access Management (IAM) users
+ * don't have any permissions by default. You must grant them explicit
+ * permission to perform specific actions. For more information, see
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+ * .
  * </p>
  * <p>
- * For information about the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html"> Working
- * with Archives in Amazon Glacier </a> in the <i>Amazon Glacier Developer Guide</i> .
+ * For information about the underlying REST API, go to
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html"> Working with Archives in Amazon Glacier </a>
+ * in the <i>Amazon Glacier Developer Guide</i> .
  * 
  * </p>
  *

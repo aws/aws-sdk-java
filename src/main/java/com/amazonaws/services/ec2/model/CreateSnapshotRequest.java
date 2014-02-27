@@ -23,25 +23,35 @@ import com.amazonaws.services.ec2.model.transform.CreateSnapshotRequestMarshalle
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createSnapshot(CreateSnapshotRequest) CreateSnapshot operation}.
  * <p>
- * Creates a snapshot of an Amazon EBS volume and stores it in Amazon S3. You can use snapshots for backups, to make copies of Amazon EBS volumes, and to
- * save data before shutting down an instance.
+ * Creates a snapshot of an Amazon EBS volume and stores it in Amazon S3.
+ * You can use snapshots for backups, to make copies of Amazon EBS
+ * volumes, and to save data before shutting down an instance.
  * </p>
  * <p>
- * When a snapshot is created, any AWS Marketplace product codes that are associated with the source volume are propagated to the snapshot.
+ * When a snapshot is created, any AWS Marketplace product codes that are
+ * associated with the source volume are propagated to the snapshot.
  * </p>
  * <p>
- * You can take a snapshot of an attached volume that is in use. However, snapshots only capture data that has been written to your Amazon EBS volume at
- * the time the snapshot command is issued; this may exclude any data that has been cached by any applications or the operating system. If you can pause
- * any file writes to the volume long enough to take a snapshot, your snapshot should be complete. However, if you cannot pause all file writes to the
- * volume, you should unmount the volume from within the instance, issue the snapshot command, and then remount the volume to ensure a consistent and
- * complete snapshot. You may remount and use your volume while the snapshot status is <code>pending</code> .
+ * You can take a snapshot of an attached volume that is in use. However,
+ * snapshots only capture data that has been written to your Amazon EBS
+ * volume at the time the snapshot command is issued; this may exclude
+ * any data that has been cached by any applications or the operating
+ * system. If you can pause any file writes to the volume long enough to
+ * take a snapshot, your snapshot should be complete. However, if you
+ * cannot pause all file writes to the volume, you should unmount the
+ * volume from within the instance, issue the snapshot command, and then
+ * remount the volume to ensure a consistent and complete snapshot. You
+ * may remount and use your volume while the snapshot status is
+ * <code>pending</code> .
  * </p>
  * <p>
- * To create a snapshot for Amazon EBS volumes that serve as root devices, you should stop the instance before taking the snapshot.
+ * To create a snapshot for Amazon EBS volumes that serve as root
+ * devices, you should stop the instance before taking the snapshot.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html"> Creating an Amazon EBS Snapshot
- * </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html"> Creating an Amazon EBS Snapshot </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSnapshot(CreateSnapshotRequest)

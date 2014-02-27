@@ -54,7 +54,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
     /**
      * List of exception unmarshallers for all AmazonElasticTranscoder exceptions.
      */
-    protected List<Unmarshaller<AmazonServiceException, JSONObject>> exceptionUnmarshallers;
+    protected List<JsonErrorUnmarshaller> jsonErrorUnmarshallers;
 
     /**
      * Constructs a new client to invoke service methods on
@@ -202,16 +202,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
     }
 
     private void init() {
-        exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, JSONObject>>();
-        exceptionUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InternalServiceExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ValidationExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new IncompatibleVersionExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new AccessDeniedExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
+        jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
+        jsonErrorUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InternalServiceExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new ValidationExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new IncompatibleVersionExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new AccessDeniedExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         
-        exceptionUnmarshallers.add(new JsonErrorUnmarshaller());
+        jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("elastictranscoder.us-east-1.amazonaws.com/");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
@@ -279,11 +279,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<UpdatePipelineStatusResult, JsonUnmarshallerContext> unmarshaller = new UpdatePipelineStatusResultJsonUnmarshaller();
             JsonResponseHandler<UpdatePipelineStatusResult> responseHandler = new JsonResponseHandler<UpdatePipelineStatusResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -336,11 +337,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<UpdatePipelineNotificationsResult, JsonUnmarshallerContext> unmarshaller = new UpdatePipelineNotificationsResultJsonUnmarshaller();
             JsonResponseHandler<UpdatePipelineNotificationsResult> responseHandler = new JsonResponseHandler<UpdatePipelineNotificationsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -386,11 +388,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<ReadJobResult, JsonUnmarshallerContext> unmarshaller = new ReadJobResultJsonUnmarshaller();
             JsonResponseHandler<ReadJobResult> responseHandler = new JsonResponseHandler<ReadJobResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -439,11 +442,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<ListJobsByStatusResult, JsonUnmarshallerContext> unmarshaller = new ListJobsByStatusResultJsonUnmarshaller();
             JsonResponseHandler<ListJobsByStatusResult> responseHandler = new JsonResponseHandler<ListJobsByStatusResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -489,11 +493,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<ReadPresetResult, JsonUnmarshallerContext> unmarshaller = new ReadPresetResultJsonUnmarshaller();
             JsonResponseHandler<ReadPresetResult> responseHandler = new JsonResponseHandler<ReadPresetResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -541,11 +546,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<CreatePipelineResult, JsonUnmarshallerContext> unmarshaller = new CreatePipelineResultJsonUnmarshaller();
             JsonResponseHandler<CreatePipelineResult> responseHandler = new JsonResponseHandler<CreatePipelineResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -598,11 +604,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<CancelJobResult, JsonUnmarshallerContext> unmarshaller = new CancelJobResultJsonUnmarshaller();
             JsonResponseHandler<CancelJobResult> responseHandler = new JsonResponseHandler<CancelJobResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -656,11 +663,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<UpdatePipelineResult, JsonUnmarshallerContext> unmarshaller = new UpdatePipelineResultJsonUnmarshaller();
             JsonResponseHandler<UpdatePipelineResult> responseHandler = new JsonResponseHandler<UpdatePipelineResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -707,11 +715,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<ListPresetsResult, JsonUnmarshallerContext> unmarshaller = new ListPresetsResultJsonUnmarshaller();
             JsonResponseHandler<ListPresetsResult> responseHandler = new JsonResponseHandler<ListPresetsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -764,11 +773,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<DeletePipelineResult, JsonUnmarshallerContext> unmarshaller = new DeletePipelineResultJsonUnmarshaller();
             JsonResponseHandler<DeletePipelineResult> responseHandler = new JsonResponseHandler<DeletePipelineResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -822,11 +832,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<TestRoleResult, JsonUnmarshallerContext> unmarshaller = new TestRoleResultJsonUnmarshaller();
             JsonResponseHandler<TestRoleResult> responseHandler = new JsonResponseHandler<TestRoleResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -872,11 +883,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<ListPipelinesResult, JsonUnmarshallerContext> unmarshaller = new ListPipelinesResultJsonUnmarshaller();
             JsonResponseHandler<ListPipelinesResult> responseHandler = new JsonResponseHandler<ListPipelinesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -922,11 +934,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<ReadPipelineResult, JsonUnmarshallerContext> unmarshaller = new ReadPipelineResultJsonUnmarshaller();
             JsonResponseHandler<ReadPipelineResult> responseHandler = new JsonResponseHandler<ReadPipelineResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -992,11 +1005,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<CreatePresetResult, JsonUnmarshallerContext> unmarshaller = new CreatePresetResultJsonUnmarshaller();
             JsonResponseHandler<CreatePresetResult> responseHandler = new JsonResponseHandler<CreatePresetResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -1047,11 +1061,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<DeletePresetResult, JsonUnmarshallerContext> unmarshaller = new DeletePresetResultJsonUnmarshaller();
             JsonResponseHandler<DeletePresetResult> responseHandler = new JsonResponseHandler<DeletePresetResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -1106,11 +1121,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<CreateJobResult, JsonUnmarshallerContext> unmarshaller = new CreateJobResultJsonUnmarshaller();
             JsonResponseHandler<CreateJobResult> responseHandler = new JsonResponseHandler<CreateJobResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -1163,11 +1179,12 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
             Unmarshaller<ListJobsByPipelineResult, JsonUnmarshallerContext> unmarshaller = new ListJobsByPipelineResultJsonUnmarshaller();
             JsonResponseHandler<ListJobsByPipelineResult> responseHandler = new JsonResponseHandler<ListJobsByPipelineResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -1275,10 +1292,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         }
 
         executionContext.setCredentials(credentials);
-        JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
+        JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(jsonErrorUnmarshallers);
         Response<X> result = client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);
-        awsRequestMetrics.log();
         return result;
     }
 }

@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element in the following actions:
+ * This data type is used as a response element in the following
+ * actions:
  * </p>
  * 
  * <ul>

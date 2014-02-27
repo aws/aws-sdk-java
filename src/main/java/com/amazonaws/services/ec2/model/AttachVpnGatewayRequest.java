@@ -23,8 +23,9 @@ import com.amazonaws.services.ec2.model.transform.AttachVpnGatewayRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#attachVpnGateway(AttachVpnGatewayRequest) AttachVpnGateway operation}.
  * <p>
- * Attaches a virtual private gateway to a VPC. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
- * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
+ * Attaches a virtual private gateway to a VPC. For more information, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#attachVpnGateway(AttachVpnGatewayRequest)

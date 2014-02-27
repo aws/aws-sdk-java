@@ -35,8 +35,10 @@ import com.amazonaws.services.ec2.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * Amazon Elastic Compute Cloud <p>
- * Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in the Amazon Web Services (AWS) cloud. Using Amazon EC2 eliminates
- * your need to invest in hardware up front, so you can develop and deploy applications faster.
+ * Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing
+ * capacity in the Amazon Web Services (AWS) cloud. Using Amazon EC2
+ * eliminates your need to invest in hardware up front, so you can
+ * develop and deploy applications faster.
  * </p>
  */
 public class AmazonEC2AsyncClient extends AmazonEC2Client
@@ -46,6 +48,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
+
+    private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -88,13 +92,13 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonEC2AsyncClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonEC2 using the specified AWS account credentials.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -106,7 +110,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      *                       when authenticating with AWS services.
      */
     public AmazonEC2AsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newCachedThreadPool());
+        this(awsCredentials, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -160,7 +164,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonEC2 using the specified AWS account credentials provider.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -173,7 +177,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      *            to authenticate requests with AWS services.
      */
     public AmazonEC2AsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -216,7 +220,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      */
     public AmazonEC2AsyncClient(AWSCredentialsProvider awsCredentialsProvider,
                 ClientConfiguration clientConfiguration) {
-        this(awsCredentialsProvider, clientConfiguration, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -260,7 +264,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who
      * wish to give pending asynchronous service calls time to complete should
-     * call getExecutorService().shutdown() prior to calling this method.
+     * call getExecutorService().shutdown() followed by
+     * getExecutorService().awaitTermination() prior to calling this method.
      */
     @Override
     public void shutdown() {
@@ -301,8 +306,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 rebootInstances(rebootInstancesRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -342,16 +347,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    rebootInstances(rebootInstancesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(rebootInstancesRequest, null);
-                   return null;
-            }
-        });
+              try {
+                rebootInstances(rebootInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(rebootInstancesRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -359,10 +364,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of the Reserved Instances that you purchased.
      * </p>
      * <p>
-     * For more information about Reserved Instances, see <a
-     * m/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">
-     * Reserved Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Reserved Instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html"> Reserved Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeReservedInstancesRequest Container for the necessary
@@ -386,8 +390,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeReservedInstancesResult>() {
             public DescribeReservedInstancesResult call() throws Exception {
                 return describeReservedInstances(describeReservedInstancesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -395,10 +399,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of the Reserved Instances that you purchased.
      * </p>
      * <p>
-     * For more information about Reserved Instances, see <a
-     * m/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">
-     * Reserved Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Reserved Instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html"> Reserved Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeReservedInstancesRequest Container for the necessary
@@ -427,17 +430,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeReservedInstancesResult>() {
             public DescribeReservedInstancesResult call() throws Exception {
-                DescribeReservedInstancesResult result;
+              DescribeReservedInstancesResult result;
                 try {
-                    result = describeReservedInstances(describeReservedInstancesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeReservedInstancesRequest, result);
-                   return result;
-            }
-        });
+                result = describeReservedInstances(describeReservedInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeReservedInstancesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -449,10 +452,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Availability Zone.
      * </p>
      * <p>
-     * For more information, see <a
-     * on.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">
-     * Regions and Availability Zones </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"> Regions and Availability Zones </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeAvailabilityZonesRequest Container for the necessary
@@ -476,8 +478,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeAvailabilityZonesResult>() {
             public DescribeAvailabilityZonesResult call() throws Exception {
                 return describeAvailabilityZones(describeAvailabilityZonesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -489,10 +491,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Availability Zone.
      * </p>
      * <p>
-     * For more information, see <a
-     * on.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">
-     * Regions and Availability Zones </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"> Regions and Availability Zones </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeAvailabilityZonesRequest Container for the necessary
@@ -521,17 +522,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeAvailabilityZonesResult>() {
             public DescribeAvailabilityZonesResult call() throws Exception {
-                DescribeAvailabilityZonesResult result;
+              DescribeAvailabilityZonesResult result;
                 try {
-                    result = describeAvailabilityZones(describeAvailabilityZonesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeAvailabilityZonesRequest, result);
-                   return result;
-            }
-        });
+                result = describeAvailabilityZones(describeAvailabilityZonesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeAvailabilityZonesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -552,10 +553,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * that volume are no longer associated with the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">
-     * Detaching an Amazon EBS Volume </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html"> Detaching an Amazon EBS Volume </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param detachVolumeRequest Container for the necessary parameters to
@@ -578,8 +578,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DetachVolumeResult>() {
             public DetachVolumeResult call() throws Exception {
                 return detachVolume(detachVolumeRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -600,10 +600,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * that volume are no longer associated with the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">
-     * Detaching an Amazon EBS Volume </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html"> Detaching an Amazon EBS Volume </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param detachVolumeRequest Container for the necessary parameters to
@@ -631,17 +630,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DetachVolumeResult>() {
             public DetachVolumeResult call() throws Exception {
-                DetachVolumeResult result;
+              DetachVolumeResult result;
                 try {
-                    result = detachVolume(detachVolumeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(detachVolumeRequest, result);
-                   return result;
-            }
-        });
+                result = detachVolume(detachVolumeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(detachVolumeRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -671,8 +670,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteKeyPair(deleteKeyPairRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -706,25 +705,24 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteKeyPair(deleteKeyPairRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteKeyPairRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteKeyPair(deleteKeyPairRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteKeyPairRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
      * <p>
      * Disables monitoring for a running instance. For more information about
-     * monitoring instances, see <a
-     * ://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">
-     * Monitoring Your Instances and Volumes </a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i> .
+     * monitoring instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html"> Monitoring Your Instances and Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param unmonitorInstancesRequest Container for the necessary
@@ -747,17 +745,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<UnmonitorInstancesResult>() {
             public UnmonitorInstancesResult call() throws Exception {
                 return unmonitorInstances(unmonitorInstancesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
      * <p>
      * Disables monitoring for a running instance. For more information about
-     * monitoring instances, see <a
-     * ://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">
-     * Monitoring Your Instances and Volumes </a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i> .
+     * monitoring instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html"> Monitoring Your Instances and Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param unmonitorInstancesRequest Container for the necessary
@@ -785,26 +782,24 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UnmonitorInstancesResult>() {
             public UnmonitorInstancesResult call() throws Exception {
-                UnmonitorInstancesResult result;
+              UnmonitorInstancesResult result;
                 try {
-                    result = unmonitorInstances(unmonitorInstancesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(unmonitorInstancesRequest, result);
-                   return result;
-            }
-        });
+                result = unmonitorInstances(unmonitorInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(unmonitorInstancesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
      * <p>
      * Attaches a virtual private gateway to a VPC. For more information, see
-     * <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param attachVpnGatewayRequest Container for the necessary parameters
@@ -827,17 +822,15 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<AttachVpnGatewayResult>() {
             public AttachVpnGatewayResult call() throws Exception {
                 return attachVpnGateway(attachVpnGatewayRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
      * <p>
      * Attaches a virtual private gateway to a VPC. For more information, see
-     * <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param attachVpnGatewayRequest Container for the necessary parameters
@@ -865,17 +858,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AttachVpnGatewayResult>() {
             public AttachVpnGatewayResult call() throws Exception {
-                AttachVpnGatewayResult result;
+              AttachVpnGatewayResult result;
                 try {
-                    result = attachVpnGateway(attachVpnGatewayRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(attachVpnGatewayRequest, result);
-                   return result;
-            }
-        });
+                result = attachVpnGateway(attachVpnGatewayRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(attachVpnGatewayRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -891,10 +884,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * those additional volumes.
      * </p>
      * <p>
-     * For more information, see <a
-     * docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">
-     * Creating Amazon EBS-Backed Linux AMIs </a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html"> Creating Amazon EBS-Backed Linux AMIs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createImageRequest Container for the necessary parameters to
@@ -917,8 +909,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateImageResult>() {
             public CreateImageResult call() throws Exception {
                 return createImage(createImageRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -934,10 +926,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * those additional volumes.
      * </p>
      * <p>
-     * For more information, see <a
-     * docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">
-     * Creating Amazon EBS-Backed Linux AMIs </a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html"> Creating Amazon EBS-Backed Linux AMIs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createImageRequest Container for the necessary parameters to
@@ -965,17 +956,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateImageResult>() {
             public CreateImageResult call() throws Exception {
-                CreateImageResult result;
+              CreateImageResult result;
                 try {
-                    result = createImage(createImageRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createImageRequest, result);
-                   return result;
-            }
-        });
+                result = createImage(createImageRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createImageRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1010,8 +1001,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteSecurityGroup(deleteSecurityGroupRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1050,16 +1041,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteSecurityGroup(deleteSecurityGroupRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteSecurityGroupRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteSecurityGroup(deleteSecurityGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteSecurityGroupRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1069,10 +1060,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For information about the supported operating systems, image formats,
      * and known limitations for the types of instances you can export, see
-     * <a
-     * cs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html">
-     * Exporting EC2 Instances </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html"> Exporting EC2 Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createInstanceExportTaskRequest Container for the necessary
@@ -1096,8 +1085,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateInstanceExportTaskResult>() {
             public CreateInstanceExportTaskResult call() throws Exception {
                 return createInstanceExportTask(createInstanceExportTaskRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1107,10 +1096,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * For information about the supported operating systems, image formats,
      * and known limitations for the types of instances you can export, see
-     * <a
-     * cs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html">
-     * Exporting EC2 Instances </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html"> Exporting EC2 Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createInstanceExportTaskRequest Container for the necessary
@@ -1139,17 +1126,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateInstanceExportTaskResult>() {
             public CreateInstanceExportTaskResult call() throws Exception {
-                CreateInstanceExportTaskResult result;
+              CreateInstanceExportTaskResult result;
                 try {
-                    result = createInstanceExportTask(createInstanceExportTaskRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createInstanceExportTaskRequest, result);
-                   return result;
-            }
-        });
+                result = createInstanceExportTask(createInstanceExportTaskRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createInstanceExportTaskRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1193,8 +1180,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<GetPasswordDataResult>() {
             public GetPasswordDataResult call() throws Exception {
                 return getPasswordData(getPasswordDataRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1243,17 +1230,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetPasswordDataResult>() {
             public GetPasswordDataResult call() throws Exception {
-                GetPasswordDataResult result;
+              GetPasswordDataResult result;
                 try {
-                    result = getPasswordData(getPasswordDataRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(getPasswordDataRequest, result);
-                   return result;
-            }
-        });
+                result = getPasswordData(getPasswordDataRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getPasswordDataRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1270,10 +1257,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * using the operating system on the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">
-     * DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param associateDhcpOptionsRequest Container for the necessary
@@ -1297,8 +1283,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 associateDhcpOptions(associateDhcpOptionsRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1315,10 +1301,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * using the operating system on the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">
-     * DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param associateDhcpOptionsRequest Container for the necessary
@@ -1346,16 +1331,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    associateDhcpOptions(associateDhcpOptionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(associateDhcpOptionsRequest, null);
-                   return null;
-            }
-        });
+              try {
+                associateDhcpOptions(associateDhcpOptionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(associateDhcpOptionsRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1372,10 +1357,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * A security group is for use with instances either in the EC2-Classic
      * platform or in a specific VPC. This action doesn't apply to security
-     * groups for use in EC2-Classic. For more information, see <a
-     * cs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">
-     * Security Groups for Your VPC </a> in the <i>Amazon Virtual Private
-     * Cloud User Guide</i> .
+     * groups for use in EC2-Classic. For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * Each rule consists of the protocol (for example, TCP), plus either a
@@ -1411,8 +1395,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 authorizeSecurityGroupEgress(authorizeSecurityGroupEgressRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1429,10 +1413,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * A security group is for use with instances either in the EC2-Classic
      * platform or in a specific VPC. This action doesn't apply to security
-     * groups for use in EC2-Classic. For more information, see <a
-     * cs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">
-     * Security Groups for Your VPC </a> in the <i>Amazon Virtual Private
-     * Cloud User Guide</i> .
+     * groups for use in EC2-Classic. For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * Each rule consists of the protocol (for example, TCP), plus either a
@@ -1472,16 +1455,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    authorizeSecurityGroupEgress(authorizeSecurityGroupEgressRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(authorizeSecurityGroupEgressRequest, null);
-                   return null;
-            }
-        });
+              try {
+                authorizeSecurityGroupEgress(authorizeSecurityGroupEgressRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(authorizeSecurityGroupEgressRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1518,10 +1501,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * instance persist. When you terminate an instance, the root device and
      * any other devices attached during the instance launch are
      * automatically deleted. For more information about the differences
-     * between stopping and terminating instances, see <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">
-     * Instance Lifecycle </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * between stopping and terminating instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param stopInstancesRequest Container for the necessary parameters to
@@ -1544,8 +1526,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<StopInstancesResult>() {
             public StopInstancesResult call() throws Exception {
                 return stopInstances(stopInstancesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1582,10 +1564,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * instance persist. When you terminate an instance, the root device and
      * any other devices attached during the instance launch are
      * automatically deleted. For more information about the differences
-     * between stopping and terminating instances, see <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">
-     * Instance Lifecycle </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * between stopping and terminating instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param stopInstancesRequest Container for the necessary parameters to
@@ -1613,17 +1594,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<StopInstancesResult>() {
             public StopInstancesResult call() throws Exception {
-                StopInstancesResult result;
+              StopInstancesResult result;
                 try {
-                    result = stopInstances(stopInstancesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(stopInstancesRequest, result);
-                   return result;
-            }
-        });
+                result = stopInstances(stopInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(stopInstancesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1636,9 +1617,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * you and AWS.
      * </p>
      * <p>
-     * For more information about key pairs, see <a
-     * ttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">
-     * Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * For more information about key pairs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param importKeyPairRequest Container for the necessary parameters to
@@ -1661,8 +1642,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<ImportKeyPairResult>() {
             public ImportKeyPairResult call() throws Exception {
                 return importKeyPair(importKeyPairRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1675,9 +1656,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * you and AWS.
      * </p>
      * <p>
-     * For more information about key pairs, see <a
-     * ttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">
-     * Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * For more information about key pairs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param importKeyPairRequest Container for the necessary parameters to
@@ -1705,17 +1686,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ImportKeyPairResult>() {
             public ImportKeyPairResult call() throws Exception {
-                ImportKeyPairResult result;
+              ImportKeyPairResult result;
                 try {
-                    result = importKeyPair(importKeyPairRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(importKeyPairRequest, result);
-                   return result;
-            }
-        });
+                result = importKeyPair(importKeyPairRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(importKeyPairRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1746,8 +1727,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteNetworkInterface(deleteNetworkInterfaceRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1782,16 +1763,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteNetworkInterface(deleteNetworkInterfaceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteNetworkInterfaceRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteNetworkInterface(deleteNetworkInterfaceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteNetworkInterfaceRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1820,8 +1801,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 modifyVpcAttribute(modifyVpcAttributeRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1854,16 +1835,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    modifyVpcAttribute(modifyVpcAttributeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(modifyVpcAttributeRequest, null);
-                   return null;
-            }
-        });
+              try {
+                modifyVpcAttribute(modifyVpcAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifyVpcAttributeRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1872,13 +1853,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * A security group is for use with instances either in the EC2-Classic
-     * platform or in a specific VPC. For more information, see <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">
-     * Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> and <a
-     * cs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">
-     * Security Groups for Your VPC </a> in the <i>Amazon Virtual Private
-     * Cloud User Guide</i> .
+     * platform or in a specific VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b> EC2-Classic: You can have up to 500 security groups.
@@ -1925,8 +1902,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateSecurityGroupResult>() {
             public CreateSecurityGroupResult call() throws Exception {
                 return createSecurityGroup(createSecurityGroupRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1935,13 +1912,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * A security group is for use with instances either in the EC2-Classic
-     * platform or in a specific VPC. For more information, see <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">
-     * Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> and <a
-     * cs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">
-     * Security Groups for Your VPC </a> in the <i>Amazon Virtual Private
-     * Cloud User Guide</i> .
+     * platform or in a specific VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b> EC2-Classic: You can have up to 500 security groups.
@@ -1993,17 +1966,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateSecurityGroupResult>() {
             public CreateSecurityGroupResult call() throws Exception {
-                CreateSecurityGroupResult result;
+              CreateSecurityGroupResult result;
                 try {
-                    result = createSecurityGroup(createSecurityGroupRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createSecurityGroupRequest, result);
-                   return result;
-            }
-        });
+                result = createSecurityGroup(createSecurityGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createSecurityGroupRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2013,10 +1986,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * specify exceeds the current Spot Price. Amazon EC2 periodically sets
      * the Spot Price based on available Spot Instance capacity and current
      * Spot Instance requests. For more information about Spot Instances, see
-     * <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * When you specify an Availability Zone, this operation describes the
@@ -2050,8 +2021,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeSpotPriceHistoryResult>() {
             public DescribeSpotPriceHistoryResult call() throws Exception {
                 return describeSpotPriceHistory(describeSpotPriceHistoryRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2061,10 +2032,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * specify exceeds the current Spot Price. Amazon EC2 periodically sets
      * the Spot Price based on available Spot Instance capacity and current
      * Spot Instance requests. For more information about Spot Instances, see
-     * <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * When you specify an Availability Zone, this operation describes the
@@ -2103,17 +2072,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSpotPriceHistoryResult>() {
             public DescribeSpotPriceHistoryResult call() throws Exception {
-                DescribeSpotPriceHistoryResult result;
+              DescribeSpotPriceHistoryResult result;
                 try {
-                    result = describeSpotPriceHistory(describeSpotPriceHistoryRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeSpotPriceHistoryRequest, result);
-                   return result;
-            }
-        });
+                result = describeSpotPriceHistory(describeSpotPriceHistoryRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeSpotPriceHistoryRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2142,8 +2111,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeNetworkInterfacesResult>() {
             public DescribeNetworkInterfacesResult call() throws Exception {
                 return describeNetworkInterfaces(describeNetworkInterfacesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2177,17 +2146,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeNetworkInterfacesResult>() {
             public DescribeNetworkInterfacesResult call() throws Exception {
-                DescribeNetworkInterfacesResult result;
+              DescribeNetworkInterfacesResult result;
                 try {
-                    result = describeNetworkInterfaces(describeNetworkInterfacesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeNetworkInterfacesRequest, result);
-                   return result;
-            }
-        });
+                result = describeNetworkInterfaces(describeNetworkInterfacesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeNetworkInterfacesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2195,9 +2164,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more regions that are currently available to you.
      * </p>
      * <p>
-     * For a list of the regions supported by Amazon EC2, see <a
-     * ="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">
-     * Regions and Endpoints </a> .
+     * For a list of the regions supported by Amazon EC2, see
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region"> Regions and Endpoints </a>
+     * .
      * </p>
      *
      * @param describeRegionsRequest Container for the necessary parameters
@@ -2220,8 +2189,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeRegionsResult>() {
             public DescribeRegionsResult call() throws Exception {
                 return describeRegions(describeRegionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2229,9 +2198,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more regions that are currently available to you.
      * </p>
      * <p>
-     * For a list of the regions supported by Amazon EC2, see <a
-     * ="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">
-     * Regions and Endpoints </a> .
+     * For a list of the regions supported by Amazon EC2, see
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region"> Regions and Endpoints </a>
+     * .
      * </p>
      *
      * @param describeRegionsRequest Container for the necessary parameters
@@ -2259,17 +2228,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeRegionsResult>() {
             public DescribeRegionsResult call() throws Exception {
-                DescribeRegionsResult result;
+              DescribeRegionsResult result;
                 try {
-                    result = describeRegions(describeRegionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeRegionsRequest, result);
-                   return result;
-            }
-        });
+                result = describeRegions(describeRegionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeRegionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2279,10 +2248,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * listing at a time.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createReservedInstancesListingRequest Container for the
@@ -2307,8 +2275,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateReservedInstancesListingResult>() {
             public CreateReservedInstancesListingResult call() throws Exception {
                 return createReservedInstancesListing(createReservedInstancesListingRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2318,10 +2286,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * listing at a time.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createReservedInstancesListingRequest Container for the
@@ -2351,17 +2318,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateReservedInstancesListingResult>() {
             public CreateReservedInstancesListingResult call() throws Exception {
-                CreateReservedInstancesListingResult result;
+              CreateReservedInstancesListingResult result;
                 try {
-                    result = createReservedInstancesListing(createReservedInstancesListingRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createReservedInstancesListingRequest, result);
-                   return result;
-            }
-        });
+                result = createReservedInstancesListing(createReservedInstancesListingRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createReservedInstancesListingRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2370,14 +2337,14 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * you must associate it with the VPC, causing all existing and new
      * instances that you launch in the VPC to use this set of DHCP options.
      * The following are the individual DHCP options you can specify. For
-     * more information about the options, see <a
-     * href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a> .
+     * more information about the options, see
+     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
+     * .
      * </p>
      * <p>
-     * For more information about DHCP options, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">
-     * DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about DHCP options, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createDhcpOptionsRequest Container for the necessary parameters
@@ -2400,8 +2367,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateDhcpOptionsResult>() {
             public CreateDhcpOptionsResult call() throws Exception {
                 return createDhcpOptions(createDhcpOptionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2410,14 +2377,14 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * you must associate it with the VPC, causing all existing and new
      * instances that you launch in the VPC to use this set of DHCP options.
      * The following are the individual DHCP options you can specify. For
-     * more information about the options, see <a
-     * href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a> .
+     * more information about the options, see
+     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
+     * .
      * </p>
      * <p>
-     * For more information about DHCP options, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">
-     * DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about DHCP options, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createDhcpOptionsRequest Container for the necessary parameters
@@ -2445,17 +2412,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateDhcpOptionsResult>() {
             public CreateDhcpOptionsResult call() throws Exception {
-                CreateDhcpOptionsResult result;
+              CreateDhcpOptionsResult result;
                 try {
-                    result = createDhcpOptions(createDhcpOptionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createDhcpOptionsRequest, result);
-                   return result;
-            }
-        });
+                result = createDhcpOptions(createDhcpOptionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createDhcpOptionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2463,10 +2430,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Resets permission settings for the specified snapshot.
      * </p>
      * <p>
-     * For more information on modifying snapshot permissions, see <a
-     * .com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">
-     * Sharing Snapshots </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information on modifying snapshot permissions, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param resetSnapshotAttributeRequest Container for the necessary
@@ -2491,8 +2457,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 resetSnapshotAttribute(resetSnapshotAttributeRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2500,10 +2466,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Resets permission settings for the specified snapshot.
      * </p>
      * <p>
-     * For more information on modifying snapshot permissions, see <a
-     * .com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">
-     * Sharing Snapshots </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information on modifying snapshot permissions, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param resetSnapshotAttributeRequest Container for the necessary
@@ -2532,16 +2497,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    resetSnapshotAttribute(resetSnapshotAttributeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(resetSnapshotAttributeRequest, null);
-                   return null;
-            }
-        });
+              try {
+                resetSnapshotAttribute(resetSnapshotAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(resetSnapshotAttributeRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -2570,8 +2535,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteRoute(deleteRouteRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2604,16 +2569,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteRoute(deleteRouteRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteRouteRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteRoute(deleteRouteRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteRouteRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -2642,8 +2607,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeInternetGatewaysResult>() {
             public DescribeInternetGatewaysResult call() throws Exception {
                 return describeInternetGateways(describeInternetGatewaysRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2677,17 +2642,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeInternetGatewaysResult>() {
             public DescribeInternetGatewaysResult call() throws Exception {
-                DescribeInternetGatewaysResult result;
+              DescribeInternetGatewaysResult result;
                 try {
-                    result = describeInternetGateways(describeInternetGatewaysRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeInternetGatewaysRequest, result);
-                   return result;
-            }
-        });
+                result = describeInternetGateways(describeInternetGatewaysRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeInternetGatewaysRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2695,10 +2660,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Creates an import volume task using metadata from the specified disk
      * image. After importing the image, you then upload it using the
      * ec2-upload-disk-image command in the Amazon EC2 command-line interface
-     * (CLI) tools. For more information, see <a
-     * on.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">
-     * Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2 </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * (CLI) tools. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param importVolumeRequest Container for the necessary parameters to
@@ -2721,8 +2685,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<ImportVolumeResult>() {
             public ImportVolumeResult call() throws Exception {
                 return importVolume(importVolumeRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2730,10 +2694,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Creates an import volume task using metadata from the specified disk
      * image. After importing the image, you then upload it using the
      * ec2-upload-disk-image command in the Amazon EC2 command-line interface
-     * (CLI) tools. For more information, see <a
-     * on.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">
-     * Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2 </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * (CLI) tools. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param importVolumeRequest Container for the necessary parameters to
@@ -2761,17 +2724,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ImportVolumeResult>() {
             public ImportVolumeResult call() throws Exception {
-                ImportVolumeResult result;
+              ImportVolumeResult result;
                 try {
-                    result = importVolume(importVolumeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(importVolumeRequest, result);
-                   return result;
-            }
-        });
+                result = importVolume(importVolumeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(importVolumeRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2780,13 +2743,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * A security group is for use with instances either in the EC2-Classic
-     * platform or in a specific VPC. For more information, see <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">
-     * Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> and <a
-     * cs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">
-     * Security Groups for Your VPC </a> in the <i>Amazon Virtual Private
-     * Cloud User Guide</i> .
+     * platform or in a specific VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeSecurityGroupsRequest Container for the necessary
@@ -2810,8 +2769,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeSecurityGroupsResult>() {
             public DescribeSecurityGroupsResult call() throws Exception {
                 return describeSecurityGroups(describeSecurityGroupsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2820,13 +2779,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * A security group is for use with instances either in the EC2-Classic
-     * platform or in a specific VPC. For more information, see <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">
-     * Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> and <a
-     * cs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">
-     * Security Groups for Your VPC </a> in the <i>Amazon Virtual Private
-     * Cloud User Guide</i> .
+     * platform or in a specific VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeSecurityGroupsRequest Container for the necessary
@@ -2855,17 +2810,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSecurityGroupsResult>() {
             public DescribeSecurityGroupsResult call() throws Exception {
-                DescribeSecurityGroupsResult result;
+              DescribeSecurityGroupsResult result;
                 try {
-                    result = describeSecurityGroups(describeSecurityGroupsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeSecurityGroupsRequest, result);
-                   return result;
-            }
-        });
+                result = describeSecurityGroups(describeSecurityGroupsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeSecurityGroupsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2903,8 +2858,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 detachVpnGateway(detachVpnGatewayRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2946,16 +2901,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    detachVpnGateway(detachVpnGatewayRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(detachVpnGatewayRequest, null);
-                   return null;
-            }
-        });
+              try {
+                detachVpnGateway(detachVpnGatewayRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(detachVpnGatewayRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -2988,8 +2943,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deregisterImage(deregisterImageRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3026,25 +2981,23 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deregisterImage(deregisterImageRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deregisterImageRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deregisterImage(deregisterImageRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deregisterImageRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
      * <p>
      * Describes the datafeed for Spot Instances. For more information, see
-     * <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeSpotDatafeedSubscriptionRequest Container for the
@@ -3069,17 +3022,15 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeSpotDatafeedSubscriptionResult>() {
             public DescribeSpotDatafeedSubscriptionResult call() throws Exception {
                 return describeSpotDatafeedSubscription(describeSpotDatafeedSubscriptionRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
      * <p>
      * Describes the datafeed for Spot Instances. For more information, see
-     * <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeSpotDatafeedSubscriptionRequest Container for the
@@ -3109,17 +3060,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSpotDatafeedSubscriptionResult>() {
             public DescribeSpotDatafeedSubscriptionResult call() throws Exception {
-                DescribeSpotDatafeedSubscriptionResult result;
+              DescribeSpotDatafeedSubscriptionResult result;
                 try {
-                    result = describeSpotDatafeedSubscription(describeSpotDatafeedSubscriptionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeSpotDatafeedSubscriptionRequest, result);
-                   return result;
-            }
-        });
+                result = describeSpotDatafeedSubscription(describeSpotDatafeedSubscriptionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeSpotDatafeedSubscriptionRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -3128,10 +3079,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * This call is designed to follow a <code>DescribeTags</code> request.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">
-     * Tagging Your Resources </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For more information about tags, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deleteTagsRequest Container for the necessary parameters to
@@ -3155,8 +3105,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteTags(deleteTagsRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3165,10 +3115,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * This call is designed to follow a <code>DescribeTags</code> request.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">
-     * Tagging Your Resources </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For more information about tags, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deleteTagsRequest Container for the necessary parameters to
@@ -3196,16 +3145,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteTags(deleteTagsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteTagsRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteTags(deleteTagsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteTagsRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -3235,8 +3184,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteSubnet(deleteSubnetRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3270,16 +3219,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteSubnet(deleteSubnetRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteSubnetRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteSubnet(deleteSubnetRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteSubnetRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -3308,8 +3257,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeAccountAttributesResult>() {
             public DescribeAccountAttributesResult call() throws Exception {
                 return describeAccountAttributes(describeAccountAttributesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3343,17 +3292,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeAccountAttributesResult>() {
             public DescribeAccountAttributesResult call() throws Exception {
-                DescribeAccountAttributesResult result;
+              DescribeAccountAttributesResult result;
                 try {
-                    result = describeAccountAttributes(describeAccountAttributesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeAccountAttributesRequest, result);
-                   return result;
-            }
-        });
+                result = describeAccountAttributes(describeAccountAttributesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeAccountAttributesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -3363,10 +3312,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * virtual private gateway before creating the VPC itself.
      * </p>
      * <p>
-     * For more information about virtual private gateways, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about virtual private gateways, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createVpnGatewayRequest Container for the necessary parameters
@@ -3389,8 +3337,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateVpnGatewayResult>() {
             public CreateVpnGatewayResult call() throws Exception {
                 return createVpnGateway(createVpnGatewayRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3400,10 +3348,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * virtual private gateway before creating the VPC itself.
      * </p>
      * <p>
-     * For more information about virtual private gateways, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about virtual private gateways, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createVpnGatewayRequest Container for the necessary parameters
@@ -3431,17 +3378,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateVpnGatewayResult>() {
             public CreateVpnGatewayResult call() throws Exception {
-                CreateVpnGatewayResult result;
+              CreateVpnGatewayResult result;
                 try {
-                    result = createVpnGateway(createVpnGatewayRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createVpnGatewayRequest, result);
-                   return result;
-            }
-        });
+                result = createVpnGateway(createVpnGatewayRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createVpnGatewayRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -3471,8 +3418,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 enableVolumeIO(enableVolumeIORequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3506,16 +3453,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    enableVolumeIO(enableVolumeIORequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(enableVolumeIORequest, null);
-                   return null;
-            }
-        });
+              try {
+                enableVolumeIO(enableVolumeIORequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(enableVolumeIORequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -3548,8 +3495,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteVpnGateway(deleteVpnGatewayRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3586,16 +3533,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteVpnGateway(deleteVpnGatewayRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteVpnGatewayRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteVpnGateway(deleteVpnGatewayRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteVpnGatewayRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -3604,14 +3551,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * exposes it to the instance with the specified device name.
      * </p>
      * <p>
-     * For a list of supported device names, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">
-     * Attaching an Amazon EBS Volume to an Instance </a> . Any device names
-     * that aren't reserved for instance store volumes can be used for Amazon
-     * EBS volumes. For more information, see <a
-     * p://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">
-     * Amazon EC2 Instance Store </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For a list of supported device names, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching an Amazon EBS Volume to an Instance </a> . Any device names that aren't reserved for instance store volumes can be used for Amazon EBS volumes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"> Amazon EC2 Instance Store </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * If a volume has an AWS Marketplace product code:
@@ -3631,17 +3573,14 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * </ul>
      * <p>
-     * For an overview of the AWS Marketplace, see <a
-     * href="https://aws.amazon.com/marketplace/help/200900000">
-     * https://aws.amazon.com/marketplace/help/200900000 </a> . For more
-     * information about how to use the AWS Marketplace, see <a
-     * href="https://aws.amazon.com/marketplace"> AWS Marketplace </a> .
+     * For an overview of the AWS Marketplace, see
+     * <a href="https://aws.amazon.com/marketplace/help/200900000"> https://aws.amazon.com/marketplace/help/200900000 </a> . For more information about how to use the AWS Marketplace, see <a href="https://aws.amazon.com/marketplace"> AWS Marketplace </a>
+     * .
      * </p>
      * <p>
-     * For more information about Amazon EBS volumes, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">
-     * Attaching Amazon EBS Volumes </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information about Amazon EBS volumes, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching Amazon EBS Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param attachVolumeRequest Container for the necessary parameters to
@@ -3664,8 +3603,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<AttachVolumeResult>() {
             public AttachVolumeResult call() throws Exception {
                 return attachVolume(attachVolumeRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3674,14 +3613,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * exposes it to the instance with the specified device name.
      * </p>
      * <p>
-     * For a list of supported device names, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">
-     * Attaching an Amazon EBS Volume to an Instance </a> . Any device names
-     * that aren't reserved for instance store volumes can be used for Amazon
-     * EBS volumes. For more information, see <a
-     * p://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">
-     * Amazon EC2 Instance Store </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For a list of supported device names, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching an Amazon EBS Volume to an Instance </a> . Any device names that aren't reserved for instance store volumes can be used for Amazon EBS volumes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"> Amazon EC2 Instance Store </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * If a volume has an AWS Marketplace product code:
@@ -3701,17 +3635,14 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * 
      * </ul>
      * <p>
-     * For an overview of the AWS Marketplace, see <a
-     * href="https://aws.amazon.com/marketplace/help/200900000">
-     * https://aws.amazon.com/marketplace/help/200900000 </a> . For more
-     * information about how to use the AWS Marketplace, see <a
-     * href="https://aws.amazon.com/marketplace"> AWS Marketplace </a> .
+     * For an overview of the AWS Marketplace, see
+     * <a href="https://aws.amazon.com/marketplace/help/200900000"> https://aws.amazon.com/marketplace/help/200900000 </a> . For more information about how to use the AWS Marketplace, see <a href="https://aws.amazon.com/marketplace"> AWS Marketplace </a>
+     * .
      * </p>
      * <p>
-     * For more information about Amazon EBS volumes, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">
-     * Attaching Amazon EBS Volumes </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information about Amazon EBS volumes, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching Amazon EBS Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param attachVolumeRequest Container for the necessary parameters to
@@ -3739,17 +3670,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AttachVolumeResult>() {
             public AttachVolumeResult call() throws Exception {
-                AttachVolumeResult result;
+              AttachVolumeResult result;
                 try {
-                    result = attachVolume(attachVolumeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(attachVolumeRequest, result);
-                   return result;
-            }
-        });
+                result = attachVolume(attachVolumeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(attachVolumeRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -3778,9 +3709,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * overall status is <code>impaired</code> . If the status is
      * <code>insufficient-data</code> , then the checks may still be taking
      * place on your volume at the time. We recommend that you retry the
-     * request. For more information on volume status, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">
-     * Monitoring the Status of Your Volumes </a> .
+     * request. For more information on volume status, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html"> Monitoring the Status of Your Volumes </a>
+     * .
      * </p>
      * <p>
      * <i>Events</i> : Reflect the cause of a volume status and may require
@@ -3826,8 +3757,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeVolumeStatusResult>() {
             public DescribeVolumeStatusResult call() throws Exception {
                 return describeVolumeStatus(describeVolumeStatusRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3856,9 +3787,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * overall status is <code>impaired</code> . If the status is
      * <code>insufficient-data</code> , then the checks may still be taking
      * place on your volume at the time. We recommend that you retry the
-     * request. For more information on volume status, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">
-     * Monitoring the Status of Your Volumes </a> .
+     * request. For more information on volume status, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html"> Monitoring the Status of Your Volumes </a>
+     * .
      * </p>
      * <p>
      * <i>Events</i> : Reflect the cause of a volume status and may require
@@ -3909,17 +3840,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVolumeStatusResult>() {
             public DescribeVolumeStatusResult call() throws Exception {
-                DescribeVolumeStatusResult result;
+              DescribeVolumeStatusResult result;
                 try {
-                    result = describeVolumeStatus(describeVolumeStatusRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeVolumeStatusRequest, result);
-                   return result;
-            }
-        });
+                result = describeVolumeStatus(describeVolumeStatusRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeVolumeStatusRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -3948,8 +3879,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 resetImageAttribute(resetImageAttributeRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -3982,16 +3913,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    resetImageAttribute(resetImageAttributeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(resetImageAttributeRequest, null);
-                   return null;
-            }
-        });
+              try {
+                resetImageAttribute(resetImageAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(resetImageAttributeRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -3999,10 +3930,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your VPN connections.
      * </p>
      * <p>
-     * For more information about VPN connections, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN connections, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeVpnConnectionsRequest Container for the necessary
@@ -4026,8 +3956,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeVpnConnectionsResult>() {
             public DescribeVpnConnectionsResult call() throws Exception {
                 return describeVpnConnections(describeVpnConnectionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4035,10 +3965,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your VPN connections.
      * </p>
      * <p>
-     * For more information about VPN connections, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN connections, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeVpnConnectionsRequest Container for the necessary
@@ -4067,17 +3996,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVpnConnectionsResult>() {
             public DescribeVpnConnectionsResult call() throws Exception {
-                DescribeVpnConnectionsResult result;
+              DescribeVpnConnectionsResult result;
                 try {
-                    result = describeVpnConnections(describeVpnConnectionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeVpnConnectionsRequest, result);
-                   return result;
-            }
-        });
+                result = describeVpnConnections(describeVpnConnectionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeVpnConnectionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -4108,8 +4037,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 enableVgwRoutePropagation(enableVgwRoutePropagationRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4144,16 +4073,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    enableVgwRoutePropagation(enableVgwRoutePropagationRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(enableVgwRoutePropagationRequest, null);
-                   return null;
-            }
-        });
+              try {
+                enableVgwRoutePropagation(enableVgwRoutePropagationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(enableVgwRoutePropagationRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -4184,10 +4113,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * devices, you should stop the instance before taking the snapshot.
      * </p>
      * <p>
-     * For more information, see <a
-     * cs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html">
-     * Creating an Amazon EBS Snapshot </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html"> Creating an Amazon EBS Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createSnapshotRequest Container for the necessary parameters to
@@ -4210,8 +4138,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateSnapshotResult>() {
             public CreateSnapshotResult call() throws Exception {
                 return createSnapshot(createSnapshotRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4242,10 +4170,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * devices, you should stop the instance before taking the snapshot.
      * </p>
      * <p>
-     * For more information, see <a
-     * cs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html">
-     * Creating an Amazon EBS Snapshot </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html"> Creating an Amazon EBS Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createSnapshotRequest Container for the necessary parameters to
@@ -4273,17 +4200,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateSnapshotResult>() {
             public CreateSnapshotResult call() throws Exception {
-                CreateSnapshotResult result;
+              CreateSnapshotResult result;
                 try {
-                    result = createSnapshot(createSnapshotRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createSnapshotRequest, result);
-                   return result;
-            }
-        });
+                result = createSnapshot(createSnapshotRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createSnapshotRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -4296,10 +4223,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * minutes.
      * </p>
      * <p>
-     * For more information, see <a
-     * docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">
-     * Deleting an Amazon EBS Volume </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html"> Deleting an Amazon EBS Volume </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deleteVolumeRequest Container for the necessary parameters to
@@ -4323,8 +4249,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteVolume(deleteVolumeRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4337,10 +4263,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * minutes.
      * </p>
      * <p>
-     * For more information, see <a
-     * docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">
-     * Deleting an Amazon EBS Volume </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html"> Deleting an Amazon EBS Volume </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deleteVolumeRequest Container for the necessary parameters to
@@ -4368,16 +4293,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteVolume(deleteVolumeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteVolumeRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteVolume(deleteVolumeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteVolumeRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -4385,10 +4310,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Creates a network interface in the specified subnet.
      * </p>
      * <p>
-     * For more information about network interfaces, see <a
-     * f="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">
-     * Elastic Network Interfaces </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For more information about network interfaces, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html"> Elastic Network Interfaces </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createNetworkInterfaceRequest Container for the necessary
@@ -4412,8 +4336,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateNetworkInterfaceResult>() {
             public CreateNetworkInterfaceResult call() throws Exception {
                 return createNetworkInterface(createNetworkInterfaceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4421,10 +4345,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Creates a network interface in the specified subnet.
      * </p>
      * <p>
-     * For more information about network interfaces, see <a
-     * f="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">
-     * Elastic Network Interfaces </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For more information about network interfaces, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html"> Elastic Network Interfaces </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createNetworkInterfaceRequest Container for the necessary
@@ -4453,17 +4376,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateNetworkInterfaceResult>() {
             public CreateNetworkInterfaceResult call() throws Exception {
-                CreateNetworkInterfaceResult result;
+              CreateNetworkInterfaceResult result;
                 try {
-                    result = createNetworkInterface(createNetworkInterfaceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createNetworkInterfaceRequest, result);
-                   return result;
-            }
-        });
+                result = createNetworkInterface(createNetworkInterfaceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createNetworkInterfaceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -4495,8 +4418,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<ModifyReservedInstancesResult>() {
             public ModifyReservedInstancesResult call() throws Exception {
                 return modifyReservedInstances(modifyReservedInstancesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4533,17 +4456,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ModifyReservedInstancesResult>() {
             public ModifyReservedInstancesResult call() throws Exception {
-                ModifyReservedInstancesResult result;
+              ModifyReservedInstancesResult result;
                 try {
-                    result = modifyReservedInstances(modifyReservedInstancesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(modifyReservedInstancesRequest, result);
-                   return result;
-            }
-        });
+                result = modifyReservedInstances(modifyReservedInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifyReservedInstancesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -4571,8 +4494,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeVpcsResult>() {
             public DescribeVpcsResult call() throws Exception {
                 return describeVpcs(describeVpcsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4605,17 +4528,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVpcsResult>() {
             public DescribeVpcsResult call() throws Exception {
-                DescribeVpcsResult result;
+              DescribeVpcsResult result;
                 try {
-                    result = describeVpcs(describeVpcsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeVpcsRequest, result);
-                   return result;
-            }
-        });
+                result = describeVpcs(describeVpcsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeVpcsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -4646,8 +4569,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 unassignPrivateIpAddresses(unassignPrivateIpAddressesRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4682,16 +4605,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    unassignPrivateIpAddresses(unassignPrivateIpAddressesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(unassignPrivateIpAddressesRequest, null);
-                   return null;
-            }
-        });
+              try {
+                unassignPrivateIpAddresses(unassignPrivateIpAddressesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(unassignPrivateIpAddressesRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -4703,10 +4626,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * disk image, the command fails and returns an exception.
      * </p>
      * <p>
-     * For more information, see <a
-     * on.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">
-     * Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2 </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param cancelConversionTaskRequest Container for the necessary
@@ -4730,8 +4652,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 cancelConversionTask(cancelConversionTaskRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4743,10 +4665,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * disk image, the command fails and returns an exception.
      * </p>
      * <p>
-     * For more information, see <a
-     * on.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">
-     * Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2 </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param cancelConversionTaskRequest Container for the necessary
@@ -4774,16 +4695,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    cancelConversionTask(cancelConversionTaskRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(cancelConversionTaskRequest, null);
-                   return null;
-            }
-        });
+              try {
+                cancelConversionTask(cancelConversionTaskRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(cancelConversionTaskRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -4793,10 +4714,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * An Elastic IP address is for use in either the EC2-Classic platform or
-     * in a VPC. For more information, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
-     * Elastic IP Addresses </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * in a VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * [EC2-Classic, default VPC] If the Elastic IP address is already
@@ -4834,8 +4754,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<AssociateAddressResult>() {
             public AssociateAddressResult call() throws Exception {
                 return associateAddress(associateAddressRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4845,10 +4765,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * An Elastic IP address is for use in either the EC2-Classic platform or
-     * in a VPC. For more information, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
-     * Elastic IP Addresses </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * in a VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * [EC2-Classic, default VPC] If the Elastic IP address is already
@@ -4891,17 +4810,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AssociateAddressResult>() {
             public AssociateAddressResult call() throws Exception {
-                AssociateAddressResult result;
+              AssociateAddressResult result;
                 try {
-                    result = associateAddress(associateAddressRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(associateAddressRequest, result);
-                   return result;
-            }
-        });
+                result = associateAddress(associateAddressRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(associateAddressRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -4932,8 +4851,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteCustomerGateway(deleteCustomerGatewayRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -4968,16 +4887,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteCustomerGateway(deleteCustomerGatewayRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteCustomerGatewayRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteCustomerGateway(deleteCustomerGatewayRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteCustomerGatewayRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -5001,10 +4920,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * it, or create an entry and delete the old one.
      * </p>
      * <p>
-     * For more information about network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createNetworkAclEntryRequest Container for the necessary
@@ -5029,8 +4947,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 createNetworkAclEntry(createNetworkAclEntryRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -5054,10 +4972,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * it, or create an entry and delete the old one.
      * </p>
      * <p>
-     * For more information about network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createNetworkAclEntryRequest Container for the necessary
@@ -5086,16 +5003,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    createNetworkAclEntry(createNetworkAclEntryRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createNetworkAclEntryRequest, null);
-                   return null;
-            }
-        });
+              try {
+                createNetworkAclEntry(createNetworkAclEntryRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createNetworkAclEntryRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -5123,8 +5040,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeExportTasksResult>() {
             public DescribeExportTasksResult call() throws Exception {
                 return describeExportTasks(describeExportTasksRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -5157,17 +5074,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeExportTasksResult>() {
             public DescribeExportTasksResult call() throws Exception {
-                DescribeExportTasksResult result;
+              DescribeExportTasksResult result;
                 try {
-                    result = describeExportTasks(describeExportTasksRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeExportTasksRequest, result);
-                   return result;
-            }
-        });
+                result = describeExportTasks(describeExportTasksRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeExportTasksRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -5199,8 +5116,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 detachInternetGateway(detachInternetGatewayRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -5236,16 +5153,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    detachInternetGateway(detachInternetGatewayRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(detachInternetGatewayRequest, null);
-                   return null;
-            }
-        });
+              try {
+                detachInternetGateway(detachInternetGatewayRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(detachInternetGatewayRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -5254,10 +5171,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * table, you can add routes and associate the table with a subnet.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createRouteTableRequest Container for the necessary parameters
@@ -5280,8 +5196,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateRouteTableResult>() {
             public CreateRouteTableResult call() throws Exception {
                 return createRouteTable(createRouteTableRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -5290,10 +5206,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * table, you can add routes and associate the table with a subnet.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createRouteTableRequest Container for the necessary parameters
@@ -5321,17 +5236,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateRouteTableResult>() {
             public CreateRouteTableResult call() throws Exception {
-                CreateRouteTableResult result;
+              CreateRouteTableResult result;
                 try {
-                    result = createRouteTable(createRouteTableRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createRouteTableRequest, result);
-                   return result;
-            }
-        });
+                result = createRouteTable(createRouteTableRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createRouteTableRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -5339,10 +5254,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes the specified Amazon EBS volumes.
      * </p>
      * <p>
-     * For more information about Amazon EBS volumes, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">
-     * Amazon EBS Volumes </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Amazon EBS volumes, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeVolumesRequest Container for the necessary parameters
@@ -5365,8 +5279,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeVolumesResult>() {
             public DescribeVolumesResult call() throws Exception {
                 return describeVolumes(describeVolumesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -5374,10 +5288,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes the specified Amazon EBS volumes.
      * </p>
      * <p>
-     * For more information about Amazon EBS volumes, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">
-     * Amazon EBS Volumes </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Amazon EBS volumes, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeVolumesRequest Container for the necessary parameters
@@ -5405,17 +5318,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVolumesResult>() {
             public DescribeVolumesResult call() throws Exception {
-                DescribeVolumesResult result;
+              DescribeVolumesResult result;
                 try {
-                    result = describeVolumes(describeVolumesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeVolumesRequest, result);
-                   return result;
-            }
-        });
+                result = describeVolumes(describeVolumesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeVolumesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -5424,10 +5337,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Instance Marketplace.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeReservedInstancesListingsRequest Container for the
@@ -5452,8 +5364,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeReservedInstancesListingsResult>() {
             public DescribeReservedInstancesListingsResult call() throws Exception {
                 return describeReservedInstancesListings(describeReservedInstancesListingsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -5462,10 +5374,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Instance Marketplace.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeReservedInstancesListingsRequest Container for the
@@ -5495,17 +5406,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeReservedInstancesListingsResult>() {
             public DescribeReservedInstancesListingsResult call() throws Exception {
-                DescribeReservedInstancesListingsResult result;
+              DescribeReservedInstancesListingsResult result;
                 try {
-                    result = describeReservedInstancesListings(describeReservedInstancesListingsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeReservedInstancesListingsRequest, result);
-                   return result;
-            }
-        });
+                result = describeReservedInstancesListings(describeReservedInstancesListingsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeReservedInstancesListingsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -5539,8 +5450,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 reportInstanceStatus(reportInstanceStatusRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -5578,16 +5489,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    reportInstanceStatus(reportInstanceStatusRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(reportInstanceStatusRequest, null);
-                   return null;
-            }
-        });
+              try {
+                reportInstanceStatus(reportInstanceStatusRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(reportInstanceStatusRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -5595,10 +5506,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your route tables.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeRouteTablesRequest Container for the necessary
@@ -5621,8 +5531,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeRouteTablesResult>() {
             public DescribeRouteTablesResult call() throws Exception {
                 return describeRouteTables(describeRouteTablesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -5630,10 +5540,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your route tables.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeRouteTablesRequest Container for the necessary
@@ -5661,17 +5570,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeRouteTablesResult>() {
             public DescribeRouteTablesResult call() throws Exception {
-                DescribeRouteTablesResult result;
+              DescribeRouteTablesResult result;
                 try {
-                    result = describeRouteTables(describeRouteTablesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeRouteTablesRequest, result);
-                   return result;
-            }
-        });
+                result = describeRouteTables(describeRouteTablesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeRouteTablesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -5679,10 +5588,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your DHCP options sets.
      * </p>
      * <p>
-     * For more information about DHCP options sets, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">
-     * DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about DHCP options sets, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeDhcpOptionsRequest Container for the necessary
@@ -5705,8 +5613,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeDhcpOptionsResult>() {
             public DescribeDhcpOptionsResult call() throws Exception {
                 return describeDhcpOptions(describeDhcpOptionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -5714,10 +5622,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your DHCP options sets.
      * </p>
      * <p>
-     * For more information about DHCP options sets, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">
-     * DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about DHCP options sets, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeDhcpOptionsRequest Container for the necessary
@@ -5745,26 +5652,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeDhcpOptionsResult>() {
             public DescribeDhcpOptionsResult call() throws Exception {
-                DescribeDhcpOptionsResult result;
+              DescribeDhcpOptionsResult result;
                 try {
-                    result = describeDhcpOptions(describeDhcpOptionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeDhcpOptionsRequest, result);
-                   return result;
-            }
-        });
+                result = describeDhcpOptions(describeDhcpOptionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDhcpOptionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
      * <p>
      * Enables monitoring for a running instance. For more information about
-     * monitoring instances, see <a
-     * ://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">
-     * Monitoring Your Instances and Volumes </a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i> .
+     * monitoring instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html"> Monitoring Your Instances and Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param monitorInstancesRequest Container for the necessary parameters
@@ -5787,17 +5693,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<MonitorInstancesResult>() {
             public MonitorInstancesResult call() throws Exception {
                 return monitorInstances(monitorInstancesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
      * <p>
      * Enables monitoring for a running instance. For more information about
-     * monitoring instances, see <a
-     * ://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">
-     * Monitoring Your Instances and Volumes </a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i> .
+     * monitoring instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html"> Monitoring Your Instances and Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param monitorInstancesRequest Container for the necessary parameters
@@ -5825,17 +5730,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<MonitorInstancesResult>() {
             public MonitorInstancesResult call() throws Exception {
-                MonitorInstancesResult result;
+              MonitorInstancesResult result;
                 try {
-                    result = monitorInstances(monitorInstancesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(monitorInstancesRequest, result);
-                   return result;
-            }
-        });
+                result = monitorInstances(monitorInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(monitorInstancesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -5843,10 +5748,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your network ACLs.
      * </p>
      * <p>
-     * For more information about network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeNetworkAclsRequest Container for the necessary
@@ -5869,8 +5773,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeNetworkAclsResult>() {
             public DescribeNetworkAclsResult call() throws Exception {
                 return describeNetworkAcls(describeNetworkAclsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -5878,10 +5782,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your network ACLs.
      * </p>
      * <p>
-     * For more information about network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeNetworkAclsRequest Container for the necessary
@@ -5909,17 +5812,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeNetworkAclsResult>() {
             public DescribeNetworkAclsResult call() throws Exception {
-                DescribeNetworkAclsResult result;
+              DescribeNetworkAclsResult result;
                 try {
-                    result = describeNetworkAcls(describeNetworkAclsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeNetworkAclsRequest, result);
-                   return result;
-            }
-        });
+                result = describeNetworkAcls(describeNetworkAclsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeNetworkAclsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -5953,8 +5856,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeBundleTasksResult>() {
             public DescribeBundleTasksResult call() throws Exception {
                 return describeBundleTasks(describeBundleTasksRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -5993,17 +5896,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeBundleTasksResult>() {
             public DescribeBundleTasksResult call() throws Exception {
-                DescribeBundleTasksResult result;
+              DescribeBundleTasksResult result;
                 try {
-                    result = describeBundleTasks(describeBundleTasksRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeBundleTasksRequest, result);
-                   return result;
-            }
-        });
+                result = describeBundleTasks(describeBundleTasksRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeBundleTasksRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -6035,8 +5938,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<ImportInstanceResult>() {
             public ImportInstanceResult call() throws Exception {
                 return importInstance(importInstanceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -6073,17 +5976,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ImportInstanceResult>() {
             public ImportInstanceResult call() throws Exception {
-                ImportInstanceResult result;
+              ImportInstanceResult result;
                 try {
-                    result = importInstance(importInstanceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(importInstanceRequest, result);
-                   return result;
-            }
-        });
+                result = importInstance(importInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(importInstanceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -6125,8 +6028,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 revokeSecurityGroupIngress(revokeSecurityGroupIngressRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -6172,16 +6075,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    revokeSecurityGroupIngress(revokeSecurityGroupIngressRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(revokeSecurityGroupIngressRequest, null);
-                   return null;
-            }
-        });
+              try {
+                revokeSecurityGroupIngress(revokeSecurityGroupIngressRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(revokeSecurityGroupIngressRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -6232,8 +6135,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<GetConsoleOutputResult>() {
             public GetConsoleOutputResult call() throws Exception {
                 return getConsoleOutput(getConsoleOutputRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -6289,17 +6192,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetConsoleOutputResult>() {
             public GetConsoleOutputResult call() throws Exception {
-                GetConsoleOutputResult result;
+              GetConsoleOutputResult result;
                 try {
-                    result = getConsoleOutput(getConsoleOutputRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(getConsoleOutputRequest, result);
-                   return result;
-            }
-        });
+                result = getConsoleOutput(getConsoleOutputRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getConsoleOutputRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -6308,9 +6211,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Internet gateway, you attach it to a VPC using AttachInternetGateway.
      * </p>
      * <p>
-     * For more information about your VPC and Internet gateway, see the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon
-     * Virtual Private Cloud User Guide </a> .
+     * For more information about your VPC and Internet gateway, see the
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon Virtual Private Cloud User Guide </a>
+     * .
      * </p>
      *
      * @param createInternetGatewayRequest Container for the necessary
@@ -6334,8 +6237,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateInternetGatewayResult>() {
             public CreateInternetGatewayResult call() throws Exception {
                 return createInternetGateway(createInternetGatewayRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -6344,9 +6247,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Internet gateway, you attach it to a VPC using AttachInternetGateway.
      * </p>
      * <p>
-     * For more information about your VPC and Internet gateway, see the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon
-     * Virtual Private Cloud User Guide </a> .
+     * For more information about your VPC and Internet gateway, see the
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon Virtual Private Cloud User Guide </a>
+     * .
      * </p>
      *
      * @param createInternetGatewayRequest Container for the necessary
@@ -6375,17 +6278,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateInternetGatewayResult>() {
             public CreateInternetGatewayResult call() throws Exception {
-                CreateInternetGatewayResult result;
+              CreateInternetGatewayResult result;
                 try {
-                    result = createInternetGateway(createInternetGatewayRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createInternetGatewayRequest, result);
-                   return result;
-            }
-        });
+                result = createInternetGateway(createInternetGatewayRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createInternetGatewayRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -6418,8 +6321,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteVpnConnectionRoute(deleteVpnConnectionRouteRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -6456,16 +6359,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteVpnConnectionRoute(deleteVpnConnectionRouteRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteVpnConnectionRouteRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteVpnConnectionRoute(deleteVpnConnectionRouteRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteVpnConnectionRouteRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -6495,8 +6398,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 detachNetworkInterface(detachNetworkInterfaceRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -6530,16 +6433,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    detachNetworkInterface(detachNetworkInterfaceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(detachNetworkInterfaceRequest, null);
-                   return null;
-            }
-        });
+              try {
+                detachNetworkInterface(detachNetworkInterfaceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(detachNetworkInterfaceRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -6573,8 +6476,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 modifyImageAttribute(modifyImageAttributeRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -6612,16 +6515,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    modifyImageAttribute(modifyImageAttributeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(modifyImageAttributeRequest, null);
-                   return null;
-            }
-        });
+              try {
+                modifyImageAttribute(modifyImageAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifyImageAttributeRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -6646,10 +6549,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * us-east-1 region, and 9059, which is reserved in the eu-west-1 region.
      * </p>
      * <p>
-     * For more information about VPN customer gateways, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN customer gateways, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createCustomerGatewayRequest Container for the necessary
@@ -6673,8 +6575,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateCustomerGatewayResult>() {
             public CreateCustomerGatewayResult call() throws Exception {
                 return createCustomerGateway(createCustomerGatewayRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -6699,10 +6601,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * us-east-1 region, and 9059, which is reserved in the eu-west-1 region.
      * </p>
      * <p>
-     * For more information about VPN customer gateways, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN customer gateways, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createCustomerGatewayRequest Container for the necessary
@@ -6731,27 +6632,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateCustomerGatewayResult>() {
             public CreateCustomerGatewayResult call() throws Exception {
-                CreateCustomerGatewayResult result;
+              CreateCustomerGatewayResult result;
                 try {
-                    result = createCustomerGateway(createCustomerGatewayRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createCustomerGatewayRequest, result);
-                   return result;
-            }
-        });
+                result = createCustomerGateway(createCustomerGatewayRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createCustomerGatewayRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
      * <p>
      * Creates a datafeed for Spot Instances, enabling you to view Spot
      * Instance usage logs. You can create one data feed per AWS account. For
-     * more information, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createSpotDatafeedSubscriptionRequest Container for the
@@ -6776,18 +6676,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateSpotDatafeedSubscriptionResult>() {
             public CreateSpotDatafeedSubscriptionResult call() throws Exception {
                 return createSpotDatafeedSubscription(createSpotDatafeedSubscriptionRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
      * <p>
      * Creates a datafeed for Spot Instances, enabling you to view Spot
      * Instance usage logs. You can create one data feed per AWS account. For
-     * more information, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createSpotDatafeedSubscriptionRequest Container for the
@@ -6817,26 +6716,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateSpotDatafeedSubscriptionResult>() {
             public CreateSpotDatafeedSubscriptionResult call() throws Exception {
-                CreateSpotDatafeedSubscriptionResult result;
+              CreateSpotDatafeedSubscriptionResult result;
                 try {
-                    result = createSpotDatafeedSubscription(createSpotDatafeedSubscriptionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createSpotDatafeedSubscriptionRequest, result);
-                   return result;
-            }
-        });
+                result = createSpotDatafeedSubscription(createSpotDatafeedSubscriptionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createSpotDatafeedSubscriptionRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
      * <p>
      * Attaches an Internet gateway to a VPC, enabling connectivity between
      * the Internet and the VPC. For more information about your VPC and
-     * Internet gateway, see the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon
-     * Virtual Private Cloud User Guide </a> .
+     * Internet gateway, see the
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon Virtual Private Cloud User Guide </a>
+     * .
      * </p>
      *
      * @param attachInternetGatewayRequest Container for the necessary
@@ -6861,17 +6760,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 attachInternetGateway(attachInternetGatewayRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
      * <p>
      * Attaches an Internet gateway to a VPC, enabling connectivity between
      * the Internet and the VPC. For more information about your VPC and
-     * Internet gateway, see the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon
-     * Virtual Private Cloud User Guide </a> .
+     * Internet gateway, see the
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/"> Amazon Virtual Private Cloud User Guide </a>
+     * .
      * </p>
      *
      * @param attachInternetGatewayRequest Container for the necessary
@@ -6900,16 +6799,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    attachInternetGateway(attachInternetGatewayRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(attachInternetGatewayRequest, null);
-                   return null;
-            }
-        });
+              try {
+                attachInternetGateway(attachInternetGatewayRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(attachInternetGatewayRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -6943,8 +6842,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteVpnConnection(deleteVpnConnectionRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -6982,25 +6881,24 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteVpnConnection(deleteVpnConnectionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteVpnConnectionRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteVpnConnection(deleteVpnConnectionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteVpnConnectionRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
      * <p>
      * Describes one or more of your conversion tasks. For more information,
-     * see <a
-     * on.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">
-     * Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2 </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeConversionTasksRequest Container for the necessary
@@ -7024,17 +6922,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeConversionTasksResult>() {
             public DescribeConversionTasksResult call() throws Exception {
                 return describeConversionTasks(describeConversionTasksRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
      * <p>
      * Describes one or more of your conversion tasks. For more information,
-     * see <a
-     * on.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">
-     * Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2 </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeConversionTasksRequest Container for the necessary
@@ -7063,17 +6960,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeConversionTasksResult>() {
             public DescribeConversionTasksResult call() throws Exception {
-                DescribeConversionTasksResult result;
+              DescribeConversionTasksResult result;
                 try {
-                    result = describeConversionTasks(describeConversionTasksRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeConversionTasksRequest, result);
-                   return result;
-            }
-        });
+                result = describeConversionTasks(describeConversionTasksRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeConversionTasksRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -7097,10 +6994,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * gateway with the new information returned from this call.
      * </p>
      * <p>
-     * For more information about VPN connections, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN connections, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createVpnConnectionRequest Container for the necessary
@@ -7123,8 +7019,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateVpnConnectionResult>() {
             public CreateVpnConnectionResult call() throws Exception {
                 return createVpnConnection(createVpnConnectionRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -7148,10 +7044,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * gateway with the new information returned from this call.
      * </p>
      * <p>
-     * For more information about VPN connections, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN connections, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createVpnConnectionRequest Container for the necessary
@@ -7179,17 +7074,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateVpnConnectionResult>() {
             public CreateVpnConnectionResult call() throws Exception {
-                CreateVpnConnectionResult result;
+              CreateVpnConnectionResult result;
                 try {
-                    result = createVpnConnection(createVpnConnectionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createVpnConnectionRequest, result);
-                   return result;
-            }
-        });
+                result = createVpnConnection(createVpnConnectionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createVpnConnectionRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -7219,8 +7114,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeInstanceAttributeResult>() {
             public DescribeInstanceAttributeResult call() throws Exception {
                 return describeInstanceAttribute(describeInstanceAttributeRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -7255,17 +7150,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeInstanceAttributeResult>() {
             public DescribeInstanceAttributeResult call() throws Exception {
-                DescribeInstanceAttributeResult result;
+              DescribeInstanceAttributeResult result;
                 try {
-                    result = describeInstanceAttribute(describeInstanceAttributeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeInstanceAttributeRequest, result);
-                   return result;
-            }
-        });
+                result = describeInstanceAttribute(describeInstanceAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeInstanceAttributeRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -7273,10 +7168,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your subnets.
      * </p>
      * <p>
-     * For more information about subnets, see <a
-     * tp://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">
-     * Your VPC and Subnets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about subnets, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeSubnetsRequest Container for the necessary parameters
@@ -7299,8 +7193,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeSubnetsResult>() {
             public DescribeSubnetsResult call() throws Exception {
                 return describeSubnets(describeSubnetsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -7308,10 +7202,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your subnets.
      * </p>
      * <p>
-     * For more information about subnets, see <a
-     * tp://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">
-     * Your VPC and Subnets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about subnets, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeSubnetsRequest Container for the necessary parameters
@@ -7339,17 +7232,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSubnetsResult>() {
             public DescribeSubnetsResult call() throws Exception {
-                DescribeSubnetsResult result;
+              DescribeSubnetsResult result;
                 try {
-                    result = describeSubnets(describeSubnetsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeSubnetsRequest, result);
-                   return result;
-            }
-        });
+                result = describeSubnets(describeSubnetsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeSubnetsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -7366,25 +7259,22 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * If you don't specify a security group when launching an instance,
      * Amazon EC2 uses the default security group. For more information, see
-     * <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">
-     * Security Groups </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Security Groups </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * Linux instances have access to the public key of the key pair at boot.
      * You can use this key to provide secure access to the instance. Amazon
      * EC2 public images use this feature to provide secure access without
-     * passwords. For more information, see <a
-     * ttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">
-     * Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * passwords. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * You can provide optional user data when launching an instance. For
-     * more information, see <a
-     * s.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">
-     * Instance Metadata </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html"> Instance Metadata </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * If any of the AMIs have a product code attached for which the user has
@@ -7411,8 +7301,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<RunInstancesResult>() {
             public RunInstancesResult call() throws Exception {
                 return runInstances(runInstancesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -7429,25 +7319,22 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * If you don't specify a security group when launching an instance,
      * Amazon EC2 uses the default security group. For more information, see
-     * <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">
-     * Security Groups </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Security Groups </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * Linux instances have access to the public key of the key pair at boot.
      * You can use this key to provide secure access to the instance. Amazon
      * EC2 public images use this feature to provide secure access without
-     * passwords. For more information, see <a
-     * ttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">
-     * Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * passwords. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * You can provide optional user data when launching an instance. For
-     * more information, see <a
-     * s.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">
-     * Instance Metadata </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html"> Instance Metadata </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * If any of the AMIs have a product code attached for which the user has
@@ -7479,26 +7366,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RunInstancesResult>() {
             public RunInstancesResult call() throws Exception {
-                RunInstancesResult result;
+              RunInstancesResult result;
                 try {
-                    result = runInstances(runInstancesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(runInstancesRequest, result);
-                   return result;
-            }
-        });
+                result = runInstances(runInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(runInstancesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
      * <p>
      * Describes one or more of your placement groups. For more information
-     * about placement groups and cluster instances, see <a
-     * .aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
-     * Cluster Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * about placement groups and cluster instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describePlacementGroupsRequest Container for the necessary
@@ -7522,17 +7408,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribePlacementGroupsResult>() {
             public DescribePlacementGroupsResult call() throws Exception {
                 return describePlacementGroups(describePlacementGroupsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
      * <p>
      * Describes one or more of your placement groups. For more information
-     * about placement groups and cluster instances, see <a
-     * .aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
-     * Cluster Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * about placement groups and cluster instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describePlacementGroupsRequest Container for the necessary
@@ -7561,17 +7446,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribePlacementGroupsResult>() {
             public DescribePlacementGroupsResult call() throws Exception {
-                DescribePlacementGroupsResult result;
+              DescribePlacementGroupsResult result;
                 try {
-                    result = describePlacementGroups(describePlacementGroupsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describePlacementGroupsRequest, result);
-                   return result;
-            }
-        });
+                result = describePlacementGroups(describePlacementGroupsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describePlacementGroupsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -7584,10 +7469,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * can be associated with multiple subnets.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param associateRouteTableRequest Container for the necessary
@@ -7610,8 +7494,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<AssociateRouteTableResult>() {
             public AssociateRouteTableResult call() throws Exception {
                 return associateRouteTable(associateRouteTableRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -7624,10 +7508,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * can be associated with multiple subnets.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param associateRouteTableRequest Container for the necessary
@@ -7655,17 +7538,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AssociateRouteTableResult>() {
             public AssociateRouteTableResult call() throws Exception {
-                AssociateRouteTableResult result;
+              AssociateRouteTableResult result;
                 try {
-                    result = associateRouteTable(associateRouteTableRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(associateRouteTableRequest, result);
-                   return result;
-            }
-        });
+                result = associateRouteTable(associateRouteTableRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(associateRouteTableRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -7705,8 +7588,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeInstancesResult>() {
             public DescribeInstancesResult call() throws Exception {
                 return describeInstances(describeInstancesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -7751,17 +7634,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeInstancesResult>() {
             public DescribeInstancesResult call() throws Exception {
-                DescribeInstancesResult result;
+              DescribeInstancesResult result;
                 try {
-                    result = describeInstances(describeInstancesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeInstancesRequest, result);
-                   return result;
-            }
-        });
+                result = describeInstances(describeInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeInstancesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -7791,8 +7674,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteNetworkAcl(deleteNetworkAclRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -7826,16 +7709,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteNetworkAcl(deleteNetworkAclRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteNetworkAclRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteNetworkAcl(deleteNetworkAclRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteNetworkAclRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -7877,8 +7760,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 modifyVolumeAttribute(modifyVolumeAttributeRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -7924,16 +7807,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    modifyVolumeAttribute(modifyVolumeAttributeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(modifyVolumeAttributeRequest, null);
-                   return null;
-            }
-        });
+              try {
+                modifyVolumeAttribute(modifyVolumeAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifyVolumeAttributeRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -7968,8 +7851,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeImagesResult>() {
             public DescribeImagesResult call() throws Exception {
                 return describeImages(describeImagesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -8009,17 +7892,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeImagesResult>() {
             public DescribeImagesResult call() throws Exception {
-                DescribeImagesResult result;
+              DescribeImagesResult result;
                 try {
-                    result = describeImages(describeImagesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeImagesRequest, result);
-                   return result;
-            }
-        });
+                result = describeImages(describeImagesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeImagesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -8047,10 +7930,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * as its root device returns an error.
      * </p>
      * <p>
-     * For more information, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">
-     * Stopping Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html"> Stopping Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param startInstancesRequest Container for the necessary parameters to
@@ -8073,8 +7955,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<StartInstancesResult>() {
             public StartInstancesResult call() throws Exception {
                 return startInstances(startInstancesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -8102,10 +7984,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * as its root device returns an error.
      * </p>
      * <p>
-     * For more information, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">
-     * Stopping Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html"> Stopping Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param startInstancesRequest Container for the necessary parameters to
@@ -8133,17 +8014,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<StartInstancesResult>() {
             public StartInstancesResult call() throws Exception {
-                StartInstancesResult result;
+              StartInstancesResult result;
                 try {
-                    result = startInstances(startInstancesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(startInstancesRequest, result);
-                   return result;
-            }
-        });
+                result = startInstances(startInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(startInstancesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -8152,10 +8033,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Instance Marketplace.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param cancelReservedInstancesListingRequest Container for the
@@ -8180,8 +8060,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CancelReservedInstancesListingResult>() {
             public CancelReservedInstancesListingResult call() throws Exception {
                 return cancelReservedInstancesListing(cancelReservedInstancesListingRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -8190,10 +8070,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Instance Marketplace.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param cancelReservedInstancesListingRequest Container for the
@@ -8223,17 +8102,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CancelReservedInstancesListingResult>() {
             public CancelReservedInstancesListingResult call() throws Exception {
-                CancelReservedInstancesListingResult result;
+              CancelReservedInstancesListingResult result;
                 try {
-                    result = cancelReservedInstancesListing(cancelReservedInstancesListingRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(cancelReservedInstancesListingRequest, result);
-                   return result;
-            }
-        });
+                result = cancelReservedInstancesListing(cancelReservedInstancesListingRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(cancelReservedInstancesListingRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -8243,10 +8122,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * To modify some attributes, the instance must be stopped. For more
-     * information, see <a
-     * 2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">
-     * Modifying Attributes of a Stopped Instance </a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i> .
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html"> Modifying Attributes of a Stopped Instance </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param modifyInstanceAttributeRequest Container for the necessary
@@ -8271,8 +8149,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 modifyInstanceAttribute(modifyInstanceAttributeRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -8282,10 +8160,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * To modify some attributes, the instance must be stopped. For more
-     * information, see <a
-     * 2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">
-     * Modifying Attributes of a Stopped Instance </a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i> .
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html"> Modifying Attributes of a Stopped Instance </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param modifyInstanceAttributeRequest Container for the necessary
@@ -8314,16 +8191,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    modifyInstanceAttribute(modifyInstanceAttributeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(modifyInstanceAttributeRequest, null);
-                   return null;
-            }
-        });
+              try {
+                modifyInstanceAttribute(modifyInstanceAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifyInstanceAttributeRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -8355,8 +8232,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteDhcpOptions(deleteDhcpOptionsRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -8392,16 +8269,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteDhcpOptions(deleteDhcpOptionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteDhcpOptionsRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteDhcpOptions(deleteDhcpOptionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteDhcpOptionsRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -8455,8 +8332,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 authorizeSecurityGroupIngress(authorizeSecurityGroupIngressRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -8514,16 +8391,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    authorizeSecurityGroupIngress(authorizeSecurityGroupIngressRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(authorizeSecurityGroupIngressRequest, null);
-                   return null;
-            }
-        });
+              try {
+                authorizeSecurityGroupIngress(authorizeSecurityGroupIngressRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(authorizeSecurityGroupIngressRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -8533,10 +8410,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * maximum price that you specify exceeds the current Spot Price. Amazon
      * EC2 periodically sets the Spot Price based on available Spot Instance
      * capacity and current Spot Instance requests. For more information
-     * about Spot Instances, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * about Spot Instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * You can use <code>DescribeSpotInstanceRequests</code> to find a
@@ -8568,8 +8444,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeSpotInstanceRequestsResult>() {
             public DescribeSpotInstanceRequestsResult call() throws Exception {
                 return describeSpotInstanceRequests(describeSpotInstanceRequestsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -8579,10 +8455,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * maximum price that you specify exceeds the current Spot Price. Amazon
      * EC2 periodically sets the Spot Price based on available Spot Instance
      * capacity and current Spot Instance requests. For more information
-     * about Spot Instances, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * about Spot Instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * You can use <code>DescribeSpotInstanceRequests</code> to find a
@@ -8619,17 +8494,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSpotInstanceRequestsResult>() {
             public DescribeSpotInstanceRequestsResult call() throws Exception {
-                DescribeSpotInstanceRequestsResult result;
+              DescribeSpotInstanceRequestsResult result;
                 try {
-                    result = describeSpotInstanceRequests(describeSpotInstanceRequestsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeSpotInstanceRequestsRequest, result);
-                   return result;
-            }
-        });
+                result = describeSpotInstanceRequests(describeSpotInstanceRequestsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeSpotInstanceRequestsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -8639,18 +8514,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * The smallest VPC you can create uses a /28 netmask (16 IP addresses),
      * and the largest uses a /16 netmask (65,536 IP addresses). To help you
-     * decide how big to make your VPC, see <a
-     * tp://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">
-     * Your VPC and Subnets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * decide how big to make your VPC, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * By default, each instance you launch in the VPC has the default DHCP
      * options, which includes only a default DNS server that we provide
-     * (AmazonProvidedDNS). For more information about DHCP options, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">
-     * DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * (AmazonProvidedDNS). For more information about DHCP options, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createVpcRequest Container for the necessary parameters to
@@ -8673,8 +8546,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateVpcResult>() {
             public CreateVpcResult call() throws Exception {
                 return createVpc(createVpcRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -8684,18 +8557,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * The smallest VPC you can create uses a /28 netmask (16 IP addresses),
      * and the largest uses a /16 netmask (65,536 IP addresses). To help you
-     * decide how big to make your VPC, see <a
-     * tp://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">
-     * Your VPC and Subnets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * decide how big to make your VPC, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * By default, each instance you launch in the VPC has the default DHCP
      * options, which includes only a default DNS server that we provide
-     * (AmazonProvidedDNS). For more information about DHCP options, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">
-     * DHCP Options Sets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * (AmazonProvidedDNS). For more information about DHCP options, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createVpcRequest Container for the necessary parameters to
@@ -8723,17 +8594,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateVpcResult>() {
             public CreateVpcResult call() throws Exception {
-                CreateVpcResult result;
+              CreateVpcResult result;
                 try {
-                    result = createVpc(createVpcRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createVpcRequest, result);
-                   return result;
-            }
-        });
+                result = createVpc(createVpcRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createVpcRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -8741,10 +8612,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your VPN customer gateways.
      * </p>
      * <p>
-     * For more information about VPN customer gateways, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN customer gateways, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeCustomerGatewaysRequest Container for the necessary
@@ -8768,8 +8638,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeCustomerGatewaysResult>() {
             public DescribeCustomerGatewaysResult call() throws Exception {
                 return describeCustomerGateways(describeCustomerGatewaysRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -8777,10 +8647,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your VPN customer gateways.
      * </p>
      * <p>
-     * For more information about VPN customer gateways, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN customer gateways, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeCustomerGatewaysRequest Container for the necessary
@@ -8809,17 +8678,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeCustomerGatewaysResult>() {
             public DescribeCustomerGatewaysResult call() throws Exception {
-                DescribeCustomerGatewaysResult result;
+              DescribeCustomerGatewaysResult result;
                 try {
-                    result = describeCustomerGateways(describeCustomerGatewaysRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeCustomerGatewaysRequest, result);
-                   return result;
-            }
-        });
+                result = describeCustomerGateways(describeCustomerGatewaysRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeCustomerGatewaysRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -8851,8 +8720,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 cancelExportTask(cancelExportTaskRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -8888,16 +8757,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    cancelExportTask(cancelExportTaskRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(cancelExportTaskRequest, null);
-                   return null;
-            }
-        });
+              try {
+                cancelExportTask(cancelExportTaskRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(cancelExportTaskRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -8933,10 +8802,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * determine where to target the traffic.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createRouteRequest Container for the necessary parameters to
@@ -8960,8 +8828,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 createRoute(createRouteRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -8997,10 +8865,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * determine where to target the traffic.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createRouteRequest Container for the necessary parameters to
@@ -9028,16 +8895,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    createRoute(createRouteRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createRouteRequest, null);
-                   return null;
-            }
-        });
+              try {
+                createRoute(createRouteRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createRouteRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -9046,10 +8913,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * region in which the request was made.
      * </p>
      * <p>
-     * For more information, see <a
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">
-     * Copying AMIs </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html"> Copying AMIs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param copyImageRequest Container for the necessary parameters to
@@ -9072,8 +8938,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CopyImageResult>() {
             public CopyImageResult call() throws Exception {
                 return copyImage(copyImageRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -9082,10 +8948,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * region in which the request was made.
      * </p>
      * <p>
-     * For more information, see <a
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">
-     * Copying AMIs </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html"> Copying AMIs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param copyImageRequest Container for the necessary parameters to
@@ -9113,17 +8978,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CopyImageResult>() {
             public CopyImageResult call() throws Exception {
-                CopyImageResult result;
+              CopyImageResult result;
                 try {
-                    result = copyImage(copyImageRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(copyImageRequest, result);
-                   return result;
-            }
-        });
+                result = copyImage(copyImageRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(copyImageRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -9155,8 +9020,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 modifyNetworkInterfaceAttribute(modifyNetworkInterfaceAttributeRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -9192,16 +9057,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    modifyNetworkInterfaceAttribute(modifyNetworkInterfaceAttributeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(modifyNetworkInterfaceAttributeRequest, null);
-                   return null;
-            }
-        });
+              try {
+                modifyNetworkInterfaceAttribute(modifyNetworkInterfaceAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifyNetworkInterfaceAttributeRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -9232,8 +9097,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteRouteTable(deleteRouteTableRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -9268,16 +9133,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteRouteTable(deleteRouteTableRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteRouteTableRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteRouteTable(deleteRouteTableRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteRouteTableRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -9308,8 +9173,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeNetworkInterfaceAttributeResult>() {
             public DescribeNetworkInterfaceAttributeResult call() throws Exception {
                 return describeNetworkInterfaceAttribute(describeNetworkInterfaceAttributeRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -9345,17 +9210,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeNetworkInterfaceAttributeResult>() {
             public DescribeNetworkInterfaceAttributeResult call() throws Exception {
-                DescribeNetworkInterfaceAttributeResult result;
+              DescribeNetworkInterfaceAttributeResult result;
                 try {
-                    result = describeNetworkInterfaceAttribute(describeNetworkInterfaceAttributeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeNetworkInterfaceAttributeRequest, result);
-                   return result;
-            }
-        });
+                result = describeNetworkInterfaceAttribute(describeNetworkInterfaceAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeNetworkInterfaceAttributeRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -9365,10 +9230,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * specify exceeds the current Spot Price. Amazon EC2 periodically sets
      * the Spot Price based on available Spot Instance capacity and current
      * Spot Instance requests. For more information about Spot Instances, see
-     * <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param requestSpotInstancesRequest Container for the necessary
@@ -9391,8 +9254,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<RequestSpotInstancesResult>() {
             public RequestSpotInstancesResult call() throws Exception {
                 return requestSpotInstances(requestSpotInstancesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -9402,10 +9265,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * specify exceeds the current Spot Price. Amazon EC2 periodically sets
      * the Spot Price based on available Spot Instance capacity and current
      * Spot Instance requests. For more information about Spot Instances, see
-     * <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param requestSpotInstancesRequest Container for the necessary
@@ -9433,17 +9294,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RequestSpotInstancesResult>() {
             public RequestSpotInstancesResult call() throws Exception {
-                RequestSpotInstancesResult result;
+              RequestSpotInstancesResult result;
                 try {
-                    result = requestSpotInstances(requestSpotInstancesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(requestSpotInstancesRequest, result);
-                   return result;
-            }
-        });
+                result = requestSpotInstances(requestSpotInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(requestSpotInstancesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -9454,10 +9315,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * resource.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">
-     * Tagging Your Resources </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For more information about tags, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createTagsRequest Container for the necessary parameters to
@@ -9481,8 +9341,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 createTags(createTagsRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -9493,10 +9353,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * resource.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">
-     * Tagging Your Resources </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For more information about tags, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createTagsRequest Container for the necessary parameters to
@@ -9524,16 +9383,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    createTags(createTagsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createTagsRequest, null);
-                   return null;
-            }
-        });
+              try {
+                createTags(createTagsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createTagsRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -9542,10 +9401,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * specify only one attribute at a time.
      * </p>
      * <p>
-     * For more information about Amazon EBS volumes, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">
-     * Amazon EBS Volumes </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Amazon EBS volumes, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeVolumeAttributeRequest Container for the necessary
@@ -9569,8 +9427,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeVolumeAttributeResult>() {
             public DescribeVolumeAttributeResult call() throws Exception {
                 return describeVolumeAttribute(describeVolumeAttributeRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -9579,10 +9437,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * specify only one attribute at a time.
      * </p>
      * <p>
-     * For more information about Amazon EBS volumes, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">
-     * Amazon EBS Volumes </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Amazon EBS volumes, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeVolumeAttributeRequest Container for the necessary
@@ -9611,17 +9468,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVolumeAttributeResult>() {
             public DescribeVolumeAttributeResult call() throws Exception {
-                DescribeVolumeAttributeResult result;
+              DescribeVolumeAttributeResult result;
                 try {
-                    result = describeVolumeAttribute(describeVolumeAttributeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeVolumeAttributeRequest, result);
-                   return result;
-            }
-        });
+                result = describeVolumeAttribute(describeVolumeAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeVolumeAttributeRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -9650,8 +9507,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<AttachNetworkInterfaceResult>() {
             public AttachNetworkInterfaceResult call() throws Exception {
                 return attachNetworkInterface(attachNetworkInterfaceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -9685,17 +9542,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AttachNetworkInterfaceResult>() {
             public AttachNetworkInterfaceResult call() throws Exception {
-                AttachNetworkInterfaceResult result;
+              AttachNetworkInterfaceResult result;
                 try {
-                    result = attachNetworkInterface(attachNetworkInterfaceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(attachNetworkInterfaceRequest, result);
-                   return result;
-            }
-        });
+                result = attachNetworkInterface(attachNetworkInterfaceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(attachNetworkInterfaceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -9705,10 +9562,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * network interface.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param replaceRouteRequest Container for the necessary parameters to
@@ -9732,8 +9588,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 replaceRoute(replaceRouteRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -9743,10 +9599,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * network interface.
      * </p>
      * <p>
-     * For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param replaceRouteRequest Container for the necessary parameters to
@@ -9774,16 +9629,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    replaceRoute(replaceRouteRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(replaceRouteRequest, null);
-                   return null;
-            }
-        });
+              try {
+                replaceRoute(replaceRouteRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(replaceRouteRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -9791,10 +9646,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of the tags for your EC2 resources.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">
-     * Tagging Your Resources </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For more information about tags, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeTagsRequest Container for the necessary parameters to
@@ -9817,8 +9671,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeTagsResult>() {
             public DescribeTagsResult call() throws Exception {
                 return describeTags(describeTagsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -9826,10 +9680,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of the tags for your EC2 resources.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">
-     * Tagging Your Resources </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * For more information about tags, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeTagsRequest Container for the necessary parameters to
@@ -9857,17 +9710,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeTagsResult>() {
             public DescribeTagsResult call() throws Exception {
-                DescribeTagsResult result;
+              DescribeTagsResult result;
                 try {
-                    result = describeTags(describeTagsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeTagsRequest, result);
-                   return result;
-            }
-        });
+                result = describeTags(describeTagsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeTagsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -9896,8 +9749,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CancelBundleTaskResult>() {
             public CancelBundleTaskResult call() throws Exception {
                 return cancelBundleTask(cancelBundleTaskRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -9931,17 +9784,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CancelBundleTaskResult>() {
             public CancelBundleTaskResult call() throws Exception {
-                CancelBundleTaskResult result;
+              CancelBundleTaskResult result;
                 try {
-                    result = cancelBundleTask(cancelBundleTaskRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(cancelBundleTaskRequest, result);
-                   return result;
-            }
-        });
+                result = cancelBundleTask(cancelBundleTaskRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(cancelBundleTaskRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -9972,8 +9825,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 disableVgwRoutePropagation(disableVgwRoutePropagationRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -10008,16 +9861,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    disableVgwRoutePropagation(disableVgwRoutePropagationRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(disableVgwRoutePropagationRequest, null);
-                   return null;
-            }
-        });
+              try {
+                disableVgwRoutePropagation(disableVgwRoutePropagationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(disableVgwRoutePropagationRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -10027,10 +9880,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * that you specify exceeds the current Spot Price. Amazon EC2
      * periodically sets the Spot Price based on available Spot Instance
      * capacity and current Spot Instance requests. For more information
-     * about Spot Instances, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * about Spot Instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b> Canceling a Spot Instance request does not terminate
@@ -10058,8 +9910,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CancelSpotInstanceRequestsResult>() {
             public CancelSpotInstanceRequestsResult call() throws Exception {
                 return cancelSpotInstanceRequests(cancelSpotInstanceRequestsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -10069,10 +9921,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * that you specify exceeds the current Spot Price. Amazon EC2
      * periodically sets the Spot Price based on available Spot Instance
      * capacity and current Spot Instance requests. For more information
-     * about Spot Instances, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * about Spot Instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b> Canceling a Spot Instance request does not terminate
@@ -10105,17 +9956,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CancelSpotInstanceRequestsResult>() {
             public CancelSpotInstanceRequestsResult call() throws Exception {
-                CancelSpotInstanceRequestsResult result;
+              CancelSpotInstanceRequestsResult result;
                 try {
-                    result = cancelSpotInstanceRequests(cancelSpotInstanceRequestsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(cancelSpotInstanceRequestsRequest, result);
-                   return result;
-            }
-        });
+                result = cancelSpotInstanceRequests(cancelSpotInstanceRequestsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(cancelSpotInstanceRequestsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -10127,10 +9978,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * you actually use the capacity reservation.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param purchaseReservedInstancesOfferingRequest Container for the
@@ -10155,8 +10005,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<PurchaseReservedInstancesOfferingResult>() {
             public PurchaseReservedInstancesOfferingResult call() throws Exception {
                 return purchaseReservedInstancesOffering(purchaseReservedInstancesOfferingRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -10168,10 +10018,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * you actually use the capacity reservation.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param purchaseReservedInstancesOfferingRequest Container for the
@@ -10201,17 +10050,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<PurchaseReservedInstancesOfferingResult>() {
             public PurchaseReservedInstancesOfferingResult call() throws Exception {
-                PurchaseReservedInstancesOfferingResult result;
+              PurchaseReservedInstancesOfferingResult result;
                 try {
-                    result = purchaseReservedInstancesOffering(purchaseReservedInstancesOfferingRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(purchaseReservedInstancesOfferingRequest, result);
-                   return result;
-            }
-        });
+                result = purchaseReservedInstancesOffering(purchaseReservedInstancesOfferingRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(purchaseReservedInstancesOfferingRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -10219,10 +10068,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Adds or removes permission settings for the specified snapshot.
      * </p>
      * <p>
-     * For more information on modifying snapshot permissions, see <a
-     * .com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">
-     * Sharing Snapshots </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information on modifying snapshot permissions, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> Snapshots with AWS Marketplace product codes cannot be
@@ -10251,8 +10099,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 modifySnapshotAttribute(modifySnapshotAttributeRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -10260,10 +10108,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Adds or removes permission settings for the specified snapshot.
      * </p>
      * <p>
-     * For more information on modifying snapshot permissions, see <a
-     * .com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">
-     * Sharing Snapshots </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information on modifying snapshot permissions, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> Snapshots with AWS Marketplace product codes cannot be
@@ -10296,16 +10143,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    modifySnapshotAttribute(modifySnapshotAttributeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(modifySnapshotAttributeRequest, null);
-                   return null;
-            }
-        });
+              try {
+                modifySnapshotAttribute(modifySnapshotAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifySnapshotAttributeRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -10338,8 +10185,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeReservedInstancesModificationsResult>() {
             public DescribeReservedInstancesModificationsResult call() throws Exception {
                 return describeReservedInstancesModifications(describeReservedInstancesModificationsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -10377,17 +10224,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeReservedInstancesModificationsResult>() {
             public DescribeReservedInstancesModificationsResult call() throws Exception {
-                DescribeReservedInstancesModificationsResult result;
+              DescribeReservedInstancesModificationsResult result;
                 try {
-                    result = describeReservedInstancesModifications(describeReservedInstancesModificationsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeReservedInstancesModificationsRequest, result);
-                   return result;
-            }
-        });
+                result = describeReservedInstancesModifications(describeReservedInstancesModificationsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeReservedInstancesModificationsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -10412,10 +10259,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * instance persist. When you terminate an instance, the root device and
      * any other devices attached during the instance launch are
      * automatically deleted. For more information about the differences
-     * between stopping and terminating instances, see <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">
-     * Instance Lifecycle </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * between stopping and terminating instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param terminateInstancesRequest Container for the necessary
@@ -10438,8 +10284,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<TerminateInstancesResult>() {
             public TerminateInstancesResult call() throws Exception {
                 return terminateInstances(terminateInstancesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -10464,10 +10310,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * instance persist. When you terminate an instance, the root device and
      * any other devices attached during the instance launch are
      * automatically deleted. For more information about the differences
-     * between stopping and terminating instances, see <a
-     * s.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">
-     * Instance Lifecycle </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * between stopping and terminating instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param terminateInstancesRequest Container for the necessary
@@ -10495,25 +10340,24 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<TerminateInstancesResult>() {
             public TerminateInstancesResult call() throws Exception {
-                TerminateInstancesResult result;
+              TerminateInstancesResult result;
                 try {
-                    result = terminateInstances(terminateInstancesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(terminateInstancesRequest, result);
-                   return result;
-            }
-        });
+                result = terminateInstances(terminateInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(terminateInstancesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
      * <p>
-     * Deletes the datafeed for Spot Instances. For more information, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * Deletes the datafeed for Spot Instances. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deleteSpotDatafeedSubscriptionRequest Container for the
@@ -10539,16 +10383,15 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteSpotDatafeedSubscription(deleteSpotDatafeedSubscriptionRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
      * <p>
-     * Deletes the datafeed for Spot Instances. For more information, see <a
-     * ocs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">
-     * Spot Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * Deletes the datafeed for Spot Instances. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deleteSpotDatafeedSubscriptionRequest Container for the
@@ -10578,16 +10421,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteSpotDatafeedSubscription(deleteSpotDatafeedSubscriptionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteSpotDatafeedSubscriptionRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteSpotDatafeedSubscription(deleteSpotDatafeedSubscriptionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteSpotDatafeedSubscriptionRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -10618,8 +10461,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteInternetGateway(deleteInternetGatewayRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -10654,16 +10497,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteInternetGateway(deleteInternetGatewayRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteInternetGatewayRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteInternetGateway(deleteInternetGatewayRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteInternetGatewayRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -10672,10 +10515,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * one attribute at a time.
      * </p>
      * <p>
-     * For more information about Amazon EBS snapshots, see <a
-     * http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">
-     * Amazon EBS Snapshots </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Amazon EBS snapshots, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeSnapshotAttributeRequest Container for the necessary
@@ -10699,8 +10541,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeSnapshotAttributeResult>() {
             public DescribeSnapshotAttributeResult call() throws Exception {
                 return describeSnapshotAttribute(describeSnapshotAttributeRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -10709,10 +10551,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * one attribute at a time.
      * </p>
      * <p>
-     * For more information about Amazon EBS snapshots, see <a
-     * http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">
-     * Amazon EBS Snapshots </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Amazon EBS snapshots, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeSnapshotAttributeRequest Container for the necessary
@@ -10741,17 +10582,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSnapshotAttributeResult>() {
             public DescribeSnapshotAttributeResult call() throws Exception {
-                DescribeSnapshotAttributeResult result;
+              DescribeSnapshotAttributeResult result;
                 try {
-                    result = describeSnapshotAttribute(describeSnapshotAttributeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeSnapshotAttributeRequest, result);
-                   return result;
-            }
-        });
+                result = describeSnapshotAttribute(describeSnapshotAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeSnapshotAttributeRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -10759,10 +10600,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Changes the route table associated with a given subnet in a VPC. After
      * the operation completes, the subnet uses the routes in the new route
      * table it's associated with. For more information about route tables,
-     * see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * You can also use ReplaceRouteTableAssociation to change which table is
@@ -10792,8 +10632,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<ReplaceRouteTableAssociationResult>() {
             public ReplaceRouteTableAssociationResult call() throws Exception {
                 return replaceRouteTableAssociation(replaceRouteTableAssociationRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -10801,10 +10641,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Changes the route table associated with a given subnet in a VPC. After
      * the operation completes, the subnet uses the routes in the new route
      * table it's associated with. For more information about route tables,
-     * see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
      * You can also use ReplaceRouteTableAssociation to change which table is
@@ -10839,17 +10678,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ReplaceRouteTableAssociationResult>() {
             public ReplaceRouteTableAssociationResult call() throws Exception {
-                ReplaceRouteTableAssociationResult result;
+              ReplaceRouteTableAssociationResult result;
                 try {
-                    result = replaceRouteTableAssociation(replaceRouteTableAssociationRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(replaceRouteTableAssociationRequest, result);
-                   return result;
-            }
-        });
+                result = replaceRouteTableAssociation(replaceRouteTableAssociationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(replaceRouteTableAssociationRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -10858,10 +10697,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * An Elastic IP address is for use in either the EC2-Classic platform or
-     * in a VPC. For more information, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
-     * Elastic IP Addresses </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * in a VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeAddressesRequest Container for the necessary parameters
@@ -10884,8 +10722,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeAddressesResult>() {
             public DescribeAddressesResult call() throws Exception {
                 return describeAddresses(describeAddressesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -10894,10 +10732,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * An Elastic IP address is for use in either the EC2-Classic platform or
-     * in a VPC. For more information, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
-     * Elastic IP Addresses </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * in a VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeAddressesRequest Container for the necessary parameters
@@ -10925,17 +10762,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeAddressesResult>() {
             public DescribeAddressesResult call() throws Exception {
-                DescribeAddressesResult result;
+              DescribeAddressesResult result;
                 try {
-                    result = describeAddresses(describeAddressesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeAddressesRequest, result);
-                   return result;
-            }
-        });
+                result = describeAddresses(describeAddressesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeAddressesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -10965,8 +10802,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeImageAttributeResult>() {
             public DescribeImageAttributeResult call() throws Exception {
                 return describeImageAttribute(describeImageAttributeRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -11001,17 +10838,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeImageAttributeResult>() {
             public DescribeImageAttributeResult call() throws Exception {
-                DescribeImageAttributeResult result;
+              DescribeImageAttributeResult result;
                 try {
-                    result = describeImageAttribute(describeImageAttributeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeImageAttributeRequest, result);
-                   return result;
-            }
-        });
+                result = describeImageAttribute(describeImageAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeImageAttributeRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -11019,9 +10856,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your key pairs.
      * </p>
      * <p>
-     * For more information about key pairs, see <a
-     * ttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">
-     * Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * For more information about key pairs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeKeyPairsRequest Container for the necessary parameters
@@ -11044,8 +10881,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeKeyPairsResult>() {
             public DescribeKeyPairsResult call() throws Exception {
                 return describeKeyPairs(describeKeyPairsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -11053,9 +10890,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your key pairs.
      * </p>
      * <p>
-     * For more information about key pairs, see <a
-     * ttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">
-     * Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * For more information about key pairs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeKeyPairsRequest Container for the necessary parameters
@@ -11083,17 +10920,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeKeyPairsResult>() {
             public DescribeKeyPairsResult call() throws Exception {
-                DescribeKeyPairsResult result;
+              DescribeKeyPairsResult result;
                 try {
-                    result = describeKeyPairs(describeKeyPairsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeKeyPairsRequest, result);
-                   return result;
-            }
-        });
+                result = describeKeyPairs(describeKeyPairsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeKeyPairsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -11125,8 +10962,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<ConfirmProductInstanceResult>() {
             public ConfirmProductInstanceResult call() throws Exception {
                 return confirmProductInstance(confirmProductInstanceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -11163,17 +11000,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ConfirmProductInstanceResult>() {
             public ConfirmProductInstanceResult call() throws Exception {
-                ConfirmProductInstanceResult result;
+              ConfirmProductInstanceResult result;
                 try {
-                    result = confirmProductInstance(confirmProductInstanceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(confirmProductInstanceRequest, result);
-                   return result;
-            }
-        });
+                result = confirmProductInstance(confirmProductInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(confirmProductInstanceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -11183,10 +11020,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * After you perform this action, the subnet no longer uses the routes in
      * the route table. Instead, it uses the routes in the VPC's main route
-     * table. For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * table. For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param disassociateRouteTableRequest Container for the necessary
@@ -11211,8 +11047,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 disassociateRouteTable(disassociateRouteTableRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -11222,10 +11058,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * After you perform this action, the subnet no longer uses the routes in
      * the route table. Instead, it uses the routes in the VPC's main route
-     * table. For more information about route tables, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
-     * Route Tables </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * table. For more information about route tables, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param disassociateRouteTableRequest Container for the necessary
@@ -11254,16 +11089,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    disassociateRouteTable(disassociateRouteTableRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(disassociateRouteTableRequest, null);
-                   return null;
-            }
-        });
+              try {
+                disassociateRouteTable(disassociateRouteTableRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(disassociateRouteTableRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -11292,8 +11127,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeVpcAttributeResult>() {
             public DescribeVpcAttributeResult call() throws Exception {
                 return describeVpcAttribute(describeVpcAttributeRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -11327,17 +11162,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVpcAttributeResult>() {
             public DescribeVpcAttributeResult call() throws Exception {
-                DescribeVpcAttributeResult result;
+              DescribeVpcAttributeResult result;
                 try {
-                    result = describeVpcAttribute(describeVpcAttributeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeVpcAttributeRequest, result);
-                   return result;
-            }
-        });
+                result = describeVpcAttribute(describeVpcAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeVpcAttributeRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -11379,8 +11214,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 revokeSecurityGroupEgress(revokeSecurityGroupEgressRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -11426,16 +11261,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    revokeSecurityGroupEgress(revokeSecurityGroupEgressRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(revokeSecurityGroupEgressRequest, null);
-                   return null;
-            }
-        });
+              try {
+                revokeSecurityGroupEgress(revokeSecurityGroupEgressRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(revokeSecurityGroupEgressRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -11466,8 +11301,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteNetworkAclEntry(deleteNetworkAclEntryRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -11502,16 +11337,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteNetworkAclEntry(deleteNetworkAclEntryRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteNetworkAclEntryRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteNetworkAclEntry(deleteNetworkAclEntryRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteNetworkAclEntryRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -11524,10 +11359,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * the volume.
      * </p>
      * <p>
-     * For more information, see <a
-     * docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">
-     * Creating or Restoring an Amazon EBS Volume </a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html"> Creating or Restoring an Amazon EBS Volume </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createVolumeRequest Container for the necessary parameters to
@@ -11550,8 +11384,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateVolumeResult>() {
             public CreateVolumeResult call() throws Exception {
                 return createVolume(createVolumeRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -11564,10 +11398,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * the volume.
      * </p>
      * <p>
-     * For more information, see <a
-     * docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">
-     * Creating or Restoring an Amazon EBS Volume </a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html"> Creating or Restoring an Amazon EBS Volume </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createVolumeRequest Container for the necessary parameters to
@@ -11595,17 +11428,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateVolumeResult>() {
             public CreateVolumeResult call() throws Exception {
-                CreateVolumeResult result;
+              CreateVolumeResult result;
                 try {
-                    result = createVolume(createVolumeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createVolumeRequest, result);
-                   return result;
-            }
-        });
+                result = createVolume(createVolumeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createVolumeRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -11717,8 +11550,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeInstanceStatusResult>() {
             public DescribeInstanceStatusResult call() throws Exception {
                 return describeInstanceStatus(describeInstanceStatusRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -11835,17 +11668,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeInstanceStatusResult>() {
             public DescribeInstanceStatusResult call() throws Exception {
-                DescribeInstanceStatusResult result;
+              DescribeInstanceStatusResult result;
                 try {
-                    result = describeInstanceStatus(describeInstanceStatusRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeInstanceStatusRequest, result);
-                   return result;
-            }
-        });
+                result = describeInstanceStatus(describeInstanceStatusRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeInstanceStatusRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -11853,10 +11686,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your virtual private gateways.
      * </p>
      * <p>
-     * For more information about virtual private gateways, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding an IPsec Hardware VPN to Your VPC </a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i> .
+     * For more information about virtual private gateways, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding an IPsec Hardware VPN to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeVpnGatewaysRequest Container for the necessary
@@ -11879,8 +11711,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeVpnGatewaysResult>() {
             public DescribeVpnGatewaysResult call() throws Exception {
                 return describeVpnGateways(describeVpnGatewaysRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -11888,10 +11720,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Describes one or more of your virtual private gateways.
      * </p>
      * <p>
-     * For more information about virtual private gateways, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding an IPsec Hardware VPN to Your VPC </a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i> .
+     * For more information about virtual private gateways, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding an IPsec Hardware VPN to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param describeVpnGatewaysRequest Container for the necessary
@@ -11919,17 +11750,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeVpnGatewaysResult>() {
             public DescribeVpnGatewaysResult call() throws Exception {
-                DescribeVpnGatewaysResult result;
+              DescribeVpnGatewaysResult result;
                 try {
-                    result = describeVpnGateways(describeVpnGatewaysRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeVpnGatewaysRequest, result);
-                   return result;
-            }
-        });
+                result = describeVpnGateways(describeVpnGatewaysRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeVpnGatewaysRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -11955,10 +11786,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * topology with a logical router in the middle.
      * </p>
      * <p>
-     * For more information about subnets, see <a
-     * tp://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">
-     * Your VPC and Subnets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about subnets, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createSubnetRequest Container for the necessary parameters to
@@ -11981,8 +11811,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateSubnetResult>() {
             public CreateSubnetResult call() throws Exception {
                 return createSubnet(createSubnetRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -12008,10 +11838,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * topology with a logical router in the middle.
      * </p>
      * <p>
-     * For more information about subnets, see <a
-     * tp://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">
-     * Your VPC and Subnets </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about subnets, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createSubnetRequest Container for the necessary parameters to
@@ -12039,17 +11868,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateSubnetResult>() {
             public CreateSubnetResult call() throws Exception {
-                CreateSubnetResult result;
+              CreateSubnetResult result;
                 try {
-                    result = createSubnet(createSubnetRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createSubnetRequest, result);
-                   return result;
-            }
-        });
+                result = createSubnet(createSubnetRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createSubnetRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -12061,10 +11890,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * rate charged for On-Demand instances for the actual time used.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeReservedInstancesOfferingsRequest Container for the
@@ -12089,8 +11917,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeReservedInstancesOfferingsResult>() {
             public DescribeReservedInstancesOfferingsResult call() throws Exception {
                 return describeReservedInstancesOfferings(describeReservedInstancesOfferingsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -12102,10 +11930,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * rate charged for On-Demand instances for the actual time used.
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">
-     * Reserved Instance Marketplace </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeReservedInstancesOfferingsRequest Container for the
@@ -12135,17 +11962,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeReservedInstancesOfferingsResult>() {
             public DescribeReservedInstancesOfferingsResult call() throws Exception {
-                DescribeReservedInstancesOfferingsResult result;
+              DescribeReservedInstancesOfferingsResult result;
                 try {
-                    result = describeReservedInstancesOfferings(describeReservedInstancesOfferingsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeReservedInstancesOfferingsRequest, result);
-                   return result;
-            }
-        });
+                result = describeReservedInstancesOfferings(describeReservedInstancesOfferingsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeReservedInstancesOfferingsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -12155,13 +11982,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * addresses, or you can specify the number of secondary IP addresses to
      * be automatically assigned within the subnet's CIDR block range. The
      * number of secondary IP addresses that you can assign to an instance
-     * varies by instance type. For information about instance types, see <a
-     * tp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">
-     * Instance Types </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> . For more information about Elastic IP addresses, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
-     * Elastic IP Addresses </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * varies by instance type. For information about instance types, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"> Instance Types </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> . For more information about Elastic IP addresses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * AssignPrivateIpAddresses is available only in EC2-VPC.
@@ -12189,8 +12012,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 assignPrivateIpAddresses(assignPrivateIpAddressesRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -12200,13 +12023,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * addresses, or you can specify the number of secondary IP addresses to
      * be automatically assigned within the subnet's CIDR block range. The
      * number of secondary IP addresses that you can assign to an instance
-     * varies by instance type. For information about instance types, see <a
-     * tp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">
-     * Instance Types </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> . For more information about Elastic IP addresses, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
-     * Elastic IP Addresses </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * varies by instance type. For information about instance types, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"> Instance Types </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> . For more information about Elastic IP addresses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * AssignPrivateIpAddresses is available only in EC2-VPC.
@@ -12238,16 +12057,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    assignPrivateIpAddresses(assignPrivateIpAddressesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(assignPrivateIpAddressesRequest, null);
-                   return null;
-            }
-        });
+              try {
+                assignPrivateIpAddresses(assignPrivateIpAddressesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(assignPrivateIpAddressesRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -12269,10 +12088,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * before you can delete the snapshot.
      * </p>
      * <p>
-     * For more information, see <a
-     * cs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">
-     * Deleting an Amazon EBS Snapshot </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html"> Deleting an Amazon EBS Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deleteSnapshotRequest Container for the necessary parameters to
@@ -12296,8 +12114,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteSnapshot(deleteSnapshotRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -12319,10 +12137,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * before you can delete the snapshot.
      * </p>
      * <p>
-     * For more information, see <a
-     * cs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">
-     * Deleting an Amazon EBS Snapshot </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html"> Deleting an Amazon EBS Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deleteSnapshotRequest Container for the necessary parameters to
@@ -12350,26 +12167,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteSnapshot(deleteSnapshotRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteSnapshotRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteSnapshot(deleteSnapshotRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteSnapshotRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
      * <p>
      * Changes which network ACL a subnet is associated with. By default when
      * you create a subnet, it's automatically associated with the default
-     * network ACL. For more information about network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * network ACL. For more information about network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param replaceNetworkAclAssociationRequest Container for the necessary
@@ -12393,18 +12209,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<ReplaceNetworkAclAssociationResult>() {
             public ReplaceNetworkAclAssociationResult call() throws Exception {
                 return replaceNetworkAclAssociation(replaceNetworkAclAssociationRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
      * <p>
      * Changes which network ACL a subnet is associated with. By default when
      * you create a subnet, it's automatically associated with the default
-     * network ACL. For more information about network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * network ACL. For more information about network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param replaceNetworkAclAssociationRequest Container for the necessary
@@ -12433,17 +12248,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ReplaceNetworkAclAssociationResult>() {
             public ReplaceNetworkAclAssociationResult call() throws Exception {
-                ReplaceNetworkAclAssociationResult result;
+              ReplaceNetworkAclAssociationResult result;
                 try {
-                    result = replaceNetworkAclAssociation(replaceNetworkAclAssociationRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(replaceNetworkAclAssociationRequest, result);
-                   return result;
-            }
-        });
+                result = replaceNetworkAclAssociation(replaceNetworkAclAssociationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(replaceNetworkAclAssociationRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -12477,8 +12292,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 disassociateAddress(disassociateAddressRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -12516,16 +12331,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    disassociateAddress(disassociateAddressRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(disassociateAddressRequest, null);
-                   return null;
-            }
-        });
+              try {
+                disassociateAddress(disassociateAddressRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(disassociateAddressRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -12536,10 +12351,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * For more information about placement groups and cluster instances, see
-     * <a
-     * .aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
-     * Cluster Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createPlacementGroupRequest Container for the necessary
@@ -12563,8 +12376,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 createPlacementGroup(createPlacementGroupRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -12575,10 +12388,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * For more information about placement groups and cluster instances, see
-     * <a
-     * .aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
-     * Cluster Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createPlacementGroupRequest Container for the necessary
@@ -12606,16 +12417,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    createPlacementGroup(createPlacementGroupRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createPlacementGroupRequest, null);
-                   return null;
-            }
-        });
+              try {
+                createPlacementGroup(createPlacementGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createPlacementGroupRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -12631,9 +12442,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * or Windows instances that are backed by Amazon EBS.
      * </p>
      * <p>
-     * For more information, see <a
-     * /AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html">
-     * Creating an Instance Store-Backed Windows AMI </a> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html"> Creating an Instance Store-Backed Windows AMI </a>
+     * .
      * </p>
      *
      * @param bundleInstanceRequest Container for the necessary parameters to
@@ -12656,8 +12467,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<BundleInstanceResult>() {
             public BundleInstanceResult call() throws Exception {
                 return bundleInstance(bundleInstanceRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -12673,9 +12484,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * or Windows instances that are backed by Amazon EBS.
      * </p>
      * <p>
-     * For more information, see <a
-     * /AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html">
-     * Creating an Instance Store-Backed Windows AMI </a> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html"> Creating an Instance Store-Backed Windows AMI </a>
+     * .
      * </p>
      *
      * @param bundleInstanceRequest Container for the necessary parameters to
@@ -12703,17 +12514,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<BundleInstanceResult>() {
             public BundleInstanceResult call() throws Exception {
-                BundleInstanceResult result;
+              BundleInstanceResult result;
                 try {
-                    result = bundleInstance(bundleInstanceRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(bundleInstanceRequest, result);
-                   return result;
-            }
-        });
+                result = bundleInstance(bundleInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(bundleInstanceRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -12721,10 +12532,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Deletes the specified placement group. You must terminate all
      * instances in the placement group before you can delete the placement
      * group. For more information about placement groups and cluster
-     * instances, see <a
-     * .aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
-     * Cluster Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deletePlacementGroupRequest Container for the necessary
@@ -12748,8 +12558,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deletePlacementGroup(deletePlacementGroupRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -12757,10 +12567,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Deletes the specified placement group. You must terminate all
      * instances in the placement group before you can delete the placement
      * group. For more information about placement groups and cluster
-     * instances, see <a
-     * .aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
-     * Cluster Instances </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param deletePlacementGroupRequest Container for the necessary
@@ -12788,16 +12597,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deletePlacementGroup(deletePlacementGroupRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deletePlacementGroupRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deletePlacementGroup(deletePlacementGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deletePlacementGroupRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -12831,8 +12640,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteVpc(deleteVpcRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -12870,16 +12679,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteVpc(deleteVpcRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteVpcRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteVpc(deleteVpcRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteVpcRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -12890,10 +12699,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * volumes or Amazon Machine Images (AMIs).
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">
-     * Copying an Amazon EBS Snapshot </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html"> Copying an Amazon EBS Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param copySnapshotRequest Container for the necessary parameters to
@@ -12916,8 +12724,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CopySnapshotResult>() {
             public CopySnapshotResult call() throws Exception {
                 return copySnapshot(copySnapshotRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -12928,10 +12736,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * volumes or Amazon Machine Images (AMIs).
      * </p>
      * <p>
-     * For more information, see <a
-     * //docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">
-     * Copying an Amazon EBS Snapshot </a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html"> Copying an Amazon EBS Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param copySnapshotRequest Container for the necessary parameters to
@@ -12959,17 +12766,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CopySnapshotResult>() {
             public CopySnapshotResult call() throws Exception {
-                CopySnapshotResult result;
+              CopySnapshotResult result;
                 try {
-                    result = copySnapshot(copySnapshotRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(copySnapshotRequest, result);
-                   return result;
-            }
-        });
+                result = copySnapshot(copySnapshotRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(copySnapshotRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -12978,10 +12785,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * An Elastic IP address is for use either in the EC2-Classic platform or
-     * in a VPC. For more information, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
-     * Elastic IP Addresses </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * in a VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param allocateAddressRequest Container for the necessary parameters
@@ -13004,8 +12810,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<AllocateAddressResult>() {
             public AllocateAddressResult call() throws Exception {
                 return allocateAddress(allocateAddressRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -13014,10 +12820,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * An Elastic IP address is for use either in the EC2-Classic platform or
-     * in a VPC. For more information, see <a
-     * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
-     * Elastic IP Addresses </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * in a VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param allocateAddressRequest Container for the necessary parameters
@@ -13045,17 +12850,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AllocateAddressResult>() {
             public AllocateAddressResult call() throws Exception {
-                AllocateAddressResult result;
+              AllocateAddressResult result;
                 try {
-                    result = allocateAddress(allocateAddressRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(allocateAddressRequest, result);
-                   return result;
-            }
-        });
+                result = allocateAddress(allocateAddressRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(allocateAddressRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -13103,8 +12908,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 releaseAddress(releaseAddressRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -13156,16 +12961,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    releaseAddress(releaseAddressRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(releaseAddressRequest, null);
-                   return null;
-            }
-        });
+              try {
+                releaseAddress(releaseAddressRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(releaseAddressRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -13180,10 +12985,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * source/destination checking is enabled. The default value is
      * <code>true</code> , which means checking is enabled. This value must
      * be <code>false</code> for a NAT instance to perform NAT. For more
-     * information, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">
-     * NAT Instances </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html"> NAT Instances </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param resetInstanceAttributeRequest Container for the necessary
@@ -13208,8 +13012,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 resetInstanceAttribute(resetInstanceAttributeRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -13224,10 +13028,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * source/destination checking is enabled. The default value is
      * <code>true</code> , which means checking is enabled. This value must
      * be <code>false</code> for a NAT instance to perform NAT. For more
-     * information, see <a
-     * docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">
-     * NAT Instances </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html"> NAT Instances </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param resetInstanceAttributeRequest Container for the necessary
@@ -13256,16 +13059,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    resetInstanceAttribute(resetInstanceAttributeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(resetInstanceAttributeRequest, null);
-                   return null;
-            }
-        });
+              try {
+                resetInstanceAttribute(resetInstanceAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(resetInstanceAttributeRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -13280,9 +13083,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * You can have up to five thousand key pairs per region.
      * </p>
      * <p>
-     * For more information about key pairs, see <a
-     * ttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">
-     * Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * For more information about key pairs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createKeyPairRequest Container for the necessary parameters to
@@ -13305,8 +13108,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateKeyPairResult>() {
             public CreateKeyPairResult call() throws Exception {
                 return createKeyPair(createKeyPairRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -13321,9 +13124,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * You can have up to five thousand key pairs per region.
      * </p>
      * <p>
-     * For more information about key pairs, see <a
-     * ttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">
-     * Key Pairs </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * For more information about key pairs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param createKeyPairRequest Container for the necessary parameters to
@@ -13351,26 +13154,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateKeyPairResult>() {
             public CreateKeyPairResult call() throws Exception {
-                CreateKeyPairResult result;
+              CreateKeyPairResult result;
                 try {
-                    result = createKeyPair(createKeyPairRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createKeyPairRequest, result);
-                   return result;
-            }
-        });
+                result = createKeyPair(createKeyPairRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createKeyPairRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
      * <p>
      * Replaces an entry (rule) in a network ACL. For more information about
-     * network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param replaceNetworkAclEntryRequest Container for the necessary
@@ -13395,17 +13197,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 replaceNetworkAclEntry(replaceNetworkAclEntryRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
      * <p>
      * Replaces an entry (rule) in a network ACL. For more information about
-     * network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param replaceNetworkAclEntryRequest Container for the necessary
@@ -13434,16 +13235,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    replaceNetworkAclEntry(replaceNetworkAclEntryRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(replaceNetworkAclEntryRequest, null);
-                   return null;
-            }
-        });
+              try {
+                replaceNetworkAclEntry(replaceNetworkAclEntryRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(replaceNetworkAclEntryRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -13495,10 +13296,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <code>all</code> for public snapshots.
      * </p>
      * <p>
-     * For more information about Amazon EBS snapshots, see <a
-     * http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">
-     * Amazon EBS Snapshots </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Amazon EBS snapshots, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeSnapshotsRequest Container for the necessary parameters
@@ -13521,8 +13321,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeSnapshotsResult>() {
             public DescribeSnapshotsResult call() throws Exception {
                 return describeSnapshots(describeSnapshotsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -13574,10 +13374,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <code>all</code> for public snapshots.
      * </p>
      * <p>
-     * For more information about Amazon EBS snapshots, see <a
-     * http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">
-     * Amazon EBS Snapshots </a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i> .
+     * For more information about Amazon EBS snapshots, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeSnapshotsRequest Container for the necessary parameters
@@ -13605,17 +13404,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSnapshotsResult>() {
             public DescribeSnapshotsResult call() throws Exception {
-                DescribeSnapshotsResult result;
+              DescribeSnapshotsResult result;
                 try {
-                    result = describeSnapshots(describeSnapshotsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeSnapshotsRequest, result);
-                   return result;
-            }
-        });
+                result = describeSnapshots(describeSnapshotsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeSnapshotsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -13625,10 +13424,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * VPC.
      * </p>
      * <p>
-     * For more information about network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createNetworkAclRequest Container for the necessary parameters
@@ -13651,8 +13449,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<CreateNetworkAclResult>() {
             public CreateNetworkAclResult call() throws Exception {
                 return createNetworkAcl(createNetworkAclRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -13662,10 +13460,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * VPC.
      * </p>
      * <p>
-     * For more information about network ACLs, see <a
-     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">
-     * Network ACLs </a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i> .
+     * For more information about network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createNetworkAclRequest Container for the necessary parameters
@@ -13693,27 +13490,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateNetworkAclResult>() {
             public CreateNetworkAclResult call() throws Exception {
-                CreateNetworkAclResult result;
+              CreateNetworkAclResult result;
                 try {
-                    result = createNetworkAcl(createNetworkAclRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createNetworkAclRequest, result);
-                   return result;
-            }
-        });
+                result = createNetworkAcl(createNetworkAclRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createNetworkAclRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
      * <p>
      * Registers an AMI. When you're creating an AMI, this is the final step
      * you must complete before you can launch an instance from the AMI. For
-     * more information about creating AMIs, see <a
-     * p://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">
-     * Creating Your Own AMIs </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * more information about creating AMIs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html"> Creating Your Own AMIs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> For Amazon EBS-backed instances, CreateImage creates and
@@ -13723,10 +13519,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * You can also use <code>RegisterImage</code> to create an Amazon
      * EBS-backed AMI from a snapshot of a root device volume. For more
-     * information, see <a
-     * com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">
-     * Launching an Instance from a Snapshot </a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i> .
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html"> Launching an Instance from a Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * If needed, you can deregister an AMI at any time. Any modifications
@@ -13759,18 +13554,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<RegisterImageResult>() {
             public RegisterImageResult call() throws Exception {
                 return registerImage(registerImageRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
      * <p>
      * Registers an AMI. When you're creating an AMI, this is the final step
      * you must complete before you can launch an instance from the AMI. For
-     * more information about creating AMIs, see <a
-     * p://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">
-     * Creating Your Own AMIs </a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i> .
+     * more information about creating AMIs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html"> Creating Your Own AMIs </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> For Amazon EBS-backed instances, CreateImage creates and
@@ -13780,10 +13574,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * You can also use <code>RegisterImage</code> to create an Amazon
      * EBS-backed AMI from a snapshot of a root device volume. For more
-     * information, see <a
-     * com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">
-     * Launching an Instance from a Snapshot </a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i> .
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html"> Launching an Instance from a Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * If needed, you can deregister an AMI at any time. Any modifications
@@ -13821,17 +13614,17 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RegisterImageResult>() {
             public RegisterImageResult call() throws Exception {
-                RegisterImageResult result;
+              RegisterImageResult result;
                 try {
-                    result = registerImage(registerImageRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(registerImageRequest, result);
-                   return result;
-            }
-        });
+                result = registerImage(registerImageRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(registerImageRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -13863,8 +13656,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 resetNetworkInterfaceAttribute(resetNetworkInterfaceAttributeRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -13900,16 +13693,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    resetNetworkInterfaceAttribute(resetNetworkInterfaceAttributeRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(resetNetworkInterfaceAttributeRequest, null);
-                   return null;
-            }
-        });
+              try {
+                resetNetworkInterfaceAttribute(resetNetworkInterfaceAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(resetNetworkInterfaceAttributeRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -13920,10 +13713,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * gateway to the VPN customer gateway.
      * </p>
      * <p>
-     * For more information about VPN connections, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN connections, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createVpnConnectionRouteRequest Container for the necessary
@@ -13948,8 +13740,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 createVpnConnectionRoute(createVpnConnectionRouteRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -13960,10 +13752,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * gateway to the VPN customer gateway.
      * </p>
      * <p>
-     * For more information about VPN connections, see <a
-     * ="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">
-     * Adding a Hardware Virtual Private Gateway to Your VPC </a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i> .
+     * For more information about VPN connections, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
      * @param createVpnConnectionRouteRequest Container for the necessary
@@ -13992,16 +13783,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    createVpnConnectionRoute(createVpnConnectionRouteRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createVpnConnectionRouteRequest, null);
-                   return null;
-            }
-        });
+              try {
+                createVpnConnectionRoute(createVpnConnectionRouteRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createVpnConnectionRouteRequest, null);
+                 return null;
+        }
+    });
     }
     
 }

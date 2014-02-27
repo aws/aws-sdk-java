@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A response message that contains the status of an updated <code>RankExpression</code> .
+ * A response message that contains the status of an updated
+ * <code>RankExpression</code> .
  * </p>
  */
 public class DefineRankExpressionResult implements Serializable {

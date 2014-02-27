@@ -23,12 +23,14 @@ import com.amazonaws.services.ec2.model.transform.CreatePlacementGroupRequestMar
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createPlacementGroup(CreatePlacementGroupRequest) CreatePlacementGroup operation}.
  * <p>
- * Creates a placement group that you launch cluster instances into. You must give the group a name that's unique within the scope of your account.
+ * Creates a placement group that you launch cluster instances into. You
+ * must give the group a name that's unique within the scope of your
+ * account.
  * </p>
  * <p>
- * For more information about placement groups and cluster instances, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a> in the <i>Amazon Elastic Compute Cloud
- * User Guide</i> .
+ * For more information about placement groups and cluster instances, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createPlacementGroup(CreatePlacementGroupRequest)

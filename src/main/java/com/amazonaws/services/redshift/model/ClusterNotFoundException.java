@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+ * The <i>ClusterIdentifier</i> parameter does not refer to an existing
+ * cluster.
  * </p>
  */        
 public class ClusterNotFoundException extends AmazonServiceException {

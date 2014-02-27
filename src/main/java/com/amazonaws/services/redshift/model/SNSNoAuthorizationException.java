@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * You do not have permission to publish to the specified Amazon SNS topic.
+ * You do not have permission to publish to the specified Amazon SNS
+ * topic.
  * </p>
  */        
 public class SNSNoAuthorizationException extends AmazonServiceException {

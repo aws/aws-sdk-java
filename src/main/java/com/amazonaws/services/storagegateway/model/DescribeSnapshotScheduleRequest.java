@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#describeSnapshotSchedule(DescribeSnapshotScheduleRequest) DescribeSnapshotSchedule operation}.
  * <p>
- * This operation describes the snapshot schedule for the specified gateway volume. The snapshot schedule information includes intervals at which
- * snapshots are automatically initiated on the volume.
+ * This operation describes the snapshot schedule for the specified
+ * gateway volume. The snapshot schedule information includes intervals
+ * at which snapshots are automatically initiated on the volume.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeSnapshotSchedule(DescribeSnapshotScheduleRequest)

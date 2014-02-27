@@ -26,8 +26,9 @@ import com.amazonaws.services.ec2.model.transform.CreateNetworkInterfaceRequestM
  * Creates a network interface in the specified subnet.
  * </p>
  * <p>
- * For more information about network interfaces, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html"> Elastic Network
- * Interfaces </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information about network interfaces, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html"> Elastic Network Interfaces </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createNetworkInterface(CreateNetworkInterfaceRequest)

@@ -23,9 +23,12 @@ import com.amazonaws.services.ec2.model.transform.DeleteVpcRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteVpc(DeleteVpcRequest) DeleteVpc operation}.
  * <p>
- * Deletes the specified VPC. You must detach or delete all gateways and resources that are associated with the VPC before you can delete it. For
- * example, you must terminate all instances running in the VPC, delete all security groups associated with the VPC (except the default one), delete all
- * route tables associated with the VPC (except the default one), and so on.
+ * Deletes the specified VPC. You must detach or delete all gateways and
+ * resources that are associated with the VPC before you can delete it.
+ * For example, you must terminate all instances running in the VPC,
+ * delete all security groups associated with the VPC (except the default
+ * one), delete all route tables associated with the VPC (except the
+ * default one), and so on.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpc(DeleteVpcRequest)

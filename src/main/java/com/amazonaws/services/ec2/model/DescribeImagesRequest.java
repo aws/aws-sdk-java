@@ -23,11 +23,14 @@ import com.amazonaws.services.ec2.model.transform.DescribeImagesRequestMarshalle
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeImages(DescribeImagesRequest) DescribeImages operation}.
  * <p>
- * Describes one or more of the images (AMIs, AKIs, and ARIs) available to you. Images available to you include public images, private images that you
- * own, and private images owned by other AWS accounts but for which you have explicit launch permissions.
+ * Describes one or more of the images (AMIs, AKIs, and ARIs) available
+ * to you. Images available to you include public images, private images
+ * that you own, and private images owned by other AWS accounts but for
+ * which you have explicit launch permissions.
  * </p>
  * <p>
- * <b>NOTE:</b> Deregistered images are included in the returned results for an unspecified interval after deregistration.
+ * <b>NOTE:</b> Deregistered images are included in the returned results
+ * for an unspecified interval after deregistration.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeImages(DescribeImagesRequest)

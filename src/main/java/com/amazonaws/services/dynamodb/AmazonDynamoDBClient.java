@@ -138,7 +138,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     /**
      * List of exception unmarshallers for all AmazonDynamoDB exceptions.
      */
-    protected List<Unmarshaller<AmazonServiceException, JSONObject>> exceptionUnmarshallers;
+    protected List<JsonErrorUnmarshaller> exceptionUnmarshallers;
 
 
     /** AWS signer for authenticating requests. */
@@ -316,7 +316,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     }
 
     private void init() {
-        exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, JSONObject>>();
+        exceptionUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
         exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InternalServerErrorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ProvisionedThroughputExceededExceptionUnmarshaller());

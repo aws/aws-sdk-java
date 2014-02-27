@@ -18,7 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result.
+ * Used to filter workflow execution query results by type. Each
+ * parameter, if specified, defines a rule that must be satisfied by each
+ * returned result.
  * </p>
  */
 public class WorkflowTypeFilter implements Serializable {

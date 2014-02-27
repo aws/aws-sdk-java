@@ -18,8 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the body of the message. You can specify text, HTML, or both. If you use both, then the message should display correctly in the widest
- * variety of email clients.
+ * Represents the body of the message. You can specify text, HTML, or
+ * both. If you use both, then the message should display correctly in
+ * the widest variety of email clients.
  * </p>
  */
 public class Body implements Serializable {

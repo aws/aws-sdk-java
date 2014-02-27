@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that controls whether access logs are written for this streaming distribution.
+ * A complex type that controls whether access logs are written for this
+ * streaming distribution.
  * </p>
  */
 public class StreamingLoggingConfig implements Serializable {

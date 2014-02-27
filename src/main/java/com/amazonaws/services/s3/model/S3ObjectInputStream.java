@@ -39,9 +39,18 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
     private final HttpRequestBase httpRequest;
 
     public S3ObjectInputStream(InputStream in, HttpRequestBase httpRequest) {
-        super(wrapWithByteCounting(in)
-            ? new MetricFilterInputStream(S3ServiceMetric.S3DownloadThroughput, in)
-            : in);
+        this(in, httpRequest, wrapWithByteCounting(in));
+    }
+
+    public S3ObjectInputStream(
+            InputStream in,
+            HttpRequestBase httpRequest,
+            boolean collectMetrics) {
+
+        super(collectMetrics
+                ? new MetricFilterInputStream(S3ServiceMetric.S3DownloadThroughput, in)
+                : in);
+
         this.httpRequest = httpRequest;
     }
 
@@ -72,13 +81,13 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
      * to clients to decide when to take the performance hit implicit in not
      * reusing an http connection in order to not read unnecessary information
      * from S3.
-     * 
+     *
      * @see EofSensorInputStream
      */
     public void abort() throws IOException {
         getHttpRequest().abort();
         try {
-            close();            
+            close();
         } catch (SocketException e) {
             // expected from some implementations because the stream is closed
         }

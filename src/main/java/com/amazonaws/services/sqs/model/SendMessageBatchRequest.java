@@ -21,27 +21,38 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#sendMessageBatch(SendMessageBatchRequest) SendMessageBatch operation}.
  * <p>
- * Delivers up to ten messages to the specified queue. This is a batch version of SendMessage. The result of the send action on each message is reported
- * individually in the response. The maximum allowed individual message size is 256 KB (262,144 bytes).
+ * Delivers up to ten messages to the specified queue. This is a batch
+ * version of SendMessage. The result of the send action on each message
+ * is reported individually in the response. The maximum allowed
+ * individual message size is 256 KB (262,144 bytes).
  * </p>
  * <p>
- * The maximum total payload size (i.e., the sum of all a batch's individual message lengths) is also 256 KB (262,144 bytes).
+ * The maximum total payload size (i.e., the sum of all a batch's
+ * individual message lengths) is also 256 KB (262,144 bytes).
  * </p>
  * <p>
- * If the <code>DelaySeconds</code> parameter is not specified for an entry, the default for the queue is used.
+ * If the <code>DelaySeconds</code> parameter is not specified for an
+ * entry, the default for the queue is used.
  * </p>
  * <p>
- * <b>IMPORTANT:</b>The following list shows the characters (in Unicode) that are allowed in your message, according to the W3C XML specification. For
- * more information, go to http://www.faqs.org/rfcs/rfc1321.html. If you send any characters that are not included in the list, your request will be
- * rejected. #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF]
+ * <b>IMPORTANT:</b>The following list shows the characters (in Unicode)
+ * that are allowed in your message, according to the W3C XML
+ * specification. For more information, go to
+ * http://www.faqs.org/rfcs/rfc1321.html. If you send any characters that
+ * are not included in the list, your request will be rejected. #x9 | #xA
+ * | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF]
  * </p>
  * <p>
- * <b>IMPORTANT:</b> Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even
- * when the call returns an HTTP status code of 200.
+ * <b>IMPORTANT:</b> Because the batch request can result in a
+ * combination of successful and unsuccessful actions, you should check
+ * for batch errors even when the call returns an HTTP status code of
+ * 200.
  * </p>
  * <p>
- * <b>NOTE:</b>Some API actions take lists of parameters. These lists are specified using the param.n notation. Values of n are integers starting from 1.
- * For example, a parameter list with two elements looks like this:
+ * <b>NOTE:</b>Some API actions take lists of parameters. These lists are
+ * specified using the param.n notation. Values of n are integers
+ * starting from 1. For example, a parameter list with two elements looks
+ * like this:
  * </p>
  * <p>
  * <code>&Attribute.1=this</code>

@@ -21,15 +21,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#updateSnapshotSchedule(UpdateSnapshotScheduleRequest) UpdateSnapshotSchedule operation}.
  * <p>
- * This operation updates a snapshot schedule configured for a gateway volume.
+ * This operation updates a snapshot schedule configured for a gateway
+ * volume.
  * </p>
  * <p>
- * The default snapshot schedule for volume is once every 24 hours, starting at the creation time of the volume. You can use this API to change the
- * snapshot schedule configured for the volume.
+ * The default snapshot schedule for volume is once every 24 hours,
+ * starting at the creation time of the volume. You can use this API to
+ * change the snapshot schedule configured for the volume.
  * </p>
  * <p>
- * In the request you must identify the gateway volume whose snapshot schedule you want to update, and the schedule information, including when you want
- * the snapshot to begin on a day and the frequency (in hours) of snapshots.
+ * In the request you must identify the gateway volume whose snapshot
+ * schedule you want to update, and the schedule information, including
+ * when you want the snapshot to begin on a day and the frequency (in
+ * hours) of snapshots.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#updateSnapshotSchedule(UpdateSnapshotScheduleRequest)

@@ -18,9 +18,10 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The S3 bucket name is invalid. For more information about naming rules, go to <a
- * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html"> Bucket Restrictions and Limitations </a> in the Amazon Simple Storage
- * Service (S3) Developer Guide.
+ * The S3 bucket name is invalid. For more information about naming
+ * rules, go to
+ * <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html"> Bucket Restrictions and Limitations </a>
+ * in the Amazon Simple Storage Service (S3) Developer Guide.
  * </p>
  */        
 public class InvalidS3BucketNameException extends AmazonServiceException {

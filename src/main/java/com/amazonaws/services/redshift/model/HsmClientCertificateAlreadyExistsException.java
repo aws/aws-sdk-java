@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * There is already an existing Amazon Redshift HSM client certificate with the specified identifier.
+ * There is already an existing Amazon Redshift HSM client certificate
+ * with the specified identifier.
  * </p>
  */        
 public class HsmClientCertificateAlreadyExistsException extends AmazonServiceException {

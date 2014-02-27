@@ -26,14 +26,21 @@ public class TrailNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller {
         super(TrailNotFoundException.class);
     }
 
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands.
-        String errorCode = parseErrorCode(json);
-        if (errorCode == null || !errorCode.equals("TrailNotFoundException"))
-            return null;
+    @Override
+    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
+        if (errorTypeFromHeader == null) {
+            // Parse error type from the JSON content if it's not available in the response headers
+            String errorCodeFromContent = parseErrorCode(json);
+            return (errorCodeFromContent != null && errorCodeFromContent.equals("TrailNotFoundException"));
+        } else {
+            return errorTypeFromHeader.equals("TrailNotFoundException");
+        }
+    }
 
+    @Override
+    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         TrailNotFoundException e = (TrailNotFoundException)super.unmarshall(json);
+        e.setErrorCode("TrailNotFoundException");
 
         return e;
     }

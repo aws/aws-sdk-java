@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Returned if the request results in a vault or account limit being exceeded.
+ * Returned if the request results in a vault or account limit being
+ * exceeded.
  * </p>
  */        
 public class LimitExceededException extends AmazonServiceException {

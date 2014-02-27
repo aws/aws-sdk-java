@@ -23,8 +23,9 @@ import com.amazonaws.services.ec2.model.transform.DetachInternetGatewayRequestMa
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#detachInternetGateway(DetachInternetGatewayRequest) DetachInternetGateway operation}.
  * <p>
- * Detaches an Internet gateway from a VPC, disabling connectivity between the Internet and the VPC. The VPC must not contain any running instances with
- * Elastic IP addresses.
+ * Detaches an Internet gateway from a VPC, disabling connectivity
+ * between the Internet and the VPC. The VPC must not contain any running
+ * instances with Elastic IP addresses.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#detachInternetGateway(DetachInternetGatewayRequest)

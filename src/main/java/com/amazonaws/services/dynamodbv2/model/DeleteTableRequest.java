@@ -21,15 +21,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#deleteTable(DeleteTableRequest) DeleteTable operation}.
  * <p>
- * The <i>DeleteTable</i> operation deletes a table and all of its items. After a <i>DeleteTable</i> request, the specified table is in the
- * <code>DELETING</code> state until Amazon DynamoDB completes the deletion. If the table is in the <code>ACTIVE</code> state, you can delete it. If a
- * table is in <code>CREATING</code> or <code>UPDATING</code> states, then Amazon DynamoDB returns a
- * <i>ResourceInUseException</i> . If the specified table does not exist, Amazon DynamoDB returns a <i>ResourceNotFoundException</i>
- * . If table is already in the <code>DELETING</code> state, no error is returned.
+ * The <i>DeleteTable</i> operation deletes a table and all of its items.
+ * After a <i>DeleteTable</i> request, the specified table is in the
+ * <code>DELETING</code> state until DynamoDB completes the deletion. If
+ * the table is in the <code>ACTIVE</code> state, you can delete it. If a
+ * table is in <code>CREATING</code> or <code>UPDATING</code> states,
+ * then DynamoDB returns a
+ * <i>ResourceInUseException</i> . If the specified
+ * table does not exist, DynamoDB returns a
+ * <i>ResourceNotFoundException</i> . If table is already in the
+ * <code>DELETING</code> state, no error is returned.
  * </p>
  * <p>
- * <b>NOTE:</b> Amazon DynamoDB might continue to accept data read and write operations, such as GetItem and PutItem, on a table in the DELETING state
- * until the table deletion is complete.
+ * <b>NOTE:</b> DynamoDB might continue to accept data read and write
+ * operations, such as GetItem and PutItem, on a table in the DELETING
+ * state until the table deletion is complete.
  * </p>
  * <p>
  * When you delete a table, any indexes on that table are also deleted.

@@ -21,11 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#setInstanceHealth(SetInstanceHealthRequest) SetInstanceHealth operation}.
  * <p>
- * Sets the health status of a specified instance that belongs to any of your Auto Scaling groups.
+ * Sets the health status of a specified instance that belongs to any of
+ * your Auto Scaling groups.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-configure-healthcheck.html"> Configure Health
- * Checks for Your Auto Scaling group </a> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-configure-healthcheck.html"> Configure Health Checks for Your Auto Scaling group </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#setInstanceHealth(SetInstanceHealthRequest)

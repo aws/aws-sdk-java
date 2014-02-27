@@ -21,21 +21,29 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#updateTable(UpdateTableRequest) UpdateTable operation}.
  * <p>
- * Updates the provisioned throughput for the given table. Setting the throughput for a table helps you manage performance and is part of the provisioned
- * throughput feature of Amazon DynamoDB.
+ * Updates the provisioned throughput for the given table. Setting the
+ * throughput for a table helps you manage performance and is part of the
+ * provisioned throughput feature of DynamoDB.
  * </p>
  * <p>
- * The provisioned throughput values can be upgraded or downgraded based on the maximums and minimums listed in the <a
- * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html"> Limits </a> section in the Amazon DynamoDB Developer Guide.
+ * The provisioned throughput values can be upgraded or downgraded based
+ * on the maximums and minimums listed in the
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html"> Limits </a>
+ * section in the Amazon DynamoDB Developer Guide.
  * </p>
  * <p>
- * The table must be in the <code>ACTIVE</code> state for this operation to succeed. <i>UpdateTable</i> is an asynchronous operation; while executing the
- * operation, the table is in the <code>UPDATING</code> state. While the table is in the <code>UPDATING</code> state, the table still has the provisioned
- * throughput from before the call. The new provisioned throughput setting is in effect only when the table returns to the <code>ACTIVE</code> state
- * after the <i>UpdateTable</i> operation.
+ * The table must be in the <code>ACTIVE</code> state for this operation
+ * to succeed. <i>UpdateTable</i> is an asynchronous operation; while
+ * executing the operation, the table is in the <code>UPDATING</code>
+ * state. While the table is in the <code>UPDATING</code> state, the
+ * table still has the provisioned throughput from before the call. The
+ * new provisioned throughput setting is in effect only when the table
+ * returns to the <code>ACTIVE</code> state after the <i>UpdateTable</i>
+ * operation.
  * </p>
  * <p>
- * You cannot add, modify or delete indexes using <i>UpdateTable</i> . Indexes can only be defined at table creation time.
+ * You cannot add, modify or delete indexes using <i>UpdateTable</i> .
+ * Indexes can only be defined at table creation time.
  * </p>
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#updateTable(UpdateTableRequest)

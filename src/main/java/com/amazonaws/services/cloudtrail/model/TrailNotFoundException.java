@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This exception is thrown when the trail with the given name is not found.
+ * This exception is thrown when the trail with the given name is not
+ * found.
  * </p>
  */        
 public class TrailNotFoundException extends AmazonServiceException {

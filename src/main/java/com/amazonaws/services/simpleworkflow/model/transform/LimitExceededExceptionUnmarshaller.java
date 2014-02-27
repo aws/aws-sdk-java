@@ -26,14 +26,21 @@ public class LimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller {
         super(LimitExceededException.class);
     }
 
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands.
-        String errorCode = parseErrorCode(json);
-        if (errorCode == null || !errorCode.equals("LimitExceededFault"))
-            return null;
+    @Override
+    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
+        if (errorTypeFromHeader == null) {
+            // Parse error type from the JSON content if it's not available in the response headers
+            String errorCodeFromContent = parseErrorCode(json);
+            return (errorCodeFromContent != null && errorCodeFromContent.equals("LimitExceededFault"));
+        } else {
+            return errorTypeFromHeader.equals("LimitExceededFault");
+        }
+    }
 
+    @Override
+    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         LimitExceededException e = (LimitExceededException)super.unmarshall(json);
+        e.setErrorCode("LimitExceededFault");
 
         return e;
     }

@@ -21,13 +21,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#createHsmConfiguration(CreateHsmConfigurationRequest) CreateHsmConfiguration operation}.
  * <p>
- * Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and retrieve database encryption keys in a
- * Hardware Storeage Module (HSM). After creating the HSM configuration, you can specify it as a parameter when creating a cluster. The cluster will then
- * store its encryption keys in the HSM.
+ * Creates an HSM configuration that contains the information required by
+ * an Amazon Redshift cluster to store and retrieve database encryption
+ * keys in a Hardware Storeage Module (HSM). After creating the HSM
+ * configuration, you can specify it as a parameter when creating a
+ * cluster. The cluster will then store its encryption keys in the HSM.
  * </p>
  * <p>
- * Before creating an HSM configuration, you must have first created an HSM client certificate. For more information, go to aLinkToHSMTopic in the Amazon
- * Redshift Management Guide.
+ * Before creating an HSM configuration, you must have first created an
+ * HSM client certificate. For more information, go to aLinkToHSMTopic in
+ * the Amazon Redshift Management Guide.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createHsmConfiguration(CreateHsmConfigurationRequest)

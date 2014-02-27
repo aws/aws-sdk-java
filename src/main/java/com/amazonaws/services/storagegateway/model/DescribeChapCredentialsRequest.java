@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#describeChapCredentials(DescribeChapCredentialsRequest) DescribeChapCredentials operation}.
  * <p>
- * This operation returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials information for a specified iSCSI target, one for
- * each target-initiator pair.
+ * This operation returns an array of Challenge-Handshake Authentication
+ * Protocol (CHAP) credentials information for a specified iSCSI target,
+ * one for each target-initiator pair.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeChapCredentials(DescribeChapCredentialsRequest)

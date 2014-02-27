@@ -21,18 +21,24 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#putPipelineDefinition(PutPipelineDefinitionRequest) PutPipelineDefinition operation}.
  * <p>
- * Adds tasks, schedules, and preconditions that control the behavior of the pipeline. You can use PutPipelineDefinition to populate a new pipeline or to
- * update an existing pipeline that has not yet been activated.
+ * Adds tasks, schedules, and preconditions that control the behavior of
+ * the pipeline. You can use PutPipelineDefinition to populate a new
+ * pipeline or to update an existing pipeline that has not yet been
+ * activated.
  * </p>
  * <p>
- * PutPipelineDefinition also validates the configuration as it adds it to the pipeline. Changes to the pipeline are saved unless one of the following
- * three validation errors exists in the pipeline. <ol> <li>An object is missing a name or identifier field.</li>
+ * PutPipelineDefinition also validates the configuration as it adds it
+ * to the pipeline. Changes to the pipeline are saved unless one of the
+ * following three validation errors exists in the pipeline. <ol> <li>An
+ * object is missing a name or identifier field.</li>
  * <li>A string or reference field is empty.</li>
- * <li>The number of objects in the pipeline exceeds the maximum allowed objects.</li>
+ * <li>The number of objects in the pipeline exceeds the maximum allowed
+ * objects.</li>
  * </ol>
  * </p>
  * <p>
- * Pipeline object definitions are passed to the PutPipelineDefinition action and returned by the GetPipelineDefinition action.
+ * Pipeline object definitions are passed to the PutPipelineDefinition
+ * action and returned by the GetPipelineDefinition action.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#putPipelineDefinition(PutPipelineDefinitionRequest)

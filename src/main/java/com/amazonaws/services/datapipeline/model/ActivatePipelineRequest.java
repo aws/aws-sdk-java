@@ -21,11 +21,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#activatePipeline(ActivatePipelineRequest) ActivatePipeline operation}.
  * <p>
- * Validates a pipeline and initiates processing. If the pipeline does not pass validation, activation fails.
+ * Validates a pipeline and initiates processing. If the pipeline does
+ * not pass validation, activation fails.
  * </p>
  * <p>
- * Call this action to start processing pipeline tasks of a pipeline you've created using the CreatePipeline and PutPipelineDefinition actions. A
- * pipeline cannot be modified after it has been successfully activated.
+ * Call this action to start processing pipeline tasks of a pipeline
+ * you've created using the CreatePipeline and PutPipelineDefinition
+ * actions. A pipeline cannot be modified after it has been successfully
+ * activated.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#activatePipeline(ActivatePipelineRequest)

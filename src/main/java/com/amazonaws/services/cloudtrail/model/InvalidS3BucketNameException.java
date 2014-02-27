@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This exception is thrown when the provided S3 bucket name is not valid.
+ * This exception is thrown when the provided S3 bucket name is not
+ * valid.
  * </p>
  */        
 public class InvalidS3BucketNameException extends AmazonServiceException {

@@ -18,7 +18,9 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The web identity token that was passed could not be validated by AWS. Get a new identity token from the identity provider and then retry the request.
+ * The web identity token that was passed could not be validated by AWS.
+ * Get a new identity token from the identity provider and then retry the
+ * request.
  * </p>
  */        
 public class InvalidIdentityTokenException extends AmazonServiceException {

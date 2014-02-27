@@ -21,8 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest) DeleteVpnConnectionRoute operation}.
  * <p>
- * Deletes the specified static route associated with a VPN connection between an existing virtual private gateway and a VPN customer gateway. The static
- * route allows traffic to be routed from the virtual private gateway to the VPN customer gateway.
+ * Deletes the specified static route associated with a VPN connection
+ * between an existing virtual private gateway and a VPN customer
+ * gateway. The static route allows traffic to be routed from the virtual
+ * private gateway to the VPN customer gateway.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest)

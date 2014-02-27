@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#deleteChapCredentials(DeleteChapCredentialsRequest) DeleteChapCredentials operation}.
  * <p>
- * This operation deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target and initiator pair.
+ * This operation deletes Challenge-Handshake Authentication Protocol
+ * (CHAP) credentials for a specified iSCSI target and initiator pair.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#deleteChapCredentials(DeleteChapCredentialsRequest)

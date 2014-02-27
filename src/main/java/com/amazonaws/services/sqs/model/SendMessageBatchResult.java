@@ -18,8 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * For each message in the batch, the response contains a SendMessageBatchResultEntry tag if the message succeeds or a BatchResultErrorEntry tag if the
- * message fails.
+ * For each message in the batch, the response contains a
+ * SendMessageBatchResultEntry tag if the message succeeds or a
+ * BatchResultErrorEntry tag if the message fails.
  * </p>
  */
 public class SendMessageBatchResult implements Serializable {

@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request cannot be processed because it would exceed the allowed number of cache security groups.
+ * The request cannot be processed because it would exceed the allowed
+ * number of cache security groups.
  * </p>
  */        
 public class CacheSecurityGroupQuotaExceededException extends AmazonServiceException {

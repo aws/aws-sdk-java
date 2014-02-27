@@ -18,8 +18,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that lists the AWS accounts, if any, that you included in the TrustedSigners complex type for the default cache behavior or for any of
- * the other cache behaviors for this distribution. These are accounts that you want to allow to create signed URLs for private content.
+ * A complex type that lists the AWS accounts, if any, that you included
+ * in the TrustedSigners complex type for the default cache behavior or
+ * for any of the other cache behaviors for this distribution. These are
+ * accounts that you want to allow to create signed URLs for private
+ * content.
  * </p>
  */
 public class ActiveTrustedSigners implements Serializable {

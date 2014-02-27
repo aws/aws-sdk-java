@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Request would result in user exceeding the allowed number of DB snapshots.
+ * Request would result in user exceeding the allowed number of DB
+ * snapshots.
  * </p>
  */        
 public class SnapshotQuotaExceededException extends AmazonServiceException {

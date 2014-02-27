@@ -26,8 +26,9 @@ import com.amazonaws.services.ec2.model.transform.DescribeSubnetsRequestMarshall
  * Describes one or more of your subnets.
  * </p>
  * <p>
- * For more information about subnets, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a> in
- * the <i>Amazon Virtual Private Cloud User Guide</i> .
+ * For more information about subnets, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSubnets(DescribeSubnetsRequest)

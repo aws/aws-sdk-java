@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The settings to be applied to the replication group, either immediately or during the next maintenance window.
+ * The settings to be applied to the replication group, either
+ * immediately or during the next maintenance window.
  * </p>
  */
 public class ReplicationGroupPendingModifiedValues implements Serializable {

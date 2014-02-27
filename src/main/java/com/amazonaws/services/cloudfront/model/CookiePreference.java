@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that specifies the cookie preferences associated with this cache behavior.
+ * A complex type that specifies the cookie preferences associated with
+ * this cache behavior.
  * </p>
  */
 public class CookiePreference implements Serializable {

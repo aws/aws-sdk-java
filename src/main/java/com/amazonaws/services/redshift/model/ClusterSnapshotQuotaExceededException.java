@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request would result in the user exceeding the allowed number of cluster snapshots.
+ * The request would result in the user exceeding the allowed number of
+ * cluster snapshots.
  * </p>
  */        
 public class ClusterSnapshotQuotaExceededException extends AmazonServiceException {

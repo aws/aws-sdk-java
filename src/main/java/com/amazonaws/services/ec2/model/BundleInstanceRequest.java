@@ -26,14 +26,17 @@ import com.amazonaws.services.ec2.model.transform.BundleInstanceRequestMarshalle
  * Bundles an Amazon instance store-backed Windows instance.
  * </p>
  * <p>
- * During bundling, only the root device volume (C:\) is bundled. Data on other instance store volumes is not preserved.
+ * During bundling, only the root device volume (C:\) is bundled. Data on
+ * other instance store volumes is not preserved.
  * </p>
  * <p>
- * <b>NOTE:</b> This procedure is not applicable for Linux/Unix instances or Windows instances that are backed by Amazon EBS.
+ * <b>NOTE:</b> This procedure is not applicable for Linux/Unix instances
+ * or Windows instances that are backed by Amazon EBS.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html"> Creating an
- * Instance Store-Backed Windows AMI </a> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html"> Creating an Instance Store-Backed Windows AMI </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#bundleInstance(BundleInstanceRequest)

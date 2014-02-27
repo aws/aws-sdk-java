@@ -41,12 +41,16 @@ import com.amazonaws.services.elasticmapreduce.model.transform.*;
  * completes.
  * <p>
  * <p>
- * This is the <i>Amazon Elastic MapReduce API Reference</i> . This guide provides descriptions and samples of the Amazon Elastic MapReduce APIs.
+ * This is the <i>Amazon Elastic MapReduce API Reference</i> . This
+ * guide provides descriptions and samples of the Amazon Elastic
+ * MapReduce APIs.
  * </p>
  * <p>
- * Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process large amounts of data efficiently. Amazon EMR uses Hadoop
- * processing combined with several AWS products to do tasks such as web indexing, data mining, log file analysis, machine learning, scientific
- * simulation, and data warehousing.
+ * Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it
+ * easy to process large amounts of data efficiently. Amazon EMR uses
+ * Hadoop processing combined with several AWS products to do tasks such
+ * as web indexing, data mining, log file analysis, machine learning,
+ * scientific simulation, and data warehousing.
  * </p>
  */
 public class AmazonElasticMapReduceClient extends AmazonWebServiceClient implements AmazonElasticMapReduce {
@@ -59,7 +63,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     /**
      * List of exception unmarshallers for all AmazonElasticMapReduce exceptions.
      */
-    protected List<Unmarshaller<AmazonServiceException, JSONObject>> exceptionUnmarshallers;
+    protected List<JsonErrorUnmarshaller> jsonErrorUnmarshallers;
 
     /**
      * Constructs a new client to invoke service methods on
@@ -207,12 +211,12 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     }
 
     private void init() {
-        exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, JSONObject>>();
-        exceptionUnmarshallers.add(new InternalServerExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InternalServerErrorExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidRequestExceptionUnmarshaller());
+        jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
+        jsonErrorUnmarshallers.add(new InternalServerExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InternalServerErrorExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidRequestExceptionUnmarshaller());
         
-        exceptionUnmarshallers.add(new JsonErrorUnmarshaller());
+        jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("elasticmapreduce.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
@@ -269,11 +273,12 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             }
             Unmarshaller<ListBootstrapActionsResult, JsonUnmarshallerContext> unmarshaller = new ListBootstrapActionsResultJsonUnmarshaller();
             JsonResponseHandler<ListBootstrapActionsResult> responseHandler = new JsonResponseHandler<ListBootstrapActionsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -281,9 +286,9 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * <p>
      * Adds tags to an Amazon EMR resource. Tags make it easier to associate
      * clusters in various ways, such as grouping clusters to track your
-     * Amazon EMR resource allocation costs. For more information, see <a
-     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
-     * Tagging Amazon EMR Resources </a> .
+     * Amazon EMR resource allocation costs. For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
+     * .
      * </p>
      *
      * @param addTagsRequest Container for the necessary parameters to
@@ -320,11 +325,12 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             }
             Unmarshaller<AddTagsResult, JsonUnmarshallerContext> unmarshaller = new AddTagsResultJsonUnmarshaller();
             JsonResponseHandler<AddTagsResult> responseHandler = new JsonResponseHandler<AddTagsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -409,11 +415,12 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             }
             Unmarshaller<ListStepsResult, JsonUnmarshallerContext> unmarshaller = new ListStepsResultJsonUnmarshaller();
             JsonResponseHandler<ListStepsResult> responseHandler = new JsonResponseHandler<ListStepsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -428,10 +435,9 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * can bypass the 256-step limitation in various ways, including using
      * the SSH shell to connect to the master node and submitting queries
      * directly to the software running on the master node, such as Hive and
-     * Hadoop. For more information on how to do this, go to <a
-     * .com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">
-     * Add More than 256 Steps to a Job Flow </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide</i> .
+     * Hadoop. For more information on how to do this, go to
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html"> Add More than 256 Steps to a Job Flow </a>
+     * in the <i>Amazon Elastic MapReduce Developer's Guide</i> .
      * </p>
      * <p>
      * A step specifies the location of a JAR file stored either on the
@@ -485,11 +491,12 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             }
             Unmarshaller<AddJobFlowStepsResult, JsonUnmarshallerContext> unmarshaller = new AddJobFlowStepsResultJsonUnmarshaller();
             JsonResponseHandler<AddJobFlowStepsResult> responseHandler = new JsonResponseHandler<AddJobFlowStepsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -532,11 +539,12 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             }
             Unmarshaller<DescribeStepResult, JsonUnmarshallerContext> unmarshaller = new DescribeStepResultJsonUnmarshaller();
             JsonResponseHandler<DescribeStepResult> responseHandler = new JsonResponseHandler<DescribeStepResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -584,11 +592,12 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             }
             Unmarshaller<ListClustersResult, JsonUnmarshallerContext> unmarshaller = new ListClustersResultJsonUnmarshaller();
             JsonResponseHandler<ListClustersResult> responseHandler = new JsonResponseHandler<ListClustersResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -597,9 +606,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * Removes tags from an Amazon EMR resource. Tags make it easier to
      * associate clusters in various ways, such as grouping clusters to track
      * your Amazon EMR resource allocation costs. For more information, see
-     * <a
-     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
-     * Tagging Amazon EMR Resources </a> .
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
+     * .
      * </p>
      *
      * @param removeTagsRequest Container for the necessary parameters to
@@ -636,11 +644,12 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             }
             Unmarshaller<RemoveTagsResult, JsonUnmarshallerContext> unmarshaller = new RemoveTagsResultJsonUnmarshaller();
             JsonResponseHandler<RemoveTagsResult> responseHandler = new JsonResponseHandler<RemoveTagsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -684,11 +693,12 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             }
             Unmarshaller<ListInstanceGroupsResult, JsonUnmarshallerContext> unmarshaller = new ListInstanceGroupsResultJsonUnmarshaller();
             JsonResponseHandler<ListInstanceGroupsResult> responseHandler = new JsonResponseHandler<ListInstanceGroupsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -774,11 +784,12 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             }
             Unmarshaller<ListInstancesResult, JsonUnmarshallerContext> unmarshaller = new ListInstancesResultJsonUnmarshaller();
             JsonResponseHandler<ListInstancesResult> responseHandler = new JsonResponseHandler<ListInstancesResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -821,11 +832,12 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             }
             Unmarshaller<AddInstanceGroupsResult, JsonUnmarshallerContext> unmarshaller = new AddInstanceGroupsResultJsonUnmarshaller();
             JsonResponseHandler<AddInstanceGroupsResult> responseHandler = new JsonResponseHandler<AddInstanceGroupsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -899,10 +911,9 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * <code>false</code> .
      * </p>
      * <p>
-     * For more information, go to <a
-     * cMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">
-     * Protecting a Job Flow from Termination </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide.</i>
+     * For more information, go to
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html"> Protecting a Job Flow from Termination </a>
+     * in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
      * </p>
      *
      * @param setTerminationProtectionRequest Container for the necessary
@@ -1002,11 +1013,12 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             }
             Unmarshaller<DescribeJobFlowsResult, JsonUnmarshallerContext> unmarshaller = new DescribeJobFlowsResultJsonUnmarshaller();
             JsonResponseHandler<DescribeJobFlowsResult> responseHandler = new JsonResponseHandler<DescribeJobFlowsResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -1036,10 +1048,9 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * can bypass the 256-step limitation in various ways, including using
      * the SSH shell to connect to the master node and submitting queries
      * directly to the software running on the master node, such as Hive and
-     * Hadoop. For more information on how to do this, go to <a
-     * .com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">
-     * Add More than 256 Steps to a Job Flow </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide</i> .
+     * Hadoop. For more information on how to do this, go to
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html"> Add More than 256 Steps to a Job Flow </a>
+     * in the <i>Amazon Elastic MapReduce Developer's Guide</i> .
      * </p>
      * <p>
      * For long running job flows, we recommend that you periodically store
@@ -1079,11 +1090,12 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             }
             Unmarshaller<RunJobFlowResult, JsonUnmarshallerContext> unmarshaller = new RunJobFlowResultJsonUnmarshaller();
             JsonResponseHandler<RunJobFlowResult> responseHandler = new JsonResponseHandler<RunJobFlowResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -1129,11 +1141,12 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             }
             Unmarshaller<DescribeClusterResult, JsonUnmarshallerContext> unmarshaller = new DescribeClusterResultJsonUnmarshaller();
             JsonResponseHandler<DescribeClusterResult> responseHandler = new JsonResponseHandler<DescribeClusterResult>(unmarshaller);
-            
+
             response = invoke(request, responseHandler, executionContext);
+            
             return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, response);
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
@@ -1165,9 +1178,9 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * <p>
      * Adds tags to an Amazon EMR resource. Tags make it easier to associate
      * clusters in various ways, such as grouping clusters to track your
-     * Amazon EMR resource allocation costs. For more information, see <a
-     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
-     * Tagging Amazon EMR Resources </a> .
+     * Amazon EMR resource allocation costs. For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
+     * .
      * </p>
      * 
      * @return The response from the AddTags service method, as returned by
@@ -1267,9 +1280,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * Removes tags from an Amazon EMR resource. Tags make it easier to
      * associate clusters in various ways, such as grouping clusters to track
      * your Amazon EMR resource allocation costs. For more information, see
-     * <a
-     * amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">
-     * Tagging Amazon EMR Resources </a> .
+     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
+     * .
      * </p>
      * 
      * @return The response from the RemoveTags service method, as returned
@@ -1488,10 +1500,9 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         }
 
         executionContext.setCredentials(credentials);
-        JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
+        JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(jsonErrorUnmarshallers);
         Response<X> result = client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);
-        awsRequestMetrics.log();
         return result;
     }
 }

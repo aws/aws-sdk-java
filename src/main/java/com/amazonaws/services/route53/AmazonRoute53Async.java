@@ -145,10 +145,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * zone ID </code> resource.
      * </p>
      * <p>
-     * For more information about deleting a hosted zone, see <a
-     * s.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html">
-     * Deleting a Hosted Zone </a> in the <i>Amazon Route 53 Developer
-     * Guide</i> .
+     * For more information about deleting a hosted zone, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html"> Deleting a Hosted Zone </a>
+     * in the <i>Amazon Route 53 Developer Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b> You can delete a hosted zone only if there are no
@@ -186,10 +185,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * zone ID </code> resource.
      * </p>
      * <p>
-     * For more information about deleting a hosted zone, see <a
-     * s.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html">
-     * Deleting a Hosted Zone </a> in the <i>Amazon Route 53 Developer
-     * Guide</i> .
+     * For more information about deleting a hosted zone, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html"> Deleting a Hosted Zone </a>
+     * in the <i>Amazon Route 53 Developer Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b> You can delete a hosted zone only if there are no
@@ -387,10 +385,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * Route 53 automatically creates a default SOA record and four NS
      * records for the zone. The NS records in the hosted zone are the name
      * servers you give your registrar to delegate your domain to. For more
-     * information about SOA and NS records, see <a
-     * docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">
-     * NS and SOA Records that Route 53 Creates for a Hosted Zone </a> in
-     * the <i>Amazon Route 53 Developer Guide</i> .
+     * information about SOA and NS records, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html"> NS and SOA Records that Route 53 Creates for a Hosted Zone </a>
+     * in the <i>Amazon Route 53 Developer Guide</i> .
      * </p>
      * <p>
      * When you create a zone, its initial status is <code>PENDING</code> .
@@ -433,10 +430,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * Route 53 automatically creates a default SOA record and four NS
      * records for the zone. The NS records in the hosted zone are the name
      * servers you give your registrar to delegate your domain to. For more
-     * information about SOA and NS records, see <a
-     * docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">
-     * NS and SOA Records that Route 53 Creates for a Hosted Zone </a> in
-     * the <i>Amazon Route 53 Developer Guide</i> .
+     * information about SOA and NS records, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html"> NS and SOA Records that Route 53 Creates for a Hosted Zone </a>
+     * in the <i>Amazon Route 53 Developer Guide</i> .
      * </p>
      * <p>
      * When you create a zone, its initial status is <code>PENDING</code> .
@@ -479,10 +475,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Changes are a list of change items and are considered transactional.
      * For more information on transactional changes, also known as change
-     * batches, see <a
-     * zon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API">
-     * Creating, Changing, and Deleting Resource Record Sets Using the Route
-     * 53 API </a> in the <i>Amazon Route 53 Developer Guide</i> .
+     * batches, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API"> Creating, Changing, and Deleting Resource Record Sets Using the Route 53 API </a>
+     * in the <i>Amazon Route 53 Developer Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b>Due to the nature of transactional changes, you
@@ -544,10 +539,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Changes are a list of change items and are considered transactional.
      * For more information on transactional changes, also known as change
-     * batches, see <a
-     * zon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API">
-     * Creating, Changing, and Deleting Resource Record Sets Using the Route
-     * 53 API </a> in the <i>Amazon Route 53 Developer Guide</i> .
+     * batches, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API"> Creating, Changing, and Deleting Resource Record Sets Using the Route 53 API </a>
+     * in the <i>Amazon Route 53 Developer Guide</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b>Due to the nature of transactional changes, you

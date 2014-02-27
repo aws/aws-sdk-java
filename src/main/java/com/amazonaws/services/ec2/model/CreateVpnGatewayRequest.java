@@ -23,12 +23,14 @@ import com.amazonaws.services.ec2.model.transform.CreateVpnGatewayRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVpnGateway(CreateVpnGatewayRequest) CreateVpnGateway operation}.
  * <p>
- * Creates a virtual private gateway. A virtual private gateway is the endpoint on the VPC side of your VPN connection. You can create a virtual private
- * gateway before creating the VPC itself.
+ * Creates a virtual private gateway. A virtual private gateway is the
+ * endpoint on the VPC side of your VPN connection. You can create a
+ * virtual private gateway before creating the VPC itself.
  * </p>
  * <p>
- * For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a
- * Hardware Virtual Private Gateway to Your VPC </a> in the <i>Amazon Virtual Private Cloud User Guide</i> .
+ * For more information about virtual private gateways, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
+ * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpnGateway(CreateVpnGatewayRequest)

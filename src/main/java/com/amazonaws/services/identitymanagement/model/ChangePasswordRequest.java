@@ -21,8 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#changePassword(ChangePasswordRequest) ChangePassword operation}.
  * <p>
- * Changes the password of the IAM user calling <code>ChangePassword</code> . The root account password is not affected by this action. For information
- * about modifying passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a> .
+ * Changes the password of the IAM user calling
+ * <code>ChangePassword</code> . The root account password is not
+ * affected by this action. For information about modifying passwords,
+ * see
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#changePassword(ChangePasswordRequest)

@@ -18,7 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>PolicyAttributeDescription</code> data type. This data type is used to describe the attributes and values associated with a policy.
+ * The <code>PolicyAttributeDescription</code> data type. This data type
+ * is used to describe the attributes and values associated with a
+ * policy.
  * </p>
  */
 public class PolicyAttributeDescription implements Serializable {

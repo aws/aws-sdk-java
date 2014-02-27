@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * There is already an existing Amazon Redshift HSM configuration with the specified identifier.
+ * There is already an existing Amazon Redshift HSM configuration with
+ * the specified identifier.
  * </p>
  */        
 public class HsmConfigurationAlreadyExistsException extends AmazonServiceException {

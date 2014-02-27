@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because Route 53 was still processing a prior request.
+ * The request was rejected because Route 53 was still processing a prior
+ * request.
  * </p>
  */        
 public class PriorRequestNotCompleteException extends AmazonServiceException {

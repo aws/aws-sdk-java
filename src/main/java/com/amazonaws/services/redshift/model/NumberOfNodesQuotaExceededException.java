@@ -18,9 +18,10 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a
- * href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html"> Limits in Amazon Redshift </a> in the <i>Amazon Redshift
- * Management Guide</i> .
+ * The operation would exceed the number of nodes allotted to the
+ * account. For information about increasing your quota, go to
+ * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html"> Limits in Amazon Redshift </a>
+ * in the <i>Amazon Redshift Management Guide</i> .
  * </p>
  */        
 public class NumberOfNodesQuotaExceededException extends AmazonServiceException {

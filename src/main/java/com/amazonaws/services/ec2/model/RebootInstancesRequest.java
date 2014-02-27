@@ -23,11 +23,14 @@ import com.amazonaws.services.ec2.model.transform.RebootInstancesRequestMarshall
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#rebootInstances(RebootInstancesRequest) RebootInstances operation}.
  * <p>
- * Requests a reboot of one or more instances. This operation is asynchronous; it only queues a request to reboot the specified instances. The operation
- * succeeds if the instances are valid and belong to you. Requests to reboot terminated instances are ignored.
+ * Requests a reboot of one or more instances. This operation is
+ * asynchronous; it only queues a request to reboot the specified
+ * instances. The operation succeeds if the instances are valid and
+ * belong to you. Requests to reboot terminated instances are ignored.
  * </p>
  * <p>
- * If a Linux/Unix instance does not cleanly shut down within four minutes, Amazon EC2 performs a hard reboot.
+ * If a Linux/Unix instance does not cleanly shut down within four
+ * minutes, Amazon EC2 performs a hard reboot.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#rebootInstances(RebootInstancesRequest)

@@ -21,16 +21,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#receiveMessage(ReceiveMessageRequest) ReceiveMessage operation}.
  * <p>
- * Retrieves one or more messages from the specified queue. Long poll support is enabled by using the <code>WaitTimeSeconds</code> parameter. For more
- * information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html"> Amazon SQS Long Poll </a>
+ * Retrieves one or more messages from the specified queue. Long poll
+ * support is enabled by using the <code>WaitTimeSeconds</code>
+ * parameter. For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html"> Amazon SQS Long Poll </a>
  * in the <i>Amazon SQS Developer Guide</i> .
  * 
  * </p>
  * <p>
- * Short poll is the default behavior where a weighted random set of machines is sampled on a <code>ReceiveMessage</code> call. This means only the
- * messages on the sampled machines are returned. If the number of messages in the queue is small (less than 1000), it is likely you will get fewer
- * messages than you requested per <code>ReceiveMessage</code> call. If the number of messages in the queue is extremely small, you might not receive any
- * messages in a particular <code>ReceiveMessage</code> response; in which case you should repeat the request.
+ * Short poll is the default behavior where a weighted random set of
+ * machines is sampled on a <code>ReceiveMessage</code> call. This means
+ * only the messages on the sampled machines are returned. If the number
+ * of messages in the queue is small (less than 1000), it is likely you
+ * will get fewer messages than you requested per
+ * <code>ReceiveMessage</code> call. If the number of messages in the
+ * queue is extremely small, you might not receive any messages in a
+ * particular <code>ReceiveMessage</code> response; in which case you
+ * should repeat the request.
  * </p>
  * <p>
  * For each message returned, the response includes the following:
@@ -42,8 +49,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * </li>
  * <li> <p>
- * MD5 digest of the message body. For information about MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">
- * http://www.faqs.org/rfcs/rfc1321.html </a> .
+ * MD5 digest of the message body. For information about MD5, go to
+ * <a href="http://www.faqs.org/rfcs/rfc1321.html"> http://www.faqs.org/rfcs/rfc1321.html </a>
+ * .
  * </p>
  * </li>
  * <li> <p>
@@ -57,21 +65,26 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  * </ul>
  * <p>
- * The receipt handle is the identifier you must provide when deleting the message. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html"> Queue and Message Identifiers </a> in the
- * <i>Amazon SQS Developer Guide</i> .
+ * The receipt handle is the identifier you must provide when deleting
+ * the message. For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html"> Queue and Message Identifiers </a>
+ * in the <i>Amazon SQS Developer Guide</i> .
  * 
  * </p>
  * <p>
- * You can provide the <code>VisibilityTimeout</code> parameter in your request, which will be applied to the messages that Amazon SQS returns in the
- * response. If you do not include the parameter, the overall visibility timeout for the queue is used for the returned messages. For more information,
- * see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a> in the <i>Amazon SQS
- * Developer Guide</i> .
+ * You can provide the <code>VisibilityTimeout</code> parameter in your
+ * request, which will be applied to the messages that Amazon SQS returns
+ * in the response. If you do not include the parameter, the overall
+ * visibility timeout for the queue is used for the returned messages.
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a>
+ * in the <i>Amazon SQS Developer Guide</i> .
  * 
  * </p>
  * <p>
- * <b>NOTE:</b> Going forward, new attributes might be added. If you are writing code that calls this action, we recommend that you structure your code
- * so that it can handle new attributes gracefully.
+ * <b>NOTE:</b> Going forward, new attributes might be added. If you are
+ * writing code that calls this action, we recommend that you structure
+ * your code so that it can handle new attributes gracefully.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#receiveMessage(ReceiveMessageRequest)

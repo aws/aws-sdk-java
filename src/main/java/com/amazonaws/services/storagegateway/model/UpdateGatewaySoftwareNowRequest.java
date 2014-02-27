@@ -21,16 +21,22 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#updateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest) UpdateGatewaySoftwareNow operation}.
  * <p>
- * This operation updates the gateway virtual machine (VM) software. The request immediately triggers the software update.
+ * This operation updates the gateway virtual machine (VM) software. The
+ * request immediately triggers the software update.
  * </p>
  * <p>
- * <b>NOTE:</b>When you make this request, you get a 200 OK success response immediately. However, it might take some time for the update to complete.
- * You can call DescribeGatewayInformation to verify the gateway is in the STATE_RUNNING state.
+ * <b>NOTE:</b>When you make this request, you get a 200 OK success
+ * response immediately. However, it might take some time for the update
+ * to complete. You can call DescribeGatewayInformation to verify the
+ * gateway is in the STATE_RUNNING state.
  * </p>
  * <p>
- * <b>IMPORTANT:</b>A software update forces a system restart of your gateway. You can minimize the chance of any disruption to your applications by
- * increasing your iSCSI Initiators' timeouts. For more information about increasing iSCSI Initiator timeouts for Windows and Linux, see Customizing Your
- * Windows iSCSI Settings and Customizing Your Linux iSCSI Settings, respectively.
+ * <b>IMPORTANT:</b>A software update forces a system restart of your
+ * gateway. You can minimize the chance of any disruption to your
+ * applications by increasing your iSCSI Initiators' timeouts. For more
+ * information about increasing iSCSI Initiator timeouts for Windows and
+ * Linux, see Customizing Your Windows iSCSI Settings and Customizing
+ * Your Linux iSCSI Settings, respectively.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#updateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest)

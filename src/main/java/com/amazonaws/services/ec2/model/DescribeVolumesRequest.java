@@ -26,8 +26,9 @@ import com.amazonaws.services.ec2.model.transform.DescribeVolumesRequestMarshall
  * Describes the specified Amazon EBS volumes.
  * </p>
  * <p>
- * For more information about Amazon EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes
- * </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information about Amazon EBS volumes, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVolumes(DescribeVolumesRequest)

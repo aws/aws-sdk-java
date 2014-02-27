@@ -35,7 +35,7 @@ import com.amazonaws.services.dynamodbv2.model.TableStatus;
 public class Tables {
     private static final int DEFAULT_WAIT_TIMEOUT = 10 * 60 * 1000;
     private static final int DEFAULT_WAIT_INTERVAL = 20 * 1000;
-    
+
     /**
      * Checks if a specified table exists and is in <code>ACTIVE</code> state.
      *
@@ -73,9 +73,9 @@ public class Tables {
      *             stops polling.
      */
     public static void waitForTableToBecomeActive(AmazonDynamoDB dynamo, String tableName) {
-        waitForTableToBecomeActive(dynamo, tableName, DEFAULT_WAIT_TIMEOUT, DEFAULT_WAIT_INTERVAL);        	
+        waitForTableToBecomeActive(dynamo, tableName, DEFAULT_WAIT_TIMEOUT, DEFAULT_WAIT_INTERVAL);
     }
- 
+
     /**
      * Waits up to a specified amount of time for a specified AWS DynamoDB
      * table to move into the <code>ACTIVE</code> state. If the table doesn't

@@ -21,12 +21,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#retrieveTapeArchive(RetrieveTapeArchiveRequest) RetrieveTapeArchive operation}.
  * <p>
- * Retrieves an archived virtual tape from the Virtual Tape Shelf (VTS) to a Gateway-Virtual Tape Library. Virtual tapes archived in the Virtual Tape
- * Shelf (VTS) are not associated with any gateway. However after a tape is retrieved, it is associated with a gateway though it also listed in VTS.
+ * Retrieves an archived virtual tape from the Virtual Tape Shelf (VTS)
+ * to a Gateway-Virtual Tape Library. Virtual tapes archived in the
+ * Virtual Tape Shelf (VTS) are not associated with any gateway. However
+ * after a tape is retrieved, it is associated with a gateway though it
+ * also listed in VTS.
  * </p>
  * <p>
- * Once a tape is successfully retrieved to a gateway, it cannot be retrieved again to another gateway. You must archive the tape again before you can
- * retrieve it to another gateway.
+ * Once a tape is successfully retrieved to a gateway, it cannot be
+ * retrieved again to another gateway. You must archive the tape again
+ * before you can retrieve it to another gateway.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#retrieveTapeArchive(RetrieveTapeArchiveRequest)

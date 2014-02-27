@@ -21,16 +21,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#deleteMessageBatch(DeleteMessageBatchRequest) DeleteMessageBatch operation}.
  * <p>
- * Deletes multiple messages. This is a batch version of DeleteMessage. The result of the delete action on each message is reported individually in the
- * response.
+ * Deletes multiple messages. This is a batch version of DeleteMessage.
+ * The result of the delete action on each message is reported
+ * individually in the response.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even
- * when the call returns an HTTP status code of 200.
+ * <b>IMPORTANT:</b> Because the batch request can result in a
+ * combination of successful and unsuccessful actions, you should check
+ * for batch errors even when the call returns an HTTP status code of
+ * 200.
  * </p>
  * <p>
- * <b>NOTE:</b>Some API actions take lists of parameters. These lists are specified using the param.n notation. Values of n are integers starting from 1.
- * For example, a parameter list with two elements looks like this:
+ * <b>NOTE:</b>Some API actions take lists of parameters. These lists are
+ * specified using the param.n notation. Values of n are integers
+ * starting from 1. For example, a parameter list with two elements looks
+ * like this:
  * </p>
  * <p>
  * <code>&Attribute.1=this</code>

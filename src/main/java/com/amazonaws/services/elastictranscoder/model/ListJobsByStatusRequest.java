@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listJobsByStatus(ListJobsByStatusRequest) ListJobsByStatus operation}.
  * <p>
- * The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job that satisfies
- * the search criteria.
+ * The ListJobsByStatus operation gets a list of jobs that have a
+ * specified status. The response body contains one element for each job
+ * that satisfies the search criteria.
  * </p>
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listJobsByStatus(ListJobsByStatusRequest)

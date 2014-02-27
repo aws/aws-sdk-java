@@ -21,11 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesListings(DescribeReservedInstancesListingsRequest) DescribeReservedInstancesListings operation}.
  * <p>
- * Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
+ * Describes your account's Reserved Instance listings in the Reserved
+ * Instance Marketplace.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a> in
- * the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesListings(DescribeReservedInstancesListingsRequest)

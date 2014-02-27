@@ -21,12 +21,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#updateItem(UpdateItemRequest) UpdateItem operation}.
  * <p>
- * Edits an existing item's attributes, or inserts a new item if it does not already exist. You can put, delete, or add attribute values. You can also
- * perform a conditional update (insert a new attribute name-value pair if it doesn't exist, or replace an existing name-value pair if it has certain
- * expected attribute values).
+ * Edits an existing item's attributes, or inserts a new item if it does
+ * not already exist. You can put, delete, or add attribute values. You
+ * can also perform a conditional update (insert a new attribute
+ * name-value pair if it doesn't exist, or replace an existing name-value
+ * pair if it has certain expected attribute values).
  * </p>
  * <p>
- * In addition to updating an item, you can also return the item's attribute values in the same operation, using the <i>ReturnValues</i> parameter.
+ * In addition to updating an item, you can also return the item's
+ * attribute values in the same operation, using the <i>ReturnValues</i>
+ * parameter.
  * </p>
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#updateItem(UpdateItemRequest)
@@ -84,24 +88,23 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
-     * number value for an item that doesn't exist before the update, Amazon
+     * number value for an item that doesn't exist before the update,
      * DynamoDB uses 0 as the initial value. <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment
-     * or decrement an attribute value which does not yet exist, Amazon
-     * DynamoDB uses <code>0</code> as the initial value. For example,
-     * suppose that the item you want to update does not yet have an
-     * attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     * the number <code>3</code> to this attribute anyway, even though it
-     * currently does not exist. Amazon DynamoDB will create the
-     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     * and finally add <code>3</code> to it. The result will be a new
-     * <i>itemcount</i> attribute in the item, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     * added to the existing set. (This is a <i>set</i> operation, not
-     * mathematical addition.) For example, if the attribute value was the
-     * set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value would be
+     * or decrement an attribute value which does not yet exist, DynamoDB
+     * uses <code>0</code> as the initial value. For example, suppose that
+     * the item you want to update does not yet have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway, even though it currently does
+     * not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     * its initial value to <code>0</code>, and finally add <code>3</code> to
+     * it. The result will be a new <i>itemcount</i> attribute in the item,
+     * with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     * data type is a set, and if the <i>Value</i> is also a set, then the
+     * <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     * operation, not mathematical addition.) For example, if the attribute
+     * value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     * specified <code>[3]</code>, then the final attribute value would be
      * <code>[1,2,3]</code>. An error occurs if an Add action is specified
      * for a set attribute and the attribute type specified does not match
      * the existing set type. <p>Both sets must have the same primitive data
@@ -111,12 +114,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
+     * <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     * primary key, and then adds the attribute. </li> <li>
      * <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     * item with the supplied primary key and number (or set of numbers) for
-     * the attribute value. The only data types allowed are number and number
+     * delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     * the supplied primary key and number (or set of numbers) for the
+     * attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul> </li> </ul>
      * <p>If you specify any attributes that are part of an index key, then
      * the data types for those attributes must match those of the schema in
@@ -128,27 +131,28 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * A map of attribute/condition pairs. This is the conditional block for
      * the <i>UpdateItem</i> operation. All the conditions must be met for
      * the operation to succeed. <p><i>Expected</i> allows you to provide an
-     * attribute name, and whether or not Amazon DynamoDB should check to see
-     * if the attribute value already exists; or if the attribute value
-     * exists and has a particular value before changing it. <p>Each item in
-     * <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     * check, along with the following: <ul> <li> <p><i>Value</i> - The
-     * attribute value for Amazon DynamoDB to check. </li> <li>
-     * <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
-     * attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
-     * <code>true</code>, Amazon DynamoDB will check to see if that attribute
-     * value already exists in the table. If it is found, then the operation
-     * succeeds. If it is not found, the operation fails with a
+     * attribute name, and whether or not DynamoDB should check to see if the
+     * attribute value already exists; or if the attribute value exists and
+     * has a particular value before changing it. <p>Each item in
+     * <i>Expected</i> represents an attribute name for DynamoDB to check,
+     * along with the following: <ul> <li> <p><i>Value</i> - A value for
+     * DynamoDB to compare with an attribute. When performing the comparison,
+     * strongly consistent reads are used. </li> <li> <p><i>Exists</i> -
+     * Causes DynamoDB to evaluate the value before attempting a conditional
+     * operation: <ul> <li> <p>If <i>Exists</i> is <code>true</code>,
+     * DynamoDB will check to see if that attribute value already exists in
+     * the table. If it is found, then the operation succeeds. If it is not
+     * found, the operation fails with a
      * <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
-     * is <code>false</code>, Amazon DynamoDB assumes that the attribute
-     * value does <i>not</i> exist in the table. If in fact the value does
-     * not exist, then the assumption is valid and the operation succeeds. If
-     * the value is found, despite the assumption that it does not exist, the
-     * operation fails with a <i>ConditionalCheckFailedException</i>. </li>
-     * </ul> <p>The default setting for <i>Exists</i> is <code>true</code>.
-     * If you supply a <i>Value</i> all by itself, Amazon DynamoDB assumes
-     * the attribute exists: You don't have to set <i>Exists</i> to
-     * <code>true</code>, because it is implied. <p>Amazon DynamoDB returns a
+     * is <code>false</code>, DynamoDB assumes that the attribute value does
+     * <i>not</i> exist in the table. If in fact the value does not exist,
+     * then the assumption is valid and the operation succeeds. If the value
+     * is found, despite the assumption that it does not exist, the operation
+     * fails with a <i>ConditionalCheckFailedException</i>. </li> </ul>
+     * <p>The default setting for <i>Exists</i> is <code>true</code>. If you
+     * supply a <i>Value</i> all by itself, DynamoDB assumes the attribute
+     * exists: You don't have to set <i>Exists</i> to <code>true</code>,
+     * because it is implied. <p>DynamoDB returns a
      * <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
      * <code>true</code> but there is no <i>Value</i> to check. (You expect a
      * value to exist, but don't specify what that value is.) </li> <li>
@@ -184,7 +188,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -253,24 +257,23 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
-     * number value for an item that doesn't exist before the update, Amazon
+     * number value for an item that doesn't exist before the update,
      * DynamoDB uses 0 as the initial value. <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment
-     * or decrement an attribute value which does not yet exist, Amazon
-     * DynamoDB uses <code>0</code> as the initial value. For example,
-     * suppose that the item you want to update does not yet have an
-     * attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     * the number <code>3</code> to this attribute anyway, even though it
-     * currently does not exist. Amazon DynamoDB will create the
-     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     * and finally add <code>3</code> to it. The result will be a new
-     * <i>itemcount</i> attribute in the item, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     * added to the existing set. (This is a <i>set</i> operation, not
-     * mathematical addition.) For example, if the attribute value was the
-     * set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value would be
+     * or decrement an attribute value which does not yet exist, DynamoDB
+     * uses <code>0</code> as the initial value. For example, suppose that
+     * the item you want to update does not yet have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway, even though it currently does
+     * not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     * its initial value to <code>0</code>, and finally add <code>3</code> to
+     * it. The result will be a new <i>itemcount</i> attribute in the item,
+     * with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     * data type is a set, and if the <i>Value</i> is also a set, then the
+     * <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     * operation, not mathematical addition.) For example, if the attribute
+     * value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     * specified <code>[3]</code>, then the final attribute value would be
      * <code>[1,2,3]</code>. An error occurs if an Add action is specified
      * for a set attribute and the attribute type specified does not match
      * the existing set type. <p>Both sets must have the same primitive data
@@ -280,12 +283,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
+     * <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     * primary key, and then adds the attribute. </li> <li>
      * <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     * item with the supplied primary key and number (or set of numbers) for
-     * the attribute value. The only data types allowed are number and number
+     * delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     * the supplied primary key and number (or set of numbers) for the
+     * attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul> </li> </ul>
      * <p>If you specify any attributes that are part of an index key, then
      * the data types for those attributes must match those of the schema in
@@ -340,24 +343,23 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
-     * number value for an item that doesn't exist before the update, Amazon
+     * number value for an item that doesn't exist before the update,
      * DynamoDB uses 0 as the initial value. <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment
-     * or decrement an attribute value which does not yet exist, Amazon
-     * DynamoDB uses <code>0</code> as the initial value. For example,
-     * suppose that the item you want to update does not yet have an
-     * attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     * the number <code>3</code> to this attribute anyway, even though it
-     * currently does not exist. Amazon DynamoDB will create the
-     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     * and finally add <code>3</code> to it. The result will be a new
-     * <i>itemcount</i> attribute in the item, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     * added to the existing set. (This is a <i>set</i> operation, not
-     * mathematical addition.) For example, if the attribute value was the
-     * set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value would be
+     * or decrement an attribute value which does not yet exist, DynamoDB
+     * uses <code>0</code> as the initial value. For example, suppose that
+     * the item you want to update does not yet have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway, even though it currently does
+     * not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     * its initial value to <code>0</code>, and finally add <code>3</code> to
+     * it. The result will be a new <i>itemcount</i> attribute in the item,
+     * with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     * data type is a set, and if the <i>Value</i> is also a set, then the
+     * <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     * operation, not mathematical addition.) For example, if the attribute
+     * value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     * specified <code>[3]</code>, then the final attribute value would be
      * <code>[1,2,3]</code>. An error occurs if an Add action is specified
      * for a set attribute and the attribute type specified does not match
      * the existing set type. <p>Both sets must have the same primitive data
@@ -367,12 +369,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
+     * <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     * primary key, and then adds the attribute. </li> <li>
      * <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     * item with the supplied primary key and number (or set of numbers) for
-     * the attribute value. The only data types allowed are number and number
+     * delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     * the supplied primary key and number (or set of numbers) for the
+     * attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul> </li> </ul>
      * <p>If you specify any attributes that are part of an index key, then
      * the data types for those attributes must match those of the schema in
@@ -441,24 +443,23 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
-     * number value for an item that doesn't exist before the update, Amazon
+     * number value for an item that doesn't exist before the update,
      * DynamoDB uses 0 as the initial value. <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment
-     * or decrement an attribute value which does not yet exist, Amazon
-     * DynamoDB uses <code>0</code> as the initial value. For example,
-     * suppose that the item you want to update does not yet have an
-     * attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     * the number <code>3</code> to this attribute anyway, even though it
-     * currently does not exist. Amazon DynamoDB will create the
-     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     * and finally add <code>3</code> to it. The result will be a new
-     * <i>itemcount</i> attribute in the item, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     * added to the existing set. (This is a <i>set</i> operation, not
-     * mathematical addition.) For example, if the attribute value was the
-     * set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value would be
+     * or decrement an attribute value which does not yet exist, DynamoDB
+     * uses <code>0</code> as the initial value. For example, suppose that
+     * the item you want to update does not yet have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway, even though it currently does
+     * not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     * its initial value to <code>0</code>, and finally add <code>3</code> to
+     * it. The result will be a new <i>itemcount</i> attribute in the item,
+     * with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     * data type is a set, and if the <i>Value</i> is also a set, then the
+     * <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     * operation, not mathematical addition.) For example, if the attribute
+     * value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     * specified <code>[3]</code>, then the final attribute value would be
      * <code>[1,2,3]</code>. An error occurs if an Add action is specified
      * for a set attribute and the attribute type specified does not match
      * the existing set type. <p>Both sets must have the same primitive data
@@ -468,12 +469,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
+     * <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     * primary key, and then adds the attribute. </li> <li>
      * <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     * item with the supplied primary key and number (or set of numbers) for
-     * the attribute value. The only data types allowed are number and number
+     * delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     * the supplied primary key and number (or set of numbers) for the
+     * attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul> </li> </ul>
      * <p>If you specify any attributes that are part of an index key, then
      * the data types for those attributes must match those of the schema in
@@ -690,24 +691,23 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
-     * number value for an item that doesn't exist before the update, Amazon
+     * number value for an item that doesn't exist before the update,
      * DynamoDB uses 0 as the initial value. <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment
-     * or decrement an attribute value which does not yet exist, Amazon
-     * DynamoDB uses <code>0</code> as the initial value. For example,
-     * suppose that the item you want to update does not yet have an
-     * attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     * the number <code>3</code> to this attribute anyway, even though it
-     * currently does not exist. Amazon DynamoDB will create the
-     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     * and finally add <code>3</code> to it. The result will be a new
-     * <i>itemcount</i> attribute in the item, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     * added to the existing set. (This is a <i>set</i> operation, not
-     * mathematical addition.) For example, if the attribute value was the
-     * set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value would be
+     * or decrement an attribute value which does not yet exist, DynamoDB
+     * uses <code>0</code> as the initial value. For example, suppose that
+     * the item you want to update does not yet have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway, even though it currently does
+     * not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     * its initial value to <code>0</code>, and finally add <code>3</code> to
+     * it. The result will be a new <i>itemcount</i> attribute in the item,
+     * with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     * data type is a set, and if the <i>Value</i> is also a set, then the
+     * <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     * operation, not mathematical addition.) For example, if the attribute
+     * value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     * specified <code>[3]</code>, then the final attribute value would be
      * <code>[1,2,3]</code>. An error occurs if an Add action is specified
      * for a set attribute and the attribute type specified does not match
      * the existing set type. <p>Both sets must have the same primitive data
@@ -717,12 +717,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
+     * <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     * primary key, and then adds the attribute. </li> <li>
      * <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     * item with the supplied primary key and number (or set of numbers) for
-     * the attribute value. The only data types allowed are number and number
+     * delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     * the supplied primary key and number (or set of numbers) for the
+     * attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul> </li> </ul>
      * <p>If you specify any attributes that are part of an index key, then
      * the data types for those attributes must match those of the schema in
@@ -763,24 +763,23 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         mathematically added to the existing attribute. If <i>Value</i> is a
      *         negative number, then it is subtracted from the existing attribute.
      *         <note> <p> If you use <code>ADD</code> to increment or decrement a
-     *         number value for an item that doesn't exist before the update, Amazon
+     *         number value for an item that doesn't exist before the update,
      *         DynamoDB uses 0 as the initial value. <p>In addition, if you use
      *         <code>ADD</code> to update an existing item, and intend to increment
-     *         or decrement an attribute value which does not yet exist, Amazon
-     *         DynamoDB uses <code>0</code> as the initial value. For example,
-     *         suppose that the item you want to update does not yet have an
-     *         attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     *         the number <code>3</code> to this attribute anyway, even though it
-     *         currently does not exist. Amazon DynamoDB will create the
-     *         <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     *         and finally add <code>3</code> to it. The result will be a new
-     *         <i>itemcount</i> attribute in the item, with a value of
-     *         <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     *         set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     *         added to the existing set. (This is a <i>set</i> operation, not
-     *         mathematical addition.) For example, if the attribute value was the
-     *         set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     *         <code>[3]</code>, then the final attribute value would be
+     *         or decrement an attribute value which does not yet exist, DynamoDB
+     *         uses <code>0</code> as the initial value. For example, suppose that
+     *         the item you want to update does not yet have an attribute named
+     *         <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     *         <code>3</code> to this attribute anyway, even though it currently does
+     *         not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     *         its initial value to <code>0</code>, and finally add <code>3</code> to
+     *         it. The result will be a new <i>itemcount</i> attribute in the item,
+     *         with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     *         data type is a set, and if the <i>Value</i> is also a set, then the
+     *         <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     *         operation, not mathematical addition.) For example, if the attribute
+     *         value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     *         specified <code>[3]</code>, then the final attribute value would be
      *         <code>[1,2,3]</code>. An error occurs if an Add action is specified
      *         for a set attribute and the attribute type specified does not match
      *         the existing set type. <p>Both sets must have the same primitive data
@@ -790,12 +789,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         for an existing attribute whose data type is number or is a set. Do
      *         not use <code>ADD</code> for any other data types. </li> </ul> <p>
      *         <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     *         <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     *         specified primary key, and then adds the attribute. </li> <li>
+     *         <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     *         primary key, and then adds the attribute. </li> <li>
      *         <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     *         delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     *         item with the supplied primary key and number (or set of numbers) for
-     *         the attribute value. The only data types allowed are number and number
+     *         delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     *         the supplied primary key and number (or set of numbers) for the
+     *         attribute value. The only data types allowed are number and number
      *         set; no other data types can be specified. </li> </ul> </li> </ul>
      *         <p>If you specify any attributes that are part of an index key, then
      *         the data types for those attributes must match those of the schema in
@@ -842,24 +841,23 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
-     * number value for an item that doesn't exist before the update, Amazon
+     * number value for an item that doesn't exist before the update,
      * DynamoDB uses 0 as the initial value. <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment
-     * or decrement an attribute value which does not yet exist, Amazon
-     * DynamoDB uses <code>0</code> as the initial value. For example,
-     * suppose that the item you want to update does not yet have an
-     * attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     * the number <code>3</code> to this attribute anyway, even though it
-     * currently does not exist. Amazon DynamoDB will create the
-     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     * and finally add <code>3</code> to it. The result will be a new
-     * <i>itemcount</i> attribute in the item, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     * added to the existing set. (This is a <i>set</i> operation, not
-     * mathematical addition.) For example, if the attribute value was the
-     * set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value would be
+     * or decrement an attribute value which does not yet exist, DynamoDB
+     * uses <code>0</code> as the initial value. For example, suppose that
+     * the item you want to update does not yet have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway, even though it currently does
+     * not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     * its initial value to <code>0</code>, and finally add <code>3</code> to
+     * it. The result will be a new <i>itemcount</i> attribute in the item,
+     * with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     * data type is a set, and if the <i>Value</i> is also a set, then the
+     * <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     * operation, not mathematical addition.) For example, if the attribute
+     * value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     * specified <code>[3]</code>, then the final attribute value would be
      * <code>[1,2,3]</code>. An error occurs if an Add action is specified
      * for a set attribute and the attribute type specified does not match
      * the existing set type. <p>Both sets must have the same primitive data
@@ -869,12 +867,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
+     * <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     * primary key, and then adds the attribute. </li> <li>
      * <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     * item with the supplied primary key and number (or set of numbers) for
-     * the attribute value. The only data types allowed are number and number
+     * delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     * the supplied primary key and number (or set of numbers) for the
+     * attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul> </li> </ul>
      * <p>If you specify any attributes that are part of an index key, then
      * the data types for those attributes must match those of the schema in
@@ -915,24 +913,23 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         mathematically added to the existing attribute. If <i>Value</i> is a
      *         negative number, then it is subtracted from the existing attribute.
      *         <note> <p> If you use <code>ADD</code> to increment or decrement a
-     *         number value for an item that doesn't exist before the update, Amazon
+     *         number value for an item that doesn't exist before the update,
      *         DynamoDB uses 0 as the initial value. <p>In addition, if you use
      *         <code>ADD</code> to update an existing item, and intend to increment
-     *         or decrement an attribute value which does not yet exist, Amazon
-     *         DynamoDB uses <code>0</code> as the initial value. For example,
-     *         suppose that the item you want to update does not yet have an
-     *         attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     *         the number <code>3</code> to this attribute anyway, even though it
-     *         currently does not exist. Amazon DynamoDB will create the
-     *         <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     *         and finally add <code>3</code> to it. The result will be a new
-     *         <i>itemcount</i> attribute in the item, with a value of
-     *         <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     *         set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     *         added to the existing set. (This is a <i>set</i> operation, not
-     *         mathematical addition.) For example, if the attribute value was the
-     *         set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     *         <code>[3]</code>, then the final attribute value would be
+     *         or decrement an attribute value which does not yet exist, DynamoDB
+     *         uses <code>0</code> as the initial value. For example, suppose that
+     *         the item you want to update does not yet have an attribute named
+     *         <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     *         <code>3</code> to this attribute anyway, even though it currently does
+     *         not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     *         its initial value to <code>0</code>, and finally add <code>3</code> to
+     *         it. The result will be a new <i>itemcount</i> attribute in the item,
+     *         with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     *         data type is a set, and if the <i>Value</i> is also a set, then the
+     *         <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     *         operation, not mathematical addition.) For example, if the attribute
+     *         value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     *         specified <code>[3]</code>, then the final attribute value would be
      *         <code>[1,2,3]</code>. An error occurs if an Add action is specified
      *         for a set attribute and the attribute type specified does not match
      *         the existing set type. <p>Both sets must have the same primitive data
@@ -942,12 +939,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         for an existing attribute whose data type is number or is a set. Do
      *         not use <code>ADD</code> for any other data types. </li> </ul> <p>
      *         <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     *         <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     *         specified primary key, and then adds the attribute. </li> <li>
+     *         <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     *         primary key, and then adds the attribute. </li> <li>
      *         <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     *         delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     *         item with the supplied primary key and number (or set of numbers) for
-     *         the attribute value. The only data types allowed are number and number
+     *         delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     *         the supplied primary key and number (or set of numbers) for the
+     *         attribute value. The only data types allowed are number and number
      *         set; no other data types can be specified. </li> </ul> </li> </ul>
      *         <p>If you specify any attributes that are part of an index key, then
      *         the data types for those attributes must match those of the schema in
@@ -993,24 +990,23 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
-     * number value for an item that doesn't exist before the update, Amazon
+     * number value for an item that doesn't exist before the update,
      * DynamoDB uses 0 as the initial value. <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment
-     * or decrement an attribute value which does not yet exist, Amazon
-     * DynamoDB uses <code>0</code> as the initial value. For example,
-     * suppose that the item you want to update does not yet have an
-     * attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     * the number <code>3</code> to this attribute anyway, even though it
-     * currently does not exist. Amazon DynamoDB will create the
-     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     * and finally add <code>3</code> to it. The result will be a new
-     * <i>itemcount</i> attribute in the item, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     * added to the existing set. (This is a <i>set</i> operation, not
-     * mathematical addition.) For example, if the attribute value was the
-     * set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value would be
+     * or decrement an attribute value which does not yet exist, DynamoDB
+     * uses <code>0</code> as the initial value. For example, suppose that
+     * the item you want to update does not yet have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway, even though it currently does
+     * not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     * its initial value to <code>0</code>, and finally add <code>3</code> to
+     * it. The result will be a new <i>itemcount</i> attribute in the item,
+     * with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     * data type is a set, and if the <i>Value</i> is also a set, then the
+     * <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     * operation, not mathematical addition.) For example, if the attribute
+     * value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     * specified <code>[3]</code>, then the final attribute value would be
      * <code>[1,2,3]</code>. An error occurs if an Add action is specified
      * for a set attribute and the attribute type specified does not match
      * the existing set type. <p>Both sets must have the same primitive data
@@ -1020,12 +1016,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
+     * <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     * primary key, and then adds the attribute. </li> <li>
      * <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     * item with the supplied primary key and number (or set of numbers) for
-     * the attribute value. The only data types allowed are number and number
+     * delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     * the supplied primary key and number (or set of numbers) for the
+     * attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul> </li> </ul>
      * <p>If you specify any attributes that are part of an index key, then
      * the data types for those attributes must match those of the schema in
@@ -1068,24 +1064,23 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         mathematically added to the existing attribute. If <i>Value</i> is a
      *         negative number, then it is subtracted from the existing attribute.
      *         <note> <p> If you use <code>ADD</code> to increment or decrement a
-     *         number value for an item that doesn't exist before the update, Amazon
+     *         number value for an item that doesn't exist before the update,
      *         DynamoDB uses 0 as the initial value. <p>In addition, if you use
      *         <code>ADD</code> to update an existing item, and intend to increment
-     *         or decrement an attribute value which does not yet exist, Amazon
-     *         DynamoDB uses <code>0</code> as the initial value. For example,
-     *         suppose that the item you want to update does not yet have an
-     *         attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     *         the number <code>3</code> to this attribute anyway, even though it
-     *         currently does not exist. Amazon DynamoDB will create the
-     *         <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     *         and finally add <code>3</code> to it. The result will be a new
-     *         <i>itemcount</i> attribute in the item, with a value of
-     *         <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     *         set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     *         added to the existing set. (This is a <i>set</i> operation, not
-     *         mathematical addition.) For example, if the attribute value was the
-     *         set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     *         <code>[3]</code>, then the final attribute value would be
+     *         or decrement an attribute value which does not yet exist, DynamoDB
+     *         uses <code>0</code> as the initial value. For example, suppose that
+     *         the item you want to update does not yet have an attribute named
+     *         <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     *         <code>3</code> to this attribute anyway, even though it currently does
+     *         not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     *         its initial value to <code>0</code>, and finally add <code>3</code> to
+     *         it. The result will be a new <i>itemcount</i> attribute in the item,
+     *         with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     *         data type is a set, and if the <i>Value</i> is also a set, then the
+     *         <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     *         operation, not mathematical addition.) For example, if the attribute
+     *         value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     *         specified <code>[3]</code>, then the final attribute value would be
      *         <code>[1,2,3]</code>. An error occurs if an Add action is specified
      *         for a set attribute and the attribute type specified does not match
      *         the existing set type. <p>Both sets must have the same primitive data
@@ -1095,12 +1090,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         for an existing attribute whose data type is number or is a set. Do
      *         not use <code>ADD</code> for any other data types. </li> </ul> <p>
      *         <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     *         <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     *         specified primary key, and then adds the attribute. </li> <li>
+     *         <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     *         primary key, and then adds the attribute. </li> <li>
      *         <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     *         delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     *         item with the supplied primary key and number (or set of numbers) for
-     *         the attribute value. The only data types allowed are number and number
+     *         delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     *         the supplied primary key and number (or set of numbers) for the
+     *         attribute value. The only data types allowed are number and number
      *         set; no other data types can be specified. </li> </ul> </li> </ul>
      *         <p>If you specify any attributes that are part of an index key, then
      *         the data types for those attributes must match those of the schema in
@@ -1150,24 +1145,23 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
-     * number value for an item that doesn't exist before the update, Amazon
+     * number value for an item that doesn't exist before the update,
      * DynamoDB uses 0 as the initial value. <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment
-     * or decrement an attribute value which does not yet exist, Amazon
-     * DynamoDB uses <code>0</code> as the initial value. For example,
-     * suppose that the item you want to update does not yet have an
-     * attribute named <i>itemcount</i>, but you decide to <code>ADD</code>
-     * the number <code>3</code> to this attribute anyway, even though it
-     * currently does not exist. Amazon DynamoDB will create the
-     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
-     * and finally add <code>3</code> to it. The result will be a new
-     * <i>itemcount</i> attribute in the item, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if the <i>Value</i> is also a set, then the <i>Value</i> is
-     * added to the existing set. (This is a <i>set</i> operation, not
-     * mathematical addition.) For example, if the attribute value was the
-     * set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value would be
+     * or decrement an attribute value which does not yet exist, DynamoDB
+     * uses <code>0</code> as the initial value. For example, suppose that
+     * the item you want to update does not yet have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway, even though it currently does
+     * not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+     * its initial value to <code>0</code>, and finally add <code>3</code> to
+     * it. The result will be a new <i>itemcount</i> attribute in the item,
+     * with a value of <code>3</code>. </note> </li> <li> <p>If the existing
+     * data type is a set, and if the <i>Value</i> is also a set, then the
+     * <i>Value</i> is added to the existing set. (This is a <i>set</i>
+     * operation, not mathematical addition.) For example, if the attribute
+     * value was the set <code>[1,2]</code>, and the <code>ADD</code> action
+     * specified <code>[3]</code>, then the final attribute value would be
      * <code>[1,2,3]</code>. An error occurs if an Add action is specified
      * for a set attribute and the attribute type specified does not match
      * the existing set type. <p>Both sets must have the same primitive data
@@ -1177,12 +1171,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
+     * <p><code>PUT</code> - DynamoDB creates a new item with the specified
+     * primary key, and then adds the attribute. </li> <li>
      * <p><code>DELETE</code> - Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
-     * item with the supplied primary key and number (or set of numbers) for
-     * the attribute value. The only data types allowed are number and number
+     * delete. </li> <li> <p><code>ADD</code> - DynamoDB creates an item with
+     * the supplied primary key and number (or set of numbers) for the
+     * attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul> </li> </ul>
      * <p>If you specify any attributes that are part of an index key, then
      * the data types for those attributes must match those of the schema in
@@ -1219,27 +1213,28 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * A map of attribute/condition pairs. This is the conditional block for
      * the <i>UpdateItem</i> operation. All the conditions must be met for
      * the operation to succeed. <p><i>Expected</i> allows you to provide an
-     * attribute name, and whether or not Amazon DynamoDB should check to see
-     * if the attribute value already exists; or if the attribute value
-     * exists and has a particular value before changing it. <p>Each item in
-     * <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     * check, along with the following: <ul> <li> <p><i>Value</i> - The
-     * attribute value for Amazon DynamoDB to check. </li> <li>
-     * <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
-     * attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
-     * <code>true</code>, Amazon DynamoDB will check to see if that attribute
-     * value already exists in the table. If it is found, then the operation
-     * succeeds. If it is not found, the operation fails with a
+     * attribute name, and whether or not DynamoDB should check to see if the
+     * attribute value already exists; or if the attribute value exists and
+     * has a particular value before changing it. <p>Each item in
+     * <i>Expected</i> represents an attribute name for DynamoDB to check,
+     * along with the following: <ul> <li> <p><i>Value</i> - A value for
+     * DynamoDB to compare with an attribute. When performing the comparison,
+     * strongly consistent reads are used. </li> <li> <p><i>Exists</i> -
+     * Causes DynamoDB to evaluate the value before attempting a conditional
+     * operation: <ul> <li> <p>If <i>Exists</i> is <code>true</code>,
+     * DynamoDB will check to see if that attribute value already exists in
+     * the table. If it is found, then the operation succeeds. If it is not
+     * found, the operation fails with a
      * <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
-     * is <code>false</code>, Amazon DynamoDB assumes that the attribute
-     * value does <i>not</i> exist in the table. If in fact the value does
-     * not exist, then the assumption is valid and the operation succeeds. If
-     * the value is found, despite the assumption that it does not exist, the
-     * operation fails with a <i>ConditionalCheckFailedException</i>. </li>
-     * </ul> <p>The default setting for <i>Exists</i> is <code>true</code>.
-     * If you supply a <i>Value</i> all by itself, Amazon DynamoDB assumes
-     * the attribute exists: You don't have to set <i>Exists</i> to
-     * <code>true</code>, because it is implied. <p>Amazon DynamoDB returns a
+     * is <code>false</code>, DynamoDB assumes that the attribute value does
+     * <i>not</i> exist in the table. If in fact the value does not exist,
+     * then the assumption is valid and the operation succeeds. If the value
+     * is found, despite the assumption that it does not exist, the operation
+     * fails with a <i>ConditionalCheckFailedException</i>. </li> </ul>
+     * <p>The default setting for <i>Exists</i> is <code>true</code>. If you
+     * supply a <i>Value</i> all by itself, DynamoDB assumes the attribute
+     * exists: You don't have to set <i>Exists</i> to <code>true</code>,
+     * because it is implied. <p>DynamoDB returns a
      * <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
      * <code>true</code> but there is no <i>Value</i> to check. (You expect a
      * value to exist, but don't specify what that value is.) </li> <li>
@@ -1253,27 +1248,28 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * @return A map of attribute/condition pairs. This is the conditional block for
      *         the <i>UpdateItem</i> operation. All the conditions must be met for
      *         the operation to succeed. <p><i>Expected</i> allows you to provide an
-     *         attribute name, and whether or not Amazon DynamoDB should check to see
-     *         if the attribute value already exists; or if the attribute value
-     *         exists and has a particular value before changing it. <p>Each item in
-     *         <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     *         check, along with the following: <ul> <li> <p><i>Value</i> - The
-     *         attribute value for Amazon DynamoDB to check. </li> <li>
-     *         <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
-     *         attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
-     *         <code>true</code>, Amazon DynamoDB will check to see if that attribute
-     *         value already exists in the table. If it is found, then the operation
-     *         succeeds. If it is not found, the operation fails with a
+     *         attribute name, and whether or not DynamoDB should check to see if the
+     *         attribute value already exists; or if the attribute value exists and
+     *         has a particular value before changing it. <p>Each item in
+     *         <i>Expected</i> represents an attribute name for DynamoDB to check,
+     *         along with the following: <ul> <li> <p><i>Value</i> - A value for
+     *         DynamoDB to compare with an attribute. When performing the comparison,
+     *         strongly consistent reads are used. </li> <li> <p><i>Exists</i> -
+     *         Causes DynamoDB to evaluate the value before attempting a conditional
+     *         operation: <ul> <li> <p>If <i>Exists</i> is <code>true</code>,
+     *         DynamoDB will check to see if that attribute value already exists in
+     *         the table. If it is found, then the operation succeeds. If it is not
+     *         found, the operation fails with a
      *         <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
-     *         is <code>false</code>, Amazon DynamoDB assumes that the attribute
-     *         value does <i>not</i> exist in the table. If in fact the value does
-     *         not exist, then the assumption is valid and the operation succeeds. If
-     *         the value is found, despite the assumption that it does not exist, the
-     *         operation fails with a <i>ConditionalCheckFailedException</i>. </li>
-     *         </ul> <p>The default setting for <i>Exists</i> is <code>true</code>.
-     *         If you supply a <i>Value</i> all by itself, Amazon DynamoDB assumes
-     *         the attribute exists: You don't have to set <i>Exists</i> to
-     *         <code>true</code>, because it is implied. <p>Amazon DynamoDB returns a
+     *         is <code>false</code>, DynamoDB assumes that the attribute value does
+     *         <i>not</i> exist in the table. If in fact the value does not exist,
+     *         then the assumption is valid and the operation succeeds. If the value
+     *         is found, despite the assumption that it does not exist, the operation
+     *         fails with a <i>ConditionalCheckFailedException</i>. </li> </ul>
+     *         <p>The default setting for <i>Exists</i> is <code>true</code>. If you
+     *         supply a <i>Value</i> all by itself, DynamoDB assumes the attribute
+     *         exists: You don't have to set <i>Exists</i> to <code>true</code>,
+     *         because it is implied. <p>DynamoDB returns a
      *         <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
      *         <code>true</code> but there is no <i>Value</i> to check. (You expect a
      *         value to exist, but don't specify what that value is.) </li> <li>
@@ -1293,27 +1289,28 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * A map of attribute/condition pairs. This is the conditional block for
      * the <i>UpdateItem</i> operation. All the conditions must be met for
      * the operation to succeed. <p><i>Expected</i> allows you to provide an
-     * attribute name, and whether or not Amazon DynamoDB should check to see
-     * if the attribute value already exists; or if the attribute value
-     * exists and has a particular value before changing it. <p>Each item in
-     * <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     * check, along with the following: <ul> <li> <p><i>Value</i> - The
-     * attribute value for Amazon DynamoDB to check. </li> <li>
-     * <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
-     * attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
-     * <code>true</code>, Amazon DynamoDB will check to see if that attribute
-     * value already exists in the table. If it is found, then the operation
-     * succeeds. If it is not found, the operation fails with a
+     * attribute name, and whether or not DynamoDB should check to see if the
+     * attribute value already exists; or if the attribute value exists and
+     * has a particular value before changing it. <p>Each item in
+     * <i>Expected</i> represents an attribute name for DynamoDB to check,
+     * along with the following: <ul> <li> <p><i>Value</i> - A value for
+     * DynamoDB to compare with an attribute. When performing the comparison,
+     * strongly consistent reads are used. </li> <li> <p><i>Exists</i> -
+     * Causes DynamoDB to evaluate the value before attempting a conditional
+     * operation: <ul> <li> <p>If <i>Exists</i> is <code>true</code>,
+     * DynamoDB will check to see if that attribute value already exists in
+     * the table. If it is found, then the operation succeeds. If it is not
+     * found, the operation fails with a
      * <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
-     * is <code>false</code>, Amazon DynamoDB assumes that the attribute
-     * value does <i>not</i> exist in the table. If in fact the value does
-     * not exist, then the assumption is valid and the operation succeeds. If
-     * the value is found, despite the assumption that it does not exist, the
-     * operation fails with a <i>ConditionalCheckFailedException</i>. </li>
-     * </ul> <p>The default setting for <i>Exists</i> is <code>true</code>.
-     * If you supply a <i>Value</i> all by itself, Amazon DynamoDB assumes
-     * the attribute exists: You don't have to set <i>Exists</i> to
-     * <code>true</code>, because it is implied. <p>Amazon DynamoDB returns a
+     * is <code>false</code>, DynamoDB assumes that the attribute value does
+     * <i>not</i> exist in the table. If in fact the value does not exist,
+     * then the assumption is valid and the operation succeeds. If the value
+     * is found, despite the assumption that it does not exist, the operation
+     * fails with a <i>ConditionalCheckFailedException</i>. </li> </ul>
+     * <p>The default setting for <i>Exists</i> is <code>true</code>. If you
+     * supply a <i>Value</i> all by itself, DynamoDB assumes the attribute
+     * exists: You don't have to set <i>Exists</i> to <code>true</code>,
+     * because it is implied. <p>DynamoDB returns a
      * <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
      * <code>true</code> but there is no <i>Value</i> to check. (You expect a
      * value to exist, but don't specify what that value is.) </li> <li>
@@ -1327,27 +1324,28 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * @param expected A map of attribute/condition pairs. This is the conditional block for
      *         the <i>UpdateItem</i> operation. All the conditions must be met for
      *         the operation to succeed. <p><i>Expected</i> allows you to provide an
-     *         attribute name, and whether or not Amazon DynamoDB should check to see
-     *         if the attribute value already exists; or if the attribute value
-     *         exists and has a particular value before changing it. <p>Each item in
-     *         <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     *         check, along with the following: <ul> <li> <p><i>Value</i> - The
-     *         attribute value for Amazon DynamoDB to check. </li> <li>
-     *         <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
-     *         attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
-     *         <code>true</code>, Amazon DynamoDB will check to see if that attribute
-     *         value already exists in the table. If it is found, then the operation
-     *         succeeds. If it is not found, the operation fails with a
+     *         attribute name, and whether or not DynamoDB should check to see if the
+     *         attribute value already exists; or if the attribute value exists and
+     *         has a particular value before changing it. <p>Each item in
+     *         <i>Expected</i> represents an attribute name for DynamoDB to check,
+     *         along with the following: <ul> <li> <p><i>Value</i> - A value for
+     *         DynamoDB to compare with an attribute. When performing the comparison,
+     *         strongly consistent reads are used. </li> <li> <p><i>Exists</i> -
+     *         Causes DynamoDB to evaluate the value before attempting a conditional
+     *         operation: <ul> <li> <p>If <i>Exists</i> is <code>true</code>,
+     *         DynamoDB will check to see if that attribute value already exists in
+     *         the table. If it is found, then the operation succeeds. If it is not
+     *         found, the operation fails with a
      *         <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
-     *         is <code>false</code>, Amazon DynamoDB assumes that the attribute
-     *         value does <i>not</i> exist in the table. If in fact the value does
-     *         not exist, then the assumption is valid and the operation succeeds. If
-     *         the value is found, despite the assumption that it does not exist, the
-     *         operation fails with a <i>ConditionalCheckFailedException</i>. </li>
-     *         </ul> <p>The default setting for <i>Exists</i> is <code>true</code>.
-     *         If you supply a <i>Value</i> all by itself, Amazon DynamoDB assumes
-     *         the attribute exists: You don't have to set <i>Exists</i> to
-     *         <code>true</code>, because it is implied. <p>Amazon DynamoDB returns a
+     *         is <code>false</code>, DynamoDB assumes that the attribute value does
+     *         <i>not</i> exist in the table. If in fact the value does not exist,
+     *         then the assumption is valid and the operation succeeds. If the value
+     *         is found, despite the assumption that it does not exist, the operation
+     *         fails with a <i>ConditionalCheckFailedException</i>. </li> </ul>
+     *         <p>The default setting for <i>Exists</i> is <code>true</code>. If you
+     *         supply a <i>Value</i> all by itself, DynamoDB assumes the attribute
+     *         exists: You don't have to set <i>Exists</i> to <code>true</code>,
+     *         because it is implied. <p>DynamoDB returns a
      *         <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
      *         <code>true</code> but there is no <i>Value</i> to check. (You expect a
      *         value to exist, but don't specify what that value is.) </li> <li>
@@ -1366,27 +1364,28 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * A map of attribute/condition pairs. This is the conditional block for
      * the <i>UpdateItem</i> operation. All the conditions must be met for
      * the operation to succeed. <p><i>Expected</i> allows you to provide an
-     * attribute name, and whether or not Amazon DynamoDB should check to see
-     * if the attribute value already exists; or if the attribute value
-     * exists and has a particular value before changing it. <p>Each item in
-     * <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     * check, along with the following: <ul> <li> <p><i>Value</i> - The
-     * attribute value for Amazon DynamoDB to check. </li> <li>
-     * <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
-     * attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
-     * <code>true</code>, Amazon DynamoDB will check to see if that attribute
-     * value already exists in the table. If it is found, then the operation
-     * succeeds. If it is not found, the operation fails with a
+     * attribute name, and whether or not DynamoDB should check to see if the
+     * attribute value already exists; or if the attribute value exists and
+     * has a particular value before changing it. <p>Each item in
+     * <i>Expected</i> represents an attribute name for DynamoDB to check,
+     * along with the following: <ul> <li> <p><i>Value</i> - A value for
+     * DynamoDB to compare with an attribute. When performing the comparison,
+     * strongly consistent reads are used. </li> <li> <p><i>Exists</i> -
+     * Causes DynamoDB to evaluate the value before attempting a conditional
+     * operation: <ul> <li> <p>If <i>Exists</i> is <code>true</code>,
+     * DynamoDB will check to see if that attribute value already exists in
+     * the table. If it is found, then the operation succeeds. If it is not
+     * found, the operation fails with a
      * <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
-     * is <code>false</code>, Amazon DynamoDB assumes that the attribute
-     * value does <i>not</i> exist in the table. If in fact the value does
-     * not exist, then the assumption is valid and the operation succeeds. If
-     * the value is found, despite the assumption that it does not exist, the
-     * operation fails with a <i>ConditionalCheckFailedException</i>. </li>
-     * </ul> <p>The default setting for <i>Exists</i> is <code>true</code>.
-     * If you supply a <i>Value</i> all by itself, Amazon DynamoDB assumes
-     * the attribute exists: You don't have to set <i>Exists</i> to
-     * <code>true</code>, because it is implied. <p>Amazon DynamoDB returns a
+     * is <code>false</code>, DynamoDB assumes that the attribute value does
+     * <i>not</i> exist in the table. If in fact the value does not exist,
+     * then the assumption is valid and the operation succeeds. If the value
+     * is found, despite the assumption that it does not exist, the operation
+     * fails with a <i>ConditionalCheckFailedException</i>. </li> </ul>
+     * <p>The default setting for <i>Exists</i> is <code>true</code>. If you
+     * supply a <i>Value</i> all by itself, DynamoDB assumes the attribute
+     * exists: You don't have to set <i>Exists</i> to <code>true</code>,
+     * because it is implied. <p>DynamoDB returns a
      * <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
      * <code>true</code> but there is no <i>Value</i> to check. (You expect a
      * value to exist, but don't specify what that value is.) </li> <li>
@@ -1402,27 +1401,28 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * @param expected A map of attribute/condition pairs. This is the conditional block for
      *         the <i>UpdateItem</i> operation. All the conditions must be met for
      *         the operation to succeed. <p><i>Expected</i> allows you to provide an
-     *         attribute name, and whether or not Amazon DynamoDB should check to see
-     *         if the attribute value already exists; or if the attribute value
-     *         exists and has a particular value before changing it. <p>Each item in
-     *         <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     *         check, along with the following: <ul> <li> <p><i>Value</i> - The
-     *         attribute value for Amazon DynamoDB to check. </li> <li>
-     *         <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
-     *         attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
-     *         <code>true</code>, Amazon DynamoDB will check to see if that attribute
-     *         value already exists in the table. If it is found, then the operation
-     *         succeeds. If it is not found, the operation fails with a
+     *         attribute name, and whether or not DynamoDB should check to see if the
+     *         attribute value already exists; or if the attribute value exists and
+     *         has a particular value before changing it. <p>Each item in
+     *         <i>Expected</i> represents an attribute name for DynamoDB to check,
+     *         along with the following: <ul> <li> <p><i>Value</i> - A value for
+     *         DynamoDB to compare with an attribute. When performing the comparison,
+     *         strongly consistent reads are used. </li> <li> <p><i>Exists</i> -
+     *         Causes DynamoDB to evaluate the value before attempting a conditional
+     *         operation: <ul> <li> <p>If <i>Exists</i> is <code>true</code>,
+     *         DynamoDB will check to see if that attribute value already exists in
+     *         the table. If it is found, then the operation succeeds. If it is not
+     *         found, the operation fails with a
      *         <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
-     *         is <code>false</code>, Amazon DynamoDB assumes that the attribute
-     *         value does <i>not</i> exist in the table. If in fact the value does
-     *         not exist, then the assumption is valid and the operation succeeds. If
-     *         the value is found, despite the assumption that it does not exist, the
-     *         operation fails with a <i>ConditionalCheckFailedException</i>. </li>
-     *         </ul> <p>The default setting for <i>Exists</i> is <code>true</code>.
-     *         If you supply a <i>Value</i> all by itself, Amazon DynamoDB assumes
-     *         the attribute exists: You don't have to set <i>Exists</i> to
-     *         <code>true</code>, because it is implied. <p>Amazon DynamoDB returns a
+     *         is <code>false</code>, DynamoDB assumes that the attribute value does
+     *         <i>not</i> exist in the table. If in fact the value does not exist,
+     *         then the assumption is valid and the operation succeeds. If the value
+     *         is found, despite the assumption that it does not exist, the operation
+     *         fails with a <i>ConditionalCheckFailedException</i>. </li> </ul>
+     *         <p>The default setting for <i>Exists</i> is <code>true</code>. If you
+     *         supply a <i>Value</i> all by itself, DynamoDB assumes the attribute
+     *         exists: You don't have to set <i>Exists</i> to <code>true</code>,
+     *         because it is implied. <p>DynamoDB returns a
      *         <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
      *         <code>true</code> but there is no <i>Value</i> to check. (You expect a
      *         value to exist, but don't specify what that value is.) </li> <li>
@@ -1445,27 +1445,28 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * A map of attribute/condition pairs. This is the conditional block for
      * the <i>UpdateItem</i> operation. All the conditions must be met for
      * the operation to succeed. <p><i>Expected</i> allows you to provide an
-     * attribute name, and whether or not Amazon DynamoDB should check to see
-     * if the attribute value already exists; or if the attribute value
-     * exists and has a particular value before changing it. <p>Each item in
-     * <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     * check, along with the following: <ul> <li> <p><i>Value</i> - The
-     * attribute value for Amazon DynamoDB to check. </li> <li>
-     * <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
-     * attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
-     * <code>true</code>, Amazon DynamoDB will check to see if that attribute
-     * value already exists in the table. If it is found, then the operation
-     * succeeds. If it is not found, the operation fails with a
+     * attribute name, and whether or not DynamoDB should check to see if the
+     * attribute value already exists; or if the attribute value exists and
+     * has a particular value before changing it. <p>Each item in
+     * <i>Expected</i> represents an attribute name for DynamoDB to check,
+     * along with the following: <ul> <li> <p><i>Value</i> - A value for
+     * DynamoDB to compare with an attribute. When performing the comparison,
+     * strongly consistent reads are used. </li> <li> <p><i>Exists</i> -
+     * Causes DynamoDB to evaluate the value before attempting a conditional
+     * operation: <ul> <li> <p>If <i>Exists</i> is <code>true</code>,
+     * DynamoDB will check to see if that attribute value already exists in
+     * the table. If it is found, then the operation succeeds. If it is not
+     * found, the operation fails with a
      * <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
-     * is <code>false</code>, Amazon DynamoDB assumes that the attribute
-     * value does <i>not</i> exist in the table. If in fact the value does
-     * not exist, then the assumption is valid and the operation succeeds. If
-     * the value is found, despite the assumption that it does not exist, the
-     * operation fails with a <i>ConditionalCheckFailedException</i>. </li>
-     * </ul> <p>The default setting for <i>Exists</i> is <code>true</code>.
-     * If you supply a <i>Value</i> all by itself, Amazon DynamoDB assumes
-     * the attribute exists: You don't have to set <i>Exists</i> to
-     * <code>true</code>, because it is implied. <p>Amazon DynamoDB returns a
+     * is <code>false</code>, DynamoDB assumes that the attribute value does
+     * <i>not</i> exist in the table. If in fact the value does not exist,
+     * then the assumption is valid and the operation succeeds. If the value
+     * is found, despite the assumption that it does not exist, the operation
+     * fails with a <i>ConditionalCheckFailedException</i>. </li> </ul>
+     * <p>The default setting for <i>Exists</i> is <code>true</code>. If you
+     * supply a <i>Value</i> all by itself, DynamoDB assumes the attribute
+     * exists: You don't have to set <i>Exists</i> to <code>true</code>,
+     * because it is implied. <p>DynamoDB returns a
      * <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
      * <code>true</code> but there is no <i>Value</i> to check. (You expect a
      * value to exist, but don't specify what that value is.) </li> <li>
@@ -1708,7 +1709,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -1717,7 +1718,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *
      * @return If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
@@ -1730,7 +1731,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -1739,7 +1740,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
@@ -1752,7 +1753,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -1763,7 +1764,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
@@ -1780,7 +1781,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -1789,7 +1790,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
@@ -1802,7 +1803,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     /**
      * If set to <code>TOTAL</code>, the response includes
      * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      * for indexes. If set to <code>NONE</code> (the default),
      * <i>ConsumedCapacity</i> is not included in the response.
      * <p>
@@ -1813,7 +1814,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the repsonse includes <i>ConsumedCapacity</i>
+     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *

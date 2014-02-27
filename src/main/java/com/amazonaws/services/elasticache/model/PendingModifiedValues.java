@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A group of settings that will be applied to the cache cluster in the future, or that are currently being applied.
+ * A group of settings that will be applied to the cache cluster in the
+ * future, or that are currently being applied.
  * </p>
  */
 public class PendingModifiedValues implements Serializable {

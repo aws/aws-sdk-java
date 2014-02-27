@@ -21,13 +21,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#reportTaskProgress(ReportTaskProgressRequest) ReportTaskProgress operation}.
  * <p>
- * Updates the AWS Data Pipeline service on the progress of the calling task runner. When the task runner is assigned a task, it should call
- * ReportTaskProgress to acknowledge that it has the task within 2 minutes. If the web service does not recieve this acknowledgement within the 2 minute
- * window, it will assign the task in a subsequent PollForTask call. After this initial acknowledgement, the task runner only needs to report progress
- * every 15 minutes to maintain its ownership of the task. You can change this reporting time from 15 minutes by specifying a
- * <code>reportProgressTimeout</code> field in your pipeline. If a task runner does not report its status after 5 minutes, AWS Data Pipeline will assume
- * that the task runner is unable to process the task and will reassign the task in a subsequent response to PollForTask. task runners should call
- * ReportTaskProgress every 60 seconds.
+ * Updates the AWS Data Pipeline service on the progress of the calling
+ * task runner. When the task runner is assigned a task, it should call
+ * ReportTaskProgress to acknowledge that it has the task within 2
+ * minutes. If the web service does not recieve this acknowledgement
+ * within the 2 minute window, it will assign the task in a subsequent
+ * PollForTask call. After this initial acknowledgement, the task runner
+ * only needs to report progress every 15 minutes to maintain its
+ * ownership of the task. You can change this reporting time from 15
+ * minutes by specifying a <code>reportProgressTimeout</code> field in
+ * your pipeline. If a task runner does not report its status after 5
+ * minutes, AWS Data Pipeline will assume that the task runner is unable
+ * to process the task and will reassign the task in a subsequent
+ * response to PollForTask. task runners should call ReportTaskProgress
+ * every 60 seconds.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#reportTaskProgress(ReportTaskProgressRequest)

@@ -23,9 +23,10 @@ import com.amazonaws.services.ec2.model.transform.DescribePlacementGroupsRequest
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describePlacementGroups(DescribePlacementGroupsRequest) DescribePlacementGroups operation}.
  * <p>
- * Describes one or more of your placement groups. For more information about placement groups and cluster instances, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a> in the <i>Amazon Elastic Compute Cloud
- * User Guide</i> .
+ * Describes one or more of your placement groups. For more information
+ * about placement groups and cluster instances, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describePlacementGroups(DescribePlacementGroupsRequest)

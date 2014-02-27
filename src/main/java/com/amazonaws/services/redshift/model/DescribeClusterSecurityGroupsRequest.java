@@ -21,12 +21,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest) DescribeClusterSecurityGroups operation}.
  * <p>
- * Returns information about Amazon Redshift security groups. If the name of a security group is specified, the response will contain only information
- * about only that security group.
+ * Returns information about Amazon Redshift security groups. If the
+ * name of a security group is specified, the response will contain only
+ * information about only that security group.
  * </p>
  * <p>
- * For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">
- * Amazon Redshift Cluster Security Groups </a> in the <i>Amazon Redshift Management Guide</i> .
+ * For information about managing security groups, go to
+ * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
+ * in the <i>Amazon Redshift Management Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest)

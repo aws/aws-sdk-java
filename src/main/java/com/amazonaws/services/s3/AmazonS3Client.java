@@ -37,6 +37,7 @@ import java.util.regex.Matcher;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.http.client.methods.HttpRequestBase;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -183,6 +184,7 @@ import com.amazonaws.util.ContentLengthValidationInputStream;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.HttpUtils;
 import com.amazonaws.util.Md5Utils;
+import com.amazonaws.util.ServiceClientHolderInputStream;
 
 /**
  * <p>
@@ -451,7 +453,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          * possible to use the endpoint "s3.amazonaws.com" to access buckets in
          * any region - we send the request to &lt;bucket&gt;.s3.amazonaws.com,
          * which resolves to an S3 endpoint in the appropriate region.
-         * 
+         *
          * However, when the user opts in to using Signature Version 4, we need
          * to include the region of the bucket in the signature, and cannot
          * take advantage of this handy feature of S3.
@@ -836,7 +838,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             RequestMetricCollector requestMetricCollector) {
         setObjectAcl0(bucketName, key, versionId, acl, requestMetricCollector);
     }
-    
+
     private void setObjectAcl0(String bucketName, String key, String versionId,
             CannedAccessControlList acl, RequestMetricCollector requestMetricCollector)
             throws AmazonClientException, AmazonServiceException {
@@ -1100,36 +1102,48 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             s3Object.setBucketName(getObjectRequest.getBucketName());
             s3Object.setKey(getObjectRequest.getKey());
 
-            S3ObjectInputStream input = s3Object.getObjectContent();
+            InputStream input = s3Object.getObjectContent();
+            HttpRequestBase httpRequest = s3Object.getObjectContent().getHttpRequest();
+
+            // Hold a reference to this client while the InputStream is still
+            // around - otherwise a finalizer in the HttpClient may reset the
+            // underlying TCP connection out from under us.
+            input = new ServiceClientHolderInputStream(input, this);
+
+            // If someone is interested in progress updates, wrap the input
+            // stream in a filter that will trigger progress reports.
             if (progressListenerCallbackExecutor != null) {
                 ProgressReportingInputStream progressReportingInputStream = new ProgressReportingInputStream(input, progressListenerCallbackExecutor);
                 progressReportingInputStream.setFireCompletedEvent(true);
-                input = new S3ObjectInputStream(progressReportingInputStream, input.getHttpRequest());
+                input = progressReportingInputStream;
                 fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.STARTED_EVENT_CODE);
             }
 
+            // The Etag header contains a server-side MD5 of the object. If
+            // we're downloading the whole object, by default we wrap the
+            // stream in a validator that calculates an MD5 of the downloaded
+            // bytes and complains if what we received doesn't match the Etag.
             if (getObjectRequest.getRange() == null && System.getProperty("com.amazonaws.services.s3.disableGetObjectMD5Validation") == null) {
                 byte[] serverSideHash = null;
                 String etag = s3Object.getObjectMetadata().getETag();
                 if (etag != null && ServiceUtils.isMultipartUploadETag(etag) == false) {
                     serverSideHash = BinaryUtils.fromHex(s3Object.getObjectMetadata().getETag());
-                    DigestValidationInputStream inputStreamWithMD5DigestValidation;
                     try {
                         MessageDigest digest = MessageDigest.getInstance("MD5");
-                        inputStreamWithMD5DigestValidation = new DigestValidationInputStream(input, digest, serverSideHash);
-                        input = new S3ObjectInputStream(inputStreamWithMD5DigestValidation, input.getHttpRequest());
+                        input = new DigestValidationInputStream(input, digest, serverSideHash);
                     } catch (NoSuchAlgorithmException e) {
                         log.warn("No MD5 digest algorithm available.  Unable to calculate "
                                     + "checksum and verify data integrity.", e);
                     }
                 }
             } else {
-                input = new S3ObjectInputStream(
-                            new ContentLengthValidationInputStream(input, s3Object.getObjectMetadata().getContentLength()),
-                            input.getHttpRequest());
+                input = new ContentLengthValidationInputStream(input, s3Object.getObjectMetadata().getContentLength());
             }
 
-            s3Object.setObjectContent(input);
+            // Re-wrap within an S3ObjectInputStream. Explicitly do not collect
+            // metrics here because we know we're ultimately wrapping another
+            // S3ObjectInputStream which will take care of that.
+            s3Object.setObjectContent(new S3ObjectInputStream(input, httpRequest, false));
 
             return s3Object;
         } catch (AmazonS3Exception ase) {
@@ -2270,14 +2284,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         HttpMethodName httpMethod = HttpMethodName.valueOf(generatePresignedUrlRequest.getMethod().toString());
-        
+
         // If the key starts with a slash character itself, the following method
         // will actually add another slash before the resource path to prevent
         // the HttpClient mistakenly treating the slash as a path delimiter.
         // For presigned request, we need to remember to remove this extra slash
         // before generating the URL.
         Request<GeneratePresignedUrlRequest> request = createRequest(bucketName, key, generatePresignedUrlRequest, httpMethod);
-        
+
         for (Entry<String, String> entry : generatePresignedUrlRequest.getRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }
@@ -2906,7 +2920,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             ((bucketName != null) ? bucketName + "/" : "") +
             ((key != null) ? HttpUtils.urlEncode(key, true) : "") +
             ((subResource != null) ? "?" + subResource : "");
-        
+
         // Make sure the resource-path for signing does not contain
         // any consecutive "/"s.
         // Note that we should also follow the same rule to escape

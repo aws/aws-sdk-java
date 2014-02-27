@@ -21,11 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#cancelUpdateStack(CancelUpdateStackRequest) CancelUpdateStack operation}.
  * <p>
- * Cancels an update on the specified stack. If the call completes successfully, the stack will roll back the update and revert to the previous stack
- * configuration.
+ * Cancels an update on the specified stack. If the call completes
+ * successfully, the stack will roll back the update and revert to the
+ * previous stack configuration.
  * </p>
  * <p>
- * <b>NOTE:</b>Only stacks that are in the UPDATE_IN_PROGRESS state can be canceled.
+ * <b>NOTE:</b>Only stacks that are in the UPDATE_IN_PROGRESS state can
+ * be canceled.
  * </p>
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#cancelUpdateStack(CancelUpdateStackRequest)

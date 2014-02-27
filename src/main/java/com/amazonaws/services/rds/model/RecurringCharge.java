@@ -18,7 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element in the DescribeReservedDBInstances and DescribeReservedDBInstancesOfferings actions.
+ * This data type is used as a response element in the
+ * DescribeReservedDBInstances and DescribeReservedDBInstancesOfferings
+ * actions.
  * </p>
  */
 public class RecurringCharge implements Serializable {

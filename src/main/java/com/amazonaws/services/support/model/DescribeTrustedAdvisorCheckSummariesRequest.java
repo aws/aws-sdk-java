@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest) DescribeTrustedAdvisorCheckSummaries operation}.
  * <p>
- * Returns the summaries of the results of the Trusted Advisor checks that have the specified check IDs. Check IDs can be obtained by calling
- * DescribeTrustedAdvisorChecks.
+ * Returns the summaries of the results of the Trusted Advisor checks
+ * that have the specified check IDs. Check IDs can be obtained by
+ * calling DescribeTrustedAdvisorChecks.
  * </p>
  * <p>
  * The response contains an array of TrustedAdvisorCheckSummary objects.

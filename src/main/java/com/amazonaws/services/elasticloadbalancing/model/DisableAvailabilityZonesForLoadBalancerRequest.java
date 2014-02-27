@@ -21,17 +21,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#disableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest) DisableAvailabilityZonesForLoadBalancer operation}.
  * <p>
- * Removes the specified EC2 Availability Zones from the set of configured Availability Zones for the load balancer.
+ * Removes the specified EC2 Availability Zones from the set of
+ * configured Availability Zones for the load balancer.
  * </p>
  * <p>
- * There must be at least one Availability Zone registered with a load balancer at all times. Once an Availability Zone is removed, all the instances
- * registered with the load balancer that are in the removed Availability Zone go into the <i>OutOfService</i> state. Upon Availability Zone removal, the
- * load balancer attempts to equally balance the traffic among its remaining usable Availability Zones. Trying to remove an Availability Zone that was
- * not associated with the load balancer does nothing.
+ * There must be at least one Availability Zone registered with a load
+ * balancer at all times. Once an Availability Zone is removed, all the
+ * instances registered with the load balancer that are in the removed
+ * Availability Zone go into the <i>OutOfService</i> state. Upon
+ * Availability Zone removal, the load balancer attempts to equally
+ * balance the traffic among its remaining usable Availability Zones.
+ * Trying to remove an Availability Zone that was not associated with the
+ * load balancer does nothing.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html"> Disable an
- * Availability Zone from a Load-Balanced Application </a> in the <i>Elastic Load Balancing Developer Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html"> Disable an Availability Zone from a Load-Balanced Application </a>
+ * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#disableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest)

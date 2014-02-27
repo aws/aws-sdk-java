@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the DescribeDBSubnetGroups action.
+ * Contains the result of a successful invocation of the
+ * DescribeDBSubnetGroups action.
  * </p>
  */
 public class DescribeDBSubnetGroupsResult implements Serializable {

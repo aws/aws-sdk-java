@@ -21,9 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#updatePipeline(UpdatePipelineRequest) UpdatePipeline operation}.
  * <p>
- * Use the <code>UpdatePipeline</code> operation to update settings for a pipeline. <p>
- * <b>IMPORTANT:</b>When you change pipeline settings, your changes take effect immediately. Jobs that you have already submitted and that Elastic
- * Transcoder has not started to process are affected in addition to jobs that you submit after you change settings.
+ * Use the <code>UpdatePipeline</code> operation to update settings for
+ * a pipeline. <p>
+ * <b>IMPORTANT:</b>When you change pipeline settings, your changes take
+ * effect immediately. Jobs that you have already submitted and that
+ * Elastic Transcoder has not started to process are affected in addition
+ * to jobs that you submit after you change settings.
  * </p>
  * 
  * </p>

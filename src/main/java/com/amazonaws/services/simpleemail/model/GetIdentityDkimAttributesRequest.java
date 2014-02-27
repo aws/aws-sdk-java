@@ -21,26 +21,34 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getIdentityDkimAttributes(GetIdentityDkimAttributesRequest) GetIdentityDkimAttributes operation}.
  * <p>
- * Returns the current status of Easy DKIM signing for an entity. For domain name identities, this action also returns the DKIM tokens that are required
- * for Easy DKIM signing, and whether Amazon SES has successfully verified that these tokens have been published.
+ * Returns the current status of Easy DKIM signing for an entity. For
+ * domain name identities, this action also returns the DKIM tokens that
+ * are required for Easy DKIM signing, and whether Amazon SES has
+ * successfully verified that these tokens have been published.
  * </p>
  * <p>
- * This action takes a list of identities as input and returns the following information for each:
+ * This action takes a list of identities as input and returns the
+ * following information for each:
  * </p>
  * 
  * <ul>
  * <li>Whether Easy DKIM signing is enabled or disabled.</li>
- * <li>A set of DKIM tokens that represent the identity. If the identity is an email address, the tokens represent the domain of that address.</li>
- * <li>Whether Amazon SES has successfully verified the DKIM tokens published in the domain's DNS. This information is only returned for domain name
- * identities, not for email addresses.</li>
+ * <li>A set of DKIM tokens that represent the identity. If the identity
+ * is an email address, the tokens represent the domain of that
+ * address.</li>
+ * <li>Whether Amazon SES has successfully verified the DKIM tokens
+ * published in the domain's DNS. This information is only returned for
+ * domain name identities, not for email addresses.</li>
  * 
  * </ul>
  * <p>
  * This action is throttled at one request per second.
  * </p>
  * <p>
- * For more information about creating DNS records using DKIM tokens, go to the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"> Amazon SES Developer Guide </a> .
+ * For more information about creating DNS records using DKIM tokens, go
+ * to the
+ * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"> Amazon SES Developer Guide </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getIdentityDkimAttributes(GetIdentityDkimAttributesRequest)

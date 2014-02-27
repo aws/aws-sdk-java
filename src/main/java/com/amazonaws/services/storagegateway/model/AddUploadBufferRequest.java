@@ -21,12 +21,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#addUploadBuffer(AddUploadBufferRequest) AddUploadBuffer operation}.
  * <p>
- * This operation configures one or more gateway local disks as upload buffer for a specified gateway. This operation is supported for both the
- * gateway-stored and gateway-cached volume architectures.
+ * This operation configures one or more gateway local disks as upload
+ * buffer for a specified gateway. This operation is supported for both
+ * the gateway-stored and gateway-cached volume architectures.
  * </p>
  * <p>
- * In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add upload buffer, and one or more disk IDs that you want to
- * configure as upload buffer.
+ * In the request, you specify the gateway Amazon Resource Name (ARN) to
+ * which you want to add upload buffer, and one or more disk IDs that you
+ * want to configure as upload buffer.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#addUploadBuffer(AddUploadBufferRequest)

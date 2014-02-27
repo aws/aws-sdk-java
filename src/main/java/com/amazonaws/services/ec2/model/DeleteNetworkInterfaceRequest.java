@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.DeleteNetworkInterfaceRequestM
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteNetworkInterface(DeleteNetworkInterfaceRequest) DeleteNetworkInterface operation}.
  * <p>
- * Deletes the specified network interface. You must detach the network interface before you can delete it.
+ * Deletes the specified network interface. You must detach the network
+ * interface before you can delete it.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteNetworkInterface(DeleteNetworkInterfaceRequest)

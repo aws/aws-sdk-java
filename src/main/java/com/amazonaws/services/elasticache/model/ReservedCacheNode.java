@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <i>PurchaseReservedCacheNodesOffering</i> operation.
+ * Represents the output of a <i>PurchaseReservedCacheNodesOffering</i>
+ * operation.
  * </p>
  */
 public class ReservedCacheNode implements Serializable {

@@ -21,32 +21,49 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kinesis.AmazonKinesis#getRecords(GetRecordsRequest) GetRecords operation}.
  * <p>
- * This operation returns one or more data records from a shard. A <code>GetRecords</code> operation request can retrieve up to 10 MB of data.
+ * This operation returns one or more data records from a shard. A
+ * <code>GetRecords</code> operation request can retrieve up to 10 MB of
+ * data.
  * </p>
  * <p>
- * You specify a shard iterator for the shard that you want to read data from in the <code>ShardIterator</code> parameter. The shard iterator specifies
- * the position in the shard from which you want to start reading data records sequentially. A shard iterator specifies this position using the sequence
- * number of a data record in the shard. For more information about the shard iterator, see GetShardIterator.
+ * You specify a shard iterator for the shard that you want to read data
+ * from in the <code>ShardIterator</code> parameter. The shard iterator
+ * specifies the position in the shard from which you want to start
+ * reading data records sequentially. A shard iterator specifies this
+ * position using the sequence number of a data record in the shard. For
+ * more information about the shard iterator, see GetShardIterator.
  * </p>
  * <p>
- * <code>GetRecords</code> may return a partial result if the response size limit is exceeded. You will get an error, but not a partial result if the
- * shard's provisioned throughput is exceeded, the shard iterator has expired, or an internal processing failure has occurred. Clients can request a
- * smaller amount of data by specifying a maximum number of returned records using the <code>Limit</code> parameter. The <code>Limit</code> parameter can
- * be set to an integer value of up to 10,000. If you set the value to an integer greater than 10,000, you will receive
- * <code>InvalidArgumentException</code> .
+ * <code>GetRecords</code> may return a partial result if the response
+ * size limit is exceeded. You will get an error, but not a partial
+ * result if the shard's provisioned throughput is exceeded, the shard
+ * iterator has expired, or an internal processing failure has occurred.
+ * Clients can request a smaller amount of data by specifying a maximum
+ * number of returned records using the <code>Limit</code> parameter. The
+ * <code>Limit</code> parameter can be set to an integer value of up to
+ * 10,000. If you set the value to an integer greater than 10,000, you
+ * will receive <code>InvalidArgumentException</code> .
  * </p>
  * <p>
- * A new shard iterator is returned by every <code>GetRecords</code> request in <code>NextShardIterator</code> ,
- * which you use in the <code>ShardIterator</code> parameter of the next <code>GetRecords</code> request. When you repeatedly read from an
- * Amazon Kinesis stream use a GetShardIterator request to get the first shard iterator to use in your first <code>GetRecords</code> request and then use
- * the shard iterator returned in <code>NextShardIterator</code> for subsequent reads.
+ * A new shard iterator is returned by every <code>GetRecords</code>
+ * request in <code>NextShardIterator</code> ,
+ * which you use in the <code>ShardIterator</code> parameter
+ * of the next <code>GetRecords</code> request. When you repeatedly read
+ * from an Amazon Kinesis stream use a GetShardIterator request to get
+ * the first shard iterator to use in your first <code>GetRecords</code>
+ * request and then use the shard iterator returned in
+ * <code>NextShardIterator</code> for subsequent reads.
  * </p>
  * <p>
- * <code>GetRecords</code> can return <code>null</code> for the <code>NextShardIterator</code> to reflect that the shard has been closed and that the
- * requested shard iterator would never have returned more data.
+ * <code>GetRecords</code> can return <code>null</code> for the
+ * <code>NextShardIterator</code> to reflect that the shard has been
+ * closed and that the requested shard iterator would never have returned
+ * more data.
  * </p>
  * <p>
- * If no items can be processed because of insufficient provisioned throughput on the shard involved in the request, <code>GetRecords</code> throws
+ * If no items can be processed because of insufficient provisioned
+ * throughput on the shard involved in the request,
+ * <code>GetRecords</code> throws
  * <code>ProvisionedThroughputExceededException</code> .
  * </p>
  *

@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type containing information about the specified health check.
+ * A complex type containing information about the specified health
+ * check.
  * </p>
  */
 public class GetHealthCheckResult implements Serializable {

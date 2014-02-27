@@ -18,7 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This entity represents an instance group, which is a group of instances that have common purpose. For example, CORE instance group is used for HDFS.
+ * This entity represents an instance group, which is a group of
+ * instances that have common purpose. For example, CORE instance group
+ * is used for HDFS.
  * </p>
  */
 public class InstanceGroup implements Serializable {

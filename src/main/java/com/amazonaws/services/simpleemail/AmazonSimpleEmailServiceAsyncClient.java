@@ -35,11 +35,16 @@ import com.amazonaws.services.simpleemail.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * Amazon Simple Email Service <p>
- * This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to be used in conjunction with the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html"> Amazon SES Developer Guide </a> .
+ * This is the API Reference for Amazon Simple Email Service (Amazon
+ * SES). This documentation is intended to be used in conjunction with
+ * the
+ * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html"> Amazon SES Developer Guide </a>
+ * .
  * </p>
  * <p>
- * <b>NOTE:</b>For a list of Amazon SES endpoints to use in service requests, see Regions and Amazon SES in the Amazon SES Developer Guide.
+ * <b>NOTE:</b>For a list of Amazon SES endpoints to use in service
+ * requests, see Regions and Amazon SES in the Amazon SES Developer
+ * Guide.
  * </p>
  */
 public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServiceClient
@@ -49,6 +54,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
+
+    private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -91,13 +98,13 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSimpleEmailServiceAsyncClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonSimpleEmailService using the specified AWS account credentials.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -109,7 +116,7 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      *                       when authenticating with AWS services.
      */
     public AmazonSimpleEmailServiceAsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newCachedThreadPool());
+        this(awsCredentials, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -163,7 +170,7 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonSimpleEmailService using the specified AWS account credentials provider.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -176,7 +183,7 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      *            to authenticate requests with AWS services.
      */
     public AmazonSimpleEmailServiceAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -219,7 +226,7 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      */
     public AmazonSimpleEmailServiceAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
                 ClientConfiguration clientConfiguration) {
-        this(awsCredentialsProvider, clientConfiguration, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -263,7 +270,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who
      * wish to give pending asynchronous service calls time to complete should
-     * call getExecutorService().shutdown() prior to calling this method.
+     * call getExecutorService().shutdown() followed by
+     * getExecutorService().awaitTermination() prior to calling this method.
      */
     @Override
     public void shutdown() {
@@ -301,8 +309,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<DeleteIdentityResult>() {
             public DeleteIdentityResult call() throws Exception {
                 return deleteIdentity(deleteIdentityRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -340,17 +348,17 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteIdentityResult>() {
             public DeleteIdentityResult call() throws Exception {
-                DeleteIdentityResult result;
+              DeleteIdentityResult result;
                 try {
-                    result = deleteIdentity(deleteIdentityRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteIdentityRequest, result);
-                   return result;
-            }
-        });
+                result = deleteIdentity(deleteIdentityRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteIdentityRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -389,8 +397,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<ListVerifiedEmailAddressesResult>() {
             public ListVerifiedEmailAddressesResult call() throws Exception {
                 return listVerifiedEmailAddresses(listVerifiedEmailAddressesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -434,17 +442,17 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListVerifiedEmailAddressesResult>() {
             public ListVerifiedEmailAddressesResult call() throws Exception {
-                ListVerifiedEmailAddressesResult result;
+              ListVerifiedEmailAddressesResult result;
                 try {
-                    result = listVerifiedEmailAddresses(listVerifiedEmailAddressesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(listVerifiedEmailAddressesRequest, result);
-                   return result;
-            }
-        });
+                result = listVerifiedEmailAddresses(listVerifiedEmailAddressesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listVerifiedEmailAddressesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -482,8 +490,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<GetSendStatisticsResult>() {
             public GetSendStatisticsResult call() throws Exception {
                 return getSendStatistics(getSendStatisticsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -526,17 +534,17 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetSendStatisticsResult>() {
             public GetSendStatisticsResult call() throws Exception {
-                GetSendStatisticsResult result;
+              GetSendStatisticsResult result;
                 try {
-                    result = getSendStatistics(getSendStatisticsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(getSendStatisticsRequest, result);
-                   return result;
-            }
-        });
+                result = getSendStatistics(getSendStatisticsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getSendStatisticsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -570,8 +578,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<VerifyEmailIdentityResult>() {
             public VerifyEmailIdentityResult call() throws Exception {
                 return verifyEmailIdentity(verifyEmailIdentityRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -610,17 +618,17 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<VerifyEmailIdentityResult>() {
             public VerifyEmailIdentityResult call() throws Exception {
-                VerifyEmailIdentityResult result;
+              VerifyEmailIdentityResult result;
                 try {
-                    result = verifyEmailIdentity(verifyEmailIdentityRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(verifyEmailIdentityRequest, result);
-                   return result;
-            }
-        });
+                result = verifyEmailIdentity(verifyEmailIdentityRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(verifyEmailIdentityRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -632,9 +640,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * This action is throttled at one request per second.
      * </p>
      * <p>
-     * For more information about feedback notification, see the <a
-     * on.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html">
-     * Amazon SES Developer Guide </a> .
+     * For more information about feedback notification, see the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param getIdentityNotificationAttributesRequest Container for the
@@ -659,8 +667,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<GetIdentityNotificationAttributesResult>() {
             public GetIdentityNotificationAttributesResult call() throws Exception {
                 return getIdentityNotificationAttributes(getIdentityNotificationAttributesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -672,9 +680,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * This action is throttled at one request per second.
      * </p>
      * <p>
-     * For more information about feedback notification, see the <a
-     * on.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html">
-     * Amazon SES Developer Guide </a> .
+     * For more information about feedback notification, see the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param getIdentityNotificationAttributesRequest Container for the
@@ -704,17 +712,17 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetIdentityNotificationAttributesResult>() {
             public GetIdentityNotificationAttributesResult call() throws Exception {
-                GetIdentityNotificationAttributesResult result;
+              GetIdentityNotificationAttributesResult result;
                 try {
-                    result = getIdentityNotificationAttributes(getIdentityNotificationAttributesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(getIdentityNotificationAttributesRequest, result);
-                   return result;
-            }
-        });
+                result = getIdentityNotificationAttributes(getIdentityNotificationAttributesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getIdentityNotificationAttributesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -736,9 +744,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * </p>
      * <p>
      * For more information about creating DNS records using DKIM tokens, go
-     * to the <a
-     * .aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">
-     * Amazon SES Developer Guide </a> .
+     * to the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param verifyDomainDkimRequest Container for the necessary parameters
@@ -762,8 +770,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<VerifyDomainDkimResult>() {
             public VerifyDomainDkimResult call() throws Exception {
                 return verifyDomainDkim(verifyDomainDkimRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -785,9 +793,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * </p>
      * <p>
      * For more information about creating DNS records using DKIM tokens, go
-     * to the <a
-     * .aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">
-     * Amazon SES Developer Guide </a> .
+     * to the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param verifyDomainDkimRequest Container for the necessary parameters
@@ -816,17 +824,17 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<VerifyDomainDkimResult>() {
             public VerifyDomainDkimResult call() throws Exception {
-                VerifyDomainDkimResult result;
+              VerifyDomainDkimResult result;
                 try {
-                    result = verifyDomainDkim(verifyDomainDkimRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(verifyDomainDkimRequest, result);
-                   return result;
-            }
-        });
+                result = verifyDomainDkim(verifyDomainDkimRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(verifyDomainDkimRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -856,9 +864,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * </p>
      * <p>
      * For more information about creating DNS records using DKIM tokens, go
-     * to the <a
-     * .aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">
-     * Amazon SES Developer Guide </a> .
+     * to the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param getIdentityDkimAttributesRequest Container for the necessary
@@ -883,8 +891,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<GetIdentityDkimAttributesResult>() {
             public GetIdentityDkimAttributesResult call() throws Exception {
                 return getIdentityDkimAttributes(getIdentityDkimAttributesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -914,9 +922,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * </p>
      * <p>
      * For more information about creating DNS records using DKIM tokens, go
-     * to the <a
-     * .aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">
-     * Amazon SES Developer Guide </a> .
+     * to the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param getIdentityDkimAttributesRequest Container for the necessary
@@ -946,17 +954,17 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetIdentityDkimAttributesResult>() {
             public GetIdentityDkimAttributesResult call() throws Exception {
-                GetIdentityDkimAttributesResult result;
+              GetIdentityDkimAttributesResult result;
                 try {
-                    result = getIdentityDkimAttributes(getIdentityDkimAttributesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(getIdentityDkimAttributesRequest, result);
-                   return result;
-            }
-        });
+                result = getIdentityDkimAttributes(getIdentityDkimAttributesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getIdentityDkimAttributesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -996,8 +1004,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
             public Void call() throws Exception {
                 verifyEmailAddress(verifyEmailAddressRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1041,16 +1049,16 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    verifyEmailAddress(verifyEmailAddressRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(verifyEmailAddressRequest, null);
-                   return null;
-            }
-        });
+              try {
+                verifyEmailAddress(verifyEmailAddressRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(verifyEmailAddressRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1082,9 +1090,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * For every message that you send, the total number of recipients (To:,
      * CC: and BCC:) is counted against your <i>sending quota</i> - the
      * maximum number of emails you can send in a 24-hour period. For
-     * information about your sending quota, go to the <a
-     * .aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">
-     * Amazon SES Developer Guide </a> .
+     * information about your sending quota, go to the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param sendRawEmailRequest Container for the necessary parameters to
@@ -1107,8 +1115,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<SendRawEmailResult>() {
             public SendRawEmailResult call() throws Exception {
                 return sendRawEmail(sendRawEmailRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1140,9 +1148,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * For every message that you send, the total number of recipients (To:,
      * CC: and BCC:) is counted against your <i>sending quota</i> - the
      * maximum number of emails you can send in a 24-hour period. For
-     * information about your sending quota, go to the <a
-     * .aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">
-     * Amazon SES Developer Guide </a> .
+     * information about your sending quota, go to the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param sendRawEmailRequest Container for the necessary parameters to
@@ -1170,17 +1178,17 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<SendRawEmailResult>() {
             public SendRawEmailResult call() throws Exception {
-                SendRawEmailResult result;
+              SendRawEmailResult result;
                 try {
-                    result = sendRawEmail(sendRawEmailRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(sendRawEmailRequest, result);
-                   return result;
-            }
-        });
+                result = sendRawEmail(sendRawEmailRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(sendRawEmailRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1214,8 +1222,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<ListIdentitiesResult>() {
             public ListIdentitiesResult call() throws Exception {
                 return listIdentities(listIdentitiesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1254,17 +1262,17 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ListIdentitiesResult>() {
             public ListIdentitiesResult call() throws Exception {
-                ListIdentitiesResult result;
+              ListIdentitiesResult result;
                 try {
-                    result = listIdentities(listIdentitiesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(listIdentitiesRequest, result);
-                   return result;
-            }
-        });
+                result = listIdentities(listIdentitiesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listIdentitiesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1299,8 +1307,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<GetIdentityVerificationAttributesResult>() {
             public GetIdentityVerificationAttributesResult call() throws Exception {
                 return getIdentityVerificationAttributes(getIdentityVerificationAttributesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1340,17 +1348,17 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetIdentityVerificationAttributesResult>() {
             public GetIdentityVerificationAttributesResult call() throws Exception {
-                GetIdentityVerificationAttributesResult result;
+              GetIdentityVerificationAttributesResult result;
                 try {
-                    result = getIdentityVerificationAttributes(getIdentityVerificationAttributesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(getIdentityVerificationAttributesRequest, result);
-                   return result;
-            }
-        });
+                result = getIdentityVerificationAttributes(getIdentityVerificationAttributesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getIdentityVerificationAttributesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1377,9 +1385,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * This action is throttled at one request per second.
      * </p>
      * <p>
-     * For more information about Easy DKIM signing, go to the <a
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">
-     * Amazon SES Developer Guide </a> .
+     * For more information about Easy DKIM signing, go to the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param setIdentityDkimEnabledRequest Container for the necessary
@@ -1404,8 +1412,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<SetIdentityDkimEnabledResult>() {
             public SetIdentityDkimEnabledResult call() throws Exception {
                 return setIdentityDkimEnabled(setIdentityDkimEnabledRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1432,9 +1440,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * This action is throttled at one request per second.
      * </p>
      * <p>
-     * For more information about Easy DKIM signing, go to the <a
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">
-     * Amazon SES Developer Guide </a> .
+     * For more information about Easy DKIM signing, go to the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param setIdentityDkimEnabledRequest Container for the necessary
@@ -1464,17 +1472,17 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<SetIdentityDkimEnabledResult>() {
             public SetIdentityDkimEnabledResult call() throws Exception {
-                SetIdentityDkimEnabledResult result;
+              SetIdentityDkimEnabledResult result;
                 try {
-                    result = setIdentityDkimEnabled(setIdentityDkimEnabledRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(setIdentityDkimEnabledRequest, result);
-                   return result;
-            }
-        });
+                result = setIdentityDkimEnabled(setIdentityDkimEnabledRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(setIdentityDkimEnabledRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1505,8 +1513,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<GetSendQuotaResult>() {
             public GetSendQuotaResult call() throws Exception {
                 return getSendQuota(getSendQuotaRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1542,17 +1550,17 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<GetSendQuotaResult>() {
             public GetSendQuotaResult call() throws Exception {
-                GetSendQuotaResult result;
+              GetSendQuotaResult result;
                 try {
-                    result = getSendQuota(getSendQuotaRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(getSendQuotaRequest, result);
-                   return result;
-            }
-        });
+                result = getSendQuota(getSendQuotaRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getSendQuotaRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1566,9 +1574,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * This action is throttled at one request per second.
      * </p>
      * <p>
-     * For more information about feedback notification, see the <a
-     * on.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html">
-     * Amazon SES Developer Guide </a> .
+     * For more information about feedback notification, see the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param setIdentityFeedbackForwardingEnabledRequest Container for the
@@ -1594,8 +1602,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<SetIdentityFeedbackForwardingEnabledResult>() {
             public SetIdentityFeedbackForwardingEnabledResult call() throws Exception {
                 return setIdentityFeedbackForwardingEnabled(setIdentityFeedbackForwardingEnabledRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1609,9 +1617,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * This action is throttled at one request per second.
      * </p>
      * <p>
-     * For more information about feedback notification, see the <a
-     * on.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html">
-     * Amazon SES Developer Guide </a> .
+     * For more information about feedback notification, see the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param setIdentityFeedbackForwardingEnabledRequest Container for the
@@ -1642,17 +1650,17 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<SetIdentityFeedbackForwardingEnabledResult>() {
             public SetIdentityFeedbackForwardingEnabledResult call() throws Exception {
-                SetIdentityFeedbackForwardingEnabledResult result;
+              SetIdentityFeedbackForwardingEnabledResult result;
                 try {
-                    result = setIdentityFeedbackForwardingEnabled(setIdentityFeedbackForwardingEnabledRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(setIdentityFeedbackForwardingEnabledRequest, result);
-                   return result;
-            }
-        });
+                result = setIdentityFeedbackForwardingEnabled(setIdentityFeedbackForwardingEnabledRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(setIdentityFeedbackForwardingEnabledRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1685,8 +1693,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<VerifyDomainIdentityResult>() {
             public VerifyDomainIdentityResult call() throws Exception {
                 return verifyDomainIdentity(verifyDomainIdentityRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1724,17 +1732,17 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<VerifyDomainIdentityResult>() {
             public VerifyDomainIdentityResult call() throws Exception {
-                VerifyDomainIdentityResult result;
+              VerifyDomainIdentityResult result;
                 try {
-                    result = verifyDomainIdentity(verifyDomainIdentityRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(verifyDomainIdentityRequest, result);
-                   return result;
-            }
-        });
+                result = verifyDomainIdentity(verifyDomainIdentityRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(verifyDomainIdentityRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1763,9 +1771,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * For every message that you send, the total number of recipients (To:,
      * CC: and BCC:) is counted against your <i>sending quota</i> - the
      * maximum number of emails you can send in a 24-hour period. For
-     * information about your sending quota, go to the <a
-     * .aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">
-     * Amazon SES Developer Guide </a> .
+     * information about your sending quota, go to the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param sendEmailRequest Container for the necessary parameters to
@@ -1788,8 +1796,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<SendEmailResult>() {
             public SendEmailResult call() throws Exception {
                 return sendEmail(sendEmailRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1818,9 +1826,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * For every message that you send, the total number of recipients (To:,
      * CC: and BCC:) is counted against your <i>sending quota</i> - the
      * maximum number of emails you can send in a 24-hour period. For
-     * information about your sending quota, go to the <a
-     * .aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">
-     * Amazon SES Developer Guide </a> .
+     * information about your sending quota, go to the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param sendEmailRequest Container for the necessary parameters to
@@ -1848,17 +1856,17 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<SendEmailResult>() {
             public SendEmailResult call() throws Exception {
-                SendEmailResult result;
+              SendEmailResult result;
                 try {
-                    result = sendEmail(sendEmailRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(sendEmailRequest, result);
-                   return result;
-            }
-        });
+                result = sendEmail(sendEmailRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(sendEmailRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1898,8 +1906,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
             public Void call() throws Exception {
                 deleteVerifiedEmailAddress(deleteVerifiedEmailAddressRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1943,16 +1951,16 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteVerifiedEmailAddress(deleteVerifiedEmailAddressRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteVerifiedEmailAddressRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteVerifiedEmailAddress(deleteVerifiedEmailAddressRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteVerifiedEmailAddressRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1967,9 +1975,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * This action is throttled at one request per second.
      * </p>
      * <p>
-     * For more information about feedback notification, see the <a
-     * on.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html">
-     * Amazon SES Developer Guide </a> .
+     * For more information about feedback notification, see the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param setIdentityNotificationTopicRequest Container for the necessary
@@ -1994,8 +2002,8 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<SetIdentityNotificationTopicResult>() {
             public SetIdentityNotificationTopicResult call() throws Exception {
                 return setIdentityNotificationTopic(setIdentityNotificationTopicRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2010,9 +2018,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * This action is throttled at one request per second.
      * </p>
      * <p>
-     * For more information about feedback notification, see the <a
-     * on.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html">
-     * Amazon SES Developer Guide </a> .
+     * For more information about feedback notification, see the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+     * .
      * </p>
      *
      * @param setIdentityNotificationTopicRequest Container for the necessary
@@ -2042,17 +2050,17 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<SetIdentityNotificationTopicResult>() {
             public SetIdentityNotificationTopicResult call() throws Exception {
-                SetIdentityNotificationTopicResult result;
+              SetIdentityNotificationTopicResult result;
                 try {
-                    result = setIdentityNotificationTopic(setIdentityNotificationTopicRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(setIdentityNotificationTopicRequest, result);
-                   return result;
-            }
-        });
+                result = setIdentityNotificationTopic(setIdentityNotificationTopicRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(setIdentityNotificationTopicRequest, result);
+                 return result;
+        }
+    });
     }
     
 }

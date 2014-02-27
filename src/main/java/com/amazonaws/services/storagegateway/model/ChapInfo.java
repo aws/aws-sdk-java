@@ -18,7 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators.
+ * Describes Challenge-Handshake Authentication Protocol (CHAP)
+ * information that supports authentication between your gateway and
+ * iSCSI initiators.
  * </p>
  */
 public class ChapInfo implements Serializable {

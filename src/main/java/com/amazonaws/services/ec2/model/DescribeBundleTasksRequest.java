@@ -26,8 +26,10 @@ import com.amazonaws.services.ec2.model.transform.DescribeBundleTasksRequestMars
  * Describes one or more of your bundling tasks.
  * </p>
  * <p>
- * <b>NOTE:</b> Completed bundle tasks are listed for only a limited time. If your bundle task is no longer in the list, you can still register an AMI
- * from it. Just use RegisterImage with the Amazon S3 bucket name and image manifest name you provided to the bundle task.
+ * <b>NOTE:</b> Completed bundle tasks are listed for only a limited
+ * time. If your bundle task is no longer in the list, you can still
+ * register an AMI from it. Just use RegisterImage with the Amazon S3
+ * bucket name and image manifest name you provided to the bundle task.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeBundleTasks(DescribeBundleTasksRequest)

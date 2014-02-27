@@ -26,14 +26,21 @@ public class MaximumNumberOfTrailsExceededExceptionUnmarshaller extends JsonErro
         super(MaximumNumberOfTrailsExceededException.class);
     }
 
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands.
-        String errorCode = parseErrorCode(json);
-        if (errorCode == null || !errorCode.equals("MaximumNumberOfTrailsExceededException"))
-            return null;
+    @Override
+    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
+        if (errorTypeFromHeader == null) {
+            // Parse error type from the JSON content if it's not available in the response headers
+            String errorCodeFromContent = parseErrorCode(json);
+            return (errorCodeFromContent != null && errorCodeFromContent.equals("MaximumNumberOfTrailsExceededException"));
+        } else {
+            return errorTypeFromHeader.equals("MaximumNumberOfTrailsExceededException");
+        }
+    }
 
+    @Override
+    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         MaximumNumberOfTrailsExceededException e = (MaximumNumberOfTrailsExceededException)super.unmarshall(json);
+        e.setErrorCode("MaximumNumberOfTrailsExceededException");
 
         return e;
     }

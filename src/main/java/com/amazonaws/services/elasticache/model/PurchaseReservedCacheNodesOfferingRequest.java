@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest) PurchaseReservedCacheNodesOffering operation}.
  * <p>
- * The <i>PurchaseReservedCacheNodesOffering</i> operation allows you to purchase a reserved cache node offering.
+ * The <i>PurchaseReservedCacheNodesOffering</i> operation allows you to
+ * purchase a reserved cache node offering.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest)

@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#modifyReplicationGroup(ModifyReplicationGroupRequest) ModifyReplicationGroup operation}.
  * <p>
- * The <i>ModifyReplicationGroup</i> operation modifies the settings for a replication group.
+ * The <i>ModifyReplicationGroup</i> operation modifies the settings for
+ * a replication group.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#modifyReplicationGroup(ModifyReplicationGroupRequest)

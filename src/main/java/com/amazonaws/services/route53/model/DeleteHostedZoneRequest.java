@@ -21,18 +21,24 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#deleteHostedZone(DeleteHostedZoneRequest) DeleteHostedZone operation}.
  * <p>
- * This action deletes a hosted zone. To delete a hosted zone, send a <code>DELETE</code> request to the <code>2013-04-01/hostedzone/hosted zone ID
- * </code> resource.
+ * This action deletes a hosted zone. To delete a hosted zone, send a
+ * <code>DELETE</code> request to the <code>2013-04-01/hostedzone/hosted
+ * zone ID </code> resource.
  * </p>
  * <p>
- * For more information about deleting a hosted zone, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html">
- * Deleting a Hosted Zone </a> in the <i>Amazon Route 53 Developer Guide</i> .
+ * For more information about deleting a hosted zone, see
+ * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html"> Deleting a Hosted Zone </a>
+ * in the <i>Amazon Route 53 Developer Guide</i> .
  * </p>
  * <p>
- * <b>IMPORTANT:</b> You can delete a hosted zone only if there are no resource record sets other than the default SOA record and NS resource record
- * sets. If your hosted zone contains other resource record sets, you must delete them before you can delete your hosted zone. If you try to delete a
- * hosted zone that contains other resource record sets, Route 53 will deny your request with a HostedZoneNotEmpty error. For information about deleting
- * records from your hosted zone, see ChangeResourceRecordSets.
+ * <b>IMPORTANT:</b> You can delete a hosted zone only if there are no
+ * resource record sets other than the default SOA record and NS resource
+ * record sets. If your hosted zone contains other resource record sets,
+ * you must delete them before you can delete your hosted zone. If you
+ * try to delete a hosted zone that contains other resource record sets,
+ * Route 53 will deny your request with a HostedZoneNotEmpty error. For
+ * information about deleting records from your hosted zone, see
+ * ChangeResourceRecordSets.
  * </p>
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#deleteHostedZone(DeleteHostedZoneRequest)

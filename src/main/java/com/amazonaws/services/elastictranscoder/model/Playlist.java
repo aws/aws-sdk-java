@@ -18,9 +18,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Use Only for MPEG-TS Outputs. If you specify a preset for which the value of Container is <code>ts</code> (MPEG-TS), Playlists contains information
- * about the master playlists that you want Elastic Transcoder to create. We recommend that you create only one master playlist. The maximum number of
- * master playlists in a job is 30.
+ * Use Only for MPEG-TS Outputs. If you specify a preset for which the
+ * value of Container is <code>ts</code> (MPEG-TS), Playlists contains
+ * information about the master playlists that you want Elastic
+ * Transcoder to create. We recommend that you create only one master
+ * playlist. The maximum number of master playlists in a job is 30.
  * </p>
  */
 public class Playlist implements Serializable {

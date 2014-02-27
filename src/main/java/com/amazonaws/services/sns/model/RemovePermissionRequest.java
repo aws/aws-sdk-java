@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#removePermission(RemovePermissionRequest) RemovePermission operation}.
  * <p>
- * The <code>RemovePermission</code> action removes a statement from a topic's access control policy.
+ * The <code>RemovePermission</code> action removes a statement from a
+ * topic's access control policy.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#removePermission(RemovePermissionRequest)

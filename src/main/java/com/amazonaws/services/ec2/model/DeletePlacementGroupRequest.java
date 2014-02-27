@@ -23,10 +23,12 @@ import com.amazonaws.services.ec2.model.transform.DeletePlacementGroupRequestMar
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deletePlacementGroup(DeletePlacementGroupRequest) DeletePlacementGroup operation}.
  * <p>
- * Deletes the specified placement group. You must terminate all instances in the placement group before you can delete the placement group. For more
- * information about placement groups and cluster instances, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a> in the <i>Amazon Elastic Compute Cloud
- * User Guide</i> .
+ * Deletes the specified placement group. You must terminate all
+ * instances in the placement group before you can delete the placement
+ * group. For more information about placement groups and cluster
+ * instances, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deletePlacementGroup(DeletePlacementGroupRequest)

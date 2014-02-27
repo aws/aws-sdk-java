@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A structure containing information about a public virtual interface that will be provisioned on a connection.
+ * A structure containing information about a public virtual interface
+ * that will be provisioned on a connection.
  * </p>
  */
 public class NewPublicVirtualInterfaceAllocation implements Serializable {

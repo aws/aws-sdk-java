@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the ListMFADevices action.
+ * Contains the result of a successful invocation of the ListMFADevices
+ * action.
  * </p>
  */
 public class ListMFADevicesResult implements Serializable {

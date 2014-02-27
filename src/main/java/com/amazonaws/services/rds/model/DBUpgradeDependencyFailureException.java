@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The DB upgrade failed because a resource the DB depends on could not be modified.
+ * The DB upgrade failed because a resource the DB depends on could not
+ * be modified.
  * </p>
  */        
 public class DBUpgradeDependencyFailureException extends AmazonServiceException {

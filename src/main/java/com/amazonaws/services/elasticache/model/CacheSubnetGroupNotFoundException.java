@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The requested cache subnet group name does not refer to an existing cache subnet group.
+ * The requested cache subnet group name does not refer to an existing
+ * cache subnet group.
  * </p>
  */        
 public class CacheSubnetGroupNotFoundException extends AmazonServiceException {

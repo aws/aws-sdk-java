@@ -18,11 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the CreateDBParameterGroup action.
+ * Contains the result of a successful invocation of the
+ * CreateDBParameterGroup action.
  * </p>
  * <p>
- * This data type is used as a request parameter in the DeleteDBParameterGroup action, and as a response element in the DescribeDBParameterGroups
- * action.
+ * This data type is used as a request parameter in the
+ * DeleteDBParameterGroup action, and as a response element in the
+ * DescribeDBParameterGroups action.
  * </p>
  */
 public class DBParameterGroup implements Serializable {

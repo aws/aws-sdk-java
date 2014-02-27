@@ -26,11 +26,14 @@ import com.amazonaws.services.ec2.model.transform.CreateRouteRequestMarshaller;
  * Creates a route in a route table within a VPC.
  * </p>
  * <p>
- * You must specify one of the following targets: Internet gateway, NAT instance, or network interface.
+ * You must specify one of the following targets: Internet gateway, NAT
+ * instance, or network interface.
  * </p>
  * <p>
- * When determining how to route traffic, we use the route with the most specific match. For example, let's say the traffic is destined for
- * <code>192.0.2.3</code> , and the route table includes the following two routes:
+ * When determining how to route traffic, we use the route with the most
+ * specific match. For example, let's say the traffic is destined for
+ * <code>192.0.2.3</code> , and the route table includes the following
+ * two routes:
  * </p>
  * 
  * <ul>
@@ -45,11 +48,14 @@ import com.amazonaws.services.ec2.model.transform.CreateRouteRequestMarshaller;
  * 
  * </ul>
  * <p>
- * Both routes apply to the traffic destined for <code>192.0.2.3</code> . However, the second route in the list covers a smaller number of IP addresses
- * and is therefore more specific, so we use that route to determine where to target the traffic.
+ * Both routes apply to the traffic destined for <code>192.0.2.3</code> .
+ * However, the second route in the list covers a smaller number of IP
+ * addresses and is therefore more specific, so we use that route to
+ * determine where to target the traffic.
  * </p>
  * <p>
- * For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+ * For more information about route tables, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
  * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *

@@ -21,11 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listJobsByPipeline(ListJobsByPipelineRequest) ListJobsByPipeline operation}.
  * <p>
- * The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.
+ * The ListJobsByPipeline operation gets a list of the jobs currently in
+ * a pipeline.
  * </p>
  * <p>
- * Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the
- * search criteria.
+ * Elastic Transcoder returns all of the jobs currently in the specified
+ * pipeline. The response body contains one element for each job that
+ * satisfies the search criteria.
  * </p>
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listJobsByPipeline(ListJobsByPipelineRequest)

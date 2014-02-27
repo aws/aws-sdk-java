@@ -18,10 +18,12 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The InstanceProfile data type contains information about an instance profile.
+ * The InstanceProfile data type contains information about an instance
+ * profile.
  * </p>
  * <p>
- * This data type is used as a response element in the following actions:
+ * This data type is used as a response element in the following
+ * actions:
  * </p>
  * 
  * <ul>

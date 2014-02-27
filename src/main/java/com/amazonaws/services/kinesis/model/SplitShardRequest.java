@@ -21,49 +21,74 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kinesis.AmazonKinesis#splitShard(SplitShardRequest) SplitShard operation}.
  * <p>
- * This operation splits a shard into two new shards in the stream, to increase the stream's capacity to ingest and transport data.
- * <code>SplitShard</code> is called when there is a need to increase the overall capacity of stream because of an expected increase in the volume of
- * data records being ingested.
+ * This operation splits a shard into two new shards in the stream, to
+ * increase the stream's capacity to ingest and transport data.
+ * <code>SplitShard</code> is called when there is a need to increase the
+ * overall capacity of stream because of an expected increase in the
+ * volume of data records being ingested.
  * </p>
  * <p>
- * <code>SplitShard</code> can also be used when a given shard appears to be approaching its maximum utilization, for example, when the set of producers
- * sending data into the specific shard are suddenly sending more than previously anticipated. You can also call the <code>SplitShard</code> operation to
- * increase stream capacity, so that more Amazon Kinesis applications can simultaneously read data from the stream for real-time processing.
+ * <code>SplitShard</code> can also be used when a given shard appears
+ * to be approaching its maximum utilization, for example, when the set
+ * of producers sending data into the specific shard are suddenly sending
+ * more than previously anticipated. You can also call the
+ * <code>SplitShard</code> operation to increase stream capacity, so that
+ * more Amazon Kinesis applications can simultaneously read data from the
+ * stream for real-time processing.
  * </p>
  * <p>
- * The <code>SplitShard</code> operation requires that you specify the shard to be split and the new hash key, which is the position in the shard where
- * the shard gets split in two. In many cases, the new hash key might simply be the average of the beginning and ending hash key, but it can be any hash
- * key value in the range being mapped into the shard. For more information about splitting shards, see the <a
- * href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a> .
+ * The <code>SplitShard</code> operation requires that you specify the
+ * shard to be split and the new hash key, which is the position in the
+ * shard where the shard gets split in two. In many cases, the new hash
+ * key might simply be the average of the beginning and ending hash key,
+ * but it can be any hash key value in the range being mapped into the
+ * shard. For more information about splitting shards, see the
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+ * .
  * </p>
  * <p>
- * You can use the DescribeStream operation to determine the shard ID and hash key values for the <code>ShardToSplit</code> and
- * <code>NewStartingHashKey</code> parameters that are specified in the <code>SplitShard</code> request.
+ * You can use the DescribeStream operation to determine the shard ID and
+ * hash key values for the <code>ShardToSplit</code> and
+ * <code>NewStartingHashKey</code> parameters that are specified in the
+ * <code>SplitShard</code> request.
  * </p>
  * <p>
- * <code>SplitShard</code> is an asynchronous operation. Upon receiving a <code>SplitShard</code> request, Amazon Kinesis immediately returns a response
- * and sets the stream status to UPDATING. After the operation is completed, Amazon Kinesis sets the stream status to ACTIVE. Read and write operations
- * continue to work while the stream is in the UPDATING state.
+ * <code>SplitShard</code> is an asynchronous operation. Upon receiving
+ * a <code>SplitShard</code> request, Amazon Kinesis immediately returns
+ * a response and sets the stream status to UPDATING. After the operation
+ * is completed, Amazon Kinesis sets the stream status to ACTIVE. Read
+ * and write operations continue to work while the stream is in the
+ * UPDATING state.
  * </p>
  * <p>
- * You can use <code>DescribeStream</code> to check the status of the stream, which is returned in <code>StreamStatus</code> .
- * If the stream is in the ACTIVE state, you can call <code>SplitShard</code> .
- * If a stream is in CREATING or UPDATING or DELETING states, then Amazon Kinesis returns a <code>ResourceInUseException</code> .
+ * You can use <code>DescribeStream</code> to check the status of the
+ * stream, which is returned in <code>StreamStatus</code> .
+ * If the stream is in the ACTIVE state, you can call
+ * <code>SplitShard</code> .
+ * If a stream is in CREATING or UPDATING or DELETING
+ * states, then Amazon Kinesis returns a
+ * <code>ResourceInUseException</code> .
  * </p>
  * <p>
- * If the specified stream does not exist, Amazon Kinesis returns a <code>ResourceNotFoundException</code> .
- * If you try to create more shards than are authorized for your account, you receive a <code>LimitExceededException</code> .
+ * If the specified stream does not exist, Amazon Kinesis returns a
+ * <code>ResourceNotFoundException</code> .
+ * If you try to create more shards than are authorized
+ * for your account, you receive a <code>LimitExceededException</code> .
  * </p>
  * <p>
- * <b>Note:</b> The default limit for an AWS account is two shards per stream. If you need to create a stream with more than two shards, contact AWS
- * Support to increase the limit on your account.
+ * <b>Note:</b> The default limit for an AWS account is five shards per
+ * stream. If you need to create a stream with more than five shards,
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
+ * to increase the limit on your account.
  * </p>
  * <p>
- * If you try to operate on too many streams in parallel using CreateStream, DeleteStream, MergeShards or SplitShard, you will receive a
- * <code>LimitExceededException</code> .
+ * If you try to operate on too many streams in parallel using
+ * CreateStream, DeleteStream, MergeShards or SplitShard, you will
+ * receive a <code>LimitExceededException</code> .
  * </p>
  * <p>
- * <code>SplitShard</code> has limit of 5 transactions per second per account.
+ * <code>SplitShard</code> has limit of 5 transactions per second per
+ * account.
  * </p>
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#splitShard(SplitShardRequest)

@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#createCacheCluster(CreateCacheClusterRequest) CreateCacheCluster operation}.
  * <p>
- * The <i>CreateCacheCluster</i> operation creates a new cache cluster. All nodes in the cache cluster run the same protocol-compliant cache engine
- * software - either Memcached or Redis.
+ * The <i>CreateCacheCluster</i> operation creates a new cache cluster.
+ * All nodes in the cache cluster run the same protocol-compliant cache
+ * engine software - either Memcached or Redis.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#createCacheCluster(CreateCacheClusterRequest)

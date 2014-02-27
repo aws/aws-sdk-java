@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains a logical operation for comparing the value of a field with a specified value.
+ * Contains a logical operation for comparing the value of a field with a
+ * specified value.
  * </p>
  */
 public class Operator implements Serializable {

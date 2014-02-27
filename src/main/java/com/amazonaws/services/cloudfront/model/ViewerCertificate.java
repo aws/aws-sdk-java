@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains information about viewer certificates for this distribution.
+ * A complex type that contains information about viewer certificates
+ * for this distribution.
  * </p>
  */
 public class ViewerCertificate implements Serializable {

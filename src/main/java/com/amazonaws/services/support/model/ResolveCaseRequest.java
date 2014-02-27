@@ -21,7 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#resolveCase(ResolveCaseRequest) ResolveCase operation}.
  * <p>
- * Takes a <code>CaseId</code> and returns the initial state of the case along with the state of the case after the call to ResolveCase completed.
+ * Takes a <code>CaseId</code> and returns the initial state of the case
+ * along with the state of the case after the call to ResolveCase
+ * completed.
  * </p>
  *
  * @see com.amazonaws.services.support.AWSSupport#resolveCase(ResolveCaseRequest)

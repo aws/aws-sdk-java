@@ -18,8 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>MetricDatum</code> data type encapsulates the information sent with PutMetricData to either create a new metric or add new values to be
- * aggregated into an existing metric.
+ * The <code>MetricDatum</code> data type encapsulates the information
+ * sent with PutMetricData to either create a new metric or add new
+ * values to be aggregated into an existing metric.
  * </p>
  */
 public class MetricDatum implements Serializable {

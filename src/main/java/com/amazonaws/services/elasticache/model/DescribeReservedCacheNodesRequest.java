@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeReservedCacheNodes(DescribeReservedCacheNodesRequest) DescribeReservedCacheNodes operation}.
  * <p>
- * The <i>DescribeReservedCacheNodes</i> operation returns information about reserved cache nodes for this account, or about a specified reserved cache
- * node.
+ * The <i>DescribeReservedCacheNodes</i> operation returns information
+ * about reserved cache nodes for this account, or about a specified
+ * reserved cache node.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeReservedCacheNodes(DescribeReservedCacheNodesRequest)

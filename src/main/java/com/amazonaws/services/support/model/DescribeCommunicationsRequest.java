@@ -21,12 +21,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#describeCommunications(DescribeCommunicationsRequest) DescribeCommunications operation}.
  * <p>
- * Returns communications regarding the support case. You can use the <code>AfterTime</code> and <code>BeforeTime</code> parameters to filter by date.
- * The <code>CaseId</code> parameter enables you to identify a specific case by its <code>CaseId</code> value.
+ * Returns communications regarding the support case. You can use the
+ * <code>AfterTime</code> and <code>BeforeTime</code> parameters to
+ * filter by date. The <code>CaseId</code> parameter enables you to
+ * identify a specific case by its <code>CaseId</code> value.
  * </p>
  * <p>
- * The <code>MaxResults</code> and <code>NextToken</code> parameters enable you to control the pagination of the result set. Set <code>MaxResults</code>
- * to the number of cases you want displayed on each page, and use <code>NextToken</code> to specify the resumption of pagination.
+ * The <code>MaxResults</code> and <code>NextToken</code> parameters
+ * enable you to control the pagination of the result set. Set
+ * <code>MaxResults</code> to the number of cases you want displayed on
+ * each page, and use <code>NextToken</code> to specify the resumption of
+ * pagination.
  * </p>
  *
  * @see com.amazonaws.services.support.AWSSupport#describeCommunications(DescribeCommunicationsRequest)

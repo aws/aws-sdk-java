@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains the value of the <code>Value</code> element for the current resource record set.
+ * A complex type that contains the value of the <code>Value</code>
+ * element for the current resource record set.
  * </p>
  */
 public class ResourceRecord implements Serializable {

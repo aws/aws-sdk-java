@@ -21,26 +21,40 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kinesis.AmazonKinesis#describeStream(DescribeStreamRequest) DescribeStream operation}.
  * <p>
- * This operation returns the following information about the stream: the current status of the stream, the stream Amazon Resource Name (ARN), and an
- * array of shard objects that comprise the stream. For each shard object there is information about the hash key and sequence number ranges that the
- * shard spans, and the IDs of any earlier shards that played in a role in a MergeShards or SplitShard operation that created the shard. A sequence
- * number is the identifier associated with every record ingested in the Amazon Kinesis stream. The sequence number is assigned by the Amazon Kinesis
- * service when a record is put into the stream.
+ * This operation returns the following information about the stream: the
+ * current status of the stream, the stream Amazon Resource Name (ARN),
+ * and an array of shard objects that comprise the stream. For each shard
+ * object there is information about the hash key and sequence number
+ * ranges that the shard spans, and the IDs of any earlier shards that
+ * played in a role in a MergeShards or SplitShard operation that created
+ * the shard. A sequence number is the identifier associated with every
+ * record ingested in the Amazon Kinesis stream. The sequence number is
+ * assigned by the Amazon Kinesis service when a record is put into the
+ * stream.
  * </p>
  * <p>
- * You can limit the number of returned shards using the <code>Limit</code> parameter. The number of shards in a stream may be too large to return from a
- * single call to <code>DescribeStream</code> .
- * You can detect this by using the <code>HasMoreShards</code> flag in the returned output. <code>HasMoreShards</code> is set to
- * <code>true</code> when there is more data available.
+ * You can limit the number of returned shards using the
+ * <code>Limit</code> parameter. The number of shards in a stream may be
+ * too large to return from a single call to <code>DescribeStream</code>
+ * .
+ * You can detect this by using the
+ * <code>HasMoreShards</code> flag in the returned output.
+ * <code>HasMoreShards</code> is set to <code>true</code> when there is
+ * more data available.
  * </p>
  * <p>
- * If there are more shards available, you can request more shards by using the shard ID of the last shard returned by the <code>DescribeStream</code>
- * request, in the <code>ExclusiveStartShardId</code> parameter in a subsequent request to <code>DescribeStream</code> .
+ * If there are more shards available, you can request more shards by
+ * using the shard ID of the last shard returned by the
+ * <code>DescribeStream</code> request, in the
+ * <code>ExclusiveStartShardId</code> parameter in a subsequent request
+ * to <code>DescribeStream</code> .
  * 
- * <code>DescribeStream</code> is a paginated operation.
+ * <code>DescribeStream</code> is a paginated
+ * operation.
  * </p>
  * <p>
- * <code>DescribeStream</code> has a limit of 10 transactions per second per account.
+ * <code>DescribeStream</code> has a limit of 10 transactions per second
+ * per account.
  * </p>
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#describeStream(DescribeStreamRequest)

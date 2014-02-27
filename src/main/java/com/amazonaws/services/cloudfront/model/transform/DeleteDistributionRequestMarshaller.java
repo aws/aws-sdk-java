@@ -45,7 +45,7 @@ public class DeleteDistributionRequestMarshaller implements Marshaller<Request<D
         if (deleteDistributionRequest.getIfMatch() != null)
             request.addHeader("If-Match", StringUtils.fromString(deleteDistributionRequest.getIfMatch()));
 
-        String uriResourcePath = "2013-11-11/distribution/{Id}"; 
+        String uriResourcePath = "2013-11-22/distribution/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(deleteDistributionRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {

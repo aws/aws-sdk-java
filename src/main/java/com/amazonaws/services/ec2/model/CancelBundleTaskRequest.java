@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.CancelBundleTaskRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#cancelBundleTask(CancelBundleTaskRequest) CancelBundleTask operation}.
  * <p>
- * Cancels a bundling operation for an instance store-backed Windows instance.
+ * Cancels a bundling operation for an instance store-backed Windows
+ * instance.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelBundleTask(CancelBundleTaskRequest)

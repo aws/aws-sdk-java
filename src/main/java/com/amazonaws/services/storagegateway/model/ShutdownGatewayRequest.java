@@ -21,27 +21,36 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#shutdownGateway(ShutdownGatewayRequest) ShutdownGateway operation}.
  * <p>
- * This operation shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource Name (ARN) of the gateway in the body of your
- * request.
+ * This operation shuts down a gateway. To specify which gateway to shut
+ * down, use the Amazon Resource Name (ARN) of the gateway in the body of
+ * your request.
  * </p>
  * <p>
- * The operation shuts down the gateway service component running in the storage gateway's virtual machine (VM) and not the VM.
+ * The operation shuts down the gateway service component running in the
+ * storage gateway's virtual machine (VM) and not the VM.
  * </p>
  * <p>
- * <b>NOTE:</b>If you want to shut down the VM, it is recommended that you first shut down the gateway component in the VM to avoid unpredictable
- * conditions.
+ * <b>NOTE:</b>If you want to shut down the VM, it is recommended that
+ * you first shut down the gateway component in the VM to avoid
+ * unpredictable conditions.
  * </p>
  * <p>
- * After the gateway is shutdown, you cannot call any other API except StartGateway, DescribeGatewayInformation, and ListGateways. For more information,
- * see ActivateGateway. Your applications cannot read from or write to the gateway's storage volumes, and there are no snapshots taken.
+ * After the gateway is shutdown, you cannot call any other API except
+ * StartGateway, DescribeGatewayInformation, and ListGateways. For more
+ * information, see ActivateGateway. Your applications cannot read from
+ * or write to the gateway's storage volumes, and there are no snapshots
+ * taken.
  * </p>
  * <p>
- * <b>NOTE:</b>When you make a shutdown request, you will get a 200 OK success response immediately. However, it might take some time for the gateway to
- * shut down. You can call the DescribeGatewayInformation API to check the status. For more information, see ActivateGateway.
+ * <b>NOTE:</b>When you make a shutdown request, you will get a 200 OK
+ * success response immediately. However, it might take some time for the
+ * gateway to shut down. You can call the DescribeGatewayInformation API
+ * to check the status. For more information, see ActivateGateway.
  * </p>
  * <p>
- * If do not intend to use the gateway again, you must delete the gateway (using DeleteGateway) to no longer pay software charges associated with the
- * gateway.
+ * If do not intend to use the gateway again, you must delete the gateway
+ * (using DeleteGateway) to no longer pay software charges associated
+ * with the gateway.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#shutdownGateway(ShutdownGatewayRequest)

@@ -21,39 +21,61 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kinesis.AmazonKinesis#getShardIterator(GetShardIteratorRequest) GetShardIterator operation}.
  * <p>
- * This operation returns a shard iterator in <code>ShardIterator</code> . The shard iterator specifies the position in the shard from which you want to
- * start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard. A sequence
- * number is the identifier associated with every record ingested in the Amazon Kinesis stream. The sequence number is assigned by the Amazon Kinesis
- * service when a record is put into the stream.
+ * This operation returns a shard iterator in <code>ShardIterator</code>
+ * . The shard iterator specifies the position in the shard from which
+ * you want to start reading data records sequentially. A shard iterator
+ * specifies this position using the sequence number of a data record in
+ * a shard. A sequence number is the identifier associated with every
+ * record ingested in the Amazon Kinesis stream. The sequence number is
+ * assigned by the Amazon Kinesis service when a record is put into the
+ * stream.
  * </p>
  * <p>
- * You must specify the shard iterator type in the <code>GetShardIterator</code> request. For example, you can set the <code>ShardIteratorType</code>
- * parameter to read exactly from the position denoted by a specific sequence number by using the AT_SEQUENCE_NUMBER shard iterator type, or right after
- * the sequence number by using the AFTER_SEQUENCE_NUMBER shard iterator type, using sequence numbers returned by earlier PutRecord, GetRecords or
- * DescribeStream requests. You can specify the shard iterator type TRIM_HORIZON in the request to cause <code>ShardIterator</code> to point to the last
- * untrimmed record in the shard in the system, which is the oldest data record in the shard. Or you can point to just after the most recent record in
- * the shard, by using the shard iterator type LATEST, so that you always read the most recent data in the shard.
+ * You must specify the shard iterator type in the
+ * <code>GetShardIterator</code> request. For example, you can set the
+ * <code>ShardIteratorType</code> parameter to read exactly from the
+ * position denoted by a specific sequence number by using the
+ * AT_SEQUENCE_NUMBER shard iterator type, or right after the sequence
+ * number by using the AFTER_SEQUENCE_NUMBER shard iterator type, using
+ * sequence numbers returned by earlier PutRecord, GetRecords or
+ * DescribeStream requests. You can specify the shard iterator type
+ * TRIM_HORIZON in the request to cause <code>ShardIterator</code> to
+ * point to the last untrimmed record in the shard in the system, which
+ * is the oldest data record in the shard. Or you can point to just after
+ * the most recent record in the shard, by using the shard iterator type
+ * LATEST, so that you always read the most recent data in the shard.
  * </p>
  * <p>
- * <b>Note:</b> Each shard iterator expires five minutes after it is returned to the requester.
+ * <b>Note:</b> Each shard iterator expires five minutes after it is
+ * returned to the requester.
  * </p>
  * <p>
- * When you repeatedly read from an Amazon Kinesis stream use a GetShardIterator request to get the first shard iterator to to use in your first
- * <code>GetRecords</code> request and then use the shard iterator returned by the <code>GetRecords</code> request in <code>NextShardIterator</code> for
- * subsequent reads. A new shard iterator is returned by every <code>GetRecords</code> request in <code>NextShardIterator</code> ,
- * which you use in the <code>ShardIterator</code> parameter of the next <code>GetRecords</code> request.
+ * When you repeatedly read from an Amazon Kinesis stream use a
+ * GetShardIterator request to get the first shard iterator to to use in
+ * your first <code>GetRecords</code> request and then use the shard
+ * iterator returned by the <code>GetRecords</code> request in
+ * <code>NextShardIterator</code> for subsequent reads. A new shard
+ * iterator is returned by every <code>GetRecords</code> request in
+ * <code>NextShardIterator</code> ,
+ * which you use in the <code>ShardIterator</code> parameter
+ * of the next <code>GetRecords</code> request.
  * </p>
  * <p>
- * If a <code>GetShardIterator</code> request is made too often, you will receive a <code>ProvisionedThroughputExceededException</code> .
- * For more information about throughput limits, see the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer
- * Guide </a> .
+ * If a <code>GetShardIterator</code> request is made too often, you will
+ * receive a <code>ProvisionedThroughputExceededException</code> .
+ * For more information about throughput limits, see the
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+ * .
  * </p>
  * <p>
- * <code>GetShardIterator</code> can return <code>null</code> for its <code>ShardIterator</code> to indicate that the shard has been closed and that the
- * requested iterator will return no more data. A shard can be closed by a SplitShard or MergeShards operation.
+ * <code>GetShardIterator</code> can return <code>null</code> for its
+ * <code>ShardIterator</code> to indicate that the shard has been closed
+ * and that the requested iterator will return no more data. A shard can
+ * be closed by a SplitShard or MergeShards operation.
  * </p>
  * <p>
- * <code>GetShardIterator</code> has a limit of 5 transactions per second per account per shard.
+ * <code>GetShardIterator</code> has a limit of 5 transactions per
+ * second per account per shard.
  * </p>
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#getShardIterator(GetShardIteratorRequest)

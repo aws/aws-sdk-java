@@ -18,8 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/UnderstandingResponses.html"> Responses
- * </a> in the <i>Amazon SQS Developer Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/UnderstandingResponses.html"> Responses </a>
+ * in the <i>Amazon SQS Developer Guide</i> .
  * </p>
  */
 public class GetQueueUrlResult implements Serializable {

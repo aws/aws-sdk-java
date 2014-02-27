@@ -21,9 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#subscribe(SubscribeRequest) Subscribe operation}.
  * <p>
- * The <code>Subscribe</code> action prepares to subscribe an endpoint by sending the endpoint a confirmation message. To actually create a subscription,
- * the endpoint owner must call the <code>ConfirmSubscription</code> action with the token from the confirmation message. Confirmation tokens are valid
- * for three days.
+ * The <code>Subscribe</code> action prepares to subscribe an endpoint by
+ * sending the endpoint a confirmation message. To actually create a
+ * subscription, the endpoint owner must call the
+ * <code>ConfirmSubscription</code> action with the token from the
+ * confirmation message. Confirmation tokens are valid for three days.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#subscribe(SubscribeRequest)

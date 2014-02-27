@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createPipeline(CreatePipelineRequest) CreatePipeline operation}.
  * <p>
- * The CreatePipeline operation creates a pipeline with settings that you specify.
+ * The CreatePipeline operation creates a pipeline with settings that you
+ * specify.
  * </p>
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createPipeline(CreatePipelineRequest)

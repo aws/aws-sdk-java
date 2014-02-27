@@ -18,8 +18,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A scaling Activity is a long-running process that represents a change to your AutoScalingGroup, such as changing the size of the group. It can also
- * be a process to replace an instance, or a process to perform any other long-running operations supported by the API.
+ * A scaling Activity is a long-running process that represents a change
+ * to your AutoScalingGroup, such as changing the size of the group. It
+ * can also be a process to replace an instance, or a process to perform
+ * any other long-running operations supported by the API.
  * </p>
  */
 public class Activity implements Serializable {

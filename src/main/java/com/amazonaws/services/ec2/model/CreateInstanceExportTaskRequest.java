@@ -24,9 +24,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Exports a running or stopped instance to an Amazon S3 bucket.
  * </p>
  * <p>
- * For information about the supported operating systems, image formats, and known limitations for the types of instances you can export, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html"> Exporting EC2 Instances </a> in the <i>Amazon Elastic Compute
- * Cloud User Guide</i> .
+ * For information about the supported operating systems, image formats,
+ * and known limitations for the types of instances you can export, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html"> Exporting EC2 Instances </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createInstanceExportTask(CreateInstanceExportTaskRequest)

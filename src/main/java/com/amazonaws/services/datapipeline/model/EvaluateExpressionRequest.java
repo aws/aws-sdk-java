@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#evaluateExpression(EvaluateExpressionRequest) EvaluateExpression operation}.
  * <p>
- * Evaluates a string in the context of a specified object. A task runner can use this action to evaluate SQL queries stored in Amazon S3.
+ * Evaluates a string in the context of a specified object. A task runner
+ * can use this action to evaluate SQL queries stored in Amazon S3.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#evaluateExpression(EvaluateExpressionRequest)

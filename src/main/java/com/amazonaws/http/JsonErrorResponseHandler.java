@@ -23,18 +23,24 @@ import java.util.Map.Entry;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
-import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.transform.JsonErrorUnmarshaller;
 import com.amazonaws.util.json.JSONObject;
 
 public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServiceException> {
 
     /**
+     * Services using AWS JSON 1.1 protocol with HTTP binding send the error
+     * type information in the response headers, instead of the content.
+     */
+    private static final String X_AMZN_ERROR_TYPE = "x-amzn-ErrorType";
+
+    /**
      * The list of error response unmarshallers to try to apply to error
      * responses.
      */
-    private List<Unmarshaller<AmazonServiceException, JSONObject>> unmarshallerList;
+    private List<? extends JsonErrorUnmarshaller> unmarshallerList;
 
-    public JsonErrorResponseHandler(List<Unmarshaller<AmazonServiceException, JSONObject>> exceptionUnmarshallers) {
+    public JsonErrorResponseHandler(List<? extends JsonErrorUnmarshaller> exceptionUnmarshallers) {
         this.unmarshallerList = exceptionUnmarshallers;
     }
 
@@ -49,7 +55,9 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
             throw new AmazonClientException("Unable to parse error response: '" + streamContents + "'", e);
         }
 
-        AmazonServiceException ase = runErrorUnmarshallers(response, jsonErrorMessage);
+        String errorTypeFromHeader = parseErrorTypeFromHeader(response);
+
+        AmazonServiceException ase = runErrorUnmarshallers(response, jsonErrorMessage, errorTypeFromHeader);
         if (ase == null) return null;
 
         ase.setServiceName(response.getRequest().getServiceName());
@@ -69,17 +77,17 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
         return ase;
     }
 
-    protected AmazonServiceException runErrorUnmarshallers(HttpResponse errorResponse, JSONObject json) throws Exception {
+    private AmazonServiceException runErrorUnmarshallers(HttpResponse errorResponse, JSONObject json, String errorTypeFromHeader) throws Exception {
         /*
          * We need to select which exception unmarshaller is the correct one to
          * use from all the possible exceptions this operation can throw.
-         * Currently we rely on the unmarshallers to return null if they can't
-         * unmarshall the response, but we might need something a little more
-         * sophisticated in the future.
+         * Currently we rely on JsonErrorUnmarshaller.match(...) method which
+         * checks for the error type parsed either from response headers or the
+         * content.
          */
-        for (Unmarshaller<AmazonServiceException, JSONObject> unmarshaller : unmarshallerList) {
-            AmazonServiceException ase = unmarshaller.unmarshall(json);
-            if (ase != null) {
+        for (JsonErrorUnmarshaller unmarshaller : unmarshallerList) {
+            if (unmarshaller.match(errorTypeFromHeader, json)) {
+                AmazonServiceException ase = unmarshaller.unmarshall(json);
                 ase.setStatusCode(errorResponse.getStatusCode());
                 return ase;
             }
@@ -109,4 +117,18 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
         }
     }
 
+    /**
+     * Attempt to parse the error type from the response headers.
+     * Returns null if such information is not available in the header.
+     */
+    private String parseErrorTypeFromHeader(HttpResponse response) {
+        String headerValue = response.getHeaders().get(X_AMZN_ERROR_TYPE);
+        if (headerValue != null) {
+            int separator = headerValue.indexOf(':');
+            if (separator != -1) {
+                headerValue  = headerValue.substring(0, separator);
+            }
+        }
+        return headerValue;
+    }
 }

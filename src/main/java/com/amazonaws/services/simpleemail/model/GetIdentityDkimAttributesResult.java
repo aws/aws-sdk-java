@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a list of all the DKIM attributes for the specified identity.
+ * Represents a list of all the DKIM attributes for the specified
+ * identity.
  * </p>
  */
 public class GetIdentityDkimAttributesResult implements Serializable {

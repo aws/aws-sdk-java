@@ -26,14 +26,21 @@ public class ProvisionedThroughputExceededExceptionUnmarshaller extends JsonErro
         super(ProvisionedThroughputExceededException.class);
     }
 
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands.
-        String errorCode = parseErrorCode(json);
-        if (errorCode == null || !errorCode.equals("ProvisionedThroughputExceededException"))
-            return null;
+    @Override
+    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
+        if (errorTypeFromHeader == null) {
+            // Parse error type from the JSON content if it's not available in the response headers
+            String errorCodeFromContent = parseErrorCode(json);
+            return (errorCodeFromContent != null && errorCodeFromContent.equals("ProvisionedThroughputExceededException"));
+        } else {
+            return errorTypeFromHeader.equals("ProvisionedThroughputExceededException");
+        }
+    }
 
+    @Override
+    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         ProvisionedThroughputExceededException e = (ProvisionedThroughputExceededException)super.unmarshall(json);
+        e.setErrorCode("ProvisionedThroughputExceededException");
 
         return e;
     }

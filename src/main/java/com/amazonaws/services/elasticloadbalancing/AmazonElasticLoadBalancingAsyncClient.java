@@ -35,38 +35,54 @@ import com.amazonaws.services.elasticloadbalancing.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * Elastic Load Balancing <p>
- * Elastic Load Balancing is a cost-effective and easy to use web service to help you improve the availability and scalability of your application
- * running on Amazon Elastic Cloud Compute (Amazon EC2). It makes it easy for you to distribute application loads between two or more EC2 instances.
- * Elastic Load Balancing supports the growth in traffic of your application by enabling availability through redundancy.
+ * Elastic Load Balancing is a cost-effective and easy to use web
+ * service to help you improve the availability and scalability of your
+ * application running on Amazon Elastic Cloud Compute (Amazon EC2). It
+ * makes it easy for you to distribute application loads between two or
+ * more EC2 instances. Elastic Load Balancing supports the growth in
+ * traffic of your application by enabling availability through
+ * redundancy.
  * </p>
  * <p>
- * This guide provides detailed information about Elastic Load Balancing actions, data types, and parameters that can be used for sending a query
- * request. Query requests are HTTP or HTTPS requests that use the HTTP verb GET or POST and a query parameter named Action or Operation. Action is used
- * throughout this documentation, although Operation is supported for backward compatibility with other AWS Query APIs.
+ * This guide provides detailed information about Elastic Load Balancing
+ * actions, data types, and parameters that can be used for sending a
+ * query request. Query requests are HTTP or HTTPS requests that use the
+ * HTTP verb GET or POST and a query parameter named Action or Operation.
+ * Action is used throughout this documentation, although Operation is
+ * supported for backward compatibility with other AWS Query APIs.
  * </p>
  * <p>
- * For detailed information on constructing a query request using the actions, data types, and parameters mentioned in this guide, go to <a
- * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-query-api.html"> Using the Query API </a> in the <i>Elastic Load
- * Balancing Developer Guide</i> .
+ * For detailed information on constructing a query request using the
+ * actions, data types, and parameters mentioned in this guide, go to
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-query-api.html"> Using the Query API </a>
+ * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  * <p>
- * For detailed information about Elastic Load Balancing features and their associated actions, go to <a
- * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html"> Using Elastic Load Balancing </a> in the <i>Elastic
- * Load Balancing Developer Guide</i> .
+ * For detailed information about Elastic Load Balancing features and
+ * their associated actions, go to
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html"> Using Elastic Load Balancing </a>
+ * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  * <p>
- * This reference guide is based on the current WSDL, which is available at: <a
- * href="http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/ElasticLoadBalancing.wsdl"> </a>
+ * This reference guide is based on the current WSDL, which is available
+ * at:
+ * <a href="http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/ElasticLoadBalancing.wsdl"> </a>
+ * 
  * </p>
  * <p>
  * <b>Endpoints</b>
  * </p>
  * <p>
- * The examples in this guide assume that your load balancers are created in the US East (Northern Virginia) region and use us-east-1 as the endpoint.
+ * The examples in this guide assume that your load balancers are created
+ * in the US East (Northern Virginia) region and use us-east-1 as the
+ * endpoint.
  * </p>
  * <p>
- * You can create your load balancers in other AWS regions. For information about regions and endpoints supported by Elastic Load Balancing, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"> Regions and Endpoints </a> in the Amazon Web Services General Reference.
+ * You can create your load balancers in other AWS regions. For
+ * information about regions and endpoints supported by Elastic Load
+ * Balancing, see
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"> Regions and Endpoints </a>
+ * in the Amazon Web Services General Reference.
  * </p>
  */
 public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBalancingClient
@@ -76,6 +92,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
+
+    private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -118,13 +136,13 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticLoadBalancingAsyncClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonElasticLoadBalancing using the specified AWS account credentials.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -136,7 +154,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      *                       when authenticating with AWS services.
      */
     public AmazonElasticLoadBalancingAsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newCachedThreadPool());
+        this(awsCredentials, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -190,7 +208,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonElasticLoadBalancing using the specified AWS account credentials provider.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -203,7 +221,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      *            to authenticate requests with AWS services.
      */
     public AmazonElasticLoadBalancingAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -246,7 +264,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      */
     public AmazonElasticLoadBalancingAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
                 ClientConfiguration clientConfiguration) {
-        this(awsCredentialsProvider, clientConfiguration, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -290,7 +308,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who
      * wish to give pending asynchronous service calls time to complete should
-     * call getExecutorService().shutdown() prior to calling this method.
+     * call getExecutorService().shutdown() followed by
+     * getExecutorService().awaitTermination() prior to calling this method.
      */
     @Override
     public void shutdown() {
@@ -329,8 +348,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DescribeLoadBalancerPolicyTypesResult>() {
             public DescribeLoadBalancerPolicyTypesResult call() throws Exception {
                 return describeLoadBalancerPolicyTypes(describeLoadBalancerPolicyTypesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -369,17 +388,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeLoadBalancerPolicyTypesResult>() {
             public DescribeLoadBalancerPolicyTypesResult call() throws Exception {
-                DescribeLoadBalancerPolicyTypesResult result;
+              DescribeLoadBalancerPolicyTypesResult result;
                 try {
-                    result = describeLoadBalancerPolicyTypes(describeLoadBalancerPolicyTypesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeLoadBalancerPolicyTypesRequest, result);
-                   return result;
-            }
-        });
+                result = describeLoadBalancerPolicyTypes(describeLoadBalancerPolicyTypesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeLoadBalancerPolicyTypesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -388,10 +407,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * state of your back-end instances.
      * </p>
      * <p>
-     * For more information, see <a
-     * ing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck">
-     * Health Check </a> in the <i>Elastic Load Balancing Developer
-     * Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck"> Health Check </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param configureHealthCheckRequest Container for the necessary
@@ -416,8 +434,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<ConfigureHealthCheckResult>() {
             public ConfigureHealthCheckResult call() throws Exception {
                 return configureHealthCheck(configureHealthCheckRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -426,10 +444,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * state of your back-end instances.
      * </p>
      * <p>
-     * For more information, see <a
-     * ing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck">
-     * Health Check </a> in the <i>Elastic Load Balancing Developer
-     * Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck"> Health Check </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param configureHealthCheckRequest Container for the necessary
@@ -459,17 +476,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ConfigureHealthCheckResult>() {
             public ConfigureHealthCheckResult call() throws Exception {
-                ConfigureHealthCheckResult result;
+              ConfigureHealthCheckResult result;
                 try {
-                    result = configureHealthCheck(configureHealthCheckRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(configureHealthCheckRequest, result);
-                   return result;
-            }
-        });
+                result = configureHealthCheck(configureHealthCheckRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(configureHealthCheckRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -507,8 +524,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DetachLoadBalancerFromSubnetsResult>() {
             public DetachLoadBalancerFromSubnetsResult call() throws Exception {
                 return detachLoadBalancerFromSubnets(detachLoadBalancerFromSubnetsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -551,17 +568,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DetachLoadBalancerFromSubnetsResult>() {
             public DetachLoadBalancerFromSubnetsResult call() throws Exception {
-                DetachLoadBalancerFromSubnetsResult result;
+              DetachLoadBalancerFromSubnetsResult result;
                 try {
-                    result = detachLoadBalancerFromSubnets(detachLoadBalancerFromSubnetsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(detachLoadBalancerFromSubnetsRequest, result);
-                   return result;
-            }
-        });
+                result = detachLoadBalancerFromSubnets(detachLoadBalancerFromSubnetsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(detachLoadBalancerFromSubnetsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -591,8 +608,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<ModifyLoadBalancerAttributesResult>() {
             public ModifyLoadBalancerAttributesResult call() throws Exception {
                 return modifyLoadBalancerAttributes(modifyLoadBalancerAttributesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -627,17 +644,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ModifyLoadBalancerAttributesResult>() {
             public ModifyLoadBalancerAttributesResult call() throws Exception {
-                ModifyLoadBalancerAttributesResult result;
+              ModifyLoadBalancerAttributesResult result;
                 try {
-                    result = modifyLoadBalancerAttributes(modifyLoadBalancerAttributesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(modifyLoadBalancerAttributesRequest, result);
-                   return result;
-            }
-        });
+                result = modifyLoadBalancerAttributes(modifyLoadBalancerAttributesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifyLoadBalancerAttributesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -648,10 +665,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * match the properties of the existing listener.
      * </p>
      * <p>
-     * For more information, see <a
-     * .com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html">
-     * Add a Listener to Your Load Balancer </a> in the <i>Elastic Load
-     * Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html"> Add a Listener to Your Load Balancer </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param createLoadBalancerListenersRequest Container for the necessary
@@ -677,8 +693,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
             public Void call() throws Exception {
                 createLoadBalancerListeners(createLoadBalancerListenersRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -689,10 +705,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * match the properties of the existing listener.
      * </p>
      * <p>
-     * For more information, see <a
-     * .com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html">
-     * Add a Listener to Your Load Balancer </a> in the <i>Elastic Load
-     * Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html"> Add a Listener to Your Load Balancer </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param createLoadBalancerListenersRequest Container for the necessary
@@ -722,16 +737,16 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    createLoadBalancerListeners(createLoadBalancerListenersRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createLoadBalancerListenersRequest, null);
-                   return null;
-            }
-        });
+              try {
+                createLoadBalancerListeners(createLoadBalancerListenersRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createLoadBalancerListenersRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -762,8 +777,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
             public Void call() throws Exception {
                 deleteLoadBalancerListeners(deleteLoadBalancerListenersRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -798,16 +813,16 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteLoadBalancerListeners(deleteLoadBalancerListenersRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteLoadBalancerListenersRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteLoadBalancerListeners(deleteLoadBalancerListenersRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteLoadBalancerListenersRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -835,10 +850,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * common web browsers.
      * </p>
      * <p>
-     * For more information, see <a
-     * eloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies">
-     * Enabling Application-Controlled Session Stickiness </a> in the
-     * <i>Elastic Load Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies"> Enabling Application-Controlled Session Stickiness </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param createAppCookieStickinessPolicyRequest Container for the
@@ -863,8 +877,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<CreateAppCookieStickinessPolicyResult>() {
             public CreateAppCookieStickinessPolicyResult call() throws Exception {
                 return createAppCookieStickinessPolicy(createAppCookieStickinessPolicyRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -892,10 +906,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * common web browsers.
      * </p>
      * <p>
-     * For more information, see <a
-     * eloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies">
-     * Enabling Application-Controlled Session Stickiness </a> in the
-     * <i>Elastic Load Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies"> Enabling Application-Controlled Session Stickiness </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param createAppCookieStickinessPolicyRequest Container for the
@@ -925,17 +938,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateAppCookieStickinessPolicyResult>() {
             public CreateAppCookieStickinessPolicyResult call() throws Exception {
-                CreateAppCookieStickinessPolicyResult result;
+              CreateAppCookieStickinessPolicyResult result;
                 try {
-                    result = createAppCookieStickinessPolicy(createAppCookieStickinessPolicyRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createAppCookieStickinessPolicyRequest, result);
-                   return result;
-            }
-        });
+                result = createAppCookieStickinessPolicy(createAppCookieStickinessPolicyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createAppCookieStickinessPolicyRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -945,10 +958,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * IDs will override any currently applied security groups.
      * </p>
      * <p>
-     * For more information, see <a
-     * on.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html">
-     * Manage Security Groups in Amazon VPC </a> in the <i>Elastic Load
-     * Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html"> Manage Security Groups in Amazon VPC </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param applySecurityGroupsToLoadBalancerRequest Container for the
@@ -973,8 +985,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<ApplySecurityGroupsToLoadBalancerResult>() {
             public ApplySecurityGroupsToLoadBalancerResult call() throws Exception {
                 return applySecurityGroupsToLoadBalancer(applySecurityGroupsToLoadBalancerRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -984,10 +996,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * IDs will override any currently applied security groups.
      * </p>
      * <p>
-     * For more information, see <a
-     * on.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html">
-     * Manage Security Groups in Amazon VPC </a> in the <i>Elastic Load
-     * Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html"> Manage Security Groups in Amazon VPC </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param applySecurityGroupsToLoadBalancerRequest Container for the
@@ -1017,17 +1028,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<ApplySecurityGroupsToLoadBalancerResult>() {
             public ApplySecurityGroupsToLoadBalancerResult call() throws Exception {
-                ApplySecurityGroupsToLoadBalancerResult result;
+              ApplySecurityGroupsToLoadBalancerResult result;
                 try {
-                    result = applySecurityGroupsToLoadBalancer(applySecurityGroupsToLoadBalancerRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(applySecurityGroupsToLoadBalancerRequest, result);
-                   return result;
-            }
-        });
+                result = applySecurityGroupsToLoadBalancer(applySecurityGroupsToLoadBalancerRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(applySecurityGroupsToLoadBalancerRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1064,8 +1075,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DescribeLoadBalancerPoliciesResult>() {
             public DescribeLoadBalancerPoliciesResult call() throws Exception {
                 return describeLoadBalancerPolicies(describeLoadBalancerPoliciesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1107,17 +1118,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeLoadBalancerPoliciesResult>() {
             public DescribeLoadBalancerPoliciesResult call() throws Exception {
-                DescribeLoadBalancerPoliciesResult result;
+              DescribeLoadBalancerPoliciesResult result;
                 try {
-                    result = describeLoadBalancerPolicies(describeLoadBalancerPoliciesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeLoadBalancerPoliciesRequest, result);
-                   return result;
-            }
-        });
+                result = describeLoadBalancerPolicies(describeLoadBalancerPoliciesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeLoadBalancerPoliciesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1148,8 +1159,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<SetLoadBalancerPoliciesOfListenerResult>() {
             public SetLoadBalancerPoliciesOfListenerResult call() throws Exception {
                 return setLoadBalancerPoliciesOfListener(setLoadBalancerPoliciesOfListenerRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1185,17 +1196,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<SetLoadBalancerPoliciesOfListenerResult>() {
             public SetLoadBalancerPoliciesOfListenerResult call() throws Exception {
-                SetLoadBalancerPoliciesOfListenerResult result;
+              SetLoadBalancerPoliciesOfListenerResult result;
                 try {
-                    result = setLoadBalancerPoliciesOfListener(setLoadBalancerPoliciesOfListenerRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(setLoadBalancerPoliciesOfListenerRequest, result);
-                   return result;
-            }
-        });
+                result = setLoadBalancerPoliciesOfListener(setLoadBalancerPoliciesOfListenerRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(setLoadBalancerPoliciesOfListenerRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1214,10 +1225,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * load balancer does nothing.
      * </p>
      * <p>
-     * For more information, see <a
-     * com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html">
-     * Disable an Availability Zone from a Load-Balanced Application </a> in
-     * the <i>Elastic Load Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html"> Disable an Availability Zone from a Load-Balanced Application </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param disableAvailabilityZonesForLoadBalancerRequest Container for
@@ -1243,8 +1253,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DisableAvailabilityZonesForLoadBalancerResult>() {
             public DisableAvailabilityZonesForLoadBalancerResult call() throws Exception {
                 return disableAvailabilityZonesForLoadBalancer(disableAvailabilityZonesForLoadBalancerRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1263,10 +1273,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * load balancer does nothing.
      * </p>
      * <p>
-     * For more information, see <a
-     * com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html">
-     * Disable an Availability Zone from a Load-Balanced Application </a> in
-     * the <i>Elastic Load Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html"> Disable an Availability Zone from a Load-Balanced Application </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param disableAvailabilityZonesForLoadBalancerRequest Container for
@@ -1297,17 +1306,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DisableAvailabilityZonesForLoadBalancerResult>() {
             public DisableAvailabilityZonesForLoadBalancerResult call() throws Exception {
-                DisableAvailabilityZonesForLoadBalancerResult result;
+              DisableAvailabilityZonesForLoadBalancerResult result;
                 try {
-                    result = disableAvailabilityZonesForLoadBalancer(disableAvailabilityZonesForLoadBalancerRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(disableAvailabilityZonesForLoadBalancerRequest, result);
-                   return result;
-            }
-        });
+                result = disableAvailabilityZonesForLoadBalancer(disableAvailabilityZonesForLoadBalancerRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(disableAvailabilityZonesForLoadBalancerRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1343,8 +1352,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DescribeInstanceHealthResult>() {
             public DescribeInstanceHealthResult call() throws Exception {
                 return describeInstanceHealth(describeInstanceHealthRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1385,17 +1394,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeInstanceHealthResult>() {
             public DescribeInstanceHealthResult call() throws Exception {
-                DescribeInstanceHealthResult result;
+              DescribeInstanceHealthResult result;
                 try {
-                    result = describeInstanceHealth(describeInstanceHealthRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeInstanceHealthRequest, result);
-                   return result;
-            }
-        });
+                result = describeInstanceHealth(describeInstanceHealthRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeInstanceHealthRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1426,8 +1435,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DeleteLoadBalancerPolicyResult>() {
             public DeleteLoadBalancerPolicyResult call() throws Exception {
                 return deleteLoadBalancerPolicy(deleteLoadBalancerPolicyRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1463,17 +1472,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteLoadBalancerPolicyResult>() {
             public DeleteLoadBalancerPolicyResult call() throws Exception {
-                DeleteLoadBalancerPolicyResult result;
+              DeleteLoadBalancerPolicyResult result;
                 try {
-                    result = deleteLoadBalancerPolicy(deleteLoadBalancerPolicyRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteLoadBalancerPolicyRequest, result);
-                   return result;
-            }
-        });
+                result = deleteLoadBalancerPolicy(deleteLoadBalancerPolicyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteLoadBalancerPolicyRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1506,8 +1515,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<CreateLoadBalancerPolicyResult>() {
             public CreateLoadBalancerPolicyResult call() throws Exception {
                 return createLoadBalancerPolicy(createLoadBalancerPolicyRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1545,17 +1554,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateLoadBalancerPolicyResult>() {
             public CreateLoadBalancerPolicyResult call() throws Exception {
-                CreateLoadBalancerPolicyResult result;
+              CreateLoadBalancerPolicyResult result;
                 try {
-                    result = createLoadBalancerPolicy(createLoadBalancerPolicyRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createLoadBalancerPolicyRequest, result);
-                   return result;
-            }
-        });
+                result = createLoadBalancerPolicy(createLoadBalancerPolicyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createLoadBalancerPolicyRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1572,10 +1581,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * was created.
      * </p>
      * <p>
-     * For more information, see <a
-     * ticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html">
-     * Expand a Load Balanced Application to an Additional Availability Zone
-     * </a> in the <i>Elastic Load Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html"> Expand a Load Balanced Application to an Additional Availability Zone </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param enableAvailabilityZonesForLoadBalancerRequest Container for the
@@ -1601,8 +1609,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<EnableAvailabilityZonesForLoadBalancerResult>() {
             public EnableAvailabilityZonesForLoadBalancerResult call() throws Exception {
                 return enableAvailabilityZonesForLoadBalancer(enableAvailabilityZonesForLoadBalancerRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1619,10 +1627,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * was created.
      * </p>
      * <p>
-     * For more information, see <a
-     * ticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html">
-     * Expand a Load Balanced Application to an Additional Availability Zone
-     * </a> in the <i>Elastic Load Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html"> Expand a Load Balanced Application to an Additional Availability Zone </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param enableAvailabilityZonesForLoadBalancerRequest Container for the
@@ -1653,17 +1660,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<EnableAvailabilityZonesForLoadBalancerResult>() {
             public EnableAvailabilityZonesForLoadBalancerResult call() throws Exception {
-                EnableAvailabilityZonesForLoadBalancerResult result;
+              EnableAvailabilityZonesForLoadBalancerResult result;
                 try {
-                    result = enableAvailabilityZonesForLoadBalancer(enableAvailabilityZonesForLoadBalancerRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(enableAvailabilityZonesForLoadBalancerRequest, result);
-                   return result;
-            }
-        });
+                result = enableAvailabilityZonesForLoadBalancer(enableAvailabilityZonesForLoadBalancerRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(enableAvailabilityZonesForLoadBalancerRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1710,8 +1717,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
             public Void call() throws Exception {
                 deleteLoadBalancer(deleteLoadBalancerRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1762,16 +1769,16 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    deleteLoadBalancer(deleteLoadBalancerRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteLoadBalancerRequest, null);
-                   return null;
-            }
-        });
+              try {
+                deleteLoadBalancer(deleteLoadBalancerRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteLoadBalancerRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -1795,9 +1802,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * </ul>
      * <p>
      * For information about the AWS regions supported by Elastic Load
-     * Balancing, see <a
-     * ="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">
-     * Regions and Endpoints </a> .
+     * Balancing, see
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region"> Regions and Endpoints </a>
+     * .
      * </p>
      * <p>
      * You can create up to 10 load balancers per region per account.
@@ -1810,16 +1817,16 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * <ul>
      * <li> <i>EC2-Classic</i> <p>
      * For information on creating and managing your load balancers in
-     * EC2-Classic, see <a
-     * /ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html">
-     * Deploy Elastic Load Balancing in Amazon EC2-Classic </a> .
+     * EC2-Classic, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html"> Deploy Elastic Load Balancing in Amazon EC2-Classic </a>
+     * .
      * </p>
      * </li>
      * <li> <i>EC2-VPC</i> <p>
      * For information on creating and managing your load balancers in
-     * EC2-VPC, see <a
-     * /ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">
-     * Deploy Elastic Load Balancing in Amazon VPC </a> .
+     * EC2-VPC, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC </a>
+     * .
      * </p>
      * </li>
      * 
@@ -1847,8 +1854,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<CreateLoadBalancerResult>() {
             public CreateLoadBalancerResult call() throws Exception {
                 return createLoadBalancer(createLoadBalancerRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1872,9 +1879,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * </ul>
      * <p>
      * For information about the AWS regions supported by Elastic Load
-     * Balancing, see <a
-     * ="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">
-     * Regions and Endpoints </a> .
+     * Balancing, see
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region"> Regions and Endpoints </a>
+     * .
      * </p>
      * <p>
      * You can create up to 10 load balancers per region per account.
@@ -1887,16 +1894,16 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * <ul>
      * <li> <i>EC2-Classic</i> <p>
      * For information on creating and managing your load balancers in
-     * EC2-Classic, see <a
-     * /ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html">
-     * Deploy Elastic Load Balancing in Amazon EC2-Classic </a> .
+     * EC2-Classic, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html"> Deploy Elastic Load Balancing in Amazon EC2-Classic </a>
+     * .
      * </p>
      * </li>
      * <li> <i>EC2-VPC</i> <p>
      * For information on creating and managing your load balancers in
-     * EC2-VPC, see <a
-     * /ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">
-     * Deploy Elastic Load Balancing in Amazon VPC </a> .
+     * EC2-VPC, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC </a>
+     * .
      * </p>
      * </li>
      * 
@@ -1929,17 +1936,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateLoadBalancerResult>() {
             public CreateLoadBalancerResult call() throws Exception {
-                CreateLoadBalancerResult result;
+              CreateLoadBalancerResult result;
                 try {
-                    result = createLoadBalancer(createLoadBalancerRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createLoadBalancerRequest, result);
-                   return result;
-            }
-        });
+                result = createLoadBalancer(createLoadBalancerRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createLoadBalancerRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1986,8 +1993,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<SetLoadBalancerPoliciesForBackendServerResult>() {
             public SetLoadBalancerPoliciesForBackendServerResult call() throws Exception {
                 return setLoadBalancerPoliciesForBackendServer(setLoadBalancerPoliciesForBackendServerRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2039,17 +2046,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<SetLoadBalancerPoliciesForBackendServerResult>() {
             public SetLoadBalancerPoliciesForBackendServerResult call() throws Exception {
-                SetLoadBalancerPoliciesForBackendServerResult result;
+              SetLoadBalancerPoliciesForBackendServerResult result;
                 try {
-                    result = setLoadBalancerPoliciesForBackendServer(setLoadBalancerPoliciesForBackendServerRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(setLoadBalancerPoliciesForBackendServerRequest, result);
-                   return result;
-            }
-        });
+                result = setLoadBalancerPoliciesForBackendServer(setLoadBalancerPoliciesForBackendServerRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(setLoadBalancerPoliciesForBackendServerRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2062,10 +2069,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * as those used to create the load balancer must be provided.
      * </p>
      * <p>
-     * For more information, see <a
-     * asticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">
-     * De-register and Register Amazon EC2 Instances </a> in the <i>Elastic
-     * Load Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> De-register and Register Amazon EC2 Instances </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      * <p>
      * You can use DescribeLoadBalancers to verify if the instance is
@@ -2095,8 +2101,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DeregisterInstancesFromLoadBalancerResult>() {
             public DeregisterInstancesFromLoadBalancerResult call() throws Exception {
                 return deregisterInstancesFromLoadBalancer(deregisterInstancesFromLoadBalancerRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2109,10 +2115,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * as those used to create the load balancer must be provided.
      * </p>
      * <p>
-     * For more information, see <a
-     * asticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">
-     * De-register and Register Amazon EC2 Instances </a> in the <i>Elastic
-     * Load Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> De-register and Register Amazon EC2 Instances </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      * <p>
      * You can use DescribeLoadBalancers to verify if the instance is
@@ -2147,17 +2152,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeregisterInstancesFromLoadBalancerResult>() {
             public DeregisterInstancesFromLoadBalancerResult call() throws Exception {
-                DeregisterInstancesFromLoadBalancerResult result;
+              DeregisterInstancesFromLoadBalancerResult result;
                 try {
-                    result = deregisterInstancesFromLoadBalancer(deregisterInstancesFromLoadBalancerRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deregisterInstancesFromLoadBalancerRequest, result);
-                   return result;
-            }
-        });
+                result = deregisterInstancesFromLoadBalancer(deregisterInstancesFromLoadBalancerRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deregisterInstancesFromLoadBalancerRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2167,10 +2172,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * that was used on the same load balancer and port.
      * </p>
      * <p>
-     * For more information on updating your SSL certificate, see <a
-     * cLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html">
-     * Updating an SSL Certificate for a Load Balancer </a> in the <i>Elastic
-     * Load Balancing Developer Guide</i> .
+     * For more information on updating your SSL certificate, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html"> Updating an SSL Certificate for a Load Balancer </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param setLoadBalancerListenerSSLCertificateRequest Container for the
@@ -2197,8 +2201,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
             public Void call() throws Exception {
                 setLoadBalancerListenerSSLCertificate(setLoadBalancerListenerSSLCertificateRequest);
                 return null;
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2208,10 +2212,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * that was used on the same load balancer and port.
      * </p>
      * <p>
-     * For more information on updating your SSL certificate, see <a
-     * cLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html">
-     * Updating an SSL Certificate for a Load Balancer </a> in the <i>Elastic
-     * Load Balancing Developer Guide</i> .
+     * For more information on updating your SSL certificate, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html"> Updating an SSL Certificate for a Load Balancer </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param setLoadBalancerListenerSSLCertificateRequest Container for the
@@ -2242,16 +2245,16 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
-                try {
-                    setLoadBalancerListenerSSLCertificate(setLoadBalancerListenerSSLCertificateRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(setLoadBalancerListenerSSLCertificateRequest, null);
-                   return null;
-            }
-        });
+              try {
+                setLoadBalancerListenerSSLCertificate(setLoadBalancerListenerSSLCertificateRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(setLoadBalancerListenerSSLCertificateRequest, null);
+                 return null;
+        }
+    });
     }
     
     /**
@@ -2282,8 +2285,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DescribeLoadBalancerAttributesResult>() {
             public DescribeLoadBalancerAttributesResult call() throws Exception {
                 return describeLoadBalancerAttributes(describeLoadBalancerAttributesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2319,17 +2322,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeLoadBalancerAttributesResult>() {
             public DescribeLoadBalancerAttributesResult call() throws Exception {
-                DescribeLoadBalancerAttributesResult result;
+              DescribeLoadBalancerAttributesResult result;
                 try {
-                    result = describeLoadBalancerAttributes(describeLoadBalancerAttributesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeLoadBalancerAttributesRequest, result);
-                   return result;
-            }
-        });
+                result = describeLoadBalancerAttributes(describeLoadBalancerAttributesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeLoadBalancerAttributesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2355,10 +2358,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * policy configuration.
      * </p>
      * <p>
-     * For more information, see <a
-     * veloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies">
-     * Enabling Duration-Based Session Stickiness </a> in the <i>Elastic Load
-     * Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies"> Enabling Duration-Based Session Stickiness </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param createLBCookieStickinessPolicyRequest Container for the
@@ -2383,8 +2385,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<CreateLBCookieStickinessPolicyResult>() {
             public CreateLBCookieStickinessPolicyResult call() throws Exception {
                 return createLBCookieStickinessPolicy(createLBCookieStickinessPolicyRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2410,10 +2412,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * policy configuration.
      * </p>
      * <p>
-     * For more information, see <a
-     * veloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies">
-     * Enabling Duration-Based Session Stickiness </a> in the <i>Elastic Load
-     * Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies"> Enabling Duration-Based Session Stickiness </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param createLBCookieStickinessPolicyRequest Container for the
@@ -2443,17 +2444,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateLBCookieStickinessPolicyResult>() {
             public CreateLBCookieStickinessPolicyResult call() throws Exception {
-                CreateLBCookieStickinessPolicyResult result;
+              CreateLBCookieStickinessPolicyResult result;
                 try {
-                    result = createLBCookieStickinessPolicy(createLBCookieStickinessPolicyRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createLBCookieStickinessPolicyRequest, result);
-                   return result;
-            }
-        });
+                result = createLBCookieStickinessPolicy(createLBCookieStickinessPolicyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createLBCookieStickinessPolicyRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2463,10 +2464,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * </p>
      * <p>
      * The load balancers evenly distribute requests across all of the
-     * registered subnets. For more information, see <a
-     * /ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">
-     * Deploy Elastic Load Balancing in Amazon VPC </a> in the <i>Elastic
-     * Load Balancing Developer Guide</i> .
+     * registered subnets. For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * 
      * </p>
      *
@@ -2492,8 +2492,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<AttachLoadBalancerToSubnetsResult>() {
             public AttachLoadBalancerToSubnetsResult call() throws Exception {
                 return attachLoadBalancerToSubnets(attachLoadBalancerToSubnetsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2503,10 +2503,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * </p>
      * <p>
      * The load balancers evenly distribute requests across all of the
-     * registered subnets. For more information, see <a
-     * /ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">
-     * Deploy Elastic Load Balancing in Amazon VPC </a> in the <i>Elastic
-     * Load Balancing Developer Guide</i> .
+     * registered subnets. For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * 
      * </p>
      *
@@ -2537,17 +2536,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<AttachLoadBalancerToSubnetsResult>() {
             public AttachLoadBalancerToSubnetsResult call() throws Exception {
-                AttachLoadBalancerToSubnetsResult result;
+              AttachLoadBalancerToSubnetsResult result;
                 try {
-                    result = attachLoadBalancerToSubnets(attachLoadBalancerToSubnetsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(attachLoadBalancerToSubnetsRequest, result);
-                   return result;
-            }
-        });
+                result = attachLoadBalancerToSubnets(attachLoadBalancerToSubnetsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(attachLoadBalancerToSubnetsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2572,10 +2571,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * from load balancer, use DeregisterInstancesFromLoadBalancer action.
      * </p>
      * <p>
-     * For more information, see <a
-     * asticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">
-     * De-register and Register Amazon EC2 Instances </a> in the <i>Elastic
-     * Load Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> De-register and Register Amazon EC2 Instances </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> In order for this call to be successful, you must provide
@@ -2614,8 +2612,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<RegisterInstancesWithLoadBalancerResult>() {
             public RegisterInstancesWithLoadBalancerResult call() throws Exception {
                 return registerInstancesWithLoadBalancer(registerInstancesWithLoadBalancerRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2640,10 +2638,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * from load balancer, use DeregisterInstancesFromLoadBalancer action.
      * </p>
      * <p>
-     * For more information, see <a
-     * asticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">
-     * De-register and Register Amazon EC2 Instances </a> in the <i>Elastic
-     * Load Balancing Developer Guide</i> .
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> De-register and Register Amazon EC2 Instances </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> In order for this call to be successful, you must provide
@@ -2687,17 +2684,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<RegisterInstancesWithLoadBalancerResult>() {
             public RegisterInstancesWithLoadBalancerResult call() throws Exception {
-                RegisterInstancesWithLoadBalancerResult result;
+              RegisterInstancesWithLoadBalancerResult result;
                 try {
-                    result = registerInstancesWithLoadBalancer(registerInstancesWithLoadBalancerRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(registerInstancesWithLoadBalancerRequest, result);
-                   return result;
-            }
-        });
+                result = registerInstancesWithLoadBalancer(registerInstancesWithLoadBalancerRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(registerInstancesWithLoadBalancerRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -2735,8 +2732,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         return executorService.submit(new Callable<DescribeLoadBalancersResult>() {
             public DescribeLoadBalancersResult call() throws Exception {
                 return describeLoadBalancers(describeLoadBalancersRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -2779,17 +2776,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeLoadBalancersResult>() {
             public DescribeLoadBalancersResult call() throws Exception {
-                DescribeLoadBalancersResult result;
+              DescribeLoadBalancersResult result;
                 try {
-                    result = describeLoadBalancers(describeLoadBalancersRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeLoadBalancersRequest, result);
-                   return result;
-            }
-        });
+                result = describeLoadBalancers(describeLoadBalancersRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeLoadBalancersRequest, result);
+                 return result;
+        }
+    });
     }
     
 }

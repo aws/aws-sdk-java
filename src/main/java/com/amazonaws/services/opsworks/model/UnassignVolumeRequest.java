@@ -21,13 +21,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#unassignVolume(UnassignVolumeRequest) UnassignVolume operation}.
  * <p>
- * Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack. For more information, see <a
- * href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a> .
+ * Unassigns an assigned Amazon EBS volume. The volume remains registered
+ * with the stack. For more information, see
+ * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
+ * .
  * </p>
  * <p>
- * <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that
- * explicitly grants permissions. For more information on user permissions, see <a
- * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a> .
+ * <b>Required Permissions</b> : To use this action, an IAM user must
+ * have a Manage permissions level for the stack, or an attached policy
+ * that explicitly grants permissions. For more information on user
+ * permissions, see
+ * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#unassignVolume(UnassignVolumeRequest)

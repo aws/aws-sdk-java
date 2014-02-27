@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Provides ownership and status information for an Amazon EC2 security group.
+ * Provides ownership and status information for an Amazon EC2 security
+ * group.
  * </p>
  */
 public class EC2SecurityGroup implements Serializable {

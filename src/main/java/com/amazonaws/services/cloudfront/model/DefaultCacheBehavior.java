@@ -18,8 +18,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if files don't match any of the values of
- * PathPattern in CacheBehavior elements.You must create exactly one default cache behavior.
+ * A complex type that describes the default cache behavior if you do
+ * not specify a CacheBehavior element or if files don't match any of the
+ * values of PathPattern in CacheBehavior elements.You must create
+ * exactly one default cache behavior.
  * </p>
  */
 public class DefaultCacheBehavior implements Serializable {
@@ -86,6 +88,13 @@ public class DefaultCacheBehavior implements Serializable {
      * origin.
      */
     private AllowedMethods allowedMethods;
+
+    /**
+     * Indicates whether you want to distribute media files in Microsoft
+     * Smooth Streaming format using the origin that is associated with this
+     * cache behavior. If so, specify true; if not, specify false.
+     */
+    private Boolean smoothStreaming;
 
     /**
      * The value of ID for the origin that you want CloudFront to route
@@ -531,6 +540,64 @@ public class DefaultCacheBehavior implements Serializable {
     }
 
     /**
+     * Indicates whether you want to distribute media files in Microsoft
+     * Smooth Streaming format using the origin that is associated with this
+     * cache behavior. If so, specify true; if not, specify false.
+     *
+     * @return Indicates whether you want to distribute media files in Microsoft
+     *         Smooth Streaming format using the origin that is associated with this
+     *         cache behavior. If so, specify true; if not, specify false.
+     */
+    public Boolean isSmoothStreaming() {
+        return smoothStreaming;
+    }
+    
+    /**
+     * Indicates whether you want to distribute media files in Microsoft
+     * Smooth Streaming format using the origin that is associated with this
+     * cache behavior. If so, specify true; if not, specify false.
+     *
+     * @param smoothStreaming Indicates whether you want to distribute media files in Microsoft
+     *         Smooth Streaming format using the origin that is associated with this
+     *         cache behavior. If so, specify true; if not, specify false.
+     */
+    public void setSmoothStreaming(Boolean smoothStreaming) {
+        this.smoothStreaming = smoothStreaming;
+    }
+    
+    /**
+     * Indicates whether you want to distribute media files in Microsoft
+     * Smooth Streaming format using the origin that is associated with this
+     * cache behavior. If so, specify true; if not, specify false.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param smoothStreaming Indicates whether you want to distribute media files in Microsoft
+     *         Smooth Streaming format using the origin that is associated with this
+     *         cache behavior. If so, specify true; if not, specify false.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DefaultCacheBehavior withSmoothStreaming(Boolean smoothStreaming) {
+        this.smoothStreaming = smoothStreaming;
+        return this;
+    }
+
+    /**
+     * Indicates whether you want to distribute media files in Microsoft
+     * Smooth Streaming format using the origin that is associated with this
+     * cache behavior. If so, specify true; if not, specify false.
+     *
+     * @return Indicates whether you want to distribute media files in Microsoft
+     *         Smooth Streaming format using the origin that is associated with this
+     *         cache behavior. If so, specify true; if not, specify false.
+     */
+    public Boolean getSmoothStreaming() {
+        return smoothStreaming;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -547,7 +614,8 @@ public class DefaultCacheBehavior implements Serializable {
         if (getTrustedSigners() != null) sb.append("TrustedSigners: " + getTrustedSigners() + ",");
         if (getViewerProtocolPolicy() != null) sb.append("ViewerProtocolPolicy: " + getViewerProtocolPolicy() + ",");
         if (getMinTTL() != null) sb.append("MinTTL: " + getMinTTL() + ",");
-        if (getAllowedMethods() != null) sb.append("AllowedMethods: " + getAllowedMethods() );
+        if (getAllowedMethods() != null) sb.append("AllowedMethods: " + getAllowedMethods() + ",");
+        if (isSmoothStreaming() != null) sb.append("SmoothStreaming: " + isSmoothStreaming() );
         sb.append("}");
         return sb.toString();
     }
@@ -563,6 +631,7 @@ public class DefaultCacheBehavior implements Serializable {
         hashCode = prime * hashCode + ((getViewerProtocolPolicy() == null) ? 0 : getViewerProtocolPolicy().hashCode()); 
         hashCode = prime * hashCode + ((getMinTTL() == null) ? 0 : getMinTTL().hashCode()); 
         hashCode = prime * hashCode + ((getAllowedMethods() == null) ? 0 : getAllowedMethods().hashCode()); 
+        hashCode = prime * hashCode + ((isSmoothStreaming() == null) ? 0 : isSmoothStreaming().hashCode()); 
         return hashCode;
     }
     
@@ -586,6 +655,8 @@ public class DefaultCacheBehavior implements Serializable {
         if (other.getMinTTL() != null && other.getMinTTL().equals(this.getMinTTL()) == false) return false; 
         if (other.getAllowedMethods() == null ^ this.getAllowedMethods() == null) return false;
         if (other.getAllowedMethods() != null && other.getAllowedMethods().equals(this.getAllowedMethods()) == false) return false; 
+        if (other.isSmoothStreaming() == null ^ this.isSmoothStreaming() == null) return false;
+        if (other.isSmoothStreaming() != null && other.isSmoothStreaming().equals(this.isSmoothStreaming()) == false) return false; 
         return true;
     }
     

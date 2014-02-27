@@ -21,7 +21,8 @@ import java.io.Serializable;
  * The Role data type contains information about a role.
  * </p>
  * <p>
- * This data type is used as a response element in the following actions:
+ * This data type is used as a response element in the following
+ * actions:
  * </p>
  * 
  * <ul>

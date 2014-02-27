@@ -24,8 +24,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes a SAML provider.
  * </p>
  * <p>
- * Deleting the provider does not update any roles that reference the SAML provider as a principal in their trust policies. Any attempt to assume a role
- * that references a SAML provider that has been deleted will fail.
+ * Deleting the provider does not update any roles that reference the
+ * SAML provider as a principal in their trust policies. Any attempt to
+ * assume a role that references a SAML provider that has been deleted
+ * will fail.
  * </p>
  * <p>
  * <b>NOTE:</b>This operation requires Signature Version 4.

@@ -29,34 +29,49 @@ import com.amazonaws.services.glacier.model.*;
  * Amazon Glacier is a storage solution for "cold data."
  * </p>
  * <p>
- * Amazon Glacier is an extremely low-cost storage service that provides secure, durable, and easy-to-use storage for data backup and archival. With
- * Amazon Glacier, customers can store their data cost effectively for months, years, or decades. Amazon Glacier also enables customers to offload the
- * administrative burdens of operating and scaling storage to AWS, so they don't have to worry about capacity planning, hardware provisioning, data
- * replication, hardware failure and recovery, or time-consuming hardware migrations.
+ * Amazon Glacier is an extremely low-cost storage service that provides
+ * secure, durable, and easy-to-use storage for data backup and archival.
+ * With Amazon Glacier, customers can store their data cost effectively
+ * for months, years, or decades. Amazon Glacier also enables customers
+ * to offload the administrative burdens of operating and scaling storage
+ * to AWS, so they don't have to worry about capacity planning, hardware
+ * provisioning, data replication, hardware failure and recovery, or
+ * time-consuming hardware migrations.
  * </p>
  * <p>
- * Amazon Glacier is a great storage choice when low storage cost is paramount, your data is rarely retrieved, and retrieval latency of several hours is
- * acceptable. If your application requires fast or frequent access to your data, consider using Amazon S3. For more information, go to <a
- * href="http://aws.amazon.com/s3/"> Amazon Simple Storage Service (Amazon S3) </a> .
+ * Amazon Glacier is a great storage choice when low storage cost is
+ * paramount, your data is rarely retrieved, and retrieval latency of
+ * several hours is acceptable. If your application requires fast or
+ * frequent access to your data, consider using Amazon S3. For more
+ * information, go to
+ * <a href="http://aws.amazon.com/s3/"> Amazon Simple Storage Service (Amazon S3) </a>
+ * .
  * </p>
  * <p>
- * You can store any kind of data in any format. There is no maximum limit on the total amount of data you can store in Amazon Glacier.
+ * You can store any kind of data in any format. There is no maximum
+ * limit on the total amount of data you can store in Amazon Glacier.
  * </p>
  * <p>
- * If you are a first-time user of Amazon Glacier, we recommend that you begin by reading the following sections in the <i>Amazon Glacier Developer
- * Guide</i> :
+ * If you are a first-time user of Amazon Glacier, we recommend that you
+ * begin by reading the following sections in the <i>Amazon Glacier
+ * Developer Guide</i> :
  * </p>
  * 
  * <ul>
  * <li> <p>
- * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html"> What is Amazon Glacier </a> - This section of the Developer Guide
- * describes the underlying data model, the operations it supports, and the AWS SDKs that you can use to interact with the service.
+ * 
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html"> What is Amazon Glacier </a>
+ * - This section of the Developer Guide describes the underlying data
+ * model, the operations it supports, and the AWS SDKs that you can use
+ * to interact with the service.
  * </p>
  * </li>
  * <li> <p>
- * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html"> Getting Started with Amazon Glacier </a> - The
- * Getting Started section walks you through the process of creating a vault, uploading archives, creating jobs to download archives, retrieving the job
- * output, and deleting archives.
+ * 
+ * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html"> Getting Started with Amazon Glacier </a>
+ * - The Getting Started section walks you through the process of
+ * creating a vault, uploading archives, creating jobs to download
+ * archives, retrieving the job output, and deleting archives.
  * </p>
  * </li>
  * 
@@ -83,16 +98,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">
-     * Retrieving Vault Metadata in Amazon Glacier </a> and <a
-     * p://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">
-     * List Vaults </a> in the <i>Amazon Glacier Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html"> Retrieving Vault Metadata in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html"> List Vaults </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -134,16 +147,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">
-     * Retrieving Vault Metadata in Amazon Glacier </a> and <a
-     * p://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">
-     * List Vaults </a> in the <i>Amazon Glacier Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html"> Retrieving Vault Metadata in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html"> List Vaults </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -192,15 +203,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For information about the underlying REST API, go to <a
-     * cs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html">
-     * Working with Archives in Amazon Glacier </a> in the <i>Amazon Glacier
-     * Developer Guide</i> .
+     * For information about the underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html"> Working with Archives in Amazon Glacier </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -244,15 +254,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For information about the underlying REST API, go to <a
-     * cs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html">
-     * Working with Archives in Amazon Glacier </a> in the <i>Amazon Glacier
-     * Developer Guide</i> .
+     * For information about the underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html"> Working with Archives in Amazon Glacier </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -304,16 +313,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and the underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">
-     * Working with Archives in Amazon Glacier </a> and <a
-     * ws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html">
-     * List Parts </a> in the <i>Amazon Glacier Developer Guide</i> .
+     * For conceptual information and the underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html"> Working with Archives in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html"> List Parts </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * </p>
      *
      * @param listPartsRequest Container for the necessary parameters to
@@ -359,16 +366,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and the underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">
-     * Working with Archives in Amazon Glacier </a> and <a
-     * ws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html">
-     * List Parts </a> in the <i>Amazon Glacier Developer Guide</i> .
+     * For conceptual information and the underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html"> Working with Archives in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html"> List Parts </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * </p>
      *
      * @param listPartsRequest Container for the necessary parameters to
@@ -403,25 +408,22 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * For information about setting a notification configuration on a vault,
      * see SetVaultNotifications. If a notification configuration for a vault
      * is not set, the operation returns a <code>404 Not Found</code> error.
-     * For more information about vault notifications, see <a
-     * s.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">
-     * Configuring Vault Notifications in Amazon Glacier </a> .
+     * For more information about vault notifications, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a>
+     * .
      * </p>
      * <p>
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">
-     * Configuring Vault Notifications in Amazon Glacier </a> and <a
-     * amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html">
-     * Get Vault Notification Configuration </a> in the <i>Amazon Glacier
-     * Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html"> Get Vault Notification Configuration </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -453,25 +455,22 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * For information about setting a notification configuration on a vault,
      * see SetVaultNotifications. If a notification configuration for a vault
      * is not set, the operation returns a <code>404 Not Found</code> error.
-     * For more information about vault notifications, see <a
-     * s.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">
-     * Configuring Vault Notifications in Amazon Glacier </a> .
+     * For more information about vault notifications, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a>
+     * .
      * </p>
      * <p>
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">
-     * Configuring Vault Notifications in Amazon Glacier </a> and <a
-     * amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html">
-     * Get Vault Notification Configuration </a> in the <i>Amazon Glacier
-     * Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html"> Get Vault Notification Configuration </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -549,14 +548,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For the underlying REST API, go to <a
-     * ttp://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html">
-     * List Jobs </a>
+     * For the underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html"> List Jobs </a>
+     * 
      * </p>
      *
      * @param listJobsRequest Container for the necessary parameters to
@@ -627,14 +626,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For the underlying REST API, go to <a
-     * ttp://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html">
-     * List Jobs </a>
+     * For the underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html"> List Jobs </a>
+     * 
      * </p>
      *
      * @param listJobsRequest Container for the necessary parameters to
@@ -693,16 +692,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * ://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html">
-     * Creating a Vault in Amazon Glacier </a> and <a
-     * tp://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html">
-     * Create Vault </a> in the <i>Amazon Glacier Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html"> Creating a Vault in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html"> Create Vault </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -757,16 +754,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * ://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html">
-     * Creating a Vault in Amazon Glacier </a> and <a
-     * tp://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html">
-     * Create Vault </a> in the <i>Amazon Glacier Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html"> Creating a Vault in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html"> Create Vault </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -830,17 +825,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">
-     * Uploading Large Archives in Parts (Multipart Upload) </a> and <a
-     * azon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html">
-     * Initiate Multipart Upload </a> in the <i>Amazon Glacier Developer
-     * Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html"> Uploading Large Archives in Parts (Multipart Upload) </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html"> Initiate Multipart Upload </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * </p>
      *
      * @param initiateMultipartUploadRequest Container for the necessary
@@ -899,17 +891,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">
-     * Uploading Large Archives in Parts (Multipart Upload) </a> and <a
-     * azon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html">
-     * Initiate Multipart Upload </a> in the <i>Amazon Glacier Developer
-     * Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html"> Uploading Large Archives in Parts (Multipart Upload) </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html"> Initiate Multipart Upload </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * </p>
      *
      * @param initiateMultipartUploadRequest Container for the necessary
@@ -955,17 +944,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">
-     * Working with Archives in Amazon Glacier </a> and <a
-     * .amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">
-     * Abort Multipart Upload </a> in the <i>Amazon Glacier Developer
-     * Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html"> Working with Archives in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html"> Abort Multipart Upload </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -1007,17 +993,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">
-     * Working with Archives in Amazon Glacier </a> and <a
-     * .amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">
-     * Abort Multipart Upload </a> in the <i>Amazon Glacier Developer
-     * Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html"> Working with Archives in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html"> Abort Multipart Upload </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -1070,16 +1053,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * ocs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html">
-     * Deleting an Archive in Amazon Glacier </a> and <a
-     * docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html">
-     * Delete Archive </a> in the <i>Amazon Glacier Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html"> Deleting an Archive in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html"> Delete Archive </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -1126,16 +1107,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * ocs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html">
-     * Deleting an Archive in Amazon Glacier </a> and <a
-     * docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html">
-     * Delete Archive </a> in the <i>Amazon Glacier Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html"> Deleting an Archive in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html"> Delete Archive </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -1214,18 +1193,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and the underlying REST API, go to <a
-     * ://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">
-     * Downloading a Vault Inventory </a> , <a
-     * .aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive.html">
-     * Downloading an Archive </a> , and <a
-     * docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html">
-     * Get Job Output </a>
+     * For conceptual information and the underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html"> Downloading a Vault Inventory </a> , <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive.html"> Downloading an Archive </a> , and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html"> Get Job Output </a>
+     * 
      * </p>
      *
      * @param getJobOutputRequest Container for the necessary parameters to
@@ -1298,18 +1273,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and the underlying REST API, go to <a
-     * ://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">
-     * Downloading a Vault Inventory </a> , <a
-     * .aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive.html">
-     * Downloading an Archive </a> , and <a
-     * docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html">
-     * Get Job Output </a>
+     * For conceptual information and the underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html"> Downloading a Vault Inventory </a> , <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive.html"> Downloading an Archive </a> , and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html"> Get Job Output </a>
+     * 
      * </p>
      *
      * @param getJobOutputRequest Container for the necessary parameters to
@@ -1399,9 +1370,9 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
      * <b>About the Vault Inventory</b>
@@ -1485,16 +1456,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and the underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">
-     * Initiate a Job </a> and <a
-     * ://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">
-     * Downloading a Vault Inventory </a>
+     * For conceptual information and the underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html"> Initiate a Job </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html"> Downloading a Vault Inventory </a>
+     * 
      * </p>
      *
      * @param initiateJobRequest Container for the necessary parameters to
@@ -1579,9 +1548,9 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
      * <b>About the Vault Inventory</b>
@@ -1665,16 +1634,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and the underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">
-     * Initiate a Job </a> and <a
-     * ://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">
-     * Downloading a Vault Inventory </a>
+     * For conceptual information and the underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html"> Initiate a Job </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html"> Downloading a Vault Inventory </a>
+     * 
      * </p>
      *
      * @param initiateJobRequest Container for the necessary parameters to
@@ -1720,9 +1687,9 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * </p>
      * <p>
      * You must provide a SHA256 tree hash of the data you are uploading. For
-     * information about computing a SHA256 tree hash, see <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">
-     * Computing Checksums </a> .
+     * information about computing a SHA256 tree hash, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html"> Computing Checksums </a>
+     * .
      * </p>
      * <p>
      * You can optionally specify an archive description of up to 1,024
@@ -1741,16 +1708,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * cs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html">
-     * Uploading an Archive in Amazon Glacier </a> and <a
-     * //docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">
-     * Upload Archive </a> in the <i>Amazon Glacier Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html"> Uploading an Archive in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html"> Upload Archive </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -1792,9 +1757,9 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * </p>
      * <p>
      * You must provide a SHA256 tree hash of the data you are uploading. For
-     * information about computing a SHA256 tree hash, see <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">
-     * Computing Checksums </a> .
+     * information about computing a SHA256 tree hash, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html"> Computing Checksums </a>
+     * .
      * </p>
      * <p>
      * You can optionally specify an archive description of up to 1,024
@@ -1813,16 +1778,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * cs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html">
-     * Uploading an Archive in Amazon Glacier </a> and <a
-     * //docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">
-     * Upload Archive </a> in the <i>Amazon Glacier Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html"> Uploading an Archive in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html"> Upload Archive </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -1885,17 +1848,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">
-     * Configuring Vault Notifications in Amazon Glacier </a> and <a
-     * amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html">
-     * Set Vault Notification Configuration </a> in the <i>Amazon Glacier
-     * Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html"> Set Vault Notification Configuration </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -1954,17 +1914,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">
-     * Configuring Vault Notifications in Amazon Glacier </a> and <a
-     * amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html">
-     * Set Vault Notification Configuration </a> in the <i>Amazon Glacier
-     * Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html"> Set Vault Notification Configuration </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -2007,15 +1964,15 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * <p>
      * In the request, you must include the computed SHA256 tree hash of the
      * entire archive you have uploaded. For information about computing a
-     * SHA256 tree hash, see <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">
-     * Computing Checksums </a> . On the server side, Amazon Glacier also
-     * constructs the SHA256 tree hash of the assembled archive. If the
-     * values match, Amazon Glacier saves the archive to the vault;
-     * otherwise, it returns an error, and the operation fails. The ListParts
-     * operation returns a list of parts uploaded for a specific multipart
-     * upload. It includes checksum information for each uploaded part that
-     * can be used to debug a bad checksum issue.
+     * SHA256 tree hash, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html"> Computing Checksums </a>
+     * . On the server side, Amazon Glacier also constructs the SHA256 tree
+     * hash of the assembled archive. If the values match, Amazon Glacier
+     * saves the archive to the vault; otherwise, it returns an error, and
+     * the operation fails. The ListParts operation returns a list of parts
+     * uploaded for a specific multipart upload. It includes checksum
+     * information for each uploaded part that can be used to debug a bad
+     * checksum issue.
      * </p>
      * <p>
      * Additionally, Amazon Glacier also checks for any missing content
@@ -2039,17 +1996,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">
-     * Uploading Large Archives in Parts (Multipart Upload) </a> and <a
-     * azon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html">
-     * Complete Multipart Upload </a> in the <i>Amazon Glacier Developer
-     * Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html"> Uploading Large Archives in Parts (Multipart Upload) </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html"> Complete Multipart Upload </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -2087,15 +2041,15 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * <p>
      * In the request, you must include the computed SHA256 tree hash of the
      * entire archive you have uploaded. For information about computing a
-     * SHA256 tree hash, see <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">
-     * Computing Checksums </a> . On the server side, Amazon Glacier also
-     * constructs the SHA256 tree hash of the assembled archive. If the
-     * values match, Amazon Glacier saves the archive to the vault;
-     * otherwise, it returns an error, and the operation fails. The ListParts
-     * operation returns a list of parts uploaded for a specific multipart
-     * upload. It includes checksum information for each uploaded part that
-     * can be used to debug a bad checksum issue.
+     * SHA256 tree hash, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html"> Computing Checksums </a>
+     * . On the server side, Amazon Glacier also constructs the SHA256 tree
+     * hash of the assembled archive. If the values match, Amazon Glacier
+     * saves the archive to the vault; otherwise, it returns an error, and
+     * the operation fails. The ListParts operation returns a list of parts
+     * uploaded for a specific multipart upload. It includes checksum
+     * information for each uploaded part that can be used to debug a bad
+     * checksum issue.
      * </p>
      * <p>
      * Additionally, Amazon Glacier also checks for any missing content
@@ -2119,17 +2073,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">
-     * Uploading Large Archives in Parts (Multipart Upload) </a> and <a
-     * azon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html">
-     * Complete Multipart Upload </a> in the <i>Amazon Glacier Developer
-     * Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html"> Uploading Large Archives in Parts (Multipart Upload) </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html"> Complete Multipart Upload </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -2175,9 +2126,9 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * part and include it in your request. Upon receiving the part data,
      * Amazon Glacier also computes a SHA256 tree hash. If these hash values
      * don't match, the operation fails. For information about computing a
-     * SHA256 tree hash, see <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">
-     * Computing Checksums </a> .
+     * SHA256 tree hash, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html"> Computing Checksums </a>
+     * .
      * </p>
      * </li>
      * <li> <p>
@@ -2211,16 +2162,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">
-     * Uploading Large Archives in Parts (Multipart Upload) </a> and <a
-     * ://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html">
-     * Upload Part </a> in the <i>Amazon Glacier Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html"> Uploading Large Archives in Parts (Multipart Upload) </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html"> Upload Part </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * </p>
      *
      * @param uploadMultipartPartRequest Container for the necessary
@@ -2260,9 +2209,9 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * part and include it in your request. Upon receiving the part data,
      * Amazon Glacier also computes a SHA256 tree hash. If these hash values
      * don't match, the operation fails. For information about computing a
-     * SHA256 tree hash, see <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">
-     * Computing Checksums </a> .
+     * SHA256 tree hash, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html"> Computing Checksums </a>
+     * .
      * </p>
      * </li>
      * <li> <p>
@@ -2296,16 +2245,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">
-     * Uploading Large Archives in Parts (Multipart Upload) </a> and <a
-     * ://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html">
-     * Upload Part </a> in the <i>Amazon Glacier Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html"> Uploading Large Archives in Parts (Multipart Upload) </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html"> Upload Part </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * </p>
      *
      * @param uploadMultipartPartRequest Container for the necessary
@@ -2343,24 +2290,22 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * Vault, the change in contents will not be immediately reflected. If
      * you want to retrieve the latest inventory of the vault, use
      * InitiateJob. Amazon Glacier generates vault inventories approximately
-     * daily. For more information, see <a
-     * ://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">
-     * Downloading a Vault Inventory in Amazon Glacier </a> .
+     * daily. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html"> Downloading a Vault Inventory in Amazon Glacier </a>
+     * .
      * </p>
      * <p>
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">
-     * Retrieving Vault Metadata in Amazon Glacier </a> and <a
-     * tp://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html">
-     * Describe Vault </a> in the <i>Amazon Glacier Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html"> Retrieving Vault Metadata in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html"> Describe Vault </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -2393,24 +2338,22 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * Vault, the change in contents will not be immediately reflected. If
      * you want to retrieve the latest inventory of the vault, use
      * InitiateJob. Amazon Glacier generates vault inventories approximately
-     * daily. For more information, see <a
-     * ://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">
-     * Downloading a Vault Inventory in Amazon Glacier </a> .
+     * daily. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html"> Downloading a Vault Inventory in Amazon Glacier </a>
+     * .
      * </p>
      * <p>
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">
-     * Retrieving Vault Metadata in Amazon Glacier </a> and <a
-     * tp://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html">
-     * Describe Vault </a> in the <i>Amazon Glacier Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html"> Retrieving Vault Metadata in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html"> Describe Vault </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -2449,17 +2392,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * ://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">
-     * Configuring Vault Notifications in Amazon Glacier </a> and <a
-     * zon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">
-     * Delete Vault Notification Configuration </a> in the Amazon Glacier
-     * Developer Guide.
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html"> Delete Vault Notification Configuration </a>
+     * in the Amazon Glacier Developer Guide.
      * </p>
      *
      * @param deleteVaultNotificationsRequest Container for the necessary
@@ -2493,17 +2433,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * ://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * s.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">
-     * Configuring Vault Notifications in Amazon Glacier </a> and <a
-     * zon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">
-     * Delete Vault Notification Configuration </a> in the Amazon Glacier
-     * Developer Guide.
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html"> Delete Vault Notification Configuration </a>
+     * in the Amazon Glacier Developer Guide.
      * </p>
      *
      * @param deleteVaultNotificationsRequest Container for the necessary
@@ -2561,17 +2498,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and the underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">
-     * Working with Archives in Amazon Glacier </a> and <a
-     * .amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html">
-     * List Multipart Uploads </a> in the <i>Amazon Glacier Developer
-     * Guide</i> .
+     * For conceptual information and the underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html"> Working with Archives in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html"> List Multipart Uploads </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * </p>
      *
      * @param listMultipartUploadsRequest Container for the necessary
@@ -2624,17 +2558,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and the underlying REST API, go to <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">
-     * Working with Archives in Amazon Glacier </a> and <a
-     * .amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html">
-     * List Multipart Uploads </a> in the <i>Amazon Glacier Developer
-     * Guide</i> .
+     * For conceptual information and the underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html"> Working with Archives in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html"> List Multipart Uploads </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * </p>
      *
      * @param listMultipartUploadsRequest Container for the necessary
@@ -2669,13 +2600,9 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * If either of these conditions is not satisfied, the vault deletion
      * fails (that is, the vault is not removed) and Amazon Glacier returns
      * an error. You can use DescribeVault to return the number of archives
-     * in a vault, and you can use <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">
-     * Initiate a Job (POST jobs) </a> to initiate a new inventory retrieval
-     * for a vault. The inventory contains the archive IDs you use to delete
-     * archives using <a
-     * docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html">
-     * Delete Archive (DELETE archive) </a> .
+     * in a vault, and you can use
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html"> Initiate a Job (POST jobs) </a> to initiate a new inventory retrieval for a vault. The inventory contains the archive IDs you use to delete archives using <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html"> Delete Archive (DELETE archive) </a>
+     * .
      * </p>
      * <p>
      * This operation is idempotent.
@@ -2684,16 +2611,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * ://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html">
-     * Deleting a Vault in Amazon Glacier </a> and <a
-     * //docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html">
-     * Delete Vault </a> in the <i>Amazon Glacier Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html"> Deleting a Vault in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html"> Delete Vault </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *
@@ -2723,13 +2648,9 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * If either of these conditions is not satisfied, the vault deletion
      * fails (that is, the vault is not removed) and Amazon Glacier returns
      * an error. You can use DescribeVault to return the number of archives
-     * in a vault, and you can use <a
-     * s.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">
-     * Initiate a Job (POST jobs) </a> to initiate a new inventory retrieval
-     * for a vault. The inventory contains the archive IDs you use to delete
-     * archives using <a
-     * docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html">
-     * Delete Archive (DELETE archive) </a> .
+     * in a vault, and you can use
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html"> Initiate a Job (POST jobs) </a> to initiate a new inventory retrieval for a vault. The inventory contains the archive IDs you use to delete archives using <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html"> Delete Archive (DELETE archive) </a>
+     * .
      * </p>
      * <p>
      * This operation is idempotent.
@@ -2738,16 +2659,14 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations
      * (actions). However, AWS Identity and Access Management (IAM) users
      * don't have any permissions by default. You must grant them explicit
-     * permission to perform specific actions. For more information, see <a
-     * azon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">
-     * Access Control Using AWS Identity and Access Management (IAM) </a> .
+     * permission to perform specific actions. For more information, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
+     * .
      * </p>
      * <p>
-     * For conceptual information and underlying REST API, go to <a
-     * ://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html">
-     * Deleting a Vault in Amazon Glacier </a> and <a
-     * //docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html">
-     * Delete Vault </a> in the <i>Amazon Glacier Developer Guide</i> .
+     * For conceptual information and underlying REST API, go to
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html"> Deleting a Vault in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html"> Delete Vault </a>
+     * in the <i>Amazon Glacier Developer Guide</i> .
      * 
      * </p>
      *

@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A comparision that is used to determine whether a query should return this object.
+ * A comparision that is used to determine whether a query should return
+ * this object.
  * </p>
  */
 public class Selector implements Serializable {

@@ -24,12 +24,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Retrieves the recovery point for the specified virtual tape.
  * </p>
  * <p>
- * A recovery point is a point in time view of a virtual tape at which all the data on the tape is consistent. If your gateway crashes, virtual tapes
- * that have recovery points can be recovered to a new gateway.
+ * A recovery point is a point in time view of a virtual tape at which
+ * all the data on the tape is consistent. If your gateway crashes,
+ * virtual tapes that have recovery points can be recovered to a new
+ * gateway.
  * </p>
  * <p>
- * <b>NOTE:</b>The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only. The virtual tape can be retrieved to only a
- * Gateway-Virtual Tape Library. There is no charge for retrieving recovery points.
+ * <b>NOTE:</b>The virtual tape can be retrieved to only one gateway. The
+ * retrieved tape is read-only. The virtual tape can be retrieved to only
+ * a Gateway-Virtual Tape Library. There is no charge for retrieving
+ * recovery points.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#retrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest)

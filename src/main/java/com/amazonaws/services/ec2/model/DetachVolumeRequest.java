@@ -23,19 +23,24 @@ import com.amazonaws.services.ec2.model.transform.DetachVolumeRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#detachVolume(DetachVolumeRequest) DetachVolume operation}.
  * <p>
- * Detaches an Amazon EBS volume from an instance. Make sure to unmount any file systems on the device within your operating system before detaching the
- * volume. Failure to do so results in the volume being stuck in a busy state while detaching.
+ * Detaches an Amazon EBS volume from an instance. Make sure to unmount
+ * any file systems on the device within your operating system before
+ * detaching the volume. Failure to do so results in the volume being
+ * stuck in a busy state while detaching.
  * </p>
  * <p>
- * If an Amazon EBS volume is the root device of an instance, it can't be detached while the instance is running. To detach the root volume, stop the
- * instance first.
+ * If an Amazon EBS volume is the root device of an instance, it can't be
+ * detached while the instance is running. To detach the root volume,
+ * stop the instance first.
  * </p>
  * <p>
- * If the root volume is detached from an instance with an AWS Marketplace product code, then the AWS Marketplace product codes from that volume are no
- * longer associated with the instance.
+ * If the root volume is detached from an instance with an AWS
+ * Marketplace product code, then the AWS Marketplace product codes from
+ * that volume are no longer associated with the instance.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html"> Detaching an Amazon EBS Volume </a>
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html"> Detaching an Amazon EBS Volume </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *

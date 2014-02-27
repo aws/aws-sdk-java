@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest) DescribeTrustedAdvisorCheckRefreshStatuses operation}.
  * <p>
- * Returns the refresh status of the Trusted Advisor checks that have the specified check IDs. Check IDs can be obtained by calling
+ * Returns the refresh status of the Trusted Advisor checks that have the
+ * specified check IDs. Check IDs can be obtained by calling
  * DescribeTrustedAdvisorChecks.
  * </p>
  *

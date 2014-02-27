@@ -21,14 +21,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#sendMessage(SendMessageRequest) SendMessage operation}.
  * <p>
- * Delivers a message to the specified queue. With Amazon SQS, you now have the ability to send large payload messages that are up to 256KB (262,144
- * bytes) in size. To send large payloads, you must use an AWS SDK that supports SigV4 signing. To verify whether SigV4 is supported for an AWS SDK,
- * check the SDK release notes.
+ * Delivers a message to the specified queue. With Amazon SQS, you now
+ * have the ability to send large payload messages that are up to 256KB
+ * (262,144 bytes) in size. To send large payloads, you must use an AWS
+ * SDK that supports SigV4 signing. To verify whether SigV4 is supported
+ * for an AWS SDK, check the SDK release notes.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> The following list shows the characters (in Unicode) allowed in your message, according to the W3C XML specification. For more
- * information, go to http://www.w3.org/TR/REC-xml/#charsets If you send any characters not included in the list, your request will be rejected. #x9 |
- * #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF]
+ * <b>IMPORTANT:</b> The following list shows the characters (in Unicode)
+ * allowed in your message, according to the W3C XML specification. For
+ * more information, go to http://www.w3.org/TR/REC-xml/#charsets If you
+ * send any characters not included in the list, your request will be
+ * rejected. #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] |
+ * [#x10000 to #x10FFFF]
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#sendMessage(SendMessageRequest)

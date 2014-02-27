@@ -21,7 +21,8 @@ import com.amazonaws.services.kinesis.model.*;
 /**
  * Interface for accessing AmazonKinesis.
  * Amazon Kinesis Service API Reference <p>
- * Amazon Kinesis is a managed service that scales elastically for real time processing of streaming big data.
+ * Amazon Kinesis is a managed service that scales elastically for real
+ * time processing of streaming big data.
  * </p>
  */
 public interface AmazonKinesis {
@@ -185,9 +186,9 @@ public interface AmazonKinesis {
      * <p>
      * If a <code>GetShardIterator</code> request is made too often, you will
      * receive a <code>ProvisionedThroughputExceededException</code> .
-     * For more information about throughput limits, see the <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis
-     * Developer Guide </a> .
+     * For more information about throughput limits, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * <code>GetShardIterator</code> can return <code>null</code> for its
@@ -245,8 +246,9 @@ public interface AmazonKinesis {
      * hash key ranges of the shards. You can override hashing the partition
      * key to determine the shard by explicitly specifying a hash value using
      * the <code>ExplicitHashKey</code> parameter. For more information, see
-     * the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon
-     * Kinesis Developer Guide </a> .
+     * the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * <code>PutRecord</code> returns the shard ID of where the data record
@@ -254,11 +256,11 @@ public interface AmazonKinesis {
      * record.
      * </p>
      * <p>
-     * The <code>SequenceNumberForOrdering</code> sets the initial sequence
-     * number for the partition key. Later <code>PutRecord</code> requests to
-     * the same partition key (from the same client) will automatically
-     * increase from <code>SequenceNumberForOrdering</code> , ensuring strict
-     * sequential ordering.
+     * Sequence numbers generally increase over time. To guarantee strictly
+     * increasing ordering, use the <code>SequenceNumberForOrdering</code>
+     * parameter. For more information, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * If a <code>PutRecord</code> request cannot be processed because of
@@ -385,9 +387,9 @@ public interface AmazonKinesis {
      * shard where the shard gets split in two. In many cases, the new hash
      * key might simply be the average of the beginning and ending hash key,
      * but it can be any hash key value in the range being mapped into the
-     * shard. For more information about splitting shards, see the <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis
-     * Developer Guide </a> .
+     * shard. For more information about splitting shards, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * You can use the DescribeStream operation to determine the shard ID and
@@ -419,9 +421,10 @@ public interface AmazonKinesis {
      * for your account, you receive a <code>LimitExceededException</code> .
      * </p>
      * <p>
-     * <b>Note:</b> The default limit for an AWS account is two shards per
-     * stream. If you need to create a stream with more than two shards,
-     * contact AWS Support to increase the limit on your account.
+     * <b>Note:</b> The default limit for an AWS account is five shards per
+     * stream. If you need to create a stream with more than five shards,
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
+     * to increase the limit on your account.
      * </p>
      * <p>
      * If you try to operate on too many streams in parallel using
@@ -498,9 +501,10 @@ public interface AmazonKinesis {
      * 
      * </ul>
      * <p>
-     * <b>Note:</b> The default limit for an AWS account is two shards per
-     * stream. If you need to create a stream with more than two shards,
-     * contact AWS Support to increase the limit on your account.
+     * <b>Note:</b> The default limit for an AWS account is five shards per
+     * stream. If you need to create a stream with more than five shards,
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
+     * to increase the limit on your account.
      * </p>
      * <p>
      * You can use the <code>DescribeStream</code> operation to check the
@@ -647,9 +651,9 @@ public interface AmazonKinesis {
      * overall capacity of a stream because of excess capacity that is not
      * being used. The operation requires that you specify the shard to be
      * merged and the adjacent shard for a given stream. For more information
-     * about merging shards, see the <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis
-     * Developer Guide </a> .
+     * about merging shards, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * If the stream is in the ACTIVE state, you can call
@@ -972,9 +976,9 @@ public interface AmazonKinesis {
      * <p>
      * If a <code>GetShardIterator</code> request is made too often, you will
      * receive a <code>ProvisionedThroughputExceededException</code> .
-     * For more information about throughput limits, see the <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis
-     * Developer Guide </a> .
+     * For more information about throughput limits, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * <code>GetShardIterator</code> can return <code>null</code> for its
@@ -1062,9 +1066,9 @@ public interface AmazonKinesis {
      * <p>
      * If a <code>GetShardIterator</code> request is made too often, you will
      * receive a <code>ProvisionedThroughputExceededException</code> .
-     * For more information about throughput limits, see the <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis
-     * Developer Guide </a> .
+     * For more information about throughput limits, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * <code>GetShardIterator</code> can return <code>null</code> for its
@@ -1134,8 +1138,9 @@ public interface AmazonKinesis {
      * hash key ranges of the shards. You can override hashing the partition
      * key to determine the shard by explicitly specifying a hash value using
      * the <code>ExplicitHashKey</code> parameter. For more information, see
-     * the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon
-     * Kinesis Developer Guide </a> .
+     * the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * <code>PutRecord</code> returns the shard ID of where the data record
@@ -1143,11 +1148,11 @@ public interface AmazonKinesis {
      * record.
      * </p>
      * <p>
-     * The <code>SequenceNumberForOrdering</code> sets the initial sequence
-     * number for the partition key. Later <code>PutRecord</code> requests to
-     * the same partition key (from the same client) will automatically
-     * increase from <code>SequenceNumberForOrdering</code> , ensuring strict
-     * sequential ordering.
+     * Sequence numbers generally increase over time. To guarantee strictly
+     * increasing ordering, use the <code>SequenceNumberForOrdering</code>
+     * parameter. For more information, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * If a <code>PutRecord</code> request cannot be processed because of
@@ -1217,8 +1222,9 @@ public interface AmazonKinesis {
      * hash key ranges of the shards. You can override hashing the partition
      * key to determine the shard by explicitly specifying a hash value using
      * the <code>ExplicitHashKey</code> parameter. For more information, see
-     * the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon
-     * Kinesis Developer Guide </a> .
+     * the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * <code>PutRecord</code> returns the shard ID of where the data record
@@ -1226,11 +1232,11 @@ public interface AmazonKinesis {
      * record.
      * </p>
      * <p>
-     * The <code>SequenceNumberForOrdering</code> sets the initial sequence
-     * number for the partition key. Later <code>PutRecord</code> requests to
-     * the same partition key (from the same client) will automatically
-     * increase from <code>SequenceNumberForOrdering</code> , ensuring strict
-     * sequential ordering.
+     * Sequence numbers generally increase over time. To guarantee strictly
+     * increasing ordering, use the <code>SequenceNumberForOrdering</code>
+     * parameter. For more information, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * If a <code>PutRecord</code> request cannot be processed because of
@@ -1257,11 +1263,13 @@ public interface AmazonKinesis {
      * to map associated data records to shards. As a result of this hashing
      * mechanism, all data records with the same partition key will map to
      * the same shard within the stream.
-     * @param sequenceNumberForOrdering The sequence number to use as the
-     * initial number for the partition key. Subsequent calls to
-     * <code>PutRecord</code> from the same client and for the same partition
-     * key will increase from the <code>SequenceNumberForOrdering</code>
-     * value.
+     * @param sequenceNumberForOrdering Guarantees strictly increasing
+     * sequence numbers, for puts from the same client and to the same
+     * partition key. Usage: set the <code>SequenceNumberForOrdering</code>
+     * of record <i>n</i> to the sequence number of record <i>n-1</i> (as
+     * returned in the <a>PutRecordResult</a> when putting record
+     * <i>n-1</i>). If this parameter is not set, records will be coarsely
+     * ordered based on arrival time.
      * 
      * @return The response from the PutRecord service method, as returned by
      *         AmazonKinesis.
@@ -1304,9 +1312,9 @@ public interface AmazonKinesis {
      * shard where the shard gets split in two. In many cases, the new hash
      * key might simply be the average of the beginning and ending hash key,
      * but it can be any hash key value in the range being mapped into the
-     * shard. For more information about splitting shards, see the <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis
-     * Developer Guide </a> .
+     * shard. For more information about splitting shards, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * You can use the DescribeStream operation to determine the shard ID and
@@ -1338,9 +1346,10 @@ public interface AmazonKinesis {
      * for your account, you receive a <code>LimitExceededException</code> .
      * </p>
      * <p>
-     * <b>Note:</b> The default limit for an AWS account is two shards per
-     * stream. If you need to create a stream with more than two shards,
-     * contact AWS Support to increase the limit on your account.
+     * <b>Note:</b> The default limit for an AWS account is five shards per
+     * stream. If you need to create a stream with more than five shards,
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
+     * to increase the limit on your account.
      * </p>
      * <p>
      * If you try to operate on too many streams in parallel using
@@ -1428,9 +1437,10 @@ public interface AmazonKinesis {
      * 
      * </ul>
      * <p>
-     * <b>Note:</b> The default limit for an AWS account is two shards per
-     * stream. If you need to create a stream with more than two shards,
-     * contact AWS Support to increase the limit on your account.
+     * <b>Note:</b> The default limit for an AWS account is five shards per
+     * stream. If you need to create a stream with more than five shards,
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
+     * to increase the limit on your account.
      * </p>
      * <p>
      * You can use the <code>DescribeStream</code> operation to check the
@@ -1450,9 +1460,11 @@ public interface AmazonKinesis {
      * @param shardCount The number of shards that the stream will use. The
      * throughput of the stream is a function of the number of shards; more
      * shards are required for greater provisioned throughput.
-     * <p><b>Note:</b> The default limit for an AWS account is two shards per
-     * stream. If you need to create a stream with more than two shards,
-     * contact AWS Support to increase the limit on your account.
+     * <p><b>Note:</b> The default limit for an AWS account is five shards
+     * per stream. If you need to create a stream with more than five shards,
+     * <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+     * AWS Support</a> to increase the limit on your account.
      * 
      * @return The response from the CreateStream service method, as returned
      *         by AmazonKinesis.
@@ -1642,9 +1654,9 @@ public interface AmazonKinesis {
      * overall capacity of a stream because of excess capacity that is not
      * being used. The operation requires that you specify the shard to be
      * merged and the adjacent shard for a given stream. For more information
-     * about merging shards, see the <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis
-     * Developer Guide </a> .
+     * about merging shards, see the
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
+     * .
      * </p>
      * <p>
      * If the stream is in the ACTIVE state, you can call

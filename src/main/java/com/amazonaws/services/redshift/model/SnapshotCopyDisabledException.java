@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Cross-region snapshot copy was temporarily disabled. Try your request again.
+ * Cross-region snapshot copy was temporarily disabled. Try your request
+ * again.
  * </p>
  */        
 public class SnapshotCopyDisabledException extends AmazonServiceException {

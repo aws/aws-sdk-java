@@ -26,8 +26,9 @@ import com.amazonaws.services.ec2.model.transform.DescribeTagsRequestMarshaller;
  * Describes one or more of the tags for your EC2 resources.
  * </p>
  * <p>
- * For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a> in the
- * <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information about tags, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging Your Resources </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeTags(DescribeTagsRequest)

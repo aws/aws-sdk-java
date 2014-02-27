@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Used to filter the closed workflow executions in visibility APIs by their close status.
+ * Used to filter the closed workflow executions in visibility APIs by
+ * their close status.
  * </p>
  */
 public class CloseStatusFilter implements Serializable {

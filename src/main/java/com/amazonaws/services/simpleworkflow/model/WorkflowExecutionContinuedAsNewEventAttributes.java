@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Provides details of the <code>WorkflowExecutionContinuedAsNew</code> event.
+ * Provides details of the <code>WorkflowExecutionContinuedAsNew</code>
+ * event.
  * </p>
  */
 public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializable {

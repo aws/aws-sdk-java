@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudtrail.AWSCloudTrail#startLogging(StartLoggingRequest) StartLogging operation}.
  * <p>
- * Starts the recording of AWS API calls and log file delivery for a trail.
+ * Starts the recording of AWS API calls and log file delivery for a
+ * trail.
  * </p>
  *
  * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#startLogging(StartLoggingRequest)

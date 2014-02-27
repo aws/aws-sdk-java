@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Result message containing a description of the requested environment info.
+ * Result message containing a description of the requested environment
+ * info.
  * </p>
  */
 public class RetrieveEnvironmentInfoResult implements Serializable {

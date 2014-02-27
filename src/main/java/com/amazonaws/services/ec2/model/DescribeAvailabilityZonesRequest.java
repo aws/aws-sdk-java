@@ -23,12 +23,16 @@ import com.amazonaws.services.ec2.model.transform.DescribeAvailabilityZonesReque
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeAvailabilityZones(DescribeAvailabilityZonesRequest) DescribeAvailabilityZones operation}.
  * <p>
- * Describes one or more of the Availability Zones that are available to you. The results include zones only for the region you're currently using. If
- * there is an event impacting an Availability Zone, you can use this request to view the state and any provided message for that Availability Zone.
+ * Describes one or more of the Availability Zones that are available to
+ * you. The results include zones only for the region you're currently
+ * using. If there is an event impacting an Availability Zone, you can
+ * use this request to view the state and any provided message for that
+ * Availability Zone.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"> Regions and Availability
- * Zones </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"> Regions and Availability Zones </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeAvailabilityZones(DescribeAvailabilityZonesRequest)

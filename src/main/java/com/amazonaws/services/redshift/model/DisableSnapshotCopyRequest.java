@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#disableSnapshotCopy(DisableSnapshotCopyRequest) DisableSnapshotCopy operation}.
  * <p>
- * Disables the automatic copying of snapshots from one region to another region for a specified cluster.
+ * Disables the automatic copying of snapshots from one region to another
+ * region for a specified cluster.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#disableSnapshotCopy(DisableSnapshotCopyRequest)

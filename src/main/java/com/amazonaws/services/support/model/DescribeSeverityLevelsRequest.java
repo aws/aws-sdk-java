@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#describeSeverityLevels(DescribeSeverityLevelsRequest) DescribeSeverityLevels operation}.
  * <p>
- * Returns the list of severity levels that you can assign to an AWS Support case. The severity level for a case is also a field in the CaseDetails data
- * type included in any CreateCase request.
+ * Returns the list of severity levels that you can assign to an AWS
+ * Support case. The severity level for a case is also a field in the
+ * CaseDetails data type included in any CreateCase request.
  * </p>
  *
  * @see com.amazonaws.services.support.AWSSupport#describeSeverityLevels(DescribeSeverityLevelsRequest)

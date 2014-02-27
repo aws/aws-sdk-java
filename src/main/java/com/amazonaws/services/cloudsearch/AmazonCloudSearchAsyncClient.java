@@ -35,13 +35,18 @@ import com.amazonaws.services.cloudsearch.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * Amazon CloudSearch Configuration Service <p>
- * You use the configuration service to create, configure, and manage search domains. Configuration service requests are submitted using the AWS Query
- * protocol. AWS Query requests are HTTP or HTTPS requests submitted via HTTP GET or POST with a query parameter named Action.
+ * You use the configuration service to create, configure, and manage
+ * search domains. Configuration service requests are submitted using
+ * the AWS Query protocol. AWS Query requests are HTTP or HTTPS requests
+ * submitted via HTTP GET or POST with a query parameter named Action.
  * </p>
  * <p>
- * The endpoint for configuration service requests is region-specific: cloudsearch. <i>region</i> .amazonaws.com. For example,
- * cloudsearch.us-east-1.amazonaws.com. For a current list of supported regions and endpoints, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region"> Regions and Endpoints </a> .
+ * The endpoint for configuration service requests is region-specific:
+ * cloudsearch. <i>region</i> .amazonaws.com. For example,
+ * cloudsearch.us-east-1.amazonaws.com. For a current list of supported
+ * regions and endpoints, see
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region"> Regions and Endpoints </a>
+ * .
  * </p>
  */
 public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
@@ -51,6 +56,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
+
+    private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -93,13 +100,13 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudSearchAsyncClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonCloudSearch using the specified AWS account credentials.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -111,7 +118,7 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
      *                       when authenticating with AWS services.
      */
     public AmazonCloudSearchAsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newCachedThreadPool());
+        this(awsCredentials, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -165,7 +172,7 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonCloudSearch using the specified AWS account credentials provider.
-     * Default client settings will be used, and a default cached thread pool will be
+     * Default client settings will be used, and a fixed size thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
@@ -178,7 +185,7 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
      *            to authenticate requests with AWS services.
      */
     public AmazonCloudSearchAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -221,7 +228,7 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
      */
     public AmazonCloudSearchAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
                 ClientConfiguration clientConfiguration) {
-        this(awsCredentialsProvider, clientConfiguration, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -265,7 +272,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who
      * wish to give pending asynchronous service calls time to complete should
-     * call getExecutorService().shutdown() prior to calling this method.
+     * call getExecutorService().shutdown() followed by
+     * getExecutorService().awaitTermination() prior to calling this method.
      */
     @Override
     public void shutdown() {
@@ -303,8 +311,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<UpdateDefaultSearchFieldResult>() {
             public UpdateDefaultSearchFieldResult call() throws Exception {
                 return updateDefaultSearchField(updateDefaultSearchFieldRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -342,17 +350,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateDefaultSearchFieldResult>() {
             public UpdateDefaultSearchFieldResult call() throws Exception {
-                UpdateDefaultSearchFieldResult result;
+              UpdateDefaultSearchFieldResult result;
                 try {
-                    result = updateDefaultSearchField(updateDefaultSearchFieldRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(updateDefaultSearchFieldRequest, result);
-                   return result;
-            }
-        });
+                result = updateDefaultSearchField(updateDefaultSearchFieldRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateDefaultSearchFieldRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -381,8 +389,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DeleteRankExpressionResult>() {
             public DeleteRankExpressionResult call() throws Exception {
                 return deleteRankExpression(deleteRankExpressionRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -416,17 +424,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteRankExpressionResult>() {
             public DeleteRankExpressionResult call() throws Exception {
-                DeleteRankExpressionResult result;
+              DeleteRankExpressionResult result;
                 try {
-                    result = deleteRankExpression(deleteRankExpressionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteRankExpressionRequest, result);
-                   return result;
-            }
-        });
+                result = deleteRankExpression(deleteRankExpressionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteRankExpressionRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -458,8 +466,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DescribeRankExpressionsResult>() {
             public DescribeRankExpressionsResult call() throws Exception {
                 return describeRankExpressions(describeRankExpressionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -496,17 +504,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeRankExpressionsResult>() {
             public DescribeRankExpressionsResult call() throws Exception {
-                DescribeRankExpressionsResult result;
+              DescribeRankExpressionsResult result;
                 try {
-                    result = describeRankExpressions(describeRankExpressionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeRankExpressionsRequest, result);
-                   return result;
-            }
-        });
+                result = describeRankExpressions(describeRankExpressionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeRankExpressionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -534,8 +542,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<CreateDomainResult>() {
             public CreateDomainResult call() throws Exception {
                 return createDomain(createDomainRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -568,17 +576,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<CreateDomainResult>() {
             public CreateDomainResult call() throws Exception {
-                CreateDomainResult result;
+              CreateDomainResult result;
                 try {
-                    result = createDomain(createDomainRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(createDomainRequest, result);
-                   return result;
-            }
-        });
+                result = createDomain(createDomainRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createDomainRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -610,8 +618,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<UpdateServiceAccessPoliciesResult>() {
             public UpdateServiceAccessPoliciesResult call() throws Exception {
                 return updateServiceAccessPolicies(updateServiceAccessPoliciesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -648,17 +656,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateServiceAccessPoliciesResult>() {
             public UpdateServiceAccessPoliciesResult call() throws Exception {
-                UpdateServiceAccessPoliciesResult result;
+              UpdateServiceAccessPoliciesResult result;
                 try {
-                    result = updateServiceAccessPolicies(updateServiceAccessPoliciesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(updateServiceAccessPoliciesRequest, result);
-                   return result;
-            }
-        });
+                result = updateServiceAccessPolicies(updateServiceAccessPoliciesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateServiceAccessPoliciesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -689,8 +697,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DefineIndexFieldResult>() {
             public DefineIndexFieldResult call() throws Exception {
                 return defineIndexField(defineIndexFieldRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -726,17 +734,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DefineIndexFieldResult>() {
             public DefineIndexFieldResult call() throws Exception {
-                DefineIndexFieldResult result;
+              DefineIndexFieldResult result;
                 try {
-                    result = defineIndexField(defineIndexFieldRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(defineIndexFieldRequest, result);
-                   return result;
-            }
-        });
+                result = defineIndexField(defineIndexFieldRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(defineIndexFieldRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -768,8 +776,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DefineRankExpressionResult>() {
             public DefineRankExpressionResult call() throws Exception {
                 return defineRankExpression(defineRankExpressionRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -806,17 +814,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DefineRankExpressionResult>() {
             public DefineRankExpressionResult call() throws Exception {
-                DefineRankExpressionResult result;
+              DefineRankExpressionResult result;
                 try {
-                    result = defineRankExpression(defineRankExpressionRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(defineRankExpressionRequest, result);
-                   return result;
-            }
-        });
+                result = defineRankExpression(defineRankExpressionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(defineRankExpressionRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -846,8 +854,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DescribeSynonymOptionsResult>() {
             public DescribeSynonymOptionsResult call() throws Exception {
                 return describeSynonymOptions(describeSynonymOptionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -882,17 +890,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeSynonymOptionsResult>() {
             public DescribeSynonymOptionsResult call() throws Exception {
-                DescribeSynonymOptionsResult result;
+              DescribeSynonymOptionsResult result;
                 try {
-                    result = describeSynonymOptions(describeSynonymOptionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeSynonymOptionsRequest, result);
-                   return result;
-            }
-        });
+                result = describeSynonymOptions(describeSynonymOptionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeSynonymOptionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -922,8 +930,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DescribeStopwordOptionsResult>() {
             public DescribeStopwordOptionsResult call() throws Exception {
                 return describeStopwordOptions(describeStopwordOptionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -958,17 +966,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeStopwordOptionsResult>() {
             public DescribeStopwordOptionsResult call() throws Exception {
-                DescribeStopwordOptionsResult result;
+              DescribeStopwordOptionsResult result;
                 try {
-                    result = describeStopwordOptions(describeStopwordOptionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeStopwordOptionsRequest, result);
-                   return result;
-            }
-        });
+                result = describeStopwordOptions(describeStopwordOptionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeStopwordOptionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -996,8 +1004,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DeleteDomainResult>() {
             public DeleteDomainResult call() throws Exception {
                 return deleteDomain(deleteDomainRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1030,17 +1038,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteDomainResult>() {
             public DeleteDomainResult call() throws Exception {
-                DeleteDomainResult result;
+              DeleteDomainResult result;
                 try {
-                    result = deleteDomain(deleteDomainRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteDomainRequest, result);
-                   return result;
-            }
-        });
+                result = deleteDomain(deleteDomainRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteDomainRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1071,8 +1079,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DescribeServiceAccessPoliciesResult>() {
             public DescribeServiceAccessPoliciesResult call() throws Exception {
                 return describeServiceAccessPolicies(describeServiceAccessPoliciesRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1108,17 +1116,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeServiceAccessPoliciesResult>() {
             public DescribeServiceAccessPoliciesResult call() throws Exception {
-                DescribeServiceAccessPoliciesResult result;
+              DescribeServiceAccessPoliciesResult result;
                 try {
-                    result = describeServiceAccessPolicies(describeServiceAccessPoliciesRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeServiceAccessPoliciesRequest, result);
-                   return result;
-            }
-        });
+                result = describeServiceAccessPolicies(describeServiceAccessPoliciesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeServiceAccessPoliciesRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1148,8 +1156,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DescribeDefaultSearchFieldResult>() {
             public DescribeDefaultSearchFieldResult call() throws Exception {
                 return describeDefaultSearchField(describeDefaultSearchFieldRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1184,17 +1192,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeDefaultSearchFieldResult>() {
             public DescribeDefaultSearchFieldResult call() throws Exception {
-                DescribeDefaultSearchFieldResult result;
+              DescribeDefaultSearchFieldResult result;
                 try {
-                    result = describeDefaultSearchField(describeDefaultSearchFieldRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeDefaultSearchFieldRequest, result);
-                   return result;
-            }
-        });
+                result = describeDefaultSearchField(describeDefaultSearchFieldRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDefaultSearchFieldRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1226,8 +1234,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<UpdateStopwordOptionsResult>() {
             public UpdateStopwordOptionsResult call() throws Exception {
                 return updateStopwordOptions(updateStopwordOptionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1264,17 +1272,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateStopwordOptionsResult>() {
             public UpdateStopwordOptionsResult call() throws Exception {
-                UpdateStopwordOptionsResult result;
+              UpdateStopwordOptionsResult result;
                 try {
-                    result = updateStopwordOptions(updateStopwordOptionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(updateStopwordOptionsRequest, result);
-                   return result;
-            }
-        });
+                result = updateStopwordOptions(updateStopwordOptionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateStopwordOptionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1306,8 +1314,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<UpdateSynonymOptionsResult>() {
             public UpdateSynonymOptionsResult call() throws Exception {
                 return updateSynonymOptions(updateSynonymOptionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1344,17 +1352,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateSynonymOptionsResult>() {
             public UpdateSynonymOptionsResult call() throws Exception {
-                UpdateSynonymOptionsResult result;
+              UpdateSynonymOptionsResult result;
                 try {
-                    result = updateSynonymOptions(updateSynonymOptionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(updateSynonymOptionsRequest, result);
-                   return result;
-            }
-        });
+                result = updateSynonymOptions(updateSynonymOptionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateSynonymOptionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1386,8 +1394,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<UpdateStemmingOptionsResult>() {
             public UpdateStemmingOptionsResult call() throws Exception {
                 return updateStemmingOptions(updateStemmingOptionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1424,17 +1432,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<UpdateStemmingOptionsResult>() {
             public UpdateStemmingOptionsResult call() throws Exception {
-                UpdateStemmingOptionsResult result;
+              UpdateStemmingOptionsResult result;
                 try {
-                    result = updateStemmingOptions(updateStemmingOptionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(updateStemmingOptionsRequest, result);
-                   return result;
-            }
-        });
+                result = updateStemmingOptions(updateStemmingOptionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateStemmingOptionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1464,8 +1472,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DescribeStemmingOptionsResult>() {
             public DescribeStemmingOptionsResult call() throws Exception {
                 return describeStemmingOptions(describeStemmingOptionsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1500,17 +1508,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeStemmingOptionsResult>() {
             public DescribeStemmingOptionsResult call() throws Exception {
-                DescribeStemmingOptionsResult result;
+              DescribeStemmingOptionsResult result;
                 try {
-                    result = describeStemmingOptions(describeStemmingOptionsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeStemmingOptionsRequest, result);
-                   return result;
-            }
-        });
+                result = describeStemmingOptions(describeStemmingOptionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeStemmingOptionsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1539,8 +1547,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DescribeDomainsResult>() {
             public DescribeDomainsResult call() throws Exception {
                 return describeDomains(describeDomainsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1574,17 +1582,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeDomainsResult>() {
             public DescribeDomainsResult call() throws Exception {
-                DescribeDomainsResult result;
+              DescribeDomainsResult result;
                 try {
-                    result = describeDomains(describeDomainsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeDomainsRequest, result);
-                   return result;
-            }
-        });
+                result = describeDomains(describeDomainsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDomainsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1616,8 +1624,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<IndexDocumentsResult>() {
             public IndexDocumentsResult call() throws Exception {
                 return indexDocuments(indexDocumentsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1654,17 +1662,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<IndexDocumentsResult>() {
             public IndexDocumentsResult call() throws Exception {
-                IndexDocumentsResult result;
+              IndexDocumentsResult result;
                 try {
-                    result = indexDocuments(indexDocumentsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(indexDocumentsRequest, result);
-                   return result;
-            }
-        });
+                result = indexDocuments(indexDocumentsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(indexDocumentsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1695,8 +1703,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DescribeIndexFieldsResult>() {
             public DescribeIndexFieldsResult call() throws Exception {
                 return describeIndexFields(describeIndexFieldsRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1732,17 +1740,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeIndexFieldsResult>() {
             public DescribeIndexFieldsResult call() throws Exception {
-                DescribeIndexFieldsResult result;
+              DescribeIndexFieldsResult result;
                 try {
-                    result = describeIndexFields(describeIndexFieldsRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(describeIndexFieldsRequest, result);
-                   return result;
-            }
-        });
+                result = describeIndexFields(describeIndexFieldsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeIndexFieldsRequest, result);
+                 return result;
+        }
+    });
     }
     
     /**
@@ -1770,8 +1778,8 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
         return executorService.submit(new Callable<DeleteIndexFieldResult>() {
             public DeleteIndexFieldResult call() throws Exception {
                 return deleteIndexField(deleteIndexFieldRequest);
-            }
-        });
+        }
+    });
     }
 
     /**
@@ -1804,17 +1812,17 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DeleteIndexFieldResult>() {
             public DeleteIndexFieldResult call() throws Exception {
-                DeleteIndexFieldResult result;
+              DeleteIndexFieldResult result;
                 try {
-                    result = deleteIndexField(deleteIndexFieldRequest);
-                } catch (Exception ex) {
-                    asyncHandler.onError(ex);
-                    throw ex;
-                }
-                asyncHandler.onSuccess(deleteIndexFieldRequest, result);
-                   return result;
-            }
-        });
+                result = deleteIndexField(deleteIndexFieldRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteIndexFieldRequest, result);
+                 return result;
+        }
+    });
     }
     
 }

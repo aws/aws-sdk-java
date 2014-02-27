@@ -24,38 +24,47 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Creates a new load balancer.
  * </p>
  * <p>
- * After the call has completed successfully, a new load balancer is created with a unique Domain Name Service (DNS) name. The DNS name includes the
- * name of the AWS region in which the load balance was created. For example, if your load balancer was created in the United States, the DNS name might
- * end with either of the following:
+ * After the call has completed successfully, a new load balancer is
+ * created with a unique Domain Name Service (DNS) name. The DNS name
+ * includes the name of the AWS region in which the load balance was
+ * created. For example, if your load balancer was created in the United
+ * States, the DNS name might end with either of the following:
  * </p>
  * 
  * <ul>
- * <li> <i>us-east-1.elb.amazonaws.com</i> (for the Northern Virginia Region) </li>
- * <li> <i>us-west-1.elb.amazonaws.com</i> (for the Northern California Region) </li>
+ * <li> <i>us-east-1.elb.amazonaws.com</i> (for the Northern Virginia
+ * Region) </li>
+ * <li> <i>us-west-1.elb.amazonaws.com</i> (for the Northern California
+ * Region) </li>
  * 
  * </ul>
  * <p>
- * For information about the AWS regions supported by Elastic Load Balancing, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region"> Regions and Endpoints </a> .
+ * For information about the AWS regions supported by Elastic Load
+ * Balancing, see
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region"> Regions and Endpoints </a>
+ * .
  * </p>
  * <p>
  * You can create up to 10 load balancers per region per account.
  * </p>
  * <p>
- * Elastic Load Balancing supports load balancing your Amazon EC2 instances launched within any one of the following platforms:
+ * Elastic Load Balancing supports load balancing your Amazon EC2
+ * instances launched within any one of the following platforms:
  * </p>
  * 
  * <ul>
  * <li> <i>EC2-Classic</i> <p>
- * For information on creating and managing your load balancers in EC2-Classic, see <a
- * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html"> Deploy Elastic Load Balancing in Amazon
- * EC2-Classic </a> .
+ * For information on creating and managing your load balancers in
+ * EC2-Classic, see
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html"> Deploy Elastic Load Balancing in Amazon EC2-Classic </a>
+ * .
  * </p>
  * </li>
  * <li> <i>EC2-VPC</i> <p>
- * For information on creating and managing your load balancers in EC2-VPC, see <a
- * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC
- * </a> .
+ * For information on creating and managing your load balancers in
+ * EC2-VPC, see
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC </a>
+ * .
  * </p>
  * </li>
  * 

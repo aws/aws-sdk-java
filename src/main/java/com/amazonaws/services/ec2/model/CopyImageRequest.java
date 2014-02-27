@@ -23,11 +23,13 @@ import com.amazonaws.services.ec2.model.transform.CopyImageRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#copyImage(CopyImageRequest) CopyImage operation}.
  * <p>
- * Initiates the copy of an AMI from the specified source region to the region in which the request was made.
+ * Initiates the copy of an AMI from the specified source region to the
+ * region in which the request was made.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html"> Copying AMIs </a> in the <i>Amazon Elastic
- * Compute Cloud User Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html"> Copying AMIs </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#copyImage(CopyImageRequest)

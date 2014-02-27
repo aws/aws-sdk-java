@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This exception is thrown when the policy on the S3 bucket is not sufficient.
+ * This exception is thrown when the policy on the S3 bucket is not
+ * sufficient.
  * </p>
  */        
 public class InsufficientS3BucketPolicyException extends AmazonServiceException {

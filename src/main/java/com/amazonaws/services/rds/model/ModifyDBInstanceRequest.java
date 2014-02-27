@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#modifyDBInstance(ModifyDBInstanceRequest) ModifyDBInstance operation}.
  * <p>
- * Modify settings for a DB instance. You can change one or more database configuration parameters by specifying these parameters and the new values in
- * the request.
+ * Modify settings for a DB instance. You can change one or more
+ * database configuration parameters by specifying these parameters and
+ * the new values in the request.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#modifyDBInstance(ModifyDBInstanceRequest)

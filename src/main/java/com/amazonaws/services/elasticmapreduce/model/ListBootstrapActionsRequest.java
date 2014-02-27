@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#listBootstrapActions(ListBootstrapActionsRequest) ListBootstrapActions operation}.
  * <p>
- * Provides information about the bootstrap actions associated with a cluster.
+ * Provides information about the bootstrap actions associated with a
+ * cluster.
  * </p>
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#listBootstrapActions(ListBootstrapActionsRequest)

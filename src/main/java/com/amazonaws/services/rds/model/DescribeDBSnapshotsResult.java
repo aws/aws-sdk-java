@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the DescribeDBSnapshots action.
+ * Contains the result of a successful invocation of the
+ * DescribeDBSnapshots action.
  * </p>
  */
 public class DescribeDBSnapshotsResult implements Serializable {

@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#enableLogging(EnableLoggingRequest) EnableLogging operation}.
  * <p>
- * Starts logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.
+ * Starts logging information, such as queries and connection attempts,
+ * for the specified Amazon Redshift cluster.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#enableLogging(EnableLoggingRequest)

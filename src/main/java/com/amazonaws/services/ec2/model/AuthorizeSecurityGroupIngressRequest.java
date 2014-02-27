@@ -26,20 +26,27 @@ import com.amazonaws.services.ec2.model.transform.AuthorizeSecurityGroupIngressR
  * Adds one or more ingress rules to a security group.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> EC2-Classic: You can have up to 100 rules per group. EC2-VPC: You can have up to 50 rules per group (covering both ingress and
- * egress rules).
+ * <b>IMPORTANT:</b> EC2-Classic: You can have up to 100 rules per group.
+ * EC2-VPC: You can have up to 50 rules per group (covering both ingress
+ * and egress rules).
  * </p>
  * <p>
- * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might occur.
+ * Rule changes are propagated to instances within the security group as
+ * quickly as possible. However, a small delay might occur.
  * </p>
  * <p>
- * [EC2-Classic] This action gives one or more CIDR IP address ranges permission to access a security group in your account, or gives one or more
- * security groups (called the <i>source groups</i> ) permission to access a security group for your account. A source group can be for your own AWS
- * account, or another.
+ * [EC2-Classic] This action gives one or more CIDR IP address ranges
+ * permission to access a security group in your account, or gives one or
+ * more security groups (called the <i>source groups</i> ) permission to
+ * access a security group for your account. A source group can be for
+ * your own AWS account, or another.
  * </p>
  * <p>
- * [EC2-VPC] This action gives one or more CIDR IP address ranges permission to access a security group in your VPC, or gives one or more other security
- * groups (called the <i>source groups</i> ) permission to access a security group for your VPC. The security groups must all be for the same VPC.
+ * [EC2-VPC] This action gives one or more CIDR IP address ranges
+ * permission to access a security group in your VPC, or gives one or
+ * more other security groups (called the <i>source groups</i> )
+ * permission to access a security group for your VPC. The security
+ * groups must all be for the same VPC.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#authorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest)

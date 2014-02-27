@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The identifiers for the temporary security credentials that the operation returns.
+ * The identifiers for the temporary security credentials that the
+ * operation returns.
  * </p>
  */
 public class AssumedRoleUser implements Serializable {

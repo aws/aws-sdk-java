@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Confirm the creation of a hosted connection on an interconnect.
  * </p>
  * <p>
- * Upon creation, the hosted connection is initially in the 'Ordering' state, and will remain in this state until the owner calls ConfirmConnection to
- * confirm creation of the hosted connection.
+ * Upon creation, the hosted connection is initially in the 'Ordering'
+ * state, and will remain in this state until the owner calls
+ * ConfirmConnection to confirm creation of the hosted connection.
  * </p>
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#confirmConnection(ConfirmConnectionRequest)

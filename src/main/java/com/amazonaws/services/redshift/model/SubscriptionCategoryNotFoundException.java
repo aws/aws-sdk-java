@@ -18,8 +18,10 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The value specified for the event category was not one of the allowed values, or it specified a category that does not apply to the specified source
- * type. The allowed values are Configuration, Management, Monitoring, and Security.
+ * The value specified for the event category was not one of the allowed
+ * values, or it specified a category that does not apply to the
+ * specified source type. The allowed values are Configuration,
+ * Management, Monitoring, and Security.
  * </p>
  */        
 public class SubscriptionCategoryNotFoundException extends AmazonServiceException {

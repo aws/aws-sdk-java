@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#describeCluster(DescribeClusterRequest) DescribeCluster operation}.
  * <p>
- * Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on. For information about the cluster
- * steps, see ListSteps.
+ * Provides cluster-level details including status, hardware and software
+ * configuration, VPC settings, and so on. For information about the
+ * cluster steps, see ListSteps.
  * </p>
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#describeCluster(DescribeClusterRequest)

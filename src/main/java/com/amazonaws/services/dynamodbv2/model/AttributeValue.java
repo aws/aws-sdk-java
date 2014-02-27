@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the data for an attribute. You can set one, and only one, of the elements.
+ * Represents the data for an attribute. You can set one, and only one,
+ * of the elements.
  * </p>
  */
 public class AttributeValue implements Serializable {

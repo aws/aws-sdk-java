@@ -23,9 +23,10 @@ import com.amazonaws.services.ec2.model.transform.UnmonitorInstancesRequestMarsh
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#unmonitorInstances(UnmonitorInstancesRequest) UnmonitorInstances operation}.
  * <p>
- * Disables monitoring for a running instance. For more information about monitoring instances, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html"> Monitoring Your Instances and Volumes </a> in the <i>Amazon Elastic
- * Compute Cloud User Guide</i> .
+ * Disables monitoring for a running instance. For more information about
+ * monitoring instances, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html"> Monitoring Your Instances and Volumes </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#unmonitorInstances(UnmonitorInstancesRequest)

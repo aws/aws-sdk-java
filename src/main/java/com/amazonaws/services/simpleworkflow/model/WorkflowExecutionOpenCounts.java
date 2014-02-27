@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the counts of open tasks, child workflow executions and timers for a workflow execution.
+ * Contains the counts of open tasks, child workflow executions and
+ * timers for a workflow execution.
  * </p>
  */
 public class WorkflowExecutionOpenCounts implements Serializable {

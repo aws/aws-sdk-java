@@ -21,11 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#createTapes(CreateTapesRequest) CreateTapes operation}.
  * <p>
- * Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes.
+ * Creates one or more virtual tapes. You write data to the virtual tapes
+ * and then archive the tapes.
  * </p>
  * <p>
- * <b>NOTE:</b>Cache storage must be allocated to the gateway before you can create virtual tapes. Use the AddCache operation to add cache storage to a
- * gateway.
+ * <b>NOTE:</b>Cache storage must be allocated to the gateway before you
+ * can create virtual tapes. Use the AddCache operation to add cache
+ * storage to a gateway.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createTapes(CreateTapesRequest)

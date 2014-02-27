@@ -21,18 +21,28 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#rebootDBInstance(RebootDBInstanceRequest) RebootDBInstance operation}.
  * <p>
- * Rebooting a DB instance restarts the database engine service. A reboot also applies to the DB instance any modifications to the associated DB
- * parameter group that were pending. Rebooting a DB instance results in a momentary outage of the instance, during which the DB instance status is set
- * to rebooting. If the RDS instance is configured for MultiAZ, it is possible that the reboot will be conducted through a failover. An Amazon RDS event
- * is created when the reboot is completed.
+ * Rebooting a DB instance restarts the database engine service. A
+ * reboot also applies to the DB instance any modifications to the
+ * associated DB parameter group that were pending. Rebooting a DB
+ * instance results in a momentary outage of the instance, during which
+ * the DB instance status is set to rebooting. If the RDS instance is
+ * configured for MultiAZ, it is possible that the reboot will be
+ * conducted through a failover. An Amazon RDS event is created when the
+ * reboot is completed.
  * </p>
  * <p>
- * If your DB instance is deployed in multiple Availability Zones, you can force a failover from one AZ to the other during the reboot. You might force
- * a failover to test the availability of your DB instance deployment or to restore operations to the original AZ after a failover occurs.
+ * If your DB instance is deployed in multiple Availability Zones, you
+ * can force a failover from one AZ to the other during the reboot. You
+ * might force a failover to test the availability of your DB instance
+ * deployment or to restore operations to the original AZ after a
+ * failover occurs.
  * </p>
  * <p>
- * The time required to reboot is a function of the specific database engine's crash recovery process. To improve the reboot time, we recommend that you
- * reduce database activities as much as possible during the reboot process to reduce rollback activity for in-transit transactions.
+ * The time required to reboot is a function of the specific database
+ * engine's crash recovery process. To improve the reboot time, we
+ * recommend that you reduce database activities as much as possible
+ * during the reboot process to reduce rollback activity for in-transit
+ * transactions.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#rebootDBInstance(RebootDBInstanceRequest)

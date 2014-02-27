@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.DeleteCustomerGatewayRequestMa
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteCustomerGateway(DeleteCustomerGatewayRequest) DeleteCustomerGateway operation}.
  * <p>
- * Deletes the specified customer gateway. You must delete the VPN connection before you can delete the customer gateway.
+ * Deletes the specified customer gateway. You must delete the VPN
+ * connection before you can delete the customer gateway.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteCustomerGateway(DeleteCustomerGatewayRequest)

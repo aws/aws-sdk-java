@@ -23,25 +23,33 @@ import com.amazonaws.services.ec2.model.transform.RegisterImageRequestMarshaller
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#registerImage(RegisterImageRequest) RegisterImage operation}.
  * <p>
- * Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an instance from the AMI. For more
- * information about creating AMIs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html"> Creating Your Own AMIs </a>
+ * Registers an AMI. When you're creating an AMI, this is the final step
+ * you must complete before you can launch an instance from the AMI. For
+ * more information about creating AMIs, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html"> Creating Your Own AMIs </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  * <p>
- * <b>NOTE:</b> For Amazon EBS-backed instances, CreateImage creates and registers the AMI in a single request, so you don't have to register the AMI
- * yourself.
+ * <b>NOTE:</b> For Amazon EBS-backed instances, CreateImage creates and
+ * registers the AMI in a single request, so you don't have to register
+ * the AMI yourself.
  * </p>
  * <p>
- * You can also use <code>RegisterImage</code> to create an Amazon EBS-backed AMI from a snapshot of a root device volume. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html"> Launching an Instance from a Snapshot </a> in the
- * <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * You can also use <code>RegisterImage</code> to create an Amazon
+ * EBS-backed AMI from a snapshot of a root device volume. For more
+ * information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html"> Launching an Instance from a Snapshot </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  * <p>
- * If needed, you can deregister an AMI at any time. Any modifications you make to an AMI backed by an instance store volume invalidates its
- * registration. If you make changes to an image, deregister the previous image and register the new image.
+ * If needed, you can deregister an AMI at any time. Any modifications
+ * you make to an AMI backed by an instance store volume invalidates its
+ * registration. If you make changes to an image, deregister the previous
+ * image and register the new image.
  * </p>
  * <p>
- * <b>NOTE:</b> You can't register an image where a secondary (non-root) snapshot has AWS Marketplace product codes.
+ * <b>NOTE:</b> You can't register an image where a secondary (non-root)
+ * snapshot has AWS Marketplace product codes.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#registerImage(RegisterImageRequest)

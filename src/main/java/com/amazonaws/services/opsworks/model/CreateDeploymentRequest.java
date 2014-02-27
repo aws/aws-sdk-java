@@ -25,19 +25,25 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * 
  * <ul>
- * <li>App deployment generates a <code>deploy</code> event, which runs the associated recipes and passes them a JSON stack configuration object that
- * includes information about the app. </li>
- * <li>Stack deployment runs the <code>deploy</code> recipes but does not raise an event.</li>
+ * <li>App deployment generates a <code>deploy</code> event, which runs
+ * the associated recipes and passes them a JSON stack configuration
+ * object that includes information about the app. </li>
+ * <li>Stack deployment runs the <code>deploy</code> recipes but does
+ * not raise an event.</li>
  * 
  * </ul>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html"> Deploying Apps </a> and <a
- * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html"> Run Stack Commands </a> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html"> Deploying Apps </a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html"> Run Stack Commands </a>
+ * .
  * </p>
  * <p>
- * <b>Required Permissions</b> : To use this action, an IAM user must have a Deploy or Manage permissions level for the stack, or an attached policy
- * that explicitly grants permissions. For more information on user permissions, see <a
- * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a> .
+ * <b>Required Permissions</b> : To use this action, an IAM user must
+ * have a Deploy or Manage permissions level for the stack, or an
+ * attached policy that explicitly grants permissions. For more
+ * information on user permissions, see
+ * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createDeployment(CreateDeploymentRequest)

@@ -22,7 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#deleteClusterParameterGroup(DeleteClusterParameterGroupRequest) DeleteClusterParameterGroup operation}.
  * <p>
  * Deletes a specified Amazon Redshift parameter group. <p>
- * <b>NOTE:</b>You cannot delete a parameter group if it is associated with a cluster.
+ * <b>NOTE:</b>You cannot delete a parameter group if it is associated
+ * with a cluster.
  * </p>
  * 
  * </p>

@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This error can occur if someone else is modifying a subscription. You should retry the action.
+ * This error can occur if someone else is modifying a subscription. You
+ * should retry the action.
  * </p>
  */        
 public class InvalidEventSubscriptionStateException extends AmazonServiceException {

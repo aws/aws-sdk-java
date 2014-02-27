@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest) DescribeOrderableDBInstanceOptions operation}.
  * <p>
- * Returns a list of orderable DB instance options for the specified engine.
+ * Returns a list of orderable DB instance options for the specified
+ * engine.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest)

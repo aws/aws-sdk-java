@@ -43,7 +43,7 @@ public class GetStreamingDistributionRequestMarshaller implements Marshaller<Req
         Request<GetStreamingDistributionRequest> request = new DefaultRequest<GetStreamingDistributionRequest>(getStreamingDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2013-11-11/streaming-distribution/{Id}"; 
+        String uriResourcePath = "2013-11-22/streaming-distribution/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(getStreamingDistributionRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {

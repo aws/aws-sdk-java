@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type stores information about a scheduled update to an Auto Scaling group.
+ * This data type stores information about a scheduled update to an Auto
+ * Scaling group.
  * </p>
  */
 public class ScheduledUpdateGroupAction implements Serializable {

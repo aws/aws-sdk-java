@@ -21,11 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#cancelReservedInstancesListing(CancelReservedInstancesListingRequest) CancelReservedInstancesListing operation}.
  * <p>
- * Cancels the specified Reserved Instance listing in the Reserved Instance Marketplace.
+ * Cancels the specified Reserved Instance listing in the Reserved
+ * Instance Marketplace.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a> in
- * the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelReservedInstancesListing(CancelReservedInstancesListingRequest)

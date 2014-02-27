@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the DescribeDBSecurityGroups action.
+ * Contains the result of a successful invocation of the
+ * DescribeDBSecurityGroups action.
  * </p>
  */
 public class DescribeDBSecurityGroupsResult implements Serializable {

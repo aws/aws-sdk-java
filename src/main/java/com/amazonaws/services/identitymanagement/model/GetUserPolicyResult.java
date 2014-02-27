@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the GetUserPolicy action.
+ * Contains the result of a successful invocation of the GetUserPolicy
+ * action.
  * </p>
  */
 public class GetUserPolicyResult implements Serializable {

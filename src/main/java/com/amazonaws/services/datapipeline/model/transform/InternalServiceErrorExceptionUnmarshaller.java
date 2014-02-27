@@ -26,14 +26,21 @@ public class InternalServiceErrorExceptionUnmarshaller extends JsonErrorUnmarsha
         super(InternalServiceErrorException.class);
     }
 
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands.
-        String errorCode = parseErrorCode(json);
-        if (errorCode == null || !errorCode.equals("InternalServiceError"))
-            return null;
+    @Override
+    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
+        if (errorTypeFromHeader == null) {
+            // Parse error type from the JSON content if it's not available in the response headers
+            String errorCodeFromContent = parseErrorCode(json);
+            return (errorCodeFromContent != null && errorCodeFromContent.equals("InternalServiceError"));
+        } else {
+            return errorTypeFromHeader.equals("InternalServiceError");
+        }
+    }
 
+    @Override
+    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         InternalServiceErrorException e = (InternalServiceErrorException)super.unmarshall(json);
+        e.setErrorCode("InternalServiceError");
 
         return e;
     }

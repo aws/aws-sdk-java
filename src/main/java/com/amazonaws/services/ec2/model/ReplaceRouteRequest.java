@@ -23,11 +23,13 @@ import com.amazonaws.services.ec2.model.transform.ReplaceRouteRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#replaceRoute(ReplaceRouteRequest) ReplaceRoute operation}.
  * <p>
- * Replaces an existing route within a route table in a VPC. You must provide only one of the following: Internet gateway, NAT instance, or network
- * interface.
+ * Replaces an existing route within a route table in a VPC. You must
+ * provide only one of the following: Internet gateway, NAT instance, or
+ * network interface.
  * </p>
  * <p>
- * For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+ * For more information about route tables, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
  * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *

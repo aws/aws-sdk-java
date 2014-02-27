@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The requested subnet is not valid, or not all of the subnets are in the same VPC.
+ * The requested subnet is not valid, or not all of the subnets are in
+ * the same VPC.
  * </p>
  */        
 public class InvalidSubnetException extends AmazonServiceException {

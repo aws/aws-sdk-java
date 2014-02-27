@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <i>DescribeCacheParameterGroups</i> operation.
+ * Represents the output of a <i>DescribeCacheParameterGroups</i>
+ * operation.
  * </p>
  */
 public class DescribeCacheParameterGroupsResult implements Serializable {

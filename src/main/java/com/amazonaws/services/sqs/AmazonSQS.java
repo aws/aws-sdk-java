@@ -21,28 +21,41 @@ import com.amazonaws.services.sqs.model.*;
 /**
  * Interface for accessing AmazonSQS.
  * Amazon Simple Queue Service <p>
- * Welcome to the <i>Amazon Simple Queue Service API Reference</i> . This section describes who should read this guide, how the guide is organized, and
- * other resources related to the Amazon Simple Queue Service (Amazon SQS).
+ * Welcome to the <i>Amazon Simple Queue Service API Reference</i> . This
+ * section describes who should read this guide, how the guide is
+ * organized, and other resources related to the Amazon Simple Queue
+ * Service (Amazon SQS).
  * </p>
  * <p>
- * Amazon SQS offers reliable and scalable hosted queues for storing messages as they travel between computers. By using Amazon SQS, you can move data
- * between distributed components of your applications that perform different tasks without losing messages or requiring each component to be always
- * available.
+ * Amazon SQS offers reliable and scalable hosted queues for storing
+ * messages as they travel between computers. By using Amazon SQS, you
+ * can move data between distributed components of your applications that
+ * perform different tasks without losing messages or requiring each
+ * component to be always available.
  * </p>
  * <p>
  * Helpful Links:
  * <ul>
- * <li> <a href="http://queue.amazonaws.com/doc/2012-11-05/QueueService.wsdl"> Current WSDL (2012-11-05) </a> </li>
- * <li> <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html"> Making API Requests </a> </li>
- * <li> <a href="http://aws.amazon.com/sqs/"> Amazon SQS product page </a> </li>
- * <li> <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region"> Regions and Endpoints </a> </li>
+ * <li>
+ * <a href="http://queue.amazonaws.com/doc/2012-11-05/QueueService.wsdl"> Current WSDL (2012-11-05) </a>
+ * </li>
+ * <li>
+ * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html"> Making API Requests </a>
+ * </li>
+ * <li>
+ * <a href="http://aws.amazon.com/sqs/"> Amazon SQS product page </a>
+ * </li>
+ * <li>
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region"> Regions and Endpoints </a>
+ * </li>
  * 
  * </ul>
  * 
  * </p>
  * <p>
- * We also provide SDKs that enable you to access Amazon SQS from your preferred programming language. The SDKs contain functionality that automatically
- * takes care of tasks such as:
+ * We also provide SDKs that enable you to access Amazon SQS from your
+ * preferred programming language. The SDKs contain functionality that
+ * automatically takes care of tasks such as:
  * </p>
  * <p>
  * 
@@ -55,7 +68,9 @@ import com.amazonaws.services.sqs.model.*;
  * 
  * </p>
  * <p>
- * For a list of available SDKs, go to <a href="http://aws.amazon.com/tools/"> Tools for Amazon Web Services </a> .
+ * For a list of available SDKs, go to
+ * <a href="http://aws.amazon.com/tools/"> Tools for Amazon Web Services </a>
+ * .
  * </p>
  */
 public interface AmazonSQS {
@@ -200,9 +215,9 @@ public interface AmazonSQS {
      * new value. The maximum allowed timeout value you can set the value to
      * is 12 hours. This means you can't extend the timeout of a message in
      * an existing queue to more than a total visibility timeout of 12 hours.
-     * (For more information visibility timeout, see <a
-     * azon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">
-     * Visibility Timeout </a> in the <i>Amazon SQS Developer Guide</i> .)
+     * (For more information visibility timeout, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a>
+     * in the <i>Amazon SQS Developer Guide</i> .)
      * </p>
      * <p>
      * For example, let's say you have a message and its default message
@@ -257,9 +272,9 @@ public interface AmazonSQS {
      * <code>QueueOwnerAWSAccountId</code> parameter to specify the account
      * ID of the queue's owner. The queue's owner must grant you permission
      * to access the queue. For more information about shared queue access,
-     * see AddPermission or go to <a
-     * com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">
-     * Shared Queues </a> in the <i>Amazon SQS Developer Guide</i> .
+     * see AddPermission or go to
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html"> Shared Queues </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      *
@@ -313,21 +328,18 @@ public interface AmazonSQS {
      * <li> <code>All</code> - returns all values.</li>
      * <li> <code>ApproximateNumberOfMessages</code> - returns the
      * approximate number of visible messages in a queue. For more
-     * information, see <a
-     * WSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">
-     * Resources Required to Process Messages </a> in the <i>Amazon SQS
-     * Developer Guide</i> .</li>
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"> Resources Required to Process Messages </a>
+     * in the <i>Amazon SQS Developer Guide</i> .</li>
      * <li> <code>ApproximateNumberOfMessagesNotVisible</code> - returns the
      * approximate number of messages that are not timed-out and not deleted.
-     * For more information, see <a
-     * WSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">
-     * Resources Required to Process Messages </a> in the <i>Amazon SQS
-     * Developer Guide</i> .</li>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"> Resources Required to Process Messages </a>
+     * in the <i>Amazon SQS Developer Guide</i> .</li>
      * <li> <code>VisibilityTimeout</code> - returns the visibility timeout
-     * for the queue. For more information about visibility timeout, see <a
-     * azon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">
-     * Visibility Timeout </a> in the <i>Amazon SQS Developer Guide</i>
-     * .</li>
+     * for the queue. For more information about visibility timeout, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a>
+     * in the <i>Amazon SQS Developer Guide</i> .</li>
      * <li> <code>CreatedTimestamp</code> - returns the time when the queue
      * was created (epoch time in seconds).</li>
      * <li> <code>LastModifiedTimestamp</code> - returns the time when the
@@ -349,10 +361,9 @@ public interface AmazonSQS {
      * arrive.</li>
      * <li> <code>RedrivePolicy</code> - returns the parameters for dead
      * letter queue functionality of the source queue. For more information
-     * about RedrivePolicy and dead letter queues, see <a
-     * SSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">
-     * Using Amazon SQS Dead Letter Queues </a> in the <i>Amazon SQS
-     * Developer Guide</i> .</li>
+     * about RedrivePolicy and dead letter queues, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"> Using Amazon SQS Dead Letter Queues </a>
+     * in the <i>Amazon SQS Developer Guide</i> .</li>
      * 
      * </ul>
      * 
@@ -506,10 +517,9 @@ public interface AmazonSQS {
      * </p>
      * <p>
      * We reserve the right to delete queues that have had no activity for
-     * more than 30 days. For more information, see <a
-     * .com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">
-     * How Amazon SQS Queues Work </a> in the <i>Amazon SQS Developer
-     * Guide</i> .
+     * more than 30 days. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html"> How Amazon SQS Queues Work </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      *
@@ -569,9 +579,9 @@ public interface AmazonSQS {
      * <p>
      * Retrieves one or more messages from the specified queue. Long poll
      * support is enabled by using the <code>WaitTimeSeconds</code>
-     * parameter. For more information, see <a
-     * AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">
-     * Amazon SQS Long Poll </a> in the <i>Amazon SQS Developer Guide</i> .
+     * parameter. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html"> Amazon SQS Long Poll </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      * <p>
@@ -595,9 +605,9 @@ public interface AmazonSQS {
      * </p>
      * </li>
      * <li> <p>
-     * MD5 digest of the message body. For information about MD5, go to <a
-     * href="http://www.faqs.org/rfcs/rfc1321.html">
-     * http://www.faqs.org/rfcs/rfc1321.html </a> .
+     * MD5 digest of the message body. For information about MD5, go to
+     * <a href="http://www.faqs.org/rfcs/rfc1321.html"> http://www.faqs.org/rfcs/rfc1321.html </a>
+     * .
      * </p>
      * </li>
      * <li> <p>
@@ -612,10 +622,9 @@ public interface AmazonSQS {
      * </ul>
      * <p>
      * The receipt handle is the identifier you must provide when deleting
-     * the message. For more information, see <a
-     * impleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">
-     * Queue and Message Identifiers </a> in the <i>Amazon SQS Developer
-     * Guide</i> .
+     * the message. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html"> Queue and Message Identifiers </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      * <p>
@@ -623,10 +632,9 @@ public interface AmazonSQS {
      * request, which will be applied to the messages that Amazon SQS returns
      * in the response. If you do not include the parameter, the overall
      * visibility timeout for the queue is used for the returned messages.
-     * For more information, see <a
-     * azon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">
-     * Visibility Timeout </a> in the <i>Amazon SQS Developer Guide</i> .
-     * 
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      * <p>
@@ -791,16 +799,16 @@ public interface AmazonSQS {
 
     /**
      * <p>
-     * Adds a permission to a queue for a specific <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">
-     * principal </a> . This allows for sharing access to the queue.
+     * Adds a permission to a queue for a specific
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P"> principal </a>
+     * . This allows for sharing access to the queue.
      * </p>
      * <p>
      * When you create a queue, you have full control access rights for the
      * queue. Only you (as owner of the queue) can grant or deny permissions
-     * to the queue. For more information about these permissions, see <a
-     * com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">
-     * Shared Queues </a> in the <i>Amazon SQS Developer Guide</i> .
+     * to the queue. For more information about these permissions, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html"> Shared Queues </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> AddPermission writes an Amazon SQS-generated policy. If
@@ -1020,9 +1028,9 @@ public interface AmazonSQS {
      * new value. The maximum allowed timeout value you can set the value to
      * is 12 hours. This means you can't extend the timeout of a message in
      * an existing queue to more than a total visibility timeout of 12 hours.
-     * (For more information visibility timeout, see <a
-     * azon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">
-     * Visibility Timeout </a> in the <i>Amazon SQS Developer Guide</i> .)
+     * (For more information visibility timeout, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a>
+     * in the <i>Amazon SQS Developer Guide</i> .)
      * </p>
      * <p>
      * For example, let's say you have a message and its default message
@@ -1082,9 +1090,9 @@ public interface AmazonSQS {
      * <code>QueueOwnerAWSAccountId</code> parameter to specify the account
      * ID of the queue's owner. The queue's owner must grant you permission
      * to access the queue. For more information about shared queue access,
-     * see AddPermission or go to <a
-     * com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">
-     * Shared Queues </a> in the <i>Amazon SQS Developer Guide</i> .
+     * see AddPermission or go to
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html"> Shared Queues </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      * 
@@ -1142,21 +1150,18 @@ public interface AmazonSQS {
      * <li> <code>All</code> - returns all values.</li>
      * <li> <code>ApproximateNumberOfMessages</code> - returns the
      * approximate number of visible messages in a queue. For more
-     * information, see <a
-     * WSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">
-     * Resources Required to Process Messages </a> in the <i>Amazon SQS
-     * Developer Guide</i> .</li>
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"> Resources Required to Process Messages </a>
+     * in the <i>Amazon SQS Developer Guide</i> .</li>
      * <li> <code>ApproximateNumberOfMessagesNotVisible</code> - returns the
      * approximate number of messages that are not timed-out and not deleted.
-     * For more information, see <a
-     * WSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">
-     * Resources Required to Process Messages </a> in the <i>Amazon SQS
-     * Developer Guide</i> .</li>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"> Resources Required to Process Messages </a>
+     * in the <i>Amazon SQS Developer Guide</i> .</li>
      * <li> <code>VisibilityTimeout</code> - returns the visibility timeout
-     * for the queue. For more information about visibility timeout, see <a
-     * azon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">
-     * Visibility Timeout </a> in the <i>Amazon SQS Developer Guide</i>
-     * .</li>
+     * for the queue. For more information about visibility timeout, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a>
+     * in the <i>Amazon SQS Developer Guide</i> .</li>
      * <li> <code>CreatedTimestamp</code> - returns the time when the queue
      * was created (epoch time in seconds).</li>
      * <li> <code>LastModifiedTimestamp</code> - returns the time when the
@@ -1178,10 +1183,9 @@ public interface AmazonSQS {
      * arrive.</li>
      * <li> <code>RedrivePolicy</code> - returns the parameters for dead
      * letter queue functionality of the source queue. For more information
-     * about RedrivePolicy and dead letter queues, see <a
-     * SSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">
-     * Using Amazon SQS Dead Letter Queues </a> in the <i>Amazon SQS
-     * Developer Guide</i> .</li>
+     * about RedrivePolicy and dead letter queues, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"> Using Amazon SQS Dead Letter Queues </a>
+     * in the <i>Amazon SQS Developer Guide</i> .</li>
      * 
      * </ul>
      * 
@@ -1309,10 +1313,9 @@ public interface AmazonSQS {
      * </p>
      * <p>
      * We reserve the right to delete queues that have had no activity for
-     * more than 30 days. For more information, see <a
-     * .com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">
-     * How Amazon SQS Queues Work </a> in the <i>Amazon SQS Developer
-     * Guide</i> .
+     * more than 30 days. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html"> How Amazon SQS Queues Work </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      * 
@@ -1374,9 +1377,9 @@ public interface AmazonSQS {
      * <p>
      * Retrieves one or more messages from the specified queue. Long poll
      * support is enabled by using the <code>WaitTimeSeconds</code>
-     * parameter. For more information, see <a
-     * AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">
-     * Amazon SQS Long Poll </a> in the <i>Amazon SQS Developer Guide</i> .
+     * parameter. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html"> Amazon SQS Long Poll </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      * <p>
@@ -1400,9 +1403,9 @@ public interface AmazonSQS {
      * </p>
      * </li>
      * <li> <p>
-     * MD5 digest of the message body. For information about MD5, go to <a
-     * href="http://www.faqs.org/rfcs/rfc1321.html">
-     * http://www.faqs.org/rfcs/rfc1321.html </a> .
+     * MD5 digest of the message body. For information about MD5, go to
+     * <a href="http://www.faqs.org/rfcs/rfc1321.html"> http://www.faqs.org/rfcs/rfc1321.html </a>
+     * .
      * </p>
      * </li>
      * <li> <p>
@@ -1417,10 +1420,9 @@ public interface AmazonSQS {
      * </ul>
      * <p>
      * The receipt handle is the identifier you must provide when deleting
-     * the message. For more information, see <a
-     * impleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">
-     * Queue and Message Identifiers </a> in the <i>Amazon SQS Developer
-     * Guide</i> .
+     * the message. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html"> Queue and Message Identifiers </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      * <p>
@@ -1428,10 +1430,9 @@ public interface AmazonSQS {
      * request, which will be applied to the messages that Amazon SQS returns
      * in the response. If you do not include the parameter, the overall
      * visibility timeout for the queue is used for the returned messages.
-     * For more information, see <a
-     * azon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">
-     * Visibility Timeout </a> in the <i>Amazon SQS Developer Guide</i> .
-     * 
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * 
      * </p>
      * <p>
@@ -1595,16 +1596,16 @@ public interface AmazonSQS {
     
     /**
      * <p>
-     * Adds a permission to a queue for a specific <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">
-     * principal </a> . This allows for sharing access to the queue.
+     * Adds a permission to a queue for a specific
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P"> principal </a>
+     * . This allows for sharing access to the queue.
      * </p>
      * <p>
      * When you create a queue, you have full control access rights for the
      * queue. Only you (as owner of the queue) can grant or deny permissions
-     * to the queue. For more information about these permissions, see <a
-     * com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">
-     * Shared Queues </a> in the <i>Amazon SQS Developer Guide</i> .
+     * to the queue. For more information about these permissions, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html"> Shared Queues </a>
+     * in the <i>Amazon SQS Developer Guide</i> .
      * </p>
      * <p>
      * <b>NOTE:</b> AddPermission writes an Amazon SQS-generated policy. If

@@ -23,13 +23,16 @@ import com.amazonaws.services.ec2.model.transform.PurchaseReservedInstancesOffer
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#purchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest) PurchaseReservedInstancesOffering operation}.
  * <p>
- * Purchases a Reserved Instance for use with your account. With Amazon EC2 Reserved Instances, you obtain a capacity reservation for a certain instance
- * configuration over a specified period of time. You pay a lower usage rate than with On-Demand instances for the time that you actually use the
- * capacity reservation.
+ * Purchases a Reserved Instance for use with your account. With Amazon
+ * EC2 Reserved Instances, you obtain a capacity reservation for a
+ * certain instance configuration over a specified period of time. You
+ * pay a lower usage rate than with On-Demand instances for the time that
+ * you actually use the capacity reservation.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a> in
- * the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#purchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest)

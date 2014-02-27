@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * An Amazon Redshift event notification subscription with the specified name does not exist.
+ * An Amazon Redshift event notification subscription with the specified
+ * name does not exist.
  * </p>
  */        
 public class SubscriptionNotFoundException extends AmazonServiceException {

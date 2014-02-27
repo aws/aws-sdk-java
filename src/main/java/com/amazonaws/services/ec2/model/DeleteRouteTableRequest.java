@@ -23,8 +23,9 @@ import com.amazonaws.services.ec2.model.transform.DeleteRouteTableRequestMarshal
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteRouteTable(DeleteRouteTableRequest) DeleteRouteTable operation}.
  * <p>
- * Deletes the specified route table. You must disassociate the route table from any subnets before you can delete it. You can't delete the main route
- * table.
+ * Deletes the specified route table. You must disassociate the route
+ * table from any subnets before you can delete it. You can't delete the
+ * main route table.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteRouteTable(DeleteRouteTableRequest)

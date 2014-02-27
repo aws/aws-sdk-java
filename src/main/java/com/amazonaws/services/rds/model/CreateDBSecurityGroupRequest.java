@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createDBSecurityGroup(CreateDBSecurityGroupRequest) CreateDBSecurityGroup operation}.
  * <p>
- * Creates a new DB security group. DB security groups control access to a DB instance.
+ * Creates a new DB security group. DB security groups control access to
+ * a DB instance.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBSecurityGroup(CreateDBSecurityGroupRequest)

@@ -21,11 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#describeVTLDevices(DescribeVTLDevicesRequest) DescribeVTLDevices operation}.
  * <p>
- * Returns a description of Virtual Tape Library (VTL) devices for the gateway specified in the request. In the response, AWS Storage Gateway returns
- * Virtual Tape Library device information.
+ * Returns a description of Virtual Tape Library (VTL) devices for the
+ * gateway specified in the request. In the response, AWS Storage Gateway
+ * returns Virtual Tape Library device information.
  * </p>
  * <p>
- * The list of Virtual Tape Library devices in the request must be from one gateway.
+ * The list of Virtual Tape Library devices in the request must be from
+ * one gateway.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeVTLDevices(DescribeVTLDevicesRequest)

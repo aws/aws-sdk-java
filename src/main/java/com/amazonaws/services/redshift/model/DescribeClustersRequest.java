@@ -21,10 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeClusters(DescribeClustersRequest) DescribeClusters operation}.
  * <p>
- * Returns properties of provisioned clusters including general cluster properties, cluster database properties, maintenance and backup properties, and
- * security and access properties. This operation supports pagination. For more information about managing clusters, go to <a
- * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a> in the <i>Amazon Redshift Management
- * Guide</i> .
+ * Returns properties of provisioned clusters including general cluster
+ * properties, cluster database properties, maintenance and backup
+ * properties, and security and access properties. This operation
+ * supports pagination. For more information about managing clusters, go
+ * to
+ * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
+ * in the <i>Amazon Redshift Management Guide</i> .
  * 
  * </p>
  *

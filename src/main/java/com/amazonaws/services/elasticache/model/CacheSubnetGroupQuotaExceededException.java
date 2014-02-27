@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request cannot be processed because it would exceed the allowed number of cache subnet groups.
+ * The request cannot be processed because it would exceed the allowed
+ * number of cache subnet groups.
  * </p>
  */        
 public class CacheSubnetGroupQuotaExceededException extends AmazonServiceException {

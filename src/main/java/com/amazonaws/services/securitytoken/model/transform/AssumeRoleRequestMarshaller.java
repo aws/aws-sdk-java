@@ -55,6 +55,12 @@ public class AssumeRoleRequestMarshaller implements Marshaller<Request<AssumeRol
         if (assumeRoleRequest.getExternalId() != null) {
             request.addParameter("ExternalId", StringUtils.fromString(assumeRoleRequest.getExternalId()));
         }
+        if (assumeRoleRequest.getSerialNumber() != null) {
+            request.addParameter("SerialNumber", StringUtils.fromString(assumeRoleRequest.getSerialNumber()));
+        }
+        if (assumeRoleRequest.getTokenCode() != null) {
+            request.addParameter("TokenCode", StringUtils.fromString(assumeRoleRequest.getTokenCode()));
+        }
 
         return request;
     }

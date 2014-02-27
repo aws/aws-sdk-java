@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the user's current activity limits returned from a successful <code>GetSendQuota</code> request.
+ * Represents the user's current activity limits returned from a
+ * successful <code>GetSendQuota</code> request.
  * </p>
  */
 public class GetSendQuotaResult implements Serializable {

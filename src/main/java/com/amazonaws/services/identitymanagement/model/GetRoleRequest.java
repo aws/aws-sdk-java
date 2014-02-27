@@ -21,13 +21,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getRole(GetRoleRequest) GetRole operation}.
  * <p>
- * Retrieves information about the specified role, including the role's path, GUID, ARN, and the policy granting permission to EC2 to assume the role.
- * For more information about ARNs, go to ARNs. For more information about roles, go to <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> .
+ * Retrieves information about the specified role, including the role's
+ * path, GUID, ARN, and the policy granting permission to EC2 to assume
+ * the role. For more information about ARNs, go to ARNs. For more
+ * information about roles, go to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a>
+ * .
  * </p>
  * <p>
- * The returned policy is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">
- * http://www.faqs.org/rfcs/rfc3986.html </a> .
+ * The returned policy is URL-encoded according to RFC 3986. For more
+ * information about RFC 3986, go to
+ * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getRole(GetRoleRequest)

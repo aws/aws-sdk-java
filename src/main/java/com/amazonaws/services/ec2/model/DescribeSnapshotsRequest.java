@@ -23,42 +23,56 @@ import com.amazonaws.services.ec2.model.transform.DescribeSnapshotsRequestMarsha
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSnapshots(DescribeSnapshotsRequest) DescribeSnapshots operation}.
  * <p>
- * Describes one or more of the Amazon EBS snapshots available to you. Available snapshots include public snapshots available for any AWS account to
- * launch, private snapshots that you own, and private snapshots owned by another AWS account but for which you've been given explicit create volume
- * permissions.
+ * Describes one or more of the Amazon EBS snapshots available to you.
+ * Available snapshots include public snapshots available for any AWS
+ * account to launch, private snapshots that you own, and private
+ * snapshots owned by another AWS account but for which you've been given
+ * explicit create volume permissions.
  * </p>
  * <p>
  * The create volume permissions fall into the following categories:
  * </p>
  * 
  * <ul>
- * <li> <i>public</i> : The owner of the snapshot granted create volume permissions for the snapshot to the <code>all</code> group. All AWS accounts
- * have create volume permissions for these snapshots.</li>
- * <li> <i>explicit</i> : The owner of the snapshot granted create volume permissions to a specific AWS account.</li>
- * <li> <i>implicit</i> : An AWS account has implicit create volume permissions for all snapshots it owns.</li>
+ * <li> <i>public</i> : The owner of the snapshot granted create volume
+ * permissions for the snapshot to the <code>all</code> group. All AWS
+ * accounts have create volume permissions for these snapshots.</li>
+ * <li> <i>explicit</i> : The owner of the snapshot granted create
+ * volume permissions to a specific AWS account.</li>
+ * <li> <i>implicit</i> : An AWS account has implicit create volume
+ * permissions for all snapshots it owns.</li>
  * 
  * </ul>
  * <p>
- * The list of snapshots returned can be modified by specifying snapshot IDs, snapshot owners, or AWS accounts with create volume permissions. If no
- * options are specified, Amazon EC2 returns all snapshots for which you have create volume permissions.
+ * The list of snapshots returned can be modified by specifying snapshot
+ * IDs, snapshot owners, or AWS accounts with create volume permissions.
+ * If no options are specified, Amazon EC2 returns all snapshots for
+ * which you have create volume permissions.
  * </p>
  * <p>
- * If you specify one or more snapshot IDs, only snapshots that have the specified IDs are returned. If you specify an invalid snapshot ID, an error is
- * returned. If you specify a snapshot ID for which you do not have access, it is not included in the returned results.
+ * If you specify one or more snapshot IDs, only snapshots that have the
+ * specified IDs are returned. If you specify an invalid snapshot ID, an
+ * error is returned. If you specify a snapshot ID for which you do not
+ * have access, it is not included in the returned results.
  * </p>
  * <p>
- * If you specify one or more snapshot owners, only snapshots from the specified owners and for which you have access are returned. The results can
- * include the AWS account IDs of the specified owners, <code>amazon</code> for snapshots owned by Amazon, or <code>self</code> for snapshots that you
- * own.
+ * If you specify one or more snapshot owners, only snapshots from the
+ * specified owners and for which you have access are returned. The
+ * results can include the AWS account IDs of the specified owners,
+ * <code>amazon</code> for snapshots owned by Amazon, or
+ * <code>self</code> for snapshots that you own.
  * </p>
  * <p>
- * If you specify a list of restorable users, only snapshots with create snapshot permissions for those users are returned. You can specify AWS account
- * IDs (if you own the snapshots), <code>self</code> for snapshots for which you own or have explicit permissions, or <code>all</code> for public
- * snapshots.
+ * If you specify a list of restorable users, only snapshots with create
+ * snapshot permissions for those users are returned. You can specify AWS
+ * account IDs (if you own the snapshots), <code>self</code> for
+ * snapshots for which you own or have explicit permissions, or
+ * <code>all</code> for public snapshots.
  * </p>
  * <p>
- * For more information about Amazon EBS snapshots, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS
- * Snapshots </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information about Amazon EBS snapshots, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSnapshots(DescribeSnapshotsRequest)

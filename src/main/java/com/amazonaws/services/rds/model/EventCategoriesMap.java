@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the results of a successful invocation of the DescribeEventCategories action.
+ * Contains the results of a successful invocation of the
+ * DescribeEventCategories action.
  * </p>
  */
 public class EventCategoriesMap implements Serializable {

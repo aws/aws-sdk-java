@@ -21,32 +21,45 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.securitytoken.AWSSecurityTokenService#getFederationToken(GetFederationTokenRequest) GetFederationToken operation}.
  * <p>
- * Returns a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for a federated user. A
- * typical use is in a proxy application that is getting temporary security credentials on behalf of distributed applications inside a corporate network.
- * Because you must call the <code>GetFederationToken</code> action using the long-term security credentials of an IAM user, this call is appropriate in
- * contexts where those credentials can be safely stored, usually in a server-based application.
+ * Returns a set of temporary security credentials (consisting of an
+ * access key ID, a secret access key, and a security token) for a
+ * federated user. A typical use is in a proxy application that is
+ * getting temporary security credentials on behalf of distributed
+ * applications inside a corporate network. Because you must call the
+ * <code>GetFederationToken</code> action using the long-term security
+ * credentials of an IAM user, this call is appropriate in contexts where
+ * those credentials can be safely stored, usually in a server-based
+ * application.
  * </p>
  * <p>
- * <b>Note:</b> Do not use this call in mobile applications or client-based web applications that directly get temporary security credentials. For those
- * types of applications, use <code>AssumeRoleWithWebIdentity</code> .
+ * <b>Note:</b> Do not use this call in mobile applications or
+ * client-based web applications that directly get temporary security
+ * credentials. For those types of applications, use
+ * <code>AssumeRoleWithWebIdentity</code> .
  * </p>
  * <p>
- * The <code>GetFederationToken</code> action must be called by using the long-term AWS security credentials of the AWS account or an IAM user.
- * Credentials that are created by IAM users are valid for the specified duration, between 900 seconds (15 minutes) and 129600 seconds (36 hours);
- * credentials that are created by using account credentials have a maximum duration of 3600 seconds (1 hour).
+ * The <code>GetFederationToken</code> action must be called by using the
+ * long-term AWS security credentials of the AWS account or an IAM user.
+ * Credentials that are created by IAM users are valid for the specified
+ * duration, between 900 seconds (15 minutes) and 129600 seconds (36
+ * hours); credentials that are created by using account credentials have
+ * a maximum duration of 3600 seconds (1 hour).
  * </p>
  * <p>
- * Optionally, you can pass an AWS IAM access policy to this operation. The temporary security credentials that are returned by the operation have the
- * permissions that are associated with the entity that is making the <code>GetFederationToken</code> call, except for any permissions explicitly denied
- * by the policy you pass. This gives you a way to further restrict the permissions for the federated user. These policies and any applicable
- * resource-based policies are evaluated when calls to AWS are made using the temporary security credentials.
+ * Optionally, you can pass an AWS IAM access policy to this operation.
+ * The temporary security credentials that are returned by the operation
+ * have the permissions that are associated with the entity that is
+ * making the <code>GetFederationToken</code> call, except for any
+ * permissions explicitly denied by the policy you pass. This gives you a
+ * way to further restrict the permissions for the resulting temporary
+ * security credentials. These policies and any applicable resource-based
+ * policies are evaluated when calls to AWS are made using the temporary
+ * security credentials.
  * </p>
  * <p>
- * For more information about how permissions work, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/TokenPermissions.html"> Controlling
- * Permissions in Temporary Credentials </a> in <i>Using Temporary Security Credentials</i> . For information about using
- * <code>GetFederationToken</code> to create temporary security credentials, see <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingFedTokens.html"> Creating Temporary Credentials to Enable Access for Federated Users
- * </a> in <i>Using Temporary Security Credentials</i> .
+ * For more information about how permissions work, see
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/TokenPermissions.html"> Controlling Permissions in Temporary Credentials </a> in <i>Using Temporary Security Credentials</i> . For information about using <code>GetFederationToken</code> to create temporary security credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingFedTokens.html"> Creating Temporary Credentials to Enable Access for Federated Users </a>
+ * in <i>Using Temporary Security Credentials</i> .
  * </p>
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#getFederationToken(GetFederationTokenRequest)

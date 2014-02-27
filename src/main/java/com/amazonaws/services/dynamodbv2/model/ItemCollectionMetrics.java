@@ -18,8 +18,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Information about item collections, if any, that were affected by the operation. <i>ItemCollectionMetrics</i> is only returned if it was asked for in
- * the request. If the table does not have any local secondary indexes, this information is not returned in the response.
+ * Information about item collections, if any, that were affected by the
+ * operation. <i>ItemCollectionMetrics</i> is only returned if it was
+ * asked for in the request. If the table does not have any local
+ * secondary indexes, this information is not returned in the response.
  * </p>
  */
 public class ItemCollectionMetrics implements Serializable {

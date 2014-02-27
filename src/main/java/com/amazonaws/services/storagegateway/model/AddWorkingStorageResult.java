@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A JSON object containing the of the gateway for which working storage was configured.
+ * A JSON object containing the of the gateway for which working storage
+ * was configured.
  * </p>
  */
 public class AddWorkingStorageResult implements Serializable {

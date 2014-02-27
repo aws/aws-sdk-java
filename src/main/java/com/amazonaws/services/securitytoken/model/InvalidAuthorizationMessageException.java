@@ -18,8 +18,9 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid
- * characters, such as linebreaks.
+ * The error returned if the message passed to
+ * <code>DecodeAuthorizationMessage</code> was invalid. This can happen
+ * if the token contains invalid characters, such as linebreaks.
  * </p>
  */        
 public class InvalidAuthorizationMessageException extends AmazonServiceException {

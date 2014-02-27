@@ -21,36 +21,52 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskCompleted(RespondActivityTaskCompletedRequest) RespondActivityTaskCompleted operation}.
  * <p>
- * Used by workers to tell the service that the ActivityTask identified by the <code>taskToken</code> completed successfully with a <code>result</code>
- * (if provided). The <code>result</code> appears in the <code>ActivityTaskCompleted</code> event in the workflow history.
+ * Used by workers to tell the service that the ActivityTask identified
+ * by the <code>taskToken</code> completed successfully with a
+ * <code>result</code> (if provided). The <code>result</code> appears in
+ * the <code>ActivityTaskCompleted</code> event in the workflow history.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> If the requested task does not complete successfully, use RespondActivityTaskFailed instead. If the worker finds that the task is
- * canceled through the canceled flag returned by RecordActivityTaskHeartbeat, it should cancel the task, clean up and then call
- * RespondActivityTaskCanceled.
+ * <b>IMPORTANT:</b> If the requested task does not complete
+ * successfully, use RespondActivityTaskFailed instead. If the worker
+ * finds that the task is canceled through the canceled flag returned by
+ * RecordActivityTaskHeartbeat, it should cancel the task, clean up and
+ * then call RespondActivityTaskCanceled.
  * </p>
  * <p>
- * A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing
- * it. A task is closed after it has been specified in a call to RespondActivityTaskCompleted, RespondActivityTaskCanceled, RespondActivityTaskFailed, or
- * the task has <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types"> timed out </a> .
+ * A task is considered open from the time that it is scheduled until it
+ * is closed. Therefore a task is reported as open while a worker is
+ * processing it. A task is closed after it has been specified in a call
+ * to RespondActivityTaskCompleted, RespondActivityTaskCanceled,
+ * RespondActivityTaskFailed, or the task has
+ * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types"> timed out </a>
+ * .
  * </p>
  * <p>
  * <b>Access Control</b>
  * </p>
  * <p>
- * You can use IAM policies to control this action's access to Amazon SWF resources as follows:
+ * You can use IAM policies to control this action's access to Amazon SWF
+ * resources as follows:
  * </p>
  * 
  * <ul>
- * <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li>
- * <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li>
- * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+ * <li>Use a <code>Resource</code> element with the domain name to limit
+ * the action to only specified domains.</li>
+ * <li>Use an <code>Action</code> element to allow or deny permission to
+ * call this action.</li>
+ * <li>You cannot use an IAM policy to constrain this action's
+ * parameters.</li>
  * 
  * </ul>
  * <p>
- * If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action
- * fails by throwing <code>OperationNotPermitted</code> . For details and example IAM policies, see <a
- * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a> .
+ * If the caller does not have sufficient permissions to invoke the
+ * action, or the parameter values fall outside the specified
+ * constraints, the action fails by throwing
+ * <code>OperationNotPermitted</code> . For details and example IAM
+ * policies, see
+ * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskCompleted(RespondActivityTaskCompletedRequest)

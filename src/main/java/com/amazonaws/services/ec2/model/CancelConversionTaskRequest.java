@@ -23,13 +23,16 @@ import com.amazonaws.services.ec2.model.transform.CancelConversionTaskRequestMar
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#cancelConversionTask(CancelConversionTaskRequest) CancelConversionTask operation}.
  * <p>
- * Cancels an active conversion task. The task can be the import of an instance or volume. The action removes all artifacts of the conversion, including
- * a partially uploaded volume or instance. If the conversion is complete or is in the process of transferring the final disk image, the command fails
- * and returns an exception.
+ * Cancels an active conversion task. The task can be the import of an
+ * instance or volume. The action removes all artifacts of the
+ * conversion, including a partially uploaded volume or instance. If the
+ * conversion is complete or is in the process of transferring the final
+ * disk image, the command fails and returns an exception.
  * </p>
  * <p>
- * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line
- * Tools to Import Your Virtual Machine to Amazon EC2 </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelConversionTask(CancelConversionTaskRequest)

@@ -18,11 +18,13 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.
+ * The identity provider (IdP) reported that authentication failed. This
+ * might be because the claim is invalid.
  * </p>
  * <p>
- * If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it can also mean that the claim has expired or has been explicitly
- * revoked.
+ * If this error is returned for the
+ * <code>AssumeRoleWithWebIdentity</code> operation, it can also mean
+ * that the claim has expired or has been explicitly revoked.
  * </p>
  */        
 public class IDPRejectedClaimException extends AmazonServiceException {

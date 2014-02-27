@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.DescribeVpcAttributeRequestMar
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVpcAttribute(DescribeVpcAttributeRequest) DescribeVpcAttribute operation}.
  * <p>
- * Describes the specified attribute of the specified VPC. You can specify only one attribute at a time.
+ * Describes the specified attribute of the specified VPC. You can
+ * specify only one attribute at a time.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpcAttribute(DescribeVpcAttributeRequest)

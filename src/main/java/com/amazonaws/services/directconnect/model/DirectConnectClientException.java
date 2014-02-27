@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The API was called with invalid parameters. The error message will contain additional details about the cause.
+ * The API was called with invalid parameters. The error message will
+ * contain additional details about the cause.
  * </p>
  */        
 public class DirectConnectClientException extends AmazonServiceException {

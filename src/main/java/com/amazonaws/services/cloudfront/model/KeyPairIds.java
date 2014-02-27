@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
+ * A complex type that lists the active CloudFront key pairs, if any,
+ * that are associated with AwsAccountNumber.
  * </p>
  */
 public class KeyPairIds implements Serializable {

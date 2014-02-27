@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#getStackPolicy(GetStackPolicyRequest) GetStackPolicy operation}.
  * <p>
- * Returns the stack policy for a specified stack. If a stack doesn't have a policy, a null value is returned.
+ * Returns the stack policy for a specified stack. If a stack doesn't
+ * have a policy, a null value is returned.
  * </p>
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#getStackPolicy(GetStackPolicyRequest)

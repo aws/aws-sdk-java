@@ -25,16 +25,21 @@ public class ListTablesResult implements Serializable {
 
     /**
      * The names of the tables associated with the current account at the
-     * current endpoint.
+     * current endpoint. The maximum size of this array is 100. <p>If
+     * <i>LastEvaluatedTableName</i> also appears in the output, you can use
+     * this value as the <i>ExclusiveStartTableName</i> parameter in a
+     * subsequent <i>ListTables</i> request and obtain the next page of
+     * results.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> tableNames;
 
     /**
-     * The name of the last table in the current list, only if some tables
-     * for the account and endpoint have not been returned. This value does
-     * not exist in a response if all table names are already returned. Use
-     * this value as the <i>ExclusiveStartTableName</i> in a new request to
-     * continue the list until all the table names are returned.
+     * The name of the last table in the current page of results. Use this
+     * value as the <i>ExclusiveStartTableName</i> in a new request to obtain
+     * the next page of results, until all the table names are returned.
+     * <p>If you do not receive a <i>LastEvaluatedTableName</i> value in the
+     * response, this means that there are no more table names to be
+     * retrieved.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
@@ -44,10 +49,18 @@ public class ListTablesResult implements Serializable {
 
     /**
      * The names of the tables associated with the current account at the
-     * current endpoint.
+     * current endpoint. The maximum size of this array is 100. <p>If
+     * <i>LastEvaluatedTableName</i> also appears in the output, you can use
+     * this value as the <i>ExclusiveStartTableName</i> parameter in a
+     * subsequent <i>ListTables</i> request and obtain the next page of
+     * results.
      *
      * @return The names of the tables associated with the current account at the
-     *         current endpoint.
+     *         current endpoint. The maximum size of this array is 100. <p>If
+     *         <i>LastEvaluatedTableName</i> also appears in the output, you can use
+     *         this value as the <i>ExclusiveStartTableName</i> parameter in a
+     *         subsequent <i>ListTables</i> request and obtain the next page of
+     *         results.
      */
     public java.util.List<String> getTableNames() {
         return tableNames;
@@ -55,10 +68,18 @@ public class ListTablesResult implements Serializable {
     
     /**
      * The names of the tables associated with the current account at the
-     * current endpoint.
+     * current endpoint. The maximum size of this array is 100. <p>If
+     * <i>LastEvaluatedTableName</i> also appears in the output, you can use
+     * this value as the <i>ExclusiveStartTableName</i> parameter in a
+     * subsequent <i>ListTables</i> request and obtain the next page of
+     * results.
      *
      * @param tableNames The names of the tables associated with the current account at the
-     *         current endpoint.
+     *         current endpoint. The maximum size of this array is 100. <p>If
+     *         <i>LastEvaluatedTableName</i> also appears in the output, you can use
+     *         this value as the <i>ExclusiveStartTableName</i> parameter in a
+     *         subsequent <i>ListTables</i> request and obtain the next page of
+     *         results.
      */
     public void setTableNames(java.util.Collection<String> tableNames) {
         if (tableNames == null) {
@@ -72,12 +93,20 @@ public class ListTablesResult implements Serializable {
     
     /**
      * The names of the tables associated with the current account at the
-     * current endpoint.
+     * current endpoint. The maximum size of this array is 100. <p>If
+     * <i>LastEvaluatedTableName</i> also appears in the output, you can use
+     * this value as the <i>ExclusiveStartTableName</i> parameter in a
+     * subsequent <i>ListTables</i> request and obtain the next page of
+     * results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tableNames The names of the tables associated with the current account at the
-     *         current endpoint.
+     *         current endpoint. The maximum size of this array is 100. <p>If
+     *         <i>LastEvaluatedTableName</i> also appears in the output, you can use
+     *         this value as the <i>ExclusiveStartTableName</i> parameter in a
+     *         subsequent <i>ListTables</i> request and obtain the next page of
+     *         results.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -92,12 +121,20 @@ public class ListTablesResult implements Serializable {
     
     /**
      * The names of the tables associated with the current account at the
-     * current endpoint.
+     * current endpoint. The maximum size of this array is 100. <p>If
+     * <i>LastEvaluatedTableName</i> also appears in the output, you can use
+     * this value as the <i>ExclusiveStartTableName</i> parameter in a
+     * subsequent <i>ListTables</i> request and obtain the next page of
+     * results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tableNames The names of the tables associated with the current account at the
-     *         current endpoint.
+     *         current endpoint. The maximum size of this array is 100. <p>If
+     *         <i>LastEvaluatedTableName</i> also appears in the output, you can use
+     *         this value as the <i>ExclusiveStartTableName</i> parameter in a
+     *         subsequent <i>ListTables</i> request and obtain the next page of
+     *         results.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -115,53 +152,58 @@ public class ListTablesResult implements Serializable {
     }
 
     /**
-     * The name of the last table in the current list, only if some tables
-     * for the account and endpoint have not been returned. This value does
-     * not exist in a response if all table names are already returned. Use
-     * this value as the <i>ExclusiveStartTableName</i> in a new request to
-     * continue the list until all the table names are returned.
+     * The name of the last table in the current page of results. Use this
+     * value as the <i>ExclusiveStartTableName</i> in a new request to obtain
+     * the next page of results, until all the table names are returned.
+     * <p>If you do not receive a <i>LastEvaluatedTableName</i> value in the
+     * response, this means that there are no more table names to be
+     * retrieved.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @return The name of the last table in the current list, only if some tables
-     *         for the account and endpoint have not been returned. This value does
-     *         not exist in a response if all table names are already returned. Use
-     *         this value as the <i>ExclusiveStartTableName</i> in a new request to
-     *         continue the list until all the table names are returned.
+     * @return The name of the last table in the current page of results. Use this
+     *         value as the <i>ExclusiveStartTableName</i> in a new request to obtain
+     *         the next page of results, until all the table names are returned.
+     *         <p>If you do not receive a <i>LastEvaluatedTableName</i> value in the
+     *         response, this means that there are no more table names to be
+     *         retrieved.
      */
     public String getLastEvaluatedTableName() {
         return lastEvaluatedTableName;
     }
     
     /**
-     * The name of the last table in the current list, only if some tables
-     * for the account and endpoint have not been returned. This value does
-     * not exist in a response if all table names are already returned. Use
-     * this value as the <i>ExclusiveStartTableName</i> in a new request to
-     * continue the list until all the table names are returned.
+     * The name of the last table in the current page of results. Use this
+     * value as the <i>ExclusiveStartTableName</i> in a new request to obtain
+     * the next page of results, until all the table names are returned.
+     * <p>If you do not receive a <i>LastEvaluatedTableName</i> value in the
+     * response, this means that there are no more table names to be
+     * retrieved.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param lastEvaluatedTableName The name of the last table in the current list, only if some tables
-     *         for the account and endpoint have not been returned. This value does
-     *         not exist in a response if all table names are already returned. Use
-     *         this value as the <i>ExclusiveStartTableName</i> in a new request to
-     *         continue the list until all the table names are returned.
+     * @param lastEvaluatedTableName The name of the last table in the current page of results. Use this
+     *         value as the <i>ExclusiveStartTableName</i> in a new request to obtain
+     *         the next page of results, until all the table names are returned.
+     *         <p>If you do not receive a <i>LastEvaluatedTableName</i> value in the
+     *         response, this means that there are no more table names to be
+     *         retrieved.
      */
     public void setLastEvaluatedTableName(String lastEvaluatedTableName) {
         this.lastEvaluatedTableName = lastEvaluatedTableName;
     }
     
     /**
-     * The name of the last table in the current list, only if some tables
-     * for the account and endpoint have not been returned. This value does
-     * not exist in a response if all table names are already returned. Use
-     * this value as the <i>ExclusiveStartTableName</i> in a new request to
-     * continue the list until all the table names are returned.
+     * The name of the last table in the current page of results. Use this
+     * value as the <i>ExclusiveStartTableName</i> in a new request to obtain
+     * the next page of results, until all the table names are returned.
+     * <p>If you do not receive a <i>LastEvaluatedTableName</i> value in the
+     * response, this means that there are no more table names to be
+     * retrieved.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -169,11 +211,12 @@ public class ListTablesResult implements Serializable {
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param lastEvaluatedTableName The name of the last table in the current list, only if some tables
-     *         for the account and endpoint have not been returned. This value does
-     *         not exist in a response if all table names are already returned. Use
-     *         this value as the <i>ExclusiveStartTableName</i> in a new request to
-     *         continue the list until all the table names are returned.
+     * @param lastEvaluatedTableName The name of the last table in the current page of results. Use this
+     *         value as the <i>ExclusiveStartTableName</i> in a new request to obtain
+     *         the next page of results, until all the table names are returned.
+     *         <p>If you do not receive a <i>LastEvaluatedTableName</i> value in the
+     *         response, this means that there are no more table names to be
+     *         retrieved.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

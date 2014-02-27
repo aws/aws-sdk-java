@@ -26,14 +26,21 @@ public class IncompatibleVersionExceptionUnmarshaller extends JsonErrorUnmarshal
         super(IncompatibleVersionException.class);
     }
 
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands.
-        String errorCode = parseErrorCode(json);
-        if (errorCode == null || !errorCode.equals("IncompatibleVersionException"))
-            return null;
+    @Override
+    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
+        if (errorTypeFromHeader == null) {
+            // Parse error type from the JSON content if it's not available in the response headers
+            String errorCodeFromContent = parseErrorCode(json);
+            return (errorCodeFromContent != null && errorCodeFromContent.equals("IncompatibleVersionException"));
+        } else {
+            return errorTypeFromHeader.equals("IncompatibleVersionException");
+        }
+    }
 
+    @Override
+    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         IncompatibleVersionException e = (IncompatibleVersionException)super.unmarshall(json);
+        e.setErrorCode("IncompatibleVersionException");
 
         return e;
     }

@@ -21,11 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.directconnect.AmazonDirectConnect#confirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest) ConfirmPrivateVirtualInterface operation}.
  * <p>
- * Accept ownership of a private virtual interface created by another customer.
+ * Accept ownership of a private virtual interface created by another
+ * customer.
  * </p>
  * <p>
- * After the virtual interface owner calls this function, the virtual interface will be created and attached to the given virtual private gateway, and
- * will be available for handling traffic.
+ * After the virtual interface owner calls this function, the virtual
+ * interface will be created and attached to the given virtual private
+ * gateway, and will be available for handling traffic.
  * </p>
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#confirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest)

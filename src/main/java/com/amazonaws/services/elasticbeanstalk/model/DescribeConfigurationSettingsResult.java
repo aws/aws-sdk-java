@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The results from a request to change the configuration settings of an environment.
+ * The results from a request to change the configuration settings of an
+ * environment.
  * </p>
  */
 public class DescribeConfigurationSettingsResult implements Serializable {

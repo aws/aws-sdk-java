@@ -23,7 +23,8 @@ import com.amazonaws.services.ec2.model.transform.DeleteSubnetRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteSubnet(DeleteSubnetRequest) DeleteSubnet operation}.
  * <p>
- * Deletes the specified subnet. You must terminate all running instances in the subnet before you can delete the subnet.
+ * Deletes the specified subnet. You must terminate all running instances
+ * in the subnet before you can delete the subnet.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteSubnet(DeleteSubnetRequest)

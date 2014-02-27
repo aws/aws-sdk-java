@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Sets the value of one or more queue attributes.
  * </p>
  * <p>
- * <b>NOTE:</b>Going forward, new attributes might be added. If you are writing code that calls this action, we recommend that you structure your code so
- * that it can handle new attributes gracefully.
+ * <b>NOTE:</b>Going forward, new attributes might be added. If you are
+ * writing code that calls this action, we recommend that you structure
+ * your code so that it can handle new attributes gracefully.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#setQueueAttributes(SetQueueAttributesRequest)

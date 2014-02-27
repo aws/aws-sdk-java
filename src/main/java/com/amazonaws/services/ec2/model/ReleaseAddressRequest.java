@@ -26,17 +26,23 @@ import com.amazonaws.services.ec2.model.transform.ReleaseAddressRequestMarshalle
  * Releases the specified Elastic IP address.
  * </p>
  * <p>
- * After releasing an Elastic IP address, it is released to the IP address pool and might be unavailable to you. Be sure to update your DNS records and
- * any servers or devices that communicate with the address. If you attempt to release an Elastic IP address that you already released, you'll get an
- * <code>AuthFailure</code> error if the address is already allocated to another AWS account.
+ * After releasing an Elastic IP address, it is released to the IP
+ * address pool and might be unavailable to you. Be sure to update your
+ * DNS records and any servers or devices that communicate with the
+ * address. If you attempt to release an Elastic IP address that you
+ * already released, you'll get an <code>AuthFailure</code> error if the
+ * address is already allocated to another AWS account.
  * </p>
  * <p>
- * [EC2-Classic, default VPC] Releasing an Elastic IP address automatically disassociates it from any instance that it's associated with. To disassociate
- * an Elastic IP address without releasing it, use DisassociateAddress.
+ * [EC2-Classic, default VPC] Releasing an Elastic IP address
+ * automatically disassociates it from any instance that it's associated
+ * with. To disassociate an Elastic IP address without releasing it, use
+ * DisassociateAddress.
  * </p>
  * <p>
- * [Nondefault VPC] You must use the DisassociateAddress to disassociate the Elastic IP address before you try to release it. Otherwise, Amazon EC2
- * returns an error ( <code>InvalidIPAddress.InUse</code> ).
+ * [Nondefault VPC] You must use the DisassociateAddress to disassociate
+ * the Elastic IP address before you try to release it. Otherwise, Amazon
+ * EC2 returns an error ( <code>InvalidIPAddress.InUse</code> ).
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#releaseAddress(ReleaseAddressRequest)

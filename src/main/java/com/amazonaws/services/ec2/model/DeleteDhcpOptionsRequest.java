@@ -23,8 +23,10 @@ import com.amazonaws.services.ec2.model.transform.DeleteDhcpOptionsRequestMarsha
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteDhcpOptions(DeleteDhcpOptionsRequest) DeleteDhcpOptions operation}.
  * <p>
- * Deletes the specified set of DHCP options. You must disassociate the set of DHCP options before you can delete it. You can disassociate the set of
- * DHCP options by associating either a new set of options or the default set of options with the VPC.
+ * Deletes the specified set of DHCP options. You must disassociate the
+ * set of DHCP options before you can delete it. You can disassociate the
+ * set of DHCP options by associating either a new set of options or the
+ * default set of options with the VPC.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteDhcpOptions(DeleteDhcpOptionsRequest)

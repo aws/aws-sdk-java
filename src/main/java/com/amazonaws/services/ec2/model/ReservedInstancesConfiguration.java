@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the configuration settings for the modified Reserved Instances.
+ * Describes the configuration settings for the modified Reserved
+ * Instances.
  * </p>
  */
 public class ReservedInstancesConfiguration implements Serializable {

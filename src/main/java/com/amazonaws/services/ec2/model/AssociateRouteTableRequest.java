@@ -23,12 +23,16 @@ import com.amazonaws.services.ec2.model.transform.AssociateRouteTableRequestMars
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#associateRouteTable(AssociateRouteTableRequest) AssociateRouteTable operation}.
  * <p>
- * Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association causes traffic originating from the
- * subnet to be routed according to the routes in the route table. The action returns an association ID, which you need in order to disassociate the
- * route table from the subnet later. A route table can be associated with multiple subnets.
+ * Associates a subnet with a route table. The subnet and route table
+ * must be in the same VPC. This association causes traffic originating
+ * from the subnet to be routed according to the routes in the route
+ * table. The action returns an association ID, which you need in order
+ * to disassociate the route table from the subnet later. A route table
+ * can be associated with multiple subnets.
  * </p>
  * <p>
- * For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
+ * For more information about route tables, see
+ * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
  * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *

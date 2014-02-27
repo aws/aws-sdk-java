@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#validatePipelineDefinition(ValidatePipelineDefinitionRequest) ValidatePipelineDefinition operation}.
  * <p>
- * Tests the pipeline definition with a set of validation checks to ensure that it is well formed and can run without error.
+ * Tests the pipeline definition with a set of validation checks to
+ * ensure that it is well formed and can run without error.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#validatePipelineDefinition(ValidatePipelineDefinitionRequest)

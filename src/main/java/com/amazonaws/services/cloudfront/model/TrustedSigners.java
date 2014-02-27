@@ -18,12 +18,19 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content. If you want to require
- * signed URLs in requests for objects in the target origin that match the PathPattern for this cache behavior, specify true for Enabled, and specify the
- * applicable values for Quantity and Items. For more information, go to Using a Signed URL to Serve Private Content in the Amazon CloudFront Developer
- * Guide. If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for Enabled and 0 for Quantity. Omit
- * Items. To add, change, or remove one or more trusted signers, change Enabled to true (if it's currently false), change Quantity as applicable, and
- * specify all of the trusted signers that you want to include in the updated distribution.
+ * A complex type that specifies the AWS accounts, if any, that you want
+ * to allow to create signed URLs for private content. If you want to
+ * require signed URLs in requests for objects in the target origin that
+ * match the PathPattern for this cache behavior, specify true for
+ * Enabled, and specify the applicable values for Quantity and Items. For
+ * more information, go to Using a Signed URL to Serve Private Content in
+ * the Amazon CloudFront Developer Guide. If you don't want to require
+ * signed URLs in requests for objects that match PathPattern, specify
+ * false for Enabled and 0 for Quantity. Omit Items. To add, change, or
+ * remove one or more trusted signers, change Enabled to true (if it's
+ * currently false), change Quantity as applicable, and specify all of
+ * the trusted signers that you want to include in the updated
+ * distribution.
  * </p>
  */
 public class TrustedSigners implements Serializable {

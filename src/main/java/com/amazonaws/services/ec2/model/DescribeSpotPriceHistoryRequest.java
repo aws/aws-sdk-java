@@ -23,16 +23,23 @@ import com.amazonaws.services.ec2.model.transform.DescribeSpotPriceHistoryReques
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSpotPriceHistory(DescribeSpotPriceHistoryRequest) DescribeSpotPriceHistory operation}.
  * <p>
- * Describes the Spot Price history. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you specify exceeds
- * the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity and current Spot Instance requests. For
- * more information about Spot Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
+ * Describes the Spot Price history. Spot Instances are instances that
+ * Amazon EC2 starts on your behalf when the maximum price that you
+ * specify exceeds the current Spot Price. Amazon EC2 periodically sets
+ * the Spot Price based on available Spot Instance capacity and current
+ * Spot Instance requests. For more information about Spot Instances, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  * <p>
- * When you specify an Availability Zone, this operation describes the price history for the specified Availability Zone with the most recent set of
- * prices listed first. If you don't specify an Availability Zone, you get the prices across all Availability Zones, starting with the most recent set.
- * However, if you're using an API version earlier than 2011-05-15, you get the lowest price across the region for the specified time period. The prices
- * returned are listed in chronological order, from the oldest to the most recent.
+ * When you specify an Availability Zone, this operation describes the
+ * price history for the specified Availability Zone with the most recent
+ * set of prices listed first. If you don't specify an Availability Zone,
+ * you get the prices across all Availability Zones, starting with the
+ * most recent set. However, if you're using an API version earlier than
+ * 2011-05-15, you get the lowest price across the region for the
+ * specified time period. The prices returned are listed in chronological
+ * order, from the oldest to the most recent.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSpotPriceHistory(DescribeSpotPriceHistoryRequest)

@@ -21,8 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeReplicationGroups(DescribeReplicationGroupsRequest) DescribeReplicationGroups operation}.
  * <p>
- * The <i>DescribeReplicationGroups</i> operation returns information about a particular replication group. If no identifier is specified,
- * <i>DescribeReplicationGroups</i> returns information about all replication groups.
+ * The <i>DescribeReplicationGroups</i> operation returns information
+ * about a particular replication group. If no identifier is specified,
+ * <i>DescribeReplicationGroups</i> returns information about all
+ * replication groups.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeReplicationGroups(DescribeReplicationGroupsRequest)

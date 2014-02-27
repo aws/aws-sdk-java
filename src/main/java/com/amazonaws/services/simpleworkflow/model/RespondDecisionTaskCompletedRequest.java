@@ -21,22 +21,29 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest) RespondDecisionTaskCompleted operation}.
  * <p>
- * Used by deciders to tell the service that the DecisionTask identified by the <code>taskToken</code> has successfully completed. The
- * <code>decisions</code> argument specifies the list of decisions made while processing the task.
+ * Used by deciders to tell the service that the DecisionTask identified
+ * by the <code>taskToken</code> has successfully completed. The
+ * <code>decisions</code> argument specifies the list of decisions made
+ * while processing the task.
  * </p>
  * <p>
  * A
- * <code>DecisionTaskCompleted</code> event is added to the workflow history. The <code>executionContext</code> specified is attached
- * to the event in the workflow execution history.
+ * <code>DecisionTaskCompleted</code> event is added
+ * to the workflow history. The <code>executionContext</code> specified
+ * is attached to the event in the workflow execution history.
  * </p>
  * <p>
  * <b>Access Control</b>
  * </p>
  * <p>
- * If an IAM policy grants permission to use <code>RespondDecisionTaskCompleted</code> , it can express permissions for the list of decisions in the
- * <code>decisions</code> parameter in the same way as for the regular API. This approach maintains a uniform conceptual model and helps keep policies
- * readable. For more information, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access
- * to Amazon SWF Workflows </a> .
+ * If an IAM policy grants permission to use
+ * <code>RespondDecisionTaskCompleted</code> , it can express permissions
+ * for the list of decisions in the <code>decisions</code> parameter in
+ * the same way as for the regular API. This approach maintains a uniform
+ * conceptual model and helps keep policies readable. For more
+ * information, see
+ * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest)

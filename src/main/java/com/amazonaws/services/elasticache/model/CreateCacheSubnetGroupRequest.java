@@ -21,10 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#createCacheSubnetGroup(CreateCacheSubnetGroupRequest) CreateCacheSubnetGroup operation}.
  * <p>
- * The <i>CreateCacheSubnetGroup</i> operation creates a new cache subnet group.
+ * The <i>CreateCacheSubnetGroup</i> operation creates a new cache subnet
+ * group.
  * </p>
  * <p>
- * Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (VPC).
+ * Use this parameter only when you are creating a cluster in an Amazon
+ * Virtual Private Cloud (VPC).
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#createCacheSubnetGroup(CreateCacheSubnetGroupRequest)

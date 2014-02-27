@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The response body contains a JSON object. If the job is successfully canceled, the value of <code>Success</code> is <code>true</code> .
+ * The response body contains a JSON object. If the job is successfully
+ * canceled, the value of <code>Success</code> is <code>true</code> .
  * </p>
  */
 public class CancelJobResult implements Serializable {

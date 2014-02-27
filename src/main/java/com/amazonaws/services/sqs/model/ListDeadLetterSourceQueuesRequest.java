@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#listDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest) ListDeadLetterSourceQueues operation}.
  * <p>
- * Returns a list of your queues that have the RedrivePolicy queue attribute configured with a dead letter queue.
+ * Returns a list of your queues that have the RedrivePolicy queue
+ * attribute configured with a dead letter queue.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#listDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest)

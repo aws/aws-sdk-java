@@ -21,9 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listSubscriptionsByTopic(ListSubscriptionsByTopicRequest) ListSubscriptionsByTopic operation}.
  * <p>
- * The <code>ListSubscriptionsByTopic</code> action returns a list of the subscriptions to a specific topic. Each call returns a limited list of
- * subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a
- * new <code>ListSubscriptionsByTopic</code> call to get further results.
+ * The <code>ListSubscriptionsByTopic</code> action returns a list of the
+ * subscriptions to a specific topic. Each call returns a limited list of
+ * subscriptions, up to 100. If there are more subscriptions, a
+ * <code>NextToken</code> is also returned. Use the
+ * <code>NextToken</code> parameter in a new
+ * <code>ListSubscriptionsByTopic</code> call to get further results.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#listSubscriptionsByTopic(ListSubscriptionsByTopicRequest)

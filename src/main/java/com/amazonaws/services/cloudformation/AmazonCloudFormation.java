@@ -21,21 +21,31 @@ import com.amazonaws.services.cloudformation.model.*;
 /**
  * Interface for accessing AmazonCloudFormation.
  * AWS CloudFormation <p>
- * AWS CloudFormation enables you to create and manage AWS infrastructure deployments predictably and repeatedly. AWS CloudFormation helps you leverage
- * AWS products such as Amazon EC2, EBS, Amazon SNS, ELB, and Auto Scaling to build highly-reliable, highly scalable, cost effective applications without
- * worrying about creating and configuring the underlying AWS infrastructure.
+ * AWS CloudFormation enables you to create and manage AWS infrastructure
+ * deployments predictably and repeatedly. AWS CloudFormation helps you
+ * leverage AWS products such as Amazon EC2, EBS, Amazon SNS, ELB, and
+ * Auto Scaling to build highly-reliable, highly scalable, cost effective
+ * applications without worrying about creating and configuring the
+ * underlying AWS infrastructure.
  * </p>
  * <p>
- * With AWS CloudFormation, you declare all of your resources and dependencies in a template file. The template defines a collection of resources as a
- * single unit called a stack. AWS CloudFormation creates and deletes all member resources of the stack together and manages all dependencies between the
- * resources for you.
+ * With AWS CloudFormation, you declare all of your resources and
+ * dependencies in a template file. The template defines a collection of
+ * resources as a single unit called a stack. AWS CloudFormation creates
+ * and deletes all member resources of the stack together and manages all
+ * dependencies between the resources for you.
  * </p>
  * <p>
- * For more information about this product, go to the <a href="http://aws.amazon.com/cloudformation/"> CloudFormation Product Page </a> .
+ * For more information about this product, go to the
+ * <a href="http://aws.amazon.com/cloudformation/"> CloudFormation Product Page </a>
+ * .
  * </p>
  * <p>
- * Amazon CloudFormation makes use of other AWS products. If you need additional technical information about a specific AWS product, you can find the
- * product's technical documentation at <a href="http://aws.amazon.com/documentation/"> http://aws.amazon.com/documentation/ </a> .
+ * Amazon CloudFormation makes use of other AWS products. If you need
+ * additional technical information about a specific AWS product, you can
+ * find the product's technical documentation at
+ * <a href="http://aws.amazon.com/documentation/"> http://aws.amazon.com/documentation/ </a>
+ * .
  * </p>
  */
 public interface AmazonCloudFormation {
@@ -311,9 +321,9 @@ public interface AmazonCloudFormation {
     /**
      * <p>
      * Returns all stack related events for a specified stack. For more
-     * information about a stack's event history, go to <a
-     * aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">
-     * Stacks </a> in the AWS CloudFormation User Guide.
+     * information about a stack's event history, go to
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html"> Stacks </a>
+     * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
      * <b>NOTE:</b>Events are returned, even if the stack never existed or
@@ -405,9 +415,9 @@ public interface AmazonCloudFormation {
      * <p>
      * </p>
      * <p>
-     * <b>Note: </b> You cannot update <a
-     * com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html">
-     * AWS::S3::Bucket </a> resources, for example, to add or modify tags.
+     * <b>Note: </b> You cannot update
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html"> AWS::S3::Bucket </a>
+     * resources, for example, to add or modify tags.
      * </p>
      * <p>
      * </p>
@@ -422,9 +432,9 @@ public interface AmazonCloudFormation {
      * </p>
      * <p>
      * For more information about creating an update template, updating a
-     * stack, and monitoring the progress of the update, see <a
-     * om/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">
-     * Updating a Stack </a> .
+     * stack, and monitoring the progress of the update, see
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html"> Updating a Stack </a>
+     * .
      * </p>
      *
      * @param updateStackRequest Container for the necessary parameters to
@@ -470,9 +480,9 @@ public interface AmazonCloudFormation {
      * specify <code>LogicalResourceId</code> to filter the returned result.
      * For more information about resources, the
      * <code>LogicalResourceId</code> and <code>PhysicalResourceId</code> ,
-     * go to the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">
-     * AWS CloudFormation User Guide </a> .
+     * go to the
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide"> AWS CloudFormation User Guide </a>
+     * .
      * </p>
      * <p>
      * <b>NOTE:</b>A ValidationError is returned if you specify both
