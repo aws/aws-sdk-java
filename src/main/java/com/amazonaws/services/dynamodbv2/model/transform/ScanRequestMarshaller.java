@@ -258,7 +258,7 @@ public class ScanRequestMarshaller implements Marshaller<Request<ScanRequest>, S
           jsonWriter.endObject();
 
           String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes("UTF-8");
+          byte[] content = snippet.getBytes(StringUtils.getUTF8Charset());
           request.setContent(new StringInputStream(snippet));
           request.addHeader("Content-Length", Integer.toString(content.length));
         } catch(Throwable t) {
