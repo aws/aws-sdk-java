@@ -45,7 +45,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * .
  * </p>
  * <p>
- * You can create up to 10 load balancers per region per account.
+ * You can create up to 20 load balancers per region per account.
  * </p>
  * <p>
  * Elastic Load Balancing supports load balancing your Amazon EC2

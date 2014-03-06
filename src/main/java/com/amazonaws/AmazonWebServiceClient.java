@@ -212,14 +212,16 @@ public abstract class AmazonWebServiceClient {
      *            "http://dynamodb.us-east-1.amazonaws.com/") of the region
      *            specific AWS endpoint this client will communicate with.
      * @param serviceName
-     *            The name of the AWS service to use when signing requests.
+     *            This parameter is ignored.
      * @param regionId
      *            The ID of the region in which this service resides AND the
      *            overriding region for signing purposes.
-     * 
+     *
      * @throws IllegalArgumentException
      *             If any problems are detected with the specified endpoint.
+     * @deprecated
      */
+    @Deprecated
     public void setEndpoint(String endpoint, String serviceName, String regionId) {
         URI uri = toURI(endpoint);
         Signer signer = computeSignerByServiceRegion(serviceName, regionId,
@@ -676,6 +678,15 @@ public abstract class AmazonWebServiceClient {
             }
         }
         return serviceName;
+    }
+
+    /**
+     * An internal method used to explicitly override the service name
+     * computed by the default implementation. This method is not expected to be
+     * normally called except for AWS internal development purposes.
+     */
+    public final void setServiceNameIntern(String serviceName) {
+        this.serviceName = serviceName;
     }
 
     /**

@@ -57,7 +57,7 @@ import com.amazonaws.services.elasticloadbalancing.model.*;
  * <p>
  * This reference guide is based on the current WSDL, which is available
  * at:
- * <a href="http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/ElasticLoadBalancing.wsdl"> </a>
+ * <a href="http://ec2-downloads.s3.amazonaws.com/ElasticLoadBalancing.wsdl"> </a>
  * 
  * </p>
  * <p>
@@ -282,6 +282,21 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * <p>
      * Modifies the attributes of a specified load balancer.
      * </p>
+     * <p>
+     * You can modify the attributes, such as cross-zone load balancing and
+     * access logs, by either enabling or disabling them.
+     * </p>
+     * <p>
+     * For information on modifying the cross-zone load balancing attribute,
+     * see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html"> Enable or Disable Cross-Zone Load Balancing for Your Load balancer </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
+     * </p>
+     * <p>
+     * For information on modifying the access log attribute, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html"> Enable or Disable Access Log Collection for Your Load Balancer </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
+     * </p>
      *
      * @param modifyLoadBalancerAttributesRequest Container for the necessary
      *           parameters to execute the ModifyLoadBalancerAttributes operation on
@@ -306,6 +321,21 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
     /**
      * <p>
      * Modifies the attributes of a specified load balancer.
+     * </p>
+     * <p>
+     * You can modify the attributes, such as cross-zone load balancing and
+     * access logs, by either enabling or disabling them.
+     * </p>
+     * <p>
+     * For information on modifying the cross-zone load balancing attribute,
+     * see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html"> Enable or Disable Cross-Zone Load Balancing for Your Load balancer </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
+     * </p>
+     * <p>
+     * For information on modifying the access log attribute, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html"> Enable or Disable Access Log Collection for Your Load Balancer </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
      * @param modifyLoadBalancerAttributesRequest Container for the necessary
@@ -1231,7 +1261,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * .
      * </p>
      * <p>
-     * You can create up to 10 load balancers per region per account.
+     * You can create up to 20 load balancers per region per account.
      * </p>
      * <p>
      * Elastic Load Balancing supports load balancing your Amazon EC2
@@ -1302,7 +1332,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * .
      * </p>
      * <p>
-     * You can create up to 10 load balancers per region per account.
+     * You can create up to 20 load balancers per region per account.
      * </p>
      * <p>
      * Elastic Load Balancing supports load balancing your Amazon EC2

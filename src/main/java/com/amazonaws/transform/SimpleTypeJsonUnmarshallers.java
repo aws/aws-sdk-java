@@ -13,8 +13,8 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.transform;
+import static com.amazonaws.util.StringUtils.UTF8;
 
-import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
@@ -184,8 +184,8 @@ public class SimpleTypeJsonUnmarshallers {
             if (dateString == null) return null;
 
             try {
-            	Number number = DecimalFormat.getInstance(new Locale("en")).parse(dateString);
-            	return new Date(number.longValue() * 1000);
+                Number number = DecimalFormat.getInstance(new Locale("en")).parse(dateString);
+                return new Date(number.longValue() * 1000);
             } catch (ParseException e) {
                 String errorMessage = "Unable to parse date '" + dateString + "':  " + e.getMessage();
                 throw new AmazonClientException(errorMessage, e);
@@ -206,14 +206,11 @@ public class SimpleTypeJsonUnmarshallers {
         public ByteBuffer unmarshall(JsonUnmarshallerContext unmarshallerContext) throws Exception {
             String base64EncodedString = unmarshallerContext.readText();
             if (base64EncodedString == null) return null;
+            byte[] base64EncodedBytes = base64EncodedString
+                    .getBytes(UTF8);
+            byte[] decodedBytes = Base64.decodeBase64(base64EncodedBytes);
+            return ByteBuffer.wrap(decodedBytes);
 
-            try {
-                byte[] base64EncodedBytes = base64EncodedString.getBytes("UTF-8");
-                byte[] decodedBytes = Base64.decodeBase64(base64EncodedBytes);
-                return ByteBuffer.wrap(decodedBytes);
-            } catch (UnsupportedEncodingException e) {
-                throw new AmazonClientException("Unable to unmarshall XML data into a ByteBuffer", e);
-            }
         }
 
         private static ByteBufferJsonUnmarshaller instance;

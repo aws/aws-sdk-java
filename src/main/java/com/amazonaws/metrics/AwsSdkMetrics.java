@@ -74,6 +74,16 @@ public enum AwsSdkMetrics {
     private static final String MBEAN_OBJECT_NAME =
         "com.amazonaws.management:type=" + AwsSdkMetrics.class.getSimpleName();
     /**
+     * Used to enable the use of a single metric namespace for all levels of SDK
+     * generated CloudWatch metrics such as JVM level, host level, etc.
+     * 
+     * <pre>
+     * Example:
+     *  -Dcom.amazonaws.sdk.enableDefaultMetrics=useSingleMetricNamespace
+     * </pre>
+     */
+    public static final String USE_SINGLE_METRIC_NAMESPACE = "useSingleMetricNamespace";
+    /**
      * Used to exclude the generation of JVM metrics when the AWS SDK default
      * metrics is enabled.
      * By default, jvm metrics is included. 
@@ -222,6 +232,12 @@ public enum AwsSdkMetrics {
      */
     private static volatile String jvmMetricName;
     private static volatile String hostMetricName;
+    /**
+     * True if the same metric namespace is to be used for all levels (such as
+     * JVM level, host-level, etc.) of AWS Cloudwatch Metrics for the Java SDK;
+     * false otherwise.
+     */
+    private static volatile boolean singleMetricNamespace;
 
     static {
         String defaultMetrics = System.getProperty(DEFAULT_METRICS_SYSTEM_PROPERTY);
@@ -230,12 +246,15 @@ public enum AwsSdkMetrics {
             String[] values = defaultMetrics.split(",");
             boolean excludeMachineMetrics = false;
             boolean includePerHostMetrics = false;
+            boolean useSingleMetricNamespace = false;
             for (String s: values) {
                 String part = s.trim();
                 if (!excludeMachineMetrics && EXCLUDE_MACHINE_METRICS.equals(part)) {
                     excludeMachineMetrics = true;
                 } else if (!includePerHostMetrics && INCLUDE_PER_HOST_METRICS.equals(part)) {
                     includePerHostMetrics = true;
+                } else if (!useSingleMetricNamespace && USE_SINGLE_METRIC_NAMESPACE.equals(part)) {
+                    useSingleMetricNamespace = true;
                 } else {
                     String[] pair = part.split("=");
                     if (pair.length == 2) {
@@ -273,6 +292,7 @@ public enum AwsSdkMetrics {
             }
             machineMetricsExcluded = excludeMachineMetrics;
             perHostMetricsIncluded = includePerHostMetrics;
+            singleMetricNamespace = useSingleMetricNamespace;
         }
     }
 
@@ -418,6 +438,27 @@ public enum AwsSdkMetrics {
      */
     public static boolean isDefaultMetricsEnabled() {
         return defaultMetricsEnabled;
+    }
+
+    /**
+     * Returns true if a single metric name space is to be used for all
+     * levels of SDK generated CloudWatch metrics, including JVM level, host
+     * level, etc.; false otherwise.
+     */
+    public static boolean isSingleMetricNamespace() {
+        return singleMetricNamespace;
+    }
+
+    /**
+     * Used to set whether a single metric name space is to be used for all
+     * levels of SDK generated CloudWatch metrics, including JVM level, host
+     * level, etc.
+     * 
+     * @param singleMetricNamespace
+     *            true if single metric name is to be used; false otherwise.
+     */
+    public static void setSingleMetricNamespace(boolean singleMetricNamespace) {
+        AwsSdkMetrics.singleMetricNamespace = singleMetricNamespace;
     }
 
     /**

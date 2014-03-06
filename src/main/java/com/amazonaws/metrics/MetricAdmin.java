@@ -136,4 +136,12 @@ public class MetricAdmin implements MetricAdminMBean {
             throws FileNotFoundException, IOException {
         AwsSdkMetrics.setCredentialFile(filepath);
     }
+    @Override
+    public boolean isSingleMetricNamespace() {
+        return AwsSdkMetrics.isSingleMetricNamespace();
+    }
+    @Override
+    public void setSingleMetricNamespace(boolean singleMetricNamespace) {
+        AwsSdkMetrics.setSingleMetricNamespace(singleMetricNamespace);
+    }
 }

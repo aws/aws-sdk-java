@@ -14,7 +14,8 @@
  */
 package com.amazonaws.transform;
 
-import java.io.UnsupportedEncodingException;
+import static com.amazonaws.util.StringUtils.UTF8;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
@@ -25,8 +26,8 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
 import com.amazonaws.util.DateUtils;
+import com.amazonaws.util.StringUtils;
 
 /**
  * Collection of StAX unmarshallers for simple data types.
@@ -55,11 +56,11 @@ public class SimpleTypeStaxUnmarshallers {
     }
 
     public static class BigDecimalStaxUnmarshaller implements Unmarshaller<BigDecimal, StaxUnmarshallerContext> {
-		public BigDecimal unmarshall(StaxUnmarshallerContext unmarshallerContext)
-				throws Exception {
-			String s = unmarshallerContext.readText();
-			return (s == null) ? null : new BigDecimal(s);
-		}
+        public BigDecimal unmarshall(StaxUnmarshallerContext unmarshallerContext)
+                throws Exception {
+            String s = unmarshallerContext.readText();
+            return (s == null) ? null : new BigDecimal(s);
+        }
 
         private static BigDecimalStaxUnmarshaller instance;
         public static BigDecimalStaxUnmarshaller getInstance() {
@@ -69,11 +70,11 @@ public class SimpleTypeStaxUnmarshallers {
     }
 
     public static class BigIntegerStaxUnmarshaller implements Unmarshaller<BigInteger, StaxUnmarshallerContext> {
-		public BigInteger unmarshall(StaxUnmarshallerContext unmarshallerContext)
-				throws Exception {
-			String s = unmarshallerContext.readText();
-			return (s == null) ? null : new BigInteger(s);
-		}
+        public BigInteger unmarshall(StaxUnmarshallerContext unmarshallerContext)
+                throws Exception {
+            String s = unmarshallerContext.readText();
+            return (s == null) ? null : new BigInteger(s);
+        }
 
         private static BigIntegerStaxUnmarshaller instance;
         public static BigIntegerStaxUnmarshaller getInstance() {
@@ -209,13 +210,11 @@ public class SimpleTypeStaxUnmarshallers {
             String base64EncodedString = unmarshallerContext.readText();
             if (base64EncodedString == null) return null;
 
-            try {
-                byte[] base64EncodedBytes = base64EncodedString.getBytes("UTF-8");
-                byte[] decodedBytes = Base64.decodeBase64(base64EncodedBytes);
-                return ByteBuffer.wrap(decodedBytes);
-            } catch (UnsupportedEncodingException e) {
-                throw new AmazonClientException("Unable to unmarshall XML data into a ByteBuffer", e);
-            }
+            byte[] base64EncodedBytes = base64EncodedString
+                    .getBytes(UTF8);
+            byte[] decodedBytes = Base64.decodeBase64(base64EncodedBytes);
+            return ByteBuffer.wrap(decodedBytes);
+
         }
 
         private static ByteBufferStaxUnmarshaller instance;

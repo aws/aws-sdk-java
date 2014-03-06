@@ -185,21 +185,23 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
 
     @Override
     public void log() {
-        StringBuilder builder = new StringBuilder();
+        if (latencyLogger.isInfoEnabled()) {
+            StringBuilder builder = new StringBuilder();
 
-        for (Entry<String, List<Object>> entry : properties.entrySet()) {
-            keyValueFormat(entry.getKey(), entry.getValue(), builder);
+            for (Entry<String, List<Object>> entry : properties.entrySet()) {
+                keyValueFormat(entry.getKey(), entry.getValue(), builder);
+            }
+
+            for (Entry<String, Number> entry : timingInfo.getAllCounters()
+                    .entrySet()) {
+                keyValueFormat(entry.getKey(), entry.getValue(), builder);
+            }
+            for (Entry<String, List<TimingInfo>> entry : timingInfo
+                    .getSubMeasurementsByName().entrySet()) {
+                keyValueFormat(entry.getKey(), entry.getValue(), builder);
+            }
+            latencyLogger.info(builder.toString());
         }
-
-        for (Entry<String, Number> entry : timingInfo.getAllCounters().entrySet()) {
-            keyValueFormat(entry.getKey(), entry.getValue(), builder);
-        }
-
-        for (Entry<String, List<TimingInfo>> entry : timingInfo.getSubMeasurementsByName().entrySet()) {
-            keyValueFormat(entry.getKey(), entry.getValue(), builder);
-        }
-
-        latencyLogger.info(builder.toString());
     }
 
     private void keyValueFormat(Object key, Object value, StringBuilder builder) {

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
+import static com.amazonaws.util.StringUtils.UTF8;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -261,7 +262,7 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
           jsonWriter.endObject();
 
           String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes("UTF-8");
+          byte[] content = snippet.getBytes(UTF8);
           request.setContent(new StringInputStream(snippet));
           request.addHeader("Content-Length", Integer.toString(content.length));
         } catch(Throwable t) {

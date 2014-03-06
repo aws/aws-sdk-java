@@ -30,6 +30,11 @@ public class LoadBalancerAttributes implements Serializable {
 
     /**
      * The name of the load balancer attribute.
+     */
+    private AccessLog accessLog;
+
+    /**
+     * The name of the load balancer attribute.
      *
      * @return The name of the load balancer attribute.
      */
@@ -62,6 +67,39 @@ public class LoadBalancerAttributes implements Serializable {
     }
 
     /**
+     * The name of the load balancer attribute.
+     *
+     * @return The name of the load balancer attribute.
+     */
+    public AccessLog getAccessLog() {
+        return accessLog;
+    }
+    
+    /**
+     * The name of the load balancer attribute.
+     *
+     * @param accessLog The name of the load balancer attribute.
+     */
+    public void setAccessLog(AccessLog accessLog) {
+        this.accessLog = accessLog;
+    }
+    
+    /**
+     * The name of the load balancer attribute.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param accessLog The name of the load balancer attribute.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public LoadBalancerAttributes withAccessLog(AccessLog accessLog) {
+        this.accessLog = accessLog;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -73,7 +111,8 @@ public class LoadBalancerAttributes implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCrossZoneLoadBalancing() != null) sb.append("CrossZoneLoadBalancing: " + getCrossZoneLoadBalancing() );
+        if (getCrossZoneLoadBalancing() != null) sb.append("CrossZoneLoadBalancing: " + getCrossZoneLoadBalancing() + ",");
+        if (getAccessLog() != null) sb.append("AccessLog: " + getAccessLog() );
         sb.append("}");
         return sb.toString();
     }
@@ -84,6 +123,7 @@ public class LoadBalancerAttributes implements Serializable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getCrossZoneLoadBalancing() == null) ? 0 : getCrossZoneLoadBalancing().hashCode()); 
+        hashCode = prime * hashCode + ((getAccessLog() == null) ? 0 : getAccessLog().hashCode()); 
         return hashCode;
     }
     
@@ -97,6 +137,8 @@ public class LoadBalancerAttributes implements Serializable {
         
         if (other.getCrossZoneLoadBalancing() == null ^ this.getCrossZoneLoadBalancing() == null) return false;
         if (other.getCrossZoneLoadBalancing() != null && other.getCrossZoneLoadBalancing().equals(this.getCrossZoneLoadBalancing()) == false) return false; 
+        if (other.getAccessLog() == null ^ this.getAccessLog() == null) return false;
+        if (other.getAccessLog() != null && other.getAccessLog().equals(this.getAccessLog()) == false) return false; 
         return true;
     }
     

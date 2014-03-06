@@ -505,18 +505,25 @@ public class DynamoDBMapper {
      * Returns a map of attribute name to EQ condition for the key prototype
      * object given. This method considers attributes annotated with either
      * {@link DynamoDBHashKey} or {@link DynamoDBIndexHashKey}.
+     * 
+     * @param obj
+     *            The prototype object that includes the hash key value.
+     * @return A map of hash key attribute name to EQ condition for the key
+     *         prototype object, or an empty map if obj is null.
      */
     private Map<String, Condition> getHashKeyEqualsConditions(Object obj) {
         Map<String, Condition> conditions = new HashMap<String, Condition>();
-        for ( Method getter : reflector.getRelevantGetters(obj.getClass()) ) {
-            if ( ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBHashKey.class)
-                    || ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBIndexHashKey.class) ) {
-                Object getterReturnResult = safeInvoke(getter, obj, (Object[])null);
-                if (getterReturnResult != null) {
-                    conditions.put(
-                            reflector.getAttributeName(getter),
-                            new Condition().withComparisonOperator(ComparisonOperator.EQ).withAttributeValueList(
-                                    getSimpleAttributeValue(getter, getterReturnResult)));
+        if (obj != null) {
+            for ( Method getter : reflector.getRelevantGetters(obj.getClass()) ) {
+                if ( ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBHashKey.class)
+                        || ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBIndexHashKey.class) ) {
+                    Object getterReturnResult = safeInvoke(getter, obj, (Object[])null);
+                    if (getterReturnResult != null) {
+                        conditions.put(
+                                reflector.getAttributeName(getter),
+                                new Condition().withComparisonOperator(ComparisonOperator.EQ).withAttributeValueList(
+                                        getSimpleAttributeValue(getter, getterReturnResult)));
+                    }
                 }
             }
         }

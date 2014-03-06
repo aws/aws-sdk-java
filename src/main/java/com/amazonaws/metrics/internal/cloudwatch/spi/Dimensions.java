@@ -30,5 +30,13 @@ public enum Dimensions {
      * etc.
      */
     RequestType,
+    /**
+     * Host used for per-host level metrics with a single metric namespace.
+     */
+    Host,
+    /**
+     * JVM used for per-JVM level metrics with a single metric namespace.
+     */
+    JVM,
     ;
 }

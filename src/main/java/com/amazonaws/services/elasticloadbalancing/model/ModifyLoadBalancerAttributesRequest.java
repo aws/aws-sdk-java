@@ -23,6 +23,21 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Modifies the attributes of a specified load balancer.
  * </p>
+ * <p>
+ * You can modify the attributes, such as cross-zone load balancing and
+ * access logs, by either enabling or disabling them.
+ * </p>
+ * <p>
+ * For information on modifying the cross-zone load balancing attribute,
+ * see
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html"> Enable or Disable Cross-Zone Load Balancing for Your Load balancer </a>
+ * in the <i>Elastic Load Balancing Developer Guide</i> .
+ * </p>
+ * <p>
+ * For information on modifying the access log attribute, see
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html"> Enable or Disable Access Log Collection for Your Load Balancer </a>
+ * in the <i>Elastic Load Balancing Developer Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#modifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest)
  */

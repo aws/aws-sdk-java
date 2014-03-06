@@ -17,6 +17,7 @@ package com.amazonaws.util;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
 import java.util.Date;
 
 import org.apache.commons.codec.binary.Base64;
@@ -26,8 +27,12 @@ import org.apache.commons.codec.binary.Base64;
  */
 public class StringUtils {
 
+    private static final String DEFAULT_ENCODING = "UTF-8";
+
     /** Shared date utils for converting dates to strings */
     private static final DateUtils dateUtils = new DateUtils();
+
+    public static final Charset UTF8 = Charset.forName(DEFAULT_ENCODING);
 
     public static Integer toInteger(StringBuilder value) {
         return Integer.parseInt(value.toString());
@@ -58,20 +63,20 @@ public class StringUtils {
     }
 
     public static String fromBigInteger(BigInteger value) {
-    	return value.toString();
+        return value.toString();
     }
 
     public static String fromBigDecimal(BigDecimal value) {
-    	return value.toString();
+        return value.toString();
     }
 
 
     public static BigInteger toBigInteger(String s) {
-    	return new BigInteger(s);
+        return new BigInteger(s);
     }
 
     public static BigDecimal toBigDecimal(String s) {
-    	return new BigDecimal(s);
+        return new BigDecimal(s);
     }
 
     public static String fromFloat(Float value) {

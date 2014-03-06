@@ -17,6 +17,8 @@
  */
 package com.amazonaws.services.s3.model.transform;
 
+import static com.amazonaws.util.StringUtils.UTF8;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -78,9 +80,9 @@ import com.amazonaws.services.s3.model.Owner;
 import com.amazonaws.services.s3.model.PartListing;
 import com.amazonaws.services.s3.model.PartSummary;
 import com.amazonaws.services.s3.model.Permission;
+import com.amazonaws.services.s3.model.RedirectRule;
 import com.amazonaws.services.s3.model.RoutingRule;
 import com.amazonaws.services.s3.model.RoutingRuleCondition;
-import com.amazonaws.services.s3.model.RedirectRule;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.amazonaws.services.s3.model.S3VersionSummary;
@@ -188,7 +190,7 @@ public class XmlResponsesSaxParser {
                 String listingDoc = listingDocBuffer.toString().replaceAll("\r", "&#013;");
 
                 sanitizedInputStream = new ByteArrayInputStream(
-                    listingDoc.getBytes(Constants.DEFAULT_ENCODING));
+                    listingDoc.getBytes(UTF8));
             } catch (Throwable t) {
                 try {
                     inputStream.close();

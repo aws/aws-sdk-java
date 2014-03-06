@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.cloudfront.model.transform;
 
+import static com.amazonaws.util.StringUtils.UTF8;
+
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
@@ -43,7 +45,7 @@ public class DeleteDistributionRequestMarshaller implements Marshaller<Request<D
         Request<DeleteDistributionRequest> request = new DefaultRequest<DeleteDistributionRequest>(deleteDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.DELETE);
         if (deleteDistributionRequest.getIfMatch() != null)
-            request.addHeader("If-Match", StringUtils.fromString(deleteDistributionRequest.getIfMatch()));
+          request.addHeader("If-Match", StringUtils.fromString(deleteDistributionRequest.getIfMatch()));
 
         String uriResourcePath = "2013-11-22/distribution/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(deleteDistributionRequest.getId())); 

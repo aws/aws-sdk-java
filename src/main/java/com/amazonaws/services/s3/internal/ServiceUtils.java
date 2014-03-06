@@ -16,7 +16,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.internal;
-
+import static com.amazonaws.util.StringUtils.UTF8;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -45,6 +45,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.HttpUtils;
 import com.amazonaws.util.Md5Utils;
+import com.amazonaws.util.StringUtils;
 
 /**
  * General utility methods used throughout the AWS S3 Java client.
@@ -96,12 +97,7 @@ public class ServiceUtils {
      * @return The byte array contents of the specified string.
      */
     public static byte[] toByteArray(String s) {
-        try {
-            return s.getBytes(Constants.DEFAULT_ENCODING);
-        } catch (UnsupportedEncodingException e) {
-            log.warn("Encoding " + Constants.DEFAULT_ENCODING + " is not supported", e);
-            return s.getBytes();
-        }
+        return s.getBytes(UTF8);
     }
 
 
@@ -138,11 +134,11 @@ public class ServiceUtils {
      *             If the request cannot be converted to a well formed URL.
      */
     public static URL convertRequestToUrl(Request<?> request) {
-        // To be backward compatible, this method by default does not 
+        // To be backward compatible, this method by default does not
         // remove the leading slash in the request resource-path.
         return convertRequestToUrl(request, false);
     }
-    
+
     /**
      * Converts the specified request object into a URL, containing all the
      * specified parameters, the specified request endpoint, etc.
@@ -159,13 +155,13 @@ public class ServiceUtils {
      */
     public static URL convertRequestToUrl(Request<?> request, boolean removeLeadingSlashInResourcePath) {
         String resourcePath = HttpUtils.urlEncode(request.getResourcePath(), true);
-        
+
         // Removed the padding "/" that was already added into the request's resource path.
         if (removeLeadingSlashInResourcePath
                 && resourcePath.startsWith("/")) {
             resourcePath = resourcePath.substring(1);
         }
-        
+
         // Some http client libraries (e.g. Apache HttpClient) cannot handle
         // consecutive "/"s between URL authority and path components.
         // So we escape "////..." into "/%2F%2F%2F...", in the same way as how
@@ -322,7 +318,7 @@ public class ServiceUtils {
         boolean needRetry;
         S3Object s3Object;
         do {
-        	needRetry = false;
+            needRetry = false;
             s3Object = retryableS3DownloadTask.getS3ObjectStream();
             if ( s3Object == null )
                 return null;

@@ -13,8 +13,8 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.internal;
+import static com.amazonaws.util.StringUtils.UTF8;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,11 +72,7 @@ public class XmlWriter {
 
     public byte[] getBytes() {
         assert(tags.size() == 0);
-        try {
-            return this.toString().getBytes(Constants.DEFAULT_ENCODING);
-        } catch (UnsupportedEncodingException e) {
-            return this.toString().toString().getBytes();
-        }
+        return this.toString().getBytes(UTF8);
     }
 
     public String toString() {

@@ -27,12 +27,12 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Modify Load Balancer Attributes Result StAX Unmarshaller
+ * Access Log StAX Unmarshaller
  */
-public class ModifyLoadBalancerAttributesResultStaxUnmarshaller implements Unmarshaller<ModifyLoadBalancerAttributesResult, StaxUnmarshallerContext> {
+public class AccessLogStaxUnmarshaller implements Unmarshaller<AccessLog, StaxUnmarshallerContext> {
 
-    public ModifyLoadBalancerAttributesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
-        ModifyLoadBalancerAttributesResult modifyLoadBalancerAttributesResult = new ModifyLoadBalancerAttributesResult();
+    public AccessLog unmarshall(StaxUnmarshallerContext context) throws Exception {
+        AccessLog accessLog = new AccessLog();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -40,28 +40,36 @@ public class ModifyLoadBalancerAttributesResultStaxUnmarshaller implements Unmar
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return modifyLoadBalancerAttributesResult;
+            if (xmlEvent.isEndDocument()) return accessLog;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("LoadBalancerName", targetDepth)) {
-                    modifyLoadBalancerAttributesResult.setLoadBalancerName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Enabled", targetDepth)) {
+                    accessLog.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("LoadBalancerAttributes", targetDepth)) {
-                    modifyLoadBalancerAttributesResult.setLoadBalancerAttributes(LoadBalancerAttributesStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("S3BucketName", targetDepth)) {
+                    accessLog.setS3BucketName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("EmitInterval", targetDepth)) {
+                    accessLog.setEmitInterval(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("S3BucketPrefix", targetDepth)) {
+                    accessLog.setS3BucketPrefix(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return modifyLoadBalancerAttributesResult;
+                    return accessLog;
                 }
             }
         }
     }
 
-    private static ModifyLoadBalancerAttributesResultStaxUnmarshaller instance;
-    public static ModifyLoadBalancerAttributesResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new ModifyLoadBalancerAttributesResultStaxUnmarshaller();
+    private static AccessLogStaxUnmarshaller instance;
+    public static AccessLogStaxUnmarshaller getInstance() {
+        if (instance == null) instance = new AccessLogStaxUnmarshaller();
         return instance;
     }
 }

@@ -173,4 +173,14 @@ public interface MetricAdminMBean {
      * {@link InetAddresss}.
      */
     public void setHostMetricName(String hostMetricName);
+
+    /**
+     * Returns true if single metric name space is to be used; false otherwise.
+     */
+    public boolean isSingleMetricNamespace();
+
+    /**
+     * Used to set whether a single metric name space is to be used.
+     */
+    public void setSingleMetricNamespace(boolean singleMetricNamespace);
 }

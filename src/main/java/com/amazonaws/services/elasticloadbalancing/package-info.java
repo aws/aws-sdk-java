@@ -34,7 +34,7 @@
  * <p>
  * This reference guide is based on the current WSDL, which is available
  * at:
- * <a href="http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/ElasticLoadBalancing.wsdl"> </a>
+ * <a href="http://ec2-downloads.s3.amazonaws.com/ElasticLoadBalancing.wsdl"> </a>
  * 
  * </p>
  * <p>

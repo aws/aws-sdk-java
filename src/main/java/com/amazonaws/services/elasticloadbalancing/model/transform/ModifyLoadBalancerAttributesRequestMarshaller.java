@@ -51,6 +51,21 @@ public class ModifyLoadBalancerAttributesRequestMarshaller implements Marshaller
                     request.addParameter("LoadBalancerAttributes.CrossZoneLoadBalancing.Enabled", StringUtils.fromBoolean(crossZoneLoadBalancingCrossZoneLoadBalancing.isEnabled()));
                 }
             }
+            AccessLog accessLogAccessLog = loadBalancerAttributesLoadBalancerAttributes.getAccessLog();
+            if (accessLogAccessLog != null) {
+                if (accessLogAccessLog.isEnabled() != null) {
+                    request.addParameter("LoadBalancerAttributes.AccessLog.Enabled", StringUtils.fromBoolean(accessLogAccessLog.isEnabled()));
+                }
+                if (accessLogAccessLog.getS3BucketName() != null) {
+                    request.addParameter("LoadBalancerAttributes.AccessLog.S3BucketName", StringUtils.fromString(accessLogAccessLog.getS3BucketName()));
+                }
+                if (accessLogAccessLog.getEmitInterval() != null) {
+                    request.addParameter("LoadBalancerAttributes.AccessLog.EmitInterval", StringUtils.fromInteger(accessLogAccessLog.getEmitInterval()));
+                }
+                if (accessLogAccessLog.getS3BucketPrefix() != null) {
+                    request.addParameter("LoadBalancerAttributes.AccessLog.S3BucketPrefix", StringUtils.fromString(accessLogAccessLog.getS3BucketPrefix()));
+                }
+            }
         }
 
         return request;

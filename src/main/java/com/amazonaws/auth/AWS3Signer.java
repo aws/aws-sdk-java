@@ -14,7 +14,8 @@
  */
 package com.amazonaws.auth;
 
-import java.io.UnsupportedEncodingException;
+import static com.amazonaws.util.StringUtils.UTF8;
+
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -93,11 +94,7 @@ public class AWS3Signer extends AbstractAWSSigner {
         if (isHttps) {
             request.addHeader(NONCE_HEADER, nonce);
             stringToSign = date + nonce;
-            try {
-                bytesToSign = stringToSign.getBytes("UTF-8");
-            } catch (UnsupportedEncodingException e) {
-                throw new AmazonClientException("Unable to serialize string to bytes: " + e.getMessage(), e);
-            }
+            bytesToSign = stringToSign.getBytes(UTF8);
         } else {
             String path = HttpUtils.appendUri(request.getEndpoint().getPath(), request.getResourcePath());
 

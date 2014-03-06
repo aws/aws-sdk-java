@@ -27,6 +27,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.metrics.internal.cloudwatch.spi.Dimensions;
 import com.amazonaws.services.cloudwatch.model.Dimension;
 import com.amazonaws.services.cloudwatch.model.MetricDatum;
 import com.amazonaws.services.cloudwatch.model.PutMetricDataRequest;
@@ -165,30 +166,52 @@ class BlockingRequestBuilder {
         final String ns = AwsSdkMetrics.getMetricNameSpace();
         PutMetricDataRequest req = newPutMetricDataRequest(data, ns);
         list.add(req);
-        String perHostNameSpace = null;
         final boolean perHost = AwsSdkMetrics.isPerHostMetricEnabled();
+        String perHostNameSpace = null;
+        String hostName = null;
+        Dimension hostDim = null;
+        final boolean singleNamespace = AwsSdkMetrics.isSingleMetricNamespace();
         if (perHost) {
-            String hostName = AwsSdkMetrics.getHostMetricName();
+            hostName = AwsSdkMetrics.getHostMetricName();
             hostName = hostName == null ? "" : hostName.trim();
             if (hostName.length() == 0)
                 hostName = AwsHostNameUtils.localHostName();
-            perHostNameSpace = ns + NAMESPACE_DELIMITER + hostName;
-            req = newPutMetricDataRequest(data, perHostNameSpace);
+            hostDim = dimension(Dimensions.Host, hostName);
+            if (singleNamespace) {
+                req = newPutMetricDataRequest(data, ns, hostDim);
+            } else {
+                perHostNameSpace = ns + NAMESPACE_DELIMITER + hostName;
+                req = newPutMetricDataRequest(data, perHostNameSpace);
+            }
             list.add(req);
         }
         String jvmMetricName = AwsSdkMetrics.getJvmMetricName();
         if (jvmMetricName != null) {
             jvmMetricName = jvmMetricName.trim();
             if (jvmMetricName.length() > 0) {
-                String perJvmNameSpace = perHostNameSpace == null
-                    ? ns + NAMESPACE_DELIMITER + jvmMetricName
-                    : perHostNameSpace + NAMESPACE_DELIMITER + jvmMetricName
-                    ;
-                // If OS metrics are already included at the per host level,
-                // there is little reason, if any, to include them at the
-                // JVM level.  Hence the filtering.
-                req = newPutMetricDataRequest
-                    (perHost ? filterOSMetrics(data) : data, perJvmNameSpace);
+                if (singleNamespace) {
+                    Dimension jvmDim = dimension(Dimensions.JVM, jvmMetricName);
+                    if (perHost) {
+                        // If OS metrics are already included at the per host level,
+                        // there is little reason, if any, to include them at the
+                        // JVM level.  Hence the filtering.
+                        req = newPutMetricDataRequest(
+                                filterOSMetrics(data), ns, hostDim, jvmDim);
+                    } else {
+                        req = newPutMetricDataRequest(data, ns, jvmDim);
+                    }
+                    
+                } else {
+                    String perJvmNameSpace = perHostNameSpace == null
+                        ? ns + NAMESPACE_DELIMITER + jvmMetricName
+                        : perHostNameSpace + NAMESPACE_DELIMITER + jvmMetricName
+                        ;
+                    // If OS metrics are already included at the per host level,
+                    // there is little reason, if any, to include them at the
+                    // JVM level.  Hence the filtering.
+                    req = newPutMetricDataRequest
+                        (perHost ? filterOSMetrics(data) : data, perJvmNameSpace);
+                }
                 list.add(req);
             }
         }
@@ -209,11 +232,42 @@ class BlockingRequestBuilder {
     }
 
     private PutMetricDataRequest newPutMetricDataRequest(
-            Collection<MetricDatum> data, String namespace) {
+            Collection<MetricDatum> data, final String namespace,
+            final Dimension... extraDims) {
+        if (extraDims != null) {
+            // Need to add some extra dimensions.
+            // To do so, we copy the metric data to avoid mutability problems.
+            Collection<MetricDatum> newData = new ArrayList<MetricDatum>(data.size());
+            for (MetricDatum md: data) {
+                MetricDatum newMD = cloneMetricDatum(md);
+                for (Dimension dim: extraDims)
+                    newMD.withDimensions(dim);  // add the extra dimensions to the new metric datum
+                newData.add(newMD);
+            }
+            data = newData;
+        }
         return new PutMetricDataRequest()
             .withNamespace(namespace)
             .withMetricData(data)
             .withRequestMetricCollector(RequestMetricCollector.NONE)
             ;
+    }
+
+    /**
+     * Returns a metric datum cloned from the given one.
+     * Made package private only for testing purposes.
+     */
+    final MetricDatum cloneMetricDatum(MetricDatum md) {
+        return new MetricDatum()
+            .withDimensions(md.getDimensions()) // a new collection is created
+            .withMetricName(md.getMetricName())
+            .withStatisticValues(md.getStatisticValues())
+            .withTimestamp(md.getTimestamp())
+            .withUnit(md.getUnit())
+            .withValue(md.getValue());
+    }
+
+    private Dimension dimension(Dimensions name, String value) {
+        return new Dimension().withName(name.toString()).withValue(value);
     }
 }

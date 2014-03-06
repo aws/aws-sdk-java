@@ -14,10 +14,11 @@
  */
 package com.amazonaws.auth;
 
+import static com.amazonaws.util.StringUtils.UTF8;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
@@ -47,20 +48,14 @@ import com.amazonaws.util.StringInputStream;
  */
 public abstract class AbstractAWSSigner implements Signer {
 
-    /** The default encoding to use when URL encoding */
-    protected static final String DEFAULT_ENCODING = "UTF-8";
-
     /**
      * Computes an RFC 2104-compliant HMAC signature and returns the result as a
      * Base64 encoded string.
      */
-    protected String signAndBase64Encode(String data, String key, SigningAlgorithm algorithm)
-            throws AmazonClientException {
-        try {
-            return signAndBase64Encode(data.getBytes(DEFAULT_ENCODING), key, algorithm);
-        } catch (UnsupportedEncodingException e) {
-            throw new AmazonClientException("Unable to calculate a request signature: " + e.getMessage(), e);
-        }
+    protected String signAndBase64Encode(String data, String key,
+            SigningAlgorithm algorithm) throws AmazonClientException {
+        return signAndBase64Encode(data.getBytes(UTF8),
+                key, algorithm);
     }
 
     /**
@@ -70,7 +65,7 @@ public abstract class AbstractAWSSigner implements Signer {
     protected String signAndBase64Encode(byte[] data, String key, SigningAlgorithm algorithm)
             throws AmazonClientException {
         try {
-            byte[] signature = sign(data, key.getBytes(DEFAULT_ENCODING), algorithm);
+            byte[] signature = sign(data, key.getBytes(UTF8), algorithm);
             return new String(Base64.encodeBase64(signature));
         } catch (Exception e) {
             throw new AmazonClientException("Unable to calculate a request signature: " + e.getMessage(), e);
@@ -79,7 +74,7 @@ public abstract class AbstractAWSSigner implements Signer {
 
     public byte[] sign(String stringData, byte[] key, SigningAlgorithm algorithm) throws AmazonClientException {
         try {
-            byte[] data = stringData.getBytes(DEFAULT_ENCODING);
+            byte[] data = stringData.getBytes(UTF8);
             return sign(data, key, algorithm);
         } catch (Exception e) {
             throw new AmazonClientException("Unable to calculate a request signature: " + e.getMessage(), e);
@@ -111,7 +106,7 @@ public abstract class AbstractAWSSigner implements Signer {
     public byte[] hash(String text) throws AmazonClientException {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
-            md.update(text.getBytes(DEFAULT_ENCODING));
+            md.update(text.getBytes(UTF8));
             return md.digest();
         } catch (Exception e) {
             throw new AmazonClientException("Unable to compute hash while signing request: " + e.getMessage(), e);
@@ -212,12 +207,10 @@ public abstract class AbstractAWSSigner implements Signer {
     protected byte[] getBinaryRequestPayload(Request<?> request) {
         if (HttpUtils.usePayloadForQueryParameters(request)) {
             String encodedParameters = HttpUtils.encodeParameters(request);
-            if (encodedParameters == null) return new byte[0];
-            try {
-                return encodedParameters.getBytes(DEFAULT_ENCODING);
-            } catch (UnsupportedEncodingException e) {
-                throw new AmazonClientException("Unable to encode string into bytes");
-            }
+            if (encodedParameters == null)
+                return new byte[0];
+
+            return encodedParameters.getBytes(UTF8);
         }
 
         return getBinaryRequestPayloadWithoutQueryParams(request);
@@ -282,12 +275,11 @@ public abstract class AbstractAWSSigner implements Signer {
     protected InputStream getBinaryRequestPayloadStream(Request<?> request) {
         if (HttpUtils.usePayloadForQueryParameters(request)) {
             String encodedParameters = HttpUtils.encodeParameters(request);
-            if (encodedParameters == null) return new ByteArrayInputStream(new byte[0]);
-            try {
-                return new ByteArrayInputStream(encodedParameters.getBytes(DEFAULT_ENCODING));
-            } catch (UnsupportedEncodingException e) {
-                throw new AmazonClientException("Unable to encode string into bytes");
-            }
+            if (encodedParameters == null)
+                return new ByteArrayInputStream(new byte[0]);
+
+            return new ByteArrayInputStream(
+                    encodedParameters.getBytes(UTF8));
         }
 
         return getBinaryRequestPayloadStreamWithoutQueryParams(request);
@@ -387,11 +379,7 @@ public abstract class AbstractAWSSigner implements Signer {
      * @return The converted String object.
      */
     protected String newString(byte[] bytes) {
-        try {
-            return new String(bytes, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            throw new AmazonClientException("Unable to encode bytes to String", e);
-        }
+        return new String(bytes, UTF8);
     }
 
     protected Date getSignatureDate(int timeOffset) {
@@ -399,20 +387,20 @@ public abstract class AbstractAWSSigner implements Signer {
         if (timeOffset != 0) {
             long epochMillis = dateValue.getTime();
             epochMillis -= timeOffset*1000;
-            dateValue = new Date(epochMillis);   
+            dateValue = new Date(epochMillis);
         }
         return dateValue;
     }
-    
+
     protected int getTimeOffset(Request<?> request) {
-    	int timeOffset = request.getTimeOffset();
+        int timeOffset = request.getTimeOffset();
         if(SDKGlobalConfiguration.getGlobalTimeOffset() != 0) {
             // if global time offset is set then use that (For clock skew issues)
             timeOffset = SDKGlobalConfiguration.getGlobalTimeOffset();
         }
         return timeOffset;
     }
-    
+
     /**
      * Adds session credentials to the request given.
      *
@@ -422,5 +410,5 @@ public abstract class AbstractAWSSigner implements Signer {
      *            The session credentials to add to the request
      */
     protected abstract void addSessionCredentials(Request<?> request, AWSSessionCredentials credentials);
-    
+
 }

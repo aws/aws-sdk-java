@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sqs;
+import static com.amazonaws.util.StringUtils.UTF8;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,82 +44,83 @@ import com.amazonaws.util.TimingInfo;
  * calculation according to the original request.
  */
 public class MessageMD5ChecksumHandler extends AbstractRequestHandler {
-	
-	private static final Log log = LogFactory.getLog(MessageMD5ChecksumHandler.class);
-	
+
+    private static final Log log = LogFactory.getLog(MessageMD5ChecksumHandler.class);
+
     @Override
     public void afterResponse(Request<?> request, Object response, TimingInfo timingInfo) {
-    	if (null != request && null != response) {
-    		// SendMessage
-        	if (request.getOriginalRequest() instanceof SendMessageRequest
-        			&& response instanceof SendMessageResult) {
-        		if (log.isDebugEnabled())
-        			log.debug("Checking the MD5 digest returned in SendMessageResult.");
-        		SendMessageRequest sendMessageRequest = (SendMessageRequest)request.getOriginalRequest();
-        		SendMessageResult sendMessageResult = (SendMessageResult)response;
-        		String messageSent = sendMessageRequest.getMessageBody();
-        		String md5Returned = sendMessageResult.getMD5OfMessageBody();
-        		if ( !checkMessageMd5(messageSent, md5Returned) )
-        			throw new AmazonClientException("MD5 returned by SQS does not match the calculation on the original request.(Message body: \""
-        					+ messageSent + "\", MD5 returned: \"" + md5Returned + "\")");
-        	}
-        	// ReceiveMessage
-        	else if (request.getOriginalRequest() instanceof ReceiveMessageRequest
-        			&& response instanceof ReceiveMessageResult) {
-        		if (log.isDebugEnabled())
-        			log.debug("Checking the MD5 digest returned in ReceiveMessageResult.");
-        		ReceiveMessageResult receiveMessageResult = (ReceiveMessageResult)response;
-        		if (null != receiveMessageResult.getMessages()) {
-        			for (Message messageReceived : receiveMessageResult.getMessages()) {
-            			String messageBody = messageReceived.getBody();
-            			String md5 = messageReceived.getMD5OfBody();
-            			if ( !checkMessageMd5(messageBody, md5) )
-            				throw new AmazonClientException("MD5 returned by SQS does not match the calculation on the original request.(Message body: \""
-                					+ messageBody + "\", MD5 returned: \"" + md5 + "\")");
-            		}
-        		}
-        	}
-        	// SendMessageBatchs
-        	else if (request.getOriginalRequest() instanceof SendMessageBatchRequest
-        			&& response instanceof SendMessageBatchResult) {
-        		if (log.isDebugEnabled())
-        			log.debug("Checking the MD5 digest returned in SendMessageBatchResult.");
-        		SendMessageBatchRequest sendMessageBatchRequest = (SendMessageBatchRequest)request.getOriginalRequest();
-        		SendMessageBatchResult sendMessageBatchResult = (SendMessageBatchResult)response;
-        		Map<String, String> idToMessageBodyMap = new HashMap<String, String>();
-        		if (null != sendMessageBatchRequest.getEntries()) {
-        			for (SendMessageBatchRequestEntry entry : sendMessageBatchRequest.getEntries()) {
-            			idToMessageBodyMap.put(entry.getId(), entry.getMessageBody());
-            		}
-        		}
-        		if (null != sendMessageBatchResult.getSuccessful()) {
-        			for (SendMessageBatchResultEntry entry : sendMessageBatchResult.getSuccessful()) {
-        				if ( !checkMessageMd5(idToMessageBodyMap.get(entry.getId()), entry.getMD5OfMessageBody()) )
-        					throw new AmazonClientException("MD5 returned by SQS does not match the calculation on the original request.(Message body: \""
-                					+ idToMessageBodyMap.get(entry.getId()) 
-                					+ "\", MD5 returned: \"" + entry.getMD5OfMessageBody() + "\")");
-        			}
-        		}
-        	}
-    	}
+        if (null != request && null != response) {
+            // SendMessage
+            if (request.getOriginalRequest() instanceof SendMessageRequest
+                    && response instanceof SendMessageResult) {
+                if (log.isDebugEnabled())
+                    log.debug("Checking the MD5 digest returned in SendMessageResult.");
+                SendMessageRequest sendMessageRequest = (SendMessageRequest)request.getOriginalRequest();
+                SendMessageResult sendMessageResult = (SendMessageResult)response;
+                String messageSent = sendMessageRequest.getMessageBody();
+                String md5Returned = sendMessageResult.getMD5OfMessageBody();
+                if ( !checkMessageMd5(messageSent, md5Returned) )
+                    throw new AmazonClientException("MD5 returned by SQS does not match the calculation on the original request.(Message body: \""
+                            + messageSent + "\", MD5 returned: \"" + md5Returned + "\")");
+            }
+            // ReceiveMessage
+            else if (request.getOriginalRequest() instanceof ReceiveMessageRequest
+                    && response instanceof ReceiveMessageResult) {
+                if (log.isDebugEnabled())
+                    log.debug("Checking the MD5 digest returned in ReceiveMessageResult.");
+                ReceiveMessageResult receiveMessageResult = (ReceiveMessageResult)response;
+                if (null != receiveMessageResult.getMessages()) {
+                    for (Message messageReceived : receiveMessageResult.getMessages()) {
+                        String messageBody = messageReceived.getBody();
+                        String md5 = messageReceived.getMD5OfBody();
+                        if ( !checkMessageMd5(messageBody, md5) )
+                            throw new AmazonClientException("MD5 returned by SQS does not match the calculation on the original request.(Message body: \""
+                                    + messageBody + "\", MD5 returned: \"" + md5 + "\")");
+                    }
+                }
+            }
+            // SendMessageBatchs
+            else if (request.getOriginalRequest() instanceof SendMessageBatchRequest
+                    && response instanceof SendMessageBatchResult) {
+                if (log.isDebugEnabled())
+                    log.debug("Checking the MD5 digest returned in SendMessageBatchResult.");
+                SendMessageBatchRequest sendMessageBatchRequest = (SendMessageBatchRequest)request.getOriginalRequest();
+                SendMessageBatchResult sendMessageBatchResult = (SendMessageBatchResult)response;
+                Map<String, String> idToMessageBodyMap = new HashMap<String, String>();
+                if (null != sendMessageBatchRequest.getEntries()) {
+                    for (SendMessageBatchRequestEntry entry : sendMessageBatchRequest.getEntries()) {
+                        idToMessageBodyMap.put(entry.getId(), entry.getMessageBody());
+                    }
+                }
+                if (null != sendMessageBatchResult.getSuccessful()) {
+                    for (SendMessageBatchResultEntry entry : sendMessageBatchResult.getSuccessful()) {
+                        if ( !checkMessageMd5(idToMessageBodyMap.get(entry.getId()), entry.getMD5OfMessageBody()) )
+                            throw new AmazonClientException("MD5 returned by SQS does not match the calculation on the original request.(Message body: \""
+                                    + idToMessageBodyMap.get(entry.getId())
+                                    + "\", MD5 returned: \"" + entry.getMD5OfMessageBody() + "\")");
+                    }
+                }
+            }
+        }
     }
-    
+
     private boolean checkMessageMd5(String messageBody, String md5) {
-    	if (log.isDebugEnabled()) {
-    		log.debug("Raw Message: " + messageBody);
-    	}
-		byte[] expectedMd5;
-		try {
-			expectedMd5 = Md5Utils.computeMD5Hash(messageBody.getBytes("UTF-8"));
-		} catch (Exception e) {
+        if (log.isDebugEnabled()) {
+            log.debug("Raw Message: " + messageBody);
+        }
+        byte[] expectedMd5;
+        try {
+            expectedMd5 = Md5Utils.computeMD5Hash(messageBody
+                    .getBytes(UTF8));
+        } catch (Exception e) {
             throw new AmazonClientException(
                     "Unable to calculate MD5 hash: " + e.getMessage(), e);
-		}
-		String expectedMd5Hex = BinaryUtils.toHex(expectedMd5);
-		if (log.isDebugEnabled()) {
-    		log.debug("Expected  MD5: " + expectedMd5Hex);
-    		log.debug("From Response: " + md5);
-    	}
-		return expectedMd5Hex.equals(md5);
+        }
+        String expectedMd5Hex = BinaryUtils.toHex(expectedMd5);
+        if (log.isDebugEnabled()) {
+            log.debug("Expected  MD5: " + expectedMd5Hex);
+            log.debug("From Response: " + md5);
+        }
+        return expectedMd5Hex.equals(md5);
     }
 }
