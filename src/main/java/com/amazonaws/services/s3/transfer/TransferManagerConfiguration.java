@@ -31,7 +31,7 @@ public class TransferManagerConfiguration {
     private static final int DEFAULT_MINIMUM_UPLOAD_PART_SIZE = 5 * MB;
 
     /** Default size threshold for when to use multipart uploads.  */
-    private static final int DEFAULT_MULTIPART_UPLOAD_THRESHOLD = 16 * MB;
+    private static final long DEFAULT_MULTIPART_UPLOAD_THRESHOLD = 16 * MB;
 
     /** Default size threshold for Amazon S3 object after which multi-part copy is initiated. */
     private static final long DEFAULT_MULTIPART_COPY_THRESHOLD = 5 * GB;
@@ -60,7 +60,7 @@ public class TransferManagerConfiguration {
      * communication, small uploads are still recommended to use a single
      * connection for the upload.
      */
-    private int multipartUploadThreshold = DEFAULT_MULTIPART_UPLOAD_THRESHOLD;
+    private long multipartUploadThreshold = DEFAULT_MULTIPART_UPLOAD_THRESHOLD;
 
     /**
      * The minimum size in bytes of each part when a multi-part copy operation
@@ -132,7 +132,7 @@ public class TransferManagerConfiguration {
      *            The size threshold in bytes for when to use multipart
      *            uploads.
      */
-    public void setMultipartUploadThreshold(int multipartUploadThreshold) {
+    public void setMultipartUploadThreshold(long multipartUploadThreshold) {
         this.multipartUploadThreshold = multipartUploadThreshold;
     }
 
