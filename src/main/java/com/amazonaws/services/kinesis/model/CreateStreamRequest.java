@@ -30,12 +30,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * You specify and control the number of shards that a stream is composed
- * of. Each shard can support up to 5 read transactions per second up to
- * a maximum total of 2 MB of data read per second. Each shard can
- * support up to 1000 write transactions per second up to a maximum total
- * of 1 MB data written per second. You can add shards to a stream if the
- * amount of data input increases and you can remove shards if the amount
- * of data input decreases.
+ * of. Each open shard can support up to 5 read transactions per second,
+ * up to a maximum total of 2 MB of data read per second. Each shard can
+ * support up to 1000 write transactions per second, up to a maximum
+ * total of 1 MB data written per second. You can add shards to a stream
+ * if the amount of data input increases and you can remove shards if the
+ * amount of data input decreases.
  * </p>
  * <p>
  * The stream name identifies the stream. The name is scoped to the AWS
@@ -64,8 +64,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  * </ul>
  * <p>
- * <b>Note:</b> The default limit for an AWS account is five shards per
- * stream. If you need to create a stream with more than five shards,
+ * <b>Note:</b> The default limit for an AWS account is 10 shards per
+ * stream. If you need to create a stream with more than 10 shards,
  * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
  * to increase the limit on your account.
  * </p>
@@ -99,8 +99,8 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements Seri
      * The number of shards that the stream will use. The throughput of the
      * stream is a function of the number of shards; more shards are required
      * for greater provisioned throughput. <p><b>Note:</b> The default limit
-     * for an AWS account is five shards per stream. If you need to create a
-     * stream with more than five shards, <a
+     * for an AWS account is 10 shards per stream. If you need to create a
+     * stream with more than 10 shards, <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
      * AWS Support</a> to increase the limit on your account.
      * <p>
@@ -182,8 +182,8 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements Seri
      * The number of shards that the stream will use. The throughput of the
      * stream is a function of the number of shards; more shards are required
      * for greater provisioned throughput. <p><b>Note:</b> The default limit
-     * for an AWS account is five shards per stream. If you need to create a
-     * stream with more than five shards, <a
+     * for an AWS account is 10 shards per stream. If you need to create a
+     * stream with more than 10 shards, <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
      * AWS Support</a> to increase the limit on your account.
      * <p>
@@ -193,8 +193,8 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements Seri
      * @return The number of shards that the stream will use. The throughput of the
      *         stream is a function of the number of shards; more shards are required
      *         for greater provisioned throughput. <p><b>Note:</b> The default limit
-     *         for an AWS account is five shards per stream. If you need to create a
-     *         stream with more than five shards, <a
+     *         for an AWS account is 10 shards per stream. If you need to create a
+     *         stream with more than 10 shards, <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
      *         AWS Support</a> to increase the limit on your account.
      */
@@ -206,8 +206,8 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements Seri
      * The number of shards that the stream will use. The throughput of the
      * stream is a function of the number of shards; more shards are required
      * for greater provisioned throughput. <p><b>Note:</b> The default limit
-     * for an AWS account is five shards per stream. If you need to create a
-     * stream with more than five shards, <a
+     * for an AWS account is 10 shards per stream. If you need to create a
+     * stream with more than 10 shards, <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
      * AWS Support</a> to increase the limit on your account.
      * <p>
@@ -217,8 +217,8 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements Seri
      * @param shardCount The number of shards that the stream will use. The throughput of the
      *         stream is a function of the number of shards; more shards are required
      *         for greater provisioned throughput. <p><b>Note:</b> The default limit
-     *         for an AWS account is five shards per stream. If you need to create a
-     *         stream with more than five shards, <a
+     *         for an AWS account is 10 shards per stream. If you need to create a
+     *         stream with more than 10 shards, <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
      *         AWS Support</a> to increase the limit on your account.
      */
@@ -230,8 +230,8 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements Seri
      * The number of shards that the stream will use. The throughput of the
      * stream is a function of the number of shards; more shards are required
      * for greater provisioned throughput. <p><b>Note:</b> The default limit
-     * for an AWS account is five shards per stream. If you need to create a
-     * stream with more than five shards, <a
+     * for an AWS account is 10 shards per stream. If you need to create a
+     * stream with more than 10 shards, <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
      * AWS Support</a> to increase the limit on your account.
      * <p>
@@ -243,8 +243,8 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements Seri
      * @param shardCount The number of shards that the stream will use. The throughput of the
      *         stream is a function of the number of shards; more shards are required
      *         for greater provisioned throughput. <p><b>Note:</b> The default limit
-     *         for an AWS account is five shards per stream. If you need to create a
-     *         stream with more than five shards, <a
+     *         for an AWS account is 10 shards per stream. If you need to create a
+     *         stream with more than 10 shards, <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
      *         AWS Support</a> to increase the limit on your account.
      *

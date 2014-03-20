@@ -34,7 +34,6 @@ public class CipherFactory {
     private byte[] initVectorBytes;
     private Provider cryptoProvider;
 
-
     /**
      * Creates a new CipherFactory that will produce ciphers using the specified
      * key, mode, IV and provider.
@@ -75,4 +74,19 @@ public class CipherFactory {
         return cipher;
     }
 
+    public Provider getCryptoProvider() {
+        return cryptoProvider;
+    }
+
+    public SecretKey getSymmetricKey() {
+        return symmetricKey;
+    }
+
+    public int getCipherMode() {
+        return cipherMode;
+    }
+
+    public byte[] getIV() {
+        return initVectorBytes == null ? null : initVectorBytes.clone();
+    }
 }

@@ -27,12 +27,12 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Load Balancer Attributes StAX Unmarshaller
+ * Connection Draining StAX Unmarshaller
  */
-public class LoadBalancerAttributesStaxUnmarshaller implements Unmarshaller<LoadBalancerAttributes, StaxUnmarshallerContext> {
+public class ConnectionDrainingStaxUnmarshaller implements Unmarshaller<ConnectionDraining, StaxUnmarshallerContext> {
 
-    public LoadBalancerAttributes unmarshall(StaxUnmarshallerContext context) throws Exception {
-        LoadBalancerAttributes loadBalancerAttributes = new LoadBalancerAttributes();
+    public ConnectionDraining unmarshall(StaxUnmarshallerContext context) throws Exception {
+        ConnectionDraining connectionDraining = new ConnectionDraining();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -40,32 +40,28 @@ public class LoadBalancerAttributesStaxUnmarshaller implements Unmarshaller<Load
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return loadBalancerAttributes;
+            if (xmlEvent.isEndDocument()) return connectionDraining;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("CrossZoneLoadBalancing", targetDepth)) {
-                    loadBalancerAttributes.setCrossZoneLoadBalancing(CrossZoneLoadBalancingStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Enabled", targetDepth)) {
+                    connectionDraining.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("AccessLog", targetDepth)) {
-                    loadBalancerAttributes.setAccessLog(AccessLogStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("ConnectionDraining", targetDepth)) {
-                    loadBalancerAttributes.setConnectionDraining(ConnectionDrainingStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Timeout", targetDepth)) {
+                    connectionDraining.setTimeout(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return loadBalancerAttributes;
+                    return connectionDraining;
                 }
             }
         }
     }
 
-    private static LoadBalancerAttributesStaxUnmarshaller instance;
-    public static LoadBalancerAttributesStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new LoadBalancerAttributesStaxUnmarshaller();
+    private static ConnectionDrainingStaxUnmarshaller instance;
+    public static ConnectionDrainingStaxUnmarshaller getInstance() {
+        if (instance == null) instance = new ConnectionDrainingStaxUnmarshaller();
         return instance;
     }
 }

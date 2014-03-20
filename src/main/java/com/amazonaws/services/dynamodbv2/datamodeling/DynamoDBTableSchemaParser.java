@@ -119,8 +119,9 @@ public class DynamoDBTableSchemaParser {
 
                     String attributeName = reflector.getAttributeName(getter);
 
-                    if (getter.isAnnotationPresent(DynamoDBIndexHashKey.class)) {
-                        DynamoDBIndexHashKey indexHashKeyAnnotation = getter.getAnnotation(DynamoDBIndexHashKey.class);
+                    if (ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBIndexHashKey.class)) {
+                        DynamoDBIndexHashKey indexHashKeyAnnotation = ReflectionUtils
+                                .getAnnotationFromGetterOrField(getter, DynamoDBIndexHashKey.class);
                         String gsiName = indexHashKeyAnnotation.globalSecondaryIndexName();
                         String[] gsiNames = indexHashKeyAnnotation.globalSecondaryIndexNames();
 
@@ -149,8 +150,9 @@ public class DynamoDBTableSchemaParser {
                         tableIndexInfo.addIndexKeyGetter(getter);
                     }
 
-                    if (getter.isAnnotationPresent(DynamoDBIndexRangeKey.class)) {
-                        DynamoDBIndexRangeKey indexRangeKeyAnnotation = getter.getAnnotation(DynamoDBIndexRangeKey.class);
+                    if (ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBIndexRangeKey.class)) {
+                        DynamoDBIndexRangeKey indexRangeKeyAnnotation = ReflectionUtils
+                                .getAnnotationFromGetterOrField(getter, DynamoDBIndexRangeKey.class);
                         String gsiName = indexRangeKeyAnnotation.globalSecondaryIndexName();
                         String[] gsiNames = indexRangeKeyAnnotation.globalSecondaryIndexNames();
                         String lsiName = indexRangeKeyAnnotation.localSecondaryIndexName();

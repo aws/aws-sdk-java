@@ -17,13 +17,11 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import java.io.IOException;
+import java.io.FilterInputStream;
 import java.io.InputStream;
 
-import javax.crypto.Cipher;
 import javax.crypto.CipherInputStream;
 
-import com.amazonaws.internal.SdkFilterInputStream;
 import com.amazonaws.services.s3.internal.crypto.CipherFactory;
 
 /**
@@ -44,13 +42,8 @@ import com.amazonaws.services.s3.internal.crypto.CipherFactory;
  * you call {@code mark} after calling {@code read} or {@code skip}, it will
  * throw an {@code UnsupportedOperationException}.
  */
-public class RepeatableCipherInputStream extends SdkFilterInputStream {
-
-    private CipherFactory cipherFactory;
-    private InputStream unencryptedDataStream;
-
-    private boolean hasBeenAccessed;
-
+public class RepeatableCipherInputStream extends
+        AbstractRepeatableCipherInputStream<CipherFactory> {
     /**
      * Constructs a new repeatable cipher input stream using the specified
      * InputStream as the source data, and the CipherFactory for building
@@ -66,66 +59,20 @@ public class RepeatableCipherInputStream extends SdkFilterInputStream {
     public RepeatableCipherInputStream(final InputStream input,
                                        final CipherFactory cipherFactory) {
 
-        super(createCipherInputStream(input, cipherFactory));
-
-        this.unencryptedDataStream = input;
-        this.cipherFactory = cipherFactory;
+        super(input,
+            newCipherInputStream(input, cipherFactory),
+            cipherFactory);
     }
 
     @Override
-    public boolean markSupported() {
-    	return unencryptedDataStream.markSupported();
+    protected FilterInputStream createCipherInputStream(
+            InputStream unencryptedDataStream, CipherFactory cipherFactory) {
+        return newCipherInputStream(unencryptedDataStream, cipherFactory);
     }
     
-    @Override
-    public void mark(final int readlimit) {
-        if (hasBeenAccessed) {
-            throw new UnsupportedOperationException(
-                    "Marking is only supported before your first call to "
-                    + "read or skip.");
-        }
-
-    	unencryptedDataStream.mark(readlimit);
-    }
-
-    @Override
-    public void reset() throws IOException {
-        unencryptedDataStream.reset();
-        in = createCipherInputStream(unencryptedDataStream, cipherFactory);
-        hasBeenAccessed = false;
-    }
-
-    @Override
-    public int read() throws IOException {
-        hasBeenAccessed = true;
-        return super.read();
-    }
-
-    @Override
-    public int read(final byte[] b) throws IOException {
-        hasBeenAccessed = true;
-        return super.read(b);
-    }
-
-    @Override
-    public int read(final byte[] b, final int off, final int len)
-            throws IOException {
-
-        hasBeenAccessed = true;
-        return super.read(b, off, len);
-    }
-
-    @Override
-    public long skip(final long n) throws IOException {
-        hasBeenAccessed = true;
-        return super.skip(n);
-    }
-
-    private static CipherInputStream createCipherInputStream(
-            final InputStream input,
-            final CipherFactory cipherFactory) {
-
-        Cipher cipher = cipherFactory.createCipher();
-        return new CipherInputStream(input, cipher);
+    private static FilterInputStream newCipherInputStream(
+            InputStream unencryptedDataStream, CipherFactory cipherFactory) {
+        return new CipherInputStream(unencryptedDataStream,
+                cipherFactory.createCipher());
     }
 }

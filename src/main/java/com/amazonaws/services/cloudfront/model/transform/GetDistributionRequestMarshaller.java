@@ -45,7 +45,7 @@ public class GetDistributionRequestMarshaller implements Marshaller<Request<GetD
         Request<GetDistributionRequest> request = new DefaultRequest<GetDistributionRequest>(getDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2013-11-22/distribution/{Id}"; 
+        String uriResourcePath = "2014-01-31/distribution/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(getDistributionRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {

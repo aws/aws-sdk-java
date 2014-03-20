@@ -66,6 +66,15 @@ public class ModifyLoadBalancerAttributesRequestMarshaller implements Marshaller
                     request.addParameter("LoadBalancerAttributes.AccessLog.S3BucketPrefix", StringUtils.fromString(accessLogAccessLog.getS3BucketPrefix()));
                 }
             }
+            ConnectionDraining connectionDrainingConnectionDraining = loadBalancerAttributesLoadBalancerAttributes.getConnectionDraining();
+            if (connectionDrainingConnectionDraining != null) {
+                if (connectionDrainingConnectionDraining.isEnabled() != null) {
+                    request.addParameter("LoadBalancerAttributes.ConnectionDraining.Enabled", StringUtils.fromBoolean(connectionDrainingConnectionDraining.isEnabled()));
+                }
+                if (connectionDrainingConnectionDraining.getTimeout() != null) {
+                    request.addParameter("LoadBalancerAttributes.ConnectionDraining.Timeout", StringUtils.fromInteger(connectionDrainingConnectionDraining.getTimeout()));
+                }
+            }
         }
 
         return request;

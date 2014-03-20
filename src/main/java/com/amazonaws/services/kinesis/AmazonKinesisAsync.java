@@ -204,7 +204,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * </p>
      * <p>
      * <code>GetShardIterator</code> has a limit of 5 transactions per
-     * second per account per shard.
+     * second per account per open shard.
      * </p>
      *
      * @param getShardIteratorRequest Container for the necessary parameters
@@ -281,7 +281,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * </p>
      * <p>
      * <code>GetShardIterator</code> has a limit of 5 transactions per
-     * second per account per shard.
+     * second per account per open shard.
      * </p>
      *
      * @param getShardIteratorRequest Container for the necessary parameters
@@ -644,8 +644,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * for your account, you receive a <code>LimitExceededException</code> .
      * </p>
      * <p>
-     * <b>Note:</b> The default limit for an AWS account is five shards per
-     * stream. If you need to create a stream with more than five shards,
+     * <b>Note:</b> The default limit for an AWS account is 10 shards per
+     * stream. If you need to create a stream with more than 10 shards,
      * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
      * to increase the limit on your account.
      * </p>
@@ -734,8 +734,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * for your account, you receive a <code>LimitExceededException</code> .
      * </p>
      * <p>
-     * <b>Note:</b> The default limit for an AWS account is five shards per
-     * stream. If you need to create a stream with more than five shards,
+     * <b>Note:</b> The default limit for an AWS account is 10 shards per
+     * stream. If you need to create a stream with more than 10 shards,
      * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
      * to increase the limit on your account.
      * </p>
@@ -783,12 +783,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * </p>
      * <p>
      * You specify and control the number of shards that a stream is composed
-     * of. Each shard can support up to 5 read transactions per second up to
-     * a maximum total of 2 MB of data read per second. Each shard can
-     * support up to 1000 write transactions per second up to a maximum total
-     * of 1 MB data written per second. You can add shards to a stream if the
-     * amount of data input increases and you can remove shards if the amount
-     * of data input decreases.
+     * of. Each open shard can support up to 5 read transactions per second,
+     * up to a maximum total of 2 MB of data read per second. Each shard can
+     * support up to 1000 write transactions per second, up to a maximum
+     * total of 1 MB data written per second. You can add shards to a stream
+     * if the amount of data input increases and you can remove shards if the
+     * amount of data input decreases.
      * </p>
      * <p>
      * The stream name identifies the stream. The name is scoped to the AWS
@@ -817,8 +817,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * </ul>
      * <p>
-     * <b>Note:</b> The default limit for an AWS account is five shards per
-     * stream. If you need to create a stream with more than five shards,
+     * <b>Note:</b> The default limit for an AWS account is 10 shards per
+     * stream. If you need to create a stream with more than 10 shards,
      * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
      * to increase the limit on your account.
      * </p>
@@ -860,12 +860,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * </p>
      * <p>
      * You specify and control the number of shards that a stream is composed
-     * of. Each shard can support up to 5 read transactions per second up to
-     * a maximum total of 2 MB of data read per second. Each shard can
-     * support up to 1000 write transactions per second up to a maximum total
-     * of 1 MB data written per second. You can add shards to a stream if the
-     * amount of data input increases and you can remove shards if the amount
-     * of data input decreases.
+     * of. Each open shard can support up to 5 read transactions per second,
+     * up to a maximum total of 2 MB of data read per second. Each shard can
+     * support up to 1000 write transactions per second, up to a maximum
+     * total of 1 MB data written per second. You can add shards to a stream
+     * if the amount of data input increases and you can remove shards if the
+     * amount of data input decreases.
      * </p>
      * <p>
      * The stream name identifies the stream. The name is scoped to the AWS
@@ -894,8 +894,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * </ul>
      * <p>
-     * <b>Note:</b> The default limit for an AWS account is five shards per
-     * stream. If you need to create a stream with more than five shards,
+     * <b>Note:</b> The default limit for an AWS account is 10 shards per
+     * stream. If you need to create a stream with more than 10 shards,
      * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
      * to increase the limit on your account.
      * </p>

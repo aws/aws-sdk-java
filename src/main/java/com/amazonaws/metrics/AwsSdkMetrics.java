@@ -775,6 +775,9 @@ public enum AwsSdkMetrics {
             metricTypes.add(Field.RetryCount);
             metricTypes.add(Field.HttpClientSendRequestTime);
             metricTypes.add(Field.HttpClientReceiveResponseTime);
+            metricTypes.add(Field.HttpClientPoolAvailableCount);
+            metricTypes.add(Field.HttpClientPoolLeasedCount);
+            metricTypes.add(Field.HttpClientPoolPendingCount);
             metricTypes.add(AWSServiceMetrics.HttpClientGetConnectionTime);
             syncReadOnly();
         }

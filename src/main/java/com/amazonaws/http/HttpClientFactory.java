@@ -61,8 +61,8 @@ import org.apache.http.protocol.HttpContext;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
+import com.amazonaws.http.impl.client.HttpRequestNoRetryHandler;
 import com.amazonaws.http.impl.client.SdkHttpClient;
-import com.amazonaws.http.impl.client.SdkHttpRequestRetryHandler;
 
 /** Responsible for creating and configuring instances of Apache HttpClient4. */
 class HttpClientFactory {
@@ -96,7 +96,7 @@ class HttpClientFactory {
         PoolingClientConnectionManager connectionManager = ConnectionManagerFactory
                 .createPoolingClientConnManager(config, httpClientParams);
         SdkHttpClient httpClient = new SdkHttpClient(connectionManager, httpClientParams);
-        httpClient.setHttpRequestRetryHandler(SdkHttpRequestRetryHandler.Singleton);
+        httpClient.setHttpRequestRetryHandler(HttpRequestNoRetryHandler.Singleton);
         httpClient.setRedirectStrategy(new LocationHeaderNotRequiredRedirectStrategy());
 
         try {

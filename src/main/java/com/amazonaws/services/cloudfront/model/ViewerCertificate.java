@@ -25,48 +25,88 @@ import java.io.Serializable;
 public class ViewerCertificate implements Serializable {
 
     /**
-     * The IAM certificate identifier of the custom viewer certificate for
-     * this distribution.
+     * If you want viewers to use HTTPS to request your objects and you're
+     * using an alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the IAM certificate identifier
+     * of the custom viewer certificate for this distribution. Specify either
+     * this value or CloudFrontDefaultCertificate.
      */
     private String iAMCertificateId;
 
     /**
-     * Set to true if you want to use the default *.cloudfront.net viewer
-     * certificate for this distribution. Omit this value if you are setting
-     * an IAMCertificateId.
+     * If you want viewers to use HTTPS to request your objects and you're
+     * using the CloudFront domain name of your distribution in your object
+     * URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
+     * set to true. Omit this value if you are setting an IAMCertificateId.
      */
     private Boolean cloudFrontDefaultCertificate;
 
     /**
-     * The IAM certificate identifier of the custom viewer certificate for
-     * this distribution.
+     * If you specify a value for IAMCertificateId, you must also specify how
+     * you want CloudFront to serve HTTPS requests. Valid values are vip and
+     * sni-only. If you specify vip, CloudFront uses dedicated IP addresses
+     * for your content and can respond to HTTPS requests from any viewer.
+     * However, you must request permission to use this feature, and you
+     * incur additional monthly charges. If you specify sni-only, CloudFront
+     * can only respond to HTTPS requests from viewers that support Server
+     * Name Indication (SNI). All modern browsers support SNI, but some
+     * browsers still in use don't support SNI. Do not specify a value for
+     * SSLSupportMethod if you specified true for
+     * CloudFrontDefaultCertificate.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>sni-only, vip
+     */
+    private String sSLSupportMethod;
+
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're
+     * using an alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the IAM certificate identifier
+     * of the custom viewer certificate for this distribution. Specify either
+     * this value or CloudFrontDefaultCertificate.
      *
-     * @return The IAM certificate identifier of the custom viewer certificate for
-     *         this distribution.
+     * @return If you want viewers to use HTTPS to request your objects and you're
+     *         using an alternate domain name in your object URLs (for example,
+     *         https://example.com/logo.jpg), specify the IAM certificate identifier
+     *         of the custom viewer certificate for this distribution. Specify either
+     *         this value or CloudFrontDefaultCertificate.
      */
     public String getIAMCertificateId() {
         return iAMCertificateId;
     }
     
     /**
-     * The IAM certificate identifier of the custom viewer certificate for
-     * this distribution.
+     * If you want viewers to use HTTPS to request your objects and you're
+     * using an alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the IAM certificate identifier
+     * of the custom viewer certificate for this distribution. Specify either
+     * this value or CloudFrontDefaultCertificate.
      *
-     * @param iAMCertificateId The IAM certificate identifier of the custom viewer certificate for
-     *         this distribution.
+     * @param iAMCertificateId If you want viewers to use HTTPS to request your objects and you're
+     *         using an alternate domain name in your object URLs (for example,
+     *         https://example.com/logo.jpg), specify the IAM certificate identifier
+     *         of the custom viewer certificate for this distribution. Specify either
+     *         this value or CloudFrontDefaultCertificate.
      */
     public void setIAMCertificateId(String iAMCertificateId) {
         this.iAMCertificateId = iAMCertificateId;
     }
     
     /**
-     * The IAM certificate identifier of the custom viewer certificate for
-     * this distribution.
+     * If you want viewers to use HTTPS to request your objects and you're
+     * using an alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the IAM certificate identifier
+     * of the custom viewer certificate for this distribution. Specify either
+     * this value or CloudFrontDefaultCertificate.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param iAMCertificateId The IAM certificate identifier of the custom viewer certificate for
-     *         this distribution.
+     * @param iAMCertificateId If you want viewers to use HTTPS to request your objects and you're
+     *         using an alternate domain name in your object URLs (for example,
+     *         https://example.com/logo.jpg), specify the IAM certificate identifier
+     *         of the custom viewer certificate for this distribution. Specify either
+     *         this value or CloudFrontDefaultCertificate.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -77,41 +117,47 @@ public class ViewerCertificate implements Serializable {
     }
 
     /**
-     * Set to true if you want to use the default *.cloudfront.net viewer
-     * certificate for this distribution. Omit this value if you are setting
-     * an IAMCertificateId.
+     * If you want viewers to use HTTPS to request your objects and you're
+     * using the CloudFront domain name of your distribution in your object
+     * URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
+     * set to true. Omit this value if you are setting an IAMCertificateId.
      *
-     * @return Set to true if you want to use the default *.cloudfront.net viewer
-     *         certificate for this distribution. Omit this value if you are setting
-     *         an IAMCertificateId.
+     * @return If you want viewers to use HTTPS to request your objects and you're
+     *         using the CloudFront domain name of your distribution in your object
+     *         URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
+     *         set to true. Omit this value if you are setting an IAMCertificateId.
      */
     public Boolean isCloudFrontDefaultCertificate() {
         return cloudFrontDefaultCertificate;
     }
     
     /**
-     * Set to true if you want to use the default *.cloudfront.net viewer
-     * certificate for this distribution. Omit this value if you are setting
-     * an IAMCertificateId.
+     * If you want viewers to use HTTPS to request your objects and you're
+     * using the CloudFront domain name of your distribution in your object
+     * URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
+     * set to true. Omit this value if you are setting an IAMCertificateId.
      *
-     * @param cloudFrontDefaultCertificate Set to true if you want to use the default *.cloudfront.net viewer
-     *         certificate for this distribution. Omit this value if you are setting
-     *         an IAMCertificateId.
+     * @param cloudFrontDefaultCertificate If you want viewers to use HTTPS to request your objects and you're
+     *         using the CloudFront domain name of your distribution in your object
+     *         URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
+     *         set to true. Omit this value if you are setting an IAMCertificateId.
      */
     public void setCloudFrontDefaultCertificate(Boolean cloudFrontDefaultCertificate) {
         this.cloudFrontDefaultCertificate = cloudFrontDefaultCertificate;
     }
     
     /**
-     * Set to true if you want to use the default *.cloudfront.net viewer
-     * certificate for this distribution. Omit this value if you are setting
-     * an IAMCertificateId.
+     * If you want viewers to use HTTPS to request your objects and you're
+     * using the CloudFront domain name of your distribution in your object
+     * URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
+     * set to true. Omit this value if you are setting an IAMCertificateId.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cloudFrontDefaultCertificate Set to true if you want to use the default *.cloudfront.net viewer
-     *         certificate for this distribution. Omit this value if you are setting
-     *         an IAMCertificateId.
+     * @param cloudFrontDefaultCertificate If you want viewers to use HTTPS to request your objects and you're
+     *         using the CloudFront domain name of your distribution in your object
+     *         URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
+     *         set to true. Omit this value if you are setting an IAMCertificateId.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -122,16 +168,200 @@ public class ViewerCertificate implements Serializable {
     }
 
     /**
-     * Set to true if you want to use the default *.cloudfront.net viewer
-     * certificate for this distribution. Omit this value if you are setting
-     * an IAMCertificateId.
+     * If you want viewers to use HTTPS to request your objects and you're
+     * using the CloudFront domain name of your distribution in your object
+     * URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
+     * set to true. Omit this value if you are setting an IAMCertificateId.
      *
-     * @return Set to true if you want to use the default *.cloudfront.net viewer
-     *         certificate for this distribution. Omit this value if you are setting
-     *         an IAMCertificateId.
+     * @return If you want viewers to use HTTPS to request your objects and you're
+     *         using the CloudFront domain name of your distribution in your object
+     *         URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
+     *         set to true. Omit this value if you are setting an IAMCertificateId.
      */
     public Boolean getCloudFrontDefaultCertificate() {
         return cloudFrontDefaultCertificate;
+    }
+
+    /**
+     * If you specify a value for IAMCertificateId, you must also specify how
+     * you want CloudFront to serve HTTPS requests. Valid values are vip and
+     * sni-only. If you specify vip, CloudFront uses dedicated IP addresses
+     * for your content and can respond to HTTPS requests from any viewer.
+     * However, you must request permission to use this feature, and you
+     * incur additional monthly charges. If you specify sni-only, CloudFront
+     * can only respond to HTTPS requests from viewers that support Server
+     * Name Indication (SNI). All modern browsers support SNI, but some
+     * browsers still in use don't support SNI. Do not specify a value for
+     * SSLSupportMethod if you specified true for
+     * CloudFrontDefaultCertificate.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>sni-only, vip
+     *
+     * @return If you specify a value for IAMCertificateId, you must also specify how
+     *         you want CloudFront to serve HTTPS requests. Valid values are vip and
+     *         sni-only. If you specify vip, CloudFront uses dedicated IP addresses
+     *         for your content and can respond to HTTPS requests from any viewer.
+     *         However, you must request permission to use this feature, and you
+     *         incur additional monthly charges. If you specify sni-only, CloudFront
+     *         can only respond to HTTPS requests from viewers that support Server
+     *         Name Indication (SNI). All modern browsers support SNI, but some
+     *         browsers still in use don't support SNI. Do not specify a value for
+     *         SSLSupportMethod if you specified true for
+     *         CloudFrontDefaultCertificate.
+     *
+     * @see SSLSupportMethod
+     */
+    public String getSSLSupportMethod() {
+        return sSLSupportMethod;
+    }
+    
+    /**
+     * If you specify a value for IAMCertificateId, you must also specify how
+     * you want CloudFront to serve HTTPS requests. Valid values are vip and
+     * sni-only. If you specify vip, CloudFront uses dedicated IP addresses
+     * for your content and can respond to HTTPS requests from any viewer.
+     * However, you must request permission to use this feature, and you
+     * incur additional monthly charges. If you specify sni-only, CloudFront
+     * can only respond to HTTPS requests from viewers that support Server
+     * Name Indication (SNI). All modern browsers support SNI, but some
+     * browsers still in use don't support SNI. Do not specify a value for
+     * SSLSupportMethod if you specified true for
+     * CloudFrontDefaultCertificate.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>sni-only, vip
+     *
+     * @param sSLSupportMethod If you specify a value for IAMCertificateId, you must also specify how
+     *         you want CloudFront to serve HTTPS requests. Valid values are vip and
+     *         sni-only. If you specify vip, CloudFront uses dedicated IP addresses
+     *         for your content and can respond to HTTPS requests from any viewer.
+     *         However, you must request permission to use this feature, and you
+     *         incur additional monthly charges. If you specify sni-only, CloudFront
+     *         can only respond to HTTPS requests from viewers that support Server
+     *         Name Indication (SNI). All modern browsers support SNI, but some
+     *         browsers still in use don't support SNI. Do not specify a value for
+     *         SSLSupportMethod if you specified true for
+     *         CloudFrontDefaultCertificate.
+     *
+     * @see SSLSupportMethod
+     */
+    public void setSSLSupportMethod(String sSLSupportMethod) {
+        this.sSLSupportMethod = sSLSupportMethod;
+    }
+    
+    /**
+     * If you specify a value for IAMCertificateId, you must also specify how
+     * you want CloudFront to serve HTTPS requests. Valid values are vip and
+     * sni-only. If you specify vip, CloudFront uses dedicated IP addresses
+     * for your content and can respond to HTTPS requests from any viewer.
+     * However, you must request permission to use this feature, and you
+     * incur additional monthly charges. If you specify sni-only, CloudFront
+     * can only respond to HTTPS requests from viewers that support Server
+     * Name Indication (SNI). All modern browsers support SNI, but some
+     * browsers still in use don't support SNI. Do not specify a value for
+     * SSLSupportMethod if you specified true for
+     * CloudFrontDefaultCertificate.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>sni-only, vip
+     *
+     * @param sSLSupportMethod If you specify a value for IAMCertificateId, you must also specify how
+     *         you want CloudFront to serve HTTPS requests. Valid values are vip and
+     *         sni-only. If you specify vip, CloudFront uses dedicated IP addresses
+     *         for your content and can respond to HTTPS requests from any viewer.
+     *         However, you must request permission to use this feature, and you
+     *         incur additional monthly charges. If you specify sni-only, CloudFront
+     *         can only respond to HTTPS requests from viewers that support Server
+     *         Name Indication (SNI). All modern browsers support SNI, but some
+     *         browsers still in use don't support SNI. Do not specify a value for
+     *         SSLSupportMethod if you specified true for
+     *         CloudFrontDefaultCertificate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see SSLSupportMethod
+     */
+    public ViewerCertificate withSSLSupportMethod(String sSLSupportMethod) {
+        this.sSLSupportMethod = sSLSupportMethod;
+        return this;
+    }
+
+    /**
+     * If you specify a value for IAMCertificateId, you must also specify how
+     * you want CloudFront to serve HTTPS requests. Valid values are vip and
+     * sni-only. If you specify vip, CloudFront uses dedicated IP addresses
+     * for your content and can respond to HTTPS requests from any viewer.
+     * However, you must request permission to use this feature, and you
+     * incur additional monthly charges. If you specify sni-only, CloudFront
+     * can only respond to HTTPS requests from viewers that support Server
+     * Name Indication (SNI). All modern browsers support SNI, but some
+     * browsers still in use don't support SNI. Do not specify a value for
+     * SSLSupportMethod if you specified true for
+     * CloudFrontDefaultCertificate.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>sni-only, vip
+     *
+     * @param sSLSupportMethod If you specify a value for IAMCertificateId, you must also specify how
+     *         you want CloudFront to serve HTTPS requests. Valid values are vip and
+     *         sni-only. If you specify vip, CloudFront uses dedicated IP addresses
+     *         for your content and can respond to HTTPS requests from any viewer.
+     *         However, you must request permission to use this feature, and you
+     *         incur additional monthly charges. If you specify sni-only, CloudFront
+     *         can only respond to HTTPS requests from viewers that support Server
+     *         Name Indication (SNI). All modern browsers support SNI, but some
+     *         browsers still in use don't support SNI. Do not specify a value for
+     *         SSLSupportMethod if you specified true for
+     *         CloudFrontDefaultCertificate.
+     *
+     * @see SSLSupportMethod
+     */
+    public void setSSLSupportMethod(SSLSupportMethod sSLSupportMethod) {
+        this.sSLSupportMethod = sSLSupportMethod.toString();
+    }
+    
+    /**
+     * If you specify a value for IAMCertificateId, you must also specify how
+     * you want CloudFront to serve HTTPS requests. Valid values are vip and
+     * sni-only. If you specify vip, CloudFront uses dedicated IP addresses
+     * for your content and can respond to HTTPS requests from any viewer.
+     * However, you must request permission to use this feature, and you
+     * incur additional monthly charges. If you specify sni-only, CloudFront
+     * can only respond to HTTPS requests from viewers that support Server
+     * Name Indication (SNI). All modern browsers support SNI, but some
+     * browsers still in use don't support SNI. Do not specify a value for
+     * SSLSupportMethod if you specified true for
+     * CloudFrontDefaultCertificate.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>sni-only, vip
+     *
+     * @param sSLSupportMethod If you specify a value for IAMCertificateId, you must also specify how
+     *         you want CloudFront to serve HTTPS requests. Valid values are vip and
+     *         sni-only. If you specify vip, CloudFront uses dedicated IP addresses
+     *         for your content and can respond to HTTPS requests from any viewer.
+     *         However, you must request permission to use this feature, and you
+     *         incur additional monthly charges. If you specify sni-only, CloudFront
+     *         can only respond to HTTPS requests from viewers that support Server
+     *         Name Indication (SNI). All modern browsers support SNI, but some
+     *         browsers still in use don't support SNI. Do not specify a value for
+     *         SSLSupportMethod if you specified true for
+     *         CloudFrontDefaultCertificate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see SSLSupportMethod
+     */
+    public ViewerCertificate withSSLSupportMethod(SSLSupportMethod sSLSupportMethod) {
+        this.sSLSupportMethod = sSLSupportMethod.toString();
+        return this;
     }
 
     /**
@@ -147,7 +377,8 @@ public class ViewerCertificate implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIAMCertificateId() != null) sb.append("IAMCertificateId: " + getIAMCertificateId() + ",");
-        if (isCloudFrontDefaultCertificate() != null) sb.append("CloudFrontDefaultCertificate: " + isCloudFrontDefaultCertificate() );
+        if (isCloudFrontDefaultCertificate() != null) sb.append("CloudFrontDefaultCertificate: " + isCloudFrontDefaultCertificate() + ",");
+        if (getSSLSupportMethod() != null) sb.append("SSLSupportMethod: " + getSSLSupportMethod() );
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +390,7 @@ public class ViewerCertificate implements Serializable {
         
         hashCode = prime * hashCode + ((getIAMCertificateId() == null) ? 0 : getIAMCertificateId().hashCode()); 
         hashCode = prime * hashCode + ((isCloudFrontDefaultCertificate() == null) ? 0 : isCloudFrontDefaultCertificate().hashCode()); 
+        hashCode = prime * hashCode + ((getSSLSupportMethod() == null) ? 0 : getSSLSupportMethod().hashCode()); 
         return hashCode;
     }
     
@@ -174,6 +406,8 @@ public class ViewerCertificate implements Serializable {
         if (other.getIAMCertificateId() != null && other.getIAMCertificateId().equals(this.getIAMCertificateId()) == false) return false; 
         if (other.isCloudFrontDefaultCertificate() == null ^ this.isCloudFrontDefaultCertificate() == null) return false;
         if (other.isCloudFrontDefaultCertificate() != null && other.isCloudFrontDefaultCertificate().equals(this.isCloudFrontDefaultCertificate()) == false) return false; 
+        if (other.getSSLSupportMethod() == null ^ this.getSSLSupportMethod() == null) return false;
+        if (other.getSSLSupportMethod() != null && other.getSSLSupportMethod().equals(this.getSSLSupportMethod()) == false) return false; 
         return true;
     }
     

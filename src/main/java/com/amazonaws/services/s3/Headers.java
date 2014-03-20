@@ -134,4 +134,16 @@ public interface Headers {
     /** Header for the optional restore information of an object */
     public static String RESTORE = "x-amz-restore";
 
+    /**
+     * Key wrapping algorithm such as "AESWrap" and "RSA/ECB/OAEPWithSHA-256AndMGF1Padding".
+     */
+    public static final String CRYPTO_KEYWRAP_ALGORITHM = "x-amz-wrap-alg";
+    /**
+     * Content encryption algorithm, such as "AES/GCM/NoPadding".
+     */
+    public static final String CRYPTO_CEK_ALGORITHM = "x-amz-cek-alg";
+    /**
+     * Tag length applicable to authenticated encrypt/decryption.
+     */
+    public static final String CRYPTO_TAG_LENGTH = "x-amz-tag-len";
 }

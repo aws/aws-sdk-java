@@ -45,7 +45,7 @@ public class CreateCloudFrontOriginAccessIdentityRequestMarshaller implements Ma
         Request<CreateCloudFrontOriginAccessIdentityRequest> request = new DefaultRequest<CreateCloudFrontOriginAccessIdentityRequest>(createCloudFrontOriginAccessIdentityRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "2013-11-22/origin-access-identity/cloudfront"; 
+        String uriResourcePath = "2014-01-31/origin-access-identity/cloudfront"; 
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -64,7 +64,7 @@ public class CreateCloudFrontOriginAccessIdentityRequestMarshaller implements Ma
         request.setResourcePath(uriResourcePath);
 
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-11-22/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2014-01-31/");
 
                     if (createCloudFrontOriginAccessIdentityRequest != null) {
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig = createCloudFrontOriginAccessIdentityRequest.getCloudFrontOriginAccessIdentityConfig();

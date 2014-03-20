@@ -50,6 +50,10 @@ public class ViewerCertificateStaxUnmarshaller implements Unmarshaller<ViewerCer
                     viewerCertificate.setCloudFrontDefaultCertificate(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("SSLSupportMethod", targetDepth)) {
+                    viewerCertificate.setSSLSupportMethod(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return viewerCertificate;

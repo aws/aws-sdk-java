@@ -68,6 +68,9 @@ public class PredefinedMetricTransformer {
             Field predefined = (Field) metricType;
             switch(predefined) {
                 case HttpClientRetryCount:
+                case HttpClientPoolAvailableCount:
+                case HttpClientPoolLeasedCount:
+                case HttpClientPoolPendingCount:
                     return metricOfCount(predefined, request, response);
                 case RequestCount:  // intentionally fall thru to reuse the same routine as RetryCount
                 case RetryCount:

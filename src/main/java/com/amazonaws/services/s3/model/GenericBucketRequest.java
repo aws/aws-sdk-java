@@ -21,15 +21,53 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class GenericBucketRequest extends AmazonWebServiceRequest {
 
-    private final String bucket;
+    private String bucketName;
 
-    public GenericBucketRequest(String bucket) {
-        super();
-        this.bucket = bucket;
+    /**
+     * Create a generic request for a bucket operation.
+     * 
+     * @param bucketName
+     *            The name of the target bucket.
+     */
+    public GenericBucketRequest(String bucketName) {
+        this.bucketName = bucketName;
     }
 
+    /**
+     * @deprecated Use getBucketName() instead.
+     * @return
+     */
+    @Deprecated
     public String getBucket() {
-        return bucket;
+        return bucketName;
+    }
+
+    /**
+     * Returns the name of the target bucket.
+     * 
+     * @return The name of the target bucket
+     */
+    public String getBucketName() {
+        return bucketName;
+    }
+
+    /**
+     * Sets the name of the target bucket.
+     */
+    public void setBucketName(String bucketName) {
+        this.bucketName = bucketName;
+    }
+
+    /**
+     * Sets the name of the target bucket, and returns this updated request
+     * object so that additional method calls can be chained together.
+     * 
+     * @return This updated request object so that additional method calls can
+     *         be chained together.
+     */
+    public GenericBucketRequest withBucketName(String bucketName) {
+        setBucketName(bucketName);
+        return this;
     }
 
 }

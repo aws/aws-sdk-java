@@ -19,6 +19,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.codec.binary.Base64;
+
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
 import com.amazonaws.services.s3.internal.ObjectRestoreResult;
@@ -29,8 +31,9 @@ import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
  * user-supplied metadata, as well as the standard HTTP headers that Amazon S3
  * sends and receives (Content-Length, ETag, Content-MD5, etc.).
  */
-public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirationResult, ObjectRestoreResult {
-
+public class ObjectMetadata implements ServerSideEncryptionResult,
+        ObjectExpirationResult, ObjectRestoreResult, Cloneable
+{
     /*
      * TODO: Might be nice to get as many of the internal use only methods out
      *       of here so users never even see them.
@@ -42,13 +45,13 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
      * Custom user metadata, represented in responses with the x-amz-meta-
      * header prefix
      */
-    private Map<String, String> userMetadata = new HashMap<String, String>();
+    private Map<String, String> userMetadata;
 
     /**
      * All other (non user custom) headers such as Content-Length, Content-Type,
      * etc.
      */
-    private Map<String, Object> metadata = new HashMap<String, Object>();
+    private Map<String, Object> metadata;
 
     public static final String AES_256_SERVER_SIDE_ENCRYPTION = "AES256";
 
@@ -702,4 +705,30 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
         return httpExpiresDate;
     }
 
+    /**
+     * Returns the value of the specified user meta datum.
+     */
+    public String getUserMetaDataOf(String key) {
+        return userMetadata == null ? null : userMetadata.get(key);
+    }
+    
+    public ObjectMetadata() {
+        userMetadata = new HashMap<String, String>();
+        metadata = new HashMap<String, Object>();
+    }
+
+    private ObjectMetadata(ObjectMetadata from) {
+        // shallow clone the internal hash maps
+        userMetadata = from.userMetadata == null ? null : new HashMap<String,String>(from.userMetadata);
+        metadata = from.metadata == null ? null : new HashMap<String, Object>(from.metadata);
+        this.expirationTime = from.expirationTime;
+        this.expirationTimeRuleId = from.expirationTimeRuleId;
+        this.httpExpiresDate = from.httpExpiresDate;
+        this.ongoingRestore = from.ongoingRestore;
+        this.restoreExpirationTime = from.restoreExpirationTime;
+    }
+
+    public ObjectMetadata clone() {
+        return new ObjectMetadata(this);
+    }
 }

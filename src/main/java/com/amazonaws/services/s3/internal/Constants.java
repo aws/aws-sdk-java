@@ -69,7 +69,7 @@ public class Constants {
      * intervention.
      */
     public static final int DEFAULT_STREAM_BUFFER_SIZE = 128 * KB;
-    
+
     /**
      * Returns the buffer size override if it is specified in the system property,
      * otherwise returns the default value.
@@ -89,7 +89,13 @@ public class Constants {
         }
         return streamBufferSize;
     }
-    
+
     /** Shared logger for client events */
     private static Log log = LogFactory.getLog(AmazonS3Client.class);
+
+    public static final int NO_SUCH_BUCKET_STATUS_CODE = 404;
+
+    public static final int BUCKET_ACCESS_FORBIDDEN_STATUS_CODE = 403;
+
+    public static final int BUCKET_REDIRECT_STATUS_CODE = 301;
 }

@@ -86,10 +86,13 @@ public class CacheBehavior implements Serializable {
      * the files in the origin specified by TargetOriginId when a request
      * matches the path pattern in PathPattern. If you want CloudFront to
      * allow end users to use any available protocol, specify allow-all. If
-     * you want CloudFront to require HTTPS, specify https.
+     * you want CloudFront to require HTTPS, specify https. If you want
+     * CloudFront to respond to an HTTP request with an HTTP status code of
+     * 301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https.
+     * The viewer then resubmits the request using the HTTPS URL.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>allow-all, https-only
+     * <b>Allowed Values: </b>allow-all, https-only, redirect-to-https
      */
     private String viewerProtocolPolicy;
 
@@ -390,16 +393,22 @@ public class CacheBehavior implements Serializable {
      * the files in the origin specified by TargetOriginId when a request
      * matches the path pattern in PathPattern. If you want CloudFront to
      * allow end users to use any available protocol, specify allow-all. If
-     * you want CloudFront to require HTTPS, specify https.
+     * you want CloudFront to require HTTPS, specify https. If you want
+     * CloudFront to respond to an HTTP request with an HTTP status code of
+     * 301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https.
+     * The viewer then resubmits the request using the HTTPS URL.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>allow-all, https-only
+     * <b>Allowed Values: </b>allow-all, https-only, redirect-to-https
      *
      * @return Use this element to specify the protocol that users can use to access
      *         the files in the origin specified by TargetOriginId when a request
      *         matches the path pattern in PathPattern. If you want CloudFront to
      *         allow end users to use any available protocol, specify allow-all. If
-     *         you want CloudFront to require HTTPS, specify https.
+     *         you want CloudFront to require HTTPS, specify https. If you want
+     *         CloudFront to respond to an HTTP request with an HTTP status code of
+     *         301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https.
+     *         The viewer then resubmits the request using the HTTPS URL.
      *
      * @see ViewerProtocolPolicy
      */
@@ -412,16 +421,22 @@ public class CacheBehavior implements Serializable {
      * the files in the origin specified by TargetOriginId when a request
      * matches the path pattern in PathPattern. If you want CloudFront to
      * allow end users to use any available protocol, specify allow-all. If
-     * you want CloudFront to require HTTPS, specify https.
+     * you want CloudFront to require HTTPS, specify https. If you want
+     * CloudFront to respond to an HTTP request with an HTTP status code of
+     * 301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https.
+     * The viewer then resubmits the request using the HTTPS URL.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>allow-all, https-only
+     * <b>Allowed Values: </b>allow-all, https-only, redirect-to-https
      *
      * @param viewerProtocolPolicy Use this element to specify the protocol that users can use to access
      *         the files in the origin specified by TargetOriginId when a request
      *         matches the path pattern in PathPattern. If you want CloudFront to
      *         allow end users to use any available protocol, specify allow-all. If
-     *         you want CloudFront to require HTTPS, specify https.
+     *         you want CloudFront to require HTTPS, specify https. If you want
+     *         CloudFront to respond to an HTTP request with an HTTP status code of
+     *         301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https.
+     *         The viewer then resubmits the request using the HTTPS URL.
      *
      * @see ViewerProtocolPolicy
      */
@@ -434,18 +449,24 @@ public class CacheBehavior implements Serializable {
      * the files in the origin specified by TargetOriginId when a request
      * matches the path pattern in PathPattern. If you want CloudFront to
      * allow end users to use any available protocol, specify allow-all. If
-     * you want CloudFront to require HTTPS, specify https.
+     * you want CloudFront to require HTTPS, specify https. If you want
+     * CloudFront to respond to an HTTP request with an HTTP status code of
+     * 301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https.
+     * The viewer then resubmits the request using the HTTPS URL.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>allow-all, https-only
+     * <b>Allowed Values: </b>allow-all, https-only, redirect-to-https
      *
      * @param viewerProtocolPolicy Use this element to specify the protocol that users can use to access
      *         the files in the origin specified by TargetOriginId when a request
      *         matches the path pattern in PathPattern. If you want CloudFront to
      *         allow end users to use any available protocol, specify allow-all. If
-     *         you want CloudFront to require HTTPS, specify https.
+     *         you want CloudFront to require HTTPS, specify https. If you want
+     *         CloudFront to respond to an HTTP request with an HTTP status code of
+     *         301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https.
+     *         The viewer then resubmits the request using the HTTPS URL.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -462,16 +483,22 @@ public class CacheBehavior implements Serializable {
      * the files in the origin specified by TargetOriginId when a request
      * matches the path pattern in PathPattern. If you want CloudFront to
      * allow end users to use any available protocol, specify allow-all. If
-     * you want CloudFront to require HTTPS, specify https.
+     * you want CloudFront to require HTTPS, specify https. If you want
+     * CloudFront to respond to an HTTP request with an HTTP status code of
+     * 301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https.
+     * The viewer then resubmits the request using the HTTPS URL.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>allow-all, https-only
+     * <b>Allowed Values: </b>allow-all, https-only, redirect-to-https
      *
      * @param viewerProtocolPolicy Use this element to specify the protocol that users can use to access
      *         the files in the origin specified by TargetOriginId when a request
      *         matches the path pattern in PathPattern. If you want CloudFront to
      *         allow end users to use any available protocol, specify allow-all. If
-     *         you want CloudFront to require HTTPS, specify https.
+     *         you want CloudFront to require HTTPS, specify https. If you want
+     *         CloudFront to respond to an HTTP request with an HTTP status code of
+     *         301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https.
+     *         The viewer then resubmits the request using the HTTPS URL.
      *
      * @see ViewerProtocolPolicy
      */
@@ -484,18 +511,24 @@ public class CacheBehavior implements Serializable {
      * the files in the origin specified by TargetOriginId when a request
      * matches the path pattern in PathPattern. If you want CloudFront to
      * allow end users to use any available protocol, specify allow-all. If
-     * you want CloudFront to require HTTPS, specify https.
+     * you want CloudFront to require HTTPS, specify https. If you want
+     * CloudFront to respond to an HTTP request with an HTTP status code of
+     * 301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https.
+     * The viewer then resubmits the request using the HTTPS URL.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>allow-all, https-only
+     * <b>Allowed Values: </b>allow-all, https-only, redirect-to-https
      *
      * @param viewerProtocolPolicy Use this element to specify the protocol that users can use to access
      *         the files in the origin specified by TargetOriginId when a request
      *         matches the path pattern in PathPattern. If you want CloudFront to
      *         allow end users to use any available protocol, specify allow-all. If
-     *         you want CloudFront to require HTTPS, specify https.
+     *         you want CloudFront to require HTTPS, specify https. If you want
+     *         CloudFront to respond to an HTTP request with an HTTP status code of
+     *         301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https.
+     *         The viewer then resubmits the request using the HTTPS URL.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

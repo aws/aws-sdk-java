@@ -45,7 +45,7 @@ public class ListDistributionsRequestMarshaller implements Marshaller<Request<Li
         Request<ListDistributionsRequest> request = new DefaultRequest<ListDistributionsRequest>(listDistributionsRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2013-11-22/distribution?Marker={Marker}&MaxItems={MaxItems}"; 
+        String uriResourcePath = "2014-01-31/distribution?Marker={Marker}&MaxItems={MaxItems}"; 
         uriResourcePath = uriResourcePath.replace("{Marker}", getString(listDistributionsRequest.getMarker())); 
         uriResourcePath = uriResourcePath.replace("{MaxItems}", getString(listDistributionsRequest.getMaxItems())); 
 

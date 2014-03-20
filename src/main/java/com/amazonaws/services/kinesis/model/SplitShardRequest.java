@@ -76,8 +76,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * for your account, you receive a <code>LimitExceededException</code> .
  * </p>
  * <p>
- * <b>Note:</b> The default limit for an AWS account is five shards per
- * stream. If you need to create a stream with more than five shards,
+ * <b>Note:</b> The default limit for an AWS account is 10 shards per
+ * stream. If you need to create a stream with more than 10 shards,
  * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
  * to increase the limit on your account.
  * </p>

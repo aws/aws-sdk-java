@@ -68,7 +68,7 @@ public class AdjustedRangeInputStream extends InputStream {
         }
         // The number of bytes the user may read is equal to the number of the bytes in the range.
         // Note that the range includes the endpoints.
-        this.virtualAvailable = (int)(rangeEnd - rangeBeginning) + 1;
+        this.virtualAvailable = (rangeEnd - rangeBeginning) + 1;
     }
 
     /* (non-Javadoc)

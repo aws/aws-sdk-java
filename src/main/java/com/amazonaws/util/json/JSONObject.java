@@ -404,7 +404,6 @@ public class JSONObject {
         return s;
     }
 
-
     /**
      * Get the value object associated with a key.
      *
@@ -420,7 +419,6 @@ public class JSONObject {
         }
         return o;
     }
-
 
     /**
      * Get the boolean value associated with a key.
@@ -599,6 +597,13 @@ public class JSONObject {
         return get(key).toString();
     }
 
+    /**
+     * Tries to return the string associated with a key; or null if not found.
+     */
+    public String tryGetString(String key) throws JSONException {
+        Object o = opt(key);
+        return o == null ? null : o.toString();
+    }
 
     /**
      * Determine if the JSONObject contains a specific key.

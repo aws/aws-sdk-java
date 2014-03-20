@@ -84,9 +84,9 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
     private String streamName;
 
     /**
-     * The data blob to put into the record, which is Base64-encoded by the
-     * AWS SDK for Java when the blob is serialized. The maximum size of the
-     * data blob (the payload after Base64-decoding) is 50 kilobytes (KB)
+     * The data blob to put into the record, which is Base64-encoded when the
+     * blob is serialized. The maximum size of the data blob (the payload
+     * after Base64-decoding) is 50 kilobytes (KB)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 51200<br/>
@@ -177,50 +177,50 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * The data blob to put into the record, which is Base64-encoded by the
-     * AWS SDK for Java when the blob is serialized. The maximum size of the
-     * data blob (the payload after Base64-decoding) is 50 kilobytes (KB)
+     * The data blob to put into the record, which is Base64-encoded when the
+     * blob is serialized. The maximum size of the data blob (the payload
+     * after Base64-decoding) is 50 kilobytes (KB)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 51200<br/>
      *
-     * @return The data blob to put into the record, which is Base64-encoded by the
-     *         AWS SDK for Java when the blob is serialized. The maximum size of the
-     *         data blob (the payload after Base64-decoding) is 50 kilobytes (KB)
+     * @return The data blob to put into the record, which is Base64-encoded when the
+     *         blob is serialized. The maximum size of the data blob (the payload
+     *         after Base64-decoding) is 50 kilobytes (KB)
      */
     public java.nio.ByteBuffer getData() {
         return data;
     }
     
     /**
-     * The data blob to put into the record, which is Base64-encoded by the
-     * AWS SDK for Java when the blob is serialized. The maximum size of the
-     * data blob (the payload after Base64-decoding) is 50 kilobytes (KB)
+     * The data blob to put into the record, which is Base64-encoded when the
+     * blob is serialized. The maximum size of the data blob (the payload
+     * after Base64-decoding) is 50 kilobytes (KB)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 51200<br/>
      *
-     * @param data The data blob to put into the record, which is Base64-encoded by the
-     *         AWS SDK for Java when the blob is serialized. The maximum size of the
-     *         data blob (the payload after Base64-decoding) is 50 kilobytes (KB)
+     * @param data The data blob to put into the record, which is Base64-encoded when the
+     *         blob is serialized. The maximum size of the data blob (the payload
+     *         after Base64-decoding) is 50 kilobytes (KB)
      */
     public void setData(java.nio.ByteBuffer data) {
         this.data = data;
     }
     
     /**
-     * The data blob to put into the record, which is Base64-encoded by the
-     * AWS SDK for Java when the blob is serialized. The maximum size of the
-     * data blob (the payload after Base64-decoding) is 50 kilobytes (KB)
+     * The data blob to put into the record, which is Base64-encoded when the
+     * blob is serialized. The maximum size of the data blob (the payload
+     * after Base64-decoding) is 50 kilobytes (KB)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 51200<br/>
      *
-     * @param data The data blob to put into the record, which is Base64-encoded by the
-     *         AWS SDK for Java when the blob is serialized. The maximum size of the
-     *         data blob (the payload after Base64-decoding) is 50 kilobytes (KB)
+     * @param data The data blob to put into the record, which is Base64-encoded when the
+     *         blob is serialized. The maximum size of the data blob (the payload
+     *         after Base64-decoding) is 50 kilobytes (KB)
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

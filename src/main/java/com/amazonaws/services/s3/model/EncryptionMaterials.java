@@ -21,12 +21,13 @@ import java.util.Map;
 import javax.crypto.SecretKey;
 
 /**
- * Stores materials to be used in encryption.  These materials may be either an asymmetric key pair or 
- * a symmetric key but not both.
+ * The "key encrypting key" materials used in encrypt/decryption. These
+ * materials may be either an asymmetric key pair or a symmetric key but not
+ * both.
  */
 public class EncryptionMaterials {
-    private KeyPair keyPair;
-    private SecretKey symmetricKey;
+    private final KeyPair keyPair;
+    private final SecretKey symmetricKey;
 
     /**
      * Constructs a new EncryptionMaterials object, storing an asymmetric key pair.
@@ -93,7 +94,7 @@ public class EncryptionMaterials {
      * 
      * @return null
      */
-    public EncryptionMaterialsAccessor getAccessor() {      
+    public EncryptionMaterialsAccessor getAccessor() {
         return null;
     }
 }

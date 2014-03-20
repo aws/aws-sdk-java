@@ -23,13 +23,10 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.conn.ClientConnectionManager;
 import org.apache.http.conn.ClientConnectionRequest;
+import org.apache.http.pool.ConnPoolControl;
 
 public class ClientConnectionManagerFactory {
     private static final Log log = LogFactory.getLog(ClientConnectionManagerFactory.class);
-    private static final Class<?>[] interfaces = {
-        ClientConnectionManager.class,
-        Wrapped.class
-    };
 
     /**
      * Returns a wrapped instance of {@link ClientConnectionManager}
@@ -39,6 +36,19 @@ public class ClientConnectionManagerFactory {
     public static ClientConnectionManager wrap(ClientConnectionManager orig) {
         if (orig instanceof Wrapped)
             throw new IllegalArgumentException();
+        final Class<?>[] interfaces;
+        if (orig instanceof ConnPoolControl) {
+            interfaces = new Class<?>[] { 
+                    ClientConnectionManager.class,
+                    ConnPoolControl.class,
+                    Wrapped.class 
+            };
+        } else {
+            interfaces = new Class<?>[] { 
+                    ClientConnectionManager.class,
+                    Wrapped.class 
+            };
+        }
         return (ClientConnectionManager) Proxy.newProxyInstance(
                 // https://github.com/aws/aws-sdk-java/pull/48#issuecomment-29454423
                 ClientConnectionManagerFactory.class.getClassLoader(),

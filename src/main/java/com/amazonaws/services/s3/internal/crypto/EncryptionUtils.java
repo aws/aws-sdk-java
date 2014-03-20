@@ -183,7 +183,7 @@ public class EncryptionUtils {
             // Get fields from instruction object
             byte[] encryptedSymmetricKeyBytes = instructionJSON.getString(Headers.CRYPTO_KEY).getBytes();
             byte[] initVectorBytes = instructionJSON.getString(Headers.CRYPTO_IV).getBytes();
-            String materialsDescriptionString = instructionJSON.getString(Headers.MATERIALS_DESCRIPTION);
+            String materialsDescriptionString = instructionJSON.tryGetString(Headers.MATERIALS_DESCRIPTION);
             Map<String, String> materialsDescription = convertJSONToMap(materialsDescriptionString);
 
             // Decode from Base 64 to standard binary bytes
@@ -625,7 +625,7 @@ public class EncryptionUtils {
         }
     }
 
-    public static InputStream getEncryptedInputStream(UploadPartRequest request, CipherFactory cipherFactory) {
+    public static ByteRangeCapturingInputStream getEncryptedInputStream(UploadPartRequest request, CipherFactory cipherFactory) {
         try {
             InputStream originalInputStream = request.getInputStream();
             if (request.getFile() != null) {

@@ -364,7 +364,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * <code>GetShardIterator</code> has a limit of 5 transactions per
-     * second per account per shard.
+     * second per account per open shard.
      * </p>
      *
      * @param getShardIteratorRequest Container for the necessary parameters
@@ -656,8 +656,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * for your account, you receive a <code>LimitExceededException</code> .
      * </p>
      * <p>
-     * <b>Note:</b> The default limit for an AWS account is five shards per
-     * stream. If you need to create a stream with more than five shards,
+     * <b>Note:</b> The default limit for an AWS account is 10 shards per
+     * stream. If you need to create a stream with more than 10 shards,
      * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
      * to increase the limit on your account.
      * </p>
@@ -715,12 +715,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * You specify and control the number of shards that a stream is composed
-     * of. Each shard can support up to 5 read transactions per second up to
-     * a maximum total of 2 MB of data read per second. Each shard can
-     * support up to 1000 write transactions per second up to a maximum total
-     * of 1 MB data written per second. You can add shards to a stream if the
-     * amount of data input increases and you can remove shards if the amount
-     * of data input decreases.
+     * of. Each open shard can support up to 5 read transactions per second,
+     * up to a maximum total of 2 MB of data read per second. Each shard can
+     * support up to 1000 write transactions per second, up to a maximum
+     * total of 1 MB data written per second. You can add shards to a stream
+     * if the amount of data input increases and you can remove shards if the
+     * amount of data input decreases.
      * </p>
      * <p>
      * The stream name identifies the stream. The name is scoped to the AWS
@@ -749,8 +749,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * 
      * </ul>
      * <p>
-     * <b>Note:</b> The default limit for an AWS account is five shards per
-     * stream. If you need to create a stream with more than five shards,
+     * <b>Note:</b> The default limit for an AWS account is 10 shards per
+     * stream. If you need to create a stream with more than 10 shards,
      * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
      * to increase the limit on your account.
      * </p>
@@ -1315,7 +1315,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * <code>GetShardIterator</code> has a limit of 5 transactions per
-     * second per account per shard.
+     * second per account per open shard.
      * </p>
      * 
      * @param streamName The name of the stream.
@@ -1411,7 +1411,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * <code>GetShardIterator</code> has a limit of 5 transactions per
-     * second per account per shard.
+     * second per account per open shard.
      * </p>
      * 
      * @param streamName The name of the stream.
@@ -1507,9 +1507,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * 
      * @param streamName The name of the stream to put the data record into.
      * @param data The data blob to put into the record, which is
-     * Base64-encoded by the AWS SDK for Java when the blob is serialized.
-     * The maximum size of the data blob (the payload after Base64-decoding)
-     * is 50 kilobytes (KB)
+     * Base64-encoded when the blob is serialized. The maximum size of the
+     * data blob (the payload after Base64-decoding) is 50 kilobytes (KB)
      * @param partitionKey Determines which shard in the stream the data
      * record is assigned to. Partition keys are Unicode strings with a
      * maximum length limit of 256 bytes. Amazon Kinesis uses the partition
@@ -1597,9 +1596,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * 
      * @param streamName The name of the stream to put the data record into.
      * @param data The data blob to put into the record, which is
-     * Base64-encoded by the AWS SDK for Java when the blob is serialized.
-     * The maximum size of the data blob (the payload after Base64-decoding)
-     * is 50 kilobytes (KB)
+     * Base64-encoded when the blob is serialized. The maximum size of the
+     * data blob (the payload after Base64-decoding) is 50 kilobytes (KB)
      * @param partitionKey Determines which shard in the stream the data
      * record is assigned to. Partition keys are Unicode strings with a
      * maximum length limit of 256 bytes. Amazon Kinesis uses the partition
@@ -1699,8 +1697,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * for your account, you receive a <code>LimitExceededException</code> .
      * </p>
      * <p>
-     * <b>Note:</b> The default limit for an AWS account is five shards per
-     * stream. If you need to create a stream with more than five shards,
+     * <b>Note:</b> The default limit for an AWS account is 10 shards per
+     * stream. If you need to create a stream with more than 10 shards,
      * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
      * to increase the limit on your account.
      * </p>
@@ -1762,12 +1760,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * You specify and control the number of shards that a stream is composed
-     * of. Each shard can support up to 5 read transactions per second up to
-     * a maximum total of 2 MB of data read per second. Each shard can
-     * support up to 1000 write transactions per second up to a maximum total
-     * of 1 MB data written per second. You can add shards to a stream if the
-     * amount of data input increases and you can remove shards if the amount
-     * of data input decreases.
+     * of. Each open shard can support up to 5 read transactions per second,
+     * up to a maximum total of 2 MB of data read per second. Each shard can
+     * support up to 1000 write transactions per second, up to a maximum
+     * total of 1 MB data written per second. You can add shards to a stream
+     * if the amount of data input increases and you can remove shards if the
+     * amount of data input decreases.
      * </p>
      * <p>
      * The stream name identifies the stream. The name is scoped to the AWS
@@ -1796,8 +1794,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * 
      * </ul>
      * <p>
-     * <b>Note:</b> The default limit for an AWS account is five shards per
-     * stream. If you need to create a stream with more than five shards,
+     * <b>Note:</b> The default limit for an AWS account is 10 shards per
+     * stream. If you need to create a stream with more than 10 shards,
      * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
      * to increase the limit on your account.
      * </p>
@@ -1819,9 +1817,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @param shardCount The number of shards that the stream will use. The
      * throughput of the stream is a function of the number of shards; more
      * shards are required for greater provisioned throughput.
-     * <p><b>Note:</b> The default limit for an AWS account is five shards
-     * per stream. If you need to create a stream with more than five shards,
-     * <a
+     * <p><b>Note:</b> The default limit for an AWS account is 10 shards per
+     * stream. If you need to create a stream with more than 10 shards, <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
      * AWS Support</a> to increase the limit on your account.
      * 

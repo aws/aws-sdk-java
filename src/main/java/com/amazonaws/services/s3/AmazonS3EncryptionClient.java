@@ -625,7 +625,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
         CipherFactory cipherFactory = new CipherFactory(envelopeSymmetricKey, Cipher.ENCRYPT_MODE, iv, this.cryptoConfig.getCryptoProvider());
 
         // Create encrypted input stream
-        InputStream encryptedInputStream = EncryptionUtils.getEncryptedInputStream(uploadPartRequest, cipherFactory);
+        ByteRangeCapturingInputStream encryptedInputStream = EncryptionUtils.getEncryptedInputStream(uploadPartRequest, cipherFactory);
         uploadPartRequest.setInputStream(encryptedInputStream);
 
         // The last part of the multipart upload will contain extra padding from the encryption process, which
@@ -646,16 +646,8 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
         // Treat all encryption requests as input stream upload requests, not as file upload requests.
         uploadPartRequest.setFile(null);
         uploadPartRequest.setFileOffset(0);
-
         UploadPartResult result = super.uploadPart(uploadPartRequest);
-
-        if (encryptedInputStream instanceof ByteRangeCapturingInputStream) {
-            ByteRangeCapturingInputStream bris = (ByteRangeCapturingInputStream)encryptedInputStream;
-            encryptedUploadContext.setNextInitializationVector(bris.getBlock());
-        } else {
-            throw new AmazonClientException("Unable to access last block of encrypted data");
-        }
-
+        encryptedUploadContext.setNextInitializationVector(encryptedInputStream.getBlock());
         return result;
     }
 

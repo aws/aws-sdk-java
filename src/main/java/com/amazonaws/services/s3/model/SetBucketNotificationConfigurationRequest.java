@@ -16,33 +16,163 @@ package com.amazonaws.services.s3.model;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * Contains options for setting the notification configuration for a bucket.
+ * 
+ * @see SetBucketNotificationConfigurationRequest#SetBucketNotificationConfigurationRequest(String, BucketNotificationConfiguration)
+ */
 public class SetBucketNotificationConfigurationRequest extends AmazonWebServiceRequest {
 
-    private BucketNotificationConfiguration bucketNotificationConfiguration;
+    private BucketNotificationConfiguration notificationConfiguration;
 
-    private String bucket;
+    private String bucketName;
 
+    /**
+     * @deprecated Use SetBucketNotificationConfigurationRequest(String, BucketNotificationConfiguration) instead.
+     */
+    @Deprecated
     public SetBucketNotificationConfigurationRequest(BucketNotificationConfiguration bucketNotificationConfiguration,
             String bucket) {
-        super();
-        this.bucketNotificationConfiguration = bucketNotificationConfiguration;
-        this.bucket = bucket;
+        this.notificationConfiguration = bucketNotificationConfiguration;
+        this.bucketName = bucket;
     }
 
+    /**
+     * Constructs a new {@link SetBucketNotificationConfigurationRequest} 
+     * to set the bucket notification configuration of
+     * the specified bucket.
+     * 
+     * @param bucketName
+     *            The name of the bucket for which to set the notification
+     *            configuration.
+     * @param notificationConfiguration
+     *            The new notification configuration for this bucket, which
+     *            completely replaces any existing configuration.
+     */
+    public SetBucketNotificationConfigurationRequest(
+            String bucketName, BucketNotificationConfiguration notificationConfiguration) {
+        this.bucketName = bucketName;
+        this.notificationConfiguration = notificationConfiguration;
+    }
+
+    /**
+     * @deprecated Use getNotificationConfiguration() instead.
+     */
+    @Deprecated
     public BucketNotificationConfiguration getBucketNotificationConfiguration() {
-        return bucketNotificationConfiguration;
+        return notificationConfiguration;
     }
 
+    /**
+     * Gets the new notification configuration for the specified bucket.
+     * 
+     * @return The new notification configuration for the specified bucket.
+     * 
+     * @see SetBucketNotificationConfigurationRequest#withNotificationConfiguration(BucketNotificationConfiguration)
+     */
+    public BucketNotificationConfiguration getNotificationConfiguration() {
+        return notificationConfiguration;
+    }
+
+    /**
+     * @deprecated Use setNotificationConfiguration(BucketNotificationConfiguration) instead.
+     */
+    @Deprecated
     public void setBucketNotificationConfiguration(BucketNotificationConfiguration bucketNotificationConfiguration) {
-        this.bucketNotificationConfiguration = bucketNotificationConfiguration;
+        this.notificationConfiguration = bucketNotificationConfiguration;
     }
 
+    /**
+     * Sets the new notification configuration for the specified bucket.
+     * 
+     * @param notificationConfiguration
+     *            The new notification configuration for the specified bucket.
+     * 
+     * @see SetBucketNotificationConfigurationRequest#withNotificationConfiguration(BucketNotificationConfiguration)
+     */
+    public void setNotificationConfiguration(BucketNotificationConfiguration notificationConfiguration) {
+        this.notificationConfiguration = notificationConfiguration;
+    }
+
+    /**
+     * Sets the new notification configuration for the specified bucket and
+     * returns this object, enabling additional method calls to be chained
+     * together.
+     * 
+     * @param notificationConfiguration
+     *            The new notification configuration for the specified bucket.
+     * 
+     * @return This {@link SetBucketNotificationConfigurationRequest} object,
+     *         enabling that additional method calls may be chained together.
+     * 
+     * @see SetBucketNotificationConfigurationRequest#getNotificationConfiguration()
+     */
+    public SetBucketNotificationConfigurationRequest withNotificationConfiguration(
+            BucketNotificationConfiguration notificationConfiguration) {
+        setNotificationConfiguration(notificationConfiguration);
+        return this;
+    }
+
+    /**
+     * @deprecated Use getBucketName() instead.
+     */
+    @Deprecated
     public String getBucket() {
-        return bucket;
+        return bucketName;
     }
 
+    /**
+     * Gets the name of the bucket whose notification configuration is being
+     * set.
+     * 
+     * @return The name of the bucket whose notification configuration is being
+     *         set.
+     * 
+     * @see SetBucketNotificationConfigurationRequest#setBucketName(String)
+     */
+    public String getBucketName() {
+        return bucketName;
+    }
+
+    /**
+     * @deprecated Use setBucketName(String) instead.
+     */
+    @Deprecated
     public void setBucket(String bucket) {
-        this.bucket = bucket;
+        this.bucketName = bucket;
     }
 
+    /**
+     * Sets the name of the bucket whose notification configuration is being
+     * set.
+     * 
+     * @param bucketName
+     *            The name of the bucket whose notification configuration is
+     *            being set.
+     * 
+     * @see SetBucketNotificationConfigurationRequest#getBucketName()
+     */
+    public void setBucketName(String bucketName) {
+        this.bucketName = bucketName;
+    }
+
+    /**
+     * Sets the name of the bucket whose notification configuration is being
+     * set, and returns this object so that additional method calls may be
+     * chained together.
+     * 
+     * @param bucketName
+     *            The name of the bucket whose notification configuration is
+     *            being set.
+     * 
+     * @return This {@link SetBucketNotificationConfigurationRequest} object so
+     *         that additional method calls may be chained together.
+     * 
+     * @see SetBucketNotificationConfigurationRequest#setBucketName(String)
+     */
+    public SetBucketNotificationConfigurationRequest withBucketName(
+            String bucketName) {
+        setBucketName(bucketName);
+        return this;
+    }
 }

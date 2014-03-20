@@ -111,7 +111,6 @@ import com.amazonaws.transform.Marshaller;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.util.json.JSONObject;
 
 
 /**
@@ -371,9 +370,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public ListTablesResult listTables(ListTablesRequest listTablesRequest)
             throws AmazonServiceException, AmazonClientException {
         ExecutionContext executionContext = createExecutionContext(listTablesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ListTablesRequest> request = marshall(listTablesRequest,
                 new ListTablesRequestMarshaller(),
                 executionContext.getAwsRequestMetrics());
+        // Binds the request metrics to the current request.
+        request.setAWSRequestMetrics(awsRequestMetrics);
         Unmarshaller<ListTablesResult, JsonUnmarshallerContext> unmarshaller = new ListTablesResultJsonUnmarshaller();
         JsonResponseHandler<ListTablesResult> responseHandler = new JsonResponseHandler<ListTablesResult>(unmarshaller);
         return invoke(request, responseHandler, executionContext);
@@ -412,9 +414,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public QueryResult query(QueryRequest queryRequest)
             throws AmazonServiceException, AmazonClientException {
         ExecutionContext executionContext = createExecutionContext(queryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<QueryRequest> request = marshall(queryRequest,
                 new QueryRequestMarshaller(),
                 executionContext.getAwsRequestMetrics());
+        // Binds the request metrics to the current request.
+        request.setAWSRequestMetrics(awsRequestMetrics);
         Unmarshaller<QueryResult, JsonUnmarshallerContext> unmarshaller = new QueryResultJsonUnmarshaller();
         JsonResponseHandler<QueryResult> responseHandler = new JsonResponseHandler<QueryResult>(unmarshaller);
         return invoke(request, responseHandler, executionContext);
@@ -452,9 +457,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public BatchWriteItemResult batchWriteItem(BatchWriteItemRequest batchWriteItemRequest)
             throws AmazonServiceException, AmazonClientException {
         ExecutionContext executionContext = createExecutionContext(batchWriteItemRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<BatchWriteItemRequest> request = marshall(
                 batchWriteItemRequest, new BatchWriteItemRequestMarshaller(),
                 executionContext.getAwsRequestMetrics());
+        // Binds the request metrics to the current request.
+        request.setAWSRequestMetrics(awsRequestMetrics);
         Unmarshaller<BatchWriteItemResult, JsonUnmarshallerContext> unmarshaller = new BatchWriteItemResultJsonUnmarshaller();
         JsonResponseHandler<BatchWriteItemResult> responseHandler = new JsonResponseHandler<BatchWriteItemResult>(unmarshaller);
         return invoke(request, responseHandler, executionContext);
@@ -493,9 +501,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public UpdateItemResult updateItem(UpdateItemRequest updateItemRequest)
             throws AmazonServiceException, AmazonClientException {
         ExecutionContext executionContext = createExecutionContext(updateItemRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateItemRequest> request = marshall(updateItemRequest,
                 new UpdateItemRequestMarshaller(),
                 executionContext.getAwsRequestMetrics());
+        // Binds the request metrics to the current request.
+        request.setAWSRequestMetrics(awsRequestMetrics);
         Unmarshaller<UpdateItemResult, JsonUnmarshallerContext> unmarshaller = new UpdateItemResultJsonUnmarshaller();
         JsonResponseHandler<UpdateItemResult> responseHandler = new JsonResponseHandler<UpdateItemResult>(unmarshaller);
         return invoke(request, responseHandler, executionContext);
@@ -537,9 +548,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public PutItemResult putItem(PutItemRequest putItemRequest)
             throws AmazonServiceException, AmazonClientException {
         ExecutionContext executionContext = createExecutionContext(putItemRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<PutItemRequest> request = marshall(putItemRequest,
                 new PutItemRequestMarshaller(),
                 executionContext.getAwsRequestMetrics());
+        // Binds the request metrics to the current request.
+        request.setAWSRequestMetrics(awsRequestMetrics);
         Unmarshaller<PutItemResult, JsonUnmarshallerContext> unmarshaller = new PutItemResultJsonUnmarshaller();
         JsonResponseHandler<PutItemResult> responseHandler = new JsonResponseHandler<PutItemResult>(unmarshaller);
         return invoke(request, responseHandler, executionContext);
@@ -575,9 +589,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public DescribeTableResult describeTable(DescribeTableRequest describeTableRequest)
             throws AmazonServiceException, AmazonClientException {
         ExecutionContext executionContext = createExecutionContext(describeTableRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DescribeTableRequest> request = marshall(describeTableRequest,
                 new DescribeTableRequestMarshaller(),
                 executionContext.getAwsRequestMetrics());
+        // Binds the request metrics to the current request.
+        request.setAWSRequestMetrics(awsRequestMetrics);
         Unmarshaller<DescribeTableResult, JsonUnmarshallerContext> unmarshaller = new DescribeTableResultJsonUnmarshaller();
         JsonResponseHandler<DescribeTableResult> responseHandler = new JsonResponseHandler<DescribeTableResult>(unmarshaller);
         return invoke(request, responseHandler, executionContext);
@@ -613,9 +630,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public ScanResult scan(ScanRequest scanRequest)
             throws AmazonServiceException, AmazonClientException {
         ExecutionContext executionContext = createExecutionContext(scanRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<ScanRequest> request = marshall(scanRequest,
                 new ScanRequestMarshaller(),
                 executionContext.getAwsRequestMetrics());
+        // Binds the request metrics to the current request.
+        request.setAWSRequestMetrics(awsRequestMetrics);
         Unmarshaller<ScanResult, JsonUnmarshallerContext> unmarshaller = new ScanResultJsonUnmarshaller();
         JsonResponseHandler<ScanResult> responseHandler = new JsonResponseHandler<ScanResult>(unmarshaller);
         return invoke(request, responseHandler, executionContext);
@@ -659,9 +679,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public CreateTableResult createTable(CreateTableRequest createTableRequest)
             throws AmazonServiceException, AmazonClientException {
         ExecutionContext executionContext = createExecutionContext(createTableRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<CreateTableRequest> request = marshall(createTableRequest,
                 new CreateTableRequestMarshaller(),
                 executionContext.getAwsRequestMetrics());
+        // Binds the request metrics to the current request.
+        request.setAWSRequestMetrics(awsRequestMetrics);
         Unmarshaller<CreateTableResult, JsonUnmarshallerContext> unmarshaller = new CreateTableResultJsonUnmarshaller();
         JsonResponseHandler<CreateTableResult> responseHandler = new JsonResponseHandler<CreateTableResult>(unmarshaller);
         return invoke(request, responseHandler, executionContext);
@@ -698,9 +721,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public UpdateTableResult updateTable(UpdateTableRequest updateTableRequest)
             throws AmazonServiceException, AmazonClientException {
         ExecutionContext executionContext = createExecutionContext(updateTableRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<UpdateTableRequest> request = marshall(updateTableRequest,
                 new UpdateTableRequestMarshaller(),
                 executionContext.getAwsRequestMetrics());
+        // Binds the request metrics to the current request.
+        request.setAWSRequestMetrics(awsRequestMetrics);
         Unmarshaller<UpdateTableResult, JsonUnmarshallerContext> unmarshaller = new UpdateTableResultJsonUnmarshaller();
         JsonResponseHandler<UpdateTableResult> responseHandler = new JsonResponseHandler<UpdateTableResult>(unmarshaller);
         return invoke(request, responseHandler, executionContext);
@@ -740,9 +766,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public DeleteTableResult deleteTable(DeleteTableRequest deleteTableRequest)
             throws AmazonServiceException, AmazonClientException {
         ExecutionContext executionContext = createExecutionContext(deleteTableRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteTableRequest> request = marshall(deleteTableRequest,
                 new DeleteTableRequestMarshaller(),
                 executionContext.getAwsRequestMetrics());
+        // Binds the request metrics to the current request.
+        request.setAWSRequestMetrics(awsRequestMetrics);
         Unmarshaller<DeleteTableResult, JsonUnmarshallerContext> unmarshaller = new DeleteTableResultJsonUnmarshaller();
         JsonResponseHandler<DeleteTableResult> responseHandler = new JsonResponseHandler<DeleteTableResult>(unmarshaller);
         return invoke(request, responseHandler, executionContext);
@@ -780,9 +809,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public DeleteItemResult deleteItem(DeleteItemRequest deleteItemRequest)
             throws AmazonServiceException, AmazonClientException {
         ExecutionContext executionContext = createExecutionContext(deleteItemRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeleteItemRequest> request = marshall(deleteItemRequest,
                 new DeleteItemRequestMarshaller(),
                 executionContext.getAwsRequestMetrics());
+        // Binds the request metrics to the current request.
+        request.setAWSRequestMetrics(awsRequestMetrics);
         Unmarshaller<DeleteItemResult, JsonUnmarshallerContext> unmarshaller = new DeleteItemResultJsonUnmarshaller();
         JsonResponseHandler<DeleteItemResult> responseHandler = new JsonResponseHandler<DeleteItemResult>(unmarshaller);
         return invoke(request, responseHandler, executionContext);
@@ -822,9 +854,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public GetItemResult getItem(GetItemRequest getItemRequest)
             throws AmazonServiceException, AmazonClientException {
         ExecutionContext executionContext = createExecutionContext(getItemRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<GetItemRequest> request = marshall(getItemRequest,
                 new GetItemRequestMarshaller(),
                 executionContext.getAwsRequestMetrics());
+        // Binds the request metrics to the current request.
+        request.setAWSRequestMetrics(awsRequestMetrics);
         Unmarshaller<GetItemResult, JsonUnmarshallerContext> unmarshaller = new GetItemResultJsonUnmarshaller();
         JsonResponseHandler<GetItemResult> responseHandler = new JsonResponseHandler<GetItemResult>(unmarshaller);
         return invoke(request, responseHandler, executionContext);
@@ -873,9 +908,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public BatchGetItemResult batchGetItem(BatchGetItemRequest batchGetItemRequest)
             throws AmazonServiceException, AmazonClientException {
         ExecutionContext executionContext = createExecutionContext(batchGetItemRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<BatchGetItemRequest> request = marshall(batchGetItemRequest,
                 new BatchGetItemRequestMarshaller(),
                 executionContext.getAwsRequestMetrics());
+        // Binds the request metrics to the current request.
+        request.setAWSRequestMetrics(awsRequestMetrics);
         Unmarshaller<BatchGetItemResult, JsonUnmarshallerContext> unmarshaller = new BatchGetItemResultJsonUnmarshaller();
         JsonResponseHandler<BatchGetItemResult> responseHandler = new JsonResponseHandler<BatchGetItemResult>(unmarshaller);
         return invoke(request, responseHandler, executionContext);

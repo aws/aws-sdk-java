@@ -75,7 +75,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * <code>GetShardIterator</code> has a limit of 5 transactions per
- * second per account per shard.
+ * second per account per open shard.
  * </p>
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#getShardIterator(GetShardIteratorRequest)

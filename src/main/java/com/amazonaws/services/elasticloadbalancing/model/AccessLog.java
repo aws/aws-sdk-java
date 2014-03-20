@@ -41,7 +41,7 @@ public class AccessLog implements Serializable {
 
     /**
      * The logical hierarchy you created for your Amazon S3 bucket, for
-     * example <code>/my-bucket-prefix/prod</code>. If the prefix is not
+     * example <code>my-bucket-prefix/prod</code>. If the prefix is not
      * provided, the log is placed at the root level of the bucket.
      */
     private String s3BucketPrefix;
@@ -162,11 +162,11 @@ public class AccessLog implements Serializable {
 
     /**
      * The logical hierarchy you created for your Amazon S3 bucket, for
-     * example <code>/my-bucket-prefix/prod</code>. If the prefix is not
+     * example <code>my-bucket-prefix/prod</code>. If the prefix is not
      * provided, the log is placed at the root level of the bucket.
      *
      * @return The logical hierarchy you created for your Amazon S3 bucket, for
-     *         example <code>/my-bucket-prefix/prod</code>. If the prefix is not
+     *         example <code>my-bucket-prefix/prod</code>. If the prefix is not
      *         provided, the log is placed at the root level of the bucket.
      */
     public String getS3BucketPrefix() {
@@ -175,11 +175,11 @@ public class AccessLog implements Serializable {
     
     /**
      * The logical hierarchy you created for your Amazon S3 bucket, for
-     * example <code>/my-bucket-prefix/prod</code>. If the prefix is not
+     * example <code>my-bucket-prefix/prod</code>. If the prefix is not
      * provided, the log is placed at the root level of the bucket.
      *
      * @param s3BucketPrefix The logical hierarchy you created for your Amazon S3 bucket, for
-     *         example <code>/my-bucket-prefix/prod</code>. If the prefix is not
+     *         example <code>my-bucket-prefix/prod</code>. If the prefix is not
      *         provided, the log is placed at the root level of the bucket.
      */
     public void setS3BucketPrefix(String s3BucketPrefix) {
@@ -188,13 +188,13 @@ public class AccessLog implements Serializable {
     
     /**
      * The logical hierarchy you created for your Amazon S3 bucket, for
-     * example <code>/my-bucket-prefix/prod</code>. If the prefix is not
+     * example <code>my-bucket-prefix/prod</code>. If the prefix is not
      * provided, the log is placed at the root level of the bucket.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param s3BucketPrefix The logical hierarchy you created for your Amazon S3 bucket, for
-     *         example <code>/my-bucket-prefix/prod</code>. If the prefix is not
+     *         example <code>my-bucket-prefix/prod</code>. If the prefix is not
      *         provided, the log is placed at the root level of the bucket.
      *
      * @return A reference to this updated object so that method calls can be chained 

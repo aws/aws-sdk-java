@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.s3.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.AmazonS3;
 
 /**
@@ -43,59 +42,17 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#deleteBucketWebsiteConfiguration(DeleteBucketWebsiteConfigurationRequest)
  */
-public class DeleteBucketWebsiteConfigurationRequest extends AmazonWebServiceRequest {
+public class DeleteBucketWebsiteConfigurationRequest extends GenericBucketRequest {
 
-	/** The name of the bucket whose website configuration is being deleted. */
-	private String bucketName;
-
-	/**
-	 * Creates a new requet object, ready to be executed to delete the website
-	 * configuration for the specified bucket.
-	 *
-	 * @param bucketName
-	 *            The name of the bucket whose website configuration is being
-	 *            deleted.
-	 */
-	public DeleteBucketWebsiteConfigurationRequest(String bucketName) {
-		this.bucketName = bucketName;
-	}
-
-	/**
-	 * Sets the name of the bucket whose website configuration will be deleted when this request is executed.
-	 *
-	 * @param bucketName
-	 *            The name of the bucket whose website configuration is being
-	 *            deleted.
-	 */
-	public void setBucketName(String bucketName) {
-		this.bucketName = bucketName;
-	}
-
-	/**
-	 * Returns the name of the bucket whose website configuration will be
-	 * deleted when this request is executed.
-	 *
-	 * @return The name of the bucket whose website configuration will be
-	 *         deleted when this request is executed.
-	 */
-	public String getBucketName() {
-		return bucketName;
-	}
-
-	/**
-	 * Sets the name of the bucket whose website configuration will be deleted
-	 * when this request is executed, and returns this updated request object so
-	 * that additional method calls can be chained together.
-	 *
-	 * @param bucketName
-	 *            The name of the bucket whose website configuration is being
-	 *            deleted.
-	 *
-	 * @return This updated request object so that additional method calls can
-	 *         be chained together.
-	 */
-	public DeleteBucketWebsiteConfigurationRequest withBucketName(String bucketName) {
-		setBucketName(bucketName);
-		return this;
-	}
+    /**
+     * Creates a new request object, ready to be executed to delete the website
+     * configuration for the specified bucket.
+     * 
+     * @param bucketName
+     *            The name of the bucket whose website configuration is being
+     *            deleted.
+     */
+    public DeleteBucketWebsiteConfigurationRequest(String bucketName) {
+        super(bucketName);
+    }
 }

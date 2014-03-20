@@ -40,9 +40,12 @@ import org.apache.http.annotation.ThreadSafe;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
 import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.conn.ClientConnectionManager;
 import org.apache.http.conn.scheme.Scheme;
 import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.ssl.SSLSocketFactory;
+import org.apache.http.pool.ConnPoolControl;
+import org.apache.http.pool.PoolStats;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 
@@ -370,6 +373,7 @@ public class AmazonHttpClient {
                     }
                 }
 
+                captureConnectionPoolMetrics(httpClient.getConnectionManager(), awsRequestMetrics);
                 HttpContext httpContext = new BasicHttpContext();
                 httpContext.setAttribute(
                         AWSRequestMetrics.class.getSimpleName(),
@@ -483,6 +487,27 @@ public class AmazonHttpClient {
                 }
             }
         } /* end while (true) */
+    }
+
+    /**
+     * Captures the connection pool metrics.
+     */
+    private void captureConnectionPoolMetrics(ClientConnectionManager connectionManager,
+            AWSRequestMetrics awsRequestMetrics) {
+        if (awsRequestMetrics.isEnabled()
+                && connectionManager instanceof ConnPoolControl) {
+            ConnPoolControl<?> control = (ConnPoolControl<?>) connectionManager;
+            PoolStats stats = control.getTotalStats();
+            awsRequestMetrics.setCounter(
+                    AWSRequestMetrics.Field.HttpClientPoolAvailableCount,
+                    stats.getAvailable());
+            awsRequestMetrics.setCounter(
+                    AWSRequestMetrics.Field.HttpClientPoolLeasedCount,
+                    stats.getLeased());
+            awsRequestMetrics.setCounter(
+                    AWSRequestMetrics.Field.HttpClientPoolPendingCount,
+                    stats.getPending());
+        }
     }
 
     /**

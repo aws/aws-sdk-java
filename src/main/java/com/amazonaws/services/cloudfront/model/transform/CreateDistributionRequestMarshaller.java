@@ -45,7 +45,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
         Request<CreateDistributionRequest> request = new DefaultRequest<CreateDistributionRequest>(createDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "2013-11-22/distribution"; 
+        String uriResourcePath = "2014-01-31/distribution"; 
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -64,7 +64,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
         request.setResourcePath(uriResourcePath);
 
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-11-22/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2014-01-31/");
 
                     if (createDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = createDistributionRequest.getDistributionConfig();
@@ -504,6 +504,9 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                         }
                         if (viewerCertificateViewerCertificate.isCloudFrontDefaultCertificate() != null) {
                             xmlWriter.startElement("CloudFrontDefaultCertificate").value(viewerCertificateViewerCertificate.isCloudFrontDefaultCertificate()).endElement();
+                        }
+                        if (viewerCertificateViewerCertificate.getSSLSupportMethod() != null) {
+                            xmlWriter.startElement("SSLSupportMethod").value(viewerCertificateViewerCertificate.getSSLSupportMethod()).endElement();
                         }
                         xmlWriter.endElement();
                     }

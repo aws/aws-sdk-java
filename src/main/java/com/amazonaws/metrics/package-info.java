@@ -37,6 +37,22 @@
  * Captured on a per request type level.</li>
  * <li>Exception - Number of logical request failure. Captured both on a per service 
  * client type level and a per request type level.</li>
+ * <li>HttpClientPoolAvailableCount - Number of idle persistent connections of
+ * the underlying httpclient.
+ * This metric is collected from the respective <a 
+ * href="https://hc.apache.org/httpcomponents-core-ga/httpcore/apidocs/org/apache/http/pool/PoolStats.html"
+ * >PoolStats</a> before the connection of a request is obtained.</li>
+ * <li>HttpClientPoolLeasedCount - Number of persistent connections tracked by 
+ * the underlying httpclient connection manager currently being used to execute
+ * requests.
+ * This metric is collected from the respective <a 
+ * href="https://hc.apache.org/httpcomponents-core-ga/httpcore/apidocs/org/apache/http/pool/PoolStats.html"
+ * >PoolStats</a> before the connection of a request is obtained.</li>
+ * <li>HttpClientPoolPendingCount - Number of connection requests being blocked
+ * awaiting a free connection of the underlying httpclient.
+ * This metric is collected from the respective <a 
+ * href="https://hc.apache.org/httpcomponents-core-ga/httpcore/apidocs/org/apache/http/pool/PoolStats.html"
+ * >PoolStats</a>. before the connection of a request is obtained</li>
  * <li>HttpRequestTime - Number of milliseconds taken for a logical request/response 
  * round trip to AWS. Captured on a per request type level.< /li>
  * <li>HttpClientSendRequestTime - Number of milliseconds taken for a physical request

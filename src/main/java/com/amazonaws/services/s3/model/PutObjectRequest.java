@@ -80,7 +80,7 @@ import com.amazonaws.event.ProgressListener;
  * @see PutObjectRequest#PutObjectRequest(String, String, File)
  * @see PutObjectRequest#PutObjectRequest(String, String, InputStream, ObjectMetadata)
  */
-public class PutObjectRequest extends AmazonWebServiceRequest {
+public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneable {
 
     /**
      * The name of an existing bucket, to which this request will upload a new
@@ -847,4 +847,20 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
         return this;
     }
 
+    /**
+     * Returns a clone of this object so that the metadata can be further
+     * modified without affecting the original.
+     */
+    public PutObjectRequest clone() {
+        return new PutObjectRequest(bucketName, key, redirectLocation).
+             withAccessControlList(accessControlList)
+            .withCannedAcl(cannedAcl)
+            .withFile(file)
+            .withGeneralProgressListener(generalProgressListener)
+            .withInputStream(inputStream)
+            .withMetadata(metadata == null ? null : metadata.clone())
+            .withStorageClass(storageClass)
+            .withRequestMetricCollector(getRequestMetricCollector())
+            ;
+    }
 }

@@ -15,17 +15,16 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
- * Viewer Protocol Policy
+ * S S L Support Method
  */
-public enum ViewerProtocolPolicy {
+public enum SSLSupportMethod {
     
-    AllowAll("allow-all"),
-    HttpsOnly("https-only"),
-    RedirectToHttps("redirect-to-https");
+    SniOnly("sni-only"),
+    Vip("vip");
 
     private String value;
 
-    private ViewerProtocolPolicy(String value) {
+    private SSLSupportMethod(String value) {
         this.value = value;
     }
 
@@ -39,18 +38,16 @@ public enum ViewerProtocolPolicy {
      *
      * @param value
      *            real value
-     * @return ViewerProtocolPolicy corresponding to the value
+     * @return SSLSupportMethod corresponding to the value
      */
-    public static ViewerProtocolPolicy fromValue(String value) {
+    public static SSLSupportMethod fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
-        } else if ("allow-all".equals(value)) {
-            return ViewerProtocolPolicy.AllowAll;
-        } else if ("https-only".equals(value)) {
-            return ViewerProtocolPolicy.HttpsOnly;
-        } else if ("redirect-to-https".equals(value)) {
-            return ViewerProtocolPolicy.RedirectToHttps;
+        } else if ("sni-only".equals(value)) {
+            return SSLSupportMethod.SniOnly;
+        } else if ("vip".equals(value)) {
+            return SSLSupportMethod.Vip;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }
