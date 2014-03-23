@@ -48,7 +48,7 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     private static final Log log = LogFactory.getLog("com.amazonaws.request");
 
     /** Shared factory for creating XML event readers */
-    private static final XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
+    private static XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
 
 
     /**
@@ -74,7 +74,21 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
             this.responseUnmarshaller = new VoidStaxUnmarshaller<T>();
         }
     }
-
+    
+    private static Integer getEntityExpansionLimit(){
+    	Integer entityExpansionLimit = null;
+    	String str = System.getProperty("jdk.xml.entityExpansionLimit");
+    	if(str==null){
+    		str = System.getProperty("entityExpansionLimit");
+    	}
+    	if(str!=null){
+    		entityExpansionLimit = Integer.valueOf(str);
+    	}
+    	else{
+    		entityExpansionLimit = 64000;
+    	}
+    	return entityExpansionLimit;
+    }
 
     /**
      * @see com.amazonaws.http.HttpResponseHandler#handle(com.amazonaws.http.HttpResponse)
@@ -84,9 +98,29 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         InputStream content = response.getContent();
         if (content == null) content = new ByteArrayInputStream("<eof/>".getBytes());
 
-        XMLEventReader eventReader;
+        XMLEventReader eventReader = null;
         synchronized (xmlInputFactory) {
-            eventReader = xmlInputFactory.createXMLEventReader(content);
+    		int reTry = 0; 
+    		//Workaround for Bug JDK-8028111 proposed by Joe Wang
+    		//https://bugs.openjdk.java.net/browse/JDK-8028111
+            for (int i = 0; i < getEntityExpansionLimit() + 1; i++) {
+            	try{
+            		eventReader = xmlInputFactory.createXMLEventReader(content);
+            	}
+                catch (XMLStreamException e) { 
+	                if (reTry == i) { 
+	                    ///this individual file does exceed the limit 
+	                    throw new XMLStreamException(e); 
+	                } 
+	          
+	                //refresh the factory 
+	                if (e.getMessage().indexOf("JAXP00010001") > -1) { 
+	                	xmlInputFactory = XMLInputFactory.newInstance(); 
+	                    reTry = i; 
+	                    i = i-1; 
+	                } 
+	            }
+            }
         }
 
         try {
